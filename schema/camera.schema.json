@@ -192,6 +192,11 @@
         },
         "voltage": {
           "type": "string"
+        },
+        "poe_class": {
+          "type": "integer",
+          "enum": [0, 1, 2, 3, 4, 5, 6, 7, 8],
+          "description": "PoE class (e.g. 3 for PoE Class 3)."
         }
       }
     },
@@ -210,6 +215,10 @@
         },
         "cloud": {
           "type": "boolean"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Free-text storage notes, e.g. external hub requirement."
         }
       }
     },
@@ -222,7 +231,9 @@
           "rtsp",
           "rtmp",
           "http",
-          "p2p"
+          "p2p",
+          "hdcvi",
+          "mxpeg"
         ]
       }
     },
@@ -264,8 +275,73 @@
     "release_year": {
       "type": "integer"
     },
+    "end_of_sale_year": {
+      "type": "integer"
+    },
+    "end_of_support_year": {
+      "type": "integer"
+    },
+    "environment": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["indoor", "outdoor"]
+      },
+      "description": "Indoor and/or outdoor suitability."
+    },
+    "soc": {
+      "type": "string",
+      "description": "System on Chip (SoC), e.g. Ingenic T31 (for Thingino/OpenIPC compatibility)."
+    },
     "msrp_usd": {
       "type": "number"
+    },
+    "msrp_eur": {
+      "type": "number",
+      "description": "MSRP in EUR."
+    },
+    "msrp_gbp": {
+      "type": "number",
+      "description": "MSRP in GBP."
+    },
+    "msrp_inr": {
+      "type": "number",
+      "description": "MSRP in INR."
+    },
+    "msrp_aed": {
+      "type": "number",
+      "description": "MSRP in AED."
+    },
+    "msrp_aud": {
+      "type": "number",
+      "description": "MSRP in AUD."
+    },
+    "msrp_cad": {
+      "type": "number",
+      "description": "MSRP in CAD."
+    },
+    "msrp_vnd": {
+      "type": "number",
+      "description": "MSRP in VND."
+    },
+    "msrp_chf": {
+      "type": "number",
+      "description": "MSRP in CHF."
+    },
+    "markets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Regions/countries where the camera is sold, e.g. ['EU', 'DE', 'MENA', 'global']."
+    },
+    "generation": {
+      "type": "string",
+      "description": "Product generation/line, e.g. 'Wisenet 9'."
+    },
+    "release_notes": {
+      "type": "string",
+      "description": "Free-text notes about the release (launch events, pending specs, etc.)."
     },
     "sources": {
       "type": "array",
@@ -309,6 +385,23 @@
             },
             "notes": {
               "type": "string"
+            },
+            "verified": {
+              "type": "boolean",
+              "description": "Whether this configuration has been verified working with Frigate."
+            },
+            "tested_by": {
+              "type": "string",
+              "description": "The community member or source that verified the config."
+            },
+            "tested_version": {
+              "type": "string",
+              "description": "Frigate version tested (e.g. '0.14')."
+            },
+            "recommended_stream_type": {
+              "type": "string",
+              "enum": ["go2rtc", "ffmpeg", "rtsp"],
+              "description": "Recommended stream input type (e.g. go2rtc for WebRTC/audio, ffmpeg for scaling, native rtsp)."
             }
           }
         },
@@ -322,6 +415,23 @@
             },
             "notes": {
               "type": "string"
+            },
+            "connection_type": {
+              "type": "string",
+              "enum": ["local", "local_push", "local_poll", "cloud", "cloud_push", "cloud_poll"],
+              "description": "Integration connectivity type."
+            },
+            "doorbell_button": {
+              "type": "boolean",
+              "description": "Whether the doorbell button press event is exposed."
+            },
+            "two_way_audio": {
+              "type": "boolean",
+              "description": "Whether two-way audio is supported in Home Assistant."
+            },
+            "onvif_events": {
+              "type": "boolean",
+              "description": "Whether ONVIF motion or other events are supported."
             }
           }
         },

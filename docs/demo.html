@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CCTV Camera Database</title>
+  <meta name="description" content="Open database of 1,330 CCTV camera specifications across 66 brands. Search, filter, compare, and find Frigate/HA/Blue Iris configs." />
+  <style>
+    /* ── Reset & base ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Theme variables ──────────────────────────────────────── */
+    :root, [data-theme="dark"] {
+      --bg:          #0d1117;
+      --bg-card:     #161b22;
+      --bg-input:    #1c2128;
+      --border:      #30363d;
+      --border-soft: #21262d;
+      --text:        #e6edf3;
+      --text-muted:  #8b949e;
+      --text-dim:    #484f58;
+      --accent:      #2f81f7;
+      --accent-soft: rgba(47,129,247,0.12);
+      --green:       #3fb950;
+      --green-soft:  rgba(63,185,80,0.12);
+      --orange:      #d29922;
+      --orange-soft: rgba(210,153,34,0.12);
+      --red:         #f85149;
+      --red-soft:    rgba(248,81,73,0.12);
+      --purple:      #bc8cff;
+      --purple-soft: rgba(188,140,255,0.12);
+      --radius:      8px;
+      --font-mono:   'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+      --font-sans:   'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --shadow:      0 1px 3px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.2);
+    }
+    [data-theme="light"] {
+      --bg:          #f6f8fa;
+      --bg-card:     #ffffff;
+      --bg-input:    #f0f2f5;
+      --border:      #d0d7de;
+      --border-soft: #e1e4e8;
+      --text:        #1f2328;
+      --text-muted:  #656d76;
+      --text-dim:    #8b949e;
+      --accent:      #0969da;
+      --accent-soft: rgba(9,105,218,0.1);
+      --green:       #1a7f37;
+      --green-soft:  rgba(26,127,55,0.1);
+      --orange:      #9a6700;
+      --orange-soft: rgba(154,103,0,0.1);
+      --red:         #cf222e;
+      --red-soft:    rgba(207,34,46,0.1);
+      --purple:      #8250df;
+      --purple-soft: rgba(130,80,223,0.1);
+      --shadow:      0 1px 3px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      line-height: 1.6;
+      min-height: 100vh;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    /* ── Layout ───────────────────────────────────────────────── */
+    .page { max-width: 1400px; margin: 0 auto; padding: 0 20px 60px; }
+
+    /* ── Header ───────────────────────────────────────────────── */
+    header {
+      padding: 40px 0 32px;
+      border-bottom: 1px solid var(--border-soft);
+      margin-bottom: 28px;
+    }
+    .header-inner {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+    .brand-icon {
+      width: 36px; height: 36px;
+      background: var(--accent-soft);
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+    }
+    h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
+    .subtitle { color: var(--text-muted); font-size: 13px; max-width: 520px; }
+    .header-actions { display: flex; gap: 8px; flex-shrink: 0; align-items: center; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 7px 14px; border-radius: var(--radius);
+      font-size: 13px; font-weight: 500; cursor: pointer;
+      text-decoration: none; transition: all 0.15s;
+      border: 1px solid var(--border);
+      background: var(--bg-card); color: var(--text-muted);
+      font-family: var(--font-sans);
+    }
+    .btn:hover { border-color: var(--text-muted); color: var(--text); }
+    .btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .btn-primary:hover { background: #388bfd; border-color: #388bfd; color: #fff; }
+    .btn-green { background: var(--green); border-color: var(--green); color: #fff; }
+    .btn-green:hover { opacity: 0.9; }
+    .btn-green:disabled { opacity: 0.4; cursor: not-allowed; }
+    .btn-sm { padding: 4px 10px; font-size: 12px; }
+    .theme-toggle {
+      width: 32px; height: 32px; padding: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; border-radius: 6px;
+    }
+
+    /* ── Stat pills ───────────────────────────────────────────── */
+    .stats { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+    .stat {
+      display: flex; align-items: center; gap: 6px;
+      padding: 5px 12px; background: var(--bg-card);
+      border: 1px solid var(--border-soft); border-radius: 20px;
+      font-size: 12px; color: var(--text-muted);
+    }
+    .stat strong { color: var(--text); font-variant-numeric: tabular-nums; }
+    .stat.clickable { cursor: pointer; transition: border-color 0.15s; }
+    .stat.clickable:hover { border-color: var(--accent); }
+
+    /* ── Controls ─────────────────────────────────────────────── */
+    .controls {
+      display: grid;
+      grid-template-columns: 1fr repeat(6, auto);
+      gap: 8px; margin-bottom: 8px;
+      align-items: center;
+    }
+    @media (max-width: 900px) { .controls { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 540px) { .controls { grid-template-columns: 1fr; } }
+
+    .search-wrap { position: relative; }
+    .search-icon {
+      position: absolute; left: 11px; top: 50%;
+      transform: translateY(-50%); color: var(--text-dim);
+      pointer-events: none; font-size: 14px;
+    }
+    .search-hint {
+      position: absolute; right: 10px; top: 50%;
+      transform: translateY(-50%);
+      padding: 1px 6px; border-radius: 4px;
+      border: 1px solid var(--border); background: var(--bg);
+      font-size: 10px; color: var(--text-dim);
+      pointer-events: none;
+    }
+    input[type="search"], select {
+      width: 100%; padding: 8px 12px 8px 34px;
+      background: var(--bg-input); border: 1px solid var(--border);
+      border-radius: var(--radius); color: var(--text);
+      font-size: 13px; font-family: var(--font-sans);
+      outline: none; transition: border-color 0.15s;
+      appearance: none; -webkit-appearance: none;
+    }
+    input[type="search"] { padding-left: 34px; padding-right: 40px; }
+    input[type="search"]:focus, select:focus { border-color: var(--accent); }
+    select { padding-left: 12px; cursor: pointer; min-width: 130px; }
+    select option { background: var(--bg-card); }
+    ::placeholder { color: var(--text-dim); }
+
+    /* ── Multi-select dropdown ────────────────────────────────── */
+    .ms-wrap { position: relative; min-width: 130px; }
+    .ms-trigger {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 8px 12px; background: var(--bg-input);
+      border: 1px solid var(--border); border-radius: var(--radius);
+      color: var(--text); font-size: 13px; cursor: pointer;
+      transition: border-color 0.15s; user-select: none;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      font-family: var(--font-sans);
+    }
+    .ms-trigger:hover, .ms-wrap.open .ms-trigger { border-color: var(--accent); }
+    .ms-trigger .ms-count {
+      background: var(--accent); color: #fff; border-radius: 10px;
+      padding: 0 6px; font-size: 10px; font-weight: 700; margin-left: 6px;
+      flex-shrink: 0;
+    }
+    .ms-trigger .ms-arrow { margin-left: 6px; font-size: 10px; color: var(--text-dim); flex-shrink: 0; }
+    .ms-dropdown {
+      display: none; position: absolute; top: calc(100% + 4px); left: 0;
+      min-width: 100%; max-height: 280px; overflow-y: auto;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); z-index: 50;
+      box-shadow: var(--shadow); padding: 4px 0;
+    }
+    .ms-wrap.open .ms-dropdown { display: block; }
+    .ms-search {
+      width: calc(100% - 12px); margin: 4px 6px 6px;
+      padding: 5px 8px; background: var(--bg-input);
+      border: 1px solid var(--border); border-radius: 4px;
+      color: var(--text); font-size: 12px; outline: none;
+      font-family: var(--font-sans);
+    }
+    .ms-search:focus { border-color: var(--accent); }
+    .ms-option {
+      display: flex; align-items: center; gap: 8px;
+      padding: 5px 12px; cursor: pointer; font-size: 12px;
+      color: var(--text); transition: background 0.1s;
+    }
+    .ms-option:hover { background: var(--accent-soft); }
+    .ms-option input { accent-color: var(--accent); cursor: pointer; flex-shrink: 0; }
+    .ms-option .ms-label { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .ms-option .ms-opt-count { color: var(--text-dim); font-size: 11px; flex-shrink: 0; }
+    .ms-option.hidden { display: none; }
+
+    /* ── Price range slider ───────────────────────────────────── */
+    .price-range-wrap {
+      display: flex; align-items: center; gap: 8px;
+      padding: 0 4px;
+    }
+    .price-range-wrap label { font-size: 11px; color: var(--text-dim); white-space: nowrap; }
+    .price-range-wrap input[type="range"] {
+      -webkit-appearance: none; appearance: none;
+      width: 100px; height: 4px; background: var(--border);
+      border-radius: 2px; outline: none; cursor: pointer;
+    }
+    .price-range-wrap input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 14px; height: 14px;
+      background: var(--accent); border-radius: 50%; cursor: pointer;
+    }
+    .price-val { font-size: 11px; color: var(--text-muted); font-variant-numeric: tabular-nums; min-width: 35px; }
+    .btn-reset {
+      padding: 4px 10px; font-size: 11px;
+      background: var(--red-soft); border-color: transparent; color: var(--red);
+    }
+    .btn-reset:hover { background: var(--red); color: #fff; border-color: var(--red); }
+
+    /* ── Active filter chips ──────────────────────────────────── */
+    .filter-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; min-height: 0; }
+    .filter-chips:empty { display: none; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 3px 10px; border-radius: 16px;
+      background: var(--accent-soft); border: 1px solid var(--accent);
+      font-size: 11px; color: var(--accent); font-weight: 500;
+    }
+    .chip-close {
+      cursor: pointer; font-size: 13px; line-height: 1;
+      opacity: 0.7; transition: opacity 0.1s;
+    }
+    .chip-close:hover { opacity: 1; }
+
+    /* ── Action bar (below filters) ──────────────────────────── */
+    .action-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 8px; margin-bottom: 10px; flex-wrap: wrap;
+    }
+    .action-bar-left { display: flex; align-items: center; gap: 8px; }
+    .action-bar-right { display: flex; align-items: center; gap: 8px; }
+    .results-count { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
+
+    /* ── Frigate checkbox filter ──────────────────────────────── */
+    .checkbox-filter {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 12px; color: var(--text-muted); cursor: pointer;
+      user-select: none;
+    }
+    .checkbox-filter input { cursor: pointer; accent-color: var(--accent); }
+
+    /* ── Table ────────────────────────────────────────────────── */
+    .table-wrap {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .table-scroll { overflow-x: auto; max-height: 70vh; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    thead tr { background: var(--bg); border-bottom: 1px solid var(--border); }
+    thead { position: sticky; top: 0; z-index: 10; }
+    th {
+      padding: 10px 14px; text-align: left;
+      font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--text-dim); white-space: nowrap;
+      cursor: pointer; user-select: none; transition: color 0.15s;
+      background: var(--bg);
+    }
+    th:first-child { padding-left: 14px; }
+    th:hover { color: var(--text-muted); }
+    th.sorted { color: var(--accent); }
+    th .sort-arrow { margin-left: 4px; font-style: normal; }
+    tbody tr {
+      border-bottom: 1px solid var(--border-soft);
+      transition: background 0.1s; cursor: pointer;
+    }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: rgba(47,129,247,0.04); }
+    tbody tr.selected { background: var(--accent-soft); }
+    td {
+      padding: 10px 14px; color: var(--text);
+      white-space: nowrap; vertical-align: middle;
+    }
+    td.model-cell { font-family: var(--font-mono); font-size: 12px; color: var(--accent); font-weight: 500; }
+    td.brand-cell { font-weight: 500; }
+    td.muted { color: var(--text-muted); }
+    td.dim { color: var(--text-dim); font-size: 12px; }
+    td.check-cell { width: 36px; text-align: center; }
+    .row-check { cursor: pointer; accent-color: var(--accent); width: 14px; height: 14px; }
+
+    /* ── Resolution color ─────────────────────────────────────── */
+    .mp-4k  { color: var(--accent); font-weight: 600; }
+    .mp-mid { color: var(--green); }
+    .mp-low { color: var(--text-muted); }
+
+    /* Badges */
+    .badge {
+      display: inline-block; padding: 2px 8px; border-radius: 4px;
+      font-size: 11px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .badge-type   { background: var(--purple-soft); color: var(--purple); }
+    .badge-ir     { background: rgba(139,148,158,0.12); color: var(--text-muted); }
+    .badge-color  { background: var(--orange-soft); color: var(--orange); }
+    .badge-hybrid { background: var(--green-soft); color: var(--green); }
+    .badge-none   { background: var(--red-soft); color: var(--red); }
+    .badge-4k     { background: var(--accent-soft); color: var(--accent); }
+    .badge-cfg    { background: var(--green-soft); color: var(--green); font-size: 9px; margin-left: 6px; vertical-align: middle; }
+    .badge-ip67   { background: var(--green-soft); color: var(--green); }
+    .badge-ip66   { background: rgba(63,185,80,0.06); color: #57ab5a; }
+    .badge-ip-other { background: rgba(139,148,158,0.1); color: var(--text-muted); }
+    .badge-wifi   { background: var(--purple-soft); color: var(--purple); }
+    .badge-ethernet { background: var(--accent-soft); color: var(--accent); }
+    .badge-4g-conn { background: var(--orange-soft); color: var(--orange); }
+    .badge-coax   { background: rgba(139,148,158,0.1); color: var(--text-muted); }
+    .badge-poe    { background: var(--accent-soft); color: var(--accent); }
+    .badge-dc     { background: rgba(139,148,158,0.1); color: var(--text-muted); }
+    .badge-usb    { background: rgba(139,148,158,0.1); color: var(--text-muted); }
+    .badge-battery { background: var(--orange-soft); color: var(--orange); }
+    .badge-solar  { background: var(--green-soft); color: var(--green); }
+    .badge-mains  { background: rgba(139,148,158,0.1); color: var(--text-muted); }
+    .conn-badges { display: flex; gap: 3px; flex-wrap: wrap; }
+
+    /* Pagination */
+    .pagination {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 16px; border-top: 1px solid var(--border-soft);
+      gap: 8px; flex-wrap: wrap;
+    }
+    .page-info { font-size: 12px; color: var(--text-muted); }
+    .page-btns { display: flex; gap: 4px; align-items: center; }
+    .page-btn {
+      padding: 5px 10px; border-radius: 6px;
+      border: 1px solid var(--border); background: transparent;
+      color: var(--text-muted); cursor: pointer;
+      font-size: 12px; font-weight: 600; font-family: var(--font-sans);
+      transition: all 0.1s; min-width: 32px; text-align: center;
+    }
+    .page-btn:hover:not(:disabled) { border-color: var(--text-muted); color: var(--text); }
+    .page-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .page-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+    /* Empty + loading */
+    .empty { padding: 60px 20px; text-align: center; color: var(--text-muted); }
+    .empty h3 { font-size: 16px; margin-bottom: 6px; color: var(--text); }
+    .empty p { font-size: 13px; }
+    .loading { padding: 48px 20px; text-align: center; color: var(--text-muted); font-size: 13px; }
+
+    /* ── Compare modal ────────────────────────────────────────── */
+    .compare-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.7);
+      z-index: 200; display: none; backdrop-filter: blur(3px);
+      align-items: center; justify-content: center;
+    }
+    .compare-overlay.open { display: flex; }
+    .compare-modal {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 12px; width: min(95vw, 900px);
+      max-height: 85vh; overflow-y: auto; padding: 28px;
+      box-shadow: var(--shadow);
+    }
+    .compare-modal h2 { font-size: 16px; margin-bottom: 16px; }
+    .compare-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .compare-table th {
+      text-align: left; padding: 8px 12px; font-size: 11px;
+      color: var(--text-dim); text-transform: uppercase;
+      letter-spacing: 0.06em; border-bottom: 1px solid var(--border);
+      background: transparent; cursor: default; position: static;
+    }
+    .compare-table td {
+      padding: 8px 12px; border-bottom: 1px solid var(--border-soft);
+      vertical-align: top; white-space: normal;
+    }
+    .compare-table td:first-child { color: var(--text-muted); font-weight: 500; width: 140px; }
+    .compare-close { float: right; }
+
+    /* ── Detail drawer ────────────────────────────────────────── */
+    .drawer-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+      z-index: 100; display: none; backdrop-filter: blur(2px);
+    }
+    .drawer-overlay.open { display: block; }
+    .drawer {
+      position: fixed; top: 0; right: 0; bottom: 0;
+      width: min(480px, 100vw); background: var(--bg-card);
+      border-left: 1px solid var(--border); z-index: 101;
+      overflow-y: auto; transform: translateX(100%);
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 24px;
+    }
+    .drawer.open { transform: translateX(0); }
+    .drawer-close {
+      position: absolute; top: 16px; right: 16px;
+      background: transparent; border: 1px solid var(--border);
+      color: var(--text-muted); width: 30px; height: 30px;
+      border-radius: 6px; cursor: pointer; font-size: 16px;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.15s;
+    }
+    .drawer-close:hover { border-color: var(--text-muted); color: var(--text); }
+    .drawer h2 { font-family: var(--font-mono); font-size: 15px; color: var(--accent); margin-bottom: 4px; padding-right: 40px; }
+    .drawer .drawer-brand { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
+    .drawer-section { margin-bottom: 20px; }
+    .drawer-section-title {
+      font-size: 10px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--text-dim);
+      margin-bottom: 8px; padding-bottom: 6px;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .drawer-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding: 5px 0; font-size: 13px; }
+    .drawer-row .key { color: var(--text-muted); flex-shrink: 0; }
+    .drawer-row .val { color: var(--text); text-align: right; word-break: break-word; max-width: 280px; }
+    .drawer-row .val.mono { font-family: var(--font-mono); font-size: 12px; color: var(--accent); }
+    .features-list { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+    .feature-tag { padding: 3px 8px; background: var(--bg-input); border: 1px solid var(--border-soft); border-radius: 4px; font-size: 11px; color: var(--text-muted); }
+    .source-link { display: block; color: var(--accent); font-size: 12px; text-decoration: none; margin-top: 3px; word-break: break-all; }
+    .source-link:hover { text-decoration: underline; }
+    .config-block {
+      background: var(--bg); border: 1px solid var(--border-soft);
+      border-radius: 6px; padding: 12px 14px; margin-top: 8px; margin-bottom: 12px;
+      font-family: var(--font-mono); font-size: 11px; line-height: 1.7;
+      color: var(--text-muted); overflow-x: auto; white-space: pre;
+    }
+    .config-block .key-hl { color: var(--accent); }
+    .config-block .val-hl { color: var(--green); }
+    .config-block .comment-hl { color: var(--text-dim); }
+    .config-label { display: inline-block; padding: 2px 8px; background: var(--green-soft); border-radius: 4px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--green); margin-bottom: 4px; }
+    .config-note { font-size: 12px; color: var(--text-muted); margin-top: 4px; padding: 6px 0; line-height: 1.5; }
+
+    /* ── Footer ────────────────────────────────────────────────── */
+    footer {
+      margin-top: 40px; padding-top: 24px;
+      border-top: 1px solid var(--border-soft);
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; flex-wrap: wrap; font-size: 12px; color: var(--text-dim);
+    }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--text); }
+    .built-with { display: flex; align-items: center; gap: 6px; }
+    .ff-badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 2px 8px; background: var(--purple-soft);
+      border: 1px solid rgba(188,140,255,0.2); border-radius: 4px;
+      color: var(--purple); font-size: 11px; font-weight: 600; text-decoration: none;
+    }
+    .ff-badge:hover { background: rgba(188,140,255,0.18); }
+    .kbd-hint { font-size: 11px; color: var(--text-dim); }
+  </style>
+</head>
+<body>
+<div style="background:#2f81f7;color:#fff;text-align:center;padding:8px 16px;font-family:system-ui,-apple-system,sans-serif;font-size:14px">
+  This is an offline snapshot. For the latest version, visit <a href="https://cctv-database.com" style="color:#fff;font-weight:600">cctv-database.com</a>.
+</div>
+<div class="page">
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <div>
+        <div class="brand">
+          <div class="brand-icon">📷</div>
+          <h1>CCTV Camera Database</h1>
+        </div>
+        <p class="subtitle">Open dataset of IP camera specifications. Search, filter, and compare — no account needed.</p>
+      </div>
+      <div class="header-actions">
+        <button class="btn theme-toggle" id="theme-toggle" title="Toggle light/dark mode">🌙</button>
+        <a class="btn" href="https://github.com/ch-bas/cctv-camera-database/issues/new?template=add-camera.yml" target="_blank" rel="noopener">
+          + Add camera
+        </a>
+        <a class="btn btn-primary" href="https://github.com/ch-bas/cctv-camera-database" target="_blank" rel="noopener">
+          ★ GitHub
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Stats -->
+  <div class="stats" id="stats"><div class="stat">Loading…</div></div>
+
+  <!-- Controls row 1: search + dropdowns -->
+  <div class="controls">
+    <div class="search-wrap">
+      <span class="search-icon">⌕</span>
+      <input type="search" id="search" placeholder="Search brand, model, feature…" autocomplete="off" />
+      <span class="search-hint">/</span>
+    </div>
+    <div class="ms-wrap" id="ms-brand" data-placeholder="All brands"></div>
+    <div class="ms-wrap" id="ms-type" data-placeholder="All types"></div>
+    <select id="filter-nv"><option value="">Night vision</option></select>
+    <select id="filter-res">
+      <option value="">Any resolution</option>
+      <option value="12+">12MP+</option>
+      <option value="8">4K (8MP)</option>
+      <option value="4">4-5MP</option>
+      <option value="2">1080p (2MP)</option>
+    </select>
+    <div class="ms-wrap" id="ms-power" data-placeholder="All power"></div>
+    <select id="filter-market"><option value="">All markets</option></select>
+  </div>
+
+  <!-- Controls row 2: price slider + reset -->
+  <div style="display:flex; align-items:center; gap:12px; margin-bottom:8px; flex-wrap:wrap;">
+    <div class="price-range-wrap">
+      <label>Max price:</label>
+      <input type="range" id="price-slider" min="0" max="1000" value="1000" step="10" />
+      <span class="price-val" id="price-val">any</span>
+    </div>
+    <button class="btn btn-sm btn-reset" id="reset-filters">Reset all</button>
+  </div>
+
+  <!-- Active filter chips -->
+  <div class="filter-chips" id="filter-chips"></div>
+
+  <!-- Action bar -->
+  <div class="action-bar">
+    <div class="action-bar-left">
+      <span class="results-count" id="results-count"></span>
+      <label class="checkbox-filter"><input type="checkbox" id="filter-frigate" /> Frigate compatible</label>
+    </div>
+    <div class="action-bar-right">
+      <button class="btn btn-sm btn-green" id="compare-btn" disabled>Compare (0)</button>
+      <button class="btn btn-sm" id="export-csv-btn" title="Export current view as CSV">↓ CSV</button>
+      <button class="btn btn-sm" id="export-json-btn" title="Export current view as JSON">↓ JSON</button>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="table-wrap">
+    <div class="table-scroll" id="table-scroll">
+      <table id="camera-table" role="table" aria-label="CCTV camera database">
+        <thead>
+          <tr id="thead-row"></tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <div class="pagination" id="pagination"></div>
+  </div>
+
+  <!-- Keyboard shortcuts hint -->
+  <div class="kbd-hint" style="margin-top:8px; text-align:right">
+    <kbd>/</kbd> search · <kbd>Esc</kbd> clear · <kbd>←</kbd><kbd>→</kbd> pages
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <span>Data released under <a href="https://github.com/ch-bas/cctv-camera-database/blob/main/LICENSE" target="_blank">CC0 1.0</a> · <a href="https://github.com/ch-bas/cctv-camera-database/blob/main/CONTRIBUTING.md" target="_blank">Contribute</a> · <a href="https://github.com/ch-bas/cctv-camera-database/blob/main/SECURITY.md" target="_blank">Security</a></span>
+    <span class="built-with">
+      Table scaffold via
+      <a class="ff-badge" href="https://frontfamily.com" target="_blank" rel="noopener">⚡ FrontFamily</a>
+    </span>
+  </footer>
+</div>
+
+<!-- Detail drawer -->
+<div class="drawer-overlay" id="overlay"></div>
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Camera details">
+  <button class="drawer-close" id="drawer-close" aria-label="Close">✕</button>
+  <div id="drawer-content"></div>
+</div>
+
+<!-- Compare modal -->
+<div class="compare-overlay" id="compare-overlay">
+  <div class="compare-modal">
+    <button class="btn btn-sm compare-close" id="compare-close">✕ Close</button>
+    <h2>Compare Cameras</h2>
+    <div id="compare-content"></div>
+  </div>
+</div>
+
+<script>
+// ── Config ──────────────────────────────────────────────────────
+const DATA_URL  = 'cameras.json';
+const PAGE_SIZE = 25;
+
+// ── State ───────────────────────────────────────────────────────
+let allCameras  = [];
+let filtered    = [];
+let sortKey     = 'brand';
+let sortDir     = 'asc';
+let page        = 0;
+let compareSet  = new Set();   // ids of cameras selected for compare
+
+// ── Helpers ──────────────────────────────────────────────────────
+const $ = id => document.getElementById(id);
+
+function flat(cam) {
+  return {
+    ...cam,
+    megapixels: cam.resolution?.megapixels ?? 0,
+    nv_type:    cam.night_vision?.type ?? 'unknown',
+    nv_range:   cam.night_vision?.range_m ?? 0,
+    two_way:    cam.audio?.two_way ?? false,
+    msrp:       cam.msrp_usd ?? cam.msrp_eur ?? cam.msrp_gbp ?? cam.msrp_aud ?? cam.msrp_inr ?? null,
+  };
+}
+
+// ── Column definitions ──────────────────────────────────────────
+const COLS = [
+  { key: '_check',       label: '',           width: '36px',  check: true },
+  { key: 'brand',        label: 'Brand',      width: '130px' },
+  { key: 'model',        label: 'Model',      width: '170px', mono: true },
+  { key: 'type',         label: 'Type',       width: '100px', badge: 'type' },
+  { key: 'megapixels',   label: 'MP',         width: '70px',  numeric: true, resColor: true },
+  { key: 'connectivity', label: 'Connect',    width: '110px', badges: 'conn' },
+  { key: 'power_source', label: 'Power',      width: '110px', badges: 'power' },
+  { key: 'night_vision', label: 'Night',      width: '85px',  badge: 'nv' },
+  { key: 'ip_rating',    label: 'IP',         width: '70px',  badge: 'ip' },
+  { key: 'two_way',      label: '2-Way',      width: '65px',  bool: true },
+  { key: 'msrp',         label: 'Price',      width: '80px',  numeric: true },
+];
+
+function fmt(cam, key) {
+  switch (key) {
+    case 'brand':       return cam.brand ?? '—';
+    case 'model':       return cam.model ?? '—';
+    case 'type':        return cam.type ?? '—';
+    case 'megapixels':  return cam.megapixels ? cam.megapixels + ' MP' : '—';
+    case 'connectivity':return cam.connectivity ?? [];
+    case 'power_source':return cam.power_source ?? [];
+    case 'night_vision':return cam.nv_type;
+    case 'ip_rating':   return cam.ip_rating ?? '—';
+    case 'two_way':     return cam.two_way;
+    case 'msrp':
+      if (!cam.msrp) return '—';
+      if (cam.msrp_usd) return '$' + cam.msrp_usd;
+      if (cam.msrp_eur) return '€' + cam.msrp_eur;
+      if (cam.msrp_gbp) return '£' + cam.msrp_gbp;
+      return '—';
+    default: return '—';
+  }
+}
+
+function nvBadgeClass(nv) { return { ir:'badge-ir', color:'badge-color', hybrid:'badge-hybrid', none:'badge-none' }[nv] ?? 'badge-ir'; }
+function ipBadgeClass(ip) { if (!ip) return 'badge-ip-other'; if (ip.includes('67')) return 'badge-ip67'; if (ip.includes('66')) return 'badge-ip66'; return 'badge-ip-other'; }
+function connBadgeClass(c) { return { wifi:'badge-wifi', ethernet:'badge-ethernet', '4g':'badge-4g-conn', coax:'badge-coax' }[c] ?? 'badge-ip-other'; }
+function connLabel(c) { return { wifi:'WiFi', ethernet:'Ethernet', '4g':'4G', coax:'Coax' }[c] ?? c; }
+function powerBadgeClass(p) { return { poe:'badge-poe', dc:'badge-dc', usb:'badge-usb', battery:'badge-battery', solar:'badge-solar', 'ac-mains':'badge-mains' }[p] ?? 'badge-ip-other'; }
+function powerLabel(p) { return { poe:'PoE', dc:'DC', usb:'USB', battery:'Battery', solar:'Solar', 'ac-mains':'AC' }[p] ?? p; }
+function mpClass(mp) { if (mp >= 8) return 'mp-4k'; if (mp >= 3) return 'mp-mid'; return 'mp-low'; }
+
+function renderCell(cam, col) {
+  const val = fmt(cam, col.key);
+  if (col.check) {
+    const checked = compareSet.has(cam.id) ? 'checked' : '';
+    return `<td class="check-cell"><input type="checkbox" class="row-check" data-id="${cam.id}" ${checked} /></td>`;
+  }
+  if (col.mono) {
+    const cfgBadge = cam.configs ? '<span class="badge badge-cfg">CFG</span>' : '';
+    return `<td class="model-cell">${val}${cfgBadge}</td>`;
+  }
+  if (col.badges === 'conn') {
+    const list = Array.isArray(val) ? val : [];
+    const badges = list.map(c => `<span class="badge ${connBadgeClass(c)}">${connLabel(c)}</span>`).join('');
+    return `<td><div class="conn-badges">${badges || '<span class="dim">—</span>'}</div></td>`;
+  }
+  if (col.badges === 'power') {
+    const list = Array.isArray(val) ? val : [];
+    const badges = list.map(p => `<span class="badge ${powerBadgeClass(p)}">${powerLabel(p)}</span>`).join('');
+    return `<td><div class="conn-badges">${badges || '<span class="dim">—</span>'}</div></td>`;
+  }
+  if (col.badge === 'nv') { return `<td><span class="badge ${nvBadgeClass(val)}">${val}</span></td>`; }
+  if (col.badge === 'ip') { return `<td><span class="badge ${ipBadgeClass(val)}">${val}</span></td>`; }
+  if (col.badge === 'type') { return `<td><span class="badge badge-type">${val}</span></td>`; }
+  if (col.bool) { return `<td class="${val ? '' : 'dim'}">${val ? '✓' : '—'}</td>`; }
+  if (col.numeric && col.resColor) {
+    const cls = mpClass(cam.megapixels);
+    return `<td class="${cls}" style="text-align:right;padding-right:20px">${val}</td>`;
+  }
+  if (col.numeric) { return `<td class="muted" style="text-align:right;padding-right:20px">${val}</td>`; }
+  if (col.key === 'brand') return `<td class="brand-cell">${val}</td>`;
+  return `<td>${val}</td>`;
+}
+
+// ── Sorting ──────────────────────────────────────────────────────
+function sortVal(cam, key) {
+  switch (key) {
+    case 'megapixels': return cam.megapixels ?? 0;
+    case 'msrp':       return cam.msrp ?? 999999;
+    case 'two_way':    return cam.two_way ? 1 : 0;
+    case 'night_vision': return cam.nv_type ?? '';
+    default: return (cam[key] ?? '').toString().toLowerCase();
+  }
+}
+function applySort() {
+  filtered.sort((a, b) => {
+    const av = sortVal(a, sortKey), bv = sortVal(b, sortKey);
+    if (typeof av === 'number') return sortDir === 'asc' ? av - bv : bv - av;
+    return sortDir === 'asc' ? av.localeCompare(bv) : bv.localeCompare(av);
+  });
+}
+
+// ── Multi-select component ───────────────────────────────────────
+const multiSelects = {};
+
+function createMultiSelect(id, options, labelFn) {
+  const wrap = $(id);
+  const placeholder = wrap.dataset.placeholder;
+  const state = new Set();
+  multiSelects[id] = state;
+
+  wrap.innerHTML = `
+    <div class="ms-trigger"><span class="ms-text">${placeholder}</span><span class="ms-arrow">▾</span></div>
+    <div class="ms-dropdown">
+      <input type="text" class="ms-search" placeholder="Search..." />
+      <div class="ms-options">${options.map(([val, count]) =>
+        `<label class="ms-option" data-val="${val}">
+          <input type="checkbox" value="${val}" />
+          <span class="ms-label">${labelFn ? labelFn(val) : val}</span>
+          <span class="ms-opt-count">${count}</span>
+        </label>`
+      ).join('')}</div>
+    </div>`;
+
+  const trigger = wrap.querySelector('.ms-trigger');
+  const dropdown = wrap.querySelector('.ms-dropdown');
+  const searchInput = wrap.querySelector('.ms-search');
+
+  trigger.addEventListener('click', e => {
+    e.stopPropagation();
+    document.querySelectorAll('.ms-wrap.open').forEach(w => { if (w !== wrap) w.classList.remove('open'); });
+    wrap.classList.toggle('open');
+    if (wrap.classList.contains('open')) { searchInput.value = ''; filterMsOptions(''); searchInput.focus(); }
+  });
+
+  function filterMsOptions(q) {
+    wrap.querySelectorAll('.ms-option').forEach(opt => {
+      const text = opt.querySelector('.ms-label').textContent.toLowerCase();
+      opt.classList.toggle('hidden', q && !text.includes(q.toLowerCase()));
+    });
+  }
+
+  searchInput.addEventListener('input', () => filterMsOptions(searchInput.value));
+  searchInput.addEventListener('click', e => e.stopPropagation());
+
+  wrap.querySelectorAll('.ms-option input').forEach(cb => {
+    cb.addEventListener('change', () => {
+      if (cb.checked) state.add(cb.value); else state.delete(cb.value);
+      updateMsTrigger(wrap, state, placeholder);
+      applyFilters();
+    });
+    cb.addEventListener('click', e => e.stopPropagation());
+  });
+
+  wrap.addEventListener('click', e => e.stopPropagation());
+}
+
+function updateMsTrigger(wrap, state, placeholder) {
+  const text = wrap.querySelector('.ms-text');
+  const existing = wrap.querySelector('.ms-count');
+  if (existing) existing.remove();
+  if (state.size === 0) {
+    text.textContent = placeholder;
+  } else {
+    text.textContent = [...state].slice(0, 2).join(', ') + (state.size > 2 ? '...' : '');
+    const badge = document.createElement('span');
+    badge.className = 'ms-count';
+    badge.textContent = state.size;
+    wrap.querySelector('.ms-trigger').insertBefore(badge, wrap.querySelector('.ms-arrow'));
+  }
+}
+
+function clearMultiSelect(id) {
+  const wrap = $(id);
+  const state = multiSelects[id];
+  if (!state) return;
+  state.clear();
+  wrap.querySelectorAll('.ms-option input').forEach(cb => cb.checked = false);
+  updateMsTrigger(wrap, state, wrap.dataset.placeholder);
+}
+
+// Close dropdowns on outside click
+document.addEventListener('click', () => document.querySelectorAll('.ms-wrap.open').forEach(w => w.classList.remove('open')));
+
+// ── URL state ────────────────────────────────────────────────────
+function pushState() {
+  const p = new URLSearchParams();
+  const s = $('search').value.trim();
+  if (s) p.set('q', s);
+  // Multi-selects
+  for (const [id, state] of Object.entries(multiSelects)) {
+    if (state.size) p.set(id.replace('ms-',''), [...state].join(','));
+  }
+  // Regular selects
+  ['filter-nv','filter-res','filter-market'].forEach(id => {
+    const v = $(id).value;
+    if (v) p.set(id.replace('filter-',''), v);
+  });
+  if ($('filter-frigate').checked) p.set('frigate', '1');
+  const maxPrice = +$('price-slider').value;
+  if (maxPrice < 1000) p.set('maxprice', maxPrice);
+  if (page > 0) p.set('page', page);
+  const hash = p.toString();
+  history.replaceState(null, '', hash ? '#' + hash : location.pathname);
+}
+function restoreState() {
+  const p = new URLSearchParams(location.hash.slice(1));
+  if (p.get('q')) $('search').value = p.get('q');
+  // Multi-selects
+  ['brand','type','power'].forEach(k => {
+    const v = p.get(k);
+    if (v && multiSelects['ms-' + k]) {
+      v.split(',').forEach(val => {
+        multiSelects['ms-' + k].add(val);
+        const cb = document.querySelector(`#ms-${k} .ms-option input[value="${val}"]`);
+        if (cb) cb.checked = true;
+      });
+      const wrap = $('ms-' + k);
+      updateMsTrigger(wrap, multiSelects['ms-' + k], wrap.dataset.placeholder);
+    }
+  });
+  ['nv','res','market'].forEach(k => { if (p.get(k)) $('filter-' + k).value = p.get(k); });
+  if (p.get('frigate') === '1') $('filter-frigate').checked = true;
+  if (p.get('maxprice')) { $('price-slider').value = p.get('maxprice'); updatePriceLabel(); }
+  if (p.get('page')) page = +p.get('page');
+}
+
+// ── Price slider ─────────────────────────────────────────────────
+function updatePriceLabel() {
+  const v = +$('price-slider').value;
+  $('price-val').textContent = v >= 1000 ? 'any' : '$' + v;
+}
+$('price-slider').addEventListener('input', () => { updatePriceLabel(); applyFilters(); });
+
+// ── Reset all ────────────────────────────────────────────────────
+$('reset-filters').addEventListener('click', () => {
+  $('search').value = '';
+  ['filter-nv','filter-res','filter-market'].forEach(id => $(id).value = '');
+  Object.keys(multiSelects).forEach(id => clearMultiSelect(id));
+  $('filter-frigate').checked = false;
+  $('price-slider').value = 1000;
+  updatePriceLabel();
+  applyFilters();
+});
+
+// ── Filtering ────────────────────────────────────────────────────
+function applyFilters() {
+  const q        = $('search').value.trim().toLowerCase();
+  const brands   = multiSelects['ms-brand'] ?? new Set();
+  const types    = multiSelects['ms-type'] ?? new Set();
+  const nv       = $('filter-nv').value;
+  const res      = $('filter-res').value;
+  const powers   = multiSelects['ms-power'] ?? new Set();
+  const market   = $('filter-market').value;
+  const frigate  = $('filter-frigate').checked;
+  const maxPrice = +$('price-slider').value;
+
+  filtered = allCameras.filter(cam => {
+    if (brands.size && !brands.has(cam.brand)) return false;
+    if (types.size && !types.has(cam.type)) return false;
+    if (nv && cam.nv_type !== nv) return false;
+    if (powers.size && !(cam.power_source ?? []).some(p => powers.has(p))) return false;
+    if (market && !(cam.markets ?? []).includes(market)) return false;
+    if (frigate && !cam.configs?.frigate) return false;
+    if (maxPrice < 1000 && cam.msrp != null && cam.msrp > maxPrice) return false;
+    if (maxPrice < 1000 && cam.msrp == null) return false;
+    if (res) {
+      const mp = cam.megapixels;
+      if (res === '12+' && mp < 12) return false;
+      if (res === '8' && !(mp >= 8 && mp < 12)) return false;
+      if (res === '4' && !(mp >= 3 && mp < 8)) return false;
+      if (res === '2' && !(mp >= 1 && mp < 3)) return false;
+    }
+    if (q) {
+      const haystack = [cam.brand, cam.model, cam.type, ...(cam.aliases ?? []), ...(cam.features ?? [])].join(' ').toLowerCase();
+      if (!haystack.includes(q)) return false;
+    }
+    return true;
+  });
+
+  applySort();
+  page = 0;
+  render();
+  renderChips();
+  pushState();
+}
+
+// ── Filter chips ─────────────────────────────────────────────────
+function renderChips() {
+  const chips = [];
+  // Multi-select chips
+  for (const val of (multiSelects['ms-brand'] ?? [])) chips.push({ id: 'ms-brand', label: 'Brand', val, multi: true });
+  for (const val of (multiSelects['ms-type'] ?? [])) chips.push({ id: 'ms-type', label: 'Type', val, multi: true });
+  for (const val of (multiSelects['ms-power'] ?? [])) chips.push({ id: 'ms-power', label: 'Power', val: powerLabel(val), rawVal: val, multi: true });
+  // Single-select chips
+  if ($('filter-nv').value) chips.push({ id: 'filter-nv', label: 'Night', val: $('filter-nv').value });
+  if ($('filter-res').value) chips.push({ id: 'filter-res', label: 'Res', val: $('filter-res').value });
+  if ($('filter-market').value) chips.push({ id: 'filter-market', label: 'Market', val: $('filter-market').value });
+  if ($('filter-frigate').checked) chips.push({ id: 'filter-frigate', label: 'Frigate', val: 'compatible' });
+  const maxPrice = +$('price-slider').value;
+  if (maxPrice < 1000) chips.push({ id: 'price-slider', label: 'Max price', val: '$' + maxPrice });
+
+  $('filter-chips').innerHTML = chips.map((c, i) =>
+    `<span class="chip">${c.label}: ${c.val} <span class="chip-close" data-idx="${i}">✕</span></span>`
+  ).join('');
+
+  $('filter-chips').querySelectorAll('.chip-close').forEach(el => {
+    el.addEventListener('click', e => {
+      e.stopPropagation();
+      const c = chips[+el.dataset.idx];
+      if (c.multi) {
+        const raw = c.rawVal ?? c.val;
+        multiSelects[c.id].delete(raw);
+        const cb = document.querySelector(`#${c.id} .ms-option input[value="${raw}"]`);
+        if (cb) cb.checked = false;
+        const wrap = $(c.id);
+        updateMsTrigger(wrap, multiSelects[c.id], wrap.dataset.placeholder);
+      } else if (c.id === 'filter-frigate') {
+        $('filter-frigate').checked = false;
+      } else if (c.id === 'price-slider') {
+        $('price-slider').value = 1000;
+        updatePriceLabel();
+      } else {
+        $(c.id).value = '';
+      }
+      applyFilters();
+    });
+  });
+}
+
+// ── Render table ─────────────────────────────────────────────────
+function renderthead() {
+  const tr = $('thead-row');
+  tr.innerHTML = COLS.map(col => {
+    if (col.check) return `<th style="width:${col.width}"></th>`;
+    const isSorted = sortKey === col.key;
+    const arrow = isSorted ? (sortDir === 'asc' ? ' ↑' : ' ↓') : '';
+    return `<th data-key="${col.key}" class="${isSorted ? 'sorted' : ''}" style="width:${col.width ?? 'auto'}">
+      ${col.label}<em class="sort-arrow">${arrow}</em></th>`;
+  }).join('');
+
+  tr.querySelectorAll('th[data-key]').forEach(th => {
+    th.addEventListener('click', () => {
+      if (sortKey === th.dataset.key) sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+      else { sortKey = th.dataset.key; sortDir = 'asc'; }
+      applySort(); renderthead(); renderRows(); renderPagination();
+    });
+  });
+}
+
+function renderRows() {
+  const tbody = $('tbody');
+  const start = page * PAGE_SIZE;
+  const slice = filtered.slice(start, start + PAGE_SIZE);
+
+  if (slice.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="${COLS.length}" class="empty"><h3>No cameras found</h3><p>Try adjusting your search or filters.</p></td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = slice.map(cam => `
+    <tr data-id="${cam.id}" class="${compareSet.has(cam.id) ? 'selected' : ''}">
+      ${COLS.map(col => renderCell(cam, col)).join('')}
+    </tr>
+  `).join('');
+
+  // Row click -> drawer (but not checkbox)
+  tbody.querySelectorAll('tr[data-id]').forEach(tr => {
+    tr.addEventListener('click', e => {
+      if (e.target.classList.contains('row-check')) return;
+      const cam = allCameras.find(c => c.id === tr.dataset.id);
+      if (cam) openDrawer(cam);
+    });
+  });
+
+  // Checkbox click -> compare
+  tbody.querySelectorAll('.row-check').forEach(cb => {
+    cb.addEventListener('click', e => {
+      e.stopPropagation();
+      const id = cb.dataset.id;
+      if (cb.checked) {
+        if (compareSet.size >= 4) { cb.checked = false; return; }
+        compareSet.add(id);
+      } else {
+        compareSet.delete(id);
+      }
+      cb.closest('tr').classList.toggle('selected', cb.checked);
+      updateCompareBtn();
+    });
+  });
+}
+
+function updateCompareBtn() {
+  const btn = $('compare-btn');
+  btn.textContent = `Compare (${compareSet.size})`;
+  btn.disabled = compareSet.size < 2;
+}
+
+function renderPagination() {
+  const total = filtered.length;
+  const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+  const start = total === 0 ? 0 : page * PAGE_SIZE + 1;
+  const end = Math.min((page + 1) * PAGE_SIZE, total);
+
+  $('results-count').textContent = total === allCameras.length
+    ? `${total.toLocaleString()} cameras`
+    : `${total.toLocaleString()} of ${allCameras.length.toLocaleString()} cameras`;
+
+  const MAX_VISIBLE = 7;
+  let pages = [];
+  if (totalPages <= MAX_VISIBLE) { pages = Array.from({ length: totalPages }, (_, i) => i); }
+  else {
+    pages = [0];
+    let lo = Math.max(1, page - 2), hi = Math.min(totalPages - 2, page + 2);
+    if (lo > 1) pages.push('…');
+    for (let i = lo; i <= hi; i++) pages.push(i);
+    if (hi < totalPages - 2) pages.push('…');
+    pages.push(totalPages - 1);
+  }
+
+  $('pagination').innerHTML = `
+    <span class="page-info">${start}–${end} of ${total.toLocaleString()}</span>
+    <div class="page-btns">
+      <button class="page-btn" id="prev-btn" ${page === 0 ? 'disabled' : ''}>‹ Prev</button>
+      ${pages.map(p => p === '…' ? `<span style="color:var(--text-dim);padding:0 4px">…</span>`
+        : `<button class="page-btn ${p === page ? 'active' : ''}" data-page="${p}">${p + 1}</button>`
+      ).join('')}
+      <button class="page-btn" id="next-btn" ${page >= totalPages - 1 ? 'disabled' : ''}>Next ›</button>
+    </div>`;
+
+  $('pagination').querySelectorAll('[data-page]').forEach(btn => {
+    btn.addEventListener('click', () => { page = +btn.dataset.page; renderRows(); renderPagination(); pushState(); });
+  });
+  const prev = $('prev-btn'), next = $('next-btn');
+  if (prev) prev.addEventListener('click', () => { page--; renderRows(); renderPagination(); pushState(); });
+  if (next) next.addEventListener('click', () => { page++; renderRows(); renderPagination(); pushState(); });
+}
+
+function render() { renderRows(); renderPagination(); }
+
+// ── Stats bar ────────────────────────────────────────────────────
+function renderStats(cameras) {
+  const brands  = new Set(cameras.map(c => c.brand)).size;
+  const r4k     = cameras.filter(c => c.megapixels >= 8).length;
+  const wiFi    = cameras.filter(c => (c.connectivity ?? []).includes('wifi')).length;
+  const noSub   = cameras.filter(c => (c.features ?? []).some(f => f.toLowerCase().includes('no subscription'))).length;
+  const configs = cameras.filter(c => c.configs).length;
+
+  $('stats').innerHTML = [
+    `<div class="stat"><strong>${cameras.length.toLocaleString()}</strong> cameras</div>`,
+    `<div class="stat"><strong>${brands}</strong> brands</div>`,
+    `<div class="stat"><strong>${r4k.toLocaleString()}</strong> 4K+</div>`,
+    `<div class="stat"><strong>${wiFi.toLocaleString()}</strong> WiFi</div>`,
+    `<div class="stat"><strong>${noSub.toLocaleString()}</strong> no subscription</div>`,
+    `<div class="stat clickable" id="stat-configs" title="Click to filter Frigate-compatible"><strong>${configs.toLocaleString()}</strong> with configs</div>`,
+  ].join('');
+
+  $('stat-configs')?.addEventListener('click', () => {
+    $('filter-frigate').checked = !$('filter-frigate').checked;
+    applyFilters();
+  });
+}
+
+// ── Filter dropdowns ─────────────────────────────────────────────
+function populateFilters(cameras) {
+  // Count occurrences
+  function counted(arr) {
+    const map = {};
+    arr.filter(Boolean).forEach(v => { map[v] = (map[v] || 0) + 1; });
+    return Object.entries(map).sort((a, b) => a[0].localeCompare(b[0]));
+  }
+  function countedFlat(arr) {
+    const map = {};
+    arr.forEach(vs => (vs ?? []).forEach(v => { map[v] = (map[v] || 0) + 1; }));
+    return Object.entries(map).sort((a, b) => a[0].localeCompare(b[0]));
+  }
+
+  const brands  = counted(cameras.map(c => c.brand));
+  const types   = counted(cameras.map(c => c.type));
+  const nvTypes = counted(cameras.map(c => c.nv_type));
+  const powers  = countedFlat(cameras.map(c => c.power_source));
+  const markets = countedFlat(cameras.map(c => c.markets));
+
+  // Multi-select dropdowns (with counts)
+  createMultiSelect('ms-brand', brands);
+  createMultiSelect('ms-type', types);
+  createMultiSelect('ms-power', powers, powerLabel);
+
+  // Regular selects (with counts)
+  const populateSelect = (id, vals, labelFn) => {
+    const sel = $(id);
+    vals.forEach(([v, cnt]) => {
+      const o = document.createElement('option');
+      o.value = v;
+      o.textContent = (labelFn ? labelFn(v) : v) + ' (' + cnt + ')';
+      sel.appendChild(o);
+    });
+  };
+  populateSelect('filter-nv', nvTypes);
+  populateSelect('filter-market', markets);
+}
+
+// ── Compare modal ────────────────────────────────────────────────
+function openCompare() {
+  const cams = [...compareSet].map(id => allCameras.find(c => c.id === id)).filter(Boolean);
+  if (cams.length < 2) return;
+
+  const specs = [
+    ['Brand',        c => c.brand],
+    ['Model',        c => c.model],
+    ['Type',         c => c.type],
+    ['Resolution',   c => c.resolution?.label ? c.resolution.label + ' (' + c.megapixels + 'MP)' : c.megapixels + 'MP'],
+    ['Sensor',       c => c.sensor ?? '—'],
+    ['Lens',         c => c.lens?.focal_length_mm ?? '—'],
+    ['FOV',          c => c.field_of_view_deg ?? '—'],
+    ['Night vision', c => c.nv_type + (c.nv_range ? ' · ' + c.nv_range + 'm' : '')],
+    ['Connectivity', c => (c.connectivity ?? []).join(', ') || '—'],
+    ['Power',        c => (c.power_source ?? []).map(powerLabel).join(', ') || '—'],
+    ['IP rating',    c => c.ip_rating ?? '—'],
+    ['Two-way audio',c => c.two_way ? 'Yes' : 'No'],
+    ['Protocols',    c => (c.protocols ?? []).join(', ') || '—'],
+    ['Storage',      c => c.storage?.onboard ? 'microSD' + (c.storage.max_microsd_gb ? ' ≤' + c.storage.max_microsd_gb + 'GB' : '') : '—'],
+    ['Price',        c => c.msrp_usd ? '$' + c.msrp_usd : '—'],
+    ['Frigate',      c => c.configs?.frigate ? 'Yes' : 'No'],
+  ];
+
+  let html = '<table class="compare-table"><thead><tr><th>Spec</th>';
+  cams.forEach(c => { html += `<th>${c.brand} ${c.model}</th>`; });
+  html += '</tr></thead><tbody>';
+  specs.forEach(([label, fn]) => {
+    html += '<tr><td>' + label + '</td>';
+    cams.forEach(c => { html += '<td>' + fn(c) + '</td>'; });
+    html += '</tr>';
+  });
+  html += '</tbody></table>';
+
+  $('compare-content').innerHTML = html;
+  $('compare-overlay').classList.add('open');
+}
+
+$('compare-btn').addEventListener('click', openCompare);
+$('compare-close').addEventListener('click', () => $('compare-overlay').classList.remove('open'));
+$('compare-overlay').addEventListener('click', e => { if (e.target === $('compare-overlay')) $('compare-overlay').classList.remove('open'); });
+
+// ── Export ───────────────────────────────────────────────────────
+function exportCSV() {
+  const headers = ['brand','model','type','megapixels','connectivity','power_source','night_vision','ip_rating','two_way_audio','price_usd'];
+  const rows = filtered.map(c => [
+    c.brand, c.model, c.type, c.megapixels,
+    (c.connectivity??[]).join(';'), (c.power_source??[]).join(';'),
+    c.nv_type, c.ip_rating ?? '', c.two_way ? 'yes' : 'no',
+    c.msrp_usd ?? ''
+  ]);
+  const csv = [headers.join(','), ...rows.map(r => r.map(v => '"' + String(v).replace(/"/g, '""') + '"').join(','))].join('\n');
+  download(csv, 'cameras-export.csv', 'text/csv');
+}
+function exportJSON() {
+  const data = filtered.map(({ megapixels, nv_type, nv_range, two_way, msrp, ...rest }) => rest);
+  download(JSON.stringify(data, null, 2), 'cameras-export.json', 'application/json');
+}
+function download(content, filename, mime) {
+  const blob = new Blob([content], { type: mime });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob); a.download = filename;
+  a.click(); URL.revokeObjectURL(a.href);
+}
+$('export-csv-btn').addEventListener('click', exportCSV);
+$('export-json-btn').addEventListener('click', exportJSON);
+
+// ── Theme toggle ─────────────────────────────────────────────────
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+  $('theme-toggle').textContent = theme === 'dark' ? '🌙' : '☀️';
+}
+$('theme-toggle').addEventListener('click', () => {
+  setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+});
+setTheme(localStorage.getItem('theme') || 'dark');
+
+// ── Detail drawer ────────────────────────────────────────────────
+function renderConfigs(cam) {
+  const cfg = cam.configs;
+  if (!cfg) return '';
+  let html = '<div class="drawer-section"><div class="drawer-section-title">Integration Configs</div>';
+  if (cfg.frigate) {
+    const f = cfg.frigate;
+    html += '<span class="config-label">Frigate</span>';
+    if (f.rtsp_url_template || f.best_substream || f.detect) {
+      let yaml = '<span class="comment-hl"># Frigate NVR config</span>\n';
+      yaml += '<span class="key-hl">cameras</span>:\n  <span class="key-hl">your_camera</span>:\n';
+      if (f.rtsp_url_template || f.best_substream) {
+        yaml += '    <span class="key-hl">ffmpeg</span>:\n      <span class="key-hl">inputs</span>:\n';
+        if (f.rtsp_url_template) yaml += '        - <span class="key-hl">path</span>: <span class="val-hl">' + f.rtsp_url_template + '</span>\n          <span class="key-hl">roles</span>: [record]\n';
+        if (f.best_substream) yaml += '        - <span class="key-hl">path</span>: <span class="val-hl">' + f.best_substream + '</span>\n          <span class="key-hl">roles</span>: [detect]\n';
+      }
+      if (f.detect) {
+        yaml += '    <span class="key-hl">detect</span>:\n';
+        if (f.detect.width) yaml += '      <span class="key-hl">width</span>: <span class="val-hl">' + f.detect.width + '</span>\n';
+        if (f.detect.height) yaml += '      <span class="key-hl">height</span>: <span class="val-hl">' + f.detect.height + '</span>\n';
+        if (f.detect.fps) yaml += '      <span class="key-hl">fps</span>: <span class="val-hl">' + f.detect.fps + '</span>\n';
+      }
+      html += '<div class="config-block">' + yaml + '</div>';
+    }
+    if (f.notes) html += '<div class="config-note">' + f.notes + '</div>';
+  }
+  if (cfg.home_assistant) {
+    const ha = cfg.home_assistant;
+    html += '<span class="config-label">Home Assistant</span>';
+    if (ha.integration) html += '<div class="config-note">Integration: <strong>' + ha.integration + '</strong></div>';
+    if (ha.notes) html += '<div class="config-note">' + ha.notes + '</div>';
+  }
+  if (cfg.blue_iris) {
+    const bi = cfg.blue_iris;
+    html += '<span class="config-label">Blue Iris</span>';
+    if (bi.profile) html += '<div class="config-note">Profile: <strong>' + bi.profile + '</strong></div>';
+    if (bi.notes) html += '<div class="config-note">' + bi.notes + '</div>';
+  }
+  html += '</div>';
+  return html;
+}
+
+function openDrawer(cam) {
+  const msrpStr = (() => {
+    const p = [];
+    if (cam.msrp_usd) p.push('$' + cam.msrp_usd);
+    if (cam.msrp_eur) p.push('€' + cam.msrp_eur);
+    if (cam.msrp_gbp) p.push('£' + cam.msrp_gbp);
+    if (cam.msrp_aud) p.push('A$' + cam.msrp_aud);
+    if (cam.msrp_inr) p.push('₹' + cam.msrp_inr);
+    return p.join(' / ') || '—';
+  })();
+  const row = (k, v) => v && v !== '—' ? `<div class="drawer-row"><span class="key">${k}</span><span class="val">${v}</span></div>` : '';
+  const rowMono = (k, v) => v ? `<div class="drawer-row"><span class="key">${k}</span><span class="val mono">${v}</span></div>` : '';
+
+  $('drawer-content').innerHTML = `
+    <h2>${cam.model}</h2>
+    <div class="drawer-brand">${cam.brand}${cam.release_year ? ' · ' + cam.release_year : ''}</div>
+    <div class="drawer-section">
+      <div class="drawer-section-title">Specs</div>
+      ${rowMono('ID', cam.id)}
+      ${row('Type', cam.type)}
+      ${row('Resolution', cam.resolution?.label + (cam.resolution?.megapixels ? ' (' + cam.resolution.megapixels + ' MP)' : ''))}
+      ${row('Sensor', cam.sensor)}
+      ${row('Lens', cam.lens?.focal_length_mm ? cam.lens.focal_length_mm + (cam.lens.aperture ? ' ' + cam.lens.aperture : '') + (cam.lens.varifocal ? ' varifocal' : '') : null)}
+      ${row('Field of view', cam.field_of_view_deg)}
+      ${row('Night vision', cam.night_vision?.type ? cam.night_vision.type + (cam.night_vision.range_m ? ' · ' + cam.night_vision.range_m + 'm' : '') : null)}
+      ${row('IP rating', cam.ip_rating)}
+      ${row('Power', cam.power?.method)}
+      ${row('Power draw', cam.power?.consumption_w ? cam.power.consumption_w + 'W' : null)}
+    </div>
+
+    <div class="drawer-section">
+      <div class="drawer-section-title">Video</div>
+      ${row('Codecs', (cam.video?.codecs ?? []).join(', '))}
+      ${row('Max FPS', cam.video?.max_fps ? cam.video.max_fps + ' fps' : null)}
+      ${cam.video?.streams?.length ? cam.video.streams.map(s =>
+        row(s.name + ' stream', s.resolution + ' @ ' + s.fps + 'fps (' + s.codec + ')')
+      ).join('') : ''}
+    </div>
+    <div class="drawer-section">
+      <div class="drawer-section-title">Connectivity & Storage</div>
+      ${row('Connectivity', (cam.connectivity ?? []).join(', '))}
+      ${row('Power source', (cam.power_source ?? []).map(powerLabel).join(', '))}
+      ${row('Protocols', (cam.protocols ?? []).join(', '))}
+      ${row('microSD', cam.storage?.onboard ? (cam.storage.max_microsd_gb ? 'Yes (up to ' + cam.storage.max_microsd_gb + 'GB)' : 'Yes') : 'No')}
+      ${row('NVR compatible', cam.storage?.nvr_compatible != null ? (cam.storage.nvr_compatible ? 'Yes' : 'No') : null)}
+      ${row('Cloud', cam.storage?.cloud != null ? (cam.storage.cloud ? 'Yes' : 'No') : null)}
+    </div>
+    <div class="drawer-section">
+      <div class="drawer-section-title">Audio & Price</div>
+      ${row('Microphone', cam.audio?.microphone != null ? (cam.audio.microphone ? 'Yes' : 'No') : null)}
+      ${row('Two-way audio', cam.audio?.two_way != null ? (cam.audio.two_way ? 'Yes' : 'No') : null)}
+      ${row('Price', msrpStr)}
+      ${row('Markets', (cam.markets ?? []).join(', '))}
+    </div>
+    ${cam.features?.length ? `<div class="drawer-section"><div class="drawer-section-title">Features</div>
+      <div class="features-list">${cam.features.map(f => `<span class="feature-tag">${f}</span>`).join('')}</div></div>` : ''}
+    ${renderConfigs(cam)}
+    ${cam.sources?.length ? `<div class="drawer-section"><div class="drawer-section-title">Sources</div>
+      ${cam.sources.map(s => `<a class="source-link" href="${s}" target="_blank" rel="noopener">${s}</a>`).join('')}</div>` : ''}
+  `;
+  $('overlay').classList.add('open');
+  $('drawer').classList.add('open');
+}
+
+function closeDrawer() { $('overlay').classList.remove('open'); $('drawer').classList.remove('open'); }
+$('overlay').addEventListener('click', closeDrawer);
+$('drawer-close').addEventListener('click', closeDrawer);
+
+// ── Keyboard shortcuts ───────────────────────────────────────────
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeDrawer(); $('compare-overlay').classList.remove('open'); $('search').blur(); }
+  if (e.key === '/' && !['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName)) { e.preventDefault(); $('search').focus(); }
+  if (e.key === 'ArrowLeft' && !['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName) && page > 0) { page--; renderRows(); renderPagination(); pushState(); }
+  if (e.key === 'ArrowRight' && !['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName) && page < Math.ceil(filtered.length / PAGE_SIZE) - 1) { page++; renderRows(); renderPagination(); pushState(); }
+});
+
+// ── Filter event listeners ───────────────────────────────────────
+['search','filter-nv','filter-res','filter-market'].forEach(id => {
+  $(id).addEventListener('input', applyFilters);
+  $(id).addEventListener('change', applyFilters);
+});
+$('filter-frigate').addEventListener('change', applyFilters);
+
+// ── Init ─────────────────────────────────────────────────────────
+async function init() {
+  $('tbody').innerHTML = `<tr><td colspan="${COLS.length}"><div class="loading">Loading cameras…</div></td></tr>`;
+  try {
+    const res = await fetch(DATA_URL);
+    const data = await res.json();
+    allCameras = data.map(flat);
+    filtered = [...allCameras];
+    renderStats(allCameras);
+    populateFilters(allCameras);
+    restoreState();
+    applyFilters();
+    renderthead();
+    render();
+    renderChips();
+  } catch (err) {
+    $('tbody').innerHTML = `<tr><td colspan="${COLS.length}"><div class="empty"><h3>Failed to load data</h3><p>${err.message}</p></div></td></tr>`;
+  }
+}
+init();
+</script>
+</body>
+</html>

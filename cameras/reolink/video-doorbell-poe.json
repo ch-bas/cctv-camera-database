@@ -24,7 +24,8 @@
     "range_m": 5
   },
   "power": {
-    "method": "PoE (IEEE 802.3af) / 12-24VAC doorbell wiring / 24VDC"
+    "method": "PoE (IEEE 802.3af) / 12-24VAC doorbell wiring / 24VDC",
+    "poe_class": 2
   },
   "storage": {
     "onboard": true,
@@ -52,6 +53,10 @@
     "works with Reolink NVR"
   ],
   "release_year": 2022,
+  "environment": [
+    "outdoor"
+  ],
+  "soc": "Novatek NT98566",
   "sources": [
     "https://reolink.com/product/reolink-video-doorbell-poe/"
   ],
@@ -88,11 +93,19 @@
       },
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main",
       "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_sub",
-      "notes": "Portrait 3:4 aspect ratio (white model 1920x2560, black model is 4:3 at 2560x1920). Set detect to 720x960 for white or 960x720 for black to maintain correct ratio. For two-way audio: use go2rtc as the RTSP proxy — Frigate does not natively handle talk-back. In go2rtc config add the camera as an RTSP source, then enable WebRTC with opus re-encoding for the back-channel: 'streams: doorbell: - rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main - ffmpeg:doorbell#audio=opus'. Button press events are not exposed via RTSP; use HA Reolink integration's Visitor binary_sensor or subscribe to ONVIF events via MQTT."
+      "notes": "Portrait 3:4 aspect ratio (white model 1920x2560, black model is 4:3 at 2560x1920). Set detect to 720x960 for white or 960x720 for black to maintain correct ratio. For two-way audio: use go2rtc as the RTSP proxy — Frigate does not natively handle talk-back. In go2rtc config add the camera as an RTSP source, then enable WebRTC with opus re-encoding for the back-channel: 'streams: doorbell: - rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main - ffmpeg:doorbell#audio=opus'. Button press events are not exposed via RTSP; use HA Reolink integration's Visitor binary_sensor or subscribe to ONVIF events via MQTT.",
+      "verified": true,
+      "tested_by": "blakeblacksear",
+      "tested_version": "0.14",
+      "recommended_stream_type": "go2rtc"
     },
     "home_assistant": {
       "integration": "reolink",
-      "notes": "Native Reolink integration auto-discovers via ONVIF (port 8000). Doorbell button press is exposed as a 'Visitor' binary_sensor entity. Two-way audio works in the Reolink app; for HA dashboard intercom, use go2rtc WebRTC card with opus back-channel."
+      "notes": "Native Reolink integration auto-discovers via ONVIF (port 8000). Doorbell button press is exposed as a 'Visitor' binary_sensor entity. Two-way audio works in the Reolink app; for HA dashboard intercom, use go2rtc WebRTC card with opus back-channel.",
+      "connection_type": "local_push",
+      "doorbell_button": true,
+      "two_way_audio": true,
+      "onvif_events": true
     },
     "blue_iris": {
       "profile": "Reolink",
