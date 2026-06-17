@@ -12,11 +12,15 @@ An open, structured database of 1,314 CCTV / IP camera models and their technica
 
 Camera spec sheets are scattered across vendor PDFs, retailer pages, and paywalled databases (IPVM, etc.) in inconsistent formats. This repo normalises them into one machine-readable structure so they can be compared, filtered, and reused.
 
+**The dataset is CC0 and always will be** — free to use, copy, and redistribute with no restrictions. The website is just a convenient viewer; the data here is the source of truth.
+
 ---
 
 ## Browse online
 
-**[Live Demo ](https://ch-bas.github.io/cctv-camera-databse)**  
+**[Browse the database → cctv-database.com](https://cctv-database.com)**  
+
+Prefer to self-host or browse offline? A [standalone demo](docs/demo.html) (just `demo.html` + `cameras.json`, no build step) is included — serve the `docs/` folder locally with any static server, e.g. `python3 -m http.server` inside `docs/`, then open it.  
 
 <p align="center">
   <img src="docs/demo.gif" alt="CCTV Camera Database — browse, search, filter, and inspect 1,296 cameras across 64 brands" width="800" />

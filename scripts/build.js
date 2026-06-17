@@ -9,10 +9,32 @@
  */
 const fs = require("fs");
 const path = require("path");
+const Ajv = require("ajv");
+const addFormats = require("ajv-formats");
 
 const ROOT = path.resolve(__dirname, "..");
 const CAMERAS_DIR = path.join(ROOT, "cameras");
 const DATA_DIR = path.join(ROOT, "data");
+const SCHEMA_PATH = path.join(ROOT, "schema", "camera.schema.json");
+
+// Load a local, gitignored .env (if present) so optional settings like
+// DATA_MIRROR_DIR can be configured without touching tracked files. No-op for
+// CI and contributors who have no .env. Avoids depending on Node's --env-file
+// flag, whose availability varies by version.
+(function loadDotenv() {
+  const envPath = path.join(ROOT, ".env");
+  if (!fs.existsSync(envPath)) return;
+  for (const raw of fs.readFileSync(envPath, "utf8").split("\n")) {
+    const line = raw.trim();
+    if (!line || line.startsWith("#")) continue;
+    const eq = line.indexOf("=");
+    if (eq === -1) continue;
+    const key = line.slice(0, eq).trim();
+    let val = line.slice(eq + 1).trim();
+    if (/^(".*"|'.*')$/.test(val)) val = val.slice(1, -1);
+    if (!(key in process.env)) process.env[key] = val;
+  }
+})();
 
 function walk(dir) {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) => {
@@ -36,27 +58,37 @@ function loadCameras() {
 }
 
 function validate(cameras) {
+  // Schema is the source of truth: required fields, id slug pattern, enums,
+  // types, and additionalProperties: false are all enforced by Ajv below.
+  const schema = JSON.parse(fs.readFileSync(SCHEMA_PATH, "utf8"));
+  const ajv = new Ajv({ allErrors: true, strict: false });
+  addFormats(ajv);
+  const validateSchema = ajv.compile(schema);
+
   const seen = new Set();
-  const required = ["id", "brand", "model", "type", "resolution"];
   let ok = true;
   for (const cam of cameras) {
-    for (const key of required) {
-      if (!(key in cam)) {
-        console.error(`✗ ${cam.id || "?"}: missing required field "${key}"`);
-        ok = false;
+    if (!validateSchema(cam)) {
+      ok = false;
+      for (const err of validateSchema.errors) {
+        const where = err.instancePath || "(root)";
+        const extra = err.params && err.params.additionalProperty
+          ? ` ("${err.params.additionalProperty}")`
+          : "";
+        console.error(`✗ ${cam.id || "?"}: ${where} ${err.message}${extra}`);
       }
     }
+    // Uniqueness can't be expressed in the schema, so check it here.
     if (cam.id && seen.has(cam.id)) {
       console.error(`✗ duplicate id "${cam.id}"`);
       ok = false;
     }
     seen.add(cam.id);
-    if (cam.id && !/^[a-z0-9]+(-[a-z0-9]+)*$/.test(cam.id)) {
-      console.error(`✗ ${cam.id}: id must be a lowercase slug`);
-      ok = false;
-    }
   }
-  if (!ok) process.exit(1);
+  if (!ok) {
+    console.error("\nValidation failed. See errors above.");
+    process.exit(1);
+  }
 }
 
 function toCsv(cameras) {
@@ -88,14 +120,25 @@ function main() {
   const jsonData = JSON.stringify(cameras, null, 2) + "\n";
   fs.writeFileSync(path.join(DATA_DIR, "cameras.json"), jsonData);
   fs.writeFileSync(path.join(DATA_DIR, "cameras.csv"), toCsv(cameras));
+  const outputs = ["data/cameras.json", "data/cameras.csv"];
 
   // Also copy into docs/ so GitHub Pages can serve it
   const DOCS_DIR = path.join(ROOT, "docs");
   if (fs.existsSync(DOCS_DIR)) {
     fs.writeFileSync(path.join(DOCS_DIR, "cameras.json"), jsonData);
+    outputs.push("docs/cameras.json");
   }
 
-  console.log(`✓ Built ${cameras.length} camera(s) → data/cameras.json + data/cameras.csv + docs/cameras.json`);
+  // Optional: mirror cameras.json into a downstream consumer's directory.
+  // Enable by setting DATA_MIRROR_DIR=/path/to/dir — a no-op when unset, so it
+  // needs no knowledge of any particular downstream app (CI/contributors skip it).
+  const mirrorDir = process.env.DATA_MIRROR_DIR;
+  if (mirrorDir && fs.existsSync(mirrorDir)) {
+    fs.writeFileSync(path.join(mirrorDir, "cameras.json"), jsonData);
+    outputs.push(path.join(mirrorDir, "cameras.json"));
+  }
+
+  console.log(`✓ Built ${cameras.length} camera(s) → ${outputs.join(" + ")}`);
 }
 
 main();
