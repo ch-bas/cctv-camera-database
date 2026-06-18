@@ -1,8 +1,8 @@
 # CCTV Camera Database
 
-An open, structured database of 1,314 CCTV / IP camera models and their technical specifications, covering 67 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
+An open, structured database of 1,306 CCTV / IP camera models and their technical specifications, covering 67 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
 
-[![cameras](https://img.shields.io/badge/cameras-1%2C314-blue)](data/cameras.json)
+[![cameras](https://img.shields.io/badge/cameras-1%2C306-blue)](data/cameras.json)
 [![brands](https://img.shields.io/badge/brands-67-green)](cameras/)
 [![license](https://img.shields.io/badge/license-CC0-lightgrey)](LICENSE)
 
@@ -31,7 +31,7 @@ Prefer to self-host or browse offline? A [standalone demo](docs/demo.html) (just
 - **Filter** — narrow by brand, camera type, night vision, resolution, or market
 - **Sort** — click any column header to sort ascending/descending
 - **Detail drawer** — click a row to slide open the full spec sheet (resolution, connectivity, protocols, storage, audio, pricing, source links)
-- **Pagination** — page through all 1,314 cameras, 25 per page
+- **Pagination** — page through all 1,306 cameras, 25 per page
 - **Stats bar** — live counts for total cameras, brands, 4K+, WiFi, and no-subscription models
 
 ---
@@ -56,14 +56,14 @@ a Claude Code skill for AI-powered video production built on [Remotion](https://
 cctv-camera-database/
 ├── cameras/              # source of truth — one JSON file per camera, grouped by brand
 │   ├── hikvision/        # 150 cameras
-│   ├── reolink/          # 130 cameras
+│   ├── reolink/          # 122 cameras
 │   ├── dahua/            # 107 cameras
 │   ├── hanwha/           #  71 cameras
 │   ├── axis/             #  66 cameras
 │   ├── tapo/             #  62 cameras
 │   └── …60 more brands
 ├── data/                 # GENERATED — do not edit by hand
-│   ├── cameras.json      # all 1,314 cameras as one array
+│   ├── cameras.json      # all 1,306 cameras as one array
 │   └── cameras.csv       # flattened, spreadsheet-friendly
 ├── schema/
 │   └── camera.schema.json
@@ -121,7 +121,7 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 
 | Metric | Count |
 |--------|-------|
-| Total cameras | **1,314** |
+| Total cameras | **1,306** |
 | Brands | **67** |
 | Form factors | 10 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, doorbell) |
 | PoE wired | 856 |
