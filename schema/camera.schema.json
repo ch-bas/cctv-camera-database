@@ -98,7 +98,7 @@
     },
     "video": {
       "type": "object",
-      "description": "Codec, FPS, and streaming capabilities.",
+      "description": "Stream capabilities — what the camera outputs (codecs, FPS, per-stream specs). This is spec metadata; the RTSP URLs to actually use live under configs.frigate.* (rtsp_url_template, best_substream). Optional and backfilled opportunistically.",
       "additionalProperties": false,
       "properties": {
         "codecs": {
@@ -133,7 +133,7 @@
               }
             }
           },
-          "description": "Per-stream resolution/fps/codec breakdown."
+          "description": "Per-stream capability breakdown (name/resolution/fps/codec) — what each stream outputs. Distinct from configs.frigate.best_substream, which is the RTSP URL to use."
         }
       }
     },
@@ -293,41 +293,6 @@
       "type": "string",
       "description": "System on Chip (SoC), e.g. Ingenic T31 (for Thingino/OpenIPC compatibility)."
     },
-    "msrp_usd": {
-      "type": "number"
-    },
-    "msrp_eur": {
-      "type": "number",
-      "description": "MSRP in EUR."
-    },
-    "msrp_gbp": {
-      "type": "number",
-      "description": "MSRP in GBP."
-    },
-    "msrp_inr": {
-      "type": "number",
-      "description": "MSRP in INR."
-    },
-    "msrp_aed": {
-      "type": "number",
-      "description": "MSRP in AED."
-    },
-    "msrp_aud": {
-      "type": "number",
-      "description": "MSRP in AUD."
-    },
-    "msrp_cad": {
-      "type": "number",
-      "description": "MSRP in CAD."
-    },
-    "msrp_vnd": {
-      "type": "number",
-      "description": "MSRP in VND."
-    },
-    "msrp_chf": {
-      "type": "number",
-      "description": "MSRP in CHF."
-    },
     "markets": {
       "type": "array",
       "items": {
@@ -381,7 +346,7 @@
             },
             "best_substream": {
               "type": "string",
-              "description": "Recommended sub-stream path."
+              "description": "Recommended sub-stream RTSP URL for Frigate's detect role (the URL to use). Distinct from video.streams[], which describes stream capabilities."
             },
             "notes": {
               "type": "string"
