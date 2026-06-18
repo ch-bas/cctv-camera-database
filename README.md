@@ -253,7 +253,6 @@ Common optional fields:
 | `audio.two_way` | `boolean` | `true` |
 | `protocols` | `string[]` | `["onvif", "rtsp"]` |
 | `markets` | `string[]` | `["UK", "EU", "DE"]` |
-| `msrp_usd` / `msrp_eur` / `msrp_gbp` | `number` | `79.99` |
 | `features` | `string[]` | `["no subscription", "IP67"]` |
 | `sources` | `string[]` | datasheet / retailer URLs |
 
@@ -285,10 +284,9 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the full field reference, naming conv
 
 ## Roadmap
 
-- [ ] JSON Schema validation in CI (GitHub Actions)
+- [x] JSON Schema validation in CI (GitHub Actions)
 - [ ] Static web frontend — search, filter, compare
 - [ ] Side-by-side comparison view (2–4 cameras)
-- [ ] Price history tracking (msrp over time)
 - [ ] Frigate-compatible config export
 - [ ] Home Assistant integration template
 - [ ] API endpoint (read-only, hosted)
