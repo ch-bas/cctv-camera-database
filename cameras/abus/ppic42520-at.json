@@ -17,25 +17,25 @@
     "EU"
   ],
   "resolution": {
-    "megapixels": 3,
-    "max_width": 2048,
-    "max_height": 1536,
-    "label": "3MP 2K"
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "Full HD (1080p)"
   },
-  "sensor": "1/2.7\" CMOS",
+  "sensor": "1/2.8\" CMOS",
   "lens": {
-    "count": 1,
-    "focal_length_mm": "4.0 (fixed)",
+    "focal_length_mm": "4.1",
     "aperture": "F2.0",
-    "varifocal": false
+    "varifocal": false,
+    "count": 1
   },
   "field_of_view_deg": "355 pan / 90 tilt",
   "night_vision": {
     "type": "ir",
-    "range_m": 12
+    "range_m": 20
   },
   "power": {
-    "method": "DC 12V (outdoor adapter)"
+    "method": "DC 5V"
   },
   "storage": {
     "onboard": true,
@@ -43,9 +43,7 @@
     "nvr_compatible": false,
     "cloud": false
   },
-  "protocols": [
-    "rtsp"
-  ],
+  "protocols": [],
   "ip_rating": "IP66",
   "audio": {
     "microphone": true,
@@ -68,23 +66,24 @@
   "power_source": [
     "dc"
   ],
-  "configs": {
-    "frigate": {
-      "detect": {
-        "width": 640,
-        "height": 480,
-        "fps": 5
-      },
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
-    },
-    "home_assistant": {
-      "integration": "onvif",
-      "notes": "Use ONVIF integration."
-    },
-    "blue_iris": {
-      "profile": "Hikvision",
-      "notes": "Select 'Hikvision' profile. Most ABUS IP cameras use Hikvision protocol."
-    }
-  }
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 15,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "210 x 120 x 160",
+  "weight_g": 650,
+  "operating_temp_c": "-10 to 50"
 }
