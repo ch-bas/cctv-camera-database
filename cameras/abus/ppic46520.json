@@ -24,18 +24,18 @@
   },
   "sensor": "1/2.8\" CMOS",
   "lens": {
-    "count": 1,
-    "focal_length_mm": "3.6 (fixed)",
+    "focal_length_mm": "4",
     "aperture": "F2.0",
-    "varifocal": false
+    "varifocal": false,
+    "count": 1
   },
   "field_of_view_deg": "110 horizontal",
   "night_vision": {
-    "type": "color",
+    "type": "hybrid",
     "range_m": 8
   },
   "power": {
-    "method": "Hardwired (replaces outdoor light fitting)"
+    "method": "AC 90-260V"
   },
   "storage": {
     "onboard": true,
@@ -43,10 +43,8 @@
     "nvr_compatible": false,
     "cloud": false
   },
-  "protocols": [
-    "rtsp"
-  ],
-  "ip_rating": "IP55",
+  "protocols": [],
+  "ip_rating": "IP66",
   "audio": {
     "microphone": true,
     "speaker": true,
@@ -69,23 +67,16 @@
   "power_source": [
     "ac-mains"
   ],
-  "configs": {
-    "frigate": {
-      "detect": {
-        "width": 640,
-        "height": 480,
-        "fps": 5
-      },
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
-    },
-    "home_assistant": {
-      "integration": "onvif",
-      "notes": "Use ONVIF integration."
-    },
-    "blue_iris": {
-      "profile": "Hikvision",
-      "notes": "Select 'Hikvision' profile. Most ABUS IP cameras use Hikvision protocol."
-    }
-  }
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 20
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "75 x 155 x 180",
+  "weight_g": 985,
+  "operating_temp_c": "-20 to 50"
 }
