@@ -130,6 +130,7 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | 4K / 8MP+ | 464 |
 | 4–5MP | 688 |
 | 1080p–2MP | 397 |
+| With integration configs (Frigate / Home Assistant) | 1,303 |
 
 ### All 68 brands
 

@@ -78,5 +78,25 @@
     "https://alarm-technik.eu/en/products/ip-tube-8-mpx-4k-2-8-12mm-abus-ipcb68621",
     "https://www.abus.com/uk/Commercial-Security/Video-surveillance/Network-technology/IP-Tube-8-MPx-Black-2.8-12mm",
     "https://c1.abus.com/var/ImagesPIM/d110001/medias/docus/26/20211027-IPCB6xx21_INST_DE_UK.pdf"
-  ]
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "ABUS Performance Line is Hikvision OEM — Hikvision-style RTSP paths (101 main / 102 sub / 103 third). Enable ONVIF/RTSP in the camera web UI (Network > Integration Protocol) first. Pattern from the IPCx OEM family (iSpyConnect, HA community); not individually bench-tested."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration after enabling ONVIF (Profile S) in the web UI."
+    }
+  }
 }

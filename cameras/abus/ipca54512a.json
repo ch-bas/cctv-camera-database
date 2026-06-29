@@ -48,7 +48,7 @@
     "aperture": "F1.0",
     "varifocal": false
   },
-  "field_of_view_deg": "110 horizontal",
+  "field_of_view_deg": "110 horizontal / 57 vertical",
   "night_vision": {
     "type": "hybrid",
     "range_m": 30
@@ -93,6 +93,27 @@
   "sources": [
     "https://www.expert-security.de/abus-ipca54512a-ip-kamera-4mpx-t-n-ir-poe-ip67.html",
     "https://alarm-technik.eu/en/products/ip-kugeldome-4-mpx-2-8-mm-ir-wl-abus-ipca54512a",
-    "https://www.abus.com/int/Commercial-Security/Video-surveillance/Network-technology/IP-Spherical-Dome-4-MPx-2.8mm"
-  ]
+    "https://www.abus.com/int/Commercial-Security/Video-surveillance/Network-technology/IP-Spherical-Dome-4-MPx-2.8mm",
+    "https://firstmall.de/ABUS-IPCA54512A-Kugeldome-Kamera-IP-4-MPx-28-mm-IR-WL-PoE-Ueberwachungskamera"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "ABUS Performance Line is Hikvision OEM — uses Hikvision-style RTSP paths (Channels/101 main, /102 sub, /103 third). ONVIF/RTSP must be enabled in the camera web UI (Network > Integration Protocol) first. Pattern inferred from sibling IPCB/IPCA models (iSpyConnect, HA community); not individually verified on this exact model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Use the generic ONVIF integration after enabling ONVIF (Profile S) in the camera web UI. No ABUS-specific HA integration for the Performance Line."
+    }
+  }
 }

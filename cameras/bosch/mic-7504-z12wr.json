@@ -102,5 +102,25 @@
   "markets": [
     "EU",
     "global"
-  ]
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    }
+  }
 }
