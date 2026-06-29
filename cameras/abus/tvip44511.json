@@ -87,5 +87,25 @@
     "https://www.expert-security.de/abus-tvip44511-ip-kamera-4mpx-t-n-ir-poe-ip67-ik10.html",
     "https://www.sotel.co.uk/en/Computer-Drucker/Smart-Home/Haussteuerung/Alarmanlagen/ABUS-TVIP44511-security-camera-Dome-IP-security-camera-Indoor-outdoor-2688-x-1520-pixels-Ceiling.html",
     "https://www.abus.com/de/Gewerbe/Videoueberwachung/Netzwerktechnik/IP-mini-dome-4-MPx-4-mm"
-  ]
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "ABUS TVIP Performance Line is Hikvision OEM (TVIP82561 shares an ABUS manual with the IPCS84511) — Hikvision-style RTSP paths (101 main / 102 sub / 103 third); /ch1/main also accepted. Enable ONVIF/RTSP + create an ONVIF user in the web UI first. Not individually bench-tested."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration after enabling ONVIF (create a dedicated ONVIF user) in the web UI."
+    }
+  }
 }
