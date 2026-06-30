@@ -32,10 +32,7 @@
     "nvr_compatible": true,
     "cloud": true
   },
-  "protocols": [
-    "rtsp",
-    "onvif"
-  ],
+  "protocols": [],
   "ip_rating": "IP66",
   "audio": {
     "microphone": true,
@@ -54,7 +51,8 @@
     "no subscription"
   ],
   "sources": [
-    "https://www.tapo.com/"
+    "https://www.tapo.com/ph/product/smart-camera/tapo-c460-kit/",
+    "https://www.tp-link.com/us/support/faq/2680/"
   ],
   "aliases": [
     "MagCam 4K Solar"
@@ -65,22 +63,9 @@
     "solar"
   ],
   "configs": {
-    "frigate": {
-      "detect": {
-        "width": 1280,
-        "height": 720,
-        "fps": 5
-      },
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/stream1",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/stream2"
-    },
     "home_assistant": {
       "integration": "tapo",
-      "notes": "Native TP-Link Tapo integration. Requires Tapo cloud account credentials."
-    },
-    "blue_iris": {
-      "profile": "Generic/ONVIF",
-      "notes": "Use Generic/ONVIF profile. RTSP streams: /stream1 (main), /stream2 (sub). Must enable ONVIF in Tapo app."
+      "notes": "Battery/solar Tapo cameras do not support RTSP/ONVIF (TP-Link FAQ). Integrate via the community HomeAssistant-Tapo-Control integration, which uses TP-Links proprietary API (not ONVIF), or the Tapo app/cloud."
     }
   }
 }
