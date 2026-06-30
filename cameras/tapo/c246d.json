@@ -7,36 +7,36 @@
     "wifi"
   ],
   "resolution": {
-    "megapixels": 4,
-    "max_width": 2560,
-    "max_height": 1440,
-    "label": "2K QHD"
+    "label": "2K (3MP per lens)",
+    "max_width": 2304,
+    "max_height": 1296,
+    "megapixels": 2.99
   },
   "lens": {
-    "count": 1,
-    "focal_length_mm": "Dual-lens",
-    "aperture": "F2.0",
+    "count": 2,
+    "focal_length_mm": "2.8 (fixed lens) / 6.0 (pan-tilt lens)",
+    "aperture": "F1.6",
     "varifocal": false
   },
-  "field_of_view_deg": "360 pan / 150 tilt",
+  "field_of_view_deg": "125.5 diagonal (fixed lens) / 67.1 diagonal (pan-tilt lens)",
   "night_vision": {
-    "type": "color",
-    "range_m": 9
+    "type": "hybrid",
+    "range_m": 12
   },
   "power": {
-    "method": "DC 5V (USB) or adapter"
+    "method": "5V DC power adapter (100-240V AC input, Type-C/USB-C output connector, 3m cable)"
   },
   "storage": {
-    "onboard": true,
-    "max_microsd_gb": 256,
-    "nvr_compatible": true,
-    "cloud": true
+    "onboard": false,
+    "max_microsd_gb": 512,
+    "cloud": true,
+    "nvr_compatible": false
   },
   "protocols": [
     "rtsp",
     "onvif"
   ],
-  "ip_rating": "IP44",
+  "ip_rating": "IP65",
   "audio": {
     "microphone": true,
     "speaker": true,
@@ -51,14 +51,16 @@
     "no subscription"
   ],
   "sources": [
-    "https://www.tapo.com/"
+    "https://www.tp-link.com/us/home-networking/cloud-camera/tapo-c246d/",
+    "https://www.tp-link.com/us/support/download/tapo-c246d/",
+    "https://www.tp-link.com/us/press/news/21827/"
   ],
   "aliases": [
     "HybridCam Duo"
   ],
   "release_year": 2025,
   "power_source": [
-    "usb"
+    "dc"
   ],
   "configs": {
     "frigate": {
@@ -78,5 +80,33 @@
       "profile": "Generic/ONVIF",
       "notes": "Use Generic/ONVIF profile. RTSP streams: /stream1 (main), /stream2 (sub). Must enable ONVIF in Tapo app."
     }
-  }
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "Fixed lens",
+        "resolution": "2304x1296",
+        "fps": 15,
+        "codec": "h264"
+      },
+      {
+        "name": "Pan/tilt lens",
+        "resolution": "2304x1296",
+        "fps": 15,
+        "codec": "h264"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS Starlight Sensor",
+  "operating_temp_c": "-20 to 50",
+  "dimensions_mm": "78 x 76.83 x 106.83",
+  "weight_g": 277,
+  "environment": [
+    "indoor",
+    "outdoor"
+  ]
 }
