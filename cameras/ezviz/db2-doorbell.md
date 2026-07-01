@@ -1,6 +1,6 @@
 # EZVIZ DB2
 
-*Also known as: EZVIZ DB2 2K Battery Video Doorbell Kit*
+*Also known as: EZVIZ DB2 Battery Video Doorbell Kit*
 
 | Field | Spec |
 |-------|------|
@@ -8,20 +8,22 @@
 | Model | DB2 |
 | Type | doorbell |
 | Connectivity | wifi |
-| Resolution | 2K QHD (4MP, 2560×1440) |
-| Lens | 1× Fixedmm F2.0 |
-| Field of view | 155 diagonal (head-to-toe)° |
+| Resolution | 3MP (3MP, 2000×1504) |
+| Sensor | 1/2.7" CMOS |
+| Lens | 1× 2.0 (fixed)mm F2.0 |
+| Field of view | 176 diagonal (head-to-toe)° |
 | Night vision | ir (5m) |
-| Power | Rechargeable battery (5200mAh) / hardwired chime power |
+| Power | Rechargeable battery (5200mAh); optional AC 110-240V plug-in indoor chime (not hardwired into existing doorbell wiring) |
 | Storage | microSD ≤ 256GB |
 | Protocols | http |
 | IP rating | IP65 |
 | Two-way audio | Yes |
+| Operating temp | -20 to 50°C |
 | Released | 2022 |
 
 ## Features
 
-- 2K head-to-toe video doorbell
+- head-to-toe video doorbell
 - 5200mAh battery
 - wire-free setup
 - anti-tamper alarm (loud alert on removal)
@@ -34,7 +36,7 @@
 
 ## Sources
 
-- https://www.ezviz.com/product/db2/
+- https://www.ezviz.com/product/db2/38579
 
 ---
 *Auto-generated from ezviz-db2-doorbell.json — do not edit by hand.*

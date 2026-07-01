@@ -13,7 +13,15 @@
   "markets": [
     "UK",
     "EU",
-    "global"
+    "global",
+    "AR",
+    "BR",
+    "CL",
+    "LATAM",
+    "AE",
+    "SA",
+    "MENA",
+    "VN"
   ],
   "resolution": {
     "megapixels": 2,
@@ -21,19 +29,20 @@
     "max_height": 1080,
     "label": "1080p HD"
   },
+  "sensor": "1/4\" CMOS",
   "lens": {
     "count": 1,
     "focal_length_mm": "4 (fixed)",
     "aperture": "F2.4",
     "varifocal": false
   },
-  "field_of_view_deg": "360 pan / 105 tilt",
+  "field_of_view_deg": "340 pan / 55 tilt",
   "night_vision": {
     "type": "ir",
     "range_m": 10
   },
   "power": {
-    "method": "DC 5V (USB)"
+    "method": "DC 5V/1A (Micro USB)"
   },
   "storage": {
     "onboard": true,
@@ -45,23 +54,31 @@
     "rtsp",
     "onvif"
   ],
-  "ip_rating": "IP20",
   "audio": {
     "microphone": true,
     "speaker": true,
     "two_way": true
   },
+  "dimensions_mm": "88 x 88.2 x 119",
+  "weight_g": 218,
+  "operating_temp_c": "-10 to 45",
+  "environment": [
+    "indoor"
+  ],
   "features": [
-    "360deg pan/tilt indoor camera",
+    "340deg pan/55deg tilt indoor camera",
     "AI person detection",
     "auto-tracking",
     "EZVIZ App",
     "Alexa / Google / Hikvision NVR compatible",
-    "RTSP/ONVIF",
+    "RTSP (manual app enable) / ONVIF (firmware >= V5.3.2 build 231228)",
     "night vision"
   ],
   "sources": [
-    "https://www.ezviz.com/product/c6n/"
+    "https://www.ezviz.com/product/C6N/9046",
+    "https://www.ezviz.com/eu/product/C6N/11391",
+    "https://www.ezviz.com/us/product/c6n/21692",
+    "https://m-support.ezviz.com/faq/article/Whether-EZVIZ-devices-support-ONVIF-protocol"
   ],
   "power_source": [
     "usb"
@@ -74,15 +91,18 @@
         "fps": 5
       },
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264/ch1/main/av_stream",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264/ch1/sub/av_stream"
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264/ch1/sub/av_stream",
+      "notes": "RTSP must be manually enabled: EZVIZ app > device settings > LAN Live View > Local Server Settings. Username is literally 'admin'; password is the device verification code printed on the label, not a user-set password. ONVIF confirmed only on firmware >= V5.3.2 build 231228 per official EZVIZ ONVIF compatibility FAQ.",
+      "verified": false
     },
     "home_assistant": {
       "integration": "ezviz",
-      "notes": "Native EZVIZ integration. RTSP must be enabled in EZVIZ app."
+      "notes": "Native EZVIZ integration. RTSP must be enabled in EZVIZ app first."
     },
     "blue_iris": {
       "profile": "Hikvision",
       "notes": "Select 'Hikvision' profile. EZVIZ uses Hikvision protocol. Must enable RTSP in EZVIZ app first."
     }
-  }
+  },
+  "last_verified": "2026-07-01"
 }

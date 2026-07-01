@@ -9,14 +9,15 @@
 | Type | ptz |
 | Connectivity | wifi |
 | Resolution | 1080p HD (2MP, 1920×1080) |
-| Lens | 1× 4 (fixed)mm F2.0 |
+| Sensor | 1/2.7" CMOS |
+| Lens | 1× 4 or 6 (fixed, buyer's choice)mm F1.6 |
 | Field of view | 352 pan / 95 tilt° |
 | Night vision | color (30m) |
-| Power | DC 12V (outdoor adapter) |
+| Power | DC 12V/1A (max 6W, outdoor adapter) |
 | Storage | microSD ≤ 256GB, NVR |
-| Protocols | rtsp, onvif |
-| IP rating | IP67 |
+| IP rating | IP65 |
 | Two-way audio | Yes |
+| Operating temp | -30 to 60°C |
 | Released | 2022 |
 
 ## Features
@@ -26,14 +27,14 @@
 - AI person detection
 - spotlight color night vision
 - strobe light deterrence
-- IP67
 - auto-tracking
-- RTSP/ONVIF
 - Alexa / Google
+- no officially confirmed RTSP/ONVIF -- official datasheet lists only 'EZVIZ Cloud Proprietary Protocol'
 
 ## Sources
 
-- https://www.ezviz.com/product/c8c/
+- https://mfs.ezvizlife.com/C8C_datasheet_1217.pdf
+- https://www.ezviz.com/product/c8c/30208
 
 ---
 *Auto-generated from ezviz-c8c.json — do not edit by hand.*
