@@ -6,18 +6,18 @@
 |-------|------|
 | Brand | Reolink |
 | Model | Solar Floodlight Cam |
-| Type | bullet |
+| Type | floodlight |
 | Connectivity | wifi |
 | Resolution | 4MP 2K (4MP, 2560×1440) |
 | Sensor | CMOS |
 | Lens | 1× Fixedmm |
 | Field of view | 150° |
-| Night vision | color (10m) |
+| Night vision | hybrid (10m) |
 | Power | Built-in 3W solar panel + rechargeable battery (wire-free) |
 | Storage | microSD ≤ 256GB |
-| Protocols | rtsp |
-| IP rating | IP65 |
+| IP rating | IP66 |
 | Two-way audio | Yes |
+| Operating temp | -20 to 55°C |
 | Released | 2026 |
 
 ## Features
