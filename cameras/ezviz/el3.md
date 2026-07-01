@@ -6,7 +6,7 @@
 |-------|------|
 | Brand | EZVIZ |
 | Model | EL3 |
-| Type | box |
+| Type | floodlight |
 | Connectivity | wifi |
 | Resolution | 3MP (3MP, 2048×1536) |
 | Lens | 1× |

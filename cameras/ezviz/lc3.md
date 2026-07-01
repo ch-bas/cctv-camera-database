@@ -6,7 +6,7 @@
 |-------|------|
 | Brand | EZVIZ |
 | Model | LC3 |
-| Type | box |
+| Type | floodlight |
 | Connectivity | wifi |
 | Resolution | 2K+ (4MP, 2560×1440) |
 | Lens | 1× F2.3 |
