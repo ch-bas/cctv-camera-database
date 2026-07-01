@@ -1,0 +1,77 @@
+{
+  "id": "tapo-c207",
+  "brand": "Tapo",
+  "model": "C207",
+  "type": "ptz",
+  "connectivity": ["wifi"],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/3\" Progressive Scan CMOS Starlight Sensor",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "85 diagonal / 73.5 horizontal / 41 vertical",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 12
+  },
+  "power": {
+    "method": "5V DC power adapter (100-240V AC input, 5.0V/1.0A Type-C output); 2.3W typical / 5W max consumption"
+  },
+  "power_source": ["dc"],
+  "storage": {
+    "onboard": false,
+    "max_microsd_gb": 512,
+    "nvr_compatible": false,
+    "cloud": true
+  },
+  "protocols": ["rtsp", "onvif"],
+  "ip_rating": "IP65",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "video": {
+    "codecs": ["H.264"],
+    "max_fps": 30
+  },
+  "environment": ["indoor", "outdoor"],
+  "dimensions_mm": "105.3 x 77.8 x 69.8",
+  "weight_g": 220,
+  "operating_temp_c": "-20 to 50",
+  "status": "available",
+  "features": [
+    "pan/tilt indoor/outdoor camera",
+    "360 horizontal / 146 vertical pan-tilt range",
+    "color night vision",
+    "no subscription"
+  ],
+  "sources": [
+    "https://www.tapo.com/us/product/smart-camera/tapo-c207/v1/"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": { "width": 640, "height": 480, "fps": 5 },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/stream1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/stream2",
+      "verified": false,
+      "notes": "Standard Tapo wired-camera RTSP scheme (stream1 main / stream2 sub); not individually bench-tested on this model."
+    },
+    "home_assistant": {
+      "integration": "tapo",
+      "notes": "Native TP-Link Tapo integration. Requires Tapo cloud account credentials."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP streams: /stream1 (main), /stream2 (sub). Must enable ONVIF in Tapo app."
+    }
+  }
+}
