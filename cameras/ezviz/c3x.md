@@ -10,29 +10,28 @@
 | Connectivity | wifi |
 | Resolution | 1080p HD (2MP, 1920×1080) |
 | Sensor | Dual CMOS |
-| Lens | 2× 2.8 wide + 12mm tele (fixed)mm F1.6 |
-| Field of view | 180 dual-lens° |
-| Night vision | color (15m) |
+| Lens | 2× 2.8mm + 4mm (fixed)mm F1.6 |
+| Field of view | 2.8mm: 105 horizontal / 120 diagonal; 4mm: 89 horizontal / 106 diagonal° |
+| Night vision | hybrid (30m) |
 | Power | DC 12V |
-| Storage | microSD ≤ 256GB, NVR |
-| Protocols | rtsp, onvif |
+| Storage | microSD ≤ 256GB |
 | IP rating | IP67 |
 | Two-way audio | Yes |
 | Released | 2020 |
 
 ## Features
 
-- dual-lens color night vision outdoor
-- wide + tele simultaneous view
+- dual-lens outdoor (both lenses wide-angle, not wide+tele)
+- IR + color hybrid night vision
 - AI person/vehicle detection
 - sound + light deterrence
 - two-way audio
-- RTSP/ONVIF
 - IP67
+- no officially confirmed RTSP/ONVIF -- not on official spec pages, only community-documented app toggle
 
 ## Sources
 
-- https://www.ezviz.com/product/c3x/
+- https://www.ezviz.com/product/c3x/12359
 
 ---
 *Auto-generated from ezviz-c3x.json — do not edit by hand.*

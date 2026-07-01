@@ -19,14 +19,14 @@
   "sensor": "Dual CMOS",
   "lens": {
     "count": 2,
-    "focal_length_mm": "2.8 wide + 12mm tele (fixed)",
+    "focal_length_mm": "2.8mm + 4mm (fixed)",
     "aperture": "F1.6",
     "varifocal": false
   },
-  "field_of_view_deg": "180 dual-lens",
+  "field_of_view_deg": "2.8mm: 105 horizontal / 120 diagonal; 4mm: 89 horizontal / 106 diagonal",
   "night_vision": {
-    "type": "color",
-    "range_m": 15
+    "type": "hybrid",
+    "range_m": 30
   },
   "power": {
     "method": "DC 12V"
@@ -34,13 +34,10 @@
   "storage": {
     "onboard": true,
     "max_microsd_gb": 256,
-    "nvr_compatible": true,
+    "nvr_compatible": false,
     "cloud": true
   },
-  "protocols": [
-    "rtsp",
-    "onvif"
-  ],
+  "protocols": [],
   "ip_rating": "IP67",
   "audio": {
     "microphone": true,
@@ -48,37 +45,18 @@
     "two_way": true
   },
   "features": [
-    "dual-lens color night vision outdoor",
-    "wide + tele simultaneous view",
+    "dual-lens outdoor (both lenses wide-angle, not wide+tele)",
+    "IR + color hybrid night vision",
     "AI person/vehicle detection",
     "sound + light deterrence",
     "two-way audio",
-    "RTSP/ONVIF",
-    "IP67"
+    "IP67",
+    "no officially confirmed RTSP/ONVIF -- not on official spec pages, only community-documented app toggle"
   ],
   "sources": [
-    "https://www.ezviz.com/product/c3x/"
+    "https://www.ezviz.com/product/c3x/12359"
   ],
   "power_source": [
     "dc"
-  ],
-  "configs": {
-    "frigate": {
-      "detect": {
-        "width": 640,
-        "height": 480,
-        "fps": 5
-      },
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264/ch1/main/av_stream",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264/ch1/sub/av_stream"
-    },
-    "home_assistant": {
-      "integration": "ezviz",
-      "notes": "Native EZVIZ integration. RTSP must be enabled in EZVIZ app."
-    },
-    "blue_iris": {
-      "profile": "Hikvision",
-      "notes": "Select 'Hikvision' profile. EZVIZ uses Hikvision protocol. Must enable RTSP in EZVIZ app first."
-    }
-  }
+  ]
 }

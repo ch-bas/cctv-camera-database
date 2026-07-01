@@ -21,10 +21,11 @@
     "max_height": 1080,
     "label": "1080p HD"
   },
+  "sensor": "1/2.7\" CMOS",
   "lens": {
     "count": 1,
-    "focal_length_mm": "4 (fixed)",
-    "aperture": "F2.0",
+    "focal_length_mm": "4 or 6 (fixed, buyer's choice)",
+    "aperture": "F1.6",
     "varifocal": false
   },
   "field_of_view_deg": "352 pan / 95 tilt",
@@ -33,58 +34,42 @@
     "range_m": 30
   },
   "power": {
-    "method": "DC 12V (outdoor adapter)"
+    "method": "DC 12V/1A (max 6W, outdoor adapter)"
   },
   "storage": {
-    "onboard": true,
+    "onboard": false,
     "max_microsd_gb": 256,
     "nvr_compatible": true,
     "cloud": true
   },
-  "protocols": [
-    "rtsp",
-    "onvif"
-  ],
-  "ip_rating": "IP67",
+  "protocols": [],
+  "ip_rating": "IP65",
   "audio": {
     "microphone": true,
     "speaker": true,
     "two_way": true
   },
+  "dimensions_mm": "158 x 157 x 149",
+  "weight_g": 510,
+  "operating_temp_c": "-30 to 60",
+  "environment": [
+    "outdoor"
+  ],
   "features": [
     "outdoor pan/tilt camera",
     "352deg pan / 95deg tilt",
     "AI person detection",
     "spotlight color night vision",
     "strobe light deterrence",
-    "IP67",
     "auto-tracking",
-    "RTSP/ONVIF",
-    "Alexa / Google"
+    "Alexa / Google",
+    "no officially confirmed RTSP/ONVIF -- official datasheet lists only 'EZVIZ Cloud Proprietary Protocol'"
   ],
   "sources": [
-    "https://www.ezviz.com/product/c8c/"
+    "https://mfs.ezvizlife.com/C8C_datasheet_1217.pdf",
+    "https://www.ezviz.com/product/c8c/30208"
   ],
   "power_source": [
     "dc"
-  ],
-  "configs": {
-    "frigate": {
-      "detect": {
-        "width": 640,
-        "height": 480,
-        "fps": 5
-      },
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264/ch1/main/av_stream",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264/ch1/sub/av_stream"
-    },
-    "home_assistant": {
-      "integration": "ezviz",
-      "notes": "Native EZVIZ integration. RTSP must be enabled in EZVIZ app."
-    },
-    "blue_iris": {
-      "profile": "Hikvision",
-      "notes": "Select 'Hikvision' profile. EZVIZ uses Hikvision protocol. Must enable RTSP in EZVIZ app first."
-    }
-  }
+  ]
 }

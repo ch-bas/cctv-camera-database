@@ -1,39 +1,34 @@
 # EZVIZ H3c 2K
 
-*Also known as: EZVIZ H3c 4MP Indoor Pan/Tilt Camera*
+*Also known as: EZVIZ H3c 2K Outdoor Fixed Bullet*
 
 | Field | Spec |
 |-------|------|
 | Brand | EZVIZ |
 | Model | H3c 2K |
-| Type | ptz |
+| Type | bullet |
 | Connectivity | wifi |
-| Resolution | 2K QHD (4MP, 2560×1440) |
-| Sensor | CMOS |
+| Resolution | 3MP (2K) (3MP, 2304×1296) |
 | Lens | 1× 4 (fixed)mm F2.0 |
-| Field of view | 360 pan / 90 tilt° |
-| Night vision | ir (10m) |
-| Power | DC 5V (USB) |
-| Storage | microSD ≤ 256GB, NVR |
-| Protocols | rtsp, onvif |
-| IP rating | IP20 |
+| Field of view | 82 horizontal° |
+| Night vision | ir (30m) |
+| Power | DC 12V/1A |
+| IP rating | IP67 |
 | Two-way audio | Yes |
-| Released | 2023 |
+| Operating temp | -30 to 50°C |
 
 ## Features
 
-- 2K QHD indoor pan/tilt
-- AI person detection
-- auto-tracking
-- two-way audio
-- RTSP/ONVIF Hikvision NVR
+- outdoor fixed-lens bullet camera
+- IR night vision up to 30m
+- IP67 weatherproof
+- no officially confirmed RTSP/ONVIF -- official datasheet lists only 'EZVIZ Cloud Proprietary Protocol'
 - EZVIZ app / Alexa / Google
-- privacy shield cover
-- H.265
 
 ## Sources
 
-- https://www.ezviz.com/product/h3c/
+- https://www.ezviz.com/product/h3c+2k/44668
+- https://www.ezviz.com/product/h3c/42661
 
 ---
 *Auto-generated from ezviz-h3c-2k.json — do not edit by hand.*

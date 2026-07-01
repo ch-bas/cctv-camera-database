@@ -1,6 +1,6 @@
 # EZVIZ BC1C eLife
 
-*Also known as: EZVIZ BC1C eLife 2K Battery Wire-Free Outdoor*
+*Also known as: EZVIZ BC1C eLife Battery Wire-Free Outdoor*
 
 | Field | Spec |
 |-------|------|
@@ -8,21 +8,22 @@
 | Model | BC1C eLife |
 | Type | bullet |
 | Connectivity | wifi |
-| Resolution | 2K QHD (4MP, 2560×1440) |
+| Resolution | 1080p HD (2MP, 1920×1080) |
 | Sensor | CMOS |
-| Lens | 1× Fixedmm F2.0 |
-| Field of view | 118 horizontal° |
+| Lens | 1× Fixedmm F1.6 |
+| Field of view | 107 horizontal / 125 diagonal° |
 | Night vision | color (10m) |
-| Power | Rechargeable battery (10,000mAh) / solar optional |
-| Storage | microSD ≤ 256GB |
-| Protocols | http |
+| Power | Rechargeable battery (7,800mAh) / solar optional |
 | IP rating | IP66 |
 | Two-way audio | Yes |
+| Operating temp | -20 to 50°C |
 | Released | 2022 |
 
 ## Features
 
-- 2K wire-free 10,000mAh battery outdoor
+- wire-free battery outdoor camera
+- 7,800mAh battery
+- 32GB fixed internal eMMC storage (no microSD slot)
 - color night vision
 - AI human detection
 - active defense (spotlight + sound)
@@ -32,7 +33,7 @@
 
 ## Sources
 
-- https://www.ezviz.com/product/ezviz-elife/
+- https://www.ezviz.com/product/ezviz-elife/37791
 
 ---
 *Auto-generated from ezviz-bc1c-elife.json — do not edit by hand.*
