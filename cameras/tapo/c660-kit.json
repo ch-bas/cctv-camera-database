@@ -11,34 +11,32 @@
   ],
   "release_year": 2025,
   "resolution": {
-    "megapixels": 8,
-    "max_width": 3840,
+    "label": "4K",
     "max_height": 2160,
-    "label": "4K UHD"
+    "max_width": 3840,
+    "megapixels": 8
   },
   "lens": {
-    "count": 1,
-    "focal_length_mm": "3.3mm",
     "aperture": "F1.6",
+    "count": 1,
+    "focal_length_mm": "4",
     "varifocal": false
   },
-  "field_of_view_deg": "360 pan / 140 tilt",
+  "field_of_view_deg": "105 (Diagonal), 88 (Horizontal), 45 (Vertical)",
   "night_vision": {
-    "type": "color",
-    "range_m": 10
+    "range_m": 12,
+    "type": "hybrid"
   },
   "power": {
-    "method": "Solar panel + hardwired / rechargeable battery backup"
+    "method": "Solar panel (Tapo A201, 5.2V/2.5W max output) + built-in rechargeable Li-ion battery; USB Type-C port accepts an optional 5.0V/2.0A AC adapter (not included) for wired charging"
   },
   "storage": {
-    "onboard": true,
+    "cloud": true,
     "max_microsd_gb": 512,
     "nvr_compatible": false,
-    "cloud": true
+    "onboard": true
   },
-  "protocols": [
-    "rtsp"
-  ],
+  "protocols": [],
   "ip_rating": "IP65",
   "audio": {
     "microphone": true,
@@ -53,10 +51,16 @@
     "starlight color night vision",
     "4K ultra clarity",
     "time-lapse",
-    "no subscription"
+    "no subscription",
+    "18x digital zoom"
   ],
   "sources": [
-    "https://www.tapo.com/us/product/smart-camera/tapo-c660-kit/"
+    "https://www.tapo.com/us/product/smart-camera/tapo-c660-kit/",
+    "https://www.tp-link.com/us/support/faq/2680/",
+    "https://www.tp-link.com/us/home-networking/cloud-camera/tapo-c660-kit/",
+    "https://static.tp-link.com/upload/product-overview/2025/202504/20250424/Tapo%20C660%20KIT%201.0&1.6_Datasheet.pdf",
+    "https://www.tp-link.com/us/press/news/21827/",
+    "https://www.tapo.com/us/product/smart-camera/tapo-c660-kit/v1/"
   ],
   "power_source": [
     "battery",
@@ -64,22 +68,22 @@
     "ac-mains"
   ],
   "configs": {
-    "frigate": {
-      "detect": {
-        "width": 1280,
-        "height": 720,
-        "fps": 5
-      },
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/stream1",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/stream2"
-    },
     "home_assistant": {
       "integration": "tapo",
-      "notes": "Native TP-Link Tapo integration. Requires Tapo cloud account credentials."
-    },
-    "blue_iris": {
-      "profile": "Generic/ONVIF",
-      "notes": "Use Generic/ONVIF profile. RTSP streams: /stream1 (main), /stream2 (sub). Must enable ONVIF in Tapo app."
+      "notes": "Battery/solar Tapo cameras do not support RTSP/ONVIF (TP-Link FAQ). Integrate via the community HomeAssistant-Tapo-Control integration (proprietary Tapo API, not ONVIF) or the Tapo app."
     }
-  }
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 20
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS Starlight Sensor",
+  "operating_temp_c": "-20 to 45",
+  "dimensions_mm": "185 x 147 x 75",
+  "weight_g": 607,
+  "environment": [
+    "outdoor"
+  ]
 }

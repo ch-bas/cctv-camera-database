@@ -12,10 +12,10 @@
   ],
   "release_year": 2025,
   "resolution": {
-    "megapixels": 8,
+    "label": "4K",
     "max_width": 3840,
     "max_height": 2160,
-    "label": "4K UHD"
+    "megapixels": 8
   },
   "lens": {
     "count": 1,
@@ -25,27 +25,20 @@
   },
   "field_of_view_deg": "360 pan / 140 tilt",
   "night_vision": {
-    "type": "color",
-    "range_m": 15
+    "type": "color"
   },
   "power": {
     "method": "Hardwired (AC)"
   },
   "storage": {
-    "onboard": true,
     "max_microsd_gb": 512,
-    "nvr_compatible": false,
-    "cloud": true
+    "cloud": true,
+    "onboard": false,
+    "nvr_compatible": false
   },
-  "protocols": [
-    "rtsp"
-  ],
+  "protocols": [],
   "ip_rating": "IP66",
-  "audio": {
-    "microphone": true,
-    "speaker": true,
-    "two_way": true
-  },
+  "audio": {},
   "features": [
     "4K ColorPro Night Vision (F1.0 aperture)",
     "360deg AI tracking",
@@ -56,21 +49,17 @@
   ],
   "release_notes": "Announced IFA 2025; availability TBC.",
   "sources": [
-    "https://www.notebookcheck.net/New-Tapo-4K-8MP-security-cameras-on-the-way.1108686.0.html"
+    "https://www.notebookcheck.net/New-Tapo-4K-8MP-security-cameras-on-the-way.1108686.0.html",
+    "https://www.tp-link.com/us/home-networking/cloud-camera/tapo-c566wb/",
+    "https://static.tp-link.com/document/pdf/en/ifa-2025/IFA%202025_Tapo%20Home%20Security_Flyer_US_2507_English_Online.pdf",
+    "https://www.tp-link.com/us/support/download/tapo-c566wb/",
+    "https://www.tp-link.com/us/support/faq/4465/",
+    "https://www.tapo.com/us/faq/724/"
   ],
   "power_source": [
     "ac-mains"
   ],
   "configs": {
-    "frigate": {
-      "detect": {
-        "width": 1280,
-        "height": 720,
-        "fps": 5
-      },
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/stream1",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/stream2"
-    },
     "home_assistant": {
       "integration": "tapo",
       "notes": "Native TP-Link Tapo integration. Requires Tapo cloud account credentials."
@@ -79,5 +68,8 @@
       "profile": "Generic/ONVIF",
       "notes": "Use Generic/ONVIF profile. RTSP streams: /stream1 (main), /stream2 (sub). Must enable ONVIF in Tapo app."
     }
-  }
+  },
+  "environment": [
+    "outdoor"
+  ]
 }

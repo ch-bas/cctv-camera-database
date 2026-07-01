@@ -7,36 +7,35 @@
     "wifi"
   ],
   "resolution": {
-    "megapixels": 5,
-    "max_width": 2560,
-    "max_height": 1920,
-    "label": "5MP 2K+"
+    "label": "3K",
+    "max_width": 2880,
+    "max_height": 1620,
+    "megapixels": 5
   },
   "lens": {
+    "focal_length_mm": "4",
+    "aperture": "f/2.0",
     "count": 1,
-    "focal_length_mm": "2.9mm",
-    "aperture": "F1.8",
     "varifocal": false
   },
-  "field_of_view_deg": "360 pan / 150 tilt",
+  "field_of_view_deg": "88° diagonal, 75° horizontal, 41° vertical (image FOV; separate from 360° pan / 114° tilt mechanical range)",
   "night_vision": {
-    "type": "color",
-    "range_m": 9
+    "type": "ir",
+    "range_m": 12
   },
   "power": {
-    "method": "DC 5V (USB)"
+    "method": "9V DC power adapter (input 100-240V 50/60Hz, output 9V/0.6A)"
   },
   "storage": {
+    "max_microsd_gb": 512,
+    "cloud": true,
     "onboard": true,
-    "max_microsd_gb": 256,
-    "nvr_compatible": true,
-    "cloud": true
+    "nvr_compatible": false
   },
   "protocols": [
     "rtsp",
     "onvif"
   ],
-  "ip_rating": "IP20",
   "audio": {
     "microphone": true,
     "speaker": true,
@@ -51,11 +50,14 @@
     "no subscription"
   ],
   "sources": [
-    "https://www.tapo.com/"
+    "https://www.tp-link.com/us/home-networking/cloud-camera/tapo-c230/",
+    "https://www.tapo.com/en/product/smart-camera/tapo-c230/",
+    "https://us.store.tapo.com/products/pan-tilt-3k-qhd-indoor-security-camera-tapo-c230",
+    "https://static.tp-link.com/upload/manual/2024/202412/20241206/1910013865_Tapo%20C230%201.0_UG_V1.pdf"
   ],
   "release_year": 2024,
   "power_source": [
-    "usb"
+    "dc"
   ],
   "configs": {
     "frigate": {
@@ -75,5 +77,25 @@
       "profile": "Generic/ONVIF",
       "notes": "Use Generic/ONVIF profile. RTSP streams: /stream1 (main), /stream2 (sub). Must enable ONVIF in Tapo app."
     }
-  }
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2880x1620",
+        "codec": "H.264",
+        "fps": 30
+      }
+    ]
+  },
+  "sensor": "1/3\" Progressive Scan CMOS Starlight Sensor",
+  "operating_temp_c": "0 to 40",
+  "dimensions_mm": "85.4 x 86.8 x 117.7",
+  "environment": [
+    "indoor"
+  ]
 }

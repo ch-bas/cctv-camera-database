@@ -10,78 +10,72 @@
   "connectivity": [
     "wifi"
   ],
-  "release_year": 2023,
+  "power_source": [
+    "battery"
+  ],
   "resolution": {
-    "megapixels": 4,
-    "max_width": 2560,
-    "max_height": 1440,
-    "label": "2K QHD"
+    "label": "2K 3MP",
+    "max_width": 2304,
+    "max_height": 1296,
+    "megapixels": 3
   },
-  "sensor": "CMOS",
+  "video": {
+    "codecs": [
+      "h264"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 15,
+        "codec": "h264"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS Starlight Sensor",
   "lens": {
     "count": 1,
-    "focal_length_mm": "Fixed",
-    "aperture": "F1.6",
+    "focal_length_mm": "3.17",
+    "aperture": "F1.65",
     "varifocal": false
   },
-  "field_of_view_deg": "118 horizontal",
+  "field_of_view_deg": "125 (diagonal), 111 (horizontal), 56 (vertical)",
   "night_vision": {
-    "type": "color",
-    "range_m": 15
+    "type": "hybrid",
+    "range_m": 9
   },
   "power": {
-    "method": "Hardwired (AC mains)"
+    "method": "Built-in 6400 mAh rechargeable Li-ion battery (up to 180-day life), charged via USB-C; optional Tapo A201/A200 solar panel sold separately"
   },
   "storage": {
     "onboard": true,
     "max_microsd_gb": 512,
-    "nvr_compatible": true,
+    "nvr_compatible": false,
     "cloud": true
   },
-  "protocols": [
-    "rtsp",
-    "onvif"
-  ],
-  "ip_rating": "IP44",
+  "protocols": [],
+  "ip_rating": "IP65",
   "audio": {
     "microphone": true,
     "speaker": true,
     "two_way": true
   },
-  "features": [
-    "2K floodlight camera",
-    "2000-lumen dual floodlight",
-    "F1.6 color night vision",
-    "AI person/vehicle detection",
-    "two-way audio",
-    "active deterrence (light + siren)",
-    "RTSP/ONVIF",
-    "Tapo app / Alexa / Google / HomeKit",
-    "IP44"
+  "operating_temp_c": "-20 to 45",
+  "dimensions_mm": "60 (D) x 89 (H)",
+  "weight_g": 230,
+  "markets": [
+    "global"
   ],
   "sources": [
-    "https://www.tapo.com/en/product/outdoor-camera/tapo-tc82/"
-  ],
-  "power_source": [
-    "ac-mains"
+    "https://www.tp-link.com/us/home-networking/cloud-camera/tc82/",
+    "https://www.tapo.com/en/product/smart-camera/tc82/",
+    "https://static.tp-link.com/upload/product-overview/2024/202403/20240322/Tapo%20C410&TC82%20KIT_1.0&1.6_Datasheet.pdf"
   ],
   "configs": {
-    "frigate": {
-      "detect": {
-        "width": 1280,
-        "height": 720,
-        "fps": 5
-      },
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/stream1",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/stream2"
-    },
     "home_assistant": {
       "integration": "tapo",
       "notes": "Native TP-Link Tapo integration. Requires Tapo cloud account credentials."
-    },
-    "blue_iris": {
-      "profile": "Generic/ONVIF",
-      "notes": "Use Generic/ONVIF profile. RTSP streams: /stream1 (main), /stream2 (sub). Must enable ONVIF in Tapo app."
     }
   }
 }

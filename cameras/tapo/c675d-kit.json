@@ -11,32 +11,32 @@
   ],
   "release_year": 2026,
   "resolution": {
-    "megapixels": 8,
-    "label": "4K 8MP dual-lens"
+    "label": "4K (dual-lens, each lens independently 4K)",
+    "max_width": 3840,
+    "max_height": 2160,
+    "megapixels": 8
   },
   "lens": {
     "count": 2,
-    "focal_length_mm": "Wide 169deg + 6mm tele",
+    "varifocal": false,
     "aperture": "F1.6",
-    "varifocal": false
+    "focal_length_mm": "2.53 (fixed lens) / 6.0 (pan-tilt lens)"
   },
-  "field_of_view_deg": "169 wide + tele",
+  "field_of_view_deg": "Fixed lens: 169.7 diagonal / 140.8 horizontal / 74.7 vertical; Pan-tilt lens: 66.5 diagonal / 57.3 horizontal / 31.0 vertical",
   "night_vision": {
-    "type": "color",
-    "range_m": 10
+    "type": "hybrid",
+    "range_m": 16
   },
   "power": {
-    "method": "Integrated solar panel"
+    "method": "Built-in rechargeable lithium-ion battery; Tapo A202 solar panel (included, up to 4.5W output)"
   },
   "storage": {
-    "onboard": true,
     "max_microsd_gb": 512,
-    "nvr_compatible": false,
-    "cloud": true
+    "cloud": true,
+    "onboard": false,
+    "nvr_compatible": false
   },
-  "protocols": [
-    "rtsp"
-  ],
+  "protocols": [],
   "ip_rating": "IP65",
   "audio": {
     "microphone": true,
@@ -52,30 +52,46 @@
     "color night vision",
     "no subscription"
   ],
-  "release_notes": "Announced CES 2025 and IFA 2025; launching 2026.",
+  "release_notes": "Announced CES 2025 and IFA 2025; official v1 product/spec page now live.",
   "sources": [
-    "https://www.notebookcheck.net/New-Tapo-4K-8MP-security-cameras-on-the-way.1108686.0.html"
+    "https://www.notebookcheck.net/New-Tapo-4K-8MP-security-cameras-on-the-way.1108686.0.html",
+    "https://www.tapo.com/us/product/smart-camera/tapo-c675d-kit/",
+    "https://www.tp-link.com/us/support/faq/2680/",
+    "https://www.tp-link.com/us/home-networking/cloud-camera/tapo-c675d-kit/",
+    "https://www.tp-link.com/us/document/113455/",
+    "https://www.tapo.com/us/product/smart-camera/tapo-c675d-kit/v1/#tapo-product-overview"
   ],
   "power_source": [
-    "solar"
+    "solar",
+    "battery"
   ],
   "configs": {
-    "frigate": {
-      "detect": {
-        "width": 1280,
-        "height": 720,
-        "fps": 5
-      },
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/stream1",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/stream2"
-    },
     "home_assistant": {
       "integration": "tapo",
-      "notes": "Native TP-Link Tapo integration. Requires Tapo cloud account credentials."
-    },
-    "blue_iris": {
-      "profile": "Generic/ONVIF",
-      "notes": "Use Generic/ONVIF profile. RTSP streams: /stream1 (main), /stream2 (sub). Must enable ONVIF in Tapo app."
+      "notes": "Battery/solar Tapo cameras do not support RTSP/ONVIF (TP-Link FAQ). Integrate via the community HomeAssistant-Tapo-Control integration (proprietary Tapo API, not ONVIF) or the Tapo app."
     }
-  }
+  },
+  "video": {
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "fixed lens",
+        "resolution": "3840x2160",
+        "fps": 15
+      },
+      {
+        "name": "pan-tilt lens",
+        "resolution": "3840x2160",
+        "fps": 15
+      }
+    ]
+  },
+  "sensor": "1/2.7\" CMOS Starlight Sensor",
+  "operating_temp_c": "-20 to 45",
+  "dimensions_mm": "102.2 x 160.3 x 132",
+  "weight_g": 678,
+  "environment": [
+    "outdoor"
+  ],
+  "status": "available"
 }

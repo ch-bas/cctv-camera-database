@@ -8,33 +8,33 @@
   ],
   "release_year": 2023,
   "resolution": {
-    "megapixels": 4,
+    "label": "2K QHD",
     "max_width": 2560,
     "max_height": 1440,
-    "label": "2K QHD"
+    "megapixels": 4
   },
   "lens": {
+    "focal_length_mm": "3.2",
+    "aperture": "F1.6",
     "count": 1,
-    "focal_length_mm": "3.18mm",
-    "aperture": "F1.61",
     "varifocal": false
   },
-  "field_of_view_deg": "110 horizontal",
+  "field_of_view_deg": "113 (diagonal), 97 (horizontal), 54 (vertical)",
   "night_vision": {
-    "type": "color",
-    "range_m": 10
+    "type": "hybrid",
+    "range_m": 15
   },
   "power": {
-    "method": "Removable rechargeable battery (A100) / solar panel optional / hub H200 required"
+    "method": "6700 mAh removable rechargeable Li-ion battery, up to 180-day battery life"
   },
   "storage": {
     "onboard": false,
-    "nvr_compatible": false,
+    "max_microsd_gb": 512,
     "cloud": true,
-    "notes": "microSD stored on H200 hub (up to 256GB)"
+    "nvr_compatible": false
   },
   "protocols": [
-    "rtsp"
+    "p2p"
   ],
   "ip_rating": "IP65",
   "audio": {
@@ -55,29 +55,29 @@
     "no subscription"
   ],
   "sources": [
-    "https://www.tapo.com/en/product/smart-camera/tapo-c420/"
+    "https://www.tapo.com/en/product/smart-camera/tapo-c420/",
+    "https://www.tapo.com/us/product/smart-camera/tapo-c420s2-kit/",
+    "https://www.tp-link.com/us/support/faq/2680/",
+    "https://www.tp-link.com/us/home-networking/cloud-camera/tapo-c420/",
+    "https://www.tp-link.com/us/support/faq/4465/",
+    "https://www.tapo.com/us/faq/724/",
+    "https://static.tp-link.com/upload/manual/2024/202404/20240401/1910013649_Tapo%20C420_UG_V1.pdf"
   ],
   "power_source": [
-    "battery",
-    "solar"
+    "battery"
   ],
   "configs": {
-    "frigate": {
-      "detect": {
-        "width": 1280,
-        "height": 720,
-        "fps": 5
-      },
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/stream1",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/stream2"
-    },
     "home_assistant": {
       "integration": "tapo",
-      "notes": "Native TP-Link Tapo integration. Requires Tapo cloud account credentials."
-    },
-    "blue_iris": {
-      "profile": "Generic/ONVIF",
-      "notes": "Use Generic/ONVIF profile. RTSP streams: /stream1 (main), /stream2 (sub). Must enable ONVIF in Tapo app."
+      "notes": "Battery/solar Tapo cameras do not support RTSP/ONVIF (TP-Link FAQ). Integrate via the community HomeAssistant-Tapo-Control integration (proprietary Tapo API, not ONVIF) or the Tapo app."
     }
-  }
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ]
+  },
+  "sensor": "1/3\" Progressive Scan CMOS Starlight Sensor",
+  "operating_temp_c": "-20 to 45",
+  "dimensions_mm": "110.6 x 64.2 x 64.2"
 }

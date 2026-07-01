@@ -5,38 +5,39 @@
   "aliases": [
     "Smart AI Baby Monitor Pan/Tilt"
   ],
-  "type": "ptz",
+  "type": "dual-lens",
   "connectivity": [
     "wifi"
   ],
-  "release_year": 2024,
+  "release_year": 2025,
   "resolution": {
-    "megapixels": 4,
-    "label": "4MP wide + 2MP tele dual lens"
+    "label": "4MP wide + 2MP tele dual lens",
+    "max_width": 2560,
+    "max_height": 1440,
+    "megapixels": 4
   },
   "lens": {
     "count": 2,
-    "focal_length_mm": "Wide 2.9mm + 2x Tele",
+    "focal_length_mm": "2.53 (wide) / 6.2 (tele)",
+    "aperture": "F1.6",
     "varifocal": false
   },
-  "field_of_view_deg": "360 pan / 130 tilt",
+  "field_of_view_deg": "144 (wide lens, diagonal) / 55 (tele lens, diagonal)",
   "night_vision": {
-    "type": "color",
-    "range_m": 8
+    "type": "ir"
   },
   "power": {
-    "method": "DC 5V (USB)"
+    "method": "5V DC, 2A power adapter (USB-C cable, 100-240V~ 50/60Hz mains input), 4.2W typical / 7.6W max consumption"
   },
   "storage": {
     "onboard": true,
-    "max_microsd_gb": 256,
-    "nvr_compatible": false,
-    "cloud": true
+    "cloud": true,
+    "max_microsd_gb": 512
   },
   "protocols": [
-    "rtsp"
+    "rtsp",
+    "onvif"
   ],
-  "ip_rating": "IP20",
   "audio": {
     "microphone": true,
     "speaker": true,
@@ -54,7 +55,12 @@
     "no subscription"
   ],
   "sources": [
-    "https://www.tapo.com/us/product/smart-camera/tapo-c840/"
+    "https://www.tapo.com/us/product/smart-camera/tapo-c840/",
+    "https://www.tp-link.com/us/home-networking/cloud-camera/tapo-c840/",
+    "https://www.tp-link.com/nordic/home-networking/cloud-camera/tapo-c840/",
+    "https://www.tp-link.com/uk/home-networking/cloud-camera/tapo-c840/",
+    "https://www.tp-link.com/nordic/press/news/21910/",
+    "https://connectit.ie/pages/c840-technical-specs"
   ],
   "power_source": [
     "usb"
@@ -77,5 +83,32 @@
       "profile": "Generic/ONVIF",
       "notes": "Use Generic/ONVIF profile. RTSP streams: /stream1 (main), /stream2 (sub). Must enable ONVIF in Tapo app."
     }
-  }
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "Wide-angle",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.264"
+      },
+      {
+        "name": "Telephoto",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/2.9\" image sensor",
+  "operating_temp_c": "0 to 40",
+  "dimensions_mm": "46 x 46 x 105.8",
+  "weight_g": 249,
+  "environment": [
+    "indoor"
+  ]
 }
