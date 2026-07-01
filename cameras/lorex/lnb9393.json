@@ -19,16 +19,16 @@
   "sensor": "1/1.8\" CMOS",
   "lens": {
     "count": 1,
-    "focal_length_mm": "2.7-13.5 (motorized zoom)",
+    "focal_length_mm": "2.7-12 (motorized zoom)",
     "varifocal": true
   },
-  "field_of_view_deg": "102-33 horizontal",
+  "field_of_view_deg": "110.4-45 horizontal",
   "night_vision": {
     "type": "color",
     "range_m": 45
   },
   "power": {
-    "method": "PoE (802.3af)"
+    "method": "ePoE (enhanced 802.3af, up to 600m/2000ft)"
   },
   "storage": {
     "onboard": false,
@@ -41,9 +41,9 @@
   ],
   "ip_rating": "IP67",
   "audio": {
-    "microphone": true,
-    "speaker": true,
-    "two_way": true
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
   },
   "features": [
     "Nocturnal 4 series 4K bullet",
@@ -51,7 +51,10 @@
     "color night vision",
     "person and vehicle detection",
     "smart motion detection",
-    "H.265"
+    "IK10 vandal-resistant",
+    "-40°C to 60°C rated",
+    "H.265",
+    "no built-in mic/speaker; two-way audio requires external NVR-connected accessories"
   ],
   "sources": [
     "https://www.lorex.com/products/nocturnal-4-4k-ip-bullet-camera"
@@ -67,11 +70,13 @@
         "fps": 5
       },
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1"
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "notes": "Dahua-OEM RTSP path. ONVIF/RTSP confirmed via official Lorex support docs.",
+      "verified": false
     },
     "home_assistant": {
       "integration": "onvif",
-      "notes": "Uses Dahua protocol. ONVIF integration works."
+      "notes": "Uses Dahua protocol. ONVIF integration works. No built-in mic/speaker on the camera itself."
     },
     "blue_iris": {
       "profile": "Dahua",
