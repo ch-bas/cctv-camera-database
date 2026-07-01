@@ -136,6 +136,20 @@ function main() {
   if (mirrorDir && fs.existsSync(mirrorDir)) {
     fs.writeFileSync(path.join(mirrorDir, "cameras.json"), jsonData);
     outputs.push(path.join(mirrorDir, "cameras.json"));
+
+    // Sync-moment marker for downstream consumers, mirrored alongside
+    // cameras.json above. Intentionally mirror-only (never written to
+    // data/ or docs/, never committed to this repo) — it's a build
+    // timestamp, not dataset content, and committing it here would make
+    // CI's "generated files are stale" check fail on every run (the
+    // timestamp never matches a prior commit).
+    const meta = {
+      generatedAt: new Date().toISOString(),
+      cameraCount: cameras.length,
+      brandCount: new Set(cameras.map((c) => c.brand)).size,
+    };
+    fs.writeFileSync(path.join(mirrorDir, "data-meta.json"), JSON.stringify(meta, null, 2) + "\n");
+    outputs.push(path.join(mirrorDir, "data-meta.json"));
   }
 
   console.log(`✓ Built ${cameras.length} camera(s) → ${outputs.join(" + ")}`);
