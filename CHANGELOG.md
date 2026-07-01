@@ -14,6 +14,7 @@ Full data-quality audit of the Lorex brand (issue #40, part of the master audit 
 
 - **X5 4K PoE Turret / X5 4K PoE Bullet** (CNE01P series) and **X3 4K Dual-Lens Turret** (CNU01P-1SW-AB1): verified against official Lorex spec-sheet PDFs (the product pages themselves are marketing-only). All three explicitly confirm ONVIF + RTSP in their datasheets ("Interoperability: ONVIF, RTSP") — a notably more open professional-tier line than the existing E-series, which had no such official confirmation.
 - **V5 4K PoE Bullet / V5 4K PoE Turret** (CN502A series, status: announced — official page shows pre-order, ships mid-July) and **X PTZ 4K** (CNX01P-DPW-AB1, a true 30x optical zoom PTZ dome, 7–210mm motorized lens, IR range up to 250m): also verified against official spec-sheet PDFs, also ONVIF + RTSP confirmed.
+- **V3 4K PoE Turret** (CN301A series) and **U3 2K+/4K PoE Turret + Bullet** (CN201/CN251 series, 4 SKUs): confirmed CN201 is the 2K+ (5MP) tier and CN251 is the 4K (8MP) tier of the same "U3" line — Lorex's own datasheet PDF headers have a copy-paste labeling quirk, but the spec tables are unambiguous. The U-series has only a confirmed microphone, no speaker/two-way talk, unlike the V-series/X-series.
 
 ### Removed
 
@@ -32,8 +33,8 @@ Full data-quality audit of the Lorex brand (issue #40, part of the master audit 
 
 ### Changed
 
-- Lorex: 21 → 24 cameras (-3 ghosts, +6 new).
-- Database now covers **1,633 cameras** across **69 brands**.
+- Lorex: 21 → 29 cameras (-3 ghosts, +11 new).
+- Database now covers **1,638 cameras** across **69 brands**.
 
 ---
 
