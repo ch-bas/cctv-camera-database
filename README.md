@@ -121,14 +121,14 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 
 | Metric | Count |
 |--------|-------|
-| Total cameras | **1,638** |
+| Total cameras | **1,649** |
 | Brands | **69** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
-| PoE wired | 1,104 |
+| PoE wired | 1,115 |
 | WiFi | 480 |
 | Battery / wire-free | 183 |
-| 4K / 8MP+ | 485 |
-| 4–5MP | 692 |
+| 4K / 8MP+ | 496 |
+| 4–5MP | 654 |
 | 1080p–2MP | 433 |
 | With integration configs (Frigate / Home Assistant) | 1,235 |
 
@@ -153,7 +153,7 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | Google Nest | 19 | Consumer smart home, global |
 | Bosch | 160 | Enterprise + thermal, EU/global |
 | EZVIZ (Hikvision) | 87 | Consumer, global |
-| Lorex | 29 | Consumer NVR systems, CA/US |
+| Lorex | 40 | Consumer NVR systems, CA/US |
 | HiLook (Hikvision) | 20 | Budget installer, EU/UK/AU |
 | Lupus Electronics | 20 | Privacy-first, DE/AT/CH |
 | Tiandy | 20 | Enterprise + prosumer, CN/ME/Africa |
