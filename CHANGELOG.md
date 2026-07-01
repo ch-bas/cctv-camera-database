@@ -8,7 +8,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [1.16.0] — 2026-07-01
 
-Full data-quality audit of the Lorex brand (issue #40, part of the master audit #28).
+Full data-quality audit of the Lorex brand (issue #40, part of the master audit #28), plus 3 new cameras from Lorex's professional "Connect X" line.
+
+### Added
+
+- **X5 4K PoE Turret / X5 4K PoE Bullet** (CNE01P series) and **X3 4K Dual-Lens Turret** (CNU01P-1SW-AB1): verified against official Lorex spec-sheet PDFs (the product pages themselves are marketing-only). All three explicitly confirm ONVIF + RTSP in their datasheets ("Interoperability: ONVIF, RTSP") — a notably more open professional-tier line than the existing E-series, which had no such official confirmation.
 
 ### Removed
 
@@ -27,8 +31,8 @@ Full data-quality audit of the Lorex brand (issue #40, part of the master audit 
 
 ### Changed
 
-- Lorex: 21 → 18 cameras (-3 ghosts).
-- Database now covers **1,627 cameras** across **69 brands**.
+- Lorex: 21 → 21 cameras (-3 ghosts, +3 new).
+- Database now covers **1,630 cameras** across **69 brands**.
 
 ---
 
