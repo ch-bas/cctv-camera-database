@@ -1,38 +1,33 @@
 # Lorex W461ASC
 
-*Also known as: 2K WiFi Spotlight Camera*
+*Also known as: 2K Indoor Wi-Fi Security Camera*
 
 | Field | Spec |
 |-------|------|
 | Brand | Lorex |
 | Model | W461ASC |
-| Type | bullet |
+| Type | dome |
 | Connectivity | wifi |
 | Resolution | 2K QHD (4MP, 2560×1440) |
-| Lens | 1× Fixedmm F1.6 |
-| Field of view | 130 horizontal° |
+| Lens | 1× Fixedmm |
+| Field of view | 125° |
 | Night vision | color (10m) |
-| Power | Rechargeable battery / optional solar panel |
-| Storage | microSD ≤ 128GB |
-| Protocols | http |
-| IP rating | IP65 |
+| Power | AC plug-in adapter (UL/CSA certified) -- no battery, no solar |
 | Two-way audio | Yes |
-| Released | 2023 |
 
 ## Features
 
-- 2K WiFi spotlight camera
-- wire-free battery powered
-- color night vision with spotlight
+- indoor plug-in WiFi camera with flexible 90-degree bend head
+- color night vision
 - person detection
-- built-in siren
-- solar panel compatible
 - no monthly fees
 - Alexa / Google
+- no officially confirmed RTSP/ONVIF
 
 ## Sources
 
-- https://www.lorex.com/products/2k-wifi-spotlight-camera
+- https://pro.lorex.com/products/2k-indoor-wi-fi-security-camera
+- https://www.lorex.com/blogs/help/w461asc-series-2k-indoor-wi-fi-security-camera-installation-guide
 
 ---
 *Auto-generated from lorex-w461asc.json — do not edit by hand.*

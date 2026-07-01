@@ -1,0 +1,95 @@
+{
+  "id": "lorex-lnb9292b",
+  "brand": "Lorex",
+  "model": "LNB9292B Nocturnal N3",
+  "aliases": [
+    "Lorex 4K Nocturnal 3.0 Motorized Varifocal Bullet",
+    "LNB9282B (color variant)"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "release_year": 2023,
+  "markets": [
+    "CA",
+    "US"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12 (4x motorized varifocal)",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "113-31 horizontal",
+  "night_vision": {
+    "type": "color",
+    "range_m": 40
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "weight_g": 820,
+  "operating_temp_c": "-40 to 60",
+  "features": [
+    "4K 30fps real-time recording",
+    "4x motorized optical zoom",
+    "Color Night Vision (CNV) with ambient light",
+    "smart motion detection (person/vehicle/animal)",
+    "aluminum exterior rated -40°C to +60°C",
+    "NVR required (sold separately)",
+    "no subscription",
+    "sold in both US and Canada under the same model number"
+  ],
+  "sources": [
+    "https://www.lorex.ca/products/4k-8mp-nocturnal-motorized-varifocal-smart-ip-bullet-security-camera",
+    "https://www.lorex.com/products/4k-8mp-nocturnal-motorized-varifocal-smart-ip-bullet-security-camera"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "notes": "Dahua-OEM RTSP path. ONVIF/RTSP support confirmed via official Lorex support docs.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Uses Dahua protocol. ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile. Most Lorex IP cameras use Dahua protocol."
+    }
+  }
+}

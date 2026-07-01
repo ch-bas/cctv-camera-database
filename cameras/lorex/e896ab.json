@@ -16,66 +16,49 @@
     "max_height": 2160,
     "label": "4K UHD"
   },
-  "sensor": "1/1.8\" CMOS",
+  "sensor": "1/2.8\" CMOS",
   "lens": {
     "count": 1,
     "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F1.4",
     "varifocal": false
   },
   "field_of_view_deg": "111 horizontal",
   "night_vision": {
-    "type": "color",
-    "range_m": 40
+    "type": "hybrid",
+    "range_m": 45
   },
   "power": {
     "method": "PoE (802.3af)"
   },
   "storage": {
-    "onboard": false,
+    "onboard": true,
     "nvr_compatible": true,
     "cloud": false
   },
-  "protocols": [
-    "onvif",
-    "rtsp"
-  ],
+  "protocols": [],
   "ip_rating": "IP67",
   "audio": {
     "microphone": true,
     "speaker": true,
     "two_way": true
   },
+  "dimensions_mm": "73 x 175 x 70",
+  "weight_g": 520,
   "features": [
     "4K AI smart deterrence bullet",
-    "color night vision",
+    "color night vision (up to 45m ambient, 30m total dark)",
     "person and vehicle detection",
     "active deterrence LED lights and siren",
     "smart motion detection zones",
-    "H.265"
+    "H.265",
+    "microSD slot confirmed present (capacity not confirmed)",
+    "no officially confirmed RTSP/ONVIF -- Lorex help center makes no mention of it for this model; the community Dahua-OEM RTSP path is unofficial"
   ],
   "sources": [
     "https://www.lorex.com/products/4k-smart-deterrence-bullet-camera"
   ],
   "power_source": [
     "poe"
-  ],
-  "configs": {
-    "frigate": {
-      "detect": {
-        "width": 1280,
-        "height": 720,
-        "fps": 5
-      },
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1"
-    },
-    "home_assistant": {
-      "integration": "onvif",
-      "notes": "Uses Dahua protocol. ONVIF integration works."
-    },
-    "blue_iris": {
-      "profile": "Dahua",
-      "notes": "Select 'Dahua' profile. Most Lorex IP cameras use Dahua protocol."
-    }
-  }
+  ]
 }
