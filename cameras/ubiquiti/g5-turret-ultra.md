@@ -9,27 +9,29 @@
 | Type | turret |
 | Connectivity | ethernet |
 | Resolution | 2K (5MP, 2688×1512) |
-| Sensor | 1/2.7" CMOS (5MP) |
-| Lens | 1× 3.4 (fixed)mm F1.6 |
-| Field of view | 88 horizontal° |
-| Night vision | ir (15m) |
-| Power | PoE (802.3af) |
+| Sensor | 1/2.4" CMOS |
+| Lens | 1× |
+| Field of view | 102.4 horizontal / 54.9 vertical / 120.6 diagonal° |
+| Night vision | ir (30m) |
+| Power | PoE, 37-57V DC; 4W max |
 | Storage | NVR |
 | Protocols | rtsp |
 | IP rating | IP66 |
 | Two-way audio | No |
+| Operating temp | -30 to 50°C |
 | Released | 2024 |
 
 ## Features
 
-- AI event detection person/vehicle
+- AI event detection person/vehicle/animal
 - UniFi Protect ecosystem
-- IK08
+- IK04 tamper resistance (not IK08 -- prior figure was wrong)
 - built-in mic
 - compact turret
 
 ## Sources
 
+- https://techspecs.ui.com/unifi/cameras-nvrs/uvc-g5-turret-ultra
 - https://store.ui.com/us/en/products/uvc-g5-turret-ultra
 
 ---

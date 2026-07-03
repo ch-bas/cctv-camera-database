@@ -11,20 +11,21 @@
 | Resolution | 2K (5MP, 2688×1512) |
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 2.8mm F1.6 |
-| Field of view | 104 horizontal° |
-| Night vision | ir (25m) |
-| Power | PoE (802.3af) |
+| Field of view | 84.4 horizontal / 45.4 vertical / 99.8 diagonal° |
+| Night vision | ir (9m) |
+| Power | PoE; 4W max |
 | Storage | NVR |
 | Protocols | rtsp |
-| IP rating | IP66 |
+| IP rating | IP55 |
 | Two-way audio | No |
+| Operating temp | -20 to 40°C |
 | Released | 2024 |
 
 ## Features
 
-- AI event detection person/vehicle
+- AI event detection person/vehicle/animal
 - UniFi Protect ecosystem
-- weatherproof IP66
+- IK04 tamper resistance
 - built-in mic
 
 ## Sources

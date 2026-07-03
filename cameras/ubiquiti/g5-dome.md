@@ -9,23 +9,25 @@
 | Type | dome |
 | Connectivity | ethernet |
 | Resolution | 2K (5MP, 2688×1512) |
-| Sensor | 1/2.7" CMOS |
-| Lens | 1× 2.8mm F1.6 |
-| Field of view | 104 horizontal° |
-| Night vision | ir (15m) |
-| Power | PoE (802.3af) |
+| Sensor | 5MP CMOS |
+| Lens | 1× |
+| Field of view | 102.4 horizontal / 54.9 vertical / 120.6 diagonal° |
+| Night vision | ir (9m) |
+| Power | PoE, 37-57V DC; 5W max |
 | Storage | NVR |
 | Protocols | rtsp |
-| IP rating | IP65 |
-| Two-way audio | No |
+| IP rating | IPX4 |
+| Two-way audio | Yes |
+| Operating temp | -20 to 40°C |
 | Released | 2024 |
 
 ## Features
 
-- AI event detection person/vehicle
+- AI event detection person/vehicle/animal
 - UniFi Protect ecosystem
 - IK08 vandal-resistant
-- built-in mic
+- hard-coated dome cover
+- IPX4 rated "while covered" by the dome housing per official spec sheet
 
 ## Sources
 
