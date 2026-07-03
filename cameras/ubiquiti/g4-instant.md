@@ -9,24 +9,26 @@
 | Type | dome |
 | Connectivity | wifi |
 | Resolution | 2K (4MP, 2688×1512) |
-| Sensor | 1/2.8" CMOS |
-| Lens | 1× 2.3 (fixed)mm F2.0 |
-| Field of view | 130 diagonal° |
-| Night vision | ir (5m) |
-| Power | USB-C / DC 5V (not PoE) |
+| Sensor | 5MP CMOS |
+| Lens | 1× 2.8 (fixed)mm F1.6 |
+| Field of view | 102.4 horizontal / 54.9 vertical / 120.6 diagonal° |
+| Night vision | ir (6m) |
+| Power | USB-C, 5V DC (not PoE) |
 | Storage | NVR |
 | Protocols | rtsp |
-| IP rating | IP20 |
+| IP rating | IPX5 |
 | Two-way audio | Yes |
 | Released | 2021 |
 
 ## Features
 
-- WiFi indoor camera
-- compact discreet design
-- AI event detection
+- WiFi (802.11a/b/g/n/ac) + Bluetooth indoor/outdoor-rated compact camera
+- compact discreet design, wall mount included
+- IK04 tamper resistance
+- AI event detection (people, vehicles, animals)
 - UniFi Protect ecosystem
 - two-way audio
+- lens/aperture/dimensions/IP-rating corrected from prior stored values (2.3mm F2.0, IP20) which did not match the official spec sheet
 
 ## Sources
 

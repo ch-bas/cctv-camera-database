@@ -8,22 +8,24 @@
 | Model | UniFi Protect G5 Turret |
 | Type | turret |
 | Connectivity | ethernet |
-| Resolution | 4MP QHD (4MP, 2688×1512) |
-| Sensor | 1/3" CMOS |
-| Lens | 1× 2.8mm F1.6 |
-| Field of view | 106 horizontal° |
-| Night vision | ir (15m) |
-| Power | PoE (802.3af) |
+| Resolution | 2K (4MP, 2688×1512) |
+| Sensor | CMOS |
+| Lens | 1× |
+| Field of view | 102.4 horizontal / 54.9 vertical / 120.6 diagonal° |
+| Night vision | ir (30m) |
+| Power | PoE, 37-57V DC |
 | Storage | NVR |
 | Protocols | rtsp |
-| IP rating | IP65 |
+| IP rating | IP66 |
 | Two-way audio | No |
+| Operating temp | -30 to 50°C |
 | Released | 2024 |
 
 ## Features
 
-- AI event detection person/vehicle
+- AI event detection person/vehicle/animal
 - UniFi Protect ecosystem
+- IK04 tamper resistance
 - compact turret
 - built-in mic
 

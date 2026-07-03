@@ -8,26 +8,23 @@
 | Model | UniFi Protect G5 Dome Ultra |
 | Type | dome |
 | Connectivity | ethernet |
-| Resolution | 4K UHD (8MP, 3840×2160) |
-| Sensor | 1/1.8" CMOS |
-| Lens | 1× 2.8mm F1.6 |
-| Field of view | 106 horizontal° |
-| Night vision | ir (25m) |
-| Power | PoE (802.3at) |
+| Resolution | 2K (4MP, 2688×1512) |
+| Sensor | 1/2.4" CMOS |
+| Lens | 1× |
+| Field of view | 102.4 horizontal / 54.9 vertical / 120.6 diagonal° |
+| Night vision | ir (20m) |
+| Power | PoE, 37-57V DC; 4.2W max |
 | Storage | NVR |
 | Protocols | rtsp |
-| IP rating | IP66 |
-| Two-way audio | No |
+| Operating temp | -20 to 40°C |
 | Released | 2024 |
 
 ## Features
 
-- 4K UHD
-- 1/1.8" large sensor
-- AI event detection person/vehicle
-- UniFi Protect ecosystem
-- IK10 vandal-resistant
-- built-in mic
+- resolution corrected: this model is 4MP (2688x1512), not 8MP/4K -- earlier stored data had it conflated with the G5 Dome Ultra's larger sibling
+- AI event detection person/vehicle/animal
+- IK06 tamper resistance (not IK10 -- prior figure was wrong)
+- no Weatherproofing/IP-rating row and no Audio row present on the official spec sheet for this specific model -- both left unconfirmed rather than assumed from similar models
 
 ## Sources
 

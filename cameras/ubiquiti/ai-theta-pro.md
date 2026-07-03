@@ -8,27 +8,31 @@
 | Model | UniFi Protect AI Theta Pro |
 | Type | panoramic |
 | Connectivity | ethernet |
-| Resolution | 4x6MP multisensor (24MP) |
-| Sensor | 4x 1/2.8" CMOS |
-| Lens | 4× Fixed per sensormm |
-| Field of view | 360° |
-| Night vision | ir (10m) |
-| Power | High PoE (802.3bt) |
+| Resolution | 4MP (1:1) (4MP, 2160×2160) |
+| Sensor | 1/1.8" 8MP CMOS |
+| Lens | 1× |
+| Field of view | 180 horizontal / 180 vertical / 180 diagonal° |
+| Power | PoE; 12.5W max |
 | Storage | NVR |
 | Protocols | rtsp |
-| IP rating | IP66 |
-| Two-way audio | No |
+| Two-way audio | Yes |
+| Operating temp | -20 to 40°C |
 | Released | 2024 |
 
 ## Features
 
-- 360deg panoramic 24MP
+- single-sensor hub + separate 180-degree fisheye lens module design -- NOT a true 360-degree or 4-sensor 24MP multisensor camera as previously stored; that spec was fabricated
+- modular: UVC-AI-Theta-Hub processing unit + UVC-AI-Theta-ProLens360 lens module, connected by cable; weights: Hub 330g, Hub mount 35g, ProLens360 58g, flush mount 24g
+- 24 FPS max
 - AI deep learning analytics
 - UniFi Protect ecosystem
 - face/license plate detection
+- no IR night-vision range confirmed on official spec sheet -- no IR Night Vision row present
+- no IP rating confirmed on official spec sheet -- not listed
 
 ## Sources
 
+- https://techspecs.ui.com/unifi/cameras-nvrs/uvc-ai-theta-pro
 - https://store.ui.com/us/en/products/uvc-ai-theta-pro
 
 ---
