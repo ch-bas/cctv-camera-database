@@ -8,37 +8,83 @@
   ],
   "resolution": {
     "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
     "label": "8MP"
   },
   "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "100.8 horizontal / 55.8 vertical",
   "night_vision": {
     "type": "hybrid",
     "range_m": 50
   },
+  "power": {
+    "method": "DC 12V / PoE (IEEE 802.3af); 5.3W (PoE)"
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP68",
   "audio": {
     "microphone": true,
     "speaker": false,
     "two_way": false
   },
-  "ip_rating": "IP68",
   "operating_temp_c": "-30 to 60",
   "environment": [
     "outdoor"
   ],
   "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
     "max_fps": 20
   },
   "features": [
     "fixed turret",
-    "extreme WDR 130dB",
-    "smart dual light (adaptive IR 50m + white LED 50m)",
-    "smart motion detection",
+    "extreme WDR 130dB, ColorGuard",
+    "smart dual light (adaptive IR 50m + white LED 50m, IR default)",
+    "smart motion detection (people/vehicle), tampering detection, deep learning AI 1.0",
+    "detection range: detect 84.0m, observe 33.6m, recognize 16.8m, identify 8.4m",
     "dual streaming",
+    "ONVIF Profile S/G/T",
     "UL Listed, NDAA compliant",
-    "sourced from ACTi's High Resolution Cameras category page -- protocols/power/dimensions not confirmed"
+    "1-way audio, built-in microphone, no speaker",
+    "no RTC, no operating button, 2-year warranty"
   ],
   "sources": [
-    "https://www.acti.com/products/high-resolution-cameras"
+    "https://www.acti.com/product/z56?tab=specifications"
   ],
-  "last_verified": "2026-07-03"
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "last_verified": "2026-07-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  }
 }
