@@ -127,9 +127,9 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | PoE wired | 1,212 |
 | WiFi | 480 |
 | Battery / wire-free | 184 |
-| 4K / 8MP+ | 535 |
-| 4–5MP | 745 |
-| 1080p–2MP | 473 |
+| 4K / 8MP+ | 531 |
+| 4–5MP | 747 |
+| 1080p–2MP | 475 |
 | With integration configs (Frigate / Home Assistant) | 1,352 |
 
 ### All 69 brands

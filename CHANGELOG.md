@@ -6,6 +6,40 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.18.0] — 2026-07-03
+
+Full data-quality audit of the Ubiquiti brand (issue #40 pattern, part of the master audit #28) — all 26 UniFi Protect cameras re-verified against official sources.
+
+### Removed
+
+- **1 ghost model**: `G4 Dome Mini` (`UVC-G4-DOME-MINI`) does not exist anywhere on Ubiquiti's site or in search results. Its stored specs (2688x1512, 4MP) exactly matched the real `G4 Dome` (`UVC-G4-DOME`), which was missing from the dataset entirely — replaced the ghost entry with the real product's full official spec (net camera count unchanged).
+
+### Fixed
+
+Every camera re-verified against `techspecs.ui.com` and/or `store.ui.com`, both fetchable directly for this brand (no PDF-export workaround needed, unlike ACTi). Corrections found, most serious first:
+
+- **`G6 PTZ`**: stored data was almost entirely fabricated — a single-sensor 22x optical zoom camera with a 150m IR range. The real G6 PTZ is a dual-sensor (wide + tele) 10x hybrid zoom design with a 30m IR range; sensor size, both lens focal lengths, and FOV were all wrong.
+- **`AI Theta Pro`**: stored as a fabricated 4-sensor 24MP 360° multisensor camera. The real product is a single 8MP-sensor hub + separate 180° fisheye lens module — not 360°, not multisensor.
+- **`AI Bullet`**: stored as 8MP/4K with 3x optical zoom and 60m IR. Real product is a 4MP/2K fixed-lens camera with 25m IR, apparently conflated with a different AI-tier model.
+- **`AI 360`**: resolution corrected from a fabricated 3840x2160 (4K) to the real 1920x1920 (1:1 fisheye) output; IR range and IP rating also corrected.
+- **`G4 Doorbell Pro`, `G4 Doorbell`**: resolution fabricated on both (2688x1512 and 2560x1920 respectively; real spec on both is 2MP/1600x1200). `G4 Doorbell Pro`'s IP rating also corrected `IP55` → `IPX4`, and clarified it has no native PoE port (requires an optional adapter accessory).
+- **`AI DSLR`**: sensor format and lens mount both wrong — stored as a 1" sensor with a C/CS lens mount; real is a Four Thirds sensor with a Micro Four Thirds mount, shipping with Olympus M.Zuiko PRO lenses.
+- **`AI Pro`, `AI Pro White`**: sensor (`1/1.2"` → `1/1.8"`), lens (`2.8-12mm F1.4` → `4.1-12.3mm F1.53-3.3`), zoom ratio (`4x` → `3x`), IP rating (`IP66` → `IP65`), and IR range (`50m` → `25m` baseline, up to 40m with the optional Vision Enhancer accessory) all corrected. Confirmed AI Pro White is a color-only variant of AI Pro (identical spec) before mirroring the correction across both entries.
+- **`G5 Pro`**: sensor size (`1/1.8"` → `1/2"`), lens focal length (`2.8-12mm` → `4.1-12.3mm`), IP rating (`IP66` → `IP65`), and IR range (`30m` → `25m` baseline) corrected.
+- **`G5 Dome Ultra`**: resolution corrected from a fabricated 8MP/4K to the real 4MP/2K; tamper rating corrected `IK10` → `IK06`; IP rating and audio capability both had no confirming row on the official spec sheet and were removed rather than assumed from sibling models.
+- **`G5 Bullet`**: IP rating corrected `IP66` → `IP55`; IR range corrected `25m` → `9m`.
+- **`G5 Turret`, `G5 Turret Ultra`**: IP ratings, IR ranges, and tamper-resistance ratings (`IK08` → `IK04`) corrected across both models.
+- **`G4 Instant`**: lens (`2.3mm F2.0` → `2.8mm F1.6`) and IP rating (`IP20` → `IPX5`) corrected — `IP20` understated this camera's actual splash resistance by a full rating class.
+- **`G3 Bullet`**: had an `IP67` rating that actually belongs to its sibling `G3 Pro` — the Bullet's own official datasheet has no weatherproofing row at all. Also removed unconfirmed IR-range figures on `G3 Bullet` and `G3 Pro` that turned out to be the optional IR Range Extender *accessory's* rated distance, misattributed to the base camera.
+
+### Changed
+
+- Widespread pattern across nearly every G5 and AI-tier model: IP ratings, IR ranges, sensor sizes, and lens specs were plausible-looking but did not match official sources — the same failure mode found in the ACTi audit and other brands per the master tracking issue (#28).
+- Full spec backfill (sensor, lens, power, dimensions, weight, IP rating, video codecs/FPS, audio, operating temp) applied across all 25 corrected entries.
+- Database resolution-tier counts shifted slightly (several models dropped from 8MP to their real 4MP spec): 4K/8MP+ 535 → 531, 4-5MP 745 → 747, 1080p-2MP 473 → 475. Total camera count and brand count unchanged.
+
+---
+
 ## [1.17.2] — 2026-07-03
 
 RTSP/ONVIF protocol confirmation pass across the entire ACTi brand (follow-up to 1.17.0/1.17.1), plus 1 new camera and several data-quality fixes surfaced during verification.
