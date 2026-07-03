@@ -8,34 +8,85 @@
   ],
   "resolution": {
     "megapixels": 16,
+    "max_width": 5968,
+    "max_height": 2688,
     "label": "16MP"
   },
   "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F1.0-F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "182.2 horizontal / 71.2 vertical (fisheye)",
   "night_vision": {
     "type": "hybrid",
     "range_m": 40
   },
+  "power": {
+    "method": "DC 12V / PoE Class 4 (IEEE 802.3at); 20W (DC), 24W (PoE)"
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP68",
   "audio": {
     "microphone": true,
     "speaker": true,
     "two_way": true
   },
-  "ip_rating": "IP68",
+  "dimensions_mm": "118.6 x 78 x 340.1",
+  "weight_g": 1460,
   "operating_temp_c": "-40 to 60",
   "environment": [
     "outdoor"
   ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 15
+  },
   "features": [
-    "hemispheric bullet, 16MP",
+    "hemispheric bullet, 16MP, LightGuard",
     "extreme WDR 130dB",
-    "LightGuard, smart dual light (adaptive IR 40m + white LED 40m)",
-    "smart motion detection, smart intrusion protection",
+    "smart dual light (adaptive IR 40m + white LED 40m, IR default)",
+    "deep-learning AI: smart motion detection, smart intrusion protection, tampering detection",
+    "detection range: detect 80m, observe 32m, recognize 16m, identify 8m",
     "dual streaming",
-    "anti-corrosion rated (~10 years)",
-    "sourced from ACTi's High Resolution Cameras category page -- lens/protocols/power/dimensions not confirmed"
+    "ONVIF Profile S/G/T",
+    "NEMA 4X, IK10 vandal-proof metal casing, corrosion protection included",
+    "2-way audio, built-in microphone x2, built-in speaker",
+    "AES256 video encryption, active deterrence event response"
   ],
   "sources": [
-    "https://www.acti.com/products/high-resolution-cameras"
+    "https://www.acti.com/product/a317?tab=specifications"
   ],
-  "last_verified": "2026-07-03"
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "last_verified": "2026-07-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  }
 }

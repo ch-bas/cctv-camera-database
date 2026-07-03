@@ -12,34 +12,80 @@
     "max_height": 1520,
     "label": "4MP visible + thermal"
   },
+  "sensor": "1/2.7\" CMOS (visible)",
   "lens": {
     "count": 2,
-    "focal_length_mm": "zoom, ~32x (4.8-153mm, visible channel)",
+    "focal_length_mm": "zoom, 32x (4.8-153mm, visible channel)",
+    "aperture": "F1.2-F4.4 (visible)",
     "varifocal": true
   },
-  "field_of_view_deg": "58.8-2.18 horizontal (visible)",
+  "field_of_view_deg": "58.8-2.18 horizontal (visible) / 18.1 horizontal (thermal)",
   "night_vision": {
     "type": "ir",
     "range_m": 100
   },
+  "power": {
+    "method": "AC 24V / DC 36V / DC 48V / High PoE; 30W (PoE)"
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP66",
   "audio": {
+    "microphone": false,
+    "speaker": false,
     "two_way": true
   },
+  "operating_temp_c": "-40 to 70 (heater off)",
   "environment": [
     "outdoor"
   ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
   "features": [
     "bi-spectrum thermal + visible PTZ -- same optics as A972 but wider industrial temperature range",
-    "thermal sensor: 256x192, NETD <35mK, fixed focal 10mm, 18.1 deg HOV",
-    "AI detection: people, vehicle, intrusion",
-    "fire detection (range 833m), smoke detection",
-    "radiometric temperature measurement: 273 preset scenes, up to 21 rules per scene, range -22 to 550C, accuracy +/-2C or +/-2%, detection range 83m",
+    "thermal sensor: 256x192, NETD <35mK at F1.0, fixed focal 10mm F1.0, 18.1 deg HOV / 13.6 deg VOV",
+    "AI detection: people/vehicle intrusion, line crossing, enter/exit area, smoke detection, PTZ auto tracking",
+    "fire detection (range 833m), 360-degree endless pan, 300 preset points, 8 preset tours",
+    "radiometric temperature measurement: point/area/line, 273 preset scenes, up to 21 rules per scene, range -22 to 550C, accuracy +/-2C or +/-2%, detection range 83m",
     "analytics detection range: people 80m, vehicle 240m",
-    "no confirmed built-in microphone/speaker",
-    "sourced from ACTi's Thermal Cameras category page -- protocols/power/dimensions/IP rating/operating temp not confirmed"
+    "ONVIF Profile G/T",
+    "IK10 vandal-proof",
+    "no built-in microphone/speaker (Mic-in/Line-out external jacks only)",
+    "1x RS-485 serial, 7/2 digital I/O; no dimensions/weight confirmed on this datasheet"
   ],
   "sources": [
-    "https://www.acti.com/products/thermal-cameras"
+    "https://www.acti.com/product/a973?tab=specifications"
   ],
-  "last_verified": "2026-07-03"
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "last_verified": "2026-07-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  }
 }
