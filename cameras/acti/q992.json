@@ -8,42 +8,86 @@
   ],
   "resolution": {
     "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
     "label": "8MP"
   },
   "sensor": "1/1.8\" CMOS",
   "lens": {
     "count": 1,
-    "focal_length_mm": "zoom, 41x, autofocus",
+    "focal_length_mm": "6.0-246 (zoom, 41x optical/16x digital)",
+    "aperture": "F1.2-F4.6",
     "varifocal": true
   },
+  "field_of_view_deg": "57.96-2.15 horizontal / 34.61-1.21 vertical",
   "night_vision": {
     "type": "none"
   },
+  "power": {
+    "method": "DC 48V / DC 24V / AC 24V; 114W max"
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP66",
   "audio": {
     "microphone": false,
-    "speaker": true,
+    "speaker": false,
     "two_way": true
   },
-  "ip_rating": "IP66",
+  "dimensions_mm": "366 x 283 x 509",
+  "weight_g": 15420,
   "operating_temp_c": "-40 to 70",
   "environment": [
     "outdoor"
   ],
   "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
     "max_fps": 30
   },
   "features": [
-    "outdoor PTZ Positioning System, 41x zoom",
+    "outdoor PTZ positioning system, 41x optical/16x digital zoom, auto iris, auto focus, LightGuard",
     "1000m laser illuminator (not IR LED)",
-    "superior WDR 120dB",
-    "LightGuard, integrated lens wiper",
-    "smart motion detection, smart intrusion protection, counting, auto tracking",
-    "triple streaming",
+    "superior WDR 120dB, extreme low light (color min. illumination 0.0002 lux)",
+    "PTZ: pan 360 endless, tilt -90 to 45, manual/preset speed 0.1-140 deg/s pan / 0.1-50 deg/s tilt, 1024 preset points, 16 preset tours",
+    "deep-learning AI 2.0: smart motion detection, smart intrusion protection, tampering, missing/unattended object, people flow/density counting, PTZ auto tracking",
+    "2-way audio via line-in/line-out terminal block (no built-in mic/speaker)",
+    "detection range: detect 155.5-4829.4m, observe 62.2-1931.8m, recognize 31.1-965.9m, identify 15.5-482.9m",
+    "ONVIF Compliant: Profile S, Profile G, Profile T",
+    "1x RS-485 serial port, 1x BNC analog video output, 7/2 digital input/output, integrated lens wiper",
+    "1 x Ethernet RJ-45 + 1 x Ethernet SFP",
     "UL Listed, NDAA compliant",
-    "sourced from ACTi's High Resolution Cameras category page -- protocols/power/dimensions not confirmed"
+    "real-time clock"
   ],
   "sources": [
-    "https://www.acti.com/products/high-resolution-cameras"
+    "https://www.acti.com/product/Q992?tab=specifications"
   ],
-  "last_verified": "2026-07-03"
+  "power_source": [
+    "dc",
+    "ac-mains"
+  ],
+  "last_verified": "2026-07-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  }
 }

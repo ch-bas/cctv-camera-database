@@ -8,38 +8,79 @@
   ],
   "resolution": {
     "megapixels": 8,
-    "label": "8MP"
+    "max_width": 5120,
+    "max_height": 1440,
+    "label": "8MP (2x4MP, stitched panoramic)"
   },
-  "sensor": "1/1.8\" CMOS",
+  "sensor": "1/1.8\" CMOS (4MP x2)",
   "lens": {
     "count": 2,
     "focal_length_mm": "2.8 (fixed, both lenses)",
+    "aperture": "F1.6",
     "varifocal": false
   },
-  "field_of_view_deg": "182 panoramic",
+  "field_of_view_deg": "182 horizontal / 57.4 vertical",
   "night_vision": {
     "type": "ir",
     "range_m": 20
   },
+  "power": {
+    "method": "AC 24V / PoE (IEEE 802.3af); 12.95W (PoE, IR on), 15.86W (AC, IR on)"
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
   "ip_rating": "IP66",
+  "dimensions_mm": "140 (diameter) x 105.5",
   "operating_temp_c": "-40 to 55",
   "environment": [
     "outdoor"
   ],
   "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
     "max_fps": 30
   },
   "features": [
-    "2-sensor 180-degree bullet, tampering detection",
+    "2-sensor 180-degree bullet, seamless video stitching (minimum stitching distance 450cm)",
     "extreme WDR 135dB",
+    "tampering detection (no other built-in analytics)",
     "quad streaming",
+    "no audio hardware (no Audio Type row on official spec sheet)",
+    "detection range: detect 106.7m, observe 43m, recognize 21.3m, identify 10.7m",
+    "ONVIF Compliant: Profile S, Profile G, Profile T",
+    "watchdog support",
     "NDAA compliant",
-    "IK10 vandal-proof metal casing",
-    "no confirmed built-in audio",
-    "sourced from ACTi's High Resolution Cameras category page -- protocols/power/dimensions not confirmed"
+    "IK10 vandal-proof metal+plastic casing"
   ],
   "sources": [
-    "https://www.acti.com/products/high-resolution-cameras"
+    "https://www.acti.com/product/q450?tab=specifications"
   ],
-  "last_verified": "2026-07-03"
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "last_verified": "2026-07-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  }
 }

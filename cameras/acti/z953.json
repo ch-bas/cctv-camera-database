@@ -8,38 +8,87 @@
   ],
   "resolution": {
     "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
     "label": "8MP"
   },
   "sensor": "1/1.8\" CMOS",
   "lens": {
     "count": 1,
-    "focal_length_mm": "zoom, 40x, autofocus",
+    "focal_length_mm": "5.7-228 (zoom, 40x optical/16x digital)",
+    "aperture": "F1.2-F4.6",
     "varifocal": true
   },
+  "field_of_view_deg": "61.4-2.15 horizontal / 38.8-1.43 vertical",
   "night_vision": {
     "type": "ir",
     "range_m": 250
   },
+  "power": {
+    "method": "DC 24V / AC 24V / High PoE (IEEE 802.3bt); 61W (PoE)"
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP66",
   "audio": {
+    "microphone": false,
+    "speaker": false,
     "two_way": true
   },
-  "ip_rating": "IP66",
+  "dimensions_mm": "270 (diameter) x 497",
+  "weight_g": 9690,
   "operating_temp_c": "-40 to 70",
   "environment": [
     "outdoor"
   ],
   "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
     "max_fps": 30
   },
   "features": [
-    "outdoor PTZ, 40x zoom",
+    "outdoor PTZ, 40x optical/16x digital zoom, auto iris, auto focus",
+    "adaptive IR LED 250m",
     "extreme WDR 145dB",
-    "counting, auto tracking",
-    "triple streaming",
-    "sourced from ACTi's High Resolution Cameras category page -- protocols/power/dimensions not confirmed"
+    "PTZ: pan 360 endless, tilt -15 to 90 (E-flip), preset speed 300 deg/s pan / 180 deg/s tilt, 1024 preset points",
+    "deep-learning AI 2.0: people flow/density counting, crowd detection, tampering, PTZ auto tracking, object line crossing/enter/exit area, intrusion (forbidden area)",
+    "2-way audio (no built-in mic/speaker confirmed)",
+    "detection range: detect 155.5-4829.4m, observe 62.2-1931.8m, recognize 31.1-965.9m, identify 15.5-482.9m",
+    "ONVIF Compliant: Profile S, Profile G, Profile T",
+    "1x RS-485 serial port, 7/2 digital input/output",
+    "surge protection 6KV",
+    "NDAA compliant"
   ],
   "sources": [
-    "https://www.acti.com/products/high-resolution-cameras"
+    "https://www.acti.com/product/z953?tab=specifications"
   ],
-  "last_verified": "2026-07-03"
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "last_verified": "2026-07-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  }
 }

@@ -12,36 +12,82 @@
     "max_height": 1520,
     "label": "4MP visible + thermal"
   },
+  "sensor": "1/2.7\" CMOS (visible)",
   "lens": {
     "count": 2,
     "focal_length_mm": "6.4 (visible, fixed)",
+    "aperture": "F1.6 (visible)",
     "varifocal": false
   },
-  "field_of_view_deg": "53 horizontal (visible)",
+  "field_of_view_deg": "53 horizontal / 28 vertical (visible)",
   "night_vision": {
     "type": "hybrid",
     "range_m": 30
   },
+  "power": {
+    "method": "DC 12V / PoE Class 3 (IEEE 802.3af); 8.5W (DC), 8.5W (PoE)"
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP68",
   "audio": {
+    "microphone": false,
+    "speaker": false,
     "two_way": true
   },
+  "dimensions_mm": "321.3 x 106.1 x 107.0",
+  "weight_g": 1650,
+  "operating_temp_c": "-40 to 70",
   "environment": [
     "outdoor"
   ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
   "features": [
     "bi-spectrum thermal + visible bullet camera, longer-lens variant of A371",
-    "thermal sensor: 256x192, NETD <40mK, fixed focal 6.9mm, 24.9 deg HOV",
-    "adaptive IR 30m + white LED 30m",
-    "superior WDR",
-    "AI detection: people, vehicle, intrusion",
-    "fire detection (range 82.8m), smoking detection (range 10.35m), sun-reflection filter",
-    "radiometric temperature measurement: range -20 to 150C, accuracy +/-8C, detection range 116.7m",
-    "analytics detection range: people 55.2m, vehicle 144.9m",
-    "no confirmed built-in microphone/speaker",
-    "sourced from ACTi's Thermal Cameras category page -- protocols/power/dimensions/IP rating/operating temp not confirmed"
+    "thermal sensor: 256x192, NETD <40mK at F1.0, fixed focal 6.9mm F1.0, 24.9 deg HOV / 18.7 deg VOV",
+    "adaptive IR LED 30m + white LED 30m",
+    "superior WDR 120dB",
+    "built-in analytics: people/vehicle detection, smart intrusion protection (line crossing/intrusion/enter/exit area for people and vehicle), tampering, temperature detection, smoking detection, fire detection, sun-reflection filter",
+    "radiometric temperature measurement: point/area/line, up to 21 rules, range -20 to 150C, accuracy +/-8C",
+    "detection range: people 287m, vehicle 881m; triggering analytics notification: people 55.2m, vehicle 144.9m; fire detection 82.8m; smoking detection 10.35m",
+    "1x RS-485 serial port, 1x BNC analog video output (installation only), 2/2 digital input/output",
+    "2-way audio via mic-in/line-in/line-out (external jacks, no built-in mic/speaker)",
+    "ONVIF Compliant: Profile G",
+    "IK10 vandal-proof metal casing, real-time clock"
   ],
   "sources": [
-    "https://www.acti.com/products/thermal-cameras"
+    "https://www.acti.com/product/A371-P1?tab=specifications"
   ],
-  "last_verified": "2026-07-03"
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "last_verified": "2026-07-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  }
 }

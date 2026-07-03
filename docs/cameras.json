@@ -8139,38 +8139,84 @@
       "max_height": 1520,
       "label": "4MP visible + thermal"
     },
+    "sensor": "1/2.7\" CMOS (visible)",
     "lens": {
       "count": 2,
       "focal_length_mm": "6.4 (visible, fixed)",
+      "aperture": "F1.6 (visible)",
       "varifocal": false
     },
-    "field_of_view_deg": "53 horizontal (visible)",
+    "field_of_view_deg": "53 horizontal / 28 vertical (visible)",
     "night_vision": {
       "type": "hybrid",
       "range_m": 30
     },
+    "power": {
+      "method": "DC 12V / PoE Class 3 (IEEE 802.3af); 8.5W (DC), 8.5W (PoE)"
+    },
+    "protocols": [
+      "rtsp",
+      "onvif"
+    ],
+    "ip_rating": "IP68",
     "audio": {
+      "microphone": false,
+      "speaker": false,
       "two_way": true
     },
+    "dimensions_mm": "321.3 x 106.1 x 107.0",
+    "weight_g": 1650,
+    "operating_temp_c": "-40 to 70",
     "environment": [
       "outdoor"
     ],
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264",
+        "MJPEG"
+      ],
+      "max_fps": 30
+    },
     "features": [
       "bi-spectrum thermal + visible bullet camera, longer-lens variant of A371",
-      "thermal sensor: 256x192, NETD <40mK, fixed focal 6.9mm, 24.9 deg HOV",
-      "adaptive IR 30m + white LED 30m",
-      "superior WDR",
-      "AI detection: people, vehicle, intrusion",
-      "fire detection (range 82.8m), smoking detection (range 10.35m), sun-reflection filter",
-      "radiometric temperature measurement: range -20 to 150C, accuracy +/-8C, detection range 116.7m",
-      "analytics detection range: people 55.2m, vehicle 144.9m",
-      "no confirmed built-in microphone/speaker",
-      "sourced from ACTi's Thermal Cameras category page -- protocols/power/dimensions/IP rating/operating temp not confirmed"
+      "thermal sensor: 256x192, NETD <40mK at F1.0, fixed focal 6.9mm F1.0, 24.9 deg HOV / 18.7 deg VOV",
+      "adaptive IR LED 30m + white LED 30m",
+      "superior WDR 120dB",
+      "built-in analytics: people/vehicle detection, smart intrusion protection (line crossing/intrusion/enter/exit area for people and vehicle), tampering, temperature detection, smoking detection, fire detection, sun-reflection filter",
+      "radiometric temperature measurement: point/area/line, up to 21 rules, range -20 to 150C, accuracy +/-8C",
+      "detection range: people 287m, vehicle 881m; triggering analytics notification: people 55.2m, vehicle 144.9m; fire detection 82.8m; smoking detection 10.35m",
+      "1x RS-485 serial port, 1x BNC analog video output (installation only), 2/2 digital input/output",
+      "2-way audio via mic-in/line-in/line-out (external jacks, no built-in mic/speaker)",
+      "ONVIF Compliant: Profile G",
+      "IK10 vandal-proof metal casing, real-time clock"
     ],
     "sources": [
-      "https://www.acti.com/products/thermal-cameras"
+      "https://www.acti.com/product/A371-P1?tab=specifications"
     ],
-    "last_verified": "2026-07-03"
+    "power_source": [
+      "poe",
+      "dc"
+    ],
+    "last_verified": "2026-07-03",
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+      },
+      "blue_iris": {
+        "profile": "ACTi",
+        "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+      }
+    }
   },
   {
     "id": "acti-a371-p2",
@@ -8186,36 +8232,61 @@
       "max_height": 1520,
       "label": "4MP visible + thermal"
     },
+    "sensor": "1/2.7\" CMOS (visible)",
     "lens": {
       "count": 2,
       "focal_length_mm": "8.0 (visible, fixed)",
+      "aperture": "F1.6 (visible)",
       "varifocal": false
     },
-    "field_of_view_deg": "39.4 horizontal (visible)",
+    "field_of_view_deg": "39.4 horizontal / 22.1 vertical (visible)",
     "night_vision": {
       "type": "hybrid",
       "range_m": 30
     },
+    "power": {
+      "method": "DC 12V / AC 24V / PoE Class 3 (IEEE 802.3af); 8.5W (DC), 8.5W (AC), 8.5W (PoE)"
+    },
+    "ip_rating": "IP68",
     "audio": {
+      "microphone": false,
+      "speaker": false,
       "two_way": true
     },
+    "dimensions_mm": "321.3 x 106.1 x 107.0",
+    "weight_g": 2400,
+    "operating_temp_c": "-40 to 70",
     "environment": [
       "outdoor"
     ],
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264",
+        "MJPEG"
+      ],
+      "max_fps": 30
+    },
     "features": [
       "bi-spectrum thermal + visible bullet camera, longest-lens variant of A371",
-      "thermal sensor: 256x192, NETD <40mK, fixed focal 9.7mm, 18 deg HOV",
-      "adaptive IR 30m + white LED 30m",
-      "superior WDR",
-      "AI detection: people, vehicle, intrusion",
-      "fire detection (range 116.4m), smoking detection (range 14.55m), sun-reflection filter",
-      "radiometric temperature measurement: range -20 to 150C, accuracy +/-8C, detection range 161.7m",
-      "analytics detection range: people 77.6m, vehicle 203.7m",
-      "no confirmed built-in microphone/speaker",
-      "sourced from ACTi's Thermal Cameras category page -- protocols/power/dimensions/IP rating/operating temp not confirmed"
+      "thermal sensor: 256x192, NETD <40mK at F1.0, fixed focal 9.7mm F1.0, 18 deg HOV / 13.5 deg VOV",
+      "adaptive IR LED 30m + white LED 30m",
+      "superior WDR 120dB",
+      "built-in analytics: people/vehicle detection, object line crossing/enter/exit area, intrusion (forbidden area), tampering, temperature detection, smoking detection, sun-reflection filter, fire detection",
+      "radiometric temperature measurement: point/area/line, up to 21 rules, range -20 to 150C, accuracy +/-8C",
+      "detection range: people 404m, vehicle 1239m; triggering analytics notification: people 77.6m, vehicle 203.7m; fire detection 116.4m; smoking detection 14.55m",
+      "1x RS-485 serial port, 1x BNC analog video output (installation only), 2/2 digital input/output",
+      "2-way audio via mic-in/line-in/line-out (external jacks, no built-in mic/speaker)",
+      "ONVIF Compliant: Yes, Profile G -- but no Network Protocol & Service / RTSP row present on the official spec sheet (unlike A371-P1's spec sheet, which does list RTSP); protocols left unconfirmed pending an explicit RTSP listing",
+      "IK10 vandal-proof metal casing, real-time clock"
     ],
     "sources": [
-      "https://www.acti.com/products/thermal-cameras"
+      "https://www.acti.com/product/A371-P2?tab=specifications"
+    ],
+    "power_source": [
+      "poe",
+      "dc",
+      "ac-mains"
     ],
     "last_verified": "2026-07-03"
   },
@@ -9233,38 +9304,85 @@
     ],
     "resolution": {
       "megapixels": 8,
+      "max_width": 3840,
+      "max_height": 2160,
       "label": "8MP"
     },
     "sensor": "1/2.4\" CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8 (fixed)",
+      "aperture": "F1.6",
+      "varifocal": false
+    },
     "night_vision": {
       "type": "ir",
       "range_m": 65
     },
+    "power": {
+      "method": "DC 12V / PoE Class 3 (IEEE 802.3af)"
+    },
+    "protocols": [
+      "rtsp",
+      "onvif"
+    ],
+    "ip_rating": "IP68",
     "audio": {
       "microphone": false,
-      "speaker": true,
+      "speaker": false,
       "two_way": true
     },
-    "ip_rating": "IP68",
     "operating_temp_c": "-40 to 60",
     "environment": [
       "outdoor"
     ],
     "video": {
+      "codecs": [
+        "H.265",
+        "H.264",
+        "MJPEG"
+      ],
       "max_fps": 30
     },
     "features": [
-      "fixed dome",
-      "extreme WDR 150dB",
-      "extreme low light sensitivity",
+      "fixed dome, IR LED x3 (850nm, non-adaptive), 65m",
+      "extreme WDR 150dB, extreme low light (color min. illumination 0.003 lux)",
+      "deep-learning AI 1.0: face/people/vehicle detection, tampering, motion, line crossing, enter area (people/vehicle/object)",
+      "2-way audio via line-in/line-out terminal block (no built-in mic/speaker)",
       "quad streaming",
+      "detection range: detect 88m, observe 35m, recognize 17m, identify 9m",
+      "ONVIF Compliant: Profile G only",
+      "watchdog support",
       "TAICS Level 1, UL Listed, NDAA compliant",
-      "sourced from ACTi's High Resolution Cameras category page -- protocols/power/dimensions not confirmed"
+      "IK10 vandal-proof, real-time clock",
+      "no dimensions/weight given on official spec sheet"
     ],
     "sources": [
-      "https://www.acti.com/products/high-resolution-cameras"
+      "https://www.acti.com/product/a78?tab=specifications"
     ],
-    "last_verified": "2026-07-03"
+    "power_source": [
+      "poe",
+      "dc"
+    ],
+    "last_verified": "2026-07-03",
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+      },
+      "blue_iris": {
+        "profile": "ACTi",
+        "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+      }
+    }
   },
   {
     "id": "acti-a810",
@@ -9276,41 +9394,62 @@
     ],
     "resolution": {
       "megapixels": 5,
+      "max_width": 2592,
+      "max_height": 1944,
       "label": "5MP"
     },
     "sensor": "1/2.7\" CMOS",
     "lens": {
       "count": 1,
-      "focal_length_mm": "zoom, 5x",
+      "focal_length_mm": "2.7-13.5 (zoom, 5x optical)",
+      "aperture": "F1.4-F3.3",
       "varifocal": true
     },
+    "field_of_view_deg": "101.1-30.4 horizontal / 72.3-22.7 vertical",
     "night_vision": {
       "type": "ir",
       "range_m": 15
     },
-    "audio": {
-      "microphone": false,
-      "speaker": true,
-      "two_way": true
+    "power": {
+      "method": "DC 12V / PoE Class 3 (IEEE 802.3af); 12.95W (PoE)"
     },
     "ip_rating": "IP66",
+    "audio": {
+      "microphone": false,
+      "speaker": false,
+      "two_way": true
+    },
     "operating_temp_c": "-30 to 50",
     "environment": [
       "outdoor"
     ],
     "video": {
+      "codecs": [
+        "H.265",
+        "H.264",
+        "MJPEG"
+      ],
       "max_fps": 30
     },
     "features": [
-      "zoom dome, 5x zoom -- newly launched model",
+      "zoom dome, 5x optical zoom, auto focus -- newly launched model",
       "extreme WDR 150dB",
+      "deep-learning AI 1.0: face/people/vehicle detection, tampering, people line crossing/enter/exit area, loitering",
+      "2-way audio via line-in/line-out terminal block (no built-in mic/speaker)",
       "triple streaming",
+      "detection range: detect 54-270m, observe 21.8-108.9m, recognize 10.8-54m, identify 5.4-27m",
+      "ONVIF Compliant: Profile S, Profile G, Profile Q, Profile T, Profile M -- but no Network Protocol & Service / RTSP row present on the official spec sheet; protocols left unconfirmed pending an explicit RTSP listing",
+      "watchdog support, auto firmware upgrade",
       "NDAA compliant",
-      "IK10 vandal-proof",
-      "sourced from ACTi's New Products category page -- protocols/power/dimensions not confirmed"
+      "IK10 vandal-proof, real-time clock",
+      "no dimensions/weight given on official spec sheet"
     ],
     "sources": [
-      "https://www.acti.com/products/new-products"
+      "https://www.acti.com/product/a810?tab=specifications"
+    ],
+    "power_source": [
+      "poe",
+      "dc"
     ],
     "last_verified": "2026-07-03"
   },
@@ -10611,50 +10750,82 @@
     ],
     "resolution": {
       "megapixels": 10,
+      "max_width": 3648,
+      "max_height": 2736,
       "label": "10MP"
     },
     "sensor": "1/2.3\" CMOS",
     "lens": {
       "count": 1,
-      "focal_length_mm": "3.6 (fixed)",
+      "focal_length_mm": "3.6 (fixed, CS mount interchangeable)",
       "aperture": "F1.8",
       "varifocal": false
     },
     "field_of_view_deg": "99 horizontal",
     "power": {
-      "method": "PoE"
+      "method": "PoE Class 2 (IEEE 802.3af); 3.84W (PoE)"
     },
+    "protocols": [
+      "rtsp",
+      "onvif"
+    ],
     "audio": {
       "microphone": true,
       "speaker": false,
       "two_way": true
     },
+    "dimensions_mm": "96 x 96 x 45",
+    "weight_g": 237,
     "operating_temp_c": "-10 to 45",
     "environment": [
       "indoor"
     ],
     "video": {
       "codecs": [
-        "H.264"
+        "H.264",
+        "MJPEG"
       ],
       "max_fps": 30
     },
     "features": [
-      "fixed cube, indoor",
+      "fixed cube, indoor, CS-mount interchangeable lens, manual focus",
+      "no day/night switching -- no mechanical IR cut filter, always color",
       "basic WDR 70dB",
       "dual streaming",
-      "7fps@10MP, 30fps@1080p/2MP",
+      "7fps at full 3648x2736; 30fps at 1920x1080 and below",
+      "server-based analytics available (line counting, people counting, face detection, smoke detection, heat map, dwell time, people queue -- requires external IVS/ALPR server)",
       "detection range: detect 72m, observe 29m, recognize 14.4m, identify 7.2m",
-      "NDAA compliant",
-      "sourced from ACTi's product overview page -- protocols/dimensions not confirmed (Specifications tab not captured)"
+      "ONVIF Compliant: Profile S, Profile G, Profile T, Profile Q; edge recording via ONVIF Profile G or proprietary protocol",
+      "GB28181 compliant, standard IoT security (anti-hacking, anti-malware)",
+      "built-in microphone + 3.5mm phone jack audio interface",
+      "watchdog support, auto firmware upgrade",
+      "NDAA compliant"
     ],
     "sources": [
-      "https://www.acti.com/product/e14?tab=overview"
+      "https://www.acti.com/product/e14?tab=specifications"
     ],
     "power_source": [
       "poe"
     ],
-    "last_verified": "2026-07-03"
+    "last_verified": "2026-07-03",
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+      },
+      "blue_iris": {
+        "profile": "ACTi",
+        "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+      }
+    }
   },
   {
     "id": "acti-e16",
@@ -12213,7 +12384,7 @@
     "power": {
       "method": "DC 12V / PoE Class 2 (IEEE 802.3af); 5W (DC)"
     },
-    "ip_rating": "IP67",
+    "ip_rating": "IP68",
     "dimensions_mm": "56 x 38.9 x 111.2",
     "weight_g": 300,
     "operating_temp_c": "-20 to 60",
@@ -12232,13 +12403,13 @@
       "bi-spectrum thermal + visible cube camera",
       "thermal sensor: 256x192, NETD <40mK at F1.0, fixed focal 2.1mm F1.0, 90 deg HOV / 64.2 deg VOV",
       "digital zoom, 3D DNR, basic WDR",
-      "tampering detection (dated 2025/3/2 PDF datasheet lists tampering detection only; the acti.com specifications-tab page additionally lists temperature detection)",
+      "tampering detection, temperature detection",
       "1x RS-485 serial port, 1x Gigabit Ethernet",
       "radiometric temperature measurement: point/area/line, up to 21 rules, dual range -20 to 150C or 0 to 550C, accuracy +/-2C or +/-2%, detection range 28m",
       "IK10 vandal-proof, real-time clock",
       "no audio (no Audio section on official spec sheet)",
-      "no ONVIF/RTSP row present on any official source checked (web specifications tab or the dated PDF datasheet) -- protocols genuinely not documented for this model, not just unconfirmed",
-      "IP rating conflict across official sources: dated PDF datasheet (2025/3/2) states IP67; acti.com specifications-tab page states IP68 -- IP67 (the dated, versioned datasheet) treated as authoritative here"
+      "no ONVIF/RTSP row present on any official source checked (web specifications tab, re-checked twice, or the dated PDF datasheet) -- protocols genuinely not documented for this model, not just unconfirmed",
+      "IP rating: acti.com specifications-tab page consistently states IP68 across two independent captures; one dated PDF datasheet (2025/3/2) stated IP67 -- IP68 treated as authoritative given the repeat live-page confirmation"
     ],
     "sources": [
       "https://www.acti.com/product/q170?tab=specifications"
@@ -12259,40 +12430,81 @@
     ],
     "resolution": {
       "megapixels": 8,
-      "label": "8MP"
+      "max_width": 5120,
+      "max_height": 1440,
+      "label": "8MP (2x4MP, stitched panoramic)"
     },
-    "sensor": "1/1.8\" CMOS",
+    "sensor": "1/1.8\" CMOS (4MP x2)",
     "lens": {
       "count": 2,
       "focal_length_mm": "2.8 (fixed, both lenses)",
+      "aperture": "F1.6",
       "varifocal": false
     },
-    "field_of_view_deg": "182 panoramic",
+    "field_of_view_deg": "182 horizontal / 57.4 vertical",
     "night_vision": {
       "type": "ir",
       "range_m": 20
     },
+    "power": {
+      "method": "AC 24V / PoE (IEEE 802.3af); 12.95W (PoE, IR on), 15.86W (AC, IR on)"
+    },
+    "protocols": [
+      "rtsp",
+      "onvif"
+    ],
     "ip_rating": "IP66",
+    "dimensions_mm": "140 (diameter) x 105.5",
     "operating_temp_c": "-40 to 55",
     "environment": [
       "outdoor"
     ],
     "video": {
+      "codecs": [
+        "H.265",
+        "H.264",
+        "MJPEG"
+      ],
       "max_fps": 30
     },
     "features": [
-      "2-sensor 180-degree bullet, tampering detection",
+      "2-sensor 180-degree bullet, seamless video stitching (minimum stitching distance 450cm)",
       "extreme WDR 135dB",
+      "tampering detection (no other built-in analytics)",
       "quad streaming",
+      "no audio hardware (no Audio Type row on official spec sheet)",
+      "detection range: detect 106.7m, observe 43m, recognize 21.3m, identify 10.7m",
+      "ONVIF Compliant: Profile S, Profile G, Profile T",
+      "watchdog support",
       "NDAA compliant",
-      "IK10 vandal-proof metal casing",
-      "no confirmed built-in audio",
-      "sourced from ACTi's High Resolution Cameras category page -- protocols/power/dimensions not confirmed"
+      "IK10 vandal-proof metal+plastic casing"
     ],
     "sources": [
-      "https://www.acti.com/products/high-resolution-cameras"
+      "https://www.acti.com/product/q450?tab=specifications"
     ],
-    "last_verified": "2026-07-03"
+    "power_source": [
+      "poe",
+      "ac-mains"
+    ],
+    "last_verified": "2026-07-03",
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+      },
+      "blue_iris": {
+        "profile": "ACTi",
+        "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+      }
+    }
   },
   {
     "id": "acti-q550",
@@ -12415,38 +12627,65 @@
     ],
     "resolution": {
       "megapixels": 8,
-      "label": "8MP"
+      "max_width": 2688,
+      "max_height": 1520,
+      "label": "8MP (2x4MP)"
     },
-    "sensor": "1/2.7\" CMOS",
+    "sensor": "1/2.7\" CMOS (4MP x2)",
+    "lens": {
+      "count": 2,
+      "focal_length_mm": "2.8 (fixed, both lenses)",
+      "aperture": "F1.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "97.68 horizontal / 52.67 vertical",
     "night_vision": {
       "type": "ir",
       "range_m": 50
     },
+    "power": {
+      "method": "DC 12V / PoE (IEEE 802.3af); 9.1W (PoE)"
+    },
+    "ip_rating": "IP68",
     "audio": {
       "microphone": true,
       "speaker": false,
       "two_way": true
     },
-    "ip_rating": "IP68",
+    "dimensions_mm": "176 x 104 x 72",
     "operating_temp_c": "-30 to 60",
     "environment": [
       "outdoor"
     ],
     "video": {
-      "max_fps": 25
+      "codecs": [
+        "H.265",
+        "H.264",
+        "MJPEG"
+      ],
+      "max_fps": 30
     },
     "features": [
-      "2-sensor dome, outdoor",
+      "2-sensor dome, each lens independently adjustable (pan 0-180, tilt 0-66, rotation 0-346)",
+      "LightGuard (smart white-light deterrent)",
       "superior WDR 120dB",
-      "LightGuard",
-      "smart motion detection, smart intrusion protection, counting",
+      "deep-learning AI 2.0: smart motion detection, smart intrusion protection, people/vehicle line crossing/enter/exit area, people flow/density counting, face capture, tampering",
+      "single-channel or two-channel (L/R, T/B) view mode",
       "triple streaming",
+      "built-in microphone x2, 2-way audio via terminal block line-in/line-out",
+      "max 32 user connections",
+      "detection range: detect 63m, observe 25.2m, recognize 12.6m, identify 6.3m",
+      "ONVIF Compliant: Profile S, Profile G, Profile T -- but no Network Protocol & Service / RTSP row present on the official spec sheet; protocols left unconfirmed pending an explicit RTSP listing",
+      "surge protection 4KV",
       "NDAA compliant",
-      "IK10 vandal-proof",
-      "sourced from ACTi's High Resolution Cameras category page -- lens/protocols/power/dimensions not confirmed"
+      "IK10 vandal-proof metal casing"
     ],
     "sources": [
-      "https://www.acti.com/products/high-resolution-cameras"
+      "https://www.acti.com/product/q711?tab=specifications"
+    ],
+    "power_source": [
+      "poe",
+      "dc"
     ],
     "last_verified": "2026-07-03"
   },
@@ -12668,32 +12907,86 @@
     ],
     "resolution": {
       "megapixels": 4,
+      "max_width": 2688,
+      "max_height": 1520,
       "label": "4MP visible + thermal"
     },
     "sensor": "1/1.8\" CMOS (visible)",
     "lens": {
       "count": 2,
-      "focal_length_mm": "zoom, 60x (6.0-360mm, visible channel)",
+      "focal_length_mm": "6.0-360 (zoom, 60x optical/8x digital, visible); 100 (fixed, thermal)",
+      "aperture": "F1.59-F5.42 (visible); F1.0 (thermal)",
       "varifocal": true
     },
+    "field_of_view_deg": "55.56-1.86 horizontal / 32.4-1.06 vertical (visible); 4.4 horizontal / 3.5 vertical (thermal)",
+    "power": {
+      "method": "DC 36V / DC 48V; 150W"
+    },
+    "protocols": [
+      "rtsp",
+      "onvif"
+    ],
+    "ip_rating": "IP66",
     "audio": {
+      "microphone": false,
+      "speaker": false,
       "two_way": true
     },
+    "dimensions_mm": "390.3 x 543.8 x 399.7",
+    "weight_g": 27500,
+    "operating_temp_c": "-40 to 70",
     "environment": [
       "outdoor"
     ],
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264",
+        "MJPEG"
+      ],
+      "max_fps": 50
+    },
     "features": [
-      "bi-spectrum thermal + visible PTZ positioning system, longer visible zoom range than Q982, thermal channel: fixed focal 100mm, NETD <20mK",
-      "fire detection (range 833m)",
-      "radiometric temperature measurement: point/area/line, 273 preset scenes, up to 21 rules per scene, range -22 to 550C, accuracy +/-2C or +/-2%, detection range 83m",
-      "analytics detection range: people 80m, vehicle 240m",
-      "no confirmed built-in microphone/speaker",
-      "sourced from ACTi's Thermal Cameras category page -- protocols/power/dimensions/IP rating/operating temp not confirmed; some spec rows shared across the Q981/Q982 family in the source table and inferred by pairing with matching thermal sensitivity"
+      "bi-spectrum thermal + visible PTZ positioning system, 60x optical/8x digital visible zoom, thermal channel fixed focal 100mm F1.0, thermal effective pixels 640x512, NETD <20mK",
+      "laser illuminator 2000m (not IR LED), PTZ auto tracking, smart intrusion protection",
+      "superior WDR 120dB",
+      "PTZ: pan 0-360 endless, tilt -85 to 85 (E-flip), 300 preset points, 8 preset tours",
+      "deep-learning AI 1.0: people/vehicle line crossing/intrusion/enter/exit area, temperature detection, fire detection, smoke detection",
+      "2-way audio via mic-in/line-in/line-out (external jacks, no built-in mic/speaker)",
+      "radiometric temperature measurement: point/area/line, 273 preset scenes, up to 21 rules per scene, range -20 to 150C, accuracy +/-8C",
+      "detection range: triggering analytics people 1300m vehicle 3000m; temperature notification 1667m; fire detection 6000m (5x5m object); smoke detection 6000m; observation detect people 4167m vehicle 12778m",
+      "ONVIF Compliant: Profile S, Profile G, Profile T",
+      "1x RS-485 serial port, 1x BNC analog video output, 7/2 digital input/output",
+      "built-in TPM 2.0 security, MAC address binding, max 32 user connections",
+      "weatherproof metal casing with integrated wiper, NEMA 4X, anti-corrosion, IK10 vandal-proof",
+      "CE Class A, FCC Class A",
+      "real-time clock"
     ],
     "sources": [
-      "https://www.acti.com/products/thermal-cameras"
+      "https://www.acti.com/product/Q982-P1?tab=specifications"
     ],
-    "last_verified": "2026-07-03"
+    "power_source": [
+      "dc"
+    ],
+    "last_verified": "2026-07-03",
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+      },
+      "blue_iris": {
+        "profile": "ACTi",
+        "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+      }
+    }
   },
   {
     "id": "acti-q982-p2",
@@ -12705,32 +12998,86 @@
     ],
     "resolution": {
       "megapixels": 4,
+      "max_width": 2688,
+      "max_height": 1520,
       "label": "4MP visible + thermal"
     },
     "sensor": "1/1.8\" CMOS (visible)",
     "lens": {
       "count": 2,
-      "focal_length_mm": "zoom, 60x (6.0-360mm visible; 13-130mm zoomable thermal channel)",
+      "focal_length_mm": "6.0-360 (zoom, 60x optical/16x digital, visible); 13-130 (zoom, thermal)",
+      "aperture": "F1.59-F5.42 (visible); F0.8-F1.25 (thermal)",
       "varifocal": true
     },
+    "field_of_view_deg": "55.56-1.86 horizontal / 32.4-1.06 vertical (visible); 34.3-3.4 horizontal / 27.3-2.7 vertical (thermal)",
+    "power": {
+      "method": "DC 36V / DC 48V; 150W"
+    },
+    "protocols": [
+      "rtsp",
+      "onvif"
+    ],
+    "ip_rating": "IP66",
     "audio": {
+      "microphone": false,
+      "speaker": false,
       "two_way": true
     },
+    "dimensions_mm": "390.3 x 543.8 x 399.7",
+    "weight_g": 27500,
+    "operating_temp_c": "-40 to 70",
     "environment": [
       "outdoor"
     ],
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264",
+        "MJPEG"
+      ],
+      "max_fps": 30
+    },
     "features": [
-      "bi-spectrum thermal + visible PTZ positioning system -- unique zoomable (not fixed) thermal lens among the Q98x family, NETD <20mK",
-      "fire detection (range 833m)",
-      "radiometric temperature measurement: point/area/line, 273 preset scenes, up to 21 rules per scene, range -22 to 550C, accuracy +/-2C or +/-2%, detection range 83m",
-      "analytics detection range: people 80m, vehicle 240m",
-      "no confirmed built-in microphone/speaker",
-      "sourced from ACTi's Thermal Cameras category page -- protocols/power/dimensions/IP rating/operating temp not confirmed; some spec rows shared across the Q981/Q982 family in the source table and inferred by pairing with matching thermal sensitivity"
+      "bi-spectrum thermal + visible PTZ positioning system -- unique zoomable (not fixed) thermal lens among the Q98x family, thermal effective pixels 640x512, NETD <20mK",
+      "laser illuminator 2000m (not IR LED), smart intrusion protection",
+      "superior WDR 120dB",
+      "PTZ: pan 0-360 endless, tilt -85 to 85 (E-flip), 300 preset points, 8 preset tours",
+      "deep-learning AI 1.0: people/vehicle line crossing/intrusion/enter/exit area, temperature detection, fire detection, smoke detection",
+      "2-way audio via mic-in/line-in/line-out (external jacks, no built-in mic/speaker)",
+      "radiometric temperature measurement: point/area/line, 273 preset scenes, up to 21 rules per scene, range -20 to 150C, accuracy +/-8C",
+      "detection range: triggering analytics people 1690m vehicle 3900m; temperature notification 2167m; fire detection 5200m (1x1m object); smoke detection 6000m; observation detect people 5417m vehicle 16611m",
+      "ONVIF Compliant: Profile S, Profile G, Profile T",
+      "1x RS-485 serial port, 1x BNC analog video output, 7/2 digital input/output",
+      "built-in TPM 2.0 security, MAC address binding, max 32 user connections",
+      "weatherproof metal casing with integrated wiper, NEMA 4X, anti-corrosion, IK10 vandal-proof",
+      "CE Class A, FCC Class A",
+      "real-time clock"
     ],
     "sources": [
-      "https://www.acti.com/products/thermal-cameras"
+      "https://www.acti.com/product/Q982-P2?tab=specifications"
     ],
-    "last_verified": "2026-07-03"
+    "power_source": [
+      "dc"
+    ],
+    "last_verified": "2026-07-03",
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+      },
+      "blue_iris": {
+        "profile": "ACTi",
+        "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+      }
+    }
   },
   {
     "id": "acti-q992",
@@ -12742,44 +13089,88 @@
     ],
     "resolution": {
       "megapixels": 8,
+      "max_width": 3840,
+      "max_height": 2160,
       "label": "8MP"
     },
     "sensor": "1/1.8\" CMOS",
     "lens": {
       "count": 1,
-      "focal_length_mm": "zoom, 41x, autofocus",
+      "focal_length_mm": "6.0-246 (zoom, 41x optical/16x digital)",
+      "aperture": "F1.2-F4.6",
       "varifocal": true
     },
+    "field_of_view_deg": "57.96-2.15 horizontal / 34.61-1.21 vertical",
     "night_vision": {
       "type": "none"
     },
+    "power": {
+      "method": "DC 48V / DC 24V / AC 24V; 114W max"
+    },
+    "protocols": [
+      "rtsp",
+      "onvif"
+    ],
+    "ip_rating": "IP66",
     "audio": {
       "microphone": false,
-      "speaker": true,
+      "speaker": false,
       "two_way": true
     },
-    "ip_rating": "IP66",
+    "dimensions_mm": "366 x 283 x 509",
+    "weight_g": 15420,
     "operating_temp_c": "-40 to 70",
     "environment": [
       "outdoor"
     ],
     "video": {
+      "codecs": [
+        "H.265",
+        "H.264",
+        "MJPEG"
+      ],
       "max_fps": 30
     },
     "features": [
-      "outdoor PTZ Positioning System, 41x zoom",
+      "outdoor PTZ positioning system, 41x optical/16x digital zoom, auto iris, auto focus, LightGuard",
       "1000m laser illuminator (not IR LED)",
-      "superior WDR 120dB",
-      "LightGuard, integrated lens wiper",
-      "smart motion detection, smart intrusion protection, counting, auto tracking",
-      "triple streaming",
+      "superior WDR 120dB, extreme low light (color min. illumination 0.0002 lux)",
+      "PTZ: pan 360 endless, tilt -90 to 45, manual/preset speed 0.1-140 deg/s pan / 0.1-50 deg/s tilt, 1024 preset points, 16 preset tours",
+      "deep-learning AI 2.0: smart motion detection, smart intrusion protection, tampering, missing/unattended object, people flow/density counting, PTZ auto tracking",
+      "2-way audio via line-in/line-out terminal block (no built-in mic/speaker)",
+      "detection range: detect 155.5-4829.4m, observe 62.2-1931.8m, recognize 31.1-965.9m, identify 15.5-482.9m",
+      "ONVIF Compliant: Profile S, Profile G, Profile T",
+      "1x RS-485 serial port, 1x BNC analog video output, 7/2 digital input/output, integrated lens wiper",
+      "1 x Ethernet RJ-45 + 1 x Ethernet SFP",
       "UL Listed, NDAA compliant",
-      "sourced from ACTi's High Resolution Cameras category page -- protocols/power/dimensions not confirmed"
+      "real-time clock"
     ],
     "sources": [
-      "https://www.acti.com/products/high-resolution-cameras"
+      "https://www.acti.com/product/Q992?tab=specifications"
     ],
-    "last_verified": "2026-07-03"
+    "power_source": [
+      "dc",
+      "ac-mains"
+    ],
+    "last_verified": "2026-07-03",
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+      },
+      "blue_iris": {
+        "profile": "ACTi",
+        "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+      }
+    }
   },
   {
     "id": "acti-vmgb-359",
@@ -15148,40 +15539,89 @@
     ],
     "resolution": {
       "megapixels": 8,
+      "max_width": 3840,
+      "max_height": 2160,
       "label": "8MP"
     },
     "sensor": "1/1.8\" CMOS",
     "lens": {
       "count": 1,
-      "focal_length_mm": "zoom, 40x, autofocus",
+      "focal_length_mm": "5.7-228 (zoom, 40x optical/16x digital)",
+      "aperture": "F1.2-F4.6",
       "varifocal": true
     },
+    "field_of_view_deg": "61.4-2.15 horizontal / 38.8-1.43 vertical",
     "night_vision": {
       "type": "ir",
       "range_m": 250
     },
+    "power": {
+      "method": "DC 24V / AC 24V / High PoE (IEEE 802.3bt); 61W (PoE)"
+    },
+    "protocols": [
+      "rtsp",
+      "onvif"
+    ],
+    "ip_rating": "IP66",
     "audio": {
+      "microphone": false,
+      "speaker": false,
       "two_way": true
     },
-    "ip_rating": "IP66",
+    "dimensions_mm": "270 (diameter) x 497",
+    "weight_g": 9690,
     "operating_temp_c": "-40 to 70",
     "environment": [
       "outdoor"
     ],
     "video": {
+      "codecs": [
+        "H.265",
+        "H.264",
+        "MJPEG"
+      ],
       "max_fps": 30
     },
     "features": [
-      "outdoor PTZ, 40x zoom",
+      "outdoor PTZ, 40x optical/16x digital zoom, auto iris, auto focus",
+      "adaptive IR LED 250m",
       "extreme WDR 145dB",
-      "counting, auto tracking",
-      "triple streaming",
-      "sourced from ACTi's High Resolution Cameras category page -- protocols/power/dimensions not confirmed"
+      "PTZ: pan 360 endless, tilt -15 to 90 (E-flip), preset speed 300 deg/s pan / 180 deg/s tilt, 1024 preset points",
+      "deep-learning AI 2.0: people flow/density counting, crowd detection, tampering, PTZ auto tracking, object line crossing/enter/exit area, intrusion (forbidden area)",
+      "2-way audio (no built-in mic/speaker confirmed)",
+      "detection range: detect 155.5-4829.4m, observe 62.2-1931.8m, recognize 31.1-965.9m, identify 15.5-482.9m",
+      "ONVIF Compliant: Profile S, Profile G, Profile T",
+      "1x RS-485 serial port, 7/2 digital input/output",
+      "surge protection 6KV",
+      "NDAA compliant"
     ],
     "sources": [
-      "https://www.acti.com/products/high-resolution-cameras"
+      "https://www.acti.com/product/z953?tab=specifications"
     ],
-    "last_verified": "2026-07-03"
+    "power_source": [
+      "poe",
+      "dc",
+      "ac-mains"
+    ],
+    "last_verified": "2026-07-03",
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+      },
+      "blue_iris": {
+        "profile": "ACTi",
+        "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+      }
+    }
   },
   {
     "id": "acti-z954",
@@ -15193,44 +15633,93 @@
     ],
     "resolution": {
       "megapixels": 8,
+      "max_width": 3840,
+      "max_height": 2160,
       "label": "8MP"
     },
     "sensor": "1/1.8\" CMOS",
     "lens": {
       "count": 1,
-      "focal_length_mm": "zoom, 25x, autofocus",
+      "focal_length_mm": "6.0-150 (zoom, 25x optical/16x digital)",
+      "aperture": "F1.5-F3.4",
       "varifocal": true
     },
+    "field_of_view_deg": "60.5-3.1 horizontal / 36.3-1.8 vertical",
     "night_vision": {
       "type": "ir",
       "range_m": 200
     },
+    "power": {
+      "method": "AC 24V / DC 24V / PoE Class 5 (IEEE 802.3bt); 58W (PoE)"
+    },
+    "protocols": [
+      "rtsp",
+      "onvif"
+    ],
+    "ip_rating": "IP66",
     "audio": {
       "microphone": false,
-      "speaker": true,
+      "speaker": false,
       "two_way": true
     },
-    "ip_rating": "IP66",
+    "dimensions_mm": "227 (diameter) x 384",
+    "weight_g": 5610,
     "operating_temp_c": "-40 to 70",
     "environment": [
       "outdoor"
     ],
     "video": {
+      "codecs": [
+        "H.265",
+        "H.264",
+        "MJPEG"
+      ],
       "max_fps": 30
     },
     "features": [
-      "outdoor PTZ, 25x zoom, deep-learning AI",
+      "outdoor PTZ, 25x optical/16x digital zoom, auto iris, auto focus, 2800 TVL, ISP-based color-to-B/W switch",
+      "adaptive IR LED x10 (850nm), 200m",
       "extreme WDR 145dB",
-      "counting, auto tracking",
-      "triple streaming",
+      "PTZ: pan 360 endless, tilt -15 to 90 (E-flip), manual speed 0.1-200 deg/s both axes, preset speed 300 deg/s pan / 240 deg/s tilt, 1024 preset points, 16 preset tours, absolute position",
+      "deep-learning AI 2.0: people flow/density counting, face detection, PTZ auto tracking, tampering, intrusion (forbidden area), object/people line crossing/enter/exit area",
+      "2-way audio via line-in/line-out (no built-in mic/speaker)",
+      "SD card backup and recovery via ONVIF Profile G integration",
+      "detection range: detect 143.1-3116.3m, observe 57.2-1246.5m, recognize 28.6-623.3m, identify 14.3-311.6m",
+      "ONVIF Compliant: Profile S, Profile G, Profile T",
+      "1x RS-485 serial port, 3.5mm phone jack audio interface, 1x BNC analog video output, 2/1 digital input/output",
+      "IK10 vandal-proof metal casing, corrosion protection optional",
+      "wall/pole/pendant/corner mount, bundled power adapter",
+      "surge protection 6KV",
       "UL Listed, NDAA compliant",
-      "IK10 vandal-proof metal casing",
-      "sourced from ACTi's High Resolution Cameras category page -- protocols/power/dimensions not confirmed"
+      "real-time clock"
     ],
     "sources": [
-      "https://www.acti.com/products/high-resolution-cameras"
+      "https://www.acti.com/product/z954?tab=specifications"
     ],
-    "last_verified": "2026-07-03"
+    "power_source": [
+      "poe",
+      "dc",
+      "ac-mains"
+    ],
+    "last_verified": "2026-07-03",
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+      },
+      "blue_iris": {
+        "profile": "ACTi",
+        "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+      }
+    }
   },
   {
     "id": "acti-z959",

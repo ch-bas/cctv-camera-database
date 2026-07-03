@@ -8,42 +8,91 @@
   ],
   "resolution": {
     "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
     "label": "8MP"
   },
   "sensor": "1/1.8\" CMOS",
   "lens": {
     "count": 1,
-    "focal_length_mm": "zoom, 25x, autofocus",
+    "focal_length_mm": "6.0-150 (zoom, 25x optical/16x digital)",
+    "aperture": "F1.5-F3.4",
     "varifocal": true
   },
+  "field_of_view_deg": "60.5-3.1 horizontal / 36.3-1.8 vertical",
   "night_vision": {
     "type": "ir",
     "range_m": 200
   },
+  "power": {
+    "method": "AC 24V / DC 24V / PoE Class 5 (IEEE 802.3bt); 58W (PoE)"
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP66",
   "audio": {
     "microphone": false,
-    "speaker": true,
+    "speaker": false,
     "two_way": true
   },
-  "ip_rating": "IP66",
+  "dimensions_mm": "227 (diameter) x 384",
+  "weight_g": 5610,
   "operating_temp_c": "-40 to 70",
   "environment": [
     "outdoor"
   ],
   "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
     "max_fps": 30
   },
   "features": [
-    "outdoor PTZ, 25x zoom, deep-learning AI",
+    "outdoor PTZ, 25x optical/16x digital zoom, auto iris, auto focus, 2800 TVL, ISP-based color-to-B/W switch",
+    "adaptive IR LED x10 (850nm), 200m",
     "extreme WDR 145dB",
-    "counting, auto tracking",
-    "triple streaming",
+    "PTZ: pan 360 endless, tilt -15 to 90 (E-flip), manual speed 0.1-200 deg/s both axes, preset speed 300 deg/s pan / 240 deg/s tilt, 1024 preset points, 16 preset tours, absolute position",
+    "deep-learning AI 2.0: people flow/density counting, face detection, PTZ auto tracking, tampering, intrusion (forbidden area), object/people line crossing/enter/exit area",
+    "2-way audio via line-in/line-out (no built-in mic/speaker)",
+    "SD card backup and recovery via ONVIF Profile G integration",
+    "detection range: detect 143.1-3116.3m, observe 57.2-1246.5m, recognize 28.6-623.3m, identify 14.3-311.6m",
+    "ONVIF Compliant: Profile S, Profile G, Profile T",
+    "1x RS-485 serial port, 3.5mm phone jack audio interface, 1x BNC analog video output, 2/1 digital input/output",
+    "IK10 vandal-proof metal casing, corrosion protection optional",
+    "wall/pole/pendant/corner mount, bundled power adapter",
+    "surge protection 6KV",
     "UL Listed, NDAA compliant",
-    "IK10 vandal-proof metal casing",
-    "sourced from ACTi's High Resolution Cameras category page -- protocols/power/dimensions not confirmed"
+    "real-time clock"
   ],
   "sources": [
-    "https://www.acti.com/products/high-resolution-cameras"
+    "https://www.acti.com/product/z954?tab=specifications"
   ],
-  "last_verified": "2026-07-03"
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "last_verified": "2026-07-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  }
 }
