@@ -8,33 +8,78 @@
   ],
   "resolution": {
     "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
     "label": "8MP"
   },
   "sensor": "1/2.4\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
   "night_vision": {
     "type": "ir",
     "range_m": 65
   },
+  "power": {
+    "method": "DC 12V / PoE Class 3 (IEEE 802.3af); 7.2W (PoE)"
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
   "ip_rating": "IP68",
+  "dimensions_mm": "71 x 71 x 170",
   "operating_temp_c": "-40 to 60",
   "environment": [
     "outdoor"
   ],
   "video": {
-    "max_fps": 30
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20
   },
   "features": [
     "fixed bullet",
     "extreme WDR 150dB",
-    "extreme low light sensitivity",
+    "extreme low light sensitivity (0.003 lux color)",
+    "deep-learning AI 1.0: face/people/vehicle detection, tampering, motion, line crossing, enter area",
+    "detection range: detect 84m, observe 33m, recognize 16m, identify 8m",
     "quad streaming",
-    "TAICS Level 1, NDAA compliant, UL Listed",
-    "IK10 vandal-proof metal casing",
-    "no confirmed built-in audio",
-    "sourced from ACTi's High Resolution Cameras category page -- protocols/power/dimensions not confirmed"
+    "ONVIF Profile S/G/T/M",
+    "TAICS Level 1 (Taiwan IoT Cybersecurity), NDAA compliant, UL Listed",
+    "IK10 vandal-proof metal casing, corrosion protection optional (~3 years at seashore)",
+    "no audio hardware at all (no Audio section on official spec sheet)"
   ],
   "sources": [
-    "https://www.acti.com/products/high-resolution-cameras"
+    "https://www.acti.com/product/A315?tab=specifications"
   ],
-  "last_verified": "2026-07-03"
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "last_verified": "2026-07-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  }
 }
