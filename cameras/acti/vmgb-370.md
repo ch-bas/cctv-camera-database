@@ -7,25 +7,25 @@
 | Type | bullet |
 | Connectivity | ethernet |
 | Resolution | 4MP visible + thermal (4MP, 2688×1520) |
-| Lens | 2× 4.0 (visible, fixed)mm |
-| Field of view | 84 horizontal (visible)° |
+| Sensor | 1/2.7" CMOS (visible) |
+| Lens | 2× 4.0 (fixed, visible); 3.1 (fixed, thermal)mm F1.6 (visible); F1.1 (thermal) |
+| Field of view | 84 horizontal / 44.8 vertical (visible)° |
 | Night vision | ir (40m) |
+| Power | DC 12V / PoE Class 3 (IEEE 802.3af); 7.5 W (DC), 8 W (PoE) |
+| IP rating | IP66 |
 | Two-way audio | Yes |
+| Operating temp | 10 to 35°C |
 
 ## Features
 
-- bi-spectrum thermal + visible bullet camera, purpose-built for human body temperature screening
-- thermal sensor: 160x120, NETD <40mK, fixed focal 3.1mm, 50 deg HOV
-- IR 40m (no white light illuminator)
-- superior WDR 120dB
-- no AI people/vehicle/intrusion detection confirmed (temperature-screening focused, not general surveillance analytics)
-- radiometric human body temperature measurement: narrow range 30 to 45C, accuracy +/-0.5C
-- no confirmed built-in microphone/speaker
-- sourced from ACTi's Thermal Cameras category page -- protocols/power/dimensions/IP rating/operating temp not confirmed
+- Superior WDR (120 dB)
+- built-in analytics: Human Body Temperature Detection
+- audio: 2-way, Mic-in, Line-in, Line-out (no built-in mic/speaker)
+- RTSP confirmed in Network Protocol & Service, but no ONVIF Compliant row on official spec sheet -- protocols left unconfirmed
 
 ## Sources
 
-- https://www.acti.com/products/thermal-cameras
+- https://www.acti.com/product/VMGB-370?tab=specifications
 
 ---
 *Auto-generated from acti-vmgb-370.json — do not edit by hand.*
