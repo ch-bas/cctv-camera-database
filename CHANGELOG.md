@@ -13,6 +13,7 @@ Full data-quality audit of the ACTi brand (issue #40 pattern, part of the master
 ### Added
 
 - **10 new cameras**, all sourced from official ACTi datasheet PDFs: Z810, Z714, Z812, A820, Z86 (domes), Q550 (dual-lens), Z47, Z49 (bullets), I98 (PTZ), Z722 (turret).
+- **58 more new cameras** from a full sweep of ACTi's High Resolution Cameras, New Products, and Thermal Cameras listing pages: cube/bullet/dome/turret/hemispheric/multi-imager/PTZ models across the 8MP+ line (36 cameras: E14, E16, A315/A421/A424/Z318/Z325/Z429/A432/A432-P1/Z310, A78/A817/Z913/A822/Z818/E816, Z56/Z64, A711/B511A/A317, Q450/Q711/Q75/Q83/Q84, A952/A959/K958/Z954/A981/A962/Z953/Q992/K9001); the newest-launched line (37 cameras: A214, J41/K31/K31-P1/K41/B412-K1/K32/K42/Z413-P1/Z411/A412/K33/K43/Z332, K71/K81/Z914/K72/K82/Z724/A828/K73/K83/A810, Z510/Z512/A573/A573-P1/A573-P2, A966/A982/Z959/K953/A957/K954, Q120/Q121); and 21 well-specced bi-spectrum thermal+visible cameras (A371/-P1/-P2, A372/-P1, A374/-P1, VMGB-359/-P1/370/371, A570/-P1/-P2, A972, A973, Q170, Q981, Q982 family) out of a larger thermal line -- ~17 thermal models with only a marketing blurb (no full spec table) were skipped, as were 2 body-worn cameras and several NVR/recorder hardware entries (out of scope for a camera database). Protocols/power/dimensions are largely unconfirmed for this batch since these are comparison-page summaries, not full datasheets, and are left unset rather than fabricated.
 
 ### Fixed
 
@@ -23,8 +24,8 @@ Full data-quality audit of the ACTi brand (issue #40 pattern, part of the master
 
 ### Changed
 
-- ACTi: 14 → 24 cameras (10 new, 6 corrected, 2 renamed).
-- Database now covers **1,659 cameras** across **69 brands**.
+- ACTi: 14 → 118 cameras (68 new, 6 corrected, 2 renamed).
+- Database now covers **1,753 cameras** across **69 brands**.
 
 ---
 
