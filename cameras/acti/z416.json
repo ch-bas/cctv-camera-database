@@ -15,28 +15,30 @@
   "sensor": "1/2.7\" CMOS",
   "lens": {
     "count": 1,
-    "focal_length_mm": "5.0-60 (12x zoom, autofocus)",
-    "aperture": "F1.6",
+    "focal_length_mm": "5.0-60 (zoom, 12x optical/16x digital)",
+    "aperture": "F1.6-F3.0",
     "varifocal": true
   },
+  "field_of_view_deg": "59.99 - 5.73 horizontal / 35.03 - 3.39 vertical",
   "night_vision": {
     "type": "ir",
     "range_m": 100
   },
   "power": {
-    "method": "PoE+ (IEEE 802.3at) / DC 12V"
-  },
-  "storage": {
-    "onboard": true,
-    "nvr_compatible": true,
-    "cloud": false
+    "method": "DC 12V / High PoE (IEEE 802.3at); 13 W (PoE)"
   },
   "protocols": [
     "rtsp",
     "onvif"
   ],
-  "ip_rating": "IP67",
+  "ip_rating": "IP68",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
   "dimensions_mm": "354 x 105 x 98",
+  "weight_g": 1930,
   "operating_temp_c": "-40 to 60",
   "environment": [
     "outdoor"
@@ -46,19 +48,22 @@
       "H.265",
       "H.264",
       "MJPEG"
-    ]
+    ],
+    "max_fps": 30
   },
   "features": [
-    "5MP zoom bullet, 12x optical zoom autofocus lens",
-    "adaptive IR 100m",
-    "extreme WDR 145dB",
-    "IP67/IK10 metal casing",
-    "AI analytics: face detection, people counting, intrusion alerts",
-    "no built-in microphone/speaker confirmed on official datasheet"
+    "zoom lens: 12x optical zoom, 16x digital zoom",
+    "Extreme WDR (145 dB)",
+    "deep-learning AI 2.0",
+    "built-in analytics: Face Detection, Age Detection, Gender Detection, Face Mask Detection, People Flow Counting, People Density Counting, Crowd Detection, Object Line Crossing Detection, Object Enter Area Detection, ...",
+    "audio: 2-way, Line-in, Line-out (no built-in mic/speaker)",
+    "detection range: detection: 119.3m-1417.5m, observation: 47.7m-567.0m, recognition: 23.9m-283.5m, identification: 11.9m-141.8m",
+    "ONVIF Compliant: Yes, Profile S, Profile G, Profile T, Profile M",
+    "1 x RS-485",
+    "UL Listed"
   ],
   "sources": [
-    "https://www.acti.com/product/Z416",
-    "https://www.a1securitycameras.com/acti-z416.html"
+    "https://www.acti.com/product/Z416?tab=specifications"
   ],
   "power_source": [
     "poe",
@@ -68,8 +73,8 @@
   "configs": {
     "frigate": {
       "detect": {
-        "width": 640,
-        "height": 480,
+        "width": 1280,
+        "height": 720,
         "fps": 5
       },
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"
