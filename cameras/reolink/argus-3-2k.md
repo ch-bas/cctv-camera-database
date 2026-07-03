@@ -7,13 +7,15 @@
 | Type | bullet |
 | Connectivity | wifi |
 | Resolution | 2K QHD (4MP) |
+| Sensor | 1/3" CMOS |
+| Lens | 1× |
 | Field of view | 122 diagonal° |
 | Night vision | color (10m) |
 | Power | Rechargeable battery / solar optional |
 | Storage | microSD ≤ 128GB |
-| Protocols | http |
 | IP rating | IP65 |
 | Two-way audio | Yes |
+| Operating temp | -10 to 55°C |
 | Released | 2022 |
 
 ## Features

@@ -7,20 +7,21 @@
 | Type | ptz |
 | Connectivity | wifi |
 | Resolution | 2K QHD (4MP) |
+| Sensor | 1/3" CMOS |
+| Lens | 1× |
 | Field of view | 355 pan/90 tilt° |
-| Night vision | color (10m) |
+| Night vision | ir (10m) |
 | Power | Rechargeable battery / solar optional |
 | Storage | microSD ≤ 128GB |
-| Protocols | http |
-| IP rating | IP65 |
+| IP rating | IP64 |
 | Two-way audio | Yes |
+| Operating temp | -10 to 55°C |
 | Released | 2023 |
 
 ## Features
 
 - 2K battery pan/tilt upgraded
-- color spotlight
-- dual-band WiFi
+- 2.4GHz WiFi
 - person/vehicle/animal detection
 - solar optional
 - no subscription

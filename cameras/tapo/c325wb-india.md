@@ -7,17 +7,18 @@
 | Brand | Tapo |
 | Model | C325WB (India) |
 | Type | bullet |
-| Connectivity | wifi |
-| Resolution | 4MP QHD (4MP, 2560×1440) |
-| Sensor | 1/2.7" CMOS |
-| Lens | 1× 3.89 (fixed)mm F1.6 |
-| Field of view | 96 horizontal° |
-| Night vision | color (30m) |
-| Power | DC 12V |
-| Storage | microSD ≤ 512GB, NVR |
+| Connectivity | wifi, ethernet |
+| Resolution | 2K QHD (4MP, 2688×1520) |
+| Sensor | 1/1.79" Progressive Scan CMOS Starlight Sensor |
+| Lens | 1× 4.58mm F1.0 |
+| Field of view | 131 (Diagonal), 106 (Horizontal), 56 (Vertical)° |
+| Night vision | hybrid |
+| Power | 9V DC Power Adapter (100-240V 50/60Hz input, 9V 0.6A output) |
+| Storage | microSD ≤ 512GB |
 | Protocols | rtsp, onvif |
-| IP rating | IP67 |
-| Two-way audio | No |
+| IP rating | IP66 |
+| Two-way audio | Yes |
+| Operating temp | -20 to 45°C |
 | Released | 2023 |
 
 ## Features
@@ -34,6 +35,10 @@
 ## Sources
 
 - https://www.tapo.com/in/
+- https://www.tp-link.com/in/home-networking/cloud-camera/tapo-c325wb/
+- https://www.tapo.com/in/product/smart-camera/tapo-c325wb/
+- https://www.tp-link.com/us/home-networking/cloud-camera/tapo-c325wb/
+- https://static.tp-link.com/upload/product-overview/2025/202502/20250207/Tapo%20C325WB%202.0&2.6&2.8_Datasheet.pdf
 
 ---
 *Auto-generated from tapo-c325wb-india.json — do not edit by hand.*

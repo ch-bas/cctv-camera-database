@@ -13,7 +13,6 @@
 | Night vision | hybrid (10m) |
 | Power | Built-in 6000 mAh rechargeable battery / USB-C / optional Reolink Solar Panel 2 (6W) |
 | Storage | microSD ≤ 512GB |
-| Protocols | rtsp |
 | IP rating | IP65 |
 | Two-way audio | Yes |
 | Operating temp | -10 to 55°C |

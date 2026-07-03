@@ -6,14 +6,16 @@
 | Model | Go PT Plus |
 | Type | ptz |
 | Connectivity | 4g |
-| Resolution | 2K QHD (4MP) |
+| Resolution | 2K QHD (5MP, 2880×1660) |
+| Sensor | 1/2.7" CMOS |
+| Lens | 1× 4mm F1.6 |
 | Field of view | 355 pan/90 tilt° |
-| Night vision | color (10m) |
+| Night vision | hybrid (10m) |
 | Power | Rechargeable battery / solar optional |
 | Storage | microSD ≤ 128GB |
-| Protocols | http |
-| IP rating | IP65 |
+| IP rating | IP64 |
 | Two-way audio | Yes |
+| Operating temp | -10 to 55°C |
 | Released | 2022 |
 
 ## Features

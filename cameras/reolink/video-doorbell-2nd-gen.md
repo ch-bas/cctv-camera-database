@@ -11,7 +11,6 @@
 | Night vision | color (5m) |
 | Power | Battery Qualcomm QCC730 Power-Efficient |
 | Storage | microSD ≤ 256GB |
-| Protocols | http |
 | IP rating | IP65 |
 | Two-way audio | Yes |
 | Released | 2026 |

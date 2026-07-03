@@ -6,14 +6,17 @@
 | Model | RLC-511WA |
 | Type | bullet |
 | Connectivity | wifi |
-| Resolution | 4K UHD (8MP) |
+| Resolution | 4K UHD (5MP, 2560×1920) |
+| Sensor | 1/2.7" CMOS |
+| Lens | 1× 2.7-13.5mm F1.6-3.3 |
 | Field of view | 110-30 horizontal° |
-| Night vision | color (30m) |
+| Night vision | hybrid (30m) |
 | Power | DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | rtsp, onvif |
 | IP rating | IP67 |
 | Two-way audio | Yes |
+| Operating temp | -10 to 55°C |
 | Released | 2022 |
 
 ## Features

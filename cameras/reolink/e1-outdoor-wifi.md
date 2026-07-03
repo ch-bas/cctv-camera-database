@@ -7,13 +7,16 @@
 | Type | bullet |
 | Connectivity | wifi |
 | Resolution | 5MP (5MP) |
+| Sensor | 1/2.7" CMOS |
+| Lens | 1× 2.8-8mm F1.6 |
 | Field of view | 80 horizontal° |
-| Night vision | ir (30m) |
+| Night vision | hybrid (12m) |
 | Power | DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | rtsp, onvif |
-| IP rating | IP67 |
+| IP rating | IP65 |
 | Two-way audio | No |
+| Operating temp | -10 to 55°C |
 | Released | 2020 |
 
 ## Features

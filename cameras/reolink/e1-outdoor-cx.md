@@ -6,14 +6,17 @@
 | Model | E1 Outdoor CX |
 | Type | bullet |
 | Connectivity | wifi |
-| Resolution | 4K UHD (8MP) |
+| Resolution | 4K UHD (4MP, 2560×1440) |
+| Sensor | 1/1.8" CMOS |
+| Lens | 1× 4.0mm F1.0 |
 | Field of view | 110 horizontal° |
 | Night vision | color (30m) |
 | Power | DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | rtsp, onvif |
-| IP rating | IP67 |
+| IP rating | IP65 |
 | Two-way audio | No |
+| Operating temp | -10 to 55°C |
 | Released | 2024 |
 
 ## Features

@@ -9,13 +9,15 @@
 | Type | ptz |
 | Connectivity | wifi |
 | Resolution | 4K UHD (8MP) |
+| Sensor | 1/1.8" CMOS |
+| Lens | 1× 4mm |
 | Field of view | 360 pan/90 tilt° |
 | Night vision | color (15m) |
 | Power | Dual solar panels (always-on continuous recording) |
 | Storage | microSD ≤ 128GB |
-| Protocols | http |
-| IP rating | IP67 |
+| IP rating | IP65 |
 | Two-way audio | Yes |
+| Operating temp | -20 to 55°C |
 | Released | 2024 |
 
 ## Features
@@ -26,7 +28,7 @@
 - WiFi 6
 - color night vision
 - no subscription
-- IP67
+- IP65
 
 ## Sources
 

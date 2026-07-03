@@ -10,12 +10,13 @@
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 2.8 (fixed)mm F1.6 |
 | Field of view | 110 horizontal° |
-| Night vision | color (25m) |
+| Night vision | hybrid (60m) |
 | Power | PoE / DC 12V |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | rtsp, onvif |
-| IP rating | IP67 |
+| IP rating | IP66 |
 | Two-way audio | Yes |
+| Operating temp | -10 to 55°C |
 | Released | 2024 |
 
 ## Features

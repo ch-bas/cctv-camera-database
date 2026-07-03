@@ -7,13 +7,15 @@
 | Type | bullet |
 | Connectivity | 4g |
 | Resolution | 1080p HD (2MP) |
+| Sensor | Starlight CMOS Image Sensor |
+| Lens | 1× |
 | Field of view | 110 horizontal° |
 | Night vision | ir (10m) |
 | Power | Rechargeable battery / solar optional |
 | Storage | microSD ≤ 64GB |
-| Protocols | http |
 | IP rating | IP65 |
 | Two-way audio | No |
+| Operating temp | -10 to 55°C |
 | Released | 2019 |
 
 ## Features

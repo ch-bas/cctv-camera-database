@@ -8,16 +8,16 @@
 | Model | Argus MagiCam |
 | Type | covert |
 | Connectivity | wifi |
-| Resolution | 2K (4MP, 2560×1440) |
+| Resolution | 2K (2MP, 1920×1080) |
 | Sensor | CMOS |
 | Lens | 1× Fixedmm |
 | Field of view | 110 diagonal° |
-| Night vision | color (8m) |
+| Night vision | ir (8m) |
 | Power | 2x AA lithium batteries (up to 9 months) |
 | Storage | microSD ≤ 256GB |
-| Protocols | rtsp |
-| IP rating | IP65 |
+| IP rating | IP67 |
 | Two-way audio | Yes |
+| Operating temp | -10 to 55°C |
 | Released | 2026 |
 
 ## Features

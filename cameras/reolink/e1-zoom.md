@@ -7,6 +7,8 @@
 | Type | ptz |
 | Connectivity | wifi |
 | Resolution | 5MP (5MP) |
+| Sensor | 1/2.7" CMOS |
+| Lens | 1× 2.8-8mm F1.6 |
 | Field of view | 95-34 horizontal° |
 | Night vision | ir (9m) |
 | Power | DC 5V USB |
@@ -14,6 +16,7 @@
 | Protocols | rtsp |
 | IP rating | IP20 |
 | Two-way audio | Yes |
+| Operating temp | -10 to 55°C |
 | Released | 2020 |
 
 ## Features

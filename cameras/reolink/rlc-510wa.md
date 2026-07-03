@@ -7,6 +7,8 @@
 | Type | dome |
 | Connectivity | wifi |
 | Resolution | 5MP (5MP) |
+| Sensor | 1/2.7" CMOS |
+| Lens | 1× 4.0mm F2.0 |
 | Field of view | 80 horizontal° |
 | Night vision | ir (30m) |
 | Power | DC 12V |
@@ -14,6 +16,7 @@
 | Protocols | rtsp, onvif |
 | IP rating | IP67 |
 | Two-way audio | No |
+| Operating temp | -10 to 55°C |
 | Released | 2021 |
 
 ## Features

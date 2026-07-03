@@ -7,13 +7,15 @@
 | Type | ptz |
 | Connectivity | 4g |
 | Resolution | 4K UHD (8MP) |
+| Sensor | 1/2.7" CMOS |
+| Lens | 1× |
 | Field of view | 355 pan/90 tilt° |
-| Night vision | color (15m) |
+| Night vision | hybrid (10m) |
 | Power | Rechargeable battery / solar optional |
 | Storage | microSD ≤ 256GB |
-| Protocols | http |
-| IP rating | IP65 |
+| IP rating | IP64 |
 | Two-way audio | Yes |
+| Operating temp | -10 to 55°C |
 | Released | 2023 |
 
 ## Features

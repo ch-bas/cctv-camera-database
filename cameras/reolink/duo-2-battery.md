@@ -10,11 +10,12 @@
 | Sensor | 1/2.7" CMOS (x2) |
 | Lens | 2× 3.2mm F2.0 |
 | Field of view | 170 horizontal° |
-| Night vision | color (30m) |
+| Night vision | hybrid (30m) |
 | Power | Rechargeable battery 37.44Wh / solar panel |
 | Storage | microSD ≤ 128GB |
 | IP rating | IP66 |
 | Two-way audio | Yes |
+| Operating temp | -10 to 55°C |
 | Released | 2024 |
 
 ## Features

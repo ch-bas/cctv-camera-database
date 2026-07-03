@@ -16,6 +16,7 @@
 | Protocols | http |
 | IP rating | IP20 |
 | Two-way audio | No |
+| Operating temp | -10 to 45°C |
 | Released | 2024 |
 
 ## Features

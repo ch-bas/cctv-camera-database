@@ -6,33 +6,25 @@
 |-------|------|
 | Brand | Tapo |
 | Model | C222 |
-| Type | dome |
-| Connectivity | wifi |
-| Resolution | 3MP 2K (3MP, 2048×1536) |
-| Sensor | CMOS |
-| Lens | 1× 4 (fixed)mm F1.8 |
-| Field of view | 120 diagonal° |
-| Night vision | color (6m) |
-| Power | DC 5V (USB) |
-| Storage | microSD ≤ 512GB, NVR |
-| Protocols | rtsp, onvif |
-| IP rating | IP20 |
+| Type | ptz |
+| Connectivity | wifi, ethernet |
+| Resolution | 2K QHD (4MP, 2560×1440) |
+| Sensor | 1/3" Progressive Scan CMOS |
+| Lens | 1× 4mm F2.2 |
+| Field of view | 90 diagonal, 76.2 horizontal, 41.8 vertical° |
+| Night vision | ir (12m) |
+| Power | 9V DC power adapter, 100-240V 50/60Hz input, 9V/0.6A output |
+| Storage | microSD ≤ 512GB |
+| Protocols | rtsp, onvif, p2p |
 | Two-way audio | Yes |
-| Released | 2023 |
-
-## Features
-
-- 3MP 2K indoor colour night vision
-- F1.8 aperture
-- AI person/pet detection
-- privacy shutter
-- H.265
-- RTSP/ONVIF
-- Tapo app / Alexa / Google / HomeKit
+| Operating temp | 0 to 40°C |
 
 ## Sources
 
-- https://www.tapo.com/en/product/indoor-camera/tapo-c222/
+- https://www.tp-link.com/en/home-networking/cloud-camera/tapo-c222/
+- https://www.tp-link.com/in/home-networking/cloud-camera/tapo-c222/
+- https://static.tp-link.com/upload/product-overview/2025/202503/20250327/Tapo%20C222%201.0&1.8_Datasheet.pdf
+- https://www.tapo.com/en/product/smart-camera/tapo-c222/
 
 ---
 *Auto-generated from tapo-c222.json — do not edit by hand.*

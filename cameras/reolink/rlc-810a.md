@@ -16,6 +16,7 @@
 | Protocols | onvif, rtsp, rtmp |
 | IP rating | IP67 |
 | Two-way audio | No |
+| Operating temp | -10 to 55°C |
 | Released | 2020 |
 
 ## Features

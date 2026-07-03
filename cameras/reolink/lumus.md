@@ -7,13 +7,16 @@
 | Type | bullet |
 | Connectivity | wifi |
 | Resolution | 2K QHD (4MP) |
+| Sensor | 1/2.7" CMOS |
+| Lens | 1× 2.8mm F2.0 |
 | Field of view | 105 horizontal° |
-| Night vision | color (15m) |
+| Night vision | hybrid (10m) |
 | Power | DC 12V hardwired |
 | Storage | microSD ≤ 128GB, NVR |
 | Protocols | rtsp, onvif |
-| IP rating | IP67 |
+| IP rating | IP65 |
 | Two-way audio | Yes |
+| Operating temp | -10 to 55°C |
 | Released | 2021 |
 
 ## Features

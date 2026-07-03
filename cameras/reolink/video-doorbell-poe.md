@@ -10,12 +10,13 @@
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 2.8 (fixed)mm |
 | Field of view | 160 diagonal° |
-| Night vision | color (5m) |
+| Night vision | ir (5m) |
 | Power | PoE (IEEE 802.3af) / 12-24VAC doorbell wiring / 24VDC |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP65 |
 | Two-way audio | Yes |
+| Operating temp | -10 to 50°C |
 | Released | 2022 |
 
 ## Features

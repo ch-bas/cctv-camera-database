@@ -6,14 +6,16 @@
 | Model | Duo 4G |
 | Type | bullet |
 | Connectivity | 4g |
-| Resolution | 2×4MP 180° dual-lens (8MP) |
+| Resolution | 2×4MP 180° dual-lens (4MP, 2560×1440) |
+| Sensor | 1/3" CMOS |
+| Lens | 2× |
 | Field of view | 180 horizontal° |
-| Night vision | ir (30m) |
+| Night vision | hybrid (30m) |
 | Power | Rechargeable battery / solar optional |
 | Storage | microSD ≤ 128GB |
-| Protocols | http |
-| IP rating | IP65 |
+| IP rating | IP66 |
 | Two-way audio | Yes |
+| Operating temp | -10 to 55°C |
 | Released | 2022 |
 
 ## Features

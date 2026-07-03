@@ -10,12 +10,13 @@
 | Sensor | 1/3" CMOS (wide) + 1/2.8" CMOS (telephoto) |
 | Lens | 2× 2.8 (wide) + 8 (telephoto)mm F1.6 |
 | Field of view | 104 horizontal (wide) / 38 horizontal (telephoto)° |
-| Night vision | ir (30m) |
+| Night vision | hybrid (30m) |
 | Power | DC 12V/2A |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | rtsp, onvif |
 | IP rating | IP65 |
 | Two-way audio | Yes |
+| Operating temp | -10 to 55°C |
 | Released | 2023 |
 
 ## Features

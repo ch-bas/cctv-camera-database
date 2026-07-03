@@ -6,14 +6,16 @@
 | Model | Go PT |
 | Type | ptz |
 | Connectivity | 4g |
-| Resolution | 2K QHD (4MP) |
+| Resolution | 2K QHD (2MP, 1920×1080) |
+| Sensor | Starlight CMOS |
+| Lens | 1× |
 | Field of view | 355 pan/90 tilt° |
 | Night vision | ir (10m) |
 | Power | Rechargeable battery / solar optional |
 | Storage | microSD ≤ 64GB |
-| Protocols | http |
 | IP rating | IP64 |
 | Two-way audio | Yes |
+| Operating temp | -10 to 55°C |
 | Released | 2021 |
 
 ## Features

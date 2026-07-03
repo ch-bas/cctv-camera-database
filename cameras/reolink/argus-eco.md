@@ -7,13 +7,15 @@
 | Type | bullet |
 | Connectivity | wifi |
 | Resolution | 1080p HD (2MP) |
+| Sensor | CMOS |
+| Lens | 1× |
 | Field of view | 120 diagonal° |
 | Night vision | ir (10m) |
 | Power | Rechargeable battery / solar optional |
 | Storage | microSD ≤ 128GB |
-| Protocols | http |
 | IP rating | IP65 |
 | Two-way audio | Yes |
+| Operating temp | -10 to 55°C |
 | Released | 2020 |
 
 ## Features

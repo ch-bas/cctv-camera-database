@@ -6,13 +6,16 @@
 | Model | E1 |
 | Type | ptz |
 | Connectivity | wifi |
-| Resolution | 1080p HD (2MP) |
+| Resolution | 1080p HD (4MP, 2560×1440) |
+| Sensor | 1/3" CMOS |
+| Lens | 1× 4.0mm F2.0 |
 | Field of view | 355 pan/50 tilt° |
 | Night vision | ir (9m) |
 | Power | DC 5V USB |
 | Storage | microSD ≤ 64GB, NVR |
 | IP rating | IP20 |
 | Two-way audio | Yes |
+| Operating temp | -10 to 40°C |
 | Released | 2019 |
 
 ## Features

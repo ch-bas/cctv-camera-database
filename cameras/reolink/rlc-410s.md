@@ -16,6 +16,7 @@
 | Protocols | rtsp, onvif |
 | IP rating | IP66 |
 | Two-way audio | No |
+| Operating temp | -10 to 55°C |
 | Released | 2018 |
 
 ## Features

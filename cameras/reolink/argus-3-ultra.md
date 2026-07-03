@@ -13,9 +13,9 @@
 | Night vision | hybrid (10m) |
 | Power | Built-in rechargeable battery / USB-C / optional Reolink solar panel |
 | Storage | microSD ≤ 512GB |
-| Protocols | rtsp |
 | IP rating | IP65 |
 | Two-way audio | Yes |
+| Operating temp | -10 to 55°C |
 | Released | 2023 |
 
 ## Features

@@ -16,8 +16,9 @@
 | Power | PoE IEEE 802.3af, 48V Active / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
-| IP rating | IP66 |
+| IP rating | IP67 |
 | Two-way audio | Yes |
+| Operating temp | -10 to 55°C |
 | Released | 2022 |
 
 ## Features

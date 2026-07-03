@@ -7,13 +7,16 @@
 | Type | doorbell |
 | Connectivity | wifi |
 | Resolution | 5MP (5MP, 2560×1920) |
+| Sensor | 1/2.7" CMOS |
+| Lens | 1× 2.26mm F2.0 |
 | Field of view | 160 diagonal° |
-| Night vision | color (5m) |
+| Night vision | ir (5m) |
 | Power | Existing doorbell wiring (12-24VAC 50/60Hz or 24VDC) |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP65 |
 | Two-way audio | Yes |
+| Operating temp | -10 to 50°C |
 | Released | 2022 |
 
 ## Features

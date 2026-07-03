@@ -12,12 +12,12 @@
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× Fixedmm F1.6 |
 | Field of view | 360 pan / 90 tilt° |
-| Night vision | color (15m) |
+| Night vision | hybrid (10m) |
 | Power | Rechargeable battery / solar optional |
 | Storage | microSD ≤ 512GB |
-| Protocols | rtsp |
-| IP rating | IP66 |
+| IP rating | IP64 |
 | Two-way audio | Yes |
+| Operating temp | -10 to 55°C |
 | Released | 2024 |
 
 ## Features
