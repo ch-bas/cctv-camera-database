@@ -8,37 +8,83 @@
   ],
   "resolution": {
     "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
     "label": "2MP"
   },
   "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "100.0 horizontal / 51.1 vertical",
   "night_vision": {
     "type": "hybrid",
     "range_m": 50
   },
+  "power": {
+    "method": "DC 12V / PoE (IEEE 802.3af); 3.9W (PoE)"
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP68",
   "audio": {
     "microphone": true,
     "speaker": false,
     "two_way": false
   },
-  "ip_rating": "IP68",
+  "dimensions_mm": "117.8 (diameter) x 100.3",
+  "weight_g": 260,
   "operating_temp_c": "-40 to 60",
   "environment": [
     "outdoor"
   ],
   "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
     "max_fps": 30
   },
   "features": [
-    "fixed turret",
+    "fixed turret, graphene-plastic composite housing",
     "superior WDR 120dB",
-    "smart dual light (adaptive IR 50m + white LED 50m)",
-    "smart motion detection",
+    "smart dual light (adaptive IR 50m + white LED 50m, IR default)",
+    "deep-learning AI: smart motion detection (people/vehicle), tampering detection",
+    "detection range: detect 46.7m, observe 18.7m, recognize 9.3m, identify 4.7m",
     "dual streaming",
-    "UL Listed, NDAA compliant",
-    "sourced from ACTi's New Products category page -- protocols/power/dimensions not confirmed"
+    "ONVIF Profile S/T",
+    "UL Listed, BSMI, NDAA compliant",
+    "1-way audio, built-in microphone, no speaker"
   ],
   "sources": [
-    "https://www.acti.com/products/new-products"
+    "https://www.acti.com/product/z510?tab=specifications"
   ],
-  "last_verified": "2026-07-03"
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "last_verified": "2026-07-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  }
 }

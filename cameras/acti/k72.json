@@ -8,37 +8,84 @@
   ],
   "resolution": {
     "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
     "label": "4MP"
   },
   "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "101.5 horizontal / 55.6 vertical",
   "night_vision": {
     "type": "ir",
     "range_m": 50
   },
+  "power": {
+    "method": "DC 12V / PoE (IEEE 802.3af); 3.5W (PoE)"
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP68",
   "audio": {
     "microphone": true,
     "speaker": false,
     "two_way": false
   },
-  "ip_rating": "IP68",
+  "dimensions_mm": "109 (diameter) x 83",
+  "weight_g": 340,
   "operating_temp_c": "-30 to 60",
   "environment": [
     "outdoor"
   ],
   "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
     "max_fps": 25
   },
   "features": [
     "fixed dome",
     "extreme WDR 130dB",
-    "smart motion detection",
+    "smart motion detection (people/vehicle), people line crossing, people intrusion, tampering",
+    "detection range: detect 63.0m, observe 25.2m, recognize 12.6m, identify 6.3m",
     "dual streaming",
-    "UL Listed, NDAA compliant",
-    "IK10 vandal-proof",
-    "sourced from ACTi's New Products category page -- protocols/power/dimensions not confirmed"
+    "ONVIF Profile S/G/T, edge recording via NVR ONVIF Profile G",
+    "UL Listed, BSMI, NDAA compliant",
+    "IK10 vandal-proof, corrosion protection optional (~3 years at seashore)",
+    "1-way audio, built-in microphone, no speaker"
   ],
   "sources": [
-    "https://www.acti.com/products/new-products"
+    "https://www.acti.com/product/k72?tab=specifications"
   ],
-  "last_verified": "2026-07-03"
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "last_verified": "2026-07-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  }
 }
