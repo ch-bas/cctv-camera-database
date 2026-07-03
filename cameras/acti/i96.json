@@ -1,0 +1,83 @@
+{
+  "id": "acti-i96",
+  "brand": "ACTi",
+  "model": "I96",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p FHD"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.3-129 (zoom, 30x optical/16x digital)",
+    "aperture": "F1.6-F5.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "66.4 - 2.61 horizontal",
+  "power": {
+    "method": "AC 24V / High PoE (IEEE 802.3at); 25.44 W (PoE)"
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "dimensions_mm": "200 (diameter) x 276",
+  "weight_g": 2750,
+  "operating_temp_c": "-40 to 50",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "features": [
+    "zoom lens: 30x optical zoom, 16x digital zoom",
+    "Extreme WDR (145 dB)",
+    "audio: 2-way, Line-in, Line-out (no built-in mic/speaker)",
+    "ONVIF Compliant: Yes, Profile S, Profile G, Profile T* (To be available through future firmware upgrade), Profile Q",
+    "real-time clock: Yes",
+    "NEMA 4X, UL (for bundled PoE injector or power adapter)"
+  ],
+  "sources": [
+    "https://www.acti.com/product/I96?tab=specifications"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "last_verified": "2026-07-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  }
+}

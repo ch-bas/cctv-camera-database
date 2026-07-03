@@ -1,0 +1,90 @@
+{
+  "id": "acti-a570",
+  "brand": "ACTi",
+  "model": "A570",
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP visible + thermal"
+  },
+  "sensor": "1/2.7\" CMOS (visible)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "4.3 (fixed, visible); 3.6 (fixed, thermal)",
+    "aperture": "F1.6 (visible); F1.0 (thermal)",
+    "varifocal": false
+  },
+  "field_of_view_deg": "84 horizontal / 43.1 vertical (visible); 50 horizontal / 37.3 vertical (thermal)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "DC 12V / PoE Class 3 (IEEE 802.3af); 6 W (DC), 6.5 W (PoE)"
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP68",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "dimensions_mm": "138.3 x 138.3 x 123.1",
+  "weight_g": 950,
+  "operating_temp_c": "-40 to 70",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "features": [
+    "Superior WDR (120 dB)",
+    "smart dual light: IR 15m + white LED 30m",
+    "built-in analytics: People Detection, Vehicle Detection, Object Line Crossing Detection, Object Enter Area Detection, Object Exit Area Detection, Intrusion Detection (Forbidden Area Detection), Tampering Detection, Temperature Detection, ...",
+    "audio: 2-way, Mic-in, Line-in, Line-out (no built-in mic/speaker)",
+    "detection range: detection: people 150m; vehicle 460m, recognition: people 38m; vehicle 112m, identification: people 19m; vehicle 56m, (people: 1.8 x 0.5m), (vehicle: 1.4 x 4.0m)",
+    "ONVIF Compliant: Yes, Profile G",
+    "real-time clock: Yes",
+    "1 x RS-485"
+  ],
+  "sources": [
+    "https://www.acti.com/product/A570?tab=specifications"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "last_verified": "2026-07-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  }
+}

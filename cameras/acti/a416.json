@@ -7,28 +7,25 @@
     "ethernet"
   ],
   "resolution": {
-    "megapixels": 2,
-    "max_width": 1920,
-    "max_height": 1080,
-    "label": "1080p FHD"
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
   },
-  "sensor": "1/2.8\" CMOS",
+  "sensor": "1/2.7\" CMOS",
   "lens": {
     "count": 1,
-    "focal_length_mm": "2.8-12 (motorized zoom)",
+    "focal_length_mm": "2.7-13.5 (zoom, 5x optical)",
+    "aperture": "F1.6",
     "varifocal": true
   },
+  "field_of_view_deg": "104 - 29 horizontal / 55 - 17 vertical",
   "night_vision": {
     "type": "ir",
-    "range_m": 50
+    "range_m": 85
   },
   "power": {
-    "method": "PoE (IEEE 802.3af) / DC 12V"
-  },
-  "storage": {
-    "onboard": true,
-    "nvr_compatible": true,
-    "cloud": false
+    "method": "DC 12V / High PoE (IEEE 802.3at); 14.5 W (DC), 18 W (PoE)"
   },
   "protocols": [
     "rtsp",
@@ -36,31 +33,46 @@
   ],
   "ip_rating": "IP68",
   "audio": {
-    "microphone": true,
+    "microphone": false,
     "speaker": false,
-    "two_way": false
+    "two_way": true
+  },
+  "dimensions_mm": "297.1 x 96.2 x 91.5",
+  "weight_g": 1272,
+  "operating_temp_c": "-30 to 60",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
   },
   "features": [
-    "2MP zoom bullet",
-    "adaptive IR 50m",
-    "extreme WDR 120dB",
-    "superior low light sensitivity",
-    "H.265/H.264",
-    "IP68/IK10",
-    "ONVIF Profile S/T/G"
+    "zoom lens: 5x optical zoom",
+    "Extreme WDR (150 dB)",
+    "built-in analytics: Tampering Detection, Face Detection, Object Line Crossing Detection, Object Enter Area Detection",
+    "audio: 2-way, Line-in, Mic-in, Line-out (no built-in mic/speaker)",
+    "ONVIF Compliant: Profile S, Profile G, Profile T, Profile M",
+    "real-time clock: Yes",
+    "NEMA 4X, Taiwan IoT Cybersecurity Certification Level 1 (TAICS, TCA)"
   ],
   "sources": [
-    "https://www.acti.com/product/A416"
+    "https://www.acti.com/product/A416?tab=specifications"
   ],
   "power_source": [
     "poe",
     "dc"
   ],
+  "last_verified": "2026-07-03",
   "configs": {
     "frigate": {
       "detect": {
-        "width": 640,
-        "height": 480,
+        "width": 1280,
+        "height": 720,
         "fps": 5
       },
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"

@@ -1,0 +1,86 @@
+{
+  "id": "acti-k9001",
+  "brand": "ACTi",
+  "model": "K9001",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 32,
+    "max_width": 11520,
+    "max_height": 2700,
+    "label": "32MP"
+  },
+  "sensor": "1/1.8\" CMOS (8x 4MP panoramic array + 1x 4MP PTZ detail channel)",
+  "lens": {
+    "count": 9,
+    "focal_length_mm": "2 (fixed, panoramic array, x8); 6.0-252 (zoom, 42x optical/16x digital, PTZ detail channel)",
+    "aperture": "F1.0-F1.6 (PTZ detail channel)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "360 horizontal / 110 vertical (panoramic array); 59.47-2.20 horizontal / 35.62-1.24 vertical (PTZ detail channel)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 500
+  },
+  "power": {
+    "method": "DC 24V / DC 36V; 124 W (DC)"
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP68",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "weight_g": 13500,
+  "operating_temp_c": "-40 to 70",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "max_fps": 30
+  },
+  "features": [
+    "Multi-Imager PTZ: fixed 8-sensor 360 degree panoramic array (4MP x8) combined with an independent 42x optical/16x digital zoom PTZ detail camera on the same head",
+    "panoramic channel: up to 30fps at 11520x2700 stitched; PTZ detail channel: up to 60fps at 2688x1520",
+    "video codec not specified on official spec sheet (no Compression row present, unlike other ACTi models)",
+    "Superior WDR (120 dB)",
+    "deep-learning AI 2.0",
+    "built-in analytics: Smart Motion Detection (People Detection, Vehicle Detection), Smart Intrusion Protection (, People Line Crossing Detection, People Intrusion Detection, People Enter Area Detection, People Exit Area Detection, ...",
+    "audio: 2-way, Line-in, Line-out (no built-in mic/speaker)",
+    "ONVIF Compliant: Yes, Profile S, Profile G, Profile T, Profile M",
+    "real-time clock: Yes",
+    "1 x RS-485",
+    "UL Listed"
+  ],
+  "sources": [
+    "https://www.acti.com/product/K9001?tab=specifications"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "last_verified": "2026-07-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  }
+}

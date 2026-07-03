@@ -1,8 +1,8 @@
 # CCTV Camera Database
 
-An open, structured database of 1,638 CCTV / IP camera models and their technical specifications, covering 69 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
+An open, structured database of 1,754 CCTV / IP camera models and their technical specifications, covering 69 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
 
-[![cameras](https://img.shields.io/badge/cameras-1%2C638-blue)](data/cameras.json)
+[![cameras](https://img.shields.io/badge/cameras-1%2C754-blue)](data/cameras.json)
 [![brands](https://img.shields.io/badge/brands-69-green)](cameras/)
 [![license](https://img.shields.io/badge/license-CC0-lightgrey)](LICENSE)
 
@@ -31,7 +31,7 @@ Prefer to self-host or browse offline? A [standalone demo](docs/demo.html) (just
 - **Filter** — narrow by brand, camera type, night vision, resolution, or market
 - **Sort** — click any column header to sort ascending/descending
 - **Detail drawer** — click a row to slide open the full spec sheet (resolution, connectivity, protocols, storage, audio, pricing, source links)
-- **Pagination** — page through all 1,638 cameras, 25 per page
+- **Pagination** — page through all 1,754 cameras, 25 per page
 - **Stats bar** — live counts for total cameras, brands, 4K+, WiFi, and no-subscription models
 
 ---
@@ -63,7 +63,7 @@ cctv-camera-database/
 │   ├── tapo/             #  62 cameras
 │   └── …60 more brands
 ├── data/                 # GENERATED — do not edit by hand
-│   ├── cameras.json      # all 1,638 cameras as one array
+│   ├── cameras.json      # all 1,754 cameras as one array
 │   └── cameras.csv       # flattened, spreadsheet-friendly
 ├── schema/
 │   └── camera.schema.json
@@ -121,16 +121,16 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 
 | Metric | Count |
 |--------|-------|
-| Total cameras | **1,649** |
+| Total cameras | **1,754** |
 | Brands | **69** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
-| PoE wired | 1,115 |
+| PoE wired | 1,212 |
 | WiFi | 480 |
-| Battery / wire-free | 183 |
-| 4K / 8MP+ | 496 |
-| 4–5MP | 654 |
-| 1080p–2MP | 433 |
-| With integration configs (Frigate / Home Assistant) | 1,235 |
+| Battery / wire-free | 184 |
+| 4K / 8MP+ | 535 |
+| 4–5MP | 745 |
+| 1080p–2MP | 473 |
+| With integration configs (Frigate / Home Assistant) | 1,352 |
 
 ### All 69 brands
 
@@ -147,7 +147,7 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | Ring (Amazon) | 25 | Consumer ecosystem, US/EU/AU |
 | Avigilon | 24 | Enterprise NDAA, US/CA |
 | Amcrest | 24 | Prosumer, US |
-| VIGI (TP-Link) | 24 | Business/SMB PoE, global |
+| VIGI (TP-Link) | 25 | Business/SMB PoE, global |
 | Ubiquiti UniFi | 26 | Prosumer/SMB, US/global |
 | Annke | 23 | Prosumer, global |
 | Google Nest | 19 | Consumer smart home, global |
@@ -168,7 +168,7 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | Pelco | 15 | Enterprise legacy, NA/global |
 | Vivotek | 15 | Enterprise AI, global |
 | Wyze | 15 | Budget consumer, US |
-| ACTi | 14 | Enterprise IP + analog, NDAA, TW/global |
+| ACTi | 119 | Enterprise IP + analog, NDAA, TW/global |
 | FLIR (Teledyne) | 12 | Thermal imaging, NA/EU |
 | Kedacom | 12 | Enterprise, CN/global |
 | Sunell | 12 | Prosumer/Enterprise, CN/global |

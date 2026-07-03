@@ -1,0 +1,90 @@
+{
+  "id": "acti-i98",
+  "brand": "ACTi",
+  "model": "I98",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p FHD"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.5-148.5 (zoom, 33x optical/16x digital)",
+    "aperture": "F1.55-F5.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "69.3 - 3 horizontal / 38 - 1.7 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 200
+  },
+  "power": {
+    "method": "DC 48V / AC 24V / High PoE 60W; 50 W (PoE, heater, fan and IR on), 62 W (AC, heater, fan and IR on)"
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "dimensions_mm": "170 (diameter) x 260",
+  "weight_g": 3112,
+  "operating_temp_c": "-40 to 55",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60
+  },
+  "features": [
+    "zoom lens: 33x optical zoom, 16x digital zoom",
+    "Extreme WDR (145 dB)",
+    "built-in analytics: Basic Face Detection, Object Based Motion Detection, Tampering Detection, Shock Detection, PTZ Auto Tracking, Object Line Crossing Detection, Object Enter Area Detection, Missing Object Detection, ...",
+    "audio: 2-way, Line-in, Line-out (no built-in mic/speaker)",
+    "detection range: detection: 90m-2970m, observation: 36.3m-1197.6m, recognition: 18m-594m, identification: 9m-297m",
+    "ONVIF Compliant: Yes, Profile S, Profile G, Profile T, Profile Q, Profile M* (To be available through future firmware upgrade)",
+    "real-time clock: Yes",
+    "NEMA 4X, UL Listed (UL 60950-1)"
+  ],
+  "sources": [
+    "https://www.acti.com/product/I98?tab=specifications"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "last_verified": "2026-07-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  }
+}

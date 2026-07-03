@@ -1,0 +1,85 @@
+{
+  "id": "acti-b511a",
+  "brand": "ACTi",
+  "model": "B511A",
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 12,
+    "max_width": 4000,
+    "max_height": 3000,
+    "label": "12MP"
+  },
+  "sensor": "1/1.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.65 (fixed)",
+    "aperture": "F2.8",
+    "varifocal": false
+  },
+  "field_of_view_deg": "198.5 horizontal / 198.5 vertical (full fisheye view); 121.1 (high detail/dewarped area)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20
+  },
+  "power": {
+    "method": "PoE Class 3 (IEEE 802.3af) / DC 12V; 7.17 W (PoE)"
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": true
+  },
+  "dimensions_mm": "149.10 (diameter) x 43.00",
+  "weight_g": 446,
+  "operating_temp_c": "-10 to 50",
+  "environment": [
+    "indoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 18
+  },
+  "features": [
+    "Extreme WDR (130 dB)",
+    "built-in analytics: Object Based Motion Detection, Tampering Detection, Shock Detection, Digital Auto Tracking, Object Line Crossing Detection, Object Enter Area Detection, Missing Object Detection, Unattended Object Detection, ...",
+    "ONVIF Compliant: Yes, Profile G, Profile T, Profile Q, Profile M* (To be available through future firmware upgrade)",
+    "real-time clock: Yes",
+    "UL (for optional PoE injector and power adapter)"
+  ],
+  "sources": [
+    "https://www.acti.com/product/B511A?tab=specifications"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "last_verified": "2026-07-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  }
+}
