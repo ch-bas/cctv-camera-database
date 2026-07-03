@@ -121,14 +121,14 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 
 | Metric | Count |
 |--------|-------|
-| Total cameras | **1,649** |
+| Total cameras | **1,659** |
 | Brands | **69** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
-| PoE wired | 1,115 |
+| PoE wired | 1,125 |
 | WiFi | 480 |
 | Battery / wire-free | 183 |
-| 4K / 8MP+ | 496 |
-| 4–5MP | 654 |
+| 4K / 8MP+ | 499 |
+| 4–5MP | 660 |
 | 1080p–2MP | 433 |
 | With integration configs (Frigate / Home Assistant) | 1,235 |
 
@@ -168,7 +168,7 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | Pelco | 15 | Enterprise legacy, NA/global |
 | Vivotek | 15 | Enterprise AI, global |
 | Wyze | 15 | Budget consumer, US |
-| ACTi | 14 | Enterprise IP + analog, NDAA, TW/global |
+| ACTi | 24 | Enterprise IP + analog, NDAA, TW/global |
 | FLIR (Teledyne) | 12 | Thermal imaging, NA/EU |
 | Kedacom | 12 | Enterprise, CN/global |
 | Sunell | 12 | Prosumer/Enterprise, CN/global |
