@@ -8,25 +8,27 @@
 | Model | UniFi Protect G4 Doorbell |
 | Type | doorbell |
 | Connectivity | wifi, ethernet |
-| Resolution | 5MP (5MP, 2560×1920) |
-| Sensor | 1/2.7" CMOS |
-| Lens | 1× 1.65mm F2.4 |
-| Field of view | 155 diagonal° |
-| Night vision | ir (8m) |
-| Power | Existing doorbell wiring (16-24VAC) |
+| Resolution | 2MP (2MP, 1600×1200) |
+| Sensor | 5MP CMOS |
+| Lens | 1× |
+| Field of view | 138 horizontal / 114 vertical / 155 diagonal° |
+| Night vision | ir |
+| Power | 16-24V AC, 1.25A max, 50/60Hz (existing doorbell wiring); 12W max |
 | Storage | NVR |
 | Protocols | rtsp |
+| IP rating | IPX4 |
 | Two-way audio | Yes |
+| Operating temp | -10 to 40°C |
 | Released | 2022 |
 
 ## Features
 
 - video doorbell
-- built-in display
-- WiFi 6
+- 802.11a/b/g/n/ac WiFi + Bluetooth 4.2
+- no built-in IR night-vision range confirmed on official spec sheet (no IR-distance row present, unlike the Pro variant)
 - person detection
 - package detection
-- two-way audio
+- two-way audio, microphone can be disabled
 - UniFi Protect ecosystem
 
 ## Sources
