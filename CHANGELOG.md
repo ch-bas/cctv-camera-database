@@ -6,6 +6,32 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.17.2] — 2026-07-03
+
+RTSP/ONVIF protocol confirmation pass across the entire ACTi brand (follow-up to 1.17.0/1.17.1), plus 1 new camera and several data-quality fixes surfaced during verification.
+
+### Added
+
+- **E815** (5MP outdoor zoom dome), sourced from an official printed ACTi datasheet (doc rev. 150610) — confirmed RTSP + ONVIF.
+- Discovered and used ACTi's internal spec AJAX endpoints (`newPopupSpecifications.ashx` + `newPopupSpecifications_value.ashx`, the same JSON backing the website's own product-page widget) to pull full official specs directly for the majority of this pass, instead of manual per-model PDF exports.
+
+### Changed
+
+- **RTSP + ONVIF now explicitly confirmed for 93 of 119 ACTi cameras** (up from a handful at the start of this pass), each cross-referenced against an official ACTi source (`?tab=specifications` page or a downloadable PDF datasheet) requiring an explicit `Network Protocol & Service` list containing RTSP *and* an `ONVIF Compliant` row — never inferred from one without the other.
+- Full spec backfill (sensor, lens, power, dimensions, weight, IP rating, video codecs/max fps, audio, detection range, ONVIF profile list) applied across effectively the whole brand, regardless of protocol-confirmation outcome.
+- **20 cameras remain genuinely unconfirmed**, each with the specific reason recorded in its `features`: 11 have ONVIF but no RTSP row (`A371-P2`, `A372`, `A372-P1`, `A374`, `A374-P1`, `A570-P1`, `A570-P2`, `A810`, `Q711`, `Q75`, `Z413-P1`), 3 have RTSP but no ONVIF row (`Q120`, `Q121`, `VMGB-370`), and 6 have neither documented (`A432`, `A432-P1`, `A973`, `Q170`, `Z64`, `Z914`). 12 of the 20 were additionally cross-checked against a second, independent official source (a downloadable PDF datasheet distinct from the specifications-tab widget) — all returned the same result, confirming this isn't a gap in the widget, it's a genuine gap in ACTi's own published documentation for these specific models.
+- The 6 genuinely-analog Y-series cameras (`Y31`, `Y32`, `Y35`, `Y55`, `Y71`, `Y72`) correctly retain no `protocols` field — not applicable over coax.
+
+### Fixed
+
+- **Bug: `video.max_fps` extraction was picking the highest FPS value anywhere in a camera's frame-rate table**, but the schema defines the field as "Max FPS at highest resolution" — a different (usually lower) number for cameras whose fps drops at their top resolution tier. Corrected across every camera processed in this pass.
+- **`A973`, `Z64`**: had been marked RTSP+ONVIF confirmed in an earlier round of this audit without an actual `Network Protocol & Service` row ever being checked for either model — corrected to unconfirmed on cross-verification against the live spec API (ONVIF-only, same pattern as several other models in this pass). `Z64`'s official PDF datasheet does contain the string "RTSP", but only inside a `Security` row (`HTTP/RTSP/ONVIF(WSSE)` authentication schemes) rather than an explicit protocol list — noted, but not treated as sufficient confirmation.
+- **`Z416`, `Z722`, `Z84`**: IP rating corrected `IP67` → `IP68` (repeat confirmation from the live spec page); `Z722`'s operating temperature widened `-30~60°C` → `-40~60°C` to match the official sheet.
+- **`Q170`**: IP rating reconciled after conflicting across three checks (`IP68` web page → `IP67` dated PDF datasheet → `IP68` web page again, re-checked) — settled on `IP68` given the live page confirms it twice against a single older PDF; still has no protocols documented on any of the three sources checked.
+- **15 cameras** (`A416`, `A820`, `A88`, `B416`, `B76A`, `I96`, `I98`, `KCM-5611`, `Q550`, `Z47`, `Z49`, `Z714`, `Z810`, `Z812`, `Z86`) were sitting on a much thinner, pre-audit-standard data shape (legacy `storage` object, third-party reseller-site sources, no `configs` block, generic feature bullets) — refreshed to the full spec depth used throughout the rest of this audit.
+
+---
+
 ## [1.17.0] — 2026-07-03
 
 Full data-quality audit of the ACTi brand (issue #40 pattern, part of the master audit #28), plus 10 new cameras.
