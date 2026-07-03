@@ -22,10 +22,12 @@
 - built-in analytics: Human Body Temperature Detection
 - audio: 2-way, Mic-in, Line-in, Line-out (no built-in mic/speaker)
 - RTSP confirmed in Network Protocol & Service, but no ONVIF Compliant row on official spec sheet -- protocols left unconfirmed
+- cross-checked against the official downloadable PDF datasheet (separate from the web specifications widget) -- same result, protocols genuinely not documented
 
 ## Sources
 
 - https://www.acti.com/product/VMGB-370?tab=specifications
+- https://download.acti.com/?id=27575
 
 ---
 *Auto-generated from acti-vmgb-370.json — do not edit by hand.*
