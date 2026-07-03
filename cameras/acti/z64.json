@@ -8,43 +8,85 @@
   ],
   "resolution": {
     "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
     "label": "8MP"
   },
   "sensor": "1/2.7\" CMOS",
   "lens": {
     "count": 1,
-    "focal_length_mm": "zoom, 4.3x",
+    "focal_length_mm": "zoom, 4.3x (2.8-12mm)",
+    "aperture": "F1.4-F3.3",
     "varifocal": true
   },
+  "field_of_view_deg": "111.5-34.4 horizontal / 58.7-19.2 vertical",
   "night_vision": {
     "type": "hybrid",
     "range_m": 60
   },
+  "power": {
+    "method": "DC 12V / PoE (IEEE 802.3af); 8W (PoE)"
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP68",
   "audio": {
     "microphone": true,
     "speaker": false,
     "two_way": false
   },
-  "ip_rating": "IP68",
+  "dimensions_mm": "129 (diameter) x 110",
+  "weight_g": 690,
   "operating_temp_c": "-30 to 60",
   "environment": [
     "outdoor"
   ],
   "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
     "max_fps": 30
   },
   "features": [
-    "zoom turret, 4.3x zoom",
+    "zoom turret, 4.3x zoom, LightGuard",
     "extreme WDR 130dB",
-    "LightGuard, smart dual light (adaptive IR 60m + white LED 40m)",
-    "smart motion detection, smart intrusion protection, counting",
+    "smart dual light (adaptive IR 60m + 3000K white LED 40m, IR default)",
+    "deep-learning AI 2.0: smart motion detection, smart intrusion protection, tampering, people flow/density counting",
+    "detection range varies with zoom: detect 81.0-405.0m, observe 32.4-162.0m, recognize 16.2-81.0m, identify 8.1-40.5m",
     "triple streaming",
+    "ONVIF Profile S/G/T/M",
     "UL Listed, NDAA compliant",
-    "IK10 vandal-proof",
-    "sourced from ACTi's High Resolution Cameras category page -- protocols/power/dimensions not confirmed"
+    "IK10 vandal-proof metal casing, corrosion protection optional (~3 years at seashore)",
+    "1-way audio, built-in microphone, no speaker"
   ],
   "sources": [
-    "https://www.acti.com/products/high-resolution-cameras"
+    "https://www.acti.com/product/z64?tab=specifications"
   ],
-  "last_verified": "2026-07-03"
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "last_verified": "2026-07-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  }
 }
