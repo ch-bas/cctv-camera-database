@@ -1,0 +1,81 @@
+{
+  "id": "acti-q550",
+  "brand": "ACTi",
+  "model": "Q550",
+  "type": "dual-lens",
+  "connectivity": ["ethernet"],
+  "power_source": ["poe", "dc"],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 4096,
+    "max_height": 1860,
+    "label": "8MP (2x4MP) 180\u00b0 panoramic"
+  },
+  "video": {
+    "codecs": ["H.265", "H.264", "MJPEG"],
+    "max_fps": 20,
+    "streams": [
+      { "name": "main", "resolution": "4096x1860", "fps": 20 },
+      { "name": "sub", "resolution": "2048x936", "fps": 20 }
+    ]
+  },
+  "sensor": "2x 1/2.7\" Progressive Scan CMOS (4MP each)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "4.0",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 horizontal, 47.41 vertical",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 50
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 12.95
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": ["rtsp", "rtmp", "onvif", "http"],
+  "ip_rating": "IP68",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "2-sensor 180-degree panoramic turret",
+    "seamless video stitching",
+    "Deep Learning AI 2.0",
+    "ColorGuard",
+    "smart dual light (IR + white LED)",
+    "white LED 30m",
+    "smart motion detection",
+    "people counting",
+    "crowd detection",
+    "extreme WDR 130dB",
+    "ONVIF Profile S/G/T",
+    "IK10 vandal proof metal casing",
+    "4KV surge protection",
+    "DI/DO"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "environment": ["outdoor"],
+  "sources": ["https://www.acti.com/product/Q550"],
+  "last_verified": "2026-07-02",
+  "configs": {
+    "frigate": {
+      "detect": { "width": 1024, "height": 465, "fps": 5 },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1",
+      "notes": "ACTi default RTSP port is 7070. Unverified template based on ACTi platform convention. Panoramic 4096x1860 main stream; consider go2rtc for restreaming."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profile S/G/T). Default RTSP port is 7070. Two-way audio via built-in mic and speaker."
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "id": "acti-z86",
+  "brand": "ACTi",
+  "model": "Z86",
+  "type": "dome",
+  "connectivity": ["ethernet"],
+  "power_source": ["poe", "dc"],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "video": {
+    "codecs": ["H.265", "H.264", "MJPEG"],
+    "max_fps": 25,
+    "streams": [
+      { "name": "main", "resolution": "2688x1520", "fps": 25 },
+      { "name": "sub", "resolution": "640x360", "fps": 30 }
+    ]
+  },
+  "sensor": "1/3\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "102.1-30.7 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 7.5
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": ["rtsp", "onvif", "http"],
+  "ip_rating": "IP68",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "4MP 4.3x optical zoom dome",
+    "adaptive IR 40m",
+    "superior WDR 120dB",
+    "superior low light sensitivity",
+    "tampering detection",
+    "intrusion detection",
+    "object line crossing detection",
+    "ONVIF Profile S/G/T",
+    "IK10 vandal proof metal casing"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "128 x 100 (dia x H)",
+  "weight_g": 775,
+  "environment": ["outdoor"],
+  "sources": ["https://www.acti.com/product/Z86"],
+  "last_verified": "2026-07-02",
+  "configs": {
+    "frigate": {
+      "detect": { "width": 640, "height": 360, "fps": 5 },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1",
+      "notes": "ACTi default RTSP port is 7070. Unverified template based on ACTi platform convention."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profile S/G/T). Default RTSP port is 7070."
+    }
+  }
+}

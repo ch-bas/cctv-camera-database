@@ -1,0 +1,84 @@
+{
+  "id": "acti-a820",
+  "brand": "ACTi",
+  "model": "A820",
+  "type": "dome",
+  "connectivity": ["ethernet"],
+  "power_source": ["poe", "dc"],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "video": {
+    "codecs": ["H.265", "H.264", "MJPEG"],
+    "max_fps": 30,
+    "streams": [
+      { "name": "main", "resolution": "2688x1520", "fps": 30 },
+      { "name": "sub", "resolution": "640x480", "fps": 30 }
+    ]
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "102.8-32.4 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 85
+  },
+  "power": {
+    "method": "PoE Class 3 (IEEE 802.3af) / DC 12V",
+    "consumption_w": 12.5,
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": ["rtsp", "onvif", "http"],
+  "ip_rating": "IP68",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "4MP 5x optical zoom dome",
+    "Deep Learning AI 1.0",
+    "face detection",
+    "people/vehicle detection",
+    "IR 85m",
+    "extreme WDR 150dB",
+    "quad streams",
+    "ONVIF Profile S/G/T/M",
+    "IK10 vandal proof",
+    "UL Listed",
+    "Taiwan IoT Cybersecurity Certification",
+    "SRTP encrypted streaming",
+    "built-in pixel counter",
+    "DI/DO",
+    "line-in/line-out audio"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "141 x 99.5 (dia x H)",
+  "environment": ["outdoor"],
+  "sources": ["https://www.acti.com/product/A820"],
+  "last_verified": "2026-07-02",
+  "configs": {
+    "frigate": {
+      "detect": { "width": 640, "height": 480, "fps": 5 },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1",
+      "notes": "ACTi default RTSP port is 7070. Unverified template based on ACTi platform convention."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profile S/G/T/M). Default RTSP port is 7070."
+    }
+  }
+}

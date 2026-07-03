@@ -1,0 +1,79 @@
+{
+  "id": "acti-z812",
+  "brand": "ACTi",
+  "model": "Z812",
+  "type": "dome",
+  "connectivity": ["ethernet"],
+  "power_source": ["poe", "dc"],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p FHD"
+  },
+  "video": {
+    "codecs": ["H.265", "H.264", "MJPEG"],
+    "max_fps": 30,
+    "streams": [
+      { "name": "main", "resolution": "1920x1080", "fps": 30 },
+      { "name": "sub", "resolution": "640x360", "fps": 30 }
+    ]
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "103.6-33.5 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 60
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 8
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": ["rtsp", "rtmp", "onvif", "http"],
+  "ip_rating": "IP68",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "2MP 4.3x optical zoom dome",
+    "people/vehicle detection",
+    "object line crossing detection",
+    "adaptive IR 60m",
+    "superior WDR 120dB",
+    "extreme low light sensitivity",
+    "ONVIF Profile S/G/T",
+    "IK10 vandal proof",
+    "UL Listed",
+    "6KV surge protection",
+    "edge recording via ONVIF Profile G"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "128 x 100 (dia x H)",
+  "environment": ["outdoor"],
+  "sources": ["https://www.acti.com/product/Z812"],
+  "last_verified": "2026-07-02",
+  "configs": {
+    "frigate": {
+      "detect": { "width": 640, "height": 360, "fps": 5 },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1",
+      "notes": "ACTi default RTSP port is 7070. Unverified template based on ACTi platform convention."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profile S/G/T). Default RTSP port is 7070."
+    }
+  }
+}

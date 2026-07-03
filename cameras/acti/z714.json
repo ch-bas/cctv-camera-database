@@ -1,0 +1,80 @@
+{
+  "id": "acti-z714",
+  "brand": "ACTi",
+  "model": "Z714",
+  "type": "dome",
+  "connectivity": ["ethernet"],
+  "power_source": ["poe", "dc"],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "video": {
+    "codecs": ["H.265", "H.264", "MJPEG"],
+    "max_fps": 20,
+    "streams": [
+      { "name": "main", "resolution": "3840x2160", "fps": 20 },
+      { "name": "sub", "resolution": "1920x1080", "fps": 30 }
+    ]
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "99 horizontal, 55.3 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40
+  },
+  "power": {
+    "method": "PoE Class 3 (IEEE 802.3af) / DC 12V",
+    "consumption_w": 4.5,
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": ["rtsp", "onvif", "http"],
+  "ip_rating": "IP68",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "8MP fixed dome",
+    "Deep Learning AI 1.0",
+    "LightGuard",
+    "smart motion detection",
+    "people/vehicle detection",
+    "adaptive IR 40m",
+    "extreme WDR 130dB",
+    "ONVIF Profile S/G/T",
+    "IK10 vandal proof",
+    "UL Listed",
+    "edge recording via ONVIF Profile G"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "109 x 83 (dia x H)",
+  "environment": ["outdoor"],
+  "sources": ["https://www.acti.com/product/Z714"],
+  "last_verified": "2026-07-02",
+  "configs": {
+    "frigate": {
+      "detect": { "width": 640, "height": 360, "fps": 5 },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1",
+      "notes": "ACTi default RTSP port is 7070. Unverified template based on ACTi platform convention."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profile S/G/T). Default RTSP port is 7070."
+    }
+  }
+}

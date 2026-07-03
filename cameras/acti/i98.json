@@ -1,0 +1,83 @@
+{
+  "id": "acti-i98",
+  "brand": "ACTi",
+  "model": "I98",
+  "type": "ptz",
+  "connectivity": ["ethernet"],
+  "power_source": ["poe", "ac-mains"],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p FHD"
+  },
+  "video": {
+    "codecs": ["H.264", "MJPEG"],
+    "max_fps": 60,
+    "streams": [
+      { "name": "main", "resolution": "1920x1080", "fps": 60 },
+      { "name": "sub", "resolution": "640x480", "fps": 30 }
+    ]
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.5-148.5",
+    "aperture": "F1.6-F5.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "69.3-3 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 160
+  },
+  "power": {
+    "method": "High PoE (IEEE 802.3at) 50W / AC 24V 62W with heater",
+    "consumption_w": 50
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "MicroSDHC memory card slot, card not included"
+  },
+  "protocols": ["rtsp", "onvif", "http"],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "2MP outdoor speed dome",
+    "33x optical zoom",
+    "endless 360 pan",
+    "PTZ auto tracking",
+    "256 preset points, 10 preset tours",
+    "adaptive IR 160m",
+    "extreme WDR 145dB",
+    "60fps at 1080p",
+    "built-in dehumidifier and heater",
+    "IK10 vandal proof metal casing",
+    "NEMA 4X",
+    "Pelco D/P and VISCA protocol support",
+    "4 DI / 2 DO"
+  ],
+  "operating_temp_c": "-40 to 55",
+  "dimensions_mm": "170 x 260 (dia x H)",
+  "weight_g": 3112,
+  "environment": ["outdoor"],
+  "sources": ["https://www.acti.com/product/I98"],
+  "last_verified": "2026-07-02",
+  "configs": {
+    "frigate": {
+      "detect": { "width": 640, "height": 480, "fps": 5 },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1",
+      "notes": "ACTi default RTSP port is 7070. Unverified template based on ACTi platform convention. Requires High PoE (802.3at) injector or AC 24V; standard 802.3af PoE is insufficient."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration for stream and PTZ control. Default RTSP port is 7070."
+    }
+  }
+}

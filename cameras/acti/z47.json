@@ -1,0 +1,80 @@
+{
+  "id": "acti-z47",
+  "brand": "ACTi",
+  "model": "Z47",
+  "type": "bullet",
+  "connectivity": ["ethernet"],
+  "power_source": ["poe", "dc"],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "video": {
+    "codecs": ["H.265", "H.264", "MJPEG"],
+    "max_fps": 20,
+    "streams": [
+      { "name": "main", "resolution": "3840x2160", "fps": 20 },
+      { "name": "sub", "resolution": "1920x1080", "fps": 30 }
+    ]
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "99.8-31.1 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": ["rtsp", "onvif", "http"],
+  "ip_rating": "IP68",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "8MP 4.3x optical zoom bullet",
+    "adaptive IR 50m",
+    "superior WDR 120dB",
+    "tampering detection",
+    "intrusion detection",
+    "object line crossing detection",
+    "triple streams",
+    "ONVIF Profile S/G/T",
+    "IK10 vandal proof metal casing",
+    "DI/DO",
+    "line-in/line-out audio"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "86 x 72 x 245",
+  "weight_g": 970,
+  "environment": ["outdoor"],
+  "sources": ["https://www.acti.com/product/Z47"],
+  "last_verified": "2026-07-02",
+  "configs": {
+    "frigate": {
+      "detect": { "width": 640, "height": 360, "fps": 5 },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1",
+      "notes": "ACTi default RTSP port is 7070. Unverified template based on ACTi platform convention."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profile S/G/T). Default RTSP port is 7070."
+    }
+  }
+}
