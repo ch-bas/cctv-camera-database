@@ -6,6 +6,25 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.19.1] — 2026-07-04
+
+Hikvision data-quality patch — 14 corrections from a targeted audit (Hikvision model-number decode + internal-consistency checks), each **verified against official Hikvision datasheets/product pages**. Field-level fixes only; no cameras added or removed.
+
+### Fixed
+
+- **Night-vision type (3)** — `DS-2CD1143G2-LIUF`, `DS-2CD1153G2-LIUF`, `DS-2CD1183G2-LIUF`: Smart Hybrid Light (LIUF) models typed `ir` → corrected to `hybrid` (IR + white supplement), matching their own siblings/regional variants.
+- **Form factor (7)** — `DS-2CD2367G2-L`, `DS-2CD2386G2-I`, `DS-2CD2386G2-ISU/SL`, `DS-2CD2386G2-IU` (dome → **turret**; 23xx is Hikvision's turret family); `DS-2CD2083G2-I`, `DS-2CD2087G2-SU` (dome → **bullet**; confirmed "Fixed Bullet" on Hikvision datasheets); `DS-2CD2726G2-IZS` (bullet → **dome**; "Motorized Varifocal Dome"); `DS-2CD6365G0E-IVS` (panoramic → **fisheye**; "Network Fisheye Camera").
+- **Resolution (2)** — `DS-2CD6944G0-IHS`: 8 → **16MP** ("180° Stitched 16MP PanoVu", four sensors); `DS-2DE2A204IW-DE3/W`: 4 → **2MP** (max 1920×1080; the `-404` variant is the 4MP one).
+- **Connectivity (1)** — `DS-2CD2443G2-IW`: the `-IW` cube is WiFi — added `wifi` to `connectivity`.
+- `last_verified: 2026-07-04` set on all 14 corrected entries.
+
+### Notes
+
+- Flagged for maintainer review (not changed): **`DS-2CD2427G2H-LI(U)`** — no such Hikvision SKU exists; its stored spec (4MP hybrid dome, 1/1.8") matches the real `DS-2CD2147G2H-LIU`, so the model number is likely mistyped. Left as a rename-vs-remove decision.
+- Patch release on top of the v1.19.0 audit (Reolink + Hanwha).
+
+---
+
 ## [1.18.0] — 2026-07-03
 
 Full data-quality audit of the Ubiquiti brand (issue #40 pattern, part of the master audit #28) — all 26 UniFi Protect cameras re-verified against official sources.

@@ -6,7 +6,7 @@
 | Model | DS-2CD6944G0-IHS |
 | Type | panoramic |
 | Connectivity | ethernet |
-| Resolution | 4MP × 4 multisensor panoramic (8MP) |
+| Resolution | 16MP (4×4MP multisensor) (16MP) |
 | Field of view | 180h° |
 | Night vision | none |
 | Power | PoE (802.3af) / DC 12V |

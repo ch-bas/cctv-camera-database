@@ -8,7 +8,7 @@
 | Model | DS-2DE2A204IW-DE3/W |
 | Type | ptz |
 | Connectivity | wifi, ethernet |
-| Resolution | 4MP (4MP, 2688×1520) |
+| Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/2.7" Progressive Scan CMOS |
 | Lens | 1× 2.8-8 (4x optical zoom)mm |
 | Field of view | 103-29 horizontal° |

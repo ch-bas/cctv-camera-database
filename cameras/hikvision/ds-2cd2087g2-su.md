@@ -6,7 +6,7 @@
 |-------|------|
 | Brand | Hikvision |
 | Model | DS-2CD2087G2-SU |
-| Type | dome |
+| Type | bullet |
 | Connectivity | ethernet |
 | Resolution | 4K UHD (8MP, 3840×2160) |
 | Sensor | 1/2.8" Progressive Scan CMOS |
