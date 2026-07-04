@@ -1,0 +1,125 @@
+{
+  "id": "hanwha-pnm-c34404rqpz",
+  "brand": "Hanwha",
+  "model": "PNM-C34404RQPZ",
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet P 4K 4Ch PTRZ + 2MP 40x PTZ AI Camera"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 34,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "34MP total (4x 4K PTRZ + 2MP 40x PTZ)"
+  },
+  "sensor": "5x 1/2.8\" CMOS (4 multi-directional + 1 PTZ)",
+  "lens": {
+    "count": 5,
+    "focal_length_mm": "4x 3.3-5.7 (1.7x) + PTZ 4.25-170 (40x optical)",
+    "aperture": "F1.5-1.9 (4ch) / F1.6-4.95 (PTZ)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "109-56 horizontal / 55-31 vertical per 4K channel; 65.66-1.88 horizontal (PTZ)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 200
+  },
+  "power": {
+    "method": "PoE++ (IEEE 802.3bt Type 4, Class 8)",
+    "consumption_w": 64,
+    "poe_class": 8
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": true,
+    "notes": "2 microSD/SDHC/SDXC slots (512GB each, 1TB total; up to 1TB each / 2TB total for OnCloud edge recording)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "4x 4K PTRZ multi-directional channels (360° coverage) + 2MP 40x optical zoom PTZ",
+    "PTZ: 360° endless pan (max 700°/s), 110° tilt, IR 200m, 150 dB WDR, auto tracking (person/vehicle) + target lock",
+    "4K channels: IR 20m, 120 dB WDR, PTRZ remote adjustment",
+    "AI smart zoom and advanced hand-over between channels and PTZ",
+    "AI object classification: person / face / vehicle / license plate + BestShot",
+    "AI loitering & line-crossing detection, WiseNR II (AI), WiseStream III",
+    "spin-dry water removal + lens heater, DIS (gyro) on PTZ",
+    "IK10, NEMA4X, NEMA-TS 2",
+    "Wisenet 7 + CV5 SoC, TPM 2.0 (FIPS 140-2 level 2)",
+    "audio/alarm I/O via optional I/O box",
+    "Direct Cloud Connection"
+  ],
+  "release_year": 2023,
+  "release_notes": "Specs verified against the official Hanwha Vision datasheet DataSheet_PNM-C34404RQPZ (Ver 202508). 4K channels max 15fps with AI on (20fps AI off); PTZ channel 1080p @60fps.",
+  "sources": [
+    "https://www.hanwhavision.com/en/products/product-details/pnm-c34404rqpz"
+  ],
+  "last_verified": "2026-07-04",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80. Each channel streams separately."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version. Add each channel as a separate camera."
+    }
+  },
+  "dimensions_mm": "Ø379.8 x 301.9",
+  "weight_g": 7900,
+  "operating_temp_c": "-40 to 50",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "4K channel (x4)",
+        "resolution": "3840x2160",
+        "fps": 15,
+        "codec": "H.265"
+      },
+      {
+        "name": "PTZ channel",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ]
+}

@@ -56,9 +56,9 @@ a Claude Code skill for AI-powered video production built on [Remotion](https://
 cctv-camera-database/
 ├── cameras/              # source of truth — one JSON file per camera, grouped by brand
 │   ├── hikvision/        # 158 cameras
-│   ├── reolink/          # 122 cameras
+│   ├── reolink/          # 116 cameras
 │   ├── dahua/            # 155 cameras
-│   ├── hanwha/           #  71 cameras
+│   ├── hanwha/           #  45 cameras
 │   ├── axis/             #  66 cameras
 │   ├── tapo/             #  62 cameras
 │   └── …60 more brands
@@ -139,7 +139,7 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | Hikvision | 158 | Enterprise + consumer, global |
 | Reolink | 122 | Prosumer, no-subscription, global |
 | Dahua | 155 | Enterprise + consumer, global |
-| Hanwha | 71 | Enterprise AI, Korea/global |
+| Hanwha | 45 | Enterprise AI, Korea/global |
 | Axis | 66 | Enterprise premium, global |
 | Tapo (TP-Link) | 47 | Consumer budget, global |
 | Eufy (Anker) | 36 | Consumer no-subscription, global |

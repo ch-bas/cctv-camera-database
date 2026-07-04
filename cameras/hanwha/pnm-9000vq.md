@@ -1,6 +1,6 @@
 # Hanwha PNM-9000VQ
 
-*Also known as: Wisenet P 4x5MP Multi-Sensor Quad Camera*
+*Also known as: Wisenet P 8-20MP Multi-directional Camera*
 
 | Field | Spec |
 |-------|------|
@@ -8,32 +8,33 @@
 | Model | PNM-9000VQ |
 | Type | panoramic |
 | Connectivity | ethernet |
-| Resolution | 4x5MP (20MP total) (20MP, 8000×1944) |
-| Sensor | 4x 1/2.8" Progressive Scan CMOS |
-| Lens | 4× 3.69 (fixed per channel)mm |
-| Field of view | 360 (4x 90°)° |
-| Night vision | ir (30m) |
-| Power | PoE (802.3at) |
+| Resolution | 8-20MP (4x 2MP/5MP modules) (20MP, 2560×1920) |
+| Sensor | 4x exchangeable CMOS lens modules (2MP or 5MP) |
+| Lens | 4× 2.4/2.8/3.6/6.0 fixed (2MP modules) or 3.7/4.6/7.0 fixed (5MP modules)mm F2.0 |
+| Field of view | up to 360 total (4 repositionable modules)° |
+| Night vision | none |
+| Power | PoE+ (IEEE 802.3at, Class 4) |
 | Storage | microSD ≤ 256GB, NVR |
-| Protocols | onvif, rtsp |
+| Protocols | onvif, rtsp, http |
 | IP rating | IP66 |
-| Two-way audio | Yes |
-| Released | 2023 |
+| Two-way audio | No |
+| Operating temp | -40 to 55°C |
 
 ## Features
 
 - 4-channel multi-sensor
-- 360° quad view
-- AI deep-learning analytics
+- exchangeable 2MP/5MP lens modules (SLA-2M/5M series)
+- WDR 150dB (2MP modules) / 120dB (5MP modules)
+- video analytics (motion, tampering, loitering, directional, fog detection)
 - WiseStream II
-- H.265
-- Wise IR 30m per channel
+- hallway view
 - IP66/IK10
 - single IP address for 4 channels
 
 ## Sources
 
-- https://hanwhavisionamerica.com/
+- https://www.hanwhavision.com/en/products/camera/network/multi-sensor/pnm-9000vq/
+- https://hanwhavisionamerica.com/product/pnm-9000vq/
 
 ---
 *Auto-generated from hanwha-pnm-9000vq.json — do not edit by hand.*

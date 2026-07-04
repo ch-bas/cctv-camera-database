@@ -9,7 +9,7 @@
 | Resolution | 2K QHD (4MP) |
 | Sensor | 1/3" CMOS |
 | Lens | 1× |
-| Field of view | 355 pan/90 tilt° |
+| Field of view | 355 pan/140 tilt° |
 | Night vision | ir (10m) |
 | Power | Rechargeable battery / solar optional |
 | Storage | microSD ≤ 128GB |
@@ -21,14 +21,16 @@
 ## Features
 
 - 2K battery pan/tilt upgraded
+- 355° pan / 140° tilt
 - 2.4GHz WiFi
-- person/vehicle/animal detection
+- person/vehicle detection
 - solar optional
 - no subscription
 
 ## Sources
 
 - https://reolink.com/product/argus-pt-2k/
+- https://cdn.reolink.com/files/docs/specs/Reolink-Argus-PT-2K-IP-Camera-Specifications.pdf
 
 ---
 *Auto-generated from reolink-argus-pt-2k.json — do not edit by hand.*

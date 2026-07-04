@@ -9,10 +9,10 @@
 | Resolution | 6MP 180° dual-lens (6MP, 4608×1296) |
 | Sensor | 1/3" CMOS dual-lens |
 | Lens | 2× |
-| Field of view | 180 horizontal° |
-| Night vision | color (30m) |
+| Field of view | 170 horizontal / 50 vertical° |
+| Night vision | hybrid (30m) |
 | Power | Rechargeable battery / solar optional |
-| Storage | microSD ≤ 256GB |
+| Storage | microSD ≤ 128GB |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 | Operating temp | -10 to 55°C |

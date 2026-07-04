@@ -4,15 +4,15 @@
 |-------|------|
 | Brand | Reolink |
 | Model | E1 Outdoor CX |
-| Type | bullet |
-| Connectivity | wifi |
-| Resolution | 4K UHD (4MP, 2560×1440) |
+| Type | ptz |
+| Connectivity | wifi, ethernet |
+| Resolution | 2K (4MP, 2560×1440) |
 | Sensor | 1/1.8" CMOS |
 | Lens | 1× 4.0mm F1.0 |
-| Field of view | 110 horizontal° |
-| Night vision | color (30m) |
+| Field of view | 89 horizontal/46 vertical° |
+| Night vision | color |
 | Power | DC 12V |
-| Storage | microSD ≤ 256GB, NVR |
+| Storage | microSD ≤ 512GB, NVR |
 | Protocols | rtsp, onvif |
 | IP rating | IP65 |
 | Two-way audio | No |
@@ -21,11 +21,13 @@
 
 ## Features
 
-- 4K ColorX WiFi outdoor F1.0 1/1.8" sensor
+- 2K ColorX WiFi outdoor F1.0 1/1.8" sensor
 - true color night vision no IR
-- person/vehicle/animal/package AI
+- person/vehicle/animal AI
+- auto-tracking
 - ONVIF/RTSP
-- IP67
+- IP65
+- Alexa/Google
 - no subscription
 
 ## Sources

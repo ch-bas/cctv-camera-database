@@ -13,29 +13,34 @@
     "megapixels": 18,
     "label": "18MP (10MP panoramic + 8MP PT)"
   },
-  "sensor": "Triple CMOS (2x5MP panoramic + 4K PT)",
+  "sensor": "3x CMOS: 2x 1/2.7\" 5MP (panoramic) + 1x 1/2.8\" 8MP (PT, 4K)",
   "lens": {
     "count": 3,
-    "focal_length_mm": "2.8 fixed (panoramic) + PT lens",
+    "focal_length_mm": "2.8mm (panoramic) + 6mm (PT)",
+    "aperture": "F1.6",
     "varifocal": false
   },
-  "field_of_view_deg": "360 panoramic + PT tracking",
+  "field_of_view_deg": "180 H / 65 V (panoramic) + 55 H / 30 V (PT); PT unit pans 350deg / tilts 50deg",
   "night_vision": {
     "type": "hybrid",
     "range_m": 30
   },
   "power": {
-    "method": "PoE (802.3af) / DC 12V"
+    "method": "PoE (802.3at/PoE+, 48V, active) / DC 12V, 2A backup, <24W",
+    "consumption_w": 24,
+    "poe_class": 4
   },
   "storage": {
     "onboard": true,
     "max_microsd_gb": 512,
     "nvr_compatible": true,
-    "cloud": false
+    "cloud": true
   },
   "protocols": [
-    "onvif",
-    "rtsp"
+    "rtsp",
+    "rtmp",
+    "http",
+    "p2p"
   ],
   "ip_rating": "IP66",
   "audio": {
@@ -52,10 +57,14 @@
     "color & IR night vision",
     "no subscription"
   ],
-  "release_year": 2025,
+  "release_year": 2026,
+  "status": "available",
   "sources": [
-    "https://reolink.com/product/omvi-3i-poe/"
+    "https://reolink.com/product/omvi-3i-poe/",
+    "https://reolink.com/de/product/omvi-3i-poe/",
+    "https://support.reolink.com/articles/58080032485401-FAQs-Reolink-OMVI-3i-PoE/"
   ],
+  "last_verified": "2026-07-04",
   "power_source": [
     "poe",
     "dc"
@@ -72,7 +81,7 @@
     },
     "home_assistant": {
       "integration": "reolink",
-      "notes": "Native Reolink integration auto-discovers via ONVIF on port 8000."
+      "notes": "Native Reolink integration (Reolink API over HTTP/RTSP). ONVIF support is not listed on Reolink's official spec page or FAQ for this model, so ONVIF auto-discovery is not confirmed — use the Reolink integration's IP/username/password setup instead."
     },
     "blue_iris": {
       "profile": "Reolink",

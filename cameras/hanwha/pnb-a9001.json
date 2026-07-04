@@ -1,0 +1,108 @@
+{
+  "id": "hanwha-pnb-a9001",
+  "brand": "Hanwha",
+  "model": "PNB-A9001",
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet P 4K AI Box Camera"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "power": {
+    "method": "PoE+ (IEEE 802.3at, Class 4) / DC 12V",
+    "poe_class": 4,
+    "voltage": "12VDC"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "2 microSD/SDHC/SDXC slots (512GB total)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "4K AI box camera (Wisenet P AI series) — lens not included",
+    "C/CS lens mount (DC auto iris, P-iris IR corrected, manual, I-CS)",
+    "AI object detection: person / face / vehicle / license plate + BestShot",
+    "face mask, social distancing, slip & fall detection",
+    "people/vehicle/crowd counting, queue management, heatmap",
+    "120 dB WDR",
+    "WiseNR II, WiseStream II / III",
+    "digital image stabilization (built-in gyro)",
+    "built-in microphone + audio in/out",
+    "Day & Night (ICR)",
+    "ONVIF Profile S/G/T/M",
+    "Micro USB service port",
+    "secure boot, encrypted firmware",
+    "NDAA compliant"
+  ],
+  "release_year": 2020,
+  "release_notes": "Specs verified against the official Hanwha Vision PNB-A9001 datasheet (Ver. 202409). Box camera ships without a lens (C/CS mount), so lens and field-of-view fields are intentionally absent.",
+  "sources": [
+    "https://www.hanwhavision.com/en/products/camera/network/box/pnb-a9001/"
+  ],
+  "last_verified": "2026-07-04",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/G/T/M). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor"
+  ]
+}

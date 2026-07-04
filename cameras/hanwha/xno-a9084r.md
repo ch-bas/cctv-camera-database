@@ -1,6 +1,6 @@
 # Hanwha XNO-A9084R
 
-*Also known as: Wisenet AI 8MP Bullet*
+*Also known as: Wisenet X series 8MP AI IR Bullet*
 
 | Field | Spec |
 |-------|------|
@@ -9,30 +9,40 @@
 | Type | bullet |
 | Connectivity | ethernet |
 | Resolution | 4K UHD (8MP, 3840×2160) |
-| Sensor | 1/2.8" Progressive Scan CMOS |
-| Lens | 1× 4.4-9.3 (2.1x motorized varifocal)mm F1.3 |
+| Sensor | 1/1.8" CMOS |
+| Lens | 1× 4.4-9.3 (2.1x motorized varifocal)mm F1.3 (wide) - F2.15 (tele) |
 | Field of view | 113-47 horizontal° |
-| Night vision | ir (30m) |
-| Power | PoE (802.3af) / DC 12V / AC 24V |
-| Storage | microSD ≤ 256GB, NVR |
-| Protocols | onvif, rtsp |
-| IP rating | IP66 |
+| Night vision | ir (40m) |
+| Power | PoE (IEEE 802.3af, Class 3) |
+| Storage | microSD ≤ 1024GB, NVR |
+| Protocols | onvif, rtsp, http |
+| IP rating | IP66/IP67/NEMA4X |
 | Two-way audio | No |
+| Operating temp | -40 to 60°C |
+| Released | 2025 |
 
 ## Features
 
-- dual NPU AI (person/face/vehicle/LPR)
-- IVA analytics
-- WiseStream III
-- 120 dB WDR
-- H.265
+- Wisenet 9 SoC (dual NPU)
+- AI object detection (person/face/vehicle/license plate) with attributes and BestShot
+- IVA (virtual line/area, loitering, intrusion)
+- slip & fall detection
+- people/vehicle/crowd counting, queue management, heatmap
+- dynamic privacy masking
+- extremeWDR (120dB)
+- WiseNR II AI noise reduction
+- AI-based WiseStream
+- WiseIR 40m (850nm)
+- Wisepower (power monitoring, ECO mode)
+- FIPS 140-3 Level 3 / CC EAL6+ secure element
 - IK10
-- NEMA 4X
-- TAA compliant
+- NEMA-TS 2
 
 ## Sources
 
+- https://www.hanwhavision.com/en/products/camera/network/bullet/xno-a9084r/
 - https://hanwhavision.eu/product/xno-a9084r/
+- https://hanwhavisionamerica.com/product/xno-a9084r/
 
 ---
 *Auto-generated from hanwha-xno-a9084r.json — do not edit by hand.*

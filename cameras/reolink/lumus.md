@@ -9,10 +9,10 @@
 | Resolution | 2K QHD (4MP) |
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 2.8mm F2.0 |
-| Field of view | 105 horizontal° |
+| Field of view | 107 horizontal, 57 vertical, 129 diagonal° |
 | Night vision | hybrid (10m) |
-| Power | DC 12V hardwired |
-| Storage | microSD ≤ 128GB, NVR |
+| Power | DC 5V/1A plug-in adapter |
+| Storage | microSD ≤ 512GB, NVR |
 | Protocols | rtsp, onvif |
 | IP rating | IP65 |
 | Two-way audio | Yes |
@@ -27,13 +27,15 @@
 - siren
 - two-way audio
 - ONVIF/RTSP
-- IP67
+- IP65
 - no subscription
 - Alexa/Google
 
 ## Sources
 
 - https://reolink.com/product/reolink-lumus/
+- https://cdn.reolink.com/files/docs/specs/Reolink-Lumus-IP-Camera-Specifications.pdf
+- https://support.reolink.com/articles/900000617826-Which-Reolink-Products-Support-CGI-RTSP-ONVIF/
 
 ---
 *Auto-generated from reolink-lumus.json — do not edit by hand.*

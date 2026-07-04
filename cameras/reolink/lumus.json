@@ -11,17 +11,19 @@
     "megapixels": 4,
     "label": "2K QHD"
   },
-  "field_of_view_deg": "105 horizontal",
+  "field_of_view_deg": "107 horizontal, 57 vertical, 129 diagonal",
   "night_vision": {
     "type": "hybrid",
     "range_m": 10
   },
   "power": {
-    "method": "DC 12V hardwired"
+    "method": "DC 5V/1A plug-in adapter",
+    "voltage": "DC 5.0V",
+    "consumption_w": 5
   },
   "storage": {
     "onboard": true,
-    "max_microsd_gb": 128,
+    "max_microsd_gb": 512,
     "nvr_compatible": true,
     "cloud": true
   },
@@ -42,13 +44,16 @@
     "siren",
     "two-way audio",
     "ONVIF/RTSP",
-    "IP67",
+    "IP65",
     "no subscription",
     "Alexa/Google"
   ],
   "sources": [
-    "https://reolink.com/product/reolink-lumus/"
+    "https://reolink.com/product/reolink-lumus/",
+    "https://cdn.reolink.com/files/docs/specs/Reolink-Lumus-IP-Camera-Specifications.pdf",
+    "https://support.reolink.com/articles/900000617826-Which-Reolink-Products-Support-CGI-RTSP-ONVIF/"
   ],
+  "last_verified": "2026-07-04",
   "power_source": [
     "dc"
   ],
@@ -60,15 +65,17 @@
         "fps": 5
       },
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_sub"
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_sub",
+      "notes": "Local RTSP only works on hardware version IPC_NT1NO24MP (added via firmware update); IPC_325C7 hardware requires a Reolink Home Hub or NVR in between and has no direct local RTSP.",
+      "verified": false
     },
     "home_assistant": {
       "integration": "reolink",
-      "notes": "Native Reolink integration auto-discovers via ONVIF on port 8000."
+      "notes": "Local ONVIF/RTSP support depends on hardware version: units with hardware ID IPC_NT1NO24MP support CGI/RTSP/ONVIF standalone (auto-discovers via ONVIF on port 8000); older IPC_325C7 hardware requires connecting through a Reolink Home Hub or NVR to reach these features. Check the camera's hardware version before assuming local/standalone access works."
     },
     "blue_iris": {
       "profile": "Reolink",
-      "notes": "Select 'Reolink' profile. If not listed, use Generic/ONVIF with RTSP path /h264Preview_01_main."
+      "notes": "Select 'Reolink' profile. If not listed, use Generic/ONVIF with RTSP path /h264Preview_01_main. Only works standalone on IPC_NT1NO24MP hardware; IPC_325C7 units need a Reolink Home Hub/NVR in between."
     }
   },
   "sensor": "1/2.7\" CMOS",

@@ -7,12 +7,12 @@
 | Type | ptz |
 | Connectivity | ethernet |
 | Resolution | 4K UHD (8MP, 3840×2160) |
-| Sensor | 1/2.7" CMOS |
-| Lens | 1× 2.8 (fixed)mm |
-| Field of view | 85 horizontal° |
+| Sensor | 1/2.8" CMOS |
+| Lens | 1× 2.8-8mm F1.6 |
+| Field of view | 90-50 horizontal/53-30 vertical° |
 | Night vision | hybrid (12m) |
 | Power | PoE (802.3af) / DC 12V |
-| Storage | microSD ≤ 256GB, NVR |
+| Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP65 |
 | Two-way audio | Yes |
@@ -22,9 +22,10 @@
 ## Features
 
 - 355deg pan / 50deg tilt
+- 3x optical zoom
 - auto-tracking
 - compact low-profile body
-- person/vehicle detection
+- person/vehicle/animal detection
 - no subscription
 
 ## Sources

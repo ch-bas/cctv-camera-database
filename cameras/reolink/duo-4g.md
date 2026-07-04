@@ -9,7 +9,7 @@
 | Resolution | 2×4MP 180° dual-lens (4MP, 2560×1440) |
 | Sensor | 1/3" CMOS |
 | Lens | 2× |
-| Field of view | 180 horizontal° |
+| Field of view | 150 horizontal / 44 vertical° |
 | Night vision | hybrid (30m) |
 | Power | Rechargeable battery / solar optional |
 | Storage | microSD ≤ 128GB |
@@ -20,12 +20,12 @@
 
 ## Features
 
-- 4G LTE dual-lens 180° battery camera
+- 4G LTE dual-lens 150° battery camera
 - no WiFi required
 - 2×4MP lenses
 - solar optional
 - no subscription
-- IP65
+- IP66
 
 ## Sources
 

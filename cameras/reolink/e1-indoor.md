@@ -9,10 +9,10 @@
 | Resolution | 1080p HD (4MP, 2560×1440) |
 | Sensor | 1/3" CMOS |
 | Lens | 1× 4.0mm F2.0 |
-| Field of view | 355 pan/50 tilt° |
-| Night vision | ir (9m) |
+| Field of view | 84 horizontal/45 vertical° |
+| Night vision | ir (12m) |
 | Power | DC 5V USB |
-| Storage | microSD ≤ 64GB, NVR |
+| Storage | microSD ≤ 512GB, NVR |
 | IP rating | IP20 |
 | Two-way audio | Yes |
 | Operating temp | -10 to 40°C |
@@ -21,7 +21,8 @@
 ## Features
 
 - 1080p indoor WiFi pan/tilt entry
-- 9m IR
+- 355° pan / 50° tilt
+- 12m IR
 - two-way audio
 - Alexa/Google
 - no subscription

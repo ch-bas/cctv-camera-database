@@ -8,25 +8,27 @@
   ],
   "release_year": 2020,
   "resolution": {
-    "megapixels": 5,
-    "label": "5MP"
+    "megapixels": 8,
+    "label": "4K",
+    "max_width": 3840,
+    "max_height": 2160
   },
-  "field_of_view_deg": "95-34 horizontal",
   "night_vision": {
     "type": "ir",
-    "range_m": 9
+    "range_m": 12
   },
   "power": {
-    "method": "DC 5V USB"
+    "method": "DC 5V/2A"
   },
   "storage": {
     "onboard": true,
-    "max_microsd_gb": 64,
+    "max_microsd_gb": 512,
     "nvr_compatible": true,
     "cloud": true
   },
   "protocols": [
-    "rtsp"
+    "rtsp",
+    "onvif"
   ],
   "ip_rating": "IP20",
   "audio": {
@@ -35,11 +37,12 @@
     "two_way": true
   },
   "features": [
-    "5MP indoor WiFi with 3× optical zoom",
+    "4K indoor WiFi with 3× optical zoom",
     "motorized varifocal",
-    "9m IR",
-    "person detection",
-    "RTSP",
+    "12m IR",
+    "person/pet detection",
+    "crying detection",
+    "ONVIF/RTSP",
     "two-way audio",
     "Alexa/Google",
     "no subscription"
@@ -47,8 +50,10 @@
   "sources": [
     "https://reolink.com/product/e1-zoom/"
   ],
+  "last_verified": "2026-07-04",
+  "release_notes": "Reolink relaunched E1 Zoom as a 4K/8MP Wi-Fi 6 model (3840x2160), superseding the original 5MP (2560x1920) version this entry previously described. Field of view is not published for the current unit on reolink.com/product/e1-zoom/ (the prior '95-34 horizontal' figure could not be re-confirmed for the new hardware and has been removed rather than carried forward). Video codec is likewise not stated on the current product page and has been left unset.",
   "power_source": [
-    "usb"
+    "dc"
   ],
   "configs": {
     "frigate": {
@@ -69,9 +74,9 @@
       "notes": "Select 'Reolink' profile. If not listed, use Generic/ONVIF with RTSP path /h264Preview_01_main."
     }
   },
-  "sensor": "1/2.7\" CMOS",
-  "dimensions_mm": "Φ80 x 111",
-  "weight_g": 250,
+  "sensor": "1/2.8\" CMOS",
+  "dimensions_mm": "Φ84 x 118",
+  "weight_g": 275,
   "operating_temp_c": "-10 to 55",
   "lens": {
     "focal_length_mm": "2.8-8",
@@ -80,16 +85,12 @@
     "count": 1
   },
   "video": {
-    "codecs": [
-      "H.264"
-    ],
     "max_fps": 20,
     "streams": [
       {
         "name": "main",
-        "resolution": "2560x1920",
-        "fps": 20,
-        "codec": "H.264"
+        "resolution": "3840x2160",
+        "fps": 20
       }
     ]
   },

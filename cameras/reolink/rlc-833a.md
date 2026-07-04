@@ -4,12 +4,12 @@
 |-------|------|
 | Brand | Reolink |
 | Model | RLC-833A |
-| Type | turret |
+| Type | dome |
 | Connectivity | ethernet |
 | Resolution | 4K UHD (8MP, 3840×2160) |
 | Sensor | 1/2.8" CMOS |
-| Lens | 1× 2.8-8 (3x motorized)mm |
-| Field of view | 110-41 horizontal° |
+| Lens | 1× 2.8-8 (3x motorized)mm F1.6 |
+| Field of view | 94-50 horizontal° |
 | Night vision | hybrid (30m) |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 512GB, NVR |

@@ -9,25 +9,25 @@
 | Type | bullet |
 | Connectivity | ethernet |
 | Resolution | 5MP (5MP, 2592×1944) |
-| Sensor | 1/2.8" Progressive Scan CMOS |
-| Lens | 1× 3.9-9.4 (2.4x motorized varifocal)mm F1.6 |
-| Field of view | 102-42 horizontal° |
-| Night vision | ir (50m) |
-| Power | PoE (802.3at) / DC 12V |
+| Sensor | 1/2.8" 5MP CMOS |
+| Lens | 1× 3.2-10 (3.1x motorized varifocal)mm F1.6-2.9 |
+| Field of view | 100.3-31.2 horizontal / 72.3-23.5 vertical° |
+| Night vision | ir (30m) |
+| Power | PoE (802.3af, Class 3) |
 | Storage | microSD ≤ 128GB, NVR |
-| Protocols | onvif, rtsp |
+| Protocols | onvif, rtsp, http |
 | IP rating | IP66 |
 | Two-way audio | No |
+| Operating temp | -30 to 55°C |
 | Released | 2019 |
 
 ## Features
 
 - 5MP outdoor bullet
-- 2.4x motorized varifocal
-- 50m IR range
+- 3.1x motorized varifocal
+- 30m IR range
 - BLC/HLC/WDR
 - H.265
-- IP66
 - IK10
 - popular UAE/KSA commercial buildings & warehouses
 

@@ -5,7 +5,6 @@ All notable changes to this dataset are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
-
 ## [1.20.0] — 2026-07-04
 
 Eight Hikvision cameras added, each populated field-by-field from its **official Hikvision datasheet**. Net: **150 → 158 Hikvision cameras**.
@@ -41,6 +40,33 @@ Hikvision data-quality patch — 14 corrections from a targeted audit (Hikvision
 - Patch release on top of the v1.19.0 audit (Reolink + Hanwha).
 
 ---
+## [1.19.0] — 2026-07-04
+
+Large data-quality release: full re-audits of the **Reolink** and **Hanwha** brands against official manufacturer sources (master audit #28), plus new models added from official datasheets. Net across the release: **1,754 → 1,722 cameras** (brand count unchanged at 69).
+
+### Reolink — full brand re-audit (122 → 116 cameras)
+
+All 122 stored Reolink cameras re-verified against official `reolink.com` product pages, datasheets, and support articles. 7 removed, 1 new model added.
+
+- **Added** — **Argus Solar**: newly-released (2026) 5MP battery/solar wire-free camera, dual-band Wi-Fi 6 (2880×1616, 1/2.7" CMOS, f=3mm F1.6, 6500mAh, IP67, two-way audio); cloud/battery-only, no RTSP/ONVIF.
+- **Removed** — 1 ghost (`RLC-823A v2`, no such product) and 6 duplicate regional listings (`RLC-823A` AU/CA/CH/EU/MENA, `RLC-810A` India); their `markets[]` were merged onto the base `RLC-823A`/`RLC-810A` first, so no market-filter coverage was lost.
+- **Fixed** — misfiled `RLC-830A-v2` was actually the **RLC-840A** (renamed); fabricated zoom lenses (`RLC-812A/824A/842A`); fabricated RTSP/ONVIF + Frigate configs on cloud-only/NVR-only cameras (B/D-series add-ons, Argus battery line) and over-claimed ONVIF on several wired models; wrong `type` (Argus 4 Pro → dual-lens, RLC-423/E1 Outdoor → ptz, RLC-8xx domes mislabeled turret); wrong resolution/stale hardware (RLC-511WA "4K"→5MP, E1 Zoom 5MP→8MP, Argus Eco 2→3MP); wrong booleans (RLC-520/522/842A mic, E1 Outdoor two-way audio); plus systemic sensor/FOV/IR/microSD drift across the brand.
+
+### Hanwha — full brand re-audit + additions (71 → 45 cameras)
+
+Every Hanwha camera verified against official Hanwha datasheets/product pages; market tags added brand-wide. **38 fabricated entries removed** (over half the original brand), **~29 real cameras corrected**, and **12 real cameras added** from official datasheets.
+
+- **Removed — 38 ghosts.** Consistent fabrication template: Hikvision-style specs (2.8-12mm F1.4 lenses, 50m IR, 256GB SD, "ColorVu" branding) pasted onto invented Hanwha model numbers. Families: fake "9300"/"A9300"/"9302" P- and X-series (`PNO-9300R`, `PND/PNO/PNV-A9300*`, `XNO-9300R/9302R`, `XNV-9300(+MENA)/9302R`, `PNV-9300RV`); fake Q-series 4K (`QND/QNO/QNV-9080R`, `QNO-8090R`, `QND-C9083R`); fake "Gen 2"/"V2"/suffix variants (`XNO/XNV-A9084R (Gen 2)`, `XNV-A9084R-LVE-3` (hid a fake "PNB-A9001RV Gen 2"), `XNV-9080R-V2`, `XNV-8080RSZ/RZ2`, `XNV-8080R-KR`); fake T-series (`TND/TNO/TNV-C8083R`); fake PTZ (`QPT-7230`, `QPT-9300RWX`, `QPTZ-8300HN`, `ruggedized-ptz-wisenet9`); fake AI domes (`QNV-A9402R(+WI)`); plus `AND-L7082R`, `QNO-A9400R`, `XNV-A9400R`, `XNV-C9300RW`, `XPT-A9401RW`.
+- **Corrected — ~29 real cameras.** Highlights: `XNO/QNO/QNV-C9083R` stored as 4MP "ColorVu" → real 4K IR; `XNV-8093R` was a telephoto AI dome, not a wide fixed dome; `PNM-9000VQ`/`PNM-9322VQP` multisensors had fabricated IR/AI; `XNO/XNV-A9084R` confirmed as real Wisenet 9 models; `QNV-8080RB` reclassified bullet → dome; `XNP-9300RW` corrected (sensor/FOV/power/dimensions); `PNO/PNV/PND-A9081R(V)` and `PNB-A9001` normalized/rewritten from a fabricated "Gen 2" state to real datasheet specs; brand-wide Q-series lens/IR/storage/power cleanup.
+- **Added — 12 real cameras** from official datasheets: `XND-A9085RV`, `XNV-A9084RS`, `QNE-C8013RL`, `QNE-C9013RL`, `ANE-L6012R`, `PNM-C9022RV`, `PNM-9031RV`, `TNV-C7013RC`, `TNV-8011C`, `PND-9080R`, `PNM-C16083RVQ`, `PNM-C34404RQPZ` (the last a 4K 4ch PTRZ + 2MP 40x PTZ AI combo).
+- **Market tags** added to all 45 surviving Hanwha cameras (`["global"]`, with verified regional variants keeping `["KR","global"]` / `["AE","SA","MENA"]`).
+
+### Release totals
+
+**1,722 cameras / 69 brands.** Resolution tiers: 4K/8MP+ 518, 4–5MP 728, 1080p–2MP 447. PoE-wired 1,179, WiFi 474, battery/wire-free 184, integration-configs 1,315.
+
+---
+
 
 ## [1.18.0] — 2026-07-03
 

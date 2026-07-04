@@ -5,15 +5,15 @@
 | Brand | Reolink |
 | Model | RLC-510WA |
 | Type | dome |
-| Connectivity | wifi |
+| Connectivity | wifi, ethernet |
 | Resolution | 5MP (5MP) |
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 4.0mm F2.0 |
 | Field of view | 80 horizontal° |
 | Night vision | ir (30m) |
 | Power | DC 12V |
-| Storage | microSD ≤ 128GB, NVR |
-| Protocols | rtsp, onvif |
+| Storage | microSD ≤ 512GB, NVR |
+| Protocols | rtsp, onvif, rtmp |
 | IP rating | IP67 |
 | Two-way audio | No |
 | Operating temp | -10 to 55°C |

@@ -17,13 +17,14 @@
     "aperture": "F1.6",
     "varifocal": false
   },
-  "field_of_view_deg": "180 horizontal",
+  "field_of_view_deg": "180 horizontal, 55 vertical",
   "night_vision": {
     "type": "hybrid",
     "range_m": 30
   },
   "power": {
-    "method": "PoE (802.3af) / DC 12V"
+    "method": "PoE (IEEE 802.3at, 48V Active) — no DC power option",
+    "poe_class": 4
   },
   "storage": {
     "onboard": true,
@@ -32,8 +33,10 @@
     "cloud": false
   },
   "protocols": [
-    "onvif",
-    "rtsp"
+    "rtsp",
+    "rtmp",
+    "http",
+    "p2p"
   ],
   "ip_rating": "IP66",
   "audio": {
@@ -43,20 +46,22 @@
   },
   "features": [
     "16MP dual-lens 180deg panoramic",
-    "2800-lumen floodlight",
-    "local AI video search",
+    "2800-lumen floodlight (17W, 3000K-6500K)",
+    "105dB siren",
+    "ReoNeura local AI video search",
     "motion track",
-    "color + IR night vision",
+    "color + IR night vision (30m, auto-switching IR-cut)",
     "person/vehicle/animal detection",
+    "Google Assistant compatible",
     "no subscription"
   ],
-  "release_year": 2025,
+  "release_year": 2026,
   "sources": [
-    "https://slickdeals.net/f/18802744"
+    "https://reolink.com/product/elite-pro-floodlight-poe/"
   ],
+  "last_verified": "2026-07-04",
   "power_source": [
-    "poe",
-    "dc"
+    "poe"
   ],
   "configs": {
     "frigate": {
@@ -70,11 +75,11 @@
     },
     "home_assistant": {
       "integration": "reolink",
-      "notes": "Native Reolink integration auto-discovers via ONVIF on port 8000."
+      "notes": "Native Reolink integration uses Reolink's HTTP/CGI API. Official spec sheet does not list ONVIF support for this PoE model (unlike the Elite Floodlight WiFi/TrackFlex siblings), so ONVIF-based discovery/events are unconfirmed."
     },
     "blue_iris": {
       "profile": "Reolink",
-      "notes": "Select 'Reolink' profile. If not listed, use Generic/ONVIF with RTSP path /h264Preview_01_main."
+      "notes": "Select 'Reolink' profile with RTSP path /h264Preview_01_main. ONVIF is not confirmed on this model's official spec sheet, so a Generic/ONVIF fallback profile may not work."
     }
   },
   "dimensions_mm": "174 x 184 x 295",
