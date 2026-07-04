@@ -13,7 +13,7 @@
 | Night vision | hybrid (12m) |
 | Power | DC 12V |
 | Storage | microSD ≤ 512GB, NVR |
-| Protocols | rtsp, onvif |
+| Protocols | onvif, rtsp, rtmp, http, p2p |
 | IP rating | IP65 |
 | Two-way audio | Yes |
 | Operating temp | -10 to 55°C |
@@ -22,6 +22,7 @@
 ## Features
 
 - 5MP outdoor WiFi PTZ
+- 355° pan / 50° tilt (64 presets)
 - 3x optical zoom
 - auto-tracking
 - 12m IR
