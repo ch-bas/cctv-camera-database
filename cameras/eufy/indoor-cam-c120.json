@@ -3,32 +3,34 @@
   "brand": "Eufy",
   "model": "Indoor Cam C120",
   "aliases": [
-    "T84151W1"
+    "T84001W1"
   ],
   "type": "dome",
   "connectivity": [
     "wifi"
   ],
+  "environment": [
+    "indoor"
+  ],
   "release_year": 2022,
   "resolution": {
-    "megapixels": 4,
-    "max_width": 2560,
-    "max_height": 1440,
-    "label": "2K QHD"
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "2K"
   },
   "lens": {
     "count": 1,
     "focal_length_mm": "Fixed",
-    "aperture": "F2.0",
     "varifocal": false
   },
-  "field_of_view_deg": "130 diagonal",
+  "field_of_view_deg": "105 horizontal / 57 vertical",
   "night_vision": {
-    "type": "color",
-    "range_m": 6
+    "type": "ir",
+    "range_m": 10
   },
   "power": {
-    "method": "USB-C (hardwired)"
+    "method": "5V/1A (USB, hardwired)"
   },
   "storage": {
     "onboard": true,
@@ -46,21 +48,24 @@
     "two_way": true
   },
   "features": [
-    "2K QHD budget indoor camera",
+    "2K budget plug-in indoor camera",
     "AI person/pet detection",
-    "color night vision",
-    "physical privacy shutter",
+    "infrared night vision",
     "local storage (microSD)",
     "no subscription fee",
-    "RTSP support",
-    "Alexa / Google HomeKit"
+    "RTSP / NAS support",
+    "Alexa / Google / HomeKit"
   ],
   "sources": [
-    "https://www.eufy.com/products/indoor-cam-c120"
+    "https://www.eufy.com/ca/products/t84001w1"
   ],
   "power_source": [
     "usb"
   ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-04",
   "configs": {
     "frigate": {
       "detect": {
@@ -68,7 +73,9 @@
         "height": 720,
         "fps": 5
       },
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live0"
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live0",
+      "notes": "RTSP must be enabled per camera in the Eufy app (Storage > RTSP/NAS). Community-reported path; eufy does not publish the URL.",
+      "verified": false
     },
     "home_assistant": {
       "integration": "eufy_security",

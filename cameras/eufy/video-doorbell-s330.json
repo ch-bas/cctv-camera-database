@@ -3,8 +3,8 @@
   "brand": "Eufy",
   "model": "Video Doorbell S330",
   "aliases": [
-    "Eufy S330 4K Wired Doorbell",
-    "T8214"
+    "eufy S330 Dual Wired Doorbell",
+    "E8203111"
   ],
   "type": "doorbell",
   "connectivity": [
@@ -12,29 +12,28 @@
   ],
   "release_year": 2023,
   "resolution": {
-    "megapixels": 8,
-    "max_width": 3840,
-    "max_height": 2160,
-    "label": "4K UHD"
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1920,
+    "label": "2K front (2560x1920) + 1080p package (1600x1200)"
   },
   "lens": {
-    "count": 1,
-    "focal_length_mm": "Fixed",
-    "aperture": "F1.8",
+    "count": 2,
     "varifocal": false
   },
-  "field_of_view_deg": "155 diagonal (head-to-toe)",
+  "field_of_view_deg": "160 front + 97 package",
   "night_vision": {
     "type": "color",
     "range_m": 5
   },
   "power": {
-    "method": "Hardwired (existing 16-24V AC wiring) / battery"
+    "method": "Hardwired only (16-24 VAC, 30 VA or more)"
   },
   "storage": {
     "onboard": true,
     "nvr_compatible": false,
-    "cloud": false
+    "cloud": false,
+    "notes": "8 GB built-in (up to 90 days); expandable via HomeBase"
   },
   "protocols": [
     "rtsp",
@@ -47,22 +46,29 @@
     "two_way": true
   },
   "features": [
-    "4K UHD head-to-toe video doorbell",
-    "BionicMind AI face recognition",
+    "dual-camera head-to-toe video doorbell (2K front + package cam)",
+    "AI face / package / human detection",
     "color night vision",
     "no subscription fee",
     "local HomeBase storage",
-    "HomeKit Secure Video / Alexa / Google",
+    "Alexa / Google (no HomeKit)",
     "two-way audio",
     "IP65"
   ],
   "sources": [
-    "https://www.eufy.com/products/video-doorbell-s330"
+    "https://www.eufy.com/products/e8203111",
+    "https://service.eufy.com/article-description/S330-S300-eufyCam-eufyCam-3-3C-FAQ-Before-You-Buy"
   ],
   "power_source": [
-    "battery",
     "ac-mains"
   ],
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-04",
   "configs": {
     "frigate": {
       "detect": {
@@ -71,11 +77,11 @@
         "fps": 5
       },
       "rtsp_url_template": "rtsp://{ip}:8554/live0",
-      "notes": "RTSP must be enabled per-camera in the Eufy app (Settings > Storage > NAS > RTSP). Portrait aspect — set detect to 720x960. No ONVIF support. RTSP stream may drop when on battery; hardwired recommended."
+      "notes": "RTSP is served via the HomeBase (Camera Settings > General > Storage > RTSP/NAS), not the doorbell directly. Portrait aspect — set detect to 720x960. No ONVIF. Hardwired doorbell."
     },
     "home_assistant": {
       "integration": "eufy_security",
-      "notes": "Use eufy_security HACS integration. RTSP must be enabled in Eufy app. Doorbell press exposed as event."
+      "notes": "Use eufy_security HACS integration. RTSP available via HomeBase when enabled. Doorbell press exposed as event."
     }
   }
 }

@@ -1,6 +1,6 @@
 # Eufy Video Doorbell S330
 
-*Also known as: Eufy S330 4K Wired Doorbell, T8214*
+*Also known as: eufy S330 Dual Wired Doorbell, E8203111*
 
 | Field | Spec |
 |-------|------|
@@ -8,11 +8,11 @@
 | Model | Video Doorbell S330 |
 | Type | doorbell |
 | Connectivity | wifi |
-| Resolution | 4K UHD (8MP, 3840×2160) |
-| Lens | 1× Fixedmm F1.8 |
-| Field of view | 155 diagonal (head-to-toe)° |
+| Resolution | 2K front (2560x1920) + 1080p package (1600x1200) (4MP, 2560×1920) |
+| Lens | 2× |
+| Field of view | 160 front + 97 package° |
 | Night vision | color (5m) |
-| Power | Hardwired (existing 16-24V AC wiring) / battery |
+| Power | Hardwired only (16-24 VAC, 30 VA or more) |
 | Protocols | rtsp, http |
 | IP rating | IP65 |
 | Two-way audio | Yes |
@@ -20,18 +20,19 @@
 
 ## Features
 
-- 4K UHD head-to-toe video doorbell
-- BionicMind AI face recognition
+- dual-camera head-to-toe video doorbell (2K front + package cam)
+- AI face / package / human detection
 - color night vision
 - no subscription fee
 - local HomeBase storage
-- HomeKit Secure Video / Alexa / Google
+- Alexa / Google (no HomeKit)
 - two-way audio
 - IP65
 
 ## Sources
 
-- https://www.eufy.com/products/video-doorbell-s330
+- https://www.eufy.com/products/e8203111
+- https://service.eufy.com/article-description/S330-S300-eufyCam-eufyCam-3-3C-FAQ-Before-You-Buy
 
 ---
 *Auto-generated from eufy-video-doorbell-s330.json — do not edit by hand.*

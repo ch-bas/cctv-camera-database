@@ -54,11 +54,15 @@
     "Alexa / Google Assistant"
   ],
   "sources": [
-    "https://www.eufy.com/products/eufycam-2-pro"
+    "https://www.eufy.com/eu-en/products/t8851"
   ],
   "power_source": [
     "battery"
   ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-04",
   "configs": {
     "frigate": {
       "detect": {
@@ -66,15 +70,16 @@
         "height": 720,
         "fps": 5
       },
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live0"
+      "rtsp_url_template": "rtsp://{user}:{pass}@{homebase_ip}:554/live0",
+      "notes": "RTSP is served by HomeBase 2/3 (not the camera IP) and must be enabled per-camera in the Eufy Security app (Settings > Storage > NAS/RTSP). Official: eufyCam 2 Pro is on Eufy's RTSP-supported list."
     },
     "home_assistant": {
       "integration": "eufy_security",
-      "notes": "Use eufy_security HACS integration. RTSP must be enabled in Eufy app per camera."
+      "notes": "Use eufy_security HACS integration. RTSP must be enabled in Eufy app per camera; stream comes from HomeBase."
     },
     "blue_iris": {
       "profile": "Generic/RTSP",
-      "notes": "Use Generic/RTSP profile. RTSP must be enabled per camera in Eufy app."
+      "notes": "Use Generic/RTSP profile. RTSP must be enabled per camera in Eufy app; stream comes from HomeBase IP."
     }
   }
 }

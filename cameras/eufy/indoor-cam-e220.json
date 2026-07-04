@@ -3,18 +3,22 @@
   "brand": "Eufy",
   "model": "Indoor Cam E220",
   "aliases": [
+    "T8410121",
     "Eufy E220 2K Indoor Pan/Tilt"
   ],
   "type": "ptz",
   "connectivity": [
     "wifi"
   ],
+  "environment": [
+    "indoor"
+  ],
   "release_year": 2022,
   "resolution": {
-    "megapixels": 4,
-    "max_width": 2560,
-    "max_height": 1440,
-    "label": "2K QHD"
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "2K"
   },
   "lens": {
     "count": 1,
@@ -22,11 +26,11 @@
   },
   "field_of_view_deg": "360 pan / 96 tilt",
   "night_vision": {
-    "type": "color",
-    "range_m": 8
+    "type": "ir",
+    "range_m": 10
   },
   "power": {
-    "method": "DC 5V (USB)"
+    "method": "DC 5V (USB, hardwired)"
   },
   "storage": {
     "onboard": true,
@@ -44,21 +48,25 @@
     "two_way": true
   },
   "features": [
-    "2K QHD indoor pan/tilt",
-    "color night vision",
-    "AI person/pet detection",
-    "physical privacy shutter",
+    "2K indoor pan/tilt (successor to Indoor Cam 2K Pan & Tilt)",
+    "infrared night vision",
+    "AI person/pet/crying detection",
+    "motion tracking",
     "no subscription",
     "microSD local storage",
     "HomeKit / Alexa / Google",
-    "RTSP support"
+    "RTSP / NAS support"
   ],
   "sources": [
-    "https://www.eufy.com/products/indoor-cam-e220"
+    "https://www.eufy.com/products/t8410121"
   ],
   "power_source": [
     "usb"
   ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-04",
   "configs": {
     "frigate": {
       "detect": {
@@ -66,7 +74,9 @@
         "height": 720,
         "fps": 5
       },
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live0"
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live0",
+      "notes": "RTSP must be enabled per camera in the Eufy app (Storage > RTSP/NAS). Community-reported path; eufy does not publish the URL.",
+      "verified": false
     },
     "home_assistant": {
       "integration": "eufy_security",

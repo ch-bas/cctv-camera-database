@@ -6,6 +6,31 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.22.0] — 2026-07-04
+
+Full data-quality audit of the **Eufy** (Anker) brand (master audit #28) — all 36 entries verified against official `eufy.com` product pages and Eufy's RTSP-support documentation. Unlike the fabricated-spec brands, Eufy was padded mostly with **regional-listing duplicates**. Net: **36 → 27 cameras**. (Version stacks on the Hikvision v1.20.0 / Annke v1.21.0 work.)
+
+### Removed
+
+**9 entries**:
+
+- **8 duplicates**: the `SoloCam S340` regional cluster (`-au`, `-ca`, `-ch`, `-eu` — spec-identical to `solocam-s340`, whose `["global"]` tag covers all regions), `solocam-s220-uk` (= `s220-solocam`), `floodlight-e340` (= `floodlight-cam-e340`, both the T8425), `homebase-s380-cam-s330` (= `eufycam-3c-2k`), and `eufycam-s330-pro` (= `eufycam-3-pro`, same SKU T88711W1).
+- **1 ghost**: `homebase-3-s380-cam-e340` — no standalone battery "eufyCam E340 dual-lens" exists ("E340" belongs only to the Video Doorbell and Floodlight Cam).
+
+### Fixed
+
+27 real cameras verified/corrected against eufy.com. The central theme was **RTSP/ONVIF accuracy** — each camera cross-checked against Eufy's official RTSP-support list (RTSP is served via a HomeBase, not the camera):
+
+- **RTSP corrected**: added the (officially confirmed but missing) `rtsp` on `eufyCam 2C`, `Floodlight Cam 2 Pro`, `eufyCam 3C`, and the `Garage-Control Cam`; **removed unsupported `rtsp`** (+ the misleading Frigate configs) from `Video Doorbell Dual` and `Indoor Cam S350`.
+- **Spec corrections**: `Outdoor Cam E210` is a wired 1080p camera, not battery/2K; `SoloCam S340` is 3K-wide + 2K-telephoto hybrid-zoom pan-tilt, not "4K"; `Video Doorbell S330` is a 2K dual-cam wired unit, not 4K single-lens; `Video Doorbell S220` retyped `dome` → `doorbell`; `Indoor Cam Mini` retyped `dome` → `ptz` (2K pan-tilt); `garage-cam-s330` is the real **Garage-Control Cam E110**; multiple color→ir night-vision, IP67→IP65, and battery→wired power corrections; unverified HomeKit claims removed brand-wide; `Floodlight Cam 2 Pro` 5MP→3MP.
+- Market tags (`["global"]`) added to all 27; `last_verified: 2026-07-04` set.
+
+### Changed
+
+- Counts: total 1,722 → 1,713, Eufy 36 → 27. Resolution tiers 4K/8MP+ 518 → 510, 4–5MP 728 → 723, 1080p–2MP 447 → 451; WiFi 474 → 465, battery/wire-free 184 → 172 (power-source corrections), integration-configs 1,315 → 1,316. Brand count unchanged at 69.
+
+---
+
 ## [1.19.0] — 2026-07-04
 
 Large data-quality release: full re-audits of the **Reolink** and **Hanwha** brands against official manufacturer sources (master audit #28), plus new models added from official datasheets. Net across the release: **1,754 → 1,722 cameras** (brand count unchanged at 69).

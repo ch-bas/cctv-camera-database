@@ -30,7 +30,7 @@
 
 ## Sources
 
-- https://www.eufy.com/products/eufycam-2-pro
+- https://www.eufy.com/eu-en/products/t8851
 
 ---
 *Auto-generated from eufy-eufycam-2-pro.json — do not edit by hand.*

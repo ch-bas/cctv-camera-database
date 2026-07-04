@@ -1,6 +1,6 @@
 # Eufy Outdoor Cam E210
 
-*Also known as: T8442, eufy Outdoor Cam E210 2K*
+*Also known as: T8442, eufy Security Outdoor Cam E210*
 
 | Field | Spec |
 |-------|------|
@@ -8,11 +8,11 @@
 | Model | Outdoor Cam E210 |
 | Type | bullet |
 | Connectivity | wifi |
-| Resolution | 2K QHD (4MP, 2560×1440) |
+| Resolution | 1080p (2MP, 1920×1080) |
 | Lens | 1× |
-| Field of view | 135 diagonal° |
-| Night vision | color (10m) |
-| Power | Wired (AC power) |
+| Field of view | 130 diagonal° |
+| Night vision | color |
+| Power | Wired (5V/1A DC adapter, 20 ft cable) |
 | Protocols | http |
 | IP rating | IP67 |
 | Two-way audio | Yes |
@@ -20,17 +20,17 @@
 
 ## Features
 
-- 2K QHD wired outdoor camera
+- 1080p wired outdoor camera
 - built-in spotlight
 - color night vision
-- AI human/vehicle detection
+- AI human detection
 - no subscription required
 - IP67 weatherproof
 - Alexa / Google Assistant
 
 ## Sources
 
-- https://www.eufy.com/products/outdoor-cam-e210
+- https://www.amazon.com/eufy-OutdoorCam-Resolution-Spotlight-Weatherproof/dp/B0912R591N
 
 ---
 *Auto-generated from eufy-outdoor-cam-e210.json — do not edit by hand.*

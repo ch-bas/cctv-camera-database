@@ -29,7 +29,7 @@
 
 ## Sources
 
-- https://www.eufy.com/products/eufycam-3-pro
+- https://www.eufy.com/products/t88711w1
 
 ---
 *Auto-generated from eufy-eufycam-3-pro.json — do not edit by hand.*

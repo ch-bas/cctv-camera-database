@@ -13,7 +13,7 @@
 | Field of view | 135 diagonal° |
 | Night vision | ir (8m) |
 | Power | Rechargeable battery (HomeBase 2 required) |
-| Protocols | http |
+| Protocols | http, rtsp |
 | IP rating | IP67 |
 | Two-way audio | Yes |
 | Released | 2020 |

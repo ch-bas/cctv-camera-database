@@ -12,7 +12,7 @@
 | Lens | 1× |
 | Field of view | 135 diagonal° |
 | Night vision | color (12m) |
-| Power | Rechargeable battery (HomeBase 3 required) |
+| Power | Plug-in power adapter (5 m / 16.4 ft cable) for continuous 24/7 recording; HomeBase 3 required |
 | Protocols | http |
 | IP rating | IP67 |
 | Two-way audio | Yes |
@@ -21,16 +21,17 @@
 ## Features
 
 - 4K UHD resolution
+- plug-in power for 24/7 continuous recording
 - cross-camera tracking
 - HomeBase 3 local storage (16 TB expandable)
 - BionicMind AI face recognition
 - color night vision
 - no subscription required
-- Apple HomeKit / Alexa / Google
+- Alexa / Google Assistant
 
 ## Sources
 
-- https://www.eufy.com/products/eufycam-e330-pro
+- https://us.eufy.com/pages/security-e330eufycam
 
 ---
 *Auto-generated from eufy-eufycam-e330-pro.json — do not edit by hand.*

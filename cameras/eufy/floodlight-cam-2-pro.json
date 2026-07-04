@@ -11,16 +11,16 @@
     "ethernet"
   ],
   "resolution": {
-    "megapixels": 5,
-    "max_width": 2880,
-    "max_height": 1620,
-    "label": "2K Pro"
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "2K"
   },
   "lens": {
     "count": 1,
     "varifocal": false
   },
-  "field_of_view_deg": "360 (pan/tilt)",
+  "field_of_view_deg": "130 lens; 360 pan / 130 tilt",
   "night_vision": {
     "type": "color",
     "range_m": 10
@@ -34,7 +34,8 @@
     "cloud": false
   },
   "protocols": [
-    "http"
+    "http",
+    "rtsp"
   ],
   "ip_rating": "IP65",
   "audio": {
@@ -53,10 +54,32 @@
   ],
   "release_year": 2022,
   "sources": [
-    "https://www.eufy.com/products/floodlight-cam-2-pro"
+    "https://service.eufy.com/article-description/eufy-Floodlight-Cam-2-Pro-FAQ"
   ],
   "power_source": [
-    "battery",
     "ac-mains"
-  ]
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-04",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live0",
+      "notes": "Floodlight Cam 2 Pro (T8423) is on Eufy's official RTSP-supported list; RTSP/NAS must be enabled per-camera in the Eufy Security app (Settings > Storage > NAS/RTSP). No HomeBase required."
+    },
+    "home_assistant": {
+      "integration": "eufy_security",
+      "notes": "Use eufy_security HACS integration. RTSP must be enabled in the Eufy Security app."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use Generic/RTSP profile. RTSP must be enabled per camera in the Eufy Security app."
+    }
+  }
 }

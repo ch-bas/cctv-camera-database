@@ -12,17 +12,17 @@
 | Lens | 1× |
 | Field of view | 130 diagonal° |
 | Night vision | color (8m) |
-| Power | Wired (AC power) |
+| Power | Built-in 13,400 mAh rechargeable battery (up to 120 days) |
 | Protocols | http |
 | IP rating | IP67 |
 | Two-way audio | Yes |
-| Released | 2023 |
+| Released | 2022 |
 
 ## Features
 
-- 1080p resolution with spotlight
+- 1080p wire-free battery camera with spotlight
 - built-in 8 GB storage
-- color night vision
+- color night vision (spotlight)
 - AI human detection
 - no subscription required
 - IP67 weatherproof
@@ -30,7 +30,7 @@
 
 ## Sources
 
-- https://www.eufy.com/products/solocam-l20
+- https://service.eufy.com/article-description/Introducing-eufy-SoloCam-L20
 
 ---
 *Auto-generated from eufy-solocam-l20.json — do not edit by hand.*
