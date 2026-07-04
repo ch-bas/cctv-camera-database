@@ -6,6 +6,22 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.24.0] — 2026-07-04
+
+Three Hanwha cameras added, each populated field-by-field from its **official Hanwha datasheet**. Net: **42 → 45 Hanwha cameras**.
+
+### Added
+
+- **PND-9080R** — 4K/12MP IR indoor dome (1/1.7" 12.4MP CMOS; 12MP 4000×3000 @20fps or 4K 4096×2160 @30fps; 4.5-10mm F1.6 P-iris; WiseIR 30m; IK08; built-in mic; ONVIF S/G/Q; 2019).
+- **PNM-C16083RVQ** — 4MP × 4ch AI multi-directional camera (16MP total, per-channel PTRZ, WiseIR 15-20m, CV5 SoC, IP66/IK10/NEMA4X, PoE+/PoE++).
+- **PNM-C34404RQPZ** — 4K 4ch PTRZ + 2MP 40x PTZ AI combo (34MP total; PTZ: IR 200m, 150 dB WDR, auto-tracking, 700°/s; AI smart zoom + hand-over; PoE++ Class 8, 64W; 7.9kg).
+
+### Changed
+
+- Counts: total 1,719 → 1,722, Hanwha 42 → 45. Resolution tiers: 4K/8MP+ 515 → 518, 4–5MP 728, 1080p–2MP 447 (both unchanged). PoE-wired 1,176 → 1,179, integration-configs 1,312 → 1,315.
+
+---
+
 ## [1.23.0] — 2026-07-04
 
 Completion of the full Hanwha brand audit (master audit #28): every remaining camera verified against official Hanwha datasheets/product pages, market tags added brand-wide, and a second ghost sweep. Net: **69 → 42 Hanwha cameras — every one now datasheet-verified and market-tagged.**
