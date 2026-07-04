@@ -32,7 +32,7 @@
 
 ## Sources
 
-- https://hanwhavisionamerica.com/
+- https://www.hanwhavision.com/global/products/product-details/ANV-L7082R
 
 ---
 *Auto-generated from hanwha-anv-l7082r.json — do not edit by hand.*

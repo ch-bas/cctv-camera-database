@@ -6,6 +6,31 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.22.0] — 2026-07-04
+
+Hanwha ghost hunt — a targeted sweep for fabricated entries across the brand, verified against Hanwha's published catalog (hanwhavision.com, official datasheets, support portal). Net: **79 → 69 Hanwha cameras**.
+
+### Removed
+
+**10 ghost models** with no corresponding product in Hanwha's catalog:
+
+- `PND-A9300RP`, `PNO-A9300RP`, `PNV-A9300R`, `PNV-A9300RVW` — the "A9300" P-series family does not exist (only the X-series `XNP-9300RW` legitimately carries "9300"). All four claimed 4MP, contradicting Hanwha's numbering where 9xxx = 4K/8MP, and `PNV-A9300RVW` even cited "ColorVu" — a **Hikvision** marketing term. All had no sensor/lens/dimensions and only the bare hanwhavisionamerica.com homepage as a source.
+- `AND-L7082R`, `QNO-A9400R`, `XNV-A9302R`, `XNV-A9400R`, `XNV-C9300RW`, `XPT-A9401RW` — confirmed unpublished/invented model numbers.
+
+### Fixed
+
+- **`PNV-A9081R`** — the stored entry described a fabricated "Gen 2 P Series / Wisenet 9" 2025 refresh (WiseStream IV, BestShot re-identification) that does not exist in Hanwha's published catalog. Rewritten to the real 2020 product's datasheet spec (1/1.8", 4.5-10mm F1.6-2.65, WiseIR 30m, IP66/IP67/IP6K9K, IK10+); file/id renamed from `pnv-a9081r-gen2`.
+- **`PNO-A9081R`** — real product previously stored under a fabricated "Gen 2" filename; renamed and its entry normalized to the schema (specs match the official Ver. 202410 datasheet).
+- **`PND-A9081RV`** — had a fabricated 3.9-9mm F1.4 lens; the real camera shares the 4.5-10mm F1.6-2.65 optics of its A9081R siblings. Full spec verified and filled (IP52, IK10, WiseIR 30m, dual SD, built-in mic).
+- **`PNB-A9001`** — real 4K AI box camera (replaces the former `PNB-A9001R` misnomer); entry normalized to the schema. Ships without a lens (C/CS mount), so lens/FOV fields are intentionally absent.
+- `QND-8080R` (KR) and `QNO-8080R` (MENA) reviewed and confirmed as legitimate regional variants — retained.
+
+### Changed
+
+- Counts: total 1,756 → 1,746, Hanwha 79 → 69. Resolution tiers: 4K/8MP+ 529 → 527, 4–5MP 750 → 742, 1080p–2MP 448 (unchanged). PoE-wired 1,213 → 1,203, integration-configs 1,349 → 1,339. Brand count unchanged at 69.
+
+---
+
 ## [1.21.0] — 2026-07-04
 
 Four more Hanwha Vision cameras, each populated and **verified field-by-field against its official Hanwha datasheet**. Net: **75 → 79 Hanwha cameras**.
