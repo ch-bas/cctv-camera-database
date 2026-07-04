@@ -8,7 +8,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [1.19.0] — 2026-07-04
 
-Full data-quality re-audit of the **Reolink** brand — all 122 stored cameras re-verified against official `reolink.com` product pages, datasheets, and support articles (part of the master audit #28). Reolink was audited once before (v1.8.0), but these pages draw heavy traffic, so every entry was re-checked from scratch. Net: **122 → 115 cameras**.
+Full data-quality re-audit of the **Reolink** brand — all 122 stored cameras re-verified against official `reolink.com` product pages, datasheets, and support articles (part of the master audit #28). Reolink was audited once before (v1.8.0), but these pages draw heavy traffic, so every entry was re-checked from scratch. Net: **122 → 116 cameras** (7 removed, 1 newly-released model added).
+
+### Added
+
+- **Argus Solar** — Reolink's newly-released (2026) 5MP battery/solar wire-free camera with dual-band Wi-Fi 6 (2880×1616, 1/2.7" CMOS, f=3mm F1.6, 6500mAh battery, IP67, two-way audio). Added from the official product page; cloud/battery-only, so no RTSP/ONVIF, per Reolink's architecture for this line.
 
 ### Removed
 
@@ -32,7 +36,7 @@ Every camera re-verified against official Reolink sources. Most serious errors f
 
 ### Changed
 
-- Resolution-tier counts recomputed after the deletions and corrections: 4K/8MP+ 531 → 525, 4–5MP 747 (unchanged), 1080p–2MP → 446 (the last figure also corrects a stale count carried in prior releases). PoE-wired 1,212 → 1,205, WiFi 480 → 473, integration-config count 1,352 → 1,341 (fabricated configs removed from cloud/NVR-only models). Brand count unchanged at 69.
+- Resolution-tier counts recomputed after the deletions, corrections, and the one addition: 4K/8MP+ 531 → 525, 4–5MP 747 → 748, 1080p–2MP → 446 (the last figure also corrects a stale count carried in prior releases). PoE-wired 1,212 → 1,205, WiFi 480 → 474, battery/wire-free → 184, integration-config count 1,352 → 1,341 (fabricated configs removed from cloud/NVR-only models). Brand count unchanged at 69.
 
 ---
 

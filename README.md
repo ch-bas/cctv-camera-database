@@ -1,8 +1,8 @@
 # CCTV Camera Database
 
-An open, structured database of 1,747 CCTV / IP camera models and their technical specifications, covering 69 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
+An open, structured database of 1,748 CCTV / IP camera models and their technical specifications, covering 69 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
 
-[![cameras](https://img.shields.io/badge/cameras-1%2C747-blue)](data/cameras.json)
+[![cameras](https://img.shields.io/badge/cameras-1%2C748-blue)](data/cameras.json)
 [![brands](https://img.shields.io/badge/brands-69-green)](cameras/)
 [![license](https://img.shields.io/badge/license-CC0-lightgrey)](LICENSE)
 
@@ -56,7 +56,7 @@ a Claude Code skill for AI-powered video production built on [Remotion](https://
 cctv-camera-database/
 ├── cameras/              # source of truth — one JSON file per camera, grouped by brand
 │   ├── hikvision/        # 150 cameras
-│   ├── reolink/          # 115 cameras
+│   ├── reolink/          # 116 cameras
 │   ├── dahua/            # 155 cameras
 │   ├── hanwha/           #  71 cameras
 │   ├── axis/             #  66 cameras
@@ -121,14 +121,14 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 
 | Metric | Count |
 |--------|-------|
-| Total cameras | **1,747** |
+| Total cameras | **1,748** |
 | Brands | **69** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
 | PoE wired | 1,205 |
-| WiFi | 473 |
-| Battery / wire-free | 183 |
+| WiFi | 474 |
+| Battery / wire-free | 184 |
 | 4K / 8MP+ | 525 |
-| 4–5MP | 747 |
+| 4–5MP | 748 |
 | 1080p–2MP | 446 |
 | With integration configs (Frigate / Home Assistant) | 1,341 |
 
@@ -137,7 +137,7 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | Brand | Cameras | Segment |
 |-------|---------|---------|
 | Hikvision | 150 | Enterprise + consumer, global |
-| Reolink | 115 | Prosumer, no-subscription, global |
+| Reolink | 116 | Prosumer, no-subscription, global |
 | Dahua | 155 | Enterprise + consumer, global |
 | Hanwha | 71 | Enterprise AI, Korea/global |
 | Axis | 66 | Enterprise premium, global |
