@@ -8,10 +8,10 @@
 | Model | Argus MagiCam |
 | Type | box |
 | Connectivity | wifi |
-| Resolution | 2K (2MP, 1920×1080) |
+| Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/3.2" CMOS |
 | Lens | 1× 2.3 (fixed)mm F2.2 |
-| Field of view | 132 diagonal° |
+| Field of view | 113.3 horizontal / 62.7 vertical / 132 diagonal° |
 | Night vision | ir |
 | Power | 2x AA lithium batteries (up to 9 months) |
 | Storage | microSD ≤ 256GB |
