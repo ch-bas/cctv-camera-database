@@ -78,7 +78,9 @@ The coverage pass exposed three errors in existing entries, now corrected agains
 
 ### Changed
 
-- Counts: total 1,722 → 1,719, Eufy 36 → 33 (9 removed, 6 added). Resolution tiers 4K/8MP+ 518 → 514, 4–5MP 728 → 724, 1080p–2MP 447 → 452; WiFi 474 → 471, battery/wire-free 184 → 176, integration-configs 1,315 → 1,317. Brand count unchanged at 69.
+- Counts: Eufy 36 → 46 (net +10 after removals/additions); `last_verified: 2026-07-04` across the brand. See the README "By the numbers" for current dataset-wide totals.
+
+---
 
 ## [1.21.0] — 2026-07-04
 
@@ -107,6 +109,42 @@ Full data-quality audit of the **Annke** brand (master audit #28) — all 23 ent
 
 - Market tags (`["global"]`) added to all 13 surviving Annke cameras; `last_verified: 2026-07-04` set on the 12 verified.
 - Counts: total 1,722 → 1,712, Annke 23 → 13. Resolution tiers 4K/8MP+ 518 → 511, 4–5MP 728 → 725, 1080p–2MP 447 (unchanged); PoE-wired 1,179 → 1,171, integration-configs 1,315 → 1,305. Brand count unchanged at 69.
+
+---
+
+## [1.20.0] — 2026-07-04
+
+Eight Hikvision cameras added, each populated field-by-field from its **official Hikvision datasheet**. Net: **150 → 158 Hikvision cameras**.
+
+### Added
+
+- **DS-2CD1027G2H-LIU(F)** — 2MP ColorVu Smart Hybrid Light network bullet (F1.0, IR + white light up to 30m, built-in mic; value series).
+- **DS-2CD1023G0E-I** — 2MP EXIR economic network bullet (H.265+, IP67, no SD slot).
+- **DS-2SF7C425MXG2/LM-EL** — DeepinViewX TandemVu 7C: fixed 6MP panoramic + 4MP 25x DarkFighter PTZ speed dome, 400m IR, large-model AI perimeter protection, LPR, PoE++ 90W. One entry covers the `-EL` / `-ELW` / `-ELY` (NEMA 4X anti-corrosion) / `-ELWY` SKU variants (identical camera spec, differing only in coating/hardware options).
+- **5 Turbo HD (HD-TVI analog) 2MP bullets** — `DS-2CE16D0T-IT3E` (EXIR 40m, PoC), `DS-2CE16D0T-ITFS` (EXIR 30m, 4-in-1, built-in mic), `DS-2CE16D0T-EXIF` (EXIR 20m, 4-in-1), `DS-2CE16D0T-VFIR3E` (varifocal 2.8-12mm, PoC, IK10), and `DS-2CE16D0T-LXTS` (ColorVu Smart Hybrid Light, two-way audio over coax). Modeled as analog: `coax`, no protocols/configs.
+
+### Changed
+
+- Counts: total 1,754 → 1,762, Hikvision 150 → 158. Resolution tiers and other "By the numbers" stats recomputed (and stale prior figures corrected).
+
+---
+
+## [1.19.1] — 2026-07-04
+
+Hikvision data-quality patch — 14 corrections from a targeted audit (Hikvision model-number decode + internal-consistency checks), each **verified against official Hikvision datasheets/product pages**. Field-level fixes only; no cameras added or removed.
+
+### Fixed
+
+- **Night-vision type (3)** — `DS-2CD1143G2-LIUF`, `DS-2CD1153G2-LIUF`, `DS-2CD1183G2-LIUF`: Smart Hybrid Light (LIUF) models typed `ir` → corrected to `hybrid` (IR + white supplement), matching their own siblings/regional variants.
+- **Form factor (7)** — `DS-2CD2367G2-L`, `DS-2CD2386G2-I`, `DS-2CD2386G2-ISU/SL`, `DS-2CD2386G2-IU` (dome → **turret**; 23xx is Hikvision's turret family); `DS-2CD2083G2-I`, `DS-2CD2087G2-SU` (dome → **bullet**; confirmed "Fixed Bullet" on Hikvision datasheets); `DS-2CD2726G2-IZS` (bullet → **dome**; "Motorized Varifocal Dome"); `DS-2CD6365G0E-IVS` (panoramic → **fisheye**; "Network Fisheye Camera").
+- **Resolution (2)** — `DS-2CD6944G0-IHS`: 8 → **16MP** ("180° Stitched 16MP PanoVu", four sensors); `DS-2DE2A204IW-DE3/W`: 4 → **2MP** (max 1920×1080; the `-404` variant is the 4MP one).
+- **Connectivity (1)** — `DS-2CD2443G2-IW`: the `-IW` cube is WiFi — added `wifi` to `connectivity`.
+- `last_verified: 2026-07-04` set on all 14 corrected entries.
+
+### Notes
+
+- Flagged for maintainer review (not changed): **`DS-2CD2427G2H-LI(U)`** — no such Hikvision SKU exists; its stored spec (4MP hybrid dome, 1/1.8") matches the real `DS-2CD2147G2H-LIU`, so the model number is likely mistyped. Left as a rename-vs-remove decision.
+- Patch release on top of the v1.19.0 audit (Reolink + Hanwha).
 
 ---
 
