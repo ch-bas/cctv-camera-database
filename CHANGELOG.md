@@ -60,6 +60,14 @@ RTSP added only where confirmed on Eufy's official RTSP-support docs (eufyCam 2,
 
 **Alias merges (duplicates, not new entries):** "Indoor Cam 2K" (T8400) folded into **Indoor Cam C120** (its current name); "Outdoor Cam C22" (T8442) folded into **Outdoor Cam E210** (same SKU).
 
+### Fixed — mislabeled eufyCam 3-series + E210 RTSP
+
+The coverage pass exposed three errors in existing entries, now corrected against official sources:
+
+- **`eufycam-3-pro` → `eufycam-3`** — there is no official "eufyCam 3 Pro"; the entry's own source URL is the **eufyCam 3 (S330)** page. Renamed to *eufyCam 3* (alias *eufyCam S330*), replaced the unverifiable SKU `T88601D4` with the real ones (T8160 / T81601W1 / T88711W1), corrected `release_year` 2023 → **2022**, and dropped an unverified aperture value.
+- **`eufycam-3c-2k` → `eufycam-3c`** — the real eufyCam 3C (S300) is **4K / 8 MP, not 2K**; corrected resolution to 4K UHD (3840×2160), replaced the bogus SKU `T8870` with the real ones (T8161 / T8161321 / T8882121), fixed `release_year` 2024 → **2022**, and renamed to *eufyCam 3C*.
+- **Outdoor Cam E210** — added the (officially confirmed, previously missing) `rtsp` protocol + complete Frigate/HA/Blue Iris configs (`verified: false`), and upgraded its lone Amazon source to two official eufy.com references.
+
 ### Fixed
 
 27 real cameras verified/corrected against eufy.com. The central theme was **RTSP/ONVIF accuracy** — each camera cross-checked against Eufy's official RTSP-support list (RTSP is served via a HomeBase, not the camera):

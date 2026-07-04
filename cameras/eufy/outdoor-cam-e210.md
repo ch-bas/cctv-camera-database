@@ -13,7 +13,7 @@
 | Field of view | 130 diagonal° |
 | Night vision | color |
 | Power | Wired (5V/1A DC adapter, 20 ft cable) |
-| Protocols | http |
+| Protocols | rtsp, http |
 | IP rating | IP67 |
 | Two-way audio | Yes |
 | Released | 2024 |
@@ -30,7 +30,8 @@
 
 ## Sources
 
-- https://www.amazon.com/eufy-OutdoorCam-Resolution-Spotlight-Weatherproof/dp/B0912R591N
+- https://service.eufy.com/article-description/Introducing-eufy-Outdoor-Cam
+- https://service.eufy.com/article-description/Differences-Between-eufy-Solo-OutdoorCams
 
 ---
 *Auto-generated from eufy-outdoor-cam-e210.json — do not edit by hand.*
