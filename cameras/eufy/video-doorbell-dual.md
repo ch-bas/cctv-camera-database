@@ -11,7 +11,7 @@
 | Resolution | 2K (dual) (4MP, 2560×1920) |
 | Lens | 2× |
 | Field of view | front + downward package view° |
-| Night vision | color (5m) |
+| Night vision | ir |
 | Power | Built-in rechargeable battery (6 months) / hardwired 16-24 VAC |
 | Protocols | http |
 | IP rating | IP65 |
@@ -29,6 +29,7 @@
 
 ## Sources
 
+- https://www.eufy.com/products/e8213181
 - https://service.eufy.com/article-description/Does-the-Video-Doorbell-Dual-Wired-support-RTSP
 
 ---

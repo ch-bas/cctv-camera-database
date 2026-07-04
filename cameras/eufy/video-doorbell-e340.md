@@ -12,7 +12,7 @@
 | Lens | 2× |
 | Field of view | wide front + downward package view° |
 | Night vision | color (5m) |
-| Power | Removable 6500 mAh battery (up to 4 months) / hardwired 8-24 VAC |
+| Power | Removable 6500 mAh battery (up to 4 months) / hardwired 16-24 VAC (10 VA) or 19V 0.6A DC adapter |
 | Protocols | rtsp, http |
 | IP rating | IP65 |
 | Two-way audio | Yes |

@@ -8,7 +8,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [1.22.0] — 2026-07-04
 
-Full data-quality audit of the **Eufy** (Anker) brand (master audit #28) — all 36 stored entries verified against official `eufy.com` product pages and Eufy's RTSP-support documentation, plus 6 missing 2024-2025 models added from official sources. Unlike the fabricated-spec brands, Eufy was padded mostly with **regional-listing duplicates**. Net: **36 → 33 cameras** (9 removed, 6 added). (Version stacks on the Hikvision v1.20.0 / Annke v1.21.0 work.)
+Full data-quality audit of the **Eufy** (Anker) brand (master audit #28) — all 36 stored entries verified against official `eufy.com` product pages and Eufy's RTSP-support documentation, plus 10 missing 2024-2025 models added from official sources, then a second-pass re-verification of the doorbell line. Unlike the fabricated-spec brands, Eufy was padded mostly with **regional-listing duplicates**. Net: **36 → 37 cameras** (9 removed, 10 added). (Version stacks on the Hikvision v1.20.0 / Annke v1.21.0 work.)
 
 ### Removed
 
@@ -19,16 +19,28 @@ Full data-quality audit of the **Eufy** (Anker) brand (master audit #28) — all
 
 ### Added
 
-6 current models that were missing from the dataset, each verified against official eufy.com pages:
+10 current models that were missing from the dataset, each verified against official eufy.com pages:
 
 - **eufyCam S3 Pro** — 2024 flagship: 4K MaxColor Vision full-color, radar + PIR, battery/solar, HomeKit Secure Video; RTSP-capable via HomeBase 3.
 - **eufyCam S4** — 2025 first wireless 3-lens hybrid (fixed 4K bullet + dual 2K PTZ, 8x zoom, bullet-to-PTZ tracking).
 - **SoloCam E30** — 360° pan/tilt solar battery 2K cam with AI auto-tracking.
 - **Indoor Cam E30** — 4K 360° pan/tilt indoor/pet cam with HomeKit (distinct from the 2K Indoor Cam E220).
+- **Indoor Cam C220** — 2K 360° pan(360°)/tilt(75°) plug-in indoor cam with on-device person/pet/crying detection + auto-tracking (distinct from the E220 and fixed C120).
 - **4G LTE Cam S330** — cellular (4G LTE) battery/solar pan-tilt cam for off-grid sites — the dataset's first `4g`-connectivity camera.
 - **Floodlight Cam E30** — hardwired 2K dual-lens 360° pan/tilt floodlight (distinct from the wireless 3K E340).
+- **Wall Light Cam S100** — wired outdoor 2K camera with an integrated 1200-lumen wall light, dual-PIR motion, color night vision, 105 dB siren.
+- **Video Doorbell C30** — 2025 budget 2K (16:9) battery-only doorbell; local microSD, no HomeKit.
+- **Video Doorbell C31** — 2025 budget 2K (4:3 head-to-toe) doorbell, removable battery + hardwire option enabling 24/7 recording and 5s pre-roll.
 
 All added as app/cloud-only (`http`) except eufyCam S3 Pro (RTSP via HomeBase); `["global"]` markets + `last_verified` set.
+
+### Re-verified (doorbell second pass)
+
+The four Eufy video doorbells were re-checked field-by-field against their official spec pages:
+
+- **Video Doorbell E340** — hardwire spec corrected `8-24 VAC` → **`16-24 VAC (10 VA)`** (+ 19V 0.6A DC adapter option); its dual-light **color** night vision confirmed accurate.
+- **Video Doorbell S330** & **Video Doorbell Dual** — night vision corrected **`color` → `ir`** (official spec: "Infrared-Enhanced Night Vision", 4 IR sensors, black-and-white); added a product-spec source to the Dual (previously cited only the RTSP FAQ).
+- **Video Doorbell S220** — confirmed accurate (single-cam 2K, app/cloud-only, no changes).
 
 ### Fixed
 

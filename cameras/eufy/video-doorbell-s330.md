@@ -11,7 +11,7 @@
 | Resolution | 2K front (2560x1920) + 1080p package (1600x1200) (4MP, 2560×1920) |
 | Lens | 2× |
 | Field of view | 160 front + 97 package° |
-| Night vision | color (5m) |
+| Night vision | ir |
 | Power | Hardwired only (16-24 VAC, 30 VA or more) |
 | Protocols | rtsp, http |
 | IP rating | IP65 |
@@ -22,7 +22,7 @@
 
 - dual-camera head-to-toe video doorbell (2K front + package cam)
 - AI face / package / human detection
-- color night vision
+- infrared-enhanced night vision (4 IR sensors)
 - no subscription fee
 - local HomeBase storage
 - Alexa / Google (no HomeKit)
