@@ -6,6 +6,34 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.20.0] — 2026-07-04
+
+Hanwha Vision additions and corrections, all verified against **official Hanwha datasheets** (PDF spec sheets). Net: **71 → 75 Hanwha cameras**.
+
+### Added
+
+Five cameras, each populated from its official Hanwha Vision datasheet:
+
+- **XND-A9085RV** — 8MP AI indoor modular dome (Wisenet 9, dual NPU, 4.4-9.3mm motorized varifocal, WiseIR 50m, IP52/IK10, dual 1TB microSD).
+- **XNV-A9084RS** — 8MP AI stainless-steel (STS316L, NSF/ANSI 169 food-grade) IR vandal dome (IP66/67/68, IK11, WiseIR 50m, WisePower).
+- **QNE-C8013RL** — 5MP Dual Light (white LED + IR) flateye turret (IP66/67, IK10, AI person/vehicle + business intelligence).
+- **QNE-C9013RL** — 4K/8MP Dual Light flateye turret (sibling of the C8013RL).
+- **ANE-L6012R** — 2MP AI IR flateye turret (compact PoE, IP67/IK10, 20m IR).
+
+### Removed
+
+- **1 ghost model**: `PNO-9300R` did not correspond to any real Hanwha product (Hanwha's actual P-series 4K bullets are `PNO-A9081R`/`A9311R`; the `9300R` designation belongs to the X-series). Removed. The real 4K bullet (`XNO-9300R`) and 4K PTZ (`XNP-9300RW`) already have their own entries.
+
+### Fixed
+
+- **XNP-9300RW** (existing entry) re-verified against its official datasheet: corrected sensor (`1/2.5"` → `1/2.8"` CMOS) and field of view; added lens aperture (F1.6-4.56), PoE++ Class 6 power (42W), dimensions (Ø184.9×318.8mm), weight (5400g), operating range (-40 to 55°C), and video codec/FPS — all of which were missing or wrong.
+
+### Changed
+
+- Resolution-tier counts: 4K/8MP+ 525 → 527, 4–5MP 748 → 749, 1080p–2MP 446 → 447. PoE-wired 1,205 → 1,209, integration-configs 1,341 → 1,345. Total 1,748 → 1,752; brand count unchanged at 69.
+
+---
+
 ## [1.19.0] — 2026-07-04
 
 Full data-quality re-audit of the **Reolink** brand — all 122 stored cameras re-verified against official `reolink.com` product pages, datasheets, and support articles (part of the master audit #28). Reolink was audited once before (v1.8.0), but these pages draw heavy traffic, so every entry was re-checked from scratch. Net: **122 → 116 cameras** (7 removed, 1 newly-released model added).
