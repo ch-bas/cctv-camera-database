@@ -11,9 +11,9 @@
 | Lens | 1× 2.8 (fixed)mm F2.0 |
 | Field of view | 100 horizontal, 75 vertical, 130 diagonal° |
 | Night vision | hybrid (30m) |
-| Power | PoE (802.3af) / DC 12V |
+| Power | PoE (IEEE 802.3af) / DC 12V |
 | Storage | microSD ≤ 512GB, NVR |
-| Protocols | onvif, rtsp |
+| Protocols | onvif, rtsp, rtmp, http, p2p |
 | IP rating | IP67 |
 | Two-way audio | Yes |
 | Operating temp | -10 to 55°C |
