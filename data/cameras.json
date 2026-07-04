@@ -65315,7 +65315,27 @@
       "global"
     ],
     "last_verified": "2026-07-04",
-    "release_notes": "SKU T8452 is officially the eufy Garage-Control Cam E110 (not a 'Garage-Cam S330' — that name does not exist). RTSP/NAS officially supported per eufy support article."
+    "release_notes": "SKU T8452 is officially the eufy Garage-Control Cam E110 (not a 'Garage-Cam S330' — that name does not exist). RTSP/NAS officially supported per eufy support article.",
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 640,
+          "height": 360,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{homebase_ip}:554/live0",
+        "best_substream": "rtsp://{user}:{pass}@{homebase_ip}:554/live1",
+        "notes": "RTSP is served by the HomeBase (Camera Settings > Storage > RTSP/NAS), not the camera."
+      },
+      "home_assistant": {
+        "integration": "eufy_security",
+        "notes": "Use the eufy_security HACS integration (P2P), or the HomeBase RTSP stream as a Generic Camera when RTSP is enabled."
+      },
+      "blue_iris": {
+        "profile": "Generic/RTSP",
+        "notes": "Eufy is not a Hikvision/ONVIF brand — use the HomeBase RTSP URL as a Generic/RTSP source (no ONVIF)."
+      }
+    }
   },
   {
     "id": "eufy-indoor-cam-2k-pan-tilt",
@@ -66632,6 +66652,10 @@
       "home_assistant": {
         "integration": "eufy_security",
         "notes": "Use eufy_security HACS integration. RTSP available via HomeBase when enabled. Doorbell press exposed as event."
+      },
+      "blue_iris": {
+        "profile": "Generic/RTSP",
+        "notes": "Use the HomeBase RTSP URL as a Generic/RTSP source (no ONVIF). Portrait aspect ratio."
       }
     }
   },
@@ -66787,6 +66811,10 @@
       "home_assistant": {
         "integration": "eufy_security",
         "notes": "Use eufy_security HACS integration. RTSP available via HomeBase when enabled. Doorbell press exposed as event."
+      },
+      "blue_iris": {
+        "profile": "Generic/RTSP",
+        "notes": "Use the HomeBase RTSP URL as a Generic/RTSP source (no ONVIF). Portrait aspect ratio."
       }
     }
   },
