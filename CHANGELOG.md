@@ -8,7 +8,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [1.22.0] — 2026-07-04
 
-Full data-quality audit of the **Eufy** (Anker) brand (master audit #28) — all 36 entries verified against official `eufy.com` product pages and Eufy's RTSP-support documentation. Unlike the fabricated-spec brands, Eufy was padded mostly with **regional-listing duplicates**. Net: **36 → 27 cameras**. (Version stacks on the Hikvision v1.20.0 / Annke v1.21.0 work.)
+Full data-quality audit of the **Eufy** (Anker) brand (master audit #28) — all 36 stored entries verified against official `eufy.com` product pages and Eufy's RTSP-support documentation, plus 6 missing 2024-2025 models added from official sources. Unlike the fabricated-spec brands, Eufy was padded mostly with **regional-listing duplicates**. Net: **36 → 33 cameras** (9 removed, 6 added). (Version stacks on the Hikvision v1.20.0 / Annke v1.21.0 work.)
 
 ### Removed
 
@@ -16,6 +16,19 @@ Full data-quality audit of the **Eufy** (Anker) brand (master audit #28) — all
 
 - **8 duplicates**: the `SoloCam S340` regional cluster (`-au`, `-ca`, `-ch`, `-eu` — spec-identical to `solocam-s340`, whose `["global"]` tag covers all regions), `solocam-s220-uk` (= `s220-solocam`), `floodlight-e340` (= `floodlight-cam-e340`, both the T8425), `homebase-s380-cam-s330` (= `eufycam-3c-2k`), and `eufycam-s330-pro` (= `eufycam-3-pro`, same SKU T88711W1).
 - **1 ghost**: `homebase-3-s380-cam-e340` — no standalone battery "eufyCam E340 dual-lens" exists ("E340" belongs only to the Video Doorbell and Floodlight Cam).
+
+### Added
+
+6 current models that were missing from the dataset, each verified against official eufy.com pages:
+
+- **eufyCam S3 Pro** — 2024 flagship: 4K MaxColor Vision full-color, radar + PIR, battery/solar, HomeKit Secure Video; RTSP-capable via HomeBase 3.
+- **eufyCam S4** — 2025 first wireless 3-lens hybrid (fixed 4K bullet + dual 2K PTZ, 8x zoom, bullet-to-PTZ tracking).
+- **SoloCam E30** — 360° pan/tilt solar battery 2K cam with AI auto-tracking.
+- **Indoor Cam E30** — 4K 360° pan/tilt indoor/pet cam with HomeKit (distinct from the 2K Indoor Cam E220).
+- **4G LTE Cam S330** — cellular (4G LTE) battery/solar pan-tilt cam for off-grid sites — the dataset's first `4g`-connectivity camera.
+- **Floodlight Cam E30** — hardwired 2K dual-lens 360° pan/tilt floodlight (distinct from the wireless 3K E340).
+
+All added as app/cloud-only (`http`) except eufyCam S3 Pro (RTSP via HomeBase); `["global"]` markets + `last_verified` set.
 
 ### Fixed
 
@@ -27,7 +40,7 @@ Full data-quality audit of the **Eufy** (Anker) brand (master audit #28) — all
 
 ### Changed
 
-- Counts: total 1,722 → 1,713, Eufy 36 → 27. Resolution tiers 4K/8MP+ 518 → 510, 4–5MP 728 → 723, 1080p–2MP 447 → 451; WiFi 474 → 465, battery/wire-free 184 → 172 (power-source corrections), integration-configs 1,315 → 1,316. Brand count unchanged at 69.
+- Counts: total 1,722 → 1,719, Eufy 36 → 33 (9 removed, 6 added). Resolution tiers 4K/8MP+ 518 → 514, 4–5MP 728 → 724, 1080p–2MP 447 → 452; WiFi 474 → 471, battery/wire-free 184 → 176, integration-configs 1,315 → 1,317. Brand count unchanged at 69.
 
 ---
 
