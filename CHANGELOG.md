@@ -6,162 +6,33 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
-## [1.24.0] — 2026-07-04
-
-Three Hanwha cameras added, each populated field-by-field from its **official Hanwha datasheet**. Net: **42 → 45 Hanwha cameras**.
-
-### Added
-
-- **PND-9080R** — 4K/12MP IR indoor dome (1/1.7" 12.4MP CMOS; 12MP 4000×3000 @20fps or 4K 4096×2160 @30fps; 4.5-10mm F1.6 P-iris; WiseIR 30m; IK08; built-in mic; ONVIF S/G/Q; 2019).
-- **PNM-C16083RVQ** — 4MP × 4ch AI multi-directional camera (16MP total, per-channel PTRZ, WiseIR 15-20m, CV5 SoC, IP66/IK10/NEMA4X, PoE+/PoE++).
-- **PNM-C34404RQPZ** — 4K 4ch PTRZ + 2MP 40x PTZ AI combo (34MP total; PTZ: IR 200m, 150 dB WDR, auto-tracking, 700°/s; AI smart zoom + hand-over; PoE++ Class 8, 64W; 7.9kg).
-
-### Changed
-
-- Counts: total 1,719 → 1,722, Hanwha 42 → 45. Resolution tiers: 4K/8MP+ 515 → 518, 4–5MP 728, 1080p–2MP 447 (both unchanged). PoE-wired 1,176 → 1,179, integration-configs 1,312 → 1,315.
-
----
-
-## [1.23.0] — 2026-07-04
-
-Completion of the full Hanwha brand audit (master audit #28): every remaining camera verified against official Hanwha datasheets/product pages, market tags added brand-wide, and a second ghost sweep. Net: **69 → 42 Hanwha cameras — every one now datasheet-verified and market-tagged.**
-
-### Removed
-
-**27 ghost models** (verified against Hanwha's published catalog — zero official or retail footprint, model numbers violating Hanwha naming conventions, or specs contradicting the real datasheets):
-
-- Fake "9300/9302" family: `XNO-9300R`, `XNO-9302R`, `XNV-9300`, `XNV-9300 (MENA)`, `XNV-9302R`, `PNV-9300RV` — "9300" belongs only to the real XNP-9300RW PTZ.
-- Fake Q-series 4K: `QND-9080R`, `QNO-9080R`, `QNV-9080R`, `QNO-8090R`, `QND-C9083R` — 4K "9080R" models are P-series; the Q AI line has no QND variant.
-- Fake suffix variants: `XNO-A9084R (Gen 2)`, `XNV-A9084R (Gen 2)`, `XNV-A9084R-LVE-3` (whose content was actually a fabricated "PNB-A9001RV Gen 2"), `XNV-9080R-V2`, `XNV-8080RSZ`, `XNV-8080RZ2`, `XNV-8080R (KR)` — "Gen 2"/"V2"/"RZ2" are not Hanwha SKUs; the KR entry contradicted the real XNV-8080R datasheet on every axis (unlike the legitimate QND-8080R KR / QNO-8080R MENA variants, which are kept).
-- Fake T-series: `TND-C8083R`, `TNO-C8083R`, `TNV-C8083R` — invented SKUs carrying X-series optics; the real C8083R family is 6MP X-series.
-- Fake PTZ: `QPT-7230`, `QPT-9300RWX`, `QPTZ-8300HN`, `ruggedized-ptz-wisenet9` — QPT/QPTZ prefixes don't exist (Q-series PTZ is QNP), and the last is a descriptive placeholder, not a model (the real 2026 ruggedized line is TNP-A9043RW etc., which can be added properly from official sources later).
-- Fake AI domes: `QNV-A9402R`, `QNV-A9402R-WI`.
-
-### Fixed
-
-**28 real cameras corrected against official datasheets.** The fabrications followed a consistent template — Hikvision-style values (2.8-12mm F1.4 lenses, 50m IR, 256GB microSD, "ColorVu" branding) pasted onto Hanwha model numbers, plus invented 12VDC support on PoE-only models. Most serious:
-
-- `XNO-C9083R`, `QNO-C9083R`, `QNV-C9083R`: stored as 4MP "ColorVu" full-color; real cameras are 4K/8MP IR models.
-- `XNV-8093R`: stored as a wide fixed-lens dome; it's actually a 10.9-29mm telephoto AI dome with 70m IR.
-- `PNM-9000VQ` / `PNM-9322VQP` multisensors: fabricated IR (neither has any), fabricated AI claims, wrong resolutions/optics; PNM-9322VQP is HPoE 802.3bt (65W), not standard PoE.
-- `XNO-A9084R` / `XNV-A9084R`: confirmed as the real Wisenet 9 ("X Gen 2") models — wrong sensor (1/2.8"→1/1.8"), IR (30→40m), storage (256GB→1TB) corrected; their fake "(Gen 2)" duplicate entries removed (see above).
-- `XNO-C7083R` / `XNV-C7083R`: fake "ColorVu" removed (real: IR 40m); missing/wrong lenses fixed.
-- `ANO-L7082R` / `ANV-L7082R`: wrong sensor, fixed-lens claim (real: 3.3-10.3mm varifocal), fake AI and audio claims fixed.
-- `QNV-8080RB`: was misclassified as a bullet — it's the black-housing SKU of the QNV-8080R vandal dome.
-- Q-series wide cleanup (14 entries): systematic 2.8-12mm F1.4 → real 3.2-10mm F1.6-2.9 lenses, 50→20-30m IR, 256→128GB microSD, PoE-only power restored, fake IP/IK ratings removed from indoor models.
-
-### Changed
-
-- **Market tags added brand-wide**: all 42 Hanwha cameras now carry `markets[]` (`["global"]` for standard catalog models; the verified regional variants keep `["KR","global"]` / `["AE","SA","MENA"]`).
-- Counts: total 1,746 → 1,719, Hanwha 69 → 42. Resolution tiers: 4K/8MP+ 527 → 515, 4–5MP 742 → 728, 1080p–2MP 448 → 447. PoE-wired 1,203 → 1,176, integration-configs 1,339 → 1,312. Brand count unchanged at 69.
-
----
-
-## [1.22.0] — 2026-07-04
-
-Hanwha ghost hunt — a targeted sweep for fabricated entries across the brand, verified against Hanwha's published catalog (hanwhavision.com, official datasheets, support portal). Net: **79 → 69 Hanwha cameras**.
-
-### Removed
-
-**10 ghost models** with no corresponding product in Hanwha's catalog:
-
-- `PND-A9300RP`, `PNO-A9300RP`, `PNV-A9300R`, `PNV-A9300RVW` — the "A9300" P-series family does not exist (only the X-series `XNP-9300RW` legitimately carries "9300"). All four claimed 4MP, contradicting Hanwha's numbering where 9xxx = 4K/8MP, and `PNV-A9300RVW` even cited "ColorVu" — a **Hikvision** marketing term. All had no sensor/lens/dimensions and only the bare hanwhavisionamerica.com homepage as a source.
-- `AND-L7082R`, `QNO-A9400R`, `XNV-A9302R`, `XNV-A9400R`, `XNV-C9300RW`, `XPT-A9401RW` — confirmed unpublished/invented model numbers.
-
-### Fixed
-
-- **`PNV-A9081R`** — the stored entry described a fabricated "Gen 2 P Series / Wisenet 9" 2025 refresh (WiseStream IV, BestShot re-identification) that does not exist in Hanwha's published catalog. Rewritten to the real 2020 product's datasheet spec (1/1.8", 4.5-10mm F1.6-2.65, WiseIR 30m, IP66/IP67/IP6K9K, IK10+); file/id renamed from `pnv-a9081r-gen2`.
-- **`PNO-A9081R`** — real product previously stored under a fabricated "Gen 2" filename; renamed and its entry normalized to the schema (specs match the official Ver. 202410 datasheet).
-- **`PND-A9081RV`** — had a fabricated 3.9-9mm F1.4 lens; the real camera shares the 4.5-10mm F1.6-2.65 optics of its A9081R siblings. Full spec verified and filled (IP52, IK10, WiseIR 30m, dual SD, built-in mic).
-- **`PNB-A9001`** — real 4K AI box camera (replaces the former `PNB-A9001R` misnomer); entry normalized to the schema. Ships without a lens (C/CS mount), so lens/FOV fields are intentionally absent.
-- `QND-8080R` (KR) and `QNO-8080R` (MENA) reviewed and confirmed as legitimate regional variants — retained.
-
-### Changed
-
-- Counts: total 1,756 → 1,746, Hanwha 79 → 69. Resolution tiers: 4K/8MP+ 529 → 527, 4–5MP 750 → 742, 1080p–2MP 448 (unchanged). PoE-wired 1,213 → 1,203, integration-configs 1,349 → 1,339. Brand count unchanged at 69.
-
----
-
-## [1.21.0] — 2026-07-04
-
-Four more Hanwha Vision cameras, each populated and **verified field-by-field against its official Hanwha datasheet**. Net: **75 → 79 Hanwha cameras**.
-
-### Added
-
-- **PNM-C9022RV** — 8MP IR panoramic camera (5120×1568 stitched, 209°×60° FOV, WiseIR 20m, PoE+ Class 4, IP66/IK10/NEMA4X, digital PTZ, TPM 2.0, power failover).
-- **PNM-9031RV** — 15MP 192° panoramic camera (6720×2240, F1.6, WiseIR 20m, heatmap, PoE+ Class 4; shares the Ø253×170mm housing with the C9022RV).
-- **TNV-C7013RC** — 3MP AI corner-mount camera (anti-ligature, invisible 940nm IR 15m, IP66/IP69/IK11, built-in mic, Direct Cloud, AI person/face/vehicle/LPR).
-- **TNV-8011C** — 5MP corner-mount camera (anti-ligature, IP66/IP6K9K/IK10). Note: this model's datasheet lists **no ONVIF** (SUNAPI/HTTP API only), so `protocols` is `rtsp`/`http` only and its Home Assistant config uses the Generic Camera integration rather than ONVIF.
-
-Corner-mount cameras (TNV) have no dedicated schema `type`, so they use `dome` as the nearest fit (noted in each entry's `aliases`).
-
-### Changed
-
-- Resolution-tier counts: 4K/8MP+ 527 → 529, 4–5MP 749 → 750, 1080p–2MP 447 → 448. PoE-wired 1,209 → 1,213, integration-configs 1,345 → 1,349. Total 1,752 → 1,756; brand count unchanged at 69.
-
----
-
-## [1.20.0] — 2026-07-04
-
-Hanwha Vision additions and corrections, all verified against **official Hanwha datasheets** (PDF spec sheets). Net: **71 → 75 Hanwha cameras**.
-
-### Added
-
-Five cameras, each populated from its official Hanwha Vision datasheet:
-
-- **XND-A9085RV** — 8MP AI indoor modular dome (Wisenet 9, dual NPU, 4.4-9.3mm motorized varifocal, WiseIR 50m, IP52/IK10, dual 1TB microSD).
-- **XNV-A9084RS** — 8MP AI stainless-steel (STS316L, NSF/ANSI 169 food-grade) IR vandal dome (IP66/67/68, IK11, WiseIR 50m, WisePower).
-- **QNE-C8013RL** — 5MP Dual Light (white LED + IR) flateye turret (IP66/67, IK10, AI person/vehicle + business intelligence).
-- **QNE-C9013RL** — 4K/8MP Dual Light flateye turret (sibling of the C8013RL).
-- **ANE-L6012R** — 2MP AI IR flateye turret (compact PoE, IP67/IK10, 20m IR).
-
-### Removed
-
-- **1 ghost model**: `PNO-9300R` did not correspond to any real Hanwha product (Hanwha's actual P-series 4K bullets are `PNO-A9081R`/`A9311R`; the `9300R` designation belongs to the X-series). Removed. The real 4K bullet (`XNO-9300R`) and 4K PTZ (`XNP-9300RW`) already have their own entries.
-
-### Fixed
-
-- **XNP-9300RW** (existing entry) re-verified against its official datasheet: corrected sensor (`1/2.5"` → `1/2.8"` CMOS) and field of view; added lens aperture (F1.6-4.56), PoE++ Class 6 power (42W), dimensions (Ø184.9×318.8mm), weight (5400g), operating range (-40 to 55°C), and video codec/FPS — all of which were missing or wrong.
-
-### Changed
-
-- Resolution-tier counts: 4K/8MP+ 525 → 527, 4–5MP 748 → 749, 1080p–2MP 446 → 447. PoE-wired 1,205 → 1,209, integration-configs 1,341 → 1,345. Total 1,748 → 1,752; brand count unchanged at 69.
-
----
-
 ## [1.19.0] — 2026-07-04
 
-Full data-quality re-audit of the **Reolink** brand — all 122 stored cameras re-verified against official `reolink.com` product pages, datasheets, and support articles (part of the master audit #28). Reolink was audited once before (v1.8.0), but these pages draw heavy traffic, so every entry was re-checked from scratch. Net: **122 → 116 cameras** (7 removed, 1 newly-released model added).
+Large data-quality release: full re-audits of the **Reolink** and **Hanwha** brands against official manufacturer sources (master audit #28), plus new models added from official datasheets. Net across the release: **1,754 → 1,722 cameras** (brand count unchanged at 69).
 
-### Added
+### Reolink — full brand re-audit (122 → 116 cameras)
 
-- **Argus Solar** — Reolink's newly-released (2026) 5MP battery/solar wire-free camera with dual-band Wi-Fi 6 (2880×1616, 1/2.7" CMOS, f=3mm F1.6, 6500mAh battery, IP67, two-way audio). Added from the official product page; cloud/battery-only, so no RTSP/ONVIF, per Reolink's architecture for this line.
+All 122 stored Reolink cameras re-verified against official `reolink.com` product pages, datasheets, and support articles. 7 removed, 1 new model added.
 
-### Removed
+- **Added** — **Argus Solar**: newly-released (2026) 5MP battery/solar wire-free camera, dual-band Wi-Fi 6 (2880×1616, 1/2.7" CMOS, f=3mm F1.6, 6500mAh, IP67, two-way audio); cloud/battery-only, no RTSP/ONVIF.
+- **Removed** — 1 ghost (`RLC-823A v2`, no such product) and 6 duplicate regional listings (`RLC-823A` AU/CA/CH/EU/MENA, `RLC-810A` India); their `markets[]` were merged onto the base `RLC-823A`/`RLC-810A` first, so no market-filter coverage was lost.
+- **Fixed** — misfiled `RLC-830A-v2` was actually the **RLC-840A** (renamed); fabricated zoom lenses (`RLC-812A/824A/842A`); fabricated RTSP/ONVIF + Frigate configs on cloud-only/NVR-only cameras (B/D-series add-ons, Argus battery line) and over-claimed ONVIF on several wired models; wrong `type` (Argus 4 Pro → dual-lens, RLC-423/E1 Outdoor → ptz, RLC-8xx domes mislabeled turret); wrong resolution/stale hardware (RLC-511WA "4K"→5MP, E1 Zoom 5MP→8MP, Argus Eco 2→3MP); wrong booleans (RLC-520/522/842A mic, E1 Outdoor two-way audio); plus systemic sensor/FOV/IR/microSD drift across the brand.
 
-- **1 ghost model**: `RLC-823A v2` (`rlc-823a-v2`) — no such product exists on Reolink's site (its only "source" was the bare homepage). Removed.
-- **6 duplicate regional listings** of models already in the dataset, all spec-identical to their base entry (same worldwide product, only a localized storefront URL): `RLC-823A (Australia/Canada/Switzerland/EU/MENA)` → fold into `RLC-823A`, and `RLC-810A (India)` → fold into `RLC-810A`. Before deleting, the union of their `markets[]` tags was merged onto the base entries (`RLC-823A` now tagged AU/CA/CH/AT/EU/DE/FR/ES/AE/SA/MENA; `RLC-810A` tagged IN) so no market-filter coverage was lost.
+### Hanwha — full brand re-audit + additions (71 → 45 cameras)
 
-### Fixed
+Every Hanwha camera verified against official Hanwha datasheets/product pages; market tags added brand-wide. **38 fabricated entries removed** (over half the original brand), **~29 real cameras corrected**, and **12 real cameras added** from official datasheets.
 
-- **Misfiled model**: `rlc-830a-v2.json` did not describe an "RLC-830A v2" (which doesn't exist) — its data, sources, and dimensions were all the real **RLC-840A** (a dome, distinct from the RLC-830A PTZ), which was otherwise missing from the dataset. Renamed the file/`id` to `rlc-840a` and corrected the remaining spec fields against the official RLC-840A page.
+- **Removed — 38 ghosts.** Consistent fabrication template: Hikvision-style specs (2.8-12mm F1.4 lenses, 50m IR, 256GB SD, "ColorVu" branding) pasted onto invented Hanwha model numbers. Families: fake "9300"/"A9300"/"9302" P- and X-series (`PNO-9300R`, `PND/PNO/PNV-A9300*`, `XNO-9300R/9302R`, `XNV-9300(+MENA)/9302R`, `PNV-9300RV`); fake Q-series 4K (`QND/QNO/QNV-9080R`, `QNO-8090R`, `QND-C9083R`); fake "Gen 2"/"V2"/suffix variants (`XNO/XNV-A9084R (Gen 2)`, `XNV-A9084R-LVE-3` (hid a fake "PNB-A9001RV Gen 2"), `XNV-9080R-V2`, `XNV-8080RSZ/RZ2`, `XNV-8080R-KR`); fake T-series (`TND/TNO/TNV-C8083R`); fake PTZ (`QPT-7230`, `QPT-9300RWX`, `QPTZ-8300HN`, `ruggedized-ptz-wisenet9`); fake AI domes (`QNV-A9402R(+WI)`); plus `AND-L7082R`, `QNO-A9400R`, `XNV-A9400R`, `XNV-C9300RW`, `XPT-A9401RW`.
+- **Corrected — ~29 real cameras.** Highlights: `XNO/QNO/QNV-C9083R` stored as 4MP "ColorVu" → real 4K IR; `XNV-8093R` was a telephoto AI dome, not a wide fixed dome; `PNM-9000VQ`/`PNM-9322VQP` multisensors had fabricated IR/AI; `XNO/XNV-A9084R` confirmed as real Wisenet 9 models; `QNV-8080RB` reclassified bullet → dome; `XNP-9300RW` corrected (sensor/FOV/power/dimensions); `PNO/PNV/PND-A9081R(V)` and `PNB-A9001` normalized/rewritten from a fabricated "Gen 2" state to real datasheet specs; brand-wide Q-series lens/IR/storage/power cleanup.
+- **Added — 12 real cameras** from official datasheets: `XND-A9085RV`, `XNV-A9084RS`, `QNE-C8013RL`, `QNE-C9013RL`, `ANE-L6012R`, `PNM-C9022RV`, `PNM-9031RV`, `TNV-C7013RC`, `TNV-8011C`, `PND-9080R`, `PNM-C16083RVQ`, `PNM-C34404RQPZ` (the last a 4K 4ch PTRZ + 2MP 40x PTZ AI combo).
+- **Market tags** added to all 45 surviving Hanwha cameras (`["global"]`, with verified regional variants keeping `["KR","global"]` / `["AE","SA","MENA"]`).
 
-Every camera re-verified against official Reolink sources. Most serious errors first:
+### Release totals
 
-- **Fabricated regional-variant specs**: 5 of the 7 `RLC-823A` "regional" files described a fictitious fixed-lens 2.8mm bullet camera; the real RLC-823A on every regional storefront is the identical 5x-zoom PTZ dome (now deduplicated, see Removed).
-- **Fabricated zoom lenses**: `RLC-812A` and `RLC-824A` were listed with motorized zoom lenses copied from other models — both are actually fixed-lens (4mm). `RLC-842A` was the inverse: listed as fixed-lens when it's a real 5x motorized zoom. Corrected all three.
-- **Fabricated protocols on cloud-only/NVR-only cameras**: the entire B/D-series (`B400/B500/B800/B1200`, `D400/D500/D800/D1200`) are NVR-kit add-on cameras with no standalone network stack, but carried invented `rtsp`/`onvif` support and fake Frigate/Home-Assistant configs pointing at direct RTSP URLs. Battery models (`Argus 4 Pro`, `Argus MagiCam`, `Argus PT Ultra`, `Argus Track`, `Solar Floodlight`) likewise had fabricated ONVIF/RTSP config blocks. All corrected to reflect real cloud/NVR-only access. ONVIF was also over-claimed on several wired models (`CX820`, `Duo 2 PoE`, `Duo 2V PoE`, `Duo Floodlight PoE`, `RLC-830A`, `RLC-840WA`, `RLC-842A`) whose own official spec pages omit it — removed.
-- **Wrong `type` classification**: `Argus 4 Pro` (bullet → dual-lens 180° stitching), `RLC-423` and `E1 Outdoor`/`E1 Outdoor CX` (bullet → ptz), and a cluster of RLC-8xx domes mislabeled `turret` (`RLC-833A/840WA/842A/843A`-area) — all corrected.
-- **Wrong resolution / stale hardware**: `RLC-511WA` was mislabeled "4K UHD" when it's 5MP; `E1 Zoom` had drifted a full hardware generation behind (5MP → the current 8MP/4K Wi-Fi 6 unit); `Argus Eco` (2MP → 3MP) and `Argus PT` had similar stale-spec drift vs. the currently-sold hardware.
-- **Wrong booleans**: `RLC-520`, `RLC-522`, and `RLC-842A` had `audio.microphone: false` despite official confirmation of a built-in mic; `E1 Outdoor` had two-way audio marked absent when it's supported. Corrected.
-- **Systemic spec drift**: sensor sizes (e.g. the RLC-12xx family's `1/2.3"` → `1/2.49"`), varifocal FOV ranges flattened to a single wrong number, feet/meters unit confusion on IR ranges (`CX410`), a swapped FOV between the `RLC-1212A`/`1224A` twins, and stale microSD capacity ceilings (many PoE models 256 → 512GB) fixed across the brand.
-- `last_verified: 2026-07-04` set on every re-verified entry; unconfirmable values were removed rather than guessed, per the no-fabrication policy (#28).
-
-### Changed
-
-- Resolution-tier counts recomputed after the deletions, corrections, and the one addition: 4K/8MP+ 531 → 525, 4–5MP 747 → 748, 1080p–2MP → 446 (the last figure also corrects a stale count carried in prior releases). PoE-wired 1,212 → 1,205, WiFi 480 → 474, battery/wire-free → 184, integration-config count 1,352 → 1,341 (fabricated configs removed from cloud/NVR-only models). Brand count unchanged at 69.
+**1,722 cameras / 69 brands.** Resolution tiers: 4K/8MP+ 518, 4–5MP 728, 1080p–2MP 447. PoE-wired 1,179, WiFi 474, battery/wire-free 184, integration-configs 1,315.
 
 ---
+
 
 ## [1.18.0] — 2026-07-03
 
