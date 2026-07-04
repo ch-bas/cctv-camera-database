@@ -1,11 +1,11 @@
 {
-  "id": "hanwha-pno-a9081r",
+  "id": "hanwha-pnb-a9001",
   "brand": "Hanwha",
-  "model": "PNO-A9081R",
+  "model": "PNB-A9001",
   "aliases": [
-    "4K AI IR Bullet Camera"
+    "4K AI Box Camera"
   ],
-  "type": "bullet",
+  "type": "box",
   "connectivity": [
     "ethernet"
   ],
@@ -17,32 +17,31 @@
   },
   "sensor": "1/1.8\" CMOS",
   "lens": {
-    "count": 1,
-    "focal_length_mm": "4.5-10",
-    "zoom": "2.2x optical",
-    "aperture": {
-      "wide": "F1.6",
-      "tele": "F2.65"
-    },
-    "iris": "P-Iris (IR corrected)",
-    "varifocal": true
+    "count": 0,
+    "mount": [
+      "C-mount",
+      "CS-mount"
+    ],
+    "supported_lens_types": [
+      "DC Auto Iris",
+      "P-Iris (IR corrected)",
+      "Manual",
+      "I-CS"
+    ],
+    "varifocal": false
   },
-  "field_of_view_deg": {
-    "horizontal": "101.4-45.5",
-    "vertical": "53.6-25.5",
-    "diagonal": "120.7-52.3"
-  },
+  "field_of_view_deg": null,
   "night_vision": {
-    "type": "IR LED (WiseIR)",
-    "range_m": 30
+    "type": "day/night (ICR)",
+    "range_m": 0
   },
   "power": {
     "method": "PoE+ (IEEE 802.3at Class 4) / DC 12V"
   },
   "storage": {
     "onboard": true,
-    "slots": 2,
     "max_microsd_gb": 512,
+    "slots": 2,
     "nvr_compatible": true,
     "cloud": true
   },
@@ -54,15 +53,16 @@
     "RTSP",
     "MQTT"
   ],
+  "ip_rating": "IP30",
   "audio": {
-    "microphone": false,
+    "microphone": true,
     "speaker": false,
+    "two_way": true,
     "audio_in": true,
-    "audio_out": true,
-    "two_way": true
+    "audio_out": true
   },
   "features": [
-    "4K AI IR Bullet Camera",
+    "4K AI Box Camera",
     "AI object detection",
     "Person detection",
     "Face detection",
@@ -72,10 +72,10 @@
     "Social distancing detection",
     "Slip & fall detection",
     "People counting",
-    "Vehicle counting",
     "Queue management",
-    "Crowd counting",
     "Heatmap",
+    "Vehicle counting",
+    "Crowd counting",
     "BestShot thumbnails",
     "WiseNR II",
     "WiseStream II",
@@ -83,24 +83,21 @@
     "120dB WDR",
     "Digital Image Stabilization",
     "Built-in gyro sensor",
-    "WiseDetector custom object detection",
     "H.265",
     "H.264",
     "MJPEG",
+    "Micro USB service port",
     "Dual microSD slots",
     "Secure Boot",
-    "Signed firmware",
     "Encrypted firmware"
   ],
   "sources": [
-    "Hanwha Vision PNO-A9081R Datasheet (Ver. 202410)"
+    "Hanwha Vision PNB-A9001 Datasheet (Ver. 202409)"
   ],
   "power_source": [
     "poe+",
     "dc"
   ],
-  "release_year": 2020,
-  "last_verified": "2026-07-04",
   "configs": {
     "frigate": {
       "detect": {
@@ -113,7 +110,7 @@
     },
     "home_assistant": {
       "integration": "onvif",
-      "notes": "Supports ONVIF Profiles S, G, T and M."
+      "notes": "Supports ONVIF Profiles S/G/T/M."
     },
     "blue_iris": {
       "profile": "Hanwha",
