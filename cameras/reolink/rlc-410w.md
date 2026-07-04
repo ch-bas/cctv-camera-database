@@ -7,13 +7,13 @@
 | Type | bullet |
 | Connectivity | wifi, ethernet |
 | Resolution | 4MP (4MP, 2560×1440) |
-| Sensor | 1/2.7" CMOS |
+| Sensor | 1/3" CMOS |
 | Lens | 1× 4.0 (fixed)mm F2.0 |
 | Field of view | 80 horizontal / 42 vertical° |
 | Night vision | ir (30m) |
-| Power | DC 12V / PoE optional |
+| Power | DC 12V (PoE not supported) |
 | Storage | microSD ≤ 256GB, NVR |
-| Protocols | onvif, rtsp |
+| Protocols | rtsp, rtmp |
 | IP rating | IP66 |
 | Two-way audio | No |
 | Operating temp | -10 to 55°C |

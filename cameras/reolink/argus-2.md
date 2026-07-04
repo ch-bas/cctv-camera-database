@@ -6,13 +6,13 @@
 | Model | Argus 2 |
 | Type | bullet |
 | Connectivity | wifi |
-| Resolution | 1080p HD (2MP) |
+| Resolution | 1080p HD (2MP, 1920×1080) |
 | Sensor | Starlight CMOS |
 | Lens | 1× |
 | Field of view | 130 diagonal° |
 | Night vision | ir (10m) |
-| Power | Rechargeable battery / solar optional |
-| Storage | microSD ≤ 128GB |
+| Power | 5200mAh rechargeable battery / solar panel optional |
+| Storage | microSD ≤ 64GB |
 | IP rating | IP65 |
 | Two-way audio | Yes |
 | Operating temp | -10 to 55°C |

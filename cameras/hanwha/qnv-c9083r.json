@@ -2,32 +2,60 @@
   "id": "hanwha-qnv-c9083r",
   "brand": "Hanwha",
   "model": "QNV-C9083R",
+  "aliases": [
+    "Wisenet Q AI 4K IR Vandal Dome"
+  ],
+  "generation": "Wisenet Q AI",
   "type": "dome",
   "connectivity": [
     "ethernet"
   ],
   "release_year": 2023,
+  "markets": [
+    "global"
+  ],
   "resolution": {
-    "megapixels": 4,
-    "label": "4MP"
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
   },
-  "field_of_view_deg": "109-42h",
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.2-10.2 (3.2x motorized varifocal)",
+    "aperture": "F1.6-3.1",
+    "varifocal": true
+  },
+  "field_of_view_deg": "104-31 horizontal / 55-17 vertical",
   "night_vision": {
-    "type": "color",
+    "type": "ir",
     "range_m": 30
   },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
   "power": {
-    "method": "PoE / DC 12V"
+    "method": "PoE (802.3af, Class 3)",
+    "consumption_w": 12.95,
+    "poe_class": 3
   },
   "storage": {
     "onboard": true,
     "max_microsd_gb": 256,
     "nvr_compatible": true,
-    "cloud": false
+    "cloud": true,
+    "notes": "OnCloud edge recording supported; compatible with Hanwha Vision microSD cards up to 1TB"
   },
   "protocols": [
     "onvif",
-    "rtsp"
+    "rtsp",
+    "http"
   ],
   "ip_rating": "IP66",
   "audio": {
@@ -36,18 +64,28 @@
     "two_way": false
   },
   "features": [
-    "Wisenet C 4MP ColorVu vandal dome",
-    "F1.6 full-color night vision",
-    "WiseStream II",
-    "IP66",
-    "IK10"
+    "AI object detection (person/vehicle: car, truck, bus, bicycle, motorcycle)",
+    "WiseStream III",
+    "WiseNR II AI noise reduction",
+    "120 dB WDR",
+    "people/vehicle counting, queue management, heatmap",
+    "hard-coated dome bubble",
+    "IK10 vandal resistant",
+    "NEMA 4X"
   ],
+  "operating_temp_c": "-30 to 55",
+  "dimensions_mm": "Ø140 x 110.2",
+  "weight_g": 875,
+  "environment": [
+    "outdoor"
+  ],
+  "release_notes": "Audit 2026-07-04: major corrections against official datasheet 'DataSheet_QNV-C9083R' (Ver 202504; basic model dated 2023.07): this is an 8MP 4K AI camera (entry previously said 4MP) with IR night vision (previously mislabeled full-color; 'ColorVu' is Hikvision branding, not Hanwha). Lens 3.2-10.2mm 3.2x F1.6-3.1, IR 30m 850nm, PoE-only max 12.95W, IP66/IK10/NEMA4X, ONVIF Profile S/G/T/M, MQTT supported. Audio available only via optional SPP-C7400 cable.",
   "sources": [
-    "https://hanwhavisionamerica.com/"
+    "https://hanwhavisionamerica.com/product/qnv-c9083r/",
+    "https://www.hanwhavision.com/en/products/camera/network/dome/qnv-c9083r/"
   ],
   "power_source": [
-    "poe",
-    "dc"
+    "poe"
   ],
   "configs": {
     "frigate": {
@@ -67,5 +105,6 @@
       "profile": "Samsung/Hanwha",
       "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
     }
-  }
+  },
+  "last_verified": "2026-07-04"
 }

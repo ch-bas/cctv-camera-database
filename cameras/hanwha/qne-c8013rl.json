@@ -1,0 +1,113 @@
+{
+  "id": "hanwha-qne-c8013rl",
+  "brand": "Hanwha",
+  "model": "QNE-C8013RL",
+  "markets": [
+    "global"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.0 (fixed)",
+    "aperture": "F1.2",
+    "varifocal": false
+  },
+  "field_of_view_deg": "97 horizontal / 71 vertical",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3)",
+    "consumption_w": 10,
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66/IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "5MP Dual Light (warm white LED + IR) flateye turret",
+    "white LED 30m + IR 30m (850nm)",
+    "120 dB WDR",
+    "IK10 vandal resistance",
+    "AI object classification (person / vehicle)",
+    "business intelligence: people counting, queue management, heatmap, vehicle counting",
+    "WiseStream III, WiseNR II, SSDR, LDC",
+    "Day & Night (ICR), hallway view",
+    "defocus & tampering detection"
+  ],
+  "release_notes": "Specs verified against the official Hanwha Vision datasheet DataSheet_QNE-C8013RL (Ver 202409).",
+  "sources": [
+    "https://www.hanwhavision.com/en/products/product-details/qne-c8013rl"
+  ],
+  "last_verified": "2026-07-04",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "dimensions_mm": "Ø140 x 99.6",
+  "weight_g": 790,
+  "operating_temp_c": "-40 to 60",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor",
+    "outdoor"
+  ]
+}

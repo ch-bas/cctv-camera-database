@@ -9,15 +9,13 @@
 | Type | panoramic |
 | Connectivity | ethernet |
 | Resolution | 24MP (16MP panoramic + 8MP PTZ) (24MP) |
-| Sensor | Triple CMOS: dual 8MP panoramic + 4K PTZ |
+| Sensor | 3x CMOS: 2x 8MP (panoramic, 16MP combined) + 1x 8MP (PTZ, 4K, 16x optical zoom) |
 | Lens | 3× Fixed panoramic + 16x optical zoom PTZmm |
-| Field of view | 180 panoramic + 360deg PT + 140deg tilt° |
-| Night vision | hybrid (30m) |
-| Power | PoE (802.3af) / DC 12V |
+| Field of view | 180 H panoramic (0-22deg motorized tilt, upper lenses) + 360deg endless pan / 95deg tilt (PTZ lens)° |
+| Night vision | hybrid (75m) |
+| Power | PoE / DC 12V (exact PoE standard/class not yet published by Reolink) |
 | Storage | microSD ≤ 512GB, NVR |
-| Protocols | onvif, rtsp |
 | IP rating | IP66 |
-| Two-way audio | Yes |
 | Released | 2026 |
 
 ## Features
@@ -35,7 +33,8 @@
 
 ## Sources
 
-- https://www.prnewswire.com/news-releases/reolink-redefines-full-coverage-smart-security-with-the-triple-lens-omvi-series-and-reolink-x-qualcomm-power-efficient-series-cameras-302786356.html
+- https://reolink.com/blog/reolink-introduces-triple-lens-omvi-series-and-reolink-x-qualcomm-power-efficient-series-cameras/
+- https://reolink.com/lp/reolink-omvi-series/
 
 ---
 *Auto-generated from reolink-omvi-x16-poe.json — do not edit by hand.*

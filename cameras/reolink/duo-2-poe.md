@@ -14,8 +14,8 @@
 | Field of view | 180 horizontal / 60 vertical° |
 | Night vision | hybrid (30m) |
 | Power | PoE IEEE 802.3af, 48V Active / DC 12V |
-| Storage | microSD ≤ 256GB, NVR |
-| Protocols | onvif, rtsp |
+| Storage | microSD ≤ 512GB, NVR |
+| Protocols | rtsp |
 | IP rating | IP67 |
 | Two-way audio | Yes |
 | Operating temp | -10 to 55°C |

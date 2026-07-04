@@ -3,11 +3,11 @@
   "brand": "Reolink",
   "model": "Home Hub",
   "aliases": [
-    "Reolink Home Hub NVR/HomeBase for WiFi cameras"
+    "Reolink Home Hub NVR/HomeBase for WiFi cameras",
+    "Wireless Security Center"
   ],
   "type": "box",
   "connectivity": [
-    "wifi",
     "ethernet"
   ],
   "release_year": 2024,
@@ -21,34 +21,42 @@
     "range_m": 0
   },
   "power": {
-    "method": "DC 12V"
+    "method": "DC 12V/1A power adapter"
   },
   "storage": {
     "onboard": true,
     "max_microsd_gb": 512,
     "nvr_compatible": false,
-    "cloud": false
+    "cloud": false,
+    "notes": "Ships with a 64GB microSD card pre-installed/included (removable — not soldered/onboard flash). Two microSD slots total, each expandable up to 512GB (1TB combined). No HDD/SATA bay (that's the separate Home Hub Pro model)."
   },
   "protocols": [
-    "http"
+    "rtsp",
+    "rtmp",
+    "p2p"
   ],
-  "ip_rating": "IP20",
   "audio": {
     "microphone": false,
-    "speaker": false,
+    "speaker": true,
     "two_way": false
   },
   "features": [
-    "Reolink Home Hub NVR hub for WiFi/battery cameras",
-    "built-in 64GB + 2× slots up to 2×512GB",
+    "Wireless Security Center hub for Reolink WiFi/battery/PoE cameras — not a standalone camera",
     "manages up to 8 Reolink cameras",
-    "AI video search",
-    "no subscription fee",
-    "no cloud required",
-    "NVR hub — not a camera"
+    "hosts its own dual-band 2.4/5GHz Wi-Fi 6 access point for connected cameras",
+    "hub itself uplinks to the router via wired Ethernet only (no client Wi-Fi)",
+    "ships with a 64GB microSD card pre-installed; 2 microSD slots, expandable up to 512GB each (1TB total)",
+    "AES-128 encrypted local recording",
+    "AI-powered video search",
+    "no subscription fee, no cloud required",
+    "115dB built-in alarm speaker with selectable siren/ringtones",
+    "Alexa / Google Home compatible",
+    "NVR/hub accessory — camera-specific schema fields (lens, resolution, night vision) do not apply"
   ],
   "sources": [
-    "https://reolink.com/product/home-hub/"
+    "https://reolink.com/product/reolink-home-hub/",
+    "https://support.reolink.com/hc/en-us/articles/33952740443161-Reolink-Home-Hub-Series-FAQ/",
+    "https://reolink.com/lp/reolink-home-hub-series/"
   ],
   "power_source": [
     "dc"
@@ -58,5 +66,7 @@
   "operating_temp_c": "-10 to 45",
   "environment": [
     "indoor"
-  ]
+  ],
+  "release_notes": "This is Reolink's NVR/hub accessory (used with Reolink WiFi/battery/PoE cameras for local storage + AI features without a cloud subscription), not a camera. The camera schema is a poor fit for several fields: resolution/lens/night_vision/field_of_view/ip_rating describe the hub itself (which has no image sensor), not the cameras it manages. 'type': 'box' is used only because the schema has no dedicated hub/NVR enum value. 'connectivity' reflects only the hub's own uplink (wired Ethernet to the router); the hub separately hosts its own private Wi-Fi 6 access point to talk to its cameras, which is a distinct function from network uplink and not the same as the hub itself being a Wi-Fi client. No official IP rating is published by Reolink for this indoor-only device, so ip_rating has been left unset rather than guessed.",
+  "last_verified": "2026-07-04"
 }

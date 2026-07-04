@@ -1,0 +1,112 @@
+{
+  "id": "hanwha-tnv-8011c",
+  "brand": "Hanwha",
+  "model": "TNV-8011C",
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet T 5MP Corner Mount Camera"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.3 (fixed)",
+    "aperture": "F2.3",
+    "varifocal": false
+  },
+  "field_of_view_deg": "131 horizontal / 93.4 vertical",
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 2)",
+    "consumption_w": 6.49,
+    "poe_class": 2
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "Single microSD/SDHC/SDXC slot up to 128GB."
+  },
+  "protocols": [
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "5MP corner mount camera",
+    "anti-ligature design for corrections & behavioral health facilities",
+    "120 dB WDR",
+    "IK10 vandal resistance, IP6K9K",
+    "hallway view, WiseStream II",
+    "digital image stabilization, defog, LDC",
+    "defocus, motion & tampering detection",
+    "audio detection, virtual line & area analytics"
+  ],
+  "release_year": 2021,
+  "release_notes": "Specs verified against the official Hanwha Vision datasheet DataSheet_TNV-8011C (Ver 202409). ONVIF not listed on this datasheet (SUNAPI/HTTP API only); RTSP and HTTP are datasheet-confirmed.",
+  "sources": [
+    "https://www.hanwhavision.com/en/products/product-details/tnv-8011c"
+  ],
+  "last_verified": "2026-07-04",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp"
+    },
+    "home_assistant": {
+      "integration": "generic",
+      "notes": "No ONVIF on this model (SUNAPI/HTTP API only); use the Generic Camera integration with the RTSP stream URL."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "dimensions_mm": "170 x 165 x 78.8",
+  "weight_g": 830,
+  "operating_temp_c": "-10 to 55",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor",
+    "outdoor"
+  ]
+}

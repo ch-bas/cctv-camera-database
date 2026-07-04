@@ -6,23 +6,23 @@
 | Model | Argus PT |
 | Type | ptz |
 | Connectivity | wifi |
-| Resolution | 1080p (2MP, 1920×1080) |
-| Sensor | Starlight CMOS |
+| Resolution | 5MP (2K+) (5MP, 2880×1616) |
+| Sensor | 1/2.7" CMOS |
 | Lens | 1× |
 | Field of view | 355 pan/140 tilt° |
-| Night vision | ir (10m) |
+| Night vision | hybrid (10m) |
 | Power | Rechargeable battery / solar optional |
 | Storage | microSD ≤ 128GB |
-| IP rating | IP65 |
+| Protocols | p2p |
+| IP rating | IP64 |
 | Two-way audio | Yes |
 | Operating temp | -10 to 55°C |
-| Released | 2021 |
 
 ## Features
 
-- 1080p battery pan/tilt
+- 5MP (2K+) battery pan/tilt
 - 355° pan / 140° tilt
-- 2.4GHz WiFi
+- 2.4GHz/5GHz dual-band WiFi
 - person/vehicle detection
 - solar optional
 - no subscription

@@ -3,8 +3,9 @@
   "brand": "Hanwha",
   "model": "XNV-A9084R",
   "aliases": [
-    "Wisenet AI 8MP 4K Vandal Dome"
+    "Wisenet X series (Gen 2) 8MP AI IR Vandal Dome"
   ],
+  "generation": "Wisenet 9",
   "type": "dome",
   "connectivity": [
     "ethernet"
@@ -15,52 +16,92 @@
     "max_height": 2160,
     "label": "4K UHD"
   },
-  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "sensor": "1/1.8\" CMOS",
   "lens": {
     "count": 1,
     "focal_length_mm": "4.4-9.3 (2.1x motorized varifocal)",
-    "aperture": "F1.3",
+    "aperture": "F1.3-2.15",
     "varifocal": true
   },
-  "field_of_view_deg": "113-47 horizontal",
+  "field_of_view_deg": "113-47 horizontal / 58-26 vertical / 138-54 diagonal",
   "night_vision": {
     "type": "ir",
-    "range_m": 30
+    "range_m": 40
   },
   "power": {
-    "method": "PoE (802.3af) / DC 12V"
+    "method": "PoE (IEEE 802.3af, Class 3)",
+    "consumption_w": 11.2,
+    "poe_class": 3
   },
   "storage": {
     "onboard": true,
-    "max_microsd_gb": 256,
+    "max_microsd_gb": 1024,
     "nvr_compatible": true,
-    "cloud": false
+    "cloud": false,
+    "notes": "microSD/SDHC/SDXC 1 slot, max 1TB; NAS recording supported"
   },
   "protocols": [
     "onvif",
-    "rtsp"
+    "rtsp",
+    "http"
   ],
-  "ip_rating": "IP66",
+  "ip_rating": "IP66/IP67",
   "audio": {
     "microphone": false,
     "speaker": false,
     "two_way": false
   },
   "features": [
-    "dual NPU AI (person/face/vehicle/LPR)",
-    "IVA analytics",
-    "WiseStream III",
-    "120 dB WDR",
+    "dual NPU AI processing (Wisenet 9 SoC)",
+    "AI object detection (person/face/vehicle/license plate) + attributes",
+    "WiseNR II AI noise reduction",
+    "WiseStream (AI-based)",
+    "extremeWDR (120 dB)",
+    "P-iris lens (IR corrected)",
+    "WiseIR 40m (850nm)",
     "H.265",
     "IK10",
-    "NEMA 4X"
+    "NEMA 4X",
+    "NEMA-TS 2",
+    "secure element, SD card encryption (AES-256)",
+    "ONVIF Profile S/G/T/M",
+    "audio in (mic/line) + line out"
   ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "operating_temp_c": "-40 to 50",
+  "dimensions_mm": "Ø160 x 118",
+  "weight_g": 1220,
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "release_notes": "Specs verified against the official Hanwha datasheet DataSheet_XNV-A9084R_250611_EN: 1/1.8\" sensor (not 1/2.8\"), F1.3-2.15, IR 40m, PoE 802.3af Class 3 only (no 12VDC), 1TB single SD slot. Non-stainless sibling of the XNV-A9084RS.",
   "sources": [
-    "https://www.bhphotovideo.com/c/product/1903646-REG/hanwha_vision_xnv_a9084r_8mp_outdoor_network.html"
+    "https://www.hanwhavision.com/en/products/camera/network/dome/xnv-a9084r/",
+    "https://hanwhavisionamerica.com/product/xnv-a9084r/",
+    "https://hanwhavision.eu/product/xnv-a9084r/"
   ],
+  "last_verified": "2026-07-04",
   "power_source": [
-    "poe",
-    "dc"
+    "poe"
   ],
   "configs": {
     "frigate": {

@@ -1,6 +1,6 @@
 # Hanwha QND-8080R (Korea)
 
-*Also known as: Wisenet Q 5MP Vandal Indoor Dome Korea domestic*
+*Also known as: Wisenet Q 5MP Indoor Dome Korea domestic*
 
 | Field | Spec |
 |-------|------|
@@ -9,31 +9,30 @@
 | Type | dome |
 | Connectivity | ethernet |
 | Resolution | 5MP (5MP, 2592×1944) |
-| Sensor | 1/2.8" CMOS |
-| Lens | 1× 2.8 (fixed)mm F1.6 |
-| Field of view | 110 horizontal° |
-| Night vision | ir (30m) |
-| Power | PoE (802.3af) / DC 12V |
+| Sensor | 1/2.8" 5MP CMOS |
+| Lens | 1× 3.2-10 (3.1x motorized varifocal)mm F1.6-2.9 |
+| Field of view | 100.3-31.2 horizontal / 72.3-23.5 vertical° |
+| Night vision | ir (20m) |
+| Power | PoE (802.3af, Class 3) |
 | Storage | microSD ≤ 128GB, NVR |
-| Protocols | onvif, rtsp |
+| Protocols | onvif, rtsp, http |
 | Two-way audio | No |
-| Released | 2020 |
+| Operating temp | -10 to 50°C |
+| Released | 2019 |
 
 ## Features
 
-- Wisenet Q 5MP fixed dome
-- IK10 vandal-resistant
+- Wisenet Q 5MP indoor dome
 - H.265
-- WDR
-- ONVIF Profile S/T
-- Korean-made Hanwha
-- #1 Korea domestic surveillance brand
-- largest market share South Korea domestic
-- ADT Caps / KT Telecop system integrator preferred
-- IK10
+- 120 dB WDR
+- WiseStream II
+- Hallway view
+- ONVIF Profile S/G/T
+- Korea domestic market SKU
 
 ## Sources
 
+- https://www.hanwhavision.com/en/products/camera/network/dome/qnd-8080r/
 - https://www.hanwhavision.com/en-kr/
 
 ---

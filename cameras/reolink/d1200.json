@@ -11,59 +11,54 @@
     "megapixels": 12,
     "label": "12MP UHD"
   },
-  "field_of_view_deg": "80 horizontal",
+  "field_of_view_deg": "93 horizontal / 49 vertical",
   "night_vision": {
     "type": "hybrid",
     "range_m": 30
   },
   "power": {
-    "method": "PoE 802.3af"
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 12
   },
   "storage": {
     "onboard": false,
     "nvr_compatible": true,
     "cloud": false
   },
-  "protocols": [
-    "rtsp",
-    "onvif"
-  ],
   "ip_rating": "IP67",
   "audio": {
-    "microphone": false,
-    "speaker": false,
-    "two_way": false
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
   },
   "features": [
     "Reolink add-on PoE dome 12MP NVR expansion",
-    "40m IR",
+    "30m IR + color spotlight night vision",
     "IP67",
-    "ONVIF/RTSP",
+    "NVR-only — no standalone ONVIF/RTSP",
+    "built-in mic/speaker two-way audio",
     "no subscription"
   ],
   "sources": [
-    "https://reolink.com/product/d1200/"
+    "https://reolink.com/product/rlk8-1200d4-a/",
+    "https://support.reolink.com/hc/en-us/articles/360003575413-Which-Cameras-Support-Micro-SD-Card/",
+    "https://support.reolink.com/articles/360003764334-Which-Reolink-Cameras-Support-Two-Way-Audio/"
   ],
+  "last_verified": "2026-07-04",
   "power_source": [
-    "poe"
+    "poe",
+    "dc"
   ],
   "configs": {
     "frigate": {
-      "detect": {
-        "width": 1280,
-        "height": 720,
-        "fps": 5
-      },
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_sub"
+      "notes": "D1200 has no confirmed standalone RTSP/ONVIF service — like its D400/D500/D800 siblings, it is an add-on camera intended to work through a Reolink PoE NVR. Pull this camera's channel from the NVR's own RTSP stream rather than connecting to the camera's IP directly."
     },
     "home_assistant": {
       "integration": "reolink",
-      "notes": "Native Reolink integration auto-discovers via ONVIF on port 8000."
+      "notes": "Not directly discoverable — treat as an NVR-attached channel rather than a standalone ONVIF device. Add the parent Reolink NVR to the Reolink HA integration instead."
     },
     "blue_iris": {
-      "profile": "Reolink",
-      "notes": "Select 'Reolink' profile. If not listed, use Generic/ONVIF with RTSP path /h264Preview_01_main."
+      "notes": "Cannot be confirmed to work as a direct ONVIF/RTSP add. Add the parent Reolink NVR as the video source and pull this camera's channel from the NVR."
     }
   },
   "sensor": "1/2.49\" CMOS",

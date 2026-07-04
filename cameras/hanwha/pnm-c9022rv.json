@@ -1,0 +1,121 @@
+{
+  "id": "hanwha-pnm-c9022rv",
+  "brand": "Hanwha",
+  "model": "PNM-C9022RV",
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet P 8MP IR Panoramic Camera"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 5120,
+    "max_height": 1568,
+    "label": "8MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "209 horizontal / 60 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at, Class 4) / 12VDC",
+    "consumption_w": 24.5,
+    "poe_class": 4,
+    "voltage": "12VDC"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "2 microSD/SDHC/SDXC slots (up to 512GB each, 1TB total; up to 1TB each / 2TB total for OnCloud edge recording). Direct cloud connection optional (needs gateway)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "8MP panoramic stitching image",
+    "WiseIR IR 20m (850nm), 4 individual zones",
+    "extremeWDR 120 dB",
+    "IK10 vandal resistance, NEMA 250 type 4X",
+    "WiseNR II (AI engine), WiseStream III (AI engine)",
+    "AI object classification (person / vehicle)",
+    "defocus, motion & tampering detection",
+    "audio detection & sound classification",
+    "digital PTZ, hard-coated dome bubble",
+    "TPM 2.0 (FIPS 140-2 level 2), power failover redundancy"
+  ],
+  "release_year": 2022,
+  "release_notes": "Specs verified against the official Hanwha Vision datasheet DataSheet_PNM-C9022RV (Ver 202410).",
+  "sources": [
+    "https://www.hanwhavision.com/en/products/product-details/pnm-c9022rv"
+  ],
+  "last_verified": "2026-07-04",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "dimensions_mm": "Ø253 x 170",
+  "weight_g": 2900,
+  "operating_temp_c": "-40 to 55",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "5120x1568",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor",
+    "outdoor"
+  ]
+}

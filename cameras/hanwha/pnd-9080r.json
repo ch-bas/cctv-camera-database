@@ -1,0 +1,123 @@
+{
+  "id": "hanwha-pnd-9080r",
+  "brand": "Hanwha",
+  "model": "PND-9080R",
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet P 4K/12MP IR Indoor Dome"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 12,
+    "max_width": 4000,
+    "max_height": 3000,
+    "label": "4K/12MP"
+  },
+  "sensor": "1/1.7\" 12.4MP CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.5-10 (2.2x motorized varifocal)",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "100.3-45.6 horizontal / 49.7-24.0 vertical (4K mode)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3) / 12VDC",
+    "consumption_w": 10.5,
+    "poe_class": 3,
+    "voltage": "12VDC"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "12MP (4000x3000 @20fps) / 4K mode (4096x2160 @30fps) IR indoor dome",
+    "P-iris motorized varifocal, simple focus",
+    "120 dB WDR",
+    "IK08",
+    "WiseStream I",
+    "defog (built-in optical filter), digital auto tracking",
+    "built-in microphone (selectable mic/line in) + line out",
+    "hallway view",
+    "ONVIF Profile S/G/Q"
+  ],
+  "release_year": 2019,
+  "release_notes": "Specs verified against the official Hanwha Techwin datasheet DataSheet_PND-9080R (09-2019). Indoor model — no IP weather rating published.",
+  "sources": [
+    "https://www.hanwhavision.com/en/products/camera/network/dome/pnd-9080r/"
+  ],
+  "last_verified": "2026-07-04",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "dimensions_mm": "Ø140.8 x 113",
+  "weight_g": 610,
+  "operating_temp_c": "-30 to 55",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main (12M mode)",
+        "resolution": "4000x3000",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "main (8M mode)",
+        "resolution": "4096x2160",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor"
+  ]
+}

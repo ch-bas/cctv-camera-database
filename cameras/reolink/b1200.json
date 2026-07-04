@@ -9,61 +9,61 @@
   "release_year": 2022,
   "resolution": {
     "megapixels": 12,
+    "max_width": 4512,
+    "max_height": 2512,
     "label": "12MP UHD"
   },
-  "field_of_view_deg": "80 horizontal",
+  "field_of_view_deg": "93 horizontal / 49 vertical",
   "night_vision": {
     "type": "hybrid",
     "range_m": 30
   },
   "power": {
-    "method": "PoE 802.3af"
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 12
   },
   "storage": {
     "onboard": false,
     "nvr_compatible": true,
-    "cloud": false
+    "cloud": false,
+    "notes": "Add-on camera; no onboard microSD slot — recording is handled entirely by the paired Reolink NVR (officially grouped with the other add-on-only Reolink cameras that do not support microSD recording)."
   },
-  "protocols": [
-    "rtsp",
-    "onvif"
-  ],
   "ip_rating": "IP67",
   "audio": {
-    "microphone": false,
-    "speaker": false,
-    "two_way": false
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
   },
   "features": [
     "Reolink add-on PoE bullet 12MP NVR expansion",
-    "40m IR",
+    "30m IR + color spotlight night vision (4.3W/6500K/700 lumens)",
     "IP67",
-    "ONVIF/RTSP",
+    "Two-way audio (built-in mic + speaker)",
+    "Person/vehicle/pet detection",
+    "NVR-only — no standalone ONVIF/RTSP (same add-on architecture as B400/B500/B800; no dedicated B1200 FAQ found, but officially grouped with them)",
     "no subscription"
   ],
   "sources": [
-    "https://reolink.com/product/b1200/"
+    "https://reolink.com/product/rlk8-1200b4-a/",
+    "https://reolink.com/product/rlk16-1200b8-a/",
+    "https://support.reolink.com/hc/en-us/articles/360003575413-Which-Cameras-Support-Micro-SD-Card/",
+    "https://support.reolink.com/articles/360003764334-Which-Reolink-Cameras-Support-Two-Way-Audio/"
   ],
+  "last_verified": "2026-07-04",
   "power_source": [
-    "poe"
+    "poe",
+    "dc"
   ],
   "configs": {
     "frigate": {
-      "detect": {
-        "width": 1280,
-        "height": 720,
-        "fps": 5
-      },
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_sub"
+      "notes": "B1200 has no standalone RTSP/ONVIF service — it is an add-on camera that only works through a Reolink PoE NVR (e.g. RLN8-410, RLN16-410, or the NVR bundled with the RLK8-1200B4-A/RLK16-1200B8-A kits). Pull this camera's channel from the NVR's own RTSP stream instead of connecting to the camera's IP directly."
     },
     "home_assistant": {
       "integration": "reolink",
-      "notes": "Native Reolink integration auto-discovers via ONVIF on port 8000."
+      "notes": "Not directly discoverable — the camera has no local ONVIF/HTTP API or UID. Add the parent Reolink NVR to the Reolink HA integration instead; this camera's channel is exposed through the NVR."
     },
     "blue_iris": {
-      "profile": "Reolink",
-      "notes": "Select 'Reolink' profile. If not listed, use Generic/ONVIF with RTSP path /h264Preview_01_main."
+      "notes": "Cannot be added directly (no local ONVIF/RTSP). Add the parent Reolink NVR as the video source and pull this camera's channel from the NVR."
     }
   },
   "sensor": "1/2.49\" CMOS",

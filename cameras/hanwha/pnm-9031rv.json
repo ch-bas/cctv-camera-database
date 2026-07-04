@@ -1,0 +1,120 @@
+{
+  "id": "hanwha-pnm-9031rv",
+  "brand": "Hanwha",
+  "model": "PNM-9031RV",
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet P 15MP Panoramic Camera"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 15,
+    "max_width": 6720,
+    "max_height": 2240,
+    "label": "15MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.3 (fixed)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "195.3-197 horizontal / 63.6 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at, Class 4) / 12VDC",
+    "consumption_w": 23.5,
+    "poe_class": 4,
+    "voltage": "12VDC"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "2 microSD/SDHC/SDXC slots (up to 256GB each, 512GB total)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "15MP 192° panoramic stitching image",
+    "WiseIR IR 20m (850nm), 4 individual zones",
+    "120 dB WDR",
+    "IK10 vandal resistance, NEMA 250 type 4X",
+    "WiseStream II",
+    "heatmap (business intelligence)",
+    "defocus, motion & tampering detection",
+    "audio detection, virtual line & area analytics",
+    "TPM 2.0 (FIPS 140-2 level 2)"
+  ],
+  "release_year": 2021,
+  "release_notes": "Specs verified against the official Hanwha Vision datasheet DataSheet_PNM-9031RV (Ver 202409).",
+  "sources": [
+    "https://www.hanwhavision.com/en/products/product-details/pnm-9031rv"
+  ],
+  "last_verified": "2026-07-04",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "dimensions_mm": "Ø253 x 170",
+  "weight_g": 2900,
+  "operating_temp_c": "-40 to 55",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "6720x2240",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor",
+    "outdoor"
+  ]
+}
