@@ -6,6 +6,36 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.21.0] — 2026-07-04
+
+Full data-quality audit of the **Annke** brand (master audit #28) — all 23 entries verified against official `annke.com` product pages. Annke OEMs Hikvision hardware, and the dataset had the same fabrication pattern seen elsewhere. Net: **23 → 13 cameras**. (Version stacks on top of the Hikvision v1.20.0 work.)
+
+### Removed
+
+**10 entries** (nearly half the brand):
+
+- **7 ghost models** with no product on annke.com: `C800 WiFi` and `C800X WiFi` (both cameras are PoE-only — no WiFi variant exists), `W800` (no such camera; WS800 is an NVR system), `AC800P` (no such PTZ — Annke's PTZ line uses CZ/ACZ/CPT naming), `C700` (no such C-series model), `CR200`, `CR400` (both 404, zero footprint).
+- **1 duplicate**: `C800 PoE Bullet` — same SKU as `C800 (Bullet)`.
+- **1 unverifiable/likely ghost**: `I91BW` — no such model in Annke's real I91B* 4K bullet family.
+- **1 non-camera**: `N48POB Kit` — an 8-channel PoE **NVR system bundle**, not a single camera.
+
+### Fixed
+
+12 real cameras corrected against official annke.com pages. Most serious:
+
+- **`NC400`** was stored as an IR **dome**; it's actually the **NightChroma NC400 full-color PoE bullet** (type dome→bullet, night_vision ir→color, added f/1.0 lens + sensor; marked discontinued).
+- **`WZ500`** was stored as a wired **PoE** camera; it's a **WiFi Tuya-based 5MP 20x PTZ** (connectivity ethernet→wifi, power poe→dc, night_vision ir→hybrid dual-light).
+- **`AC400`** mistyped bullet→**dome**; **`AC500`** resolution corrected 4:3 → 16:9 3K; **`AC800`**/**`C1200`** wrong sensor + IR range; **`C800`** family (Bullet/Turret/C800X) sensor `1/2.7"`→`1/2.4"`/`1/1.8"` and FOV (diagonal mislabeled as horizontal); **`I61DQ`** dual-lens resolution + hybrid light.
+- **`NightChroma NCM800`** was a wrong model name — corrected to the real **NightChroma NC800** and the file/id renamed `ncm800` → `nc800`.
+- The WiFi doorbell (`video-doorbell`) confirmed correct as app/cloud-only with **no** RTSP/ONVIF (exact SKU still unconfirmed — flagged, not changed).
+
+### Changed
+
+- Market tags (`["global"]`) added to all 13 surviving Annke cameras; `last_verified: 2026-07-04` set on the 12 verified.
+- Counts: total 1,722 → 1,712, Annke 23 → 13. Resolution tiers 4K/8MP+ 518 → 511, 4–5MP 728 → 725, 1080p–2MP 447 (unchanged); PoE-wired 1,179 → 1,171, integration-configs 1,315 → 1,305. Brand count unchanged at 69.
+
+---
+
 ## [1.19.0] — 2026-07-04
 
 Large data-quality release: full re-audits of the **Reolink** and **Hanwha** brands against official manufacturer sources (master audit #28), plus new models added from official datasheets. Net across the release: **1,754 → 1,722 cameras** (brand count unchanged at 69).
