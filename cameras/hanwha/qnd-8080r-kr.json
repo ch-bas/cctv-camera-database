@@ -3,14 +3,14 @@
   "brand": "Hanwha",
   "model": "QND-8080R (Korea)",
   "aliases": [
-    "Wisenet Q 5MP Vandal Indoor Dome Korea domestic"
+    "Wisenet Q 5MP Indoor Dome Korea domestic"
   ],
   "generation": "Wisenet Q",
   "type": "dome",
   "connectivity": [
     "ethernet"
   ],
-  "release_year": 2020,
+  "release_year": 2019,
   "markets": [
     "KR",
     "global"
@@ -21,20 +21,30 @@
     "max_height": 1944,
     "label": "5MP"
   },
-  "sensor": "1/2.8\" CMOS",
+  "sensor": "1/2.8\" 5MP CMOS",
   "lens": {
     "count": 1,
-    "focal_length_mm": "2.8 (fixed)",
-    "aperture": "F1.6",
-    "varifocal": false
+    "focal_length_mm": "3.2-10 (3.1x motorized varifocal)",
+    "aperture": "F1.6-2.9",
+    "varifocal": true
   },
-  "field_of_view_deg": "110 horizontal",
+  "field_of_view_deg": "100.3-31.2 horizontal / 72.3-23.5 vertical",
   "night_vision": {
     "type": "ir",
-    "range_m": 30
+    "range_m": 20
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
   },
   "power": {
-    "method": "PoE (802.3af) / DC 12V"
+    "method": "PoE (802.3af, Class 3)",
+    "consumption_w": 8.9,
+    "poe_class": 3
   },
   "storage": {
     "onboard": true,
@@ -44,7 +54,8 @@
   },
   "protocols": [
     "onvif",
-    "rtsp"
+    "rtsp",
+    "http"
   ],
   "audio": {
     "microphone": false,
@@ -52,23 +63,27 @@
     "two_way": false
   },
   "features": [
-    "Wisenet Q 5MP fixed dome",
-    "IK10 vandal-resistant",
+    "Wisenet Q 5MP indoor dome",
     "H.265",
-    "WDR",
-    "ONVIF Profile S/T",
-    "Korean-made Hanwha",
-    "#1 Korea domestic surveillance brand",
-    "largest market share South Korea domestic",
-    "ADT Caps / KT Telecop system integrator preferred",
-    "IK10"
+    "120 dB WDR",
+    "WiseStream II",
+    "Hallway view",
+    "ONVIF Profile S/G/T",
+    "Korea domestic market SKU"
   ],
+  "operating_temp_c": "-10 to 50",
+  "dimensions_mm": "Ø120.3 x 102.0",
+  "weight_g": 430,
+  "environment": [
+    "indoor"
+  ],
+  "release_notes": "Audit 2026-07-04: Korea-market entry of QND-8080R (maintainer-confirmed legitimate regional variant; same hardware as global SKU). Corrected against official datasheet 'QND-8080R 5M H.265 IR Dome Camera' (09-2019): lens is 3.2-10mm 3.1x motorized varifocal F1.6-2.9 (not 2.8mm fixed), IR 20m (not 30m), PoE-only power (removed 12VDC), release 2019 (was 2020). Removed incorrect IK10/vandal claims - QND-8080R is a non-vandal indoor dome with no IP/IK certification; the vandal version is QNV-8080R.",
   "sources": [
+    "https://www.hanwhavision.com/en/products/camera/network/dome/qnd-8080r/",
     "https://www.hanwhavision.com/en-kr/"
   ],
   "power_source": [
-    "poe",
-    "dc"
+    "poe"
   ],
   "configs": {
     "frigate": {
@@ -88,5 +103,6 @@
       "profile": "Samsung/Hanwha",
       "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
     }
-  }
+  },
+  "last_verified": "2026-07-04"
 }

@@ -6,6 +6,41 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.23.0] — 2026-07-04
+
+Completion of the full Hanwha brand audit (master audit #28): every remaining camera verified against official Hanwha datasheets/product pages, market tags added brand-wide, and a second ghost sweep. Net: **69 → 42 Hanwha cameras — every one now datasheet-verified and market-tagged.**
+
+### Removed
+
+**27 ghost models** (verified against Hanwha's published catalog — zero official or retail footprint, model numbers violating Hanwha naming conventions, or specs contradicting the real datasheets):
+
+- Fake "9300/9302" family: `XNO-9300R`, `XNO-9302R`, `XNV-9300`, `XNV-9300 (MENA)`, `XNV-9302R`, `PNV-9300RV` — "9300" belongs only to the real XNP-9300RW PTZ.
+- Fake Q-series 4K: `QND-9080R`, `QNO-9080R`, `QNV-9080R`, `QNO-8090R`, `QND-C9083R` — 4K "9080R" models are P-series; the Q AI line has no QND variant.
+- Fake suffix variants: `XNO-A9084R (Gen 2)`, `XNV-A9084R (Gen 2)`, `XNV-A9084R-LVE-3` (whose content was actually a fabricated "PNB-A9001RV Gen 2"), `XNV-9080R-V2`, `XNV-8080RSZ`, `XNV-8080RZ2`, `XNV-8080R (KR)` — "Gen 2"/"V2"/"RZ2" are not Hanwha SKUs; the KR entry contradicted the real XNV-8080R datasheet on every axis (unlike the legitimate QND-8080R KR / QNO-8080R MENA variants, which are kept).
+- Fake T-series: `TND-C8083R`, `TNO-C8083R`, `TNV-C8083R` — invented SKUs carrying X-series optics; the real C8083R family is 6MP X-series.
+- Fake PTZ: `QPT-7230`, `QPT-9300RWX`, `QPTZ-8300HN`, `ruggedized-ptz-wisenet9` — QPT/QPTZ prefixes don't exist (Q-series PTZ is QNP), and the last is a descriptive placeholder, not a model (the real 2026 ruggedized line is TNP-A9043RW etc., which can be added properly from official sources later).
+- Fake AI domes: `QNV-A9402R`, `QNV-A9402R-WI`.
+
+### Fixed
+
+**28 real cameras corrected against official datasheets.** The fabrications followed a consistent template — Hikvision-style values (2.8-12mm F1.4 lenses, 50m IR, 256GB microSD, "ColorVu" branding) pasted onto Hanwha model numbers, plus invented 12VDC support on PoE-only models. Most serious:
+
+- `XNO-C9083R`, `QNO-C9083R`, `QNV-C9083R`: stored as 4MP "ColorVu" full-color; real cameras are 4K/8MP IR models.
+- `XNV-8093R`: stored as a wide fixed-lens dome; it's actually a 10.9-29mm telephoto AI dome with 70m IR.
+- `PNM-9000VQ` / `PNM-9322VQP` multisensors: fabricated IR (neither has any), fabricated AI claims, wrong resolutions/optics; PNM-9322VQP is HPoE 802.3bt (65W), not standard PoE.
+- `XNO-A9084R` / `XNV-A9084R`: confirmed as the real Wisenet 9 ("X Gen 2") models — wrong sensor (1/2.8"→1/1.8"), IR (30→40m), storage (256GB→1TB) corrected; their fake "(Gen 2)" duplicate entries removed (see above).
+- `XNO-C7083R` / `XNV-C7083R`: fake "ColorVu" removed (real: IR 40m); missing/wrong lenses fixed.
+- `ANO-L7082R` / `ANV-L7082R`: wrong sensor, fixed-lens claim (real: 3.3-10.3mm varifocal), fake AI and audio claims fixed.
+- `QNV-8080RB`: was misclassified as a bullet — it's the black-housing SKU of the QNV-8080R vandal dome.
+- Q-series wide cleanup (14 entries): systematic 2.8-12mm F1.4 → real 3.2-10mm F1.6-2.9 lenses, 50→20-30m IR, 256→128GB microSD, PoE-only power restored, fake IP/IK ratings removed from indoor models.
+
+### Changed
+
+- **Market tags added brand-wide**: all 42 Hanwha cameras now carry `markets[]` (`["global"]` for standard catalog models; the verified regional variants keep `["KR","global"]` / `["AE","SA","MENA"]`).
+- Counts: total 1,746 → 1,719, Hanwha 69 → 42. Resolution tiers: 4K/8MP+ 527 → 515, 4–5MP 742 → 728, 1080p–2MP 448 → 447. PoE-wired 1,203 → 1,176, integration-configs 1,339 → 1,312. Brand count unchanged at 69.
+
+---
+
 ## [1.22.0] — 2026-07-04
 
 Hanwha ghost hunt — a targeted sweep for fabricated entries across the brand, verified against Hanwha's published catalog (hanwhavision.com, official datasheets, support portal). Net: **79 → 69 Hanwha cameras**.

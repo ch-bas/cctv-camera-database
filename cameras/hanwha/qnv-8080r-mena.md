@@ -9,15 +9,16 @@
 | Type | dome |
 | Connectivity | ethernet |
 | Resolution | 5MP (5MP, 2592×1944) |
-| Sensor | 1/2.8" Progressive Scan CMOS |
-| Lens | 1× 3.2-10 (3.1x motorized varifocal)mm F1.6 |
-| Field of view | 100-31 horizontal° |
+| Sensor | 1/2.8" 5MP CMOS |
+| Lens | 1× 3.2-10 (3.1x motorized varifocal)mm F1.6-2.9 |
+| Field of view | 101-31 horizontal / 73-23 vertical° |
 | Night vision | ir (30m) |
-| Power | PoE (802.3at) / DC 12V |
+| Power | PoE (802.3af, Class 3) |
 | Storage | microSD ≤ 128GB, NVR |
-| Protocols | onvif, rtsp |
+| Protocols | onvif, rtsp, http |
 | IP rating | IP66 |
 | Two-way audio | No |
+| Operating temp | -30 to 55°C |
 | Released | 2019 |
 
 ## Features
@@ -28,7 +29,6 @@
 - motion detection
 - defocus detection
 - H.265/H.264
-- IP66
 - IK10
 - popular UAE/KSA enterprise installer choice
 
