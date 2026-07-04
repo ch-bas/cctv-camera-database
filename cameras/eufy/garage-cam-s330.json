@@ -1,14 +1,18 @@
 {
   "id": "eufy-garage-cam-s330",
   "brand": "Eufy",
-  "model": "Garage-Cam S330",
+  "model": "Garage-Control Cam E110",
   "aliases": [
     "T8452",
-    "eufy Garage-Cam S330 2K"
+    "E110",
+    "eufy Garage-Control Cam"
   ],
   "type": "box",
   "connectivity": [
     "wifi"
+  ],
+  "environment": [
+    "indoor"
   ],
   "release_year": 2024,
   "resolution": {
@@ -21,13 +25,13 @@
     "count": 1,
     "varifocal": false
   },
-  "field_of_view_deg": "140 diagonal",
+  "field_of_view_deg": "130 diagonal",
   "night_vision": {
     "type": "ir",
     "range_m": 8
   },
   "power": {
-    "method": "Wired (AC power)"
+    "method": "Wired (DC adapter)"
   },
   "storage": {
     "onboard": true,
@@ -35,7 +39,8 @@
     "cloud": false
   },
   "protocols": [
-    "http"
+    "http",
+    "rtsp"
   ],
   "audio": {
     "microphone": true,
@@ -43,18 +48,45 @@
     "two_way": true
   },
   "features": [
-    "2K garage-mount camera with door opener",
-    "smart garage door control",
+    "2K garage-mount camera with door opener control",
+    "smart garage door open/close + status alerts",
     "AI human/vehicle detection",
-    "built-in storage",
+    "microSD local storage",
     "no subscription required",
-    "real-time door status alerts",
+    "RTSP / NAS support",
     "Alexa / Google Assistant"
   ],
   "sources": [
-    "https://www.eufy.com/products/garage-cam-s330"
+    "https://us.eufy.com/pages/security-garage-control-cam",
+    "https://service.eufy.com/article-description/Does-eufy-Garage-Control-Cam-support-RTSP-NAS"
   ],
   "power_source": [
     "dc"
-  ]
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-04",
+  "release_notes": "SKU T8452 is officially the eufy Garage-Control Cam E110 (not a 'Garage-Cam S330' — that name does not exist). RTSP/NAS officially supported per eufy support article.",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 360,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{homebase_ip}:554/live0",
+      "best_substream": "rtsp://{user}:{pass}@{homebase_ip}:554/live1",
+      "notes": "RTSP is served by the HomeBase (Camera Settings > Storage > RTSP/NAS), not the camera.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "eufy_security",
+      "notes": "Use the eufy_security HACS integration (P2P), or the HomeBase RTSP stream as a Generic Camera when RTSP is enabled."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Eufy is not a Hikvision/ONVIF brand — use the HomeBase RTSP URL as a Generic/RTSP source (no ONVIF)."
+    }
+  }
 }

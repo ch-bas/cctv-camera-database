@@ -8,13 +8,14 @@
 | Model | Floodlight Cam E340 |
 | Type | dual-lens |
 | Connectivity | wifi |
-| Resolution | Dual 3MP 2K+2K floodlight (6MP) |
-| Lens | 2× Wide + standard fixedmm F1.6 |
-| Field of view | 290 combined° |
+| Resolution | Dual-lens: 3K wide-angle + telephoto (3x optical / 8x hybrid zoom) (6MP) |
+| Lens | 2× Wide-angle + telephoto (fixed)mm F1.6 |
+| Field of view | 130 wide lens; 360 pan / 70 tilt° |
 | Night vision | color (15m) |
 | Power | Hardwired (AC mains) |
+| Storage | microSD ≤ 128GB |
 | Protocols | http |
-| IP rating | IP67 |
+| IP rating | IP65 |
 | Two-way audio | Yes |
 | Released | 2024 |
 
@@ -24,14 +25,16 @@
 - motorised pan/tilt
 - color night vision
 - AI person/vehicle detection
-- 24/7 recording on HomeBase
+- 3x optical / 8x hybrid zoom
+- dual-band Wi-Fi 6
+- 24/7 recording on HomeBase S380
 - no subscription fee
-- HomeKit / Alexa / Google
-- IP67
+- Alexa / Google Assistant
+- IP65
 
 ## Sources
 
-- https://www.eufy.com/products/floodlight-cam-e340
+- https://www.eufy.com/floodlight-cam-e340
 
 ---
 *Auto-generated from eufy-floodlight-cam-e340.json — do not edit by hand.*

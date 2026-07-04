@@ -1,6 +1,6 @@
 # Eufy Indoor Cam C120
 
-*Also known as: T84151W1*
+*Also known as: T84001W1, T8400, Indoor Cam 2K*
 
 | Field | Spec |
 |-------|------|
@@ -8,11 +8,11 @@
 | Model | Indoor Cam C120 |
 | Type | dome |
 | Connectivity | wifi |
-| Resolution | 2K QHD (4MP, 2560×1440) |
-| Lens | 1× Fixedmm F2.0 |
-| Field of view | 130 diagonal° |
-| Night vision | color (6m) |
-| Power | USB-C (hardwired) |
+| Resolution | 2K (3MP, 2304×1296) |
+| Lens | 1× Fixedmm |
+| Field of view | 105 horizontal / 57 vertical° |
+| Night vision | ir (10m) |
+| Power | 5V/1A (USB, hardwired) |
 | Protocols | http, rtsp |
 | IP rating | IP20 |
 | Two-way audio | Yes |
@@ -20,18 +20,17 @@
 
 ## Features
 
-- 2K QHD budget indoor camera
+- 2K budget plug-in indoor camera
 - AI person/pet detection
-- color night vision
-- physical privacy shutter
+- infrared night vision
 - local storage (microSD)
 - no subscription fee
-- RTSP support
-- Alexa / Google HomeKit
+- RTSP / NAS support
+- Alexa / Google / HomeKit
 
 ## Sources
 
-- https://www.eufy.com/products/indoor-cam-c120
+- https://www.eufy.com/ca/products/t84001w1
 
 ---
 *Auto-generated from eufy-indoor-cam-c120.json — do not edit by hand.*

@@ -3,29 +3,36 @@
   "brand": "Eufy",
   "model": "Indoor Cam S350",
   "aliases": [
+    "T8416121",
     "Eufy S350 4K Dual-Lens Pan/Tilt Indoor"
   ],
   "type": "ptz",
   "connectivity": [
     "wifi"
   ],
+  "environment": [
+    "indoor"
+  ],
   "release_year": 2024,
   "resolution": {
     "megapixels": 8,
-    "label": "4K wide + 8x zoom dual-lens"
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD (dual-lens)"
   },
   "lens": {
     "count": 2,
-    "focal_length_mm": "Wide 4K + 8x zoom tele",
+    "focal_length_mm": "4K wide + 2K 3x optical tele (8x hybrid zoom)",
+    "aperture": "F1.6",
     "varifocal": false
   },
-  "field_of_view_deg": "360 pan / 45 tilt",
+  "field_of_view_deg": "130 diagonal (355 pan / 75 tilt)",
   "night_vision": {
-    "type": "color",
-    "range_m": 8
+    "type": "hybrid",
+    "range_m": 10
   },
   "power": {
-    "method": "DC 5V (USB-C)"
+    "method": "DC 5V (USB-C, hardwired)"
   },
   "storage": {
     "onboard": true,
@@ -33,8 +40,7 @@
     "cloud": false
   },
   "protocols": [
-    "http",
-    "rtsp"
+    "http"
   ],
   "ip_rating": "IP20",
   "audio": {
@@ -44,37 +50,23 @@
   },
   "features": [
     "4K dual-lens indoor pan/tilt",
-    "8x optical zoom",
-    "auto-tracking",
-    "BionicMind AI face recognition",
-    "color night vision",
+    "8x hybrid zoom (3x optical tele)",
+    "AI auto-tracking",
+    "on-device human/pet/crying detection",
+    "color night vision + IR",
     "no subscription",
-    "local HomeBase storage",
-    "HomeKit / Alexa / Google",
-    "RTSP support"
+    "microSD / HomeBase 3 storage",
+    "HomeKit / Alexa / Google"
   ],
   "sources": [
-    "https://www.eufy.com/products/indoor-cam-s350"
+    "https://www.eufy.com/products/t8416121"
   ],
   "power_source": [
     "usb"
   ],
-  "configs": {
-    "frigate": {
-      "detect": {
-        "width": 1280,
-        "height": 720,
-        "fps": 5
-      },
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live0"
-    },
-    "home_assistant": {
-      "integration": "eufy_security",
-      "notes": "Use eufy_security HACS integration. RTSP must be enabled in Eufy app per camera."
-    },
-    "blue_iris": {
-      "profile": "Generic/RTSP",
-      "notes": "Use Generic/RTSP profile. RTSP must be enabled per camera in Eufy app."
-    }
-  }
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-04",
+  "release_notes": "RTSP removed: not confirmed by any official eufy source (eufy 'About NAS/RTSP' article lists only eufyCam 3C/3/E330 Pro; S350 FAQ and product page do not mention RTSP). Community (iSpyConnect) reports /live0 but this is unverified."
 }

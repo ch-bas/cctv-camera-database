@@ -1,0 +1,56 @@
+{
+  "id": "eufy-eufycam-2c-pro",
+  "brand": "Eufy",
+  "model": "eufyCam 2C Pro",
+  "aliases": ["T8142", "T81421D1", "eufyCam S220"],
+  "type": "bullet",
+  "connectivity": ["wifi"],
+  "power_source": ["battery"],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "2K"
+  },
+  "field_of_view_deg": "135",
+  "night_vision": {
+    "type": "hybrid"
+  },
+  "storage": {
+    "onboard": false,
+    "notes": "Records locally to HomeBase (16GB eMMC on hub, up to ~3 months); proprietary hub required, no in-camera microSD. RTSP-to-NAS supported."
+  },
+  "protocols": ["rtsp", "http"],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": ["human detection", "spotlight", "color night vision", "smart detection zones", "180-day battery life"],
+  "environment": ["outdoor"],
+  "release_year": 2021,
+  "markets": ["global"],
+  "sources": [
+    "https://www.eufy.com/eu-en/products/t8142",
+    "https://service.eufy.com/article-description/Introducing-eufyCam-2C-Pro"
+  ],
+  "last_verified": "2026-07-04",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{homebase_ip}:554/live0",
+      "notes": "RTSP is served by the eufy HomeBase (port 554), not the camera. Enable RTSP per-camera in the eufy Security app first. eufy is not ONVIF/Hikvision.",
+      "recommended_stream_type": "rtsp",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "eufy_security",
+      "notes": "Use the eufy_security HACS integration; RTSP available via HomeBase when enabled per-camera."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use the HomeBase-served RTSP URL on port 554; eufy is not ONVIF."
+    }
+  }
+}

@@ -1,35 +1,36 @@
-# Eufy Garage-Cam S330
+# Eufy Garage-Control Cam E110
 
-*Also known as: T8452, eufy Garage-Cam S330 2K*
+*Also known as: T8452, E110, eufy Garage-Control Cam*
 
 | Field | Spec |
 |-------|------|
 | Brand | Eufy |
-| Model | Garage-Cam S330 |
+| Model | Garage-Control Cam E110 |
 | Type | box |
 | Connectivity | wifi |
 | Resolution | 2K QHD (4MP, 2560×1440) |
 | Lens | 1× |
-| Field of view | 140 diagonal° |
+| Field of view | 130 diagonal° |
 | Night vision | ir (8m) |
-| Power | Wired (AC power) |
-| Protocols | http |
+| Power | Wired (DC adapter) |
+| Protocols | http, rtsp |
 | Two-way audio | Yes |
 | Released | 2024 |
 
 ## Features
 
-- 2K garage-mount camera with door opener
-- smart garage door control
+- 2K garage-mount camera with door opener control
+- smart garage door open/close + status alerts
 - AI human/vehicle detection
-- built-in storage
+- microSD local storage
 - no subscription required
-- real-time door status alerts
+- RTSP / NAS support
 - Alexa / Google Assistant
 
 ## Sources
 
-- https://www.eufy.com/products/garage-cam-s330
+- https://us.eufy.com/pages/security-garage-control-cam
+- https://service.eufy.com/article-description/Does-eufy-Garage-Control-Cam-support-RTSP-NAS
 
 ---
 *Auto-generated from eufy-garage-cam-s330.json — do not edit by hand.*

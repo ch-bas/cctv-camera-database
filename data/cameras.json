@@ -63708,41 +63708,105 @@
     }
   },
   {
-    "id": "eufy-e340-eufycam-dual",
+    "id": "eufy-4g-lte-cam-s330",
     "brand": "Eufy",
-    "model": "EufyCam E340 (Dual-lens)",
+    "model": "4G LTE Cam S330",
     "aliases": [
-      "T88801D3",
-      "EufyCam 3 Dual Lens"
+      "T86P2121",
+      "eufy 4G Starlight Cam"
     ],
-    "release_year": 2025,
-    "type": "dual-lens",
+    "type": "ptz",
     "connectivity": [
+      "4g",
       "wifi"
+    ],
+    "power_source": [
+      "battery",
+      "solar"
     ],
     "resolution": {
       "megapixels": 8,
-      "label": "4K+2K dual-lens"
+      "max_width": 3840,
+      "max_height": 2160,
+      "label": "4K"
     },
-    "lens": {
-      "count": 2,
-      "focal_length_mm": "Wide 4K + 2K zoom",
-      "varifocal": false
-    },
-    "field_of_view_deg": "360 combined pan/tilt",
+    "field_of_view_deg": "130 diagonal (344 pan / 70 tilt)",
     "night_vision": {
-      "type": "color",
-      "range_m": 10
+      "type": "hybrid",
+      "range_m": 8
     },
     "power": {
-      "method": "Solar charging + built-in battery (HomeBase 3 required)"
+      "method": "9400mAh battery + 5W solar panel"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": true,
+      "cloud": true,
+      "notes": "32GB microSD included, up to 256GB; HomeBase S380 when on Wi-Fi; free cloud backup."
+    },
+    "protocols": [
+      "http"
+    ],
+    "ip_rating": "IP65",
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "4G LTE cellular (3-in-1 Verizon/AT&T/T-Mobile SIM) for off-grid sites",
+      "dual-mode: 4G LTE + 2.4GHz Wi-Fi",
+      "344 pan / 70 tilt auto-tracking, 8x zoom",
+      "person/vehicle detection",
+      "IR + 100-lumen color spotlight night vision",
+      "battery + solar, no monthly fee"
+    ],
+    "release_year": 2024,
+    "release_notes": "Cellular (4G LTE) battery/solar pan-tilt camera for locations without Wi-Fi. protocols http-only (cloud/app).",
+    "sources": [
+      "https://www.eufy.com/products/t86p2121"
+    ],
+    "last_verified": "2026-07-04",
+    "status": "available",
+    "dimensions_mm": "145 x 89 x 89",
+    "operating_temp_c": "-20 to 50",
+    "environment": [
+      "outdoor"
+    ]
+  },
+  {
+    "id": "eufy-eufycam-2",
+    "brand": "Eufy",
+    "model": "eufyCam 2",
+    "aliases": [
+      "T8114",
+      "T81141D1",
+      "eufyCam S211"
+    ],
+    "type": "bullet",
+    "connectivity": [
+      "wifi"
+    ],
+    "power_source": [
+      "battery"
+    ],
+    "resolution": {
+      "megapixels": 2,
+      "max_width": 1920,
+      "max_height": 1080,
+      "label": "1080p"
+    },
+    "field_of_view_deg": "140",
+    "night_vision": {
+      "type": "ir"
     },
     "storage": {
       "onboard": false,
-      "nvr_compatible": false,
-      "cloud": false
+      "notes": "Records locally to HomeBase / HomeBase 2 (proprietary hub required); no in-camera microSD. RTSP-to-NAS supported."
     },
     "protocols": [
+      "rtsp",
       "http"
     ],
     "ip_rating": "IP67",
@@ -63752,21 +63816,40 @@
       "two_way": true
     },
     "features": [
-      "dual-lens (4K wide + 2K zoom)",
-      "solar-powered",
-      "BionicMind AI face recognition",
-      "full-color night vision",
-      "HomeBase local storage",
-      "no subscription",
-      "Alexa / Google"
+      "human detection",
+      "face detection",
+      "365-day battery life",
+      "HomeKit"
+    ],
+    "environment": [
+      "outdoor"
+    ],
+    "release_year": 2019,
+    "markets": [
+      "global"
     ],
     "sources": [
-      "https://www.eufy.com/"
+      "https://www.eufy.com/products/t81141D1",
+      "https://service.eufy.com/article-description/Differences-Between-All-Add-on-eufyCams"
     ],
-    "power_source": [
-      "battery",
-      "solar"
-    ]
+    "last_verified": "2026-07-04",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{homebase_ip}:554/live0",
+        "notes": "RTSP is served by the eufy HomeBase (port 554), not the camera itself. Enable RTSP per-camera in the eufy Security app first. eufy is not ONVIF/Hikvision.",
+        "recommended_stream_type": "rtsp",
+        "verified": false
+      },
+      "home_assistant": {
+        "integration": "eufy_security",
+        "notes": "Use the eufy_security HACS integration; RTSP available via HomeBase when enabled per-camera."
+      },
+      "blue_iris": {
+        "profile": "Generic/RTSP",
+        "notes": "Use the HomeBase-served RTSP URL on port 554; eufy is not ONVIF."
+      }
+    }
   },
   {
     "id": "eufy-eufycam-2-pro",
@@ -63824,11 +63907,15 @@
       "Alexa / Google Assistant"
     ],
     "sources": [
-      "https://www.eufy.com/products/eufycam-2-pro"
+      "https://www.eufy.com/eu-en/products/t8851"
     ],
     "power_source": [
       "battery"
     ],
+    "markets": [
+      "global"
+    ],
+    "last_verified": "2026-07-04",
     "configs": {
       "frigate": {
         "detect": {
@@ -63836,15 +63923,17 @@
           "height": 720,
           "fps": 5
         },
-        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live0"
+        "rtsp_url_template": "rtsp://{user}:{pass}@{homebase_ip}:554/live0",
+        "notes": "RTSP is served by HomeBase 2/3 (not the camera IP) and must be enabled per-camera in the Eufy Security app (Settings > Storage > NAS/RTSP). Official: eufyCam 2 Pro is on Eufy's RTSP-supported list.",
+        "verified": false
       },
       "home_assistant": {
         "integration": "eufy_security",
-        "notes": "Use eufy_security HACS integration. RTSP must be enabled in Eufy app per camera."
+        "notes": "Use eufy_security HACS integration. RTSP must be enabled in Eufy app per camera; stream comes from HomeBase."
       },
       "blue_iris": {
         "profile": "Generic/RTSP",
-        "notes": "Use Generic/RTSP profile. RTSP must be enabled per camera in Eufy app."
+        "notes": "Use Generic/RTSP profile. RTSP must be enabled per camera in Eufy app; stream comes from HomeBase IP."
       }
     }
   },
@@ -63885,7 +63974,8 @@
       "cloud": false
     },
     "protocols": [
-      "http"
+      "http",
+      "rtsp"
     ],
     "ip_rating": "IP67",
     "audio": {
@@ -63906,21 +63996,126 @@
     ],
     "power_source": [
       "battery"
-    ]
+    ],
+    "markets": [
+      "global"
+    ],
+    "last_verified": "2026-07-04",
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{homebase_ip}:554/live0",
+        "notes": "RTSP is served by HomeBase 2/3 (not the camera IP) and must be enabled per-camera in the Eufy Security app (Settings > Storage > NAS/RTSP). Official: eufyCam 2C is on Eufy's RTSP-supported list.",
+        "verified": false
+      },
+      "home_assistant": {
+        "integration": "eufy_security",
+        "notes": "Use eufy_security HACS integration. RTSP must be enabled in Eufy app per camera; stream comes from HomeBase."
+      },
+      "blue_iris": {
+        "profile": "Generic/RTSP",
+        "notes": "Use Generic/RTSP profile. RTSP must be enabled per camera in Eufy app; stream comes from HomeBase IP."
+      }
+    }
   },
   {
-    "id": "eufy-eufycam-3-pro",
+    "id": "eufy-eufycam-2c-pro",
     "brand": "Eufy",
-    "model": "EufyCam 3 Pro",
+    "model": "eufyCam 2C Pro",
     "aliases": [
-      "T88601D4",
+      "T8142",
+      "T81421D1",
+      "eufyCam S220"
+    ],
+    "type": "bullet",
+    "connectivity": [
+      "wifi"
+    ],
+    "power_source": [
+      "battery"
+    ],
+    "resolution": {
+      "megapixels": 4,
+      "max_width": 2560,
+      "max_height": 1440,
+      "label": "2K"
+    },
+    "field_of_view_deg": "135",
+    "night_vision": {
+      "type": "hybrid"
+    },
+    "storage": {
+      "onboard": false,
+      "notes": "Records locally to HomeBase (16GB eMMC on hub, up to ~3 months); proprietary hub required, no in-camera microSD. RTSP-to-NAS supported."
+    },
+    "protocols": [
+      "rtsp",
+      "http"
+    ],
+    "ip_rating": "IP67",
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "human detection",
+      "spotlight",
+      "color night vision",
+      "smart detection zones",
+      "180-day battery life"
+    ],
+    "environment": [
+      "outdoor"
+    ],
+    "release_year": 2021,
+    "markets": [
+      "global"
+    ],
+    "sources": [
+      "https://www.eufy.com/eu-en/products/t8142",
+      "https://service.eufy.com/article-description/Introducing-eufyCam-2C-Pro"
+    ],
+    "last_verified": "2026-07-04",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{homebase_ip}:554/live0",
+        "notes": "RTSP is served by the eufy HomeBase (port 554), not the camera. Enable RTSP per-camera in the eufy Security app first. eufy is not ONVIF/Hikvision.",
+        "recommended_stream_type": "rtsp",
+        "verified": false
+      },
+      "home_assistant": {
+        "integration": "eufy_security",
+        "notes": "Use the eufy_security HACS integration; RTSP available via HomeBase when enabled per-camera."
+      },
+      "blue_iris": {
+        "profile": "Generic/RTSP",
+        "notes": "Use the HomeBase-served RTSP URL on port 554; eufy is not ONVIF."
+      }
+    }
+  },
+  {
+    "id": "eufy-eufycam-3",
+    "brand": "Eufy",
+    "model": "eufyCam 3",
+    "aliases": [
+      "eufyCam S330",
+      "T8160",
+      "T81601W1",
+      "T88711W1",
+      "T88713W1",
       "EufyCam 4K Solar"
     ],
     "type": "bullet",
     "connectivity": [
       "wifi"
     ],
-    "release_year": 2023,
+    "release_year": 2022,
     "resolution": {
       "megapixels": 8,
       "max_width": 3840,
@@ -63929,22 +64124,20 @@
     },
     "lens": {
       "count": 1,
-      "focal_length_mm": "Fixed",
-      "aperture": "F1.6",
       "varifocal": false
     },
     "field_of_view_deg": "135 diagonal",
     "night_vision": {
-      "type": "color",
-      "range_m": 12
+      "type": "color"
     },
     "power": {
-      "method": "Solar-powered + built-in battery (HomeBase S380 required)"
+      "method": "Integrated solar panel + built-in battery (365-day); HomeBase S380 / HomeBase 3 required"
     },
     "storage": {
       "onboard": false,
       "nvr_compatible": false,
-      "cloud": false
+      "cloud": false,
+      "notes": "Records to HomeBase S380 (16GB built-in, expandable up to 16TB); no in-camera storage."
     },
     "protocols": [
       "http"
@@ -63960,53 +64153,66 @@
       "BionicMind AI face recognition",
       "color night vision",
       "no subscription fee",
-      "HomeBase local 16GB storage",
-      "Apple HomeKit / Alexa / Google"
+      "HomeBase S380 local storage (expandable to 16TB)",
+      "Apple HomeKit / Alexa / Google",
+      "IP67"
     ],
     "sources": [
-      "https://www.eufy.com/products/eufycam-3-pro"
+      "https://www.eufy.com/products/t88711w1",
+      "https://service.eufy.com/article-description/Introducing-S330-eufyCam-eufyCam-3"
     ],
     "power_source": [
       "battery",
       "solar"
-    ]
+    ],
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "status": "available",
+    "last_verified": "2026-07-04"
   },
   {
-    "id": "eufy-eufycam-3c-2k",
+    "id": "eufy-eufycam-3c",
     "brand": "Eufy",
-    "model": "EufyCam 3C 2K",
+    "model": "eufyCam 3C",
     "aliases": [
-      "Eufy 3C T8870 2K Solar Battery Outdoor Camera"
+      "eufyCam S300",
+      "T8161",
+      "T8161321",
+      "T8882121",
+      "T8881321"
     ],
     "type": "bullet",
     "connectivity": [
       "wifi"
     ],
-    "release_year": 2024,
+    "release_year": 2022,
     "resolution": {
-      "megapixels": 4,
-      "max_width": 2560,
-      "max_height": 1440,
-      "label": "2K QHD"
+      "megapixels": 8,
+      "max_width": 3840,
+      "max_height": 2160,
+      "label": "4K UHD"
     },
     "lens": {
       "count": 1,
-      "focal_length_mm": "Fixed",
-      "aperture": "F1.8",
+      "aperture": "F1.4",
       "varifocal": false
     },
     "field_of_view_deg": "135 diagonal",
     "night_vision": {
-      "type": "color",
-      "range_m": 8
+      "type": "color"
     },
     "power": {
-      "method": "Solar + built-in battery"
+      "method": "Solar + built-in battery (~180-day); HomeBase S380 / HomeBase 3 required"
     },
     "storage": {
       "onboard": false,
       "nvr_compatible": false,
-      "cloud": false
+      "cloud": false,
+      "notes": "Records to HomeBase S380; no in-camera storage."
     },
     "protocols": [
       "http"
@@ -64018,22 +64224,90 @@
       "two_way": true
     },
     "features": [
-      "2K QHD solar-powered always-on",
-      "no subscription fee",
-      "BionicMind AI person detection",
+      "4K solar-powered always-on",
+      "BionicMind AI face recognition",
       "color night vision",
+      "no subscription fee",
       "HomeBase S380 required for storage",
       "Apple HomeKit / Alexa / Google",
       "IP67",
-      "more affordable EufyCam 3 entry variant"
+      "more affordable eufyCam 3-series variant"
     ],
     "sources": [
-      "https://www.eufy.com/products/eufycam-3c"
+      "https://service.eufy.com/article-description/Introducing-S300-eufyCam-eufyCam-3C",
+      "https://us.eufy.com/pages/security-eufycam3c"
     ],
     "power_source": [
       "battery",
       "solar"
-    ]
+    ],
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "status": "available",
+    "last_verified": "2026-07-04"
+  },
+  {
+    "id": "eufy-eufycam-e",
+    "brand": "Eufy",
+    "model": "eufyCam E",
+    "aliases": [
+      "T8112",
+      "T81121D1"
+    ],
+    "type": "bullet",
+    "connectivity": [
+      "wifi"
+    ],
+    "power_source": [
+      "battery"
+    ],
+    "resolution": {
+      "megapixels": 2,
+      "max_width": 1920,
+      "max_height": 1080,
+      "label": "1080p"
+    },
+    "field_of_view_deg": "140",
+    "night_vision": {
+      "type": "ir"
+    },
+    "storage": {
+      "onboard": false,
+      "notes": "Records to HomeBase (16GB microSD included, expandable to 128GB); proprietary hub required, no direct in-camera storage."
+    },
+    "protocols": [
+      "http"
+    ],
+    "ip_rating": "IP65",
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "anti-theft alarm",
+      "365-day battery life"
+    ],
+    "operating_temp_c": "-20 to 50",
+    "dimensions_mm": "87.15 x 82.3 x 51",
+    "weight_g": 345,
+    "environment": [
+      "outdoor"
+    ],
+    "release_year": 2018,
+    "markets": [
+      "global"
+    ],
+    "sources": [
+      "https://service.eufy.com/article-description/Introducing-eufyCam-E",
+      "https://service.eufy.com/article-description/Differences-Between-All-Add-on-eufyCams"
+    ],
+    "last_verified": "2026-07-04",
+    "status": "discontinued"
   },
   {
     "id": "eufy-eufycam-e330-pro",
@@ -64064,7 +64338,7 @@
       "range_m": 12
     },
     "power": {
-      "method": "Rechargeable battery (HomeBase 3 required)"
+      "method": "Plug-in power adapter (5 m / 16.4 ft cable) for continuous 24/7 recording; HomeBase 3 required"
     },
     "storage": {
       "onboard": false,
@@ -64082,59 +64356,141 @@
     },
     "features": [
       "4K UHD resolution",
+      "plug-in power for 24/7 continuous recording",
       "cross-camera tracking",
       "HomeBase 3 local storage (16 TB expandable)",
       "BionicMind AI face recognition",
       "color night vision",
       "no subscription required",
-      "Apple HomeKit / Alexa / Google"
+      "Alexa / Google Assistant"
     ],
     "sources": [
-      "https://www.eufy.com/products/eufycam-e330-pro"
+      "https://us.eufy.com/pages/security-e330eufycam"
     ],
     "power_source": [
-      "battery"
-    ]
+      "dc"
+    ],
+    "markets": [
+      "global"
+    ],
+    "last_verified": "2026-07-04"
   },
   {
-    "id": "eufy-eufycam-s330-pro",
+    "id": "eufy-eufycam-e40",
     "brand": "Eufy",
-    "model": "EufyCam S330 Pro",
+    "model": "eufyCam E40",
     "aliases": [
-      "Eufy S330 Pro 4K Battery Solar Outdoor"
+      "T8144121",
+      "T8144321",
+      "eufyCam E40 Add-on Camera",
+      "E8144121"
     ],
     "type": "bullet",
     "connectivity": [
       "wifi"
     ],
-    "release_year": 2024,
+    "resolution": {
+      "megapixels": 4,
+      "label": "2K"
+    },
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8",
+      "aperture": "F1.0",
+      "varifocal": false
+    },
+    "field_of_view_deg": "130",
+    "night_vision": {
+      "type": "hybrid"
+    },
+    "power": {
+      "method": "Built-in solar panel (SolarPlus 2.0, 0.7W) + rechargeable battery; HomeBase 2 or HomeBase S380 required"
+    },
+    "storage": {
+      "onboard": true,
+      "cloud": true,
+      "notes": "Built-in 16GB; expandable via HomeBase 2 (up to 256GB) or HomeBase S380 (up to 16TB); optional cloud backup"
+    },
+    "protocols": [
+      "http"
+    ],
+    "ip_rating": "IP66",
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "2K MaxColor Vision color night vision",
+      "human / pet / vehicle / motion detection",
+      "integrated solar (SolarPlus 2.0)",
+      "no subscription fee",
+      "HomeBase 2 or HomeBase S380 required",
+      "Apple HomeKit / Alexa / Google",
+      "IP66"
+    ],
+    "sources": [
+      "https://www.eufy.com/products/t8144121",
+      "https://www.eufy.com/eu-en/products/t8144321"
+    ],
+    "power_source": [
+      "battery",
+      "solar"
+    ],
+    "markets": [
+      "global"
+    ],
+    "environment": [
+      "outdoor"
+    ],
+    "status": "available",
+    "last_verified": "2026-07-04"
+  },
+  {
+    "id": "eufy-eufycam-s3-pro",
+    "brand": "Eufy",
+    "model": "eufyCam S3 Pro",
+    "aliases": [
+      "T81621W1",
+      "eufyCam S3 Pro MaxColor Vision"
+    ],
+    "type": "bullet",
+    "connectivity": [
+      "wifi"
+    ],
+    "power_source": [
+      "battery",
+      "solar"
+    ],
     "resolution": {
       "megapixels": 8,
       "max_width": 3840,
       "max_height": 2160,
       "label": "4K UHD"
     },
+    "sensor": "1/1.8\" Stacked CMOS",
     "lens": {
       "count": 1,
-      "focal_length_mm": "Fixed",
-      "aperture": "F1.6",
+      "aperture": "F1.0",
       "varifocal": false
     },
-    "field_of_view_deg": "130 diagonal",
+    "field_of_view_deg": "112 horizontal / 60 vertical (135 diagonal)",
     "night_vision": {
       "type": "color",
-      "range_m": 12
+      "range_m": 9
     },
     "power": {
-      "method": "Rechargeable battery / solar panel"
+      "method": "Rechargeable battery + solar panel"
     },
     "storage": {
-      "onboard": false,
-      "nvr_compatible": false,
-      "cloud": false
+      "onboard": true,
+      "nvr_compatible": true,
+      "cloud": true,
+      "notes": "16GB eMMC on-camera; primary recording to HomeBase 3 (S380), expandable to 16TB. Optional eufy cloud."
     },
     "protocols": [
-      "http"
+      "http",
+      "rtsp"
     ],
     "ip_rating": "IP67",
     "audio": {
@@ -64143,22 +64499,211 @@
       "two_way": true
     },
     "features": [
-      "4K outdoor battery/solar camera",
-      "BionicMind AI face recognition",
-      "color night vision",
-      "auto-tracking",
-      "no subscription fee",
-      "HomeBase S380 required",
-      "HomeKit / Alexa / Google",
-      "IP67"
+      "4K MaxColor Vision full-color night",
+      "radar + PIR dual motion detection",
+      "adaptive spotlight, WDR",
+      "person/vehicle/pet/package detection, face recognition",
+      "cross-camera tracking (HomeBase 3 mesh, up to 16 cams)",
+      "100 dB siren",
+      "HomeKit Secure Video, Alexa, Google",
+      "solar charging, no monthly fee"
     ],
+    "release_year": 2024,
+    "release_notes": "eufy's 2024 flagship. RTSP is served via the HomeBase, not the camera.",
     "sources": [
-      "https://www.eufy.com/products/eufycam-s330-pro"
+      "https://www.eufy.com/eufycam-pro",
+      "https://www.eufy.com/products/t81621w1"
+    ],
+    "last_verified": "2026-07-04",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 640,
+          "height": 360,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{homebase_ip}:554/live0",
+        "best_substream": "rtsp://{user}:{pass}@{homebase_ip}:554/live1",
+        "notes": "RTSP is served by the HomeBase, not the camera. Enable in eufy Security app > Camera Settings > Storage/NAS (RTSP).",
+        "verified": false
+      },
+      "home_assistant": {
+        "integration": "eufy_security",
+        "notes": "No native ONVIF on the camera; use the HomeBase RTSP stream as a Generic Camera, or the eufy-security HACS integration (P2P)."
+      },
+      "blue_iris": {
+        "profile": "Generic/RTSP",
+        "notes": "Eufy is not a Hikvision/ONVIF brand — use the HomeBase RTSP URL as a Generic/RTSP source (no ONVIF)."
+      }
+    },
+    "dimensions_mm": "69 x 82.4 x 143.5",
+    "weight_g": 534,
+    "operating_temp_c": "-20 to 50",
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 15
+    },
+    "environment": [
+      "outdoor"
+    ]
+  },
+  {
+    "id": "eufy-eufycam-s4",
+    "brand": "Eufy",
+    "model": "eufyCam S4",
+    "aliases": [
+      "T8172",
+      "T81721W1"
+    ],
+    "type": "dual-lens",
+    "connectivity": [
+      "wifi"
     ],
     "power_source": [
       "battery",
       "solar"
+    ],
+    "resolution": {
+      "megapixels": 8,
+      "max_width": 3840,
+      "max_height": 2160,
+      "label": "4K (bullet) + 2K (PTZ)"
+    },
+    "sensor": "1/2.8\" Stacked CMOS (bullet) + 1/3\" CMOS (PTZ)",
+    "lens": {
+      "count": 3
+    },
+    "field_of_view_deg": "bullet 107 horizontal / 57 vertical (130 diagonal); PTZ 360 pan / 70 tilt",
+    "night_vision": {
+      "type": "color",
+      "range_m": 10
+    },
+    "power": {
+      "method": "Quick-swap 10000mAh battery + 5.5W SolarPlus 2.0 panel"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": true,
+      "cloud": true,
+      "notes": "32GB built-in, expandable to 256GB microSD standalone; or HomeBase S380 (expandable to 16TB). HomeBase 2/mini and eufy NVR not supported."
+    },
+    "protocols": [
+      "http"
+    ],
+    "ip_rating": "IP65",
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "3-lens hybrid: fixed 4K bullet + dual 2K PTZ",
+      "bullet-to-PTZ auto-tracking, 8x hybrid zoom",
+      "360 pan / 70 tilt",
+      "radar + PIR motion, on-device AI (person/vehicle/pet)",
+      "color night vision + spotlight",
+      "105 dB siren",
+      "Alexa, Google (no HomeKit)",
+      "solar charging, no monthly fee"
+    ],
+    "release_year": 2025,
+    "release_notes": "eufy's first wireless 3-lens hybrid camera (2025). protocols http-only (no official RTSP-support listing confirmed).",
+    "sources": [
+      "https://www.eufy.com/eufycam-s4",
+      "https://www.eufy.com/products/t81721w1"
+    ],
+    "last_verified": "2026-07-04",
+    "status": "available",
+    "dimensions_mm": "92 x 164.5 x 165",
+    "weight_g": 745,
+    "operating_temp_c": "-20 to 55",
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 15
+    },
+    "environment": [
+      "outdoor"
     ]
+  },
+  {
+    "id": "eufy-floodlight-cam-1080p",
+    "brand": "Eufy",
+    "model": "Floodlight Cam 1080p",
+    "aliases": [
+      "T8420",
+      "eufy Security Floodlight Camera 1080p"
+    ],
+    "type": "floodlight",
+    "connectivity": [
+      "wifi"
+    ],
+    "release_year": 2019,
+    "resolution": {
+      "megapixels": 2,
+      "max_width": 1920,
+      "max_height": 1080,
+      "label": "1080p"
+    },
+    "field_of_view_deg": "130 horizontal",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 12
+    },
+    "power": {
+      "method": "Hardwired (AC mains) 110V-240V"
+    },
+    "storage": {
+      "onboard": true,
+      "nvr_compatible": false,
+      "cloud": false,
+      "notes": "Built-in 4 GB eMMC, AES-128 encrypted local storage"
+    },
+    "protocols": [
+      "http"
+    ],
+    "ip_rating": "IP65",
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "1080p HD floodlight camera",
+      "2500-lumen adjustable LED floodlights (5000K)",
+      "color and IR night vision up to 40 ft",
+      "AI human/face detection",
+      "PIR motion detection",
+      "up to 4 activity zones",
+      "built-in 100 dB siren",
+      "two-way audio (half-duplex)",
+      "4 GB built-in eMMC local storage",
+      "no subscription fee",
+      "Alexa / Google Assistant"
+    ],
+    "operating_temp_c": "-20 to 50",
+    "sources": [
+      "https://service.eufy.com/article-description/Introducing-eufy-Floodlight-Cam-1080p",
+      "https://service.eufy.com/article-description/Differences-Between-eufy-Floodlight-Cameras"
+    ],
+    "power_source": [
+      "ac-mains"
+    ],
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "status": "discontinued",
+    "last_verified": "2026-07-04"
   },
   {
     "id": "eufy-floodlight-cam-2-pro",
@@ -64173,16 +64718,16 @@
       "ethernet"
     ],
     "resolution": {
-      "megapixels": 5,
-      "max_width": 2880,
-      "max_height": 1620,
-      "label": "2K Pro"
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "2K"
     },
     "lens": {
       "count": 1,
       "varifocal": false
     },
-    "field_of_view_deg": "360 (pan/tilt)",
+    "field_of_view_deg": "130 lens; 360 pan / 130 tilt",
     "night_vision": {
       "type": "color",
       "range_m": 10
@@ -64196,7 +64741,8 @@
       "cloud": false
     },
     "protocols": [
-      "http"
+      "http",
+      "rtsp"
     ],
     "ip_rating": "IP65",
     "audio": {
@@ -64215,12 +64761,107 @@
     ],
     "release_year": 2022,
     "sources": [
-      "https://www.eufy.com/products/floodlight-cam-2-pro"
+      "https://service.eufy.com/article-description/eufy-Floodlight-Cam-2-Pro-FAQ"
     ],
     "power_source": [
-      "battery",
       "ac-mains"
-    ]
+    ],
+    "markets": [
+      "global"
+    ],
+    "last_verified": "2026-07-04",
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live0",
+        "notes": "Floodlight Cam 2 Pro (T8423) is on Eufy's official RTSP-supported list; RTSP/NAS must be enabled per-camera in the Eufy Security app (Settings > Storage > NAS/RTSP). No HomeBase required.",
+        "verified": false
+      },
+      "home_assistant": {
+        "integration": "eufy_security",
+        "notes": "Use eufy_security HACS integration. RTSP must be enabled in the Eufy Security app."
+      },
+      "blue_iris": {
+        "profile": "Generic/RTSP",
+        "notes": "Use Generic/RTSP profile. RTSP must be enabled per camera in the Eufy Security app."
+      }
+    }
+  },
+  {
+    "id": "eufy-floodlight-cam-2k",
+    "brand": "Eufy",
+    "model": "Floodlight Cam 2K",
+    "aliases": [
+      "T8424",
+      "eufy Security Floodlight Camera 2K"
+    ],
+    "type": "floodlight",
+    "connectivity": [
+      "wifi"
+    ],
+    "resolution": {
+      "megapixels": 4,
+      "label": "2K"
+    },
+    "video": {
+      "max_fps": 15
+    },
+    "field_of_view_deg": "130 horizontal",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 12
+    },
+    "power": {
+      "method": "Hardwired (AC mains) 110V-240V"
+    },
+    "storage": {
+      "onboard": true,
+      "nvr_compatible": false,
+      "cloud": false,
+      "notes": "Built-in 4 GB eMMC, AES-128 encrypted local storage"
+    },
+    "protocols": [
+      "http"
+    ],
+    "ip_rating": "IP65",
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "2K floodlight camera",
+      "2500-lumen adjustable LED floodlights (5000K, 30000-hour LED)",
+      "color and IR night vision up to 40 ft",
+      "8X digital zoom",
+      "AI human/face detection",
+      "PIR motion detection",
+      "up to 4 activity zones",
+      "built-in 100 dB siren",
+      "two-way audio (half-duplex)",
+      "4 GB built-in eMMC local storage",
+      "no subscription fee"
+    ],
+    "operating_temp_c": "-20 to 50",
+    "sources": [
+      "https://service.eufy.com/article-description/Introducing-eufy-Floodlight-Cam-2K",
+      "https://service.eufy.com/article-description/Differences-Between-eufy-Floodlight-Cameras"
+    ],
+    "power_source": [
+      "ac-mains"
+    ],
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "status": "discontinued",
+    "last_verified": "2026-07-04"
   },
   {
     "id": "eufy-floodlight-cam-e220",
@@ -64246,7 +64887,7 @@
       "aperture": "F1.6",
       "varifocal": false
     },
-    "field_of_view_deg": "125 horizontal",
+    "field_of_view_deg": "130 horizontal",
     "night_vision": {
       "type": "color",
       "range_m": 10
@@ -64262,7 +64903,7 @@
     "protocols": [
       "http"
     ],
-    "ip_rating": "IP67",
+    "ip_rating": "IP65",
     "audio": {
       "microphone": true,
       "speaker": true,
@@ -64273,18 +64914,91 @@
       "2000-lumen LED floodlight",
       "color night vision",
       "AI person detection",
-      "built-in siren",
+      "built-in 100 dB siren",
       "two-way audio",
+      "4 GB built-in local storage",
       "no subscription fee",
-      "HomeBase optional",
-      "HomeKit / Alexa / Google",
-      "IP67"
+      "Alexa / Google Assistant",
+      "IP65"
     ],
     "sources": [
-      "https://www.eufy.com/products/floodlight-cam-e220"
+      "https://us.eufy.com/products/t8422j21"
     ],
     "power_source": [
       "ac-mains"
+    ],
+    "markets": [
+      "global"
+    ],
+    "last_verified": "2026-07-04"
+  },
+  {
+    "id": "eufy-floodlight-cam-e30",
+    "brand": "Eufy",
+    "model": "Floodlight Cam E30",
+    "aliases": [
+      "T8426",
+      "T8426121"
+    ],
+    "type": "floodlight",
+    "connectivity": [
+      "wifi"
+    ],
+    "power_source": [
+      "ac-mains"
+    ],
+    "resolution": {
+      "megapixels": 4,
+      "max_width": 2560,
+      "max_height": 1440,
+      "label": "2K QHD"
+    },
+    "lens": {
+      "count": 2
+    },
+    "field_of_view_deg": "102 horizontal / 70 vertical per lens (355 pan coverage)",
+    "night_vision": {
+      "type": "color"
+    },
+    "power": {
+      "method": "AC mains hardwired",
+      "voltage": "100-240V AC, 50/60Hz"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 128,
+      "nvr_compatible": true,
+      "cloud": true,
+      "notes": "microSD up to 128GB; HomeBase 3 / S380 compatible (expandable to 16TB)."
+    },
+    "protocols": [
+      "http"
+    ],
+    "ip_rating": "IP65",
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "dual-lens 360 pan & tilt with auto-tracking",
+      "3x optical / 8x digital zoom",
+      "2000-lumen motion-activated LED floodlight (4000K)",
+      "AI human/vehicle detection, out-of-view detection",
+      "color night vision",
+      "105 dB siren",
+      "24/7 continuous recording",
+      "preset positions"
+    ],
+    "release_year": 2024,
+    "release_notes": "Hardwired 2K dual-lens pan-tilt floodlight camera; distinct from the wireless 3K Floodlight Cam E340. protocols http-only (Eufy's official doc states floodlight cams do not support RTSP).",
+    "sources": [
+      "https://www.eufy.com/products/t8426121"
+    ],
+    "last_verified": "2026-07-04",
+    "status": "available",
+    "environment": [
+      "outdoor"
     ]
   },
   {
@@ -64301,15 +65015,15 @@
     "release_year": 2024,
     "resolution": {
       "megapixels": 6,
-      "label": "Dual 3MP 2K+2K floodlight"
+      "label": "Dual-lens: 3K wide-angle + telephoto (3x optical / 8x hybrid zoom)"
     },
     "lens": {
       "count": 2,
-      "focal_length_mm": "Wide + standard fixed",
+      "focal_length_mm": "Wide-angle + telephoto (fixed)",
       "aperture": "F1.6",
       "varifocal": false
     },
-    "field_of_view_deg": "290 combined",
+    "field_of_view_deg": "130 wide lens; 360 pan / 70 tilt",
     "night_vision": {
       "type": "color",
       "range_m": 15
@@ -64319,13 +65033,15 @@
     },
     "storage": {
       "onboard": true,
+      "max_microsd_gb": 128,
       "nvr_compatible": false,
-      "cloud": false
+      "cloud": false,
+      "notes": "microSD up to 128 GB, or continuous recording via HomeBase S380 (up to 16 TB)."
     },
     "protocols": [
       "http"
     ],
-    "ip_rating": "IP67",
+    "ip_rating": "IP65",
     "audio": {
       "microphone": true,
       "speaker": true,
@@ -64336,100 +65052,39 @@
       "motorised pan/tilt",
       "color night vision",
       "AI person/vehicle detection",
-      "24/7 recording on HomeBase",
+      "3x optical / 8x hybrid zoom",
+      "dual-band Wi-Fi 6",
+      "24/7 recording on HomeBase S380",
       "no subscription fee",
-      "HomeKit / Alexa / Google",
-      "IP67"
+      "Alexa / Google Assistant",
+      "IP65"
     ],
     "sources": [
-      "https://www.eufy.com/products/floodlight-cam-e340"
+      "https://www.eufy.com/floodlight-cam-e340"
     ],
     "power_source": [
       "ac-mains"
-    ]
-  },
-  {
-    "id": "eufy-floodlight-e340",
-    "brand": "Eufy",
-    "model": "Floodlight Camera E340",
-    "aliases": [
-      "Eufy E340 Dual 3K Wired Floodlight EU"
     ],
-    "type": "dual-lens",
-    "connectivity": [
-      "wifi",
-      "ethernet"
-    ],
-    "release_year": 2024,
     "markets": [
-      "DE",
-      "FR",
-      "ES",
-      "EU",
       "global"
     ],
-    "resolution": {
-      "megapixels": 6,
-      "label": "Dual 3K (3+3MP)"
-    },
-    "lens": {
-      "count": 2,
-      "focal_length_mm": "Wide + standard (fixed)",
-      "aperture": "F1.6",
-      "varifocal": false
-    },
-    "field_of_view_deg": "290 combined wide+standard",
-    "night_vision": {
-      "type": "color",
-      "range_m": 15
-    },
-    "power": {
-      "method": "Hardwired (AC mains)"
-    },
-    "storage": {
-      "onboard": true,
-      "nvr_compatible": false,
-      "cloud": false
-    },
-    "protocols": [
-      "http"
-    ],
-    "ip_rating": "IP67",
-    "audio": {
-      "microphone": true,
-      "speaker": true,
-      "two_way": true
-    },
-    "features": [
-      "dual 3K cameras + 2000-lumen floodlight",
-      "pan & tilt motorised",
-      "color night vision",
-      "AI person/vehicle detection",
-      "24/7 recording",
-      "NO subscription fee",
-      "HomeBase S380 optional",
-      "Alexa / Google / HomeKit",
-      "IP67",
-      "top-rated EU floodlight cam"
-    ],
-    "sources": [
-      "https://www.eufy.com/de-de/"
-    ],
-    "power_source": [
-      "ac-mains"
-    ]
+    "last_verified": "2026-07-04"
   },
   {
     "id": "eufy-garage-cam-s330",
     "brand": "Eufy",
-    "model": "Garage-Cam S330",
+    "model": "Garage-Control Cam E110",
     "aliases": [
       "T8452",
-      "eufy Garage-Cam S330 2K"
+      "E110",
+      "eufy Garage-Control Cam"
     ],
     "type": "box",
     "connectivity": [
       "wifi"
+    ],
+    "environment": [
+      "indoor"
     ],
     "release_year": 2024,
     "resolution": {
@@ -64442,13 +65097,13 @@
       "count": 1,
       "varifocal": false
     },
-    "field_of_view_deg": "140 diagonal",
+    "field_of_view_deg": "130 diagonal",
     "night_vision": {
       "type": "ir",
       "range_m": 8
     },
     "power": {
-      "method": "Wired (AC power)"
+      "method": "Wired (DC adapter)"
     },
     "storage": {
       "onboard": true,
@@ -64456,7 +65111,8 @@
       "cloud": false
     },
     "protocols": [
-      "http"
+      "http",
+      "rtsp"
     ],
     "audio": {
       "microphone": true,
@@ -64464,39 +65120,70 @@
       "two_way": true
     },
     "features": [
-      "2K garage-mount camera with door opener",
-      "smart garage door control",
+      "2K garage-mount camera with door opener control",
+      "smart garage door open/close + status alerts",
       "AI human/vehicle detection",
-      "built-in storage",
+      "microSD local storage",
       "no subscription required",
-      "real-time door status alerts",
+      "RTSP / NAS support",
       "Alexa / Google Assistant"
     ],
     "sources": [
-      "https://www.eufy.com/products/garage-cam-s330"
+      "https://us.eufy.com/pages/security-garage-control-cam",
+      "https://service.eufy.com/article-description/Does-eufy-Garage-Control-Cam-support-RTSP-NAS"
     ],
     "power_source": [
       "dc"
-    ]
+    ],
+    "markets": [
+      "global"
+    ],
+    "last_verified": "2026-07-04",
+    "release_notes": "SKU T8452 is officially the eufy Garage-Control Cam E110 (not a 'Garage-Cam S330' — that name does not exist). RTSP/NAS officially supported per eufy support article.",
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 640,
+          "height": 360,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{homebase_ip}:554/live0",
+        "best_substream": "rtsp://{user}:{pass}@{homebase_ip}:554/live1",
+        "notes": "RTSP is served by the HomeBase (Camera Settings > Storage > RTSP/NAS), not the camera.",
+        "verified": false
+      },
+      "home_assistant": {
+        "integration": "eufy_security",
+        "notes": "Use the eufy_security HACS integration (P2P), or the HomeBase RTSP stream as a Generic Camera when RTSP is enabled."
+      },
+      "blue_iris": {
+        "profile": "Generic/RTSP",
+        "notes": "Eufy is not a Hikvision/ONVIF brand — use the HomeBase RTSP URL as a Generic/RTSP source (no ONVIF)."
+      }
+    }
   },
   {
     "id": "eufy-indoor-cam-2k-pan-tilt",
     "brand": "Eufy",
     "model": "Indoor Cam 2K Pan & Tilt",
     "aliases": [
-      "Eufy 2K Indoor Pan & Tilt T8410",
-      "Eufy T8410 budget indoor"
+      "T8410",
+      "Solo IndoorCam P24",
+      "Eufy 2K Indoor Pan & Tilt T8410"
     ],
     "type": "ptz",
     "connectivity": [
       "wifi"
     ],
+    "environment": [
+      "indoor"
+    ],
     "release_year": 2020,
     "resolution": {
-      "megapixels": 4,
-      "max_width": 2560,
-      "max_height": 1440,
-      "label": "2K QHD"
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "2K"
     },
     "lens": {
       "count": 1,
@@ -64510,7 +65197,7 @@
       "range_m": 8
     },
     "power": {
-      "method": "DC 5V (USB)"
+      "method": "DC 5V (micro-USB, hardwired)"
     },
     "storage": {
       "onboard": true,
@@ -64528,22 +65215,26 @@
       "two_way": true
     },
     "features": [
-      "2K QHD 360° pan/tilt indoor",
+      "2K 360 pan/tilt indoor",
       "AI human/pet detection",
       "motion tracking",
       "physical privacy shutter",
       "no subscription",
       "microSD local storage",
       "HomeKit / Alexa / Google",
-      "RTSP support",
-      "€35–45 best-value Eufy indoor"
+      "RTSP / NAS support"
     ],
     "sources": [
-      "https://www.eufy.com/products/indoor-cam-2k-pan-tilt"
+      "https://service.eufy.com/article-description/Introducing-eufy-Indoor-Cam-2K-Pan-Tilt",
+      "https://support.eufy.com/s/article/T8410-Indoor-Cam-2K-Pan-Tilt-INT-QSG"
     ],
     "power_source": [
       "usb"
     ],
+    "markets": [
+      "global"
+    ],
+    "last_verified": "2026-07-04",
     "configs": {
       "frigate": {
         "detect": {
@@ -64551,7 +65242,9 @@
           "height": 720,
           "fps": 5
         },
-        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live0"
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live0",
+        "notes": "RTSP must be enabled per camera in the Eufy app (Storage > RTSP/NAS). Community-reported path; eufy does not publish the URL.",
+        "verified": false
       },
       "home_assistant": {
         "integration": "eufy_security",
@@ -64568,32 +65261,36 @@
     "brand": "Eufy",
     "model": "Indoor Cam C120",
     "aliases": [
-      "T84151W1"
+      "T84001W1",
+      "T8400",
+      "Indoor Cam 2K"
     ],
     "type": "dome",
     "connectivity": [
       "wifi"
     ],
+    "environment": [
+      "indoor"
+    ],
     "release_year": 2022,
     "resolution": {
-      "megapixels": 4,
-      "max_width": 2560,
-      "max_height": 1440,
-      "label": "2K QHD"
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "2K"
     },
     "lens": {
       "count": 1,
       "focal_length_mm": "Fixed",
-      "aperture": "F2.0",
       "varifocal": false
     },
-    "field_of_view_deg": "130 diagonal",
+    "field_of_view_deg": "105 horizontal / 57 vertical",
     "night_vision": {
-      "type": "color",
-      "range_m": 6
+      "type": "ir",
+      "range_m": 10
     },
     "power": {
-      "method": "USB-C (hardwired)"
+      "method": "5V/1A (USB, hardwired)"
     },
     "storage": {
       "onboard": true,
@@ -64611,21 +65308,24 @@
       "two_way": true
     },
     "features": [
-      "2K QHD budget indoor camera",
+      "2K budget plug-in indoor camera",
       "AI person/pet detection",
-      "color night vision",
-      "physical privacy shutter",
+      "infrared night vision",
       "local storage (microSD)",
       "no subscription fee",
-      "RTSP support",
-      "Alexa / Google HomeKit"
+      "RTSP / NAS support",
+      "Alexa / Google / HomeKit"
     ],
     "sources": [
-      "https://www.eufy.com/products/indoor-cam-c120"
+      "https://www.eufy.com/ca/products/t84001w1"
     ],
     "power_source": [
       "usb"
     ],
+    "markets": [
+      "global"
+    ],
+    "last_verified": "2026-07-04",
     "configs": {
       "frigate": {
         "detect": {
@@ -64633,7 +65333,9 @@
           "height": 720,
           "fps": 5
         },
-        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live0"
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live0",
+        "notes": "RTSP must be enabled per camera in the Eufy app (Storage > RTSP/NAS). Community-reported path; eufy does not publish the URL.",
+        "verified": false
       },
       "home_assistant": {
         "integration": "eufy_security",
@@ -64646,22 +65348,167 @@
     }
   },
   {
+    "id": "eufy-indoor-cam-c210",
+    "brand": "Eufy",
+    "model": "Indoor Cam C210",
+    "aliases": [
+      "T8419",
+      "T8419121"
+    ],
+    "type": "ptz",
+    "connectivity": [
+      "wifi"
+    ],
+    "environment": [
+      "indoor"
+    ],
+    "power_source": [
+      "usb"
+    ],
+    "resolution": {
+      "megapixels": 2,
+      "max_width": 1920,
+      "max_height": 1080,
+      "label": "1080p"
+    },
+    "lens": {
+      "count": 1,
+      "varifocal": false
+    },
+    "night_vision": {
+      "type": "ir",
+      "range_m": 8
+    },
+    "power": {
+      "method": "5V/1A (USB, plug-in)"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 128,
+      "nvr_compatible": false,
+      "cloud": false,
+      "notes": "microSD up to 128 GB; compatible with HomeBase 3 for local storage; no monthly subscription."
+    },
+    "protocols": [
+      "http"
+    ],
+    "ip_rating": "IP20",
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "1080p 360 pan/tilt indoor camera",
+      "AI human/motion detection",
+      "motion auto-tracking",
+      "infrared night vision",
+      "privacy mode",
+      "no subscription required",
+      "microSD local storage",
+      "HomeBase 3 compatible",
+      "Alexa / Google Assistant"
+    ],
+    "release_year": 2023,
+    "markets": [
+      "global"
+    ],
+    "sources": [
+      "https://www.eufy.com/products/t8419121",
+      "https://service.eufy.com/article-description/eufy-Security-Indoor-Cam-C210-User-Guide-T8419"
+    ],
+    "last_verified": "2026-07-04",
+    "status": "available"
+  },
+  {
+    "id": "eufy-indoor-cam-c220",
+    "brand": "Eufy",
+    "model": "Indoor Cam C220",
+    "aliases": [
+      "T8W11",
+      "T8W11321"
+    ],
+    "type": "ptz",
+    "connectivity": [
+      "wifi"
+    ],
+    "power_source": [
+      "usb"
+    ],
+    "resolution": {
+      "megapixels": 3.7,
+      "max_width": 2560,
+      "max_height": 1440,
+      "label": "2K"
+    },
+    "lens": {
+      "count": 1,
+      "varifocal": false
+    },
+    "field_of_view_deg": "125",
+    "night_vision": {
+      "type": "ir"
+    },
+    "power": {
+      "method": "micro-USB"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 128,
+      "cloud": false,
+      "notes": "microSD up to 128 GB; compatible with HomeBase 3 for local storage; no monthly subscription."
+    },
+    "protocols": [
+      "http"
+    ],
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "person detection",
+      "pet detection",
+      "crying detection",
+      "auto-tracking",
+      "privacy mode",
+      "360 pan / 75 tilt (no HomeKit)"
+    ],
+    "environment": [
+      "indoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "release_year": 2024,
+    "sources": [
+      "https://www.eufy.com/eu-en/products/t8w11321",
+      "https://service.eufy.com/article-description/Indoor-Cam-C220-User-Guide-T8W11"
+    ],
+    "last_verified": "2026-07-04",
+    "status": "available"
+  },
+  {
     "id": "eufy-indoor-cam-e220",
     "brand": "Eufy",
     "model": "Indoor Cam E220",
     "aliases": [
+      "T8410121",
       "Eufy E220 2K Indoor Pan/Tilt"
     ],
     "type": "ptz",
     "connectivity": [
       "wifi"
     ],
+    "environment": [
+      "indoor"
+    ],
     "release_year": 2022,
     "resolution": {
-      "megapixels": 4,
-      "max_width": 2560,
-      "max_height": 1440,
-      "label": "2K QHD"
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "2K"
     },
     "lens": {
       "count": 1,
@@ -64669,11 +65516,11 @@
     },
     "field_of_view_deg": "360 pan / 96 tilt",
     "night_vision": {
-      "type": "color",
-      "range_m": 8
+      "type": "ir",
+      "range_m": 10
     },
     "power": {
-      "method": "DC 5V (USB)"
+      "method": "DC 5V (USB, hardwired)"
     },
     "storage": {
       "onboard": true,
@@ -64691,21 +65538,25 @@
       "two_way": true
     },
     "features": [
-      "2K QHD indoor pan/tilt",
-      "color night vision",
-      "AI person/pet detection",
-      "physical privacy shutter",
+      "2K indoor pan/tilt (successor to Indoor Cam 2K Pan & Tilt)",
+      "infrared night vision",
+      "AI person/pet/crying detection",
+      "motion tracking",
       "no subscription",
       "microSD local storage",
       "HomeKit / Alexa / Google",
-      "RTSP support"
+      "RTSP / NAS support"
     ],
     "sources": [
-      "https://www.eufy.com/products/indoor-cam-e220"
+      "https://www.eufy.com/products/t8410121"
     ],
     "power_source": [
       "usb"
     ],
+    "markets": [
+      "global"
+    ],
+    "last_verified": "2026-07-04",
     "configs": {
       "frigate": {
         "detect": {
@@ -64713,7 +65564,9 @@
           "height": 720,
           "fps": 5
         },
-        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live0"
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live0",
+        "notes": "RTSP must be enabled per camera in the Eufy app (Storage > RTSP/NAS). Community-reported path; eufy does not publish the URL.",
+        "verified": false
       },
       "home_assistant": {
         "integration": "eufy_security",
@@ -64726,38 +65579,103 @@
     }
   },
   {
-    "id": "eufy-indoor-cam-mini",
+    "id": "eufy-indoor-cam-e30",
     "brand": "Eufy",
-    "model": "Indoor Cam Mini",
+    "model": "Indoor Cam E30",
     "aliases": [
-      "T8414",
-      "eufy Indoor Cam Mini 1080p"
+      "T8417",
+      "T8417121"
     ],
-    "type": "dome",
+    "type": "ptz",
     "connectivity": [
       "wifi"
     ],
+    "power_source": [
+      "usb"
+    ],
+    "resolution": {
+      "megapixels": 8,
+      "max_width": 3840,
+      "max_height": 2160,
+      "label": "4K UHD"
+    },
+    "lens": {
+      "count": 1
+    },
+    "field_of_view_deg": "125 diagonal (360 pan / motorized tilt)",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 5
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 128,
+      "nvr_compatible": true,
+      "cloud": true,
+      "notes": "microSD up to 128GB (sold separately); HomeBase 3 / HomeBase Professional S1 compatible; 24/7 recording, no monthly fee."
+    },
+    "protocols": [
+      "http"
+    ],
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "4K 360 pan & tilt indoor / pet camera",
+      "AI person/pet/sound/cry detection, auto-tracking",
+      "IR + full-color night vision (spotlight)",
+      "24/7 recording",
+      "privacy mode",
+      "HomeKit (1080p), Alexa, Google",
+      "2.4GHz Wi-Fi"
+    ],
+    "release_notes": "4K indoor pan-tilt camera; distinct from the 2K Indoor Cam E220. HomeKit officially supported. protocols http-only (no confirmed RTSP-support listing).",
+    "sources": [
+      "https://www.eufy.com/products/t8417121"
+    ],
+    "last_verified": "2026-07-04",
+    "status": "available",
+    "environment": [
+      "indoor"
+    ]
+  },
+  {
+    "id": "eufy-indoor-cam-mini",
+    "brand": "Eufy",
+    "model": "Indoor Cam Mini 2K",
+    "aliases": [
+      "T8414",
+      "T8414J21",
+      "eufy Indoor Cam Mini 2K"
+    ],
+    "type": "ptz",
+    "connectivity": [
+      "wifi"
+    ],
+    "environment": [
+      "indoor"
+    ],
     "release_year": 2023,
     "resolution": {
-      "megapixels": 2,
-      "max_width": 1920,
-      "max_height": 1080,
-      "label": "1080p HD"
+      "megapixels": 4,
+      "label": "2K"
     },
     "lens": {
       "count": 1,
       "varifocal": false
     },
-    "field_of_view_deg": "125 diagonal",
+    "field_of_view_deg": "125 diagonal (360 pan / 100 tilt)",
     "night_vision": {
       "type": "ir",
       "range_m": 8
     },
     "power": {
-      "method": "Wired (USB-C)"
+      "method": "Wired (USB)"
     },
     "storage": {
-      "onboard": false,
+      "onboard": true,
       "nvr_compatible": false,
       "cloud": false
     },
@@ -64770,48 +65688,62 @@
       "two_way": true
     },
     "features": [
-      "ultra-compact indoor design",
-      "1080p HD resolution",
+      "ultra-compact 360 pan/tilt indoor camera",
+      "2K resolution",
       "AI human/pet detection",
+      "motion tracking",
+      "infrared night vision",
       "no subscription required",
       "microSD card slot",
       "Alexa / Google Assistant"
     ],
     "sources": [
-      "https://www.eufy.com/products/indoor-cam-mini"
+      "https://service.eufy.com/article-description/Introducing-eufy-Indoor-Cam-Mini-2K"
     ],
     "power_source": [
       "usb"
-    ]
+    ],
+    "markets": [
+      "global"
+    ],
+    "last_verified": "2026-07-04",
+    "release_notes": "Corrected from 1080p fixed to 2K 360 pan/tilt per eufy's official 'Introducing eufy Indoor Cam Mini 2K' article (360 horizontal / 100 vertical). RTSP not confirmed by an official eufy source; app/cloud (http) only."
   },
   {
     "id": "eufy-indoor-cam-s350",
     "brand": "Eufy",
     "model": "Indoor Cam S350",
     "aliases": [
+      "T8416121",
       "Eufy S350 4K Dual-Lens Pan/Tilt Indoor"
     ],
     "type": "ptz",
     "connectivity": [
       "wifi"
     ],
+    "environment": [
+      "indoor"
+    ],
     "release_year": 2024,
     "resolution": {
       "megapixels": 8,
-      "label": "4K wide + 8x zoom dual-lens"
+      "max_width": 3840,
+      "max_height": 2160,
+      "label": "4K UHD (dual-lens)"
     },
     "lens": {
       "count": 2,
-      "focal_length_mm": "Wide 4K + 8x zoom tele",
+      "focal_length_mm": "4K wide + 2K 3x optical tele (8x hybrid zoom)",
+      "aperture": "F1.6",
       "varifocal": false
     },
-    "field_of_view_deg": "360 pan / 45 tilt",
+    "field_of_view_deg": "130 diagonal (355 pan / 75 tilt)",
     "night_vision": {
-      "type": "color",
-      "range_m": 8
+      "type": "hybrid",
+      "range_m": 10
     },
     "power": {
-      "method": "DC 5V (USB-C)"
+      "method": "DC 5V (USB-C, hardwired)"
     },
     "storage": {
       "onboard": true,
@@ -64819,8 +65751,7 @@
       "cloud": false
     },
     "protocols": [
-      "http",
-      "rtsp"
+      "http"
     ],
     "ip_rating": "IP20",
     "audio": {
@@ -64830,39 +65761,25 @@
     },
     "features": [
       "4K dual-lens indoor pan/tilt",
-      "8x optical zoom",
-      "auto-tracking",
-      "BionicMind AI face recognition",
-      "color night vision",
+      "8x hybrid zoom (3x optical tele)",
+      "AI auto-tracking",
+      "on-device human/pet/crying detection",
+      "color night vision + IR",
       "no subscription",
-      "local HomeBase storage",
-      "HomeKit / Alexa / Google",
-      "RTSP support"
+      "microSD / HomeBase 3 storage",
+      "HomeKit / Alexa / Google"
     ],
     "sources": [
-      "https://www.eufy.com/products/indoor-cam-s350"
+      "https://www.eufy.com/products/t8416121"
     ],
     "power_source": [
       "usb"
     ],
-    "configs": {
-      "frigate": {
-        "detect": {
-          "width": 1280,
-          "height": 720,
-          "fps": 5
-        },
-        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live0"
-      },
-      "home_assistant": {
-        "integration": "eufy_security",
-        "notes": "Use eufy_security HACS integration. RTSP must be enabled in Eufy app per camera."
-      },
-      "blue_iris": {
-        "profile": "Generic/RTSP",
-        "notes": "Use Generic/RTSP profile. RTSP must be enabled per camera in Eufy app."
-      }
-    }
+    "markets": [
+      "global"
+    ],
+    "last_verified": "2026-07-04",
+    "release_notes": "RTSP removed: not confirmed by any official eufy source (eufy 'About NAS/RTSP' article lists only eufyCam 3C/3/E330 Pro; S350 FAQ and product page do not mention RTSP). Community (iSpyConnect) reports /live0 but this is unverified."
   },
   {
     "id": "eufy-outdoor-cam-e210",
@@ -64870,7 +65787,10 @@
     "model": "Outdoor Cam E210",
     "aliases": [
       "T8442",
-      "eufy Outdoor Cam E210 2K"
+      "T8442121",
+      "eufy Security Outdoor Cam E210",
+      "Solo OutdoorCam C22",
+      "Outdoor Cam C22"
     ],
     "type": "bullet",
     "connectivity": [
@@ -64878,29 +65798,30 @@
     ],
     "release_year": 2024,
     "resolution": {
-      "megapixels": 4,
-      "max_width": 2560,
-      "max_height": 1440,
-      "label": "2K QHD"
+      "megapixels": 2,
+      "max_width": 1920,
+      "max_height": 1080,
+      "label": "1080p"
     },
     "lens": {
       "count": 1,
       "varifocal": false
     },
-    "field_of_view_deg": "135 diagonal",
+    "field_of_view_deg": "130 diagonal",
     "night_vision": {
-      "type": "color",
-      "range_m": 10
+      "type": "color"
     },
     "power": {
-      "method": "Wired (AC power)"
+      "method": "Wired (5V/1A DC adapter, 20 ft cable)"
     },
     "storage": {
       "onboard": true,
       "nvr_compatible": false,
-      "cloud": false
+      "cloud": false,
+      "notes": "microSD local storage; also records to NAS over RTSP (enable per-camera in the eufy Security app)."
     },
     "protocols": [
+      "rtsp",
       "http"
     ],
     "ip_rating": "IP67",
@@ -64910,54 +65831,190 @@
       "two_way": true
     },
     "features": [
-      "2K QHD wired outdoor camera",
+      "1080p wired outdoor camera",
       "built-in spotlight",
       "color night vision",
-      "AI human/vehicle detection",
+      "AI human detection",
       "no subscription required",
       "IP67 weatherproof",
       "Alexa / Google Assistant"
     ],
     "sources": [
-      "https://www.eufy.com/products/outdoor-cam-e210"
+      "https://service.eufy.com/article-description/Introducing-eufy-Outdoor-Cam",
+      "https://service.eufy.com/article-description/Differences-Between-eufy-Solo-OutdoorCams"
     ],
     "power_source": [
-      "battery",
-      "solar"
-    ]
+      "dc"
+    ],
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "last_verified": "2026-07-04",
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 640,
+          "height": 360,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live0",
+        "notes": "RTSP must first be enabled per-camera in the eufy Security app (Settings > Storage/RTSP). Standalone Wi-Fi cam, no HomeBase, no ONVIF — use a direct RTSP URL.",
+        "verified": false
+      },
+      "home_assistant": {
+        "integration": "eufy_security",
+        "notes": "Use the eufy_security HACS integration, or add the RTSP URL as a Generic Camera. ONVIF not supported."
+      },
+      "blue_iris": {
+        "profile": "Generic/RTSP",
+        "notes": "Add as a Network IP camera with a manual RTSP path (/live0); no ONVIF."
+      }
+    }
+  },
+  {
+    "id": "eufy-outdoor-cam-e220",
+    "brand": "Eufy",
+    "model": "Outdoor Cam E220",
+    "aliases": [
+      "T8441Z21",
+      "T8441",
+      "eufy Security Outdoor Cam E220",
+      "Outdoor Cam Pro",
+      "Solo OutdoorCam C24",
+      "Outdoor Cam C24"
+    ],
+    "type": "bullet",
+    "connectivity": [
+      "wifi"
+    ],
+    "resolution": {
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "2K"
+    },
+    "lens": {
+      "count": 1,
+      "aperture": "F2.0",
+      "varifocal": false
+    },
+    "field_of_view_deg": "130 diagonal",
+    "night_vision": {
+      "type": "color"
+    },
+    "power": {
+      "method": "Wired (5V/1A DC adapter, 20 ft cable; must remain plugged in)"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 128,
+      "nvr_compatible": false,
+      "cloud": false,
+      "notes": "32 GB microSD card included; also records to NAS over RTSP"
+    },
+    "protocols": [
+      "rtsp",
+      "http"
+    ],
+    "ip_rating": "IP67",
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "2K wired outdoor camera",
+      "built-in spotlight",
+      "color night vision",
+      "AI human / pet / crying detection",
+      "8x digital zoom",
+      "32 GB microSD included",
+      "no subscription required",
+      "RTSP to NAS",
+      "HomeKit / Alexa / Google Assistant",
+      "IP67 weatherproof"
+    ],
+    "operating_temp_c": "-20 to 45",
+    "environment": [
+      "outdoor"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "markets": [
+      "global"
+    ],
+    "sources": [
+      "https://www.eufy.com/products/t8441z21",
+      "https://service.eufy.com/article-description/Introducing-eufy-Outdoor-Cam-Pro",
+      "https://service.eufy.com/article-description/Differences-Between-eufy-Solo-OutdoorCams"
+    ],
+    "last_verified": "2026-07-04",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 640,
+          "height": 360,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/live1",
+        "notes": "RTSP must first be enabled per-camera in the eufy Security app (Settings > Storage/RTSP). Standalone Wi-Fi cam, no HomeBase, no ONVIF — use a direct RTSP URL.",
+        "verified": false
+      },
+      "home_assistant": {
+        "integration": "eufy_security",
+        "notes": "Use the eufy_security HACS integration, or add the RTSP URL as a Generic Camera. ONVIF not supported."
+      },
+      "blue_iris": {
+        "profile": "Generic/RTSP",
+        "notes": "Add as a Network IP camera with a manual RTSP path (/live0); no ONVIF."
+      }
+    }
   },
   {
     "id": "eufy-s220-solocam",
     "brand": "Eufy",
     "model": "SoloCam S220",
     "aliases": [
-      "T81401",
+      "T8134121",
       "SoloCam Solar 2K"
     ],
     "type": "bullet",
     "connectivity": [
       "wifi"
     ],
+    "release_year": 2023,
+    "markets": [
+      "global"
+    ],
     "resolution": {
-      "megapixels": 4,
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
       "label": "2K"
     },
     "lens": {
       "count": 1,
+      "aperture": "f/1.6",
       "varifocal": false
     },
-    "field_of_view_deg": "90 diagonal",
+    "field_of_view_deg": "135",
     "night_vision": {
-      "type": "color",
-      "range_m": 7
+      "type": "ir"
     },
     "power": {
-      "method": "Built-in battery + integrated solar panel"
+      "method": "6,500 mAh built-in battery + 0.9W integrated solar panel"
     },
     "storage": {
       "onboard": true,
       "nvr_compatible": false,
-      "cloud": false
+      "cloud": false,
+      "notes": "8 GB built-in eMMC; HomeBase 3 compatible"
     },
     "protocols": [
       "http"
@@ -64969,86 +66026,32 @@
       "two_way": true
     },
     "features": [
-      "solar-powered (continuous power)",
-      "color night vision",
-      "AI person detection",
+      "solar-powered continuous power",
+      "infrared night vision (850nm IR LEDs)",
+      "AI human & face detection",
+      "75 dB siren",
       "no subscription fee",
       "8 GB built-in eMMC",
-      "Alexa / Google"
+      "Alexa / Google Assistant"
     ],
-    "release_year": 2023,
+    "operating_temp_c": "-20 to 50",
     "sources": [
-      "https://www.eufy.com/products/solocam-s220"
+      "https://www.eufy.com/products/t8134121"
     ],
     "power_source": [
       "battery",
       "solar"
-    ]
-  },
-  {
-    "id": "eufy-s330-eufycam-3c",
-    "brand": "Eufy",
-    "model": "EufyCam 3C (S330)",
-    "aliases": [
-      "T8861"
     ],
-    "type": "bullet",
-    "connectivity": [
-      "wifi"
-    ],
-    "resolution": {
-      "megapixels": 4,
-      "label": "2K"
-    },
-    "lens": {
-      "count": 1,
-      "varifocal": false
-    },
-    "field_of_view_deg": "135 diagonal",
-    "night_vision": {
-      "type": "color",
-      "range_m": 10
-    },
-    "power": {
-      "method": "Solar charging + built-in battery (HomeBase S380 required)"
-    },
-    "storage": {
-      "onboard": false,
-      "nvr_compatible": false,
-      "cloud": false
-    },
-    "protocols": [
-      "http"
-    ],
-    "ip_rating": "IP67",
-    "audio": {
-      "microphone": true,
-      "speaker": true,
-      "two_way": true
-    },
-    "features": [
-      "solar-powered (always on)",
-      "BionicMind AI face recognition",
-      "color night vision",
-      "no subscription fee",
-      "local HomeBase storage",
-      "Alexa / Google integration"
-    ],
-    "release_year": 2023,
-    "sources": [
-      "https://www.eufy.com/products/eufycam-3c"
-    ],
-    "power_source": [
-      "battery",
-      "solar"
-    ]
+    "last_verified": "2026-07-04"
   },
   {
     "id": "eufy-solocam-c210",
     "brand": "Eufy",
     "model": "SoloCam C210",
     "aliases": [
-      "Eufy SoloCam C210 2K Battery Wire-Free"
+      "T8B00322",
+      "T8B00122",
+      "eufy SoloCam C210 2K Battery Wire-Free"
     ],
     "type": "bullet",
     "connectivity": [
@@ -65063,15 +66066,15 @@
     },
     "lens": {
       "count": 1,
+      "aperture": "F1.6",
       "varifocal": false
     },
     "field_of_view_deg": "135 diagonal",
     "night_vision": {
-      "type": "color",
-      "range_m": 8
+      "type": "ir"
     },
     "power": {
-      "method": "Rechargeable battery (6 months) / optional solar"
+      "method": "Rechargeable battery (up to 3 months) / optional solar panel"
     },
     "storage": {
       "onboard": true,
@@ -65089,20 +66092,87 @@
     },
     "features": [
       "2K wire-free battery outdoor",
-      "6-month battery life",
-      "color night vision",
+      "infrared night vision",
       "no subscription fee",
-      "built-in 8GB storage (no hub required)",
-      "AI person detection",
+      "built-in 8GB eMMC storage (no hub required)",
+      "AI human detection",
       "Alexa / Google",
       "IP67"
     ],
     "sources": [
-      "https://www.eufy.com/products/solocam-c210"
+      "https://www.eufy.com/eu-en/products/t8b00322"
     ],
     "power_source": [
       "battery",
       "solar"
+    ],
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "last_verified": "2026-07-04"
+  },
+  {
+    "id": "eufy-solocam-e30",
+    "brand": "Eufy",
+    "model": "SoloCam E30",
+    "aliases": [
+      "T8171121"
+    ],
+    "type": "ptz",
+    "connectivity": [
+      "wifi"
+    ],
+    "power_source": [
+      "battery",
+      "solar"
+    ],
+    "resolution": {
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "2K"
+    },
+    "lens": {
+      "aperture": "F1.6"
+    },
+    "field_of_view_deg": "360 pan / 70 tilt",
+    "night_vision": {
+      "type": "ir"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 128,
+      "nvr_compatible": true,
+      "cloud": true,
+      "notes": "Up to 128GB microSD; HomeBase S380 compatible; free cloud backup, no monthly fee."
+    },
+    "protocols": [
+      "http"
+    ],
+    "ip_rating": "IP65",
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "360 pan / 70 tilt AI auto-tracking",
+      "person/vehicle detection",
+      "detachable SolarPlus panel",
+      "spotlight",
+      "no monthly fee"
+    ],
+    "release_notes": "Battery/solar 2K pan-tilt SoloCam. protocols http-only (not on Eufy's RTSP-support list).",
+    "sources": [
+      "https://www.eufy.com/products/t8171121"
+    ],
+    "last_verified": "2026-07-04",
+    "status": "available",
+    "environment": [
+      "outdoor"
     ]
   },
   {
@@ -65158,12 +66228,93 @@
     "operating_temp_c": "-20 to 50",
     "release_year": 2022,
     "sources": [
-      "https://support.eufy.com/s/article/eufy-SoloCam-E40-FAQ",
+      "https://service.eufy.com/article-description/eufy-SoloCam-E40-FAQ",
       "https://service.eufy.com/article-description/Introducing-eufy-SoloCam-E40"
     ],
     "power_source": [
       "battery"
-    ]
+    ],
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "last_verified": "2026-07-04"
+  },
+  {
+    "id": "eufy-solocam-e42",
+    "brand": "Eufy",
+    "model": "SoloCam E42",
+    "aliases": [
+      "T8173121",
+      "T8173",
+      "eufy Security SoloCam E42"
+    ],
+    "type": "ptz",
+    "connectivity": [
+      "wifi"
+    ],
+    "power_source": [
+      "battery",
+      "solar"
+    ],
+    "resolution": {
+      "megapixels": 8,
+      "max_width": 3840,
+      "max_height": 2160,
+      "label": "4K"
+    },
+    "lens": {
+      "count": 1,
+      "aperture": "f/1.6"
+    },
+    "field_of_view_deg": "130",
+    "night_vision": {
+      "type": "hybrid"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 128,
+      "cloud": false,
+      "notes": "Built-in storage; expandable up to 16TB when paired with HomeBase 3 (S380). No cloud storage support, no monthly fee."
+    },
+    "protocols": [
+      "http"
+    ],
+    "ip_rating": "IP65",
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "360 pan and tilt",
+      "AI tracking",
+      "human detection",
+      "vehicle detection",
+      "facial recognition",
+      "license plate recognition",
+      "PIR motion detection",
+      "full-color spotlight",
+      "strobe light",
+      "siren"
+    ],
+    "dimensions_mm": "91.8 x 91.8 x 129.3",
+    "weight_g": 520,
+    "release_year": 2025,
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "sources": [
+      "https://www.eufy.com/products/t8173121",
+      "https://service.eufy.com/article-description/Basic-Information-of-SoloCam-E42"
+    ],
+    "last_verified": "2026-07-04",
+    "status": "available"
   },
   {
     "id": "eufy-solocam-l20",
@@ -65177,7 +66328,7 @@
     "connectivity": [
       "wifi"
     ],
-    "release_year": 2023,
+    "release_year": 2022,
     "resolution": {
       "megapixels": 2,
       "max_width": 1920,
@@ -65194,7 +66345,7 @@
       "range_m": 8
     },
     "power": {
-      "method": "Wired (AC power)"
+      "method": "Built-in 13,400 mAh rechargeable battery (up to 120 days)"
     },
     "storage": {
       "onboard": true,
@@ -65211,21 +66362,27 @@
       "two_way": true
     },
     "features": [
-      "1080p resolution with spotlight",
+      "1080p wire-free battery camera with spotlight",
       "built-in 8 GB storage",
-      "color night vision",
+      "color night vision (spotlight)",
       "AI human detection",
       "no subscription required",
       "IP67 weatherproof",
       "Alexa / Google Assistant"
     ],
     "sources": [
-      "https://www.eufy.com/products/solocam-l20"
+      "https://service.eufy.com/article-description/Introducing-eufy-SoloCam-L20"
     ],
     "power_source": [
-      "battery",
-      "solar"
-    ]
+      "battery"
+    ],
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "last_verified": "2026-07-04"
   },
   {
     "id": "eufy-solocam-l40",
@@ -65239,7 +66396,7 @@
     "connectivity": [
       "wifi"
     ],
-    "release_year": 2023,
+    "release_year": 2022,
     "resolution": {
       "megapixels": 4,
       "max_width": 2560,
@@ -65256,7 +66413,7 @@
       "range_m": 10
     },
     "power": {
-      "method": "Wired (AC power)"
+      "method": "Built-in 13,400 mAh rechargeable battery (up to 120 days)"
     },
     "storage": {
       "onboard": true,
@@ -65273,100 +66430,180 @@
       "two_way": true
     },
     "features": [
-      "2K resolution with spotlight",
+      "2K wire-free battery camera with spotlight",
       "built-in 8 GB storage",
-      "color night vision",
+      "color night vision (spotlight)",
       "AI human detection",
       "no subscription required",
       "IP67 weatherproof",
       "Alexa / Google Assistant"
     ],
     "sources": [
-      "https://www.eufy.com/products/solocam-l40"
+      "https://service.eufy.com/article-description/Introducing-eufy-SoloCam-L40"
     ],
     "power_source": [
-      "battery",
-      "solar"
-    ]
-  },
-  {
-    "id": "eufy-solocam-s220-uk",
-    "brand": "Eufy",
-    "model": "SoloCam S220 (UK)",
-    "aliases": [
-      "EufySoloCam Solar S220"
+      "battery"
     ],
-    "type": "bullet",
-    "connectivity": [
-      "wifi"
+    "environment": [
+      "outdoor"
     ],
-    "release_year": 2022,
     "markets": [
-      "UK",
-      "EU"
+      "global"
     ],
-    "resolution": {
-      "megapixels": 2,
-      "max_width": 1920,
-      "max_height": 1080,
-      "label": "2K HD"
-    },
-    "lens": {
-      "count": 1,
-      "varifocal": false
-    },
-    "field_of_view_deg": "135 diagonal",
-    "night_vision": {
-      "type": "color",
-      "range_m": 8
-    },
-    "power": {
-      "method": "Integrated solar panel + built-in battery (wire-free)"
-    },
-    "storage": {
-      "onboard": true,
-      "nvr_compatible": false,
-      "cloud": false
-    },
-    "protocols": [
-      "http"
-    ],
-    "ip_rating": "IP67",
-    "audio": {
-      "microphone": true,
-      "speaker": true,
-      "two_way": true
-    },
-    "features": [
-      "solar-powered always-on",
-      "2K color night vision",
-      "AI person detection",
-      "no subscription fee",
-      "built-in 8GB storage",
-      "Alexa / Google HomeKit",
-      "popular UK Amazon choice"
-    ],
-    "sources": [
-      "https://www.eufy.com/en-gb/"
-    ],
-    "power_source": [
-      "battery",
-      "solar"
-    ]
+    "last_verified": "2026-07-04"
   },
   {
     "id": "eufy-solocam-s230",
     "brand": "Eufy",
     "model": "SoloCam S230",
     "aliases": [
-      "T8134",
-      "SoloCam S230 Solar"
+      "T81243W1",
+      "SoloCam S230 (S40) Solar"
     ],
     "type": "bullet",
     "connectivity": [
       "wifi"
     ],
     "release_year": 2023,
+    "markets": [
+      "global"
+    ],
+    "resolution": {
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "2K"
+    },
+    "sensor": "1/2.8\" CMOS",
+    "lens": {
+      "count": 1,
+      "aperture": "f/1.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "130",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 8
+    },
+    "power": {
+      "method": "Integrated solar panel + built-in rechargeable battery"
+    },
+    "storage": {
+      "onboard": true,
+      "nvr_compatible": false,
+      "cloud": false,
+      "notes": "8 GB built-in eMMC; HomeBase 3 (S380) compatible up to 16 TB"
+    },
+    "protocols": [
+      "http"
+    ],
+    "ip_rating": "IP67",
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "2K (2304x1296) resolution",
+      "600-lumen spotlight color night vision + IR",
+      "AI human detection",
+      "solar continuous power",
+      "no subscription fee",
+      "8 GB built-in eMMC",
+      "IP67 weatherproof",
+      "Alexa / Google Assistant"
+    ],
+    "sources": [
+      "https://www.eufy.com/hr-en/products/t81243w1",
+      "https://service.eufy.com/product-description/a085g000000Nm47AAC/solocam-s230"
+    ],
+    "power_source": [
+      "battery",
+      "solar"
+    ],
+    "last_verified": "2026-07-04"
+  },
+  {
+    "id": "eufy-solocam-s340",
+    "brand": "Eufy",
+    "model": "SoloCam S340",
+    "aliases": [
+      "T81701W1",
+      "3K Dual-Lens Solar Pan & Tilt"
+    ],
+    "type": "dual-lens",
+    "connectivity": [
+      "wifi"
+    ],
+    "release_year": 2024,
+    "markets": [
+      "global"
+    ],
+    "resolution": {
+      "megapixels": 5,
+      "max_width": 2880,
+      "max_height": 1620,
+      "label": "3K wide + 2K telephoto dual-lens"
+    },
+    "lens": {
+      "count": 2,
+      "focal_length_mm": "Dual: 3K wide + 2K telephoto (hybrid 8x zoom)",
+      "aperture": "f/1.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "135",
+    "night_vision": {
+      "type": "color"
+    },
+    "power": {
+      "method": "Adjustable/removable 2.2W solar panel + built-in rechargeable battery"
+    },
+    "storage": {
+      "onboard": true,
+      "nvr_compatible": false,
+      "cloud": false,
+      "notes": "8 GB built-in eMMC; HomeBase 3 (S380) compatible"
+    },
+    "protocols": [
+      "http"
+    ],
+    "ip_rating": "IP67",
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "dual-lens: 3K wide + 2K 8x hybrid-zoom telephoto",
+      "355 pan / 70 tilt with auto-tracking",
+      "dual solar panels, always-on power",
+      "color night vision",
+      "no subscription fee",
+      "local HomeBase storage",
+      "Alexa / Google Assistant"
+    ],
+    "operating_temp_c": "-20 to 50",
+    "sources": [
+      "https://www.eufy.com/products/t81701w1"
+    ],
+    "power_source": [
+      "battery",
+      "solar"
+    ],
+    "last_verified": "2026-07-04"
+  },
+  {
+    "id": "eufy-solocam-s40",
+    "brand": "Eufy",
+    "model": "SoloCam S40",
+    "aliases": [
+      "T81241W1",
+      "SoloCam S230"
+    ],
+    "type": "bullet",
+    "connectivity": [
+      "wifi"
+    ],
     "resolution": {
       "megapixels": 4,
       "max_width": 2560,
@@ -65377,406 +66614,13 @@
       "count": 1,
       "varifocal": false
     },
-    "field_of_view_deg": "135 diagonal",
-    "night_vision": {
-      "type": "color",
-      "range_m": 10
-    },
-    "power": {
-      "method": "Solar panel + rechargeable battery"
-    },
-    "storage": {
-      "onboard": true,
-      "nvr_compatible": false,
-      "cloud": false
-    },
-    "protocols": [
-      "http"
-    ],
-    "ip_rating": "IP67",
-    "audio": {
-      "microphone": true,
-      "speaker": true,
-      "two_way": true
-    },
-    "features": [
-      "2K resolution with solar charging",
-      "built-in 8 GB storage",
-      "color night vision with spotlight",
-      "AI human detection",
-      "no subscription required",
-      "no hub needed",
-      "IP67 weatherproof",
-      "Alexa / Google Assistant"
-    ],
-    "sources": [
-      "https://www.eufy.com/products/solocam-s230"
-    ],
-    "power_source": [
-      "battery",
-      "solar"
-    ]
-  },
-  {
-    "id": "eufy-solocam-s340",
-    "brand": "Eufy",
-    "model": "SoloCam S340",
-    "aliases": [
-      "T88301D1",
-      "4K Dual-Lens Solar"
-    ],
-    "type": "dual-lens",
-    "connectivity": [
-      "wifi"
-    ],
-    "release_year": 2024,
-    "resolution": {
-      "megapixels": 8,
-      "label": "4K + 2K dual-lens"
-    },
-    "lens": {
-      "count": 2,
-      "focal_length_mm": "Wide 4K + 8x zoom tele",
-      "varifocal": false
-    },
-    "field_of_view_deg": "135 wide + 8x zoom",
-    "night_vision": {
-      "type": "color",
-      "range_m": 12
-    },
-    "power": {
-      "method": "Dual solar panels (continuously powered)"
-    },
-    "storage": {
-      "onboard": true,
-      "nvr_compatible": false,
-      "cloud": false
-    },
-    "protocols": [
-      "http"
-    ],
-    "ip_rating": "IP67",
-    "audio": {
-      "microphone": true,
-      "speaker": true,
-      "two_way": true
-    },
-    "features": [
-      "dual solar panels always-on",
-      "4K wide + 8x optical zoom tele",
-      "auto-tracking",
-      "BionicMind AI face recognition",
-      "color night vision",
-      "no subscription fee",
-      "local HomeBase storage",
-      "Alexa / Google"
-    ],
-    "sources": [
-      "https://www.eufy.com/products/solocam-s340"
-    ],
-    "power_source": [
-      "battery",
-      "solar"
-    ]
-  },
-  {
-    "id": "eufy-solocam-s340-au",
-    "brand": "Eufy",
-    "model": "SoloCam S340 (Australia)",
-    "aliases": [
-      "Eufy SoloCam S340 4K Dual Solar AU"
-    ],
-    "type": "dual-lens",
-    "connectivity": [
-      "wifi"
-    ],
-    "release_year": 2024,
-    "markets": [
-      "AU"
-    ],
-    "resolution": {
-      "megapixels": 8,
-      "label": "4K + 8x zoom dual-lens solar"
-    },
-    "lens": {
-      "count": 2,
-      "focal_length_mm": "Wide 4K + 8x zoom tele",
-      "varifocal": false
-    },
-    "field_of_view_deg": "135 wide + 8x zoom",
-    "night_vision": {
-      "type": "color",
-      "range_m": 12
-    },
-    "power": {
-      "method": "Dual solar panels (always-on)"
-    },
-    "storage": {
-      "onboard": true,
-      "nvr_compatible": false,
-      "cloud": false
-    },
-    "protocols": [
-      "http"
-    ],
-    "ip_rating": "IP67",
-    "audio": {
-      "microphone": true,
-      "speaker": true,
-      "two_way": true
-    },
-    "features": [
-      "dual solar panels always-on",
-      "no subscription fee",
-      "4K wide + 8x optical zoom",
-      "auto-tracking",
-      "BionicMind AI face recognition",
-      "colour night vision",
-      "local HomeBase storage",
-      "Apple HomeKit / Alexa / Google",
-      "IP67",
-      "JB Hi-Fi / The Good Guys AU stocked"
-    ],
-    "sources": [
-      "https://www.eufy.com/au-en/"
-    ],
-    "power_source": [
-      "battery",
-      "solar"
-    ]
-  },
-  {
-    "id": "eufy-solocam-s340-ca",
-    "brand": "Eufy",
-    "model": "SoloCam S340 (Canada)",
-    "aliases": [
-      "Eufy SoloCam S340 4K Solar Dual-Lens CA"
-    ],
-    "type": "dual-lens",
-    "connectivity": [
-      "wifi"
-    ],
-    "release_year": 2024,
-    "markets": [
-      "CA",
-      "US"
-    ],
-    "resolution": {
-      "megapixels": 8,
-      "label": "4K wide + 8x zoom dual-lens"
-    },
-    "lens": {
-      "count": 2,
-      "focal_length_mm": "Wide 4K + 8x optical tele",
-      "varifocal": false
-    },
-    "field_of_view_deg": "135 wide + 8x zoom",
-    "night_vision": {
-      "type": "color",
-      "range_m": 12
-    },
-    "power": {
-      "method": "Dual solar panels (always-on, heated base optional)"
-    },
-    "storage": {
-      "onboard": true,
-      "nvr_compatible": false,
-      "cloud": false
-    },
-    "protocols": [
-      "http"
-    ],
-    "ip_rating": "IP67",
-    "audio": {
-      "microphone": true,
-      "speaker": true,
-      "two_way": true
-    },
-    "features": [
-      "dual solar panel always-on",
-      "no subscription fee (key Canada differentiator)",
-      "4K + 8x zoom dual-lens",
-      "auto-tracking",
-      "BionicMind AI face recognition",
-      "color night vision",
-      "local HomeBase storage",
-      "Alexa / Google / Apple HomeKit",
-      "IP67",
-      "rated -20°C",
-      "Best Buy Canada top pick"
-    ],
-    "sources": [
-      "https://www.eufy.com/ca-en/"
-    ],
-    "power_source": [
-      "battery",
-      "solar"
-    ]
-  },
-  {
-    "id": "eufy-solocam-s340-ch",
-    "brand": "Eufy",
-    "model": "SoloCam S340 (Switzerland)",
-    "aliases": [
-      "Eufy SoloCam S340 4K Solar CH/AT"
-    ],
-    "type": "dual-lens",
-    "connectivity": [
-      "wifi"
-    ],
-    "release_year": 2024,
-    "markets": [
-      "CH",
-      "AT",
-      "EU"
-    ],
-    "resolution": {
-      "megapixels": 8,
-      "label": "4K + 8x zoom dual-lens solar"
-    },
-    "lens": {
-      "count": 2,
-      "focal_length_mm": "Wide 4K + 8x tele",
-      "varifocal": false
-    },
-    "field_of_view_deg": "135 wide + 8x zoom",
-    "night_vision": {
-      "type": "color",
-      "range_m": 12
-    },
-    "power": {
-      "method": "Dual solar panels (always-on)"
-    },
-    "storage": {
-      "onboard": true,
-      "nvr_compatible": false,
-      "cloud": false
-    },
-    "protocols": [
-      "http"
-    ],
-    "ip_rating": "IP67",
-    "audio": {
-      "microphone": true,
-      "speaker": true,
-      "two_way": true
-    },
-    "features": [
-      "dual solar always-on",
-      "NO subscription fees (key CH/AT differentiator)",
-      "4K wide + 8x zoom",
-      "auto-tracking",
-      "BionicMind AI face recognition",
-      "color night vision",
-      "local HomeBase storage",
-      "Apple HomeKit / Alexa / Google",
-      "IP67",
-      "Digitec / Galaxus CH top pick no-fee camera"
-    ],
-    "sources": [
-      "https://www.eufy.com/ch-de/",
-      "https://www.digitec.ch/"
-    ],
-    "power_source": [
-      "battery",
-      "solar"
-    ]
-  },
-  {
-    "id": "eufy-solocam-s340-eu",
-    "brand": "Eufy",
-    "model": "SoloCam S340 (EU)",
-    "aliases": [
-      "Eufy SoloCam S340 4K Solar EU"
-    ],
-    "type": "dual-lens",
-    "connectivity": [
-      "wifi"
-    ],
-    "release_year": 2024,
-    "markets": [
-      "DE",
-      "FR",
-      "ES",
-      "EU"
-    ],
-    "resolution": {
-      "megapixels": 8,
-      "label": "4K + 2K dual-lens solar"
-    },
-    "lens": {
-      "count": 2,
-      "focal_length_mm": "Wide 4K + 8x zoom tele",
-      "varifocal": false
-    },
-    "field_of_view_deg": "135 wide + 8x zoom",
-    "night_vision": {
-      "type": "color",
-      "range_m": 12
-    },
-    "power": {
-      "method": "Dual solar panels (always-on)"
-    },
-    "storage": {
-      "onboard": true,
-      "nvr_compatible": false,
-      "cloud": false
-    },
-    "protocols": [
-      "http"
-    ],
-    "ip_rating": "IP67",
-    "audio": {
-      "microphone": true,
-      "speaker": true,
-      "two_way": true
-    },
-    "features": [
-      "dual solar panels always-on",
-      "4K wide + 8x optical zoom tele",
-      "auto-tracking",
-      "AI face recognition (BionicMind)",
-      "color night vision",
-      "NO subscription fee",
-      "local HomeBase storage",
-      "Alexa / Google / Apple HomeKit",
-      "IP67",
-      "popular EU Amazon #1 no-fee camera"
-    ],
-    "sources": [
-      "https://www.eufy.com/de-de/"
-    ],
-    "power_source": [
-      "battery",
-      "solar"
-    ]
-  },
-  {
-    "id": "eufy-solocam-s40",
-    "brand": "Eufy",
-    "model": "SoloCam S40",
-    "aliases": [
-      "T81241W1"
-    ],
-    "type": "bullet",
-    "connectivity": [
-      "wifi"
-    ],
-    "resolution": {
-      "megapixels": 4,
-      "label": "2K"
-    },
-    "lens": {
-      "count": 1,
-      "varifocal": false
-    },
-    "field_of_view_deg": "90 diagonal",
+    "field_of_view_deg": "140 diagonal",
     "night_vision": {
       "type": "color",
       "range_m": 8
     },
     "power": {
-      "method": "Built-in rechargeable battery + integrated solar panel"
+      "method": "Built-in 13,400 mAh rechargeable battery + integrated solar panel"
     },
     "storage": {
       "onboard": true,
@@ -65794,8 +66638,8 @@
     },
     "features": [
       "integrated solar panel charging",
-      "built-in spotlight for color night vision",
-      "AI person detection",
+      "600-lumen built-in spotlight for color night vision",
+      "AI human detection",
       "8 GB built-in eMMC storage",
       "no subscription fee",
       "90 dB siren",
@@ -65803,46 +66647,55 @@
     ],
     "release_year": 2022,
     "sources": [
-      "https://www.eufy.com/products/t8124"
+      "https://service.eufy.com/article-description/Introducing-eufy-SoloCam-S40"
     ],
     "power_source": [
       "battery",
       "solar"
-    ]
+    ],
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "last_verified": "2026-07-04"
   },
   {
-    "id": "eufy-video-doorbell-dual",
+    "id": "eufy-video-doorbell-c30",
     "brand": "Eufy",
-    "model": "Video Doorbell Dual (E8213)",
+    "model": "Video Doorbell C30",
+    "aliases": [
+      "T8224311",
+      "T8224111",
+      "T8224Z11",
+      "eufy Security Video Doorbell C30"
+    ],
     "type": "doorbell",
     "connectivity": [
       "wifi"
     ],
+    "power_source": [
+      "battery"
+    ],
     "resolution": {
-      "megapixels": 2,
-      "max_width": 1920,
-      "max_height": 1080,
-      "label": "1080p"
+      "megapixels": 3.7,
+      "max_width": 2560,
+      "max_height": 1440,
+      "label": "2K"
     },
-    "lens": {
-      "count": 2,
-      "varifocal": false
-    },
-    "field_of_view_deg": "180 diagonal (dual)",
     "night_vision": {
-      "type": "color",
-      "range_m": 5
+      "type": "ir"
     },
-    "power": {
-      "method": "Built-in rechargeable battery (6 months) / hardwired 16-24 VAC"
-    },
+    "field_of_view_deg": "140",
     "storage": {
       "onboard": true,
+      "max_microsd_gb": 128,
       "nvr_compatible": false,
-      "cloud": false
+      "cloud": true,
+      "notes": "Local microSD up to 128 GB with no subscription; optional cloud backup. Pairs with eufy HomeBase S280/S380 and MiniBase Chime (T8023) for expandable storage."
     },
     "protocols": [
-      "rtsp",
       "http"
     ],
     "ip_rating": "IP65",
@@ -65852,35 +66705,170 @@
       "two_way": true
     },
     "features": [
-      "dual-lens (door + package view)",
-      "AI person detection",
-      "package detection",
-      "no subscription fee",
-      "8 GB built-in storage",
-      "Alexa / Google integration",
-      "HomeBase 2 compatible (optional)"
+      "person detection",
+      "motion detection",
+      "two-way audio",
+      "live video call",
+      "2.4GHz Wi-Fi (no HomeKit)"
     ],
-    "release_year": 2022,
+    "dimensions_mm": "50 x 140 (W x H)",
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "release_year": 2025,
     "sources": [
-      "https://www.eufy.com/video-doorbells"
+      "https://www.eufy.com/eu-en/products/t8224311",
+      "https://www.eufy.com/products/t8224111",
+      "https://service.eufy.com/article-description/Video-Doorbell-C30-User-Guide-T8224"
+    ],
+    "last_verified": "2026-07-04",
+    "status": "available"
+  },
+  {
+    "id": "eufy-video-doorbell-c31",
+    "brand": "Eufy",
+    "model": "Video Doorbell C31",
+    "aliases": [
+      "T8223111",
+      "E8223111",
+      "T8223112",
+      "eufy Security Video Doorbell C31",
+      "Video Doorbell C31 with Battery Pack"
+    ],
+    "type": "doorbell",
+    "connectivity": [
+      "wifi"
     ],
     "power_source": [
       "battery",
       "ac-mains"
     ],
+    "resolution": {
+      "megapixels": 4.9,
+      "max_width": 2560,
+      "max_height": 1920,
+      "label": "2K"
+    },
+    "night_vision": {
+      "type": "ir"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 128,
+      "nvr_compatible": false,
+      "cloud": true,
+      "notes": "Local microSD up to 128 GB with no subscription fee. Compatible with eufy HomeBase S280/S380 (up to 16 TB expandable) and MiniBase Chime (T8023); optional cloud backup. 24/7 recording available when hardwired (16-24V, 30VA transformer)."
+    },
+    "protocols": [
+      "http"
+    ],
+    "ip_rating": "IP65",
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "person detection",
+      "motion detection",
+      "two-way audio",
+      "live video call",
+      "24/7 recording (when hardwired)",
+      "5-second pre-roll",
+      "4:3 head-to-toe view (no HomeKit)"
+    ],
+    "operating_temp_c": "-20 to 50",
+    "dimensions_mm": "148 x 53 x 31",
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "release_year": 2025,
+    "sources": [
+      "https://www.eufy.com/products/t8223111",
+      "https://www.eufy.com/products/e8223111",
+      "https://service.eufy.com/product-description/a08J1000000YA4KIAW"
+    ],
+    "last_verified": "2026-07-04",
+    "status": "available"
+  },
+  {
+    "id": "eufy-video-doorbell-dual",
+    "brand": "Eufy",
+    "model": "Video Doorbell Dual (E8213)",
+    "aliases": [
+      "T8213",
+      "eufy Video Doorbell Dual 2K"
+    ],
+    "type": "doorbell",
+    "connectivity": [
+      "wifi"
+    ],
+    "resolution": {
+      "megapixels": 4,
+      "max_width": 2560,
+      "max_height": 1920,
+      "label": "2K (dual)"
+    },
+    "lens": {
+      "count": 2,
+      "varifocal": false
+    },
+    "field_of_view_deg": "front + downward package view",
+    "night_vision": {
+      "type": "ir"
+    },
+    "power": {
+      "method": "Built-in rechargeable battery (6 months) / hardwired 16-24 VAC"
+    },
+    "storage": {
+      "onboard": true,
+      "nvr_compatible": false,
+      "cloud": false,
+      "notes": "16 GB stored on included HomeBase"
+    },
+    "protocols": [
+      "http"
+    ],
+    "ip_rating": "IP65",
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "dual-lens (door + downward package view)",
+      "AI person detection",
+      "package detection",
+      "no subscription fee",
+      "local HomeBase storage",
+      "Alexa / Google integration"
+    ],
+    "release_year": 2022,
+    "sources": [
+      "https://www.eufy.com/products/e8213181",
+      "https://service.eufy.com/article-description/Does-the-Video-Doorbell-Dual-Wired-support-RTSP"
+    ],
+    "power_source": [
+      "battery",
+      "ac-mains"
+    ],
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "last_verified": "2026-07-04",
     "configs": {
-      "frigate": {
-        "detect": {
-          "width": 720,
-          "height": 960,
-          "fps": 5
-        },
-        "rtsp_url_template": "rtsp://{ip}:8554/live0",
-        "notes": "RTSP must be enabled in Eufy app. Dual-lens doorbell — only the main lens streams via RTSP. Portrait aspect — set detect to 720x960. Hardwired recommended for continuous RTSP."
-      },
       "home_assistant": {
         "integration": "eufy_security",
-        "notes": "Use eufy_security HACS integration. Doorbell press exposed as event. Dual-lens: only main camera accessible via RTSP."
+        "notes": "Use the eufy_security HACS integration (P2P live stream). Doorbell press exposed as event. No native RTSP/ONVIF — eufy confirms the Video Doorbell Dual does not support RTSP."
       }
     }
   },
@@ -65889,7 +66877,8 @@
     "brand": "Eufy",
     "model": "Video Doorbell E340",
     "aliases": [
-      "Eufy E340 Dual Camera Video Doorbell"
+      "T8214111",
+      "eufy E340 Dual Camera Video Doorbell"
     ],
     "type": "doorbell",
     "connectivity": [
@@ -65898,25 +66887,27 @@
     "release_year": 2023,
     "resolution": {
       "megapixels": 4,
-      "label": "Dual 2K: wide + telephoto"
+      "max_width": 2048,
+      "max_height": 1536,
+      "label": "Dual: 2K front (2048x1536) + 1080p package (1600x1200)"
     },
     "lens": {
       "count": 2,
-      "focal_length_mm": "Wide 2K + standard 2K (fixed)",
       "varifocal": false
     },
-    "field_of_view_deg": "180 wide + 50 tele",
+    "field_of_view_deg": "wide front + downward package view",
     "night_vision": {
       "type": "color",
       "range_m": 5
     },
     "power": {
-      "method": "Hardwired (existing doorbell wiring) / battery"
+      "method": "Removable 6500 mAh battery (up to 4 months) / hardwired 16-24 VAC (10 VA) or 19V 0.6A DC adapter"
     },
     "storage": {
       "onboard": true,
       "nvr_compatible": false,
-      "cloud": false
+      "cloud": false,
+      "notes": "8 GB built-in eMMC; expandable via HomeBase 2/3"
     },
     "protocols": [
       "rtsp",
@@ -65929,23 +66920,31 @@
       "two_way": true
     },
     "features": [
-      "dual-camera doorbell (wide + telephoto simultaneous)",
-      "panoramic 180° + close-up view",
-      "BionicMind AI face recognition",
-      "color night vision",
+      "dual-camera doorbell (2K front + downward package cam)",
+      "head-to-toe view",
+      "dual-light color night vision",
+      "AI motion / package detection",
       "no subscription fee",
       "local HomeBase storage",
-      "HomeKit / Alexa / Google",
+      "Alexa / Google (no HomeKit)",
       "two-way audio",
       "IP65"
     ],
     "sources": [
-      "https://www.eufy.com/products/video-doorbell-e340"
+      "https://www.eufy.com/products/t8214111",
+      "https://service.eufy.com/article-description/Understanding-the-Specifications-of-the-Video-Doorbell-E340"
     ],
     "power_source": [
       "battery",
       "ac-mains"
     ],
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "last_verified": "2026-07-04",
     "configs": {
       "frigate": {
         "detect": {
@@ -65954,11 +66953,16 @@
           "fps": 5
         },
         "rtsp_url_template": "rtsp://{ip}:8554/live0",
-        "notes": "RTSP must be enabled per-camera in the Eufy app (Settings > Storage > NAS > RTSP). Portrait aspect — set detect to 720x960. No ONVIF support. RTSP stream may drop when on battery; hardwired recommended for Frigate."
+        "notes": "RTSP is served via the HomeBase (Settings > Storage > NAS/RTSP), not the doorbell directly. Portrait aspect — set detect to 720x960. No ONVIF. Hardwired recommended for continuous RTSP.",
+        "verified": false
       },
       "home_assistant": {
         "integration": "eufy_security",
-        "notes": "Use eufy_security HACS integration. RTSP must be enabled in Eufy app. Doorbell press exposed as event. Local RTSP available when enabled."
+        "notes": "Use eufy_security HACS integration. RTSP available via HomeBase when enabled. Doorbell press exposed as event."
+      },
+      "blue_iris": {
+        "profile": "Generic/RTSP",
+        "notes": "Use the HomeBase RTSP URL as a Generic/RTSP source (no ONVIF). Portrait aspect ratio."
       }
     }
   },
@@ -65968,39 +66972,40 @@
     "model": "Video Doorbell S220",
     "aliases": [
       "T8210",
+      "E82101W3",
       "eufy Video Doorbell S220 2K Battery"
     ],
-    "type": "dome",
+    "type": "doorbell",
     "connectivity": [
       "wifi"
     ],
     "release_year": 2024,
     "resolution": {
       "megapixels": 4,
-      "max_width": 2560,
-      "max_height": 1440,
-      "label": "2K QHD"
+      "label": "2K"
     },
     "lens": {
       "count": 1,
       "varifocal": false
     },
-    "field_of_view_deg": "165 diagonal",
+    "field_of_view_deg": "head-to-toe 4:3",
     "night_vision": {
       "type": "ir",
       "range_m": 5
     },
     "power": {
-      "method": "Rechargeable battery / optional wired"
+      "method": "Rechargeable battery (up to 180 days) / hardwired 8-24 VAC"
     },
     "storage": {
       "onboard": true,
       "nvr_compatible": false,
-      "cloud": false
+      "cloud": false,
+      "notes": "16 GB stored on included HomeBase"
     },
     "protocols": [
       "http"
     ],
+    "ip_rating": "IP65",
     "audio": {
       "microphone": true,
       "speaker": true,
@@ -66009,25 +67014,33 @@
     "features": [
       "2K video doorbell",
       "battery or wired installation",
-      "AI human detection",
-      "built-in 4 GB storage",
+      "AI human/face detection",
+      "16 GB storage on HomeBase",
       "no subscription required",
       "Alexa / Google Assistant"
     ],
     "sources": [
-      "https://www.eufy.com/products/video-doorbell-s220"
+      "https://www.eufy.com/products/e82101w3"
     ],
     "power_source": [
-      "battery"
-    ]
+      "battery",
+      "ac-mains"
+    ],
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "last_verified": "2026-07-04"
   },
   {
     "id": "eufy-video-doorbell-s330",
     "brand": "Eufy",
     "model": "Video Doorbell S330",
     "aliases": [
-      "Eufy S330 4K Wired Doorbell",
-      "T8214"
+      "eufy S330 Dual Wired Doorbell",
+      "E8203111"
     ],
     "type": "doorbell",
     "connectivity": [
@@ -66035,29 +67048,27 @@
     ],
     "release_year": 2023,
     "resolution": {
-      "megapixels": 8,
-      "max_width": 3840,
-      "max_height": 2160,
-      "label": "4K UHD"
+      "megapixels": 4,
+      "max_width": 2560,
+      "max_height": 1920,
+      "label": "2K front (2560x1920) + 1080p package (1600x1200)"
     },
     "lens": {
-      "count": 1,
-      "focal_length_mm": "Fixed",
-      "aperture": "F1.8",
+      "count": 2,
       "varifocal": false
     },
-    "field_of_view_deg": "155 diagonal (head-to-toe)",
+    "field_of_view_deg": "160 front + 97 package",
     "night_vision": {
-      "type": "color",
-      "range_m": 5
+      "type": "ir"
     },
     "power": {
-      "method": "Hardwired (existing 16-24V AC wiring) / battery"
+      "method": "Hardwired only (16-24 VAC, 30 VA or more)"
     },
     "storage": {
       "onboard": true,
       "nvr_compatible": false,
-      "cloud": false
+      "cloud": false,
+      "notes": "8 GB built-in (up to 90 days); expandable via HomeBase"
     },
     "protocols": [
       "rtsp",
@@ -66070,22 +67081,29 @@
       "two_way": true
     },
     "features": [
-      "4K UHD head-to-toe video doorbell",
-      "BionicMind AI face recognition",
-      "color night vision",
+      "dual-camera head-to-toe video doorbell (2K front + package cam)",
+      "AI face / package / human detection",
+      "infrared-enhanced night vision (4 IR sensors)",
       "no subscription fee",
       "local HomeBase storage",
-      "HomeKit Secure Video / Alexa / Google",
+      "Alexa / Google (no HomeKit)",
       "two-way audio",
       "IP65"
     ],
     "sources": [
-      "https://www.eufy.com/products/video-doorbell-s330"
+      "https://www.eufy.com/products/e8203111",
+      "https://service.eufy.com/article-description/S330-S300-eufyCam-eufyCam-3-3C-FAQ-Before-You-Buy"
     ],
     "power_source": [
-      "battery",
       "ac-mains"
     ],
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "last_verified": "2026-07-04",
     "configs": {
       "frigate": {
         "detect": {
@@ -66094,13 +67112,86 @@
           "fps": 5
         },
         "rtsp_url_template": "rtsp://{ip}:8554/live0",
-        "notes": "RTSP must be enabled per-camera in the Eufy app (Settings > Storage > NAS > RTSP). Portrait aspect — set detect to 720x960. No ONVIF support. RTSP stream may drop when on battery; hardwired recommended."
+        "notes": "RTSP is served via the HomeBase (Camera Settings > General > Storage > RTSP/NAS), not the doorbell directly. Portrait aspect — set detect to 720x960. No ONVIF. Hardwired doorbell.",
+        "verified": false
       },
       "home_assistant": {
         "integration": "eufy_security",
-        "notes": "Use eufy_security HACS integration. RTSP must be enabled in Eufy app. Doorbell press exposed as event."
+        "notes": "Use eufy_security HACS integration. RTSP available via HomeBase when enabled. Doorbell press exposed as event."
+      },
+      "blue_iris": {
+        "profile": "Generic/RTSP",
+        "notes": "Use the HomeBase RTSP URL as a Generic/RTSP source (no ONVIF). Portrait aspect ratio."
       }
     }
+  },
+  {
+    "id": "eufy-wall-light-cam-s100",
+    "brand": "Eufy",
+    "model": "Wall Light Cam S100",
+    "aliases": [
+      "Wired Wall Light Cam S100",
+      "T84A1111",
+      "T84A1311"
+    ],
+    "type": "floodlight",
+    "connectivity": [
+      "wifi"
+    ],
+    "power_source": [
+      "ac-mains"
+    ],
+    "resolution": {
+      "megapixels": 3.1,
+      "max_width": 2048,
+      "max_height": 1536,
+      "label": "2K"
+    },
+    "lens": {
+      "count": 1,
+      "varifocal": false
+    },
+    "field_of_view_deg": "160",
+    "night_vision": {
+      "type": "color"
+    },
+    "storage": {
+      "onboard": true,
+      "cloud": false,
+      "notes": "4 GB built-in local storage (~25 days of events, no monthly fee); optionally expandable via HomeBase 3 (HomeBase / HomeBase 2 not supported)."
+    },
+    "protocols": [
+      "http"
+    ],
+    "ip_rating": "IP65",
+    "audio": {
+      "microphone": true,
+      "speaker": true
+    },
+    "features": [
+      "person detection",
+      "motion-activated light",
+      "1200-lumen integrated wall light",
+      "color night vision",
+      "5x zoom",
+      "105 dB siren",
+      "dual PIR motion detection (200 degrees)",
+      "works with Amazon Alexa",
+      "works with Google Assistant"
+    ],
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "status": "available",
+    "sources": [
+      "https://www.eufy.com/eufy-security-s100-wired-wall-light-cam",
+      "https://www.eufy.com/eu-en/products/t84a1311",
+      "https://service.eufy.com/article-description/Introducing-S100-Wall-Light-Cam"
+    ],
+    "last_verified": "2026-07-04"
   },
   {
     "id": "ezviz-bc1c-4k",

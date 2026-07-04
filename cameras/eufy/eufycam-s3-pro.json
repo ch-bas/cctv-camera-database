@@ -1,0 +1,105 @@
+{
+  "id": "eufy-eufycam-s3-pro",
+  "brand": "Eufy",
+  "model": "eufyCam S3 Pro",
+  "aliases": [
+    "T81621W1",
+    "eufyCam S3 Pro MaxColor Vision"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "wifi"
+  ],
+  "power_source": [
+    "battery",
+    "solar"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/1.8\" Stacked CMOS",
+  "lens": {
+    "count": 1,
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "112 horizontal / 60 vertical (135 diagonal)",
+  "night_vision": {
+    "type": "color",
+    "range_m": 9
+  },
+  "power": {
+    "method": "Rechargeable battery + solar panel"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": true,
+    "notes": "16GB eMMC on-camera; primary recording to HomeBase 3 (S380), expandable to 16TB. Optional eufy cloud."
+  },
+  "protocols": [
+    "http",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "4K MaxColor Vision full-color night",
+    "radar + PIR dual motion detection",
+    "adaptive spotlight, WDR",
+    "person/vehicle/pet/package detection, face recognition",
+    "cross-camera tracking (HomeBase 3 mesh, up to 16 cams)",
+    "100 dB siren",
+    "HomeKit Secure Video, Alexa, Google",
+    "solar charging, no monthly fee"
+  ],
+  "release_year": 2024,
+  "release_notes": "eufy's 2024 flagship. RTSP is served via the HomeBase, not the camera.",
+  "sources": [
+    "https://www.eufy.com/eufycam-pro",
+    "https://www.eufy.com/products/t81621w1"
+  ],
+  "last_verified": "2026-07-04",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 360,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{homebase_ip}:554/live0",
+      "best_substream": "rtsp://{user}:{pass}@{homebase_ip}:554/live1",
+      "notes": "RTSP is served by the HomeBase, not the camera. Enable in eufy Security app > Camera Settings > Storage/NAS (RTSP).",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "eufy_security",
+      "notes": "No native ONVIF on the camera; use the HomeBase RTSP stream as a Generic Camera, or the eufy-security HACS integration (P2P)."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Eufy is not a Hikvision/ONVIF brand — use the HomeBase RTSP URL as a Generic/RTSP source (no ONVIF)."
+    }
+  },
+  "dimensions_mm": "69 x 82.4 x 143.5",
+  "weight_g": 534,
+  "operating_temp_c": "-20 to 50",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 15
+  },
+  "environment": [
+    "outdoor"
+  ]
+}

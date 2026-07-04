@@ -30,7 +30,7 @@
 
 ## Sources
 
-- https://support.eufy.com/s/article/eufy-SoloCam-E40-FAQ
+- https://service.eufy.com/article-description/eufy-SoloCam-E40-FAQ
 - https://service.eufy.com/article-description/Introducing-eufy-SoloCam-E40
 
 ---

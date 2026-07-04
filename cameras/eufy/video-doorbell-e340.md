@@ -1,6 +1,6 @@
 # Eufy Video Doorbell E340
 
-*Also known as: Eufy E340 Dual Camera Video Doorbell*
+*Also known as: T8214111, eufy E340 Dual Camera Video Doorbell*
 
 | Field | Spec |
 |-------|------|
@@ -8,11 +8,11 @@
 | Model | Video Doorbell E340 |
 | Type | doorbell |
 | Connectivity | wifi |
-| Resolution | Dual 2K: wide + telephoto (4MP) |
-| Lens | 2× Wide 2K + standard 2K (fixed)mm |
-| Field of view | 180 wide + 50 tele° |
+| Resolution | Dual: 2K front (2048x1536) + 1080p package (1600x1200) (4MP, 2048×1536) |
+| Lens | 2× |
+| Field of view | wide front + downward package view° |
 | Night vision | color (5m) |
-| Power | Hardwired (existing doorbell wiring) / battery |
+| Power | Removable 6500 mAh battery (up to 4 months) / hardwired 16-24 VAC (10 VA) or 19V 0.6A DC adapter |
 | Protocols | rtsp, http |
 | IP rating | IP65 |
 | Two-way audio | Yes |
@@ -20,19 +20,20 @@
 
 ## Features
 
-- dual-camera doorbell (wide + telephoto simultaneous)
-- panoramic 180° + close-up view
-- BionicMind AI face recognition
-- color night vision
+- dual-camera doorbell (2K front + downward package cam)
+- head-to-toe view
+- dual-light color night vision
+- AI motion / package detection
 - no subscription fee
 - local HomeBase storage
-- HomeKit / Alexa / Google
+- Alexa / Google (no HomeKit)
 - two-way audio
 - IP65
 
 ## Sources
 
-- https://www.eufy.com/products/video-doorbell-e340
+- https://www.eufy.com/products/t8214111
+- https://service.eufy.com/article-description/Understanding-the-Specifications-of-the-Video-Doorbell-E340
 
 ---
 *Auto-generated from eufy-video-doorbell-e340.json — do not edit by hand.*

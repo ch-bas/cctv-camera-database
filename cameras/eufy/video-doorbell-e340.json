@@ -3,7 +3,8 @@
   "brand": "Eufy",
   "model": "Video Doorbell E340",
   "aliases": [
-    "Eufy E340 Dual Camera Video Doorbell"
+    "T8214111",
+    "eufy E340 Dual Camera Video Doorbell"
   ],
   "type": "doorbell",
   "connectivity": [
@@ -12,25 +13,27 @@
   "release_year": 2023,
   "resolution": {
     "megapixels": 4,
-    "label": "Dual 2K: wide + telephoto"
+    "max_width": 2048,
+    "max_height": 1536,
+    "label": "Dual: 2K front (2048x1536) + 1080p package (1600x1200)"
   },
   "lens": {
     "count": 2,
-    "focal_length_mm": "Wide 2K + standard 2K (fixed)",
     "varifocal": false
   },
-  "field_of_view_deg": "180 wide + 50 tele",
+  "field_of_view_deg": "wide front + downward package view",
   "night_vision": {
     "type": "color",
     "range_m": 5
   },
   "power": {
-    "method": "Hardwired (existing doorbell wiring) / battery"
+    "method": "Removable 6500 mAh battery (up to 4 months) / hardwired 16-24 VAC (10 VA) or 19V 0.6A DC adapter"
   },
   "storage": {
     "onboard": true,
     "nvr_compatible": false,
-    "cloud": false
+    "cloud": false,
+    "notes": "8 GB built-in eMMC; expandable via HomeBase 2/3"
   },
   "protocols": [
     "rtsp",
@@ -43,23 +46,31 @@
     "two_way": true
   },
   "features": [
-    "dual-camera doorbell (wide + telephoto simultaneous)",
-    "panoramic 180° + close-up view",
-    "BionicMind AI face recognition",
-    "color night vision",
+    "dual-camera doorbell (2K front + downward package cam)",
+    "head-to-toe view",
+    "dual-light color night vision",
+    "AI motion / package detection",
     "no subscription fee",
     "local HomeBase storage",
-    "HomeKit / Alexa / Google",
+    "Alexa / Google (no HomeKit)",
     "two-way audio",
     "IP65"
   ],
   "sources": [
-    "https://www.eufy.com/products/video-doorbell-e340"
+    "https://www.eufy.com/products/t8214111",
+    "https://service.eufy.com/article-description/Understanding-the-Specifications-of-the-Video-Doorbell-E340"
   ],
   "power_source": [
     "battery",
     "ac-mains"
   ],
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-04",
   "configs": {
     "frigate": {
       "detect": {
@@ -68,11 +79,16 @@
         "fps": 5
       },
       "rtsp_url_template": "rtsp://{ip}:8554/live0",
-      "notes": "RTSP must be enabled per-camera in the Eufy app (Settings > Storage > NAS > RTSP). Portrait aspect — set detect to 720x960. No ONVIF support. RTSP stream may drop when on battery; hardwired recommended for Frigate."
+      "notes": "RTSP is served via the HomeBase (Settings > Storage > NAS/RTSP), not the doorbell directly. Portrait aspect — set detect to 720x960. No ONVIF. Hardwired recommended for continuous RTSP.",
+      "verified": false
     },
     "home_assistant": {
       "integration": "eufy_security",
-      "notes": "Use eufy_security HACS integration. RTSP must be enabled in Eufy app. Doorbell press exposed as event. Local RTSP available when enabled."
+      "notes": "Use eufy_security HACS integration. RTSP available via HomeBase when enabled. Doorbell press exposed as event."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use the HomeBase RTSP URL as a Generic/RTSP source (no ONVIF). Portrait aspect ratio."
     }
   }
 }
