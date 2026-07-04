@@ -6,6 +6,25 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.21.0] — 2026-07-04
+
+Four more Hanwha Vision cameras, each populated and **verified field-by-field against its official Hanwha datasheet**. Net: **75 → 79 Hanwha cameras**.
+
+### Added
+
+- **PNM-C9022RV** — 8MP IR panoramic camera (5120×1568 stitched, 209°×60° FOV, WiseIR 20m, PoE+ Class 4, IP66/IK10/NEMA4X, digital PTZ, TPM 2.0, power failover).
+- **PNM-9031RV** — 15MP 192° panoramic camera (6720×2240, F1.6, WiseIR 20m, heatmap, PoE+ Class 4; shares the Ø253×170mm housing with the C9022RV).
+- **TNV-C7013RC** — 3MP AI corner-mount camera (anti-ligature, invisible 940nm IR 15m, IP66/IP69/IK11, built-in mic, Direct Cloud, AI person/face/vehicle/LPR).
+- **TNV-8011C** — 5MP corner-mount camera (anti-ligature, IP66/IP6K9K/IK10). Note: this model's datasheet lists **no ONVIF** (SUNAPI/HTTP API only), so `protocols` is `rtsp`/`http` only and its Home Assistant config uses the Generic Camera integration rather than ONVIF.
+
+Corner-mount cameras (TNV) have no dedicated schema `type`, so they use `dome` as the nearest fit (noted in each entry's `aliases`).
+
+### Changed
+
+- Resolution-tier counts: 4K/8MP+ 527 → 529, 4–5MP 749 → 750, 1080p–2MP 447 → 448. PoE-wired 1,209 → 1,213, integration-configs 1,345 → 1,349. Total 1,752 → 1,756; brand count unchanged at 69.
+
+---
+
 ## [1.20.0] — 2026-07-04
 
 Hanwha Vision additions and corrections, all verified against **official Hanwha datasheets** (PDF spec sheets). Net: **71 → 75 Hanwha cameras**.
