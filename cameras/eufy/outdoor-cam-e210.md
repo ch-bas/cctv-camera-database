@@ -1,6 +1,6 @@
 # Eufy Outdoor Cam E210
 
-*Also known as: T8442, eufy Security Outdoor Cam E210*
+*Also known as: T8442, T8442121, eufy Security Outdoor Cam E210, Solo OutdoorCam C22, Outdoor Cam C22*
 
 | Field | Spec |
 |-------|------|

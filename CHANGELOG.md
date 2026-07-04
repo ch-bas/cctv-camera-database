@@ -8,7 +8,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [1.22.0] — 2026-07-04
 
-Full data-quality audit of the **Eufy** (Anker) brand (master audit #28) — all 36 stored entries verified against official `eufy.com` product pages and Eufy's RTSP-support documentation, plus 10 missing 2024-2025 models added from official sources, then a second-pass re-verification of the doorbell line. Unlike the fabricated-spec brands, Eufy was padded mostly with **regional-listing duplicates**. Net: **36 → 37 cameras** (9 removed, 10 added). (Version stacks on the Hikvision v1.20.0 / Annke v1.21.0 work.)
+Full data-quality audit of the **Eufy** (Anker) brand (master audit #28) — all 36 stored entries verified against official `eufy.com` product pages and Eufy's RTSP-support documentation, plus 19 missing models added from official sources (a full lineup-coverage pass across eufy.com's current + legacy catalog), then a second-pass re-verification of the doorbell line. Unlike the fabricated-spec brands, Eufy was padded mostly with **regional-listing duplicates**. Net: **36 → 46 cameras** (9 removed, 19 added). (Version stacks on the Hikvision v1.20.0 / Annke v1.21.0 work.)
 
 ### Removed
 
@@ -41,6 +41,24 @@ The four Eufy video doorbells were re-checked field-by-field against their offic
 - **Video Doorbell E340** — hardwire spec corrected `8-24 VAC` → **`16-24 VAC (10 VA)`** (+ 19V 0.6A DC adapter option); its dual-light **color** night vision confirmed accurate.
 - **Video Doorbell S330** & **Video Doorbell Dual** — night vision corrected **`color` → `ir`** (official spec: "Infrared-Enhanced Night Vision", 4 IR sensors, black-and-white); added a product-spec source to the Dual (previously cited only the RTSP FAQ).
 - **Video Doorbell S220** — confirmed accurate (single-cam 2K, app/cloud-only, no changes).
+
+### Added — lineup coverage pass
+
+A model-by-model coverage check against Eufy's full catalog (current + legacy) surfaced 9 more real, distinct products, each verified against official eufy.com / service.eufy.com pages:
+
+- **eufyCam 2** (T8114) — original 1080p HomeBase battery cam; RTSP via HomeBase.
+- **eufyCam 2C Pro** (T8142 / "eufyCam S220") — 2K spotlight battery cam; RTSP via HomeBase.
+- **eufyCam E** (T8112) — 2018 original 1080p battery cam; app-only. `discontinued`.
+- **eufyCam E40** (T8144121) — 2K MaxColor built-in-solar HomeBase cam; **distinct from SoloCam E40** (HomeBase-required, IP66 vs standalone IP65).
+- **SoloCam E42** (T8173) — 2025 4K pan/tilt solar cam with license-plate/face recognition; distinct from the fixed 2K SoloCam E40.
+- **Indoor Cam C210** (T8419) — 1080p 360° pan/tilt plug-in indoor cam (sits below the 2K C220).
+- **Outdoor Cam E220** (T8441Z21 / "Outdoor Cam Pro" / "Solo OutdoorCam C24") — 2K wired outdoor bullet with RTSP-to-NAS; distinct from the Floodlight Cam E220 and the 1080p Outdoor Cam E210.
+- **Floodlight Cam 1080p** (T8420) — 2019 original wired floodlight cam; app-only (eufy floodlights don't support RTSP). `discontinued`.
+- **Floodlight Cam 2K** (T8424) — 2500-lumen wired floodlight cam; distinct from the "Floodlight Cam E 2K" (E220 / T8422, 2000 lm). `discontinued`.
+
+RTSP added only where confirmed on Eufy's official RTSP-support docs (eufyCam 2, 2C Pro via HomeBase; Outdoor Cam E220 via app-enabled NAS/RTSP), each with `configs.frigate.verified: false` (untested). C210's RTSP was community-sourced only, so it ships app/cloud-only (`http`). `["global"]` markets + `last_verified` on all.
+
+**Alias merges (duplicates, not new entries):** "Indoor Cam 2K" (T8400) folded into **Indoor Cam C120** (its current name); "Outdoor Cam C22" (T8442) folded into **Outdoor Cam E210** (same SKU).
 
 ### Fixed
 

@@ -1,0 +1,84 @@
+{
+  "id": "eufy-outdoor-cam-e220",
+  "brand": "Eufy",
+  "model": "Outdoor Cam E220",
+  "aliases": ["T8441Z21", "T8441", "eufy Security Outdoor Cam E220", "Outdoor Cam Pro", "Solo OutdoorCam C24", "Outdoor Cam C24"],
+  "type": "bullet",
+  "connectivity": ["wifi"],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "2K"
+  },
+  "lens": {
+    "count": 1,
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "130 diagonal",
+  "night_vision": {
+    "type": "color"
+  },
+  "power": {
+    "method": "Wired (5V/1A DC adapter, 20 ft cable; must remain plugged in)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": false,
+    "cloud": false,
+    "notes": "32 GB microSD card included; also records to NAS over RTSP"
+  },
+  "protocols": ["rtsp", "http"],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "2K wired outdoor camera",
+    "built-in spotlight",
+    "color night vision",
+    "AI human / pet / crying detection",
+    "8x digital zoom",
+    "32 GB microSD included",
+    "no subscription required",
+    "RTSP to NAS",
+    "HomeKit / Alexa / Google Assistant",
+    "IP67 weatherproof"
+  ],
+  "operating_temp_c": "-20 to 45",
+  "environment": ["outdoor"],
+  "power_source": ["dc"],
+  "markets": ["global"],
+  "sources": [
+    "https://www.eufy.com/products/t8441z21",
+    "https://service.eufy.com/article-description/Introducing-eufy-Outdoor-Cam-Pro",
+    "https://service.eufy.com/article-description/Differences-Between-eufy-Solo-OutdoorCams"
+  ],
+  "last_verified": "2026-07-04",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 360,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/live1",
+      "notes": "RTSP must first be enabled per-camera in the eufy Security app (Settings > Storage/RTSP). Standalone Wi-Fi cam, no HomeBase, no ONVIF — use a direct RTSP URL.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "eufy_security",
+      "notes": "Use the eufy_security HACS integration, or add the RTSP URL as a Generic Camera. ONVIF not supported."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Add as a Network IP camera with a manual RTSP path (/live0); no ONVIF."
+    }
+  }
+}

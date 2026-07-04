@@ -1,0 +1,56 @@
+{
+  "id": "eufy-eufycam-2",
+  "brand": "Eufy",
+  "model": "eufyCam 2",
+  "aliases": ["T8114", "T81141D1", "eufyCam S211"],
+  "type": "bullet",
+  "connectivity": ["wifi"],
+  "power_source": ["battery"],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "field_of_view_deg": "140",
+  "night_vision": {
+    "type": "ir"
+  },
+  "storage": {
+    "onboard": false,
+    "notes": "Records locally to HomeBase / HomeBase 2 (proprietary hub required); no in-camera microSD. RTSP-to-NAS supported."
+  },
+  "protocols": ["rtsp", "http"],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": ["human detection", "face detection", "365-day battery life", "HomeKit"],
+  "environment": ["outdoor"],
+  "release_year": 2019,
+  "markets": ["global"],
+  "sources": [
+    "https://www.eufy.com/products/t81141D1",
+    "https://service.eufy.com/article-description/Differences-Between-All-Add-on-eufyCams"
+  ],
+  "last_verified": "2026-07-04",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{homebase_ip}:554/live0",
+      "notes": "RTSP is served by the eufy HomeBase (port 554), not the camera itself. Enable RTSP per-camera in the eufy Security app first. eufy is not ONVIF/Hikvision.",
+      "recommended_stream_type": "rtsp",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "eufy_security",
+      "notes": "Use the eufy_security HACS integration; RTSP available via HomeBase when enabled per-camera."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use the HomeBase-served RTSP URL on port 554; eufy is not ONVIF."
+    }
+  }
+}

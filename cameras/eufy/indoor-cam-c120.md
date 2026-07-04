@@ -1,6 +1,6 @@
 # Eufy Indoor Cam C120
 
-*Also known as: T84001W1*
+*Also known as: T84001W1, T8400, Indoor Cam 2K*
 
 | Field | Spec |
 |-------|------|
