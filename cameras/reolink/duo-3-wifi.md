@@ -6,10 +6,10 @@
 | Model | Duo 3 WiFi |
 | Type | dual-lens |
 | Connectivity | wifi |
-| Resolution | 16MP (16MP) |
+| Resolution | 16MP (16MP, 7680×2160) |
 | Sensor | Dual 1/2.7" CMOS (4K each) |
 | Lens | 2× 2.8 (fixed)mm F1.6 |
-| Field of view | 180 horizontal° |
+| Field of view | 180 horizontal / 55 vertical° |
 | Night vision | hybrid (30m) |
 | Power | DC 12V |
 | Storage | microSD ≤ 512GB, NVR |

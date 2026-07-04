@@ -8,8 +8,8 @@
 | Connectivity | ethernet |
 | Resolution | 4K UHD (8MP, 3840×2160) |
 | Sensor | 1/2.8" CMOS |
-| Lens | 1× 2.7-13.5 (5x motorized)mm |
-| Field of view | 110-27 horizontal° |
+| Lens | 1× 2.7-13.5 (5x motorized)mm F1.6 |
+| Field of view | 100-31 horizontal° |
 | Night vision | hybrid (30m) |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 512GB, NVR |

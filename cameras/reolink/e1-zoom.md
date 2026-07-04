@@ -6,14 +6,13 @@
 | Model | E1 Zoom |
 | Type | ptz |
 | Connectivity | wifi |
-| Resolution | 5MP (5MP) |
-| Sensor | 1/2.7" CMOS |
+| Resolution | 4K (8MP, 3840×2160) |
+| Sensor | 1/2.8" CMOS |
 | Lens | 1× 2.8-8mm F1.6 |
-| Field of view | 95-34 horizontal° |
-| Night vision | ir (9m) |
-| Power | DC 5V USB |
-| Storage | microSD ≤ 64GB, NVR |
-| Protocols | rtsp |
+| Night vision | ir (12m) |
+| Power | DC 5V/2A |
+| Storage | microSD ≤ 512GB, NVR |
+| Protocols | rtsp, onvif |
 | IP rating | IP20 |
 | Two-way audio | Yes |
 | Operating temp | -10 to 55°C |
@@ -21,11 +20,12 @@
 
 ## Features
 
-- 5MP indoor WiFi with 3× optical zoom
+- 4K indoor WiFi with 3× optical zoom
 - motorized varifocal
-- 9m IR
-- person detection
-- RTSP
+- 12m IR
+- person/pet detection
+- crying detection
+- ONVIF/RTSP
 - two-way audio
 - Alexa/Google
 - no subscription

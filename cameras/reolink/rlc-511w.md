@@ -9,11 +9,11 @@
 | Resolution | 5MP (5MP) |
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 2.7-12mm F1.6 |
-| Field of view | 80 horizontal° |
+| Field of view | 90-31 horizontal° |
 | Night vision | ir (30m) |
 | Power | DC 12V |
 | Storage | microSD ≤ 128GB, NVR |
-| Protocols | rtsp, onvif |
+| Protocols | rtsp, onvif, rtmp, http, p2p |
 | IP rating | IP66 |
 | Two-way audio | No |
 | Operating temp | -10 to 55°C |
@@ -31,6 +31,8 @@
 ## Sources
 
 - https://reolink.com/product/rlc-511w/
+- https://reolink.com/files/docs/specs/RLC-511W-IP-Camera-Specifications.pdf
+- https://support.reolink.com/articles/900000617826-Which-Reolink-Products-Support-CGI-RTSP-ONVIF/
 
 ---
 *Auto-generated from reolink-rlc-511w.json — do not edit by hand.*

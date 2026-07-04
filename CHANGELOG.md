@@ -6,6 +6,36 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.19.0] — 2026-07-04
+
+Full data-quality re-audit of the **Reolink** brand — all 122 stored cameras re-verified against official `reolink.com` product pages, datasheets, and support articles (part of the master audit #28). Reolink was audited once before (v1.8.0), but these pages draw heavy traffic, so every entry was re-checked from scratch. Net: **122 → 115 cameras**.
+
+### Removed
+
+- **1 ghost model**: `RLC-823A v2` (`rlc-823a-v2`) — no such product exists on Reolink's site (its only "source" was the bare homepage). Removed.
+- **6 duplicate regional listings** of models already in the dataset, all spec-identical to their base entry (same worldwide product, only a localized storefront URL): `RLC-823A (Australia/Canada/Switzerland/EU/MENA)` → fold into `RLC-823A`, and `RLC-810A (India)` → fold into `RLC-810A`. Before deleting, the union of their `markets[]` tags was merged onto the base entries (`RLC-823A` now tagged AU/CA/CH/AT/EU/DE/FR/ES/AE/SA/MENA; `RLC-810A` tagged IN) so no market-filter coverage was lost.
+
+### Fixed
+
+- **Misfiled model**: `rlc-830a-v2.json` did not describe an "RLC-830A v2" (which doesn't exist) — its data, sources, and dimensions were all the real **RLC-840A** (a dome, distinct from the RLC-830A PTZ), which was otherwise missing from the dataset. Renamed the file/`id` to `rlc-840a` and corrected the remaining spec fields against the official RLC-840A page.
+
+Every camera re-verified against official Reolink sources. Most serious errors first:
+
+- **Fabricated regional-variant specs**: 5 of the 7 `RLC-823A` "regional" files described a fictitious fixed-lens 2.8mm bullet camera; the real RLC-823A on every regional storefront is the identical 5x-zoom PTZ dome (now deduplicated, see Removed).
+- **Fabricated zoom lenses**: `RLC-812A` and `RLC-824A` were listed with motorized zoom lenses copied from other models — both are actually fixed-lens (4mm). `RLC-842A` was the inverse: listed as fixed-lens when it's a real 5x motorized zoom. Corrected all three.
+- **Fabricated protocols on cloud-only/NVR-only cameras**: the entire B/D-series (`B400/B500/B800/B1200`, `D400/D500/D800/D1200`) are NVR-kit add-on cameras with no standalone network stack, but carried invented `rtsp`/`onvif` support and fake Frigate/Home-Assistant configs pointing at direct RTSP URLs. Battery models (`Argus 4 Pro`, `Argus MagiCam`, `Argus PT Ultra`, `Argus Track`, `Solar Floodlight`) likewise had fabricated ONVIF/RTSP config blocks. All corrected to reflect real cloud/NVR-only access. ONVIF was also over-claimed on several wired models (`CX820`, `Duo 2 PoE`, `Duo 2V PoE`, `Duo Floodlight PoE`, `RLC-830A`, `RLC-840WA`, `RLC-842A`) whose own official spec pages omit it — removed.
+- **Wrong `type` classification**: `Argus 4 Pro` (bullet → dual-lens 180° stitching), `RLC-423` and `E1 Outdoor`/`E1 Outdoor CX` (bullet → ptz), and a cluster of RLC-8xx domes mislabeled `turret` (`RLC-833A/840WA/842A/843A`-area) — all corrected.
+- **Wrong resolution / stale hardware**: `RLC-511WA` was mislabeled "4K UHD" when it's 5MP; `E1 Zoom` had drifted a full hardware generation behind (5MP → the current 8MP/4K Wi-Fi 6 unit); `Argus Eco` (2MP → 3MP) and `Argus PT` had similar stale-spec drift vs. the currently-sold hardware.
+- **Wrong booleans**: `RLC-520`, `RLC-522`, and `RLC-842A` had `audio.microphone: false` despite official confirmation of a built-in mic; `E1 Outdoor` had two-way audio marked absent when it's supported. Corrected.
+- **Systemic spec drift**: sensor sizes (e.g. the RLC-12xx family's `1/2.3"` → `1/2.49"`), varifocal FOV ranges flattened to a single wrong number, feet/meters unit confusion on IR ranges (`CX410`), a swapped FOV between the `RLC-1212A`/`1224A` twins, and stale microSD capacity ceilings (many PoE models 256 → 512GB) fixed across the brand.
+- `last_verified: 2026-07-04` set on every re-verified entry; unconfirmable values were removed rather than guessed, per the no-fabrication policy (#28).
+
+### Changed
+
+- Resolution-tier counts recomputed after the deletions and corrections: 4K/8MP+ 531 → 525, 4–5MP 747 (unchanged), 1080p–2MP → 446 (the last figure also corrects a stale count carried in prior releases). PoE-wired 1,212 → 1,205, WiFi 480 → 473, integration-config count 1,352 → 1,341 (fabricated configs removed from cloud/NVR-only models). Brand count unchanged at 69.
+
+---
+
 ## [1.18.0] — 2026-07-03
 
 Full data-quality audit of the Ubiquiti brand (issue #40 pattern, part of the master audit #28) — all 26 UniFi Protect cameras re-verified against official sources.

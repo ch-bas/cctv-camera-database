@@ -6,25 +6,26 @@
 | Model | Argus Eco |
 | Type | bullet |
 | Connectivity | wifi |
-| Resolution | 1080p HD (2MP) |
-| Sensor | CMOS |
+| Resolution | 3MP Super HD (3MP, 2304×1296) |
+| Sensor | 1/2.7" CMOS |
 | Lens | 1× |
-| Field of view | 120 diagonal° |
+| Field of view | 100 diagonal° |
 | Night vision | ir (10m) |
 | Power | Rechargeable battery / solar optional |
 | Storage | microSD ≤ 128GB |
 | IP rating | IP65 |
 | Two-way audio | Yes |
 | Operating temp | -10 to 55°C |
-| Released | 2020 |
+| Released | 2019 |
 
 ## Features
 
-- 1080p IR budget battery camera
+- 3MP IR budget battery camera
 - wire-free solar optional
 - motion detection
+- person/vehicle detection
 - no subscription
-- Alexa/Google
+- Google Assistant/Alexa (coming soon per Reolink)
 
 ## Sources
 

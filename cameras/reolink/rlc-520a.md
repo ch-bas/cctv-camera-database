@@ -12,9 +12,9 @@
 | Field of view | 80 horizontal° |
 | Night vision | ir (30m) |
 | Power | PoE (IEEE 802.3af) / DC 12V |
-| Storage | microSD ≤ 512GB, NVR |
-| Protocols | onvif, rtsp, rtmp |
-| IP rating | IP67 |
+| Storage | microSD ≤ 256GB, NVR |
+| Protocols | onvif, rtsp, rtmp, http, p2p |
+| IP rating | IP66 |
 | Two-way audio | No |
 | Operating temp | -10 to 55°C |
 | Released | 2020 |
@@ -31,6 +31,8 @@
 ## Sources
 
 - https://reolink.com/product/rlc-520a/
+- https://home-cdn.reolink.us/wp-content/uploads/public/specs-pdf/rlc-520a-1725957148930-rlc-520a-4.pdf
+- https://support.reolink.com/articles/900000617826-Which-Reolink-Products-Support-CGI-RTSP-ONVIF/
 
 ---
 *Auto-generated from reolink-rlc-520a.json — do not edit by hand.*

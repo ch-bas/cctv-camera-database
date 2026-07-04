@@ -6,11 +6,11 @@
 | Model | Argus 3 2K |
 | Type | bullet |
 | Connectivity | wifi |
-| Resolution | 2K QHD (4MP) |
+| Resolution | 2K QHD (4MP, 2560×1440) |
 | Sensor | 1/3" CMOS |
 | Lens | 1× |
 | Field of view | 122 diagonal° |
-| Night vision | color (10m) |
+| Night vision | hybrid (10m) |
 | Power | Rechargeable battery / solar optional |
 | Storage | microSD ≤ 128GB |
 | IP rating | IP65 |

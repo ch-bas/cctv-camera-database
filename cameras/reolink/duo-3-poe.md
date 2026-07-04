@@ -6,14 +6,14 @@
 | Model | Duo 3 PoE |
 | Type | dual-lens |
 | Connectivity | ethernet |
-| Resolution | 16MP (16MP) |
+| Resolution | 16MP (16MP, 7680×2160) |
 | Sensor | Dual 1/2.7" CMOS (4K per lens) |
-| Lens | 2× 2.8 (fixed)mm |
-| Field of view | 180 horizontal° |
+| Lens | 2× 2.8 (fixed)mm F1.6 |
+| Field of view | 180 horizontal / 55 vertical° |
 | Night vision | hybrid (30m) |
-| Power | PoE (IEEE 802.3af) / DC 12V |
+| Power | PoE (IEEE 802.3af, 48V, active) / DC 12V, 2A, <12W |
 | Storage | microSD ≤ 512GB, NVR |
-| Protocols | onvif, rtsp |
+| Protocols | onvif, rtsp, rtmp, http, p2p |
 | IP rating | IP67 |
 | Two-way audio | Yes |
 | Operating temp | -10 to 55°C |

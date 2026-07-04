@@ -4,30 +4,32 @@
 |-------|------|
 | Brand | Reolink |
 | Model | E1 Outdoor |
-| Type | bullet |
-| Connectivity | wifi |
-| Resolution | 5MP (5MP) |
+| Type | ptz |
+| Connectivity | wifi, ethernet |
+| Resolution | 5MP (5MP, 2560×1920) |
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 2.8-8mm F1.6 |
-| Field of view | 80 horizontal° |
+| Field of view | 90-50 horizontal/53-30 vertical° |
 | Night vision | hybrid (12m) |
 | Power | DC 12V |
-| Storage | microSD ≤ 256GB, NVR |
+| Storage | microSD ≤ 512GB, NVR |
 | Protocols | rtsp, onvif |
 | IP rating | IP65 |
-| Two-way audio | No |
+| Two-way audio | Yes |
 | Operating temp | -10 to 55°C |
 | Released | 2020 |
 
 ## Features
 
-- 5MP outdoor WiFi bullet
-- 30m IR
-- person detection
+- 5MP outdoor WiFi PTZ
+- 3x optical zoom
+- auto-tracking
+- 12m IR
+- person/vehicle/animal detection
 - ONVIF/RTSP
-- IP67
+- IP65
 - no subscription
-- Alexa/Google
+- Google Assistant
 
 ## Sources
 

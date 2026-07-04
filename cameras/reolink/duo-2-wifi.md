@@ -12,7 +12,7 @@
 | Field of view | 180 horizontal / 60 vertical° |
 | Night vision | hybrid (30m) |
 | Power | DC 12V |
-| Storage | microSD ≤ 256GB, NVR |
+| Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | Yes |
@@ -29,7 +29,7 @@
 
 ## Sources
 
-- https://reolink.com/product/reolink-duo-2-wifi/
+- https://reolink.com/product/reolink-duo-wifi/
 
 ---
 *Auto-generated from reolink-duo-2-wifi.json — do not edit by hand.*

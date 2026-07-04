@@ -11,8 +11,9 @@
 | Lens | 1× 2.8 (fixed)mm |
 | Field of view | 105 horizontal / 55 vertical° |
 | Night vision | hybrid (10m) |
-| Power | Built-in rechargeable battery / USB-C / optional Reolink solar panel |
+| Power | Built-in 21.6Wh rechargeable battery / USB-C / optional Reolink solar panel |
 | Storage | microSD ≤ 512GB |
+| Protocols | p2p |
 | IP rating | IP65 |
 | Two-way audio | Yes |
 | Operating temp | -10 to 55°C |
@@ -31,7 +32,9 @@
 
 ## Sources
 
+- https://reolink.com/product/argus-3-ultra/
 - https://reolink.com/us/product/argus-3-ultra/
+- https://reolink.com/blog/reolink-argus-3-ultra-review/
 
 ---
 *Auto-generated from reolink-argus-3-ultra.json — do not edit by hand.*

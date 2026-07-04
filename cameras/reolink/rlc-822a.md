@@ -12,8 +12,8 @@
 | Field of view | 94-50 horizontal° |
 | Night vision | ir (30m) |
 | Power | PoE (802.3af) / DC 12V |
-| Storage | microSD ≤ 512GB, NVR |
-| Protocols | onvif, rtsp |
+| Storage | microSD ≤ 256GB, NVR |
+| Protocols | onvif, rtsp, rtmp |
 | IP rating | IP66 |
 | Two-way audio | No |
 | Operating temp | -10 to 55°C |

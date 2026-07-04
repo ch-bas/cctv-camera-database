@@ -9,61 +9,58 @@
   "release_year": 2021,
   "resolution": {
     "megapixels": 5,
+    "max_width": 2560,
+    "max_height": 1920,
     "label": "5MP"
   },
-  "field_of_view_deg": "80 horizontal",
+  "field_of_view_deg": "80 horizontal / 58 vertical",
   "night_vision": {
     "type": "ir",
     "range_m": 30
   },
   "power": {
-    "method": "PoE 802.3af"
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 10
   },
   "storage": {
     "onboard": false,
     "nvr_compatible": true,
-    "cloud": false
+    "cloud": false,
+    "notes": "Add-on camera; no onboard microSD slot — recording is handled entirely by the paired Reolink NVR."
   },
-  "protocols": [
-    "rtsp",
-    "onvif"
-  ],
   "ip_rating": "IP66",
   "audio": {
-    "microphone": false,
+    "microphone": true,
     "speaker": false,
     "two_way": false
   },
   "features": [
     "Reolink add-on PoE bullet 5MP NVR expansion",
     "30m IR",
-    "IP67",
-    "ONVIF/RTSP",
+    "IP66",
+    "NVR-only — no standalone ONVIF/RTSP (confirmed via Reolink FAQ)",
     "no subscription"
   ],
   "sources": [
-    "https://reolink.com/product/b500/"
+    "https://cdn.reolink.com/files/docs/specs/RLK8-410B4-NVR-Kit-IP-Camera-Specifications.pdf",
+    "https://cdn.reolink.com/files/docs/specs/RLK16-410B8-NVR-Kit-IP-Camera-Specifications.pdf",
+    "https://support.reolink.com/articles/17261883589657-FAQs-B500-D500/"
   ],
+  "last_verified": "2026-07-04",
   "power_source": [
-    "poe"
+    "poe",
+    "dc"
   ],
   "configs": {
     "frigate": {
-      "detect": {
-        "width": 1280,
-        "height": 720,
-        "fps": 5
-      },
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_sub"
+      "notes": "B500 has no standalone RTSP/ONVIF service — it is an add-on camera that only works through a Reolink PoE NVR (e.g. RLN8-410, RLN16-410). Pull this camera's channel from the NVR's own RTSP stream instead of connecting to the camera's IP directly."
     },
     "home_assistant": {
       "integration": "reolink",
-      "notes": "Native Reolink integration auto-discovers via ONVIF on port 8000."
+      "notes": "Not directly discoverable — the camera has no local ONVIF/HTTP API or UID. Add the parent Reolink NVR to the Reolink HA integration instead; this camera's channel is exposed through the NVR."
     },
     "blue_iris": {
-      "profile": "Reolink",
-      "notes": "Select 'Reolink' profile. If not listed, use Generic/ONVIF with RTSP path /h264Preview_01_main."
+      "notes": "Cannot be added directly (no local ONVIF/RTSP). Add the parent Reolink NVR as the video source and pull this camera's channel from the NVR."
     }
   },
   "sensor": "1/2.7\" CMOS",
@@ -80,15 +77,18 @@
     "codecs": [
       "H.264"
     ],
+    "max_fps": 30,
     "streams": [
       {
         "name": "Mainstream",
         "resolution": "2560x1920",
+        "fps": 30,
         "codec": "H.264"
       },
       {
         "name": "Substream",
         "resolution": "640x480",
+        "fps": 7,
         "codec": "H.264"
       }
     ]

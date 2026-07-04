@@ -10,12 +10,12 @@
 | Connectivity | wifi, ethernet |
 | Resolution | 4K UHD (8MP, 3840×2160) |
 | Sensor | 1/2.8" CMOS |
-| Lens | 1× 2.8-13.5 (5x optical zoom)mm |
-| Field of view | 110-27 horizontal° |
-| Night vision | hybrid (30m) |
+| Lens | 1× 2.7-13.5 (5x optical zoom)mm |
+| Field of view | 100-31 horizontal° |
+| Night vision | hybrid (60m) |
 | Power | DC 12V |
 | Storage | microSD ≤ 512GB, NVR |
-| Protocols | onvif, rtsp |
+| Protocols | onvif, rtsp, rtmp |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 | Operating temp | -10 to 50°C |

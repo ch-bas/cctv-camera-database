@@ -5,11 +5,11 @@
 | Brand | Reolink |
 | Model | E1 Pro |
 | Type | ptz |
-| Connectivity | wifi |
+| Connectivity | wifi, ethernet |
 | Resolution | 5MP Super HD (5MP, 2880×1616) |
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 4.0mm F1.6 |
-| Field of view | 104 diagonal° |
+| Field of view | 82 horizontal/43 vertical° |
 | Night vision | ir (12m) |
 | Power | DC 5V/1A |
 | Storage | microSD ≤ 512GB, NVR |
@@ -31,6 +31,7 @@
 ## Sources
 
 - https://reolink.com/product/e1-pro/
+- https://home-cdn.reolink.us/files/docs/specs/E1-Pro-IP-Camera-Specification.pdf
 
 ---
 *Auto-generated from reolink-e1-pro.json — do not edit by hand.*

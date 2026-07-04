@@ -6,10 +6,10 @@
 | Model | Duo 3V PoE |
 | Type | dual-lens |
 | Connectivity | ethernet |
-| Resolution | 16MP (16MP) |
-| Sensor | Dual 1/2.7" CMOS (4K each) |
+| Resolution | 16MP (16MP, 7680×2160) |
+| Sensor | Dual 1/2.8" CMOS (4K each) |
 | Lens | 2× 2.8 (fixed)mm F1.6 |
-| Field of view | 180 horizontal° |
+| Field of view | 180 horizontal / 53 vertical° |
 | Night vision | hybrid (30m) |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 512GB, NVR |

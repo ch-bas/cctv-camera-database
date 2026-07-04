@@ -8,13 +8,14 @@
 | Model | Argus 4 Pro (Austria) |
 | Type | dual-lens |
 | Connectivity | wifi |
-| Resolution | 4K dual-lens 180deg (8MP) |
-| Sensor | 1/2.7" CMOS |
-| Lens | 2× 4mm x2 (fixed)mm F1.6 |
-| Field of view | 180 horizontal° |
+| Resolution | 4K UHD (8MP, 5120×1440) |
+| Sensor | 1/1.8" CMOS |
+| Lens | 2× 4mm x2 (fixed)mm F1.0 |
+| Field of view | 180 horizontal / 50 vertical° |
 | Night vision | color (10m) |
-| Power | Rechargeable battery / solar panel optional |
+| Power | Built-in 5000mAh rechargeable battery / USB-C / Reolink Solar Panel 2 (6W) optional |
 | Storage | microSD ≤ 512GB |
+| Protocols | p2p |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 | Operating temp | -10 to 55°C |
@@ -24,18 +25,18 @@
 
 - 4K 180deg dual-lens ColorX color night vision (no IR needed)
 - WiFi 6 dual-band
-- person/vehicle/animal/package AI detection
+- person/vehicle/animal AI detection
 - no subscription
 - up to 512GB microSD
 - solar optional
 - IP66
 - Alexa / Google
-- available Amazon.at / Conrad AT
 
 ## Sources
 
-- https://reolink.com/at/
-- https://www.amazon.at/
+- https://reolink.com/at/product/argus-4-pro/
+- https://reolink.com/product/argus-4-pro/
+- https://reolink.com/blog/argus-4-pro-review/
 
 ---
 *Auto-generated from reolink-argus-4-pro-at.json — do not edit by hand.*

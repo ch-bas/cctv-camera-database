@@ -9,10 +9,11 @@
 | Resolution | 2K QHD (5MP, 2880×1660) |
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 4mm F1.6 |
-| Field of view | 355 pan/90 tilt° |
+| Field of view | 355 pan/140 tilt° |
 | Night vision | hybrid (10m) |
-| Power | Rechargeable battery / solar optional |
+| Power | 6000mAh rechargeable battery / solar optional / USB-C |
 | Storage | microSD ≤ 128GB |
+| Protocols | p2p |
 | IP rating | IP64 |
 | Two-way audio | Yes |
 | Operating temp | -10 to 55°C |
@@ -26,11 +27,13 @@
 - solar optional
 - two-way audio
 - no subscription
-- IP65
+- IP64
+- cloud/P2P app only — no local ONVIF/RTSP/NVR streaming
 
 ## Sources
 
 - https://reolink.com/product/reolink-go-pt-plus/
+- https://support.reolink.com/articles/900000617826-Which-Reolink-Products-Support-CGI-RTSP-ONVIF/
 
 ---
 *Auto-generated from reolink-go-pt-plus.json — do not edit by hand.*

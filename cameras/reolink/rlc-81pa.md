@@ -1,6 +1,6 @@
 # Reolink RLC-81PA
 
-*Also known as: 4K Pan-Tilt PTZ PoE*
+*Also known as: 4K 180° Pan Rotation PoE*
 
 | Field | Spec |
 |-------|------|
@@ -10,8 +10,8 @@
 | Connectivity | ethernet |
 | Resolution | 4K UHD (8MP, 3840×2160) |
 | Sensor | 1/2.7" CMOS |
-| Lens | 1× 2.8 (fixed)mm |
-| Field of view | 87 horizontal° |
+| Lens | 1× 4.0 (fixed)mm F1.6 |
+| Field of view | 88 horizontal° |
 | Night vision | hybrid (30m) |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
@@ -19,11 +19,11 @@
 | IP rating | IP67 |
 | Two-way audio | Yes |
 | Operating temp | -10 to 55°C |
-| Released | 2022 |
+| Released | 2023 |
 
 ## Features
 
-- 355deg pan / 90deg tilt
+- 180deg pan rotation
 - auto-tracking
 - person/vehicle detection
 - no subscription

@@ -31,6 +31,7 @@
 ## Sources
 
 - https://reolink.com/product/rlc-810a/
+- https://support.reolink.com/articles/900000617826-Which-Reolink-Products-Support-CGI-RTSP-ONVIF/
 
 ---
 *Auto-generated from reolink-rlc-810a.json — do not edit by hand.*

@@ -6,7 +6,7 @@
 | Model | Argus 2E |
 | Type | bullet |
 | Connectivity | wifi |
-| Resolution | 3MP 2K (3MP) |
+| Resolution | 3MP 2K (3MP, 2312×1304) |
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× |
 | Field of view | 120 diagonal° |

@@ -7,13 +7,13 @@
 | Type | bullet |
 | Connectivity | ethernet |
 | Resolution | 4K UHD (8MP, 3840×2160) |
-| Sensor | 1/2.8" CMOS |
-| Lens | 1× 2.8-8 (3x motorized)mm |
-| Field of view | 94-42 horizontal° |
+| Sensor | 1/2.49" CMOS |
+| Lens | 1× 4.0 (fixed)mm |
+| Field of view | 85 horizontal / 44 vertical° |
 | Night vision | color (30m) |
 | Power | PoE (802.3af) / DC 12V |
-| Storage | microSD ≤ 512GB, NVR |
-| Protocols | onvif, rtsp |
+| Storage | microSD ≤ 256GB, NVR |
+| Protocols | onvif, rtsp, rtmp |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 | Operating temp | -10 to 55°C |
@@ -21,7 +21,6 @@
 
 ## Features
 
-- 3x optical zoom
 - spotlight color night vision
 - person/vehicle/animal detection
 - two-way audio

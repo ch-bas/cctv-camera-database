@@ -9,9 +9,9 @@
 | Resolution | 2K QHD (4MP, 2560×1440) |
 | Sensor | 1/3" CMOS |
 | Lens | 2× 2.8 (wide) + 8 (telephoto)mm F1.6 |
-| Field of view | 96-38 horizontal° |
+| Field of view | 96-38 horizontal, 55-21 vertical° |
 | Night vision | hybrid (30m) |
-| Power | Rechargeable battery 155.52Wh / solar panel |
+| Power | Rechargeable battery 10.8V 14400mAh (155.52Wh) / 66W solar panel (included) |
 | Storage | microSD ≤ 256GB |
 | IP rating | IP65 |
 | Two-way audio | Yes |
@@ -32,6 +32,7 @@
 ## Sources
 
 - https://reolink.com/product/trackmix-lte-plus/
+- https://support.reolink.com/articles/29335325593241-Introduction-to-Reolink-TrackMix-LTE-Plus/
 
 ---
 *Auto-generated from reolink-trackmix-lte-plus.json — do not edit by hand.*

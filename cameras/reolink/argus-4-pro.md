@@ -4,12 +4,12 @@
 |-------|------|
 | Brand | Reolink |
 | Model | Argus 4 Pro |
-| Type | bullet |
+| Type | dual-lens |
 | Connectivity | wifi |
-| Resolution | 4K UHD (8MP, 3840×2160) |
-| Sensor | 1/2.7" CMOS |
-| Lens | 1× 2.8 (fixed)mm F1.6 |
-| Field of view | 105 horizontal° |
+| Resolution | 4K UHD (8MP, 5120×1440) |
+| Sensor | 1/1.8" CMOS |
+| Lens | 2× 4 (fixed)mm F1.0 |
+| Field of view | 180 horizontal° |
 | Night vision | color (10m) |
 | Power | Built-in rechargeable battery / USB-C / solar panel optional |
 | Storage | microSD ≤ 512GB |
@@ -21,6 +21,7 @@
 ## Features
 
 - 4K battery/solar
+- dual-lens 180° image stitching, no blind spots
 - dual-band WiFi 2.4/5GHz
 - spotlight color night vision
 - person/vehicle/animal detection

@@ -1,18 +1,18 @@
 # Reolink Argus MagiCam
 
-*Also known as: Power-Efficient Series Qualcomm QCC730*
+*Also known as: Reolink Power-Efficient Series*
 
 | Field | Spec |
 |-------|------|
 | Brand | Reolink |
 | Model | Argus MagiCam |
-| Type | covert |
+| Type | box |
 | Connectivity | wifi |
 | Resolution | 2K (2MP, 1920×1080) |
-| Sensor | CMOS |
-| Lens | 1× Fixedmm |
-| Field of view | 110 diagonal° |
-| Night vision | ir (8m) |
+| Sensor | 1/3.2" CMOS |
+| Lens | 1× 2.3 (fixed)mm F2.2 |
+| Field of view | 132 diagonal° |
+| Night vision | ir |
 | Power | 2x AA lithium batteries (up to 9 months) |
 | Storage | microSD ≤ 256GB |
 | IP rating | IP67 |
@@ -31,7 +31,8 @@
 
 ## Sources
 
-- https://securityjournaluk.com/reolink-launches-new-cameras/
+- https://reolink.com/product/argus-magicam/
+- https://reolink.com/blog/reolink-argus-magicam-review/
 
 ---
 *Auto-generated from reolink-argus-magicam.json — do not edit by hand.*

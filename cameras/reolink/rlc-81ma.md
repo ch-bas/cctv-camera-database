@@ -9,10 +9,10 @@
 | Type | dual-lens |
 | Connectivity | ethernet |
 | Resolution | 4K UHD (8MP, 3840×2160) |
-| Sensor | Dual CMOS (2.8mm wide + 8mm tele) |
-| Lens | 2× |
-| Field of view | Wide 87deg / Tele 30deg° |
-| Night vision | hybrid (30m) |
+| Sensor | 1/2.7" CMOS (x2, wide + telephoto) |
+| Lens | 2× 2.8 (wide) / 8 (tele)mm F1.6 |
+| Field of view | 109-43 horizontal° |
+| Night vision | hybrid (15m) |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |

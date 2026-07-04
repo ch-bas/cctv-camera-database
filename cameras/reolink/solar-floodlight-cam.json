@@ -16,27 +16,30 @@
     "max_height": 1440,
     "label": "4MP 2K"
   },
-  "sensor": "CMOS",
+  "sensor": "1/3\" CMOS",
   "lens": {
     "count": 1,
-    "focal_length_mm": "Fixed",
+    "focal_length_mm": "2.3",
+    "aperture": "F2.2",
     "varifocal": false
   },
-  "field_of_view_deg": "150",
+  "field_of_view_deg": "150 diagonal (124.5 horizontal, 69.6 vertical)",
   "night_vision": {
     "type": "hybrid",
     "range_m": 10
   },
   "power": {
-    "method": "Built-in 3W solar panel + rechargeable battery (wire-free)"
+    "method": "Built-in 3W solar panel + 7800mAh rechargeable battery (wire-free)"
   },
   "storage": {
     "onboard": true,
-    "max_microsd_gb": 256,
+    "max_microsd_gb": 512,
     "nvr_compatible": false,
     "cloud": false
   },
-  "protocols": [],
+  "protocols": [
+    "p2p"
+  ],
   "ip_rating": "IP66",
   "audio": {
     "microphone": true,
@@ -46,35 +49,32 @@
   "features": [
     "solar-powered wire-free floodlight camera",
     "1000-lumen integrated floodlight",
+    "110dB siren",
     "runs all day on 1 hour sunlight",
     "3-month battery without sunlight",
-    "smart AI detection",
+    "person/vehicle/animal AI + PIR detection",
     "no subscription"
   ],
   "sources": [
+    "https://reolink.com/product/reolink-solar-floodlight-cam/",
     "https://reolink.com/blog/reolink-new-products-at-ces/"
   ],
+  "last_verified": "2026-07-04",
   "power_source": [
     "battery",
     "solar"
   ],
   "configs": {
     "frigate": {
-      "detect": {
-        "width": 1280,
-        "height": 720,
-        "fps": 5
-      },
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_sub"
+      "notes": "No local RTSP/ONVIF stream — this is a Reolink cloud/P2P-only battery-solar camera (like the Argus line), so it cannot be added to Frigate as an RTSP source. Video is only accessible via the Reolink app/cloud."
     },
     "home_assistant": {
       "integration": "reolink",
-      "notes": "Native Reolink integration auto-discovers via ONVIF on port 8000."
+      "connection_type": "cloud",
+      "notes": "No confirmed ONVIF/RTSP support on the official spec sheet; only P2P (cloud) connectivity is listed, so local push/poll integration is not expected to work."
     },
     "blue_iris": {
-      "profile": "Reolink",
-      "notes": "Select 'Reolink' profile. If not listed, use Generic/ONVIF with RTSP path /h264Preview_01_main."
+      "notes": "Not usable with Blue Iris — no local RTSP/ONVIF stream is offered by this camera; it is cloud/P2P-only."
     }
   },
   "dimensions_mm": "101.5 x 264 x 161.2",
