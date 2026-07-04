@@ -6,6 +6,23 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.20.0] — 2026-07-04
+
+Eight Hikvision cameras added, each populated field-by-field from its **official Hikvision datasheet**. Net: **150 → 158 Hikvision cameras**.
+
+### Added
+
+- **DS-2CD1027G2H-LIU(F)** — 2MP ColorVu Smart Hybrid Light network bullet (F1.0, IR + white light up to 30m, built-in mic; value series).
+- **DS-2CD1023G0E-I** — 2MP EXIR economic network bullet (H.265+, IP67, no SD slot).
+- **DS-2SF7C425MXG2/LM-EL** — DeepinViewX TandemVu 7C: fixed 6MP panoramic + 4MP 25x DarkFighter PTZ speed dome, 400m IR, large-model AI perimeter protection, LPR, PoE++ 90W. One entry covers the `-EL` / `-ELW` / `-ELY` (NEMA 4X anti-corrosion) / `-ELWY` SKU variants (identical camera spec, differing only in coating/hardware options).
+- **5 Turbo HD (HD-TVI analog) 2MP bullets** — `DS-2CE16D0T-IT3E` (EXIR 40m, PoC), `DS-2CE16D0T-ITFS` (EXIR 30m, 4-in-1, built-in mic), `DS-2CE16D0T-EXIF` (EXIR 20m, 4-in-1), `DS-2CE16D0T-VFIR3E` (varifocal 2.8-12mm, PoC, IK10), and `DS-2CE16D0T-LXTS` (ColorVu Smart Hybrid Light, two-way audio over coax). Modeled as analog: `coax`, no protocols/configs.
+
+### Changed
+
+- Counts: total 1,754 → 1,762, Hikvision 150 → 158. Resolution tiers and other "By the numbers" stats recomputed (and stale prior figures corrected).
+
+---
+
 ## [1.19.1] — 2026-07-04
 
 Hikvision data-quality patch — 14 corrections from a targeted audit (Hikvision model-number decode + internal-consistency checks), each **verified against official Hikvision datasheets/product pages**. Field-level fixes only; no cameras added or removed.

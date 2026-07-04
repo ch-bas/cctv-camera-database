@@ -1,0 +1,130 @@
+{
+  "id": "hikvision-ds-2sf7c425mxg2-lm-el",
+  "brand": "Hikvision",
+  "model": "DS-2SF7C425MXG2/LM-EL",
+  "aliases": [
+    "DeepinViewX TandemVu 7C 4MP 25X DarkFighter Speed Dome",
+    "DS-2SF7C425MXG2/LM-ELW",
+    "DS-2SF7C425MXG2/LM-ELY",
+    "DS-2SF7C425MXG2/LM-ELWY"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 10,
+    "max_width": 3680,
+    "max_height": 1656,
+    "label": "6MP panoramic + 4MP 25x PTZ (TandemVu)"
+  },
+  "sensor": "1/2.5\" CMOS (panoramic channel) + 1/1.8\" CMOS (PTZ channel)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "2.8 (panoramic) + 5.9-147.5 (25x optical, PTZ)",
+    "aperture": "F1.0 (panoramic) / F1.5 (PTZ)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "190 horizontal (panoramic) / 60.2-2.3 horizontal (PTZ)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 400
+  },
+  "power": {
+    "method": "PoE++ (IEEE 802.3bt Type 4, Class 8, 90W) / 36VDC",
+    "consumption_w": 90,
+    "poe_class": 8,
+    "voltage": "36VDC"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "microSD/SDHC/SDXC up to 1TB; NAS (NFS, SMB/CIFS) + ANR."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "TandemVu: fixed 6MP panoramic (190° H) + 4MP 25x DarkFighter PTZ, tracked together",
+    "DarkFighter 2.0 24/7 color + DeepinViewX large-model AI",
+    "25x optical / 16x digital zoom, 360° pan, -20° to 90° tilt, 300 presets, auto-tracking 3.0",
+    "hybrid supplement: panoramic white light 40m + IR 60m, PTZ IR up to 400m",
+    "dedicated large-scale AI perimeter protection (line crossing/intrusion/entrance/exit), ~90% fewer false alarms",
+    "LPR (124+ countries/regions), vehicle attribute detection, face capture/comparison (150k library)",
+    "WDR 120 dB (panoramic) / 150 dB (PTZ), EIS with gyroscope, digital defog",
+    "7 alarm in / 2 out, audio line in/out, RS-485",
+    "IP67, IK10 (excluding glass window), lightning/surge protection",
+    "variants: -EL base, -ELW, -ELY (NEMA 4X anti-corrosion), -ELWY"
+  ],
+  "release_year": 2026,
+  "release_notes": "Specs verified against the official Hikvision datasheet DS-2SF7C425MXG2/LM-EL/26 (Ver. 20260417). One entry covers the /LM-EL, /LM-ELW, /LM-ELY (NEMA 4X anti-corrosion), and /LM-ELWY SKUs — identical camera spec, differing only in coating/hardware options.",
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000101372/DS-2SF7C425MXG2_LM-EL_26_Datasheet_20260417.pdf"
+  ],
+  "last_verified": "2026-07-04",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "notes": "TandemVu has multiple channels — panoramic (channel 1) and PTZ (channel 2); add each as needed."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80. Enable in Configuration > Network > Integration Protocol."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile. Add panoramic and PTZ channels separately."
+    }
+  },
+  "dimensions_mm": "Ø260 x 382.9",
+  "weight_g": 7800,
+  "operating_temp_c": "-40 to 70",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "panoramic main",
+        "resolution": "3680x1656",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "PTZ main",
+        "resolution": "2688x1520",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ]
+}
