@@ -6,7 +6,7 @@
 |-------|------|
 | Brand | Hikvision |
 | Model | DS-2CD2726G2-IZS |
-| Type | bullet |
+| Type | dome |
 | Connectivity | ethernet |
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/2.8" Progressive Scan CMOS |
