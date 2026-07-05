@@ -1,9 +1,9 @@
 # CCTV Camera Database
 
-An open, structured database of 1,728 CCTV / IP camera models and their technical specifications, covering 69 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
+An open, structured database of 1,820 CCTV / IP camera models and their technical specifications, covering 74 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
 
-[![cameras](https://img.shields.io/badge/cameras-1%2C728-blue)](data/cameras.json)
-[![brands](https://img.shields.io/badge/brands-69-green)](cameras/)
+[![cameras](https://img.shields.io/badge/cameras-1%2C820-blue)](data/cameras.json)
+[![brands](https://img.shields.io/badge/brands-74-green)](cameras/)
 [![license](https://img.shields.io/badge/license-CC0-lightgrey)](LICENSE)
 
 ---
@@ -31,7 +31,7 @@ Prefer to self-host or browse offline? A [standalone demo](docs/demo.html) (just
 - **Filter** — narrow by brand, camera type, night vision, resolution, or market
 - **Sort** — click any column header to sort ascending/descending
 - **Detail drawer** — click a row to slide open the full spec sheet (resolution, connectivity, protocols, storage, audio, pricing, source links)
-- **Pagination** — page through all 1,728 cameras, 25 per page
+- **Pagination** — page through all 1,820 cameras, 25 per page
 - **Stats bar** — live counts for total cameras, brands, 4K+, WiFi, and no-subscription models
 
 ---
@@ -63,7 +63,7 @@ cctv-camera-database/
 │   ├── tapo/             #  62 cameras
 │   └── …60 more brands
 ├── data/                 # GENERATED — do not edit by hand
-│   ├── cameras.json      # all 1,728 cameras as one array
+│   ├── cameras.json      # all 1,820 cameras as one array
 │   └── cameras.csv       # flattened, spreadsheet-friendly
 ├── schema/
 │   └── camera.schema.json
@@ -121,8 +121,8 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 
 | Metric | Count |
 |--------|-------|
-| Total cameras | **1,728** |
-| Brands | **69** |
+| Total cameras | **1,820** |
+| Brands | **74** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
 | PoE wired | 1,171 |
 | WiFi | 470 |
@@ -132,7 +132,7 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | 1080p–2MP | 496 |
 | With integration configs (Frigate / Home Assistant) | 1,321 |
 
-### All 69 brands
+### All 74 brands
 
 | Brand | Cameras | Segment |
 |-------|---------|---------|
@@ -158,12 +158,14 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | Lupus Electronics | 20 | Privacy-first, DE/AT/CH |
 | Tiandy | 20 | Enterprise + prosumer, CN/ME/Africa |
 | Uniview | 15 | Enterprise NDAA, global |
+| Uniarch (Uniview) | 6 | Budget NDAA sub-brand, global |
 | Blink (Amazon) | 16 | Budget battery, US/UK/EU |
 | Swann | 16 | Consumer, AU/US/UK |
 | ABUS | 76 | Consumer + professional, GDPR-first, DE/AT/CH |
 | CP Plus | 14 | India #2 brand, IN |
 | GeoVision | 15 | Enterprise, TW/Asia/global |
-| IMOU (Dahua) | 15 | Consumer, global |
+| IMOU (Dahua) | 56 | Consumer + prosumer, global |
+| Foscam | 22 | Consumer WiFi/PoE, global |
 | Milesight | 15 | Prosumer/Enterprise IoT, global |
 | Pelco | 15 | Enterprise legacy, NA/global |
 | Vivotek | 15 | Enterprise AI, global |
@@ -172,6 +174,8 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | FLIR (Teledyne) | 12 | Thermal imaging, NA/EU |
 | Kedacom | 58 | Enterprise, CN/global |
 | Sunell | 12 | Prosumer/Enterprise, CN/global |
+| INSTAR | 12 | Privacy-first prosumer, DE/EU |
+| LTS | 7 | Prosumer/installer, US |
 | SV3C | 13 | Budget consumer, CN/US |
 | Synology | 12 | NAS-native cameras, global |
 | TVT Digital | 12 | Prosumer budget, CN/IN/SE Asia |
@@ -192,6 +196,7 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | KBvision | 5 | Budget installer, VN |
 | Somfy | 3 | Smart home, FR/EU |
 | Godrej | 4 | Consumer, IN |
+| Longse | 4 | OEM/budget, CN/global |
 | Honeywell | 4 | Enterprise, US/IN |
 | Qubo (Hero) | 4 | Consumer IoT, IN |
 | SimpliSafe | 4 | DIY monitored security, US |

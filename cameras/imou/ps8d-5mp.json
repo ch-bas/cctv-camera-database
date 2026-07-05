@@ -1,0 +1,88 @@
+{
+  "id": "imou-ps8d-5mp",
+  "brand": "IMOU",
+  "model": "PS8D 5MP",
+  "aliases": [
+    "IPC-PS8D-5V0"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2880,
+    "max_height": 1620,
+    "label": "5MP/3K"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30
+  },
+  "sensor": "1/3\" progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af)"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": true,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "PoE turret",
+    "full-color night vision + white LED",
+    "two-way audio",
+    "siren active deterrence",
+    "SENSE AI human & vehicle detection",
+    "microSD recording"
+  ],
+  "release_notes": "PS8D 5MP (IPC-PS8D-5V0): PoE turret; a 3MP variant exists. The '-D' does NOT denote dual-lens (single-lens).",
+  "sources": [
+    "https://www.imou.com/en/product/detail/ps8d-5mp",
+    "https://orientcctv.com/product/imou-ipc-ps8d-5v0-5mp-poe-smart-dome-ip-camera-with-color-night-vision/"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF is listed for this model but the exact path is not independently verified on this SKU."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+    }
+  }
+}

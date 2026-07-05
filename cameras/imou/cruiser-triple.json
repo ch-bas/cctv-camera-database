@@ -1,0 +1,95 @@
+{
+  "id": "imou-cruiser-triple",
+  "brand": "IMOU",
+  "model": "Cruiser Triple 11MP",
+  "aliases": [
+    "IPC-S7UP-11M0WED",
+    "IPC-S7UN-11M0WED"
+  ],
+  "type": "dual-lens",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 11,
+    "max_width": 2880,
+    "max_height": 1620,
+    "label": "11MP (2x3MP fixed + 5MP PT)"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 15
+  },
+  "sensor": "fixed 1/2.8\" 3MP CMOS x2; PT 1/3.06\" 5MP CMOS",
+  "lens": {
+    "count": 3,
+    "varifocal": false
+  },
+  "field_of_view_deg": "fixed 87 H / PT 51 H; PT lens pan 355 / tilt 0-90",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "DC 12V/1.5A, <18W"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": true,
+    "max_microsd_gb": 1024
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "triple lens (two 3MP fixed + one 5MP motorized pan/tilt)",
+    "smart color four-mode night vision",
+    "red & blue warning lights",
+    "4 spotlight+IR illuminators",
+    "siren",
+    "AIgo Play downloadable algorithms",
+    "AOR always-on-record",
+    "dual microSD slots",
+    "Wi-Fi 6",
+    "two-way talk"
+  ],
+  "release_notes": "Cruiser Triple (IPC-S7UP-11M0WED): 3-lens PT camera, dual microSD up to 1024GB total. Typed 'dual-lens' (multi-lens family; no triple enum) — lens count 3. ONVIF not printed on the datasheet but standard for the platform.",
+  "sources": [
+    "https://www.imou.com/en/product/detail/cruiser-triple",
+    "https://static-website.imou.com/3a1a94ba-6119-4774-98a5-32303df42971.pdf",
+    "https://skiteck.com/products/imou-cruiser-triple-lens-11mp-wifi-ourdoor-camera-ipc-s7up-11mowed"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF is listed for this model but the exact path is not independently verified on this SKU."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+    }
+  }
+}

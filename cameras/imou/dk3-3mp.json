@@ -1,0 +1,89 @@
+{
+  "id": "imou-dk3-3mp",
+  "brand": "IMOU",
+  "model": "DK3 3MP",
+  "aliases": [
+    "IPC-DK3-3H1WY"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "wifi"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "3MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ]
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "104 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "power": {
+    "method": "DC power adapter"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": true,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "outdoor fixed bullet",
+    "AI human detection",
+    "IP67 weatherproof (-30 to 50C)",
+    "H.265",
+    "Wi-Fi",
+    "NVR/cloud/microSD storage",
+    "Alexa"
+  ],
+  "release_notes": "DK3 (IPC-DK3-3H1WY): fixed outdoor bullet — NOT an indoor pan/tilt. 2MP and 4MP variants also exist. Two-way audio/Ethernet not confirmed for this SKU.",
+  "sources": [
+    "https://www.imou.com/en/product/detail/dk3",
+    "https://www.flipkart.com/imou-dk3-3mp-bullet-ip67-wi-fi-camera-human-detection-security/p/itmdd274b6cbe0d7"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF is listed for this model but the exact path is not independently verified on this SKU."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+    }
+  }
+}

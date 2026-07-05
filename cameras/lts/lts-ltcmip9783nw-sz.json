@@ -1,0 +1,97 @@
+{
+  "id": "lts-ltcmip9783nw-sz",
+  "brand": "LTS",
+  "model": "LTCMIP9783NW-SZ",
+  "aliases": [
+    "Platinum 8 MP Varifocal Bullet IP Camera",
+    "CMIP9783NW-SZ"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K/8MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 15
+  },
+  "sensor": "1/2.5\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "Horizontal 34.5-105, Vertical 19-55, Diagonal 40-125",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50
+  },
+  "power": {
+    "method": "PoE or DC power adapter"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "notes": "Built-in microSD/SDHC/SDXC slot."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "3-axis adjustment (pan 0-355, tilt 0-90, rotate 0-355)",
+    "120dB WDR, BLC/3D DNR/HLC/ROI",
+    "line crossing and intrusion detection, face detection",
+    "3 simultaneous video streams (main/sub/third)",
+    "auto-focus motorized varifocal lens"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "release_notes": "LTS (LT Security Inc.) is a US-based distributor selling Hikvision OEM hardware under its own model numbering (Platinum, Pro-X, Sapphire, Pro-VS series). Note: Hikvision-derived firmware has shipped with ONVIF disabled by default since v5.5.0 \u2014 it must be manually enabled under Configuration > Network > Advanced Settings > Integration Protocol before use with Frigate/Home Assistant/third-party NVRs.",
+  "sources": [
+    "https://ltsecurityinc.com/8-mp-ir-varifocal-bullet-network-camera.html"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "discontinued",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "notes": "Standard Hikvision-OEM RTSP path convention (channel 101 = main stream, 102 = sub stream) likely applies given this is Hikvision-derived hardware, but not independently confirmed against this exact relabeled SKU. ONVIF must be manually enabled in the camera's web UI (disabled by default on Hikvision firmware v5.5.0+).",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF must be manually enabled first (see release_notes). Once enabled, the generic ONVIF integration should work given the Hikvision-derived platform.",
+      "connection_type": "local"
+    },
+    "blue_iris": {
+      "profile": "Hikvision (generic)",
+      "notes": "Not independently confirmed for this specific model, but Hikvision-OEM hardware typically works with Blue Iris's generic Hikvision camera profile."
+    }
+  }
+}

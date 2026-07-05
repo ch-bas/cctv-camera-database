@@ -30,11 +30,10 @@
 - two-way audio
 - IMOU app
 - Alexa / Google
-- ₹2,500–4,000 best-value India indoor camera
 
 ## Sources
 
-- https://www.imoulife.com/
+- https://www.imou.com/en/product/detail/ranger2
 
 ---
 *Auto-generated from imou-ranger-2.json — do not edit by hand.*

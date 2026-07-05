@@ -9,11 +9,13 @@
   "release_year": 2023,
   "resolution": {
     "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
     "label": "4MP"
   },
   "field_of_view_deg": "107h",
   "night_vision": {
-    "type": "ir",
+    "type": "hybrid",
     "range_m": 30
   },
   "power": {
@@ -44,7 +46,8 @@
     "IP67"
   ],
   "sources": [
-    "https://www.imoulife.com/"
+    "https://www.imou.com/en/product/detail/bullet2",
+    "https://www.wifi-stock.com/details/imou-4mp-h-265-bullet-poe-camera-ipc-f42eap.html"
   ],
   "power_source": [
     "poe",
@@ -52,21 +55,33 @@
   ],
   "configs": {
     "frigate": {
-      "detect": {
-        "width": 1280,
-        "height": 720,
-        "fps": 5
-      },
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1"
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention but is not independently verified on this specific SKU."
     },
     "home_assistant": {
       "integration": "onvif",
-      "notes": "Uses Dahua protocol. ONVIF integration works."
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
     },
     "blue_iris": {
       "profile": "Dahua",
-      "notes": "Select 'Dahua' profile. IMOU uses Dahua protocol."
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
     }
-  }
+  },
+  "aliases": [
+    "IPC-F42EAP",
+    "IPC-F42FEP",
+    "IMOU Bullet 2 4MP"
+  ],
+  "sensor": "1/2.7\" progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "release_notes": "Bullet 2 4MP. Wi-Fi variant is IPC-F42FEP(-D); the PoE variant (matching this entry) is IPC-F42EAP. Night vision is smart dual-mode (IR + full-color spotlight).",
+  "last_verified": "2026-07-05",
+  "status": "available"
 }

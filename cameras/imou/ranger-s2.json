@@ -3,7 +3,7 @@
   "brand": "IMOU",
   "model": "Ranger S2",
   "aliases": [
-    "IPC-GS7EP-3M0WE",
+    "IPC-DK2-3H1W",
     "IMOU Ranger S2 3MP"
   ],
   "type": "ptz",
@@ -13,7 +13,10 @@
   "release_year": 2024,
   "markets": [
     "IN",
-    "global"
+    "global",
+    "AE",
+    "SA",
+    "MENA"
   ],
   "resolution": {
     "megapixels": 3,
@@ -30,7 +33,7 @@
   },
   "field_of_view_deg": "355 pan / 90 tilt",
   "night_vision": {
-    "type": "color",
+    "type": "ir",
     "range_m": 10
   },
   "power": {
@@ -64,28 +67,29 @@
     "₹3,500–5,000"
   ],
   "sources": [
-    "https://www.imoulife.com/"
+    "https://www.wifi-stock.com/details/imou-ranger-s2-IPC-DK2-3H1W.html",
+    "https://www.ispyconnect.com/camera/imou"
   ],
   "power_source": [
     "usb"
   ],
   "configs": {
     "frigate": {
-      "detect": {
-        "width": 640,
-        "height": 480,
-        "fps": 5
-      },
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1"
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention but is not independently verified on this specific SKU."
     },
     "home_assistant": {
       "integration": "onvif",
-      "notes": "Uses Dahua protocol. ONVIF integration works."
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
     },
     "blue_iris": {
       "profile": "Dahua",
-      "notes": "Select 'Dahua' profile. IMOU uses Dahua protocol."
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
     }
-  }
+  },
+  "release_notes": "Ranger S2 3MP indoor pan/tilt (IPC-DK2-3H1W). Corrected from a fabricated code (IPC-GS7EP-3M0WE, which is actually the Cruiser 2) and a wrong 'color' night-vision claim (it is IR). Absorbed the former MENA regional-duplicate entry.",
+  "last_verified": "2026-07-05",
+  "status": "available"
 }

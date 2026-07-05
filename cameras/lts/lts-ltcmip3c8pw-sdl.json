@@ -1,0 +1,90 @@
+{
+  "id": "lts-ltcmip3c8pw-sdl",
+  "brand": "LTS",
+  "model": "LTCMIP3C8PW-SDL",
+  "aliases": [
+    "Platinum 8 MP Panoramic Fixed Turret IP Camera"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 5120,
+    "max_height": 1440,
+    "label": "8MP dual-sensor panoramic (2x4MP stitched)"
+  },
+  "video": {
+    "max_fps": 20
+  },
+  "sensor": "2x 1/1.8\" Progressive Scan CMOS (dual sensor)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "4",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 (panoramic, dual fixed lens)",
+  "night_vision": {
+    "type": "color",
+    "range_m": 40
+  },
+  "power": {
+    "method": "12V DC or PoE"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "dual 1/1.8\" sensor 180 degree panoramic stitched image",
+    "130dB True WDR",
+    "white supplemental light LEDs, range up to 40m (131ft)",
+    "MD 2.0 human/vehicle target classification",
+    "IK10 vandal-resistant",
+    "pan -30 to 30 / tilt -75 to 75 angle adjustment"
+  ],
+  "dimensions_mm": "155 diameter x 155.3",
+  "weight_g": 1110,
+  "environment": [
+    "outdoor"
+  ],
+  "release_notes": "LTS (LT Security Inc.) is a US-based distributor selling Hikvision OEM hardware under its own model numbering (Platinum, Pro-X, Sapphire, Pro-VS lines). Hikvision-derived firmware ships with ONVIF disabled by default since v5.5.0 \u2014 must be manually enabled under Configuration > Network > Advanced Settings > Integration Protocol before use with Frigate/Home Assistant/third-party NVRs.",
+  "sources": [
+    "https://ltsecurityinc.com/8-mp-panoramic-fixed-turret-network-camera.html"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "notes": "Standard Hikvision-OEM RTSP path convention likely applies but not independently confirmed for this exact model. Panoramic dual-sensor cameras typically expose the stitched panoramic stream and each individual sensor as separate channels \u2014 check the camera's own web UI for the full channel list before assuming channel 101/102 covers everything you want. ONVIF must be manually enabled (disabled by default on Hikvision firmware v5.5.0+).",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF must be manually enabled first (see release_notes).",
+      "connection_type": "local"
+    },
+    "blue_iris": {
+      "profile": "Hikvision (generic)",
+      "notes": "Not independently confirmed for this specific model."
+    }
+  }
+}

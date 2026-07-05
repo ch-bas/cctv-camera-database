@@ -6,6 +6,28 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.26.0] — 2026-07-05
+
+Five new brands added and a full **IMOU** audit + expansion. Net: **1,728 → 1,820 cameras**, **69 → 74 brands**.
+
+### Added — 5 new brands (51 cameras)
+
+- **Foscam** (22) — consumer WiFi/PoE line (C/D/G/PD/R/SD/T/V/W/X series), verified against `us.foscam.com`/`foscam.com` product pages.
+- **INSTAR** (12) — privacy-first German prosumer PT/box cams (IN-8xxx/9xxx), verified against `wiki.instar.com`.
+- **LTS** (7) — US prosumer/installer line (Platinum + Pro-X); Pro-X OEM origin flagged as unconfirmed.
+- **Uniarch** (6) — Uniview's budget NDAA sub-brand (IPC-B/T1xx, UHO).
+- **Longse** (4) — CN OEM/budget bullets/domes.
+
+All honestly caveated: `verified: false` + notes wherever an RTSP path or ONVIF support is not confirmed.
+
+### IMOU — full brand audit + expansion (15 → 56)
+
+- **Audited the 15 legacy entries** (all cited bare `imoulife.com` homepages): **3 ghosts removed** (`Go Basic` = cross-brand/Reolink naming; `Turret PoE 8MP` = no such 8MP Imou turret; `Doorbell 2MP`/`IPC-B46LP` = mislabeled Cell 2 bullet), **3 regional duplicates merged** into their canonicals (`Cruiser 2 MENA`, `Ranger S2 MENA`, `Ranger 2 VN`), and **8 fixed** for fabricated model codes / wrong specs (e.g. `Cruiser 2` code `IPC-S7XEP…`→`IPC-GS7EP-5M0WE`; `Ranger S2` code →`IPC-DK2-3H1W`; `Bullet 2E` code →`IPC-K3DP-5H0WF`; `Cell Go` 4MP/4G→3MP/WiFi; `Cruiser SE+` bullet→PTZ).
+- **Added 47 verified models** from official `imou.com` pages: the battery Cell/AOV line (Cell 2/3/3C, Cell PT/2C/4G, AOV PT/Dual — `protocols: ["http"]`, no fabricated RTSP), and the wired Cruiser (Dual/Triple/Pano-Z/Z/SC/2C/4G), Bullet (2 Pro/2C/2E/3/3C), PS professional PoE (PS2M/3D/3E/7F/8D/70F), Titan Pro, DK3/DK7, Knight and Versa lines (Dahua `realmonitor` RTSP + ONVIF, `verified: false`).
+- **3 deferred** (specs genuinely unpublished): `Bullet 3 Pro`, `PS5E`, `PS8E` (Imou's own spec tabs render "To be announced").
+
+---
+
 ## [1.25.0] — 2026-07-05
 
 Full data-quality audit of the **Kedacom** brand (master audit #28) — a **replace-the-whole-brand** case. Net: **12 → 58 cameras** (all 12 removed, 58 real models added, all verified against official `kedacom.com` product pages).

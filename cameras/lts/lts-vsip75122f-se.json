@@ -1,0 +1,85 @@
+{
+  "id": "lts-vsip75122f-se",
+  "brand": "LTS",
+  "model": "VSIP75122F-SE",
+  "aliases": [
+    "Pro-VS 12 MP Ultra-HD Infrared Fisheye IP Camera"
+  ],
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 12,
+    "max_width": 4000,
+    "max_height": 3000,
+    "label": "12MP"
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ]
+  },
+  "sensor": "1/1.7\" CMOS",
+  "field_of_view_deg": "360 panoramic (fisheye)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 15
+  },
+  "power": {
+    "method": "PoE or DC power adapter"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "360 degree panoramic fisheye with multiple dewarping/decoding modes",
+    "IK10 vandal-resistant",
+    "heat map analytics (deep-learning-based)",
+    "embedded 360-degree IR illumination"
+  ],
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "release_notes": "Pro-VS is a separate LTS product line from Platinum and Pro-X. LTS explicitly lists Pro-VS (alongside Pro-X) on its official NDAA-Compliant Products page, making it a relevant option for government/school/E-Rate-funded installs where NDAA Section 889 compliance matters. Underlying OEM/chipset origin not confirmed in sources reviewed.",
+  "sources": [
+    "https://ltsecurityinc.com/12mp-ultra-hd-infrared-vandal-resistant-fisheye.html"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "notes": "RTSP path and ONVIF profile not confirmed for the Pro-VS line specifically. Fisheye dewarping for Frigate typically needs to happen either on-camera (check for a 'panoramic'/'dewarp' mode in the web UI) or via Frigate's own camera-side transform \u2014 verify which modes this camera exposes over RTSP before assuming a specific dewarped stream is available.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF support not independently confirmed for this specific model.",
+      "connection_type": "local"
+    },
+    "blue_iris": {
+      "profile": "Generic ONVIF/RTSP",
+      "notes": "Not independently confirmed for this specific model."
+    }
+  }
+}

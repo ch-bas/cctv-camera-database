@@ -1,0 +1,98 @@
+{
+  "id": "instar-in-9408-2k-plus",
+  "brand": "INSTAR",
+  "model": "IN-9408 2K+",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet",
+    "wifi"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "2K+/WQHD"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25
+  },
+  "sensor": "1/3\" Sony STARVIS IMX335 CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.3",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "90 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20
+  },
+  "power": {
+    "method": "PoE (802.3af) or DC power adapter"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": true,
+    "notes": "Ships with a 32GB microSD card installed. Also supports FTP/SFTP upload and the optional INSTAR Cloud (hosted on German servers)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "microphone built in; no built-in speaker, but supports an optional active speaker via 3.5mm jack for two-way audio",
+    "ONVIF Profile S conformant",
+    "MQTT v5 for smart home / Home Assistant integration",
+    "PIR heat sensor with 4 configurable alarm areas (reduces false alarms)",
+    "Apple HomeKit Secure Video",
+    "WiFi 5 (802.11ac) dual-band, or LAN/PoE on the non-WiFi variant",
+    "P2P remote access via QR code, no cloud account required for LAN use"
+  ],
+  "operating_temp_c": "-5 to 55 (-20 to 55 with optional heater accessory)",
+  "dimensions_mm": "103x75x230",
+  "weight_g": 900,
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://www.instar.com/en_US/in-9408-2k-wifi-black.html",
+    "https://wiki.instar.com/en/Outdoor_Cameras/IN-9408_WQHD/",
+    "https://manualsnet.com/instar/in-9408-2k-plus"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/livestream/12",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/livestream/13",
+      "notes": "INSTAR's own RTSP path convention uses numbered channel IDs (12 = main/full res, 13 = sub-stream) rather than named streams \u2014 confirm exact channel numbering against the camera's own web UI (Multimedia > Video) before publishing, as it has varied slightly across firmware versions.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF Profile S is explicitly confirmed by the manufacturer. INSTAR also has a native MQTT interface (v5) which some users prefer over ONVIF for Home Assistant / openHAB integration since it exposes PIR and alarm-zone events directly.",
+      "connection_type": "local"
+    },
+    "blue_iris": {
+      "profile": "Generic ONVIF/RTSP",
+      "notes": "Not independently confirmed for this specific model, but ONVIF Profile S support makes it a likely fit."
+    }
+  }
+}

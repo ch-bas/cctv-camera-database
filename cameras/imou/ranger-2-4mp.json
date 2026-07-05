@@ -1,0 +1,89 @@
+{
+  "id": "imou-ranger-2-4mp",
+  "brand": "IMOU",
+  "model": "Ranger 2 4MP",
+  "type": "ptz",
+  "aliases": [
+    "IPC-A42P"
+  ],
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25
+  },
+  "sensor": "1/2.7\" Progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "85 H / 109 D; pan 355 / tilt -5~80",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10
+  },
+  "power": {
+    "method": "DC 5V/1A via USB; <3.5W"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "indoor pan/tilt",
+    "IR night vision (no full-color)",
+    "AI human detection",
+    "two-way talk",
+    "ONVIF / NVR compatible",
+    "microSD up to 256GB"
+  ],
+  "release_notes": "Base code IPC-A42P (region suffixes -B/-D/-L). 4MP indoor pan/tilt, IR-only — a lower tier than the Ranger 2 Pro 4K line.",
+  "sources": [
+    "https://www.imou.com/en/product/detail/ranger2-4mp",
+    "https://datasheet.w.od.ua/files/imou/imou-ranger-2-4mp-ipc-a42p-b-datasheet_eng.pdf"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF/RTSP is documented for this plugged Wi-Fi line but not independently verified on this specific SKU."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+    }
+  }
+}

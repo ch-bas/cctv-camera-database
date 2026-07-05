@@ -1,0 +1,95 @@
+{
+  "id": "imou-cruiser-dual-2",
+  "brand": "IMOU",
+  "model": "Cruiser Dual 2 10MP",
+  "aliases": [
+    "IPC-S7XEP-10M0WED",
+    "IPC-S7XEP-6M0WED (6MP)"
+  ],
+  "type": "dual-lens",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 10,
+    "max_width": 2880,
+    "max_height": 1620,
+    "label": "10MP (5MP+5MP)"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 15
+  },
+  "sensor": "1/3.06\" 5MP progressive CMOS (per lens)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "3.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "fixed lens pan 0-260; PT lens pan 355 / tilt 0-90",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "DC 12V, <12W"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": true,
+    "max_microsd_gb": 256
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "dual lens (fixed wide + motorized pan/tilt)",
+    "smart color four-mode night vision",
+    "red & blue warning lights",
+    "110 dB siren",
+    "spotlight active deterrence",
+    "IMOU SENSE human/vehicle detection",
+    "auto-tracking",
+    "Wi-Fi 6",
+    "two-way talk"
+  ],
+  "release_notes": "Cruiser Dual 2 (IPC-S7XEP-10M0WED, S7XEP prefix; 6MP variant IPC-S7XEP-6M0WED). Mains-wired dual-lens PT.",
+  "sources": [
+    "https://www.imou.com/en/product/detail/cruiser-dual2",
+    "https://www.imou.com/en/product/specs/cruiser-dual2",
+    "https://device.report/manuals/imou-cruiser-dual-2-10mp-datasheet"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF is listed for this model but the exact path is not independently verified on this SKU."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+    }
+  }
+}

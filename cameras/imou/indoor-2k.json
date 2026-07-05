@@ -2,19 +2,21 @@
   "id": "imou-indoor-2k",
   "brand": "IMOU",
   "model": "Indoor 2K",
-  "type": "dome",
+  "type": "ptz",
   "connectivity": [
     "wifi"
   ],
   "release_year": 2023,
   "resolution": {
-    "megapixels": 4,
-    "label": "2K QHD"
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "2K/3MP"
   },
   "field_of_view_deg": "107h",
   "night_vision": {
     "type": "ir",
-    "range_m": 8
+    "range_m": 10
   },
   "power": {
     "method": "DC 5V USB"
@@ -26,7 +28,8 @@
     "cloud": true
   },
   "protocols": [
-    "http"
+    "onvif",
+    "rtsp"
   ],
   "ip_rating": "IP20",
   "audio": {
@@ -35,17 +38,37 @@
     "two_way": true
   },
   "features": [
-    "IMOU Indoor 2K 4MP WiFi pan/tilt indoor",
+    "indoor pan/tilt",
     "AI human detection",
-    "auto-tracking",
-    "2-way audio",
-    "H.265",
-    "Alexa"
+    "smart auto-tracking",
+    "two-way talk",
+    "plug-in Wi-Fi"
   ],
   "sources": [
-    "https://www.imoulife.com/"
+    "https://www.imou.com/en/product/detail/cue2",
+    "https://www.imou.com/en/product/specs/cue2"
   ],
   "power_source": [
     "usb"
-  ]
+  ],
+  "sensor": "1/2.8\" CMOS",
+  "release_notes": "Generic entry for Imou's 2K indoor pan/tilt line ('2K' on Imou = 3MP/2304x1296, corrected from the earlier 4MP dome claim). Closest official match is the Imou Cue 2 / A1 indoor PT (A32EP family); the exact SKU is not pinned. Plug-in (non-battery), so it exposes ONVIF/RTSP.",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention but is not independently verified on this specific SKU."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+    }
+  },
+  "last_verified": "2026-07-05",
+  "status": "available"
 }

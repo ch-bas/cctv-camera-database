@@ -1,0 +1,94 @@
+{
+  "id": "foscam-pd8",
+  "brand": "Foscam",
+  "model": "PD8",
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K/8MP"
+  },
+  "video": {
+    "codecs": [
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 20
+  },
+  "sensor": "High Definition Color CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "Diagonal 114.2, Horizontal 99.5, Vertical 56.8",
+  "night_vision": {
+    "type": "hybrid"
+  },
+  "power": {
+    "method": "DC 12V/2A",
+    "consumption_w": 12.9,
+    "voltage": "12V"
+  },
+  "storage": {
+    "onboard": false,
+    "max_microsd_gb": 512,
+    "cloud": true,
+    "notes": "Also supports FTP storage. NVR compatibility not stated in the official spec table."
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "millimeter-wave radar with 360 auto human tracking (detects motion outside the lens's field of view)",
+    "20x digital zoom",
+    "350 pan / 90 tilt",
+    "WiFi 6 dual-band (2.4GHz/5GHz)",
+    "115dB siren + sound/light alarm",
+    "DORI: detect 77.1m / observe 30.6m / recognize 15.4m / identify 7.7m",
+    "Alexa / Google Home",
+    "Bluetooth + QR code wireless setup"
+  ],
+  "operating_temp_c": "-20 to 45",
+  "dimensions_mm": "115x177x130",
+  "weight_g": 565,
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://us.foscam.com/PD8.html"
+  ],
+  "last_verified": "2026-07-04",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/videoMain",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/videoSub",
+      "notes": "ONVIF is not listed in the official protocol table (only IP/TCP/UDP/SMTP/FTP/DHCP/RTSP) \u2014 do not assume ONVIF works on this model without testing. RTSP path not yet verified against a physical unit.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF support not confirmed for this model (see frigate notes) \u2014 verify before relying on the generic ONVIF integration.",
+      "connection_type": "local"
+    },
+    "blue_iris": {
+      "profile": "Generic ONVIF/RTSP",
+      "notes": "Not independently confirmed for this specific model."
+    }
+  }
+}

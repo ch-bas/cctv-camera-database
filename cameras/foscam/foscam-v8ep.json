@@ -1,0 +1,95 @@
+{
+  "id": "foscam-v8ep",
+  "brand": "Foscam",
+  "model": "V8EP",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K/8MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 25
+  },
+  "sensor": "High Definition Color CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.3",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "Horizontal 90.1, Vertical 46.2, Diagonal 108.5",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 20
+  },
+  "power": {
+    "method": "PoE (802.3af) or DC 12V/1A",
+    "consumption_w": 5,
+    "voltage": "12V"
+  },
+  "storage": {
+    "onboard": false,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": true,
+    "notes": "Also supports FTP storage."
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "human/vehicle detection",
+    "spotlight + 100dB siren deterrent",
+    "20x digital zoom",
+    "DORI: detect 81.1m / observe 32.2m / recognize 16.2m / identify 8.1m"
+  ],
+  "operating_temp_c": "-20 to 50",
+  "dimensions_mm": "170x66x66",
+  "weight_g": 342,
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "sources": [
+    "https://us.foscam.com/V8EP.html"
+  ],
+  "last_verified": "2026-07-04",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/videoMain",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/videoSub",
+      "notes": "videoMain/videoSub is Foscam's current-gen RTSP path convention; not yet verified against a physical unit. Confirm before setting verified: true. Older Foscam models used port 88 instead of 554.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "No native Foscam integration in HA core; use the generic ONVIF integration. ONVIF support stated on Foscam's site but not itemized in this model's spec table \u2014 confirm before publishing.",
+      "connection_type": "local"
+    },
+    "blue_iris": {
+      "profile": "Generic ONVIF/RTSP",
+      "notes": "No dedicated Foscam profile in Blue Iris; use generic ONVIF/RTSP setup."
+    }
+  }
+}
