@@ -6,9 +6,18 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
-## [1.27.0] — 2026-07-05
+## [1.26.0] — 2026-07-05
 
-New brand **Speco Technologies** and a full **Ajax** wired-camera audit + expansion. Net: **1,820 → 1,871 cameras**, **74 → 75 brands**.
+Five new brands plus **IMOU**, **Speco Technologies**, **Ajax**, **Canon** and **Arecont/Costar** audits + expansions. Net: **1,728 → 1,875 cameras**, **69 → 75 brands**.
+
+### Added — Canon (2 → 4)
+
+- Two indoor PTZ dome cameras (**VB-M46** 1.3MP, **VB-H47** 2MP/Full HD) from official Canon datasheets — 20x optical zoom, day/night IR-cut low-light, ONVIF S/G/T, PoE/DC/AC.
+
+### Costar / Arecont Vision — ConteraIP audit + expansion (8 → 10)
+
+- **Removed 8 fabricated/placeholder entries:** 4 ghosts with non-existent model codes (`CBR-2312IR`, `CBR-5312IR`, `CDI-2312IRV`, `CDI-5312IRV` — `CBR` isn't a Costar prefix; real Costar IP cameras use CBI/CDI-series numbering) and 4 generic bare-sourced placeholders (`ConteraIP Bullet 8MP` was itself a ghost — no 8MP single-sensor ConteraIP bullet exists; plus generic `Dome 5MP`/`Dome 8MP`/`Panoramic 12MP`).
+- **Added 10 real Arecont Vision ConteraIP SKUs** from `sales.arecontvision.com`: Contera indoor/outdoor domes (AV02/AV05 CID/CLD; -200 varifocal / -201 fixed), 12MP fisheye (AV12CFE-250), MicroDome Duo dual-sensor (AV4956/AV10956/AV16956DN-28 = 2×1080p / 2×5MP / 2×8MP), and the discontinued 4-sensor panoramic AV12CPD-236.
 
 ### Added — Speco Technologies (new brand, 31 cameras)
 
@@ -21,11 +30,7 @@ US professional/commercial (NDAA) brand, all verified against official `specotec
 - **Removed 2 fabricated ghosts:** `OutdoorCam` (no such product; `/products/outdoorcam/` 404s) and `DualCam` (no Ajax "DualCam" exists; the only real referent is the single-camera DoorBell).
 - **Added 22 verified wired PoE cameras** from official `ajax.systems` spec pages: DomeCam Mini (×4) + Mini HL (×3), DomeCam HLVF (×2), BulletCam HL (×4), TurretCam (×4), Superior BulletCam/DomeCam HLVF (×4), and the DoorBell (ADB.Y.W). All ONVIF (Profile S / S+T); Ajax doesn't publish RTSP paths so configs use ONVIF auto-discovery.
 
----
-
-## [1.26.0] — 2026-07-05
-
-Five new brands added and a full **IMOU** audit + expansion. Net: **1,728 → 1,820 cameras**, **69 → 74 brands**.
+### Added — 5 new brands (51 cameras)
 
 ### Added — 5 new brands (51 cameras)
 

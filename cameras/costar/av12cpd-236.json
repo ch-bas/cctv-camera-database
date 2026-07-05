@@ -1,0 +1,80 @@
+{
+  "id": "costar-av12cpd-236",
+  "brand": "Costar",
+  "model": "AV12CPD-236",
+  "aliases": ["Arecont Vision AV12CPD-236", "ConteraIP Panoramic 12MP"],
+  "type": "panoramic",
+  "connectivity": ["ethernet"],
+  "power_source": ["poe", "dc"],
+  "resolution": {
+    "megapixels": 12,
+    "max_width": 4000,
+    "max_height": 3000,
+    "label": "12MP panoramic"
+  },
+  "video": {
+    "codecs": ["H.265", "H.264", "MJPEG"],
+    "max_fps": 15
+  },
+  "lens": {
+    "count": 4,
+    "varifocal": false
+  },
+  "field_of_view_deg": "360 panoramic",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10
+  },
+  "power": {
+    "method": "PoE + auxiliary DC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "notes": "MicroSD card slot."
+  },
+  "protocols": ["onvif", "rtsp"],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "four-sensor 360-degree panoramic (no blind spots)",
+    "IR illumination on all four sensors (~10m)",
+    "WDR at full resolution",
+    "SNAPstream+ bandwidth reduction",
+    "NightView low-light",
+    "forensic zooming (zoom live/recorded while capturing full FoV)",
+    "on-board dewarping (ConteraVMS)",
+    "2-axis gimbal (360 pan / 90 tilt)",
+    "IK10 vandal-resistant",
+    "integrated microphone + speaker",
+    "NDAA compliant"
+  ],
+  "markets": ["US", "global"],
+  "release_notes": "ConteraIP 4-sensor 360-degree panoramic (SurroundVideo-style multi-imager), 12MP / 4000x3000. DISCONTINUED — successor is the single-sensor AV12CFE-250 fisheye. Replaces the former generic 'ConteraIP Panoramic 12MP' placeholder entry.",
+  "sources": [
+    "https://sales.arecontvision.com/product/Contera+Fisheye+Series/AV12CPD-236"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "discontinued",
+  "configs": {
+    "frigate": {
+      "detect": { "width": 1280, "height": 720, "fps": 5 },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/media/video1",
+      "verified": false,
+      "notes": "Arecont/ConteraIP RTSP path (ONVIF). Multi-sensor: additional sensors are typically /media/video2../video4."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF conformant."
+    },
+    "blue_iris": {
+      "profile": "Generic ONVIF/RTSP",
+      "notes": "ONVIF/RTSP; ConteraIP stream path /media/video1."
+    }
+  }
+}
