@@ -1,0 +1,92 @@
+{
+  "id": "instar-in-9008-full-hd",
+  "brand": "INSTAR",
+  "model": "IN-9008 Full HD",
+  "aliases": [
+    "IN-9008 HD"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet",
+    "wifi"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p Full HD"
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ]
+  },
+  "sensor": "Panasonic WDR CMOS (1080p)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.3",
+    "varifocal": false
+  },
+  "field_of_view_deg": "90 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20
+  },
+  "power": {
+    "method": "PoE (802.3af, on the PoE variant) or DC power adapter / WiFi variant"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": true,
+    "notes": "Ships with a 16GB microSD card installed. Also supports FTP upload and the optional INSTAR Cloud."
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "predecessor housing/design later reused for the IN-9408 2K+",
+    "integrated Panasonic PIR sensor, range up to 12m, 4 configurable alarm areas",
+    "MQTT for smart home integration",
+    "Apple HomeKit (via cloud), Alexa (via INSTAR Cloud)",
+    "WiFi IEEE 802.11 b/g/n (2.4GHz only, no 5GHz on this legacy model)"
+  ],
+  "operating_temp_c": "-5 to 55 (-20 to 55 with optional heater accessory)",
+  "environment": [
+    "outdoor"
+  ],
+  "status": "discontinued",
+  "sources": [
+    "https://www.instar.com/en_US/in-9008-full-hd-poe-black.html",
+    "https://wiki.instar.com/en/Outdoor_Cameras/IN-9008_HD/",
+    "https://www.amazon.com/INSTAR-9008-Full-White-Professional/dp/B074367GFP"
+  ],
+  "last_verified": "2026-07-05",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/11",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/12",
+      "notes": "RTSP path confirmed via a community forum report for this camera generation (format rtsp://{address}:{port}/{stream}, e.g. /11 for the main stream) \u2014 this is a different, simpler numbering convention than the '/livestream/NN' pattern used on the newer 2K+/4K line. Exact substream number not independently confirmed. ONVIF support was not confirmed anywhere in the sources reviewed for this specific model (RTSP is confirmed, ONVIF is not); check the camera's own web UI before assuming ONVIF compatibility.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "generic_camera",
+      "notes": "ONVIF support unconfirmed for this legacy model (see frigate notes) \u2014 the generic RTSP/MJPEG camera integration is a safer starting point than assuming ONVIF works. MQTT is a well-documented alternative integration path INSTAR has supported since this camera's era.",
+      "connection_type": "local"
+    },
+    "blue_iris": {
+      "profile": "Generic RTSP",
+      "notes": "Not independently confirmed for this specific model."
+    }
+  }
+}

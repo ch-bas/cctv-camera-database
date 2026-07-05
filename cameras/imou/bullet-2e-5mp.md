@@ -1,6 +1,6 @@
 # IMOU Bullet 2E 5MP
 
-*Also known as: IPC-F57FEP-D, IMOU 5MP Outdoor Bullet*
+*Also known as: IPC-K3DP-5H0WF, IMOU Bullet 2E 5MP*
 
 | Field | Spec |
 |-------|------|
@@ -34,7 +34,8 @@
 
 ## Sources
 
-- https://www.imoulife.com/
+- https://www.imou.com/en/product/detail/bullet2e
+- https://www.imou.com/en/product/specs/bullet2e
 
 ---
 *Auto-generated from imou-bullet-2e-5mp.json — do not edit by hand.*

@@ -1,0 +1,82 @@
+{
+  "id": "instar-in-9808-4k",
+  "brand": "INSTAR",
+  "model": "IN-9808 4K",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet",
+    "wifi"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K/QFHD"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ]
+  },
+  "sensor": "Sony STARVIS CMOS (4K)",
+  "power": {
+    "method": "PoE (802.3af) or DC power adapter"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": true,
+    "notes": "Ships with a 32GB microSD card installed. Also supports FTP/SFTP and the optional INSTAR Cloud."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "same audio arrangement as the IN-9408 2K+: built-in microphone, optional external speaker via 3.5mm jack for two-way audio",
+    "2x2 MIMO dual-band WiFi (2.4GHz/5GHz)",
+    "PIR heat sensor with configurable alarm areas",
+    "AI object detection (person/vehicle/animal)",
+    "MQTT v5 for smart home / Home Assistant integration",
+    "Apple HomeKit Secure Video, Alexa, Google Nest",
+    "WPA3 encryption"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://www.instar.com/en_US/in-9808-4k-white.html",
+    "https://www.instar.com/en_US/in-9808-4k-black-2-camera-set.html"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/livestream/12",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/livestream/13",
+      "notes": "Lens focal length/FOV and exact ONVIF profile could not be pinned down for this model \u2014 the product pages reviewed had copy-pasted description text from the IN-9408 2K+ page (mentioning a 4.3mm/90 degree lens that may or may not apply here), and two different IN-9808 listings disagreed on ONVIF Profile S vs Profile T. Confirm both the lens spec and ONVIF profile against the camera's own web UI before publishing.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF support confirmed in principle, but the exact profile (S vs T) is unconfirmed for this model \u2014 see frigate notes.",
+      "connection_type": "local"
+    },
+    "blue_iris": {
+      "profile": "Generic ONVIF/RTSP",
+      "notes": "Not independently confirmed for this specific model."
+    }
+  }
+}

@@ -3,8 +3,8 @@
   "brand": "IMOU",
   "model": "Cruiser 2 5MP",
   "aliases": [
-    "IPC-S7XEP-5M0WED",
-    "IMOU Cruiser 5MP Pan/Tilt Outdoor"
+    "IPC-GS7EP-5M0WE",
+    "IMOU Cruiser 2 5MP"
   ],
   "type": "ptz",
   "connectivity": [
@@ -13,28 +13,30 @@
   "release_year": 2024,
   "markets": [
     "IN",
-    "global"
+    "global",
+    "AE",
+    "SA",
+    "MENA"
   ],
   "resolution": {
     "megapixels": 5,
     "max_width": 2880,
     "max_height": 1620,
-    "label": "5MP 3K"
+    "label": "5MP/3K"
   },
-  "sensor": "1/2.7\" CMOS",
+  "sensor": "1/2.7\" progressive CMOS",
   "lens": {
     "count": 1,
-    "focal_length_mm": "2.7 (fixed)",
-    "aperture": "F1.6",
+    "focal_length_mm": "3.6 (fixed)",
     "varifocal": false
   },
-  "field_of_view_deg": "360 pan / 90 tilt",
+  "field_of_view_deg": "pan 340 / tilt 0-90",
   "night_vision": {
     "type": "color",
     "range_m": 30
   },
   "power": {
-    "method": "DC 12V (outdoor adapter)"
+    "method": "DC 12V"
   },
   "storage": {
     "onboard": true,
@@ -63,28 +65,30 @@
     "₹7,000–9,000 best outdoor India PTZ"
   ],
   "sources": [
-    "https://www.imoulife.com/"
+    "https://www.imou.com/en/product/detail/cruiser2",
+    "https://www.imou.com/en/product/specs/cruiser2",
+    "https://datasheet.w.od.ua/files/imou/imou-cruiser-2-ipc-gs7ep-5m0we-datasheet_eng.pdf"
   ],
   "power_source": [
     "dc"
   ],
   "configs": {
     "frigate": {
-      "detect": {
-        "width": 1280,
-        "height": 720,
-        "fps": 5
-      },
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1"
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention but is not independently verified on this specific SKU."
     },
     "home_assistant": {
       "integration": "onvif",
-      "notes": "Uses Dahua protocol. ONVIF integration works."
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
     },
     "blue_iris": {
       "profile": "Dahua",
-      "notes": "Select 'Dahua' profile. IMOU uses Dahua protocol."
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
     }
-  }
+  },
+  "release_notes": "Single-lens Cruiser 2 5MP (IPC-GS7EP-5M0WE). Corrected from a fabricated code (IPC-S7XEP-5M0WED, which is the dual-lens Cruiser Dual 2) and wrong 2.7mm lens. Absorbed the former MENA regional-duplicate entry.",
+  "last_verified": "2026-07-05",
+  "status": "available"
 }

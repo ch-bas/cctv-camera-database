@@ -1,0 +1,77 @@
+{
+  "id": "foscam-d8et",
+  "brand": "Foscam",
+  "model": "D8ET",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K/8MP"
+  },
+  "sensor": "Color CMOS",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20
+  },
+  "power": {
+    "method": "PoE (802.3af) or DC"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": true,
+    "notes": "Also supports FTP storage. Exact microSD capacity not confirmed for this model \u2014 verify before publishing."
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "motorized pan/tilt (350 pan / 70 tilt)",
+    "IK10 vandal-resistant dome housing",
+    "human/vehicle AI detection",
+    "110dB siren",
+    "wall-mount kit compatible (FABWMB-D8)"
+  ],
+  "operating_temp_c": "-20 to 50",
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "sources": [
+    "https://www.foscam.nl/d8et-wb.html",
+    "https://www.amazon.nl/Foscam-D8ET-bewakingscamera-voertuigherkenning-vandalismebescherming/dp/B0GP12XLWH"
+  ],
+  "last_verified": "2026-07-04",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/videoMain",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/videoSub",
+      "notes": "Not yet verified against a physical unit. Sourced from a Dutch distributor page and an Amazon.nl listing rather than us.foscam.com directly \u2014 double-check against the official spec page before publishing.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "No native Foscam integration in HA core; use the generic ONVIF integration.",
+      "connection_type": "local"
+    },
+    "blue_iris": {
+      "profile": "Generic ONVIF/RTSP",
+      "notes": "No dedicated Foscam profile in Blue Iris; use generic ONVIF/RTSP setup."
+    }
+  }
+}

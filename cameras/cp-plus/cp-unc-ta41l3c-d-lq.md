@@ -1,7 +1,5 @@
 # CP Plus CP-UNC-TA41L3C-D-LQ
 
-*Also known as: 4MP Color Night Vision IP Bullet STQC, CP Plus 4MP Dual Light Bullet*
-
 | Field | Spec |
 |-------|------|
 | Brand | CP Plus |
@@ -9,30 +7,26 @@
 | Type | bullet |
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2688×1520) |
-| Sensor | 1/2.7" CMOS |
-| Lens | 1× 3.6 (fixed)mm F1.6 |
-| Field of view | 98 horizontal° |
+| Sensor | 1/2.9" 4MP progressive CMOS |
+| Lens | 1× 3.6mm |
+| Field of view | 78 H / 40 V / 93 D° |
 | Night vision | hybrid (30m) |
-| Power | PoE (802.3af) / DC 12V |
-| Storage | microSD ≤ 128GB, NVR |
+| Power | PoE (IEEE 802.3af) or 12V DC |
+| Storage | NVR |
 | Protocols | onvif, rtsp |
-| IP rating | IP67 |
 | Two-way audio | No |
-| Released | 2023 |
+| Operating temp | -40 to 60°C |
 
 ## Features
 
-- 4MP outdoor bullet dual-light
-- STQC certified
-- H.265+
-- built-in mic
-- PoE
-- IP67
-- Made in India
+- dual light: IR + warm light (30m) full-color night vision
+- WDR 120dB
+- day/night (ICR)
+- Dahua-OEM platform (ONVIF Profile S/G/T + RTSP)
 
 ## Sources
 
-- https://www.cpplusworld.com/
+- https://cpplusworld.com/cp-unc-ta41l3c-d-lq
 
 ---
 *Auto-generated from cp-plus-cp-unc-ta41l3c-d-lq.json — do not edit by hand.*

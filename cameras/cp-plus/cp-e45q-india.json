@@ -4,74 +4,78 @@
   "model": "CP-E45Q",
   "type": "ptz",
   "connectivity": [
-    "ethernet"
+    "wifi"
   ],
-  "release_year": 2021,
+  "power_source": [
+    "usb",
+    "dc"
+  ],
   "resolution": {
     "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
     "label": "4MP"
   },
-  "field_of_view_deg": "60-2.5h",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 20
+  },
+  "sensor": "1/2.9\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4",
+    "varifocal": false
+  },
+  "field_of_view_deg": "pan 355 / tilt 59",
   "night_vision": {
     "type": "ir",
-    "range_m": 100
+    "range_m": 15
   },
   "power": {
-    "method": "PoE (802.3at)"
+    "method": "USB DC 5V (~5W)"
   },
   "storage": {
     "onboard": true,
     "max_microsd_gb": 256,
-    "nvr_compatible": true,
-    "cloud": false
+    "cloud": true,
+    "nvr_compatible": false
   },
   "protocols": [
-    "onvif",
-    "rtsp"
+    "http"
   ],
-  "ip_rating": "IP66",
   "audio": {
-    "microphone": false,
-    "speaker": false,
-    "two_way": false
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
   },
   "features": [
-    "pan/tilt/zoom",
-    "CP Plus 4MP 25x AI PTZ India",
-    "100m IR",
-    "SMD Plus AI",
-    "H.265",
-    "IP66",
-    "popular India PTZ entry"
+    "ezyKam+ consumer indoor Wi-Fi pan/tilt",
+    "355 pan / 59 tilt",
+    "human/motion/sound detection + motion tracking",
+    "two-way talk",
+    "Google Home",
+    "cloud + microSD",
+    "CTC cyber-secure tech"
   ],
+  "environment": [
+    "indoor"
+  ],
+  "markets": [
+    "IN"
+  ],
+  "release_notes": "CP Plus ezyKam+ consumer indoor Wi-Fi pan/tilt camera (4MP). App-only (ezyKam+ / P2P cloud) — no ONVIF/RTSP. Pan/tilt only (no optical zoom).",
   "sources": [
-    "https://www.cpplus.in/"
+    "https://cpplusworld.com/cp-e45q"
   ],
-  "lens": {
-    "count": 1,
-    "focal_length_mm": "4.8-120 (25x optical)",
-    "varifocal": true
-  },
-  "power_source": [
-    "poe"
-  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
   "configs": {
     "frigate": {
-      "detect": {
-        "width": 1280,
-        "height": 720,
-        "fps": 5
-      },
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1"
-    },
-    "home_assistant": {
-      "integration": "onvif",
-      "notes": "Uses Dahua protocol. ONVIF integration works."
-    },
-    "blue_iris": {
-      "profile": "Dahua",
-      "notes": "Select 'Dahua' profile. CP Plus uses Dahua protocol."
+      "notes": "ezyKam+ consumer Wi-Fi camera — app-only (ezyKam+ / P2P cloud). No ONVIF or RTSP is exposed, so Frigate / local-NVR integration is not supported.",
+      "verified": false
     }
   }
 }

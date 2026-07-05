@@ -1,0 +1,89 @@
+{
+  "id": "imou-bullet-3c-5mp",
+  "brand": "IMOU",
+  "model": "Bullet 3C 5MP",
+  "aliases": [
+    "IPC-S3DP-5M0WJ"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2880,
+    "max_height": 1620,
+    "label": "5MP/3K"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "power": {
+    "method": "DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": true,
+    "max_microsd_gb": 256
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "IR night vision (up to 30m)",
+    "IMOU SENSE AI human & vehicle detection",
+    "110 dB siren",
+    "two-way audio",
+    "H.265",
+    "2.4GHz Wi-Fi"
+  ],
+  "release_notes": "Bullet 3C (IPC-S3DP-5M0WJ, moderate-confidence code; 3MP variant also sold): the IR, 2.4GHz-Wi-Fi budget sibling of the Bullet 3 (which adds full-color + Wi-Fi 6 + PoE).",
+  "sources": [
+    "https://www.imou.com/en/product/detail/bullet3c",
+    "https://www.imou.com/en/product/specs/bullet3c",
+    "https://e-catalog.com/IMOU-BULLET-3C-5MP.htm"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF is listed for this model but the exact path is not independently verified on this SKU."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+    }
+  }
+}

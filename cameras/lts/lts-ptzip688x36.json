@@ -1,0 +1,91 @@
+{
+  "id": "lts-ptzip688x36",
+  "brand": "LTS",
+  "model": "PTZIP688X36",
+  "aliases": [
+    "Platinum 8 MP 36x PTZ IP Camera"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 4096,
+    "max_height": 2160,
+    "label": "4K/8MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30
+  },
+  "sensor": "2/3\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "7.5-270",
+    "aperture": "F1.5",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir"
+  },
+  "power": {
+    "method": "24V AC or High PoE, up to 50W"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "36x optical zoom, autofocus",
+    "Smart Tracking 2.0 (deep-learning-based auto-tracking)",
+    "IK10 vandal-resistant",
+    "very low-light rated: 0.005 lux color / 0.0005 lux B&W (AGC on)"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "release_notes": "LTS (LT Security Inc.) is a US-based distributor selling Hikvision OEM hardware under its own model numbering. Hikvision-derived firmware ships with ONVIF disabled by default since v5.5.0 \u2014 must be manually enabled in the camera's web UI before use with third-party NVRs/Frigate/Home Assistant.",
+  "sources": [
+    "https://ltsecurityinc.com/ip-network-ptz-camera-ptzip688x36.html",
+    "https://ltsecurityinc.com/default/products/product-lines/platinum/ip-camera/ip-ptz.html"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "notes": "Standard Hikvision-OEM RTSP path convention likely applies but not independently confirmed for this exact model. PTZ control via ONVIF requires ONVIF to be manually enabled first (disabled by default on Hikvision-derived firmware v5.5.0+).",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF must be manually enabled first. Once enabled, PTZ control should work through the generic ONVIF integration given the Hikvision-derived platform.",
+      "connection_type": "local"
+    },
+    "blue_iris": {
+      "profile": "Hikvision (generic)",
+      "notes": "Not independently confirmed for this specific model."
+    }
+  }
+}

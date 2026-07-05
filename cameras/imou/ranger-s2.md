@@ -1,6 +1,6 @@
 # IMOU Ranger S2
 
-*Also known as: IPC-GS7EP-3M0WE, IMOU Ranger S2 3MP*
+*Also known as: IPC-DK2-3H1W, IMOU Ranger S2 3MP*
 
 | Field | Spec |
 |-------|------|
@@ -12,7 +12,7 @@
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 3.6 (fixed)mm F2.0 |
 | Field of view | 355 pan / 90 tilt° |
-| Night vision | color (10m) |
+| Night vision | ir (10m) |
 | Power | DC 5V (USB) |
 | Storage | microSD ≤ 256GB |
 | Protocols | rtsp |
@@ -35,7 +35,8 @@
 
 ## Sources
 
-- https://www.imoulife.com/
+- https://www.wifi-stock.com/details/imou-ranger-s2-IPC-DK2-3H1W.html
+- https://www.ispyconnect.com/camera/imou
 
 ---
 *Auto-generated from imou-ranger-s2.json — do not edit by hand.*

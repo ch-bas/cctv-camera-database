@@ -1,0 +1,92 @@
+{
+  "id": "imou-cruiser",
+  "brand": "IMOU",
+  "model": "Cruiser 4MP",
+  "aliases": [
+    "IPC-S42FP",
+    "IPC-S22FP (2MP)"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30
+  },
+  "sensor": "1/2.7\" progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "105 diagonal; pan 355 / tilt 0-90",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "power": {
+    "method": "DC 12V/1A"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": true,
+    "max_microsd_gb": 256
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "outdoor pan/tilt",
+    "8x digital zoom",
+    "human detection",
+    "two-way talk",
+    "dual-antenna Wi-Fi",
+    "NVR support"
+  ],
+  "release_notes": "Original/base Cruiser (IPC-S42FP 4MP; a 2MP variant IPC-S22FP also exists). Mains-powered wired Wi-Fi PTZ.",
+  "sources": [
+    "https://www.imou.com/en/product/detail/cruiser",
+    "https://www.imou.com/en/product/specs/cruiser",
+    "https://www.wifi-stock.com/details/imou-4mp-h-265-wi-fi-p.html"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF is listed for this model but the exact path is not independently verified on this SKU."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+    }
+  }
+}

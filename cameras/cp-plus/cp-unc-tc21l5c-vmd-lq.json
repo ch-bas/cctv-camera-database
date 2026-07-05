@@ -1,0 +1,94 @@
+{
+  "id": "cp-plus-cp-unc-tc21l5c-vmd-lq",
+  "brand": "CP Plus",
+  "model": "CP-UNC-TC21L5C-VMD-LQ",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p/2MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "sensor": "1/2.7\" 2MP progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "varifocal": false,
+    "aperture": "F1.4"
+  },
+  "field_of_view_deg": "84 H / 42 V / 101 D",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 50
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) or 12V DC"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "dual light: IR + warm light (50m) full-color night vision",
+    "Starlight low-light",
+    "Smart IR",
+    "IVS perimeter protection",
+    "WDR 120dB",
+    "IK10 vandal-resistant",
+    "Dahua-OEM platform (ONVIF Profile S/G/T + RTSP)"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "markets": [
+    "IN"
+  ],
+  "sources": [
+    "https://cpplusworld.com/cp-unc-tc21l5c-vmd-lq"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Uses Dahua protocol. ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile. CP Plus uses Dahua protocol."
+    }
+  }
+}

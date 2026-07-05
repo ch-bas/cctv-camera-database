@@ -1,41 +1,37 @@
 # CP Plus CP-Z43Q
 
-*Also known as: 4MP Quad HD Outdoor WiFi Pan/Tilt, CP-Z45Q*
-
 | Field | Spec |
 |-------|------|
 | Brand | CP Plus |
 | Model | CP-Z43Q |
 | Type | ptz |
-| Connectivity | wifi |
-| Resolution | 4MP QHD (4MP, 2560×1440) |
-| Sensor | 1/2.7" CMOS |
-| Lens | 1× 3.6 (fixed)mm F1.6 |
-| Field of view | 360 pan / 90 tilt° |
-| Night vision | color (20m) |
-| Power | DC 12V (outdoor adapter) |
+| Connectivity | wifi, ethernet |
+| Resolution | 4MP (4MP, 2560×1440) |
+| Sensor | 1/2.9" CMOS |
+| Lens | 1× 4mm |
+| Field of view | pan 345 / tilt 70° |
+| Night vision | hybrid (15m) |
+| Power | USB DC 5V/1A |
 | Storage | microSD ≤ 256GB |
-| Protocols | rtsp |
-| IP rating | IP66 |
+| Protocols | http |
+| IP rating | IP65 |
 | Two-way audio | Yes |
-| Released | 2024 |
 
 ## Features
 
-- 4MP outdoor pan/tilt WiFi
-- 360deg motorized coverage
-- full-color night vision
-- AI person/human detection
-- smart motion tracking
-- CTC Cyber Secure Tech
-- two-way audio
-- Alexa / Google
-- IP66
-- ₹5,000–7,000
+- ezyKam+ outdoor Wi-Fi pan/tilt
+- full-color night vision (white LED ~8-10m) + IR ~15m
+- built-in siren
+- 345 pan / 70 tilt
+- human detection + motion tracking
+- two-way talk
+- Alexa + Google Home
+- optional wired Ethernet backup
+- microSD up to 256GB
 
 ## Sources
 
-- https://www.cpplusworld.com/
+- https://cpplusworld.com/cp-z43q
 
 ---
 *Auto-generated from cp-plus-cp-z43q.json — do not edit by hand.*

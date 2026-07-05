@@ -1,0 +1,77 @@
+{
+  "id": "canon-vb-m46",
+  "brand": "Canon",
+  "model": "VB-M46",
+  "type": "ptz",
+  "connectivity": ["ethernet"],
+  "power_source": ["poe", "dc", "ac-mains"],
+  "resolution": {
+    "megapixels": 1.3,
+    "max_width": 1280,
+    "max_height": 960,
+    "label": "1.3MP"
+  },
+  "video": {
+    "codecs": ["H.265", "H.264", "MJPEG"],
+    "max_fps": 60
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.7-94",
+    "aperture": "F1.6-3.5",
+    "varifocal": true
+  },
+  "field_of_view_deg": "62.4-3.3 horizontal (20x optical zoom)",
+  "power": {
+    "method": "PoE (IEEE 802.3at Type1) / 12V DC / AC adapter (PA-V18)"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "notes": "SD / SDHC / SDXC memory card (Class 10 recommended); backup recording."
+  },
+  "protocols": ["onvif", "rtsp"],
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "1.3MP indoor PTZ dome (pan 340 / tilt 100)",
+    "20x optical zoom + 16x digital, fast auto-focus (4.7-94mm F1.6-3.5)",
+    "day/night with IR-cut filter (no IR illuminator)",
+    "low-light: color 0.02 lux, mono 0.003 lux",
+    "True WDR + Smart Shade Control + haze compensation",
+    "image stabilizer",
+    "intelligent analytics: moving/abandoned/removed object, tampering, passing, intrusion, volume, face detection",
+    "up to 64 presets + 5 tour routes",
+    "ONVIF Profile S/G/T",
+    "two-way audio via external 3.5mm line/mic in + line out"
+  ],
+  "operating_temp_c": "-10 to 50",
+  "dimensions_mm": "132 diameter x 155",
+  "weight_g": 1100,
+  "release_year": 2022,
+  "environment": ["indoor"],
+  "markets": ["JP", "global"],
+  "release_notes": "2022 refresh of Canon's compact indoor PTZ line (new CMOS + video engine). 1.3MP sibling of the 2MP/Full HD VB-H47. Indoor only (no IP rating); needs an optional dome housing for outdoor-style installs.",
+  "sources": [
+    "https://www.axis.com/dam/public/b9/43/62/datasheet-canon-vb-m46-en-US-379307.pdf"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "detect": { "width": 640, "height": 480, "fps": 5 },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/stream/profile1=r",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S/G/T)."
+    },
+    "blue_iris": {
+      "profile": "Canon",
+      "notes": "Select the 'Canon' profile if available, otherwise Generic/ONVIF."
+    }
+  }
+}

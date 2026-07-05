@@ -1,0 +1,87 @@
+{
+  "id": "imou-bullet-2e-pro-5mp",
+  "brand": "IMOU",
+  "model": "Bullet 2E Pro 5MP",
+  "type": "bullet",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2880,
+    "max_height": 1620,
+    "label": "5MP/3K"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 20
+  },
+  "sensor": "1/2.9\" progressive CMOS (3MP variant)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "varifocal": false
+  },
+  "field_of_view_deg": "96 H / 52 V / 111 D",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 25
+  },
+  "power": {
+    "method": "DC 12V/1A, <9W"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": true,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Wi-Fi 6",
+    "IR night vision",
+    "AI human & vehicle detection",
+    "configurable detection region",
+    "motion detection",
+    "8x digital zoom"
+  ],
+  "release_notes": "Bullet 2E Pro: Wi-Fi 6 IR bullet, built-in mic only. 3MP variant confirmed on the official spec page; 5MP top variant inferred. No IPC model code published yet. (Legacy non-Pro Bullet 2E had color spotlight NV — verify whether the 5MP Pro adds a spotlight.)",
+  "sources": [
+    "https://www.imou.com/en/product/detail/bullet2e-pro",
+    "https://www.imou.com/en/product/specs/bullet2e-pro"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF is listed for this model but the exact path is not independently verified on this SKU."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+    }
+  }
+}

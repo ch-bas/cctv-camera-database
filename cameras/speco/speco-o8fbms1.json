@@ -1,0 +1,86 @@
+{
+  "id": "speco-o8fbms1",
+  "brand": "Speco Technologies",
+  "model": "O8FBMS1",
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "label": "8MP stitched panoramic (4x 2MP sensors)"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "sensor": "4x progressive scan CMOS (multi-sensor panoramic array)",
+  "lens": {
+    "count": 4,
+    "focal_length_mm": "3.3",
+    "varifocal": false
+  },
+  "field_of_view_deg": "Horizontal 175, Vertical 80",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20
+  },
+  "power": {
+    "method": "PoE"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "notes": "microSD capacity not confirmed; supports Speco NVR-based recording."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Flexible Intensifier Technology (low-light enhancement)",
+    "IK10 vandal-resistant",
+    "ONVIF Profile S conformant",
+    "advanced analytics (object removal, regional intrusion, abnormal video, line crossing, people intrusion) — requires a Speco NRE-series recorder for full functionality",
+    "up to 10 simultaneous users",
+    "junction box included"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://specotech.com/product/o8fbms1/",
+    "https://www.homecontrols.com/Speco-8MP-Panoramic-IP-Camera-SPO8FBMS1"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "notes": "This is a 4-sensor stitched panoramic camera — it likely exposes either one stitched panoramic stream, four individual sensor streams, or both, depending on firmware configuration. Check the camera's web UI for the full RTSP channel list rather than assuming a single stream covers the full panoramic view. ONVIF Profile S is confirmed, which should support standard discovery, but the exact RTSP path was not found in the sources reviewed.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF Profile S conformance explicitly confirmed by the manufacturer's own retailer-published spec sheet.",
+      "connection_type": "local"
+    },
+    "blue_iris": {
+      "profile": "Generic ONVIF/RTSP",
+      "notes": "Not independently confirmed with Blue Iris specifically; advanced analytics features require a Speco NRE recorder rather than a third-party NVR."
+    }
+  }
+}

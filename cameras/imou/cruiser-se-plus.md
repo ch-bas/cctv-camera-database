@@ -1,18 +1,22 @@
 # IMOU Cruiser SE+
 
+*Also known as: IPC-S41FEP, IMOU Cruiser SE+*
+
 | Field | Spec |
 |-------|------|
 | Brand | IMOU |
 | Model | Cruiser SE+ |
-| Type | bullet |
-| Connectivity | ethernet |
-| Resolution | 4MP (4MP) |
-| Field of view | 107h° |
+| Type | ptz |
+| Connectivity | wifi, ethernet |
+| Resolution | 4MP (4MP, 2560×1440) |
+| Sensor | 1/3" progressive CMOS |
+| Lens | 1× 3.6 (fixed)mm |
+| Field of view | 79 H / 44 V / 94 D; pan 355 / tilt 0-90° |
 | Night vision | color (30m) |
-| Power | PoE / DC 12V |
+| Power | DC 12V/1A |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
-| IP rating | IP67 |
+| IP rating | IP66 |
 | Two-way audio | No |
 | Released | 2023 |
 
@@ -26,7 +30,8 @@
 
 ## Sources
 
-- https://www.imoulife.com/
+- https://www.imou.com/fr/product/detail/cruiser-se-plus
+- https://www.wifi-stock.com/details/imou-4mp-h-265-wi-fi-ptz-camera-cruiser-se-ipc-s41fep.html
 
 ---
 *Auto-generated from imou-cruiser-se-plus.json — do not edit by hand.*

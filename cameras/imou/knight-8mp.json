@@ -1,0 +1,94 @@
+{
+  "id": "imou-knight-8mp",
+  "brand": "IMOU",
+  "model": "Knight 8MP",
+  "aliases": [
+    "IPC-F88FIP-V2",
+    "IPC-F88FIP"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K/8MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 15
+  },
+  "sensor": "1/2.8\" 8MP progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "varifocal": false
+  },
+  "field_of_view_deg": "107 H / 56 V / 127 D",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "DC 12V/1.5A"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": true,
+    "max_microsd_gb": 256
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "4K/8MP outdoor spotlight bullet",
+    "600-lumen LED floodlights",
+    "110 dB siren",
+    "smart color night vision (B/W 30m, color 20m)",
+    "AI human/vehicle/animal detection",
+    "16x digital zoom",
+    "HDR",
+    "dual-band Wi-Fi 6",
+    "two-way audio"
+  ],
+  "release_notes": "Knight (IPC-F88FIP-V2): 4K Wi-Fi 6 floodlight/spotlight bullet, 15fps at full 4K. ONVIF explicitly confirmed by distributor.",
+  "sources": [
+    "https://www.imou.com/en/product/detail/knight",
+    "https://www.setik.biz/en/cameras/8107-imou-ipc-f88fip-imou-imou-knight-4k-wi-fi-6-smart-camera-onvif-8mp-28mm-ir30-people-detection-audio-microphone-ip66-color-night-vision.html"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF is listed for this model but the exact path is not independently verified on this SKU."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+    }
+  }
+}

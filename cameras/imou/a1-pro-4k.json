@@ -1,0 +1,85 @@
+{
+  "id": "imou-a1-pro-4k",
+  "brand": "IMOU",
+  "model": "A1 Pro 4K",
+  "type": "ptz",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ]
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "91 H; pan 355 / tilt -5~80",
+  "night_vision": {
+    "type": "hybrid"
+  },
+  "power": {
+    "method": "DC 5V via USB-C"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "4K/8MP pan/tilt (A1 body)",
+    "AI human/pet detection",
+    "smart tracking",
+    "intelligent full-color night vision",
+    "one-touch call",
+    "dual-band Wi-Fi 6",
+    "Ethernet port",
+    "two-way talk"
+  ],
+  "release_notes": "A1 industrial-design body on the IPC-S2E1P platform (the A1 Pro 3MP is IPC-S2E1P-3R1S; the exact 8MP model code was not found). Third distinct SKU of the shared 4K platform. Sensor size, aperture, night-vision distance and max FPS unconfirmed for this SKU.",
+  "sources": [
+    "https://www.imou.com/en/product/detail/a1-pro4k",
+    "https://www.imou.com/en/product/specs/a1-pro4k"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF/RTSP is documented for this plugged Wi-Fi line but not independently verified on this specific SKU."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+    }
+  }
+}

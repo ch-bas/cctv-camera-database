@@ -1,0 +1,94 @@
+{
+  "id": "imou-titan-pro-6mp",
+  "brand": "IMOU",
+  "model": "Titan Pro 6MP",
+  "aliases": [
+    "IPC-U7LP-6V0NE"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3072,
+    "max_height": 2048,
+    "label": "6MP/3K"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ]
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "pan 340 / tilt 0-90",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE or DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "premium pan/tilt",
+    "F1.0 ultra-wide-aperture lens",
+    "Aurora full-color night vision",
+    "auto human/vehicle tracking",
+    "red-blue warning lights",
+    "spotlight + siren",
+    "dual-band Wi-Fi 6",
+    "AOR adaptive recording",
+    "people counting",
+    "privacy zones"
+  ],
+  "release_notes": "Titan Pro (IPC-U7LP-6V0NE): single-lens motorized PTZ, F1.0 lens, PoE-capable. IP rating and microSD max not confirmed on sources reviewed.",
+  "sources": [
+    "https://www.imou.com/en/product/detail/titan-pro",
+    "https://www.megateh.eu/products/imou-cloud-cameras/imou-titan-pro-6mp-ptz-camera-with-aurora-color-night-vision",
+    "https://static-website.imou.com/673b89be-cf64-4782-b9cf-30f4779c1d81.pdf"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF is listed for this model but the exact path is not independently verified on this SKU."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+    }
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "id": "imou-dk7-5mp",
+  "brand": "IMOU",
+  "model": "DK7 5MP",
+  "aliases": [
+    "IPC-DK7P-5H1WE",
+    "IPC-DK7P-3H1WE (3MP)"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2880,
+    "max_height": 1620,
+    "label": "5MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ]
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "pan 355 / tilt 0-90",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": true,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "outdoor pan/tilt",
+    "smart tracking / auto-follow",
+    "4 night-vision modes (full-color + B/W)",
+    "integrated spotlight",
+    "110 dB siren",
+    "full-duplex two-way talk",
+    "AI human detection",
+    "dual-band Wi-Fi"
+  ],
+  "release_notes": "DK7 (IPC-DK7P-5H1WE 5MP / -3H1WE 3MP): outdoor motorized pan/tilt with color night vision + spotlight.",
+  "sources": [
+    "https://www.imou.com/en/product/detail/dk7",
+    "https://cctv.rs/wp-content/uploads/2024/07/Dahua-Imou-DK7.pdf"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF is listed for this model but the exact path is not independently verified on this SKU."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+    }
+  }
+}

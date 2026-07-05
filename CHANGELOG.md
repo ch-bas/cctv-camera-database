@@ -6,6 +6,56 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.26.0] — 2026-07-05
+
+Five new brands plus **IMOU**, **Speco Technologies**, **Ajax**, **Canon**, **Arecont/Costar** and **CP Plus** audits + expansions. Net: **1,728 → 1,887 cameras**, **69 → 75 brands**.
+
+### CP Plus — audit + expansion (14 → 26)
+
+- **Removed 6 fabricated ghosts:** `CP-UNC-BA41PL3`, `CP-UNC-BA81L3-S2` (`BA` isn't a CP Plus prefix), `CP-UNC-DA41L3S2-LQ`, `CP-UNC-DA41PL3C-D-LQ` (invented `S2`/`PL3C-D-LQ` codes, mis-typed turret — `DA`=dome), `CP-UNC-TA81PL3` (8MP economy `PL3` doesn't exist), `CP-UNC-WI41PL3` (`WI` isn't a CP-UNC prefix).
+- **Fixed 3 ezyKam+ Wi-Fi cams** (`CP-E35Q`/`CP-E45Q`/`CP-Z43Q`) — corrected from a wrong Dahua-RTSP config to **app-only Wi-Fi** (P2P/cloud, no ONVIF/RTSP; `connectivity: wifi`, USB power). Re-sourced + stamped 4 real UNC IP cameras.
+- **Added 19 real CP-UNC IP cameras** from `cpplusworld.com` (Dahua-OEM ONVIF S/G/T): box/dome/bullet/fisheye across 2/4/5/6/8MP, `Q`=IR-only vs `LQ`=dual-light (full-color), `ZL`=motorized varifocal.
+
+### Added — Canon (2 → 4)
+
+- Two indoor PTZ dome cameras (**VB-M46** 1.3MP, **VB-H47** 2MP/Full HD) from official Canon datasheets — 20x optical zoom, day/night IR-cut low-light, ONVIF S/G/T, PoE/DC/AC.
+
+### Costar / Arecont Vision — ConteraIP audit + expansion (8 → 10)
+
+- **Removed 8 fabricated/placeholder entries:** 4 ghosts with non-existent model codes (`CBR-2312IR`, `CBR-5312IR`, `CDI-2312IRV`, `CDI-5312IRV` — `CBR` isn't a Costar prefix; real Costar IP cameras use CBI/CDI-series numbering) and 4 generic bare-sourced placeholders (`ConteraIP Bullet 8MP` was itself a ghost — no 8MP single-sensor ConteraIP bullet exists; plus generic `Dome 5MP`/`Dome 8MP`/`Panoramic 12MP`).
+- **Added 10 real Arecont Vision ConteraIP SKUs** from `sales.arecontvision.com`: Contera indoor/outdoor domes (AV02/AV05 CID/CLD; -200 varifocal / -201 fixed), 12MP fisheye (AV12CFE-250), MicroDome Duo dual-sensor (AV4956/AV10956/AV16956DN-28 = 2×1080p / 2×5MP / 2×8MP), and the discontinued 4-sensor panoramic AV12CPD-236.
+
+### Added — Speco Technologies (new brand, 31 cameras)
+
+US professional/commercial (NDAA) brand, all verified against official `specotech.com` datasheets + reputable retailers:
+- **O-series** turrets/domes/bullets (O4T9, O4VT2, O4TDD2, O4D9/M, O4B9M, O8D9/M, O8B9/M, O8VD3, O8VT3), **Flexible Intensifier** line (O8FD1/M, O8FB1/M, O8FT1/M), **White-Light Intensifier** (O8VLT1, O8KT1/B), **PS professional PoE** (PS2M/3D/3E/7F/8D/70F), **multi-sensor panoramics** (O8FBMS1, O4FDMS1, O8LMST1, O84S), LPR box (O4BXLP1M), 25x PTZ (O4P25X2), 12MP fisheye/bullet (O12MDP4, O12B1M), and a video doorbell (O2DB1).
+- Of the 10 pre-existing entries, 8 were spec-correct; 2 fixed (**O4BXLP1M** night vision `ir → color`, it is a white-light LPR camera; **O8VT3** power `poe → poe+dc`). Speco does not publish RTSP paths, so `configs` use ONVIF auto-discovery (`verified: false`).
+
+### Ajax — wired-camera audit + expansion (2 → 22)
+
+- **Removed 2 fabricated ghosts:** `OutdoorCam` (no such product; `/products/outdoorcam/` 404s) and `DualCam` (no Ajax "DualCam" exists; the only real referent is the single-camera DoorBell).
+- **Added 22 verified wired PoE cameras** from official `ajax.systems` spec pages: DomeCam Mini (×4) + Mini HL (×3), DomeCam HLVF (×2), BulletCam HL (×4), TurretCam (×4), Superior BulletCam/DomeCam HLVF (×4), and the DoorBell (ADB.Y.W). All ONVIF (Profile S / S+T); Ajax doesn't publish RTSP paths so configs use ONVIF auto-discovery.
+
+### Added — 5 new brands (51 cameras)
+
+### Added — 5 new brands (51 cameras)
+
+- **Foscam** (22) — consumer WiFi/PoE line (C/D/G/PD/R/SD/T/V/W/X series), verified against `us.foscam.com`/`foscam.com` product pages.
+- **INSTAR** (12) — privacy-first German prosumer PT/box cams (IN-8xxx/9xxx), verified against `wiki.instar.com`.
+- **LTS** (7) — US prosumer/installer line (Platinum + Pro-X); Pro-X OEM origin flagged as unconfirmed.
+- **Uniarch** (6) — Uniview's budget NDAA sub-brand (IPC-B/T1xx, UHO).
+- **Longse** (4) — CN OEM/budget bullets/domes.
+
+All honestly caveated: `verified: false` + notes wherever an RTSP path or ONVIF support is not confirmed.
+
+### IMOU — full brand audit + expansion (15 → 56)
+
+- **Audited the 15 legacy entries** (all cited bare `imoulife.com` homepages): **3 ghosts removed** (`Go Basic` = cross-brand/Reolink naming; `Turret PoE 8MP` = no such 8MP Imou turret; `Doorbell 2MP`/`IPC-B46LP` = mislabeled Cell 2 bullet), **3 regional duplicates merged** into their canonicals (`Cruiser 2 MENA`, `Ranger S2 MENA`, `Ranger 2 VN`), and **8 fixed** for fabricated model codes / wrong specs (e.g. `Cruiser 2` code `IPC-S7XEP…`→`IPC-GS7EP-5M0WE`; `Ranger S2` code →`IPC-DK2-3H1W`; `Bullet 2E` code →`IPC-K3DP-5H0WF`; `Cell Go` 4MP/4G→3MP/WiFi; `Cruiser SE+` bullet→PTZ).
+- **Added 47 verified models** from official `imou.com` pages: the battery Cell/AOV line (Cell 2/3/3C, Cell PT/2C/4G, AOV PT/Dual — `protocols: ["http"]`, no fabricated RTSP), and the wired Cruiser (Dual/Triple/Pano-Z/Z/SC/2C/4G), Bullet (2 Pro/2C/2E/3/3C), PS professional PoE (PS2M/3D/3E/7F/8D/70F), Titan Pro, DK3/DK7, Knight and Versa lines (Dahua `realmonitor` RTSP + ONVIF, `verified: false`).
+- **3 deferred** (specs genuinely unpublished): `Bullet 3 Pro`, `PS5E`, `PS8E` (Imou's own spec tabs render "To be announced").
+
+---
+
 ## [1.25.0] — 2026-07-05
 
 Full data-quality audit of the **Kedacom** brand (master audit #28) — a **replace-the-whole-brand** case. Net: **12 → 58 cameras** (all 12 removed, 58 real models added, all verified against official `kedacom.com` product pages).

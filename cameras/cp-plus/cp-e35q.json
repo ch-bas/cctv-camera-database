@@ -2,87 +2,80 @@
   "id": "cp-plus-cp-e35q",
   "brand": "CP Plus",
   "model": "CP-E35Q",
-  "aliases": [
-    "3MP WiFi Smart CCTV Camera CTC",
-    "CP Plus Cyber Secure"
-  ],
   "type": "ptz",
   "connectivity": [
     "wifi"
   ],
-  "release_year": 2023,
-  "markets": [
-    "IN"
+  "power_source": [
+    "usb",
+    "dc"
   ],
   "resolution": {
     "megapixels": 3,
-    "max_width": 2048,
-    "max_height": 1536,
-    "label": "3MP 2K"
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "3MP/2K"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 20
   },
   "sensor": "1/2.7\" CMOS",
   "lens": {
     "count": 1,
-    "focal_length_mm": "3.6 (fixed)",
+    "focal_length_mm": "4",
     "aperture": "F2.0",
     "varifocal": false
   },
-  "field_of_view_deg": "355 pan / 90 tilt",
+  "field_of_view_deg": "pan 355 / tilt 59",
   "night_vision": {
-    "type": "color",
-    "range_m": 10
+    "type": "ir",
+    "range_m": 15
   },
   "power": {
-    "method": "DC 5V (USB)"
+    "method": "USB Type-C DC 5V/1A (max ~5W)"
   },
   "storage": {
     "onboard": true,
     "max_microsd_gb": 256,
-    "nvr_compatible": false,
-    "cloud": true
+    "cloud": true,
+    "nvr_compatible": false
   },
   "protocols": [
-    "rtsp"
+    "http"
   ],
-  "ip_rating": "IP20",
   "audio": {
     "microphone": true,
     "speaker": true,
     "two_way": true
   },
   "features": [
-    "3MP 2K WiFi indoor pan/tilt",
-    "CTC Cyber Secure Tech (Indian data protection)",
-    "360deg coverage",
-    "color night vision",
-    "two-way audio",
-    "Alexa / Google Home",
-    "CP Plus app",
-    "₹3,500–4,500 price range"
+    "ezyKam+ consumer indoor Wi-Fi pan/tilt",
+    "355 pan / 59 tilt",
+    "two-way talk",
+    "motion + human detection",
+    "Google Home + Alexa",
+    "microSD up to 256GB"
   ],
+  "environment": [
+    "indoor"
+  ],
+  "markets": [
+    "IN"
+  ],
+  "release_notes": "CP Plus ezyKam+ consumer indoor Wi-Fi pan/tilt camera. App-only (ezyKam+ / P2P cloud) — no ONVIF or RTSP, so it does not integrate with Frigate/NVRs. Pan/tilt only (no optical zoom).",
   "sources": [
-    "https://www.cpplusworld.com/"
+    "https://cpplusworld.com/cp-e35q"
   ],
-  "power_source": [
-    "usb"
-  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
   "configs": {
     "frigate": {
-      "detect": {
-        "width": 640,
-        "height": 480,
-        "fps": 5
-      },
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1"
-    },
-    "home_assistant": {
-      "integration": "onvif",
-      "notes": "Uses Dahua protocol. ONVIF integration works."
-    },
-    "blue_iris": {
-      "profile": "Dahua",
-      "notes": "Select 'Dahua' profile. CP Plus uses Dahua protocol."
+      "notes": "ezyKam+ consumer Wi-Fi camera — app-only (ezyKam+ / P2P cloud). No ONVIF or RTSP is exposed, so Frigate / local-NVR integration is not supported.",
+      "verified": false
     }
   }
 }

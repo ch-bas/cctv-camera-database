@@ -4,30 +4,31 @@
 |-------|------|
 | Brand | IMOU |
 | Model | Indoor 2K |
-| Type | dome |
+| Type | ptz |
 | Connectivity | wifi |
-| Resolution | 2K QHD (4MP) |
+| Resolution | 2K/3MP (3MP, 2304×1296) |
+| Sensor | 1/2.8" CMOS |
 | Field of view | 107h° |
-| Night vision | ir (8m) |
+| Night vision | ir (10m) |
 | Power | DC 5V USB |
 | Storage | microSD ≤ 256GB |
-| Protocols | http |
+| Protocols | onvif, rtsp |
 | IP rating | IP20 |
 | Two-way audio | Yes |
 | Released | 2023 |
 
 ## Features
 
-- IMOU Indoor 2K 4MP WiFi pan/tilt indoor
+- indoor pan/tilt
 - AI human detection
-- auto-tracking
-- 2-way audio
-- H.265
-- Alexa
+- smart auto-tracking
+- two-way talk
+- plug-in Wi-Fi
 
 ## Sources
 
-- https://www.imoulife.com/
+- https://www.imou.com/en/product/detail/cue2
+- https://www.imou.com/en/product/specs/cue2
 
 ---
 *Auto-generated from imou-indoor-2k.json — do not edit by hand.*

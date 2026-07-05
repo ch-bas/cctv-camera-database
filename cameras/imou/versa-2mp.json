@@ -1,0 +1,90 @@
+{
+  "id": "imou-versa-2mp",
+  "brand": "IMOU",
+  "model": "Versa 2MP",
+  "aliases": [
+    "IPC-C22FP-C"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ]
+  },
+  "sensor": "1/2.8\" 2MP progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "varifocal": false
+  },
+  "field_of_view_deg": "97 H",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 20
+  },
+  "power": {
+    "method": "DC power adapter"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": true,
+    "max_microsd_gb": 256
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "compact corded Wi-Fi bullet",
+    "smart color night vision + spotlight (20m)",
+    "siren alarm",
+    "two-way audio",
+    "AI human detection",
+    "magnetic base",
+    "2.4GHz Wi-Fi + Ethernet port"
+  ],
+  "release_notes": "Versa (IPC-C22FP-C): compact 1080p corded Wi-Fi bullet. IP rating varies by SKU (IP65/IP67).",
+  "sources": [
+    "https://www.imou.com/en/product/detail/versa",
+    "https://www.wifi-stock.com/details/imou-1080p-h-265-wi-fi-bullet-camera-versa-ipc-c22fp-c.html"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF is listed for this model but the exact path is not independently verified on this SKU."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+    }
+  }
+}

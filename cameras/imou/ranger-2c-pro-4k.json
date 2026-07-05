@@ -1,0 +1,91 @@
+{
+  "id": "imou-ranger-2c-pro-4k",
+  "brand": "IMOU",
+  "model": "Ranger 2C Pro 4K",
+  "type": "ptz",
+  "aliases": [
+    "IPC-TA82P-PRO"
+  ],
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 15
+  },
+  "sensor": "1/2.7\" Progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "89 H / 45 V / 105 D; pan 355 / tilt -5~80",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 20
+  },
+  "power": {
+    "method": "DC 5V/1.5A via USB-C; <7.5W"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "4K/8MP compact pan/tilt",
+    "360 auto-cruise + patrol plans",
+    "automatic target tracking",
+    "full-color night vision + white light",
+    "dual-band Wi-Fi 6",
+    "8x digital zoom",
+    "two-way talk"
+  ],
+  "release_notes": "Compact 'C' sibling (IPC-TA82P-PRO) of the Ranger 2 Pro 4K, distinct SKU on the shared 4K platform. Night-vision distance (20m) is retailer-reported and conflicts with the Ranger 2 Pro 4K's 15m. Ethernet port is a family trait, marked with lower confidence. ONVIF listed; RTSP inferred from the platform.",
+  "sources": [
+    "https://www.imou.com/en/product/detail/ranger2c-pro4k",
+    "https://www.imou.com/en/product/specs/ranger2c-pro4k"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF/RTSP is documented for this plugged Wi-Fi line but not independently verified on this specific SKU. This SKU's page lists ONVIF; the RTSP path is inferred from the shared platform."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+    }
+  }
+}

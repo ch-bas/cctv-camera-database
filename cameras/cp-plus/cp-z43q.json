@@ -2,89 +2,84 @@
   "id": "cp-plus-cp-z43q",
   "brand": "CP Plus",
   "model": "CP-Z43Q",
-  "aliases": [
-    "4MP Quad HD Outdoor WiFi Pan/Tilt",
-    "CP-Z45Q"
-  ],
   "type": "ptz",
   "connectivity": [
-    "wifi"
+    "wifi",
+    "ethernet"
   ],
-  "release_year": 2024,
-  "markets": [
-    "IN"
+  "power_source": [
+    "usb",
+    "dc"
   ],
   "resolution": {
     "megapixels": 4,
     "max_width": 2560,
     "max_height": 1440,
-    "label": "4MP QHD"
+    "label": "4MP"
   },
-  "sensor": "1/2.7\" CMOS",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 20
+  },
+  "sensor": "1/2.9\" CMOS",
   "lens": {
     "count": 1,
-    "focal_length_mm": "3.6 (fixed)",
-    "aperture": "F1.6",
+    "focal_length_mm": "4",
     "varifocal": false
   },
-  "field_of_view_deg": "360 pan / 90 tilt",
+  "field_of_view_deg": "pan 345 / tilt 70",
   "night_vision": {
-    "type": "color",
-    "range_m": 20
+    "type": "hybrid",
+    "range_m": 15
   },
   "power": {
-    "method": "DC 12V (outdoor adapter)"
+    "method": "USB DC 5V/1A"
   },
   "storage": {
     "onboard": true,
     "max_microsd_gb": 256,
-    "nvr_compatible": false,
-    "cloud": true
+    "cloud": true,
+    "nvr_compatible": false
   },
   "protocols": [
-    "rtsp"
+    "http"
   ],
-  "ip_rating": "IP66",
+  "ip_rating": "IP65",
   "audio": {
     "microphone": true,
     "speaker": true,
     "two_way": true
   },
   "features": [
-    "4MP outdoor pan/tilt WiFi",
-    "360deg motorized coverage",
-    "full-color night vision",
-    "AI person/human detection",
-    "smart motion tracking",
-    "CTC Cyber Secure Tech",
-    "two-way audio",
-    "Alexa / Google",
-    "IP66",
-    "₹5,000–7,000"
+    "ezyKam+ outdoor Wi-Fi pan/tilt",
+    "full-color night vision (white LED ~8-10m) + IR ~15m",
+    "built-in siren",
+    "345 pan / 70 tilt",
+    "human detection + motion tracking",
+    "two-way talk",
+    "Alexa + Google Home",
+    "optional wired Ethernet backup",
+    "microSD up to 256GB"
   ],
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "IN"
+  ],
+  "release_notes": "CP Plus ezyKam+ consumer OUTDOOR full-color Wi-Fi pan/tilt camera (IP65, siren). App-only (ezyKam+ / P2P cloud) — no ONVIF/RTSP despite an Ethernet backup port. Pan/tilt only (no optical zoom).",
   "sources": [
-    "https://www.cpplusworld.com/"
+    "https://cpplusworld.com/cp-z43q"
   ],
-  "power_source": [
-    "dc"
-  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
   "configs": {
     "frigate": {
-      "detect": {
-        "width": 1280,
-        "height": 720,
-        "fps": 5
-      },
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1"
-    },
-    "home_assistant": {
-      "integration": "onvif",
-      "notes": "Uses Dahua protocol. ONVIF integration works."
-    },
-    "blue_iris": {
-      "profile": "Dahua",
-      "notes": "Select 'Dahua' profile. CP Plus uses Dahua protocol."
+      "notes": "ezyKam+ consumer Wi-Fi camera — app-only (ezyKam+ / P2P cloud). No ONVIF or RTSP is exposed, so Frigate / local-NVR integration is not supported.",
+      "verified": false
     }
   }
 }
