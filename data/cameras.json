@@ -143476,6 +143476,7 @@
       "cloud": false
     },
     "protocols": [
+      "onvif",
       "rtsp"
     ],
     "ip_rating": "IP66",
@@ -143499,18 +143500,23 @@
     ],
     "configs": {
       "frigate": {
-        "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
-        "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
         "detect": {
           "width": 1280,
           "height": 720,
           "fps": 5
         },
-        "notes": "Default user 'admin'. H.265 main stream. No ONVIF. No audio."
+        "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
+        "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
+        "verified": false,
+        "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "ONVIF-conformant — use the ONVIF integration."
       },
       "blue_iris": {
         "profile": "Generic/RTSP",
-        "notes": "Use Generic/RTSP. Main: /stream0, Sub: /stream1."
+        "notes": "Use the Generic/RTSP (or ONVIF) profile."
       }
     },
     "power_source": [
@@ -143519,7 +143525,8 @@
     ],
     "sources": [
       "https://www.sv3c.com/Upgraded-SV3C-IP-POE-Camera-Security-Outdoor-4-Megapixels-Super-HD-2560x1440-H-265-Waterproof-Video-Camera-IR-Night-Vision-Motion-Detection-Wired-p1743568.html"
-    ]
+    ],
+    "last_verified": "2026-07-05"
   },
   {
     "id": "sv3c-b05poe",
@@ -143566,18 +143573,23 @@
     ],
     "configs": {
       "frigate": {
-        "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
-        "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
         "detect": {
           "width": 1280,
           "height": 720,
           "fps": 5
         },
-        "notes": "Default user 'admin'. No ONVIF."
+        "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
+        "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
+        "verified": false,
+        "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
+      },
+      "home_assistant": {
+        "integration": "generic_camera",
+        "notes": "Add via the generic RTSP/ONVIF camera integration."
       },
       "blue_iris": {
         "profile": "Generic/RTSP",
-        "notes": "Use Generic/RTSP. Main: /stream0, Sub: /stream1."
+        "notes": "Use the Generic/RTSP (or ONVIF) profile."
       }
     },
     "power_source": [
@@ -143586,7 +143598,8 @@
     ],
     "sources": [
       "https://www.sv3c.com/SV3C-5MP-POE-IP-Camera-5-Megapixels-Security-Camera-Outdoor-with-2-Way-Audio-Humanoid-Detection-IP66-Waterproof-Power-Over-Ethernet-Cameras-Support-Max-128G-SD-Card-Record-Browser-View-No-WiFi-p2437989.html"
-    ]
+    ],
+    "last_verified": "2026-07-05"
   },
   {
     "id": "sv3c-b05w",
@@ -143617,8 +143630,8 @@
       "cloud": false
     },
     "protocols": [
-      "rtsp",
-      "onvif"
+      "onvif",
+      "rtsp"
     ],
     "ip_rating": "IP66",
     "audio": {
@@ -143636,22 +143649,23 @@
     ],
     "configs": {
       "frigate": {
-        "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
-        "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
         "detect": {
           "width": 1280,
           "height": 720,
           "fps": 5
         },
-        "notes": "Default user 'admin'. This is the original SV3C model — one of the few that supports ONVIF. Known for inconsistent firmware; RTSP may break after updates."
+        "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
+        "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
+        "verified": false,
+        "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
       },
       "home_assistant": {
         "integration": "onvif",
-        "notes": "Use ONVIF integration. One of the few SV3C models with ONVIF support. Firmware updates may break ONVIF — pin your firmware version."
+        "notes": "ONVIF-conformant — use the ONVIF integration."
       },
       "blue_iris": {
-        "profile": "Generic/ONVIF",
-        "notes": "Use Generic/ONVIF. Also works with Generic/RTSP at /stream0 and /stream1."
+        "profile": "Generic/RTSP",
+        "notes": "Use the Generic/RTSP (or ONVIF) profile."
       }
     },
     "power_source": [
@@ -143659,7 +143673,102 @@
     ],
     "sources": [
       "https://www.sv3c.com/5MP-8MP-Outdoor-Security-Camera-SV3C-WiFi-Wireless-5-8-Megapixels-HD-Night-Vision-Surveillance-Cameras-2-Way-Audio-IP-Camera-Motion-Detection-CCTV-Weatherproof-Outside-Camera-Support-Max-128GB-SD-Card-p395185.html"
-    ]
+    ],
+    "last_verified": "2026-07-05"
+  },
+  {
+    "id": "sv3c-b06w",
+    "brand": "SV3C",
+    "model": "B06W-1080P-HX",
+    "aliases": [
+      "SV3C 1080P WiFi Bullet"
+    ],
+    "type": "bullet",
+    "connectivity": [
+      "wifi",
+      "ethernet"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 2,
+      "max_width": 1920,
+      "max_height": 1080,
+      "label": "1080p/2MP"
+    },
+    "video": {
+      "codecs": [
+        "H.264"
+      ]
+    },
+    "sensor": "1/2.9\" CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "4",
+      "varifocal": false
+    },
+    "field_of_view_deg": "70 H",
+    "night_vision": {
+      "type": "ir"
+    },
+    "power": {
+      "method": "DC 12V/1A (Wi-Fi or LAN)"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 128,
+      "nvr_compatible": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "ip_rating": "IP66",
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "1080p WiFi bullet (2.4GHz + LAN)",
+      "smart IR-cut day/night",
+      "motion detection (area/schedule)",
+      "two-way audio",
+      "ONVIF 2.4",
+      "RTSP + Blue Iris/iSpy"
+    ],
+    "markets": [
+      "US",
+      "global"
+    ],
+    "release_notes": "SV3C B06W 1080p WiFi bullet, 1/2.9\" sensor, 4mm fixed, ONVIF 2.4 + RTSP, two-way audio.",
+    "sources": [
+      "https://www.sv3c.com/WiFi-Camera-Outdoor-SV3C-1080P-HD-Security-Camera-Motion-Detection-IP-Cameras-IR-LED-Night-Vision-Surveillance-Camera-Waterproof-CCTV-for-Indoor-Outdoor-Support-Max-128GB-SD-Card-p405553.html"
+    ],
+    "last_verified": "2026-07-05",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
+        "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
+        "verified": false,
+        "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "ONVIF-conformant — use the ONVIF integration."
+      },
+      "blue_iris": {
+        "profile": "Generic/RTSP",
+        "notes": "Use the Generic/RTSP (or ONVIF) profile."
+      }
+    }
   },
   {
     "id": "sv3c-b08poe",
@@ -143692,6 +143801,7 @@
       "cloud": false
     },
     "protocols": [
+      "onvif",
       "rtsp"
     ],
     "audio": {
@@ -143728,18 +143838,23 @@
     },
     "configs": {
       "frigate": {
-        "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
-        "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
         "detect": {
           "width": 1280,
           "height": 720,
           "fps": 5
         },
-        "notes": "Default user is 'admin'. RTSP paths are /stream0 (main) and /stream1 (sub). No ONVIF."
+        "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
+        "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
+        "verified": false,
+        "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "ONVIF-conformant — use the ONVIF integration."
       },
       "blue_iris": {
         "profile": "Generic/RTSP",
-        "notes": "Use Generic/RTSP. Main: /stream0, Sub: /stream1. Default user 'admin'."
+        "notes": "Use the Generic/RTSP (or ONVIF) profile."
       }
     },
     "power_source": [
@@ -143748,15 +143863,16 @@
     ],
     "sources": [
       "https://www.sv3c.com/SV3C-4K-POE-IP-Camera-Outdoor-8MP-POE-Security-Camera-with-Smart-Motion-Detection-IR-Color-Night-Vision-120-Wide-Angle-2-Way-Audio-Metal-Shell-RTSP-SD-Card-Record-Wired-p2471515.html"
-    ]
+    ],
+    "last_verified": "2026-07-05"
   },
   {
     "id": "sv3c-c12",
     "brand": "SV3C",
     "model": "C12",
     "aliases": [
-      "SV3C PTZ WiFi 15X Optical Zoom",
-      "SV3C 5MP WiFi PTZ Floodlight"
+      "SV3C 5MP WiFi PTZ Floodlight",
+      "SV3C PTZ WiFi 15X Optical Zoom"
     ],
     "type": "ptz",
     "connectivity": [
@@ -143768,7 +143884,7 @@
     },
     "lens": {
       "count": 1,
-      "focal_length_mm": "15x optical zoom",
+      "focal_length_mm": "5-50",
       "varifocal": true
     },
     "night_vision": {
@@ -143784,6 +143900,7 @@
       "cloud": false
     },
     "protocols": [
+      "onvif",
       "rtsp"
     ],
     "ip_rating": "IP66",
@@ -143804,27 +143921,126 @@
     ],
     "configs": {
       "frigate": {
-        "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
-        "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
         "detect": {
           "width": 1280,
           "height": 720,
           "fps": 5
         },
-        "notes": "Default user 'admin'. RTSP /stream0 (main) /stream1 (sub). No ONVIF — PTZ control via app/web UI only."
+        "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
+        "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
+        "verified": false,
+        "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "ONVIF-conformant — use the ONVIF integration."
       },
       "blue_iris": {
         "profile": "Generic/RTSP",
-        "notes": "Manufacturer lists Blue Iris compatibility. Use Generic/RTSP at /stream0. No ONVIF PTZ control."
+        "notes": "Use the Generic/RTSP (or ONVIF) profile."
       }
     },
     "power_source": [
       "dc"
     ],
     "sources": [
-      "https://www.amazon.de/SV3C-%C3%9Cberwachungskamera-Optischer-Flutlicht-Nachtsicht/dp/B0BDFF5VMC",
       "https://www.sv3c.com/SV3C-PTZ-WiFi-Security-Camera-Outdoor-15X-Optical-Zoom-Auto-Tracking-5MP-8MP-Floodlight-Color-Night-Vision-Wireless-IP-Cam-2-Way-Audio-Metal-Shell-RTSP-FTP-SD-Card-Record-BlueIris-p2032033.html"
-    ]
+    ],
+    "last_verified": "2026-07-05"
+  },
+  {
+    "id": "sv3c-c22-4k",
+    "brand": "SV3C",
+    "model": "C22-4K",
+    "aliases": [
+      "SV3C 5MP/8MP WiFi PTZ Dome"
+    ],
+    "type": "ptz",
+    "connectivity": [
+      "wifi"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 8,
+      "max_width": 3840,
+      "max_height": 2160,
+      "label": "4K/8MP"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ]
+    },
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "pan 355 / tilt 90",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 30
+    },
+    "power": {
+      "method": "12V DC (Wi-Fi data)"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 128,
+      "nvr_compatible": true
+    },
+    "protocols": [
+      "rtsp"
+    ],
+    "ip_rating": "IP66",
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "pan 355 / tilt 90, 5X digital zoom",
+      "humanoid auto-tracking + detection",
+      "64 presets",
+      "8 IR LEDs (~30m)",
+      "dual-band 2.4/5GHz Wi-Fi",
+      "two-way audio",
+      "RTSP + FTP"
+    ],
+    "markets": [
+      "US",
+      "global"
+    ],
+    "release_notes": "SV3C C22-4K WiFi PTZ dome, 8MP/4K, 5X digital zoom, humanoid tracking, RTSP (SD + FTP, no cloud).",
+    "sources": [
+      "https://www.sv3c.com/SV3C-5MP-4K-PTZ-WiFi-Security-Camera-Outdoor-5MP-8MP-Wireless-IP-Dome-Camera-Indoor-with-Humanoid-Tracking-Infrared-HD-Night-Vision-2-Way-Audio-SD-Card-Record-Support-RTSP-FTP-PC-APP-2-4-5-GHz-WiFi-p2471530.html"
+    ],
+    "last_verified": "2026-07-05",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
+        "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
+        "verified": false,
+        "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
+      },
+      "home_assistant": {
+        "integration": "generic_camera",
+        "notes": "Add via the generic RTSP/ONVIF camera integration."
+      },
+      "blue_iris": {
+        "profile": "Generic/RTSP",
+        "notes": "Use the Generic/RTSP (or ONVIF) profile."
+      }
+    }
   },
   {
     "id": "sv3c-c25",
@@ -143876,22 +144092,23 @@
     ],
     "configs": {
       "frigate": {
-        "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
-        "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
         "detect": {
           "width": 1280,
           "height": 720,
           "fps": 5
         },
-        "notes": "Default user 'admin'. ONVIF supported on this model (unlike most SV3C). PTZ control via ONVIF possible."
-      },
-      "blue_iris": {
-        "profile": "Generic/ONVIF",
-        "notes": "Use Generic/ONVIF. PTZ control supported via ONVIF."
+        "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
+        "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
+        "verified": false,
+        "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
       },
       "home_assistant": {
         "integration": "onvif",
-        "notes": "ONVIF integration works — one of the few SV3C models with ONVIF. PTZ controls exposed via ONVIF."
+        "notes": "ONVIF-conformant — use the ONVIF integration."
+      },
+      "blue_iris": {
+        "profile": "Generic/RTSP",
+        "notes": "Use the Generic/RTSP (or ONVIF) profile."
       }
     },
     "power_source": [
@@ -143924,7 +144141,8 @@
           "codec": "H.265"
         }
       ]
-    }
+    },
+    "last_verified": "2026-07-05"
   },
   {
     "id": "sv3c-d08poe",
@@ -143957,6 +144175,7 @@
       "cloud": false
     },
     "protocols": [
+      "onvif",
       "rtsp"
     ],
     "ip_rating": "IP66",
@@ -143974,18 +144193,23 @@
     ],
     "configs": {
       "frigate": {
-        "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
-        "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
         "detect": {
           "width": 1280,
           "height": 720,
           "fps": 5
         },
-        "notes": "Default user 'admin'. RTSP /stream0 (main) /stream1 (sub). No ONVIF."
+        "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
+        "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
+        "verified": false,
+        "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "ONVIF-conformant — use the ONVIF integration."
       },
       "blue_iris": {
         "profile": "Generic/RTSP",
-        "notes": "Use Generic/RTSP. Main: /stream0, Sub: /stream1."
+        "notes": "Use the Generic/RTSP (or ONVIF) profile."
       }
     },
     "power_source": [
@@ -143994,7 +144218,101 @@
     ],
     "sources": [
       "https://www.sv3c.com/SV3C-4K-POE-Camera-Outdoor-IP-Dome-Wired-Security-Indoor-Camera-with-Human-Vehicle-Detection-8MP-HD-Color-Night-Vision-Two-Way-Audio-Waterproof-24-7-Recording-RTSP-Up-to-512GB-SD-Card-p2471510.html"
-    ]
+    ],
+    "last_verified": "2026-07-05"
+  },
+  {
+    "id": "sv3c-hx03",
+    "brand": "SV3C",
+    "model": "HX03",
+    "aliases": [
+      "SV3C 8MP WiFi Floodlight Bullet"
+    ],
+    "type": "bullet",
+    "connectivity": [
+      "wifi"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 8,
+      "max_width": 3840,
+      "max_height": 2160,
+      "label": "4K/8MP"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ]
+    },
+    "sensor": "1/2.8\" Sony IMX415 CMOS",
+    "lens": {
+      "count": 1,
+      "varifocal": false
+    },
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 48
+    },
+    "power": {
+      "method": "DC power adapter (Wi-Fi data)"
+    },
+    "storage": {
+      "onboard": true,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "rtsp"
+    ],
+    "ip_rating": "IP66",
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "dual-band 2.4/5GHz Wi-Fi",
+      "6-LED array (IR + floodlight/spotlight)",
+      "IR B&W to ~48m + full-color to ~18m",
+      "humanoid / vehicle / pet detection",
+      "spotlight deterrent + siren",
+      "two-way audio",
+      "RTSP + third-party NVR (Blue Iris/iSpy)"
+    ],
+    "markets": [
+      "US",
+      "global"
+    ],
+    "release_notes": "SV3C HX03 4K WiFi floodlight bullet (Sony IMX415). Dual-band Wi-Fi, hybrid IR + full-color night vision, RTSP.",
+    "sources": [
+      "https://www.sv3c.com/SV3C-4K-WiFi-IP-Camera-Outdoor-8MP-Wired-Bullet-Security-Cameras-with-Floodlight-Color-Night-Vision-RTSP-Humanoid-Vehicle-Pet-Detection-P2P-Remote-View-2-way-Audio-SD-Card-Cloud-Storage-p2563455.html"
+    ],
+    "last_verified": "2026-07-05",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
+        "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
+        "verified": false,
+        "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
+      },
+      "home_assistant": {
+        "integration": "generic_camera",
+        "notes": "Add via the generic RTSP/ONVIF camera integration."
+      },
+      "blue_iris": {
+        "profile": "Generic/RTSP",
+        "notes": "Use the Generic/RTSP (or ONVIF) profile."
+      }
+    }
   },
   {
     "id": "sv3c-ptz-1080p-wifi-4x",
@@ -144022,6 +144340,7 @@
       "cloud": false
     },
     "protocols": [
+      "onvif",
       "rtsp"
     ],
     "audio": {
@@ -144038,14 +144357,23 @@
     ],
     "configs": {
       "frigate": {
-        "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
-        "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
         "detect": {
-          "width": 640,
-          "height": 480,
+          "width": 1280,
+          "height": 720,
           "fps": 5
         },
-        "notes": "Default user 'admin'. Budget 1080P PTZ. No ONVIF."
+        "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
+        "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
+        "verified": false,
+        "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "ONVIF-conformant — use the ONVIF integration."
+      },
+      "blue_iris": {
+        "profile": "Generic/RTSP",
+        "notes": "Use the Generic/RTSP (or ONVIF) profile."
       }
     },
     "power_source": [
@@ -144053,7 +144381,8 @@
     ],
     "sources": [
       "https://www.sv3c.com/1080P-Wifi-Surveillance-Camera-SV3C-Wireless-Home-Security-PTZ-Camera-IP-CCTV-4X-Digital-ZOOM-AI-Human-Detect-CamHi-p2058778.html"
-    ]
+    ],
+    "last_verified": "2026-07-05"
   },
   {
     "id": "sv3c-ptz-4k-dual-network",
@@ -144101,18 +144430,23 @@
     ],
     "configs": {
       "frigate": {
-        "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
-        "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
         "detect": {
           "width": 1280,
           "height": 720,
           "fps": 5
         },
-        "notes": "Default user 'admin'. Supports both PoE and WiFi simultaneously. No ONVIF."
+        "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
+        "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
+        "verified": false,
+        "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
+      },
+      "home_assistant": {
+        "integration": "generic_camera",
+        "notes": "Add via the generic RTSP/ONVIF camera integration."
       },
       "blue_iris": {
         "profile": "Generic/RTSP",
-        "notes": "Use Generic/RTSP. Main: /stream0, Sub: /stream1."
+        "notes": "Use the Generic/RTSP (or ONVIF) profile."
       }
     },
     "power_source": [
@@ -144121,7 +144455,8 @@
     ],
     "sources": [
       "https://www.sv3c.com/SV3C-4K-PTZ-POE-Wired-WiFi-Security-Camera-Outdoor-Dual-Network-Support-Auto-Tracking-Security-Cam-Color-Night-Vision-Human-Vehicle-Detection-2-Way-Audio-Waterproof-24-7-Record-CamHiPro-p2707179.html"
-    ]
+    ],
+    "last_verified": "2026-07-05"
   },
   {
     "id": "sv3c-ptz-5mp-wifi-5x",
@@ -144166,14 +144501,23 @@
     ],
     "configs": {
       "frigate": {
-        "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
-        "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
         "detect": {
           "width": 1280,
           "height": 720,
           "fps": 5
         },
-        "notes": "Default user 'admin'. No ONVIF."
+        "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
+        "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
+        "verified": false,
+        "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
+      },
+      "home_assistant": {
+        "integration": "generic_camera",
+        "notes": "Add via the generic RTSP/ONVIF camera integration."
+      },
+      "blue_iris": {
+        "profile": "Generic/RTSP",
+        "notes": "Use the Generic/RTSP (or ONVIF) profile."
       }
     },
     "power_source": [
@@ -144181,7 +144525,8 @@
     ],
     "sources": [
       "https://www.sv3c.com/New-Auto-Track-PTZ-WiFi-Camera-Outdoor-Wireless-5MP-5X-Zoom-Spotlight-Color-Night-Vision-Camera-IP66-Waterproof-Playback-p1737238.html"
-    ]
+    ],
+    "last_verified": "2026-07-05"
   },
   {
     "id": "sv3c-ptz-poe-15x",
@@ -144225,18 +144570,23 @@
     ],
     "configs": {
       "frigate": {
-        "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
-        "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
         "detect": {
           "width": 1280,
           "height": 720,
           "fps": 5
         },
-        "notes": "Default user 'admin'. No ONVIF. Blue Iris compatible per manufacturer."
+        "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
+        "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
+        "verified": false,
+        "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
+      },
+      "home_assistant": {
+        "integration": "generic_camera",
+        "notes": "Add via the generic RTSP/ONVIF camera integration."
       },
       "blue_iris": {
         "profile": "Generic/RTSP",
-        "notes": "Manufacturer explicitly lists Blue Iris compatibility. Use Generic/RTSP at /stream0."
+        "notes": "Use the Generic/RTSP (or ONVIF) profile."
       }
     },
     "power_source": [
@@ -144245,7 +144595,101 @@
     ],
     "sources": [
       "https://www.sv3c.com/SV3C-5MP-8MP-POE-PTZ-Security-Camera-Outdoor-15X-Optical-Zoom-5MP-4k-Auto-Tracking-Floodlight-Color-Night-Vision-IP-Camera-2-Way-Audio-Metal-Shell-RTSP-FTP-SD-Card-Record-BlueIris-Wired-p2302126.html"
-    ]
+    ],
+    "last_verified": "2026-07-05"
+  },
+  {
+    "id": "sv3c-ptz-poe-36x",
+    "brand": "SV3C",
+    "model": "SD7POE-5MP-HX",
+    "aliases": [
+      "SV3C 5MP/8MP PoE PTZ 36X"
+    ],
+    "type": "ptz",
+    "connectivity": [
+      "ethernet"
+    ],
+    "power_source": [
+      "poe"
+    ],
+    "resolution": {
+      "megapixels": 8,
+      "max_width": 3840,
+      "max_height": 2160,
+      "label": "4K/8MP"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 20
+    },
+    "lens": {
+      "count": 1,
+      "varifocal": true
+    },
+    "field_of_view_deg": "pan 360 / tilt 93",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 82
+    },
+    "power": {
+      "method": "PoE (IEEE)"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 128,
+      "nvr_compatible": true
+    },
+    "protocols": [
+      "rtsp"
+    ],
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "36X optical zoom",
+      "pan 360 / tilt 93, auto human tracking",
+      "256 presets + 2 patrol groups",
+      "human/pet/vehicle detection",
+      "9 IR LEDs (~82m) + 6 white LEDs (color ~41m)",
+      "two-way audio",
+      "RTSP + FTP + Blue Iris/iSpy"
+    ],
+    "markets": [
+      "US",
+      "global"
+    ],
+    "release_notes": "SV3C 5MP/8MP PoE PTZ, 36X optical zoom, 4K@20fps, IR to ~82m (200ft class), 256 presets. Wired PoE. IP rating not stated on page.",
+    "sources": [
+      "https://www.sv3c.com/Outdoor-5MP-8MP-PTZ-IP-POE-Security-Camera-SV3C-Pan-360%C2%B0-Tilt-36X-Zoom-Home-Surveillance-Camera-200FT-IR-HD-Night-Vision-Waterproof-Motion-Detect-Remote-Access-RTSP-128GB-SD-Card-Slot-p1508818.html"
+    ],
+    "last_verified": "2026-07-05",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
+        "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
+        "verified": false,
+        "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
+      },
+      "home_assistant": {
+        "integration": "generic_camera",
+        "notes": "Add via the generic RTSP/ONVIF camera integration."
+      },
+      "blue_iris": {
+        "profile": "Generic/RTSP",
+        "notes": "Use the Generic/RTSP (or ONVIF) profile."
+      }
+    }
   },
   {
     "id": "sv3c-ptz-wifi-track",
@@ -144295,14 +144739,23 @@
     ],
     "configs": {
       "frigate": {
-        "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
-        "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
         "detect": {
           "width": 1280,
           "height": 720,
           "fps": 5
         },
-        "notes": "Default user 'admin'. H.265 main stream available. No ONVIF."
+        "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
+        "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
+        "verified": false,
+        "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
+      },
+      "home_assistant": {
+        "integration": "generic_camera",
+        "notes": "Add via the generic RTSP/ONVIF camera integration."
+      },
+      "blue_iris": {
+        "profile": "Generic/RTSP",
+        "notes": "Use the Generic/RTSP (or ONVIF) profile."
       }
     },
     "power_source": [
@@ -144310,7 +144763,8 @@
     ],
     "sources": [
       "https://www.sv3c.com/SV3C-5MP-8MP-WiFi-IP-Camera-Outdoor-Metal-Motion-Track-PTZ-Security-Surveillance-Camera-Spotlight-Full-Color-Night-Vision-IP-Camera-p2010092.html"
-    ]
+    ],
+    "last_verified": "2026-07-05"
   },
   {
     "id": "sv3c-solar-dual-lens-2k",
@@ -144357,7 +144811,18 @@
     ],
     "sources": [
       "https://www.sv3c.com/SV3C-Security-Cameras-Wireless-Outdoor-2K-Dual-Lens-Camera-for-Home-Security-with-Solar-Powered-No-Subscription-Fees-360-Pan-Tilt-Auto-Tracking-Color-Night-Vision-2-Way-Audio-4-Camera-Kit-p2708922.html"
-    ]
+    ],
+    "last_verified": "2026-07-05",
+    "protocols": [
+      "http"
+    ],
+    "configs": {
+      "frigate": {
+        "notes": "SV3C solar/battery camera — app-only (CamHiPro + local hub); it sleeps between events and does not expose ONVIF/RTSP for local NVR/Frigate.",
+        "verified": false
+      }
+    },
+    "release_notes": "App-only solar/battery camera (CamHiPro + local hub) — no ONVIF/RTSP."
   },
   {
     "id": "swann-4k-bullet",

@@ -2,29 +2,72 @@
   "id": "sv3c-b05poe",
   "brand": "SV3C",
   "model": "SV-B05POE",
-  "aliases": ["SV3C 5MP PoE Bullet"],
+  "aliases": [
+    "SV3C 5MP PoE Bullet"
+  ],
   "type": "bullet",
-  "connectivity": ["ethernet"],
-  "resolution": { "megapixels": 5, "label": "5MP" },
-  "night_vision": { "type": "ir" },
-  "power": { "method": "PoE / DC 12V" },
-  "storage": { "onboard": true, "max_microsd_gb": 128, "nvr_compatible": true, "cloud": false },
-  "protocols": ["rtsp"],
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "label": "5MP"
+  },
+  "night_vision": {
+    "type": "ir"
+  },
+  "power": {
+    "method": "PoE / DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp"
+  ],
   "ip_rating": "IP66",
-  "audio": { "microphone": true, "speaker": true, "two_way": true },
-  "features": ["5MP", "humanoid detection", "IP66", "RTSP", "browser view"],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "5MP",
+    "humanoid detection",
+    "IP66",
+    "RTSP",
+    "browser view"
+  ],
   "configs": {
     "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
       "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
       "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
-      "detect": {"width": 1280, "height": 720, "fps": 5},
-      "notes": "Default user 'admin'. No ONVIF."
+      "verified": false,
+      "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
+    },
+    "home_assistant": {
+      "integration": "generic_camera",
+      "notes": "Add via the generic RTSP/ONVIF camera integration."
     },
     "blue_iris": {
       "profile": "Generic/RTSP",
-      "notes": "Use Generic/RTSP. Main: /stream0, Sub: /stream1."
+      "notes": "Use the Generic/RTSP (or ONVIF) profile."
     }
   },
-  "power_source": ["poe", "dc"],
-  "sources": ["https://www.sv3c.com/SV3C-5MP-POE-IP-Camera-5-Megapixels-Security-Camera-Outdoor-with-2-Way-Audio-Humanoid-Detection-IP66-Waterproof-Power-Over-Ethernet-Cameras-Support-Max-128G-SD-Card-Record-Browser-View-No-WiFi-p2437989.html"]
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "sources": [
+    "https://www.sv3c.com/SV3C-5MP-POE-IP-Camera-5-Megapixels-Security-Camera-Outdoor-with-2-Way-Audio-Humanoid-Detection-IP66-Waterproof-Power-Over-Ethernet-Cameras-Support-Max-128G-SD-Card-Record-Browser-View-No-WiFi-p2437989.html"
+  ],
+  "last_verified": "2026-07-05"
 }

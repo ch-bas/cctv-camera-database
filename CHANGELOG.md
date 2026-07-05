@@ -8,7 +8,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [1.27.0] — 2026-07-05
 
-Full data-quality audit + expansion of the **ABUS** brand (76 → 85). Net: **1,887 → 1,896 cameras**.
+Full data-quality audits + expansions of the **ABUS** (76 → 85) and **SV3C** (13 → 17) brands. Net: **1,887 → 1,900 cameras**.
 
 ### ABUS — audit + expansion (76 → 85)
 
@@ -17,6 +17,12 @@ Full data-quality audit + expansion of the **ABUS** brand (76 → 85). Net: **1,
 - **Spec corrections:** PPIC Wi-Fi cams confirmed app-only (App2Cam Plus, no ONVIF/RTSP); `TVIP42562`/`62562` corrected to WLAN (Wi-Fi + 12VDC, not PoE); `PPIC46520` 2MP not 3MP; IK10 added to the vandal-rated TVIP/IPCB tube & dome models. Merged the `PPIC42520 (Austria)` regional duplicate.
 - **Added 10 new models** from official pages: IP Mini Tube WL bullets (`IPCS34511A/B`), IR mini-tubes (`IPCB64510A/B/C`), motorized tube `IPCB64620`, 4K fixed tube `IPCB68515A`, 12MP fisheye `IPCS24500`, 3MP indoor fisheye `TVIP83900`, and the Akku-Kamera Pro add-on battery cam `PPIC91520`.
 - Flagged (kept, not removed): the 5 **analog-HD** entries (`HDCC*`/`TVCC*`) and 2 proprietary EasyLook accessories (`PPDF*`) fall outside the IP-camera scope but were retained pending a scope decision.
+
+### SV3C — audit + expansion (13 → 17)
+
+- **Audited all 13 existing entries** against official `sv3c.com` pages — **zero ghosts**. Stamped every entry with `last_verified` and completed the `configs` (added `home_assistant`). Corrected the outdated "no ONVIF" assumption: several newer models (`SV-B04POE`, `SV-B08POE`, `SV-D08POE`, `C12`, the 1080p WiFi PTZ) are **ONVIF-conformant** — added `onvif` to their protocols.
+- **Spec fixes:** the **2K Solar Dual-Lens** kit is app-only (battery/hub, no ONVIF/RTSP) → `protocols: ["http"]`; `C12` re-sourced to its `sv3c.com` page and its zoom corrected (marketed "15X" = 10X optical + 5X digital, 5-50mm varifocal).
+- **Added 4 new models:** `HX03` (4K WiFi floodlight bullet), `C22-4K` (4K WiFi PTZ dome), `SD7POE-5MP-HX` (5MP/8MP PoE PTZ, 36X optical), `B06W` (1080p WiFi bullet, ONVIF 2.4).
 
 ---
 

@@ -2,30 +2,76 @@
   "id": "sv3c-d08poe",
   "brand": "SV3C",
   "model": "SV-D08POE",
-  "aliases": ["SV3C 4K PoE Dome"],
+  "aliases": [
+    "SV3C 4K PoE Dome"
+  ],
   "type": "dome",
-  "connectivity": ["ethernet"],
-  "resolution": { "megapixels": 8, "max_width": 3840, "max_height": 2160, "label": "4K UHD" },
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
   "field_of_view_deg": "120 horizontal",
-  "night_vision": { "type": "color" },
-  "power": { "method": "PoE / DC 12V" },
-  "storage": { "onboard": true, "max_microsd_gb": 512, "nvr_compatible": true, "cloud": false },
-  "protocols": ["rtsp"],
+  "night_vision": {
+    "type": "color"
+  },
+  "power": {
+    "method": "PoE / DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
   "ip_rating": "IP66",
-  "audio": { "microphone": true, "speaker": true, "two_way": true },
-  "features": ["4K 8MP", "human/vehicle detection", "color night vision", "RTSP", "24/7 recording"],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "4K 8MP",
+    "human/vehicle detection",
+    "color night vision",
+    "RTSP",
+    "24/7 recording"
+  ],
   "configs": {
     "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
       "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
       "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
-      "detect": {"width": 1280, "height": 720, "fps": 5},
-      "notes": "Default user 'admin'. RTSP /stream0 (main) /stream1 (sub). No ONVIF."
+      "verified": false,
+      "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF-conformant — use the ONVIF integration."
     },
     "blue_iris": {
       "profile": "Generic/RTSP",
-      "notes": "Use Generic/RTSP. Main: /stream0, Sub: /stream1."
+      "notes": "Use the Generic/RTSP (or ONVIF) profile."
     }
   },
-  "power_source": ["poe", "dc"],
-  "sources": ["https://www.sv3c.com/SV3C-4K-POE-Camera-Outdoor-IP-Dome-Wired-Security-Indoor-Camera-with-Human-Vehicle-Detection-8MP-HD-Color-Night-Vision-Two-Way-Audio-Waterproof-24-7-Recording-RTSP-Up-to-512GB-SD-Card-p2471510.html"]
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "sources": [
+    "https://www.sv3c.com/SV3C-4K-POE-Camera-Outdoor-IP-Dome-Wired-Security-Indoor-Camera-with-Human-Vehicle-Detection-8MP-HD-Color-Night-Vision-Two-Way-Audio-Waterproof-24-7-Recording-RTSP-Up-to-512GB-SD-Card-p2471510.html"
+  ],
+  "last_verified": "2026-07-05"
 }

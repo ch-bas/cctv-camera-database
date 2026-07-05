@@ -2,17 +2,45 @@
   "id": "sv3c-c12",
   "brand": "SV3C",
   "model": "C12",
-  "aliases": ["SV3C PTZ WiFi 15X Optical Zoom", "SV3C 5MP WiFi PTZ Floodlight"],
+  "aliases": [
+    "SV3C 5MP WiFi PTZ Floodlight",
+    "SV3C PTZ WiFi 15X Optical Zoom"
+  ],
   "type": "ptz",
-  "connectivity": ["wifi"],
-  "resolution": { "megapixels": 5, "label": "5MP" },
-  "lens": { "count": 1, "focal_length_mm": "15x optical zoom", "varifocal": true },
-  "night_vision": { "type": "color" },
-  "power": { "method": "DC 12V", "consumption_w": 12 },
-  "storage": { "onboard": true, "nvr_compatible": false, "cloud": false },
-  "protocols": ["rtsp"],
+  "connectivity": [
+    "wifi"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "label": "5MP"
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5-50",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "color"
+  },
+  "power": {
+    "method": "DC 12V",
+    "consumption_w": 12
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": false,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
   "ip_rating": "IP66",
-  "audio": { "microphone": true, "speaker": true, "two_way": true },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
   "features": [
     "15x optical zoom",
     "auto-tracking",
@@ -25,19 +53,30 @@
   ],
   "configs": {
     "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
       "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
       "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
-      "detect": {"width": 1280, "height": 720, "fps": 5},
-      "notes": "Default user 'admin'. RTSP /stream0 (main) /stream1 (sub). No ONVIF — PTZ control via app/web UI only."
+      "verified": false,
+      "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF-conformant — use the ONVIF integration."
     },
     "blue_iris": {
       "profile": "Generic/RTSP",
-      "notes": "Manufacturer lists Blue Iris compatibility. Use Generic/RTSP at /stream0. No ONVIF PTZ control."
+      "notes": "Use the Generic/RTSP (or ONVIF) profile."
     }
   },
-  "power_source": ["dc"],
+  "power_source": [
+    "dc"
+  ],
   "sources": [
-    "https://www.amazon.de/SV3C-%C3%9Cberwachungskamera-Optischer-Flutlicht-Nachtsicht/dp/B0BDFF5VMC",
     "https://www.sv3c.com/SV3C-PTZ-WiFi-Security-Camera-Outdoor-15X-Optical-Zoom-Auto-Tracking-5MP-8MP-Floodlight-Color-Night-Vision-Wireless-IP-Cam-2-Way-Audio-Metal-Shell-RTSP-FTP-SD-Card-Record-BlueIris-p2032033.html"
-  ]
+  ],
+  "last_verified": "2026-07-05"
 }

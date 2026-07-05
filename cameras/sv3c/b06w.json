@@ -1,0 +1,94 @@
+{
+  "id": "sv3c-b06w",
+  "brand": "SV3C",
+  "model": "B06W-1080P-HX",
+  "aliases": [
+    "SV3C 1080P WiFi Bullet"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p/2MP"
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ]
+  },
+  "sensor": "1/2.9\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4",
+    "varifocal": false
+  },
+  "field_of_view_deg": "70 H",
+  "night_vision": {
+    "type": "ir"
+  },
+  "power": {
+    "method": "DC 12V/1A (Wi-Fi or LAN)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "1080p WiFi bullet (2.4GHz + LAN)",
+    "smart IR-cut day/night",
+    "motion detection (area/schedule)",
+    "two-way audio",
+    "ONVIF 2.4",
+    "RTSP + Blue Iris/iSpy"
+  ],
+  "markets": [
+    "US",
+    "global"
+  ],
+  "release_notes": "SV3C B06W 1080p WiFi bullet, 1/2.9\" sensor, 4mm fixed, ONVIF 2.4 + RTSP, two-way audio.",
+  "sources": [
+    "https://www.sv3c.com/WiFi-Camera-Outdoor-SV3C-1080P-HD-Security-Camera-Motion-Detection-IP-Cameras-IR-LED-Night-Vision-Surveillance-Camera-Waterproof-CCTV-for-Indoor-Outdoor-Support-Max-128GB-SD-Card-p405553.html"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
+      "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
+      "verified": false,
+      "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF-conformant — use the ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use the Generic/RTSP (or ONVIF) profile."
+    }
+  }
+}

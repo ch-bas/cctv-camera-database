@@ -13,7 +13,7 @@
 | Night vision | hybrid |
 | Power | PoE / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | Two-way audio | Yes |
 
 ## Features

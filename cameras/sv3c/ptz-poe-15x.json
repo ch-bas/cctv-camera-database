@@ -3,26 +3,68 @@
   "brand": "SV3C",
   "model": "SV3C 5MP/8MP PoE PTZ 15X",
   "type": "ptz",
-  "connectivity": ["ethernet"],
-  "resolution": { "megapixels": 5, "label": "5MP" },
-  "night_vision": { "type": "color" },
-  "power": { "method": "PoE / DC 12V" },
-  "storage": { "onboard": true, "nvr_compatible": true, "cloud": false },
-  "protocols": ["rtsp"],
-  "audio": { "microphone": true, "speaker": true, "two_way": true },
-  "features": ["15x optical zoom", "auto-tracking", "floodlight color night vision", "RTSP", "FTP", "Blue Iris compatible", "metal shell"],
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "label": "5MP"
+  },
+  "night_vision": {
+    "type": "color"
+  },
+  "power": {
+    "method": "PoE / DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "15x optical zoom",
+    "auto-tracking",
+    "floodlight color night vision",
+    "RTSP",
+    "FTP",
+    "Blue Iris compatible",
+    "metal shell"
+  ],
   "configs": {
     "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
       "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
       "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
-      "detect": {"width": 1280, "height": 720, "fps": 5},
-      "notes": "Default user 'admin'. No ONVIF. Blue Iris compatible per manufacturer."
+      "verified": false,
+      "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
+    },
+    "home_assistant": {
+      "integration": "generic_camera",
+      "notes": "Add via the generic RTSP/ONVIF camera integration."
     },
     "blue_iris": {
       "profile": "Generic/RTSP",
-      "notes": "Manufacturer explicitly lists Blue Iris compatibility. Use Generic/RTSP at /stream0."
+      "notes": "Use the Generic/RTSP (or ONVIF) profile."
     }
   },
-  "power_source": ["poe", "dc"],
-  "sources": ["https://www.sv3c.com/SV3C-5MP-8MP-POE-PTZ-Security-Camera-Outdoor-15X-Optical-Zoom-5MP-4k-Auto-Tracking-Floodlight-Color-Night-Vision-IP-Camera-2-Way-Audio-Metal-Shell-RTSP-FTP-SD-Card-Record-BlueIris-Wired-p2302126.html"]
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "sources": [
+    "https://www.sv3c.com/SV3C-5MP-8MP-POE-PTZ-Security-Camera-Outdoor-15X-Optical-Zoom-5MP-4k-Auto-Tracking-Floodlight-Color-Night-Vision-IP-Camera-2-Way-Audio-Metal-Shell-RTSP-FTP-SD-Card-Record-BlueIris-Wired-p2302126.html"
+  ],
+  "last_verified": "2026-07-05"
 }

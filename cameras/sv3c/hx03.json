@@ -1,0 +1,93 @@
+{
+  "id": "sv3c-hx03",
+  "brand": "SV3C",
+  "model": "HX03",
+  "aliases": [
+    "SV3C 8MP WiFi Floodlight Bullet"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "wifi"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K/8MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ]
+  },
+  "sensor": "1/2.8\" Sony IMX415 CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 48
+  },
+  "power": {
+    "method": "DC power adapter (Wi-Fi data)"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "dual-band 2.4/5GHz Wi-Fi",
+    "6-LED array (IR + floodlight/spotlight)",
+    "IR B&W to ~48m + full-color to ~18m",
+    "humanoid / vehicle / pet detection",
+    "spotlight deterrent + siren",
+    "two-way audio",
+    "RTSP + third-party NVR (Blue Iris/iSpy)"
+  ],
+  "markets": [
+    "US",
+    "global"
+  ],
+  "release_notes": "SV3C HX03 4K WiFi floodlight bullet (Sony IMX415). Dual-band Wi-Fi, hybrid IR + full-color night vision, RTSP.",
+  "sources": [
+    "https://www.sv3c.com/SV3C-4K-WiFi-IP-Camera-Outdoor-8MP-Wired-Bullet-Security-Cameras-with-Floodlight-Color-Night-Vision-RTSP-Humanoid-Vehicle-Pet-Detection-P2P-Remote-View-2-way-Audio-SD-Card-Cloud-Storage-p2563455.html"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
+      "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
+      "verified": false,
+      "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
+    },
+    "home_assistant": {
+      "integration": "generic_camera",
+      "notes": "Add via the generic RTSP/ONVIF camera integration."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use the Generic/RTSP (or ONVIF) profile."
+    }
+  }
+}

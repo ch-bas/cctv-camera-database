@@ -1,8 +1,8 @@
 # CCTV Camera Database
 
-An open, structured database of 1,896 CCTV / IP camera models and their technical specifications, covering 75 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
+An open, structured database of 1,900 CCTV / IP camera models and their technical specifications, covering 75 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
 
-[![cameras](https://img.shields.io/badge/cameras-1%2C896-blue)](data/cameras.json)
+[![cameras](https://img.shields.io/badge/cameras-1%2C900-blue)](data/cameras.json)
 [![brands](https://img.shields.io/badge/brands-75-green)](cameras/)
 [![license](https://img.shields.io/badge/license-CC0-lightgrey)](LICENSE)
 
@@ -31,7 +31,7 @@ Prefer to self-host or browse offline? A [standalone demo](docs/demo.html) (just
 - **Filter** — narrow by brand, camera type, night vision, resolution, or market
 - **Sort** — click any column header to sort ascending/descending
 - **Detail drawer** — click a row to slide open the full spec sheet (resolution, connectivity, protocols, storage, audio, pricing, source links)
-- **Pagination** — page through all 1,896 cameras, 25 per page
+- **Pagination** — page through all 1,900 cameras, 25 per page
 - **Stats bar** — live counts for total cameras, brands, 4K+, WiFi, and no-subscription models
 
 ---
@@ -63,7 +63,7 @@ cctv-camera-database/
 │   ├── tapo/             #  62 cameras
 │   └── …60 more brands
 ├── data/                 # GENERATED — do not edit by hand
-│   ├── cameras.json      # all 1,896 cameras as one array
+│   ├── cameras.json      # all 1,900 cameras as one array
 │   └── cameras.csv       # flattened, spreadsheet-friendly
 ├── schema/
 │   └── camera.schema.json
@@ -121,7 +121,7 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 
 | Metric | Count |
 |--------|-------|
-| Total cameras | **1,896** |
+| Total cameras | **1,900** |
 | Brands | **75** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
 | PoE wired | 1,171 |
@@ -177,7 +177,7 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | Sunell | 12 | Prosumer/Enterprise, CN/global |
 | INSTAR | 12 | Privacy-first prosumer, DE/EU |
 | LTS | 7 | Prosumer/installer, US |
-| SV3C | 13 | Budget consumer, CN/US |
+| SV3C | 17 | Budget consumer, CN/US |
 | Synology | 12 | NAS-native cameras, global |
 | TVT Digital | 12 | Prosumer budget, CN/IN/SE Asia |
 | Hi-Focus | 10 | Made-in-India, BIS certified, IN |

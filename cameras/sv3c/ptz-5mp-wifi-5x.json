@@ -3,23 +3,68 @@
   "brand": "SV3C",
   "model": "SV3C 5MP WiFi PTZ 5X Spotlight",
   "type": "ptz",
-  "connectivity": ["wifi"],
-  "resolution": { "megapixels": 5, "label": "5MP" },
-  "night_vision": { "type": "color" },
-  "power": { "method": "DC 12V" },
-  "storage": { "onboard": true, "max_microsd_gb": 128, "nvr_compatible": false, "cloud": false },
-  "protocols": ["rtsp"],
+  "connectivity": [
+    "wifi"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "label": "5MP"
+  },
+  "night_vision": {
+    "type": "color"
+  },
+  "power": {
+    "method": "DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": false,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp"
+  ],
   "ip_rating": "IP66",
-  "audio": { "microphone": true, "speaker": true, "two_way": true },
-  "features": ["5MP WiFi PTZ", "5x optical zoom", "auto-tracking", "spotlight color night vision", "IP66", "RTSP"],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "5MP WiFi PTZ",
+    "5x optical zoom",
+    "auto-tracking",
+    "spotlight color night vision",
+    "IP66",
+    "RTSP"
+  ],
   "configs": {
     "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
       "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
       "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
-      "detect": {"width": 1280, "height": 720, "fps": 5},
-      "notes": "Default user 'admin'. No ONVIF."
+      "verified": false,
+      "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
+    },
+    "home_assistant": {
+      "integration": "generic_camera",
+      "notes": "Add via the generic RTSP/ONVIF camera integration."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use the Generic/RTSP (or ONVIF) profile."
     }
   },
-  "power_source": ["dc"],
-  "sources": ["https://www.sv3c.com/New-Auto-Track-PTZ-WiFi-Camera-Outdoor-Wireless-5MP-5X-Zoom-Spotlight-Color-Night-Vision-Camera-IP66-Waterproof-Playback-p1737238.html"]
+  "power_source": [
+    "dc"
+  ],
+  "sources": [
+    "https://www.sv3c.com/New-Auto-Track-PTZ-WiFi-Camera-Outdoor-Wireless-5MP-5X-Zoom-Spotlight-Color-Night-Vision-Camera-IP66-Waterproof-Playback-p1737238.html"
+  ],
+  "last_verified": "2026-07-05"
 }

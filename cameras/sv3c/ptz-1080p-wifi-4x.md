@@ -9,7 +9,7 @@
 | Resolution | 1080p FHD (2MP, 1920×1080) |
 | Night vision | ir |
 | Power | DC 12V |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | Two-way audio | Yes |
 
 ## Features

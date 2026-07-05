@@ -12,7 +12,7 @@
 | Night vision | ir |
 | Power | PoE / DC 12V |
 | Storage | NVR |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | Two-way audio | No |
 
