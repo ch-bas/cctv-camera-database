@@ -48,22 +48,23 @@
   ],
   "configs": {
     "frigate": {
-      "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
-      "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
       "detect": {
         "width": 1280,
         "height": 720,
         "fps": 5
       },
-      "notes": "Default user 'admin'. ONVIF supported on this model (unlike most SV3C). PTZ control via ONVIF possible."
-    },
-    "blue_iris": {
-      "profile": "Generic/ONVIF",
-      "notes": "Use Generic/ONVIF. PTZ control supported via ONVIF."
+      "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
+      "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
+      "verified": false,
+      "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
     },
     "home_assistant": {
       "integration": "onvif",
-      "notes": "ONVIF integration works — one of the few SV3C models with ONVIF. PTZ controls exposed via ONVIF."
+      "notes": "ONVIF-conformant — use the ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use the Generic/RTSP (or ONVIF) profile."
     }
   },
   "power_source": [
@@ -96,5 +97,6 @@
         "codec": "H.265"
       }
     ]
-  }
+  },
+  "last_verified": "2026-07-05"
 }

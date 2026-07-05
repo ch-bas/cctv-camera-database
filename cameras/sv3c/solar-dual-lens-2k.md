@@ -11,6 +11,7 @@
 | Night vision | color |
 | Power | Solar panel / rechargeable battery |
 | Storage | microSD ≤ 64GB |
+| Protocols | http |
 | Two-way audio | Yes |
 
 ## Features

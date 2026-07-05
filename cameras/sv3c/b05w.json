@@ -2,33 +2,74 @@
   "id": "sv3c-b05w",
   "brand": "SV3C",
   "model": "SV-B05W / SV-B08W",
-  "aliases": ["SV3C 5MP WiFi Bullet", "SV3C 8MP WiFi Bullet"],
+  "aliases": [
+    "SV3C 5MP WiFi Bullet",
+    "SV3C 8MP WiFi Bullet"
+  ],
   "type": "bullet",
-  "connectivity": ["wifi"],
-  "resolution": { "megapixels": 5, "label": "5MP" },
-  "night_vision": { "type": "ir" },
-  "power": { "method": "DC 12V" },
-  "storage": { "onboard": true, "max_microsd_gb": 128, "nvr_compatible": false, "cloud": false },
-  "protocols": ["rtsp", "onvif"],
+  "connectivity": [
+    "wifi"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "label": "5MP"
+  },
+  "night_vision": {
+    "type": "ir"
+  },
+  "power": {
+    "method": "DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": false,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
   "ip_rating": "IP66",
-  "audio": { "microphone": true, "speaker": true, "two_way": true },
-  "features": ["5MP/8MP variants", "ONVIF", "RTSP", "motion detection", "IP66", "two-way audio"],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "5MP/8MP variants",
+    "ONVIF",
+    "RTSP",
+    "motion detection",
+    "IP66",
+    "two-way audio"
+  ],
   "configs": {
     "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
       "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
       "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
-      "detect": {"width": 1280, "height": 720, "fps": 5},
-      "notes": "Default user 'admin'. This is the original SV3C model — one of the few that supports ONVIF. Known for inconsistent firmware; RTSP may break after updates."
+      "verified": false,
+      "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
     },
     "home_assistant": {
       "integration": "onvif",
-      "notes": "Use ONVIF integration. One of the few SV3C models with ONVIF support. Firmware updates may break ONVIF — pin your firmware version."
+      "notes": "ONVIF-conformant — use the ONVIF integration."
     },
     "blue_iris": {
-      "profile": "Generic/ONVIF",
-      "notes": "Use Generic/ONVIF. Also works with Generic/RTSP at /stream0 and /stream1."
+      "profile": "Generic/RTSP",
+      "notes": "Use the Generic/RTSP (or ONVIF) profile."
     }
   },
-  "power_source": ["dc"],
-  "sources": ["https://www.sv3c.com/5MP-8MP-Outdoor-Security-Camera-SV3C-WiFi-Wireless-5-8-Megapixels-HD-Night-Vision-Surveillance-Cameras-2-Way-Audio-IP-Camera-Motion-Detection-CCTV-Weatherproof-Outside-Camera-Support-Max-128GB-SD-Card-p395185.html"]
+  "power_source": [
+    "dc"
+  ],
+  "sources": [
+    "https://www.sv3c.com/5MP-8MP-Outdoor-Security-Camera-SV3C-WiFi-Wireless-5-8-Megapixels-HD-Night-Vision-Surveillance-Cameras-2-Way-Audio-IP-Camera-Motion-Detection-CCTV-Weatherproof-Outside-Camera-Support-Max-128GB-SD-Card-p395185.html"
+  ],
+  "last_verified": "2026-07-05"
 }

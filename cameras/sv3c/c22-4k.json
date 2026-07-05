@@ -1,0 +1,94 @@
+{
+  "id": "sv3c-c22-4k",
+  "brand": "SV3C",
+  "model": "C22-4K",
+  "aliases": [
+    "SV3C 5MP/8MP WiFi PTZ Dome"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K/8MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ]
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "pan 355 / tilt 90",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "power": {
+    "method": "12V DC (Wi-Fi data)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "pan 355 / tilt 90, 5X digital zoom",
+    "humanoid auto-tracking + detection",
+    "64 presets",
+    "8 IR LEDs (~30m)",
+    "dual-band 2.4/5GHz Wi-Fi",
+    "two-way audio",
+    "RTSP + FTP"
+  ],
+  "markets": [
+    "US",
+    "global"
+  ],
+  "release_notes": "SV3C C22-4K WiFi PTZ dome, 8MP/4K, 5X digital zoom, humanoid tracking, RTSP (SD + FTP, no cloud).",
+  "sources": [
+    "https://www.sv3c.com/SV3C-5MP-4K-PTZ-WiFi-Security-Camera-Outdoor-5MP-8MP-Wireless-IP-Dome-Camera-Indoor-with-Humanoid-Tracking-Infrared-HD-Night-Vision-2-Way-Audio-SD-Card-Record-Support-RTSP-FTP-PC-APP-2-4-5-GHz-WiFi-p2471530.html"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
+      "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
+      "verified": false,
+      "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
+    },
+    "home_assistant": {
+      "integration": "generic_camera",
+      "notes": "Add via the generic RTSP/ONVIF camera integration."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use the Generic/RTSP (or ONVIF) profile."
+    }
+  }
+}

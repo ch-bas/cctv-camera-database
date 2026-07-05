@@ -13,7 +13,7 @@
 | Night vision | color |
 | Power | PoE / DC 12V |
 | Storage | microSD ≤ 512GB, NVR |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 

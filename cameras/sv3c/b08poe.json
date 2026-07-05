@@ -2,37 +2,95 @@
   "id": "sv3c-b08poe",
   "brand": "SV3C",
   "model": "SV-B08POE",
-  "aliases": ["SV3C 4K PoE Bullet"],
+  "aliases": [
+    "SV3C 4K PoE Bullet"
+  ],
   "type": "bullet",
-  "connectivity": ["ethernet"],
-  "resolution": { "megapixels": 8, "max_width": 3840, "max_height": 2160, "label": "4K UHD" },
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
   "field_of_view_deg": "120 horizontal",
-  "night_vision": { "type": "hybrid" },
-  "power": { "method": "PoE / DC 12V" },
-  "storage": { "onboard": true, "max_microsd_gb": 256, "nvr_compatible": true, "cloud": false },
-  "protocols": ["rtsp"],
-  "audio": { "microphone": true, "speaker": true, "two_way": true },
-  "features": ["4K@20fps", "human/vehicle detection", "color night vision", "RTSP", "metal shell"],
+  "night_vision": {
+    "type": "hybrid"
+  },
+  "power": {
+    "method": "PoE / DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "4K@20fps",
+    "human/vehicle detection",
+    "color night vision",
+    "RTSP",
+    "metal shell"
+  ],
   "video": {
-    "codecs": ["H.264"],
+    "codecs": [
+      "H.264"
+    ],
     "max_fps": 20,
     "streams": [
-      {"name": "main", "resolution": "3840x2160", "fps": 20, "codec": "H.264"},
-      {"name": "sub", "resolution": "unknown", "fps": 20, "codec": "H.264"}
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 20,
+        "codec": "H.264"
+      },
+      {
+        "name": "sub",
+        "resolution": "unknown",
+        "fps": 20,
+        "codec": "H.264"
+      }
     ]
   },
   "configs": {
     "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
       "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
       "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
-      "detect": {"width": 1280, "height": 720, "fps": 5},
-      "notes": "Default user is 'admin'. RTSP paths are /stream0 (main) and /stream1 (sub). No ONVIF."
+      "verified": false,
+      "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF-conformant — use the ONVIF integration."
     },
     "blue_iris": {
       "profile": "Generic/RTSP",
-      "notes": "Use Generic/RTSP. Main: /stream0, Sub: /stream1. Default user 'admin'."
+      "notes": "Use the Generic/RTSP (or ONVIF) profile."
     }
   },
-  "power_source": ["poe", "dc"],
-  "sources": ["https://www.sv3c.com/SV3C-4K-POE-IP-Camera-Outdoor-8MP-POE-Security-Camera-with-Smart-Motion-Detection-IR-Color-Night-Vision-120-Wide-Angle-2-Way-Audio-Metal-Shell-RTSP-SD-Card-Record-Wired-p2471515.html"]
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "sources": [
+    "https://www.sv3c.com/SV3C-4K-POE-IP-Camera-Outdoor-8MP-POE-Security-Camera-with-Smart-Motion-Detection-IR-Color-Night-Vision-120-Wide-Angle-2-Way-Audio-Metal-Shell-RTSP-SD-Card-Record-Wired-p2471515.html"
+  ],
+  "last_verified": "2026-07-05"
 }

@@ -1,0 +1,93 @@
+{
+  "id": "sv3c-ptz-poe-36x",
+  "brand": "SV3C",
+  "model": "SD7POE-5MP-HX",
+  "aliases": [
+    "SV3C 5MP/8MP PoE PTZ 36X"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K/8MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 20
+  },
+  "lens": {
+    "count": 1,
+    "varifocal": true
+  },
+  "field_of_view_deg": "pan 360 / tilt 93",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 82
+  },
+  "power": {
+    "method": "PoE (IEEE)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "36X optical zoom",
+    "pan 360 / tilt 93, auto human tracking",
+    "256 presets + 2 patrol groups",
+    "human/pet/vehicle detection",
+    "9 IR LEDs (~82m) + 6 white LEDs (color ~41m)",
+    "two-way audio",
+    "RTSP + FTP + Blue Iris/iSpy"
+  ],
+  "markets": [
+    "US",
+    "global"
+  ],
+  "release_notes": "SV3C 5MP/8MP PoE PTZ, 36X optical zoom, 4K@20fps, IR to ~82m (200ft class), 256 presets. Wired PoE. IP rating not stated on page.",
+  "sources": [
+    "https://www.sv3c.com/Outdoor-5MP-8MP-PTZ-IP-POE-Security-Camera-SV3C-Pan-360%C2%B0-Tilt-36X-Zoom-Home-Surveillance-Camera-200FT-IR-HD-Night-Vision-Waterproof-Motion-Detect-Remote-Access-RTSP-128GB-SD-Card-Slot-p1508818.html"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
+      "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
+      "verified": false,
+      "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
+    },
+    "home_assistant": {
+      "integration": "generic_camera",
+      "notes": "Add via the generic RTSP/ONVIF camera integration."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use the Generic/RTSP (or ONVIF) profile."
+    }
+  }
+}

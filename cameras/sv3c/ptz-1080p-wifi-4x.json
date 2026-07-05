@@ -3,22 +3,68 @@
   "brand": "SV3C",
   "model": "SV3C 1080P WiFi PTZ 4X",
   "type": "ptz",
-  "connectivity": ["wifi"],
-  "resolution": { "megapixels": 2, "max_width": 1920, "max_height": 1080, "label": "1080p FHD" },
-  "night_vision": { "type": "ir" },
-  "power": { "method": "DC 12V" },
-  "storage": { "onboard": true, "nvr_compatible": false, "cloud": false },
-  "protocols": ["rtsp"],
-  "audio": { "microphone": true, "speaker": true, "two_way": true },
-  "features": ["1080P WiFi PTZ", "4x digital zoom", "AI human detection", "RTSP", "CamHi app"],
+  "connectivity": [
+    "wifi"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p FHD"
+  },
+  "night_vision": {
+    "type": "ir"
+  },
+  "power": {
+    "method": "DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": false,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "1080P WiFi PTZ",
+    "4x digital zoom",
+    "AI human detection",
+    "RTSP",
+    "CamHi app"
+  ],
   "configs": {
     "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
       "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
       "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
-      "detect": {"width": 640, "height": 480, "fps": 5},
-      "notes": "Default user 'admin'. Budget 1080P PTZ. No ONVIF."
+      "verified": false,
+      "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF-conformant — use the ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use the Generic/RTSP (or ONVIF) profile."
     }
   },
-  "power_source": ["dc"],
-  "sources": ["https://www.sv3c.com/1080P-Wifi-Surveillance-Camera-SV3C-Wireless-Home-Security-PTZ-Camera-IP-CCTV-4X-Digital-ZOOM-AI-Human-Detect-CamHi-p2058778.html"]
+  "power_source": [
+    "dc"
+  ],
+  "sources": [
+    "https://www.sv3c.com/1080P-Wifi-Surveillance-Camera-SV3C-Wireless-Home-Security-PTZ-Camera-IP-CCTV-4X-Digital-ZOOM-AI-Human-Detect-CamHi-p2058778.html"
+  ],
+  "last_verified": "2026-07-05"
 }

@@ -1,0 +1,95 @@
+{
+  "id": "abus-ipcs24500",
+  "brand": "ABUS",
+  "model": "IPCS24500",
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 12,
+    "max_width": 4000,
+    "max_height": 3072,
+    "label": "12MP"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20
+  },
+  "sensor": "1/1.7\" progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2",
+    "aperture": "F2.4",
+    "varifocal": false
+  },
+  "field_of_view_deg": "360",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 15
+  },
+  "power": {
+    "method": "PoE (802.3at) / 12V DC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "360-degree hemispheric fisheye",
+    "ePTZ dewarping (panorama / quad-PTZ modes)",
+    "two-way audio",
+    "IR ~15m",
+    "IK10 vandal-resistant"
+  ],
+  "markets": [
+    "DE",
+    "EU"
+  ],
+  "release_notes": "ABUS IP Fisheye 12MP (older IP-Fisheye-12-MPx SKU), 1/1.7\" sensor, 4000x3072. Distinct from the newer IPCS29512.",
+  "sources": [
+    "https://www.abus.com/int/Commercial-Security/Video-surveillance/Network-technology/IP-Fisheye-12-MPx"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "verified": false,
+      "notes": "ABUS Performance Line is Hikvision OEM — Hikvision-style RTSP paths (101 main / 102 sub). Enable ONVIF/RTSP in the camera web UI first."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "notes": "Generic ONVIF integration after enabling ONVIF (Profile S)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "ABUS is Hikvision OEM — select the 'Hikvision' profile (or Generic ONVIF/RTSP)."
+    }
+  }
+}
