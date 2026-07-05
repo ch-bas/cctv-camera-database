@@ -31,7 +31,7 @@
 
 ## Sources
 
-- https://www.avigilon.com/
+- https://www.avigilon.com/security-cameras/h6a-dome
 
 ---
 *Auto-generated from avigilon-h6a-dc1-ir-2mp.json — do not edit by hand.*

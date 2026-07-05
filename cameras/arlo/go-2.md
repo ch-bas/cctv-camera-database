@@ -7,7 +7,7 @@
 | Brand | Arlo |
 | Model | Go 2 |
 | Type | bullet |
-| Connectivity | wifi |
+| Connectivity | wifi, 4g |
 | Resolution | 1080p HD (2MP, 1920×1080) |
 | Lens | 1× Fixedmm |
 | Field of view | 130 diagonal° |

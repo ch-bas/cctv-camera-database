@@ -6,9 +6,9 @@
 | Model | Pan-Tilt Indoor Cam |
 | Type | ptz |
 | Connectivity | wifi |
-| Resolution | 2K QHD (4MP, 2560×1440) |
+| Resolution | 1080p HD (2MP, 1920×1080) |
 | Lens | 1× Fixedmm |
-| Field of view | 360 pan / 169 tilt° |
+| Field of view | 143 diagonal° |
 | Night vision | color (6m) |
 | Power | Plug-in (USB-C) |
 | Protocols | http |

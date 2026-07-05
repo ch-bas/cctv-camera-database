@@ -30,7 +30,7 @@
 
 ## Sources
 
-- https://www.avigilon.com/security-cameras
+- https://www.avigilon.com/security-cameras/h5a-bullet
 
 ---
 *Auto-generated from avigilon-h5a-bo1-ir-2mp.json — do not edit by hand.*

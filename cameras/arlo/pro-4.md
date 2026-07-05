@@ -14,7 +14,7 @@
 | Night vision | color (8m) |
 | Power | Rechargeable removable battery / optional magnetic charging cable |
 | Protocols | http |
-| IP rating | IP67 |
+| IP rating | IP65 |
 | Two-way audio | Yes |
 | Released | 2021 |
 

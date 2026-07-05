@@ -11,13 +11,13 @@
 | Resolution | 5MP (5MP, 2592×1944) |
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 2.8 (fixed)mm |
-| Field of view | 99 horizontal° |
-| Night vision | ir (30m) |
+| Field of view | 129° |
+| Night vision | hybrid (30m) |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
-| Two-way audio | Yes |
+| Two-way audio | No |
 
 ## Features
 
@@ -29,7 +29,7 @@
 
 ## Sources
 
-- https://amcrest.com/
+- https://amcrest.com/5mp-poe-camera-turret-ai-ip5m-t1277ew-ai.html
 
 ---
 *Auto-generated from amcrest-ip5m-t1277ew.json — do not edit by hand.*

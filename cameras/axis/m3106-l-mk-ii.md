@@ -8,11 +8,11 @@
 | Model | M3106-L Mk II |
 | Type | dome |
 | Connectivity | ethernet |
-| Resolution | 4MP (4MP, 2592×1944) |
+| Resolution | 4MP (4MP, 2688×1520) |
 | Sensor | 1/3" Progressive Scan CMOS |
-| Lens | 1× 3 (fixed)mm F1.8 |
-| Field of view | 112 horizontal° |
-| Night vision | none |
+| Lens | 1× 2.4mm F1.8 |
+| Field of view | 130° |
+| Night vision | ir (15m) |
 | Power | PoE (802.3af) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |

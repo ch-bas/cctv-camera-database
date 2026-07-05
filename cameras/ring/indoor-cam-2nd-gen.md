@@ -8,9 +8,9 @@
 | Connectivity | wifi |
 | Resolution | 1080p (2MP, 1920×1080) |
 | Lens | 1× |
-| Field of view | 115 diagonal° |
+| Field of view | 143 diagonal° |
 | Night vision | color (4m) |
-| Power | Plug-in (AC) |
+| Power | micro-USB (5V USB-A adapter) |
 | Protocols | http |
 | IP rating | IP20 |
 | Two-way audio | Yes |

@@ -8,7 +8,7 @@
 | Model | Spotlight Cam Pro |
 | Type | bullet |
 | Connectivity | wifi |
-| Resolution | 2K QHD (4MP, 2560×1440) |
+| Resolution | 1080p HDR (2MP, 1920×1080) |
 | Lens | 1× Fixedmm |
 | Field of view | 140 horizontal / 80 vertical° |
 | Night vision | color (10m) |

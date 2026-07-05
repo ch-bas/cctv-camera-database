@@ -31,7 +31,7 @@
 
 ## Sources
 
-- https://www.avigilon.com/security-cameras
+- https://www.avigilon.com/security-cameras/h5-dome
 
 ---
 *Auto-generated from avigilon-h5a-d1-2mp.json — do not edit by hand.*

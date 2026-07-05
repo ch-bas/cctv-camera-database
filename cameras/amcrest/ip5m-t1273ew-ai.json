@@ -1,0 +1,58 @@
+{
+  "id": "amcrest-ip5m-t1273ew-ai",
+  "brand": "Amcrest",
+  "model": "IP5M-T1273EW-AI",
+  "type": "turret",
+  "connectivity": ["ethernet"],
+  "power_source": ["poe", "dc"],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP"
+  },
+  "video": {
+    "codecs": ["H.265", "H.264"],
+    "max_fps": 20
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "focal_length_mm": "2.8",
+    "varifocal": false
+  },
+  "field_of_view_deg": "98",
+  "night_vision": {
+    "type": "color",
+    "range_m": 30
+  },
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true
+  },
+  "protocols": ["onvif", "rtsp", "http"],
+  "features": ["human detection", "vehicle detection", "perimeter protection"],
+  "environment": ["outdoor"],
+  "markets": ["global"],
+  "sources": [
+    "https://amcrest.com/prohd-5mp-outdoor-security-ip-turret-poe-camera-2-8mm-lens-98-fov-ip67-weatherproof-white-ip5m-t1273ew-ai.html",
+    "https://support.amcrest.com/hc/en-us/articles/360058785752-Technical-Specifications-IP5M-T1273EW-AI"
+  ],
+  "last_verified": "2026-07-04",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "notes": "Amcrest (Dahua OEM) RTSP. Enable RTSP in the Amcrest web UI; use the sub-stream (subtype=1) for Frigate detect.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Amcrest supports ONVIF Profile S/T; use the ONVIF integration for stream + motion events."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Add as an ONVIF/RTSP camera; Amcrest is ONVIF-compatible."
+    }
+  }
+}

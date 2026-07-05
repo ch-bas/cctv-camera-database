@@ -8,10 +8,10 @@
 | Model | M4318-PLVE |
 | Type | panoramic |
 | Connectivity | ethernet |
-| Resolution | 4K UHD per channel (8MP, 3840×2160) |
-| Sensor | 1/2" Progressive Scan CMOS |
-| Lens | 2× Wide + tele (fixed per sensor)mm |
-| Field of view | 270 combined° |
+| Resolution | 12MP (12MP, 2992×2992) |
+| Sensor | 1/2.3" CMOS |
+| Lens | 1× 1.2mm |
+| Field of view | 182° |
 | Night vision | ir (15m) |
 | Power | High PoE (802.3at) |
 | Storage | NVR |
@@ -22,7 +22,6 @@
 
 ## Features
 
-- dual-sensor outdoor panoramic
 - ARTPEC-8 DLPU
 - Lightfinder 2.0
 - Forensic WDR

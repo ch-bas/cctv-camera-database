@@ -5,10 +5,11 @@
 | Brand | Amcrest |
 | Model | IP8M-T2599EW |
 | Type | turret |
-| Connectivity | wifi |
+| Connectivity | ethernet |
 | Resolution | 4K UHD (8MP, 3840×2160) |
-| Night vision | hybrid (30m) |
-| Power | DC 12V |
+| Field of view | 125° |
+| Night vision | ir (30m) |
+| Power | PoE / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | rtsp, onvif |
 | IP rating | IP67 |
@@ -17,18 +18,14 @@
 
 ## Features
 
-- 4K WiFi turret with spotlight
-- active deterrence siren + light
-- color night vision
 - IP67 weatherproof
-- two-way audio
 - H.265
 - person detection
 - RTSP / ONVIF
 
 ## Sources
 
-- https://amcrest.com/
+- https://amcrest.com/4k-poe-camera-turret-ip8m-t2599ew-ai-v3.html
 
 ---
 *Auto-generated from amcrest-ip8m-t2599ew.json — do not edit by hand.*

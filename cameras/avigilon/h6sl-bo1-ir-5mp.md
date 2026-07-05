@@ -31,7 +31,7 @@
 
 ## Sources
 
-- https://www.avigilon.com/
+- https://www.avigilon.com/security-cameras/h6sl-bullet
 
 ---
 *Auto-generated from avigilon-h6sl-bo1-ir-5mp.json — do not edit by hand.*

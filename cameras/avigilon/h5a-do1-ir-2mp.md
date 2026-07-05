@@ -31,7 +31,7 @@
 
 ## Sources
 
-- https://www.securityinformed.com/avigilon-2-0c-h5a-do1-ir-ip-dome-camera-technical-details.html
+- https://www.avigilon.com/security-cameras/h5-dome
 
 ---
 *Auto-generated from avigilon-h5a-do1-ir-2mp.json — do not edit by hand.*

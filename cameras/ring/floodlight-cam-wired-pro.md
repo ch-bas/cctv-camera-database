@@ -5,10 +5,10 @@
 | Brand | Ring |
 | Model | Floodlight Cam Wired Pro |
 | Type | bullet |
-| Connectivity | wifi, ethernet |
+| Connectivity | wifi |
 | Resolution | 1080p (2MP, 1920×1080) |
 | Lens | 1× |
-| Field of view | 140 horizontal° |
+| Field of view | 140 horizontal / 80 vertical° |
 | Night vision | color (9m) |
 | Power | Hardwired (AC) |
 | Protocols | http |

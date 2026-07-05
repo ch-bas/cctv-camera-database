@@ -1,0 +1,65 @@
+{
+  "id": "amcrest-ip8m-vt2879ew-ai",
+  "brand": "Amcrest",
+  "model": "IP8M-VT2879EW-AI",
+  "type": "turret",
+  "connectivity": ["ethernet"],
+  "power_source": ["poe", "dc"],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "video": {
+    "codecs": ["H.265", "H.264"],
+    "max_fps": 15
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "focal_length_mm": "2.7-13.5",
+    "aperture": "F1.5",
+    "varifocal": true
+  },
+  "field_of_view_deg": "31-113",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true
+  },
+  "protocols": ["onvif", "rtsp", "http"],
+  "features": ["5x optical zoom", "human detection", "vehicle detection", "perimeter protection"],
+  "operating_temp_c": "-30 to 60",
+  "environment": ["outdoor"],
+  "markets": ["global"],
+  "sources": [
+    "https://amcrest.com/4k-poe-camera-turret-optical-zoom-ip8m-vt2879ew-ai.html",
+    "https://support.amcrest.com/hc/en-us/articles/360060835671-User-Manual-IP8M-VT2879EW-AI"
+  ],
+  "last_verified": "2026-07-04",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "notes": "Amcrest (Dahua OEM) RTSP. Enable RTSP in the Amcrest web UI; use the sub-stream (subtype=1) for Frigate detect.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Amcrest supports ONVIF Profile S/T; use the ONVIF integration for stream + motion events."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Add as an ONVIF/RTSP camera; Amcrest is ONVIF-compatible."
+    }
+  }
+}

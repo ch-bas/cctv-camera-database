@@ -4,21 +4,20 @@
 |-------|------|
 | Brand | Amcrest |
 | Model | ASH42-W |
-| Type | dome |
+| Type | bullet |
 | Connectivity | wifi |
 | Resolution | 2K QHD (4MP, 2560×1440) |
+| Field of view | 101 horizontal° |
 | Night vision | ir (10m) |
 | Power | DC 5V (USB) |
-| Storage | microSD ≤ 256GB |
+| Storage | microSD ≤ 128GB |
 | Protocols | rtsp |
-| Two-way audio | Yes |
+| IP rating | IP66 |
+| Two-way audio | No |
 | Released | 2023 |
 
 ## Features
 
-- 2K indoor pan/tilt WiFi camera
-- 360° pan / 93° tilt
-- auto-tracking of motion
 - AI person detection
 - two-way audio
 - privacy mode
@@ -27,7 +26,7 @@
 
 ## Sources
 
-- https://amcrest.com/
+- https://www.amazon.com/dp/B08NSY7KT6
 
 ---
 *Auto-generated from amcrest-ash42-w.json — do not edit by hand.*

@@ -15,7 +15,7 @@
 | Power | Wired (USB-C) |
 | Protocols | http |
 | Two-way audio | Yes |
-| Released | 2024 |
+| Released | 2017 |
 
 ## Features
 

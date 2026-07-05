@@ -10,7 +10,7 @@
 | Connectivity | wifi |
 | Resolution | Head-to-Toe 1536p (4MP, 2560×1440) |
 | Lens | 1× |
-| Field of view | 150 horizontal / 84 vertical° |
+| Field of view | 150 horizontal / 150 vertical° |
 | Night vision | color (5m) |
 | Power | Rechargeable battery / existing doorbell wiring optional |
 | Protocols | http |

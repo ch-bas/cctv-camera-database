@@ -1,6 +1,6 @@
 # Arlo Wired Floodlight Camera (2025)
 
-*Also known as: Arlo Floodlight Cam 2025*
+*Also known as: FLW2001, Arlo Floodlight Cam 2025*
 
 | Field | Spec |
 |-------|------|
@@ -14,9 +14,9 @@
 | Night vision | color (10m) |
 | Power | Hardwired (AC mains) |
 | Protocols | http |
-| IP rating | IP54 |
+| IP rating | IP65 |
 | Two-way audio | Yes |
-| Released | 2025 |
+| Released | 2024 |
 
 ## Features
 
@@ -25,13 +25,13 @@
 - color night vision
 - person/vehicle/animal/package detection
 - integrated siren
-- IP54 weather-resistant
+- IP65 weather-resistant
 - Apple HomeKit / Google / Alexa
 - Arlo Secure plan for cloud storage
 
 ## Sources
 
-- https://www.arlo.com/
+- https://us.arlo.com/products/arlo-wired-floodlight
 
 ---
 *Auto-generated from arlo-wired-floodlight-2025.json — do not edit by hand.*

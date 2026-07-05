@@ -1,20 +1,20 @@
-# Arlo Video Doorbell HD
+# Arlo Video Doorbell 2K (2nd Gen)
 
 *Also known as: Arlo Essential Video Doorbell Wire-Free 2K*
 
 | Field | Spec |
 |-------|------|
 | Brand | Arlo |
-| Model | Video Doorbell HD |
+| Model | Video Doorbell 2K (2nd Gen) |
 | Type | doorbell |
 | Connectivity | wifi |
 | Resolution | 2K QHD (4MP, 2560×1440) |
 | Lens | 1× |
 | Field of view | 180 diagonal° |
-| Night vision | color (5m) |
+| Night vision | ir (5m) |
 | Power | Battery / hardwired existing wiring |
 | Protocols | http |
-| IP rating | IP55 |
+| IP rating | IP65 |
 | Two-way audio | Yes |
 | Released | 2023 |
 
@@ -27,7 +27,7 @@
 - no hub required
 - Apple HomeKit / Google / Alexa
 - Arlo Secure plan
-- IP55
+- IP65
 
 ## Sources
 

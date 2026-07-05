@@ -1,17 +1,17 @@
-# Avigilon H5A Multisensor 24MP (4x6MP)
+# Avigilon 24C-H5A-3MH
 
 *Also known as: H5A Multisensor 4x6MP, 4x6MP 360deg*
 
 | Field | Spec |
 |-------|------|
 | Brand | Avigilon |
-| Model | H5A Multisensor 24MP (4x6MP) |
+| Model | 24C-H5A-3MH |
 | Type | panoramic |
 | Connectivity | ethernet |
-| Resolution | 4x6MP (24MP) |
-| Sensor | 4x 1/2.8" CMOS |
-| Lens | 4× 3.3-5.7 (motorized per sensor)mm |
-| Field of view | 360° |
+| Resolution | 3x8MP (24MP) (24MP) |
+| Sensor | 3x 1/2.8" CMOS |
+| Lens | 3× 3.3-5.7 (motorized per sensor)mm |
+| Field of view | 270° |
 | Night vision | ir (20m) |
 | Power | High PoE (802.3bt) |
 | Storage | NVR |
@@ -21,7 +21,7 @@
 
 ## Features
 
-- 4-sensor 360deg coverage 24MP total
+- 3-sensor 270° coverage 24MP total
 - Avigilon Next-Gen Analytics
 - Appearance Search
 - LightCatcher

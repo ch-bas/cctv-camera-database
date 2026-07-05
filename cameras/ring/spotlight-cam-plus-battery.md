@@ -28,7 +28,7 @@
 
 ## Sources
 
-- https://ring.com/products/spotlight-cam-battery
+- https://ring.com/products/spotlight-cam-plus-battery
 
 ---
 *Auto-generated from ring-spotlight-cam-plus-battery.json — do not edit by hand.*

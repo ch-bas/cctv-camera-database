@@ -1,0 +1,67 @@
+{
+  "id": "amcrest-ip8m-2899ew-ai",
+  "brand": "Amcrest",
+  "model": "IP8M-2899EW-AI",
+  "type": "ptz",
+  "connectivity": ["ethernet"],
+  "power_source": ["poe", "dc"],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "video": {
+    "codecs": ["H.265", "H.264"],
+    "max_fps": 25
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "aperture": "F1.6-F3.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "59.3",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100
+  },
+  "power": {
+    "method": "PoE+ (802.3at) / DC 12V",
+    "voltage": "DC 12V",
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP66",
+  "protocols": ["onvif", "rtsp", "http"],
+  "features": ["25x optical zoom", "human detection", "vehicle detection", "face detection", "perimeter protection"],
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "160 x 160 x 259",
+  "environment": ["outdoor"],
+  "markets": ["global"],
+  "sources": [
+    "https://support.amcrest.com/hc/en-us/articles/4505722116621-Technical-Specifications-IP8M-2899EW-AI",
+    "https://amcrest.com/4k-8-megapixel-ip-poe-camera-ptz-25x-optical-zoom-ai-ip8m-2899ew-ai-v2.html"
+  ],
+  "last_verified": "2026-07-04",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "notes": "Amcrest (Dahua OEM) RTSP. Enable RTSP in the Amcrest web UI; use the sub-stream (subtype=1) for Frigate detect. PTZ via ONVIF.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Amcrest supports ONVIF Profile S/T; use the ONVIF integration for stream, motion events, and PTZ."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Add as an ONVIF/RTSP camera; Amcrest is ONVIF-compatible (PTZ supported)."
+    }
+  }
+}
