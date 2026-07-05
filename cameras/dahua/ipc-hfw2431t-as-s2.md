@@ -11,7 +11,7 @@
 | Resolution | 4MP (4MP, 2688×1520) |
 | Sensor | 1/3" CMOS |
 | Lens | 1× 2.8 / 3.6 (fixed)mm |
-| Night vision | ir (30m) |
+| Night vision | ir (80m) |
 | Power | PoE / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -32,7 +32,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com
+- https://www.dahuasecurity.com/asset/upload/uploads/soft/20200320/DH-IPC-HFW2431T-AS-S2_datasheet_20200318.pdf
 
 ---
 *Auto-generated from dahua-ipc-hfw2431t-as-s2.json — do not edit by hand.*

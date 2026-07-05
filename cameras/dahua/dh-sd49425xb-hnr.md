@@ -8,7 +8,7 @@
 | Model | SD49425XB-HNR |
 | Type | ptz |
 | Connectivity | ethernet |
-| Resolution | 4MP (4MP, 2688×1520) |
+| Resolution | 4MP (4MP, 2560×1440) |
 | Sensor | 1/2.8" STARVIS CMOS |
 | Lens | 1× 4.8-120 (25x optical)mm F1.6 |
 | Field of view | 60-2.5 horizontal° |
@@ -33,7 +33,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com/
+- https://www.dahuasecurity.com/products/All-Products/Discontinued-Products/PTZ-Cameras/SD49425XB-HNR=S2
 
 ---
 *Auto-generated from dahua-dh-sd49425xb-hnr.json — do not edit by hand.*

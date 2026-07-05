@@ -1,11 +1,11 @@
-# Dahua SD49225XA-HNR (MENA)
+# Dahua SD49225XA-HNR
 
 *Also known as: 2MP 25x Starlight AI PTZ MENA, Dahua PTZ Dubai Starlight*
 
 | Field | Spec |
 |-------|------|
 | Brand | Dahua |
-| Model | SD49225XA-HNR (MENA) |
+| Model | SD49225XA-HNR |
 | Type | ptz |
 | Connectivity | ethernet |
 | Resolution | 1080p HD (2MP, 1920×1080) |
@@ -34,8 +34,7 @@
 
 ## Sources
 
-- https://shop.acssllc.ae/product-category/dahua-camera/
-- https://www.dahuasecurity.com/mena/
+- https://www.dahuasecurity.com/products/All-Products/Discontinued-Products/PTZ-Cameras/SD49225XA-HNR
 
 ---
 *Auto-generated from dahua-sd49225xa-hnr-mena.json — do not edit by hand.*

@@ -30,7 +30,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com
+- https://www.dahuasecurity.com/products/All-Products/Network-Cameras/WizMind-5-Series/S-Series/8MP/IPC-HFW5842E-ZE=S3
 
 ---
 *Auto-generated from dahua-ipc-hfw5842e-ze.json — do not edit by hand.*

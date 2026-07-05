@@ -17,7 +17,7 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
-| Released | 2024 |
+| Released | 2022 |
 
 ## Features
 
@@ -31,7 +31,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com/
+- https://www.dahuasecurity.com/products/network-products/network-cameras/wizsense-2-series/smart-dual-light/ipc-hdw2249t-s-il
 
 ---
 *Auto-generated from dahua-ipc-hdw2249t-s-il.json — do not edit by hand.*

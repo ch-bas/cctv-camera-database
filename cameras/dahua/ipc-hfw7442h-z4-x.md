@@ -29,7 +29,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com/
+- https://www.dahuasecurity.com/products/All-Products/Network-Cameras/WizMind-X-series/4MP/IPC-HFW7442H-Z4-X
 
 ---
 *Auto-generated from dahua-ipc-hfw7442h-z4-x.json — do not edit by hand.*

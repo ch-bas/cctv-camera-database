@@ -4,9 +4,10 @@
 |-------|------|
 | Brand | Dahua |
 | Model | IPC-HDW1830T-H |
-| Type | dome |
+| Type | turret |
 | Connectivity | ethernet |
 | Resolution | 4K UHD (8MP) |
+| Sensor | 1/2.7" CMOS |
 | Field of view | 107h° |
 | Night vision | ir (30m) |
 | Power | PoE (802.3af) / DC 12V |
@@ -27,7 +28,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com/
+- https://www.dahuasecurity.com/products/productDetail/94597
 
 ---
 *Auto-generated from dahua-ipc-hdw1830t-h.json — do not edit by hand.*

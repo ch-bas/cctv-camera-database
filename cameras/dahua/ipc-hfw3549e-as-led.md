@@ -27,7 +27,7 @@
 
 ## Sources
 
-- https://www.sourcesecurity.com/dahua-technology-ipc-hfw3549e-as-led-ip-camera-technical-details.html
+- https://www.dahuasecurity.com/products/All-Products/Network-Cameras/WizSense-Series/3-Series/Full-color/IPC-HFW3549E-AS-LED
 
 ---
 *Auto-generated from dahua-ipc-hfw3549e-as-led.json — do not edit by hand.*

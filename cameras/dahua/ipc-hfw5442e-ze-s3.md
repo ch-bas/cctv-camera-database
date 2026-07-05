@@ -29,7 +29,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com/
+- https://www.dahuasecurity.com/products/All-Products/Network-Cameras/WizMind-S-Series/4MP/IPC-HFW5442E-ZE=S3
 
 ---
 *Auto-generated from dahua-ipc-hfw5442e-ze-s3.json — do not edit by hand.*

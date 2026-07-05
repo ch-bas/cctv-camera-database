@@ -28,7 +28,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com
+- https://www.dahuasecurity.com/products/All-Products/Network-Cameras/WizSense-2-Series/Smart-Dual-Light/IPC-HFW2449S-S-IL
 
 ---
 *Auto-generated from dahua-ipc-hfw2449s-s-il.json — do not edit by hand.*

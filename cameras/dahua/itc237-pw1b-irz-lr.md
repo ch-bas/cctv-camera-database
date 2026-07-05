@@ -30,7 +30,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com
+- https://www.dahuasecurity.com/asset/upload/product/20180110/ITC237-PW1B-IRZ_Datasheet_20180105.pdf
 
 ---
 *Auto-generated from dahua-itc237-pw1b-irz-lr.json — do not edit by hand.*

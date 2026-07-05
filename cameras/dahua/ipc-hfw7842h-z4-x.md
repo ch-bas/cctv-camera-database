@@ -10,8 +10,9 @@
 | Connectivity | ethernet |
 | Resolution | 4K UHD (8MP, 3840×2160) |
 | Sensor | 1/1.8" CMOS |
-| Lens | 1× 2.8-12 (motorized varifocal)mm |
-| Night vision | ir (60m) |
+| Lens | 1× 8-32mm |
+| Field of view | 42-15° |
+| Night vision | ir (120m) |
 | Power | PoE / ePoE / DC 12V / AC 24V |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
@@ -31,7 +32,7 @@
 
 ## Sources
 
-- https://www.scribd.com/document/725140541/IPC-HFW7842H-Z-X-S0-datasheet-20230214
+- https://www.dahuasecurity.com/products/All-Products/Network-Cameras/WizMind-X-Series/8MP/IPC-HFW7842H-Z4-X
 
 ---
 *Auto-generated from dahua-ipc-hfw7842h-z4-x.json — do not edit by hand.*

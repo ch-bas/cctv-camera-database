@@ -29,7 +29,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com/
+- https://www.dahuasecurity.com/products/All-Products/Network-Cameras/WizMind-X-series/8MP/IPC-HFW7842H-Z-X
 
 ---
 *Auto-generated from dahua-ipc-hfw7842h-z-x.json — do not edit by hand.*

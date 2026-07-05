@@ -8,7 +8,7 @@
 | Connectivity | ethernet |
 | Resolution | 4K UHD (8MP) |
 | Sensor | 1/2.8" CMOS |
-| Lens | 1× 4.8-120 (25x optical)mm F1.6 |
+| Lens | 1× 5-125 (25x optical zoom)mm F1.6 |
 | Field of view | 60-2.5h° |
 | Night vision | ir (100m) |
 | Power | PoE (802.3at) |
@@ -30,7 +30,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com/
+- https://www.dahuasecurity.com/products/All-Products/PTZ-Cameras/WizSense-Series/SD4/SD49825GB-HNR
 
 ---
 *Auto-generated from dahua-sd49825gb-hnr.json — do not edit by hand.*

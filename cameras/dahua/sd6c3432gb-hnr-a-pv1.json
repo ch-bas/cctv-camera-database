@@ -1,0 +1,90 @@
+{
+  "id": "dahua-sd6c3432gb-hnr-a-pv1",
+  "brand": "Dahua",
+  "model": "SD6C3432GB-HNR-A-PV1",
+  "aliases": ["DH-SD6C3432GB-HNR-A-PV1", "WizSense 4MP 32x TiOC Starlight PTZ"],
+  "type": "ptz",
+  "connectivity": ["ethernet"],
+  "power_source": ["poe", "ac-mains"],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "video": {
+    "codecs": ["H.265", "H.264", "MJPEG"],
+    "max_fps": 30
+  },
+  "sensor": "1/2.8\" STARVIS CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.8-154 (32x optical zoom)",
+    "aperture": "F1.6-F4.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "55.8-2.3 (wide-tele)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 150
+  },
+  "power": {
+    "method": "24VAC / PoE+ (802.3at)",
+    "consumption_w": 23,
+    "voltage": "24VAC",
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": ["onvif", "rtsp", "http"],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "32x optical zoom",
+    "TiOC active deterrence",
+    "WizSense AI",
+    "Auto-tracking 3.0",
+    "SMD 4.0",
+    "face detection",
+    "perimeter protection",
+    "dual illumination (IR 150m + warm/white light 50m)",
+    "full-color Starlight",
+    "red & blue warning lights",
+    "audio in/out (two-way)",
+    "TVS 6000V surge protection",
+    "H.265"
+  ],
+  "dimensions_mm": "202 x 202 x 325.3",
+  "weight_g": 4600,
+  "environment": ["outdoor"],
+  "markets": ["global"],
+  "status": "discontinued",
+  "sources": [
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/SD6C3432GB-HNR-A-PV1_S0_datasheet_20250123.pdf"
+  ],
+  "last_verified": "2026-07-04",
+  "configs": {
+    "frigate": {
+      "detect": { "width": 1280, "height": 720, "fps": 5 },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "notes": "ONVIF PTZ control supported (port 80). Standard Dahua realmonitor URLs."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile. Supports both main and sub streams."
+    }
+  }
+}

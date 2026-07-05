@@ -32,7 +32,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com/
+- https://www.dahuasecurity.com/au/products/All-Products/Network-Cameras/WizSense-Series/TiOC/IPC-HFW3649T1-AS-PV-ANZ-S2
 
 ---
 *Auto-generated from dahua-ipc-hfw3649t1-as-pv-s2.json — do not edit by hand.*

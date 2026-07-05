@@ -17,7 +17,7 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
-| Released | 2022 |
+| Released | 2020 |
 
 ## Features
 
@@ -32,7 +32,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com
+- https://www.dahuasecurity.com/products/All-Products/Network-Cameras/Lite-Series/8-MP/IPC-HDW2831T-AS-S2
 
 ---
 *Auto-generated from dahua-ipc-hdw2831t-as-s2.json — do not edit by hand.*

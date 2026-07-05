@@ -7,6 +7,8 @@
 | Type | dome |
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP) |
+| Sensor | 1/1.8" CMOS |
+| Lens | 1× 2.7-12mm |
 | Field of view | 110-30h° |
 | Night vision | ir (40m) |
 | Power | PoE (802.3af) / DC 12V |
@@ -29,7 +31,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com/
+- https://www.dahuasecurity.com/products/All-Products/Network-Cameras/WizMind-Series/5-Series/4MP/IPC-HDBW5442E-ZE
 
 ---
 *Auto-generated from dahua-ipc-hdbw5442r-ze.json — do not edit by hand.*

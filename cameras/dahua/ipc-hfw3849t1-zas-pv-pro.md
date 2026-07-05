@@ -7,10 +7,10 @@
 | Type | bullet |
 | Connectivity | ethernet |
 | Resolution | 4K (8MP, 3840×2160) |
-| Sensor | 1/1.8" CMOS |
-| Lens | 1× 2.7-12mm F1.2 |
+| Sensor | 1/2.8" CMOS |
+| Lens | 1× 2.7-13.5mm F1.2 |
 | Field of view | 112-48h° |
-| Night vision | hybrid (60m) |
+| Night vision | hybrid (50m) |
 | Power | 12VDC/PoE+ |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |

@@ -1,0 +1,84 @@
+{
+  "id": "dahua-ipc-hfw5849t1-ase-led",
+  "brand": "Dahua",
+  "model": "IPC-HFW5849T1-ASE-LED",
+  "aliases": ["DH-IPC-HFW5849T1-ASE-LED", "WizMind 8MP Full-color Bullet"],
+  "type": "bullet",
+  "connectivity": ["ethernet"],
+  "power_source": ["poe", "dc"],
+  "release_year": 2023,
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "video": {
+    "codecs": ["H.265", "H.264", "MJPEG"],
+    "max_fps": 30
+  },
+  "sensor": "1/1.2\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 3.6 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "113 (2.8mm)",
+  "night_vision": {
+    "type": "color",
+    "range_m": 40
+  },
+  "power": {
+    "method": "12VDC/PoE/ePoE",
+    "voltage": "12VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": ["onvif", "rtsp", "http"],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "WizMind 4K full-color F1.0 bullet",
+    "1/1.2\" large sensor",
+    "warm light up to 40m",
+    "IK10 vandal resistance",
+    "face detection & video metadata",
+    "people counting / IVS",
+    "built-in mic & speaker",
+    "H.265+"
+  ],
+  "operating_temp_c": "-40 to +60",
+  "dimensions_mm": "288 x 94 x 85",
+  "weight_g": 1380,
+  "environment": ["outdoor"],
+  "markets": ["global"],
+  "status": "discontinued",
+  "sources": [
+    "https://www.sourcesecurity.com/dahua-technology-ipc-hfw5849t1-ase-led-ip-camera-technical-details.html"
+  ],
+  "last_verified": "2026-07-04",
+  "configs": {
+    "frigate": {
+      "detect": { "width": 1280, "height": 720, "fps": 5 },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile. Supports both main and sub streams."
+    }
+  }
+}

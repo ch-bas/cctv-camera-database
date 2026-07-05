@@ -32,7 +32,7 @@
 
 ## Sources
 
-- https://m.indiamart.com/proddetail/dahua-ipc-hf71242f-z-x-12mp-box-wizmind-network-camera-2855727704788.html
+- https://www.dahuasecurity.com/products/All-Products/Network-Cameras/WizMind-X-series/12MP/IPC-HF71242F-Z-X
 
 ---
 *Auto-generated from dahua-ipc-hf71242f-z-x.json — do not edit by hand.*
