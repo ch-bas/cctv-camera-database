@@ -1,9 +1,9 @@
 # CCTV Camera Database
 
-An open, structured database of 1,820 CCTV / IP camera models and their technical specifications, covering 74 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
+An open, structured database of 1,871 CCTV / IP camera models and their technical specifications, covering 75 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
 
-[![cameras](https://img.shields.io/badge/cameras-1%2C820-blue)](data/cameras.json)
-[![brands](https://img.shields.io/badge/brands-74-green)](cameras/)
+[![cameras](https://img.shields.io/badge/cameras-1%2C871-blue)](data/cameras.json)
+[![brands](https://img.shields.io/badge/brands-75-green)](cameras/)
 [![license](https://img.shields.io/badge/license-CC0-lightgrey)](LICENSE)
 
 ---
@@ -31,7 +31,7 @@ Prefer to self-host or browse offline? A [standalone demo](docs/demo.html) (just
 - **Filter** — narrow by brand, camera type, night vision, resolution, or market
 - **Sort** — click any column header to sort ascending/descending
 - **Detail drawer** — click a row to slide open the full spec sheet (resolution, connectivity, protocols, storage, audio, pricing, source links)
-- **Pagination** — page through all 1,820 cameras, 25 per page
+- **Pagination** — page through all 1,871 cameras, 25 per page
 - **Stats bar** — live counts for total cameras, brands, 4K+, WiFi, and no-subscription models
 
 ---
@@ -63,7 +63,7 @@ cctv-camera-database/
 │   ├── tapo/             #  62 cameras
 │   └── …60 more brands
 ├── data/                 # GENERATED — do not edit by hand
-│   ├── cameras.json      # all 1,820 cameras as one array
+│   ├── cameras.json      # all 1,871 cameras as one array
 │   └── cameras.csv       # flattened, spreadsheet-friendly
 ├── schema/
 │   └── camera.schema.json
@@ -121,8 +121,8 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 
 | Metric | Count |
 |--------|-------|
-| Total cameras | **1,820** |
-| Brands | **74** |
+| Total cameras | **1,871** |
+| Brands | **75** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
 | PoE wired | 1,171 |
 | WiFi | 470 |
@@ -132,7 +132,7 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | 1080p–2MP | 496 |
 | With integration configs (Frigate / Home Assistant) | 1,321 |
 
-### All 74 brands
+### All 75 brands
 
 | Brand | Cameras | Segment |
 |-------|---------|---------|
@@ -173,6 +173,7 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | ACTi | 119 | Enterprise IP + analog, NDAA, TW/global |
 | FLIR (Teledyne) | 12 | Thermal imaging, NA/EU |
 | Kedacom | 58 | Enterprise, CN/global |
+| Speco Technologies | 31 | Professional/commercial (NDAA), US |
 | Sunell | 12 | Prosumer/Enterprise, CN/global |
 | INSTAR | 12 | Privacy-first prosumer, DE/EU |
 | LTS | 7 | Prosumer/installer, US |
@@ -206,7 +207,7 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | IDIS | 3 | Enterprise DirectIP, KR/global |
 | Steinel | 3 | Outdoor smart light/cam, DE/AT/CH |
 | Verkada | 3 | Cloud-managed enterprise, US/CA |
-| Ajax | 2 | Professional alarm, EU/UK |
+| Ajax | 22 | Professional alarm + wired PoE cameras, EU/UK |
 | Bosch Smart Home | 2 | Consumer smart home, DE/AT/CH |
 | Canon | 2 | Enterprise optical, JP/global |
 | Kasa (TP-Link) | 1 | Consumer wired, US |

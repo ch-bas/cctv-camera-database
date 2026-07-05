@@ -6,6 +6,23 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.27.0] — 2026-07-05
+
+New brand **Speco Technologies** and a full **Ajax** wired-camera audit + expansion. Net: **1,820 → 1,871 cameras**, **74 → 75 brands**.
+
+### Added — Speco Technologies (new brand, 31 cameras)
+
+US professional/commercial (NDAA) brand, all verified against official `specotech.com` datasheets + reputable retailers:
+- **O-series** turrets/domes/bullets (O4T9, O4VT2, O4TDD2, O4D9/M, O4B9M, O8D9/M, O8B9/M, O8VD3, O8VT3), **Flexible Intensifier** line (O8FD1/M, O8FB1/M, O8FT1/M), **White-Light Intensifier** (O8VLT1, O8KT1/B), **PS professional PoE** (PS2M/3D/3E/7F/8D/70F), **multi-sensor panoramics** (O8FBMS1, O4FDMS1, O8LMST1, O84S), LPR box (O4BXLP1M), 25x PTZ (O4P25X2), 12MP fisheye/bullet (O12MDP4, O12B1M), and a video doorbell (O2DB1).
+- Of the 10 pre-existing entries, 8 were spec-correct; 2 fixed (**O4BXLP1M** night vision `ir → color`, it is a white-light LPR camera; **O8VT3** power `poe → poe+dc`). Speco does not publish RTSP paths, so `configs` use ONVIF auto-discovery (`verified: false`).
+
+### Ajax — wired-camera audit + expansion (2 → 22)
+
+- **Removed 2 fabricated ghosts:** `OutdoorCam` (no such product; `/products/outdoorcam/` 404s) and `DualCam` (no Ajax "DualCam" exists; the only real referent is the single-camera DoorBell).
+- **Added 22 verified wired PoE cameras** from official `ajax.systems` spec pages: DomeCam Mini (×4) + Mini HL (×3), DomeCam HLVF (×2), BulletCam HL (×4), TurretCam (×4), Superior BulletCam/DomeCam HLVF (×4), and the DoorBell (ADB.Y.W). All ONVIF (Profile S / S+T); Ajax doesn't publish RTSP paths so configs use ONVIF auto-discovery.
+
+---
+
 ## [1.26.0] — 2026-07-05
 
 Five new brands added and a full **IMOU** audit + expansion. Net: **1,728 → 1,820 cameras**, **69 → 74 brands**.

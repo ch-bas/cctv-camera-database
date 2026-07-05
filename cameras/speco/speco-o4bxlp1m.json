@@ -1,0 +1,93 @@
+{
+  "id": "speco-o4bxlp1m",
+  "brand": "Speco Technologies",
+  "model": "O4BXLP1M",
+  "aliases": [
+    "replacement for O2BLP2M, O2BLP1M, O4BLP2M"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 60
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "8-32",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "color",
+    "range_m": 100
+  },
+  "power": {
+    "method": "PoE++ (IEEE 802.3bt) or 12V DC / 24V AC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "License Plate Recognition, built-in database stores up to 10,000 plates for onboard search/match (or use with a compatible Speco recorder)",
+    "captures plates at vehicle speeds up to 75mph in optimal conditions",
+    "recommended capture distance 22-98ft (6.7-30m); white LED extends visibility to 330ft (100m) in low light",
+    "supports up to 60fps in high-frame-rate mode (30fps standard)",
+    "three independently adjustable video streams",
+    "2-channel alarm input/output",
+    "ONVIF Profile G, S, and T conformant",
+    "NDAA compliant, 5-year warranty",
+    "default web UI login is admin/1234 with a separate ONVIF password that must be matched or set independently"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "release_notes": "Like LTS's LPR camera, this is a purpose-built plate-capture camera rather than a general security camera — the narrow, long motorized lens (8-32mm) trades wide-area coverage for plate legibility at a specific recommended distance range. White-light LPR camera: illumination is a white LED (up to ~100m), not IR (official name is '4MP White Light License Plate Recognition').",
+  "sources": [
+    "https://www.a1securitycameras.com/speco-o4bxlp1m.html",
+    "https://www.bhphotovideo.com/c/product/1879950-REG/speco_technologies_o4bxlp1m_4mp_outdoor_network.html",
+    "https://www.manualslib.com/manual/3497140/Speco-O4bxlp1m.html"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "notes": "ONVIF Profile G/S/T conformance confirmed. The official user manual confirms the camera exposes a distinct ONVIF configuration section with its own separate password (must be matched to the web login password or set independently) — worth checking during setup since a mismatched ONVIF password is a common cause of failed ONVIF discovery. Exact RTSP URL path not stated in the manual excerpt reviewed. LPR-specific plate-read events/metadata, if exposed, would likely be more useful for automation than raw object detection on this camera's narrow FOV.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF Profile G/S/T conformance confirmed by the manufacturer; note the separate ONVIF password requirement described above.",
+      "connection_type": "local"
+    },
+    "blue_iris": {
+      "profile": "Generic ONVIF/RTSP",
+      "notes": "Strong ONVIF conformance makes this a likely good fit; not independently confirmed with Blue Iris specifically."
+    }
+  }
+}
