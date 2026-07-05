@@ -8,13 +8,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [1.25.0] — 2026-07-05
 
-Full data-quality audit of the **Kedacom** brand (master audit #28) — a **replace-the-whole-brand** case. Net: **12 → 54 cameras** (all 12 removed, 54 real models added, all verified against official `kedacom.com` product pages).
+Full data-quality audit of the **Kedacom** brand (master audit #28) — a **replace-the-whole-brand** case. Net: **12 → 58 cameras** (all 12 removed, 58 real models added, all verified against official `kedacom.com` product pages).
 
 ### Removed — 12 fabricated ghosts (the entire prior set)
 
 The existing 12 entries were a made-up 4×3 grid of invented model numbers (`IPC21xx`=dome / `IPC23xx`=bullet / `IPC25xx`=box / `IPC28xx`=PTZ, 3rd digit = megapixels) with a `-HN-S`/`-HN-B`/`-HN-X`/`-HN-PZ30` naming scheme that **is not Kedacom's**. None of the 12 model numbers exist on kedacom.com, and they contradicted real products (the real `IPC2151` is a 1.3MP bullet, not a 2MP dome; Kedacom PTZ is the `IPC42x/44x` family, not `IPC28xx`; real box cameras are `IPC14x`, not `IPC25xx`). Homepage-only sourcing, no `last_verified`, templated specs — a coherent fabricated cluster.
 
-### Added — 54 real, verified Kedacom models
+### Added — 58 real, verified Kedacom models
 
 Extracted field-by-field from official kedacom.com product pages across the full catalogue:
 - **Semi-domes** (IPC21xx–IPC28xx FN/HN/AN/EN/DN series, LC2110) — ~33 real models: fixed + motorized-varifocal, IR / full-color / Smart Dual Light, 1.3MP–8MP, incl. the `IPC2533-FN-SIR50` 5MP and `IPC2833-FN-SIR50` 4K.
