@@ -8,7 +8,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [1.23.0] — 2026-07-05
 
-Parallel data-quality audit of **five brands** — **Avigilon, Amcrest, Ring, Arlo, Axis** (master audit #28, issues #37/#36/#35/#33/#31) — every camera verified against official manufacturer sources. Net across the release: **1,730 → 1,695 cameras** (39 removed, 4 re-keyed to real models, ~129 corrected; brand count unchanged at 69).
+Parallel data-quality audit of **five brands** — **Avigilon, Amcrest, Ring, Arlo, Axis** (master audit #28, issues #37/#36/#35/#33/#31) — every camera verified against official manufacturer sources. Net across the release: **1,730 → 1,703 cameras** (39 removed, 4 re-keyed to real models, 8 Arlo legacy models added, ~129 corrected; brand count unchanged at 69).
+
+### Added — 8 Arlo legacy models
+
+Filling gaps in Arlo's back-catalog, each verified against official Arlo/NETGEAR sources: **Arlo Q** (VMC3040), **Arlo Q Plus** (VMC3040S, PoE), **Arlo (1st Gen)** (VMC3030, 720p), **Arlo Pro** (VMC4030, 720p), **Arlo Pro 2** (VMC4030P, 1080p), **Arlo Go** (VML4030, 4G LTE), **Arlo Essential (1st Gen)** (VMC2020), and the **Arlo Essential Video Doorbell Wired** (AVD1001, the only currently-available one; the rest are `discontinued`). All app/cloud-only (`http`), no bogus RTSP.
 
 ### Removed — 35 net (23 ghosts + 16 duplicates, minus 4 re-keys)
 
