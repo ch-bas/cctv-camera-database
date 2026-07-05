@@ -6,7 +6,8 @@
 | Model | IPC-HDW5442T-ZE |
 | Type | turret |
 | Connectivity | ethernet |
-| Resolution | 4MP (4MP) |
+| Resolution | 4MP (4MP, 2688×1520) |
+| Sensor | 1/1.8" CMOS |
 | Field of view | 110-30h° |
 | Night vision | ir (40m) |
 | Power | PoE (802.3af) / DC 12V |
@@ -29,7 +30,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com/
+- https://www.dahuasecurity.com/products/All-Products/Network-Cameras/WizMind-Series/5-Series/4MP/IPC-HDW5442T-ZE
 
 ---
 *Auto-generated from dahua-ipc-hdw5442t-ze.json — do not edit by hand.*

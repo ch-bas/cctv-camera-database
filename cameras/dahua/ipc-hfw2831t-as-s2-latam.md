@@ -6,7 +6,7 @@
 |-------|------|
 | Brand | Dahua |
 | Model | IPC-HFW2831T-AS-S2 (LATAM) |
-| Type | turret |
+| Type | bullet |
 | Connectivity | ethernet |
 | Resolution | 4K UHD (8MP, 3840×2160) |
 | Sensor | 1/2.7" CMOS |
@@ -32,7 +32,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com/latam/
+- https://www.dahuasecurity.com/asset/upload/uploads/soft/20200320/DH-IPC-HFW2831T-AS-S2_datasheet_20200318.pdf
 
 ---
 *Auto-generated from dahua-ipc-hfw2831t-as-s2-latam.json — do not edit by hand.*

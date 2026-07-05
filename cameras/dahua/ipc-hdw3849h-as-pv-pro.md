@@ -31,7 +31,7 @@
 
 ## Sources
 
-- https://www.cctv-mall.com/products/network-cameras_wizsense-series_3-series_tioc_ipc-hfw3849t1-as-pv-pro
+- https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/DH-IPC-HDW3849H-AS-PV-PRO_S0_datasheet_20250618.pdf
 
 ---
 *Auto-generated from dahua-ipc-hdw3849h-as-pv-pro.json — do not edit by hand.*

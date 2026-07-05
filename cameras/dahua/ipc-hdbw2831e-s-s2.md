@@ -28,7 +28,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com
+- https://www.dahuasecurity.com/in/products/All-Products/Network-Cameras/Lite-Series/8-MP/IPC-HDBW2831E-S-S2
 
 ---
 *Auto-generated from dahua-ipc-hdbw2831e-s-s2.json — do not edit by hand.*

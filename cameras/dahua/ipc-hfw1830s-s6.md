@@ -27,7 +27,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com/
+- https://www.dahuasecurity.com/products/All-Products/Dedicated-Products/Project-Exclusive/Network-Cameras/IPC-HFW1830S-S6
 
 ---
 *Auto-generated from dahua-ipc-hfw1830s-s6.json — do not edit by hand.*

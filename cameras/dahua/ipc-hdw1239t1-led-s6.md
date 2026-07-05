@@ -4,11 +4,12 @@
 |-------|------|
 | Brand | Dahua |
 | Model | IPC-HDW1239T1-LED-S6 |
-| Type | dome |
+| Type | turret |
 | Connectivity | ethernet |
 | Resolution | 1080p HD (2MP) |
-| Field of view | 107h° |
-| Night vision | color (30m) |
+| Sensor | 1/2.8" CMOS |
+| Field of view | 110° |
+| Night vision | color (15m) |
 | Power | PoE/DC12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -25,7 +26,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com/
+- https://material.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/IPC-HDW1239T1-A-LED_S6_datasheet_20240131.pdf
 
 ---
 *Auto-generated from dahua-ipc-hdw1239t1-led-s6.json — do not edit by hand.*

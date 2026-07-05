@@ -1,0 +1,79 @@
+{
+  "id": "dahua-ipc-hdw2849t-s-il-india",
+  "brand": "Dahua",
+  "model": "IPC-HDW2849T-S-IL",
+  "aliases": ["WizSense 8MP Smart Dual Light Eyeball (India)"],
+  "type": "turret",
+  "connectivity": ["ethernet"],
+  "power_source": ["poe", "dc"],
+  "markets": ["IN"],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 3.6 (fixed)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "111 (2.8mm) / 87 (3.6mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "video": {
+    "codecs": ["H.265", "H.264", "MJPEG"],
+    "max_fps": 20
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": ["onvif", "rtsp", "http"],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "WizSense 8MP Smart Dual Light eyeball",
+    "smart dual illumination (IR 30m + warm light 30m)",
+    "AI SMD / human/vehicle classification",
+    "H.265+",
+    "built-in mic",
+    "IP67",
+    "popular with Indian system integrators"
+  ],
+  "operating_temp_c": "-40 to +55",
+  "dimensions_mm": "100.9 x 109.9",
+  "weight_g": 380,
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/network-cameras/WizSense-Series/2-Series/Smart-Dual-Light/IPC-HDW2849T-S-IL"
+  ],
+  "last_verified": "2026-07-04",
+  "configs": {
+    "frigate": {
+      "detect": { "width": 1280, "height": 720, "fps": 5 },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile. Supports both main and sub streams."
+    }
+  }
+}

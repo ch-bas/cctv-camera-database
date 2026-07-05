@@ -8,7 +8,7 @@
 | Model | IPC-PFW5849-A180-E2-ASTE |
 | Type | panoramic |
 | Connectivity | ethernet |
-| Resolution | 2x4MP 180° (8MP, 3840×2160) |
+| Resolution | 2x4MP 180° (8MP, 4096×1800) |
 | Sensor | 2x 1/2.8" CMOS |
 | Lens | 2× 2.8mm per sensormm |
 | Field of view | 180 horizontal° |
@@ -34,7 +34,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com/
+- https://www.dahuasecurity.com/products/All-Products/Network-Cameras/WizMind-Series/5-Series/Full-color/IPC-PFW5849-A180-E2-ASTE
 
 ---
 *Auto-generated from dahua-ipc-pfw5849-a180-e2-aste.json — do not edit by hand.*

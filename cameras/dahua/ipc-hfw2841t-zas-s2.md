@@ -26,7 +26,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com/
+- https://www.dahuasecurity.com/products/All-Products/Network-Cameras/WizSense-Series/2-Series/IR/IPC-HFW2841T-ZAS
 
 ---
 *Auto-generated from dahua-ipc-hfw2841t-zas-s2.json — do not edit by hand.*

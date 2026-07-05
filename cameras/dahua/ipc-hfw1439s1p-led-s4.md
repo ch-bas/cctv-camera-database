@@ -31,7 +31,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com/
+- https://www.dahuasecurity.com/in/products/All-Products/Network-Cameras/Lite-Series/4-MP/DH-IPC-HFW1439S1P-LED-S4
 
 ---
 *Auto-generated from dahua-ipc-hfw1439s1p-led-s4.json — do not edit by hand.*

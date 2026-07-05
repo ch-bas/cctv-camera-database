@@ -32,7 +32,7 @@
 
 ## Sources
 
-- https://m.indiamart.com/proddetail/dahua-ipc-hfw5842h-z4he-8mp-ir-vari-focal-bullet-wizmind-network-camera-2853740950030.html
+- https://www.dahuasecurity.com/products/All-Products/Discontinued-Products/Network-Cameras/WizMind-Series/IPC-HFW5842H-Z4HE
 
 ---
 *Auto-generated from dahua-ipc-hfw5842h-z4he.json — do not edit by hand.*

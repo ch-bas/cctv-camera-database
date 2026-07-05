@@ -6,6 +6,27 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.24.0] — 2026-07-05
+
+Full data-quality audit of the **Dahua** brand (master audit #28) — the largest single-brand audit yet: all 155 stored entries verified against official `dahuasecurity.com` product pages and datasheets. Dahua is a legitimate ONVIF/RTSP enterprise brand, so unlike the consumer brands the problem was **fabricated/typo'd model numbers and spec drift**, not fake RTSP. Net: **155 → 134 cameras** (20 removed, 23 re-keyed/renamed to their real SKUs, ~50 corrected). (Stacks on the v1.23.0 5-brand audit.)
+
+### Removed — 20
+
+- **10 ghosts** (model strings that return no official product): `IPC-HDW2831T-AS-PV` / `IPC-HDW2849T1-AS-PV` / `IPC-HFW2849T1-AS-PV` (no 2-series 8MP TiOC "AS-PV" eyeball/bullet — that's the 3-series), `IPC-HDW5842T-ZE-LED` / `IPC-HDW5849T1-ZE-LED` (no varifocal full-color "-LED"), `IPC-HDW7842H-Z4-X` (HDW eyeball doesn't exist — it's the HFW bullet), `IPC-HFW3849E-AS-LED(-S2)` / `IPC-HFW3849E-ZAS-LED-S2` (no 8MP "E-AS-LED"), `IPC-PT8849-A180` (Dahua A180 panoramics are PFW/PDBW, not "PT").
+- **10 duplicates**: the fabricated `IPC-HDW3849H-AS-PV` EU/MENA/UK market-split clones, the `IPC-HFW2849S-S-IL` MENA/VN clones, `IPC-PFW5849-A180` (a fabricated 4-sensor build of the real 2-sensor `-E2-ASTE`), plus four wrong-SKU strings that collapse onto entries we already have (`IPC-HDBW2849H-S-IL-S2`→`-E-S-IL`, `IPC-HDBW3849H-ZAS`→`R1-ZAS-PV`, `IPC-HFW5842H-Z4E`→`-Z4HE`, `SD49225XB-HNR`→`XA`).
+
+### Re-keyed / renamed — 23 (real cameras under a fabricated SKU string)
+
+The dataset was riddled with **invented model-number infixes**, each corrected to the real Dahua SKU with accurate datasheet specs:
+- **`-H-S`→`-T-S`/`-TM-S`** eyeball group (2241/2441/2449/2849, incl. the India-market variant) — Dahua eyeballs are `-T-S`, not `-H-S`.
+- **`-PROX`→`-PRO`**, **`S1`→`T1`**, **`-ZE-LED`/`E-ZAS`→ real**, **PTZ `XB`→`GB`** (`SD6C3432GB-HNR-A-PV1`), and the HDCVI re-keys `HAC-HFW2802E-LED`→**`HAC-HFW2802E-A`** (it's IR Starlight, not full-color) and the fake 8MP `HAC-HFW2849E-A-NI-LED`→ real **2MP `HAC-HFW2249E-A-LED`**.
+
+### Fixed — ~50 cameras
+
+`HDW`/`HAC-HDW` eyeballs mistyped `dome`→`turret`; inflated/wrong IR ranges (e.g. `SD6AL245XA` is 2MP/550m-laser not 4MP/300m-IR; several 3-series bullets 80m→50m); wrong sensor sizes (many 1/2.7"→1/1.8" on WizMind/full-color); a mistyped dual-lens eyeball (`HDW5449H-ASE-D2` dome→dual-lens); full-color LED warm-light range 30→15m; and **~70 placeholder/reseller `sources` replaced with official dahuasecurity.com product pages / datasheet PDFs**. `["global"]` markets + `last_verified: 2026-07-04` applied to all retained entries (regional SKUs keep their market tags).
+
+---
+
 ## [1.22.0] — 2026-07-04
 
 Full data-quality audit of the **Eufy** (Anker) brand (master audit #28) — all 36 stored entries verified against official `eufy.com` product pages and Eufy's RTSP-support documentation, plus 19 missing models added from official sources (a full lineup-coverage pass across eufy.com's current + legacy catalog), then a second-pass re-verification of the doorbell line. Unlike the fabricated-spec brands, Eufy was padded mostly with **regional-listing duplicates**. Net: **36 → 46 cameras** (9 removed, 19 added). (Version stacks on the Hikvision v1.20.0 / Annke v1.21.0 work.)

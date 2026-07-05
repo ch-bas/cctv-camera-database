@@ -27,7 +27,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com/
+- https://www.dahuasecurity.com/products/All-Products/Network-Cameras/WizSense-Series/3-Series/Smart-Dual-Light/IPC-HDBW3849E-S-IL
 
 ---
 *Auto-generated from dahua-ipc-hdbw3849e-s-il.json — do not edit by hand.*

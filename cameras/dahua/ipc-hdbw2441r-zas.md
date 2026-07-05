@@ -9,7 +9,7 @@
 | Type | dome |
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2688×1520) |
-| Sensor | 1/3" CMOS |
+| Sensor | 1/2.9" CMOS |
 | Lens | 1× 2.7-13.5 (motorized)mm |
 | Night vision | ir (40m) |
 | Power | PoE (802.3af) / DC 12V |
@@ -33,7 +33,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com/
+- https://www.dahuasecurity.com/products/All-Products/Network-Cameras/WizSense-Series/2-Series/4MP/IPC-HDBW2441R-ZAS
 
 ---
 *Auto-generated from dahua-ipc-hdbw2441r-zas.json — do not edit by hand.*

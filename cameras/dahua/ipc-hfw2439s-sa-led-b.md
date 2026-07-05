@@ -25,7 +25,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com/
+- https://www.dahuasecurity.com/products/network-products/network-cameras/Lite-Series/Full-color/IPC-HFW2439S-SA-LED-S2
 
 ---
 *Auto-generated from dahua-ipc-hfw2439s-sa-led-b.json — do not edit by hand.*

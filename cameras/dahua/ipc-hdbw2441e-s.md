@@ -29,7 +29,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com
+- https://www.dahuasecurity.com/products/network-products/network-cameras/WizSense-Series/2-Series/IR/IPC-HDBW2441E-S
 
 ---
 *Auto-generated from dahua-ipc-hdbw2441e-s.json — do not edit by hand.*

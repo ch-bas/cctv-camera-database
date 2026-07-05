@@ -1,6 +1,6 @@
 # Dahua DH-SD6AL245XA-HNR
 
-*Also known as: 4MP 45x Starlight PTZ AI*
+*Also known as: 2MP 45x Starlight PTZ AI*
 
 | Field | Spec |
 |-------|------|
@@ -8,10 +8,10 @@
 | Model | DH-SD6AL245XA-HNR |
 | Type | ptz |
 | Connectivity | ethernet |
-| Resolution | 4MP (4MP, 2560×1440) |
+| Resolution | 2MP (2MP, 1920×1080) |
 | Sensor | 1/2.8" Starlight CMOS |
 | Lens | 1× 3.95-177.7 (45x optical zoom)mm |
-| Night vision | ir (300m) |
+| Night vision | ir (550m) |
 | Power | PoE++ (802.3bt) / AC 24V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -26,7 +26,7 @@
 - AI auto-tracking
 - face detection
 - perimeter protection
-- 300m IR range
+- 550m laser range
 - H.265+
 - IP67
 - IK10
@@ -34,7 +34,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com/
+- https://www.dahuasecurity.com/products/All-Products/Discontinued-Products/PTZ-Cameras/SD6AL245XA-HNR
 
 ---
 *Auto-generated from dahua-dh-sd6al245xa-hnr.json — do not edit by hand.*

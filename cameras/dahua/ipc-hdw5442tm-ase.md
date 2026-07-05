@@ -30,7 +30,7 @@
 
 ## Sources
 
-- https://www.sourcesecurity.com/dahua-technology-ipc-hdw5442tm-ase-ip-camera-technical-details.html
+- https://www.dahuasecurity.com/products/All-Products/Network-Cameras/WizMind-Series/5-Series/4MP/IPC-HDW5442TM-ASE
 
 ---
 *Auto-generated from dahua-ipc-hdw5442tm-ase.json — do not edit by hand.*

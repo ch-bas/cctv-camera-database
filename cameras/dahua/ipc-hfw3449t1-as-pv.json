@@ -1,0 +1,84 @@
+{
+  "id": "dahua-ipc-hfw3449t1-as-pv",
+  "brand": "Dahua",
+  "model": "IPC-HFW3449T1-AS-PV",
+  "aliases": ["DH-IPC-HFW3449T1-AS-PV", "WizSense TiOC 4MP Bullet"],
+  "type": "bullet",
+  "connectivity": ["ethernet"],
+  "power_source": ["poe", "dc"],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "video": {
+    "codecs": ["H.265", "H.264", "MJPEG"],
+    "max_fps": 30
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "103 (2.8mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "12VDC/PoE",
+    "consumption_w": 8.8,
+    "voltage": "12VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": ["onvif", "rtsp", "http"],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "TiOC active deterrence",
+    "WizSense AI human/vehicle classification",
+    "smart dual illumination (IR 30m + warm light 30m)",
+    "red & blue warning lights",
+    "two-way audio",
+    "SMD Plus",
+    "H.265+"
+  ],
+  "operating_temp_c": "-40 to +60",
+  "dimensions_mm": "288.4 x 94.4 x 84.7",
+  "weight_g": 1000,
+  "environment": ["outdoor"],
+  "markets": ["global"],
+  "status": "discontinued",
+  "sources": [
+    "https://www.dahuasecurity.com/mena/products/All-Products/Discontinued-Products/Network-Cameras/IPC-HFW3449T1-AS-PV",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/IPC-HFW3449T1-AS-PV_S5_datasheet_20250709.pdf"
+  ],
+  "last_verified": "2026-07-04",
+  "configs": {
+    "frigate": {
+      "detect": { "width": 1280, "height": 720, "fps": 5 },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile. Supports both main and sub streams."
+    }
+  }
+}

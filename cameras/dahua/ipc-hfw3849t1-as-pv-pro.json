@@ -1,0 +1,73 @@
+{
+  "id": "dahua-ipc-hfw3849t1-as-pv-pro",
+  "brand": "Dahua",
+  "model": "IPC-HFW3849T1-AS-PV-PRO",
+  "aliases": ["WizColor TiOC PRO 8MP Bullet"],
+  "type": "bullet",
+  "connectivity": ["ethernet"],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "108 (2.8mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 50
+  },
+  "power": {
+    "method": "PoE / DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": ["onvif", "rtsp", "http"],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "TiOC PRO WizColor 24/7 color",
+    "1/1.8\" large sensor F1.0",
+    "WizSense AI",
+    "SMD 4.0",
+    "AcuPick",
+    "active deterrence red/blue lights",
+    "built-in mic & speaker",
+    "H.265"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/All-Products/Network-Cameras/WizSense-Series/3-Series/TiOC-PRO-WizColor/IPC-HFW3849T1-AS-PV-PRO"
+  ],
+  "power_source": ["poe", "dc"],
+  "configs": {
+    "frigate": {
+      "detect": { "width": 1280, "height": 720, "fps": 5 },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile. Supports both main and sub streams."
+    }
+  },
+  "markets": ["global"],
+  "last_verified": "2026-07-04"
+}

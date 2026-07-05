@@ -7,14 +7,14 @@
 | Type | turret |
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP) |
-| Field of view | 107h° |
+| Field of view | 96° |
 | Night vision | color (30m) |
 | Power | PoE/DC12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
-| Released | 2023 |
+| Released | 2022 |
 
 ## Features
 
@@ -27,7 +27,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com/
+- https://www.dahuasecurity.com/products/All-Products/Network-Cameras/Lite-Series/Full-color/IPC-HDW2439T-AS-LED-S2
 
 ---
 *Auto-generated from dahua-ipc-hdw2439t-as-led-s2.json — do not edit by hand.*

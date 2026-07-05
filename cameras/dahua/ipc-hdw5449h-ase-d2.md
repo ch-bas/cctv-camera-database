@@ -6,12 +6,12 @@
 |-------|------|
 | Brand | Dahua |
 | Model | IPC-HDW5449H-ASE-D2 |
-| Type | dome |
+| Type | dual-lens |
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2688×1520) |
 | Sensor | 1/1.8" CMOS |
-| Lens | 1× 2.8 (fixed)mm |
-| Night vision | hybrid (30m) |
+| Lens | 2× 2.8 (fixed)mm |
+| Night vision | hybrid (50m) |
 | Power | PoE (802.3at) / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -34,7 +34,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com/
+- https://www.dahuasecurity.com/products/All-Products/Network-Cameras/WizMind-5-Series/Full-color/IPC-HDW5449H-ASE-D2
 
 ---
 *Auto-generated from dahua-ipc-hdw5449h-ase-d2.json — do not edit by hand.*

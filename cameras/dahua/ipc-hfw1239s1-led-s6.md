@@ -25,7 +25,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com/
+- https://material.dahuasecurity.com/uploads/soft/20220516/DH-IPC-HFW1239S1-LED-S4_datasheet_20220516.pdf
 
 ---
 *Auto-generated from dahua-ipc-hfw1239s1-led-s6.json — do not edit by hand.*
