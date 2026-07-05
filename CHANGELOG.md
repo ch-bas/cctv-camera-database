@@ -8,7 +8,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [1.26.0] — 2026-07-05
 
-Five new brands plus **IMOU**, **Speco Technologies**, **Ajax**, **Canon** and **Arecont/Costar** audits + expansions. Net: **1,728 → 1,875 cameras**, **69 → 75 brands**.
+Five new brands plus **IMOU**, **Speco Technologies**, **Ajax**, **Canon**, **Arecont/Costar** and **CP Plus** audits + expansions. Net: **1,728 → 1,887 cameras**, **69 → 75 brands**.
+
+### CP Plus — audit + expansion (14 → 26)
+
+- **Removed 6 fabricated ghosts:** `CP-UNC-BA41PL3`, `CP-UNC-BA81L3-S2` (`BA` isn't a CP Plus prefix), `CP-UNC-DA41L3S2-LQ`, `CP-UNC-DA41PL3C-D-LQ` (invented `S2`/`PL3C-D-LQ` codes, mis-typed turret — `DA`=dome), `CP-UNC-TA81PL3` (8MP economy `PL3` doesn't exist), `CP-UNC-WI41PL3` (`WI` isn't a CP-UNC prefix).
+- **Fixed 3 ezyKam+ Wi-Fi cams** (`CP-E35Q`/`CP-E45Q`/`CP-Z43Q`) — corrected from a wrong Dahua-RTSP config to **app-only Wi-Fi** (P2P/cloud, no ONVIF/RTSP; `connectivity: wifi`, USB power). Re-sourced + stamped 4 real UNC IP cameras.
+- **Added 19 real CP-UNC IP cameras** from `cpplusworld.com` (Dahua-OEM ONVIF S/G/T): box/dome/bullet/fisheye across 2/4/5/6/8MP, `Q`=IR-only vs `LQ`=dual-light (full-color), `ZL`=motorized varifocal.
 
 ### Added — Canon (2 → 4)
 
