@@ -1,8 +1,8 @@
 # CCTV Camera Database
 
-An open, structured database of 1,887 CCTV / IP camera models and their technical specifications, covering 75 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
+An open, structured database of 1,896 CCTV / IP camera models and their technical specifications, covering 75 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
 
-[![cameras](https://img.shields.io/badge/cameras-1%2C887-blue)](data/cameras.json)
+[![cameras](https://img.shields.io/badge/cameras-1%2C896-blue)](data/cameras.json)
 [![brands](https://img.shields.io/badge/brands-75-green)](cameras/)
 [![license](https://img.shields.io/badge/license-CC0-lightgrey)](LICENSE)
 
@@ -31,7 +31,7 @@ Prefer to self-host or browse offline? A [standalone demo](docs/demo.html) (just
 - **Filter** — narrow by brand, camera type, night vision, resolution, or market
 - **Sort** — click any column header to sort ascending/descending
 - **Detail drawer** — click a row to slide open the full spec sheet (resolution, connectivity, protocols, storage, audio, pricing, source links)
-- **Pagination** — page through all 1,887 cameras, 25 per page
+- **Pagination** — page through all 1,896 cameras, 25 per page
 - **Stats bar** — live counts for total cameras, brands, 4K+, WiFi, and no-subscription models
 
 ---
@@ -63,7 +63,7 @@ cctv-camera-database/
 │   ├── tapo/             #  62 cameras
 │   └── …60 more brands
 ├── data/                 # GENERATED — do not edit by hand
-│   ├── cameras.json      # all 1,887 cameras as one array
+│   ├── cameras.json      # all 1,896 cameras as one array
 │   └── cameras.csv       # flattened, spreadsheet-friendly
 ├── schema/
 │   └── camera.schema.json
@@ -121,7 +121,7 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 
 | Metric | Count |
 |--------|-------|
-| Total cameras | **1,887** |
+| Total cameras | **1,896** |
 | Brands | **75** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
 | PoE wired | 1,171 |
@@ -161,7 +161,7 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | Uniarch (Uniview) | 6 | Budget NDAA sub-brand, global |
 | Blink (Amazon) | 16 | Budget battery, US/UK/EU |
 | Swann | 16 | Consumer, AU/US/UK |
-| ABUS | 76 | Consumer + professional, GDPR-first, DE/AT/CH |
+| ABUS | 85 | Consumer + professional, GDPR-first, DE/AT/CH |
 | CP Plus | 26 | India #2 brand, IN |
 | GeoVision | 15 | Enterprise, TW/Asia/global |
 | IMOU (Dahua) | 56 | Consumer + prosumer, global |

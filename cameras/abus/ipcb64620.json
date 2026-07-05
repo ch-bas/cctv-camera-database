@@ -1,0 +1,95 @@
+{
+  "id": "abus-ipcb64620",
+  "brand": "ABUS",
+  "model": "IPCB64620",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "sensor": "1/2.5\" progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12",
+    "aperture": "F1.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "32-114 H",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50
+  },
+  "power": {
+    "method": "PoE (802.3at) / 12V DC"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "motorized varifocal (2.8-12mm)",
+    "120dB WDR",
+    "IR up to 50m",
+    "two-way audio (audio in/out)",
+    "IK10 vandal-resistant"
+  ],
+  "markets": [
+    "DE",
+    "EU"
+  ],
+  "release_notes": "ABUS IP Tube 4MP (black), 2.8-12mm motorized varifocal, IR 50m, IK10. Distinct from the IPCB64621 (fixed-lens sibling).",
+  "sources": [
+    "https://www.abus.com/int/Commercial-Security/Video-surveillance/Network-technology/IP-Tube-4-MPx-Black-2.8-12-mm"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "verified": false,
+      "notes": "ABUS Performance Line is Hikvision OEM — Hikvision-style RTSP paths (101 main / 102 sub). Enable ONVIF/RTSP in the camera web UI first."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "notes": "Generic ONVIF integration after enabling ONVIF (Profile S)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "ABUS is Hikvision OEM — select the 'Hikvision' profile (or Generic ONVIF/RTSP)."
+    }
+  }
+}

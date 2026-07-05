@@ -37,7 +37,7 @@
     "range_m": 30
   },
   "power": {
-    "method": "12 V DC"
+    "method": "12V DC (Wi-Fi)"
   },
   "storage": {
     "onboard": true,
@@ -80,5 +80,28 @@
     "https://www.rapidonline.com/abus-tvip62562-performance-line-2mpx-mini-tube-ip-camera-full-hd-ip67-01-0347",
     "https://my.rs-online.com/web/p/cctv-cameras/2528334",
     "https://www.ispyconnect.com/camera/abus"
-  ]
+  ],
+  "last_verified": "2026-07-05",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "verified": false,
+      "notes": "ABUS Performance Line is Hikvision OEM — Hikvision-style RTSP paths. Enable ONVIF/RTSP in the camera web UI first."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "notes": "Generic ONVIF integration after enabling ONVIF (Profile S)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "ABUS is Hikvision OEM — select the 'Hikvision' profile (or Generic ONVIF/RTSP)."
+    }
+  }
 }

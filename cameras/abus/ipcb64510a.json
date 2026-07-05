@@ -1,0 +1,94 @@
+{
+  "id": "abus-ipcb64510a",
+  "brand": "ABUS",
+  "model": "IPCB64510A",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "varifocal": false
+  },
+  "field_of_view_deg": "109 H",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10
+  },
+  "power": {
+    "method": "PoE (802.3af) / 12V DC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "IR night vision (~10m)",
+    "120dB WDR",
+    "AI person/vehicle detection",
+    "microSD up to 256GB",
+    "ONVIF"
+  ],
+  "markets": [
+    "DE",
+    "EU"
+  ],
+  "release_notes": "ABUS IP Mini Tube 4MP, 2.8mm, IR night vision (~10m). ONVIF Profile S/G.",
+  "sources": [
+    "https://www.abus.com/int/Commercial-Security/Video-surveillance/Network-technology/IP-Mini-Tube-4-MPx-2.8-mm"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "verified": false,
+      "notes": "ABUS Performance Line is Hikvision OEM — Hikvision-style RTSP paths (101 main / 102 sub). Enable ONVIF/RTSP in the camera web UI first."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "notes": "Generic ONVIF integration after enabling ONVIF (Profile S) in the web UI."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "ABUS Performance Line is Hikvision OEM — select the 'Hikvision' profile (or Generic ONVIF/RTSP)."
+    }
+  }
+}

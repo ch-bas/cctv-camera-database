@@ -1,0 +1,97 @@
+{
+  "id": "abus-tvip83900",
+  "brand": "ABUS",
+  "model": "TVIP83900",
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2048,
+    "max_height": 1536,
+    "label": "3MP"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25
+  },
+  "sensor": "1/3\" progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.27",
+    "aperture": "F2.8",
+    "varifocal": false
+  },
+  "field_of_view_deg": "360",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 5
+  },
+  "power": {
+    "method": "PoE (802.3at) / 12V DC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP24",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "360-degree indoor hemispheric fisheye",
+    "ePTZ dewarping",
+    "two-way audio",
+    "indoor (IP24)"
+  ],
+  "markets": [
+    "DE",
+    "EU"
+  ],
+  "release_notes": "ABUS IP Fisheye 3MP (legacy TVIP naming) — indoor hemispheric, IP24. IR range ~5m per page prose (spec table shows 15m; low confidence).",
+  "sources": [
+    "https://www.abus.com/int/Commercial-Security/Video-surveillance/Network-technology/IP-Fisheye-3-MPx"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "verified": false,
+      "notes": "ABUS Performance Line is Hikvision OEM — Hikvision-style RTSP paths (101 main / 102 sub). Enable ONVIF/RTSP in the camera web UI first."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "notes": "Generic ONVIF integration after enabling ONVIF (Profile S)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "ABUS is Hikvision OEM — select the 'Hikvision' profile (or Generic ONVIF/RTSP)."
+    }
+  },
+  "environment": [
+    "indoor"
+  ]
+}
