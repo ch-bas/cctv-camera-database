@@ -1,0 +1,45 @@
+{
+  "id": "kedacom-ipc2241-fn-sir",
+  "brand": "Kedacom",
+  "model": "IPC2241-FN-SIR",
+  "aliases": ["IPC2241-FNW-SIR"],
+  "type": "dome",
+  "connectivity": ["ethernet", "wifi"],
+  "power_source": ["poe", "dc"],
+  "resolution": { "megapixels": 2.0, "max_width": 1920, "max_height": 1080, "label": "1080p" },
+  "video": {
+    "codecs": ["H.265", "H.264", "MJPEG"],
+    "max_fps": 30,
+    "streams": [
+      { "name": "main", "resolution": "1920x1080", "fps": 30 },
+      { "name": "sub", "resolution": "720x576", "fps": 30 }
+    ]
+  },
+  "sensor": "1/2.8\" progressive scan CMOS",
+  "lens": { "count": 1, "focal_length_mm": "2.8/3.6/6/8", "varifocal": false },
+  "field_of_view_deg": "36.8-101.2",
+  "night_vision": { "type": "ir", "range_m": 15 },
+  "power": { "method": "PoE (IEEE802.3af) / 12V DC", "consumption_w": 8, "voltage": "12V DC", "poe_class": 3 },
+  "storage": { "onboard": true, "notes": "Micro SD slot with ANR" },
+  "protocols": ["onvif", "rtsp", "http"],
+  "ip_rating": "IP67",
+  "audio": { "microphone": true, "two_way": true },
+  "features": ["Ultra WDR (>=120dB)", "3D noise reduction", "smart IR", "motion detection", "tamper detection", "IK10", "ANR"],
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "Ø103.7 x 56.4",
+  "environment": ["indoor", "outdoor"],
+  "markets": ["global"],
+  "release_notes": "IPC2241-FN-SIR is wired-only; IPC2241-FNW-SIR variant adds a Wi-Fi module.",
+  "sources": ["https://www.kedacom.com/en/bqwlsxj/4684.jhtml"],
+  "last_verified": "2026-07-04",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/id=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/id=1",
+      "verified": false
+    },
+    "home_assistant": { "integration": "onvif" },
+    "blue_iris": { "profile": "ONVIF" }
+  }
+}

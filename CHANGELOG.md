@@ -6,6 +6,27 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.25.0] — 2026-07-05
+
+Full data-quality audit of the **Kedacom** brand (master audit #28) — a **replace-the-whole-brand** case. Net: **12 → 50 cameras** (all 12 removed, 50 real models added, all verified against official `kedacom.com` product pages).
+
+### Removed — 12 fabricated ghosts (the entire prior set)
+
+The existing 12 entries were a made-up 4×3 grid of invented model numbers (`IPC21xx`=dome / `IPC23xx`=bullet / `IPC25xx`=box / `IPC28xx`=PTZ, 3rd digit = megapixels) with a `-HN-S`/`-HN-B`/`-HN-X`/`-HN-PZ30` naming scheme that **is not Kedacom's**. None of the 12 model numbers exist on kedacom.com, and they contradicted real products (the real `IPC2151` is a 1.3MP bullet, not a 2MP dome; Kedacom PTZ is the `IPC42x/44x` family, not `IPC28xx`; real box cameras are `IPC14x`, not `IPC25xx`). Homepage-only sourcing, no `last_verified`, templated specs — a coherent fabricated cluster.
+
+### Added — 50 real, verified Kedacom models
+
+Extracted field-by-field from official kedacom.com product pages across the full catalogue:
+- **Semi-domes** (IPC21xx–IPC28xx FN/HN/AN/EN/DN series, LC2110) — ~33 real models: fixed + motorized-varifocal, IR / full-color / Smart Dual Light, 1.3MP–8MP, incl. the `IPC2533-FN-SIR50` 5MP and `IPC2833-FN-SIR50` 4K.
+- **Bullets** — `IPC2251-HN` (2MP), `IPC2552-FN` (5MP), `IPC2852-FN` (4K), `IPC2452-HN-PIR` (4MP PIR).
+- **Box** — `IPC143-HN` (4MP C/CS-mount).
+- **PTZ speed domes** — `IPC425-F223/F233/G223-N` (23x/33x, IR 220m, human auto-tracking).
+- **Face-capture / recognitive line** (tzfxsxj/rykksxj categories) — 9 models: `IPC2655-Gi7N/Gi4N`, `IPC2855-Gi4N`, `IPC2451-Fi4N`, `IPC442-i405-NP` recognitive PTZ, and `IPC121/123-Ei7N/Fi4N` recognitive boxes (face intelligence exposure, best-shot capture — visible-spectrum, not thermal).
+
+All entries: correct Kedacom RTSP path (`rtsp://…:554/id=0`), ONVIF, complete Frigate/HA/Blue-Iris configs (`verified: false`), `["global"]` markets, `last_verified: 2026-07-04`.
+
+---
+
 ## [1.24.0] — 2026-07-05
 
 Full data-quality audit of the **Dahua** brand (master audit #28) — the largest single-brand audit yet: all 155 stored entries verified against official `dahuasecurity.com` product pages and datasheets. Dahua is a legitimate ONVIF/RTSP enterprise brand, so unlike the consumer brands the problem was **fabricated/typo'd model numbers and spec drift**, not fake RTSP. Net: **155 → 134 cameras** (20 removed, 23 re-keyed/renamed to their real SKUs, ~50 corrected). (Stacks on the v1.23.0 5-brand audit.)
