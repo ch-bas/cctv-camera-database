@@ -10,13 +10,13 @@
 | Connectivity | ethernet |
 | Resolution | 4K UHD (8MP, 3840×2160) |
 | Sensor | 1/1.2" Progressive Scan RGB CMOS |
-| Lens | 1× 6-13 (varifocal P-Iris)mm F1.8 |
-| Field of view | 60-31 horizontal° |
+| Lens | 1× 6.2-12.9 (varifocal P-Iris)mm F1.8 |
+| Field of view | 103-49 horizontal° |
 | Night vision | ir (40m) |
 | Power | High PoE (802.3at) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
-| IP rating | IP68 |
+| IP rating | IP69K |
 | Two-way audio | No |
 
 ## Features

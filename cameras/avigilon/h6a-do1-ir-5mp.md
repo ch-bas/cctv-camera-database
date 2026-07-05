@@ -10,7 +10,7 @@
 | Connectivity | ethernet |
 | Resolution | 5MP (5MP, 2592×1944) |
 | Sensor | 1/2.8" CMOS |
-| Lens | 1× 3.3-9 (motorized varifocal)mm |
+| Lens | 1× 2.8-12 (motorized varifocal)mm |
 | Field of view | 97-33 horizontal° |
 | Night vision | ir (40m) |
 | Power | PoE (802.3af/at) |
@@ -31,7 +31,7 @@
 
 ## Sources
 
-- https://www.avigilon.com/
+- https://www.avigilon.com/security-cameras/h6a-dome
 
 ---
 *Auto-generated from avigilon-h6a-do1-ir-5mp.json — do not edit by hand.*

@@ -8,11 +8,12 @@
 | Model | AD410 2K Video Doorbell |
 | Type | doorbell |
 | Connectivity | wifi |
-| Resolution | 2K QHD (4MP, 2560×1440) |
+| Resolution | 2K QHD (4MP, 2560×1920) |
 | Lens | 1× Fixedmm F2.0 |
 | Field of view | 163 diagonal (head-to-toe)° |
-| Night vision | color (5m) |
+| Night vision | ir (5m) |
 | Power | Hardwired (16-24V AC) / battery |
+| Storage | microSD ≤ 128GB |
 | Protocols | onvif, rtsp, http |
 | IP rating | IP65 |
 | Two-way audio | Yes |
@@ -32,7 +33,7 @@
 
 ## Sources
 
-- https://amcrest.com/products/video-doorbells/ad410
+- https://amcrest.com/4mp-wifi-camera-doorbell-ad410.html
 
 ---
 *Auto-generated from amcrest-ad410-doorbell.json — do not edit by hand.*

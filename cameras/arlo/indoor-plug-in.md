@@ -1,6 +1,6 @@
 # Arlo Indoor Plug-In (Gen 1)
 
-*Also known as: Arlo Essential Indoor Plug-in 2K Camera*
+*Also known as: VMC3060, Arlo Essential Indoor Plug-in 2K Camera, Arlo Essential Indoor 2K (2nd Gen) Plug-in*
 
 | Field | Spec |
 |-------|------|

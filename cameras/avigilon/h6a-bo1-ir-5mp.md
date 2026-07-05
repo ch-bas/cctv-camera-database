@@ -12,7 +12,7 @@
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 3.3-9 (motorized varifocal)mm |
 | Field of view | 97-33 horizontal° |
-| Night vision | ir (40m) |
+| Night vision | ir (55m) |
 | Power | PoE (802.3af/at) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
@@ -31,7 +31,7 @@
 
 ## Sources
 
-- https://www.avigilon.com/
+- https://www.avigilon.com/security-cameras/h6a-bullet
 
 ---
 *Auto-generated from avigilon-h6a-bo1-ir-5mp.json — do not edit by hand.*

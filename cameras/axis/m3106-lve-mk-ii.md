@@ -10,8 +10,8 @@
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2688×1520) |
 | Sensor | 1/2.7" Progressive Scan CMOS |
-| Lens | 1× 3-9 (motorized varifocal)mm F1.8 |
-| Field of view | 107-36 horizontal° |
+| Lens | 1× 2.4mm F1.8 |
+| Field of view | 130° |
 | Night vision | ir (30m) |
 | Power | PoE (802.3af) |
 | Storage | NVR |
@@ -24,7 +24,6 @@
 - Forensic WDR
 - OptimizedIR
 - H.265 Zipstream
-- remote zoom and focus
 - AXIS Video Motion Detection
 - IK10
 - affordable mid-range outdoor dome

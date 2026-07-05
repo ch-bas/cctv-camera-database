@@ -10,7 +10,7 @@
 | Connectivity | ethernet |
 | Resolution | 5MP (5MP, 2592×1944) |
 | Sensor | 1/2.8" CMOS |
-| Lens | 1× 3.3-9 (motorized varifocal)mm |
+| Lens | 1× 9-22 (motorized varifocal)mm |
 | Field of view | 97-33 horizontal° |
 | Night vision | ir (40m) |
 | Power | PoE (802.3af/at) |
@@ -31,7 +31,7 @@
 
 ## Sources
 
-- https://www.avigilon.com/security-cameras
+- https://www.avigilon.com/security-cameras/h5a-bullet
 
 ---
 *Auto-generated from avigilon-h5a-bo2-ir-5mp.json — do not edit by hand.*

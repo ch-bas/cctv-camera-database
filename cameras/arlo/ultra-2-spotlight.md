@@ -28,6 +28,7 @@
 - Apple HomeKit / Google / Alexa
 - Arlo Secure plan
 - IP65
+- SmartHub/base station required
 
 ## Sources
 

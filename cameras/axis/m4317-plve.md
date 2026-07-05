@@ -8,9 +8,9 @@
 | Model | M4317-PLVE |
 | Type | panoramic |
 | Connectivity | ethernet |
-| Resolution | 6MP (6MP, 3072×2048) |
+| Resolution | 6MP (6MP, 2160×2160) |
 | Sensor | 1/1.8" Progressive Scan CMOS |
-| Lens | 1× 1.05 (fixed fisheye)mm |
+| Lens | 1× 1.1mm |
 | Field of view | 360 horizontal° |
 | Night vision | ir (20m) |
 | Power | PoE (802.3af) |

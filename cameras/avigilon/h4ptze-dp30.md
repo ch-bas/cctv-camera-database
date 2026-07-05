@@ -32,7 +32,7 @@
 
 ## Sources
 
-- https://www.avigilon.com/
+- https://www.avigilon.com/security-cameras/h4-ptz
 
 ---
 *Auto-generated from avigilon-h4ptze-dp30.json — do not edit by hand.*

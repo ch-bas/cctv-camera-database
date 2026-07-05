@@ -10,8 +10,8 @@
 | Connectivity | wifi |
 | Resolution | 1080p (2MP, 1920×1080) |
 | Lens | 1× |
-| Field of view | 155 diagonal° |
-| Night vision | color (5m) |
+| Field of view | 160 horizontal / 84 vertical° |
+| Night vision | ir (5m) |
 | Power | Quick-Release rechargeable battery / hardwired 8–24 VAC |
 | Protocols | http |
 | IP rating | IPX5 |

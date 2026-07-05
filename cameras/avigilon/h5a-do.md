@@ -1,5 +1,7 @@
 # Avigilon H5A Dome
 
+*Also known as: 5.0C-H5A-DO1-IR*
+
 | Field | Spec |
 |-------|------|
 | Brand | Avigilon |
@@ -29,7 +31,7 @@
 
 ## Sources
 
-- https://www.avigilon.com/
+- https://www.avigilon.com/security-cameras/h5-dome
 
 ---
 *Auto-generated from avigilon-h5a-do.json — do not edit by hand.*

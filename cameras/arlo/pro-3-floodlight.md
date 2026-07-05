@@ -12,7 +12,7 @@
 | Lens | 1× |
 | Field of view | 160 diagonal° |
 | Night vision | color (10m) |
-| Power | Wired (AC power) |
+| Power | Battery / wire-free (up to 6 months; optional wired power cable) |
 | Protocols | http |
 | IP rating | IP65 |
 | Two-way audio | Yes |

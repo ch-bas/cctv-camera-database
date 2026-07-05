@@ -11,7 +11,7 @@
 | Resolution | 1080p HD (2MP, 1920×1080) |
 | Sensor | 1/2.8" Progressive Scan CMOS |
 | Lens | 1× 4.3-137.6 (32x optical)mm F1.6 |
-| Field of view | 61.5-2.1 horizontal° |
+| Field of view | 58.3-2.4 horizontal° |
 | Night vision | ir (250m) |
 | Power | High PoE (802.3bt) / 3-axis multi-connector cable |
 | Storage | NVR |
@@ -35,7 +35,6 @@
 ## Sources
 
 - https://www.axis.com/products/axis-q6135-le
-- https://www.axis.com/en-me/
 
 ---
 *Auto-generated from axis-q6135-le-mena.json — do not edit by hand.*

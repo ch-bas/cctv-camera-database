@@ -10,9 +10,9 @@
 | Connectivity | ethernet |
 | Resolution | 1080p HD (2MP, 1920×1080) |
 | Sensor | 1/2.8" Progressive Scan CMOS |
-| Lens | 1× 3-10.5 (motorized varifocal 3x)mm F1.8 |
-| Field of view | 100-31 horizontal° |
-| Night vision | ir (30m) |
+| Lens | 1× 3.4-8.9mm F1.8 |
+| Field of view | 100-36° |
+| Night vision | none |
 | Power | PoE (802.3af) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |

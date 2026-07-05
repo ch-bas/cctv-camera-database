@@ -11,7 +11,7 @@
 | Resolution | 1080p (2MP, 1920×1080) |
 | Lens | 1× |
 | Field of view | 130 diagonal° |
-| Night vision | color (5m) |
+| Night vision | ir (5m) |
 | Power | USB-C power adapter (plug-in) |
 | Protocols | http |
 | IP rating | IP20 |
@@ -21,7 +21,6 @@
 ## Features
 
 - privacy shield cover
-- color night vision
 - person/package/animal detection
 - two-way audio
 - direct WiFi no hub needed

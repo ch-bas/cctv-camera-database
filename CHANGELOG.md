@@ -6,6 +6,34 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.23.0] — 2026-07-05
+
+Parallel data-quality audit of **five brands** — **Avigilon, Amcrest, Ring, Arlo, Axis** (master audit #28, issues #37/#36/#35/#33/#31) — every camera verified against official manufacturer sources. Net across the release: **1,730 → 1,695 cameras** (39 removed, 4 re-keyed to real models, ~129 corrected; brand count unchanged at 69).
+
+### Removed — 35 net (23 ghosts + 16 duplicates, minus 4 re-keys)
+
+- **Amcrest** (24 → 16): worst offender (~46% fabricated). 8 ghost model numbers (`ip8m-2483ew/2496ew/2513ew/2556ew/2577ew` + the 3 re-keyed below), 3 duplicates (`ad410p`, `ip4m-1051b`, `ip5m-t1179ew`). 22/24 entries had cited only the bare `amcrest.com` homepage.
+- **Arlo** (29 → 17): 5 ghosts (`security-light` = an LED light not a camera, `solar-panel-cam` = accessory, `pro-5s-4k-ultra`, `floodlight-camera-pro`, `essential-outdoor-3rd-gen`), 7 duplicates (the `pro-5s` au/ca/eu/uk regional cluster, `essential-xl-outdoor`, `pro-4-spotlight`, `wired-doorbell-2nd-gen`).
+- **Avigilon** (24 → 18): 4 ghosts (the entire fabricated **H7A line** — no such series exists — plus a fake `h6sl-do-ir-mena` regional SKU), 2 duplicates (`h6a-bullet`, `h6a-do-canada`).
+- **Axis** (66 → 61): 4 ghosts (`p5676-le-mkii`, `q3538-ve`, `m3106-ma-mk2`, `m5076`), 1 duplicate (`fa54-mini`).
+- **Ring** (25 → 21): 2 ghosts (`alarm-security-cam-pro` = a base-station kit, `outdoor-cam-wired` re-keyed below), 3 duplicates (`indoor-cam-gen2` — its file was misnamed `alarm-outdoor-contact-sensor.json` — `indoor-cam-2nd-gen-uk`, `spotlight-cam-battery-gen2`).
+
+### Re-keyed — 4 ghosts rebuilt as the real product they described
+
+- **Amcrest**: `ip5m-t1190ew` → **IP5M-T1273EW-AI** (5MP NightColor turret); `ip8m-2837ew` → **IP8M-2899EW-AI** (4K 25x PTZ); `ip8m-vt2579ew` → **IP8M-VT2879EW-AI** (4K varifocal turret) — all with real datasheet specs + ONVIF/RTSP Frigate/HA/Blue-Iris configs (`verified: false`).
+- **Ring**: `outdoor-cam-wired` → **Outdoor Cam Plus** (real 2024 Retinal-2K family, app/cloud-only).
+- (Arlo "Ultimate" was verified **not** a real product — that ghost was deleted, not re-keyed.)
+
+### Fixed — ~129 cameras corrected
+
+- **Ring/Arlo**: confirmed **zero bogus RTSP/ONVIF** (correctly app/cloud-only). Ring Pro line "2K" → 1080p; doorbells retyped `dome` → `doorbell`; Video Doorbell 4 night vision `color` → `ir`; Arlo Go 2 gained its defining `4g` connectivity; several `color` → `ir` night-vision corrections.
+- **Amcrest**: indoor pan/tilt cams (IP2M-841B, IP4M-1041W, IP4M-1051) mislabeled as outdoor bullets → corrected; PoE cams relabeled from fabricated "WiFi + spotlight + two-way" back to real PoE/IR specs.
+- **Avigilon**: fabricated 24MP-4×6MP-360° multisensor → real 3×8MP/270°; fixed varifocal→fixed lenses; real SKUs restored.
+- **Axis**: invented/stale resolutions corrected across the line (P3267 "4K" → 5MP, M3116 "12MP fisheye" → 4MP dome, M2025/M2035-LE "4MP" → 1080p, Q6315 "4MP" → 1080p, Q9307 retyped covert → dome, several P3245 "V/VE" false-IR removed).
+- Bare-homepage/reseller `sources` replaced with official product/datasheet URLs brand-wide; `["global"]` markets + `last_verified: 2026-07-04` applied to all retained entries.
+
+---
+
 ## [1.22.0] — 2026-07-04
 
 Full data-quality audit of the **Eufy** (Anker) brand (master audit #28) — all 36 stored entries verified against official `eufy.com` product pages and Eufy's RTSP-support documentation, plus 19 missing models added from official sources (a full lineup-coverage pass across eufy.com's current + legacy catalog), then a second-pass re-verification of the doorbell line. Unlike the fabricated-spec brands, Eufy was padded mostly with **regional-listing duplicates**. Net: **36 → 46 cameras** (9 removed, 19 added). (Version stacks on the Hikvision v1.20.0 / Annke v1.21.0 work.)

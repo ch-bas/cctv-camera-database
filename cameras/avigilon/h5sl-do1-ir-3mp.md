@@ -9,8 +9,8 @@
 | Type | dome |
 | Connectivity | ethernet |
 | Resolution | 3MP (3MP, 2048×1536) |
-| Sensor | 1/2.7" CMOS |
-| Lens | 1× 3-9 (motorized varifocal)mm |
+| Sensor | 1/2.8" CMOS |
+| Lens | 1× 3.1-8.4 (motorized varifocal)mm |
 | Field of view | 97-33 horizontal° |
 | Night vision | ir (30m) |
 | Power | PoE (802.3af) |
@@ -31,7 +31,7 @@
 
 ## Sources
 
-- https://www.securityinformed.com/avigilon-2-0c-h5a-do1-ir-ip-dome-camera-technical-details.html
+- https://www.avigilon.com/security-cameras/h5sl-dome
 
 ---
 *Auto-generated from avigilon-h5sl-do1-ir-3mp.json — do not edit by hand.*
