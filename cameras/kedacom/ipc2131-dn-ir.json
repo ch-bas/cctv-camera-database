@@ -1,0 +1,44 @@
+{
+  "id": "kedacom-ipc2131-dn-ir",
+  "brand": "Kedacom",
+  "model": "IPC2131-DN-IR",
+  "aliases": ["IPC2131-DN-IR1", "IPC2131-DN-IR2"],
+  "type": "dome",
+  "connectivity": ["ethernet"],
+  "power_source": ["poe", "dc"],
+  "resolution": { "megapixels": 1.3, "max_width": 1280, "max_height": 960, "label": "960p" },
+  "video": {
+    "codecs": ["H.264", "MJPEG"],
+    "max_fps": 60,
+    "streams": [
+      { "name": "main", "resolution": "1280x960", "fps": 60 }
+    ]
+  },
+  "sensor": "1/3\" progressive scan CMOS",
+  "lens": { "count": 1, "focal_length_mm": "2.7-9", "aperture": "F1.2", "varifocal": true },
+  "field_of_view_deg": "55-99",
+  "night_vision": { "type": "ir", "range_m": 40 },
+  "power": { "method": "PoE (IEEE802.3af) / 12V DC", "consumption_w": 10, "voltage": "12V DC", "poe_class": 3 },
+  "storage": { "onboard": true, "max_microsd_gb": 128 },
+  "protocols": ["onvif", "rtsp", "http"],
+  "ip_rating": "IP67",
+  "audio": { "microphone": true, "two_way": true },
+  "features": ["Ultra WDR (>=120dB)", "3D noise reduction", "smart IR", "motion detection", "IK10"],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Ø155.8 x 125.9",
+  "environment": ["indoor", "outdoor"],
+  "markets": ["global"],
+  "release_notes": "IR1: 2.7-9mm manual varifocal; IR2: 2.7-9mm motorized varifocal. 26 IR LEDs.",
+  "sources": ["https://www.kedacom.com/en/bqwlsxj/4414.jhtml"],
+  "last_verified": "2026-07-04",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/id=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/id=1",
+      "verified": false
+    },
+    "home_assistant": { "integration": "onvif" },
+    "blue_iris": { "profile": "ONVIF" }
+  }
+}
