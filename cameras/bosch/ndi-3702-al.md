@@ -34,10 +34,7 @@
 
 ## Sources
 
-- https://resources.keenfinity.tech/public/documents/NDI_3702_AL_Data_sheet_enUS_121022979851.pdf
-- https://www.boschsecurity.com
-- https://netcamcenter.de/de/produkte/ip-kameras/ndi-3702-al
-- https://www.bhphotovideo.com/c/product/1859255-REG/bosch_ndi_3702_al_flexidome_indoor_3100i_ir.html
+- https://cdn.commerce.boschsecurity.com/public/documents/NDI_3702_AL_GOV_Data_sheet_enUS_121022983563.pdf
 
 ---
 *Auto-generated from bosch-ndi-3702-al.json — do not edit by hand.*

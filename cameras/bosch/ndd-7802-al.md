@@ -6,7 +6,7 @@
 | Model | FLEXIDOME dual 7100i IR (NDD-7802-AL) |
 | Type | dual-lens |
 | Connectivity | ethernet |
-| Resolution | 2x 3MP (2048×1536 per imager) (3MP, 2048×1536) |
+| Resolution | 2x 3MP (2048×1536 per imager) (6MP, 2048×1536) |
 | Lens | 2× 3.2–8.1mm |
 | Field of view | 37°–104° horizontal (per lens, varifocal)° |
 | Night vision | ir (25m) |

@@ -37,10 +37,7 @@
 
 ## Sources
 
-- https://www.a1securitycameras.com/content/product_documents/66095/Datasheet_2uz3x5ji.pdf
-- https://www.boschsecurity.com
-- https://netcamcenter.de/de/produkte/ip-kameras/nde-8703-rxt
-- https://commerce.keenfinity.tech/us/en/FLEXIDOME-8100i-X-series/p/F.01U.411.092/
+- https://cdn.commerce.boschsecurity.com/public/documents/NDE_8703_RXT_Data_sheet_zhTW_125843041291.pdf
 
 ---
 *Auto-generated from bosch-nde-8703-rxt.json — do not edit by hand.*

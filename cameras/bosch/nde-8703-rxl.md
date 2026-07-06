@@ -38,10 +38,7 @@
 
 ## Sources
 
-- https://www.boschsecurity.com
-- https://www.a1securitycameras.com/content/product_documents/66098/Datasheet_xtcka5sq.pdf
-- https://www.a1securitycameras.com/bosch-nde-8703-rxl.html
-- https://netcamcenter.de/de/produkte/ip-kameras/nde-8703-rxl
+- https://cdn.commerce.boschsecurity.com/public/documents/NDE_8703_RXT_Data_sheet_zhTW_125843041291.pdf
 
 ---
 *Auto-generated from bosch-nde-8703-rxl.json — do not edit by hand.*

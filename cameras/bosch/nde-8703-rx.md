@@ -33,9 +33,7 @@
 
 ## Sources
 
-- https://resources.keenfinity.tech/public/documents/FD_8100i_X_series_Data_sheet_enUS_125842917643.pdf
-- https://www.boschsecurity.com
-- https://netcamcenter.de/de/produkte/ip-kameras/nde-8703-rx
+- https://cdn.commerce.boschsecurity.com/public/documents/NDE_8703_RXT_Data_sheet_zhTW_125843041291.pdf
 
 ---
 *Auto-generated from bosch-nde-8703-rx.json — do not edit by hand.*

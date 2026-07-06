@@ -31,7 +31,7 @@
 
 ## Sources
 
-- https://www.boschsecurity.com/
+- https://commerce.boschsecurity.com/nlexp/en/FLEXIDOME-IP-starlight-8000i-2MP/p/23543250187/
 
 ---
 *Auto-generated from bosch-nde-8512-rx.json — do not edit by hand.*

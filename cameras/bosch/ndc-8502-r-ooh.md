@@ -1,14 +1,14 @@
-# Bosch FLEXIDOME 8000i 4K Outdoor Dome
+# Bosch FLEXIDOME 8000i Outdoor Dome (NDC-8502-R)
 
 *Also known as: NDC-8502-R-OOH, Bosch 8000i 4K starlight outdoor vandal dome*
 
 | Field | Spec |
 |-------|------|
 | Brand | Bosch |
-| Model | FLEXIDOME 8000i 4K Outdoor Dome |
+| Model | FLEXIDOME 8000i Outdoor Dome (NDC-8502-R) |
 | Type | dome |
 | Connectivity | ethernet |
-| Resolution | 4K UHD (8MP, 3840×2160) |
+| Resolution | 4K UHD (2MP, 3840×2160) |
 | Sensor | 1/1.8" CMOS (starlight) |
 | Lens | 1× 3-9 (motorized varifocal)mm F1.2 |
 | Field of view | 100-33 horizontal° |
@@ -35,7 +35,7 @@
 
 ## Sources
 
-- https://www.boschsecurity.com/
+- https://cdn.commerce.boschsecurity.com/public/documents/NDE_8502_R_Fixed_dom_Data_sheet_koKR_94290242059.pdf
 
 ---
 *Auto-generated from bosch-ndc-8502-r-ooh.json — do not edit by hand.*
