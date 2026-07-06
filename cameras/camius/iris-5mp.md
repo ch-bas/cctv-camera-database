@@ -1,16 +1,19 @@
-# Camius Iris 5MP
+# Camius IRIS528R
+
+*Also known as: Iris 5MP, Camius 2K PoE 5MP Turret*
 
 | Field | Spec |
 |-------|------|
 | Brand | Camius |
-| Model | Iris 5MP |
-| Type | dome |
+| Model | IRIS528R |
+| Type | turret |
 | Connectivity | ethernet |
-| Resolution | 5MP Super HD (5MP, 2592×1944) |
-| Sensor | 1/2.7" CMOS |
-| Night vision | ir (25m) |
+| Resolution | 2K (2880x1620) (5MP, 2880×1620) |
+| Sensor | 1/2.7" Progressive CMOS |
+| Field of view | 110 (2.8mm)° |
+| Night vision | hybrid (30m) |
 | Power | PoE (IEEE 802.3af) / DC 12V |
-| Storage | NVR |
+| Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
@@ -18,10 +21,14 @@
 
 ## Features
 
-- no subscription required
-- vandal-resistant housing
+- no subscription / no monthly fees
+- 2.8mm wide-angle lens (110° horizontal FOV)
+- AI human & vehicle detection, cross-counting, sound detection
+- color night vision in low light (0.002 lux F1.2) + IR to 30m
+- built-in mic (listen-in / audio recording)
+- record to microSD, Dropbox, or Camius NVR/VMS
 - WDR
-- motion detection
+- low power (<=5W with IR), -30°C to 55°C
 
 ## Sources
 

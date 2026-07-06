@@ -4,7 +4,7 @@
 |-------|------|
 | Brand | Reolink |
 | Model | RLC-510WA |
-| Type | dome |
+| Type | bullet |
 | Connectivity | wifi, ethernet |
 | Resolution | 5MP (5MP) |
 | Sensor | 1/2.7" CMOS |

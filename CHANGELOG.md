@@ -6,6 +6,37 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.30.0] — 2026-07-06
+
+Reolink battery/solar/4G verification pass against official reolink.com pages. Net: **1,901 → 1,907 cameras** (71 brands unchanged). Most linked URLs were already present; six were genuinely new. All are app-only (no RTSP/ONVIF), so no NVR configs are emitted.
+
+### Added
+- **Reolink Altas** — 2K WiFi 6 battery bullet (20000mAh), ColorX color night vision.
+- **Reolink Go PT S Lite** — 2K 4G LTE battery pan-tilt with auto-tracking.
+- **Reolink Altas Go PT** — 2K 4G LTE solar pan-tilt (20000mAh), ColorX.
+- **Reolink Talon Pro** — 4K 4G LTE cellular trail camera (Camovue line) with GPS.
+- **Reolink Go Ranger PT** — 4K 4G LTE battery pan-tilt trail/wildlife cam with species recognition.
+- **Reolink TrackMix LTE C** — 4K 4G dual-lens battery variant of the TrackMix LTE (6x hybrid zoom).
+
+### Notes
+- Verified ~15 existing battery/solar models (Argus/Go/Altas/TrackMix families) — all correct, no changes. The `reolink-trackmix` and `reolink-duo` base URLs resolve to the already-listed TrackMix WiFi and Duo 2.
+
+## [1.29.0] — 2026-07-06
+
+Reolink verification pass against official reolink.com pages, plus a Camius correction. Net: **1,896 → 1,901 cameras** (71 brands unchanged).
+
+### Added
+- **Reolink E1 Outdoor SE PoE** — 8MP 4K PoE pan-tilt with auto-tracking.
+- **Reolink Lumus Pro** — 8MP 4K WiFi spotlight bullet (F1.6).
+- **Reolink CX410W** — 4MP ColorX WiFi bullet (1/1.8" sensor, F1.0), WiFi variant of the CX410.
+- **Reolink FE-W** — 6MP WiFi 360° fisheye, WiFi sibling of the FE-P.
+- **Reolink Duo Floodlight WiFi** — 8MP dual-lens 180° floodlight cam, WiFi variant of the Duo Floodlight PoE.
+
+### Changed
+- **Camius IRIS528R** — relabelled the generic "Iris 5MP" entry with its real model number and turret form factor (verified 2K/5MP specs); "Iris 5MP" kept as an alias. The web frontend 301-redirects the old ghost `/camera/camius-triton/` URL here.
+- **Reolink CX820** and **RLC-840A** corrected dome → **turret**; **RLC-1224A** and **RLC-510WA** corrected dome → **bullet** (per official product pages).
+- **Reolink Lumus** — filled in missing resolution (4MP / 2560×1440).
+
 ## [1.28.0] — 2026-07-06
 
 Major data-quality audit of **48 previously-unaudited small/mid brands**, removal of fabricated data, and large expansions of Dahua, Hikvision and HiLook — plus one new brand and one rebuilt brand. Net: **1,900 → 1,896 cameras**, **75 → 71 brands**.
@@ -29,6 +60,10 @@ Major data-quality audit of **48 previously-unaudited small/mid brands**, remova
 - **Dahua +22:** WizSense Starlight / Smart Dual Light, WizMind AI (incl. 12MP Ultra), WizColor, and dual-sensor TiOC panoramic PTZs.
 - **Hikvision +32:** ColorVu Gen2 / ColorVu 3.0 / Smart Hybrid Light turrets, bullets and domes (incl. dual-head 180° panoramic), and AcuSense DarkFighter / TandemVu / PanoVu IP PTZ speed domes.
 - **HiLook +11:** PTZ-N2C mini-PT and PTZ-N2D TandemVu dual-lens PT cameras, IPC value-line dome/turret, and ColorVu 3.0 active-deterrence HAA-LU models.
+
+### Spot-check fixes
+
+- Filled Speco `O12B1M` missing resolution (4000×3000) and corrected Tapo `C110` type (fixed cube → `box`). Reolink regional variants (Argus 3 Pro AU, Argus 4 Pro AT) were kept intentionally — they receive direct regional traffic.
 
 ### Scope — analog Turbo HD (opt-in)
 
