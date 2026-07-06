@@ -1,9 +1,9 @@
-# Hikvision DS-2XS6A26G0-I/CH20S40
+# Hikvision DS-2XS6A25G0-I/CH20S40
 
 | Field | Spec |
 |-------|------|
 | Brand | Hikvision |
-| Model | DS-2XS6A26G0-I/CH20S40 |
+| Model | DS-2XS6A25G0-I/CH20S40 |
 | Type | bullet |
 | Connectivity | wifi |
 | Resolution | 1080p HD (2MP) |
@@ -31,4 +31,4 @@
 - https://www.hikvision.com/en/products/
 
 ---
-*Auto-generated from hikvision-ds-2xs6a26g0-i.json — do not edit by hand.*
+*Auto-generated from hikvision-ds-2xs6a25g0-i.json — do not edit by hand.*

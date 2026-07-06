@@ -1,11 +1,11 @@
-# Hikvision DS-2CD2H43G2-IZS (UK market)
+# Hikvision DS-2CD2H43G2-IZS
 
 *Also known as: AcuSense 4MP 50fps Motorized Bullet UK*
 
 | Field | Spec |
 |-------|------|
 | Brand | Hikvision |
-| Model | DS-2CD2H43G2-IZS (UK market) |
+| Model | DS-2CD2H43G2-IZS |
 | Type | bullet |
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2688×1520) |

@@ -6,7 +6,7 @@
 |-------|------|
 | Brand | Hikvision |
 | Model | DS-2CD2955FWD-IS |
-| Type | panoramic |
+| Type | fisheye |
 | Connectivity | ethernet |
 | Resolution | 5MP 360° (5MP, 2592×1944) |
 | Sensor | 1/2.5" CMOS |

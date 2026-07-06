@@ -31,7 +31,7 @@
 
 ## Sources
 
-- https://www.hikvision.com/
+- https://assets.hikvision.com/prd/public/all/doc/sm000064613/DS-2CD2T87G2-L-C_Datasheet_V5.5.115_20230418.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2t87g2-4i.json — do not edit by hand.*

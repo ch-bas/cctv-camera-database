@@ -30,7 +30,7 @@
 
 ## Sources
 
-- https://www.hikvision.com/
+- https://www.hikvision.com/en/products/IP-Products/Network-Cameras/Pro-Series-EasyIP-/ds-2cd2t23g2-2i-4i/
 
 ---
 *Auto-generated from hikvision-ds-2cd2t23g2-2i.json — do not edit by hand.*
