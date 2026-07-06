@@ -1,0 +1,86 @@
+{
+  "id": "hikvision-ds-2cd2387g2p-lsu-sl",
+  "brand": "Hikvision",
+  "model": "DS-2CD2387G2P-LSU/SL",
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 5120,
+    "max_height": 1440,
+    "label": "8MP panoramic (5120x1440)"
+  },
+  "lens": {
+    "count": 2,
+    "varifocal": false,
+    "focal_length_mm": "2 x 4 (fixed, F1.0)"
+  },
+  "night_vision": {
+    "type": "color",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE (802.3af)"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "ColorVu full-color",
+    "dual-head / dual-lens 180 panoramic",
+    "AcuSense human/vehicle",
+    "strobe + audible warning (SL)",
+    "built-in 95dB speaker + mic + two-way audio",
+    "130dB WDR",
+    "30m white light"
+  ],
+  "markets": [
+    "AU",
+    "global"
+  ],
+  "release_notes": "The Hikvision DS-2CD2387G2P-LSU/SL is an 8MP dual-lens panoramic ColorVu turret (two 1/1.8-inch sensors + 2x4mm lenses stitched to 180-degree / 5120x1440), PoE-only, with strobe and audible-warning deterrence.",
+  "sources": [
+    "https://www.hikvision.com/us-en/products/network-products/network-cameras/colorvu-series/ds-2cd2387g2p-lsu-sl/"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "verified": false,
+      "notes": "Hikvision native RTSP path (main 101 / sub 102); enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "last_verified": "2026-07-06",
+  "sensor": "2 x 1/1.8\" CMOS",
+  "field_of_view_deg": "180",
+  "ip_rating": "IP67"
+}

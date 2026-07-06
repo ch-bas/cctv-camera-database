@@ -1,0 +1,88 @@
+{
+  "id": "hilook-ipc-b429haa-lu",
+  "brand": "HiLook",
+  "model": "IPC-B429HAA-LU",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed)",
+    "varifocal": false
+  },
+  "field_of_view_deg": "106 (2.8mm) / 88 (4mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 50
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V"
+  },
+  "ip_rating": "IP67",
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "ColorVu 3.0 full-color 24/7 imaging",
+    "Smart Hybrid Light (IR + white LED, 3 modes) to 50m",
+    "HikAI-ISP noise reduction",
+    "Motion Detection 3.0 (human/vehicle)",
+    "built-in mic",
+    "strobe (SL) + red-blue (SRB) active deterrence with two-way audio + speaker",
+    "microSD up to 512GB (-F)",
+    "NOTE: Hikvision datasheet specs this at 2MP/1080p despite the model number"
+  ],
+  "markets": [
+    "MENA",
+    "global"
+  ],
+  "release_notes": "The HiLook IPC-B429HAA-LU is a ColorVu 3.0 active-deterrence bullet (2MP/1080p per Hikvision datasheet, despite the '429') with Smart Hybrid Light to 50m and a 1.5W/95dB speaker.",
+  "sources": [
+    "https://www.hikvision.com/mena-en/products/HiLook-IP-Products/Network-Cameras/Value-Camera/ipc-b429haa-lu-f---sl---srb-/"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "verified": false,
+      "notes": "HiLook uses the Hikvision RTSP path (main 101 / sub 102); enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "HiLook (Hikvision OEM); ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "HiLook uses the Hikvision protocol — select the 'Hikvision' profile."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

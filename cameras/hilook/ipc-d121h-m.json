@@ -1,0 +1,87 @@
+{
+  "id": "hilook-ipc-d121h-m",
+  "brand": "HiLook",
+  "model": "IPC-D121H-M",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed)",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Digital WDR",
+    "3D DNR",
+    "BLC",
+    "smart IR (850nm)",
+    "motion detection / video tampering",
+    "Motion Detection 2.0 (-M)",
+    "ROI",
+    "IK10 vandal-resistant"
+  ],
+  "markets": [
+    "MENA",
+    "global"
+  ],
+  "release_notes": "The HiLook IPC-D121H-M is a value 2MP fixed-lens EXIR dome with DWDR, 30m smart IR and IP67/IK10 build; the -M denotes the Motion Detection 2.0 variant.",
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000000474/IPC-D121H-M_Datasheet_20260522.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "verified": false,
+      "notes": "HiLook uses the Hikvision RTSP path (main 101 / sub 102); enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "HiLook (Hikvision OEM); ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "HiLook uses the Hikvision protocol — select the 'Hikvision' profile."
+    }
+  },
+  "last_verified": "2026-07-06",
+  "sensor": "1/2.7\" CMOS",
+  "field_of_view_deg": "112.1 (2.8mm) / 90.2 (4mm)",
+  "ip_rating": "IP67"
+}
