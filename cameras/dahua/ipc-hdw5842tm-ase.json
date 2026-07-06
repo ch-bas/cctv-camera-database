@@ -1,0 +1,86 @@
+{
+  "id": "dahua-ipc-hdw5842tm-ase",
+  "brand": "Dahua",
+  "model": "IPC-HDW5842TM-ASE",
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 1024
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "WizMind AI",
+    "face detection",
+    "video metadata",
+    "people counting",
+    "perimeter protection",
+    "SMD",
+    "human/vehicle classification",
+    "Smart IR to 50m"
+  ],
+  "markets": [
+    "AU",
+    "global"
+  ],
+  "release_notes": "The Dahua IPC-HDW5842TM-ASE is an 8MP fixed-focal WizMind eyeball with premium on-device AI (face detection, metadata) and Smart IR to 50m.",
+  "sources": [
+    "https://www.securitywholesalers.com.au/product/dahua-dh-ipc-hdw5842tm-ase-8mp-ir-fixed-focal-eyeball-wizmind-network-camera/"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI (default admin)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "last_verified": "2026-07-06",
+  "sensor": "1/1.8\" CMOS",
+  "ip_rating": "IP67"
+}

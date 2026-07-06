@@ -1,0 +1,86 @@
+{
+  "id": "dahua-ipc-hfw3866tp-zas",
+  "brand": "Dahua",
+  "model": "IPC-HFW3866TP-ZAS",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "lens": {
+    "count": 1,
+    "varifocal": true,
+    "focal_length_mm": "2.7-13.5"
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 60
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 256
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "WizSense",
+    "SMD 4.0",
+    "AI SSA",
+    "motorized varifocal",
+    "60m IR",
+    "perimeter protection (intrusion/tripwire, human/vehicle)",
+    "WDR"
+  ],
+  "markets": [
+    "AU",
+    "global"
+  ],
+  "release_notes": "The Dahua IPC-HFW3866TP-ZAS is an 8MP 4K WizSense motorized varifocal IR bullet with 60m IR, SMD 4.0 and human/vehicle classification.",
+  "sources": [
+    "https://www.securitywholesalers.com.au/product/dahua-dh-ipc-hfw3866tp-zas-aus-8mp-4k-wdr-ir-bullet-motorised-black/"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI (default admin)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "last_verified": "2026-07-06",
+  "sensor": "1/2.7\" CMOS",
+  "ip_rating": "IP67"
+}
