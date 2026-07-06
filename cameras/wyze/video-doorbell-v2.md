@@ -6,7 +6,7 @@
 | Model | Video Doorbell v2 |
 | Type | doorbell |
 | Connectivity | wifi |
-| Resolution | 2K QHD (4MP, 2560×1920) |
+| Resolution | 3MP (3MP, 2304×1296) |
 | Lens | 1× Fixedmm F2.0 |
 | Field of view | 150 diagonal° |
 | Night vision | color (6m) |

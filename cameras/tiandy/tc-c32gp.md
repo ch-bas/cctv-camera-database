@@ -28,7 +28,7 @@
 
 ## Sources
 
-- https://www.tiandy.com/
+- https://en.tiandy.com/index.php?s=%2Fhome%2Ffile%2Fdownloadfile%2Fid%2F53.html
 
 ---
 *Auto-generated from tiandy-tc-c32gp.json — do not edit by hand.*

@@ -6,7 +6,7 @@
 | Model | Spectra Enhanced 7 S7240L-EW1 |
 | Type | ptz |
 | Connectivity | ethernet |
-| Resolution | 1080p (2MP, 1920×1080) |
+| Resolution | 4K/8MP (8MP, 3840×2160) |
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 4.3-170mm |
 | Field of view | 59.2-1.8 horizontal° |

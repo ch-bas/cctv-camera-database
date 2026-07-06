@@ -36,7 +36,7 @@
 
 ## Sources
 
-- https://www.lupus-electronics.de/
+- https://www.lupus-electronics.de/shop/en/Video-surveillance/Network-Cameras/Tube-Cameras/LUPUS-LE221-PoE-p.html
 
 ---
 *Auto-generated from lupus-le221-poe.json — do not edit by hand.*

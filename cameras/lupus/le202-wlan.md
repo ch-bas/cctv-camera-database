@@ -6,9 +6,9 @@
 |-------|------|
 | Brand | Lupus Electronics |
 | Model | LE202 |
-| Type | dome |
+| Type | bullet |
 | Connectivity | wifi |
-| Resolution | 1080p HD (2MP, 1920×1080) |
+| Resolution | 3MP (3MP, 2304×1296) |
 | Sensor | CMOS |
 | Lens | 1× 2.8 (fixed)mm F2.0 |
 | Field of view | 107 horizontal° |
@@ -35,7 +35,7 @@
 
 ## Sources
 
-- https://www.lupus-electronics.de/
+- https://www.expert-security.de/lupusnet-10202-le202-1080p-t-n-ir-wlan-ip67.html
 
 ---
 *Auto-generated from lupus-le202-wlan.json — do not edit by hand.*

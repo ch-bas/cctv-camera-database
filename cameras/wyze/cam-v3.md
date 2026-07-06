@@ -6,7 +6,7 @@
 |-------|------|
 | Brand | Wyze |
 | Model | Cam v3 |
-| Type | dome |
+| Type | box |
 | Connectivity | wifi |
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/2.9" CMOS |

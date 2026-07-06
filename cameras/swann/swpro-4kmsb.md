@@ -30,7 +30,7 @@
 
 ## Sources
 
-- https://www.swann.com/
+- https://support.swann.com/hc/en-us/articles/4643987041561-PRO-4KMSB-4K-Ultra-HD-Thermal-Sensing-Bullet-Security-Camera
 
 ---
 *Auto-generated from swann-swpro-4kmsb.json — do not edit by hand.*

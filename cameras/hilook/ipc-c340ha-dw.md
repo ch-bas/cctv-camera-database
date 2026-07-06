@@ -6,7 +6,7 @@
 |-------|------|
 | Brand | HiLook |
 | Model | IPC-C340HA-D/W |
-| Type | turret |
+| Type | box |
 | Connectivity | wifi |
 | Resolution | 4MP (4MP, 2560×1440) |
 | Sensor | CMOS |

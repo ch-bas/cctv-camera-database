@@ -4,7 +4,7 @@
 |-------|------|
 | Brand | Tiandy |
 | Model | TC-C34SP |
-| Type | bullet |
+| Type | turret |
 | Connectivity | ethernet |
 | Resolution | 4MP QHD (4MP, 2560×1440) |
 | Sensor | 1/2.7" Super Starlight CMOS |
@@ -29,7 +29,7 @@
 
 ## Sources
 
-- https://www.tiandy.com/
+- https://rxtx.com.au/tc-c34sp-spec-w-e-y-m-2-8mm-tiandy-4mp-fixed-color-maker-turret-camera/
 
 ---
 *Auto-generated from tiandy-tc-c34sp.json — do not edit by hand.*

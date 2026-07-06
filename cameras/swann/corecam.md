@@ -31,7 +31,7 @@
 
 ## Sources
 
-- https://www.swann.com/
+- https://us.swann.com/swifi-corecampk3/
 
 ---
 *Auto-generated from swann-corecam.json — do not edit by hand.*

@@ -29,7 +29,7 @@
 
 ## Sources
 
-- https://www.swann.com/
+- https://us.swann.com/swifi-xtrcm16g1pk/
 
 ---
 *Auto-generated from swann-xtreem-solar.json — do not edit by hand.*

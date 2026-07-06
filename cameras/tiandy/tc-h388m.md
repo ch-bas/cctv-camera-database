@@ -29,7 +29,7 @@
 
 ## Sources
 
-- https://www.tiandy.com/
+- https://en.tiandy.com/index.php?s=%2FHome%2FProduct%2Fdetail%2Fid%2F507.html
 
 ---
 *Auto-generated from tiandy-tc-h388m.json — do not edit by hand.*

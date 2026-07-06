@@ -8,7 +8,7 @@
 | Model | Nest Cam Indoor (1st Gen) |
 | Type | dome |
 | Connectivity | wifi |
-| Resolution | 1080p (3MP, 1920×1080) |
+| Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/3" CMOS |
 | Lens | 1× |
 | Field of view | 130 diagonal° |

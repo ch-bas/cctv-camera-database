@@ -31,7 +31,7 @@
 
 ## Sources
 
-- https://www.swann.com/
+- https://us.swann.com/swpro-4kmqb/
 
 ---
 *Auto-generated from swann-4k-bullet.json — do not edit by hand.*

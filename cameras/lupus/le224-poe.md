@@ -36,7 +36,7 @@
 
 ## Sources
 
-- https://www.lupus-electronics.de/
+- https://www.lupus-electronics.de/shop/en/Video-surveillance/Network-Cameras/Dome-Cameras/LUPUS-LE224-PoE-p.html
 
 ---
 *Auto-generated from lupus-le224-poe.json — do not edit by hand.*

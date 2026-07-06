@@ -6,7 +6,7 @@
 |-------|------|
 | Brand | Wyze |
 | Model | Cam v4 |
-| Type | dome |
+| Type | box |
 | Connectivity | wifi |
 | Resolution | 2.5K QHD (4MP, 2560×1440) |
 | Sensor | 1/2.7" CMOS (upgraded vs v3) |

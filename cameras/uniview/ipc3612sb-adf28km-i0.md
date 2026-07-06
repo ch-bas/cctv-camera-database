@@ -31,7 +31,7 @@
 
 ## Sources
 
-- https://www.uniview.com/
+- https://www.uniview.com/Products/Network_Cameras/Prime_Series/PRIMEI_Series/IPC3612SB-ADF28KM-I0/
 
 ---
 *Auto-generated from uniview-ipc3612sb-adf28km-i0.json — do not edit by hand.*

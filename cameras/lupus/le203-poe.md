@@ -6,9 +6,9 @@
 |-------|------|
 | Brand | Lupus Electronics |
 | Model | LE203 |
-| Type | bullet |
+| Type | dome |
 | Connectivity | ethernet |
-| Resolution | 1080p HD (2MP, 1920×1080) |
+| Resolution | 1.3MP (1.3MP, 1280×960) |
 | Sensor | CMOS |
 | Lens | 1× 2.8 / 4 (fixed)mm F2.0 |
 | Field of view | 92 horizontal° |
@@ -34,7 +34,7 @@
 
 ## Sources
 
-- https://www.lupus-electronics.de/
+- https://s3.secureo.at/assets/dzn/lupus/lupusnet-handbuch-hd-le203.pdf
 
 ---
 *Auto-generated from lupus-le203-poe.json — do not edit by hand.*

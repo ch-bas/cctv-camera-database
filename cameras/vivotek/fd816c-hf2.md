@@ -28,7 +28,7 @@
 
 ## Sources
 
-- https://www.vivotek.com/
+- https://www.vivotek.com/en-US/products/network-cameras/dome
 
 ---
 *Auto-generated from vivotek-fd816c-hf2.json — do not edit by hand.*

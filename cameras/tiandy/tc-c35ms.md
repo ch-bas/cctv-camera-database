@@ -4,7 +4,7 @@
 |-------|------|
 | Brand | Tiandy |
 | Model | TC-C35MS |
-| Type | turret |
+| Type | dome |
 | Connectivity | ethernet |
 | Resolution | 5MP (5MP, 2592×1944) |
 | Sensor | 1/2.7" Super Starlight CMOS |
@@ -29,7 +29,7 @@
 
 ## Sources
 
-- https://www.tiandy.com/
+- https://allysec.com/products/tiandy-pro-series-starlight-5mp-ip-dome-camera-tc-c35ms-spec-i3-a-e-y-m-c-h-2-7-13-5mm-v4-0
 
 ---
 *Auto-generated from tiandy-tc-c35ms.json — do not edit by hand.*
