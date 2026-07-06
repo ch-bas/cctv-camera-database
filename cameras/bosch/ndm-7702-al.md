@@ -4,7 +4,7 @@
 |-------|------|
 | Brand | Bosch |
 | Model | FLEXIDOME multi 7000i IR (NDM-7702-AL) |
-| Type | dome |
+| Type | panoramic |
 | Connectivity | ethernet |
 | Resolution | 12MP (4x 3MP imagers) (12MP, 2048×1536) |
 | Sensor | 4x 1/2.7-inch CMOS |

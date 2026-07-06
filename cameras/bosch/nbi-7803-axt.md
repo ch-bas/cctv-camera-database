@@ -36,10 +36,7 @@
 
 ## Sources
 
-- https://netcamcenter.de/de/produkte/ip-kameras/nbi-7803-axt
-- https://netcamcenter.com/media/documents/NBI_7802_AX_Data_sheet_enUS_172743006091.pdf
-- https://www.boschsecurity.com
-- https://netcamcenter.com/en/products/ip-cameras/box/all
+- https://commerce.boschsecurity.com/us/en/Cameras/c/10164917899
 
 ---
 *Auto-generated from bosch-nbi-7803-axt.json — do not edit by hand.*

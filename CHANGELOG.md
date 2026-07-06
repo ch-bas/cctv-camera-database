@@ -8,7 +8,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [1.28.0] — 2026-07-06
 
-Major data-quality audit of **48 previously-unaudited small/mid brands**, removal of fabricated data, and large expansions of Dahua, Hikvision and HiLook — plus one new brand and one rebuilt brand. Net: **1,900 → 1,903 cameras**, **75 → 71 brands**.
+Major data-quality audit of **48 previously-unaudited small/mid brands**, removal of fabricated data, and large expansions of Dahua, Hikvision and HiLook — plus one new brand and one rebuilt brand. Net: **1,900 → 1,896 cameras**, **75 → 71 brands**.
 
 ### Audit — 48 small/mid brands verified against official manufacturer sources
 
@@ -18,6 +18,8 @@ Major data-quality audit of **48 previously-unaudited small/mid brands**, remova
 - Corrected dozens of form-factor `type` and `megapixels` values; replaced bare-homepage sources with verified product/spec URLs; stamped `last_verified` on every surviving entry.
 
 ### Brand rebuilds & additions
+
+- **Bosch — audited all 160 entries** against boschsecurity.com: removed 6 fabricated ghosts (nonexistent `NMM-7703`/`NUE-3703-AL`/`NBE-7703-AL`/`NDE-7703-AL` SKUs, and a `VG4-A-PSU0` entry that is actually a *power supply*, not a camera) + 1 mounting-variant duplicate, fixed 7 form-factor types (multi-imager NDM/NMM → panoramic, F360 → panoramic, mislabelled DINION bullets typed as AUTODOME PTZ) and 3 megapixel values, corrected 5 wrong model names, reclassified 1 legacy analog MIC 550, added the missing Blue Iris profile to 134 entries, and stamped every survivor.
 
 - **Hikvision — audited the 135 previously-unaudited entries** against hikvision.com: removed 9 ghosts (nonexistent model numbers — e.g. the fictitious `DS-2CD2N` line, a box camera with an impossible IR suffix, ColorVu SKUs missing their mandatory `L` suffix) and 10 region-tagged duplicates, fixed 3 form-factor types + 2 TandemVu megapixel values, converted 4 mislabelled analog Turbo-HD entries to `connectivity: coax`, corrected 1 typo'd model number, and stamped every survivor.
 

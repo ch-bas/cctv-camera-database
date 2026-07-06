@@ -42,9 +42,7 @@
 
 ## Sources
 
-- https://www.a1securitycameras.com/content/product_documents/51705/Bosch-MIC-9502-Z30BVF-Datasheet-A1.pdf
-- https://netcamcenter.de/de/produkte/ip-kameras/mic-9502-z30bvf
-- https://www.boschsecurity.com
+- https://commerce.boschsecurity.com/gb/en/MIC-IP-fusion-9000i/p/F.01U.368.927/
 
 ---
 *Auto-generated from bosch-mic-9502-z30bvf.json — do not edit by hand.*

@@ -1,11 +1,11 @@
-# Bosch FLEXIDOME 7000i Bullet (NBE-7702-ALXT)
+# Bosch DINION 7100i IR (NBE-7702-ALXT)
 
 *Also known as: NBE-7702-ALXT, FLEXIDOME 7000i tele bullet*
 
 | Field | Spec |
 |-------|------|
 | Brand | Bosch |
-| Model | FLEXIDOME 7000i Bullet (NBE-7702-ALXT) |
+| Model | DINION 7100i IR (NBE-7702-ALXT) |
 | Type | bullet |
 | Connectivity | ethernet |
 | Resolution | 1080p (2MP, 1920×1080) |
