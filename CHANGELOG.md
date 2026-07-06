@@ -6,6 +6,21 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.30.0] — 2026-07-06
+
+Reolink battery/solar/4G verification pass against official reolink.com pages. Net: **1,901 → 1,907 cameras** (71 brands unchanged). Most linked URLs were already present; six were genuinely new. All are app-only (no RTSP/ONVIF), so no NVR configs are emitted.
+
+### Added
+- **Reolink Altas** — 2K WiFi 6 battery bullet (20000mAh), ColorX color night vision.
+- **Reolink Go PT S Lite** — 2K 4G LTE battery pan-tilt with auto-tracking.
+- **Reolink Altas Go PT** — 2K 4G LTE solar pan-tilt (20000mAh), ColorX.
+- **Reolink Talon Pro** — 4K 4G LTE cellular trail camera (Camovue line) with GPS.
+- **Reolink Go Ranger PT** — 4K 4G LTE battery pan-tilt trail/wildlife cam with species recognition.
+- **Reolink TrackMix LTE C** — 4K 4G dual-lens battery variant of the TrackMix LTE (6x hybrid zoom).
+
+### Notes
+- Verified ~15 existing battery/solar models (Argus/Go/Altas/TrackMix families) — all correct, no changes. The `reolink-trackmix` and `reolink-duo` base URLs resolve to the already-listed TrackMix WiFi and Duo 2.
+
 ## [1.29.0] — 2026-07-06
 
 Reolink verification pass against official reolink.com pages, plus a Camius correction. Net: **1,896 → 1,901 cameras** (71 brands unchanged).
