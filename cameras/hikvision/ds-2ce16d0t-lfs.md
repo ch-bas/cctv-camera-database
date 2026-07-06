@@ -1,15 +1,15 @@
-# Hikvision DS-2CE76K0T-LMFS
+# Hikvision DS-2CE16D0T-LFS
 
 | Field | Spec |
 |-------|------|
 | Brand | Hikvision |
-| Model | DS-2CE76K0T-LMFS |
-| Type | turret |
+| Model | DS-2CE16D0T-LFS |
+| Type | bullet |
 | Connectivity | coax |
-| Resolution | 3K (~5MP) (5MP, 2960×1665) |
-| Sensor | 3K CMOS |
+| Resolution | 1080p (2MP, 1920×1080) |
+| Sensor | 2MP CMOS |
 | Lens | 1× 2.8 / 3.6 (fixed)mm |
-| Field of view | 104.9 / 81.3° |
+| Field of view | 101 / 78° |
 | Night vision | hybrid (30m) |
 | Power | 12 VDC |
 | Storage | NVR |
@@ -21,11 +21,11 @@
 - Analog Turbo HD 4-in-1 (TVI/AHD/CVI/CVBS) over coax/BNC — NOT an IP camera
 - Smart-Hybrid dual light: IR up to 30m + white light up to 20m
 - built-in mic + audio over coax
-- metal housing, DWDR
+- metal mini bullet, DWDR
 
 ## Sources
 
-- https://assets.hikvision.com/prd/public/all/doc/m000059516/DS-2CE76K0T-LMFS_Datasheet_20241211.pdf
+- https://assets.hikvision.com/prd/public/all/doc/m000059507/DS-2CE16D0T-LFS_Datasheet_20241210.pdf
 
 ---
-*Auto-generated from hikvision-ds-2ce76k0t-lmfs.json — do not edit by hand.*
+*Auto-generated from hikvision-ds-2ce16d0t-lfs.json — do not edit by hand.*

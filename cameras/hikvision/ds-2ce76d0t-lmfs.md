@@ -1,15 +1,15 @@
-# Hikvision DS-2CE76K0T-LMFS
+# Hikvision DS-2CE76D0T-LMFS
 
 | Field | Spec |
 |-------|------|
 | Brand | Hikvision |
-| Model | DS-2CE76K0T-LMFS |
+| Model | DS-2CE76D0T-LMFS |
 | Type | turret |
 | Connectivity | coax |
-| Resolution | 3K (~5MP) (5MP, 2960×1665) |
-| Sensor | 3K CMOS |
+| Resolution | 1080p (2MP, 1920×1080) |
+| Sensor | 2MP CMOS |
 | Lens | 1× 2.8 / 3.6 (fixed)mm |
-| Field of view | 104.9 / 81.3° |
+| Field of view | 101 / 78° |
 | Night vision | hybrid (30m) |
 | Power | 12 VDC |
 | Storage | NVR |
@@ -25,7 +25,7 @@
 
 ## Sources
 
-- https://assets.hikvision.com/prd/public/all/doc/m000059516/DS-2CE76K0T-LMFS_Datasheet_20241211.pdf
+- https://assets.hikvision.com/prd/public/all/doc/m000059510/DS-2CE76D0T-LMFS_Datasheet_20250324.pdf
 
 ---
-*Auto-generated from hikvision-ds-2ce76k0t-lmfs.json — do not edit by hand.*
+*Auto-generated from hikvision-ds-2ce76d0t-lmfs.json — do not edit by hand.*
