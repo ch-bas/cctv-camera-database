@@ -8,7 +8,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [1.28.0] — 2026-07-06
 
-Major data-quality audit of **48 previously-unaudited small/mid brands**, removal of fabricated data, and large expansions of Dahua, Hikvision and HiLook — plus one new brand and one rebuilt brand. Net: **1,900 → 1,894 cameras**, **75 → 71 brands**.
+Major data-quality audit of **48 previously-unaudited small/mid brands**, removal of fabricated data, and large expansions of Dahua, Hikvision and HiLook — plus one new brand and one rebuilt brand. Net: **1,900 → 1,896 cameras**, **75 → 71 brands**.
 
 ### Audit — 48 small/mid brands verified against official manufacturer sources
 
@@ -32,7 +32,7 @@ Major data-quality audit of **48 previously-unaudited small/mid brands**, remova
 
 ### Spot-check fixes
 
-- Filled Speco `O12B1M` missing resolution (4000×3000), corrected Tapo `C110` type (fixed cube → `box`), and removed 2 Reolink regional-duplicate entries (Argus 3 Pro AU, Argus 4 Pro AT).
+- Filled Speco `O12B1M` missing resolution (4000×3000) and corrected Tapo `C110` type (fixed cube → `box`). Reolink regional variants (Argus 3 Pro AU, Argus 4 Pro AT) were kept intentionally — they receive direct regional traffic.
 
 ### Scope — analog Turbo HD (opt-in)
 
