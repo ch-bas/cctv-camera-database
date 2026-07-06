@@ -26,7 +26,7 @@
 
 ## Sources
 
-- https://store.google.com/
+- https://support.google.com/googlehome/answer/9259110
 
 ---
 *Auto-generated from google-nest-doorbell-battery.json — do not edit by hand.*

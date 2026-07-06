@@ -1,0 +1,86 @@
+{
+  "id": "hilook-ptz-n2c200m-de",
+  "brand": "HiLook",
+  "model": "PTZ-N2C200M-DE",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed)",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "mini PT: pan 340 / tilt 110 (no optical zoom)",
+    "Smart Hybrid Light (IR + white) to 30m",
+    "Human Detection + Auto-tracking Lite",
+    "two-way audio",
+    "DWDR / 3D DNR",
+    "Hik-Connect"
+  ],
+  "markets": [
+    "MENA",
+    "global"
+  ],
+  "release_notes": "The HiLook PTZ-N2C200M-DE is a 2MP single-lens mini PT camera (pan 340 / tilt 110) with a fixed 2.8/4mm lens and Smart Hybrid Light to 30m.",
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/sm000066639/PTZ-N2C200M-DE_Datasheet_20250212.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "verified": false,
+      "notes": "HiLook uses the Hikvision RTSP path (main 101 / sub 102); enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "HiLook (Hikvision OEM); ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "HiLook uses the Hikvision protocol — select the 'Hikvision' profile."
+    }
+  },
+  "last_verified": "2026-07-06",
+  "sensor": "1/2.7\" CMOS",
+  "field_of_view_deg": "111.4 (2.8mm) / 91.5 (4mm)",
+  "ip_rating": "IP66"
+}

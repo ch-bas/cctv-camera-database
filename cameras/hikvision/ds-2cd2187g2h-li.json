@@ -1,0 +1,87 @@
+{
+  "id": "hikvision-ds-2cd2187g2h-li",
+  "brand": "Hikvision",
+  "model": "DS-2CD2187G2H-LI",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K/8MP"
+  },
+  "lens": {
+    "count": 1,
+    "varifocal": false,
+    "focal_length_mm": "2.8 (fixed, F1.0)"
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 256
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "Smart Hybrid Light",
+    "ColorVu (Gen2, F1.0)",
+    "AcuSense",
+    "130dB WDR",
+    "built-in mic + audio I/O",
+    "30m IR + 30m white LED",
+    "IK10 vandal-resistant"
+  ],
+  "markets": [
+    "AU",
+    "global"
+  ],
+  "release_notes": "The Hikvision DS-2CD2187G2H-LI is an 8MP fixed-lens ColorVu vandal dome with Smart Hybrid Light (the -LISU sub-variant adds mic + two-way audio).",
+  "sources": [
+    "https://www.securitywholesalers.com.au/product/hikvision-ds-2cd2187g2h-li-8mp-outdoor-colorvu-dome-camera-hybrid-light-mic-2-8mm/"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "verified": false,
+      "notes": "Hikvision native RTSP path (main 101 / sub 102); enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "last_verified": "2026-07-06",
+  "sensor": "1/1.8\" CMOS",
+  "field_of_view_deg": "105.1",
+  "ip_rating": "IP67"
+}

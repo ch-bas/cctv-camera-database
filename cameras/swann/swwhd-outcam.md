@@ -33,7 +33,7 @@
 
 ## Sources
 
-- https://www.swann.com/
+- https://www.amazon.com/Swann-Outdoor-Security-Camera-SWWHD-OUTCAM/dp/B07BT7YT5Y
 
 ---
 *Auto-generated from swann-swwhd-outcam.json — do not edit by hand.*

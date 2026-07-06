@@ -32,7 +32,7 @@
 
 ## Sources
 
-- https://www.quboworld.com/
+- https://www.quboworld.com/products/smart-bullet-cam-pro-4mp
 
 ---
 *Auto-generated from qubo-bullet-cam-pro.json — do not edit by hand.*

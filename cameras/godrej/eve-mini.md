@@ -8,7 +8,7 @@
 | Model | Eve Mini |
 | Type | dome |
 | Connectivity | wifi |
-| Resolution | 3MP 2K (3MP, 2048×1536) |
+| Resolution | 1.3MP (1.3MP, 1280×960) |
 | Sensor | CMOS |
 | Lens | 1× 3.6 (fixed)mm F2.0 |
 | Field of view | 110 diagonal° |

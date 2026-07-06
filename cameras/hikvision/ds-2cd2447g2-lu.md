@@ -6,7 +6,7 @@
 |-------|------|
 | Brand | Hikvision |
 | Model | DS-2CD2447G2-LU |
-| Type | turret |
+| Type | box |
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2688×1520) |
 | Sensor | 1/1.8" Progressive Scan CMOS |

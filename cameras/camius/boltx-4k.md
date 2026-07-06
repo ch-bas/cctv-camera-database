@@ -25,7 +25,7 @@
 
 ## Sources
 
-- https://camius.com/
+- https://camius.com/4k-ip-security-camera-2-pack-boltx8
 
 ---
 *Auto-generated from camius-boltx-4k.json — do not edit by hand.*

@@ -1,11 +1,11 @@
-# Hikvision DS-2CD2147G2H-LI(U) (EU)
+# Hikvision DS-2CD2147G2H-LI(U)
 
 *Also known as: Smart Hybrid 4MP Mini Dome ColorVu EU, EasyIP 4.0 Plus EU*
 
 | Field | Spec |
 |-------|------|
 | Brand | Hikvision |
-| Model | DS-2CD2147G2H-LI(U) (EU) |
+| Model | DS-2CD2147G2H-LI(U) |
 | Type | dome |
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2688×1520) |

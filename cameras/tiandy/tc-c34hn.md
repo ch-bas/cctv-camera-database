@@ -28,7 +28,7 @@
 
 ## Sources
 
-- https://www.tiandy.com/
+- https://www.cctvcameraexpert.com/network-ip-camera/57625468.html
 
 ---
 *Auto-generated from tiandy-tc-c34hn.json — do not edit by hand.*

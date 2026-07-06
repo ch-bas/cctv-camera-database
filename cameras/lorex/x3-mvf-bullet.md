@@ -34,7 +34,6 @@
 ## Sources
 
 - https://www.lorex.com/products/connect-x3-series-bullet-ip-camera-mvf
-- https://d2zri47w41ywm3.cloudfront.net/downloads/ip-cameras/CNE01P/CNE01P-2BB-AB1_CNE01P-2BW-AB1_Specifications_EN_R1.pdf
 
 ---
 *Auto-generated from lorex-x3-mvf-bullet.json — do not edit by hand.*

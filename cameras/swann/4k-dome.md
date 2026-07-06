@@ -31,7 +31,7 @@
 
 ## Sources
 
-- https://www.swann.com/
+- https://us.swann.com/swnhd-900de/
 
 ---
 *Auto-generated from swann-4k-dome.json — do not edit by hand.*

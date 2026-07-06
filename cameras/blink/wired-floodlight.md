@@ -8,7 +8,7 @@
 | Model | Wired Floodlight Camera |
 | Type | bullet |
 | Connectivity | wifi |
-| Resolution | 2K HD (4MP, 2560×1440) |
+| Resolution | 1080p (2MP, 1920×1080) |
 | Lens | 1× Fixedmm F2.0 |
 | Field of view | 142 diagonal° |
 | Night vision | color (12m) |

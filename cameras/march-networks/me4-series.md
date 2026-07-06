@@ -25,7 +25,7 @@
 
 ## Sources
 
-- https://www.marchnetworks.com/
+- https://www.marchnetworks.com/news/me4-series-ip-cameras/
 
 ---
 *Auto-generated from march-networks-me4-series.json — do not edit by hand.*

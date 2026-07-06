@@ -8,7 +8,7 @@
 | Model | SD9384-EHL |
 | Type | ptz |
 | Connectivity | ethernet |
-| Resolution | 4K UHD (8MP, 3840×2160) |
+| Resolution | 5MP (5MP, 2592×1944) |
 | Sensor | 1/2.5" CMOS |
 | Lens | 1× 4.7-150 (32x optical zoom)mm |
 | Field of view | 59-1.9 horizontal° |
@@ -32,7 +32,7 @@
 
 ## Sources
 
-- https://www.vivotek.com/
+- https://www.vivotek.com/sd9384-ehl
 
 ---
 *Auto-generated from vivotek-sd9384-ehl.json — do not edit by hand.*

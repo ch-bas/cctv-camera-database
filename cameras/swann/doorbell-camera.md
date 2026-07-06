@@ -29,7 +29,7 @@
 
 ## Sources
 
-- https://www.swann.com/
+- https://us.swann.com/products/video-doorbells/
 
 ---
 *Auto-generated from swann-doorbell-camera.json — do not edit by hand.*

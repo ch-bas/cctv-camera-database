@@ -30,7 +30,7 @@
 
 ## Sources
 
-- https://www.tvt.net.cn/
+- https://en.tvt.net.cn/products/1637.html
 
 ---
 *Auto-generated from tvt-td-8483is-a.json — do not edit by hand.*

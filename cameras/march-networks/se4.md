@@ -4,7 +4,7 @@
 |-------|------|
 | Brand | March Networks |
 | Model | SE4 |
-| Type | bullet |
+| Type | dome |
 | Connectivity | ethernet |
 | Resolution | 1440p QHD (4MP, 2560×1440) |
 | Sensor | 1/3" CMOS |
@@ -25,7 +25,7 @@
 
 ## Sources
 
-- https://www.marchnetworks.com/
+- https://abcsecurity.ca/product/march-networks-se4-outdoor-ir-dome-camera/
 
 ---
 *Auto-generated from march-networks-se4.json — do not edit by hand.*

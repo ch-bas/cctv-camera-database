@@ -35,7 +35,7 @@
 
 ## Sources
 
-- https://www.quboworld.com/
+- https://www.quboworld.com/products/smart-cam-360-pro
 
 ---
 *Auto-generated from qubo-smart-cam-360-pro-4mp.json — do not edit by hand.*

@@ -29,7 +29,7 @@
 
 ## Sources
 
-- https://www.swann.com/
+- https://support.swann.com/hc/en-us/articles/4714852529561-SWIFI-PTCAM2-Pan-Tilt-Security-Camera
 
 ---
 *Auto-generated from swann-pan-and-tilt-indoor.json — do not edit by hand.*

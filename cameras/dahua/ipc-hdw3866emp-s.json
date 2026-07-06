@@ -1,0 +1,87 @@
+{
+  "id": "dahua-ipc-hdw3866emp-s",
+  "brand": "Dahua",
+  "model": "IPC-HDW3866EMP-S",
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K/8MP"
+  },
+  "lens": {
+    "count": 1,
+    "varifocal": false,
+    "focal_length_mm": "2.8 (fixed)"
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 256
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "WizSense",
+    "Starlight",
+    "SMD 4.0",
+    "AI SSA",
+    "perimeter protection (tripwire + intrusion)",
+    "human/vehicle classification",
+    "Smart H.265+"
+  ],
+  "markets": [
+    "AU",
+    "global"
+  ],
+  "release_notes": "The Dahua IPC-HDW3866EMP-S is an 8MP 4K WizSense Starlight turret with a fixed 2.8mm lens, 30m IR, SMD 4.0 and AI perimeter protection.",
+  "sources": [
+    "https://www.securitywholesalers.com.au/product/dahua-dh-ipc-hdw3866emp-s-aus-8mp-turret-2-8mm-wizsense-starlight-smd-4-0/"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI (default admin)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "last_verified": "2026-07-06",
+  "sensor": "1/2.8\" CMOS",
+  "field_of_view_deg": "110",
+  "ip_rating": "IP67"
+}

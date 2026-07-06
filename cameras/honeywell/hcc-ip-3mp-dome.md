@@ -8,7 +8,7 @@
 | Model | CALIPD-1AI 3MP IP Dome |
 | Type | dome |
 | Connectivity | ethernet |
-| Resolution | 4MP (4MP, 2688×1520) |
+| Resolution | 1.3MP (1.3MP, 1280×960) |
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 2.8 / 4 (fixed)mm F1.8 |
 | Field of view | 100 horizontal° |

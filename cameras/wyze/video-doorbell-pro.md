@@ -8,7 +8,7 @@
 | Model | Video Doorbell Pro |
 | Type | doorbell |
 | Connectivity | wifi |
-| Resolution | 2K QHD (4MP, 2560×1920) |
+| Resolution | 1080p (2MP, 1920×1080) |
 | Lens | 1× Fixedmm F2.0 |
 | Field of view | 160 diagonal° |
 | Night vision | color (6m) |

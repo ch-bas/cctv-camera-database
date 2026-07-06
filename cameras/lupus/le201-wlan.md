@@ -8,7 +8,7 @@
 | Model | LE201 |
 | Type | bullet |
 | Connectivity | wifi |
-| Resolution | 1080p HD (2MP, 1920×1080) |
+| Resolution | 1.3MP (1.3MP, 1280×960) |
 | Sensor | CMOS |
 | Lens | 1× 2.8 (fixed)mm F2.0 |
 | Field of view | 92 horizontal° |
@@ -35,7 +35,7 @@
 
 ## Sources
 
-- https://www.lupus-electronics.de/
+- https://www.lupus-electronics.de/shop/documents/Datenblatt_10201_LE201_WLAN_.pdf
 
 ---
 *Auto-generated from lupus-le201-wlan.json — do not edit by hand.*

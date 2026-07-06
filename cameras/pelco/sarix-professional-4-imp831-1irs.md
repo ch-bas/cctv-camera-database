@@ -4,7 +4,7 @@
 |-------|------|
 | Brand | Pelco |
 | Model | Sarix Professional 4 IMP831-1IRS |
-| Type | bullet |
+| Type | dome |
 | Connectivity | ethernet |
 | Resolution | 4K UHD (8MP, 3840×2160) |
 | Sensor | 1/1.8" CMOS |

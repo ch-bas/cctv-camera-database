@@ -32,7 +32,7 @@
 
 ## Sources
 
-- https://www.vivotek.com/
+- https://www.vivotek.com/products/network-cameras/bullet/ib9387-eht-a
 
 ---
 *Auto-generated from vivotek-ib9387-eht-v2.json — do not edit by hand.*

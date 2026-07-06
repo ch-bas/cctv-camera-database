@@ -26,7 +26,7 @@
 
 ## Sources
 
-- https://www.marchnetworks.com/
+- https://www.marchnetworks.com/products/cameras/me-series/me8-ir-dome/
 
 ---
 *Auto-generated from march-networks-me8.json — do not edit by hand.*

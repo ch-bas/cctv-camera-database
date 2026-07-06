@@ -6,7 +6,7 @@
 |-------|------|
 | Brand | Lorex |
 | Model | W452ASD (2K Wired Floodlight) |
-| Type | bullet |
+| Type | floodlight |
 | Connectivity | wifi |
 | Resolution | 2K QHD (4MP, 2560×1440) |
 | Sensor | 1/2.8" CMOS |

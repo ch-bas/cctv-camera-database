@@ -8,7 +8,7 @@
 | Model | LE204 |
 | Type | dome |
 | Connectivity | wifi |
-| Resolution | 4MP QHD (4MP, 2560×1440) |
+| Resolution | 3MP (3MP, 2304×1296) |
 | Sensor | CMOS |
 | Lens | 1× 2.8 (fixed)mm F2.0 |
 | Field of view | 107 horizontal° |
@@ -34,7 +34,7 @@
 
 ## Sources
 
-- https://www.lupus-electronics.de/
+- https://www.lupus-electronics.de/shop/en/Video-surveillance/Network-Cameras/Wifi-Cameras/LUPUS-LE204-WLAN-p.html
 
 ---
 *Auto-generated from lupus-le204-wlan.json — do not edit by hand.*

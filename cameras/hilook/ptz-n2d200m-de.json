@@ -1,0 +1,85 @@
+{
+  "id": "hilook-ptz-n2d200m-de",
+  "brand": "HiLook",
+  "model": "PTZ-N2D200M-DE",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p per channel"
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 panoramic / 8 PT",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "TandemVu dual-lens: fixed 2.8mm panoramic + 8mm pan/tilt channel",
+    "Smart Hybrid Light (IR + white) to 30m",
+    "Human Detection + Auto-tracking Lite",
+    "motion detection 2.0",
+    "two-way audio",
+    "PoE 802.3at"
+  ],
+  "markets": [
+    "MENA",
+    "global"
+  ],
+  "release_notes": "The HiLook PTZ-N2D200M-DE is a 2MP dual-lens TandemVu PT camera pairing a fixed 2.8mm panoramic view with a pan/tilt 8mm channel and Smart Hybrid Light to 30m.",
+  "sources": [
+    "https://www.hikvision.com/mena-en/products/HiLook-IP-Products/Network-Cameras/Value-Camera/ptz-n2d200m-de-12/"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "verified": false,
+      "notes": "HiLook uses the Hikvision RTSP path (main 101 / sub 102); enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "HiLook (Hikvision OEM); ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "HiLook uses the Hikvision protocol — select the 'Hikvision' profile."
+    }
+  },
+  "last_verified": "2026-07-06",
+  "sensor": "1/2.9\" CMOS",
+  "ip_rating": "IP66"
+}

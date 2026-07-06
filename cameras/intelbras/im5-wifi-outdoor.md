@@ -8,7 +8,7 @@
 | Model | iM5 |
 | Type | bullet |
 | Connectivity | wifi |
-| Resolution | 3MP 2K (3MP, 2048×1536) |
+| Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | CMOS |
 | Lens | 1× Fixedmm F2.0 |
 | Field of view | 107 horizontal° |

@@ -1,0 +1,88 @@
+{
+  "id": "hikvision-ds-2se4c425mwg-4g",
+  "brand": "Hikvision",
+  "model": "DS-2SE4C425MWG-4G",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet",
+    "4g"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/2.8\" CMOS (dual-channel)",
+  "lens": {
+    "count": 1,
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 100
+  },
+  "power": {
+    "method": "PoE (802.3at) / 12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "25x optical zoom",
+    "TandemVu dual-channel (fixed ColorVu bullet + IR PTZ)",
+    "4G/LTE cellular",
+    "ColorVu full-color + DarkFighter",
+    "AcuSense classification",
+    "linked auto-tracking",
+    "active strobe + audio alarm",
+    "100m IR + 30m white light",
+    "dual mics + speaker",
+    "pan/tilt: pan 360 / tilt -15 to 90"
+  ],
+  "markets": [
+    "global"
+  ],
+  "release_notes": "The Hikvision DS-2SE4C425MWG-4G is a 4MP TandemVu speed dome pairing a fixed ColorVu bullet with a 25x IR PTZ, built-in 4G, two-way audio and active deterrence.",
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000159416/DS-2SE4C425MWG-4G_14_Datasheet_20250615.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "verified": false,
+      "notes": "Hikvision native RTSP (main 101 / sub 102). Multi-channel/TandemVu units expose each channel as 201/301 etc. — enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "last_verified": "2026-07-06",
+  "ip_rating": "IP67"
+}

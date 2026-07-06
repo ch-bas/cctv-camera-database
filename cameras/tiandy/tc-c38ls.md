@@ -30,7 +30,7 @@
 
 ## Sources
 
-- https://www.tiandy.com/
+- https://tiandy.com.au/product/tc-c38ls/
 
 ---
 *Auto-generated from tiandy-tc-c38ls.json — do not edit by hand.*

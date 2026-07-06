@@ -1,0 +1,87 @@
+{
+  "id": "hikvision-ds-2sf8c442mxg1-elw",
+  "brand": "Hikvision",
+  "model": "DS-2SF8C442MXG1-ELW",
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3680,
+    "max_height": 1656,
+    "label": "6MP panoramic + 4MP 42x PTZ"
+  },
+  "sensor": "1/2.5\" + 1/1.8\" CMOS (dual-channel)",
+  "lens": {
+    "count": 2,
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 300
+  },
+  "power": {
+    "method": "Hi-PoE (802.3bt) / 36 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 1024
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "42x optical zoom",
+    "TandemVu dual-channel panoramic (190) + PTZ",
+    "DarkFighter 2.0 24/7 color",
+    "auto-tracking 3.0",
+    "active deterrence (30m white-light flash + audible warning)",
+    "IR up to 300m",
+    "300 presets",
+    "deep-learning face capture / LPR",
+    "pan/tilt: pan 360 / tilt -20 to 90",
+    "IK10 vandal-resistant"
+  ],
+  "markets": [
+    "global"
+  ],
+  "release_notes": "The Hikvision DS-2SF8C442MXG1-ELW is a TandemVu dual-channel dome pairing a 6MP 190-degree panoramic channel with a 4MP 42x DarkFighter 2.0 PTZ, IR to 300m and active deterrence.",
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000074502/DS-2SF8C442MXG1-ELW_26_Datasheet_20260620.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "verified": false,
+      "notes": "Hikvision native RTSP (main 101 / sub 102). Multi-channel/TandemVu units expose each channel as 201/301 etc. — enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "last_verified": "2026-07-06",
+  "ip_rating": "IP67"
+}

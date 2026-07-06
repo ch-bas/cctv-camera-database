@@ -1,0 +1,86 @@
+{
+  "id": "hikvision-ds-2de4825wg-e3",
+  "brand": "Hikvision",
+  "model": "DS-2DE4825WG-E3",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "color"
+  },
+  "power": {
+    "method": "PoE / 12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "25x optical zoom + 16x digital",
+    "pan/tilt: pan 360 / tilt 0 to 90",
+    "powered-by-DarkFighter low-light (no IR — indoor)",
+    "smart/auto tracking",
+    "120dB WDR",
+    "3D positioning",
+    "300 presets",
+    "in-ceiling compact design",
+    "built-in eMMC up to 128GB",
+    "IP54 indoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "release_notes": "The Hikvision DS-2DE4825WG-E3 is an 8MP/4K powered-by-DarkFighter indoor speed dome with 25x optical zoom and no IR (IP54, in-ceiling).",
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000148772/DS-2DE4825WG-E3_Datasheet_20251209.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "verified": false,
+      "notes": "Hikvision native RTSP (main 101 / sub 102). TandemVu units expose each channel separately — enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "last_verified": "2026-07-06",
+  "ip_rating": "IP54"
+}

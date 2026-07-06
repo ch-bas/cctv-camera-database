@@ -4,7 +4,7 @@
 |-------|------|
 | Brand | Milesight |
 | Model | MS-C5362-FPA |
-| Type | dome |
+| Type | bullet |
 | Connectivity | ethernet |
 | Resolution | 5MP (5MP, 2592×1944) |
 | Sensor | 1/2.7" Progressive Scan CMOS |

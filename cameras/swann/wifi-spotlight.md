@@ -30,7 +30,7 @@
 
 ## Sources
 
-- https://www.swann.com/
+- https://support.swann.com/hc/en-us/articles/4714813018905-SWIFI-SPOTCAM-Outdoor-Wireless-Security-Camera
 
 ---
 *Auto-generated from swann-wifi-spotlight.json — do not edit by hand.*

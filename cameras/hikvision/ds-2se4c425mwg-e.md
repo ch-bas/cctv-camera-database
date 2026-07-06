@@ -6,7 +6,7 @@
 | Model | DS-2SE4C425MWG-E |
 | Type | ptz |
 | Connectivity | ethernet |
-| Resolution | 4MP+4MP TandemVu (8MP) |
+| Resolution | 4MP+4MP TandemVu (4MP) |
 | Sensor | Dual CMOS |
 | Lens | 2× 2.8mm wide + 4.8-120mm 25x PTZmm |
 | Field of view | 60-2.5h° |

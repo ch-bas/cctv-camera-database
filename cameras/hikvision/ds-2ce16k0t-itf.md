@@ -17,6 +17,7 @@
 
 ## Features
 
+- Analog Turbo HD (TVI/AHD/CVI/CVBS) over coax/BNC — NOT an IP camera
 - Turbo HD (HD-TVI) analog over coax
 - 5MP TurboHD Analog bullet
 - 40m IR

@@ -6,7 +6,7 @@
 | Model | Spectra Professional 4K S6230-FWL1 |
 | Type | ptz |
 | Connectivity | ethernet |
-| Resolution | 4K UHD (8MP, 3840×2160) |
+| Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/1.8" CMOS |
 | Lens | 1× 6.5-202mm |
 | Field of view | 54-2.1 horizontal° |

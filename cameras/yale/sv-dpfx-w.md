@@ -31,7 +31,7 @@
 
 ## Sources
 
-- https://www.yale.co.uk/
+- https://www.yalehome.com/hr/en/products/security-cameras/indoor-wifi-camera-pantilt
 
 ---
 *Auto-generated from yale-sv-dpfx-w.json — do not edit by hand.*

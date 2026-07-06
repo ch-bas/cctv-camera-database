@@ -8,7 +8,7 @@
 | Model | LE213 |
 | Type | ptz |
 | Connectivity | wifi |
-| Resolution | 4MP QHD (4MP, 2560×1440) |
+| Resolution | 3MP (3MP, 2304×1296) |
 | Sensor | CMOS |
 | Lens | 1× Fixedmm F2.0 |
 | Field of view | 355 pan / 90 tilt° |
@@ -33,7 +33,7 @@
 
 ## Sources
 
-- https://www.lupus-electronics.de/
+- https://www.lupus-electronics.de/shop/en/Video-surveillance/Network-Cameras/Wifi-Cameras/LUPUS-LE213-WLAN-white-p.html
 
 ---
 *Auto-generated from lupus-le213-ai.json — do not edit by hand.*

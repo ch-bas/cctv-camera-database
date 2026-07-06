@@ -8,7 +8,7 @@
 | Model | UniFi Protect G5 Bullet |
 | Type | bullet |
 | Connectivity | ethernet |
-| Resolution | 2K (5MP, 2688×1512) |
+| Resolution | 2K/4MP (4MP, 2688×1520) |
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 2.8mm F1.6 |
 | Field of view | 84.4 horizontal / 45.4 vertical / 99.8 diagonal° |

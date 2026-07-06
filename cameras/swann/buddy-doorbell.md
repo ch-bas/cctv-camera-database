@@ -25,7 +25,7 @@
 
 ## Sources
 
-- https://au.swann.com/
+- https://us.swann.com/swifi-buddy/
 
 ---
 *Auto-generated from swann-buddy-doorbell.json — do not edit by hand.*

@@ -6,7 +6,7 @@
 | Model | Camera Hub G3 |
 | Type | ptz |
 | Connectivity | wifi, ethernet |
-| Resolution | 4MP QHD (4MP, 2304×1296) |
+| Resolution | 3MP (3MP, 2304×1296) |
 | Sensor | CMOS |
 | Lens | 1× 3 fixedmm F1.8 |
 | Field of view | 360 pan / 90 tilt° |

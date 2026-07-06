@@ -4,7 +4,7 @@
 |-------|------|
 | Brand | March Networks |
 | Model | SE2 |
-| Type | bullet |
+| Type | dome |
 | Connectivity | ethernet |
 | Resolution | 1080p FHD (2MP, 1920×1080) |
 | Sensor | 1/2.8" CMOS |
@@ -25,7 +25,7 @@
 
 ## Sources
 
-- https://www.marchnetworks.com/
+- https://www.marchnetworks.com/news/new-se2-series-ip-cameras/
 
 ---
 *Auto-generated from march-networks-se2.json — do not edit by hand.*

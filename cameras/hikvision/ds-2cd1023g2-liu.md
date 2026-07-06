@@ -30,7 +30,7 @@
 
 ## Sources
 
-- https://www.hikvision.com/
+- https://assets.hikvision.com/prd/public/all/doc/sm000042453/DS-2CD1023G2-LIUF_Datasheet_20230914.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd1023g2-liu.json — do not edit by hand.*

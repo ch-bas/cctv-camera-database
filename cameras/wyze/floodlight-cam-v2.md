@@ -6,7 +6,7 @@
 | Model | Floodlight Cam v2 |
 | Type | bullet |
 | Connectivity | wifi |
-| Resolution | 2K QHD (4MP, 2560×1440) |
+| Resolution | 3MP (3MP, 2304×1296) |
 | Sensor | CMOS |
 | Lens | 1× 2.8 (fixed)mm F1.8 |
 | Field of view | 160 diagonal° |

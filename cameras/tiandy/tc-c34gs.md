@@ -29,7 +29,7 @@
 
 ## Sources
 
-- https://www.tiandy.com/
+- https://www.anabon.com/wp-content/uploads/2020/12/TC-C34GS-Spec-I5-E-C-4mm.pdf
 
 ---
 *Auto-generated from tiandy-tc-c34gs.json — do not edit by hand.*

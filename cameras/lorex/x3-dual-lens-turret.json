@@ -67,11 +67,34 @@
     "ONVIF/RTSP confirmed via official datasheet"
   ],
   "sources": [
-    "https://www.lorex.com/products/connect-x3-series-turret-ip-camera-dual-lens",
-    "https://d2zri47w41ywm3.cloudfront.net/downloads/ip-cameras/CNU01P-1SW-AB1/CNU01P-1SW-AB1_Specifications_EN_R1.pdf"
+    "https://www.lorex.com/products/connect-x3-series-turret-ip-camera-dual-lens"
   ],
   "power_source": [
     "poe",
     "dc"
-  ]
+  ],
+  "last_verified": "2026-07-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Lorex PoE cameras expose RTSP once enabled in the web UI; newer Connect models are ONVIF-conformant — if the Dahua-style /cam/realmonitor path fails, use ONVIF auto-discovery."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Add as ONVIF/RTSP; enable RTSP in the Lorex web UI first."
+    }
+  }
 }

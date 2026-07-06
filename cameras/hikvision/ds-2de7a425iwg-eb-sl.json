@@ -1,0 +1,88 @@
+{
+  "id": "hikvision-ds-2de7a425iwg-eb-sl",
+  "brand": "Hikvision",
+  "model": "DS-2DE7A425IWG-EB/SL",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 200
+  },
+  "power": {
+    "method": "Hi-PoE / 36 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "25x optical zoom",
+    "powered-by-DarkFighter low-light",
+    "AcuSense human/vehicle classification",
+    "active deterrence: sound + strobe light to 100m",
+    "IR up to 200m (850nm)",
+    "2 built-in speakers",
+    "auto-tracking",
+    "300 presets",
+    "face capture",
+    "pan/tilt: pan 360 / tilt -15 to 90",
+    "IK10 vandal-resistant"
+  ],
+  "markets": [
+    "global"
+  ],
+  "release_notes": "The Hikvision DS-2DE7A425IWG-EB/SL is a 4MP 25x IR AcuSense PTZ speed dome; the /SL variant adds sound + strobe-light active deterrence effective to 100m.",
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000161011/DS-2DE7A425IWG-EB_SL_Datasheet_20250514.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "verified": false,
+      "notes": "Hikvision native RTSP (main 101 / sub 102). Multi-channel/TandemVu units expose each channel as 201/301 etc. — enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "last_verified": "2026-07-06",
+  "ip_rating": "IP67"
+}

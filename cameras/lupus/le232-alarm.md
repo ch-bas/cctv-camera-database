@@ -36,7 +36,7 @@
 
 ## Sources
 
-- https://www.lupus-electronics.de/
+- https://www.lupus-electronics.de/shop/en/Video-surveillance/Network-Cameras/Tube-Cameras/LUPUS-LE232-Alarm-camera-p.html
 
 ---
 *Auto-generated from lupus-le232-alarm.json — do not edit by hand.*

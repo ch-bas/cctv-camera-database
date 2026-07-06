@@ -26,7 +26,7 @@
 
 ## Sources
 
-- https://www.yalehome.co.uk/
+- https://www.yalehome.com/it/en/products/smart-security-ecosystem/smart-cameras/smart-video-doorbell
 
 ---
 *Auto-generated from yale-sv-dbc-b.json — do not edit by hand.*

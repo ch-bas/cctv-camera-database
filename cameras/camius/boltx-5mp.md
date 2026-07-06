@@ -25,7 +25,7 @@
 
 ## Sources
 
-- https://camius.com/
+- https://www.camius.com/outdoor-ip-camera-boltx5pa
 
 ---
 *Auto-generated from camius-boltx-5mp.json — do not edit by hand.*

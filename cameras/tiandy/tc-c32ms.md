@@ -4,7 +4,7 @@
 |-------|------|
 | Brand | Tiandy |
 | Model | TC-C32MS |
-| Type | turret |
+| Type | dome |
 | Connectivity | ethernet |
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/2.8" Super Starlight CMOS |
@@ -27,7 +27,7 @@
 
 ## Sources
 
-- https://www.tiandy.com/
+- https://www.cctvcameraexpert.com/network-ip-camera/57613765.html
 
 ---
 *Auto-generated from tiandy-tc-c32ms.json — do not edit by hand.*

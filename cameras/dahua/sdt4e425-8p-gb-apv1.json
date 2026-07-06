@@ -1,0 +1,85 @@
+{
+  "id": "dahua-sdt4e425-8p-gb-apv1",
+  "brand": "Dahua",
+  "model": "SDT4E425-8P-GB-APV1",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP panoramic + 4MP PTZ"
+  },
+  "lens": {
+    "count": 1,
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 100
+  },
+  "power": {
+    "method": "Hi-PoE (802.3bt) / 24 VAC"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "WizSense",
+    "TiOC 2.0",
+    "dual-sensor: 8MP 180 panoramic + 4MP 25x-optical PTZ",
+    "Smart Dual Light",
+    "25x optical zoom",
+    "Auto Tracking 3.0",
+    "active deterrence (strobe + siren)",
+    "IR/warm light to 100m"
+  ],
+  "markets": [
+    "AU",
+    "global"
+  ],
+  "release_notes": "The Dahua SDT4E425-8P-GB-APV1 is a dual-sensor TiOC 2.0 PTZ pairing an 8MP 180-degree panoramic view with a 4MP 25x optical-zoom PTZ, plus Auto Tracking 3.0 and active deterrence.",
+  "sources": [
+    "https://www.securitywholesalers.com.au/product/dahua-dh-sdt4e425-8p-gb-apv1-x-spans-8mp4mp-25x-tioc-wizsense-network-ptz-camera/"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI (default admin)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "last_verified": "2026-07-06",
+  "sensor": "STARVIS CMOS",
+  "field_of_view_deg": "180"
+}

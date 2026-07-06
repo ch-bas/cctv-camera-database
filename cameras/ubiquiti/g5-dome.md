@@ -8,7 +8,7 @@
 | Model | UniFi Protect G5 Dome |
 | Type | dome |
 | Connectivity | ethernet |
-| Resolution | 2K (5MP, 2688×1512) |
+| Resolution | 2K/4MP (4MP, 2688×1520) |
 | Sensor | 5MP CMOS |
 | Lens | 1× |
 | Field of view | 102.4 horizontal / 54.9 vertical / 120.6 diagonal° |

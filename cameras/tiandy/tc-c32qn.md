@@ -4,7 +4,7 @@
 |-------|------|
 | Brand | Tiandy |
 | Model | TC-C32QN |
-| Type | dome |
+| Type | bullet |
 | Connectivity | ethernet |
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/2.8" CMOS |
@@ -27,7 +27,7 @@
 
 ## Sources
 
-- https://www.tiandy.com/
+- https://lancetrend.com/product/tiandy-tc-c32qn-fixed-bullet/
 
 ---
 *Auto-generated from tiandy-tc-c32qn.json — do not edit by hand.*

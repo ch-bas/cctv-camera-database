@@ -4,7 +4,7 @@
 |-------|------|
 | Brand | Somfy |
 | Model | Somfy One+ |
-| Type | covert |
+| Type | dome |
 | Connectivity | wifi |
 | Resolution | 1080p HD (2MP, 1920×1080) |
 | Lens | 1× |
@@ -27,7 +27,7 @@
 
 ## Sources
 
-- https://www.somfy.fr/
+- https://www.somfy.me/en-gc/products/2401493/somfy-one
 
 ---
 *Auto-generated from somfy-one-plus.json — do not edit by hand.*

@@ -1,11 +1,11 @@
-# Hikvision DS-2DE4425IWG-E (India)
+# Hikvision DS-2DE4425IWG-E
 
 *Also known as: 4MP 25x PTZ Network Camera India, Prama Hikvision 4MP PTZ*
 
 | Field | Spec |
 |-------|------|
 | Brand | Hikvision |
-| Model | DS-2DE4425IWG-E (India) |
+| Model | DS-2DE4425IWG-E |
 | Type | ptz |
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2688×1520) |

@@ -29,7 +29,7 @@
 
 ## Sources
 
-- https://www.uniview.com/
+- https://www.uniview.com/Backup_Products/Cameras/Easy/IPC2122LE-ADF28(40)KMC-WL/
 
 ---
 *Auto-generated from uniview-ipc2122le-adf40kmc-wl.json — do not edit by hand.*

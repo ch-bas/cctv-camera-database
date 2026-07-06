@@ -1,0 +1,75 @@
+{
+  "id": "hikvision-ds-2xs6a25g0-i",
+  "brand": "Hikvision",
+  "model": "DS-2XS6A25G0-I/CH20S40",
+  "type": "bullet",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2022,
+  "resolution": {
+    "megapixels": 2,
+    "label": "1080p HD"
+  },
+  "field_of_view_deg": "103h",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 60
+  },
+  "power": {
+    "method": "Built-in solar panel + 10,400mAh battery"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Hikvision solar-powered WiFi AcuSense bullet",
+    "solar always-on",
+    "10,400mAh battery backup",
+    "60m IR",
+    "AcuSense AI",
+    "H.265+",
+    "IP67"
+  ],
+  "sources": [
+    "https://www.hikvision.com/en/products/"
+  ],
+  "power_source": [
+    "battery",
+    "solar"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "notes": "Solar/battery powered enterprise camera — RTSP/ONVIF fully supported, but continuous 24/7 streaming will drain the battery faster than solar recharge in low-light seasons. Use sub-stream detection at low fps and motion-triggered recording."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80. Enable in Configuration > Network > Integration Protocol."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile. Use main stream for recording, sub stream for live view."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

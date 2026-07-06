@@ -8,7 +8,7 @@
 | Model | Outdoor Camera |
 | Type | bullet |
 | Connectivity | wifi |
-| Resolution | 2K QHD (4MP, 2560×1440) |
+| Resolution | 1080p (2MP, 1920×1080) |
 | Lens | 1× Fixedmm F1.6 |
 | Field of view | 140 horizontal° |
 | Night vision | color (12m) |

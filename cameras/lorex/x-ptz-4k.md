@@ -36,7 +36,6 @@
 ## Sources
 
 - https://www.lorex.com/products/connect-x-series-ptz-ip-camera
-- https://d2zri47w41ywm3.cloudfront.net/downloads/ip-cameras/CNX01P-DPW-AB1/CNX01P-DPW-AB1_Specifications_EN_R1.pdf
 
 ---
 *Auto-generated from lorex-x-ptz-4k.json — do not edit by hand.*

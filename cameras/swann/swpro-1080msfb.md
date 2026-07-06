@@ -30,7 +30,7 @@
 
 ## Sources
 
-- https://www.swann.com/
+- https://support.swann.com/hc/en-us/articles/35834975254169-PRO-1080MSFB-1080p-Thermal-Sensing-Sensor-Warning-Light-Bullet-Security-Camera
 
 ---
 *Auto-generated from swann-swpro-1080msfb.json — do not edit by hand.*

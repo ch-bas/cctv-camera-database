@@ -28,7 +28,7 @@
 
 ## Sources
 
-- https://www.tvt.net.cn/
+- https://www.tvt.net.cn/products/1690.html
 
 ---
 *Auto-generated from tvt-td-8423is-a.json — do not edit by hand.*

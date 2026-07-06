@@ -33,7 +33,7 @@
 
 ## Sources
 
-- https://www.somfy.fr/
+- https://service.somfy.com/downloads/bui_v4/2401507--somfy-indoor-camera--sales-sheet--en.pdf
 
 ---
 *Auto-generated from somfy-indoor-camera.json — do not edit by hand.*

@@ -30,7 +30,7 @@
 
 ## Sources
 
-- https://www.hivehome.com/
+- https://www.hivehome.com/shop/smart-home-security/hive-view
 
 ---
 *Auto-generated from hive-view-indoor.json — do not edit by hand.*

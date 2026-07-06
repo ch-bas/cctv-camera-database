@@ -4,7 +4,7 @@
 |-------|------|
 | Brand | Milesight |
 | Model | MS-C2983-PB |
-| Type | bullet |
+| Type | dome |
 | Connectivity | ethernet |
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/2.8" Starlight CMOS |

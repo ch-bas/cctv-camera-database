@@ -30,7 +30,7 @@
 
 ## Sources
 
-- https://www.swann.com/
+- https://www.amazon.com/Swann-Smart-Security-Camera-Wireless/dp/B0764KFR9D
 
 ---
 *Auto-generated from swann-swwhd-intcam.json — do not edit by hand.*

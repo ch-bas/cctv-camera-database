@@ -26,7 +26,7 @@
 
 ## Sources
 
-- https://www.yalehome.co.uk/
+- https://yalehome.co.uk/floodlight-camera/
 
 ---
 *Auto-generated from yale-sv-floodlight.json — do not edit by hand.*

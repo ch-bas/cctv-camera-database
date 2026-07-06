@@ -4,7 +4,7 @@
 |-------|------|
 | Brand | Milesight |
 | Model | MS-C2942-EPB |
-| Type | fisheye |
+| Type | ptz |
 | Connectivity | ethernet |
 | Resolution | 2MP Fisheye (2MP) |
 | Sensor | 1/2.8" Progressive Scan CMOS |

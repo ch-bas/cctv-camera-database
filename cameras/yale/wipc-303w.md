@@ -30,7 +30,7 @@
 
 ## Sources
 
-- https://www.yale.co.uk/
+- https://www.yalehome.com/in/en/products/smart-products/ip-camera/yale-wipc-303w-home-view-pantilt-and-zoom-ip-camera-white
 
 ---
 *Auto-generated from yale-wipc-303w.json — do not edit by hand.*

@@ -25,7 +25,7 @@
 
 ## Sources
 
-- https://simplisafe.com/
+- https://simplisafe.com/smart-alarm-wireless-indoor-camera
 
 ---
 *Auto-generated from simplisafe-indoor-cam-v2.json — do not edit by hand.*

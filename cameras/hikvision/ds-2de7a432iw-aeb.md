@@ -33,7 +33,7 @@
 
 ## Sources
 
-- https://www.hikvision.com/
+- https://www.hikvision.com/us-en/products/network-products/ip-ptz-cameras/pro-series/ds-2de7a432iw-aeb/
 
 ---
 *Auto-generated from hikvision-ds-2de7a432iw-aeb.json — do not edit by hand.*

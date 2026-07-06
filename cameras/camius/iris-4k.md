@@ -25,7 +25,7 @@
 
 ## Sources
 
-- https://camius.com/
+- https://www.camius.com/4k-poe-dome-camera-iris8r/
 
 ---
 *Auto-generated from camius-iris-4k.json — do not edit by hand.*

@@ -1,0 +1,88 @@
+{
+  "id": "hifocus-hc-ipc-sd3380e",
+  "brand": "Hi-Focus",
+  "model": "HC-IPC-SD3380E",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K/8MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.3-144",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 200
+  },
+  "power": {
+    "method": "PoE+ (802.3at) / AC 24V / DC 24V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": false
+  },
+  "features": [
+    "33x optical + 16x digital zoom",
+    "200m Smart IR",
+    "360 presets, 8 patrol patterns",
+    "endless 360 pan",
+    "auto-tracking / object detection",
+    "120dB WDR",
+    "snow-removing (defog)",
+    "ICR day/night"
+  ],
+  "markets": [
+    "IN",
+    "global"
+  ],
+  "release_notes": "The Hi-Focus HC-IPC-SD3380E is an 8MP/4K network PTZ camera with 33x optical zoom, 200m Smart IR, 360 presets and embedded auto-tracking analytics.",
+  "sources": [
+    "https://hifocuscctv.com/categories/network-ptz-cameras/8mp-network-ptz-camera-hc-ipc-sd3380e"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Hi-Focus PTZ is Dahua-OEM — standard Dahua RTSP path; enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua-OEM; the ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Hi-Focus PTZ uses the Dahua protocol — select the 'Dahua' profile (or Generic/ONVIF)."
+    }
+  },
+  "last_verified": "2026-07-06",
+  "ip_rating": "IP67"
+}

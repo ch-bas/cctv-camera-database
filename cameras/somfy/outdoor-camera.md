@@ -33,7 +33,7 @@
 
 ## Sources
 
-- https://www.somfy.fr/
+- https://service.somfy.com/downloads/bui_v4/2401560-and-2401563--somfy-outdoor-camera--sales-sheet--en2-rd.pdf
 
 ---
 *Auto-generated from somfy-outdoor-camera.json — do not edit by hand.*

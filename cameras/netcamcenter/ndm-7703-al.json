@@ -1,0 +1,96 @@
+{
+  "id": "netcamcenter-ndm-7703-al",
+  "brand": "NetCamCenter",
+  "model": "NDM-7703-AL",
+  "aliases": [
+    "Bosch FLEXIDOME multi 7000i IR",
+    "Bosch F.01U.389.265"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 20,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "20MP (4x 5MP imagers)"
+  },
+  "sensor": "4x 1/2.7\" CMOS",
+  "lens": {
+    "count": 4,
+    "focal_length_mm": "3.7-7.7",
+    "varifocal": true
+  },
+  "field_of_view_deg": "85.1-38.7 horizontal per imager; up to 360 combined",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE+ / PoE++ / 24 VAC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2000,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "Four independent 5MP imagers with motorized zoom/focus on a single IP address",
+    "Integrated 360 surround IR up to 30 m",
+    "Up to 360 coverage (imagers adjustable on 4 axes)",
+    "120 dB HDR/WDR",
+    "Bosch Intelligent Video Analytics + Camera Trainer",
+    "Two-way audio (intercom) with built-in mic",
+    "microSD recording up to 2 TB with 5s pre-alarm buffer",
+    "IK10 vandal rating",
+    "NDAA-compliant",
+    "TPM/Secure Element (RSA 4096, AES-256, 802.1x)",
+    "-50C to +55C; PoE+/PoE++ or 24 VAC"
+  ],
+  "markets": [
+    "EU",
+    "global"
+  ],
+  "release_notes": "The NetCamCenter NDM-7703-AL (Bosch FLEXIDOME multi 7000i IR OEM) is a 20MP outdoor multi-imager panoramic dome pairing four independently aimable 5MP imagers and motorized zoom/focus lenses on one IP address with 360 surround IR to 30 m, 30 fps H.265, 120 dB HDR, two-way audio and onboard Intelligent Video Analytics.",
+  "sources": [
+    "https://netcamcenter.de/de/produkte/ip-kameras/ndm-7703-al",
+    "https://netcamcenter.de/media/documents/NDM_7703_AL_Fixed_do_Data_sheet_deDE_84181084299.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/rtsp_tunnel",
+      "best_substream": "rtsp://{user}:{pass}@{ip}/rtsp_tunnel?inst=2",
+      "verified": false,
+      "notes": "Bosch OEM (FLEXIDOME multi 7000i) multi-imager — each of the 4 imagers exposes its own stream. Use ONVIF auto-discovery to enumerate the imager streams."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Bosch is ONVIF-conformant; add each of the 4 imagers via the ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Bosch OEM — use the ONVIF/RTSP (or 'Bosch') profile; add each imager as a separate camera."
+    }
+  },
+  "last_verified": "2026-07-06"
+}
