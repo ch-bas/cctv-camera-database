@@ -8,7 +8,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [1.28.0] — 2026-07-06
 
-Major data-quality audit of **48 previously-unaudited small/mid brands**, removal of fabricated data, and large expansions of Dahua, Hikvision and HiLook — plus one new brand and one rebuilt brand. Net: **1,900 → 1,896 cameras**, **75 → 71 brands**.
+Major data-quality audit of **48 previously-unaudited small/mid brands**, removal of fabricated data, and large expansions of Dahua, Hikvision and HiLook — plus one new brand and one rebuilt brand. Net: **1,900 → 1,894 cameras**, **75 → 71 brands**.
 
 ### Audit — 48 small/mid brands verified against official manufacturer sources
 
@@ -29,6 +29,10 @@ Major data-quality audit of **48 previously-unaudited small/mid brands**, remova
 - **Dahua +22:** WizSense Starlight / Smart Dual Light, WizMind AI (incl. 12MP Ultra), WizColor, and dual-sensor TiOC panoramic PTZs.
 - **Hikvision +32:** ColorVu Gen2 / ColorVu 3.0 / Smart Hybrid Light turrets, bullets and domes (incl. dual-head 180° panoramic), and AcuSense DarkFighter / TandemVu / PanoVu IP PTZ speed domes.
 - **HiLook +11:** PTZ-N2C mini-PT and PTZ-N2D TandemVu dual-lens PT cameras, IPC value-line dome/turret, and ColorVu 3.0 active-deterrence HAA-LU models.
+
+### Spot-check fixes
+
+- Filled Speco `O12B1M` missing resolution (4000×3000), corrected Tapo `C110` type (fixed cube → `box`), and removed 2 Reolink regional-duplicate entries (Argus 3 Pro AU, Argus 4 Pro AT).
 
 ### Scope — analog Turbo HD (opt-in)
 

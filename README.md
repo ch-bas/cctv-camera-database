@@ -1,8 +1,8 @@
 # CCTV Camera Database
 
-An open, structured database of 1,896 CCTV / IP camera models and their technical specifications, covering 71 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
+An open, structured database of 1,894 CCTV / IP camera models and their technical specifications, covering 71 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
 
-[![cameras](https://img.shields.io/badge/cameras-1%2C896-blue)](data/cameras.json)
+[![cameras](https://img.shields.io/badge/cameras-1%2C894-blue)](data/cameras.json)
 [![brands](https://img.shields.io/badge/brands-71-green)](cameras/)
 [![license](https://img.shields.io/badge/license-CC0-lightgrey)](LICENSE)
 
@@ -31,7 +31,7 @@ Prefer to self-host or browse offline? A [standalone demo](docs/demo.html) (just
 - **Filter** — narrow by brand, camera type, night vision, resolution, or market
 - **Sort** — click any column header to sort ascending/descending
 - **Detail drawer** — click a row to slide open the full spec sheet (resolution, connectivity, protocols, storage, audio, pricing, source links)
-- **Pagination** — page through all 1,896 cameras, 25 per page
+- **Pagination** — page through all 1,894 cameras, 25 per page
 - **Stats bar** — live counts for total cameras, brands, 4K+, WiFi, and no-subscription models
 
 ---
@@ -63,7 +63,7 @@ cctv-camera-database/
 │   ├── tapo/             #  62 cameras
 │   └── …60 more brands
 ├── data/                 # GENERATED — do not edit by hand
-│   ├── cameras.json      # all 1,896 cameras as one array
+│   ├── cameras.json      # all 1,894 cameras as one array
 │   └── cameras.csv       # flattened, spreadsheet-friendly
 ├── schema/
 │   └── camera.schema.json
@@ -121,16 +121,16 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 
 | Metric | Count |
 |--------|-------|
-| Total cameras | **1,896** |
+| Total cameras | **1,894** |
 | Brands | **71** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
 | PoE wired | 1,279 |
-| WiFi | 503 |
-| Battery / wire-free | 180 |
-| 4K / 8MP+ | 545 |
-| 4–5MP | 706 |
+| WiFi | 501 |
+| Battery / wire-free | 178 |
+| 4K / 8MP+ | 544 |
+| 4–5MP | 705 |
 | 1080p–2MP | 487 |
-| With integration configs (Frigate / Home Assistant) | 1,507 | 1,514 | 1,533 | 1,321 |
+| With integration configs (Frigate / Home Assistant) | 1,505 | 1,507 | 1,514 | 1,533 | 1,321 |
 
 ### All 71 brands
 
@@ -140,7 +140,7 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | Dahua | 156 | Enterprise + consumer, global |
 | Bosch | 153 | Enterprise + thermal, EU/global |
 | ACTi | 119 | Enterprise IP + analog, NDAA, TW/global |
-| Reolink | 116 | Prosumer, no-subscription, global |
+| Reolink | 114 | Prosumer, no-subscription, global |
 | EZVIZ (Hikvision) | 87 | Consumer, global |
 | ABUS | 85 | Consumer + professional, GDPR-first, DE/AT/CH |
 | Axis | 61 | Enterprise premium, global |
