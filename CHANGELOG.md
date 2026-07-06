@@ -6,6 +6,31 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.28.0] — 2026-07-06
+
+Major data-quality audit of **48 previously-unaudited small/mid brands**, removal of fabricated data, and large expansions of Dahua, Hikvision and HiLook — plus one new brand and one rebuilt brand. Net: **1,900 → 1,922 cameras**, **75 → 71 brands**.
+
+### Audit — 48 small/mid brands verified against official manufacturer sources
+
+- Verified every model of 48 brands (VIGI, Lorex, Ubiquiti, Blink, Wyze, GeoVision, Swann, Milesight, Vivotek, Pelco, Google Nest, HiLook, Uniview, Tiandy, Lupus, TVT, Synology, FLIR, Mobotix, Yale, Luma, Intelbras, Netatmo, March Networks, LaView, Camius, Hive, Qubo, Godrej, ADT, Verkada, Steinel, Somfy, IDIS, i-PRO, Aqara, Bosch Smart Home, Kasa, Honeywell, SimpliSafe, and more).
+- **Removed 143 entries:** 55+ fabricated "ghost" model numbers (real product families with invented model codes that 404 on the manufacturer site), Swann NVR kits + Turbo-HD analog cams that were out of the IP-camera scope, and regional/color duplicates.
+- **6 brands were found to be entirely fabricated and removed:** Sunell, Zebronics, Cathexis (a VMS-only software vendor that makes no cameras), Secureye, KBVision — and Hi-Focus (later rebuilt from real models, see below).
+- Corrected dozens of form-factor `type` and `megapixels` values; replaced bare-homepage sources with verified product/spec URLs; stamped `last_verified` on every surviving entry.
+
+### Brand rebuilds & additions
+
+- **Hi-Focus rebuilt (0 → 60)** from real `hifocuscctv.com` models — current PTZ/dome/turret/bullet, Wi-Fi/4G, and discontinued IP lines, with OEM origin noted per model (Dahua / Uniview) and matching RTSP configs.
+- **New brand — NetCamCenter (2):** `NDM-7702-A` / `NDM-7703-AL`, Bosch FLEXIDOME multi 7000i OEM multi-imager panoramic domes.
+- **Dahua +22:** WizSense Starlight / Smart Dual Light, WizMind AI (incl. 12MP Ultra), WizColor, and dual-sensor TiOC panoramic PTZs.
+- **Hikvision +32:** ColorVu Gen2 / ColorVu 3.0 / Smart Hybrid Light turrets, bullets and domes (incl. dual-head 180° panoramic), and AcuSense DarkFighter / TandemVu / PanoVu IP PTZ speed domes.
+- **HiLook +11:** PTZ-N2C mini-PT and PTZ-N2D TandemVu dual-lens PT cameras, IPC value-line dome/turret, and ColorVu 3.0 active-deterrence HAA-LU models.
+
+### Scope — analog Turbo HD (opt-in)
+
+- Added **Hikvision Turbo HD analog cameras** (`connectivity: coax`, 4-in-1 switchable TVI/AHD/CVI/CVBS, no ONVIF/RTSP): DS-2AE PTZ speed domes and DS-2CE Smart-Hybrid dual-light / EXIR / ultra-low-light bullets, turrets and box cameras. Each is flagged "NOT an IP camera" in features. This deliberately extends the dataset beyond IP-only per an explicit scope decision.
+
+---
+
 ## [1.27.0] — 2026-07-05
 
 Full data-quality audits + expansions of the **ABUS** (76 → 85) and **SV3C** (13 → 17) brands. Net: **1,887 → 1,900 cameras**.
