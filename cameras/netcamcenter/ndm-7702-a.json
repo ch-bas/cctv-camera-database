@@ -1,0 +1,91 @@
+{
+  "id": "netcamcenter-ndm-7702-a",
+  "brand": "NetCamCenter",
+  "model": "NDM-7702-A",
+  "aliases": [
+    "Bosch FLEXIDOME multi 7000i",
+    "Bosch F.01U.389.262"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 12,
+    "max_width": 2048,
+    "max_height": 1536,
+    "label": "12MP (4x 3MP imagers)"
+  },
+  "sensor": "4x 1/2.7\" CMOS",
+  "lens": {
+    "count": 4,
+    "focal_length_mm": "3.7-7.7",
+    "varifocal": true
+  },
+  "field_of_view_deg": "81.9-39.5 horizontal per imager; up to 360 combined",
+  "night_vision": {
+    "type": "none"
+  },
+  "power": {
+    "method": "PoE+ (802.3at) / 24 VAC"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "Four independent 3MP imagers with motorized zoom/focus on a single IP address",
+    "Up to 360 coverage (imagers adjustable on 4 axes)",
+    "120 dB HDR/WDR",
+    "Bosch Intelligent Video Analytics + Camera Trainer",
+    "Built-in microphone + audio line in/out",
+    "microSD recording with 5s pre-alarm buffer",
+    "IK10 vandal rating",
+    "TPM/Secure Element (RSA 4096, AES-256, 802.1x)",
+    "-50C to +55C; PoE+ or 24 VAC"
+  ],
+  "markets": [
+    "EU",
+    "global"
+  ],
+  "release_notes": "The NetCamCenter NDM-7702-A (Bosch FLEXIDOME multi 7000i OEM) is a rugged IP66/IK10 outdoor multi-imager panoramic dome combining four independently aimable 3MP imagers with motorized zoom/focus lenses on a single IP address for up to 360 coverage, delivering 30 fps H.265, 120 dB HDR and onboard Intelligent Video Analytics.",
+  "sources": [
+    "https://netcamcenter.de/de/produkte/ip-kameras/ndm-7702-a"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/rtsp_tunnel",
+      "best_substream": "rtsp://{user}:{pass}@{ip}/rtsp_tunnel?inst=2",
+      "verified": false,
+      "notes": "Bosch OEM (FLEXIDOME multi 7000i) multi-imager — each of the 4 imagers exposes its own stream. Use ONVIF auto-discovery to enumerate the imager streams."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Bosch is ONVIF-conformant; add each of the 4 imagers via the ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Bosch OEM — use the ONVIF/RTSP (or 'Bosch') profile; add each imager as a separate camera."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

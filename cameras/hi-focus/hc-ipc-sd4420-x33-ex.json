@@ -1,0 +1,86 @@
+{
+  "id": "hifocus-hc-ipc-sd4420-x33-ex",
+  "brand": "Hi-Focus",
+  "model": "HC-IPC-SD4420-X33-EX",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.5-180",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 150
+  },
+  "power": {
+    "method": "DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "33x optical zoom (5.5-180mm)",
+    "150m IR night vision",
+    "Explosion-proof (Ex db IIC T6 Gb / Ex tb IIIC)",
+    "IP68 housing",
+    "120dB WDR, 3D DNR",
+    "Smart H.265+",
+    "motion / tamper detection",
+    "ICR day/night"
+  ],
+  "markets": [
+    "IN",
+    "global"
+  ],
+  "release_notes": "The Hi-Focus HC-IPC-SD4420-X33-EX is a 2MP explosion-proof network PTZ camera with 33x optical zoom, IP68 housing and 150m IR range for hazardous-area monitoring.",
+  "sources": [
+    "https://hifocuscctv.com/categories/network-ptz-cameras/2mp-explosion-proof-network-ptz-camera-hc-ipc-sd4420-x33-ex"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Hi-Focus PTZ is Dahua-OEM — standard Dahua RTSP path; enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua-OEM; the ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Hi-Focus PTZ uses the Dahua protocol — select the 'Dahua' profile (or Generic/ONVIF)."
+    }
+  },
+  "last_verified": "2026-07-06",
+  "ip_rating": "IP68"
+}

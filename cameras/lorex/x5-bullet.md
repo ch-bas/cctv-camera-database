@@ -35,7 +35,6 @@
 ## Sources
 
 - https://www.lorex.com/products/connect-x5-series-bullet-ip-camera-fixed
-- https://d2zri47w41ywm3.cloudfront.net/downloads/ip-cameras/CNE01P/CNE01P-1BB-AB1_CNE01P-1BW-AB1_Specifications_EN_R1.pdf
 
 ---
 *Auto-generated from lorex-x5-bullet.json — do not edit by hand.*

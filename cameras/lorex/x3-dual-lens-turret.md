@@ -37,7 +37,6 @@
 ## Sources
 
 - https://www.lorex.com/products/connect-x3-series-turret-ip-camera-dual-lens
-- https://d2zri47w41ywm3.cloudfront.net/downloads/ip-cameras/CNU01P-1SW-AB1/CNU01P-1SW-AB1_Specifications_EN_R1.pdf
 
 ---
 *Auto-generated from lorex-x3-dual-lens-turret.json — do not edit by hand.*
