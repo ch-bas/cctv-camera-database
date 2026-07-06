@@ -8,7 +8,7 @@
 | Model | Smart Video Doorbell |
 | Type | doorbell |
 | Connectivity | wifi |
-| Resolution | 1080p+ 4:3 (4MP) |
+| Resolution | 1080p (2MP, 1920×1080) |
 | Lens | 1× Fixedmm F2.0 |
 | Field of view | 165 diagonal° |
 | Night vision | ir (4m) |
@@ -33,7 +33,7 @@
 
 ## Sources
 
-- https://www.netatmo.com/
+- https://www.netatmo.com/smart-video-doorbell
 
 ---
 *Auto-generated from netatmo-smart-video-doorbell.json — do not edit by hand.*

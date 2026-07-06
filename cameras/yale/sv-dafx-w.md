@@ -32,7 +32,7 @@
 
 ## Sources
 
-- https://www.yale.co.uk/
+- https://www.yalehome.com/in/en/products/smart-products/ip-camera/all-in-one-indoor-and-outdoor-camera-1080p-sv-dafx-w_eu
 
 ---
 *Auto-generated from yale-sv-dafx-w.json — do not edit by hand.*

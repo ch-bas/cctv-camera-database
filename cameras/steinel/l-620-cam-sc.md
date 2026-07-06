@@ -6,7 +6,7 @@
 | Model | L 620 CAM SC |
 | Type | bullet |
 | Connectivity | wifi |
-| Resolution | 2K QHD (4MP, 2560×1440) |
+| Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | CMOS |
 | Lens | 1× |
 | Field of view | 180 horizontal° |
@@ -29,7 +29,7 @@
 
 ## Sources
 
-- https://www.steinel.de/
+- https://www.steinel.de/en/lights-sensors/products-oxid/lights/product-category/outdoor-lights-with-camera/l-620-cam-sc-065829.html
 
 ---
 *Auto-generated from steinel-l-620-cam-sc.json — do not edit by hand.*

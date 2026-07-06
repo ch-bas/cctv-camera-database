@@ -25,7 +25,7 @@
 
 ## Sources
 
-- https://www.yalehome.co.uk/
+- https://www.yalehome.com/it/en/products/smart-security-ecosystem/smart-cameras/smart-outdoor-camera
 
 ---
 *Auto-generated from yale-sv-outdoor-2k.json — do not edit by hand.*

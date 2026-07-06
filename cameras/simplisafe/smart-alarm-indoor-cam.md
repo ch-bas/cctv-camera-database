@@ -6,7 +6,7 @@
 | Model | Smart Alarm Wireless Indoor Camera |
 | Type | dome |
 | Connectivity | wifi |
-| Resolution | 2K QHD (4MP, 2560×1440) |
+| Resolution | 1080p (2MP, 1920×1080) |
 | Lens | 1× Fixedmm F2.0 |
 | Field of view | 125 diagonal° |
 | Night vision | ir (6m) |

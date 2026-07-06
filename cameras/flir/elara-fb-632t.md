@@ -4,7 +4,7 @@
 |-------|------|
 | Brand | FLIR |
 | Model | Elara FB-632T |
-| Type | dome |
+| Type | bullet |
 | Connectivity | ethernet |
 | Resolution | Thermal 640x480 (0.3MP, 640×480) |
 | Sensor | Uncooled VOx Microbolometer |

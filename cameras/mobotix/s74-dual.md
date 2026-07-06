@@ -29,7 +29,7 @@
 
 ## Sources
 
-- https://www.mobotix.com/
+- https://www.mobotix.com/en/products/mobotix-7/s74
 
 ---
 *Auto-generated from mobotix-s74-dual.json — do not edit by hand.*

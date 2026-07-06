@@ -8,7 +8,7 @@
 | Model | Smart Outdoor Camera (Presence, with Siren) |
 | Type | bullet |
 | Connectivity | wifi |
-| Resolution | 1080p HD (4MP) |
+| Resolution | 1080p (2MP, 1920×1080) |
 | Lens | 1× Fixedmm F2.0 |
 | Field of view | 100 horizontal° |
 | Night vision | ir (15m) |
@@ -32,7 +32,7 @@
 
 ## Sources
 
-- https://www.netatmo.com/
+- https://www.netatmo.com/smart-outdoor-camera-with-siren
 
 ---
 *Auto-generated from netatmo-smart-outdoor-camera-with-siren.json — do not edit by hand.*

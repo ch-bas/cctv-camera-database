@@ -25,7 +25,7 @@
 
 ## Sources
 
-- https://camius.com/
+- https://www.camius.com/2k-poe-dome-5mp-camera/
 
 ---
 *Auto-generated from camius-iris-5mp.json — do not edit by hand.*

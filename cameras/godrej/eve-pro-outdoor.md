@@ -29,7 +29,7 @@
 
 ## Sources
 
-- https://www.amazon.in/
+- https://shop.godrejsecure.com/products/Godrej-EVE-Pro-Green-4MP-Solar-Powered-Camera/1161
 
 ---
 *Auto-generated from godrej-eve-pro-outdoor.json — do not edit by hand.*

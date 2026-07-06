@@ -32,7 +32,7 @@
 
 ## Sources
 
-- https://www.yale.co.uk/
+- https://www.yalehome.com/kz/en/products/smart-living-range/surveillance/cctv/smart-home-cctv-bullet-camera
 
 ---
 *Auto-generated from yale-sv-abfx-w.json — do not edit by hand.*

@@ -6,7 +6,7 @@
 | Model | LUM-510-TUR |
 | Type | turret |
 | Connectivity | ethernet |
-| Resolution | 5MP Super HD (5MP, 2592×1944) |
+| Resolution | 2K/4MP (4MP, 2688×1520) |
 | Sensor | 1/2.7" CMOS |
 | Night vision | ir (30m) |
 | Power | PoE (IEEE 802.3af) |

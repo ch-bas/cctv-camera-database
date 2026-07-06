@@ -34,7 +34,7 @@
 
 ## Sources
 
-- https://www.steinel.de/
+- https://www.steinel.de/en/group/lighting/outdoor-lights/wall-and-ceiling-lights/l-625-cam-sc-092597.html
 
 ---
 *Auto-generated from steinel-l-625-cam.json — do not edit by hand.*

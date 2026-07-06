@@ -8,7 +8,7 @@
 | Model | Smart Indoor Camera |
 | Type | dome |
 | Connectivity | wifi, ethernet |
-| Resolution | 1080p HD (4MP) |
+| Resolution | 1080p (2MP, 1920×1080) |
 | Lens | 1× Fixedmm |
 | Field of view | 130 diagonal° |
 | Night vision | ir (5m) |
@@ -33,7 +33,7 @@
 
 ## Sources
 
-- https://www.netatmo.com/
+- https://www.netatmo.com/smart-indoor-camera
 
 ---
 *Auto-generated from netatmo-smart-indoor-camera.json — do not edit by hand.*

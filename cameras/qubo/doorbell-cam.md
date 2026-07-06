@@ -29,7 +29,7 @@
 
 ## Sources
 
-- https://www.quboworld.com/
+- https://www.quboworld.com/video-door-bell
 
 ---
 *Auto-generated from qubo-doorbell-cam.json — do not edit by hand.*

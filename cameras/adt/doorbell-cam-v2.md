@@ -26,7 +26,7 @@
 
 ## Sources
 
-- https://www.adt.com/
+- https://www.adt.com/doorbell-camera
 
 ---
 *Auto-generated from adt-doorbell-cam-v2.json — do not edit by hand.*
