@@ -6,6 +6,22 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.29.0] — 2026-07-06
+
+Reolink verification pass against official reolink.com pages, plus a Camius correction. Net: **1,896 → 1,901 cameras** (71 brands unchanged).
+
+### Added
+- **Reolink E1 Outdoor SE PoE** — 8MP 4K PoE pan-tilt with auto-tracking.
+- **Reolink Lumus Pro** — 8MP 4K WiFi spotlight bullet (F1.6).
+- **Reolink CX410W** — 4MP ColorX WiFi bullet (1/1.8" sensor, F1.0), WiFi variant of the CX410.
+- **Reolink FE-W** — 6MP WiFi 360° fisheye, WiFi sibling of the FE-P.
+- **Reolink Duo Floodlight WiFi** — 8MP dual-lens 180° floodlight cam, WiFi variant of the Duo Floodlight PoE.
+
+### Changed
+- **Camius IRIS528R** — relabelled the generic "Iris 5MP" entry with its real model number and turret form factor (verified 2K/5MP specs); "Iris 5MP" kept as an alias. The web frontend 301-redirects the old ghost `/camera/camius-triton/` URL here.
+- **Reolink CX820** and **RLC-840A** corrected dome → **turret**; **RLC-1224A** and **RLC-510WA** corrected dome → **bullet** (per official product pages).
+- **Reolink Lumus** — filled in missing resolution (4MP / 2560×1440).
+
 ## [1.28.0] — 2026-07-06
 
 Major data-quality audit of **48 previously-unaudited small/mid brands**, removal of fabricated data, and large expansions of Dahua, Hikvision and HiLook — plus one new brand and one rebuilt brand. Net: **1,900 → 1,896 cameras**, **75 → 71 brands**.

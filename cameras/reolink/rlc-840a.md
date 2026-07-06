@@ -4,7 +4,7 @@
 |-------|------|
 | Brand | Reolink |
 | Model | RLC-840A |
-| Type | dome |
+| Type | turret |
 | Connectivity | ethernet |
 | Resolution | 4K UHD (8MP, 3840×2160) |
 | Sensor | 1/2.49" CMOS |
