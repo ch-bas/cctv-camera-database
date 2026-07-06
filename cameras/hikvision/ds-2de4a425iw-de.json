@@ -1,0 +1,86 @@
+{
+  "id": "hikvision-ds-2de4a425iw-de",
+  "brand": "Hikvision",
+  "model": "DS-2DE4A425IW-DE",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50
+  },
+  "power": {
+    "method": "PoE+ / 12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 256
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "25x optical zoom + 16x digital",
+    "pan/tilt: pan 360 / tilt -5 to 90",
+    "DarkFighter low-light",
+    "IR to 50m (850nm, smart supplement)",
+    "120dB WDR",
+    "3D positioning",
+    "300 presets",
+    "face detection",
+    "(S6 generation, no AcuSense)"
+  ],
+  "markets": [
+    "global"
+  ],
+  "release_notes": "The Hikvision DS-2DE4A425IW-DE is a 4MP 25x DarkFighter IR 4-inch speed dome with 50m IR (older S6 generation, no AcuSense).",
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000045332/Datasheet-of-DS-2DE4A425IW-DES6_V5.7.3_20230303.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "verified": false,
+      "notes": "Hikvision native RTSP (main 101 / sub 102). TandemVu units expose each channel separately — enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "last_verified": "2026-07-06",
+  "ip_rating": "IP66"
+}

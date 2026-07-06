@@ -1,0 +1,87 @@
+{
+  "id": "hikvision-ds-2de7a225iwg1-e",
+  "brand": "Hikvision",
+  "model": "DS-2DE7A225IWG1-E",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 200
+  },
+  "power": {
+    "method": "Hi-PoE / 36 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "25x optical zoom",
+    "powered-by-DarkFighter + HIK AI-ISP",
+    "AcuSense human/vehicle classification",
+    "arrayed dual-mic two-way audio",
+    "white-light + audible audio-visual alarm",
+    "auto-tracking",
+    "300 presets",
+    "IR up to 200m",
+    "pan/tilt: pan 360 / tilt -15 to 90",
+    "IK10 vandal-resistant"
+  ],
+  "markets": [
+    "global"
+  ],
+  "release_notes": "The Hikvision DS-2DE7A225IWG1-E is a 2MP 25x IR AcuSense PTZ speed dome with HIK AI-ISP, arrayed dual-mic two-way audio and a white-light audio-visual alarm.",
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000171694/DS-2DE7A225IWG1-E_Datasheet_20260528.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "verified": false,
+      "notes": "Hikvision native RTSP (main 101 / sub 102). Multi-channel/TandemVu units expose each channel as 201/301 etc. — enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "last_verified": "2026-07-06",
+  "ip_rating": "IP67"
+}

@@ -1,0 +1,86 @@
+{
+  "id": "hikvision-ds-2se7c432mwg-eb",
+  "brand": "Hikvision",
+  "model": "DS-2SE7C432MWG-EB",
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3632,
+    "max_height": 1632,
+    "label": "6MP panoramic + 4MP 32x PTZ"
+  },
+  "sensor": "1/2.5\" + 1/2.8\" CMOS (dual-channel)",
+  "lens": {
+    "count": 2,
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 200
+  },
+  "power": {
+    "method": "Hi-PoE / 24 VAC"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 256
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "32x optical zoom",
+    "TandemVu dual-channel: 6MP ColorVu panoramic (180 stitch) + 4MP 32x PTZ",
+    "ColorVu white light (30m) + IR (200m)",
+    "AcuSense human/vehicle classification",
+    "active deterrence (strobe + audio alarm)",
+    "smart panorama-to-PTZ linkage",
+    "300 presets",
+    "face capture in motion",
+    "pan/tilt: pan 360 / tilt -15 to 90"
+  ],
+  "markets": [
+    "global"
+  ],
+  "release_notes": "The Hikvision DS-2SE7C432MWG-EB is a TandemVu dual-channel dome combining a 6MP ColorVu 180-degree panoramic channel with a 4MP 32x AcuSense IR PTZ.",
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000072481/DS-2SE7C432MWG-EB_26F0_Datasheet_20250522.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "verified": false,
+      "notes": "Hikvision native RTSP (main 101 / sub 102). Multi-channel/TandemVu units expose each channel as 201/301 etc. — enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "last_verified": "2026-07-06",
+  "ip_rating": "IP66"
+}
