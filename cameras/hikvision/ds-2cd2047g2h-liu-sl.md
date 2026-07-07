@@ -1,0 +1,34 @@
+# Hikvision DS-2CD2047G2H-LIU/SL
+
+| Field | Spec |
+|-------|------|
+| Brand | Hikvision |
+| Model | DS-2CD2047G2H-LIU/SL |
+| Type | bullet |
+| Connectivity | ethernet |
+| Resolution | 4MP (2688x1520) (4MP, 2688×1520) |
+| Sensor | 1/1.8" Progressive Scan CMOS |
+| Lens | 1× 2.8/4/6mm |
+| Field of view | 111.9 (2.8mm)/95.2 (4mm) horizontal° |
+| Night vision | hybrid (40m) |
+| Power | PoE (802.3af) / DC 12V |
+| Storage | microSD ≤ 512GB, NVR |
+| Protocols | onvif, rtsp |
+| IP rating | IP67 |
+| Two-way audio | Yes |
+| Released | 2023 |
+
+## Features
+
+- ColorVu Smart Hybrid Light (IR + white)
+- AcuSense human/vehicle detection
+- strobe light + audible-warning active deterrence
+- built-in two-way audio
+- F1.0 aperture
+
+## Sources
+
+- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2047G2H-LIU_SL-eF.pdf
+
+---
+*Auto-generated from hikvision-ds-2cd2047g2h-liu-sl.json — do not edit by hand.*

@@ -1,0 +1,135 @@
+{
+  "id": "hikvision-ds-2cd23166g3-i2uy",
+  "brand": "Hikvision",
+  "model": "DS-2CD23166G3-I(2U)Y",
+  "aliases": [
+    "Pro Series G3 16MP AcuSense DarkFighter Fixed Turret"
+  ],
+  "generation": "Pro Series (EasyIP, G3)",
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "release_year": 2025,
+  "resolution": {
+    "megapixels": 16,
+    "max_width": 4608,
+    "max_height": 3456,
+    "label": "16MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4608x3456",
+        "fps": 15
+      },
+      {
+        "name": "main-16:9",
+        "resolution": "4608x2592",
+        "fps": 20
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 10
+      }
+    ]
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "94.5 horizontal (2.8mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3) / DC 12V",
+    "consumption_w": 10.5,
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "16MP ultra high definition (4608x3456)",
+    "AcuSense human/vehicle classification",
+    "powered-by-DarkFighter low light (0.0008 lux)",
+    "-2U variant: built-in arrayed dual microphone",
+    "face capture",
+    "perimeter protection (line crossing, intrusion, region enter/exit)",
+    "130 dB true WDR",
+    "distortion correction and defog",
+    "NEMA 4X anti-corrosion (moderate protection)",
+    "ONVIF Profile S/G/T",
+    "plug-in free live view",
+    "smart supplement IR",
+    "metal body"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "138.3 x 115.4 (dia x H)",
+  "weight_g": 750,
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000106865/DS-2CD23166G3-I2UY_Datasheet_20251029.pdf"
+  ],
+  "last_verified": "2026-07-07",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "notes": "16MP main stream is heavy; use sub-stream for detect and consider go2rtc restreaming for viewers."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80. Enable in Configuration > Network > Integration Protocol."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile. Use main stream for recording, sub stream for live view."
+    }
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "id": "hikvision-ds-2cd3056g2-is",
+  "brand": "Hikvision",
+  "model": "DS-2CD3056G2-IS",
+  "aliases": [
+    "Ultra Series 5MP AcuSense Fixed Mini Bullet"
+  ],
+  "generation": "Ultra Series (SmartIP)",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "fps": 25
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 25
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 10
+      },
+      {
+        "name": "fourth",
+        "resolution": "1280x720",
+        "fps": 10
+      }
+    ]
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 / 6 (fixed)",
+    "aperture": "F1.4",
+    "varifocal": false
+  },
+  "field_of_view_deg": "98 horizontal (2.8mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3) / DC 12V",
+    "consumption_w": 8.5,
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "AcuSense human/vehicle classification",
+    "powered-by-DarkFighter low light (0.003 lux)",
+    "HEOP 2.0 open platform (1.5 TOPS)",
+    "face capture",
+    "perimeter protection (line crossing, intrusion, region enter/exit)",
+    "120 dB true WDR",
+    "quad streams",
+    "ONVIF Profile S/G/T",
+    "line-in/line-out audio",
+    "alarm I/O",
+    "smart supplement light",
+    "aluminum alloy body"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "78.8 x 78.6 x 215.2",
+  "weight_g": 725,
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000035425/DS-2CD3056G2-IS-H_Datasheet_20230717.pdf"
+  ],
+  "last_verified": "2026-07-02",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80. Enable in Configuration > Network > Integration Protocol."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile. Use main stream for recording, sub stream for live view."
+    }
+  }
+}

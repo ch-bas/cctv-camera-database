@@ -6,6 +6,37 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.31.0] — 2026-07-07
+
+Large **Hikvision** catalogue expansion — **97 new models** across the 2CD1 / 2CD2 / 2CD3 / 2CD7 families (AcuSense, ColorVu, Smart Hybrid Light, DeepinView, active-deterrence and indoor-cube lines), plus a Reolink Home Hub data-quality fix. Every model was verified against official Hikvision datasheets (PDF extraction with printed-title verification). Net: **1,907 -> 2,004 cameras** (71 brands unchanged) — the dataset passes **2,000 cameras**.
+
+### Added — Hikvision (97)
+
+**Initial AcuSense/ColorVu/DeepinView batch (13):** DS-2CD2046G2-IU/SL, DS-2CD2066G2-IU/SL, DS-2CD2166G2-I(SU), DS-2CD2566G2-I(S), DS-2CD2686G2-IZS, DS-2CD23166G3-I(2U)Y (16MP DarkFighter turret, 4608x3456), DS-2CD3056G2-IS, DS-2CD3086G2-IS, DS-2CD3156G2-IS(U), DS-2CD3386G2-IS(U), DS-2CD3746G2-IZS, DS-2CD3766G2T-IZS(Y), iDS-2CD7A46G0/P-IZHS(Y) (DeepinView ANPR).
+
+**1-series budget line (26)** — fixed-lens ColorVu/AcuSense/Smart Hybrid Light + motorized-varifocal IZS:
+- Bullets: DS-2CD1047G0-LUF, DS-2CD1047G2H-LIUF, DS-2CD1067G2H-LIUF, DS-2CD1T27G0-LUF-C.
+- Domes: DS-2CD1127G0-LUF-D, DS-2CD1123G2-I, DS-2CD1123G2-LIUF, DS-2CD1127G2H-LIUF, DS-2CD1143G2-I, DS-2CD1143G2-IUF, DS-2CD1143G2-LIUF, DS-2CD1147G0-LUF-D, DS-2CD1147G2H-LIUF, DS-2CD1167G2H-LIUF.
+- Turrets: DS-2CD1323G2-IUF, DS-2CD1323G2-LIUF, DS-2CD1327G2H-LIUF, DS-2CD1343G2-IUF, DS-2CD1343G2-LIUF, DS-2CD1347G2H-LIUF, DS-2CD1367G2H-LIUF.
+- Motorized varifocal IZS: DS-2CD1623G2-IZS, DS-2CD1643G2-IZS, DS-2CD1723G2-IZS, DS-2CD1743G2-IZS, DS-2CD1H43G2-IZS.
+
+**2-series 2CD20xx/21xx (32):**
+- Bullets: DS-2CD2047G2H-LIU/SL, DS-2CD2047G2H-LIU, DS-2CD2046G2H-IU, DS-2CD2046G2H-I2U/SLRB, DS-2CD2046G2-IU, DS-2CD2043G2-LI2U, DS-2CD2043G2-L, DS-2CD2043G2-IU, DS-2CD2047G3-LI2UY/SLRB, DS-2CD2026G2-IU, DS-2CD2021G1-I, DS-2CD2067G2H-LIU/SL, DS-2CD2086G2-IU/SL, DS-2CD2086G2-IU, DS-2CD2083G2-IU, DS-2CD2086G2H-IU, DS-2CD2087G2H-LIU, DS-2CD2087G3-LI2UY/SLRB.
+- Domes: DS-2CD2123G2-IS, DS-2CD2125G0-IMS, DS-2CD2126G2-I, DS-2CD2126G2-ISU, DS-2CD2146G2H-ISU, DS-2CD2147G2-SU, DS-2CD2147G2H-LISU, DS-2CD2147G3-LIS2UY, DS-2CD2167G2H-LISU, DS-2CD2183G2-IS, DS-2CD2186G2-ISU, DS-2CD2186G2H-ISU, DS-2CD2187G2-LSU, DS-2CD2187G2H-LISU.
+
+**2CD23xx turrets + panoramic (9):** DS-2CD2323G2-IU, DS-2CD2326G2-IU, DS-2CD2327G2-LU, DS-2CD2343G2-IU, DS-2CD2346G2H-IU, DS-2CD2346G2-ISU/SL, DS-2CD2346G2H-IS2U/SLRB, DS-2CD2345G0P-I (180deg panoramic-fisheye), DS-2CD2347G2P-LSU/SL (dual-lens 180deg panoramic).
+
+**2CD236x/238x turrets, 24xx indoor cubes, 25xx mini-domes (17):**
+- Turrets: DS-2CD2347G3-LIS2UY/SLRB, DS-2CD2367G2H-LIU, DS-2CD2383G2-IU, DS-2CD2386G2H-IS2U/SLRB, DS-2CD2386G2H-IU, DS-2CD2387G2H-LISU/SL, DS-2CD2387G3-LIS2UY/SLRB.
+- Indoor cubes (box): DS-2CD2421G0-IDW (WiFi, DC-only), DS-2CD2423G2-I, DS-2CD2423G2-IW (WiFi), DS-2CD2443G2-I, DS-2CD2446G2-I, DS-2CD2483G2-I (H.265-only).
+- Mini-domes: DS-2CD2523G2-IS, DS-2CD2546G2-IWS (WiFi), DS-2CD2547G2-LS (ColorVu), DS-2CD2583G2-IS.
+
+### Fixed
+- **Reolink Home Hub** — removed `rtsp`/`rtmp` from `protocols` (they describe re-streaming the hub's *managed* cameras, not a stream of the hub itself, which has no image sensor); the relay capability is now documented in `features`. Clears a spurious "rtsp without NVR configs" data-quality flag.
+
+### Notes
+- Naming decoded: `L*`=ColorVu white-light, `I`=AcuSense IR, `U`=built-in mic, `F`=microSD, `Z`=motorized varifocal, `G2H`/`G3`=ColorVu Smart Hybrid Light (F1.0; G3 adds HikAI-ISP), `/SL` and `SLRB`=strobe + audible active deterrence (SLRB adds red/blue flashing) with two-way audio. Indoor cubes typed `box` (no IP rating); WiFi models carry `connectivity: ["wifi","ethernet"]`. Region/packaging suffixes (`-C`/`-D`/`-eF`) and `_T` regional datasheets were folded into base models rather than duplicated.
+
 ## [1.30.0] — 2026-07-06
 
 Reolink battery/solar/4G verification pass against official reolink.com pages. Net: **1,901 → 1,907 cameras** (71 brands unchanged). Most linked URLs were already present; six were genuinely new. All are app-only (no RTSP/ONVIF), so no NVR configs are emitted.
