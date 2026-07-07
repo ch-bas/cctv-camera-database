@@ -6,6 +6,18 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.35.0] — 2026-07-07
+
+Hikvision 2CD2 expansion continued — 17 new models: 236x/238x fixed turrets, 24xx indoor cubes, and 25xx mini-domes, from official datasheet PDFs (printed titles verified). Net: **1,987 → 2,004 cameras** (71 brands unchanged) — the dataset passes **2,000 cameras**.
+
+### Added (Hikvision 17)
+- **Turrets:** DS-2CD2347G3-LIS2UY/SLRB (4MP), DS-2CD2367G2H-LIU (6MP), DS-2CD2383G2-IU, DS-2CD2386G2H-IS2U/SLRB, DS-2CD2386G2H-IU, DS-2CD2387G2H-LISU/SL, DS-2CD2387G3-LIS2UY/SLRB (8MP).
+- **Indoor cubes (box):** DS-2CD2421G0-IDW (2MP WiFi, DC-only), DS-2CD2423G2-I, DS-2CD2423G2-IW (2MP WiFi), DS-2CD2443G2-I, DS-2CD2446G2-I (4MP), DS-2CD2483G2-I (8MP, H.265-only).
+- **Mini-domes:** DS-2CD2523G2-IS (2MP), DS-2CD2546G2-IWS (4MP WiFi), DS-2CD2547G2-LS (4MP ColorVu), DS-2CD2583G2-IS (8MP).
+
+### Notes
+- Indoor cubes typed `box` with no IP rating; WiFi models carry `connectivity: ["wifi","ethernet"]`; the DC-only `2421G0-IDW` has `power_source: ["dc"]`. G3 turrets add HikAI-ISP + red/blue & white flashing deterrence with two-way audio.
+
 ## [1.34.0] — 2026-07-07
 
 Hikvision **2CD23xx** fixed-turret expansion — 9 new AcuSense / ColorVu / active-deterrence turrets (plus two panoramic models) from official datasheet PDFs, printed titles verified. Net: **1,978 → 1,987 cameras** (71 brands unchanged).
