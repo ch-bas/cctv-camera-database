@@ -13,7 +13,7 @@
 | Night vision | none |
 | Power | DC 12V/1A power adapter |
 | Storage | microSD ≤ 512GB |
-| Protocols | rtsp, rtmp, p2p |
+| Protocols | p2p |
 | Two-way audio | No |
 | Operating temp | -10 to 45°C |
 | Released | 2024 |
@@ -30,6 +30,7 @@
 - no subscription fee, no cloud required
 - 115dB built-in alarm speaker with selectable siren/ringtones
 - Alexa / Google Home compatible
+- provides RTSP/RTMP re-streaming access to its connected cameras (the hub has no camera stream of its own)
 - NVR/hub accessory — camera-specific schema fields (lens, resolution, night vision) do not apply
 
 ## Sources

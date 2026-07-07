@@ -6,6 +6,21 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.31.0] — 2026-07-07
+
+Hikvision expansion (13 new AcuSense/ColorVu/DeepinView models) plus a Reolink hub data-quality fix. Net: **1,907 → 1,920 cameras** (71 brands unchanged). All 13 new models verified against official Hikvision datasheets.
+
+### Added (Hikvision)
+- **DS-2CD2046G2-IU/SL** (4MP bullet), **DS-2CD2066G2-IU/SL** (6MP bullet)
+- **DS-2CD2166G2-I(SU)** (6MP dome), **DS-2CD2566G2-I(S)** (6MP dome), **DS-2CD2686G2-IZS** (8MP bullet)
+- **DS-2CD23166G3-I(2U)Y** (16MP AcuSense DarkFighter turret, 4608×3456)
+- **DS-2CD3056G2-IS** (5MP bullet), **DS-2CD3086G2-IS** (8MP bullet), **DS-2CD3156G2-IS(U)** (5MP dome), **DS-2CD3386G2-IS(U)** (8MP turret)
+- **DS-2CD3746G2-IZS** (4MP dome), **DS-2CD3766G2T-IZS(Y)** (6MP dome)
+- **iDS-2CD7A46G0/P-IZHS(Y)** (4MP DeepinView ANPR bullet)
+
+### Fixed
+- **Reolink Home Hub** — removed `rtsp`/`rtmp` from `protocols` (they describe re-streaming the hub's *managed* cameras, not a stream of the hub itself, which has no image sensor); the RTSP/RTMP relay capability is now documented in `features` instead. Clears a spurious "rtsp without NVR configs" data-quality flag.
+
 ## [1.30.0] — 2026-07-06
 
 Reolink battery/solar/4G verification pass against official reolink.com pages. Net: **1,901 → 1,907 cameras** (71 brands unchanged). Most linked URLs were already present; six were genuinely new. All are app-only (no RTSP/ONVIF), so no NVR configs are emitted.

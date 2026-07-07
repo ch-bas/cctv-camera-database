@@ -1,0 +1,138 @@
+{
+  "id": "hikvision-ids-2cd7a46g0-p-izhs-y",
+  "brand": "Hikvision",
+  "model": "iDS-2CD7A46G0/P-IZHS(Y)",
+  "aliases": [
+    "DeepinView 4MP ANPR IR Varifocal Bullet"
+  ],
+  "generation": "DeepinView Series",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30
+      },
+      {
+        "name": "main-60fps",
+        "resolution": "2560x1440",
+        "fps": 60
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 30
+      }
+    ]
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12 or 8-32 (motorized, P-iris)",
+    "aperture": "F1.2-F2.5 (2.8-12mm) / F1.7 (8-32mm)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "114.5-41.8 horizontal (2.8-12mm), 42.5-15.1 (8-32mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at, Class 4) / DC 12V",
+    "consumption_w": 16.8,
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "DeepinView deep learning AI",
+    "ANPR/LPR: 124+ countries, >=98% recognition, up to 120 km/h",
+    "vehicle attribute detection (type, color, brand, direction)",
+    "vehicle/non-vehicle counting, 10k block/allowlist",
+    "parking space status detection (up to 40 spaces)",
+    "perimeter protection (line crossing, intrusion, region enter/exit)",
+    "DarkFighter 0.0005 lux color",
+    "140 dB WDR",
+    "EIS image stabilization",
+    "5 streams",
+    "ONVIF Profile S/G/T/M",
+    "TPM 2.0 (FIPS 140-2 level 2)",
+    "smart IR (50m wide / 100m tele lens)",
+    "heater built in",
+    "-Y variant: NEMA 4X anti-corrosion, RS-485, Wiegand",
+    "alarm 2 in / 2 out",
+    "IK10 vandal proof aluminum body"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "144 x 347 (dia x L)",
+  "weight_g": 1950,
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/sm000080301/iDS-2CD7A46G0_P-IZHSY-C_Datasheet_20231122.pdf"
+  ],
+  "last_verified": "2026-07-07",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "notes": "Camera performs ANPR on-board; plate events available via ISAPI. Requires PoE+ (802.3at)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profile S/G/T/M). Default ONVIF port 80. Enable in Configuration > Network > Integration Protocol."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile. Use main stream for recording, sub stream for live view."
+    }
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "id": "hikvision-ds-2cd2166g2-isu",
+  "brand": "Hikvision",
+  "model": "DS-2CD2166G2-I(SU)",
+  "aliases": [
+    "Pro Series 6MP AcuSense DarkFighter Fixed Dome"
+  ],
+  "generation": "Pro Series (EasyIP 4.0)",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3200,
+    "max_height": 1800,
+    "label": "6MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3200x1800",
+        "fps": 30
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 10
+      }
+    ]
+  },
+  "sensor": "1/2.4\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "105 horizontal (2.8mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3) / DC 12V",
+    "consumption_w": 7.5,
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "AcuSense human/vehicle classification",
+    "powered-by-DarkFighter low light (0.003 lux)",
+    "face capture",
+    "line crossing, intrusion, region enter/exit detection",
+    "120 dB true WDR",
+    "SRTP encrypted streaming",
+    "ONVIF Profile S/G/T",
+    "IK10 vandal resistant aluminum body",
+    "-SU variant: built-in mic, line-in/out, alarm I/O",
+    "smart supplement IR"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "121.4 x 92.2 (dia x H)",
+  "weight_g": 440,
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/sm000059060/DS-2CD2166G2-ISU-C_Datasheet_V5.7.11_20230201.pdf"
+  ],
+  "last_verified": "2026-07-07",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80. Enable in Configuration > Network > Integration Protocol."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile. Use main stream for recording, sub stream for live view."
+    }
+  }
+}

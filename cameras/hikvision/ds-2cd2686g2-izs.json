@@ -1,0 +1,126 @@
+{
+  "id": "hikvision-ds-2cd2686g2-izs",
+  "brand": "Hikvision",
+  "model": "DS-2CD2686G2-IZS",
+  "aliases": [
+    "Pro Series 8MP AcuSense DarkFighter Motorized Varifocal Bullet"
+  ],
+  "generation": "Pro Series (EasyIP 4.0)",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 25
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 25
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 10
+      }
+    ]
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12 (motorized)",
+    "aperture": "F1.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "108-46 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 60
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3at, Class 4) / DC 12V",
+    "consumption_w": 15,
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "AcuSense human/vehicle classification",
+    "powered-by-DarkFighter low light (0.003 lux)",
+    "motorized varifocal 2.8-12mm",
+    "face capture",
+    "perimeter protection (line crossing, intrusion, region enter/exit)",
+    "120 dB true WDR",
+    "smart supplement IR",
+    "ONVIF Profile S/G/T",
+    "IK10 vandal proof metal body",
+    "line-in/line-out audio",
+    "alarm I/O (24V 1A)"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "144.1 x 345.7 (dia x L)",
+  "weight_g": 1430,
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/sm000059137/DS-2CD2686G2-IZS-C_Datasheet_V5.5.112_20230218.pdf"
+  ],
+  "last_verified": "2026-07-02",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80. Enable in Configuration > Network > Integration Protocol."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile. Use main stream for recording, sub stream for live view."
+    }
+  }
+}
