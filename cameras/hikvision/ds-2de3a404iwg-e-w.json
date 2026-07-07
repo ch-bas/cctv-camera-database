@@ -1,0 +1,103 @@
+{
+  "id": "hikvision-ds-2de3a404iwg-e-w",
+  "brand": "Hikvision",
+  "model": "DS-2DE3A404IWG-E/W",
+  "type": "ptz",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP (2560x1440)"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12",
+    "varifocal": false
+  },
+  "field_of_view_deg": "96.7-31.6 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "mini PTZ 4x optical zoom",
+    "built-in Wi-Fi 802.11b/g/n",
+    "Powered-by-DarkFighter",
+    "120dB WDR",
+    "AcuSense human/vehicle classification",
+    "two-way audio (mic + speaker)",
+    "audio-visual alarm",
+    "300 presets"
+  ],
+  "release_year": 2023,
+  "sources": [
+    "https://download.axilogi.com/Hikvision/Datasheet/DS-2DE3A404IWG-E_W.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile. Use main stream for recording, sub stream for live view."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "last_verified": "2026-07-07",
+  "release_notes": "4MP Wi-Fi variant of the DS-2DE3A404IWG-E mini PTZ (4x optical zoom, 50m IR)."
+}

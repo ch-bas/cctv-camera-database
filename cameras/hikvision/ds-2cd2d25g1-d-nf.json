@@ -1,0 +1,94 @@
+{
+  "id": "hikvision-ds-2cd2d25g1-d-nf",
+  "brand": "Hikvision",
+  "model": "DS-2CD2D25G1-D/NF",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8/3.7",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "none"
+  },
+  "power": {
+    "method": "DC 12V"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "mini/covert two-part modular camera (31.5mm cube head)",
+    "120dB WDR",
+    "3D DNR",
+    "line-in audio input",
+    "indoor"
+  ],
+  "release_year": 2023,
+  "sources": [
+    "https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2D25G1-D_NF.pdf"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile. Use main stream for recording, sub stream for live view."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor"
+  ],
+  "last_verified": "2026-07-07",
+  "release_notes": "2MP mini modular covert camera; no IR, no IP rating (indoor), DC only."
+}

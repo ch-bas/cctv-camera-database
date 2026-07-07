@@ -1,0 +1,104 @@
+{
+  "id": "hikvision-ds-2de4215iw-det5",
+  "brand": "Hikvision",
+  "model": "DS-2DE4215IW-DET5",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5-75",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false,
+    "max_microsd_gb": 256
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "15X optical zoom",
+    "15X optical + 16X digital zoom",
+    "pan 360° endless, tilt -15° to 90° auto-flip",
+    "Powered-by-DarkFighter",
+    "AcuSense human/vehicle classification",
+    "face capture",
+    "300 presets, 8 patrols",
+    "3D positioning",
+    "PoE 802.3at",
+    "6000V lightning protection"
+  ],
+  "release_year": 2023,
+  "sources": [
+    "https://download.axilogi.com/Hikvision/Datasheet/DS-2DE4215IW-DET5.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile. Use main stream for recording, sub stream for live view."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "last_verified": "2026-07-07",
+  "ip_rating": "IP66",
+  "field_of_view_deg": "57.6°-4° (H)",
+  "release_notes": "2MP 15X IR network speed dome (PTZ), 100m IR, pan 360°."
+}

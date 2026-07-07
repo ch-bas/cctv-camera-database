@@ -1,0 +1,100 @@
+{
+  "id": "hikvision-ds-2cd2t87g2p-lsu-sl",
+  "brand": "Hikvision",
+  "model": "DS-2CD2T87G2P-LSU/SL",
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 5120,
+    "max_height": 1440,
+    "label": "8MP panoramic (5120x1440)"
+  },
+  "sensor": "2 x 1/1.8\" Progressive Scan CMOS (dual sensor)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4 (dual lens)",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "color",
+    "range_m": 40
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "dual-lens 180deg panoramic single stitched image",
+    "ColorVu 24/7 color, white light 40m",
+    "130dB WDR",
+    "two-way audio (mic + speaker)",
+    "strobe + audible deterrence (SL)",
+    "alarm I/O",
+    "AcuSense human/vehicle classification"
+  ],
+  "release_year": 2023,
+  "sources": [
+    "https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2T87G2P-LSU_SL-C.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile. Use main stream for recording, sub stream for live view."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "5120x1440",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "last_verified": "2026-07-07",
+  "ip_rating": "IP67",
+  "release_notes": "8MP dual-sensor panoramic ColorVu bullet (5120x1440) with deterrence + two-way audio."
+}

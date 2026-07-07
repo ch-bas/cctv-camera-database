@@ -1,0 +1,100 @@
+{
+  "id": "hikvision-ds-2cd2747g2h-liptrzs2u-slrb",
+  "brand": "Hikvision",
+  "model": "DS-2CD2747G2H-LIPTRZS2U/SLRB",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP (2688x1520)"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 40
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "ColorVu Smart Hybrid Light (IR + white)",
+    "motorized PTRZ (pan/tilt/rotate/zoom) reposition",
+    "130dB WDR",
+    "two-way audio (arrayed dual-mic + speaker)",
+    "strobe + red/blue flashing + audible deterrence (SLRB)",
+    "AcuSense human/vehicle classification",
+    "IK10 vandal-resistant"
+  ],
+  "release_year": 2023,
+  "sources": [
+    "https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2747G2H-LIPTRZS2U_SLRB.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile. Use main stream for recording, sub stream for live view."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "last_verified": "2026-07-07",
+  "ip_rating": "IP66",
+  "release_notes": "4MP ColorVu Smart Hybrid PTRZ varifocal dome with red/blue deterrence + two-way audio."
+}

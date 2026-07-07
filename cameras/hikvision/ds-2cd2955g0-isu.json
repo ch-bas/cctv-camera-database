@@ -1,0 +1,96 @@
+{
+  "id": "hikvision-ds-2cd2955g0-isu",
+  "brand": "Hikvision",
+  "model": "DS-2CD2955G0-ISU",
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2560,
+    "max_height": 1920,
+    "label": "5MP fisheye"
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.05",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 8
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false,
+    "max_microsd_gb": 256
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "180deg fisheye panoramic",
+    "multiple dewarp/PTZ views",
+    "built-in microphone (-U)",
+    "audio line-in & alarm I/O"
+  ],
+  "release_year": 2023,
+  "sources": [
+    "https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2955G0-ISU.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile. Use main stream for recording, sub stream for live view."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1920",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor"
+  ],
+  "last_verified": "2026-07-07",
+  "release_notes": "5MP indoor fisheye (no IP/IK rating); 8m IR; built-in mic."
+}
