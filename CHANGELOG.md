@@ -6,6 +6,15 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.34.0] — 2026-07-07
+
+Hikvision **2CD23xx** fixed-turret expansion — 9 new AcuSense / ColorVu / active-deterrence turrets (plus two panoramic models) from official datasheet PDFs, printed titles verified. Net: **1,978 → 1,987 cameras** (71 brands unchanged).
+
+### Added (Hikvision 2CD23xx)
+- **AcuSense/ColorVu turrets:** DS-2CD2323G2-IU, DS-2CD2326G2-IU, DS-2CD2327G2-LU (2MP); DS-2CD2343G2-IU, DS-2CD2346G2H-IU (4MP).
+- **Active-deterrence turrets (strobe + audible + two-way audio):** DS-2CD2346G2-ISU/SL, DS-2CD2346G2H-IS2U/SLRB (red/blue + white flashing).
+- **Panoramic:** DS-2CD2345G0P-I (4MP indoor 1.68mm 180° panoramic-fisheye), DS-2CD2347G2P-LSU/SL (4MP dual-lens 180° panoramic ColorVu with deterrence).
+
 ## [1.33.0] — 2026-07-07
 
 Hikvision **2-series** (2CD20xx/21xx) expansion — 32 new AcuSense / ColorVu / Smart Hybrid Light bullets and domes extracted from official datasheet PDFs (printed model titles verified against each request). Net: **1,946 → 1,978 cameras** (71 brands unchanged).
