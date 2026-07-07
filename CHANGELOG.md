@@ -6,6 +6,19 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.32.0] — 2026-07-07
+
+Hikvision **1-series** budget-line expansion (26 new ColorVu / AcuSense / Smart Hybrid Light cameras) extracted and verified from official Hikvision datasheets. Net: **1,920 → 1,946 cameras** (71 brands unchanged).
+
+### Added (Hikvision 1-series)
+- **Fixed-lens bullets:** DS-2CD1047G0-LUF (4MP ColorVu), DS-2CD1047G2H-LIUF (4MP hybrid), DS-2CD1067G2H-LIUF (6MP hybrid), DS-2CD1T27G0-LUF-C (2MP ColorVu).
+- **Fixed-lens domes:** DS-2CD1127G0-LUF-D, DS-2CD1123G2-I, DS-2CD1123G2-LIUF, DS-2CD1127G2H-LIUF (2MP); DS-2CD1143G2-I, DS-2CD1143G2-IUF, DS-2CD1143G2-LIUF, DS-2CD1147G0-LUF-D, DS-2CD1147G2H-LIUF (4MP); DS-2CD1167G2H-LIUF (6MP).
+- **Fixed-lens turrets:** DS-2CD1323G2-IUF, DS-2CD1323G2-LIUF, DS-2CD1327G2H-LIUF (2MP); DS-2CD1343G2-IUF, DS-2CD1343G2-LIUF, DS-2CD1347G2H-LIUF (4MP); DS-2CD1367G2H-LIUF (6MP).
+- **Motorized varifocal (2.8–12mm) AcuSense IZS:** DS-2CD1623G2-IZS, DS-2CD1643G2-IZS (bullets); DS-2CD1723G2-IZS, DS-2CD1743G2-IZS (IK10 domes); DS-2CD1H43G2-IZS (turret).
+
+### Notes
+- Specs pulled from the official datasheet PDFs. Naming decoded: `L*`=ColorVu white-light, `I`=AcuSense IR, `U`=built-in mic, `F`=microSD, `Z`=motorized varifocal, `G2H`=ColorVu Smart Hybrid Light (F1.0). The `DS-2CD1143G2-I_T` and `DS-2CD1323G2-IUF_T` regional datasheet variants were folded into their base models (identical hardware) rather than duplicated.
+
 ## [1.31.0] — 2026-07-07
 
 Hikvision expansion (13 new AcuSense/ColorVu/DeepinView models) plus a Reolink hub data-quality fix. Net: **1,907 → 1,920 cameras** (71 brands unchanged). All 13 new models verified against official Hikvision datasheets.
