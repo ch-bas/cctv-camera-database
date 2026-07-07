@@ -6,6 +6,18 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.33.0] — 2026-07-07
+
+Hikvision **2-series** (2CD20xx/21xx) expansion — 32 new AcuSense / ColorVu / Smart Hybrid Light bullets and domes extracted from official datasheet PDFs (printed model titles verified against each request). Net: **1,946 → 1,978 cameras** (71 brands unchanged).
+
+### Added (Hikvision 2-series, 32)
+- **Fixed bullets (4MP):** DS-2CD2047G2H-LIU/SL, DS-2CD2047G2H-LIU, DS-2CD2046G2H-IU, DS-2CD2046G2H-I2U/SLRB, DS-2CD2046G2-IU, DS-2CD2043G2-LI2U, DS-2CD2043G2-L, DS-2CD2043G2-IU, DS-2CD2047G3-LI2UY/SLRB.
+- **Fixed bullets (2/6/8MP):** DS-2CD2026G2-IU, DS-2CD2021G1-I (2MP); DS-2CD2067G2H-LIU/SL (6MP); DS-2CD2086G2-IU/SL, DS-2CD2086G2-IU, DS-2CD2083G2-IU, DS-2CD2086G2H-IU, DS-2CD2087G2H-LIU, DS-2CD2087G3-LI2UY/SLRB (8MP).
+- **Fixed domes/turrets:** DS-2CD2123G2-IS, DS-2CD2125G0-IMS, DS-2CD2126G2-I, DS-2CD2126G2-ISU (2MP); DS-2CD2146G2H-ISU, DS-2CD2147G2-SU, DS-2CD2147G2H-LISU, DS-2CD2147G3-LIS2UY (4MP); DS-2CD2167G2H-LISU (6MP); DS-2CD2183G2-IS, DS-2CD2186G2-ISU, DS-2CD2186G2H-ISU, DS-2CD2187G2-LSU, DS-2CD2187G2H-LISU (8MP).
+
+### Notes
+- Active-deterrence SKUs (`/SL`, `I2U/SLRB`, G3 `LI2UY/SLRB`) captured with speaker + two-way audio and strobe/siren (G3 adds red/blue + white-light flashing, HikAI-ISP). `-S`-only models expose line-level audio terminals (no built-in mic). `2125G0-IMS` is an indoor IP42 public-view-monitor dome with HDMI out. Region/packaging suffixes (`-C`/`-D`/`-eF`) and `_T` datasheets folded into base models.
+
 ## [1.32.0] — 2026-07-07
 
 Hikvision **1-series** budget-line expansion (26 new ColorVu / AcuSense / Smart Hybrid Light cameras) extracted and verified from official Hikvision datasheets. Net: **1,920 → 1,946 cameras** (71 brands unchanged).
