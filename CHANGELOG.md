@@ -8,7 +8,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [1.31.0] — 2026-07-07
 
-Large **Hikvision** catalogue expansion — **97 new models** across the 2CD1 / 2CD2 / 2CD3 / 2CD7 families (AcuSense, ColorVu, Smart Hybrid Light, DeepinView, active-deterrence and indoor-cube lines), plus a Reolink Home Hub data-quality fix. Every model was verified against official Hikvision datasheets (PDF extraction with printed-title verification). Net: **1,907 -> 2,004 cameras** (71 brands unchanged) — the dataset passes **2,000 cameras**.
+Large **Hikvision** catalogue expansion — **194 new models** across the 2CD1 / 2CD2 / 2CD3 / 2CD6 / 2CD7 / 2DE / 2CV families (AcuSense, ColorVu, Smart Hybrid Light, motorized-varifocal, PTRZ, PTZ speed domes, DeepinView fisheye, dual-lens panoramic, WiFi and indoor-cube lines), plus a Reolink Home Hub data-quality fix. Every model was verified against official Hikvision datasheets (PDF extraction with printed-title verification). Net: **1,907 -> 2,101 cameras** (71 brands unchanged) — the dataset passes **2,100 cameras**.
 
 ### Added — Hikvision (97)
 
@@ -30,6 +30,17 @@ Large **Hikvision** catalogue expansion — **97 new models** across the 2CD1 / 
 - Turrets: DS-2CD2347G3-LIS2UY/SLRB, DS-2CD2367G2H-LIU, DS-2CD2383G2-IU, DS-2CD2386G2H-IS2U/SLRB, DS-2CD2386G2H-IU, DS-2CD2387G2H-LISU/SL, DS-2CD2387G3-LIS2UY/SLRB.
 - Indoor cubes (box): DS-2CD2421G0-IDW (WiFi, DC-only), DS-2CD2423G2-I, DS-2CD2423G2-IW (WiFi), DS-2CD2443G2-I, DS-2CD2446G2-I, DS-2CD2483G2-I (H.265-only).
 - Mini-domes: DS-2CD2523G2-IS, DS-2CD2546G2-IWS (WiFi), DS-2CD2547G2-LS (ColorVu), DS-2CD2583G2-IS.
+
+### Added — Hikvision, second wave (97)
+
+Full sweep of the remaining catalogue on the datasheet mirror (diffed 228 camera datasheets against the dataset; 3 `_T` regional duplicates skipped):
+- **Motorized-varifocal (IZS/LIZS) bullets, domes & turrets (2CD26xx/27xx/28xx, 2CD2Hxx):** AcuSense DarkFighter + ColorVu Smart Hybrid Light, 2/4/6/8 MP — incl. G3 `LIZS2UY/SLRB` red/blue-flashing deterrence and `IPTRZS2U` PTRZ (pan/tilt/rotate/zoom) reposition models.
+- **Fixed bullets (2CD2T-series):** `-2I/4I` long-range IR (to 80 m), ColorVu/Smart-Hybrid `-LI`/`-LISU/SL`/`G3-LIS2UY/SLRB`, and active-deterrence `-ISU/SL`, `-IS2U/SLRB`.
+- **DS-2DE PTZ speed domes & mini-PTZ (17):** 4×–32× optical zoom, IR to 200 m, incl. WiFi mini-PTZ variants.
+- **Dual-lens 180° panoramic (2CD2T4xG2P / 2T87G2P):** stitched-image ColorVu with strobe/audible deterrence.
+- **DeepinView fisheye (2CD6365/63C5/6W65 — 6/12 MP)** and standard fisheye (`2CD2955G0-ISU`).
+- **DS-2CV WiFi & indoor cubes (2CV20xx/21xx/2Q21, 2CD2E/2D25):** WiFi and DC-only indoor models.
+- **1-series 2/4 MP (2CD1023/1027/1043):** ColorVu / AcuSense / Smart Hybrid Light fixed bullets.
 
 ### Fixed
 - **Reolink Home Hub** — removed `rtsp`/`rtmp` from `protocols` (they describe re-streaming the hub's *managed* cameras, not a stream of the hub itself, which has no image sensor); the relay capability is now documented in `features`. Clears a spurious "rtsp without NVR configs" data-quality flag.
