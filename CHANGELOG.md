@@ -6,6 +6,20 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.33.0] — 2026-07-11
+
+**ACTi catalogue completion** — added **129 currently-orderable ACTi cameras** that were missing from the dataset. Discovered by diffing ACTi's official product-roadmap (only `AvailableToOrder=Available` models) against our set, then extracted from ACTi's server-side spec-API (`newPopupSpecifications.ashx` + `_value.ashx`). Net: **2,101 -> 2,230 cameras** (71 brands unchanged). ACTi coverage 119 -> 248.
+
+### Added — ACTi (129)
+- The entire **L-series** (L31/L33/L41/L43/L71/L73/L81/L83 + -P1 variants) — a current line we had zero of.
+- More **J-series** (J71/J72/J73/J81), plus **E-series**, **Z-series**, **A-series**, **B-series** fixed/zoom bullets, domes, turrets, boxes/cubes and PTZ.
+- Specialty: 2 thermal bispectral bullets (A377, K372), fisheye/hemispheric (A912, B57, E96, E925M), covert (Q12/Q113/Q115), door station Q950, video intercom Q970, body-worn PCAM-1600.
+
+### Notes
+- `max_fps` recorded at the highest resolution (ACTi lists highest-res first) — not `max()` across the resolution table. Bispectral (thermal+visual) fields resolved to the visual sensor with the thermal sensor noted in `features`.
+- 9 models whose ACTi spec sheet omits the Network Protocol row (RTSP not documented) get ONVIF-only with no Frigate config, matching the existing dataset methodology (documented in the private repo's `docs/acti-spec-api.md`).
+- Skipped `B943-C-V01-145` (custom bundle SKU, no published specs); `Z79-P1` inherits its `Z79` base specs.
+
 ## [1.32.0] — 2026-07-07
 
 **Hikvision full-catalogue sweep** — the remaining **97 models** from the datasheet mirror (diffed 228 camera datasheets against the dataset; 3 `_T` regional-duplicate datasheets skipped). Every model verified against its official Hikvision datasheet (PDF extraction with printed-title verification). Net: **2,004 -> 2,101 cameras** (71 brands unchanged) — the dataset passes **2,100 cameras**.
