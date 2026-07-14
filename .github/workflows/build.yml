@@ -10,6 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Full history: build.js derives each camera's `added` date from
+          # `git log --diff-filter=A`; a shallow clone would compute different
+          # dates and falsely trip the stale-files check below.
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
