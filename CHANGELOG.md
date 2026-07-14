@@ -6,6 +6,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.34.0] — 2026-07-14
+
+Generated-artifact feature: each camera in the **generated** `cameras.json` (data/, docs/, and downstream mirrors) now carries an **`added`** date (YYYY-MM-DD) — derived at build time from git history (`git log --diff-filter=A`, with `--follow` fallback for renamed files). Per-camera **source files are unchanged** and the schema is untouched; `added` is provenance metadata injected after validation. Powers downstream "recently added" listings and RSS feeds. CI now checks out with full history (`fetch-depth: 0`) so the stale-artifact check reproduces identical dates.
+
 ## [1.33.0] — 2026-07-11
 
 **ACTi catalogue completion** — added **129 currently-orderable ACTi cameras** that were missing from the dataset. Discovered by diffing ACTi's official product-roadmap (only `AvailableToOrder=Available` models) against our set, then extracted from ACTi's server-side spec-API (`newPopupSpecifications.ashx` + `_value.ashx`). Net: **2,101 -> 2,230 cameras** (71 brands unchanged). ACTi coverage 119 -> 248.

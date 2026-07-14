@@ -9,6 +9,7 @@
  */
 const fs = require("fs");
 const path = require("path");
+const { execSync } = require("child_process");
 const Ajv = require("ajv");
 const addFormats = require("ajv-formats");
 
@@ -48,13 +49,56 @@ function loadCameras() {
   return walk(CAMERAS_DIR)
     .map((f) => {
       try {
-        return JSON.parse(fs.readFileSync(f, "utf8"));
+        return { file: path.relative(ROOT, f), cam: JSON.parse(fs.readFileSync(f, "utf8")) };
       } catch (err) {
         console.error(`Failed to parse ${f}: ${err.message}`);
         process.exit(1);
       }
     })
-    .sort((a, b) => a.id.localeCompare(b.id));
+    .sort((a, b) => a.cam.id.localeCompare(b.cam.id));
+}
+
+// Repo-relative camera file -> date (YYYY-MM-DD) the file was first added to
+// git. Powers the `added` field injected into the *generated* aggregate for
+// downstream consumers (RSS feed / "recently added" page). Returns an empty
+// map — feature silently degrades — when history is unavailable or shallow;
+// CI must therefore checkout with fetch-depth: 0 (see build.yml) or its
+// "generated files are stale" rebuild would compute different dates.
+function addedDates() {
+  try {
+    const shallow = execSync("git rev-parse --is-shallow-repository", { cwd: ROOT })
+      .toString().trim();
+    if (shallow === "true") return {};
+    const out = execSync(
+      "git log --diff-filter=A --name-only --format=__%ad --date=short -- cameras",
+      { cwd: ROOT, maxBuffer: 64 * 1024 * 1024 }
+    ).toString();
+    const map = {};
+    let date = null;
+    for (const line of out.split("\n")) {
+      if (line.startsWith("__")) date = line.slice(2).trim();
+      // git log is newest-first: keep overwriting so a file re-added later
+      // (e.g. after a rename) resolves to its oldest add date.
+      else if (line.endsWith(".json") && date) map[line.trim()] = date;
+    }
+    return map;
+  } catch {
+    return {};
+  }
+}
+
+// Fallback for files whose add is hidden behind a git rename (the bulk pass
+// attributes the A to the old path): follow the file's history individually.
+function addedDateFollow(file) {
+  try {
+    const out = execSync(
+      `git log --follow --diff-filter=A --format=%ad --date=short -- "${file}"`,
+      { cwd: ROOT }
+    ).toString().trim().split("\n");
+    return out[out.length - 1] || null; // oldest add
+  } catch {
+    return null;
+  }
 }
 
 function validate(cameras) {
@@ -114,8 +158,20 @@ function toCsv(cameras) {
 }
 
 function main() {
-  const cameras = loadCameras();
+  const entries = loadCameras();
+  const cameras = entries.map((e) => e.cam);
   validate(cameras);
+  // Inject the git-derived `added` date into the generated aggregate only —
+  // never into the per-camera source files (the schema stays authoritative
+  // there; `added` is provenance metadata, not dataset content). Injected
+  // after validation because the schema's additionalProperties: false would
+  // otherwise reject it.
+  const added = addedDates();
+  const haveHistory = Object.keys(added).length > 0;
+  for (const { file, cam } of entries) {
+    const d = added[file] || (haveHistory ? addedDateFollow(file) : null);
+    if (d) cam.added = d;
+  }
   if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
   const jsonData = JSON.stringify(cameras, null, 2) + "\n";
   fs.writeFileSync(path.join(DATA_DIR, "cameras.json"), jsonData);
