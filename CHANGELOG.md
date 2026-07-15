@@ -6,9 +6,19 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
-## [1.35.1] — 2026-07-15
+## [1.36.0] — 2026-07-15
 
-Enrich 5 ACTi PTZ cameras with **`ptz.autotracking: true`**, confirmed from their official ACTi datasheets ("PTZ Auto Tracking, 360° endless"): Q992, Q982-P1, A973, A972, A966. Follows the #124 camera-side model. (Q982-P2's datasheet omits the auto-tracking line despite being the P1 twin — left unset pending confirmation; Q711/Q450 are fixed 2-sensor cameras with no tracking.)
+Re-verified all **33 ACTi cameras** that have official datasheets on hand, field-by-field against those datasheets (previously `last_verified: 2026-07-03`).
+
+### Changed
+- **`ptz.autotracking: true`** on 5 PTZ models confirmed by datasheet ("PTZ Auto Tracking"): Q992, Q982-P1, A973, A972, A966.
+- **A966** — `max_fps` 60 → 30 (the 60 fps rows are "High Frame Mode"; highest sustained rate is 30).
+- **A570-P2** — added thermal aperture (F1.0) + thermal field-of-view.
+- **Z64** — `power_source` +`dc` (datasheet: "12 V, PoE").
+- `last_verified` → 2026-07-15 on all 33.
+
+### Notes
+- The remaining fields were already accurate (spec-API sourcing held up). Multi-sensor aggregate-MP (Q450/Q711 = 2×4 MP) and ACTi nominal-vs-effective MP (Z318/Z954) correctly preserved, not false-fixed. A711 `max_width/height` kept at the max *stream* resolution (4000×3000), not the sensor's raw effective pixels. Cameras whose sheets lack a "Network Protocol & Service" row (A570-P1/P2, A371-P2, A973, Q170, Q711, Z64) keep `protocols` unset per methodology.
 
 ## [1.35.0] — 2026-07-15
 
