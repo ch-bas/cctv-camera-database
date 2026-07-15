@@ -6,6 +6,17 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.37.0] — 2026-07-15
+
+Mark **Reolink PTZ cameras as incompatible with Frigate autotracking** (#124, part 2 — Reolink slice). Reolink exposes only **absolute** ONVIF PTZ, while Frigate autotracking requires relative movement.
+
+### Changed
+- On the 20 mechanical-PTZ Reolink models with a Frigate config (E1 Outdoor / RLC-823x / TrackMix / TrackFlex / P830 / RLC-523WA / RLC-81PA / RLC-423 / E1 Zoom): set **`configs.frigate.autotracking: false`** with an explanatory note, and **`ptz.onvif_ptz: absolute`** on the 18 that expose ONVIF.
+- Camera-side `ptz.autotracking` (onboard tracking, which *does* work) is unchanged and remains distinct.
+
+### Notes
+- Community-sourced (Frigate docs/forums; not a Reolink datasheet field) — recorded as an integration fact with a note, separate from the official-spec fields. Fixed dual-lens Reolink (Duo/Elite, no mechanical pan/tilt) excluded. Camera-side autotracking gaps on other Reolink PT models are tracked separately.
+
 ## [1.35.0] — 2026-07-15
 
 Separate **camera-side** autotracking from **Frigate-based** autotracking (#124, part 1).
