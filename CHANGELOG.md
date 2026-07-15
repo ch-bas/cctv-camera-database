@@ -6,6 +6,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.35.1] — 2026-07-15
+
+Enrich 5 ACTi PTZ cameras with **`ptz.autotracking: true`**, confirmed from their official ACTi datasheets ("PTZ Auto Tracking, 360° endless"): Q992, Q982-P1, A973, A972, A966. Follows the #124 camera-side model. (Q982-P2's datasheet omits the auto-tracking line despite being the P1 twin — left unset pending confirmation; Q711/Q450 are fixed 2-sensor cameras with no tracking.)
+
 ## [1.35.0] — 2026-07-15
 
 Separate **camera-side** autotracking from **Frigate-based** autotracking (#124, part 1).
