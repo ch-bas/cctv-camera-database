@@ -23,7 +23,6 @@
 
 - 360° pan / 90° tilt
 - 5x optical zoom
-- auto-tracking (person/vehicle)
 - spotlight color night vision
 - active deterrence siren
 - person/vehicle/animal detection

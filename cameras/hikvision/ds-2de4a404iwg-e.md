@@ -27,7 +27,6 @@
 - 50m IR
 - H.265+
 - IP66
-- auto-tracking
 - most affordable Hikvision PoE mini PTZ
 
 ## Sources

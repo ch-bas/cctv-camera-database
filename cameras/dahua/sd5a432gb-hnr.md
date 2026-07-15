@@ -24,7 +24,6 @@
 - WizSense AI
 - Starlight low-light
 - SMD Plus
-- auto-tracking
 - IVS analytics
 - H.265
 - IK10

@@ -23,7 +23,6 @@
 - AcuSense human/vehicle classification
 - arrayed dual-mic two-way audio
 - white-light + audible audio-visual alarm
-- auto-tracking
 - 300 presets
 - IR up to 200m
 - pan/tilt: pan 360 / tilt -15 to 90

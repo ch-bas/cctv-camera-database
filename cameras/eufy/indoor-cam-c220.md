@@ -23,7 +23,6 @@
 - person detection
 - pet detection
 - crying detection
-- auto-tracking
 - privacy mode
 - 360 pan / 75 tilt (no HomeKit)
 

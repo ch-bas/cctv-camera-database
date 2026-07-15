@@ -27,7 +27,6 @@
 - AI person detection
 - spotlight color night vision
 - strobe light deterrence
-- auto-tracking
 - Alexa / Google
 - no officially confirmed RTSP/ONVIF -- official datasheet lists only 'EZVIZ Cloud Proprietary Protocol'
 

@@ -27,7 +27,6 @@
 - AcuSense
 - IP66
 - H.265+
-- auto-tracking
 - very popular commercial India PTZ
 - ₹25,000–35,000
 

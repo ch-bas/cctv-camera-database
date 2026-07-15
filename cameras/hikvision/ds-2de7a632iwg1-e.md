@@ -22,7 +22,6 @@
 - pan/tilt: pan 360 / tilt -15 to 90
 - powered-by-DarkFighter + HIK AI-ISP
 - AcuSense human/vehicle classification
-- auto-tracking (Smart Tracking)
 - active deterrence: white-light flash + audible warning
 - built-in speaker (30m) + arrayed dual-mic (8m) two-way audio
 - IR to 200m

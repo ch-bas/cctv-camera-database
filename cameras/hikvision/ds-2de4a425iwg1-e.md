@@ -22,7 +22,6 @@
 - pan/tilt: pan 360 / tilt -5 to 90
 - powered-by-DarkFighter low-light
 - AcuSense human/vehicle classification
-- auto-tracking (Smart Tracking)
 - face capture, regional people counting
 - IR to 50m (850nm)
 - 120dB WDR

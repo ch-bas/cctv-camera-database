@@ -24,7 +24,6 @@
 - 5MP outdoor WiFi PTZ
 - 355° pan / 50° tilt (64 presets)
 - 3x optical zoom
-- auto-tracking
 - 12m IR
 - person/vehicle/animal detection
 - ONVIF/RTSP

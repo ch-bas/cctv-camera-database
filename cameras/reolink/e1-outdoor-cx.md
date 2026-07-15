@@ -24,7 +24,6 @@
 - 2K ColorX WiFi outdoor F1.0 1/1.8" sensor
 - true color night vision no IR
 - person/vehicle/animal AI
-- auto-tracking
 - ONVIF/RTSP
 - IP65
 - Alexa/Google

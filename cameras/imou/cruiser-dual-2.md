@@ -27,7 +27,6 @@
 - 110 dB siren
 - spotlight active deterrence
 - IMOU SENSE human/vehicle detection
-- auto-tracking
 - Wi-Fi 6
 - two-way talk
 

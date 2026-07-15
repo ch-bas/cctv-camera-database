@@ -22,7 +22,7 @@
 - 200m Smart IR
 - 360 presets, 8 patrol patterns
 - endless 360 pan
-- auto-tracking / object detection
+- object detection
 - 120dB WDR
 - snow-removing (defog)
 - ICR day/night

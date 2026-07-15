@@ -22,7 +22,6 @@
 
 - dual-lens
 - 6x hybrid zoom
-- auto-tracking
 - 355° pan / 90° tilt
 - person/vehicle/animal detection
 - 4G LTE

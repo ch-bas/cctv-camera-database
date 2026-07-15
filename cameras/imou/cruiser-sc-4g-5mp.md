@@ -23,7 +23,6 @@
 
 - 4G LTE pan/tilt
 - full-color night vision
-- auto-tracking
 - spotlight + 110 dB siren
 - red-blue warning lights
 - AI human detection

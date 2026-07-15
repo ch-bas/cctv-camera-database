@@ -22,7 +22,6 @@
 
 - 22x optical zoom
 - 360° continuous pan
-- autotracking
 - H.265 compression
 - preset tours
 

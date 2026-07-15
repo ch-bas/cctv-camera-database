@@ -24,7 +24,6 @@
 - 1080p outdoor pan/tilt
 - dual spotlights color night vision
 - AI person/vehicle detection
-- auto-tracking
 - strobe deterrence
 - RTSP / ONVIF (official ONVIF compatibility FAQ lists H8c firmware builds)
 - Alexa / Google

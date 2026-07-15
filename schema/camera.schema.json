@@ -181,6 +181,27 @@
         }
       }
     },
+    "ptz": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "PTZ capabilities (pan/tilt/zoom cameras). Camera-side autotracking is distinct from Frigate autotracking (configs.frigate.autotracking), which additionally requires ONVIF relative movement.",
+      "properties": {
+        "autotracking": {
+          "type": "boolean",
+          "description": "Camera-side (onboard) subject autotracking — the camera moves itself to follow a subject."
+        },
+        "onvif_ptz": {
+          "type": "string",
+          "description": "ONVIF PTZ movement model the camera exposes. Frigate autotracking requires 'relative'; e.g. Reolink is 'absolute' only.",
+          "enum": [
+            "relative",
+            "absolute",
+            "continuous",
+            "none"
+          ]
+        }
+      }
+    },
     "power": {
       "type": "object",
       "additionalProperties": false,
@@ -373,6 +394,10 @@
               "type": "string",
               "enum": ["go2rtc", "ffmpeg", "rtsp"],
               "description": "Recommended stream input type (e.g. go2rtc for WebRTC/audio, ffmpeg for scaling, native rtsp)."
+            },
+            "autotracking": {
+              "type": "boolean",
+              "description": "Whether Frigate can drive PTZ autotracking on this camera. Requires ONVIF relative movement (ptz.onvif_ptz: relative); false for absolute-only cameras like Reolink. Distinct from camera-side ptz.autotracking."
             }
           }
         },

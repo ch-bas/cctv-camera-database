@@ -23,7 +23,6 @@
 - 360° pan / 90° tilt
 - 25x optical zoom
 - smart IR
-- auto-tracking
 - H.265 compression
 
 ## Sources

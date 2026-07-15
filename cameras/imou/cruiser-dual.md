@@ -25,7 +25,6 @@
 - full-color night vision
 - 110 dB siren
 - IMOU SENSE human/vehicle detection
-- auto-tracking
 - Wi-Fi 6
 - two-way talk
 

@@ -24,7 +24,6 @@
 - active deterrence: sound + strobe light to 100m
 - IR up to 200m (850nm)
 - 2 built-in speakers
-- auto-tracking
 - 300 presets
 - face capture
 - pan/tilt: pan 360 / tilt -15 to 90

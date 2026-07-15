@@ -29,7 +29,6 @@
 - Zipstream H.265
 - Axis Edge Vault TPM cybersecurity (FIPS 140-2 Level 2)
 - sharpdome design (20deg above horizon)
-- auto-tracking
 - used in NEOM/smart city Saudi Arabia & UAE critical infra
 
 ## Sources

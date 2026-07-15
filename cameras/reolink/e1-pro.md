@@ -24,7 +24,6 @@
 - 64 presets
 - human/pet detection
 - crying detection
-- auto-tracking
 - dual-band WiFi
 - no subscription
 

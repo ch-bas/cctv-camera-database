@@ -23,7 +23,6 @@
 
 - outdoor pan/tilt
 - 8x digital zoom
-- auto-tracking
 - human & vehicle detection
 - full-color night vision
 - 110 dB siren

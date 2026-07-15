@@ -22,7 +22,6 @@
 
 - 25x optical zoom (5-125mm)
 - active deterrence: built-in red/blue strobe lights + siren (X-Deterrence)
-- auto-tracking
 - VCA: line crossing, intrusion detection, face detection
 - MD 2.0 human/vehicle detection
 - built-in heater for lens defogging
