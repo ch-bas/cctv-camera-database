@@ -23,7 +23,6 @@
 - 30x optical zoom
 - 360° continuous pan
 - Starlight sensor
-- autotracking
 - H.265+ compression
 - smart IR
 

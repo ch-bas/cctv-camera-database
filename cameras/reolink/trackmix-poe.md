@@ -22,7 +22,6 @@
 ## Features
 
 - dual-lens dual-view
-- auto-tracking
 - 6x hybrid zoom
 - 355° pan / 90° tilt
 - person/vehicle/animal detection

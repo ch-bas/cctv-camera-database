@@ -22,7 +22,6 @@
 - 150m Smart IR (850nm)
 - 1024 presets
 - endless 360 pan
-- auto tracking
 - line-crossing / intrusion / area analytics
 - 120dB optical WDR
 - two-way audio

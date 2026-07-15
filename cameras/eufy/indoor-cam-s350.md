@@ -22,7 +22,6 @@
 
 - 4K dual-lens indoor pan/tilt
 - 8x hybrid zoom (3x optical tele)
-- AI auto-tracking
 - on-device human/pet/crying detection
 - color night vision + IR
 - no subscription

@@ -24,7 +24,6 @@
 - 3x optical zoom
 - 4K UHD
 - person/vehicle/animal detection
-- auto-tracking
 - 355° pan / 50° tilt
 - color night vision
 - WiFi 6

@@ -23,7 +23,6 @@
 
 - 2K QHD indoor WiFi pan/tilt
 - ONVIF Profile S confirmed on official datasheet
-- auto-tracking
 - Lorex Home app
 - Alexa / Google
 - no monthly fees

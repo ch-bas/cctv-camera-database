@@ -24,7 +24,6 @@
 
 - 5MP outdoor pan/tilt color night vision
 - AI human/vehicle detection
-- auto-tracking
 - smart siren + spotlight deterrence
 - IP66
 - H.265

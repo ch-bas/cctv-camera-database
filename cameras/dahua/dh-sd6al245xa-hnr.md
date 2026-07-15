@@ -23,7 +23,6 @@
 
 - 45x optical zoom PTZ
 - Starlight low-light sensor
-- AI auto-tracking
 - face detection
 - perimeter protection
 - 550m laser range

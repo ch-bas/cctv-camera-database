@@ -23,7 +23,6 @@
 
 - 355deg pan / 50deg tilt
 - 3x optical zoom
-- auto-tracking
 - compact low-profile body
 - person/vehicle/animal detection
 - no subscription

@@ -21,7 +21,6 @@
 ## Features
 
 - 355deg pan / 50deg tilt
-- auto-tracking
 - spotlight color night vision
 - person/vehicle/animal detection
 - 10x digital zoom

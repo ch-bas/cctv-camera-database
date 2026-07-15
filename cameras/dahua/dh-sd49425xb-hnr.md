@@ -26,7 +26,6 @@
 - WizMind 4MP 25x Starlight PTZ
 - face detection
 - perimeter protection
-- auto-tracking
 - H.265+
 - IP66
 - 100m IR

@@ -25,7 +25,6 @@
 - outdoor pan/tilt WiFi
 - F1.6 color night vision 30m
 - AI person/vehicle detection
-- auto-tracking
 - dual spotlights
 - sound + light deterrence
 - no officially confirmed RTSP/ONVIF -- official docs list only 'EZVIZ Cloud Proprietary Protocol'

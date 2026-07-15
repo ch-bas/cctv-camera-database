@@ -25,7 +25,6 @@
 - F1.0 large-aperture 'Aurora' lens
 - AURORA full-color night vision (25m)
 - AI human detection
-- auto tracking
 - integrated siren
 - 4G LTE + Wi-Fi
 

@@ -22,7 +22,6 @@
 ## Features
 
 - dual-lens 12x mixed zoom (3x optical + 4x digital)
-- auto-tracking
 - IMOU SENSE AI human & vehicle detection
 - full-color night vision
 - spotlight/siren active deterrence

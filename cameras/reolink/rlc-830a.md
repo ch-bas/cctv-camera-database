@@ -22,7 +22,6 @@
 ## Features
 
 - 355deg pan / 90deg tilt
-- auto-tracking
 - spotlight color night vision
 - person/vehicle/animal detection
 - no subscription

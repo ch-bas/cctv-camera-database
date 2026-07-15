@@ -23,7 +23,6 @@
 ## Features
 
 - 25x optical zoom, endless (360-degree continuous) panning, -3 to 90 degree tilt
-- Smart Tracking (auto-tracking)
 - ONVIF Profile G, S, and T conformant
 - line crossing, video blurring/tamper detection, human/vehicle detection
 - face detection and recognition (requires a compatible Speco recorder)

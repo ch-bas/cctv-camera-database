@@ -22,7 +22,6 @@
 - battery-powered + solar option
 - 4G LTE (no WiFi needed)
 - 355deg pan / 140deg tilt
-- auto-tracking
 - person/vehicle/animal detection
 - PIR + siren
 - app-only (no RTSP/ONVIF)

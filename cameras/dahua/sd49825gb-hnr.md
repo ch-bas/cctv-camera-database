@@ -23,7 +23,6 @@
 - pan/tilt/zoom
 - WizMind 4K 8MP 25x PTZ SMD 4.0
 - face recognition
-- auto-tracking
 - 100m IR
 - H.265+
 - IP66

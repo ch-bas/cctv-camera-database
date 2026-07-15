@@ -24,7 +24,6 @@
 - 360° continuous pan
 - SureVision WDR
 - analytics-ready
-- autotracking
 - H.265 compression
 
 ## Sources

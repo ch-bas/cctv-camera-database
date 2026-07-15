@@ -23,7 +23,6 @@
 - 25x optical zoom
 - Smart Dual Light
 - WizSense
-- auto-tracking
 - pan 240 deg/s
 - H.265+
 

@@ -24,10 +24,8 @@
 - 4MP 25x PTZ DeepinView
 - 100m IR
 - AcuSense AI
-- auto-tracking
 - H.265+
 - IP66
-- smart tracking
 
 ## Sources
 

@@ -23,7 +23,6 @@
 
 - Always-On-Video (AOV) low-power 24/7 recording
 - AI human detection (>98%)
-- auto tracking
 - siren & spotlight
 - 8x digital zoom
 - PIR

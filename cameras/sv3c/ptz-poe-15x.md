@@ -16,7 +16,6 @@
 ## Features
 
 - 15x optical zoom
-- auto-tracking
 - floodlight color night vision
 - RTSP
 - FTP

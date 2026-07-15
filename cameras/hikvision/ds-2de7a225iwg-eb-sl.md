@@ -23,7 +23,6 @@
 - AcuSense human/vehicle classification
 - active deterrence strobe + audible warning to 100m
 - 2 built-in speakers
-- auto-tracking
 - 300 presets
 - IR up to 200m
 - pan/tilt: pan 360 / tilt -15 to 90

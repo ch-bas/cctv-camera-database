@@ -20,7 +20,6 @@
 
 - 25x optical zoom
 - pan/tilt/zoom
-- auto-tracking
 - Control4 integration
 - preset patrol
 

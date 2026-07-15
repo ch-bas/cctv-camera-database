@@ -19,7 +19,6 @@
 - 2K dual-lens
 - solar powered
 - 360° pan/tilt
-- auto-tracking
 - color night vision
 - no subscription
 - 4-camera kit

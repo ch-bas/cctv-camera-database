@@ -27,7 +27,6 @@
 - 5x optical zoom
 - 3D zoom
 - 360deg pan / 90deg tilt
-- auto-tracking
 - spotlight color night vision
 - no subscription
 

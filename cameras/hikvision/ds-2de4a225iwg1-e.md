@@ -22,7 +22,6 @@
 - pan/tilt: pan 360 / tilt -5 to 90
 - DarkFighter low-light
 - AcuSense human/vehicle classification
-- auto-tracking
 - IR to 50m (850nm, smart supplement)
 - 120dB WDR
 - 3D positioning

@@ -18,7 +18,6 @@
 
 - 5MP WiFi PTZ
 - 5x optical zoom
-- auto-tracking
 - spotlight color night vision
 - IP66
 - RTSP

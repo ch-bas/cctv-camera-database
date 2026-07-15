@@ -23,7 +23,6 @@
 - 4G LTE
 - dual-lens 6x hybrid zoom
 - 355deg pan / 90deg tilt
-- auto-tracking
 - person/vehicle/animal detection
 - app-only (no RTSP/ONVIF)
 - no subscription

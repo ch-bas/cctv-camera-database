@@ -24,7 +24,6 @@
 - 360° continuous pan
 - SureVision 4.0 WDR
 - analytics-ready
-- autotracking
 - preset tours
 
 ## Sources

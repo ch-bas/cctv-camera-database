@@ -24,7 +24,6 @@
 ## Features
 
 - 180deg pan rotation
-- auto-tracking
 - person/vehicle detection
 - no subscription
 

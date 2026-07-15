@@ -24,7 +24,6 @@
 - Smart Dual Light
 - WizSense
 - 4K PTZ
-- auto-tracking
 - pan 240 deg/s
 - H.265+
 

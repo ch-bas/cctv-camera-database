@@ -24,7 +24,6 @@
 
 - 340deg pan/55deg tilt indoor camera
 - AI person detection
-- auto-tracking
 - EZVIZ App
 - Alexa / Google / Hikvision NVR compatible
 - RTSP (manual app enable) / ONVIF (firmware >= V5.3.2 build 231228)

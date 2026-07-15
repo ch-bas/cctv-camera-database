@@ -28,7 +28,6 @@
 - Ambarella S5L66 processor
 - PoE++ powered
 - UniFi Protect ecosystem
-- auto-tracking
 
 ## Sources
 

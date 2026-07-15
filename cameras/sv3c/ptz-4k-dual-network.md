@@ -19,7 +19,6 @@
 - pan/tilt/zoom
 - 4K 8MP
 - dual network (PoE + WiFi)
-- auto-tracking
 - human/vehicle detection
 - color night vision
 - RTSP

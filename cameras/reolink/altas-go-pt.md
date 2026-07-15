@@ -22,7 +22,6 @@
 - battery-powered (20000mAh) + solar option
 - 4G LTE
 - 355deg pan / 90deg tilt
-- auto-tracking
 - ColorX hybrid night vision
 - 10-second pre-recording
 - person/vehicle/animal detection

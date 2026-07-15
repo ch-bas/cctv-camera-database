@@ -24,7 +24,6 @@
 - arrayed dual-mic (8m) + speaker (30m)
 - audio-visual alarm (white-light flash + audible)
 - IR up to 200m
-- auto-tracking
 - 300 presets
 - regional people counting
 - 360 VR panoramic view

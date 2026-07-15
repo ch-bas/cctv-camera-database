@@ -26,7 +26,6 @@
 - dual-camera design: separate wide-angle and tele (zoom) sensors/lenses, 10x hybrid zoom -- corrected from a fabricated single-sensor 22x optical / 5-185mm spec and a fabricated 150m IR range
 - pan 350 degrees, tilt 100 degrees (not full 360-degree endless pan)
 - face recognition, license plate recognition
-- auto-tracking
 - UniFi Protect ecosystem
 - IK04 tamper resistance
 - MicroSD card expansion slot

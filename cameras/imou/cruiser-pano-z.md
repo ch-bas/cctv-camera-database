@@ -25,7 +25,6 @@
 - smart color four-mode night vision
 - warning lights + 120 dB alarm
 - AI human/vehicle detection
-- auto-tracking
 - AOR always-on-record
 - dual microSD slots
 - dual-band Wi-Fi 6

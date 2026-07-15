@@ -6,6 +6,19 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.35.0] — 2026-07-15
+
+Separate **camera-side** autotracking from **Frigate-based** autotracking (#124, part 1).
+
+### Added
+- Schema **`ptz`** object — `ptz.autotracking` (camera-side, onboard subject tracking) and `ptz.onvif_ptz` (`relative`|`absolute`|`continuous`|`none`, the ONVIF movement model that gates Frigate compatibility).
+- Schema **`configs.frigate.autotracking`** — whether Frigate can drive PTZ autotracking (requires ONVIF relative movement; distinct from the camera-side flag).
+
+### Changed
+- Migrated **153** PTZ/dual-lens cameras from free-text `features[]` autotracking tags to **`ptz.autotracking: true`**; removed 84 now-redundant pure-autotracking feature strings (versioned/descriptive strings like "Autotracking 2" retained).
+
+### Notes
+- `onvif_ptz` and `configs.frigate.autotracking` are intentionally left **unset** pending part 2 (community-sourced ONVIF-move / Frigate-compat data — Reolink → false, Frigate known-working → true). 16 non-PTZ cameras with autotracking mentions (digital/e-PTZ or fixed) were **not** migrated — flagged for manual review in #124.
 ## [1.34.0] — 2026-07-14
 
 Generated-artifact feature: each camera in the **generated** `cameras.json` (data/, docs/, and downstream mirrors) now carries an **`added`** date (YYYY-MM-DD) — derived at build time from git history (`git log --diff-filter=A`, with `--follow` fallback for renamed files). Per-camera **source files are unchanged** and the schema is untouched; `added` is provenance metadata injected after validation. Powers downstream "recently added" listings and RSS feeds. CI now checks out with full history (`fetch-depth: 0`) so the stale-artifact check reproduces identical dates.
