@@ -6,6 +6,18 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.37.0] — 2026-07-15
+
+Reolink autotracking: separate the camera-side capability from Frigate compatibility (#124 part 2, Reolink slice).
+
+### Changed
+- **Frigate incompatibility**: on the 20 mechanical-PTZ Reolink with a Frigate config, set `configs.frigate.autotracking: false` + note ("Reolink uses absolute ONVIF PTZ; Frigate autotracking requires relative movement"), and `ptz.onvif_ptz: absolute` on the 18 that expose ONVIF.
+- **Camera-side completion**: set `ptz.autotracking: true` on 10 more Reolink models confirmed to have onboard auto-tracking via official Reolink sources (product pages / support compatibility table) — Argus Track, E1, E1 Zoom, RLC-823S2, Omvi 3I PoE/WiFi, Omvi X16, Go PT Plus, Go PT Ultra, Go Ranger PT. Reolink camera-side autotracking coverage: 24 → 34.
+
+### Notes
+- Camera-side auto-tracking (onboard, which works) stays distinct from Frigate-driven (which doesn't, on Reolink's absolute PTZ).
+- 4 of the 10 (E1, Go PT Plus/Ultra, Go Ranger PT) gate auto-tracking to newer hardware revisions; our entries track the model (current production), so `true` reflects the shipping hardware. E1 Zoom tracking is pan-only. Omvi X16 is a CES-2026 product (blog-sourced).
+- Confirmed NO (left unset): RLC-423, Argus PT, Argus PT 2K, Go PT (base), Keen Ranger PT. Fixed dual-lens (Duo/Elite) excluded — digital tracking, not mechanical.
 ## [1.36.0] — 2026-07-15
 
 Re-verified the **entire ACTi catalogue (248 cameras)** against ACTi's official sources — 33 against downloaded datasheet PDFs, 215 against the ACTi spec-API (`newPopupSpecifications` endpoints) — previously `last_verified` 2026-07-03/-11.
