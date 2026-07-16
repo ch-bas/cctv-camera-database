@@ -8,14 +8,16 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [1.37.0] — 2026-07-15
 
-Mark **Reolink PTZ cameras as incompatible with Frigate autotracking** (#124, part 2 — Reolink slice). Reolink exposes only **absolute** ONVIF PTZ, while Frigate autotracking requires relative movement.
+Reolink autotracking: separate the camera-side capability from Frigate compatibility (#124 part 2, Reolink slice).
 
 ### Changed
-- On the 20 mechanical-PTZ Reolink models with a Frigate config (E1 Outdoor / RLC-823x / TrackMix / TrackFlex / P830 / RLC-523WA / RLC-81PA / RLC-423 / E1 Zoom): set **`configs.frigate.autotracking: false`** with an explanatory note, and **`ptz.onvif_ptz: absolute`** on the 18 that expose ONVIF.
-- Camera-side `ptz.autotracking` (onboard tracking, which *does* work) is unchanged and remains distinct.
+- **Frigate incompatibility**: on the 20 mechanical-PTZ Reolink with a Frigate config, set `configs.frigate.autotracking: false` + note ("Reolink uses absolute ONVIF PTZ; Frigate autotracking requires relative movement"), and `ptz.onvif_ptz: absolute` on the 18 that expose ONVIF.
+- **Camera-side completion**: set `ptz.autotracking: true` on 10 more Reolink models confirmed to have onboard auto-tracking via official Reolink sources (product pages / support compatibility table) — Argus Track, E1, E1 Zoom, RLC-823S2, Omvi 3I PoE/WiFi, Omvi X16, Go PT Plus, Go PT Ultra, Go Ranger PT. Reolink camera-side autotracking coverage: 24 → 34.
 
 ### Notes
-- Community-sourced (Frigate docs/forums; not a Reolink datasheet field) — recorded as an integration fact with a note, separate from the official-spec fields. Fixed dual-lens Reolink (Duo/Elite, no mechanical pan/tilt) excluded. Camera-side autotracking gaps on other Reolink PT models are tracked separately.
+- Camera-side auto-tracking (onboard, which works) stays distinct from Frigate-driven (which doesn't, on Reolink's absolute PTZ).
+- 4 of the 10 (E1, Go PT Plus/Ultra, Go Ranger PT) gate auto-tracking to newer hardware revisions; our entries track the model (current production), so `true` reflects the shipping hardware. E1 Zoom tracking is pan-only. Omvi X16 is a CES-2026 product (blog-sourced).
+- Confirmed NO (left unset): RLC-423, Argus PT, Argus PT 2K, Go PT (base), Keen Ranger PT. Fixed dual-lens (Duo/Elite) excluded — digital tracking, not mechanical.
 
 ## [1.35.0] — 2026-07-15
 
