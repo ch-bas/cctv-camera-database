@@ -12,6 +12,7 @@
 | Field of view | 84 horizontal / 44.8 vertical (visible)° |
 | Night vision | ir (40m) |
 | Power | DC 12V / PoE Class 3 (IEEE 802.3af); 7.5 W (DC), 8 W (PoE) |
+| Protocols | rtsp |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 | Operating temp | 10 to 35°C |

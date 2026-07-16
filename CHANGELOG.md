@@ -18,6 +18,19 @@ Reolink autotracking: separate the camera-side capability from Frigate compatibi
 - Camera-side auto-tracking (onboard, which works) stays distinct from Frigate-driven (which doesn't, on Reolink's absolute PTZ).
 - 4 of the 10 (E1, Go PT Plus/Ultra, Go Ranger PT) gate auto-tracking to newer hardware revisions; our entries track the model (current production), so `true` reflects the shipping hardware. E1 Zoom tracking is pan-only. Omvi X16 is a CES-2026 product (blog-sourced).
 - Confirmed NO (left unset): RLC-423, Argus PT, Argus PT 2K, Go PT (base), Keen Ranger PT. Fixed dual-lens (Duo/Elite) excluded — digital tracking, not mechanical.
+## [1.36.0] — 2026-07-15
+
+Re-verified the **entire ACTi catalogue (248 cameras)** against ACTi's official sources — 33 against downloaded datasheet PDFs, 215 against the ACTi spec-API (`newPopupSpecifications` endpoints) — previously `last_verified` 2026-07-03/-11.
+
+### Changed
+- **Autotracking**: `ptz.autotracking: true` on Q992, Q982-P1, A973, A972, A966 (datasheet "PTZ Auto Tracking").
+- **max_fps** (fps at the true max resolution; High-Frame-Mode rows handled correctly): A412/A957/A981 30→60; A966 60→30; Y32/Y72 25→20.
+- **RTSP added**: Q120, Q121, VMGB-370 gain `rtsp` + Frigate/Home Assistant/Blue Iris config (the spec-API "Network Protocol & Service" lists RTSP; they were missing it).
+- **IP rating**: Y31/Y32/Y35/Y71/Y72 IP67→IP68. **IR range**: A570 30→15 m. **Power**: Z64 +`dc`. **A570-P2**: +thermal aperture/FOV.
+- `last_verified` → 2026-07-15 on all 248 ACTi.
+
+### Notes
+- Everything else verified accurate (spec-API sourcing held up across 215). Deliberately preserved, not false-fixed: multi-sensor aggregate-MP, ACTi nominal-vs-effective MP, and max-*stream*-resolution (vs sensor effective pixels). Genuine 1080p120 High-Frame-Mode models (A29/A425/A982) correctly kept at 120. `protocols` left unset for models whose ACTi sheet has no "Network Protocol & Service" row.
 
 ## [1.35.0] — 2026-07-15
 

@@ -47,6 +47,9 @@
     ],
     "max_fps": 30
   },
+  "protocols": [
+    "rtsp"
+  ],
   "features": [
     "Superior WDR (120 dB)",
     "built-in analytics: Human Body Temperature Detection",
@@ -54,6 +57,24 @@
     "RTSP confirmed in Network Protocol & Service, but no ONVIF Compliant row on official spec sheet -- protocols left unconfirmed",
     "cross-checked against the official downloadable PDF datasheet (separate from the web specifications widget) -- same result, protocols genuinely not documented"
   ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  },
   "sources": [
     "https://www.acti.com/product/VMGB-370?tab=specifications",
     "https://download.acti.com/?id=27575"
@@ -62,5 +83,5 @@
     "poe",
     "dc"
   ],
-  "last_verified": "2026-07-03"
+  "last_verified": "2026-07-15"
 }
