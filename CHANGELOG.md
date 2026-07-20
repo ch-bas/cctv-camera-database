@@ -6,6 +6,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.39.1] — 2026-07-20
+
+**Added** the Axis **M2036-LE** (4MP bullet, PoE, OptimizedIR 20m, IP66/IP67/IK08, ONVIF/RTSP with Frigate config) — contributed via #130 by @aweaton123. 2,283 -> 2,284 cameras.
+
 ## [1.39.0] — 2026-07-20
 
 **New brand: Xiaomi (+26).** Added Xiaomi / Mi cameras: Smart Camera C-series (C100-C701 Pro), Outdoor BW/CW-series, Mi 360 pan-tilt, and dual-lens models. Net: **2,257 -> 2,283 cameras** (71 -> 72 brands).
