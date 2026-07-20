@@ -1,0 +1,77 @@
+{
+  "id": "axis-q1800-le",
+  "brand": "Axis",
+  "model": "Q1800-LE",
+  "aliases": ["03107-001", "Q1800-LE-3 (License Plate Verifier kit)"],
+  "type": "bullet",
+  "connectivity": ["ethernet"],
+  "power_source": ["poe"],
+  "environment": ["indoor", "outdoor"],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "video": {
+    "codecs": ["H.265", "H.264"],
+    "max_fps": 90
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "7-137 (varifocal, ~19.5x)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "38-2.3 horizontal",
+  "night_vision": {
+    "type": "none"
+  },
+  "power": {
+    "method": "PoE IEEE 802.3at Type 2",
+    "poe_class": 4,
+    "consumption_w": 29.0
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": ["onvif", "rtsp", "http"],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "ip_rating": "IP66, IK10",
+  "operating_temp_c": "-40 to 60",
+  "features": [
+    "dedicated License Plate Recognition (ANPR) camera",
+    "captures plates at speeds up to 250 km/h (single lane)",
+    "range up to 100m daylight / 50m at night (no built-in IR)",
+    "varifocal 7-137mm, 90 fps for fast-moving vehicles",
+    "vendor-agnostic: works with AXIS License Plate Verifier + 3rd-party LPR",
+    "optional AXIS T90D20 IR illuminator extends night range to 100m",
+    "IK10 body / IK08 glass, NEMA 4X",
+    "audio + I/O via network/portcast accessories"
+  ],
+  "sources": ["https://www.axis.com/products/axis-q1800-le"],
+  "markets": ["global"],
+  "last_verified": "2026-07-20",
+  "configs": {
+    "frigate": {
+      "detect": {"width": 640, "height": 360, "fps": 5},
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=1920x1080",
+      "best_substream": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=640x360",
+      "notes": "LPR camera — for plate capture use a dedicated stream/analytics rather than Frigate object detection."
+    },
+    "home_assistant": {
+      "integration": "axis",
+      "notes": "Native Axis integration with auto-discovery via Zeroconf."
+    },
+    "blue_iris": {
+      "profile": "Axis",
+      "notes": "Select 'Axis' profile. Auto-discovery via ONVIF usually works."
+    }
+  }
+}

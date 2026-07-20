@@ -1,0 +1,78 @@
+{
+  "id": "axis-p1475-le",
+  "brand": "Axis",
+  "model": "P1475-LE",
+  "aliases": ["03181-001"],
+  "type": "bullet",
+  "connectivity": ["ethernet"],
+  "power_source": ["poe"],
+  "environment": ["indoor", "outdoor"],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "video": {
+    "codecs": ["AV1", "H.265", "H.264"],
+    "max_fps": 60
+  },
+  "sensor": "1/2.8\" CMOS",
+  "soc": "ARTPEC-9",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.1-9.0 (2.91x optical zoom)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "117-36 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50
+  },
+  "power": {
+    "method": "PoE IEEE 802.3af/802.3at Type 1",
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": ["onvif", "rtsp", "http"],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "ip_rating": "IP66/IP67, IK10",
+  "operating_temp_c": "-40 to 60",
+  "features": [
+    "1/2.8\" 2MP sensor, ARTPEC-9 with deep learning processing unit (DLPU)",
+    "wide varifocal 3.1-9.0mm, 2.91x optical zoom",
+    "OptimizedIR up to 50m",
+    "Forensic WDR, AV1/H.265/H.264 with Zipstream",
+    "AXIS Object Analytics, Axis Edge Vault",
+    "microSD up to 1TB surveillance cards",
+    "NEMA 4X, IK10; audio + I/O via network/portcast accessories",
+    "-40 to 60 C"
+  ],
+  "sources": ["https://www.axis.com/products/axis-p1475-le"],
+  "markets": ["global"],
+  "last_verified": "2026-07-20",
+  "configs": {
+    "frigate": {
+      "detect": {"width": 640, "height": 360, "fps": 5},
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=1920x1080",
+      "best_substream": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=640x360"
+    },
+    "home_assistant": {
+      "integration": "axis",
+      "notes": "Native Axis integration with auto-discovery via Zeroconf."
+    },
+    "blue_iris": {
+      "profile": "Axis",
+      "notes": "Select 'Axis' profile. Auto-discovery via ONVIF usually works."
+    }
+  }
+}
