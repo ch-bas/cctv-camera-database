@@ -1,0 +1,78 @@
+{
+  "id": "axis-q1809-le",
+  "brand": "Axis",
+  "model": "Q1809-LE",
+  "aliases": ["02870-001", "03019-001 (150mm tele)"],
+  "type": "bullet",
+  "connectivity": ["ethernet"],
+  "power_source": ["poe"],
+  "environment": ["indoor", "outdoor"],
+  "resolution": {
+    "megapixels": 41,
+    "max_width": 7424,
+    "max_height": 5568,
+    "label": "41MP"
+  },
+  "video": {
+    "codecs": ["H.265", "H.264"],
+    "max_fps": 15
+  },
+  "sensor": "4/3\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "wide 12-24 (2x) or tele 50-150 (3x) — Canon varifocal",
+    "varifocal": true
+  },
+  "field_of_view_deg": "90-44 (wide) / 21-7 (tele) horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100
+  },
+  "power": {
+    "method": "PoE IEEE 802.3bt Type 3",
+    "poe_class": 6,
+    "consumption_w": 35.0
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": ["onvif", "rtsp", "http"],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "ip_rating": "IP66/IP67, IK10",
+  "operating_temp_c": "-40 to 55",
+  "features": [
+    "4/3\" 41MP sensor (7424x5568) — extreme detail over very wide areas",
+    "dual Axis system-on-chip",
+    "Canon varifocal lens: wide 12-24mm (2x) or 150mm tele 50-150mm (3x)",
+    "15 fps at 41MP (30 fps at 8K)",
+    "OptimizedIR up to 100m, electronic image stabilization (EIS)",
+    "Forensic WDR, AXIS Object Analytics, Axis Edge Vault",
+    "PoE Class 6 (802.3bt); IK10 body / IK08 glass, NEMA 4X",
+    "audio + I/O via network/portcast accessories"
+  ],
+  "sources": ["https://www.axis.com/products/axis-q1809-le"],
+  "markets": ["global"],
+  "last_verified": "2026-07-20",
+  "configs": {
+    "frigate": {
+      "detect": {"width": 640, "height": 360, "fps": 5},
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=7424x5568",
+      "best_substream": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=640x480",
+      "notes": "41MP main stream is very heavy — run detection on a low-res substream and record the full stream on motion."
+    },
+    "home_assistant": {
+      "integration": "axis",
+      "notes": "Native Axis integration with auto-discovery via Zeroconf."
+    },
+    "blue_iris": {
+      "profile": "Axis",
+      "notes": "Select 'Axis' profile. Auto-discovery via ONVIF usually works."
+    }
+  }
+}
