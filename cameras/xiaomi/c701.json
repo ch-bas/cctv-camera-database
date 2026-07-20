@@ -1,0 +1,81 @@
+{
+  "id": "xiaomi-c701",
+  "brand": "Xiaomi",
+  "model": "Smart Camera C701",
+  "aliases": [
+    "MJSXJ27CM"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "resolution": {
+    "label": "4K UHD",
+    "max_width": 3840,
+    "max_height": 2160,
+    "megapixels": 8
+  },
+  "video": {
+    "codecs": [
+      "H.265"
+    ]
+  },
+  "field_of_view_deg": "pan 360 (horizontal), tilt 109 (vertical)",
+  "night_vision": {
+    "type": "hybrid"
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "5V DC 2A power adapter (2m cable)",
+    "voltage": "5V"
+  },
+  "storage": {
+    "onboard": false,
+    "max_microsd_gb": 256,
+    "cloud": true,
+    "nvr_compatible": false,
+    "notes": "microSD 8-256GB (Class 10+, FAT32), NAS network-attached storage, or cloud."
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "8MP 4K with HDR",
+    "940nm no-glow infrared fill light",
+    "physical lens cover (privacy protection)",
+    "local AI: loud sound, baby cry and pet detection; human motion tracking",
+    "large-diameter box speaker with independent sound cavity",
+    "stream quality: 4K / 480p",
+    "dual-band Wi-Fi 6 with Bluetooth 5.4",
+    "Alexa / Google Assistant"
+  ],
+  "operating_temp_c": "-10 to 40",
+  "dimensions_mm": "79 x 79 x 119",
+  "release_year": 2025,
+  "release_notes": "No official RTSP or ONVIF support (streaming is normally via the Xiaomi Home app only). Supported by go2rtc v1.9.13+ via the xiaomi:// source using Xiaomi's 'miss' (Mi Secure Streaming) protocol: streaming is local (same subnet), but internet access is required at each connection to obtain encryption keys. Frigate can consume the go2rtc restream. Community-verified working (miot model chuangmi.camera.079ae2, protocol cs2+udp, H.265 video + Opus audio). Two-way audio confirmed working; near-realtime via WebRTC. Unlike the C700 (4K/1080p/480p), the C701 only offers 4K and 480p stream quality options.",
+  "sources": [
+    "https://www.mi.com/global/product/xiaomi-smart-camera-c701/",
+    "https://www.mi.com/global/product/xiaomi-smart-camera-c701/specs/",
+    "https://www.mi.com/global/support/faq/details/KA-608921/"
+  ],
+  "status": "available",
+  "last_verified": "2026-07-20",
+  "configs": {
+    "frigate": {
+      "recommended_stream_type": "go2rtc",
+      "verified": true,
+      "tested_by": "go2rtc community (AlexxIT/go2rtc#1982)",
+      "notes": "No native RTSP. Use go2rtc v1.9.13+ xiaomi:// source: add Xiaomi account in go2rtc WebUI, then stream URL xiaomi://{account}:{region}@{camera_ip}?did={device_id}&model=chuangmi.camera.079ae2 (protocol cs2+udp; H.265 video + Opus audio). Two-way audio confirmed working; near-realtime via WebRTC. Camera and go2rtc must be on the same subnet; internet required at connect time for key exchange. Quality: subtype=hd/sd/auto/0-5. Point Frigate at the go2rtc restream."
+    }
+  }
+}

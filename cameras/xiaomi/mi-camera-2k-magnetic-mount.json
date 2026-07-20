@@ -1,0 +1,69 @@
+{
+  "id": "xiaomi-mi-camera-2k-magnetic-mount",
+  "brand": "Xiaomi",
+  "model": "Mi Camera 2K (Magnetic Mount)",
+  "aliases": [
+    "MJSXJ03HL"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "wifi"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "resolution": {
+    "label": "2K (1296p)",
+    "max_width": 2304,
+    "max_height": 1296,
+    "megapixels": 3
+  },
+  "video": {
+    "codecs": [
+      "H.265"
+    ]
+  },
+  "field_of_view_deg": "125 (lens angle)",
+  "night_vision": {
+    "type": "ir"
+  },
+  "power": {
+    "method": "5V DC 1A",
+    "voltage": "5V"
+  },
+  "storage": {
+    "onboard": false,
+    "cloud": true,
+    "nvr_compatible": false,
+    "notes": "microSD card (no maximum capacity stated on official spec page)."
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true
+  },
+  "features": [
+    "ultra-compact (60 x 48 x 67.5mm) with detachable adjustable magnetic base",
+    "125-degree wide-angle fixed lens",
+    "metal pad included for flexible magnetic placement"
+  ],
+  "operating_temp_c": "-10 to 50",
+  "dimensions_mm": "60 x 48 x 67.5",
+  "release_notes": "No official RTSP or ONVIF support (streaming is normally via the Xiaomi Home app only). Supported by go2rtc v1.9.13+ via the xiaomi:// source using Xiaomi's 'miss' (Mi Secure Streaming) protocol: streaming is local (same subnet), but internet access is required at each connection to obtain encryption keys. Frigate can consume the go2rtc restream. Community-verified working (miot model isa.camera.hlc7, protocol cs2, H.265 video + PCMA audio). Manufactured by Tianjin Hualai Technology (Mi Ecosystem, same manufacturer as Wyze cameras).",
+  "sources": [
+    "https://www.mi.com/global/product/mi-camera-2k-magnetic-mount/specs/",
+    "https://www.mi.com/uk/product/mi-camera-2k-magnetic-mount/specs/"
+  ],
+  "status": "available",
+  "last_verified": "2026-07-20",
+  "configs": {
+    "frigate": {
+      "recommended_stream_type": "go2rtc",
+      "verified": true,
+      "tested_by": "go2rtc community (AlexxIT/go2rtc#1982)",
+      "notes": "No native RTSP. Use go2rtc v1.9.13+ xiaomi:// source: add Xiaomi account in go2rtc WebUI, then stream URL xiaomi://{account}:{region}@{camera_ip}?did={device_id}&model=isa.camera.hlc7 (protocol cs2; H.265 video + PCMA audio). Camera and go2rtc must be on the same subnet; internet required at connect time for key exchange. Quality: subtype=hd/sd/auto/0-5. Point Frigate at the go2rtc restream."
+    }
+  }
+}

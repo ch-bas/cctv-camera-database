@@ -6,6 +6,15 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.39.0] — 2026-07-20
+
+**New brand: Xiaomi (+26).** Added Xiaomi / Mi cameras: Smart Camera C-series (C100-C701 Pro), Outdoor BW/CW-series, Mi 360 pan-tilt, and dual-lens models. Net: **2,257 -> 2,283 cameras** (71 -> 72 brands).
+
+### Notes
+- All Xiaomi models are **Wi-Fi, Mi Home app-only with no native RTSP/ONVIF** — recorded honestly with no fabricated `protocols` or `rtsp_url_template`.
+- The 7 models with a documented Frigate path use a **go2rtc `xiaomi://` cloud-source** note (per-camera MIoT model IDs, codecs, subnet/key-exchange caveats) rather than a fake RTSP URL — the real way to bring these into Frigate/go2rtc.
+- Specs + sources from official mi.com product/spec/FAQ pages.
+
 ## [1.38.0] — 2026-07-20
 
 **Annke catalogue expansion + C800/C1200 model-number disambiguation** (issue #129). Replaced the generic "C800 (Turret)/(Bullet)" umbrella entries with exact `I91xx` model numbers, corrected the 12MP line to the **C1200** family (removing a duplicate of the existing C1200 turret), and added the current Annke line-ups. Net: **2,230 -> 2,257 cameras** (+27; brand count unchanged). Thanks to @fvdpol (#129) for the report.

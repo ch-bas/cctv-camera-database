@@ -1,0 +1,85 @@
+{
+  "id": "xiaomi-c200",
+  "brand": "Xiaomi",
+  "model": "Smart Camera C200",
+  "aliases": [
+    "MJSXJ14CM"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "resolution": {
+    "label": "1080p Full HD",
+    "max_width": 1920,
+    "max_height": 1080,
+    "megapixels": 2
+  },
+  "video": {
+    "codecs": [
+      "H.265"
+    ]
+  },
+  "lens": {
+    "count": 1,
+    "aperture": "F2.1",
+    "varifocal": false
+  },
+  "field_of_view_deg": "pan 360 (horizontal)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 9
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "5V DC 2A power adapter",
+    "voltage": "5V"
+  },
+  "storage": {
+    "onboard": false,
+    "max_microsd_gb": 256,
+    "cloud": true,
+    "nvr_compatible": false,
+    "notes": "Supports NAS transfer via inserted microSD card (SD card acts as relay to NAS storage)."
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "1080p entry pan-tilt indoor",
+    "AI human detection and tracking",
+    "infrared night vision (9m)",
+    "two-way voice calls via Xiaomi Home app",
+    "NAS transfer support",
+    "continues local recording during network outage",
+    "Xiaomi security chip"
+  ],
+  "operating_temp_c": "-10 to 40",
+  "release_notes": "No official RTSP or ONVIF support (streaming is normally via the Xiaomi Home app only). Supported by go2rtc v1.9.13+ via the xiaomi:// source using Xiaomi's 'miss' (Mi Secure Streaming) protocol: streaming is local (same subnet), but internet access is required at each connection to obtain encryption keys. Frigate can consume the go2rtc restream. Community-verified working (miot model chuangmi.camera.046c04, protocol cs2, H.265 video + Opus audio).",
+  "sources": [
+    "https://www.mi.com/global/product/xiaomi-smart-camera-c200/",
+    "https://www.mi.com/global/product/xiaomi-smart-camera-c200/specs/",
+    "https://www.mi.com/global/support/faq/details/KA-86464/",
+    "https://www.mi.com/global/support/faq/details/KA-235580/"
+  ],
+  "status": "available",
+  "last_verified": "2026-07-20",
+  "configs": {
+    "frigate": {
+      "recommended_stream_type": "go2rtc",
+      "verified": true,
+      "tested_by": "go2rtc community (AlexxIT/go2rtc#1982)",
+      "notes": "No native RTSP. Use go2rtc v1.9.13+ xiaomi:// source: add Xiaomi account in go2rtc WebUI, then stream URL xiaomi://{account}:{region}@{camera_ip}?did={device_id}&model=chuangmi.camera.046c04 (protocol cs2; H.265 video + Opus audio). Camera and go2rtc must be on the same subnet; internet required at connect time for key exchange. Quality: subtype=hd/sd/auto/0-5. Point Frigate at the go2rtc restream."
+    }
+  }
+}
