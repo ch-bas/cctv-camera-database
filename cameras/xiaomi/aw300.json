@@ -1,0 +1,80 @@
+{
+  "id": "xiaomi-aw300",
+  "brand": "Xiaomi",
+  "model": "Outdoor Camera AW300",
+  "type": "bullet",
+  "connectivity": [
+    "wifi"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "resolution": {
+    "label": "2K (1296p)",
+    "max_width": 2304,
+    "max_height": 1296,
+    "megapixels": 3
+  },
+  "video": {
+    "codecs": [
+      "H.265"
+    ]
+  },
+  "lens": {
+    "count": 1,
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "101.7",
+  "night_vision": {
+    "type": "hybrid"
+  },
+  "power": {
+    "method": "12V DC 1A adapter (3m cable; official 6m 22AWG extension supported)",
+    "voltage": "12V"
+  },
+  "storage": {
+    "onboard": false,
+    "max_microsd_gb": 256,
+    "cloud": true,
+    "nvr_compatible": false,
+    "notes": "microSD 32-256GB (FAT32) or cloud storage."
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "2x 850nm IR lights + 2x LED spotlights for full-colour night vision",
+    "WDR for complex outdoor lighting",
+    "focus zone detection with audible alarm and flashing lights",
+    "AI human detection, face recognition via Xiaomi Home Secure",
+    "full-duplex two-way calls",
+    "split-screen multi-camera viewing (up to 4)",
+    "Alexa / Google Assistant"
+  ],
+  "ip_rating": "IP66",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "173 x 70 x 75",
+  "weight_g": 249,
+  "release_notes": "No official RTSP or ONVIF support (streaming is normally via the Xiaomi Home app only). Supported by go2rtc v1.9.13+ via the xiaomi:// source using Xiaomi's 'miss' (Mi Secure Streaming) protocol: streaming is local (same subnet), but internet access is required at each connection to obtain encryption keys. Frigate can consume the go2rtc restream. Community-verified working (miot model mxiang.camera.mod13, protocol cs2+udp, H.265 video + Opus audio).",
+  "sources": [
+    "https://www.mi.com/global/product/xiaomi-outdoor-camera-aw300/",
+    "https://www.mi.com/global/product/xiaomi-outdoor-camera-aw300/specs/",
+    "https://www.mi.com/global/support/faq/details/KA-12521/"
+  ],
+  "status": "available",
+  "last_verified": "2026-07-20",
+  "configs": {
+    "frigate": {
+      "recommended_stream_type": "go2rtc",
+      "verified": true,
+      "tested_by": "go2rtc community (AlexxIT/go2rtc#1982)",
+      "notes": "No native RTSP. Use go2rtc v1.9.13+ xiaomi:// source: add Xiaomi account in go2rtc WebUI, then stream URL xiaomi://{account}:{region}@{camera_ip}?did={device_id}&model=mxiang.camera.mod13 (protocol cs2+udp; H.265 video + Opus audio). Camera and go2rtc must be on the same subnet; internet required at connect time for key exchange. Quality: subtype=hd/sd/auto/0-5. Point Frigate at the go2rtc restream."
+    }
+  }
+}

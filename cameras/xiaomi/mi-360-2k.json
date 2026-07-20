@@ -1,0 +1,76 @@
+{
+  "id": "xiaomi-mi-360-2k",
+  "brand": "Xiaomi",
+  "model": "Mi 360° Home Security Camera 2K",
+  "aliases": [
+    "MJSXJ09CM"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "resolution": {
+    "label": "2K (1296p)",
+    "max_width": 2304,
+    "max_height": 1296,
+    "megapixels": 3
+  },
+  "video": {
+    "codecs": [
+      "H.265"
+    ]
+  },
+  "lens": {
+    "count": 1,
+    "aperture": "F1.4",
+    "varifocal": false
+  },
+  "field_of_view_deg": "110 (lens angle)",
+  "night_vision": {
+    "type": "hybrid"
+  },
+  "power": {
+    "method": "5V DC 2A",
+    "voltage": "5V"
+  },
+  "storage": {
+    "onboard": false,
+    "max_microsd_gb": 32,
+    "cloud": true,
+    "nvr_compatible": false
+  },
+  "features": [
+    "940nm no-glow infrared night vision",
+    "full colour in low light",
+    "AI human detection with false-alarm filtering",
+    "dual-axis pan-tilt (360 horizontal, 108 vertical)",
+    "Mi Smart Clock video output",
+    "BSI Kitemark certified (residential IoT)",
+    "Alexa / Google Assistant"
+  ],
+  "operating_temp_c": "-10 to 50",
+  "dimensions_mm": "115 x 78 x 78",
+  "weight_g": 310,
+  "release_notes": "No official RTSP or ONVIF support (streaming is normally via the Xiaomi Home app only). Supported by go2rtc v1.9.13+ via the xiaomi:// source using Xiaomi's 'miss' (Mi Secure Streaming) protocol: streaming is local (same subnet), but internet access is required at each connection to obtain encryption keys. Frigate can consume the go2rtc restream. Community-verified working (miot model chuangmi.camera.029a02, protocol cs2+udp, H.265 video + PCMA audio). Note the low 32GB microSD cap versus 256GB on the newer C-series.",
+  "sources": [
+    "https://www.mi.com/global/product/mi-360-home-security-camera-2k/",
+    "https://www.mi.com/global/product/mi-360-home-security-camera-2k/specs/",
+    "https://www.mi.com/global/support/faq/details/KA-06539/"
+  ],
+  "status": "available",
+  "last_verified": "2026-07-20",
+  "configs": {
+    "frigate": {
+      "recommended_stream_type": "go2rtc",
+      "verified": true,
+      "tested_by": "go2rtc community (AlexxIT/go2rtc#1982)",
+      "notes": "No native RTSP. Use go2rtc v1.9.13+ xiaomi:// source: add Xiaomi account in go2rtc WebUI, then stream URL xiaomi://{account}:{region}@{camera_ip}?did={device_id}&model=chuangmi.camera.029a02 (protocol cs2+udp; H.265 video + PCMA audio). Camera and go2rtc must be on the same subnet; internet required at connect time for key exchange. Quality: subtype=hd/sd/auto/0-5. Point Frigate at the go2rtc restream."
+    }
+  }
+}
