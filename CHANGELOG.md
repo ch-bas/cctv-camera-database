@@ -6,6 +6,23 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.38.0] — 2026-07-20
+
+**Annke catalogue expansion + C800/C1200 model-number disambiguation** (issue #129). Replaced the generic "C800 (Turret)/(Bullet)" umbrella entries with exact `I91xx` model numbers, corrected the 12MP line to the **C1200** family (removing a duplicate of the existing C1200 turret), and added the current Annke line-ups. Net: **2,230 -> 2,257 cameras** (+27; brand count unchanged). Thanks to @fvdpol (#129) for the report.
+
+### Added -- Annke (27)
+- **C800** (8MP): I91DB, I91DM, I91DL, I91DF (dome).
+- **C1200** (12MP): I91DD (bullet), C1200D I91DG (dome).
+- **NightChroma**: NC500 (I81HE turret / I81HD bullet), NCBR800 (I91DJ bullet / I91DU turret), NCT425 I81EL (2-in-1 dual-lens PTZ).
+- **Dual-lens panoramic**: FCD600 I51FS, FCD800 (I91ET turret / I91EV bullet), I91BH, I91BI, I51DX.
+- **Zoom PTZ / speed dome**: CZ804 (I91DQ dome / I91DE bullet), CZ825X I91BW (25x), CZ425X I81HB (25x), I91BK, I81EM, I51EX.
+- **Other**: C500D I51DN, I91BV (full-color turret), SLPR400 I81HY (ANPR/LPR).
+
+### Changed
+- `C800 (Turret)` -> `C800 I91BM`, `C800 (Bullet)` -> `C800 I91BD` (legacy 2020 revision; id/URL preserved).
+- `C1200` -> `C1200 I91DN` (enriched with its model number; identified as the 12MP turret).
+- Retail order SKUs (AN-/AU-/AP-...) captured as aliases across the family.
+
 ## [1.37.0] — 2026-07-15
 
 Reolink autotracking: separate the camera-side capability from Frigate compatibility (#124 part 2, Reolink slice).

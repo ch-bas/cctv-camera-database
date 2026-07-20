@@ -1,11 +1,11 @@
-# Annke C800 (Bullet)
+# Annke C800 I91BD
 
-*Also known as: 4K 8MP PoE Bullet*
+*Also known as: I91BD, C800 Bullet, C800 (Bullet), 4K 8MP PoE Bullet*
 
 | Field | Spec |
 |-------|------|
 | Brand | Annke |
-| Model | C800 (Bullet) |
+| Model | C800 I91BD |
 | Type | bullet |
 | Connectivity | ethernet |
 | Resolution | 4K UHD (8MP, 3840×2160) |

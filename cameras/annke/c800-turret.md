@@ -1,11 +1,11 @@
-# Annke C800 (Turret)
+# Annke C800 I91BM
 
-*Also known as: 4K 8MP PoE Turret I91BM*
+*Also known as: I91BM, C800 Turret, C800 (Turret), 4K 8MP PoE Turret*
 
 | Field | Spec |
 |-------|------|
 | Brand | Annke |
-| Model | C800 (Turret) |
+| Model | C800 I91BM |
 | Type | turret |
 | Connectivity | ethernet |
 | Resolution | 4K UHD (8MP, 3840×2160) |
