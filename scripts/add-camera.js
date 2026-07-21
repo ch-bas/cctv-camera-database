@@ -102,8 +102,12 @@ async function run() {
   if (powerMethod) cam.power = { method: powerMethod };
 
   // IP rating
-  const ipRating = await ask('IP/IK rating (e.g. IP67, IP66+IK10) : ');
+  const ipRating = await ask('IP rating (e.g. IP67) : ');
   if (ipRating) cam.ip_rating = ipRating;
+
+  // IK rating
+  const ikRating = await ask('IK rating (e.g. IK10) : ');
+  if (ikRating) cam.ik_rating = ikRating;
 
   // Audio
   const hasMic  = await askYN('\nBuilt-in microphone?');

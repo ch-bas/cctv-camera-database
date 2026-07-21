@@ -255,6 +255,7 @@ Common optional fields:
 | `night_vision.range_m` | `number` | `30` |
 | `power.method` | `string` | `"PoE (802.3af) / DC 12V"` |
 | `ip_rating` | `string` | `"IP67"` |
+| `ik_rating` | `string` | `"IK10"` |
 | `audio.two_way` | `boolean` | `true` |
 | `protocols` | `string[]` | `["onvif", "rtsp"]` |
 | `markets` | `string[]` | `["UK", "EU", "DE"]` |

@@ -38,6 +38,7 @@ function render(c) {
   md += row("Storage", c.storage && [c.storage.max_microsd_gb ? `microSD ≤ ${c.storage.max_microsd_gb}GB` : "", c.storage.nvr_compatible ? "NVR" : ""].filter(Boolean).join(", "));
   md += row("Protocols", c.protocols?.join(", "));
   md += row("IP rating", c.ip_rating);
+  md += row("IK rating", c.ik_rating);
   md += row("Two-way audio", c.audio ? (c.audio.two_way ? "Yes" : "No") : "");
   md += row("Operating temp", c.operating_temp_c && `${c.operating_temp_c}°C`);
   md += row("Released", c.release_year);
