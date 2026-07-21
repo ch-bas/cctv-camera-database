@@ -6,6 +6,21 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.41.0] — 2026-07-21
+
+**First community contribution** (#135 — thanks @fvdpol!) — further Annke model-name disambiguation and spec corrections, sourced from web.archive.org snapshots of the legacy revisions.
+
+### Added -- Annke (3)
+- **C800 I91BN** (dome) and **C800 I91BL** -- legacy C800 variants.
+- **C800 I91DM (28mm)** -- split the I91DM turret into its 28mm and 40mm lens variants.
+
+### Changed
+- Disambiguated more Annke families to exact model numbers: **AC400 I81HQ, C500 I51HL, NC400 I81HC, NightChroma NC800 I91HJ, WZ500 I51CK** (301 redirects in the web repo preserve the old URLs).
+- Spec corrections to C800 I91BD / I91BM / I91DB and C1200 I91DN from archived datasheets.
+- Maintainer follow-up: regenerated data/docs, fixed a C1200 id typo, aligned the I91DM variant ids with their filenames.
+
+Net: 2,294 -> 2,297 cameras.
+
 ## [1.40.0] — 2026-07-20
 
 **Axis P14-LE + Q18-LE bullet series (+10).** ARTPEC-9 varifocal bullets **P1475/P1485/P1486/P1487/P1488-LE** (AV1 codec, Lightfinder, global-shutter P1486-LE) and the **Q18 series**: **Q1800-LE** (LPR, plates up to 250 km/h), **Q1805/Q1806-LE** (32x optical zoom, ARTPEC-8), **Q1808-LE** (10MP 4/3"), **Q1809-LE** (41MP). Net: 2,284 -> 2,294. The dedicated `soc` field is now populated on 7 cameras (ARTPEC-8/9), advancing #22/#122. Lens (wide/tele) and kit variants recorded as aliases.
