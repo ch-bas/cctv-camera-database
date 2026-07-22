@@ -6,7 +6,7 @@
 | Model | DS-2CD2367G3-LIS2UY/SL |
 | Type | turret |
 | Connectivity | ethernet |
-| Resolution | 6MP (6MP, 3072×2048) |
+| Resolution | 6MP (6MP, 3200×1800) |
 | Sensor | 1/1.8" CMOS |
 | Lens | 1× 2.8 (fixed)mm |
 | Field of view | 108.8° |
@@ -30,7 +30,7 @@
 
 ## Sources
 
-- https://www.securitywholesalers.com.au/product/hikvision-ds-2cd2367g3-lis2uy-sl-6mp-smart-hybrid-light-colorvu-3-0-turret-camera-with-strobe-speaker/
+- https://assets.hikvision.com/prd/public/all/doc/m000144452/DS-2CD2367G3-LIS2UY_SLRB_Datasheet_20241021.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2367g3-lis2uy-sl.json — do not edit by hand.*

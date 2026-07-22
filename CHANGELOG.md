@@ -6,6 +6,28 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.44.2] — 2026-07-22
+
+**Reseller-source audit close-out** (#138, #140). Resolved the last flagged reseller-sourced entries and a duplicate:
+
+- **Hikvision (4)** — re-sourced `DS-2CD2347G2-L`, `DS-2CD2347G2-LSU/SL`, `DS-2CD2367G2P-LSU/SL`, `DS-2CD2367G3-LIS2UY/SL` from securitywholesalers.com.au listings to official hikvision.com datasheets, correcting specs that were wrong versus the datasheets: `2367G2P-LSU/SL` max resolution 3840×1080→**3632×1632** and sensor 1/2.7″→**1/2.5″**; `2367G3-LIS2UY/SL` 3072×2048→**3200×1800**; `2347G2-LSU/SL` microSD 256→**512 GB**.
+- **Dahua (3)** — re-sourced `IPC-HDW3841TP-ZAS`, `IPC-HFW3841TP-ZAS`, `IPC-HDW5842TM-ASE` from the axilogi.com mirror to official dahuasecurity.com pages. Confirmed `HDW3841TP-ZAS` is a genuine PAL regional order code of the base model (not a relabel) and reverted two fields a prior pass had wrongly changed (IR range→50 m, SMD Plus).
+- **Dedupe** — removed the redundant `IPC-HDW2849T-S-IL` India twin (same model/source as the global entry).
+
+Net: 2,331 → 2,330.
+
+## [1.44.1] — 2026-07-22
+
+**Hikvision reseller-source audit** (#138, #140). Re-verified **8 ColorVu / Smart-Hybrid-Light entries** against official hikvision.com datasheets and replaced their reseller sources (securitywholesalers.com.au listings and axilogi.com mirror PDFs) with official `assets.hikvision.com` / `www.hikvision.com` datasheet URLs. Spec corrections from the datasheets: `DS-2CD2187G2H-LI` audio dropped to none (the microphone is the `-U` suffix; the retailer listing overclaimed two-way audio) and microSD max 256→512 GB; `DS-2CD2087G2H-LIU/SL` supplement-light range 30→40 m; `DS-2CD2687G2HT-LIZS` PoE corrected (retailer claimed 802.3af); marketing branding replaced with datasheet wording throughout. No camera count change (2,331).
+
+## [1.44.0] — 2026-07-22
+
+**Dahua catalogue expansion, cont.** (#138, #140). Added **10 more Dahua cameras** from official dahuasecurity.com pages: the X-Spans dual-lens PTZ **SDT8C842-8P-FA-APV** (2.8mm panorama + 4K zoom-detail, dual 1/1.8" CMOS); the TiOC-Pro WizColor WizSense-3 turrets **HDW3449H / HDW3649H / HDW3849H-ZAS-PV-PRO** (4/6/8MP); and the anti-corrosion (NEMA 4X / C5) WizSense-3 line — multi-sensor 180-degree panoramics **PDW31259 / PFW31259S-A180-AS-PV-ATC** (12MP), **PDW3859 / PFW3859S-A180-AS-PV-ATC** (8MP), and vandal domes **HDBW3649R1 / HDBW3849R1-ZAS-PV-PRO-ATC** (6/8MP, IK10). Net: 2,321 -> 2,331.
+
+## [1.43.0] — 2026-07-22
+
+**Dahua catalogue expansion + reseller-source audit** (#138, #140). Added **24 Dahua cameras** from official dahuasecurity.com pages: the WizColor WizSense-2 full-colour line (HFW/HDW 22xx-28xx-S-PRO/PROX), Smart-Dual-Light WizSense-3 (HDBW3467R-ZAS-IL, HFW3467E/3667E/3867E-AS-IL), two multi-sensor 180-degree panoramics (PFW83242-A180-S2 32MP, PFW81642-A180 16MP) and a discontinued 4K turret (HDW3841T-ZS-S2). Re-sourced 12 reseller-only Dahua entries off securitywholesalers.com.au (9 now on official Dahua pages) and fixed the SDT3E410-8P-MB-A-PV1 sensor error (1/1.8" -> 1/2.8"), resolution, IP and pan reported by @Cyphon00 (#138). Net: 2,297 -> 2,321.
+
 ## [1.42.0] — 2026-07-22
 
 **New field: `ik_rating`** (IEC 62262 mechanical impact / vandal protection, IK00-IK11) — contributed by @fvdpol (#137). IK ratings were previously buried in `features` or incorrectly stored in `ip_rating`; this adds a dedicated field and migrates **735 cameras**, cleaning IK out of `ip_rating`. Entries rated IK10 @ 50 J were upgraded to **IK11** per the 2021 IEC 62262 Amendment 1 (31 cameras). Adds `ik_rating` to the CSV export and glossary.

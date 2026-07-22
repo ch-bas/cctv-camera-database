@@ -1,0 +1,99 @@
+{
+  "id": "dahua-ipc-hdw3841t-zs-s2",
+  "brand": "Dahua",
+  "model": "IPC-HDW3841T-ZS-S2",
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5",
+    "aperture": "F1.5",
+    "varifocal": true
+  },
+  "field_of_view_deg": "109°-30° (horizontal)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V",
+    "consumption_w": 10.2
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-30 to 60",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "WizSense",
+    "SMD 4.0",
+    "AI SSA",
+    "motorized varifocal",
+    "5x optical zoom",
+    "40m IR",
+    "perimeter protection (intrusion/tripwire, human/vehicle)",
+    "Quick Pick",
+    "ONVIF Profile S/G/T"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/fr/products/Discontinued-Products/Network-Cameras/IPC-HDW3841T-ZS-S2=S2"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-22",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI (default admin)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

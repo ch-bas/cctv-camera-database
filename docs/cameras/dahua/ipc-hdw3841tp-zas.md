@@ -27,7 +27,7 @@
 
 ## Sources
 
-- https://www.securitywholesalers.com.au/product/dahua-8mp-dh-ipc-hdw3841tp-zas-4k-starlight-ip-turret-motorised-optical-zoom-wdr-ir-50m-ip67-poe/
+- https://material.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/IPC-HDW3841T-ZAS_Datasheet_20210330.pdf
 
 ---
 *Auto-generated from dahua-ipc-hdw3841tp-zas.json — do not edit by hand.*

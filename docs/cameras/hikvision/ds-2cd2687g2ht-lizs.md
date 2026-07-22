@@ -11,7 +11,7 @@
 | Lens | 1× 2.8-12 (motorized)mm |
 | Field of view | 112.3-41.2° |
 | Night vision | hybrid (60m) |
-| Power | PoE (802.3af) / DC 12V |
+| Power | PoE+ (802.3at, Class 4, max 18 W) / 12 VDC |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
@@ -20,18 +20,18 @@
 
 ## Features
 
-- ColorVu Gen 2
-- Smart Hybrid Light (IR + white + smart mode) up to 60m
-- AcuSense human/vehicle detection
+- ColorVu
+- Smart Hybrid Light (IR + white) up to 60m
+- deep-learning human/vehicle classification
 - motorized remote zoom 2.8-12mm
-- 130dB True WDR
-- audio & alarm I/O
+- 130dB WDR
+- audio & alarm I/O (line in/out)
 - F1.2 aperture
 - IK10 vandal-resistant
 
 ## Sources
 
-- https://www.securitywholesalers.com.au/product/hikvision-ds-2cd2687g2ht-8mp-smart-hybrid-light-colorvu-motorised-vf-bullet-camera-2-8-12mm/
+- https://www.hikvision.com/content/dam/hikvision/products/S000000001/S000000002/S000000003/S000000025/OFR007893/M000078496/SM000058446/Data_Sheet/DS-2CD2687G2HT-LIZS_Datasheet_20230720.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2687g2ht-lizs.json — do not edit by hand.*
