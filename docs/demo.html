@@ -327,6 +327,10 @@
     .badge-ip67   { background: var(--green-soft); color: var(--green); }
     .badge-ip66   { background: rgba(63,185,80,0.06); color: #57ab5a; }
     .badge-ip-other { background: rgba(139,148,158,0.1); color: var(--text-muted); }
+    .badge-ik10   { background: var(--green-soft); color: var(--green); }
+    .badge-ik11   { background: var(--green-soft); color: var(--green); }
+    .badge-ik-none { color: #484f58; }
+    .badge-ik-other { background: rgba(139,148,158,0.1); color: var(--text-muted); }
     .badge-wifi   { background: var(--purple-soft); color: var(--purple); }
     .badge-ethernet { background: var(--accent-soft); color: var(--accent); }
     .badge-4g-conn { background: var(--orange-soft); color: var(--orange); }
@@ -625,6 +629,7 @@ const COLS = [
   { key: 'power_source', label: 'Power',      width: '110px', badges: 'power' },
   { key: 'night_vision', label: 'Night',      width: '85px',  badge: 'nv' },
   { key: 'ip_rating',    label: 'IP',         width: '70px',  badge: 'ip' },
+  { key: 'ik_rating',    label: 'IK',         width: '70px',  badge: 'ik' },
   { key: 'two_way',      label: '2-Way',      width: '65px',  bool: true },
   { key: 'msrp',         label: 'Price',      width: '80px',  numeric: true },
 ];
@@ -639,6 +644,7 @@ function fmt(cam, key) {
     case 'power_source':return cam.power_source ?? [];
     case 'night_vision':return cam.nv_type;
     case 'ip_rating':   return cam.ip_rating ?? '—';
+    case 'ik_rating':   return cam.ik_rating ?? '—';
     case 'two_way':     return cam.two_way;
     case 'msrp':
       if (!cam.msrp) return '—';
@@ -652,6 +658,7 @@ function fmt(cam, key) {
 
 function nvBadgeClass(nv) { return { ir:'badge-ir', color:'badge-color', hybrid:'badge-hybrid', none:'badge-none' }[nv] ?? 'badge-ir'; }
 function ipBadgeClass(ip) { if (!ip) return 'badge-ip-other'; if (ip.includes('67')) return 'badge-ip67'; if (ip.includes('66')) return 'badge-ip66'; return 'badge-ip-other'; }
+function ikBadgeClass(ik) { if (!ik) return 'xxx'; if (ik === '—') return 'badge-ik-none'; if (ik === 'IK11') return 'badge-ik11'; if (ik === 'IK10') return 'badge-ik10'; return 'badge-ik-other'; }
 function connBadgeClass(c) { return { wifi:'badge-wifi', ethernet:'badge-ethernet', '4g':'badge-4g-conn', coax:'badge-coax' }[c] ?? 'badge-ip-other'; }
 function connLabel(c) { return { wifi:'WiFi', ethernet:'Ethernet', '4g':'4G', coax:'Coax' }[c] ?? c; }
 function powerBadgeClass(p) { return { poe:'badge-poe', dc:'badge-dc', usb:'badge-usb', battery:'badge-battery', solar:'badge-solar', 'ac-mains':'badge-mains' }[p] ?? 'badge-ip-other'; }
@@ -680,6 +687,7 @@ function renderCell(cam, col) {
   }
   if (col.badge === 'nv') { return `<td><span class="badge ${nvBadgeClass(val)}">${val}</span></td>`; }
   if (col.badge === 'ip') { return `<td><span class="badge ${ipBadgeClass(val)}">${val}</span></td>`; }
+  if (col.badge === 'ik') { return `<td><span class="badge ${ikBadgeClass(val)}">${val}</span></td>`; }
   if (col.badge === 'type') { return `<td><span class="badge badge-type">${val}</span></td>`; }
   if (col.bool) { return `<td class="${val ? '' : 'dim'}">${val ? '✓' : '—'}</td>`; }
   if (col.numeric && col.resColor) {
@@ -1157,7 +1165,7 @@ function exportCSV() {
   const rows = filtered.map(c => [
     c.brand, c.model, c.type, c.megapixels,
     (c.connectivity??[]).join(';'), (c.power_source??[]).join(';'),
-    c.nv_type, c.ip_rating ?? '', c.two_way ? 'yes' : 'no',
+    c.nv_type, c.ip_rating ?? '', c.ik_rating ?? '', c.two_way ? 'yes' : 'no',
     c.msrp_usd ?? ''
   ]);
   const csv = [headers.join(','), ...rows.map(r => r.map(v => '"' + String(v).replace(/"/g, '""') + '"').join(','))].join('\n');
@@ -1255,6 +1263,7 @@ function openDrawer(cam) {
       ${row('Field of view', cam.field_of_view_deg)}
       ${row('Night vision', cam.night_vision?.type ? cam.night_vision.type + (cam.night_vision.range_m ? ' · ' + cam.night_vision.range_m + 'm' : '') : null)}
       ${row('IP rating', cam.ip_rating)}
+      ${row('IK rating', cam.ik_rating)}
       ${row('Power', cam.power?.method)}
       ${row('Power draw', cam.power?.consumption_w ? cam.power.consumption_w + 'W' : null)}
     </div>

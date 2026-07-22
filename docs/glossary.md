@@ -16,7 +16,7 @@ Quick reference for terms used across camera entries.
 
 **IP rating** — Ingress protection. First digit = dust, second = water. `IP66` = dust-tight + strong water jets; `IP67` = dust-tight + temporary immersion.
 
-**IK rating** — Impact/vandal resistance. `IK10` is the highest common rating.
+**IK rating** — Impact/vandal resistance as defined by international standard IEC 62262. `IK11` is the highest rating.
 
 **Sensor size** — e.g. `1/2.7"`, `1/3"`. Larger sensors generally gather more light → better low-light performance at equal resolution.
 
