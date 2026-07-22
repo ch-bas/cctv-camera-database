@@ -62,6 +62,14 @@ git push origin add/reolink-rlc-823a
 3. Run `npm run build` to validate
 4. Open a pull request
 
+> **You only commit source files** — the camera JSON under `cameras/`, and (for
+> tooling changes) `schema/` and `glossary.md`. **Do not commit the generated
+> artifacts** (`data/cameras.json`, `data/cameras.csv`, `docs/cameras.json`, the
+> per-camera `.md` docs). CI regenerates and commits those to `main` on merge, so
+> if `npm run build` leaves them changed in your working tree, just leave them
+> uncommitted. Pull-request CI only checks that your data **validates against the
+> schema** — it no longer requires the build outputs to be committed.
+
 ### JSON structure
 
 Only five fields are required. Everything else is optional — partial entries are welcome:
