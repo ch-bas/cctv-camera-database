@@ -12,7 +12,7 @@
 | Field of view | 111° |
 | Night vision | hybrid (30m) |
 | Power | PoE (802.3af) / DC 12V |
-| Storage | NVR |
+| Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
@@ -20,19 +20,20 @@
 
 ## Features
 
-- ColorVu 3.0 (F1.0 super aperture)
+- ColorVu (F1.0 super aperture)
 - Smart Hybrid Light
-- AcuSense
+- deep-learning person/vehicle classification
 - 130dB WDR
-- built-in mic
-- IK10 metal dome
-- DORI detect 55.2m
+- built-in arrayed dual-microphone
+- IK10 vandal-resistant metal dome
+- DORI detect 89 m (2.8 mm)
 - 30m white LED + IR
-- IK10 vandal-resistant
+- HikAI-ISP
+- NEMA 4X anti-corrosion
 
 ## Sources
 
-- https://www.securitywholesalers.com.au/product/hikvision-ds-2cd2187g3-lis2uy-8mp-colorvu-3-0-hybrid-dome-camera/
+- https://assets.hikvision.com/prd/normal/all/doc/sm000077860/fr-ca/DS-2CD2187G3-LIS2UY_Datasheet_20250414.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2187g3-lis2uy.json — do not edit by hand.*

@@ -11,25 +11,26 @@
 | Lens | 1× 2.8 (fixed)mm |
 | Field of view | 108.8° |
 | Night vision | hybrid (30m) |
-| Power | PoE (802.3af) |
-| Storage | NVR |
+| Power | PoE+ (802.3at, Class 4, max 17 W) / 12 VDC |
+| Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | Yes |
 
 ## Features
 
-- ColorVu 3.0
-- Smart Hybrid Light (IR<->warm white LED)
-- AcuSense human/vehicle detection
-- strobe + speaker active deterrence
-- dual microphones
-- 130dB True WDR
+- ColorVu (F1.0)
+- Smart Hybrid Light (IR + white LED) up to 30m
+- deep-learning human/vehicle classification
+- white strobe light + audio alarm deterrence (/SL)
+- built-in arrayed dual-microphone
+- 130dB WDR
 - HikAI-ISP
+- NEMA 4X anti-corrosion
 
 ## Sources
 
-- https://www.securitywholesalers.com.au/product/hikvision-ds-2cd2387g3-lis2uy-sl-8mp-4k-smart-hybrid-light-colorvu-3-0-turret-camera-with-strobe-speaker/
+- https://assets.hikvision.com/prd/public/all/doc/sm000077874/DS-2CD2387G3-LIS2UY_SLRB_Datasheet_20250414.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2387g3-lis2uy-sl.json — do not edit by hand.*

@@ -6,6 +6,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.44.1] — 2026-07-22
+
+**Hikvision reseller-source audit** (#138, #140). Re-verified **8 ColorVu / Smart-Hybrid-Light entries** against official hikvision.com datasheets and replaced their reseller sources (securitywholesalers.com.au listings and axilogi.com mirror PDFs) with official `assets.hikvision.com` / `www.hikvision.com` datasheet URLs. Spec corrections from the datasheets: `DS-2CD2187G2H-LI` audio dropped to none (the microphone is the `-U` suffix; the retailer listing overclaimed two-way audio) and microSD max 256→512 GB; `DS-2CD2087G2H-LIU/SL` supplement-light range 30→40 m; `DS-2CD2687G2HT-LIZS` PoE corrected (retailer claimed 802.3af); marketing branding replaced with datasheet wording throughout. No camera count change (2,331).
+
 ## [1.44.0] — 2026-07-22
 
 **Dahua catalogue expansion, cont.** (#138, #140). Added **10 more Dahua cameras** from official dahuasecurity.com pages: the X-Spans dual-lens PTZ **SDT8C842-8P-FA-APV** (2.8mm panorama + 4K zoom-detail, dual 1/1.8" CMOS); the TiOC-Pro WizColor WizSense-3 turrets **HDW3449H / HDW3649H / HDW3849H-ZAS-PV-PRO** (4/6/8MP); and the anti-corrosion (NEMA 4X / C5) WizSense-3 line — multi-sensor 180-degree panoramics **PDW31259 / PFW31259S-A180-AS-PV-ATC** (12MP), **PDW3859 / PFW3859S-A180-AS-PV-ATC** (8MP), and vandal domes **HDBW3649R1 / HDBW3849R1-ZAS-PV-PRO-ATC** (6/8MP, IK10). Net: 2,321 -> 2,331.

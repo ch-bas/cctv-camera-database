@@ -12,25 +12,23 @@
 | Field of view | 105.1° |
 | Night vision | hybrid (30m) |
 | Power | PoE (802.3af) / DC 12V |
-| Storage | microSD ≤ 256GB, NVR |
+| Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
-| Two-way audio | Yes |
+| Two-way audio | No |
 
 ## Features
 
-- Smart Hybrid Light
-- ColorVu (Gen2, F1.0)
-- AcuSense
+- ColorVu (F1.0)
+- Smart Hybrid Light (IR + white) up to 30m
+- deep-learning human/vehicle classification
 - 130dB WDR
-- built-in mic + audio I/O
-- 30m IR + 30m white LED
 - IK10 vandal-resistant
 
 ## Sources
 
-- https://www.securitywholesalers.com.au/product/hikvision-ds-2cd2187g2h-li-8mp-outdoor-colorvu-dome-camera-hybrid-light-mic-2-8mm/
+- https://assets.hikvision.com/prd/normal/all/doc/sm000051719/DS-2CD2187G2H-LI_Datasheet_20260603.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2187g2h-li.json — do not edit by hand.*

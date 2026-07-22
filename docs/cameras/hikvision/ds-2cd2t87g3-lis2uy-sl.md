@@ -11,24 +11,26 @@
 | Lens | 1× 2.8 (fixed)mm |
 | Field of view | 108.8° |
 | Night vision | hybrid (60m) |
-| Power | PoE (802.3af) |
-| Storage | NVR |
+| Power | PoE+ (802.3at, Class 4, max 18 W) / 12 VDC |
+| Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | Yes |
 
 ## Features
 
-- ColorVu 3.0 full-color
+- ColorVu (F1.0)
 - Smart Hybrid Light (IR + white) up to 60m
-- AcuSense 3.0 human/vehicle classification
-- red & blue strobe + speaker active deterrence
-- LiveGuard
+- deep-learning human/vehicle classification
+- white strobe light + audio alarm deterrence (/SL)
+- built-in arrayed dual-microphone
 - two-way audio
+- 130dB WDR
+- NEMA 4X anti-corrosion
 
 ## Sources
 
-- https://www.securitywholesalers.com.au/product/hikvision-ds-2cd2t87g3-lis2uy-sl-8mp-colorvu-3-0-bullet-camera-light-speaker-liveguard/
+- https://assets.hikvision.com/prd/public/all/doc/m000144460/DS-2CD2T87G3-LIS2UY_SLRB_Datasheet_20241018.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2t87g3-lis2uy-sl.json — do not edit by hand.*
