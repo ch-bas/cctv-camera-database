@@ -6,6 +6,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.44.0] — 2026-07-22
+
+**Dahua catalogue expansion, cont.** (#138, #140). Added **10 more Dahua cameras** from official dahuasecurity.com pages: the X-Spans dual-lens PTZ **SDT8C842-8P-FA-APV** (2.8mm panorama + 4K zoom-detail, dual 1/1.8" CMOS); the TiOC-Pro WizColor WizSense-3 turrets **HDW3449H / HDW3649H / HDW3849H-ZAS-PV-PRO** (4/6/8MP); and the anti-corrosion (NEMA 4X / C5) WizSense-3 line — multi-sensor 180-degree panoramics **PDW31259 / PFW31259S-A180-AS-PV-ATC** (12MP), **PDW3859 / PFW3859S-A180-AS-PV-ATC** (8MP), and vandal domes **HDBW3649R1 / HDBW3849R1-ZAS-PV-PRO-ATC** (6/8MP, IK10). Net: 2,321 -> 2,331.
+
 ## [1.43.0] — 2026-07-22
 
 **Dahua catalogue expansion + reseller-source audit** (#138, #140). Added **24 Dahua cameras** from official dahuasecurity.com pages: the WizColor WizSense-2 full-colour line (HFW/HDW 22xx-28xx-S-PRO/PROX), Smart-Dual-Light WizSense-3 (HDBW3467R-ZAS-IL, HFW3467E/3667E/3867E-AS-IL), two multi-sensor 180-degree panoramics (PFW83242-A180-S2 32MP, PFW81642-A180 16MP) and a discontinued 4K turret (HDW3841T-ZS-S2). Re-sourced 12 reseller-only Dahua entries off securitywholesalers.com.au (9 now on official Dahua pages) and fixed the SDT3E410-8P-MB-A-PV1 sensor error (1/1.8" -> 1/2.8"), resolution, IP and pan reported by @Cyphon00 (#138). Net: 2,297 -> 2,321.
