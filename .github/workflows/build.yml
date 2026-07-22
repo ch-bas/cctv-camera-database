@@ -80,7 +80,9 @@ jobs:
         run: npm ci
       - name: Build dataset
         run: node scripts/build.js
-      - name: Copy data into docs for Pages
+      - name: Generate docs (data/cameras.json + docs/cameras/*.md)
+        run: node scripts/gen-docs.js
+      - name: Copy aggregate into docs for Pages
         run: cp data/cameras.json docs/cameras.json
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

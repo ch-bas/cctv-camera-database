@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 /**
- * Generates a human-readable markdown doc next to each camera JSON file,
- * so the docs never drift from the data. Run after build.js.
+ * Generates a human-readable markdown doc for each camera JSON file into
+ * docs/cameras/<brand>/<model>.md (mirroring the cameras/ tree), so the docs
+ * never drift from the data and cameras/ stays pure source. These are a
+ * generated artifact — served via GitHub Pages and refreshed by CI; do not
+ * hand-edit and do not commit them from a contributor PR. Run after build.js.
  *
  * Usage: node scripts/gen-docs.js
  */
@@ -10,6 +13,7 @@ const path = require("path");
 
 const ROOT = path.resolve(__dirname, "..");
 const CAMERAS_DIR = path.join(ROOT, "cameras");
+const DOCS_CAMERAS_DIR = path.join(ROOT, "docs", "cameras");
 
 function walk(dir) {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) => {
@@ -51,7 +55,9 @@ function render(c) {
 let count = 0;
 for (const f of walk(CAMERAS_DIR)) {
   const c = JSON.parse(fs.readFileSync(f, "utf8"));
-  fs.writeFileSync(f.replace(/\.json$/, ".md"), render(c));
+  const out = path.join(DOCS_CAMERAS_DIR, path.relative(CAMERAS_DIR, f).replace(/\.json$/, ".md"));
+  fs.mkdirSync(path.dirname(out), { recursive: true });
+  fs.writeFileSync(out, render(c));
   count++;
 }
-console.log(`✓ Generated ${count} markdown doc(s).`);
+console.log(`✓ Generated ${count} markdown doc(s) → docs/cameras/`);
