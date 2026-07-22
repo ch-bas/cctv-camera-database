@@ -5,6 +5,11 @@ on:
     branches: [main]
   pull_request:
 
+# contents: write lets the main-branch run commit regenerated artifacts back.
+# The pages job overrides this with its own (read-only) permissions block.
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,22 +18,45 @@ jobs:
         with:
           # Full history: build.js derives each camera's `added` date from
           # `git log --diff-filter=A`; a shallow clone would compute different
-          # dates and falsely trip the stale-files check below.
+          # dates. Also needed so the main-branch run can commit + push.
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
       - name: Install dependencies
         run: npm ci
-      - name: Build & validate dataset
+
+      # This validates every camera against the schema (AJV) and fails on any
+      # invalid entry — that is the gate for pull requests. Contributors only
+      # ever touch source files (cameras/, schema/, glossary.md); they do NOT
+      # need to run a build or commit generated artifacts.
+      - name: Validate & build dataset
         run: node scripts/build.js
       - name: Generate docs
         run: node scripts/gen-docs.js
-      - name: Fail if generated files are stale
+
+      # On push to main, keep the committed artifacts (data/, docs/) in sync by
+      # regenerating and committing them here — so no contributor or maintainer
+      # ever has to. Skipped on pull_request (validation above is the only gate).
+      # The [skip ci] tag stops this commit from re-triggering workflows.
+      - name: Sync generated artifacts (main only)
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
-          if [ -n "$(git status --porcelain data/ docs/cameras.json docs/glossary.md)" ]; then
-            echo "::error::Generated files are out of date. Run 'npm run build' and commit the result."
-            git status --porcelain data/ docs/cameras.json docs/glossary.md
+          if [ -z "$(git status --porcelain data/ docs/)" ]; then
+            echo "Generated artifacts already up to date — nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ docs/
+          git commit -m "chore: regenerate data/docs artifacts [skip ci]"
+          if git push; then
+            echo "Regenerated artifacts committed to main."
+          else
+            echo "::error::Could not push regenerated artifacts to main. Allow \
+              github-actions[bot] to bypass the branch-protection 'require a pull \
+              request' rule (Settings → Branches), or regenerate manually with \
+              'npm run build' and commit."
             exit 1
           fi
 
@@ -52,7 +80,9 @@ jobs:
         run: npm ci
       - name: Build dataset
         run: node scripts/build.js
-      - name: Copy data into docs for Pages
+      - name: Generate docs (data/cameras.json + docs/cameras/*.md)
+        run: node scripts/gen-docs.js
+      - name: Copy aggregate into docs for Pages
         run: cp data/cameras.json docs/cameras.json
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

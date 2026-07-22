@@ -70,7 +70,9 @@ cctv-camera-database/
 ├── scripts/
 │   └── build.js          # aggregates + validates cameras/ → data/
 ├── docs/
-│   └── glossary.md
+│   ├── glossary.md       # field reference (source — edit when adding fields)
+│   ├── cameras.json      # GENERATED — aggregate copy for the demo/Pages API
+│   └── cameras/          # GENERATED — one browsable .md spec sheet per camera
 ├── CONTRIBUTING.md
 └── LICENSE
 ```
