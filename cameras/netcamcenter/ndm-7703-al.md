@@ -17,6 +17,7 @@
 | Storage | microSD ≤ 2000GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
+| IK rating | IK10 |
 | Two-way audio | Yes |
 
 ## Features

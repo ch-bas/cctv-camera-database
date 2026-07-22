@@ -13,6 +13,7 @@
 | Power | 36 VDC |
 | Storage | NVR |
 | IP rating | IP66 |
+| IK rating | IK10 |
 | Two-way audio | No |
 
 ## Features

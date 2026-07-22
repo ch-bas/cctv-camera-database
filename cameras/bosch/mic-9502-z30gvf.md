@@ -15,6 +15,7 @@
 | Storage | NVR |
 | Protocols | onvif, rtsp, http |
 | IP rating | IP68 (Type 6P) |
+| IK rating | IK10 |
 | Two-way audio | No |
 | Operating temp | -40 to +65°C |
 | Released | 2022 |

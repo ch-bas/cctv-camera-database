@@ -14,7 +14,8 @@
 | Power | High PoE (95W, requires NPD-9501-E midspan) or 24 VAC (21-30 VAC) |
 | Storage | NVR |
 | Protocols | onvif, rtsp, http |
-| IP rating | IP68 (with MIC-DCA/MIC-WMB mount); IK10 |
+| IP rating | IP68 (with MIC-DCA/MIC-WMB mount) |
+| IK rating | IK10 |
 | Two-way audio | Yes |
 | Operating temp | -40 to +65°C |
 | Released | 2019 |

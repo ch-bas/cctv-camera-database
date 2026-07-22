@@ -17,6 +17,7 @@
 | Storage | NVR |
 | Protocols | rtsp |
 | IP rating | IPX4 |
+| IK rating | IK08 |
 | Two-way audio | Yes |
 | Operating temp | -20 to 40°C |
 | Released | 2024 |

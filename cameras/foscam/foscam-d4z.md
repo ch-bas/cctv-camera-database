@@ -13,6 +13,7 @@
 | Night vision | ir (20m) |
 | Power | DC |
 | Protocols | rtsp |
+| IK rating | IK10 |
 | Two-way audio | Yes |
 
 ## Features

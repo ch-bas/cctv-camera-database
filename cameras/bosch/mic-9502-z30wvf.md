@@ -14,6 +14,7 @@
 | Power | 24 VAC (21-30 VAC) and/or 95W High PoE |
 | Protocols | onvif, rtsp, http |
 | IP rating | IP68 |
+| IK rating | IK10 |
 | Operating temp | -40 to 65°C |
 | Released | 2019 |
 

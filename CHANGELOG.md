@@ -6,6 +6,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.42.0] — 2026-07-22
+
+**New field: `ik_rating`** (IEC 62262 mechanical impact / vandal protection, IK00-IK11) — contributed by @fvdpol (#137). IK ratings were previously buried in `features` or incorrectly stored in `ip_rating`; this adds a dedicated field and migrates **735 cameras**, cleaning IK out of `ip_rating`. Entries rated IK10 @ 50 J were upgraded to **IK11** per the 2021 IEC 62262 Amendment 1 (31 cameras). Adds `ik_rating` to the CSV export and glossary.
+
 ## [1.41.0] — 2026-07-21
 
 **First community contribution** (#135 — thanks @fvdpol!) — further Annke model-name disambiguation and spec corrections, sourced from web.archive.org snapshots of the legacy revisions.

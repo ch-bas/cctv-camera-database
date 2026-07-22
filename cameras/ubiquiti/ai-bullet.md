@@ -16,6 +16,7 @@
 | Storage | NVR |
 | Protocols | rtsp |
 | IP rating | IP65 |
+| IK rating | IK04 |
 | Two-way audio | No |
 | Released | 2024 |
 

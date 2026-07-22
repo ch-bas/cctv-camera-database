@@ -14,7 +14,8 @@
 | Power | PoE+ (IEEE 802.3at Type 2, Class 4), 12-26V DC, 24V AC |
 | Storage | microSD ≤ 2048GB, NVR |
 | Protocols | onvif, rtsp |
-| IP rating | IP66/IP67/IP6K9K, IK11 |
+| IP rating | IP66/IP67/IP6K9K |
+| IK rating | IK11 |
 | Two-way audio | No |
 | Operating temp | -50 to 60°C |
 | Released | 2024 |

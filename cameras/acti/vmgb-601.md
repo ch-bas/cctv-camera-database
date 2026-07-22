@@ -13,6 +13,7 @@
 | Night vision | ir (30m) |
 | Power | DC 12V, PoE Class 3 (IEEE802.3af); 10.5 W (DC), 12.95 W (PoE) |
 | Protocols | onvif |
+| IK rating | IK10 |
 | Two-way audio | Yes |
 | Operating temp | -30 to 60°C |
 

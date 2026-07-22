@@ -15,6 +15,7 @@
 | Storage | microSD ≤ 128GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP42 |
+| IK rating | IK10 |
 | Two-way audio | No |
 | Released | 2023 |
 

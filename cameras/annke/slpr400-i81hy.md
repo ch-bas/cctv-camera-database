@@ -15,7 +15,8 @@
 | Power | PoE |
 | Storage | NVR |
 | Protocols | rtsp, onvif |
-| IP rating | IP67, IK10 |
+| IP rating | IP67 |
+| IK rating | IK10 |
 | Two-way audio | No |
 
 ## Features

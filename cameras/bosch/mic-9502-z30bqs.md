@@ -14,7 +14,8 @@
 | Power | High PoE (95 W); 24 V AC / 56 V DC |
 | Storage | NVR |
 | Protocols | onvif, rtsp, http |
-| IP rating | IP66/IP68/IK10 |
+| IP rating | IP66/IP68 |
+| IK rating | IK10 |
 | Operating temp | -40 to 65°C |
 
 ## Features

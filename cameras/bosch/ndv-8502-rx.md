@@ -14,6 +14,7 @@
 | Storage | NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP54 |
+| IK rating | IK10 |
 | Operating temp | -20 to 55°C |
 
 ## Features

@@ -15,7 +15,8 @@
 | Power | Hi-PoE / 24VAC (max 42W) |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | rtsp, onvif |
-| IP rating | IP66, IK10 |
+| IP rating | IP66 |
+| IK rating | IK10 |
 | Two-way audio | Yes |
 
 ## Features

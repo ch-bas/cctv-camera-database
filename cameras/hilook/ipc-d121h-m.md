@@ -15,6 +15,7 @@
 | Storage | NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
+| IK rating | IK10 |
 | Two-way audio | No |
 
 ## Features

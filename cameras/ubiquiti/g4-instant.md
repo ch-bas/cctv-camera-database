@@ -17,6 +17,7 @@
 | Storage | NVR |
 | Protocols | rtsp |
 | IP rating | IPX5 |
+| IK rating | IK04 |
 | Two-way audio | Yes |
 | Released | 2021 |
 

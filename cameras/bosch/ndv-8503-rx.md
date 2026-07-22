@@ -15,6 +15,7 @@
 | Storage | microSD ≤ 2000GB, NVR |
 | Protocols | onvif, rtsp, http |
 | IP rating | IP5X (IP54 with NDA-8001-IP accessory kit) |
+| IK rating | IK10 |
 | Two-way audio | No |
 | Operating temp | -20 to 55°C |
 | Released | 2021 |

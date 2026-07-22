@@ -15,6 +15,7 @@
 | Storage | microSD ≤ 2048GB, NVR |
 | Protocols | onvif, rtsp, http |
 | IP rating | IP66 |
+| IK rating | IK10 |
 | Operating temp | -30 to 50 (continuous); up to 55 IR on / 60 IR off°C |
 
 ## Features

@@ -16,6 +16,7 @@
 | Power | PoE (IEEE802.3af) / 12V DC |
 | Protocols | onvif, rtsp, http |
 | IP rating | IP67 |
+| IK rating | IK10 |
 | Two-way audio | Yes |
 | Operating temp | -30 to 60°C |
 

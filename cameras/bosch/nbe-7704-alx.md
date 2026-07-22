@@ -15,6 +15,7 @@
 | Storage | microSD ≤ 2000GB, NVR |
 | Protocols | onvif, rtsp, http |
 | IP rating | IP66/IP67 |
+| IK rating | IK10 |
 | Two-way audio | Yes |
 | Operating temp | -40 to 60 (PoE) / -50 to 60 (12VDC/24VAC)°C |
 | Released | 2023 |

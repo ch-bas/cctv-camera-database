@@ -15,6 +15,7 @@
 | Storage | NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP66/IP67/IP6K9K |
+| IK rating | IK11 |
 
 ## Features
 

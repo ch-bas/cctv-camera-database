@@ -14,6 +14,7 @@
 | Storage | microSD ≤ 128GB, NVR |
 | Protocols | rtsp |
 | IP rating | IP66 |
+| IK rating | IK10 |
 | Two-way audio | Yes |
 | Operating temp | -10 to 60°C |
 

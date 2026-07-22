@@ -15,6 +15,7 @@
 | Storage | NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
+| IK rating | IK11 |
 | Two-way audio | No |
 | Operating temp | -10 to 50°C |
 | Released | 2023 |

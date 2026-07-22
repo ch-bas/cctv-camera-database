@@ -17,6 +17,7 @@
 | Storage | NVR |
 | Protocols | rtsp |
 | IP rating | IP65 |
+| IK rating | IK04 |
 | Two-way audio | No |
 | Operating temp | -20 to 50°C |
 | Released | 2024 |

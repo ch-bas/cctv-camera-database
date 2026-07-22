@@ -14,6 +14,7 @@
 | Power | PoE (IEEE 802.3af/at), 12 VDC, 24 VAC |
 | Protocols | onvif, rtsp, http |
 | IP rating | IP66/IP67 |
+| IK rating | IK10 |
 | Operating temp | -40 °C to +60 °C (PoE); down to -50 °C with 12 VDC / 24 VAC°C |
 | Released | 2023 |
 

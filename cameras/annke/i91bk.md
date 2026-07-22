@@ -15,7 +15,8 @@
 | Power | PoE (802.3af) / DC 12V (max 9.2W) |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | rtsp, onvif |
-| IP rating | IP66, IK10 |
+| IP rating | IP66 |
+| IK rating | IK10 |
 | Two-way audio | No |
 
 ## Features

@@ -16,6 +16,7 @@
 | Power | PoE, 37-57V DC; 4.2W max |
 | Storage | NVR |
 | Protocols | rtsp |
+| IK rating | IK06 |
 | Operating temp | -20 to 40°C |
 | Released | 2024 |
 
