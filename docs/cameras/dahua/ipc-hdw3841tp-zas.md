@@ -9,7 +9,7 @@
 | Resolution | 4K (8MP, 3840×2160) |
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 2.7-13.5mm |
-| Night vision | ir (40m) |
+| Night vision | ir (50m) |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -20,14 +20,14 @@
 
 - Starlight
 - WizSense
-- SMD 4.0
+- SMD Plus
 - motorized varifocal zoom
 - WDR
 - human/vehicle classification
 
 ## Sources
 
-- https://download.axilogi.com/Dahua/Datasheet/IPC-HDW3841T-ZS-S2.pdf
+- https://material.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/IPC-HDW3841T-ZAS_Datasheet_20210330.pdf
 
 ---
 *Auto-generated from dahua-ipc-hdw3841tp-zas.json — do not edit by hand.*

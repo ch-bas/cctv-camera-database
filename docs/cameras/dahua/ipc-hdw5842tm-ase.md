@@ -29,7 +29,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Dahua/Datasheet/IPC-HDW5842TM-ASE_S3.pdf
+- https://material.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/IPC-HDW5842TM-ASE_S3_datasheet_20250311.pdf
 
 ---
 *Auto-generated from dahua-ipc-hdw5842tm-ase.json — do not edit by hand.*

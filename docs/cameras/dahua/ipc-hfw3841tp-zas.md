@@ -31,7 +31,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Dahua/Datasheet/IPC-HFW3841T-ZAS-S2.pdf
+- https://www.dahuasecurity.com/in/products/All-Products/Network-Cameras/WizSense-Series/3-Series/8MP/DH-IPC-HFW3841TP-ZAS
 
 ---
 *Auto-generated from dahua-ipc-hfw3841tp-zas.json — do not edit by hand.*

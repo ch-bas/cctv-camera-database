@@ -12,7 +12,7 @@
 | Field of view | 111.9° |
 | Night vision | color (30m) |
 | Power | PoE (802.3af) / DC 12V |
-| Storage | microSD ≤ 256GB, NVR |
+| Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | Yes |
@@ -28,7 +28,7 @@
 
 ## Sources
 
-- https://www.securitywholesalers.com.au/product/hikvision-ds-2cd2347g2-lsu-sl-4mp-gen2-colorvu-turret-camera-acusense-speaker-strobe-mic-30m-white-led-2-8mm/
+- https://www.hikvision.com/content/dam/hikvision/usa/data-sheet/colorvu-ip/Datasheet-for-DS-2CD2347G2-LSU_SL.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2347g2-lsu-sl.json — do not edit by hand.*
