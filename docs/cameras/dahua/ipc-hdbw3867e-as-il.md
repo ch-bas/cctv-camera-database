@@ -29,7 +29,7 @@
 
 ## Sources
 
-- https://www.securitywholesalers.com.au/product/dahua-dh-ipc-hdbw3867e-as-il-anz-8mp-smart-dual-light-fixed-focal-dome-wizsense-network-camera/
+- https://www.dahuasecurity.com/au/products/network-products/network-cameras/wizsense-3-series/smart-dual-light/ipc-hdbw3867e-as-il-anz
 
 ---
 *Auto-generated from dahua-ipc-hdbw3867e-as-il.json — do not edit by hand.*

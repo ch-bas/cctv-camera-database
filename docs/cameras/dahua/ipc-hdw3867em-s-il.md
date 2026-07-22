@@ -28,7 +28,7 @@
 
 ## Sources
 
-- https://www.securitywholesalers.com.au/product/dahua-dh-ipc-hdw3867em-s-il-anz-with-smart-warm-light-30m-ir/
+- https://www.dahuasecurity.com/au/products/network-products/network-cameras/wizsense-3-series/smart-dual-light/ipc-hdw3867em-s-il-anz
 
 ---
 *Auto-generated from dahua-ipc-hdw3867em-s-il.json — do not edit by hand.*

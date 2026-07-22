@@ -14,7 +14,7 @@
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
-| Two-way audio | Yes |
+| Two-way audio | No |
 
 ## Features
 
@@ -27,7 +27,7 @@
 
 ## Sources
 
-- https://www.securitywholesalers.com.au/product/dahua-ipc-hfw3867t-zas-il-anz-8mp-8mp-smart-dual-light-vari-focal-bullet-wizsense-motorised/
+- https://www.dahuasecurity.com/au/products/network-products/network-cameras/wizsense-3-series/smart-dual-light/ipc-hfw3867t-zas-il-anz
 
 ---
 *Auto-generated from dahua-ipc-hfw3867t-zas-il.json — do not edit by hand.*

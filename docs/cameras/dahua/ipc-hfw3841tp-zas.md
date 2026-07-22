@@ -21,7 +21,7 @@
 
 - WizSense
 - Starlight
-- SMD Plus
+- SMD 4.0
 - motorized zoom
 - perimeter protection
 - human/vehicle classification
@@ -31,7 +31,7 @@
 
 ## Sources
 
-- https://www.securitywholesalers.com.au/product/dahua-8mp-4k-starlight-ip-bullet-motorized-2-7-13-5mm-smd-plusperimeter-protection-ir-distance-60m/
+- https://download.axilogi.com/Dahua/Datasheet/IPC-HFW3841T-ZAS-S2.pdf
 
 ---
 *Auto-generated from dahua-ipc-hfw3841tp-zas.json — do not edit by hand.*

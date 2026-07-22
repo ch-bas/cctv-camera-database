@@ -6,6 +6,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.43.0] — 2026-07-22
+
+**Dahua catalogue expansion + reseller-source audit** (#138, #140). Added **24 Dahua cameras** from official dahuasecurity.com pages: the WizColor WizSense-2 full-colour line (HFW/HDW 22xx-28xx-S-PRO/PROX), Smart-Dual-Light WizSense-3 (HDBW3467R-ZAS-IL, HFW3467E/3667E/3867E-AS-IL), two multi-sensor 180-degree panoramics (PFW83242-A180-S2 32MP, PFW81642-A180 16MP) and a discontinued 4K turret (HDW3841T-ZS-S2). Re-sourced 12 reseller-only Dahua entries off securitywholesalers.com.au (9 now on official Dahua pages) and fixed the SDT3E410-8P-MB-A-PV1 sensor error (1/1.8" -> 1/2.8"), resolution, IP and pan reported by @Cyphon00 (#138). Net: 2,297 -> 2,321.
+
 ## [1.42.0] — 2026-07-22
 
 **New field: `ik_rating`** (IEC 62262 mechanical impact / vandal protection, IK00-IK11) — contributed by @fvdpol (#137). IK ratings were previously buried in `features` or incorrectly stored in `ip_rating`; this adds a dedicated field and migrates **735 cameras**, cleaning IK out of `ip_rating`. Entries rated IK10 @ 50 J were upgraded to **IK11** per the 2021 IEC 62262 Amendment 1 (31 cameras). Adds `ik_rating` to the CSV export and glossary.
