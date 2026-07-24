@@ -37,7 +37,7 @@ function render(c) {
   md += row("Sensor", c.sensor);
   md += row("Lens", c.lens && [c.lens.count ? `${c.lens.count}×` : "", c.lens.focal_length_mm ? `${c.lens.focal_length_mm}mm` : "", c.lens.aperture].filter(Boolean).join(" "));
   md += row("Field of view", c.field_of_view_deg && `${c.field_of_view_deg}°`);
-  md += row("Night vision", c.night_vision && `${c.night_vision.type}${c.night_vision.range_m ? ` (${c.night_vision.range_m}m)` : ""}`);
+  md += row("Night vision", c.night_vision && `${c.night_vision.type}${c.night_vision.range_m ? ` (${c.night_vision.range_m}m)` : ""}${c.night_vision.min_lux_color ? `, ${c.night_vision.min_lux_color} lux color` : ""}`);
   md += row("Power", c.power?.method);
   md += row("Storage", c.storage && [c.storage.max_microsd_gb ? `microSD ≤ ${c.storage.max_microsd_gb}GB` : "", c.storage.nvr_compatible ? "NVR" : ""].filter(Boolean).join(", "));
   md += row("Protocols", c.protocols?.join(", "));
