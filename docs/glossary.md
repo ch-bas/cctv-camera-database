@@ -10,7 +10,7 @@ Quick reference for terms used across camera entries.
 
 **IR night vision** — Infrared LEDs illuminate the scene invisibly; image is black & white. `range_m` is the rated effective distance.
 
-**Color night vision** — Uses a low-light sensor plus a white spotlight to keep footage in color at night.
+**Color night vision** — Uses a low-light sensor plus a white spotlight to keep footage in color at night. The low-light sensitivity is specified as the minimum illumination required for color, defined in lux (lx).
 
 **WDR (Wide Dynamic Range)** — Balances very bright and very dark areas in one frame. Measured in dB; 120 dB is strong.
 

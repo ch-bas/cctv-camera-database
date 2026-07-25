@@ -11,7 +11,7 @@
 | Resolution | 2K (2880x1620) (5MP, 2880×1620) |
 | Sensor | 1/2.7" Progressive CMOS |
 | Field of view | 110 (2.8mm)° |
-| Night vision | hybrid (30m) |
+| Night vision | hybrid (30m), 0.002 lux color |
 | Power | PoE (IEEE 802.3af) / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |

@@ -11,7 +11,7 @@
 | Resolution | 4MP per channel (2560x1440) (4MP, 2560×1440) |
 | Sensor | 1/3" (fixed bullet) + 1/2.8" (PTZ) Progressive Scan CMOS |
 | Lens | 2× bullet 2.8 (F1.0) + PTZ 4.8-120 (25x optical zoom)mm |
-| Night vision | hybrid (100m) |
+| Night vision | hybrid (100m), 0.0005 lux color |
 | Power | PoE+ (802.3at, max 24W) / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | rtsp, onvif |

@@ -10,7 +10,7 @@
 | Sensor | 2x 1/2.8" CMOS (panoramic + PTZ) |
 | Lens | 2× panoramic: 2.8 fixed / PTZ: 4.8-120 (25x optical)mm F1.0 (panoramic) / F1.6-3.6 (PTZ) |
 | Field of view | 180 horizontal (panoramic) / 55.8-2.4 (PTZ)° |
-| Night vision | hybrid (150m) |
+| Night vision | hybrid (150m), 0.001 lux color |
 | Power | DC 36V/2.23A (±25%) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |

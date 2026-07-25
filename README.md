@@ -255,6 +255,7 @@ Common optional fields:
 | `connectivity` | `string[]` | `["poe", "wifi", "ethernet"]` |
 | `night_vision.type` | `string` | `"color"` / `"ir"` / `"none"` |
 | `night_vision.range_m` | `number` | `30` |
+| `night_vision.min_lux_color` | `number` | `0.01` |
 | `power.method` | `string` | `"PoE (802.3af) / DC 12V"` |
 | `ip_rating` | `string` | `"IP67"` |
 | `ik_rating` | `string` | `"IK10"` |

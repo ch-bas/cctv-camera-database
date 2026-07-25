@@ -11,7 +11,7 @@
 | Resolution | 6MP panoramic (3632x1632) (6MP, 3632×1632) |
 | Sensor | 2x 1/2.5" Progressive Scan CMOS |
 | Lens | 2× 2.8 (fixed, dual lens)mm F1.2 |
-| Night vision | hybrid (30m) |
+| Night vision | hybrid (30m), 0.005 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | rtsp, onvif |
