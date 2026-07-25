@@ -613,7 +613,8 @@ function flat(cam) {
     megapixels: cam.resolution?.megapixels ?? 0,
     nv_type:    cam.night_vision?.type ?? 'unknown',
     nv_range:   cam.night_vision?.range_m ?? 0,
-    nv_lux:     cam.night_vision?.min_lux_color ?? null,
+    nv_lux:     cam.night_vision?.min_lux ?? null,
+    nv_lux_color:     cam.night_vision?.min_lux_color ?? null,
     two_way:    cam.audio?.two_way ?? false,
     msrp:       cam.msrp_usd ?? cam.msrp_eur ?? cam.msrp_gbp ?? cam.msrp_aud ?? cam.msrp_inr ?? null,
   };
@@ -1131,7 +1132,7 @@ function openCompare() {
     ['Sensor',       c => c.sensor ?? '—'],
     ['Lens',         c => c.lens?.focal_length_mm ?? '—'],
     ['FOV',          c => c.field_of_view_deg ?? '—'],
-    ['Night vision', c => c.nv_type + (c.nv_range ? ' · ' + c.nv_range + 'm' : '') + (c.nv_lux ? ' · ' + c.nv_lux + ' lux color' : '')],
+    ['Night vision', c => c.nv_type + (c.nv_range ? ' · ' + c.nv_range + 'm' : '') + (c.nv_lux ? ' · ' + c.nv_lux + ' lux' : '')(c.nv_lux_color ? ' · ' + c.nv_lux_color + ' lux color' : '')],
     ['Connectivity', c => (c.connectivity ?? []).join(', ') || '—'],
     ['Power',        c => (c.power_source ?? []).map(powerLabel).join(', ') || '—'],
     ['IP rating',    c => c.ip_rating ?? '—'],
@@ -1264,6 +1265,7 @@ function openDrawer(cam) {
       ${row('Field of view', cam.field_of_view_deg)}
       ${row('Night vision', cam.night_vision?.type ? cam.night_vision.type + 
       		(cam.night_vision.range_m ? ' · ' + cam.night_vision.range_m + 'm' : '')  +
+		(cam.night_vision.min_lux ? ' · ' + cam.night_vision.min_lux + ' lux' : '') +
 		(cam.night_vision.min_lux_color ? ' · ' + cam.night_vision.min_lux_color + ' lux color' : '')
 		: null)
 	}
