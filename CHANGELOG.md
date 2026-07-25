@@ -6,6 +6,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.45.1] — 2026-07-25
+
+**Verified Frigate configs for 5 Annke models** (#142 — thanks @fvdpol!). Real-world-tested Frigate 0.17.2 configuration for `C800 I91BL`, `C800 I91BN`, `C800 I91DM (28mm)`, `C800 I91DM (40mm)` and `FCD800 I91ET`: detect FPS corrected 5→4, plus `recommended_stream_type`, per-camera `notes` (H.265 sub-stream resolution/codec guidance) and `verified` / `tested_version` / `tested_by` provenance flags.
+
 ## [1.45.0] — 2026-07-25
 
 **New field: `night_vision.min_lux_color`** (#143 — thanks @fvdpol!). Captures the minimum illumination, in lux, required to render a usable **colour** image — the objective figure behind vendor marketing terms like ColorVu, Starlight, DarkFighter and NightChroma, so low-light colour capability can actually be compared. Migrated the value into **96 cameras** where it was documented (range 0.0001–0.18 lx). Also updates `docs/glossary.md`, the `add-camera` wizard, `gen-docs` (renders "… lux color" on the Night vision row) and the `docs/demo.html` viewer. (Maintainer follow-ups: normalised the schema indentation and added `minimum: 0`.)
