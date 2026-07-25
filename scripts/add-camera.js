@@ -92,7 +92,13 @@ async function run() {
   const nvType = await askList('\nNight vision type :', ['ir','color','hybrid','none']);
   if (nvType !== 'none') {
     const rangeRaw = await ask('Night vision range in metres (e.g. 30) : ');
-    cam.night_vision = { type: nvType, range_m: parseInt(rangeRaw) || 20 };
+    const minluxRaw = await ask('Minimum illumination (lux) required for color image (e.g. 0.005) : ');
+    cam.night_vision = { type: nvType, range_m: parseInt(rangeRaw) || 20};
+
+    const minluxParsed = parseFloat(minluxRaw);
+    if (!isNaN(minluxParsed)) {
+      cam.night_vision.min_lux_color = minluxParsed;
+    }
   } else {
     cam.night_vision = { type: 'none', range_m: 0 };
   }

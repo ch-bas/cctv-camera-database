@@ -10,7 +10,7 @@
 | Sensor | 2MP ultra-low-light CMOS |
 | Lens | 1× 2.8-12 (motorized)mm |
 | Field of view | 32.1-98° |
-| Night vision | ir (40m) |
+| Night vision | ir (40m), 0.003 lux color |
 | Power | 12 VDC / 24 VAC / PoC |
 | Storage | NVR |
 | IP rating | IP67 |

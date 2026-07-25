@@ -10,7 +10,7 @@
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 3.6 (fixed)mm F1.0 |
 | Field of view | 89.5° |
-| Night vision | color (40m) |
+| Night vision | color (40m), 0.001 lux color |
 | Power | 12 VDC HDCVI coaxial |
 | Storage | NVR |
 | Protocols | hdcvi |

@@ -10,7 +10,7 @@
 | Sensor | 1/3" progressive scan CMOS |
 | Lens | 1× 2.8/3.6/6mm |
 | Field of view | 53.4-101.2° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.05 lux color |
 | Power | PoE (IEEE802.3af) / 12V DC |
 | Protocols | onvif, rtsp, http |
 | IP rating | IP67 |

@@ -9,7 +9,7 @@
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/3" 2MP ultra-low-light CMOS |
 | Lens | 1× |
-| Night vision | none |
+| Night vision | none, 0.003 lux color |
 | Power | 12 VDC / 24 VAC |
 | Storage | NVR |
 | Two-way audio | No |
