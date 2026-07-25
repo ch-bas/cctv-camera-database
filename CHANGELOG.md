@@ -6,6 +6,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.45.0] — 2026-07-25
+
+**New field: `night_vision.min_lux_color`** (#143 — thanks @fvdpol!). Captures the minimum illumination, in lux, required to render a usable **colour** image — the objective figure behind vendor marketing terms like ColorVu, Starlight, DarkFighter and NightChroma, so low-light colour capability can actually be compared. Migrated the value into **96 cameras** where it was documented (range 0.0001–0.18 lx). Also updates `docs/glossary.md`, the `add-camera` wizard, `gen-docs` (renders "… lux color" on the Night vision row) and the `docs/demo.html` viewer. (Maintainer follow-ups: normalised the schema indentation and added `minimum: 0`.)
+
 ## [1.44.2] — 2026-07-22
 
 **Reseller-source audit close-out** (#138, #140). Resolved the last flagged reseller-sourced entries and a duplicate:
