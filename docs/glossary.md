@@ -12,6 +12,8 @@ Quick reference for terms used across camera entries.
 
 **Color night vision** — Uses a low-light sensor plus a white spotlight to keep footage in color at night. The low-light sensitivity is specified as the minimum illumination required for color, defined in lux (lx).
 
+**Minimum Illumination** -- This is the lowest light level, measured in lux (lx) at which a security camera produces a usable, recognizable video image. A complete definition requires an IRE (Institute of Radio Engineers) video signal level (usually 30% to 50%, or 50 IRE). Note that different vendors may use different standards regarding the required minimum image quality/contrast/noise/blur or an 10% IRE to inflate the low-light sensitivity numbers.
+
 **WDR (Wide Dynamic Range)** — Balances very bright and very dark areas in one frame. Measured in dB; 120 dB is strong.
 
 **IP rating** — Ingress protection. First digit = dust, second = water. `IP66` = dust-tight + strong water jets; `IP67` = dust-tight + temporary immersion.
