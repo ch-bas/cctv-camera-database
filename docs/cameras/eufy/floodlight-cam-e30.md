@@ -21,7 +21,7 @@
 
 ## Features
 
-- dual-lens 360 pan & tilt with auto-tracking
+- dual-lens 355° pan & tilt with auto-tracking
 - 3x optical / 8x digital zoom
 - 2000-lumen motion-activated LED floodlight (4000K)
 - AI human/vehicle detection, out-of-view detection
