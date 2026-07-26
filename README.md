@@ -2,7 +2,7 @@
 
 An open, structured database of 2,330 CCTV / IP camera models and their technical specifications, covering 72 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
 
-[![cameras](https://img.shields.io/badge/cameras-2%2C330-blue)](data/cameras.json)
+[![cameras](https://img.shields.io/badge/cameras-2%2C394-blue)](data/cameras.json)
 [![brands](https://img.shields.io/badge/brands-72-green)](cameras/)
 [![license](https://img.shields.io/badge/license-CC0-lightgrey)](LICENSE)
 
@@ -60,11 +60,11 @@ cctv-camera-database/
 │   ├── acti/             # 248 cameras
 │   ├── dahua/            # 189 cameras
 │   ├── bosch/            # 153 cameras
+│   ├── abus/             # 142 cameras
 │   ├── reolink/          # 127 cameras
-│   ├── ezviz/            #  87 cameras
 │   └── …66 more brands
 ├── data/                 # GENERATED — do not edit by hand
-│   ├── cameras.json      # all 2,330 cameras as one array
+│   ├── cameras.json      # all 2,394 cameras as one array
 │   └── cameras.csv       # flattened, spreadsheet-friendly
 ├── schema/
 │   └── camera.schema.json
@@ -125,7 +125,7 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 
 | Metric | Count |
 |--------|-------|
-| Total cameras | **2,330** |
+| Total cameras | **2,394** |
 | Brands | **72** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
 | PoE wired | 1,669 |
@@ -145,14 +145,14 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | ACTi | 248 | Enterprise IP + analog, NDAA, TW/global |
 | Dahua | 189 | Enterprise + consumer, global |
 | Bosch | 153 | Enterprise + thermal, EU/global |
+| ABUS | 142 | Consumer + professional, GDPR-first, DE/AT/CH |
 | Reolink | 127 | Prosumer, no-subscription, global |
 | EZVIZ (Hikvision) | 87 | Consumer, global |
-| ABUS | 85 | Consumer + professional, GDPR-first, DE/AT/CH |
 | Axis | 72 | Enterprise premium, global |
 | Hi-Focus | 60 | Made-in-India, BIS certified, IN |
 | Kedacom | 58 | Enterprise, CN/global |
 | IMOU (Dahua) | 56 | Consumer + prosumer, global |
-| Tapo (TP-Link) | 47 | Consumer budget, global |
+| Tapo (TP-Link) | 54 | Consumer budget, global |
 | Eufy (Anker) | 46 | Consumer no-subscription, global |
 | Hanwha | 45 | Enterprise AI, Korea/global |
 | Annke | 43 | Prosumer, global |
