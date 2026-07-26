@@ -1,0 +1,127 @@
+{
+  "id": "abus-ipcs84510",
+  "brand": "ABUS",
+  "model": "IPCS84510",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "label": "4MP",
+    "max_width": 2560,
+    "max_height": 1440,
+    "megapixels": 4
+  },
+  "video": {
+    "max_fps": 25,
+    "codecs": [
+      "H.264",
+      "H.265",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "Stream 1",
+        "resolution": "2560x1440",
+        "fps": 25
+      },
+      {
+        "name": "Stream 2",
+        "resolution": "704x576",
+        "fps": 25
+      },
+      {
+        "name": "Stream 3",
+        "resolution": "1280x720",
+        "fps": 25
+      }
+    ]
+  },
+  "sensor": "1/3\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 - 12.0",
+    "aperture": "F1.6 - F2.7",
+    "varifocal": true
+  },
+  "field_of_view_deg": "31.6 to 96.7 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / 12V DC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "two_way": true
+  },
+  "features": [
+    "PTZ 355 pan / 0-90 tilt (100°/s)",
+    "4x optical zoom",
+    "16x digital zoom",
+    "120dB WDR",
+    "electronic image stabilization (EIS)",
+    "3D-DNR",
+    "IK10 vandal resistance",
+    "300 presets",
+    "Tripwire / intrusion detection VCA",
+    "Motion detection",
+    "2 relay outputs",
+    "Pelco D / Pelco P",
+    "ABUS Link Station App"
+  ],
+  "operating_temp_c": "-20 to 60",
+  "dimensions_mm": "131 x 131 x 102",
+  "environment": [
+    "outdoor",
+    "indoor"
+  ],
+  "release_notes": "Predecessor of the IPCS84511 mini PTZ on the same Ø13 cm body; still supported by current mounts (TVAC31215/31285) on abus.com. Specs from the official ABUS datasheet. Power recorded from the datasheet spec table (12V DC / PoE 802.3af); the same datasheet's bullet list states '24 V AC & PoE' and recommends a High-PoE 60W injector for wall mounting — discrepancy left unresolved rather than guessed.",
+  "sources": [
+    "https://asset.conrad.com/media10/add/160267/c1/-/de/002237147DS00/datablad-2237147-abus-ipcs84510-ip-bewakingscamera-lan-2560-x-1440-pix.pdf",
+    "https://www.abus.com/int/Commercial-Security/Video-surveillance/Network-technology/Ceiling-Mount-for-IPCS84510",
+    "https://www.manualslib.com/manual/2285047/Abus-Ipcs84510.html"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "ABUS Performance Line is Hikvision OEM — Hikvision-style RTSP paths (101 main / 102 sub / 103 third). Enable ONVIF/RTSP in the camera web UI (Network > Integration Protocol) first. Pattern from the IPCx OEM family (iSpyConnect, HA community); not individually bench-tested."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration after enabling ONVIF (Profile S) in the web UI. ONVIF PTZ control supported."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "ABUS Performance Line is Hikvision OEM — select the 'Hikvision' profile (or Generic ONVIF/RTSP)."
+    }
+  },
+  "last_verified": "2026-07-26"
+}

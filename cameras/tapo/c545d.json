@@ -1,0 +1,96 @@
+{
+  "id": "tapo-c545d",
+  "brand": "Tapo",
+  "model": "Tapo C545D",
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "resolution": {
+    "label": "2K (3MP per lens)",
+    "max_width": 2304,
+    "max_height": 1296,
+    "megapixels": 2.99
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "streams": [
+      {
+        "name": "Wide-angle lens",
+        "resolution": "2304x1296"
+      },
+      {
+        "name": "Telephoto pan/tilt lens",
+        "resolution": "2304x1296"
+      }
+    ]
+  },
+  "lens": {
+    "count": 2,
+    "varifocal": false
+  },
+  "field_of_view_deg": "121 diagonal / 95 horizontal / 57.3 vertical (wide-angle lens); 31.7 vertical (telephoto lens)",
+  "night_vision": {
+    "type": "hybrid"
+  },
+  "storage": {
+    "onboard": false,
+    "max_microsd_gb": 512,
+    "nvr_compatible": false,
+    "cloud": true
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "power_source": [
+    "dc"
+  ],
+  "features": [
+    "dual 2K 3MP lenses (wide-angle + telephoto)",
+    "synchronized smart detection and tracking",
+    "color night vision",
+    "motorized pan/tilt on telephoto lens",
+    "wide-angle lens manual pan 270 degrees, tilt -30 to -10 degrees",
+    "wall, ceiling or rod mounting",
+    "Alexa / Google Assistant / Samsung SmartThings",
+    "Tapo Care cloud or local microSD storage"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "release_notes": "Outdoor dual-lens pan/tilt camera — the outdoor counterpart of the indoor C245D and indoor/outdoor C246D. Dual 2K 3MP resolution, both lens FOV figures, the wide-angle manual pan/tilt ranges, motorized telephoto control, colour night vision, and 512 GB microSD from the official TP-Link C545D datasheet. Sensor, focal lengths, apertures, IR range, IP rating, power method, dimensions, and weight omitted: not present in the recovered datasheet text.",
+  "sources": [
+    "https://www.tapo.com/en/product/smart-camera/tapo-c545d/",
+    "https://manuals.plus/m/25fd9cf1ca4000dcfcba1ecd9b383147b3fd481b4ac5735e94f324b76441574d"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/stream1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/stream2",
+      "verified": false,
+      "notes": "Mains-powered Tapo cameras expose RTSP once a Camera Account is created in the Tapo app (Settings > Advanced > Camera Account). Dual-lens models: /stream1 and /stream2 map to the two lenses rather than main/sub — confirm per-lens mapping in your setup."
+    },
+    "home_assistant": {
+      "integration": "tapo",
+      "notes": "Native TP-Link Tapo integration. Requires Tapo cloud account credentials."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP streams: /stream1, /stream2. Must enable ONVIF/Camera Account in the Tapo app."
+    }
+  },
+  "last_verified": "2026-07-26"
+}

@@ -1,0 +1,122 @@
+{
+  "id": "abus-ipcs84530",
+  "brand": "ABUS",
+  "model": "IPCS84530",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "label": "4MP",
+    "max_width": 2560,
+    "max_height": 1440,
+    "megapixels": 4
+  },
+  "video": {
+    "max_fps": 50,
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "Stream 1",
+        "resolution": "2560x1440",
+        "fps": 25
+      },
+      {
+        "name": "Stream 2",
+        "resolution": "704x576",
+        "fps": 25
+      },
+      {
+        "name": "Stream 3",
+        "resolution": "2560x1440",
+        "fps": 25
+      }
+    ]
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.8 to 120",
+    "aperture": "F1.6 - F3.5",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 256
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "features": [
+    "25x optical autofocus motor zoom (4.8-120 mm)",
+    "360 degree pan",
+    "300 presets / 8 tours (automated guard tours)",
+    "Ultra Low Light",
+    "WDR",
+    "2-way audio",
+    "1080p @ 50 fps mode",
+    "compact form factor for flush ceiling mount",
+    "ABUS Link Station App"
+  ],
+  "environment": [
+    "outdoor",
+    "indoor"
+  ],
+  "status": "discontinued",
+  "release_notes": "Archived/EOL IP PTZ 4 MPx (25x) — predecessor of the IPCS84531/IPCS84532 on the same 169 mm body (note: 1/2.5\" sensor vs 1/2.8\" in the successors). Full platform table (sensor, 4.8-120 mm F1.6-F3.5, FOV 2.5-57.6°, streams, 2-way audio, 12V DC / PoE+ 802.3at) from the official ABUS partner portal product data; IR 50 m, IP66, 360° pan, and ULL from the official ABUS archive product page. Weight and operating temperature omitted: not captured from official sources.",
+  "sources": [
+    "https://www.abus.com/de/Archiv/IP-PTZ-4-MPx-25x",
+    "https://partner-ch.abus.com/de/silver.econtent/catalog/Produkte/Elektronische-Sicherheit/Professional-Sortiment/Videoueberwachung/Netzwerk/Kameras/SPECIAL/IP-PTZ-4-MPx-25x",
+    "https://c1.abus.com/var/ImagesPIM/d110001/medias/docus/23/20200218-IPCS84530_IPCS84550-BDA-INT.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "ABUS Performance Line is Hikvision OEM — Hikvision-style RTSP paths (101 main / 102 sub / 103 third). Enable ONVIF/RTSP in the camera web UI (Network > Integration Protocol) first. Pattern from the IPCx OEM family (iSpyConnect, HA community); not individually bench-tested."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration after enabling ONVIF (Profile S) in the web UI."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "ABUS Performance Line is Hikvision OEM — select the 'Hikvision' profile (or Generic ONVIF/RTSP)."
+    }
+  },
+  "last_verified": "2026-07-26",
+  "sensor": "1/2.5\" Progressive Scan CMOS",
+  "field_of_view_deg": "2.5 to 57.6 horizontal",
+  "power": {
+    "method": "12V DC / PoE+ (IEEE 802.3at, 30W)"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "dimensions_mm": "169 diameter x 161"
+}

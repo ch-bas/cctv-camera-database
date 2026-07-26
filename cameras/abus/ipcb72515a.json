@@ -1,0 +1,96 @@
+{
+  "id": "abus-ipcb72515a",
+  "brand": "ABUS",
+  "model": "IPCB72515A",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "label": "2MP (1080p)",
+    "max_width": 1920,
+    "max_height": 1080,
+    "megapixels": 2
+  },
+  "video": {
+    "max_fps": 25,
+    "codecs": [
+      "H.264",
+      "H.265",
+      "MJPEG"
+    ]
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "varifocal": false
+  },
+  "field_of_view_deg": "108 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / 12V DC"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "features": [
+    "IK10 vandal-resistant full dome",
+    "120 dB WDR",
+    "motion detection (8 zones)",
+    "compatible with ABUS Secvest / wAppLoxx Pro / ModuVis",
+    "ABUS Link Station App"
+  ],
+  "dimensions_mm": "143 x 143 x 100",
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "status": "discontinued",
+  "release_notes": "Archived/EOL Basic-line 2 MPx full-size vandal dome (fixed-lens dome family: IPCB72515A 2.8 mm / 108°, IPCB74515B 4 mm / 88°, IPCB78515A 2.8 mm / 102°; FOVs corroborated by the official ABUS Video/IP catalog). Sensor, IR range, weight, and operating temperature omitted: not confirmed from an official source for this variant.",
+  "sources": [
+    "https://www.tinnes24.de/pdf/ABUS-Katalog-19-Video-IP-Sortiment.pdf",
+    "https://endlich-sicher.de/abus-ip-dome-kamera-ipcb72515a",
+    "https://manuals.plus/m/41e9eecc72014f49518f19ef80f4599ffbfe1827ef54d434bc1c5bf5ee7006d4"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "ABUS Performance Line is Hikvision OEM — Hikvision-style RTSP paths (101 main / 102 sub / 103 third). Enable ONVIF/RTSP in the camera web UI (Network > Integration Protocol) first. Pattern from the IPCx OEM family (iSpyConnect, HA community); not individually bench-tested."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration after enabling ONVIF (Profile S) in the web UI."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "ABUS Performance Line is Hikvision OEM — select the 'Hikvision' profile (or Generic ONVIF/RTSP)."
+    }
+  },
+  "last_verified": "2026-07-26",
+  "operating_temp_c": "-30 to 60",
+  "sensor": "1/2.8\" Progressive Scan CMOS"
+}

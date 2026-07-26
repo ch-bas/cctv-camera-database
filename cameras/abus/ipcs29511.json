@@ -1,0 +1,114 @@
+{
+  "id": "abus-ipcs29511",
+  "brand": "ABUS",
+  "model": "IPCS29511",
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "label": "12MP",
+    "max_width": 4000,
+    "max_height": 3000,
+    "megapixels": 12
+  },
+  "video": {
+    "max_fps": 25,
+    "codecs": [
+      "H.264",
+      "H.265",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "Main (Fisheye)",
+        "resolution": "4000x3000",
+        "fps": 20
+      },
+      {
+        "name": "Main (Panorama)",
+        "resolution": "3072x2304",
+        "fps": 15
+      },
+      {
+        "name": "Sub",
+        "resolution": "704x576",
+        "fps": 15
+      }
+    ]
+  },
+  "field_of_view_deg": "360 horizontal",
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "features": [
+    "hemispheric 360/180 degree panorama views",
+    "in-camera dewarping (hardware + up to 14 software view modes)",
+    "ePTZ with up to 255 presets and 32 tours",
+    "replaces up to 4 cameras (up to 4 video channels)",
+    "DWDR",
+    "people counting",
+    "heat map",
+    "intersection analysis",
+    "Tripwire / intrusion / region entry-exit / unattended baggage / object removal VCA",
+    "audio exception detection",
+    "1x alarm input / 1x alarm output",
+    "audio in/out (2-way audio)",
+    "8 privacy zones",
+    "NAS recording",
+    "ABUS Link Station App"
+  ],
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "status": "discontinued",
+  "release_notes": "Archived/EOL 12 MPx Hemispheric IP fisheye — predecessor of the IPCS29512 (which added deep-learning people counting v2). All fields from the official ABUS user manual (20230425-IPCS29511_BDA_INT): 4000x3000 @ 20 fps fisheye main stream (2560x2560 @ 25/30 fps mode), panorama and multi-ePTZ view modes, IP66, mic + speaker with 2-way audio, alarm I/O, PoE/12V DC, microSD + NAS recording, DWDR, full smart-event suite. Sensor, lens, IR range, IK rating, microSD max size, dimensions, and weight omitted: the manual defers the spec table to the product page, and no official datasheet was recovered.",
+  "sources": [
+    "https://c1.abus.com/asc-pim-assets-01/medias/docus/28/20230425-IPCS29511_BDA_INT.pdf",
+    "https://www.manualslib.com/manual/2285047/Abus-Ipcs84510.html"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "ABUS Performance Line is Hikvision OEM — Hikvision-style RTSP paths (101 main / 102 sub / 103 third). Enable ONVIF/RTSP in the camera web UI (Network > Integration Protocol) first. Pattern from the IPCx OEM family (iSpyConnect, HA community); not individually bench-tested."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration after enabling ONVIF (Profile S) in the web UI."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "ABUS Performance Line is Hikvision OEM — select the 'Hikvision' profile (or Generic ONVIF/RTSP)."
+    }
+  },
+  "last_verified": "2026-07-26",
+  "power": {
+    "method": "PoE (IEEE 802.3af) / 12V DC"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  }
+}
