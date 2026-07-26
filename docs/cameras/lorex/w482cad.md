@@ -25,7 +25,6 @@
 - 2K WiFi outdoor smart deterrence (spotlight + siren)
 - color night vision
 - person/vehicle/animal/package detection
-- auto-tracking
 - 32GB local storage included
 - no monthly fees
 - Lorex Home app
