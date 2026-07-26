@@ -6,6 +6,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.46.0] — 2026-07-26
+
+**New field: `night_vision.min_lux`** (#147 — thanks @fvdpol!). A generic minimum-illumination figure (lux) for datasheets that state a low-light sensitivity **without** specifying whether the resulting image is colour or black-and-white — complementing `min_lux_color` (#143), which is specifically the colour threshold. `gen-docs` and the `docs/demo.html` viewer render both. Adds a "Minimum Illumination" glossary entry (with the IRE-level caveat on how vendors measure it). (Maintainer follow-up: fixed a missing `+` in the demo.html table renderer that would have thrown on the Night-vision column.)
+
 ## [1.45.1] — 2026-07-25
 
 **Verified Frigate configs for 5 Annke models** (#142 — thanks @fvdpol!). Real-world-tested Frigate 0.17.2 configuration for `C800 I91BL`, `C800 I91BN`, `C800 I91DM (28mm)`, `C800 I91DM (40mm)` and `FCD800 I91ET`: detect FPS corrected 5→4, plus `recommended_stream_type`, per-camera `notes` (H.265 sub-stream resolution/codec guidance) and `verified` / `tested_version` / `tested_by` provenance flags.
