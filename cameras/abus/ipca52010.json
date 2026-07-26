@@ -1,0 +1,95 @@
+{
+  "id": "abus-ipca52010",
+  "brand": "ABUS",
+  "model": "IPCA52010",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "label": "2MP",
+    "max_width": 1920,
+    "max_height": 1080,
+    "megapixels": 2
+  },
+  "video": {
+    "max_fps": 30,
+    "codecs": [
+      "H.264",
+      "H.265",
+      "MJPEG"
+    ]
+  },
+  "sensor": "1/2.8\" Sony Exmor R STARVIS CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.001
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP20",
+  "power": {
+    "method": "12V DC / 24V AC / PoE (IEEE 802.3af, class 3)"
+  },
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "audio": {
+    "two_way": true
+  },
+  "operating_temp_c": "0 to 50",
+  "dimensions_mm": "65 x 65 x 120",
+  "features": [
+    "CS-mount box camera (lens sold separately, e.g. TVAC65502 2.8-10 mm)",
+    "150 dB DOL WDR (3x shutter)",
+    "Ultra Low-Light",
+    "Tripwire, intrusion, human detection, object counting VCA",
+    "full-duplex 2-way audio",
+    "1 alarm input / 1 alarm output",
+    "indoor (IP20), outdoor via TVAC70200 heated housing"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "status": "discontinued",
+  "release_notes": "Archived/EOL Advanced-line IP boxtype 2 MPx — interchangeable-lens body; the lens field is intentionally minimal (CS mount, no bundled lens). Full spec table from the official ABUS Video IP Katalog 2019 (ABUS Security Center).",
+  "sources": [
+    "https://www.tinnes24.de/pdf/ABUS-Katalog-19-Video-IP-Sortiment.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Exact RTSP path undocumented for this ABUS line (not the Hikvision-OEM Basic platform). Use go2rtc ONVIF autodiscovery (onvif://{user}:{pass}@{ip}) to resolve the stream URL, or check the camera web UI. ONVIF Profile S supported per the official catalog."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration (Profile S per official catalog)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic ONVIF/RTSP with 'Find/inspect' to discover the stream path."
+    }
+  },
+  "last_verified": "2026-07-26"
+}

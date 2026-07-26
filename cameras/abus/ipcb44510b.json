@@ -1,0 +1,101 @@
+{
+  "id": "abus-ipcb44510b",
+  "brand": "ABUS",
+  "model": "IPCB44510B",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "label": "4MP",
+    "max_width": 2688,
+    "max_height": 1520,
+    "megapixels": 4
+  },
+  "video": {
+    "max_fps": 30,
+    "codecs": [
+      "H.264",
+      "H.265",
+      "MJPEG"
+    ]
+  },
+  "sensor": "1/2.5\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "88 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10,
+    "min_lux_color": 0.008
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / 12V DC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK08",
+  "features": [
+    "IK08 vandal-resistant housing",
+    "120 dB WDR",
+    "Ultra low-light performance",
+    "ONVIF Profile S/G",
+    "M12 fixed lens mount",
+    "Min. illumination 0.008 lux color / 0 lux IR",
+    "ABUS Link Station App support"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "100 x 97 x 53",
+  "weight_g": 400,
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "release_notes": "4 mm middle lens variant of the IPCB44510 mini dome family (A = 2.8 mm / 109°, B = 4 mm / 88°, C = 6 mm / 53°). Lens and FOV from the official ABUS archive product page; all shared-platform specs match the family datasheet.",
+  "sources": [
+    "https://www.abus.com/de/Archiv/IP-Mini-Dome-4-MPx-4-mm",
+    "https://c1.abus.com/uk/Archive/Video-surveillance/Surveillance-cameras/IP-Mini-Dome-4-MPx-4-mm",
+    "https://www.expert-security.de/abus-ipcb44510b-ip-dome-1080p-t-n-ir-poe-ip66-ik08.html"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "ABUS Performance Line is Hikvision OEM — Hikvision-style RTSP paths (101 main / 102 sub / 103 third). Enable ONVIF/RTSP in the camera web UI (Network > Integration Protocol) first. Pattern from the IPCx OEM family (iSpyConnect, HA community); not individually bench-tested."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration after enabling ONVIF (Profile S) in the web UI."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "ABUS Performance Line is Hikvision OEM — select the 'Hikvision' profile (or Generic ONVIF/RTSP)."
+    }
+  },
+  "last_verified": "2026-07-26"
+}

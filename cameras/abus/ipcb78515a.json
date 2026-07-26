@@ -1,0 +1,118 @@
+{
+  "id": "abus-ipcb78515a",
+  "brand": "ABUS",
+  "model": "IPCB78515A",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "label": "8MP (4K)",
+    "max_width": 3840,
+    "max_height": 2160,
+    "megapixels": 8
+  },
+  "video": {
+    "max_fps": 20,
+    "codecs": [
+      "H.264",
+      "H.265",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "Stream 1",
+        "resolution": "3840x2160",
+        "fps": 20
+      },
+      {
+        "name": "Stream 2",
+        "resolution": "640x480",
+        "fps": 25
+      },
+      {
+        "name": "Stream 3",
+        "resolution": "1280x720",
+        "fps": 25
+      }
+    ]
+  },
+  "sensor": "1/2.5\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "102 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / 12V DC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "features": [
+    "IK10 vandal-resistant full dome",
+    "120 dB WDR",
+    "3D-DNR",
+    "motion detection (8 zones)",
+    "ONVIF Profile S/G",
+    "compatible with ABUS Secvest / wAppLoxx",
+    "ABUS Link Station App"
+  ],
+  "dimensions_mm": "143 x 143 x 100",
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "status": "discontinued",
+  "release_notes": "Archived/EOL Basic-line 8 MPx (4K) full-size vandal dome; 2.8 mm / 102° per the official ABUS archive product page and datasheet. Sensor, F2.0, dimensions, and streams from the official ABUS datasheet; IR 30 m from the ABUS datasheet bullet as replicated across independent retailer listings. Weight and operating temperature omitted: not captured from the official sources reviewed.",
+  "sources": [
+    "https://www.abus.com/ger/Archiv/Videoueberwachung/Ueberwachungskameras/IP-Dome-8-MPx-4K-2.8-mm",
+    "https://asset.conrad.com/media10/add/160267/c1/-/de/002246401DS00/datablad-2246401-abus-ipcb78515a-lan-ip-overvagningskamera-3840-x-2160-pix.pdf",
+    "https://www.elektroshopwagner.de/product_info.php/info/p266293_ABUS-IPCB78515A-IP-Dome-8-MPx--4K--2-8-mm-.html",
+    "https://www.tinnes24.de/pdf/ABUS-Katalog-19-Video-IP-Sortiment.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "ABUS Performance Line is Hikvision OEM — Hikvision-style RTSP paths (101 main / 102 sub / 103 third). Enable ONVIF/RTSP in the camera web UI (Network > Integration Protocol) first. Pattern from the IPCx OEM family (iSpyConnect, HA community); not individually bench-tested."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration after enabling ONVIF (Profile S) in the web UI."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "ABUS Performance Line is Hikvision OEM — select the 'Hikvision' profile (or Generic ONVIF/RTSP)."
+    }
+  },
+  "last_verified": "2026-07-26",
+  "operating_temp_c": "-30 to 60"
+}

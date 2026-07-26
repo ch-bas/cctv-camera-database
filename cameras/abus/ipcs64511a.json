@@ -1,0 +1,121 @@
+{
+  "id": "abus-ipcs64511a",
+  "brand": "ABUS",
+  "model": "IPCS64511A",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "label": "4MP",
+    "max_width": 2688,
+    "max_height": 1520,
+    "megapixels": 4
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "H.265",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "Stream 1",
+        "resolution": "2688x1520",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "Stream 2",
+        "resolution": "640x480",
+        "fps": 25,
+        "codec": "H.264"
+      },
+      {
+        "name": "Stream 3",
+        "resolution": "1920x1080",
+        "fps": 10,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "108 horizontal",
+  "night_vision": {
+    "type": "color",
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) or 12V DC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "features": [
+    "WDR 120 dB",
+    "full-color night vision",
+    "white light LEDs",
+    "person/vehicle detection",
+    "motion detection (up to 8 zones)",
+    "minimum illumination 0.0005 lux (color)",
+    "compatible with ABUS Secvest / Secoris / wAppLoxx Pro",
+    "ABUS Link Station App"
+  ],
+  "operating_temp_c": "-25 to 60",
+  "dimensions_mm": "282 x 105 x 105",
+  "weight_g": 1000,
+  "release_year": 2023,
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "release_notes": "2.8 mm wide-angle variant of the Gecko IP Tube 4 MPx WL (A = 2.8 mm / 108°, B = 4 mm / 95°) per the official ABUS product pages. White-light LED range omitted: not stated per-variant in the official sources reviewed (retailer figures conflict with the B variant's documented 50 m).",
+  "sources": [
+    "https://www.abus.com/int/Commercial-Security/Video-surveillance/Network-technology/IP-Tube-4-MPx-2.8-mm-WL",
+    "https://c4.abus.com/ch_de/Objektsicherheit/Videoueberwachung/IP/Kameras/Tube/IP-Tube-4-MPx-2.8-mm-WL",
+    "https://www.zajadacz.de/ABUS-IP-Tube-4-MPx-2-8-mm-IPCS64511A.html"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "ABUS Performance Line is Hikvision OEM — Hikvision-style RTSP paths (101 main / 102 sub / 103 third). Enable ONVIF/RTSP in the camera web UI (Network > Integration Protocol) first. Pattern from the IPCx OEM family (iSpyConnect, HA community); not individually bench-tested."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration after enabling ONVIF (Profile S) in the web UI."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "ABUS Performance Line is Hikvision OEM — select the 'Hikvision' profile (or Generic ONVIF/RTSP)."
+    }
+  },
+  "last_verified": "2026-07-26"
+}

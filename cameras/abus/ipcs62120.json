@@ -1,0 +1,100 @@
+{
+  "id": "abus-ipcs62120",
+  "brand": "ABUS",
+  "model": "IPCS62120",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "label": "2MP",
+    "max_width": 1920,
+    "max_height": 1080,
+    "megapixels": 2
+  },
+  "video": {
+    "max_fps": 60,
+    "codecs": [
+      "H.264",
+      "MPEG-4",
+      "MJPEG"
+    ]
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 to 12",
+    "varifocal": true
+  },
+  "field_of_view_deg": "32 to 92 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux_color": 0.003
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "power": {
+    "method": "12V DC / PoE+ (IEEE 802.3at)"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "audio": {
+    "two_way": true
+  },
+  "dimensions_mm": "390 x 160",
+  "features": [
+    "ANPR license plate recognition (Europe, up to 70 km/h, 2048-plate allow/deny list)",
+    "1080p @ 50/60 fps",
+    "2.8-12 mm motor zoom (4.2x)",
+    "120 dB WDR",
+    "EIS electronic image stabilization, distortion correction",
+    "2-way audio (browser/CMS)",
+    "1 alarm input / 1 alarm output",
+    "analog video output"
+  ],
+  "environment": [
+    "outdoor",
+    "indoor"
+  ],
+  "status": "discontinued",
+  "release_notes": "Archived/EOL SPECIAL-line ANPR tube on the Basic Hikvision-OEM platform. Full spec table from the official ABUS Video IP Katalog 2019 (ABUS Security Center).",
+  "sources": [
+    "https://www.tinnes24.de/pdf/ABUS-Katalog-19-Video-IP-Sortiment.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "ABUS Basic IP line is Hikvision OEM — Hikvision-style RTSP paths (101 main / 102 sub). Enable ONVIF/RTSP in the web UI first. Pattern from the IPCx OEM family; not individually bench-tested."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration after enabling ONVIF in the web UI."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile (or Generic ONVIF/RTSP)."
+    }
+  },
+  "last_verified": "2026-07-26"
+}

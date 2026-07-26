@@ -1,0 +1,116 @@
+{
+  "id": "abus-ipcb68510b",
+  "brand": "ABUS",
+  "model": "IPCB68510B",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "label": "8MP (4K)",
+    "max_width": 3840,
+    "max_height": 2160,
+    "megapixels": 8
+  },
+  "video": {
+    "max_fps": 20,
+    "codecs": [
+      "H.264",
+      "H.265",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "Stream 1",
+        "resolution": "3840x2160",
+        "fps": 20
+      },
+      {
+        "name": "Stream 2",
+        "resolution": "640x480",
+        "fps": 25
+      },
+      {
+        "name": "Stream 3",
+        "resolution": "1280x720",
+        "fps": 25
+      }
+    ]
+  },
+  "sensor": "1/2.5\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / 12V DC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "dimensions_mm": "155 x 74 x 74",
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "status": "discontinued",
+  "release_notes": "Archived/EOL Basic-line 8 MPx (4K) mini tube; family = IPCB68510A (2.8 mm / 102°), B (4 mm), C (6 mm / 50°) per the official ABUS archive product pages. Platform specs (sensor, F2.0, dimensions, streams) from the ABUS PIM/datasheet data as republished by distributors. B-variant FOV omitted: not stated in the official sources reviewed.",
+  "sources": [
+    "https://www.abus.com/de/Archiv/IP-Mini-Tube-8-MPx-4K-2.8-mm",
+    "https://www.zajadacz.de/ABUS-IP-Mini-Tube-8-MPx-4K-IPCB68510A.html",
+    "https://www.solarics.de/products/abus-abus-ipcb68510a-ip-mini-tube-8-mpx-4k-2-8-mm-art-ipcb68510a",
+    "https://www.tinnes24.de/pdf/ABUS-Katalog-19-Video-IP-Sortiment.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "ABUS Performance Line is Hikvision OEM — Hikvision-style RTSP paths (101 main / 102 sub / 103 third). Enable ONVIF/RTSP in the camera web UI (Network > Integration Protocol) first. Pattern from the IPCx OEM family (iSpyConnect, HA community); not individually bench-tested."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration after enabling ONVIF (Profile S) in the web UI."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "ABUS Performance Line is Hikvision OEM — select the 'Hikvision' profile (or Generic ONVIF/RTSP)."
+    }
+  },
+  "last_verified": "2026-07-26",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10
+  },
+  "features": [
+    "120 dB WDR",
+    "3D-DNR",
+    "motion detection (8 zones)",
+    "ONVIF Profile S/G",
+    "compatible with ABUS Secvest / wAppLoxx",
+    "ABUS Link Station App"
+  ],
+  "field_of_view_deg": "79 horizontal",
+  "operating_temp_c": "-30 to 60"
+}

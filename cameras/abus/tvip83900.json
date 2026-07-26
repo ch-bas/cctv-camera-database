@@ -6,37 +6,30 @@
   "connectivity": [
     "ethernet"
   ],
-  "power_source": [
-    "poe",
-    "dc"
-  ],
   "resolution": {
-    "megapixels": 3,
+    "label": "3MP",
     "max_width": 2048,
     "max_height": 1536,
-    "label": "3MP"
+    "megapixels": 3.1
   },
   "video": {
+    "max_fps": 25,
     "codecs": [
       "H.264",
       "MJPEG"
-    ],
-    "max_fps": 25
+    ]
   },
-  "sensor": "1/3\" progressive CMOS",
+  "sensor": "1/3\" Progressive Scan CMOS",
   "lens": {
     "count": 1,
     "focal_length_mm": "1.27",
-    "aperture": "F2.8",
     "varifocal": false
   },
-  "field_of_view_deg": "360",
+  "field_of_view_deg": "180/360",
   "night_vision": {
     "type": "ir",
-    "range_m": 5
-  },
-  "power": {
-    "method": "PoE (802.3at) / 12V DC"
+    "range_m": 15,
+    "min_lux_color": 0.28
   },
   "storage": {
     "onboard": true,
@@ -48,27 +41,33 @@
     "rtsp"
   ],
   "ip_rating": "IP24",
+  "power": {
+    "method": "12V DC / PoE (IEEE 802.3af)"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
   "audio": {
-    "microphone": true,
-    "speaker": true,
     "two_way": true
   },
+  "operating_temp_c": "10 to 50",
+  "dimensions_mm": "164 x 44 x 153",
   "features": [
-    "360-degree indoor hemispheric fisheye",
-    "ePTZ dewarping",
-    "two-way audio",
-    "indoor (IP24)"
+    "hemispheric 360/180 degree panorama views",
+    "ePTZ (360/80 degrees) with configurable tours",
+    "WDR, 3D DNR, BLC",
+    "1 alarm input / 1 alarm output",
+    "audio in/out"
   ],
-  "markets": [
-    "DE",
-    "EU"
+  "environment": [
+    "indoor"
   ],
-  "release_notes": "ABUS IP Fisheye 3MP (legacy TVIP naming) — indoor hemispheric, IP24. IR range ~5m per page prose (spec table shows 15m; low confidence).",
+  "status": "discontinued",
+  "release_notes": "Archived/EOL SPECIAL-line IP Fisheye 3 MPx — the small hemispheric predecessor sold alongside the 12 MPx IPCS24500 (shares TVAC31280/31290 mounts). IP24 and +10 C minimum: indoor use. Full spec table from the official ABUS Video IP Katalog 2019 (ABUS Security Center).",
   "sources": [
-    "https://www.abus.com/int/Commercial-Security/Video-surveillance/Network-technology/IP-Fisheye-3-MPx"
+    "https://www.tinnes24.de/pdf/ABUS-Katalog-19-Video-IP-Sortiment.pdf"
   ],
-  "last_verified": "2026-07-05",
-  "status": "available",
   "configs": {
     "frigate": {
       "detect": {
@@ -76,22 +75,20 @@
         "height": 480,
         "fps": 5
       },
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "recommended_stream_type": "go2rtc",
       "verified": false,
-      "notes": "ABUS Performance Line is Hikvision OEM — Hikvision-style RTSP paths (101 main / 102 sub). Enable ONVIF/RTSP in the camera web UI first."
+      "notes": "Exact RTSP path undocumented for this ABUS line (not the Hikvision-OEM Basic platform). Use go2rtc ONVIF autodiscovery (onvif://{user}:{pass}@{ip}) to resolve the stream URL, or check the camera web UI. ONVIF Profile S supported per the official catalog."
     },
     "home_assistant": {
       "integration": "onvif",
       "connection_type": "local_push",
-      "notes": "Generic ONVIF integration after enabling ONVIF (Profile S)."
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration (Profile S per official catalog)."
     },
     "blue_iris": {
-      "profile": "Hikvision",
-      "notes": "ABUS is Hikvision OEM — select the 'Hikvision' profile (or Generic ONVIF/RTSP)."
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic ONVIF/RTSP with 'Find/inspect' to discover the stream path."
     }
   },
-  "environment": [
-    "indoor"
-  ]
+  "last_verified": "2026-07-26"
 }

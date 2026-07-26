@@ -1,0 +1,78 @@
+{
+  "id": "abus-ipca72500",
+  "brand": "ABUS",
+  "model": "IPCA72500",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "label": "2MP",
+    "max_width": 1920,
+    "max_height": 1080,
+    "megapixels": 2
+  },
+  "video": {
+    "max_fps": 25,
+    "codecs": [
+      "H.264"
+    ]
+  },
+  "sensor": "Sony Exmor CMOS (Sony Xarina DSP)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.0 to 9.0",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "features": [
+    "Tamron 3-9 mm motor vario zoom",
+    "120 dB WDR",
+    "16 GB internal memory for recording on network failure",
+    "Sony Xarina DSP",
+    "outdoor dome (TVAC31311 wall mount)"
+  ],
+  "environment": [
+    "outdoor",
+    "indoor"
+  ],
+  "status": "discontinued",
+  "release_notes": "Archived/EOL Advanced outdoor IP dome 1080p (2017 generation, predecessor of the IPCA72510). Platform data (1920x1080 @ 25 fps, Sony Exmor + Xarina DSP, Tamron 3.0-9.0 mm motor vario, 120 dB WDR, 16 GB internal failover memory) from the official ABUS joint family manual (20171018); dome form factor confirmed by the official Katalog 19 mount compatibility (TVAC31311 wall mount: IPCA72500, IPCA72510, IPCA72515, IPCA78500). IR range, IP rating, power, and dimensions omitted pending the official datasheet. Note: IPCA22500 from the same manual remains excluded — its form factor is still unconfirmed.",
+  "sources": [
+    "https://www.abus.com/var/ImagesPIM/d110001/medias/docus/19/20171018-IPCA22500_BDA_INT.pdf",
+    "https://www.tinnes24.de/pdf/ABUS-Katalog-19-Video-IP-Sortiment.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "2016/17 Advanced line (Sony/Tamron platform, not Hikvision OEM) — RTSP path undocumented. Use go2rtc ONVIF autodiscovery (onvif://{user}:{pass}@{ip}) to resolve the stream URL, or check the camera web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic ONVIF/RTSP with 'Find/inspect' to discover the stream path."
+    }
+  },
+  "last_verified": "2026-07-26"
+}

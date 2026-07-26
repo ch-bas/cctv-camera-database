@@ -1,0 +1,72 @@
+{
+  "id": "abus-ipca52000",
+  "brand": "ABUS",
+  "model": "IPCA52000",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "label": "2MP",
+    "max_width": 1920,
+    "max_height": 1080,
+    "megapixels": 2
+  },
+  "video": {
+    "max_fps": 25,
+    "codecs": [
+      "H.264"
+    ]
+  },
+  "sensor": "Sony Exmor CMOS (Sony Xarina DSP)",
+  "night_vision": {
+    "type": "ir"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "features": [
+    "outdoor boxtype",
+    "120 dB WDR",
+    "16 GB internal memory for recording on network failure",
+    "Sony Xarina DSP"
+  ],
+  "environment": [
+    "outdoor",
+    "indoor"
+  ],
+  "status": "discontinued",
+  "release_notes": "Archived/EOL Aussen IP Boxtype 1080p (2017 Advanced generation, predecessor of the IPCA52010). Platform data (1920x1080 @ 25 fps, Sony Exmor sensor + Xarina DSP, 120 dB WDR, 16 GB internal failover memory) from the official ABUS joint family manual (20171018, covering IPCA22500/32500/52000/62500/62505/72500); 'Aussen IP Boxtype 1080p' designation from the official ABUS Katalog accessory compatibility matrices. Lens, IR range, IP rating, power, and dimensions omitted: not stated per-model in recovered official sources.",
+  "sources": [
+    "https://www.abus.com/var/ImagesPIM/d110001/medias/docus/19/20171018-IPCA22500_BDA_INT.pdf",
+    "https://www.tinnes24.de/pdf/ABUS-Katalog-19-Video-IP-Sortiment.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "2016/17 Advanced line (Sony/Tamron platform, not Hikvision OEM) — RTSP path undocumented. Use go2rtc ONVIF autodiscovery (onvif://{user}:{pass}@{ip}) to resolve the stream URL, or check the camera web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic ONVIF/RTSP with 'Find/inspect' to discover the stream path."
+    }
+  },
+  "last_verified": "2026-07-26"
+}

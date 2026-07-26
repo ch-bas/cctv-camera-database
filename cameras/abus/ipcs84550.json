@@ -1,0 +1,119 @@
+{
+  "id": "abus-ipcs84550",
+  "brand": "ABUS",
+  "model": "IPCS84550",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "label": "4MP",
+    "max_width": 2560,
+    "max_height": 1440,
+    "megapixels": 4
+  },
+  "video": {
+    "max_fps": 50,
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "Stream 1",
+        "resolution": "2560x1440",
+        "fps": 25
+      },
+      {
+        "name": "Stream 2",
+        "resolution": "704x576",
+        "fps": 25
+      },
+      {
+        "name": "Stream 3",
+        "resolution": "1920x1080",
+        "fps": 25
+      }
+    ]
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.8 to 153",
+    "aperture": "F1.2 - F4.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "2.0 to 54.3 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 150
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "32x optical zoom",
+    "16x digital zoom",
+    "120 dB WDR",
+    "Ultra Low Light",
+    "Smart Tracking",
+    "Tripwire / intrusion detection VCA",
+    "300 presets / 8 tours",
+    "2 alarm inputs / 1 alarm output",
+    "1080p @ 50 fps mode",
+    "ABUS Link Station App"
+  ],
+  "environment": [
+    "outdoor",
+    "indoor"
+  ],
+  "status": "discontinued",
+  "release_notes": "Archived/EOL IP PTZ 4 MPx (32x) — predecessor of the IPCS84551 (which moved to a 1/1.8\" sensor, 5.9-189 mm lens, and 200 m IR). Platform table (sensor, 4.8-153 mm F1.2-F4.4, FOV, streams, audio, alarm I/O, Smart Tracking) from the ABUS PIM data as republished by distributors, alongside the official archive product page and the official joint IPCS84530/IPCS84550 manual. IR 150 m from a distributor spec listing (single secondary source — flagged for verification against the official datasheet). Power method (PoE class), weight, and dimensions omitted: unconfirmed.",
+  "sources": [
+    "https://www.abus.com/de/Archiv/IP-PTZ-4-MPx-32x",
+    "https://c1.abus.com/var/ImagesPIM/d110001/medias/docus/23/20200218-IPCS84530_IPCS84550-BDA-INT.pdf",
+    "https://www.abus-alarmanlagen.ch/video/netzwerkkameras/abus-ip-ptz-dome-4-mpx-32x-t-n-ir-poe-ip66/",
+    "https://www.aesag.ch/en/network-cameras/2778-abus-ip-ptz-dome-4-mpx-32x-t-n-ir-poe-ip66-ipcs84550.html"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "ABUS Performance Line is Hikvision OEM — Hikvision-style RTSP paths (101 main / 102 sub / 103 third). Enable ONVIF/RTSP in the camera web UI (Network > Integration Protocol) first. Pattern from the IPCx OEM family (iSpyConnect, HA community); not individually bench-tested."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration after enabling ONVIF (Profile S) in the web UI."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "ABUS Performance Line is Hikvision OEM — select the 'Hikvision' profile (or Generic ONVIF/RTSP)."
+    }
+  },
+  "last_verified": "2026-07-26",
+  "power_source": [
+    "poe",
+    "dc"
+  ]
+}

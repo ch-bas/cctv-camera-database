@@ -1,0 +1,100 @@
+{
+  "id": "abus-ipcs82500",
+  "brand": "ABUS",
+  "model": "IPCS82500",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "label": "2MP",
+    "max_width": 1920,
+    "max_height": 1080,
+    "megapixels": 2
+  },
+  "video": {
+    "max_fps": 25,
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ]
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.7 to 94",
+    "varifocal": true
+  },
+  "field_of_view_deg": "3.2 to 58.3 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 150,
+    "min_lux_color": 0.05
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "power": {
+    "method": "24V AC / High-PoE (IEEE 802.3bt)"
+  },
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "audio": {
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 65",
+  "dimensions_mm": "185 x 330 x 185",
+  "features": [
+    "20x optical zoom",
+    "16x digital zoom",
+    "360 degree pan / -15 to 90 tilt",
+    "EIS electronic image stabilization",
+    "Defog",
+    "WDR, BLC, HLC",
+    "2 alarm inputs / 1 alarm output",
+    "RS485",
+    "analog video output",
+    "2-way audio (browser/CMS)"
+  ],
+  "environment": [
+    "outdoor",
+    "indoor"
+  ],
+  "status": "discontinued",
+  "release_notes": "Archived/EOL SPECIAL-line IP PTZ 2 MPx (20x) — predecessor generation of the IPCS84550/84551 slot. Full spec table from the official ABUS Video IP Katalog 2019 (ABUS Security Center).",
+  "sources": [
+    "https://www.tinnes24.de/pdf/ABUS-Katalog-19-Video-IP-Sortiment.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Exact RTSP path undocumented for this ABUS line (not the Hikvision-OEM Basic platform). Use go2rtc ONVIF autodiscovery (onvif://{user}:{pass}@{ip}) to resolve the stream URL, or check the camera web UI. ONVIF Profile S supported per the official catalog."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration (Profile S per official catalog)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic ONVIF/RTSP with 'Find/inspect' to discover the stream path."
+    }
+  },
+  "last_verified": "2026-07-26"
+}

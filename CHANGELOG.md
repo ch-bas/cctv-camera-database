@@ -6,6 +6,12 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.47.0] — 2026-07-26
+
+**ABUS + Tapo expansion (+64).** Added **57 ABUS** cameras across the professional IP range — IPCA (18), IPCB bullets (24), IPCS domes/turrets (11) and PPIC pan/floodlight (4) series — and **7 Tapo** models (`C217`, `C245D`, `C250`, `C403`, `C410`, `C545D`, `C710`). Also corrected `abus-tvip83900` (SPECIAL-line 3 MPx fisheye): fixed resolution (3→3.1 MP), IR range (5→15 m) and sensor naming, marked it **discontinued**, and removed an incorrect "Hikvision-OEM" claim — its RTSP/integration guidance now points to Generic ONVIF (Profile S) per the official ABUS catalog. Net: 2,330 → **2,394**.
+
+> **Note on sources:** several of the added ABUS models are discontinued / end-of-life and no longer have live pages on abus.com. Where no official manufacturer source was available, specs were taken from the official **ABUS Video IP catalog** and reputable retailer/distributor listings instead. These are flagged for a future re-source if official archived datasheets surface.
+
 ## [1.46.0] — 2026-07-26
 
 **New field: `night_vision.min_lux`** (#147 — thanks @fvdpol!). A generic minimum-illumination figure (lux) for datasheets that state a low-light sensitivity **without** specifying whether the resulting image is colour or black-and-white — complementing `min_lux_color` (#143), which is specifically the colour threshold. `gen-docs` and the `docs/demo.html` viewer render both. Adds a "Minimum Illumination" glossary entry (with the IRE-level caveat on how vendors measure it). (Maintainer follow-up: fixed a missing `+` in the demo.html table renderer that would have thrown on the Night-vision column.)
