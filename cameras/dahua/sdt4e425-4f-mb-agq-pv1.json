@@ -1,0 +1,106 @@
+{
+  "id": "dahua-sdt4e425-4f-mb-agq-pv1",
+  "brand": "Dahua",
+  "model": "SDT4E425-4F-MB-AGQ-PV1",
+  "aliases": [
+    "SDT4E425-4F-MB-AGQ-PV1-LA"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet",
+    "4g"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" CMOS (overview) + 1/2.8\" CMOS (detail)",
+  "lens": {
+    "count": 2
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 100
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "DC 12V",
+    "consumption_w": 32,
+    "voltage": "12V DC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "dual-channel (overview + PT detail)",
+    "25x optical zoom",
+    "WizTracking auto-tracking",
+    "SMD 4.0",
+    "IVS perimeter protection (intrusion/tripwire, human/vehicle)",
+    "active deterrence (light + sound)",
+    "100m IR",
+    "100m warm light",
+    "4G cellular",
+    "Wi-Fi 802.11ax (2.4GHz)"
+  ],
+  "operating_temp_c": "-40 to 65",
+  "markets": [
+    "LA"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/ptz-cameras/wireless-series/4g-camera/sdt4e425-4f-mb-agq-pv1-la=s2"
+  ],
+  "last_verified": "2026-07-27",
+  "power_source": [
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI (default admin)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "id": "dahua-sd6c3432gb-hnr-agq-pv1",
+  "brand": "Dahua",
+  "model": "SD6C3432GB-HNR-AGQ-PV1",
+  "aliases": [
+    "SD6C3432GB-HNR-AGQ-PV1-LA"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet",
+    "4g"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6-192 (32x optical zoom)",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 150
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "12V DC",
+    "voltage": "12V DC",
+    "consumption_w": 18
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "4G LTE cellular connectivity",
+    "32x optical zoom",
+    "Auto Tracking 3.0",
+    "SMD 4.0",
+    "TiOC active deterrence (red & blue warning lights)",
+    "WizSense AI",
+    "face detection",
+    "vehicle/human classification",
+    "IVS perimeter protection",
+    "dual illumination (IR 150m + white light 50m)",
+    "audio in/out (two-way)"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "LA"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/ptz-cameras/wireless-series/4g-camera/sd6c3432gb-hnr-agq-pv1-la"
+  ],
+  "last_verified": "2026-07-27",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "notes": "ONVIF PTZ control supported (port 80). Standard Dahua realmonitor URLs.",
+      "autotracking": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile. Supports both main and sub streams."
+    }
+  }
+}
