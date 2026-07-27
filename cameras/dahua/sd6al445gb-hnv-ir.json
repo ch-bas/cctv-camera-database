@@ -1,0 +1,105 @@
+{
+  "id": "dahua-sd6al445gb-hnv-ir",
+  "brand": "Dahua",
+  "model": "SD6AL445GB-HNV-IR",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "lens": {
+    "count": 1,
+    "varifocal": true,
+    "focal_length_mm": "3.95-177.7"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 300
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "method": "Hi-PoE / DC 36V",
+    "consumption_w": 27,
+    "voltage": "36 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "relative"
+  },
+  "features": [
+    "45x optical zoom",
+    "auto-tracking",
+    "300m IR",
+    "SMD 4.0",
+    "WizMind",
+    "face detection",
+    "vehicle/non-motor vehicle detection",
+    "perimeter protection (tripwire/intrusion IVS)",
+    "120dB WDR",
+    "EIS",
+    "24 privacy masks"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/ptz-cameras/wizmind-series/sd6/sd6al445gb-hnv-ir"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI (default admin).",
+      "autotracking": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "last_verified": "2026-07-27"
+}

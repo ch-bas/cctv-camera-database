@@ -1,0 +1,103 @@
+{
+  "id": "dahua-sd6e825ma-hnr-a-pv1",
+  "brand": "Dahua",
+  "model": "SD6E825MA-HNR-A-PV1",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": true,
+    "focal_length_mm": "6-192"
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 250
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "relative"
+  },
+  "power": {
+    "method": "PoE+ (802.3at) / 24 VDC",
+    "consumption_w": 21
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "WizMind",
+    "25x optical zoom",
+    "WizTracking auto-tracking",
+    "AcuPick",
+    "active deterrence (red/blue warning light, voice alarm)",
+    "250m IR",
+    "100m warm light",
+    "endless 360 pan / -20 to +90 tilt",
+    "SMD"
+  ],
+  "operating_temp_c": "-40 to +70",
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/ptz-cameras/wizmind-series/sd6/sd6e825ma-hnr-a-pv1"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI (default admin).",
+      "autotracking": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "last_verified": "2026-07-27"
+}

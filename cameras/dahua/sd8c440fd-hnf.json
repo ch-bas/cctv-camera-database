@@ -1,0 +1,103 @@
+{
+  "id": "dahua-sd8c440fd-hnf",
+  "brand": "Dahua",
+  "model": "SD8C440FD-HNF",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": true,
+    "focal_length_mm": "6-240"
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 250
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "relative"
+  },
+  "power": {
+    "method": "Hi-PoE",
+    "consumption_w": 33,
+    "voltage": "36V DC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-40 to 70",
+  "features": [
+    "40x optical zoom",
+    "dual-sensor (panoramic + detail)",
+    "Auto Tracking 3.0",
+    "PolarLight",
+    "250m IR",
+    "80m white light",
+    "Smart H.265+ / H.264+",
+    "pan 0-360 endless, tilt -20 to +90",
+    "line-in / line-out audio"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/ptz-cameras/wizmind-series/sd8/sd8c440fd-hnf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-27",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI (default admin).",
+      "autotracking": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

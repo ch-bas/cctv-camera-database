@@ -1,0 +1,103 @@
+{
+  "id": "dahua-sd8a845qa-hnf",
+  "brand": "Dahua",
+  "model": "SD8A845QA-HNF",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": true,
+    "focal_length_mm": "5.5-248"
+  },
+  "field_of_view_deg": "H: 64.4-2.0, V: 38.4-1.1, D: 69.6-2.3",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 500
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "relative"
+  },
+  "power": {
+    "method": "Hi-PoE / DC 36V",
+    "consumption_w": 45,
+    "voltage": "36 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "WizMind",
+    "45x optical zoom",
+    "Auto Tracking 3.0 (onboard auto-tracking)",
+    "500m IR",
+    "perimeter protection (tripwire/intrusion, human/vehicle)",
+    "SMD Plus",
+    "endless 360 pan"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "markets": [
+    "global"
+  ],
+  "release_notes": "The Dahua SD8A845QA-HNF is an 8MP 4K WizMind 45x optical zoom PTZ speed dome with 500m IR, onboard Auto Tracking 3.0 and endless 360 pan. Audio is line-in/line-out only (no built-in mic/speaker).",
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/ptz-cameras/wizmind-series/sd8/sd8a845qa-hnf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI (default admin).",
+      "autotracking": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "last_verified": "2026-07-27"
+}
