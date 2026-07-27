@@ -1,0 +1,97 @@
+{
+  "id": "dahua-sdt4e425-4f-gb-a-pv1",
+  "brand": "Dahua",
+  "model": "SDT4E425-4F-GB-A-PV1",
+  "type": "ptz",
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "relative"
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "Dual 4MP (panorama + 25x PTZ detail)"
+  },
+  "sensor": "Dual 1/2.8\" CMOS (overview + PTZ)",
+  "lens": {
+    "count": 2,
+    "varifocal": true,
+    "focal_length_mm": "2.8 (overview) / 5-125 (detail)",
+    "aperture": "F1.0 (overview) / F1.6-F3.6 (detail)"
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 100
+  },
+  "video": {
+    "max_fps": 30
+  },
+  "power": {
+    "method": "PoE (802.3at) / DC 12V",
+    "consumption_w": 25
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP66",
+  "operating_temp_c": "-40 to +65",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "X-Spans dual-channel PTZ (4MP overview + 4MP 25x optical zoom detail)",
+    "25x optical zoom detail channel",
+    "Auto Tracking 3.0 (onboard auto-tracking)",
+    "100m IR (detail channel)",
+    "warm light illumination (50m detail / 30m overview)",
+    "smart dual illumination",
+    "active deterrence (light and sound warning)",
+    "two-way audio"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/ptz-cameras/x-spans-series/distribution/sdt4e425-4f-gb-a-pv1-s2=s2"
+  ],
+  "last_verified": "2026-07-27",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI (default admin).",
+      "autotracking": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}
