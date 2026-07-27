@@ -6,6 +6,12 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.49.0] — 2026-07-27
+
+**Dahua PTZ expansion (+45).** Added 45 Dahua PTZ cameras from official dahuasecurity.com pages, all motorized speed domes / positioning systems: the **wireless** line — 5G (`SD8A440PA`/`SD8A840PA-HNF-5G`) and 4G (`SD49425DB-HNY-GQ`, `SD6C3432GB-HNR-AGQ-PV1`, `SDT4E425-4F-MB-AGQ-PV1`); the **positioning systems** (`PTZ85448`/`PTZ85260`/`PTZ85848`/`PTZ83440`-HNF-PA IR & laser variants, `PTZ19245U-IRB-N`, `MPTZ1100-2030RA`, `PTZ4M231`, `PTZ37225`, `PTZ1A225`); and the **WizSense SD3/SD4/SD5/SDZ** speed-dome families (`SD3D`, `SD4A/D/E/F`, `SD5A/SD52C/SD50`, `SDZ4032`). 36 set `ptz.autotracking` (onboard SMD-plus auto-tracking); positioning/laser and SMD-only models left unflagged. Regional SKUs collapsed (`-LA`/`-EAU`/`-EG`) and the `SD49425DB-HNY-GQ` bracket kit de-duplicated. Net: 2,394 → **2,439**.
+
+**New `connectivity` enum value: `5g`** — for the 5G wireless PTZ line.
+
 ## [1.48.0] — 2026-07-27
 
 **Autotracking: camera-side vs Frigate-driven** (#124, closes the parent).
