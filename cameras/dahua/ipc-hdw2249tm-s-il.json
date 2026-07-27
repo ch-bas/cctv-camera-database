@@ -1,0 +1,97 @@
+{
+  "id": "dahua-ipc-hdw2249tm-s-il",
+  "brand": "Dahua",
+  "model": "IPC-HDW2249TM-S-IL",
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.9\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "100",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V",
+    "consumption_w": 3.6,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-40 to +60",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "WizSense",
+    "Smart Dual Light",
+    "SMD Plus",
+    "human and vehicle classification",
+    "30m IR",
+    "30m warm light"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/Network-Cameras/WizSense-2-Series/Smart-Dual-Light/IPC-HDW2249TM-S-IL=S2"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-27",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI (default admin)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}
