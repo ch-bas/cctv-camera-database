@@ -132,6 +132,8 @@ A complete entry looks like this:
 | `field_of_view_deg` | — | string | e.g. `110 horizontal` |
 | `night_vision.type` | — | enum | `ir` `color` `hybrid` `none` |
 | `night_vision.range_m` | — | integer | Manufacturer-stated range in metres |
+| `night_vision.min_lux` |  — |  number | minimum illumination for usable image (B&W or unspecified) |
+| `night_vision.min_lux_color` | — | number |  minimum illumination for usable color image |
 | `power.method` | — | string | e.g. `PoE (802.3af) / DC 12V` |
 | `storage.onboard` | — | boolean | Has a microSD slot |
 | `storage.max_microsd_gb` | — | integer | |
@@ -139,6 +141,7 @@ A complete entry looks like this:
 | `storage.cloud` | — | boolean | Has cloud storage option |
 | `protocols` | — | enum[] | `onvif` `rtsp` `rtmp` `http` `p2p` |
 | `ip_rating` | — | string | e.g. `IP67`, `IP66` |
+| `ik_rating` | — | enum[] | `IK00` `IK01` `IK02` `IK03` `IK04` `IK05` `IK06` `IK07` `IK08` `IK09` `IK10` `IK11` |
 | `audio.microphone` | — | boolean | |
 | `audio.speaker` | — | boolean | |
 | `audio.two_way` | — | boolean | |
