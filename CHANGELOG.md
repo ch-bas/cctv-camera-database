@@ -6,6 +6,15 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.48.0] — 2026-07-27
+
+**Autotracking: camera-side vs Frigate-driven** (#124, closes the parent).
+
+- **Part 1 finished.** Closed a drift gap where 12 PTZ/dual-lens cameras added after the original migration were never flagged `ptz.autotracking` (#150), and added a **build lint** (#151) that fails if a `ptz`/`dual-lens`/`panoramic` camera advertises auto-tracking in `features[]` without setting `ptz.autotracking` — so the drift can't recur. 198 cameras now carry the flag. (The 16 non-PTZ edge cases were handled earlier under #126/#148.)
+- **Part 2 populated** from Frigate's official ONVIF/autotracking docs (requirement: FOV RelativeMove + working `MoveStatus`). `ptz.onvif_ptz` set on **56** cameras (39 `absolute` Reolink + 17 `relative`); `configs.frigate.autotracking` set on **115** (**17 `true`** — Dahua SD/SDT speed domes incl. the exact-match `SD49825GB-HNR`, Hikvision `DS-2DE3A404IWG-E/-E-W`, Amcrest `IP8M-2899EW-AI`; **98 `false`** — Reolink, Hikvision, Tapo, Foscam, all brand-level ❌ in Frigate's table). Undocumented cameras left undefined — ongoing backfill tracked in #154.
+
+No camera-count change (2,394).
+
 ## [1.47.0] — 2026-07-26
 
 **ABUS + Tapo expansion (+64).** Added **57 ABUS** cameras across the professional IP range — IPCA (18), IPCB bullets (24), IPCS domes/turrets (11) and PPIC pan/floodlight (4) series — and **7 Tapo** models (`C217`, `C245D`, `C250`, `C403`, `C410`, `C545D`, `C710`). Also corrected `abus-tvip83900` (SPECIAL-line 3 MPx fisheye): fixed resolution (3→3.1 MP), IR range (5→15 m) and sensor naming, marked it **discontinued**, and removed an incorrect "Hikvision-OEM" claim — its RTSP/integration guidance now points to Generic ONVIF (Profile S) per the official ABUS catalog. Net: 2,330 → **2,394**.
