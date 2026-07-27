@@ -1,0 +1,108 @@
+{
+  "id": "dahua-sdt5x425-4z4-fa-2812",
+  "brand": "Dahua",
+  "model": "SDT5X425-4Z4-FA-2812",
+  "type": "ptz",
+  "ptz": {
+    "onvif_ptz": "relative"
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "Dual 4MP (4MP panorama + 4MP 25x PTZ)"
+  },
+  "sensor": "Dual 1/1.8\" CMOS (panorama + PTZ)",
+  "lens": {
+    "count": 2,
+    "varifocal": true,
+    "focal_length_mm": "2.8-12 (panorama 4x) / 5.4-135 (detail 25x)",
+    "aperture": "F1.3-F2.0 (panorama) / F1.6-F4.0 (detail)"
+  },
+  "field_of_view_deg": "99.2-45.8 (panorama) / 58-3.5 (detail)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 100
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "method": "Hi-PoE / DC 36V",
+    "consumption_w": 40,
+    "voltage": "36 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-40 to +65",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "X-Spans dual-channel PTZ (4MP panorama + 4MP 25x optical zoom detail)",
+    "25x optical zoom detail channel",
+    "4x zoom panorama channel",
+    "100m IR (detail channel)",
+    "white light illumination (30m panorama)",
+    "360 degree endless pan",
+    "face recognition (up to 10,000 face database)",
+    "Acupick deep-learning search",
+    "perimeter protection IVS (tripwire/intrusion/loitering)",
+    "human/vehicle classification",
+    "WDR 120dB",
+    "starlight low-light"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/ptz-cameras/x-spans-series/project/sdt5x425-4z4-fa-2812"
+  ],
+  "last_verified": "2026-07-27",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI (default admin).",
+      "autotracking": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

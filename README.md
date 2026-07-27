@@ -2,7 +2,7 @@
 
 An open, structured database of 2,330 CCTV / IP camera models and their technical specifications, covering 72 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
 
-[![cameras](https://img.shields.io/badge/cameras-2%2C473-blue)](data/cameras.json)
+[![cameras](https://img.shields.io/badge/cameras-2%2C540-blue)](data/cameras.json)
 [![brands](https://img.shields.io/badge/brands-72-green)](cameras/)
 [![license](https://img.shields.io/badge/license-CC0-lightgrey)](LICENSE)
 
@@ -57,14 +57,14 @@ a Claude Code skill for AI-powered video production built on [Remotion](https://
 cctv-camera-database/
 ├── cameras/              # source of truth — one JSON file per camera, grouped by brand
 │   ├── hikvision/        # 403 cameras
-│   ├── dahua/            # 268 cameras
+│   ├── dahua/            # 335 cameras
 │   ├── acti/             # 248 cameras
 │   ├── bosch/            # 153 cameras
 │   ├── abus/             # 142 cameras
 │   ├── reolink/          # 127 cameras
 │   └── …66 more brands
 ├── data/                 # GENERATED — do not edit by hand
-│   ├── cameras.json      # all 2,473 cameras as one array
+│   ├── cameras.json      # all 2,540 cameras as one array
 │   └── cameras.csv       # flattened, spreadsheet-friendly
 ├── schema/
 │   └── camera.schema.json
@@ -125,7 +125,7 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 
 | Metric | Count |
 |--------|-------|
-| Total cameras | **2,473** |
+| Total cameras | **2,540** |
 | Brands | **72** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
 | PoE wired | 1,669 |
@@ -142,7 +142,7 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | Brand | Cameras | Segment |
 |-------|---------|---------|
 | Hikvision | 403 | Enterprise + consumer, global |
-| Dahua | 268 | Enterprise + consumer, global |
+| Dahua | 335 | Enterprise + consumer, global |
 | ACTi | 248 | Enterprise IP + analog, NDAA, TW/global |
 | Bosch | 153 | Enterprise + thermal, EU/global |
 | ABUS | 142 | Consumer + professional, GDPR-first, DE/AT/CH |

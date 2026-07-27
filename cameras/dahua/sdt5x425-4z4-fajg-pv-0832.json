@@ -1,0 +1,101 @@
+{
+  "id": "dahua-sdt5x425-4z4-fajg-pv-0832",
+  "brand": "Dahua",
+  "model": "SDT5X425-4Z4-FAJG-PV-0832",
+  "type": "ptz",
+  "ptz": {
+    "onvif_ptz": "relative"
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "Dual 4MP (4MP panorama + 4MP 25x PTZ)"
+  },
+  "sensor": "Dual 1/1.8\" CMOS (panorama + PTZ)",
+  "lens": {
+    "count": 2,
+    "varifocal": true,
+    "focal_length_mm": "8-32 4x (panorama) / 5.4-135 25x (detail)",
+    "aperture": "F1.4-F4.5 (detail)"
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 100
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "method": "Hi-PoE / DC 36V",
+    "consumption_w": 45,
+    "voltage": "36 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-40 to +70",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "X-Spans dual-PTZ (4MP 4x panorama + 4MP 25x detail)",
+    "25x optical zoom detail channel",
+    "WizMind AI (starlight)",
+    "100m IR",
+    "30m white light illumination",
+    "Hi-PoE powered"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/ptz-cameras/x-spans-series/project/sdt5x425-4z4-fajg-pv-0832"
+  ],
+  "last_verified": "2026-07-27",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI (default admin).",
+      "autotracking": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

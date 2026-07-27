@@ -6,6 +6,15 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.52.0] — 2026-07-27
+
+**Dahua X-Spans PTZ + WizSense-2 series completion (+67).**
+
+- **X-Spans multi-sensor tracking PTZ (12)** — project + distribution series (`SDT3A`, `SDT4A`, `SDT4E`, `SDT5X`, `SDT6E`): panorama-array + motorized tracking optic, typed `ptz` per the `SDT8C842` convention (combined MP, single-stream max res). All get the Frigate-compat stamp (`onvif_ptz: relative`, `configs.frigate.autotracking: true`, per #124); 7 with onboard `ptz.autotracking`. Also re-sourced `SDT4E425-8P-GB-APV1` to official OEM.
+- **WizSense-2 series completion (55)** — enumerated the full series via Dahua's product API and back-filled every missing model: the IR (32) and Smart-Dual-Light (23) bullets/domes/turrets/panoramics (incl. the multi-sensor `PDW/PFW2849-A180` and the `IPC-HFW2449DG-4G-ZAS-PV-PRO` 4G bullet). All fixed cameras.
+
+Net: 2,473 → **2,540**.
+
 ## [1.51.0] — 2026-07-27
 
 **Dahua WizMind SD5/SD6/SD7/SD8 PTZ (+28).** Added 28 more Dahua motorized speed domes from official pages — the WizMind `SD5R`, `SD6E`/`SD6AL`/`SD60`, `SD7A` and `SD8A`/`SD8C` families (incl. `-ATC` anti-corrosion, `-IR`, `-WP` wiper, laser and AcuPick variants). All SD-series speed domes, so each also gets the Frigate-compat stamp (`onvif_ptz: relative`, `configs.frigate.autotracking: true`, per #124); 22 with onboard `ptz.autotracking`. Net: 2,445 → **2,473**.

@@ -1,0 +1,96 @@
+{
+  "id": "dahua-ipc-hdbw2841e-s",
+  "brand": "Dahua",
+  "model": "IPC-HDBW2841E-S",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": false,
+    "focal_length_mm": "2.8 / 3.6",
+    "aperture": "F2.0"
+  },
+  "field_of_view_deg": "106 (2.8mm) / 88 (3.6mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 20
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V",
+    "consumption_w": 6.4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-40 to 60",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "WizSense",
+    "SMD Plus",
+    "AI SSA",
+    "perimeter protection (intrusion/tripwire, human/vehicle)",
+    "30m IR",
+    "WDR (120dB)"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/Network-Cameras/WizSense-2-Series/IR/IPC-HDBW2841E-S"
+  ],
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI (default admin)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "last_verified": "2026-07-27"
+}
