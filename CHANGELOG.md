@@ -6,6 +6,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.50.0] — 2026-07-27
+
+**Dahua WizMind SD8 PTZ (+6).** Added the SD8 speed-dome family from official pages: traffic PTZ `SD8A440FA-HNT` (4MP) / `SD8A840FA-HNT` (8MP) / `SD8A440FA-HNP-AID`, the `SD8A440-HNF-PA` (Auto Tracking 3.0), and the laser PTZ `SD8X442FA-HNF` (4MP) / `SD8X842FA-HNF` (8MP, 42× + 600 m laser + AcuPick). All are motorized SD-series speed domes, so each also gets the Frigate-compat stamp (`onvif_ptz: relative`, `configs.frigate.autotracking: true`, per #124); 3 with onboard `ptz.autotracking`. Net: 2,439 → **2,445**.
+
 ## [1.49.0] — 2026-07-27
 
 **Dahua PTZ expansion (+45).** Added 45 Dahua PTZ cameras from official dahuasecurity.com pages, all motorized speed domes / positioning systems: the **wireless** line — 5G (`SD8A440PA`/`SD8A840PA-HNF-5G`) and 4G (`SD49425DB-HNY-GQ`, `SD6C3432GB-HNR-AGQ-PV1`, `SDT4E425-4F-MB-AGQ-PV1`); the **positioning systems** (`PTZ85448`/`PTZ85260`/`PTZ85848`/`PTZ83440`-HNF-PA IR & laser variants, `PTZ19245U-IRB-N`, `MPTZ1100-2030RA`, `PTZ4M231`, `PTZ37225`, `PTZ1A225`); and the **WizSense SD3/SD4/SD5/SDZ** speed-dome families (`SD3D`, `SD4A/D/E/F`, `SD5A/SD52C/SD50`, `SDZ4032`). 36 set `ptz.autotracking` (onboard SMD-plus auto-tracking); positioning/laser and SMD-only models left unflagged. Regional SKUs collapsed (`-LA`/`-EAU`/`-EG`) and the `SD49425DB-HNY-GQ` bracket kit de-duplicated. Net: 2,394 → **2,439**.
