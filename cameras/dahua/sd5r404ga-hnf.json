@@ -1,0 +1,104 @@
+{
+  "id": "dahua-sd5r404ga-hnf",
+  "brand": "Dahua",
+  "model": "SD5R404GA-HNF",
+  "type": "ptz",
+  "ptz": {
+    "onvif_ptz": "relative"
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 40
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "Smart H.265+",
+      "Smart H.264+",
+      "MJPEG"
+    ],
+    "max_fps": 60
+  },
+  "power": {
+    "method": "PoE (802.3at) / 12 VDC / 24 VAC",
+    "consumption_w": 16
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 70",
+  "features": [
+    "WizMind",
+    "4x optical zoom",
+    "PTRZ (pan-tilt-rotate-zoom)",
+    "SMD 4.0",
+    "AcuPick",
+    "Smart Dual Illumination (40m IR + 40m warm light)",
+    "Starlight+",
+    "two-way audio",
+    "perimeter protection (tripwire/intrusion, human/vehicle)"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/ptz-cameras/wizmind-series/sd5/sd5r404ga-hnf"
+  ],
+  "last_verified": "2026-07-27",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI (default admin).",
+      "autotracking": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

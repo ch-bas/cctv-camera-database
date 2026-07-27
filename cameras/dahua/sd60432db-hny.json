@@ -1,0 +1,104 @@
+{
+  "id": "dahua-sd60432db-hny",
+  "brand": "Dahua",
+  "model": "SD60432DB-HNY",
+  "type": "ptz",
+  "ptz": {
+    "onvif_ptz": "relative"
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": true,
+    "focal_length_mm": "4.8-154"
+  },
+  "field_of_view_deg": "H: 55.8°-2.3°; V: 31.9°-1.3°",
+  "night_vision": {
+    "type": "color",
+    "min_lux_color": 0.005
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "method": "PoE+ (802.3at) / DC 24V",
+    "consumption_w": 18,
+    "voltage": "24 VDC",
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-40 to 70",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "WizSense",
+    "32x optical zoom",
+    "Starlight ultra-low-light (0.005 lux color)",
+    "120dB WDR",
+    "SMD 3.0 (human/vehicle)",
+    "perimeter protection IVS (tripwire, intrusion)",
+    "face detection",
+    "line in/out audio (no built-in mic or speaker)"
+  ],
+  "release_notes": "The Dahua SD60432DB-HNY is a 4MP 32x Starlight WizSense PTZ speed dome with 120dB WDR, SMD 3.0 human/vehicle classification, perimeter protection and face detection. Pan 0-360 endless, tilt -20 to +90 with 180 auto flip. Audio is line in/out (bare wire) only, no built-in mic or speaker. The official datasheet lists no IR illuminator distance (Starlight low-light imaging) and no onboard auto-tracking function.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/ptz-cameras/wizmind-series/sd6/sd60432db-hny"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-27",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI (default admin).",
+      "autotracking": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}
