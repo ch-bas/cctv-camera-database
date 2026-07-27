@@ -29,7 +29,7 @@
 
 ## Sources
 
-- https://www.securitywholesalers.com.au/product/dahua-dh-sdt4e425-8p-gb-apv1-x-spans-8mp4mp-25x-tioc-wizsense-network-ptz-camera/
+- https://www.dahuasecurity.com/products/network-products/ptz-cameras/x-spans-series/distribution/sdt4e425-8p-gb-apv1
 
 ---
 *Auto-generated from dahua-sdt4e425-8p-gb-apv1.json — do not edit by hand.*
