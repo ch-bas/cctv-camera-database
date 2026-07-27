@@ -182,6 +182,7 @@ cameras/hikvision/ds-2cd2387g2-lu.json   →   id: "hikvision-ds-2cd2387g2-lu"
 - **Don't guess specs.** If you're unsure, leave the field out — a partial entry is better than a wrong one
 - **One file per variant.** Regional editions (different firmware, power supply, certifications) should be separate entries with a market suffix in the ID
 - **No marketing copy in `features`.** Keep features factual and terse: `"no subscription"` not `"experience true security freedom with zero monthly fees"`
+- **Auto-tracking → set `ptz.autotracking`.** If a `ptz` / `dual-lens` / `panoramic` camera does onboard auto-tracking (it physically moves to follow a subject), set `"ptz": { "autotracking": true }` — the build **fails** if such a camera mentions auto-tracking only in `features`. If the tracking is *digital*/e-PTZ (software crop, no motor), don't set the flag; describe it as digital in `features` instead.
 
 ---
 
