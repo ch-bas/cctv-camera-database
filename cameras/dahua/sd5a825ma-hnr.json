@@ -1,0 +1,101 @@
+{
+  "id": "dahua-sd5a825ma-hnr",
+  "brand": "Dahua",
+  "model": "SD5A825MA-HNR",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.4-135"
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 150
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "video": {
+    "codecs": [
+      "Smart H.265",
+      "H.265",
+      "Smart H.264",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "method": "PoE+ (802.3at) / 24 VDC",
+    "consumption_w": 20
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "WizSense",
+    "WizTracking auto-tracking",
+    "SMD 4.0",
+    "25x optical zoom",
+    "8MP 4K",
+    "150m IR",
+    "pan 360 endless (0.1-250 deg/s)",
+    "tilt -15 to 90 deg",
+    "perimeter protection (tripwire/intrusion, human/vehicle)"
+  ],
+  "operating_temp_c": "-40 to 65",
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/ptz-cameras/wizsense-series/sd5/sd5a825ma-hnr"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI (default admin)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "last_verified": "2026-07-27"
+}
