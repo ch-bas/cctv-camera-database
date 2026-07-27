@@ -1,0 +1,96 @@
+{
+  "id": "dahua-sd8a440fa-hnp-aid",
+  "brand": "Dahua",
+  "model": "SD8A440FA-HNP-AID",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "40x optical zoom"
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 500
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "ptz": {
+    "onvif_ptz": "relative"
+  },
+  "power": {
+    "method": "Hi-PoE (36V DC)",
+    "consumption_w": 31
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-40 to 70",
+  "features": [
+    "WizMind",
+    "40x optical zoom",
+    "500m IR",
+    "360 endless pan",
+    "traffic event detection (wrong-way driving, illegal parking, accident, pedestrian, congestion)",
+    "line-in/line-out audio"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/ptz-cameras/wizmind-series/sd8/sd8a440fa-hnp-aid"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-27",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI (default admin).",
+      "autotracking": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}
