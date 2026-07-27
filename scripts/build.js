@@ -128,6 +128,27 @@ function validate(cameras) {
       ok = false;
     }
     seen.add(cam.id);
+
+    // Drift guard for #124: a camera that mechanically moves (type ptz /
+    // dual-lens / panoramic) and advertises onboard auto-tracking in its
+    // free-text features must also set the structured `ptz.autotracking` flag,
+    // or downstream (site filters, Frigate compat) sees an inconsistent record.
+    // Fixed types (dome/bullet/fisheye/box) are intentionally excluded — their
+    // "tracking" is digital/e-PTZ, which is not ptz.autotracking (see #126).
+    const MOVING = new Set(["ptz", "dual-lens", "panoramic"]);
+    const AUTOTRACK_TAG = /auto[- ]?track|smart track|subject track/i;
+    if (
+      MOVING.has(cam.type) &&
+      (cam.features || []).some((f) => AUTOTRACK_TAG.test(f)) &&
+      !cam.ptz?.autotracking
+    ) {
+      console.error(
+        `✗ ${cam.id}: type "${cam.type}" advertises auto-tracking in features but ` +
+        `does not set ptz.autotracking:true (add it, or reword the feature if the ` +
+        `tracking is digital/e-PTZ rather than onboard mechanical — see #124/#126).`
+      );
+      ok = false;
+    }
   }
   if (!ok) {
     console.error("\nValidation failed. See errors above.");
