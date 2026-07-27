@@ -6,6 +6,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.51.0] — 2026-07-27
+
+**Dahua WizMind SD5/SD6/SD7/SD8 PTZ (+28).** Added 28 more Dahua motorized speed domes from official pages — the WizMind `SD5R`, `SD6E`/`SD6AL`/`SD60`, `SD7A` and `SD8A`/`SD8C` families (incl. `-ATC` anti-corrosion, `-IR`, `-WP` wiper, laser and AcuPick variants). All SD-series speed domes, so each also gets the Frigate-compat stamp (`onvif_ptz: relative`, `configs.frigate.autotracking: true`, per #124); 22 with onboard `ptz.autotracking`. Net: 2,445 → **2,473**.
+
 ## [1.50.0] — 2026-07-27
 
 **Dahua WizMind SD8 PTZ (+6).** Added the SD8 speed-dome family from official pages: traffic PTZ `SD8A440FA-HNT` (4MP) / `SD8A840FA-HNT` (8MP) / `SD8A440FA-HNP-AID`, the `SD8A440-HNF-PA` (Auto Tracking 3.0), and the laser PTZ `SD8X442FA-HNF` (4MP) / `SD8X842FA-HNF` (8MP, 42× + 600 m laser + AcuPick). All are motorized SD-series speed domes, so each also gets the Frigate-compat stamp (`onvif_ptz: relative`, `configs.frigate.autotracking: true`, per #124); 3 with onboard `ptz.autotracking`. Net: 2,439 → **2,445**.
