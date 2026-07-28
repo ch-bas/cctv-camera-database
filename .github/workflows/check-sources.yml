@@ -1,0 +1,99 @@
+name: check-sources
+
+# Weekly source-availability sweep: probes every URL in each camera's `sources`
+# and reports dead / moved links into a self-updating tracking issue. Advisory
+# only — it never fails the workflow (external vendor sites rot and rate-limit,
+# which is not a code regression). Manual runs can scope to a brand via `filter`.
+on:
+  schedule:
+    - cron: "0 7 * * 1" # Mondays 07:00 UTC
+  workflow_dispatch:
+    inputs:
+      filter:
+        description: "Optional brand/path filter (e.g. hikvision, or reolink/*823*)"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check source URLs
+        id: check
+        run: |
+          set +e
+          node scripts/check-sources.js "${{ github.event.inputs.filter }}" | tee source-report.txt
+          rc=${PIPESTATUS[0]}
+          set -e
+          count=$(grep -oE 'Found [0-9]+ dead' source-report.txt | grep -oE '[0-9]+' | head -1)
+          echo "dead=${count:-0}" >> "$GITHUB_OUTPUT"
+          echo "Script exit code: $rc"
+
+      - name: Write job summary
+        run: |
+          {
+            echo "## Source availability check"
+            if [ "${{ steps.check.outputs.dead }}" = "0" ]; then
+              echo "🎉 All checked sources are reachable."
+            else
+              echo "❌ **${{ steps.check.outputs.dead }}** dead/unreachable source URL(s) — see the tracking issue."
+              echo ""
+              echo '```'
+              sed -n '/--- VALIDATION REPORT ---/,$p' source-report.txt | head -n 400
+              echo '```'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload full report
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-report
+          path: source-report.txt
+
+      - name: Upsert tracking issue (dead links found)
+        if: steps.check.outputs.dead != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE="🔗 Dead/unreachable source URLs (automated weekly check)"
+          {
+            echo "_Automated weekly source-availability check (\`scripts/check-sources.js\`). Last run: $(date -u '+%Y-%m-%d %H:%M UTC') — [run log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})._"
+            echo ""
+            echo "**${{ steps.check.outputs.dead }}** source URL(s) failed. Re-source each to a working (preferably official OEM) URL. Related: the reseller-source audit #164."
+            echo ""
+            echo '```'
+            sed -n '/--- VALIDATION REPORT ---/,$p' source-report.txt | head -n 400
+            echo '```'
+            echo ""
+            echo "_Full report attached as the \`source-report\` artifact on the run._"
+          } > issue-body.md
+          NUM=$(gh issue list --state open --search "in:title Dead/unreachable source URLs (automated weekly check)" --json number --jq '.[0].number // empty')
+          if [ -n "$NUM" ]; then
+            gh issue edit "$NUM" --body-file issue-body.md
+            echo "Updated tracking issue #$NUM"
+          else
+            gh issue create --title "$TITLE" --label "help wanted" --body-file issue-body.md
+          fi
+
+      - name: Close tracking issue (all clear)
+        if: steps.check.outputs.dead == '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          NUM=$(gh issue list --state open --search "in:title Dead/unreachable source URLs (automated weekly check)" --json number --jq '.[0].number // empty')
+          if [ -n "$NUM" ]; then
+            gh issue comment "$NUM" --body "✅ All sources reachable as of run #${{ github.run_id }} — closing."
+            gh issue close "$NUM"
+          fi

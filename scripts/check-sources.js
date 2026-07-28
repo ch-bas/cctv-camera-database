@@ -1,12 +1,18 @@
 #!/usr/bin/env node
 /**
- * Generates a human-readable markdown doc for each camera JSON file into
- * docs/cameras/<brand>/<model>.md (mirroring the cameras/ tree), so the docs
- * never drift from the data and cameras/ stays pure source. These are a
- * generated artifact — served via GitHub Pages and refreshed by CI; do not
- * hand-edit and do not commit them from a contributor PR. Run after build.js.
+ * Probes every URL in each camera's `sources` field and reports dead / moved
+ * links, so we can catch source rot (vendor site redesigns, archived spec
+ * sheets, changed CDN paths). Tries a lightweight HEAD first, falling back to a
+ * stream-cancelled GET for servers that block HEAD. Exits non-zero if any
+ * source is unreachable. Read-only — never modifies the dataset.
  *
- * Usage: node scripts/check-sources.js
+ * Usage:
+ *   node scripts/check-sources.js            # check every brand
+ *   node scripts/check-sources.js hikvision  # scope to a brand folder
+ *   node scripts/check-sources.js "reolink/*823*"  # glob by path
+ *
+ * Run weekly in CI via .github/workflows/check-sources.yml (results land in a
+ * self-updating tracking issue).
  */
 const fs = require('node:fs/promises');
 const path = require('node:path');
