@@ -88,6 +88,8 @@ npm install   # installs Ajv for schema validation (no runtime deps)
 npm run build # validates all JSON, writes data/cameras.json + data/cameras.csv
 ```
 
+Other scripts: `npm run add` (interactive add-a-camera wizard) and `npm run check-sources [brand]` (probes every `sources` URL for dead/moved links — see [`docs/check-sources.md`](docs/check-sources.md); also runs weekly in CI).
+
 ### Querying the data
 
 ```js
