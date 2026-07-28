@@ -13,6 +13,7 @@
 | IP rating | IP66/IP67/IP6K9K |
 | IK rating | IK10 |
 | Operating temp | -30 to 55°C |
+| Released | 2024 |
 
 ## Features
 

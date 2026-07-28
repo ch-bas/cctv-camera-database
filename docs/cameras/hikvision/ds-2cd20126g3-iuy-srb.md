@@ -19,6 +19,7 @@
 | IP rating | IP67 |
 | Two-way audio | Yes |
 | Operating temp | -30 to 60°C |
+| Released | 2025 |
 
 ## Features
 
