@@ -29,13 +29,16 @@
   "night_vision": {
     "type": "hybrid"
   },
+  "operating_temp_c": "-10 to 40",
+  "release_year": 2025,
   "video": {
     "codecs": [
       "H.264"
     ]
   },
   "power": {
-    "method": "DC 5V 1A (wired)"
+    "method": "DC 5V 1A (wired)",
+    "consumption_w": 5
   },
   "power_source": [
     "dc"
@@ -75,6 +78,17 @@
     "home_assistant": {
       "integration": "homekit",
       "notes": "Works via HomeKit/HomeKit Secure Video; RTSP stream also available for Home Assistant / Frigate."
+    },
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live/ch00_0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/live/ch00_1",
+      "verified": false,
+      "notes": "Enable RTSP in the Aqara Home app: camera > Settings > Advanced > Enable RTSP; the app generates a unique RTSP URL with a per-camera token/credentials to use in Frigate. Path shown is the typical Aqara format; use the exact URL provided by the app."
     }
   },
   "last_verified": "2026-07-28"
