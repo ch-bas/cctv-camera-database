@@ -9,7 +9,7 @@
 | Sensor | CMOS |
 | Lens | 2.8mm F1.6 |
 | Field of view | 110 horizontal, 61 vertical° |
-| Night vision | ir (10m) |
+| Night vision | ir (10m), 0.3 lux color |
 | IP rating | IP66/IP67/IP6K9K |
 | IK rating | IK10 |
 | Operating temp | -30 to 55°C |

@@ -9,7 +9,7 @@
 | Resolution | 1080p/2MP (2MP, 1920×1080) |
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 2.8mm F1.2 |
-| Night vision | ir (20m) |
+| Night vision | ir (20m), 0.001 lux color |
 | Power | 12VDC (power supply not included) |
 | Storage | NVR |
 | IP rating | IP67 |

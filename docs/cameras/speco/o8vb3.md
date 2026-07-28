@@ -10,7 +10,7 @@
 | Sensor | 1/2.8" progressive scan CMOS |
 | Lens | 1× 2.8mm |
 | Field of view | 108.9 H / 76.4 V / 116.2 D° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.02 lux |
 | Power | PoE (IEEE 802.3af) or 12VDC |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | rtsp, onvif |

@@ -10,7 +10,7 @@
 | Sensor | 1/2.5" progressive scan CMOS |
 | Lens | 1× 1.65mm |
 | Field of view | 360 (ceiling mount) or 180 (wall mount)° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.01 lux |
 | Power | PoE (IEEE 802.3af) |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
