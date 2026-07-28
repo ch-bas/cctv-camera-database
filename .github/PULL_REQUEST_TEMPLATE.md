@@ -20,6 +20,7 @@
 ### For schema / tooling changes
 - [ ] Existing cameras still validate (`npm run build`)
 - [ ] Updated `docs/glossary.md` if new fields were added
+- [ ] Updated `CONTRIBUTING.md` if new fields were added
 
 ---
 
