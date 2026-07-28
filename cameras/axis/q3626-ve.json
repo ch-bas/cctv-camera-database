@@ -1,0 +1,115 @@
+{
+  "id": "axis-q3626-ve",
+  "brand": "Axis",
+  "model": "Q3626-VE",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1512,
+    "label": "4MP / 2688x1512"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60
+  },
+  "sensor": "1/1.8\" progressive scan RGB CMOS",
+  "soc": "ARTPEC-8",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.3-8.6",
+    "aperture": "F1.5-2.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "103-52 H / 56-30 V",
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.06
+  },
+  "power": {
+    "method": "PoE IEEE 802.3at Type 2 Class 4",
+    "poe_class": 4,
+    "consumption_w": 25,
+    "voltage": "10-28 V DC"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "microSD/microSDHC/microSDXC slot with AES-XTS-Plain64 256-bit SD encryption; recording to network-attached storage (NAS) supported."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "ip_rating": "IP66/IP6K9K",
+  "ik_rating": "IK10",
+  "features": [
+    "ARTPEC-8 SoC with deep learning processing unit (DLPU)",
+    "AXIS Object Analytics: human/vehicle detection and classification (cars, buses, trucks, bikes, other)",
+    "AXIS Scene Metadata, AXIS Image Health Analytics, AXIS Video Motion Detection, AXIS Live Privacy Shield included",
+    "Lightfinder 2.0 (0.06 lux colour) and Forensic WDR up to 120 dB",
+    "Remote pan-tilt-roll-zoom (PTRZ) with autofocus, P-Iris and remote zoom/focus",
+    "Electronic image stabilization (EIS)",
+    "Axis Zipstream for H.264/H.265",
+    "ONVIF Profiles G, M, S and T",
+    "Axis Edge Vault: signed OS, secure boot, TPM 2.0 (CC EAL4+, FIPS 140-2 Level 2), secure element (CC EAL6+), signed video",
+    "SIP/VoIP support and network speaker pairing",
+    "IP66, NEMA 4X and IK10 rated metal casing with integrated weathershield",
+    "5-year warranty"
+  ],
+  "operating_temp_c": "-50 to 55",
+  "dimensions_mm": "141 height x 184 diameter",
+  "weight_g": 2100,
+  "release_year": 2023,
+  "markets": [
+    "global"
+  ],
+  "release_notes": "No built-in microphone or speaker; audio is via a 3.5 mm mic/line input and network speaker pairing, with two-way (half/full duplex) audio streaming. Also powerable via 10-28 V DC. Resolution modes: 2688x1512 (16:9), 1280x800 (16:10) or 2016x1512 (4:3). Max 50/60 fps without WDR; up to 25/30 fps with Forensic WDR.",
+  "sources": [
+    "https://www.axis.com/products/axis-q3626-ve",
+    "https://www.axis.com/dam/public/70/85/4d/datasheet-axis-q3626-ve-dome-camera-en-US-506855.pdf"
+  ],
+  "status": "available",
+  "last_verified": "2026-07-28",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 360,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=2688x1512",
+      "best_substream": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=640x360",
+      "notes": "Standard Axis VAPIX RTSP path. ONVIF Profile S/T for discovery and streams."
+    },
+    "home_assistant": {
+      "integration": "axis",
+      "notes": "Native Axis integration with auto-discovery via Zeroconf."
+    },
+    "blue_iris": {
+      "profile": "Axis",
+      "notes": "Select 'Axis' profile. Auto-discovery via ONVIF usually works."
+    }
+  }
+}
