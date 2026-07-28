@@ -238,7 +238,11 @@ function updateReadme(cameras) {
     .replace(/(\| Brands \| \*\*)\d+(\*\* \|)/, `$1${brandCount}$2`)
     .replace(/(badge\/cameras-)[\d,%C]+(-blue)/, `$1${total.replace(/,/g, "%2C")}$2`)
     .replace(/(badge\/brands-)\d+(-green)/, `$1${brandCount}$2`)
-    .replace(/### All \d+ brands/, `### All ${brandCount} brands`);
+    .replace(/### All \d+ brands/, `### All ${brandCount} brands`)
+    // Prose counts that would otherwise drift (intro line, demo-GIF alt, pagination).
+    .replace(/(database of )[\d,]+( CCTV \/ IP camera models)/, `$1${total}$2`)
+    .replace(/(inspect )[\d,]+( cameras across )\d+( brands)/, `$1${total}$2${brandCount}$3`)
+    .replace(/(page through all )[\d,]+( cameras)/, `$1${total}$2`);
 
   // "All brands" table (between brands-table markers): auto-refresh the Cameras
   // column and re-sort by count, but PRESERVE the hand-written display name and
