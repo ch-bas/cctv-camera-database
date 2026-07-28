@@ -8,12 +8,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [1.53.0] — 2026-07-28
 
-**Aqara + Axis (+9).**
+**Aqara + Axis (+16).**
 - **Aqara (7)** — smart-home line: `Camera Hub G350` (dual-lens 4K 360° pan-tilt hub, auto-tracking), `Camera Hub G2H Pro`, `Camera G100`, `Camera E1` (2K pan-tilt, auto-tracking), `Video Doorbell G4`, `Video Doorbell G410`, `Doorbell Camera G400 Wired`. The pan-tilt models (E1, G350) are consumer PT, not in Frigate's autotracking list, so `onvif_ptz`/`frigate.autotracking` left undefined.
-- **Axis (2)** — `Q3628-VE` (8 MP 4K) and `Q3626-VE` (4 MP) outdoor vandal fixed domes (Lightfinder 2.0, Forensic WDR, IK10, ARTPEC-8).
-- **Fix** — re-sourced Aqara `Camera Hub G3` (its source was the dead 404 caught by the new `check-sources` cron → official page) and corrected its pan/tilt (360°/90° → 340°/45°).
+- **Axis fixed / PTZ (5)** — `Q3628-VE` (8 MP 4K) and `Q3626-VE` (4 MP) outdoor vandal domes; `M4228-LVE` (8 MP IR vandal dome); `P5654-E Mk II` (21× PTZ) and `Q6411-LE` (31× **bispectral thermal+visual** PTZ, ARTPEC-9). PTZ carry `ptz.autotracking` but not the Frigate-compat fields (Axis PTZ have documented ONVIF `MoveStatus` issues).
+- **Axis modular sensor units (4)** — `F4108` (4K dome), `F4105-SLRE` (SS316L IR dome), `FA3105-L` (IR eyeball), `FA4115` (dome); partial entries, since power/audio/storage live on the separate main unit.
+- **Fixes** — re-sourced Aqara `Camera Hub G3` (dead 404 caught by the new `check-sources` cron → official page; pan/tilt corrected 360°/90° → 340°/45°); and corrected the mislabeled `F4105-RE` → **`F4105-LRE`** (no "-RE" SKU exists — it 404s; removed the bogus alias and fixed its IP/IK ratings + specs).
 
-Net: 2,540 → **2,549**.
+Net: 2,540 → **2,556**.
 
 ## [1.52.2] — 2026-07-28
 

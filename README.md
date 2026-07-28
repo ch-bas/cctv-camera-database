@@ -2,7 +2,7 @@
 
 An open, structured database of 2,330 CCTV / IP camera models and their technical specifications, covering 72 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
 
-[![cameras](https://img.shields.io/badge/cameras-2%2C549-blue)](data/cameras.json)
+[![cameras](https://img.shields.io/badge/cameras-2%2C556-blue)](data/cameras.json)
 [![brands](https://img.shields.io/badge/brands-72-green)](cameras/)
 [![license](https://img.shields.io/badge/license-CC0-lightgrey)](LICENSE)
 
@@ -64,7 +64,7 @@ cctv-camera-database/
 │   ├── reolink/          # 127 cameras
 │   └── …66 more brands
 ├── data/                 # GENERATED — do not edit by hand
-│   ├── cameras.json      # all 2,549 cameras as one array
+│   ├── cameras.json      # all 2,556 cameras as one array
 │   └── cameras.csv       # flattened, spreadsheet-friendly
 ├── schema/
 │   └── camera.schema.json
@@ -127,7 +127,7 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 
 | Metric | Count |
 |--------|-------|
-| Total cameras | **2,549** |
+| Total cameras | **2,556** |
 | Brands | **72** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
 | PoE wired | 1,669 |
@@ -150,7 +150,7 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | ABUS | 142 | Consumer + professional, GDPR-first, DE/AT/CH |
 | Reolink | 127 | Prosumer, no-subscription, global |
 | EZVIZ (Hikvision) | 87 | Consumer, global |
-| Axis | 74 | Enterprise premium, global |
+| Axis | 81 | Enterprise premium, global |
 | Hi-Focus | 60 | Made-in-India, BIS certified, IN |
 | Kedacom | 58 | Enterprise, CN/global |
 | IMOU (Dahua) | 56 | Consumer + prosumer, global |
