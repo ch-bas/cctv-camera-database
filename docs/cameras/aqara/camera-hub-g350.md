@@ -13,6 +13,8 @@
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | rtsp |
 | Two-way audio | Yes |
+| Operating temp | -10 to 40°C |
+| Released | 2026 |
 
 ## Features
 

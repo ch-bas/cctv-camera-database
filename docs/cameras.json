@@ -43978,6 +43978,7 @@
       "varifocal": false
     },
     "field_of_view_deg": "101 diagonal",
+    "release_year": 2023,
     "night_vision": {
       "type": "hybrid"
     },
@@ -44055,13 +44056,16 @@
     "night_vision": {
       "type": "hybrid"
     },
+    "operating_temp_c": "-10 to 40",
+    "release_year": 2025,
     "video": {
       "codecs": [
         "H.264"
       ]
     },
     "power": {
-      "method": "DC 5V 1A (wired)"
+      "method": "DC 5V 1A (wired)",
+      "consumption_w": 5
     },
     "power_source": [
       "dc"
@@ -44101,6 +44105,17 @@
       "home_assistant": {
         "integration": "homekit",
         "notes": "Works via HomeKit/HomeKit Secure Video; RTSP stream also available for Home Assistant / Frigate."
+      },
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live/ch00_0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/live/ch00_1",
+        "verified": false,
+        "notes": "Enable RTSP in the Aqara Home app: camera > Settings > Advanced > Enable RTSP; the app generates a unique RTSP URL with a per-camera token/credentials to use in Frigate. Path shown is the typical Aqara format; use the exact URL provided by the app."
       }
     },
     "last_verified": "2026-07-28",
@@ -44137,8 +44152,11 @@
       "type": "ir"
     },
     "power": {
-      "method": "Micro USB 5V/1A"
+      "method": "Micro USB 5V/1A",
+      "consumption_w": 5
     },
+    "operating_temp_c": "-10 to 40",
+    "release_year": 2022,
     "storage": {
       "onboard": true,
       "max_microsd_gb": 128,
@@ -44309,6 +44327,24 @@
     "power_source": [
       "usb"
     ],
+    "power": {
+      "consumption_w": 10
+    },
+    "operating_temp_c": "-10 to 40",
+    "release_year": 2026,
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live/ch00_0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/live/ch00_1",
+        "verified": false,
+        "notes": "Enable RTSP in the Aqara Home app: camera > Settings > Advanced > Enable RTSP; the app generates a unique RTSP URL with a per-camera token/credentials to use in Frigate. Path shown is the typical Aqara format; use the exact URL provided by the app."
+      }
+    },
     "last_verified": "2026-07-28",
     "added": "2026-07-28"
   },
@@ -44416,6 +44452,8 @@
     "night_vision": {
       "type": "ir"
     },
+    "operating_temp_c": "-20 to 50",
+    "release_year": 2026,
     "video": {
       "codecs": [
         "H.264"
@@ -44465,6 +44503,19 @@
       "poe",
       "ac-mains"
     ],
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live/ch00_0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/live/ch00_1",
+        "verified": false,
+        "notes": "Aqara G400 supports RTSP and ONVIF for Home Assistant/Frigate. Enable RTSP in the Aqara Home app (camera > Settings > Advanced); the app generates a unique RTSP URL with per-camera credentials. Path shown is the typical Aqara format; use the exact URL provided by the app, or discover the stream via go2rtc ONVIF."
+      }
+    },
     "last_verified": "2026-07-28",
     "added": "2026-07-28"
   },
@@ -44487,6 +44538,8 @@
       "label": "1080p Full HD"
     },
     "field_of_view_deg": "162",
+    "operating_temp_c": "-18 to 50",
+    "release_year": 2023,
     "environment": [
       "indoor",
       "outdoor"
@@ -44553,6 +44606,12 @@
     "night_vision": {
       "type": "color"
     },
+    "operating_temp_c": "-18 to 50",
+    "release_year": 2025,
+    "environment": [
+      "indoor",
+      "outdoor"
+    ],
     "power": {
       "method": "6 x LR6 AA alkaline batteries (up to 5 months) or wired 12-24V AC 0.2A / 12-24V DC 0.5A"
     },
@@ -44580,6 +44639,19 @@
       "tamper alarm and privacy masking",
       "RTSP available only over wired connection"
     ],
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{ip}:8554/{token}",
+        "best_substream": "rtsp://{ip}:8554/{token}",
+        "verified": false,
+        "notes": "RTSP works only when the doorbell is wired (not battery-powered). Enable it in the Aqara Home app: camera > Settings > Advanced > Enable RTSP, then copy the app-generated URL. The URL embeds a per-device auth token (typically port 8554), so there is no fixed static path; substitute the exact URL shown in the app."
+      }
+    },
     "sources": [
       "https://eu.aqara.com/en-eu/products/aqara-video-doorbell-g410"
     ],
@@ -182247,7 +182319,8 @@
     },
     "power": {
       "method": "5V DC 1.0A via included AC adapter",
-      "voltage": "5V DC"
+      "voltage": "5V DC",
+      "consumption_w": 5
     },
     "storage": {
       "onboard": true,
@@ -182264,6 +182337,8 @@
     "environment": [
       "indoor"
     ],
+    "operating_temp_c": "0 to 40",
+    "release_year": 2020,
     "status": "available",
     "features": [
       "24/7 continuous local recording to microSD",
@@ -182315,7 +182390,8 @@
     },
     "power": {
       "method": "DC power adapter",
-      "voltage": "9.0V"
+      "voltage": "9.0V",
+      "consumption_w": 5
     },
     "video": {
       "codecs": [
@@ -182337,6 +182413,8 @@
     "environment": [
       "indoor"
     ],
+    "operating_temp_c": "0 to 40",
+    "release_year": 2021,
     "status": "available",
     "features": [
       "360° horizontal pan, 113° vertical tilt",
@@ -182413,6 +182491,8 @@
     "environment": [
       "indoor"
     ],
+    "operating_temp_c": "0 to 40",
+    "release_year": 2023,
     "status": "available",
     "features": [
       "360 degree horizontal pan and 113 degree vertical tilt",
@@ -182460,6 +182540,8 @@
       "varifocal": false
     },
     "field_of_view_deg": "130",
+    "operating_temp_c": "0 to 40",
+    "release_year": 2017,
     "night_vision": {
       "type": "ir",
       "range_m": 9
@@ -182556,6 +182638,8 @@
     "environment": [
       "indoor"
     ],
+    "operating_temp_c": "0 to 40",
+    "release_year": 2021,
     "status": "available",
     "features": [
       "24/7 continuous recording to microSD",
@@ -182566,7 +182650,8 @@
       "no native RTSP/ONVIF -- Kasa is a separate TP-Link ecosystem and does not support local streaming protocols"
     ],
     "sources": [
-      "https://www.kasasmart.com/us/products/security-cameras/kasa-spot-kc400"
+      "https://www.kasasmart.com/us/products/security-cameras/kasa-spot-kc400",
+      "https://www.businesswire.com/news/home/20210513005288/en/TP-Link-Introduces-New-Kasa-Smart-Cameras-and-Plugs-for-247-Whole-Home-Security-and-Control"
     ],
     "markets": [
       "US",
@@ -182603,6 +182688,8 @@
       "type": "ir",
       "range_m": 9
     },
+    "operating_temp_c": "0 to 40",
+    "release_year": 2022,
     "video": {
       "codecs": [
         "H.264"
@@ -182611,7 +182698,8 @@
     },
     "power": {
       "method": "5V DC 1.0A power adapter",
-      "voltage": "5V DC"
+      "voltage": "5V DC",
+      "consumption_w": 5
     },
     "storage": {
       "onboard": true,
@@ -182688,7 +182776,8 @@
     },
     "power": {
       "method": "DC power adapter (5.0 VDC, 1.0A)",
-      "voltage": "5.0 VDC"
+      "voltage": "5.0 VDC",
+      "consumption_w": 5
     },
     "storage": {
       "onboard": true,
@@ -182707,6 +182796,7 @@
     ],
     "operating_temp_c": "0~40",
     "dimensions_mm": "82 x 82 x 112.6",
+    "release_year": 2021,
     "status": "available",
     "features": [
       "360-degree pan / 113-degree tilt with motion tracking",
@@ -182717,7 +182807,8 @@
       "128-bit AES encryption with SSL/TLS"
     ],
     "sources": [
-      "https://www.kasasmart.com/us/products/security-cameras/kasa-spot-pan-tilt-24-7-recording"
+      "https://www.kasasmart.com/us/products/security-cameras/kasa-spot-pan-tilt-24-7-recording",
+      "https://www.businesswire.com/news/home/20210513005288/en/TP-Link-Introduces-New-Kasa-Smart-Cameras-and-Plugs-for-247-Whole-Home-Security-and-Control"
     ],
     "markets": [
       "US",
@@ -182757,7 +182848,8 @@
     },
     "power": {
       "method": "5VDC power adapter",
-      "voltage": "5VDC"
+      "voltage": "5VDC",
+      "consumption_w": 5
     },
     "video": {
       "codecs": [
@@ -182780,6 +182872,8 @@
     "environment": [
       "indoor"
     ],
+    "operating_temp_c": "0 to 40",
+    "release_year": 2022,
     "status": "available",
     "features": [
       "Motorized pan (360° horizontal) and tilt (113° vertical) coverage",
@@ -182906,6 +183000,8 @@
     },
     "protocols": [],
     "ip_rating": "IP64",
+    "operating_temp_c": "-20 to 45",
+    "release_year": 2022,
     "audio": {
       "microphone": true,
       "speaker": true,
@@ -215224,6 +215320,9 @@
         "notes": "Speco is ONVIF Profile S/G/T conformant; native RTSP path varies by model/firmware. Use go2rtc ONVIF autodiscovery (onvif://{user}:{pass}@{ip}) to resolve the stream URL, or check the camera web UI."
       }
     },
+    "markets": [
+      "US"
+    ],
     "added": "2026-07-28"
   },
   {
@@ -218363,6 +218462,9 @@
         "notes": "Speco is ONVIF Profile S/G/T conformant; native RTSP path varies by model/firmware. Use go2rtc ONVIF autodiscovery (onvif://{user}:{pass}@{ip}) to resolve the stream URL, or check the camera web UI."
       }
     },
+    "markets": [
+      "US"
+    ],
     "added": "2026-07-28"
   },
   {

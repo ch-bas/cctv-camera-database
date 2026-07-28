@@ -15,6 +15,8 @@
 | Protocols | rtsp |
 | IP rating | IP65 |
 | Two-way audio | Yes |
+| Operating temp | -10 to 40°C |
+| Released | 2025 |
 
 ## Features
 

@@ -14,6 +14,8 @@
 | Storage | microSD ≤ 512GB |
 | Protocols | rtsp |
 | Two-way audio | Yes |
+| Operating temp | -18 to 50°C |
+| Released | 2025 |
 
 ## Features
 

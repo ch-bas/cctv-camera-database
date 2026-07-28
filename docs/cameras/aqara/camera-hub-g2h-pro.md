@@ -13,6 +13,8 @@
 | Power | Micro USB 5V/1A |
 | Storage | microSD ≤ 128GB, NVR |
 | Two-way audio | Yes |
+| Operating temp | -10 to 40°C |
+| Released | 2022 |
 
 ## Features
 

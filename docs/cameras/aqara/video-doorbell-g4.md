@@ -12,6 +12,8 @@
 | Power | 6 AA batteries (up to 4 months), or wired 12V-24V AC / 8V-24V DC; chime repeater 5V/1A USB-A to USB-C |
 | Storage | microSD ≤ 512GB |
 | Two-way audio | Yes |
+| Operating temp | -18 to 50°C |
+| Released | 2023 |
 
 ## Features
 
