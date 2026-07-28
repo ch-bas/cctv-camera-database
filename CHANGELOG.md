@@ -8,13 +8,16 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [1.53.0] — 2026-07-28
 
-**Aqara + Axis (+16).**
-- **Aqara (7)** — smart-home line: `Camera Hub G350` (dual-lens 4K 360° pan-tilt hub, auto-tracking), `Camera Hub G2H Pro`, `Camera G100`, `Camera E1` (2K pan-tilt, auto-tracking), `Video Doorbell G4`, `Video Doorbell G410`, `Doorbell Camera G400 Wired`. The pan-tilt models (E1, G350) are consumer PT, not in Frigate's autotracking list, so `onvif_ptz`/`frigate.autotracking` left undefined.
-- **Axis fixed / PTZ (5)** — `Q3628-VE` (8 MP 4K) and `Q3626-VE` (4 MP) outdoor vandal domes; `M4228-LVE` (8 MP IR vandal dome); `P5654-E Mk II` (21× PTZ) and `Q6411-LE` (31× **bispectral thermal+visual** PTZ, ARTPEC-9). PTZ carry `ptz.autotracking` but not the Frigate-compat fields (Axis PTZ have documented ONVIF `MoveStatus` issues).
-- **Axis modular sensor units (4)** — `F4108` (4K dome), `F4105-SLRE` (SS316L IR dome), `FA3105-L` (IR eyeball), `FA4115` (dome); partial entries, since power/audio/storage live on the separate main unit.
-- **Fixes** — re-sourced Aqara `Camera Hub G3` (dead 404 caught by the new `check-sources` cron → official page; pan/tilt corrected 360°/90° → 340°/45°); and corrected the mislabeled `F4105-RE` → **`F4105-LRE`** (no "-RE" SKU exists — it 404s; removed the bogus alias and fixed its IP/IK ratings + specs).
+**Multi-brand expansion (+78).**
+- **Aqara (7)** — `Camera Hub G350` (dual-lens 4K 360° pan-tilt hub), `Camera Hub G2H Pro`, `Camera G100`, `Camera E1` (2K pan-tilt), `Video Doorbell G4`/`G410`, `Doorbell Camera G400 Wired`. Pan-tilt E1/G350 are consumer PT (not in Frigate's list → Frigate fields undefined).
+- **Axis (9)** — `Q3628-VE`/`Q3626-VE`/`M4228-LVE` vandal domes; `P5654-E Mk II` (21× PTZ) and `Q6411-LE` (31× **bispectral thermal+visual** PTZ); modular sensor units `F4108`, `F4105-SLRE`, `FA3105-L`, `FA4115` (partial entries — power/audio live on the main unit). Axis PTZ carry `ptz.autotracking` but not Frigate-compat (`MoveStatus` issues).
+- **Speco Technologies (30)** — O8/O6/O5/O4-series turrets/domes/bullets, `O8P32X` PTZ, `VLD10`. Also normalized 10 pre-existing Speco filenames to the standard `<model>.json` convention.
+- **Kasa / TP-Link (9)** — Spot / Spot Pan-Tilt (`EC60`/`EC70`/`EC71`, `KC400`/`KC401`/`KC410S`/`KC411S`), `KC120`, Doorbell `KD110`.
+- **Hikvision (23)** — `DS-2CD2126G2-IMS`/`2186G2-IMS` HDMI domes; the **DS-2CD27xxG3-LIPTRZ** ColorVu repositionable family (2143/2747/2767/2787, incl. `/SL` `/SRB` variants with Black colorways as aliases); TandemVu `2T127`/`2T167`/`2T87G3P`; and fixed AcuSense turrets (`20126`/`20166` = 12/16 MP, `23126`/`23166`).
+- **EZVIZ (1)** — `HB90X Dual 4G` (dual-lens 4G solar).
+- **Fixes** — Aqara `Camera Hub G3` re-sourced (dead 404 caught by the `check-sources` cron; pan/tilt corrected); mislabeled `F4105-RE` → **`F4105-LRE`** (no "-RE" SKU exists); corrected `DS-2CD20166G3` to 16 MP; removed the EZVIZ `HB90X-Dual-4G-kit` duplicate.
 
-Net: 2,540 → **2,556**.
+Net: 2,540 → **2,618**.
 
 ## [1.52.2] — 2026-07-28
 
