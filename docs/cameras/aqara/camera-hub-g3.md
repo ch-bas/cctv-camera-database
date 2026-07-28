@@ -9,7 +9,7 @@
 | Resolution | 3MP (3MP, 2304×1296) |
 | Sensor | CMOS |
 | Lens | 1× 3 fixedmm F1.8 |
-| Field of view | 360 pan / 90 tilt° |
+| Field of view | 340 pan / 45 tilt° |
 | Night vision | ir (10m) |
 | Power | DC 5V (USB-C) |
 | Storage | NVR |
@@ -28,7 +28,7 @@
 
 ## Sources
 
-- https://eu.aqara.com/en-eu/products/camera-hub-g3
+- https://eu.aqara.com/en-eu/products/aqara-2k-security-indoor-camera-hub-g3
 
 ---
 *Auto-generated from aqara-camera-hub-g3.json — do not edit by hand.*

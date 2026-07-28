@@ -6,6 +6,15 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.53.0] — 2026-07-28
+
+**Aqara + Axis (+9).**
+- **Aqara (7)** — smart-home line: `Camera Hub G350` (dual-lens 4K 360° pan-tilt hub, auto-tracking), `Camera Hub G2H Pro`, `Camera G100`, `Camera E1` (2K pan-tilt, auto-tracking), `Video Doorbell G4`, `Video Doorbell G410`, `Doorbell Camera G400 Wired`. The pan-tilt models (E1, G350) are consumer PT, not in Frigate's autotracking list, so `onvif_ptz`/`frigate.autotracking` left undefined.
+- **Axis (2)** — `Q3628-VE` (8 MP 4K) and `Q3626-VE` (4 MP) outdoor vandal fixed domes (Lightfinder 2.0, Forensic WDR, IK10, ARTPEC-8).
+- **Fix** — re-sourced Aqara `Camera Hub G3` (its source was the dead 404 caught by the new `check-sources` cron → official page) and corrected its pan/tilt (360°/90° → 340°/45°).
+
+Net: 2,540 → **2,549**.
+
 ## [1.52.2] — 2026-07-28
 
 **Tooling & docs.**
