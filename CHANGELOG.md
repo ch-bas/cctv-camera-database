@@ -6,6 +6,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.52.2] — 2026-07-28
+
+**Tooling & docs.**
+- **Source-availability checker** (#172 — thanks @fvdpol!) — new `npm run check-sources` script that probes every URL in each camera's `sources` (HEAD→GET fallback) and reports dead/moved links, with an optional brand/path filter.
+- **Weekly source-check cron** (#174) — `.github/workflows/check-sources.yml` runs the checker every Monday (plus manual dispatch), posting dead links into a self-updating tracking issue + job summary + report artifact. Advisory only (never fails the build). Feeds the reseller-source audit (#164).
+- **Contributor docs** (#173 — thanks @fvdpol!) — documented `ik_rating`, `min_lux`, and `min_lux_color` in CONTRIBUTING's field reference and the add-camera issue template (splitting the old combined IP/IK input into separate Ingress-Protection and Impact-resistance fields).
+
 ## [1.52.1] — 2026-07-28
 
 **Low-light lux enrichment** (#171 — thanks @fvdpol!). Back-filled minimum-illumination values from datasheets across ~190 entries: `night_vision.min_lux_color` **136 → 300** and `night_vision.min_lux` **6 → 31**. Also added official datasheet-PDF sources to 5 entries and corrected the Synology `CC400W` against its official datasheet (WiFi-only, 2.12mm, IR, IP65, two-way audio). Progresses the low-light-lux backfill lane (#161). No camera-count change (2,540).
