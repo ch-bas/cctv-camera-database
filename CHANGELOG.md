@@ -16,6 +16,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - **Hikvision (23)** — `DS-2CD2126G2-IMS`/`2186G2-IMS` HDMI domes; the **DS-2CD27xxG3-LIPTRZ** ColorVu repositionable family (2143/2747/2767/2787, incl. `/SL` `/SRB` variants with Black colorways as aliases); TandemVu `2T127`/`2T167`/`2T87G3P`; and fixed AcuSense turrets (`20126`/`20166` = 12/16 MP, `23126`/`23166`).
 - **EZVIZ (1)** — `HB90X Dual 4G` (dual-lens 4G solar).
 - **Fixes** — Aqara `Camera Hub G3` re-sourced (dead 404 caught by the `check-sources` cron; pan/tilt corrected); mislabeled `F4105-RE` → **`F4105-LRE`** (no "-RE" SKU exists); corrected `DS-2CD20166G3` to 16 MP; removed the EZVIZ `HB90X-Dual-4G-kit` duplicate.
+- **Field back-fill (this release's cameras)** — enriched from official datasheets/press: `configs.frigate` on 62 (all pro models + RTSP-capable Aqara), `release_year` on 36 (press-sourced, not datasheet dates), plus `environment` (**100%**, IP-cross-checked), `markets` (**100%**), `operating_temp_c` (96%), `power.consumption_w` (80%), `ik_rating`/`min_lux_color`. Only genuinely-unpublished values (`soc`, some Speco `release_year`) left undefined.
 
 Net: 2,540 → **2,618**.
 
