@@ -12,7 +12,7 @@
 | Sensor | 1/2.8" STARVIS CMOS |
 | Lens | 1× 4.8-154 (32x optical zoom)mm F1.6-F4.0 |
 | Field of view | 55.8-2.3 (wide-tele)° |
-| Night vision | hybrid (150m) |
+| Night vision | hybrid (150m), 0.005 lux color |
 | Power | 24VAC / PoE+ (802.3at) |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp, http |

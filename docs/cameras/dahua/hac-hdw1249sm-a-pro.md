@@ -10,7 +10,7 @@
 | Sensor | 2MP CMOS |
 | Lens | 1× 2.8mm F1.0 |
 | Field of view | 101h° |
-| Night vision | color (30m) |
+| Night vision | color (30m), 0.0001 lux color |
 | Power | DC 12V |
 | Storage | NVR |
 | Protocols | hdcvi |
@@ -29,6 +29,7 @@
 ## Sources
 
 - https://www.dahuasecurity.com/products/All-Products/HDCVI-Cameras/Pro-Series/2MP/HAC-HDW1249SM-A-PRO
+- https://materialfile.dahuasecurity.com/uploads/cpq/86618/datasheet/HAC-HDW1249SM-A-PRO_S0_datasheet_20260507.pdf
 
 ---
 *Auto-generated from dahua-hac-hdw1249sm-a-pro.json — do not edit by hand.*

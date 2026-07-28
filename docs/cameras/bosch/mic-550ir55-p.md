@@ -11,7 +11,7 @@
 | Resolution | 1080p (0.38MP, 1920×1080) |
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 4.7-94 (20x optical zoom)mm |
-| Night vision | ir (120m) |
+| Night vision | ir (120m), 0.0052 lux |
 | Power | High PoE (802.3at) / AC 24V |
 | Storage | NVR |
 | IP rating | IP68 |

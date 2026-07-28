@@ -6,6 +6,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.52.1] — 2026-07-28
+
+**Low-light lux enrichment** (#171 — thanks @fvdpol!). Back-filled minimum-illumination values from datasheets across ~190 entries: `night_vision.min_lux_color` **136 → 300** and `night_vision.min_lux` **6 → 31**. Also added official datasheet-PDF sources to 5 entries and corrected the Synology `CC400W` against its official datasheet (WiFi-only, 2.12mm, IR, IP65, two-way audio). Progresses the low-light-lux backfill lane (#161). No camera-count change (2,540).
+
 ## [1.52.0] — 2026-07-27
 
 **Dahua X-Spans PTZ + WizSense-2 series completion (+67).**

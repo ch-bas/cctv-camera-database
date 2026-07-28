@@ -11,7 +11,7 @@
 | Resolution | 1080p HD (dual-lens, 8x combined optical+digital zoom) (2MP, 1920×1080) |
 | Lens | 2× 2.8mm wide + 12mm tele (fixed)mm F1.6 |
 | Field of view | 340 pan / 80 tilt (wide + tele simultaneous)° |
-| Night vision | color (30m) |
+| Night vision | color (30m), 0.05 lux |
 | Power | DC 12V/1A (max 12W) |
 | Storage | microSD ≤ 512GB, NVR |
 | Two-way audio | Yes |

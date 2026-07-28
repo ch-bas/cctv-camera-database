@@ -12,7 +12,7 @@
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 4 or 6 (fixed, buyer's choice)mm F1.6 |
 | Field of view | 352 pan / 95 tilt° |
-| Night vision | color (30m) |
+| Night vision | color (30m), 0.5 lux |
 | Power | DC 12V/1A (max 6W, outdoor adapter) |
 | Storage | microSD ≤ 256GB, NVR |
 | IP rating | IP65 |

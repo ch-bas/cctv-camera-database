@@ -12,7 +12,7 @@
 | Sensor | 1/2.8" Progressive Scan CMOS |
 | Lens | 1× 2.8 / 4 (fixed)mm F1.0 |
 | Field of view | 103 horizontal (2.8mm)° |
-| Night vision | color (40m) |
+| Night vision | color (40m), 0.0005 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -32,6 +32,7 @@
 ## Sources
 
 - https://www.hikvision.com/en/products/
+- https://assets.hikvision.com/prd/public/all/doc/sm000058317/DS-2CD2027G2-LU-C_Datasheet_V5.5.113_20230418.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2027g2-lu.json — do not edit by hand.*

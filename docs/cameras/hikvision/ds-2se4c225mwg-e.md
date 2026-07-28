@@ -9,7 +9,7 @@
 | Resolution | 1080p (2MP PTZ) + 6MP ColorVu bullet (2MP, 1920×1080) |
 | Sensor | 1/2.8" + 1/2.5" CMOS (dual-channel) |
 | Lens | 1× |
-| Night vision | hybrid (100m) |
+| Night vision | hybrid (100m), 0.005 lux color |
 | Power | PoE+ / 12 VDC |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |

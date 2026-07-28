@@ -10,7 +10,7 @@
 | Sensor | 1/2.9" CMOS |
 | Lens | 1× 2.8mm F1.0 |
 | Field of view | 101° |
-| Night vision | color (30m) |
+| Night vision | color (30m), 0.0002 lux |
 | Power | DC 12V / PoE |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | rtsp, onvif |
@@ -32,6 +32,7 @@
 ## Sources
 
 - https://www.dahuasecurity.com/products/network-products/network-cameras/wizsense-2-series/wizcolor/ipc-hdw2249t-s-pro
+- https://materialfile.dahuasecurity.com/uploads/cpq/82610/datasheet/DH-IPC-HDW2249T-S-PRO_S0_datasheet_20250912.pdf
 
 ---
 *Auto-generated from dahua-ipc-hdw2249t-s-pro.json — do not edit by hand.*

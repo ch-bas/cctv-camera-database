@@ -12,7 +12,7 @@
 | Sensor | 1/1.8" Progressive Scan CMOS |
 | Lens | 1× 2.8 / 4 (fixed options)mm F1.0 |
 | Field of view | 103 horizontal (2.8mm) / 84 horizontal (4mm)° |
-| Night vision | color (30m) |
+| Night vision | color (30m), 0.0005 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp, http |
@@ -31,6 +31,7 @@
 ## Sources
 
 - https://www.hikvision.com/en/products/IP-Products/Network-Cameras/Pro-Series-EasyIP-/ds-2cd2347g2-l-u-/
+- https://assets.hikvision.com/prd/public/all/doc/sm000058331/DS-2CD2347G2-LU-C_Datasheet_20240417.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2347g2-lu.json — do not edit by hand.*

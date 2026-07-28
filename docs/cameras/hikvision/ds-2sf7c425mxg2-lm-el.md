@@ -12,7 +12,7 @@
 | Sensor | 1/2.5" CMOS (panoramic channel) + 1/1.8" CMOS (PTZ channel) |
 | Lens | 2× 2.8 (panoramic) + 5.9-147.5 (25x optical, PTZ)mm F1.0 (panoramic) / F1.5 (PTZ) |
 | Field of view | 190 horizontal (panoramic) / 60.2-2.3 horizontal (PTZ)° |
-| Night vision | hybrid (400m) |
+| Night vision | hybrid (400m), 0.0005 lux color |
 | Power | PoE++ (IEEE 802.3bt Type 4, Class 8, 90W) / 36VDC |
 | Storage | microSD ≤ 1024GB, NVR |
 | Protocols | onvif, rtsp, http |

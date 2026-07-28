@@ -9,7 +9,7 @@
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/2.8-inch Exmor R CMOS (visible) + uncooled VOx microbolometer FPA (thermal) |
 | Lens | 2× 4.3-129mm F1.6-F4.7 |
-| Night vision | none |
+| Night vision | none, 0.0077 lux color |
 | Power | High PoE / 24 VAC (21-30 VAC) / 56 VDC, ~72 W |
 | Storage | NVR |
 | Protocols | onvif, rtsp |

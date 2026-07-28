@@ -12,7 +12,7 @@
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 4 or 6 (fixed, buyer's choice)mm F1.6 |
 | Field of view | 350 pan / 80 tilt° |
-| Night vision | color (30m) |
+| Night vision | color (30m), 0.5 lux |
 | Power | DC 12V |
 | Storage | microSD ≤ 512GB, NVR |
 | Two-way audio | Yes |

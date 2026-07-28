@@ -12,7 +12,7 @@
 | Sensor | CMOS |
 | Lens | 1× 2.8 (fixed)mm F1.6 |
 | Field of view | 107 horizontal° |
-| Night vision | color (20m) |
+| Night vision | color (20m), 0.005 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -34,6 +34,7 @@
 ## Sources
 
 - https://www.hikvision.com/en/products/HiLook-IP-Products/
+- https://www.hilooksecurity.com/europe/products/hilook-ip-products/Network-Cameras/Value-Camera/ipc-d140ha-lu/
 
 ---
 *Auto-generated from hilook-ipc-d140ha-lu.json — do not edit by hand.*

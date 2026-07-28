@@ -9,7 +9,7 @@
 | Resolution | 4K (3840x2160) (8MP, 3840×2160) |
 | Sensor | 1/1.8" Progressive Scan CMOS |
 | Lens | 1× 2.8-12mm |
-| Night vision | hybrid (60m) |
+| Night vision | hybrid (60m), 0.001 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |

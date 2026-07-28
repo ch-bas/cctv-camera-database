@@ -10,7 +10,7 @@
 | Sensor | 1/2.7" CMOS |
 | Lens | 2.8mm |
 | Field of view | 98° |
-| Night vision | color (30m) |
+| Night vision | color (30m), 0.003 lux color |
 | Protocols | onvif, rtsp, http |
 | IP rating | IP67 |
 | Two-way audio | No |

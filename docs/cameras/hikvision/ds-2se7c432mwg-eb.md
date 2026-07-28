@@ -9,7 +9,7 @@
 | Resolution | 6MP panoramic + 4MP 32x PTZ (6MP, 3632×1632) |
 | Sensor | 1/2.5" + 1/2.8" CMOS (dual-channel) |
 | Lens | 2× |
-| Night vision | hybrid (200m) |
+| Night vision | hybrid (200m), 0.005 lux color |
 | Power | Hi-PoE / 24 VAC |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |

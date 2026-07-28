@@ -10,7 +10,7 @@
 | Sensor | 5MP CMOS |
 | Lens | 1× 2.8mm F1.0 |
 | Field of view | 109.6h° |
-| Night vision | color (30m) |
+| Night vision | color (30m), 0.0047 lux color |
 | Power | DC 12V |
 | Storage | NVR |
 | Protocols | hdcvi |

@@ -10,7 +10,7 @@
 | Sensor | 3K CMOS |
 | Lens | 1× 2.8 or 3.6 (fixed)mm |
 | Field of view | 104.9 / 81.3° |
-| Night vision | hybrid (25m) |
+| Night vision | hybrid (25m), 0.01 lux |
 | Power | 12 VDC |
 | Storage | NVR |
 | IP rating | IP67 |

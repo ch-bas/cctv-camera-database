@@ -10,7 +10,7 @@
 | Sensor | 1/2.8-inch Exmor R CMOS (visible); uncooled VOx microbolometer (thermal) |
 | Lens | 2× 4.3-129mm F1.6-4.7 |
 | Field of view | Thermal ~12 (50mm lens); visible 30x optical zoom (4.3-129mm)° |
-| Night vision | none |
+| Night vision | none, 0.0077 lux color |
 | Power | 24 VAC (21-30 VAC) and/or 95W High PoE |
 | Protocols | onvif, rtsp, http |
 | IP rating | IP68 |

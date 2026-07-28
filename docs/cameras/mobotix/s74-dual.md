@@ -9,7 +9,7 @@
 | Resolution | 2x6MP dual sensor (12MP) |
 | Sensor | 2x 1/1.8" CMOS |
 | Lens | 2× Interchangeable dual headsmm |
-| Night vision | color (15m) |
+| Night vision | color (15m), 0.005 lux color |
 | Power | PoE (802.3at) |
 | Storage | microSD ≤ 2048GB, NVR |
 | Protocols | onvif, rtsp |

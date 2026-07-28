@@ -9,7 +9,7 @@
 | Resolution | 6MP panoramic + 8MP 48x laser PTZ (8MP, 3840×2160) |
 | Sensor | 1/2.5" + 1/1.2" CMOS (dual-channel) |
 | Lens | 2× |
-| Night vision | hybrid (500m) |
+| Night vision | hybrid (500m), 0.0005 lux color |
 | Power | Hi-PoE (802.3bt Type4) / 36 VDC |
 | Storage | microSD ≤ 1024GB, NVR |
 | Protocols | onvif, rtsp |
