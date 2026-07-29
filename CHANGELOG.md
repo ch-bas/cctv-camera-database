@@ -6,6 +6,14 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.54.1] — 2026-07-29
+
+**`video.streams[]` backfill, continued (#177).** +112 cameras across 17 (mostly small) brands — dataset-wide streams coverage **1,349 → 1,461**. Main stream derived from each record's already-verified `resolution` / `max_fps` / `codecs`; main-stream-only (these OEM/consumer brands document configurable multi-profile streaming with no fixed sub-stream).
+
+- **Annke (+34), CP Plus (+22), Tapo (+10), Kasa (+9), Foscam (+6), SV3C (+5), Kedacom (+4), LTS (+4), Uniarch (+4), Amcrest (+3), Aqara (+2), Arlo (+2), Canon (+2), Eufy (+2), EZVIZ (+1), Longse (+1), Reolink (+1).**
+
+Includes the Tapo/Kedacom records that were held back from 1.54.0 to avoid conflicting with the codec-normalization branch (now merged).
+
 ## [1.54.0] — 2026-07-29
 
 **`video.streams[]` backfill (#177) + codec normalization & enum (#180).**
