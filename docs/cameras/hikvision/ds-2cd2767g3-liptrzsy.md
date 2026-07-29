@@ -33,7 +33,7 @@
 
 ## Sources
 
-- https://assets.hikvision.com/prd/normal/all/doc/sm000077890/DS-2CD2747G3-LIPTRZS2UY_SL_Datasheet_20260629.pdf
+- https://assets.hikvision.com/prd/normal/all/doc/sm000107013/DS-2CD2767G3-LIPTRZSY_Datasheet_20260629.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2767g3-liptrzsy.json — do not edit by hand.*
