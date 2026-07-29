@@ -149,6 +149,27 @@ function validate(cameras) {
       );
       ok = false;
     }
+
+    // Placeholder / sentinel bad-data guard (#180). Some datasheets state a
+    // figure that is technically valid JSON but semantically wrong for the
+    // field — most notably "0 lux (IR on)", which is NOT the ambient
+    // sensitivity `min_lux` represents (0 lux = no light = nothing to see
+    // without IR). 15 such entries had to be stripped by hand once; this keeps
+    // them from creeping back. Extend SENTINELS as new traps are found.
+    const SENTINELS = [
+      ["night_vision.min_lux", cam.night_vision?.min_lux, (v) => v === 0],
+      ["night_vision.min_lux_color", cam.night_vision?.min_lux_color, (v) => v === 0],
+      ["weight_g", cam.weight_g, (v) => v === 0],
+    ];
+    for (const [field, value, isBad] of SENTINELS) {
+      if (value != null && isBad(value)) {
+        console.error(
+          `✗ ${cam.id}: ${field} = ${JSON.stringify(value)} is a placeholder/sentinel, ` +
+          `not a real spec — leave the field undefined instead (see #180).`
+        );
+        ok = false;
+      }
+    }
   }
   if (!ok) {
     console.error("\nValidation failed. See errors above.");

@@ -6,6 +6,26 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.54.0] — 2026-07-29
+
+**`video.streams[]` backfill (#177) + codec normalization & enum (#180).**
+
+Per-stream capability data (`video.streams[]` — name / resolution / fps / codec) backfilled for **776 cameras across 14 brands**, taking dataset-wide streams coverage from 573 to **1,349**. Every value is verified against an official datasheet, or — for brands that document configurable multi-profile streaming with no fixed sub-stream — faithfully reconstructed from already-verified `resolution` / `max_fps` / `codecs`. Nothing guessed: main resolutions cross-checked against `resolution.max_*`, and cameras were skipped (not filled) where a datasheet was ambiguous, a model ID wrong, or a source unretrievable.
+
+- **Dahua (+167)** — full main/sub/sub2 tables from Stream Capability datasheets: WizSense-2/3 domes/turrets/bullets, SD4–SD8 PTZ, positioning systems, A180 panoramic (stitched), X-Spans/SDT thermal (visible channel only).
+- **ACTi (+196)** — main stream via the hidden spec API (`newPopupSpecifications_value.ashx`).
+- **Hikvision (+77)** — full `video` block (codecs + max_fps + streams) for IP cameras that had none, from UA-gated datasheet PDFs; Turbo HD analog (coax) cameras excluded.
+- **ABUS (+68), Speco (+57), IMOU (+46), Kedacom (+46), Xiaomi (+23), Tapo (+21), Costar (+3)** — main stream derived from each record's verified fields.
+- **Hanwha (+23), Ajax (+22), Bosch (+15), INSTAR (+12)** — main stream from official datasheets. **Hanwha, Ajax, INSTAR reach 100% streams coverage.**
+
+Main-stream-only for the OEM/consumer brands above — their datasheets describe configurable multi-profile streaming without a fixed sub-stream resolution, so a sub would be invented. Dahua and Hikvision carry explicit main/sub/sub2 where the datasheet tabulates them.
+
+**Codec enum + hygiene (#180):**
+- `video.codecs[]` and `video.streams[].codec` are now validated against a canonical enum (`H.264`, `H.264+`, `H.265`, `H.265+`, `MJPEG`, `JPEG`, `AV1`, `Ultra265`, `MPEG-4`). 114 files normalized (`M-JPEG`→`MJPEG`, `Smart 265`→`H.265`, `h264`→`H.264`, `H.264H`/`H.264B`→`H.264`, etc.).
+- `build.js` gains a placeholder-sentinel lint — fails validation on `night_vision.min_lux` / `min_lux_color` / `weight_g === 0` (the "0 lux, IR on" trap).
+
+Surfaced data-quality issues for follow-up (tracked in #186 + PR notes): several Hikvision bad model IDs / stored-vs-datasheet resolution conflicts / a wrong source URL (one fixed), and ~14 ABUS/Speco/Costar records that carry only `megapixels` with no pixel resolution.
+
 ## [1.53.0] — 2026-07-28
 
 **Multi-brand expansion (+78).**
