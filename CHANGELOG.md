@@ -6,6 +6,15 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.54.2] — 2026-07-30
+
+**`video.streams[]` — remaining Dahua + third-stream correction (#177).**
+
+- **+13 Dahua** cameras backfilled with full main/sub(/sub2) tables — the `#182`-overlap set deferred from 1.54.0 (4 fixed WizSense-2/3 bullets/dome + 9 PTZ speed domes). This completes every Dahua camera that carries a `codecs` list.
+- **Correction — WizSense-3 third stream restored (6 cameras).** An earlier extraction rule wrongly dropped "1 fps" third-stream rows, and in doing so also missed the genuinely useful **`1920×1080@30` third stream** on the WizSense-3 models. Fixed: `HFW3467E`/`HFW3667E`/`HFW3867E-AS-IL` and discontinued `HFW3449T1`/`HFW3549T1-AS-PV` now carry their real 3-stream tables; `HFW2849TH-S-PROX` (WizColor) corrected to its 3 streams (`352×288@1fps` third). Verified against official Dahua datasheet PDFs.
+
+Known limitation (tracked in #205): the low-value **WizSense-2** optional `352×288@1fps` CIF third stream is per-model and not exhaustively captured — those records carry datasheet-verified `main`+`sub`.
+
 ## [1.54.1] — 2026-07-29
 
 **`video.streams[]` backfill, continued (#177).** +112 cameras across 17 (mostly small) brands — dataset-wide streams coverage **1,349 → 1,461**. Main stream derived from each record's already-verified `resolution` / `max_fps` / `codecs`; main-stream-only (these OEM/consumer brands document configurable multi-profile streaming with no fixed sub-stream).
