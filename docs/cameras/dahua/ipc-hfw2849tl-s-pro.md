@@ -12,7 +12,7 @@
 | Sensor | 1/1.8" CMOS |
 | Lens | 1× 2.8 / 3.6 / 6 (fixed)mm F1.0 |
 | Field of view | 110 (2.8mm)° |
-| Night vision | color (50m) |
+| Night vision | color (50m), 0.0004 lux color |
 | Power | 12VDC/PoE (802.3af) |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp, http |

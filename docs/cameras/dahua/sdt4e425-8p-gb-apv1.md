@@ -10,7 +10,7 @@
 | Sensor | STARVIS CMOS |
 | Lens | 1× |
 | Field of view | 180° |
-| Night vision | hybrid (100m) |
+| Night vision | hybrid (100m), 0.005 lux color |
 | Power | Hi-PoE (802.3bt) / 24 VAC |
 | Storage | NVR |
 | Protocols | onvif, rtsp |

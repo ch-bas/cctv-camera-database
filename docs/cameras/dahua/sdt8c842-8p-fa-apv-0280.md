@@ -10,7 +10,7 @@
 | Sensor | Dual 1/1.8" CMOS |
 | Lens | 2× 2.8 (panorama) / 5.5-231 (detail)mm F1.0 (panorama) / F1.4-F4.5 (detail) |
 | Field of view | 200 (panorama) / 61.8-2.2 (detail)° |
-| Night vision | hybrid (300m) |
+| Night vision | hybrid (300m), 0.001 lux color |
 | Power | PoE++ (802.3bt) / DC |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | rtsp, onvif |
@@ -35,6 +35,7 @@
 ## Sources
 
 - https://www.dahuasecurity.com/products/network-products/ptz-cameras/x-spans-series/project/sdt8c842-8p-fa-apv-0280
+- https://materialfile.dahuasecurity.com/uploads/soft/20241224/SDT8C842-8P-FA-APV-0280_S0_datasheet_20241120_BR.pdf
 
 ---
 *Auto-generated from dahua-sdt8c842-8p-fa-apv-0280.json — do not edit by hand.*

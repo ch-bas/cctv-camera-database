@@ -8,7 +8,7 @@
 | Model | FLEXIDOME 8000i Outdoor Dome (NDC-8502-R) |
 | Type | dome |
 | Connectivity | ethernet |
-| Resolution | 4K UHD (2MP, 3840×2160) |
+| Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/1.8" CMOS (starlight) |
 | Lens | 1× 3-9 (motorized varifocal)mm F1.2 |
 | Field of view | 100-33 horizontal° |

@@ -6,6 +6,25 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.54.3] — 2026-07-31
+
+**Night-vision lux backfill + CI checks + data-quality corrections.**
+
+### Added (data — night vision, #161)
+- **`night_vision.min_lux_color` backfilled for 179 cameras** — **ACTi (25)** and **Dahua (154)** — the Color minimum-illumination figure, extracted from official datasheets (ACTi via the `.ashx` spec API; Dahua via product pages + `materialfile.dahuasecurity.com` PDFs). Dataset-wide, **516 cameras** now carry a color-lux rating.
+- Dahua coverage spans IP bullets/eyeballs/turrets, HDCVI full-color LED, WizColor/TiOC, panoramic PDW/PFW/PTS, and the full PTZ range (SD4/SD5/SD6/SD8 + SDT X-Spans dual-PTZ). **12 Dahua Smart Dual-Light/HAC models are deliberately left `null`** — they publish only a B/W figure, so there is no honest Color value to record.
+- Recorded the `Color, 30 IRE` figure only — never the `0 lux (Illuminator on)` sentinel; single-figure WizColor models use that one figure. A re-verify pass caught the Dahua "wrapped Color line" trap (the Color value wraps above the "Min. Illumination" label), which had produced false B/W-only readings on several WizSense-3 / SD8 / SDT models.
+
+### Added (CI)
+- **Resolution sanity check (#169)** in `build.js`: FATAL on structurally-broken resolution (`max_width`/`max_height` present without the other, or non-positive); WARNING on `megapixels` vs `max_width×max_height` mismatches (single-sensor only — panoramic/dual-lens excluded) and on `megapixels` present with no pixel resolution.
+- **Reseller-source lint (#165)**: WARNING listing cameras with no official OEM source (reseller/distributor-mirror only), via registrable-domain matching. Surfaces the #164 re-sourcing backlog (notably 181 Hikvision records mirrored on `download.axilogi.com`).
+
+### Fixed (data quality)
+- **Hikvision (#186):** deleted `ds-2cd2583g2-izs` — a duplicate of the real `ds-2cd2h83g2-izs` (`2583G2` = typo of `2H83G2`); corrected `ds-2cd2067g2h-liu` & `ds-2cd2167g2h-liu` resolution `3072x1728` → `3200x1800` (G2H ColorVu 6 MP).
+- **Megapixels/resolution mismatches (via #169):** `acti-a429` `1920x1080` → `2688x1520` (the 1080p was the 120fps High-Frame-Mode row); `bosch-mic-550ir55-p` → `768x494` (it's an analog SD PTZ, not HD); `bosch-ndc-8502-r-ooh` → `1920x1080` (the 8502 FLEXIDOME is 2 MP; 8504 is the 4K one); `kedacom-ipc442-i405-np` megapixels `4` → `2` (max output is 1080p).
+
+Camera count 2,618 → **2,617** (the removed duplicate). `ds-2cd2087g2-su` (a phantom model number) left flagged for maintainer review (#186).
+
 ## [1.54.2] — 2026-07-30
 
 **`video.streams[]` — remaining Dahua + third-stream correction (#177).**

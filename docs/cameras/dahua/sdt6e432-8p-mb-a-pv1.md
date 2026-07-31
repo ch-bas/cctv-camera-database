@@ -10,7 +10,7 @@
 | Sensor | 1/2.7" 8MP panorama + 1/2.8" 4MP PTZ CMOS |
 | Lens | 2× 2.8 (panorama) / 4.8-154 (detail 32x)mm F1.4 (panorama) / F1.6-F4.0 (detail) |
 | Field of view | 180 (panorama) / 55.8-2.3 (detail)° |
-| Night vision | hybrid (250m) |
+| Night vision | hybrid (250m), 0.005 lux color |
 | Power | PoE++ (802.3bt) / DC 36V |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | rtsp, onvif |
