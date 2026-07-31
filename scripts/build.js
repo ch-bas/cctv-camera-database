@@ -111,6 +111,40 @@ function validate(cameras) {
 
   const seen = new Set();
   let ok = true;
+
+  // Non-fatal warning collectors (printed as a summary at the end). These
+  // surface data issues without failing the build, because they have legitimate
+  // exceptions in the current data that need per-record cleanup first.
+  const warnResMismatch = []; // #169 megapixels vs max_width×max_height
+  const warnResMissing = [];  // #169 megapixels present but no pixel resolution
+  const warnResellerOnly = []; // #165 no official OEM source
+
+  // #165: a source is "official" if its host is (a sub-domain of) a known OEM
+  // registrable domain, or contains a token of the brand name (>=4 chars).
+  // Registrable-domain suffix matching (not substring) avoids false hits like
+  // `mi.com` matching `dynami.com`. Extend as new brands appear — this is a
+  // best-effort provenance heuristic tied to the re-sourcing effort in #164.
+  const OFFICIAL_DOMAINS = [
+    "boschsecurity.com", "boschbuildingtechnologies.com", "keenfinity.tech",
+    "tp-link.com", "tapo.com", "ui.com", "ubnt.com", "ajax.systems",
+    "hanwhavision.com", "hanwhavisionamerica.com", "dahuasecurity.com",
+    "hikvision.com", "reolink.com", "eufy.com", "arlo.com", "wyze.com",
+    "ezviz.com", "imou.com", "aqara.com", "acti.com", "kedacom.com",
+    "uniview.com", "uniarch.com", "avigilon.com", "axis.com", "vivotek.com",
+    "tiandy.com", "annke.com", "amcrest.com", "lorex.com", "foscam.com",
+    "instar.com", "instar.de", "cpplusworld.com", "specotech.com",
+    "mi.com", "xiaomi.com", "tvt.net.cn", "arecontvision.com", "geovision.com",
+    "hilook.com", "milesight.com", "sunell.com",
+  ];
+  const hostMatches = (host, dom) => host === dom || host.endsWith("." + dom);
+  const isOfficialSource = (cam, url) => {
+    let host = "";
+    try { host = new URL(url).host.toLowerCase(); } catch { return false; }
+    if (OFFICIAL_DOMAINS.some((d) => hostMatches(host, d))) return true;
+    const brandTokens = (cam.brand || "").toLowerCase().replace(/[^a-z0-9 ]/g, "").split(/\s+/).filter((t) => t.length >= 4);
+    return brandTokens.some((t) => host.includes(t));
+  };
+
   for (const cam of cameras) {
     if (!validateSchema(cam)) {
       ok = false;
@@ -170,7 +204,59 @@ function validate(cameras) {
         ok = false;
       }
     }
+
+    // Resolution sanity (#169). FATAL part = structural integrity: a pixel
+    // resolution must be complete (both width AND height) and positive. This
+    // guards against a contributor entering one dimension without the other.
+    const r = cam.resolution || {};
+    const hasW = r.max_width != null, hasH = r.max_height != null;
+    if (hasW !== hasH) {
+      console.error(`✗ ${cam.id}: resolution has ${hasW ? "max_width" : "max_height"} but not the other — a pixel resolution needs both (see #169).`);
+      ok = false;
+    }
+    if ((hasW && (!Number.isInteger(r.max_width) || r.max_width <= 0)) ||
+        (hasH && (!Number.isInteger(r.max_height) || r.max_height <= 0))) {
+      console.error(`✗ ${cam.id}: resolution.max_width/max_height must be positive integers (see #169).`);
+      ok = false;
+    }
+    // WARNING part (non-fatal): megapixels vs pixel count. Skipped for
+    // multi-imager types (panoramic / dual-lens) where the stated megapixels is
+    // the COMBINED total across sensors and legitimately exceeds a single
+    // max_width×max_height. For single-sensor cameras a large gap usually means
+    // one of the two was updated without the other (e.g. resolution bumped to 4K
+    // but megapixels left at 2).
+    const MULTI_IMAGER = new Set(["panoramic", "dual-lens"]);
+    if (r.megapixels != null && hasW && hasH) {
+      const computed = (r.max_width * r.max_height) / 1e6;
+      const ratio = computed / r.megapixels;
+      if (!MULTI_IMAGER.has(cam.type) && Math.abs(computed - r.megapixels) > 1.0 && (ratio < 0.6 || ratio > 1.6)) {
+        warnResMismatch.push(`${cam.id}: stated ${r.megapixels}MP vs ${r.max_width}×${r.max_height}=${computed.toFixed(2)}MP (type=${cam.type})`);
+      }
+    } else if (r.megapixels != null && !hasW && !hasH) {
+      warnResMissing.push(cam.id);
+    }
+
+    // Source provenance (#165): flag cameras with NO official OEM source (only
+    // reseller/marketplace/mirror URLs). Non-fatal — existing entries are being
+    // re-sourced under #164; this surfaces the backlog and catches new ones.
+    if ((cam.sources || []).length && !cam.sources.some((s) => isOfficialSource(cam, s))) {
+      warnResellerOnly.push(cam.id);
+    }
   }
+
+  // ── Non-fatal warning summaries ──────────────────────────────────────────
+  if (warnResMissing.length) {
+    console.warn(`\n⚠  #169: ${warnResMissing.length} camera(s) have megapixels but no pixel resolution (max_width/max_height) — needs a resolution backfill:`);
+    console.warn("   " + warnResMissing.join(", "));
+  }
+  if (warnResMismatch.length) {
+    console.warn(`\n⚠  #169: ${warnResMismatch.length} single-sensor camera(s) where megapixels disagrees with max_width×max_height — likely one field is stale:`);
+    warnResMismatch.forEach((w) => console.warn("   " + w));
+  }
+  if (warnResellerOnly.length) {
+    console.warn(`\n⚠  #165: ${warnResellerOnly.length} camera(s) have no official OEM source (reseller/mirror only) — re-source under #164.`);
+  }
+
   if (!ok) {
     console.error("\nValidation failed. See errors above.");
     process.exit(1);
