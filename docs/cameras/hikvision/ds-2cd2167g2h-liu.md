@@ -8,7 +8,7 @@
 | Model | DS-2CD2167G2H-LI(SU) |
 | Type | dome |
 | Connectivity | ethernet |
-| Resolution | 6MP (6MP, 3072×1728) |
+| Resolution | 6MP (6MP, 3200×1800) |
 | Sensor | 1/1.7" CMOS |
 | Lens | 1× 2.8 / 4 (fixed super-confocal)mm F1.0 |
 | Field of view | 103 horizontal (2.8mm)° |
