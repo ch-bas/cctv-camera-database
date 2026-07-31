@@ -9,7 +9,7 @@
 | Resolution | Dual 4MP (panorama + 25x PTZ detail) (8MP, 2560×1440) |
 | Sensor | Dual 1/2.8" CMOS (overview + PTZ) |
 | Lens | 2× 2.8 (overview) / 5-125 (detail)mm F1.0 (overview) / F1.6-F3.6 (detail) |
-| Night vision | hybrid (100m) |
+| Night vision | hybrid (100m), 0.001 lux color |
 | Power | PoE (802.3at) / DC 12V |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | rtsp, onvif |
