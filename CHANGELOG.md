@@ -8,7 +8,12 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [1.54.3] — 2026-07-31
 
-**CI checks + data-quality corrections.**
+**Night-vision lux backfill + CI checks + data-quality corrections.**
+
+### Added (data — night vision, #161)
+- **`night_vision.min_lux_color` backfilled for 179 cameras** — **ACTi (25)** and **Dahua (154)** — the Color minimum-illumination figure, extracted from official datasheets (ACTi via the `.ashx` spec API; Dahua via product pages + `materialfile.dahuasecurity.com` PDFs). Dataset-wide, **516 cameras** now carry a color-lux rating.
+- Dahua coverage spans IP bullets/eyeballs/turrets, HDCVI full-color LED, WizColor/TiOC, panoramic PDW/PFW/PTS, and the full PTZ range (SD4/SD5/SD6/SD8 + SDT X-Spans dual-PTZ). **12 Dahua Smart Dual-Light/HAC models are deliberately left `null`** — they publish only a B/W figure, so there is no honest Color value to record.
+- Recorded the `Color, 30 IRE` figure only — never the `0 lux (Illuminator on)` sentinel; single-figure WizColor models use that one figure. A re-verify pass caught the Dahua "wrapped Color line" trap (the Color value wraps above the "Min. Illumination" label), which had produced false B/W-only readings on several WizSense-3 / SD8 / SDT models.
 
 ### Added (CI)
 - **Resolution sanity check (#169)** in `build.js`: FATAL on structurally-broken resolution (`max_width`/`max_height` present without the other, or non-positive); WARNING on `megapixels` vs `max_width×max_height` mismatches (single-sensor only — panoramic/dual-lens excluded) and on `megapixels` present with no pixel resolution.
