@@ -8,7 +8,7 @@
 | Model | MIC Series 550 IR (MIC-550IR55-P) |
 | Type | ptz |
 | Connectivity | coax |
-| Resolution | 1080p (0.38MP, 1920×1080) |
+| Resolution | D1 (analog SD) (0.38MP, 768×494) |
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 4.7-94 (20x optical zoom)mm |
 | Night vision | ir (120m), 0.0052 lux |
