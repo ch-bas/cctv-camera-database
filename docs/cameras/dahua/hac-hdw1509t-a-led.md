@@ -8,7 +8,7 @@
 | Connectivity | coax |
 | Resolution | 5MP HD (5MP) |
 | Field of view | 107h° |
-| Night vision | color (40m) |
+| Night vision | color (40m), 0.005 lux color |
 | Power | DC 12V (HDCVI coaxial) |
 | Storage | NVR |
 | Protocols | hdcvi |
