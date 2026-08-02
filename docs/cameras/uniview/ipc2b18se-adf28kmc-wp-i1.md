@@ -9,6 +9,7 @@
 | Resolution | 4K UHD (8MP, 3840×2160) |
 | Sensor | 1/1.8" CMOS |
 | Lens | 1× 2.8mm F1.0 |
+| Field of view | 108.1 horizontal, 59.5 vertical, 130.2 diagonal° |
 | Night vision | hybrid (40m), 0.0005 lux color |
 | Power | PoE (IEEE 802.3af) / DC 12V |
 | Storage | microSD ≤ 512GB, NVR |

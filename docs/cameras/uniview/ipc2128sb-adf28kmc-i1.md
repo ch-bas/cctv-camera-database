@@ -9,6 +9,7 @@
 | Resolution | 8MP (8MP, 3840×2160) |
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 2.8mm F1.4 |
+| Field of view | 98.7 horizontal, 53.6 vertical, 113.4 diagonal° |
 | Night vision | hybrid (40m), 0.002 lux color |
 | Power | PoE (IEEE 802.3af) / DC 12V |
 | Storage | microSD ≤ 512GB, NVR |

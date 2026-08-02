@@ -9,6 +9,7 @@
 | Resolution | 16MP (16MP, 4800×2688) |
 | Sensor | 1/1.8" CMOS |
 | Lens | 1× 2.8mm F1.6 |
+| Field of view | 180 horizontal, 90 vertical, 221.4 diagonal° |
 | Night vision | ir (50m), 0.001 lux color |
 | Power | PoE (IEEE 802.3at) / AC 24V / DC 24V |
 | Storage | microSD ≤ 512GB, NVR |

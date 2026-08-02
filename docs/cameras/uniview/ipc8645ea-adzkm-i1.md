@@ -9,6 +9,7 @@
 | Resolution | 4x5MP (20MP, 2880×1620) |
 | Sensor | 1/2.7" CMOS |
 | Lens | 4× 2.7-13.5mm F1.2 |
+| Field of view | 110.3 horizontal, 57.1 vertical, 143.4 diagonal° |
 | Night vision | hybrid (50m), 0.002 lux color |
 | Power | PoE (IEEE 802.3bt) / AC 24V / DC 24V |
 | Storage | microSD ≤ 512GB, NVR |

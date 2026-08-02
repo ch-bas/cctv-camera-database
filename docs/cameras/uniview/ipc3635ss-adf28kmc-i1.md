@@ -9,6 +9,7 @@
 | Resolution | 5MP (5MP, 2880×1620) |
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 2.8mm F1.0 |
+| Field of view | 112.8 horizontal, 59.4 vertical, 116.3 diagonal° |
 | Night vision | hybrid (30m), 0.001 lux color |
 | Power | PoE (IEEE 802.3af) / DC 12V |
 | Storage | microSD ≤ 512GB, NVR |

@@ -9,6 +9,7 @@
 | Resolution | 6MP (6MP, 2560×2560) |
 | Sensor | 1/2.5" CMOS |
 | Lens | 1× 1.6mm F2.0 |
+| Field of view | 180 horizontal, 180 vertical, 180 diagonal° |
 | Night vision | ir (15m), 0.005 lux color |
 | Power | PoE (IEEE 802.3af) / DC 12V |
 | Storage | microSD ≤ 512GB, NVR |

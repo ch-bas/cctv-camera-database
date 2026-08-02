@@ -9,6 +9,7 @@
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 2.8mm F1.0 |
+| Field of view | 108.5 horizontal, 59.2 vertical, 125.5 diagonal° |
 | Night vision | color (30m), 0.0003 lux color |
 | Power | PoE (IEEE 802.3af) / DC 12V |
 | Storage | microSD ≤ 512GB, NVR |

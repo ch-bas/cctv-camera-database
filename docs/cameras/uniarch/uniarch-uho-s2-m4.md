@@ -9,6 +9,7 @@
 | Resolution | 4MP (4MP, 2560×1440) |
 | Sensor | 1/3.0" CMOS |
 | Lens | 1× 4.0mm F2.0 |
+| Field of view | 79.0 horizontal, 42.3 vertical, 85.1 diagonal° |
 | Night vision | ir (10m), 0.01 lux color |
 | Power | DC 5V/1.5A via Micro USB |
 | Storage | microSD ≤ 512GB |

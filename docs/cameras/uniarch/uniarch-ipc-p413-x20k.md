@@ -9,6 +9,7 @@
 | Resolution | 3MP (3MP, 2304×1296) |
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 5-100mm F1.7-F2.8 |
+| Field of view | 51.70 horizontal, 30.49 vertical, 63.60 diagonal° |
 | Night vision | ir (100m), 0.003 lux color |
 | Power | PoE+ (IEEE 802.3at) or DC power adapter |
 | Storage | microSD ≤ 512GB, NVR |

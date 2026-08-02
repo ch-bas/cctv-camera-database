@@ -9,6 +9,7 @@
 | Resolution | 5MP (5MP, 2880×1620) |
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 4.0mm F1.6 |
+| Field of view | 93.6 horizontal, 48.9 vertical, 98.3 diagonal° |
 | Night vision | hybrid (30m), 0.005 lux color |
 | Power | DC 12V via coaxial power plug |
 | Storage | microSD ≤ 512GB |

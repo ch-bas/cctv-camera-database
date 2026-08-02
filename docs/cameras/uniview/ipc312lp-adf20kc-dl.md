@@ -9,6 +9,7 @@
 | Resolution | 2MP (2MP, 1920×1080) |
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 2.0mm F1.6 |
+| Field of view | 126 horizontal, 71.0 vertical, 144.6 diagonal° |
 | Night vision | hybrid (10m), 0.003 lux color |
 | Power | PoE (IEEE 802.3af) / DC 12V |
 | Storage | microSD ≤ 512GB, NVR |
