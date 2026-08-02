@@ -30,6 +30,8 @@
 
 ## Sources
 
+- https://cdn.shopify.com/s/files/1/0110/6385/3156/files/I91EV-I91ET.pdf
+- https://www.annkecctv.com/products/i91ev
 - https://ca-en.annke.com/products/fcd800?variant=51933939400979
 
 ---

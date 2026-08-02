@@ -30,6 +30,8 @@
 
 ## Sources
 
+- https://cdn.shopify.com/s/files/1/0566/7966/1762/files/I81EL.pdf
+- https://www.annkecctv.com/products/i81el
 - https://ca-en.annke.com/products/nct425
 
 ---

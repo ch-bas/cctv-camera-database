@@ -29,6 +29,8 @@
 
 ## Sources
 
+- https://cdn.shopify.com/s/files/1/0110/6385/3156/files/I91DU.pdf
+- https://www.annkecctv.com/products/i91du
 - https://ca-en.annke.com/products/ncbr800?variant=50144218579219
 
 ---
