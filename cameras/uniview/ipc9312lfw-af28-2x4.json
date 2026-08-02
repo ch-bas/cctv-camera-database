@@ -1,0 +1,119 @@
+{
+  "id": "uniview-ipc9312lfw-af28-2x4",
+  "brand": "Uniview",
+  "model": "IPC9312LFW-AF28-2X4",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 50,
+    "min_lux_color": 0.002
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at) / DC 12V",
+    "consumption_w": 16,
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "dual-lens (fixed panorama + PTZ detail)",
+    "4X optical zoom (PTZ channel)",
+    "PTZ auto-tracking linked to fixed-channel detection",
+    "LightHunter low-light technology",
+    "120 dB optical WDR",
+    "Smart Intrusion Prevention with false alarm filtering",
+    "dual-light (IR 50m + warm light)",
+    "256 presets, 16 patrols"
+  ],
+  "operating_temp_c": "-20 to 60",
+  "dimensions_mm": "192 x 134 x 302",
+  "weight_g": 1030,
+  "sources": [
+    "https://www.uniview.com/Products/PTZ_Cameras/Easy_Series/Easy_Series/IPC9312LFW-AF28-2X4/",
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/e3ace9ad-0836-4084-8b18-442a3bda1cde/f6ad5d5c-abd9-44ee-bd90-93ee1983baf3.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  },
+  "last_verified": "2026-08-02"
+}
