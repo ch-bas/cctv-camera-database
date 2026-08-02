@@ -1,0 +1,118 @@
+{
+  "id": "uniview-ipc3635ss-adf28kmc-i1",
+  "brand": "Uniview",
+  "model": "IPC3635SS-ADF28KMC-I1",
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2880,
+    "max_height": 1620,
+    "label": "5MP"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "112.8 horizontal, 59.4 vertical, 116.3 diagonal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.001
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2880x1620",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 10,
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "dual-light (IR + warm light, 30m) / ColorHunter",
+    "130 dB WDR",
+    "Smart Intrusion Prevention (human/vehicle/non-motor vehicle classification)",
+    "people flow counting",
+    "crowd density monitoring",
+    "Ultra 265 (U-code) smart encoding",
+    "Auto Scene Match (ASM)"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Ø129 x 118",
+  "weight_g": 690,
+  "sources": [
+    "https://www.uniview.com/Products/Network_Cameras/Prime_Series/PRIMEII_Series/IPC3635SS-ADF28KMC-I1/",
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/e287e4b2-c3ca-4e8f-9b83-3da449242214/34a0a193-24e9-401c-8f55-4caa92c5713c.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  },
+  "last_verified": "2026-08-02",
+  "environment": [
+    "outdoor"
+  ]
+}

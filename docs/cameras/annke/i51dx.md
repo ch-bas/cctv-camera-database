@@ -28,6 +28,7 @@
 
 ## Sources
 
+- https://cdn.shopify.com/s/files/1/0110/6385/3156/files/I51DW.pdf
 - https://www.annkecctv.com/products/i51dx
 
 ---

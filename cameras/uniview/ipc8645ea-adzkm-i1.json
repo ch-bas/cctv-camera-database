@@ -1,0 +1,121 @@
+{
+  "id": "uniview-ipc8645ea-adzkm-i1",
+  "brand": "Uniview",
+  "model": "IPC8645EA-ADZKM-I1",
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 20,
+    "max_width": 2880,
+    "max_height": 1620,
+    "label": "4x5MP"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 4,
+    "focal_length_mm": "2.7-13.5",
+    "aperture": "F1.2",
+    "varifocal": true
+  },
+  "field_of_view_deg": "110.3 horizontal, 57.1 vertical, 143.4 diagonal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 50,
+    "min_lux_color": 0.002
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2880x1620",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3bt) / AC 24V / DC 24V",
+    "consumption_w": 31,
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "4-directional multi-sensor (4x5MP, independently adjustable lenses)",
+    "5X optical zoom (2.7-13.5mm)",
+    "LightHunter low-light",
+    "IR (50m)",
+    "130 dB true WDR",
+    "Smart Intrusion Prevention",
+    "people counting",
+    "scene change detection",
+    "IK10 vandal-resistant"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Ø318 x 136.6",
+  "weight_g": 4770,
+  "sources": [
+    "https://www.uniview.com/Products/Network_Cameras/Pro_Series/ProBasic_Series/IPC8645EA-ADZKM-I1/"
+  ],
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  },
+  "last_verified": "2026-08-02",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ]
+}

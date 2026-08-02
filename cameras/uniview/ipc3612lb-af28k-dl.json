@@ -1,0 +1,113 @@
+{
+  "id": "uniview-ipc3612lb-af28k-dl",
+  "brand": "Uniview",
+  "model": "IPC3612LB-AF28K-DL",
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.9\" CMOS",
+  "field_of_view_deg": "101.1 horizontal, 55 vertical, 111 diagonal (2.8mm)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.005
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x360",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 4.5
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Smart dual-light (IR + warm light) / ColorHunter",
+    "Ultra 265 (U-code) smart encoding",
+    "human body detection",
+    "DWDR / HLC / BLC / digital defog"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "weight_g": 290,
+  "dimensions_mm": "Ø118 x 98",
+  "sources": [
+    "https://www.uniview.com/Products/Network_Cameras/Easy_Series/EasyBasic_Series/IPC3612LB-AF28K-DL/",
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/0e8a286f-8295-4fd4-8857-a37b90121d53/f7042688-2691-4464-8108-4c6f9b2f2b06.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  },
+  "last_verified": "2026-08-02",
+  "environment": [
+    "outdoor"
+  ]
+}

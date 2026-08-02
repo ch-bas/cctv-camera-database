@@ -29,6 +29,8 @@
 
 ## Sources
 
+- https://cdn.shopify.com/s/files/1/0528/9679/2748/files/fcd600.pdf
+- https://www.annkecctv.com/products/i51fs
 - https://ca-en.annke.com/products/fcd600
 
 ---

@@ -29,6 +29,7 @@
 
 ## Sources
 
+- https://cdn.shopify.com/s/files/1/0908/7343/0297/files/I91BH.pdf
 - https://www.annkecctv.com/products/i91bh
 
 ---

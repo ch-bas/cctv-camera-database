@@ -1,0 +1,117 @@
+{
+  "id": "uniview-ipc312lp-adf20kc-dl",
+  "brand": "Uniview",
+  "model": "IPC312LP-ADF20KC-DL",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.0",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "126 horizontal, 71.0 vertical, 144.6 diagonal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 10,
+    "min_lux_color": 0.003
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 5.5,
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "dual-light (IR 10m + white light) active deterrence",
+    "elevator entrance detection (electric moped / bicycle target classification)",
+    "elevator floor display on OSD",
+    "TOF tampering detection",
+    "temperature / humidity display",
+    "Ultra 265 (U-code) smart encoding"
+  ],
+  "operating_temp_c": "-10 to 40",
+  "dimensions_mm": "Ø100.0 x 68.7",
+  "weight_g": 250,
+  "sources": [
+    "https://www.uniview.com/Products/Network_Cameras/Easy_Series/EasyProject_Series/IPC312LP-ADF20KC-DL/",
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/7938aa93-6f4a-4a97-8bce-0626fbaa04b2/f701c4b2-bfa2-4596-b84a-dd08cf2ade78.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  },
+  "last_verified": "2026-08-02",
+  "environment": [
+    "outdoor"
+  ]
+}

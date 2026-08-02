@@ -30,6 +30,8 @@
 
 ## Sources
 
+- https://cdn.shopify.com/s/files/1/0110/6385/3156/files/I91BI.pdf
+- https://cdn.shopify.com/s/files/1/0110/6385/3156/files/ndk800-spe.pdf
 - https://www.annkecctv.com/products/i91bi
 
 ---

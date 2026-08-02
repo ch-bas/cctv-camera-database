@@ -1,0 +1,117 @@
+{
+  "id": "uniview-ipc8544ea-km-i1",
+  "brand": "Uniview",
+  "model": "IPC8544EA-KM-I1",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 16,
+    "max_width": 4800,
+    "max_height": 2688,
+    "label": "16MP"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 horizontal, 90 vertical, 221.4 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux_color": 0.001
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4800x2688",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3at) / AC 24V / DC 24V",
+    "consumption_w": 23,
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "180° OmniView panoramic",
+    "ColorHunter with Wise-ISP low-light",
+    "Smart IR (50m)",
+    "motion detection",
+    "tampering alarm",
+    "Ultra 265 (U-code) smart encoding"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "259 x 211 x 115",
+  "weight_g": 2271,
+  "sources": [
+    "https://www.uniview.com/Products/Network_Cameras/Pro_Series/ProBasic_Series/IPC8544EA-KM-I1/"
+  ],
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  },
+  "last_verified": "2026-08-02",
+  "environment": [
+    "outdoor"
+  ]
+}

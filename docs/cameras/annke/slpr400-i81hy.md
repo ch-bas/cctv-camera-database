@@ -32,6 +32,7 @@
 
 ## Sources
 
+- https://cdn.shopify.com/s/files/1/0110/6385/3156/files/I81HY.pdf
 - https://ca-en.annke.com/products/slpr400
 
 ---

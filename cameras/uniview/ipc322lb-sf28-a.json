@@ -1,0 +1,114 @@
+{
+  "id": "uniview-ipc322lb-sf28-a",
+  "brand": "Uniview",
+  "model": "IPC322LB-SF28-A",
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "field_of_view_deg": "101.1 horizontal, 56.5 vertical, 117 diagonal (2.8mm)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.01
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x360",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 5
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Smart IR (up to 30m)",
+    "Ultra 265 (U-code) smart encoding",
+    "human body detection",
+    "DWDR / HLC / BLC / digital defog",
+    "IK10 vandal-resistant"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "weight_g": 350,
+  "dimensions_mm": "Ø109 x 81",
+  "sources": [
+    "https://www.uniview.com/Products/Network_Cameras/Easy_Series/EasyBasic_Series/IPC322LB-SF28-A/",
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/bebc4815-90d0-4e8a-885e-5c57c686f815/2ffb89ae-3387-464d-a257-69f92738187e.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  },
+  "last_verified": "2026-08-02",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ]
+}

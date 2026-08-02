@@ -30,6 +30,7 @@
 
 ## Sources
 
+- https://cdn.shopify.com/s/files/1/0110/6385/3156/files/I51EX.pdf
 - https://www.annkecctv.com/products/i51ex
 
 ---

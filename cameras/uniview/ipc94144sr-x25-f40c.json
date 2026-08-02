@@ -1,0 +1,124 @@
+{
+  "id": "uniview-ipc94144sr-x25-f40c",
+  "brand": "Uniview",
+  "model": "IPC94144SR-X25-F40C",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.8-120",
+    "aperture": "F1.5",
+    "varifocal": true
+  },
+  "field_of_view_deg": "91.3 horizontal, 46.7 vertical, 112.3 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100,
+    "min_lux_color": 0.0005
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at) / DC 12V",
+    "consumption_w": 24,
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "dual-lens (4mm fixed panorama + 4.8-120mm PTZ detail)",
+    "25X optical zoom (detail channel)",
+    "PTZ auto-tracking linked to fixed-channel detection",
+    "IR range 100m",
+    "120 dB WDR",
+    "LightHunter low-light technology",
+    "Smart Intrusion Prevention with false alarm filtering",
+    "people counting and crowd density monitoring",
+    "1024 presets, 16 patrols"
+  ],
+  "operating_temp_c": "-40 to 65",
+  "dimensions_mm": "304 x 195 x 163",
+  "weight_g": 2270,
+  "sources": [
+    "https://www.uniview.com/Products/PTZ_Cameras/Prime_Series/Prime_Series/IPC94144SR-X25-F40C/",
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/b5ffbd34-7949-4af7-829c-4e7a40e511ea/c5ad56ac-f62d-4d9c-a1f1-cce1463feb51.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  },
+  "last_verified": "2026-08-02",
+  "environment": [
+    "outdoor"
+  ]
+}

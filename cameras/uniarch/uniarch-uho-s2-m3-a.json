@@ -1,0 +1,115 @@
+{
+  "id": "uniarch-uho-s2-m3-a",
+  "brand": "Uniarch",
+  "model": "Uho-S2-M3-A",
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "3MP (2304x1296)"
+  },
+  "sensor": "1/3.0\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.0",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "67.3 (H)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10,
+    "min_lux_color": 0.02
+  },
+  "ptz": {
+    "autotracking": false
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x360",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "DC 5V micro-USB power adapter",
+    "consumption_w": 7.5,
+    "voltage": "DC 5V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "indoor pan/tilt (pan 0-338 deg, tilt -5 to 55 deg)",
+    "Wi-Fi (2.4 GHz IEEE 802.11b/g/n, built-in antenna)",
+    "two-way audio",
+    "human body / vehicle detection",
+    "built-in mic and speaker",
+    "Uniarch mobile app"
+  ],
+  "operating_temp_c": "-10 to 50",
+  "dimensions_mm": "80 (dia) x 120",
+  "weight_g": 180,
+  "environment": [
+    "indoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.uniarch.cn/Products/Wireless_Series/Basic_Series/Basic_Series/Uho-S2-M3-A/",
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/a8f70c6f-0d84-4917-a773-1d367564b139/274835e5-329d-4a95-81a1-179ae47d3b96.pdf"
+  ],
+  "last_verified": "2026-08-02",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/",
+      "notes": "Indoor Wi-Fi PT cam. Datasheet confirms RTSP and ONVIF; exact RTSP stream path not published by Uniarch — root path is the common Uniview/Uniarch default. Verify against the unit.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Datasheet lists ONVIF (WSSE/Digest auth) and RTSP support.",
+      "connection_type": "local"
+    },
+    "blue_iris": {
+      "profile": "Generic ONVIF/RTSP",
+      "notes": "ONVIF/RTSP supported per datasheet; not independently confirmed against a physical unit."
+    }
+  }
+}
