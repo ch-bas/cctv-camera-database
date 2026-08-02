@@ -6,6 +6,22 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.56.0] — 2026-08-02
+
+**Camius + Uniview catalog expansion (+101 cameras).**
+
+### Added — Camius (+7)
+- **SCOUT4K4XPTZ** (4K PTZ, 4x zoom, auto-tracking), **SPOT828A-RB** (4K spotlight bullet), **IRIS8PRO** (4K dome, NDAA), **BOLTX536R** (5MP bullet), **WF4KC2** (4K battery/wireless, WF4KN-NVR-only), **FB4KPRO** + **FD4KATC2** (4K analog/HD-over-coax bullet & dome). Enriched the IRIS528R sourcing.
+
+### Added — Uniview (+94)
+- **EasyBasic (23):** LB-series bullets/turrets/domes (ECO, ColorHunter dual-light, 1080p–8MP), incl. one Wi-Fi model.
+- **Owlview / Owlview Plus / Owlview PTZ (32):** ColorHunter full-color and dual-light bullets/turrets/domes + 2 PTZ; SE (Owlview Plus) and LE (Owlview) lines.
+- **PRIMEI / PRIMEII / PRIMEIII (29):** SB/SS/SE ColorHunter & dual-light, incl. fisheye (IPC815SB/816SB) and dual-lens stitched panoramic (IPC2K-series).
+- **Pro / ProBasic / Alphaview (3):** fisheye (IPC86CEB), 180° OmniView (IPC8544EA), 4-directional multi-sensor (IPC8645EA).
+- **Pro / Prime PTZ (5):** 4x–42x zoom incl. laser illuminators; **EasyProject (8):** LightHunter/dual-light + 4G-cellular models.
+
+Specs sourced from official Uniview datasheets (ubox OSS PDFs). Camera count 2,617 → **2,718**. Two `RVS441-2D` **security-radar** units were excluded — not IP cameras.
+
 ## [1.54.3] — 2026-07-31
 
 **Night-vision lux backfill + CI checks + data-quality corrections.**
