@@ -1,0 +1,109 @@
+{
+  "id": "uniarch-ipc-p222-af40c",
+  "brand": "Uniarch",
+  "model": "IPC-P222-AF40C",
+  "type": "ptz",
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p/2MP"
+  },
+  "sensor": "1/3.0\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.0",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.003
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x360",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "DC 12V or PoE (IEEE 802.3af)",
+    "consumption_w": 7.3,
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "2D/3D DNR (digital noise reduction)",
+    "digital WDR",
+    "warm light supplemental illumination",
+    "auto tracking",
+    "20 preset positions",
+    "motion detection"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "110 x 141 x 151",
+  "weight_g": 380,
+  "sources": [
+    "https://www.uniarch.cn/Products/Network_Cameras/Entry_Series/Entry_Series/IPC-P222-AF40C/",
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/c7f16e0a-0383-4c17-8816-4146aa722983/40379839-eeaa-4b28-a642-280a7dc40419.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "last_verified": "2026-08-02",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/",
+      "notes": "Not directly listed on iSpyConnect's crowd-sourced table, but shares firmware family with the IPC-T122-APF28/IPC-B222 which report '/', '/cam1/mpeg4', '/videoMain', and '/media/video2' as working paths depending on firmware revision. Not independently verified against a physical unit.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF conformance confirmed for the closely related IPC-T122-APF28; reasonably likely here too given shared firmware family.",
+      "connection_type": "local"
+    },
+    "blue_iris": {
+      "profile": "Generic ONVIF/RTSP",
+      "notes": "Not independently confirmed for this specific model."
+    }
+  }
+}

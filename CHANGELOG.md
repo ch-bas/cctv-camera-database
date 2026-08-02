@@ -8,7 +8,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [1.55.0] — 2026-08-02
 
-**Annke + Camius + Uniview catalog expansion (+122 cameras).**
+**Annke + Camius + Uniview + Uniarch catalog expansion (+147 cameras).**
 
 ### Added — Annke (+21) — #217, @fvdpol
 - **+21 Annke analog/coax cameras** (HD-TVI/AHD/CVI — bullets, turrets, dome, PTZ): C51 (BY/BZ/EZ), CR1 (CJ/CV/CW/CX/CY/CZ/DD/DR/EQ/ES/FC), CT1 (DW/FC/GR/GS/GT/GU/GV). Each sourced to an official Annke datasheet PDF (Shopify CDN) where available.
@@ -20,11 +20,15 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 ### Added — Uniview (+94)
 - **EasyBasic (23)**, **Owlview / Owlview Plus / Owlview PTZ (32)**, **PRIMEI / II / III (29)** — incl. fisheye and dual-lens stitched panoramic, **Pro / ProBasic / Alphaview (3)** — fisheye, 180° OmniView, 4-directional multi-sensor, **Pro / Prime PTZ (5)** — 4x–42x zoom w/ laser illuminators, and **EasyProject (8)** — LightHunter/dual-light + 4G cellular. Specs from official Uniview datasheets. Two `RVS441-2D` **security-radar** units were excluded (not IP cameras).
 
+### Added — Uniarch (+25)
+- **Halo (4):** IPC-T242/B242/T244/B244-ADF28K-WP — ColorHunter full-color turrets/bullets (2/4MP).
+- **Entry (21):** ECO IR + dual-light bullets/turrets/domes (IPC-B/T/D 1/2-series, 2/4MP), the `APF28K`/`PF28K` hardware variants, and 2 pan-tilt models (IPC-P222/P224-AF40C). Specs from official uniarch.cn datasheets.
+
 ### Changed / Fixed — Annke maintainer review
 - **2 slug corrections** (301 redirects added on the web deploy): `annke-c800x` → `annke-c800x-i91by`, `annke-c800-i91db` → `annke-c800x-i91db`.
 - Datasheet-verified: `cr1dd` / `cr1dr` resolution `2328×1504` → **`3328×1504`** (transposed-digit typo); `cr1fc` → **`2592×1944`**; `cr1cj` warm-light range 20 → **30 m**; `ct1fc` — removed a mismatched datasheet source.
 
-Camera count 2,617 → **2,739**.
+Camera count 2,617 → **2,764**.
 
 ## [1.54.3] — 2026-07-31
 
