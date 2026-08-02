@@ -16,6 +16,7 @@
 | Power | DC 12V |
 | Storage | NVR |
 | IP rating | IP66 |
+| IK rating | IK10 |
 | Two-way audio | No |
 | Operating temp | -30 to 55°C |
 

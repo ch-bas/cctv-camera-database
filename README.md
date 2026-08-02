@@ -1,8 +1,8 @@
 # CCTV Camera Database
 
-An open, structured database of 2,764 CCTV / IP camera models and their technical specifications, covering 72 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
+An open, structured database of 2,776 CCTV / IP camera models and their technical specifications, covering 72 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
 
-[![cameras](https://img.shields.io/badge/cameras-2%2C764-blue)](data/cameras.json)
+[![cameras](https://img.shields.io/badge/cameras-2%2C776-blue)](data/cameras.json)
 [![brands](https://img.shields.io/badge/brands-72-green)](cameras/)
 [![license](https://img.shields.io/badge/license-CC0-lightgrey)](LICENSE)
 
@@ -23,7 +23,7 @@ Camera spec sheets are scattered across vendor PDFs, retailer pages, and paywall
 Prefer to self-host or browse offline? A [standalone demo](docs/demo.html) (just `demo.html` + `cameras.json`, no build step) is included — serve the `docs/` folder locally with any static server, e.g. `python3 -m http.server` inside `docs/`, then open it.  
 
 <p align="center">
-  <img src="docs/demo.gif" alt="CCTV Camera Database — browse, search, filter, and inspect 2,764 cameras across 72 brands" width="800" />
+  <img src="docs/demo.gif" alt="CCTV Camera Database — browse, search, filter, and inspect 2,776 cameras across 72 brands" width="800" />
 </p>
 
 **What you see above:**
@@ -31,7 +31,7 @@ Prefer to self-host or browse offline? A [standalone demo](docs/demo.html) (just
 - **Filter** — narrow by brand, camera type, night vision, resolution, or market
 - **Sort** — click any column header to sort ascending/descending
 - **Detail drawer** — click a row to slide open the full spec sheet (resolution, connectivity, protocols, storage, audio, pricing, source links)
-- **Pagination** — page through all 2,764 cameras, 25 per page
+- **Pagination** — page through all 2,776 cameras, 25 per page
 - **Stats bar** — live counts for total cameras, brands, 4K+, WiFi, and no-subscription models
 
 ---
@@ -64,7 +64,7 @@ cctv-camera-database/
 │   ├── reolink/          # 127 cameras
 │   └── …66 more brands
 ├── data/                 # GENERATED — do not edit by hand
-│   ├── cameras.json      # all 2,764 cameras as one array
+│   ├── cameras.json      # all 2,776 cameras as one array
 │   └── cameras.csv       # flattened, spreadsheet-friendly
 ├── schema/
 │   └── camera.schema.json
@@ -127,7 +127,7 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 
 | Metric | Count |
 |--------|-------|
-| Total cameras | **2,764** |
+| Total cameras | **2,776** |
 | Brands | **72** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
 | PoE wired | 1,669 |
@@ -161,8 +161,8 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | Tapo (TP-Link) | 54 | Consumer budget, global |
 | Eufy (Anker) | 46 | Consumer no-subscription, global |
 | Hanwha | 45 | Enterprise AI, Korea/global |
+| Uniarch (Uniview) | 43 | Budget NDAA sub-brand, global |
 | Lorex | 40 | Consumer NVR systems, CA/US |
-| Uniarch (Uniview) | 31 | Budget NDAA sub-brand, global |
 | CP Plus | 26 | India #2 brand, IN |
 | Xiaomi | 26 | Consumer smart home, CN/global |
 | Arlo | 25 | Consumer premium wire-free, global |
