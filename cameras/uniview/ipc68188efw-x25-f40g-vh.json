@@ -1,0 +1,120 @@
+{
+  "id": "uniview-ipc68188efw-x25-f40g-vh",
+  "brand": "Uniview",
+  "model": "IPC68188EFW-X25-F40G-VH",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP"
+  },
+  "sensor": "1/1.2\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "10-250",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 250,
+    "min_lux_color": 0.0005
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "DC 24V / AC 24V",
+    "consumption_w": 63
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "dual-lens MultiView (4mm fixed panorama + 10-250mm detail)",
+    "25X optical zoom (detail channel)",
+    "auto-tracking",
+    "IR range 250m + warm light 30m",
+    "gyroscope stabilization",
+    "120 dB WDR",
+    "LightHunter low-light technology",
+    "Smart Intrusion Prevention (cross-line, intrusion)",
+    "people counting and flow detection",
+    "IK10 vandal-resistant"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "Ø270 x 497",
+  "weight_g": 10080,
+  "sources": [
+    "https://www.uniview.com/Products/PTZ_Cameras/Pro_Series/Pro_Series/IPC68188EFW-X25-F40G-VH/",
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/6d2c9f30-eb0c-4f85-ba8a-773795afa390/23f3d3cb-7085-4cc3-922e-d0946fa40891.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "dc",
+    "ac-mains"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  },
+  "last_verified": "2026-08-02"
+}

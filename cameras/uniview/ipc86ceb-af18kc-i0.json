@@ -1,0 +1,113 @@
+{
+  "id": "uniview-ipc86ceb-af18kc-i0",
+  "brand": "Uniview",
+  "model": "IPC86CEB-AF18KC-I0",
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 12,
+    "max_width": 4000,
+    "max_height": 3000,
+    "label": "12MP"
+  },
+  "sensor": "1/1.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.8",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 15,
+    "min_lux_color": 0.03
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4000x3000",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "2000x1500",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 12,
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "180° fisheye panoramic (fisheye/panorama/PTZ dewarp modes)",
+    "360° IR fill-in light (15m)",
+    "heat map",
+    "cross line detection",
+    "intrusion detection",
+    "Ultra 265 (U-code) smart encoding",
+    "IK10 vandal-resistant"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Ø149 x 55",
+  "weight_g": 524,
+  "sources": [
+    "https://www.uniview.com/Products/Network_Cameras/Pro_Series/ProBasic_Series/IPC86CEB-AF18KC-I0/"
+  ],
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  },
+  "last_verified": "2026-08-02"
+}

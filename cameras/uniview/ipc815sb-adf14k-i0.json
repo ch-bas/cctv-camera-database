@@ -1,0 +1,115 @@
+{
+  "id": "uniview-ipc815sb-adf14k-i0",
+  "brand": "Uniview",
+  "model": "IPC815SB-ADF14K-I0",
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.4",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10,
+    "min_lux_color": 0.01
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 8.5,
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "360° panoramic fisheye view",
+    "120 dB true WDR",
+    "built-in dual-mic",
+    "multiple dewarping / decoding view modes",
+    "heat map analysis",
+    "Ultra 265 (U-code) smart encoding",
+    "Smart IR",
+    "IK10 vandal-resistant"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Ø125 x 43.7",
+  "weight_g": 360,
+  "sources": [
+    "https://www.uniview.com/Products/Network_Cameras/Prime_Series/PRIMEI_Series/IPC815SB-ADF14K-I0/",
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/64735db1-4f79-43bb-93a5-299e288ee90f/1b90106b-806c-4b2e-a376-1ba81ac781a5.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  },
+  "last_verified": "2026-08-02"
+}

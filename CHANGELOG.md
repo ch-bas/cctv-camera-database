@@ -8,22 +8,23 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [1.55.0] — 2026-08-02
 
-**Annke catalog expansion (#217, @fvdpol).**
+**Annke + Camius + Uniview catalog expansion (+122 cameras).**
 
-### Added
-- **+21 Annke analog/coax cameras** (HD-TVI/AHD/CVI — bullets, turrets, dome, PTZ): C51 (BY/BZ/EZ), CR1 (CJ/CV/CW/CX/CY/CZ/DD/DR/EQ/ES/FC), CT1 (DW/FC/GR/GS/GT/GU/GV). Each sourced to an official Annke datasheet PDF (Shopify CDN) where available, so the source doubles as an artifact for future automated validation.
-- **Source enrichment** on 36 existing Annke records — added official datasheet PDFs and camera-specific product pages.
+### Added — Annke (+21) — #217, @fvdpol
+- **+21 Annke analog/coax cameras** (HD-TVI/AHD/CVI — bullets, turrets, dome, PTZ): C51 (BY/BZ/EZ), CR1 (CJ/CV/CW/CX/CY/CZ/DD/DR/EQ/ES/FC), CT1 (DW/FC/GR/GS/GT/GU/GV). Each sourced to an official Annke datasheet PDF (Shopify CDN) where available.
+- **Source enrichment** on 36 existing Annke records — official datasheet PDFs + camera-specific product pages.
 
-### Changed
+### Added — Camius (+7)
+- **SCOUT4K4XPTZ** (4K PTZ), **SPOT828A-RB** (4K spotlight bullet), **IRIS8PRO** (4K dome, NDAA), **BOLTX536R** (5MP bullet), **WF4KC2** (4K battery/wireless), **FB4KPRO** + **FD4KATC2** (4K analog/HD-over-coax). Enriched IRIS528R sourcing.
+
+### Added — Uniview (+94)
+- **EasyBasic (23)**, **Owlview / Owlview Plus / Owlview PTZ (32)**, **PRIMEI / II / III (29)** — incl. fisheye and dual-lens stitched panoramic, **Pro / ProBasic / Alphaview (3)** — fisheye, 180° OmniView, 4-directional multi-sensor, **Pro / Prime PTZ (5)** — 4x–42x zoom w/ laser illuminators, and **EasyProject (8)** — LightHunter/dual-light + 4G cellular. Specs from official Uniview datasheets. Two `RVS441-2D` **security-radar** units were excluded (not IP cameras).
+
+### Changed / Fixed — Annke maintainer review
 - **2 slug corrections** (301 redirects added on the web deploy): `annke-c800x` → `annke-c800x-i91by`, `annke-c800-i91db` → `annke-c800x-i91db`.
+- Datasheet-verified: `cr1dd` / `cr1dr` resolution `2328×1504` → **`3328×1504`** (transposed-digit typo); `cr1fc` → **`2592×1944`**; `cr1cj` warm-light range 20 → **30 m**; `ct1fc` — removed a mismatched datasheet source.
 
-### Fixed (maintainer review, datasheet-verified)
-- **`cr1dd` / `cr1dr`** resolution `2328×1504` → **`3328×1504`** (a transposed-digit typo; the datasheet lists "3K, 3328×1504" = 5.01 MP, consistent with the stated 5 MP).
-- **`cr1fc`** resolution `2328×1504` → **`2592×1944`** (datasheet: "HD TVI 5 MP").
-- **`cr1cj`** warm-light range `20 m` → **`30 m`** (datasheet spec table).
-- **`ct1fc`** — removed a mismatched datasheet source (`C51BY.pdf` does not cover CT1FC; kept its AL200 product page).
-
-Camera count 2,617 → **2,638**.
+Camera count 2,617 → **2,739**.
 
 ## [1.54.3] — 2026-07-31
 

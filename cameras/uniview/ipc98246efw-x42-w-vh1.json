@@ -1,0 +1,121 @@
+{
+  "id": "uniview-ipc98246efw-x42-w-vh1",
+  "brand": "Uniview",
+  "model": "IPC98246EFW-X42-W-VH1",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3680,
+    "max_height": 1656,
+    "label": "6MP"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6-252",
+    "aperture": "F1.2",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 350,
+    "min_lux_color": 0.0005
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3680x1656",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1200x536",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "Hi-PoE (IEEE 802.3bt) / DC 24V / AC 24V",
+    "consumption_w": 74,
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "panoramic dual-lens splicing, three-lens design",
+    "42X optical zoom (detail channel)",
+    "auto-tracking (pedestrians, vehicles, non-motor vehicles)",
+    "VF laser illumination 350m + warm light 30m",
+    "optical defog",
+    "120 dB WDR",
+    "Smart Intrusion Prevention, multi-target detection",
+    "people counting",
+    "1024 presets, 16 patrols"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "456 x 223 x 266",
+  "weight_g": 8400,
+  "sources": [
+    "https://www.uniview.com/Products/PTZ_Cameras/Pro_Series/Pro_Series/IPC98246EFW-X42-W-VH1/",
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/d6bada2f-9e4b-416f-a53f-1158121a50ed/be25768a-3dbf-4d46-8f35-4ea8d3126b41.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  },
+  "last_verified": "2026-08-02"
+}
