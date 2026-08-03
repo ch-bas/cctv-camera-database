@@ -1,0 +1,85 @@
+{
+  "id": "ubiquiti-ai-lpr",
+  "brand": "Ubiquiti",
+  "model": "UniFi Protect AI LPR",
+  "aliases": [
+    "UVC-AI-LPR"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "sensor": "1/1.8\" 8MP",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.1-12.3",
+    "aperture": "F1.53-F3.3",
+    "varifocal": true
+  },
+  "field_of_view_deg": "109.9 horizontal / 60 vertical / 127.7 diagonal (wide); 35 horizontal / 19.8 vertical / 40 diagonal (tele)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 15
+  },
+  "power": {
+    "method": "PoE+; 25.5W max, 42.5-57V DC"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK04",
+  "dimensions_mm": "130 x 151.4 x 302.9",
+  "weight_g": 3300,
+  "operating_temp_c": "-20 to 50",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "License Plate Recognition",
+    "Smart Detections (people/vehicles/animals)",
+    "3x optical zoom",
+    "IR optimized with LPR filter",
+    "MicroSD card slot",
+    "IK04 tamper resistance",
+    "NDAA compliant"
+  ],
+  "sources": [
+    "https://techspecs.ui.com/unifi/physical-security/uvc-ai-lpr"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsps://{ip}:7441/{camera_id}?enableSrtp"
+    },
+    "home_assistant": {
+      "integration": "unifiprotect",
+      "notes": "Native UniFi Protect integration. Requires UniFi Protect console."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use Generic/RTSP profile with RTSPS URL from UniFi Protect. Requires Protect RTSP stream enabled per camera."
+    }
+  },
+  "last_verified": "2026-08-03"
+}

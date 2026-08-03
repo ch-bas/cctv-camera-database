@@ -1,0 +1,80 @@
+{
+  "id": "ubiquiti-g5-ptz",
+  "brand": "Ubiquiti",
+  "model": "UniFi Protect G5 PTZ",
+  "aliases": [
+    "UVC-G5-PTZ"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1512,
+    "label": "4MP"
+  },
+  "sensor": "1/2.7\" 5MP CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.42-6.85",
+    "aperture": "F1.85-F2.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "99.7 horizontal / 51.9 vertical / 121 diagonal (wide); 45.5 horizontal / 25.4 vertical / 52.4 diagonal (zoom)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20
+  },
+  "power": {
+    "method": "PoE+; 14W max"
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK04",
+  "dimensions_mm": "90 (diameter) x 152.5",
+  "weight_g": 580,
+  "operating_temp_c": "-30 to 45",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "2x optical zoom",
+    "pan-tilt-zoom",
+    "30 FPS max",
+    "built-in IR & white LED illumination",
+    "Smart Detections (person/vehicle/animal)",
+    "IK04 tamper resistance",
+    "UniFi Protect ecosystem"
+  ],
+  "sources": [
+    "https://techspecs.ui.com/unifi/physical-security/uvc-g5-ptz"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsps://{ip}:7441/{camera_id}?enableSrtp"
+    },
+    "home_assistant": {
+      "integration": "unifiprotect",
+      "notes": "Native UniFi Protect integration. Requires UniFi Protect console."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use Generic/RTSP profile with RTSPS URL from UniFi Protect. Requires Protect RTSP stream enabled per camera."
+    }
+  },
+  "last_verified": "2026-08-03"
+}

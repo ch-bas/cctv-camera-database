@@ -1,0 +1,80 @@
+{
+  "id": "ubiquiti-ai-ptz",
+  "brand": "Ubiquiti",
+  "model": "UniFi Protect AI PTZ",
+  "aliases": [
+    "UVC-AI-PTZ"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/1.8\" 8MP",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6.36-138.5",
+    "aperture": "F1.5-F3.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "59.8 horizontal / 44.4 vertical / 70 diagonal (wide); 3 horizontal / 2.24 vertical / 3.76 diagonal (zoom)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100
+  },
+  "power": {
+    "method": "PoE++; 51W max"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "dimensions_mm": "207 x 223.7 x 341.3",
+  "weight_g": 3800,
+  "operating_temp_c": "-40 to 50",
+  "features": [
+    "22x optical zoom",
+    "pan-tilt-zoom (360 endless pan / 120 tilt)",
+    "Face Recognition",
+    "License Plate Recognition",
+    "Smart Detections (person/vehicle/animal)",
+    "microSD storage",
+    "NDAA compliant",
+    "UniFi Protect ecosystem"
+  ],
+  "sources": [
+    "https://techspecs.ui.com/unifi/physical-security/uvc-ai-ptz"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsps://{ip}:7441/{camera_id}?enableSrtp"
+    },
+    "home_assistant": {
+      "integration": "unifiprotect",
+      "notes": "Native UniFi Protect integration. Requires UniFi Protect console."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use Generic/RTSP profile with RTSPS URL from UniFi Protect. Requires Protect RTSP stream enabled per camera."
+    }
+  },
+  "last_verified": "2026-08-03"
+}

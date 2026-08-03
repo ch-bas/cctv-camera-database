@@ -1,0 +1,81 @@
+{
+  "id": "ubiquiti-g6-bullet",
+  "brand": "Ubiquiti",
+  "model": "UniFi Protect G6 Bullet",
+  "aliases": [
+    "UVC-G6-Bullet"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "sensor": "1/1.8\" 8MP",
+  "lens": {
+    "count": 1
+  },
+  "field_of_view_deg": "109.9 horizontal / 56.7 vertical / 134.1 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE; 9.9W max, 37-57V DC"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK04",
+  "dimensions_mm": "82 (diameter) x 88.8 (without mount); 82 (diameter) x 153 (with mount)",
+  "weight_g": 587,
+  "operating_temp_c": "-20 to 50",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Face Recognition",
+    "License Plate Recognition",
+    "Smart Detections (people/vehicles/animals)",
+    "HDR",
+    "built-in mic",
+    "NDAA compliant"
+  ],
+  "sources": [
+    "https://techspecs.ui.com/unifi/physical-security/uvc-g6-bullet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsps://{ip}:7441/{camera_id}?enableSrtp"
+    },
+    "home_assistant": {
+      "integration": "unifiprotect",
+      "notes": "Native UniFi Protect integration. Requires UniFi Protect console."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use Generic/RTSP profile with RTSPS URL from UniFi Protect. Requires Protect RTSP stream enabled per camera."
+    }
+  },
+  "last_verified": "2026-08-03"
+}

@@ -1,0 +1,76 @@
+{
+  "id": "ubiquiti-doorbell-lite",
+  "brand": "Ubiquiti",
+  "model": "UniFi Protect Doorbell Lite",
+  "aliases": [
+    "UVC-Doorbell-Lite"
+  ],
+  "type": "doorbell",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 1920,
+    "max_height": 2560,
+    "label": "5MP"
+  },
+  "sensor": "1/2.7\" 5MP",
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "field_of_view_deg": "95.8 horizontal / 131.2 vertical / 175.9 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 5
+  },
+  "power": {
+    "method": "PoE; 8W max"
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IPX5",
+  "dimensions_mm": "137 x 40 x 26.4",
+  "weight_g": 142,
+  "operating_temp_c": "-30 to 50",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "3:4 vertical aspect ratio for head-to-toe view",
+    "24 FPS max",
+    "Smart Detections (person/vehicle/animal)",
+    "two-way audio",
+    "NDAA compliant",
+    "UniFi Protect ecosystem"
+  ],
+  "sources": [
+    "https://techspecs.ui.com/unifi/physical-security/uvc-doorbell-lite"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsps://{ip}:7441/{camera_id}?enableSrtp"
+    },
+    "home_assistant": {
+      "integration": "unifiprotect",
+      "notes": "Native UniFi Protect integration. Requires UniFi Protect console."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use Generic/RTSP profile with RTSPS URL from UniFi Protect. Requires Protect RTSP stream enabled per camera."
+    }
+  },
+  "last_verified": "2026-08-03"
+}
