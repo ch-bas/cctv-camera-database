@@ -10,7 +10,7 @@
 | Sensor | 1/2.7" CMOS (visible) |
 | Lens | 2× 4.0 (fixed, visible); 3.1 (fixed, thermal)mm |
 | Field of view | 84 horizontal / 44.8 vertical (visible)° |
-| Night vision | ir (40m) |
+| Night vision | ir (40m), 0.0089 lux color |
 | Power | DC 12V / PoE Class 3 (IEEE 802.3af); 6 W (DC), 6.5 W (PoE) |
 | Protocols | rtsp, onvif |
 | IP rating | IP66 |
