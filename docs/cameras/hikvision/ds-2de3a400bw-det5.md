@@ -9,6 +9,7 @@
 | Resolution | 4MP (2560x1440) (4MP, 2560×1440) |
 | Sensor | 1/1.8" Progressive Scan CMOS |
 | Lens | 1× 4mm |
+| Field of view | 88.7 horizontal° |
 | Night vision | color (30m), 0.0005 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 512GB, NVR |

@@ -10,7 +10,7 @@
 | Sensor | 5MP CMOS |
 | Lens | 1× 2.7-13.5 (motorized)mm |
 | Field of view | 95-26° |
-| Night vision | ir (40m) |
+| Night vision | ir (40m), 0.01 lux color |
 | Power | 12 VDC / PoC.at |
 | Storage | NVR |
 | IP rating | IP67 |

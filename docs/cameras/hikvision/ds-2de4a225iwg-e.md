@@ -9,7 +9,8 @@
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× |
-| Night vision | ir (50m) |
+| Field of view | 54.9 H / 31.5 V / 62.3 D° |
+| Night vision | ir (50m), 0.005 lux color |
 | Power | PoE+ / 12 VDC |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
