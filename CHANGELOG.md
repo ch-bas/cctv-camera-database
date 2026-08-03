@@ -6,6 +6,23 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.56.0] — 2026-08-03
+
+**Datasheet backfill sweep (ACTi + Hikvision + Dahua) + UniFi Protect catalog expansion.**
+
+### Added
+- **+21 UniFi Protect cameras (#181)** — Ubiquiti 25 → 46: the current G6 lineup (Bullet/Pro/Edge, Turret/Pro/Edge, Dome/Pro/Mini/Edge, 180 panoramic, Pro 360 fisheye, Instant), new AI models (AI PTZ, PTZ Precision, LPR, Turret, MS-2 & MS-4 multi-sensor), G5/G6 PTZ, and Doorbell Lite. Specs from techspecs.ui.com. (Chime accessories excluded — not cameras.)
+
+### Backfilled — from official datasheets, never guessed
+- **ACTi (#178/#162/#179/#177/#161)** — full 5-lane pass via the `.ashx` spec API (all 248 cameras): `ik_rating` ~105→200, `dimensions_mm`→224, `field_of_view_deg`→246, `video.streams[]`→247, `min_lux_color`→201.
+- **Hikvision (#178/#162/#179/#161/#177)** — all 292 pdf-sourced cameras: `dimensions_mm`/`weight_g` **22 → 298 (70%)**, `field_of_view_deg`→**100%**, `min_lux_color`→287, streams→287. Data-quality mismatches surfaced on #186.
+- **Dahua `ik_rating` (#162)** — 112 → **129**; the 17 vandal-rated models (WizMind bullets/eyeballs, WizSense `-AS/-ZAS/-ZS` varifocal bullets, ITC traffic cam). Lane now saturated — the rest of Dahua's range is genuinely IP-only.
+
+### Coverage (dataset-wide, 2,797 cameras)
+`dimensions_mm` 53% · `weight_g` 47% · `field_of_view_deg` 89% · `ik_rating` 36% · `video.streams[]` 60%.
+
+Camera count 2,776 → **2,797**.
+
 ## [1.55.0] — 2026-08-02
 
 **Annke + Camius + Uniview + Uniarch catalog expansion (+147 cameras).**
