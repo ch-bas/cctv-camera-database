@@ -9,6 +9,7 @@
 | Resolution | 6MP (3200x1800) (6MP, 3200×1800) |
 | Sensor | 1/1.8" Progressive Scan CMOS |
 | Lens | 1× 2.8-12mm |
+| Field of view | 112.3-41.2° |
 | Night vision | hybrid (40m), 0.0028 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 512GB, NVR |

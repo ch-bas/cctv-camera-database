@@ -9,7 +9,8 @@
 | Resolution | 4MP (2688x1520) (4MP, 2688×1520) |
 | Sensor | 1/3" Progressive Scan CMOS |
 | Lens | 1× 2.8/4mm |
-| Night vision | ir (80m) |
+| Field of view | 100.2 horizontal (2.8mm), 81.1 horizontal (4mm)° |
+| Night vision | ir (80m), 0.001 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
