@@ -14,6 +14,7 @@
 | Power | DC 12V / PoE Class 3 (IEEE 802.3af); 6 W (DC), 6.5 W (PoE) |
 | Protocols | rtsp, onvif |
 | IP rating | IP66 |
+| IK rating | IK10 |
 | Two-way audio | Yes |
 | Operating temp | 10 to 35°C |
 
