@@ -9,6 +9,7 @@
 | Resolution | 12MP fisheye (12MP, 3504×3504) |
 | Sensor | 1/1.8" Progressive Scan CMOS |
 | Lens | 1× 1.29mm |
+| Field of view | 180 horizontal / 180 vertical° |
 | Night vision | none |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |

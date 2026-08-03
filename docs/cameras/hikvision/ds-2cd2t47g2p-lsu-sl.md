@@ -9,6 +9,7 @@
 | Resolution | 4MP panoramic (3040x1368) (4MP, 3040×1368) |
 | Sensor | 2 x 1/2.5" Progressive Scan CMOS (dual sensor) |
 | Lens | 1× 2.8 (dual lens)mm |
+| Field of view | 180 horizontal, 81 vertical (2.8mm)° |
 | Night vision | color (40m), 0.0005 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 512GB, NVR |
