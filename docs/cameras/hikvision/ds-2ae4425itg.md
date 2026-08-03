@@ -9,7 +9,8 @@
 | Resolution | 4MP (4MP, 2560×1440) |
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 4.8-120mm |
-| Night vision | ir (100m) |
+| Field of view | 55h° |
+| Night vision | ir (100m), 0.005 lux color |
 | Power | 12 VDC (IR 7W) |
 | Storage | NVR |
 | IP rating | IP66 |
