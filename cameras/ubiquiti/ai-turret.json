@@ -1,0 +1,86 @@
+{
+  "id": "ubiquiti-ai-turret",
+  "brand": "Ubiquiti",
+  "model": "UniFi Protect AI Turret",
+  "aliases": [
+    "UVC-AI-Turret"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/1.8\" 8MP",
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "field_of_view_deg": "109.9 horizontal / 56.7 vertical / 134.1 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40
+  },
+  "power": {
+    "method": "PoE+; 20W max"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK08",
+  "dimensions_mm": "118 (diameter) x 111",
+  "weight_g": 990,
+  "operating_temp_c": "-30 to 50",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "4K UHD, 30 FPS max",
+    "adaptive IR up to 40m",
+    "Face Recognition",
+    "License Plate Recognition",
+    "AI event detection person/vehicle/animal",
+    "MicroSD card slot",
+    "IK08 tamper resistance",
+    "NDAA compliant",
+    "UniFi Protect ecosystem",
+    "two-way audio"
+  ],
+  "sources": [
+    "https://techspecs.ui.com/unifi/physical-security/uvc-ai-turret"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsps://{ip}:7441/{camera_id}?enableSrtp"
+    },
+    "home_assistant": {
+      "integration": "unifiprotect",
+      "notes": "Native UniFi Protect integration. Requires UniFi Protect console."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use Generic/RTSP profile with RTSPS URL from UniFi Protect. Requires Protect RTSP stream enabled per camera."
+    }
+  },
+  "last_verified": "2026-08-03"
+}

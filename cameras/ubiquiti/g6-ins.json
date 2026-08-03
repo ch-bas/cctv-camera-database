@@ -1,0 +1,85 @@
+{
+  "id": "ubiquiti-g6-ins",
+  "brand": "Ubiquiti",
+  "model": "UniFi Protect G6 Instant",
+  "aliases": [
+    "UVC-G6-Ins"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet",
+    "wifi"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/1.8\" 8MP",
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "field_of_view_deg": "109.9 horizontal / 56.7 vertical / 134.1 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 6
+  },
+  "power": {
+    "method": "5V/2A USB power adapter (included) or PoE-to-USB-C adapter (not included); 7W max"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IPX5",
+  "ik_rating": "IK04",
+  "dimensions_mm": "81.7 x 50.1 x 57.2",
+  "weight_g": 180,
+  "operating_temp_c": "-20 to 40",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "compact indoor camera with WiFi and Bluetooth",
+    "Face Recognition",
+    "License Plate Recognition",
+    "Smart Detections (person/vehicle/animal)",
+    "HDR",
+    "two-way audio",
+    "microSD storage",
+    "UniFi Protect ecosystem"
+  ],
+  "sources": [
+    "https://techspecs.ui.com/unifi/physical-security/uvc-g6-ins"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsps://{ip}:7441/{camera_id}?enableSrtp"
+    },
+    "home_assistant": {
+      "integration": "unifiprotect",
+      "notes": "Native UniFi Protect integration. Requires UniFi Protect console."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use Generic/RTSP profile with RTSPS URL from UniFi Protect. Requires Protect RTSP stream enabled per camera."
+    }
+  },
+  "last_verified": "2026-08-03"
+}
