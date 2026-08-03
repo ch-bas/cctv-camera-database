@@ -9,6 +9,7 @@
 | Resolution | 1080p (2MP PTZ) + 6MP ColorVu bullet (2MP, 1920×1080) |
 | Sensor | 1/2.8" + 1/2.5" CMOS (dual-channel) |
 | Lens | 1× |
+| Field of view | 54.8 horizontal/31.4 vertical/62.2 diagonal (PTZ channel wide end)° |
 | Night vision | hybrid (100m), 0.005 lux color |
 | Power | PoE+ / 12 VDC |
 | Storage | microSD ≤ 256GB, NVR |

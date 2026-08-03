@@ -10,7 +10,7 @@
 | Sensor | 8.29MP CMOS |
 | Lens | 1× 2.8 / 3.6 / 6 (fixed)mm |
 | Field of view | 102.9 / 79 / 44.7° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.01 lux color |
 | Power | 12 VDC |
 | Storage | NVR |
 | Two-way audio | No |

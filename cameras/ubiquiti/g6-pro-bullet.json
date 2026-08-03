@@ -1,0 +1,86 @@
+{
+  "id": "ubiquiti-g6-pro-bullet",
+  "brand": "Ubiquiti",
+  "model": "UniFi Protect G6 Pro Bullet",
+  "aliases": [
+    "UVC-G6-Pro-Bullet"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "sensor": "1/1.2\" 8MP",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.9-13.8",
+    "aperture": "F1.5-F2.9",
+    "varifocal": true
+  },
+  "field_of_view_deg": "113.8 horizontal / 61.9 vertical / 134 diagonal (wide); 45.5 horizontal / 25.8 vertical / 52 diagonal (tele)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40
+  },
+  "power": {
+    "method": "PoE+; 15W max"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK04",
+  "dimensions_mm": "85.8 (diameter) x 106.2 (without mount); 85.8 (diameter) x 210 (with wall mount)",
+  "weight_g": 755,
+  "operating_temp_c": "-20 to 50",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "Face Recognition",
+    "License Plate Recognition",
+    "Smart Detections (people/vehicles/animals)",
+    "2.36x optical zoom",
+    "optional Vision Enhancer extends IR range from 40m up to 60m",
+    "two-way audio",
+    "MicroSD card slot",
+    "NDAA compliant"
+  ],
+  "sources": [
+    "https://techspecs.ui.com/unifi/physical-security/uvc-g6-pro-bullet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsps://{ip}:7441/{camera_id}?enableSrtp"
+    },
+    "home_assistant": {
+      "integration": "unifiprotect",
+      "notes": "Native UniFi Protect integration. Requires UniFi Protect console."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use Generic/RTSP profile with RTSPS URL from UniFi Protect. Requires Protect RTSP stream enabled per camera."
+    }
+  },
+  "last_verified": "2026-08-03"
+}

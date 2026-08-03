@@ -9,7 +9,8 @@
 | Resolution | 6MP fisheye (6MP, 2560×2560) |
 | Sensor | 1/1.8" Progressive Scan CMOS |
 | Lens | 1× 1.16mm |
-| Night vision | ir (15m) |
+| Field of view | 180 horizontal / 180 vertical° |
+| Night vision | ir (15m), 0.01 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |

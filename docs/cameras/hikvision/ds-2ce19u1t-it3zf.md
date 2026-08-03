@@ -10,7 +10,7 @@
 | Sensor | 8.29MP progressive-scan CMOS |
 | Lens | 1× 2.7-13.5 (motorized)mm |
 | Field of view | 108.1-45.6° |
-| Night vision | ir (80m) |
+| Night vision | ir (80m), 0.01 lux color |
 | Power | 12 VDC |
 | Storage | NVR |
 | IP rating | IP67 |

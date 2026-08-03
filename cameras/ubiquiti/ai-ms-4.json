@@ -1,0 +1,83 @@
+{
+  "id": "ubiquiti-ai-ms-4",
+  "brand": "Ubiquiti",
+  "model": "UniFi Protect AI MS-4",
+  "aliases": [
+    "UVC-AI-MS-4"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 32,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD per sensor (32MP total)"
+  },
+  "sensor": "1/2.8\" 8MP (x4)",
+  "lens": {
+    "count": 4,
+    "focal_length_mm": "3.18-7.42",
+    "aperture": "F1.8-F2.8",
+    "varifocal": true
+  },
+  "field_of_view_deg": "108.8 horizontal / 57.6 vertical / 130.8 diagonal (wide); 42.8 horizontal / 24.1 vertical / 49.1 diagonal (tele)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20
+  },
+  "power": {
+    "method": "PoE++; 34.6W max"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "dimensions_mm": "255 (diameter) x 105",
+  "weight_g": 2400,
+  "operating_temp_c": "-20 to 50",
+  "features": [
+    "four 8MP sensors, 32MP total, 24 FPS max",
+    "2.33x optical zoom per sensor",
+    "adaptive IR illumination up to 20m",
+    "face recognition",
+    "license plate recognition",
+    "AI smart detections person/vehicle/animal",
+    "HDR",
+    "2x microSD card slots + M.2 2280 SATA SSD",
+    "IK10 vandal resistance",
+    "UniFi Protect ecosystem"
+  ],
+  "sources": [
+    "https://techspecs.ui.com/unifi/physical-security/uvc-ai-ms-4"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsps://{ip}:7441/{camera_id}?enableSrtp"
+    },
+    "home_assistant": {
+      "integration": "unifiprotect",
+      "notes": "Native UniFi Protect integration. Requires UniFi Protect console."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use Generic/RTSP profile with RTSPS URL from UniFi Protect. Requires Protect RTSP stream enabled per camera."
+    }
+  },
+  "last_verified": "2026-08-03"
+}

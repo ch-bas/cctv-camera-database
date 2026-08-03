@@ -9,6 +9,7 @@
 | Resolution | 8MP panoramic (5120x1440) (8MP, 5120×1440) |
 | Sensor | 2 x 1/1.8" Progressive Scan CMOS (dual sensor) |
 | Lens | 1× 4 (dual lens)mm |
+| Field of view | 180 horizontal / 44 vertical (4mm)° |
 | Night vision | color (40m), 0.0005 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 512GB, NVR |

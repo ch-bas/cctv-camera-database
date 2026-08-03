@@ -12,7 +12,7 @@
 | Sensor | 1/2.7" Progressive Scan CMOS |
 | Lens | 1× 2.8 / 4 (fixed)mm F2.0 |
 | Field of view | 112.1 horizontal (2.8mm) / 90.2 horizontal (4mm)° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.01 lux color |
 | Power | PoE (802.3af, Class 3) / DC 12V |
 | Storage | NVR |
 | Protocols | onvif, rtsp, http |
