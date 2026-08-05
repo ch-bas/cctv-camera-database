@@ -7,7 +7,8 @@
 | Type | ptz |
 | Connectivity | wifi |
 | Resolution | 5MP (5MP) |
-| Night vision | color |
+| Lens | 1× 2.7-13.5mm |
+| Night vision | color (60m) |
 | Power | DC 12V |
 | Storage | microSD ≤ 128GB |
 | Protocols | rtsp |

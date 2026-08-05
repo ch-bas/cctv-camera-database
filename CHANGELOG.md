@@ -6,6 +6,12 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.56.1] — 2026-08-05
+
+### Backfilled — SV3C spec audit (#177/#178/#179/#161)
+- Audited the 14 SV3C product pages against the catalog (all already in the dataset) and backfilled **device specs** for 8 cameras from the published specifications: `sensor`, `lens`, `field_of_view_deg`, `night_vision.range_m` / `min_lux_color`, `ip_rating`, `video.codecs`/`streams`.
+- Sources recovered via Wayback (sv3c.com is now Cloudflare bot-walled). **Deliberately not recorded:** the pages' `Weight` and `Product Dimensions` figures — those are Ecwid/Amazon package/shipping values (identical across models), not device dimensions/weight. 5 pages (C25, HX03, C22-4K, PoE-36X, 4K-Dual-Network) published only marketing copy and were left unchanged.
+
 ## [1.56.0] — 2026-08-03
 
 **Datasheet backfill sweep (ACTi + Hikvision + Dahua) + UniFi Protect catalog expansion.**

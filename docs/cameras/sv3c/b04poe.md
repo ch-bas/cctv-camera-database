@@ -9,7 +9,10 @@
 | Type | bullet |
 | Connectivity | ethernet |
 | Resolution | 2K QHD (4MP, 2560×1440) |
-| Night vision | ir |
+| Sensor | 1/3" CMOS |
+| Lens | 1× 4mm |
+| Field of view | 70 horizontal° |
+| Night vision | ir, 0.1 lux color |
 | Power | PoE / DC 12V |
 | Storage | NVR |
 | Protocols | onvif, rtsp |

@@ -10,6 +10,7 @@
 | Night vision | color |
 | Power | DC 12V |
 | Protocols | rtsp |
+| IP rating | IP66 |
 | Two-way audio | Yes |
 
 ## Features

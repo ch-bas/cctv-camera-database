@@ -7,9 +7,11 @@
 | Type | ptz |
 | Connectivity | wifi |
 | Resolution | 1080p FHD (2MP, 1920×1080) |
-| Night vision | ir |
+| Field of view | pan 320 / tilt 90° |
+| Night vision | ir (20m) |
 | Power | DC 12V |
 | Protocols | onvif, rtsp |
+| IP rating | IP65 |
 | Two-way audio | Yes |
 
 ## Features
