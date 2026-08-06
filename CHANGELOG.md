@@ -6,11 +6,19 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
-## [1.57.0] — 2026-08-06
+## [1.58.0] — 2026-08-06
 
-**Consumer-camera catalog pass — SV3C spec audit + new LaView / Yale models.** Camera count 2,797 → **2,801**.
+**Pro-install & consumer catalog expansion — SnapAV (Luma + ClareVision) and Resideo, plus SV3C audit + LaView/Yale.** Camera count 2,797 → **2,861** (+64).
 
-### Added (+4 cameras)
+### Added — SnapAV / Snap One (+49)
+- **Luma +25** — the full Luma Surveillance IP line from snapav.com: 220/420/520/720/820/1220 series turret/bullet/dome (fixed + motorized varifocal), 24/7-color, floodlight, 7MP dual-lens floodlight, 12MP fisheye, and the X20 25x PTZ. Full datasheet specs (sensor/lens/FOV/streams/IR/IP/IK/dimensions). 56 SKUs collapsed to 25 distinct cameras (color + heater variants folded into `aliases`).
+- **ClareVision +24** — new brand (Clare/SnapAV): V100 value line (2MP/4MP, WiFi variants), V200 4MP/8MP IR turret/bullet/dome (fixed + varifocal) + fisheye, and V300 "Performance Series" Color-at-Night (full-color night vision). 45 SKUs → 24 distinct.
+- Both are Hikvision-OEM, so they ship the Hikvision-protocol Frigate/Home Assistant/Blue Iris `configs`.
+
+### Added — Resideo / First Alert Pro (+11, new brand)
+- **CX4 pro AI** 8MP bullet/dome/turret, **VX** consumer WiFi (VX3 outdoor, VX1 5MP doorbell, VX5 indoor), IPCAM-WOC2, Trim 2 doorbell, and 3 Videofied/ProSeries **MotionViewers** (PIR + camera; typed `box` with an alarm-device note). Resideo's pages are marketing-oriented with JS-walled spec tables, so the pro CX4 entries are feature-level — only stated facts + model-number decode (e.g. `CX4BE08F28PW` → 8MP, 2.8mm), never fabricated.
+
+### Added — consumer (+4)
 - **LaView +2** — `B10` (2K outdoor 360° pan/tilt, full-color night vision + motion spotlight) and `F2` (2K indoor, two-way audio). LaView's storefront publishes only marketing copy, so these carry the same lean field set as the existing LaView cloud-cam entries — stated facts only, no fabricated sensor/lens/lux.
 - **Yale +2** — `WIPC-301W` (Home View 720p indoor WiFi box, IR 8m, microSD/Dropbox) and the `Smart Home CCTV Dome Camera` (1080p coax DVR accessory, IR 30m). Three other Yale URLs resolved to existing entries (WIPC-303W, SV-DAFX-W) or lacked an identifiable model and were left untouched rather than duplicated/guessed.
 
