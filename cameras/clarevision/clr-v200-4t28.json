@@ -1,0 +1,120 @@
+{
+  "id": "clarevision-clr-v200-4t28",
+  "brand": "ClareVision",
+  "model": "CLR-V200-4T28",
+  "aliases": [
+    "CLR-V200-4T28B",
+    "CLR-V200-4T28W"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264"
+    ],
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "720x480",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1280x720",
+        "fps": 15,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "Sony Starvis CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "108",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 25,
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "WDR",
+    "NDAA compliant",
+    "line crossing detection",
+    "loitering detection",
+    "human body detection",
+    "intrusion detection",
+    "video tampering detection",
+    "alarm I/O"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "114.3 (H) x 93.98 (dia)",
+  "markets": [
+    "US"
+  ],
+  "sources": [
+    "https://www.snapav.com/shop/en/snapav/clr-v200-4t28w"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Uses Hikvision protocol. ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile. ClareVision uses Hikvision protocol."
+    }
+  },
+  "last_verified": "2026-08-06"
+}

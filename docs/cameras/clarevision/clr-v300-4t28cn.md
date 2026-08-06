@@ -1,0 +1,38 @@
+# ClareVision CLR-V300-4T28CN
+
+*Also known as: CLR-V300-4T28CNW, CLR-V300-4T28CNB*
+
+| Field | Spec |
+|-------|------|
+| Brand | ClareVision |
+| Model | CLR-V300-4T28CN |
+| Type | turret |
+| Connectivity | ethernet |
+| Resolution | 4MP (4MP, 2560×1440) |
+| Sensor | Sony Starvis |
+| Lens | 1× 2.8mm F1.0 |
+| Night vision | color (30m), 0.01 lux color |
+| Power | DC 12V / PoE (IEEE 802.3af) |
+| Storage | microSD ≤ 512GB, NVR |
+| Protocols | onvif, rtsp |
+| IP rating | IP67 |
+| Two-way audio | Yes |
+| Operating temp | -30 to 60°C |
+
+## Features
+
+- 24/7 full-color (Color at Night)
+- warm white LED supplemental light (4000K)
+- True WDR
+- 3D DNR
+- person/vehicle detection
+- line crossing / intrusion / loitering detection
+- Control4 integration
+- NDAA compliant
+
+## Sources
+
+- https://www.snapav.com/shop/en/snapav/clr-v300-4t28cnw
+
+---
+*Auto-generated from clarevision-clr-v300-4t28cn.json — do not edit by hand.*
