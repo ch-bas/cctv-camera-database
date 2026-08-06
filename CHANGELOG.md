@@ -6,7 +6,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
-## [1.56.1] — 2026-08-05
+## [1.57.0] — 2026-08-06
+
+**Consumer-camera catalog pass — SV3C spec audit + new LaView / Yale models.** Camera count 2,797 → **2,801**.
+
+### Added (+4 cameras)
+- **LaView +2** — `B10` (2K outdoor 360° pan/tilt, full-color night vision + motion spotlight) and `F2` (2K indoor, two-way audio). LaView's storefront publishes only marketing copy, so these carry the same lean field set as the existing LaView cloud-cam entries — stated facts only, no fabricated sensor/lens/lux.
+- **Yale +2** — `WIPC-301W` (Home View 720p indoor WiFi box, IR 8m, microSD/Dropbox) and the `Smart Home CCTV Dome Camera` (1080p coax DVR accessory, IR 30m). Three other Yale URLs resolved to existing entries (WIPC-303W, SV-DAFX-W) or lacked an identifiable model and were left untouched rather than duplicated/guessed.
 
 ### Backfilled — SV3C spec audit (#177/#178/#179/#161)
 - Audited the 14 SV3C product pages against the catalog (all already in the dataset) and backfilled **device specs** for 8 cameras from the published specifications: `sensor`, `lens`, `field_of_view_deg`, `night_vision.range_m` / `min_lux_color`, `ip_rating`, `video.codecs`/`streams`.
