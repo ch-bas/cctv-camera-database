@@ -6,7 +6,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
-## [1.58.0] — 2026-08-06
+## [1.57.0] — 2026-08-06
 
 **Pro-install & consumer catalog expansion — SnapAV (Luma + ClareVision) and Resideo, plus SV3C audit + LaView/Yale.** Camera count 2,797 → **2,861** (+64).
 
