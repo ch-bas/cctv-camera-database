@@ -9,6 +9,9 @@
 | Type | bullet |
 | Connectivity | ethernet |
 | Resolution | 5MP (5MP) |
+| Sensor | 1/2.8" Sony CMOS |
+| Lens | 1× 3.6mm |
+| Field of view | 87 horizontal° |
 | Night vision | ir |
 | Power | PoE / DC 12V |
 | Storage | microSD ≤ 128GB, NVR |

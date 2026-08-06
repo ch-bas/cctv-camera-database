@@ -7,10 +7,13 @@
 | Type | ptz |
 | Connectivity | ethernet |
 | Resolution | 5MP (5MP) |
-| Night vision | color |
+| Lens | 1× |
+| Field of view | pan 355 / tilt 90° |
+| Night vision | color (64m) |
 | Power | PoE / DC 12V |
 | Storage | NVR |
 | Protocols | rtsp |
+| IP rating | IP66 |
 | Two-way audio | Yes |
 
 ## Features

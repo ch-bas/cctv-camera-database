@@ -1,0 +1,120 @@
+{
+  "id": "luma-lum-520-ip-tfc",
+  "brand": "Luma",
+  "model": "LUM-520-IP-TFC",
+  "aliases": [
+    "LUM-520-IP-TFCW",
+    "LUM-520-IP-TFCB"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP"
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "color",
+    "range_m": 30,
+    "min_lux_color": 0.006
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "codec": "H.265+"
+      },
+      {
+        "name": "2nd",
+        "resolution": "704x480",
+        "codec": "H.264"
+      },
+      {
+        "name": "3rd",
+        "resolution": "704x480",
+        "codec": "H.264"
+      },
+      {
+        "name": "4th",
+        "resolution": "1920x1080",
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "DC12V / PoE (IEEE 802.3af)"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": false
+  },
+  "features": [
+    "24/7 full-color night vision",
+    "warm-light LED illuminator",
+    "WDR",
+    "person/vehicle detection",
+    "NDAA Compliant"
+  ],
+  "dimensions_mm": "94.6 x 82.8",
+  "markets": [
+    "US"
+  ],
+  "sources": [
+    "https://www.snapav.com/shop/en/snapav/lum-520-ip-tfcw"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Uses Hikvision protocol. ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile. Luma uses Hikvision protocol."
+    }
+  },
+  "last_verified": "2026-08-06"
+}

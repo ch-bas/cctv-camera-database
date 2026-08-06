@@ -1,0 +1,115 @@
+{
+  "id": "clarevision-clr-v200-4bvf",
+  "brand": "ClareVision",
+  "model": "CLR-V200-4BVF",
+  "aliases": [
+    "CLR-V200-4BVFW",
+    "CLR-V200-4BVFB"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1536,
+    "label": "4MP"
+  },
+  "sensor": "Sony Starvis",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5",
+    "aperture": "F1.6-F3.3",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 60,
+    "min_lux_color": 0.005
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264"
+    ],
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1536",
+        "fps": 30
+      },
+      {
+        "name": "sub",
+        "resolution": "720x480",
+        "fps": 30
+      },
+      {
+        "name": "third",
+        "resolution": "1280x720",
+        "fps": 15
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) or DC 12V"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true
+  },
+  "features": [
+    "motorized varifocal lens",
+    "True WDR",
+    "3D DNR",
+    "Smart IR",
+    "Control4 integration",
+    "NDAA compliant"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "markets": [
+    "US"
+  ],
+  "sources": [
+    "https://www.snapav.com/shop/en/snapav/clr-v200-4bvfw"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Uses Hikvision protocol. ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile. ClareVision uses Hikvision protocol."
+    }
+  },
+  "last_verified": "2026-08-06"
+}

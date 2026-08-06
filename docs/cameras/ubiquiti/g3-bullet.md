@@ -16,6 +16,7 @@
 | Power | 802.3af PoE or 24V Passive PoE; 4W standalone, 9W with optional IR Range Extender |
 | Storage | NVR |
 | Protocols | rtsp |
+| IP rating | IP67 |
 | Two-way audio | No |
 | Operating temp | -20 to 50°C |
 | Released | 2018 |

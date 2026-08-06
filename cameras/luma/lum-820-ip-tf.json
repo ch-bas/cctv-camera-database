@@ -1,0 +1,126 @@
+{
+  "id": "luma-lum-820-ip-tf",
+  "brand": "Luma",
+  "model": "LUM-820-IP-TF",
+  "aliases": [
+    "LUM-820-IP-TFW",
+    "LUM-820-IP-TFB",
+    "LUM-820-IP-TFHB",
+    "LUM-820-IP-TFHW"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K/8MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "codec": "H.265+"
+      },
+      {
+        "name": "2nd",
+        "resolution": "704x480",
+        "codec": "H.264"
+      },
+      {
+        "name": "3rd",
+        "resolution": "704x480",
+        "codec": "H.264"
+      },
+      {
+        "name": "4th",
+        "resolution": "1920x1080",
+        "codec": "H.265"
+      }
+    ]
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "106.7 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.02
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af)"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "WDR",
+    "Smart IR",
+    "human detection",
+    "vehicle detection",
+    "non-motor vehicle detection",
+    "NDAA Compliant",
+    "heated housing option (cold-climate variant)"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "94.6mm x 82.8mm",
+  "markets": [
+    "US"
+  ],
+  "sources": [
+    "https://www.snapav.com/shop/en/snapav/lum-820-ip-tfw"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Uses Hikvision protocol. ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile. Luma uses Hikvision protocol."
+    }
+  },
+  "last_verified": "2026-08-06",
+  "environment": [
+    "outdoor"
+  ]
+}

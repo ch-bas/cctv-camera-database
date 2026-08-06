@@ -1,0 +1,130 @@
+{
+  "id": "luma-lum-720-ip-fld",
+  "brand": "Luma",
+  "model": "LUM-720-IP-FLD",
+  "aliases": [
+    "LUM-720-IP-FLDW",
+    "LUM-720-IP-FLDB"
+  ],
+  "type": "floodlight",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 7,
+    "max_width": 4560,
+    "max_height": 1520,
+    "label": "Dual 7MP"
+  },
+  "sensor": "Dual 7MP 1/1.8\" CMOS",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4560x1520",
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "704x480",
+        "codec": "H.265"
+      },
+      {
+        "name": "fourth",
+        "resolution": "704x480",
+        "codec": "H.265"
+      }
+    ]
+  },
+  "lens": {
+    "count": 2,
+    "aperture": "F1.0-F1.07"
+  },
+  "field_of_view_deg": "Horizontal: 200°, Vertical: 60°",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.001
+  },
+  "power": {
+    "method": "PoE, 37.8W @ 54V",
+    "consumption_w": 37.8
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http",
+    "rtmp",
+    "p2p"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true
+  },
+  "features": [
+    "dual-lens design",
+    "built-in floodlights",
+    "Active Deterrence",
+    "built-in speaker (110dB) / siren",
+    "white LED distance 15m",
+    "hybrid IR + full-color night vision",
+    "Human, Vehicle & Non-motor Vehicle Detection",
+    "WDR",
+    "2D/3D DNR",
+    "NDAA Compliant"
+  ],
+  "operating_temp_c": "-20°C - 50°C",
+  "dimensions_mm": "273 × 215.6 × 191",
+  "weight_g": 1210,
+  "release_year": 2023,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "US"
+  ],
+  "sources": [
+    "https://www.snapav.com/shop/en/snapav/lum-720-ip-fldw"
+  ],
+  "last_verified": "2026-08-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Uses Hikvision protocol. ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile. Luma uses Hikvision protocol."
+    }
+  },
+  "power_source": [
+    "poe"
+  ]
+}
