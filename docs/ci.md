@@ -71,9 +71,11 @@ npm run lint -- --fix   # auto-fix JSON formatting
 - **`docs/cameras/**.md`** — per-camera docs (`scripts/gen-docs.js`).
 - **`COVERAGE.md`** — field-coverage report (`scripts/coverage-report.js`,
   `npm run coverage`). A table of how completely each important field is filled,
-  with progress bars, linked to the data-lane issues (#123/#161/#162/#177/#178/
-  #179/#166/#170). This replaces the old manual coverage tallies. Regenerate
-  locally with `COVERAGE_DATE=$(git log -1 --format=%cs) npm run coverage`.
+  with progress bars + shields.io badges, linked to the data-lane issues
+  (#123/#161/#162/#177/#178/#179/#166/#170). This replaces the old manual
+  coverage tallies. The same script also refreshes the badge row in the README
+  between the `<!-- coverage:start -->` / `<!-- coverage:end -->` markers (#234).
+  Regenerate locally with `COVERAGE_DATE=$(git log -1 --format=%cs) npm run coverage`.
 
 ---
 

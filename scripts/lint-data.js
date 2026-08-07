@@ -103,12 +103,20 @@ for (const file of files) {
   }
 }
 
-// W2 — the same source URL on >1 camera. Often legitimate (shared manuals /
-// brand asset pages / multi-packs), so advisory only — but it surfaces the
-// class of mistake where a new entry was sourced from another model's page.
+// W2 — the same source URL on >1 camera. Most sharing is legitimate — brand
+// hubs, category/family pages, manuals & datasheet PDFs, comparison/news
+// articles, and regional/lens/colour variants of one model — so those are
+// suppressed (audited in #232). What's left is the actionable class: a
+// *specific product page* cited by cameras that aren't variants of each other
+// (the #226 "sourced from another model's page" mistake).
+const BENIGN_SHARE = /manualslib|manuals\.plus|\/dam\/|assets\.|\/support|\/brands?\/|\/category|\/collections?\/|\/products\/?(\?|#|$)|user-?manual|\.pdf(\?|$)|\/downloads?\/|\/faq|\/news|\/press|\/blog|\/article|difference|comparison|businesswire|notebookcheck|9to5|ces|\/(en|us|uk|in-en|kz\/en|mena-en)\/?$/i;
+// Strip trailing region / lens / colour / resolution suffixes to a "model root".
+const modelRoot = (id) => id.replace(/-(mena|india|in|eu|us|uk|ca)$|-\d+mm$|-(white|black|w|b|telephoto|kit)$|-\d(mp|k)$/gi, "");
 const shared = Object.entries(bySource).filter(([, ids]) => ids.length > 1);
 for (const [url, ids] of shared) {
-  warnings.push(`source shared by ${ids.length} cameras: ${url}  → ${ids.slice(0, 4).join(", ")}${ids.length > 4 ? " …" : ""}`);
+  if (BENIGN_SHARE.test(url)) continue;
+  if (new Set(ids.map(modelRoot)).size <= 1) continue; // same model, different variant — fine
+  warnings.push(`source shared across ${ids.length} distinct models — verify it covers each: ${url}  → ${ids.slice(0, 4).join(", ")}${ids.length > 4 ? " …" : ""}`);
 }
 
 // ── report ──────────────────────────────────────────────────────────────────

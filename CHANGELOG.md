@@ -13,6 +13,8 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - **Normalised `field_of_view_deg` (#231).** Stripped the `°` symbol from 62 values (Bosch/Dahua/Luma/Tapo/VIGI), preserving descriptive wording (thermal, tele/wide, per-focal).
 - **Enforced formatting + FOV normalisation** as hard errors in `scripts/lint-data.js` (E5/E6), so PRs now fail on non-canonical JSON or a `°` in FOV.
 - **Made the Wayback archiver resumable (#233).** `scripts/archive-sources.js` now skips URLs already snapshotted within `ARCHIVE_SKIP_DAYS` (default 45), and `archive-sources.yml` gained a monthly full-catalogue sweep — so the entire back-catalogue gets archived without re-doing work. Docs in `docs/ci.md`.
+- **Audited shared source URLs (#232).** Reviewed all 145 shared `sources[]` URLs — no wrong-model copies found (sharing is by-design: catalogs, brand hubs, family pages, regional/lens variants); the weak-sourcing tail is routed to #164/#165. Tightened the lint's shared-source warning to suppress benign sharing so genuine mistakes stand out (145 → ~40).
+- **Auto coverage badges (#234).** `scripts/coverage-report.js` now emits shields.io badges into `COVERAGE.md` and a README section (between `<!-- coverage:start/end -->` markers), and #163 points to the live report.
 
 ## [1.58.0] — 2026-08-07
 
