@@ -1,6 +1,6 @@
 # CCTV Camera Database
 
-An open, structured database of 2,884 CCTV / IP camera models and their technical specifications, covering 72 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
+An open, structured database of 2,884 CCTV / IP camera models and their technical specifications, covering 74 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
 
 [![cameras](https://img.shields.io/badge/cameras-2%2C884-blue)](data/cameras.json)
 [![brands](https://img.shields.io/badge/brands-74-green)](cameras/)

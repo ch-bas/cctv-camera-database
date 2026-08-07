@@ -348,6 +348,7 @@ function updateReadme(cameras) {
     .replace(/### All \d+ brands/, `### All ${brandCount} brands`)
     // Prose counts that would otherwise drift (intro line, demo-GIF alt, pagination).
     .replace(/(database of )[\d,]+( CCTV \/ IP camera models)/, `$1${total}$2`)
+    .replace(/(covering )\d+( brands across)/, `$1${brandCount}$2`)
     .replace(/(inspect )[\d,]+( cameras across )\d+( brands)/, `$1${total}$2${brandCount}$3`)
     .replace(/(page through all )[\d,]+( cameras)/, `$1${total}$2`);
 
