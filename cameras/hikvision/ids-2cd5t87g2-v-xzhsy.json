@@ -1,0 +1,114 @@
+{
+  "id": "hikvision-ids-2cd5t87g2-v-xzhsy",
+  "brand": "Hikvision",
+  "model": "iDS-2CD5T87G2/V-XZHSY",
+  "aliases": [
+    "iDS-2CD5T87G2/V-XZ(H)S(Y)",
+    "8MP DeepinViewX Motorized Varifocal Bullet for Perimeter Protection"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 80,
+    "min_lux_color": 0.002
+  },
+  "power": {
+    "method": "PoE (802.3at, Type 2, Class 4), max. 22.8W, or 12 VDC max. 19.2W"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "codec": "H.265+",
+        "max_fps": 30
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "codec": "H.265",
+        "max_fps": 30
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "codec": "H.265",
+        "max_fps": 30
+      }
+    ]
+  },
+  "features": [
+    "DeepinViewX 8MP motorized-varifocal bullet with dedicated large-scale AI model for perimeter protection (~90% fewer false alarms vs conventional AI cameras)",
+    "perimeter protection: line crossing, intrusion, region entrance, region exiting with human/vehicle target classification and combined-event triggering",
+    "AcuSeek search for humans and vehicles (requires AcuSeek NVR/servers)",
+    "hybrid supplement light: IR up to 80 m plus white light up to 60 m, smart supplement light",
+    "120 dB WDR, DarkFighter 2.0 low-light, blue-glass module, EIS",
+    "built-in front window heater (-H) for clear image in rain/snow, optional NEMA 4X anti-corrosion (-Y)",
+    "smart events: scene change, audio exception, defocus, loitering, people gathering, fast moving, parking, unattended baggage, object removal"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile."
+    }
+  },
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000172234/iDS-2CD5T87G2_V-XHSY_Datasheet_20250924.pdf",
+    "https://www.hikvision.com/mena-en/products/IP-Products/Network-Cameras/DeepinView-Series/ids-2cd5t87g2-v-x-h-s-y-/"
+  ],
+  "last_verified": "2026-08-07",
+  "release_notes": "8MP DeepinViewX motorized-varifocal (-Z) bullet for perimeter protection, -H heater, -Y NEMA 4X. Specs (sensor, codecs, WDR, IP67/IK10, supplement light, power, storage, analytics) taken from the family /V-X(H)S(Y) datasheet; the -XZHSY motorized-lens datasheet is not yet published, so lens focal length / FOV / DORI / dimensions / weight are omitted (THIN on lens-specific numerics)."
+}

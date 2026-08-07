@@ -1,0 +1,117 @@
+{
+  "id": "hikvision-ids-2cd5d87g2-v-xs",
+  "brand": "Hikvision",
+  "model": "iDS-2CD5D87G2/V-XS",
+  "aliases": [
+    "8MP DeepinViewX Fixed Lens Dome for Perimeter Protection"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 or 4",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "108.8 (2.8mm), 93.0 (4mm) horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 40,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "PoE (802.3at, Type 2, Class 4), max. 15.6W, or 12 VDC max. 15.6W"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "dimensions_mm": "121.5 (diameter) x 97.6",
+  "weight_g": 630,
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "codec": "H.265+",
+        "max_fps": 30
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "codec": "H.265",
+        "max_fps": 30
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "codec": "H.265",
+        "max_fps": 30
+      }
+    ]
+  },
+  "features": [
+    "DeepinViewX 8MP fixed-lens dome with dedicated Guanlan large-scale AI model for perimeter protection (~90% fewer false alarms vs conventional AI cameras)",
+    "perimeter protection: line crossing, intrusion, region entrance, region exiting with human/vehicle target classification and combined-event triggering",
+    "AI Encoding to reduce bandwidth and storage",
+    "AcuSeek search for humans and vehicles (requires AcuSeek NVR/servers)",
+    "hybrid supplement light (IR + white light) up to 40 m",
+    "130 dB WDR, DarkFighter 2.0 low-light, blue-glass module, EIS",
+    "smart events: scene change, audio exception, defocus, unattended baggage, object removal, loitering, people gathering, fast moving, parking detection"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile."
+    }
+  },
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000172231/iDS-2CD5D87G2_V-XS_Datasheet_20260430.pdf"
+  ],
+  "last_verified": "2026-08-07",
+  "release_notes": "8MP DeepinViewX fixed-lens (2.8/4mm, F1.0) dome for perimeter protection (Guanlan model). IP67/IK10, hybrid supplement light to 40m, 130dB WDR, AI Encoding, AcuSeek."
+}
