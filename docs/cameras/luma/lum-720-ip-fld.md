@@ -11,7 +11,7 @@
 | Resolution | Dual 7MP (7MP, 4560×1520) |
 | Sensor | Dual 7MP 1/1.8" CMOS |
 | Lens | 2× F1.0-F1.07 |
-| Field of view | Horizontal: 200°, Vertical: 60°° |
+| Field of view | Horizontal: 200, Vertical: 60° |
 | Night vision | hybrid (30m), 0.001 lux color |
 | Power | PoE, 37.8W @ 54V |
 | Storage | microSD ≤ 1024GB, NVR |

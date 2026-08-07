@@ -9,7 +9,7 @@
 | Resolution | 2x 5MP (10MP total) (10MP) |
 | Sensor | 2x 1/2.8" CMOS |
 | Lens | 2× 3.2-8.1mm |
-| Field of view | 104° to 37° (horizontal)° |
+| Field of view | 104 to 37 (horizontal)° |
 | Night vision | ir (25m) |
 | Power | PoE (IEEE 802.3 Power-over-Ethernet) |
 | Storage | microSD ≤ 2048GB, NVR |

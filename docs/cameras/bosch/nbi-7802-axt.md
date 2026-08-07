@@ -9,7 +9,7 @@
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/1.8" CMOS |
 | Lens | 1× 10.5-47mm |
-| Field of view | 41.6°–9.3° (H), 23.9°–5.3° (V)° |
+| Field of view | 41.6–9.3 (H), 23.9–5.3 (V)° |
 | Night vision | none |
 | Power | PoE IEEE 802.3at Type 1 / 12-26 VDC / 24 VAC |
 | Storage | NVR |

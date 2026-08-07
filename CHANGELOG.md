@@ -10,7 +10,9 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ### Changed
 - **Canonicalised JSON formatting across the dataset (#230).** Reformatted 109 camera files to canonical 2-space indent + trailing newline via `npm run lint -- --fix`. No spec values changed (the generated `data/` aggregate is byte-identical) — purely whitespace, to keep future diffs clean.
-- **Promoted the formatting check to a hard error** in `scripts/lint-data.js`, so PRs now fail on non-canonical JSON. Docs updated in `docs/ci.md`.
+- **Normalised `field_of_view_deg` (#231).** Stripped the `°` symbol from 62 values (Bosch/Dahua/Luma/Tapo/VIGI), preserving descriptive wording (thermal, tele/wide, per-focal).
+- **Enforced formatting + FOV normalisation** as hard errors in `scripts/lint-data.js` (E5/E6), so PRs now fail on non-canonical JSON or a `°` in FOV.
+- **Made the Wayback archiver resumable (#233).** `scripts/archive-sources.js` now skips URLs already snapshotted within `ARCHIVE_SKIP_DAYS` (default 45), and `archive-sources.yml` gained a monthly full-catalogue sweep — so the entire back-catalogue gets archived without re-doing work. Docs in `docs/ci.md`.
 
 ## [1.58.0] — 2026-08-07
 

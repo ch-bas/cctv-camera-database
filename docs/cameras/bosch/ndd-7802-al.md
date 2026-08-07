@@ -8,7 +8,7 @@
 | Connectivity | ethernet |
 | Resolution | 2x 3MP (2048×1536 per imager) (6MP, 2048×1536) |
 | Lens | 2× 3.2–8.1mm |
-| Field of view | 37°–104° horizontal (per lens, varifocal)° |
+| Field of view | 37–104 horizontal (per lens, varifocal)° |
 | Night vision | ir (25m) |
 | Power | PoE (IEEE 802.3bt) / 12 VDC / 24 VAC |
 | Storage | microSD ≤ 2048GB, NVR |

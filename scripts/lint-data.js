@@ -72,11 +72,10 @@ for (const file of files) {
     errors.push(`${id}: weight_g ${JSON.stringify(cam.weight_g)} is out of range (expected 0 < g ≤ 100000).`);
   }
 
-  // W3 — field_of_view_deg should be normalised (no "°" symbol; see the ACTi /
-  // Uniview convention). Advisory: a clean strip sometimes also wants the
-  // "horizontal"/"vertical" wording, so it's a nudge rather than a gate.
+  // E6 — field_of_view_deg must be normalised without the "°" symbol (the whole
+  // dataset was normalised in #231, so this stays enforced).
   if (typeof cam.field_of_view_deg === "string" && cam.field_of_view_deg.includes("°")) {
-    warnings.push(`${id}: field_of_view_deg contains "°" — consider normalising (strip the degree symbol).`);
+    errors.push(`${id}: field_of_view_deg contains "°" — strip the degree symbol.`);
   }
 
   // E4 — last_verified, when present, must be an ISO date (YYYY-MM-DD).

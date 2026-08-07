@@ -10,7 +10,7 @@
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2560×1440) |
 | Lens | 2.8-12mm F1.6-F2.7 |
-| Field of view | Horizontal: 97° - 31°, Vertical: 51° - 18°, Diagonal: 115° - 36°° |
+| Field of view | Horizontal: 97 - 31, Vertical: 51 - 18, Diagonal: 115 - 36° |
 | Night vision | ir (50m), 0.01 lux color |
 | Power | DC12V / PoE+ (IEEE 802.3at) |
 | Storage | microSD ≤ 256GB, NVR |
