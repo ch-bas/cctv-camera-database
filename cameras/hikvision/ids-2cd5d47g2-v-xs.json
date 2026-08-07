@@ -1,0 +1,120 @@
+{
+  "id": "hikvision-ids-2cd5d47g2-v-xs",
+  "brand": "Hikvision",
+  "model": "iDS-2CD5D47G2/V-XS",
+  "aliases": [
+    "4MP DeepinViewX Fixed Lens Dome"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 or 4",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "111 (2.8mm), 95 (4mm) horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 40,
+    "min_lux_color": 0.0001
+  },
+  "power": {
+    "method": "PoE (802.3at, Type 2, Class 4), max. 15.6W, or 12 VDC"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "dimensions_mm": "121.5 diameter x 97.6",
+  "weight_g": 630,
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "codec": "H.265+",
+        "max_fps": 30
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "codec": "H.265",
+        "max_fps": 30
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "codec": "H.265",
+        "max_fps": 30
+      }
+    ]
+  },
+  "features": [
+    "DeepinViewX 4MP dome with dedicated Guanlan large-scale AI model for perimeter protection (~90% fewer false alarms)",
+    "AI Encoding — cuts storage ~50% while preserving human/vehicle image quality",
+    "multi-target-type detection — simultaneous human body, face and vehicle capture with feature extraction",
+    "face capture — up to 60 faces simultaneously (swing -60 to 60, tilt -30 to 30)",
+    "regional people counting — density / people-exception / waiting-time exception detection, up to 8 regions",
+    "heat map (space + time), on/off duty detection, AcuSeek search (with AcuSeek NVR/servers)",
+    "perimeter protection: line crossing, intrusion, region entrance/exiting with combined event alarms",
+    "AI Open Platform — 4 loadable model packages, up to 16 target types each",
+    "140 dB WDR, DarkFighter 2.0 low-light, blue-glass day/night module",
+    "IK10 vandal-resistant aluminum-alloy dome"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile."
+    }
+  },
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000172230/iDS-2CD5D47G2_V-XS_Datasheet_20260630.pdf"
+  ],
+  "last_verified": "2026-08-07",
+  "release_notes": "4MP DeepinViewX fixed-lens dome for perimeter protection (Guanlan model) with face capture, regional people counting, heat map, AI Encoding. Datasheet lists it as a single-lens IK10 dome despite the 'D' model designator."
+}

@@ -1,0 +1,122 @@
+{
+  "id": "hikvision-ids-2cd7t46g2-vx3-ihsy",
+  "brand": "Hikvision",
+  "model": "iDS-2CD7T46G2/VX3-IHSY",
+  "aliases": [
+    "iDS-2CD7T46G2/VX3-IS",
+    "iDS-2CD7T46G2/VX3-I(H)S(Y)",
+    "4MP DeepinView Triple Fixed Lens Bullet"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 3,
+    "focal_length_mm": "4 / 12 / 25",
+    "aperture": "F1.6 (4mm), F1.6 (12mm), F2.8 (25mm)",
+    "varifocal": false
+  },
+  "field_of_view_deg": "82.5 (4mm), 25.4 (12mm), 13.0 (25mm) horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 120,
+    "min_lux_color": 0.005,
+    "min_lux": 0.002
+  },
+  "power": {
+    "method": "PoE (802.3at, Type 2, Class 4), max. 25.5W, or 12 VDC max. 25.2W"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "dimensions_mm": "128.9 x 139.5 x 337",
+  "weight_g": 2510,
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "codec": "H.265+",
+        "max_fps": 30
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "codec": "H.265",
+        "max_fps": 30
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "codec": "H.265",
+        "max_fps": 30
+      }
+    ]
+  },
+  "features": [
+    "DeepinView triple fixed-lens bullet (4mm + 12mm + 25mm) — 4MP + 2 x 2MP, 3 channels",
+    "Guanlan large-scale AI model for perimeter protection — reduces false alarms by ~90% vs conventional AI, detects person/vehicle up to 120m",
+    "perimeter protection: line crossing, intrusion, region entrance, region exiting (human/vehicle target classification)",
+    "DarkFighter 2.0 Sharpmotion low-light, Digital WDR",
+    "hybrid supplement light — IR up to 120m (850nm), smart supplement light",
+    "red/blue alarm LED and audible warning, motorized tilt -10 to 10 for install",
+    "2 built-in mics + speaker, 2 alarm in / 2 alarm out",
+    "TPM 2.0 (FIPS 140-2 level 2) cyber security",
+    "metadata output: intrusion, line crossing, region entrance/exiting"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile."
+    }
+  },
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/sm000086677/iDS-2CD7T46G2_VX3-IHSY_Datasheet_20250616.pdf"
+  ],
+  "last_verified": "2026-08-07",
+  "release_notes": "4MP DeepinView triple fixed-lens bullet (4/12/25mm, 3 channels) for perimeter protection. -H adds heater/wide temp, -Y adds RS-485, alarm/audio expansion, NEMA 4X anti-corrosion and 12 VDC out."
+}

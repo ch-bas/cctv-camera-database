@@ -189550,7 +189550,8 @@
       "https://assets.hikvision.com/prd/normal/all/doc/m000058707/DS-2DF4420WG-XEY_Datasheet_20251211.pdf"
     ],
     "last_verified": "2026-08-07",
-    "release_notes": "Explosion-proof 4MP 20x network speed dome (ATEX/IECEx Ex db IIC T6). Spark-safe design has no IR illuminator; relies on starlight sensor (0.005 lux color)."
+    "release_notes": "Explosion-proof 4MP 20x network speed dome (ATEX/IECEx Ex db IIC T6). Spark-safe design has no IR illuminator; relies on starlight sensor (0.005 lux color).",
+    "added": "2026-08-07"
   },
   {
     "id": "hikvision-ds-2pt3q27iwx-de",
@@ -190187,6 +190188,139 @@
     "added": "2026-06-06"
   },
   {
+    "id": "hikvision-ds-2se7c432iwg-k",
+    "brand": "Hikvision",
+    "model": "DS-2SE7C432IWG-K",
+    "aliases": [
+      "DS-2SE7C432IWG-K/4G/14(F0)",
+      "TandemVu 7-inch 4MP 32x Solar-powered Speed Dome"
+    ],
+    "type": "ptz",
+    "connectivity": [
+      "4g",
+      "ethernet"
+    ],
+    "resolution": {
+      "megapixels": 4,
+      "max_width": 2560,
+      "max_height": 1440,
+      "label": "4MP"
+    },
+    "sensor": "1/1.8\" Progressive Scan CMOS",
+    "lens": {
+      "focal_length_mm": "5.9-188.8",
+      "aperture": "F1.5",
+      "varifocal": true
+    },
+    "field_of_view_deg": "60.2 to 2.3 horizontal (PTZ channel)",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 200,
+      "min_lux_color": 0.005,
+      "min_lux": 0.001
+    },
+    "ptz": {
+      "autotracking": true
+    },
+    "power": {
+      "method": "12 VDC ± 25%, max. 28 W; solar-powered with lithium battery",
+      "consumption_w": 28,
+      "voltage": "12 VDC"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp",
+      "http"
+    ],
+    "ip_rating": "IP67",
+    "ik_rating": "IK10",
+    "audio": {
+      "two_way": true
+    },
+    "operating_temp_c": "-30 to 65",
+    "dimensions_mm": "Ø220 x 382.1",
+    "weight_g": 6000,
+    "video": {
+      "codecs": [
+        "H.265+",
+        "H.265",
+        "H.264+",
+        "H.264",
+        "MJPEG"
+      ],
+      "max_fps": 25,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2560x1440",
+          "fps": 25,
+          "codec": "H.265+"
+        },
+        {
+          "name": "sub",
+          "resolution": "704x576",
+          "fps": 25,
+          "codec": "H.265"
+        },
+        {
+          "name": "third",
+          "resolution": "1920x1080",
+          "fps": 25,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "features": [
+      "TandemVu dual-channel: 4MP ColorVu bullet + 4MP 32x PTZ speed dome",
+      "32x optical zoom + 16x digital zoom (PTZ channel)",
+      "pan 360° endless, tilt -15° to 90°, 300 presets, 8 patrols",
+      "IR up to 200 m (PTZ channel), IR up to 30 m (bullet channel)",
+      "ColorVu low-light bullet channel (0.0005 lux @ F1.0, 0 lux with light)",
+      "smart tracking / auto tracking (PTZ channel)",
+      "120 dB WDR, HLC, BLC, 3D DNR, defog, EIS with built-in gyroscope",
+      "solar-powered with lithium battery (360 WH), scheduled/low-power sleep mode (0.5 W)",
+      "line crossing, intrusion, region entrance/exiting detection; face capture (PTZ channel)",
+      "12 VDC power output (max. 1000 mA), 2 alarm in / 1 alarm out, audio in/out"
+    ],
+    "environment": [
+      "outdoor"
+    ],
+    "power_source": [
+      "solar",
+      "battery",
+      "dc"
+    ],
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "Use ONVIF integration. Default ONVIF port 80. Dual-channel (bullet + PTZ) device."
+      },
+      "blue_iris": {
+        "profile": "Hikvision",
+        "notes": "Select 'Hikvision' profile."
+      }
+    },
+    "sources": [
+      "https://assets.hikvision.com/prd/normal/all/doc/m000111081/DS-2SE7C432IWG-K_4G_14F0_Datasheet_20260622.pdf"
+    ],
+    "last_verified": "2026-08-07",
+    "release_notes": "Solar-powered 4G TandemVu speed dome kit pairing a 4MP ColorVu bullet channel with a 4MP 32x IR PTZ channel (IR up to 200 m). Datasheet notes no specific anti-corrosion protection."
+  },
+  {
     "id": "hikvision-ds-2se7c432mwg-eb",
     "brand": "Hikvision",
     "model": "DS-2SE7C432MWG-EB",
@@ -190799,7 +190933,253 @@
       "https://assets.hikvision.com/prd/normal/all/doc/m000144120/DS-2XE6646G0-LIZSADC_Datasheet_20260708.pdf"
     ],
     "last_verified": "2026-08-07",
-    "release_notes": "Explosion-proof 4MP motorized-varifocal bullet (ATEX/IECEx Ex db IIC T6). Despite the -ADC suffix the datasheet notes this SKU has no specific anti-corrosion protection."
+    "release_notes": "Explosion-proof 4MP motorized-varifocal bullet (ATEX/IECEx Ex db IIC T6). Despite the -ADC suffix the datasheet notes this SKU has no specific anti-corrosion protection.",
+    "added": "2026-08-07"
+  },
+  {
+    "id": "hikvision-ds-2xs3q47g1-ld",
+    "brand": "Hikvision",
+    "model": "DS-2XS3Q47G1-LD",
+    "aliases": [
+      "DS-2XS3Q47G1-LD/4G",
+      "DS-2XS3Q47G1-LD/4G/C18S40",
+      "4MP ColorVu Solar-Powered 4G Bullet"
+    ],
+    "type": "bullet",
+    "connectivity": [
+      "4g"
+    ],
+    "resolution": {
+      "megapixels": 4,
+      "max_width": 2688,
+      "max_height": 1520,
+      "label": "4MP"
+    },
+    "sensor": "1/3\" Progressive Scan CMOS",
+    "lens": {
+      "focal_length_mm": "4 and 6 optional",
+      "aperture": "F1.0"
+    },
+    "field_of_view_deg": "4 mm: 75 horizontal; 6 mm: 49 horizontal",
+    "night_vision": {
+      "type": "color",
+      "range_m": 30,
+      "min_lux_color": 0.0005
+    },
+    "power": {
+      "method": "40 W (±2 W) solar panel with built-in ternary lithium battery; 12 VDC ± 25% (debugging only)",
+      "consumption_w": 6,
+      "voltage": "12 VDC"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": true,
+      "notes": "Built-in eMMC up to 64 GB (50 GB available for recording) plus microSD up to 256 GB"
+    },
+    "protocols": [
+      "onvif",
+      "rtsp",
+      "http"
+    ],
+    "ip_rating": "IP65",
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "operating_temp_c": "0 to 60",
+    "dimensions_mm": "686.6 x 442.6 x 760",
+    "weight_g": 11900,
+    "video": {
+      "codecs": [
+        "H.265+",
+        "H.265",
+        "H.264+",
+        "H.264",
+        "MJPEG"
+      ],
+      "max_fps": 15,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2688x1520",
+          "fps": 15,
+          "codec": "H.265"
+        },
+        {
+          "name": "sub",
+          "resolution": "1280x720",
+          "fps": 15,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "features": [
+      "24/7 ColorVu full-color imaging (0.0005 lux @ F1.0, 0 lux with light)",
+      "solar-powered standalone with built-in ternary lithium battery (8.4 Ah x 2 packs)",
+      "4G LTE-TDD/LTE-FDD/WCDMA/GSM (Cat 4, up 50 Mbps / down 150 Mbps), Micro SIM",
+      "white-light supplement: performance mode up to 30 m, proactive mode up to 10 m",
+      "fixed lens 4 mm or 6 mm optional, F1.0 super-aperture",
+      "battery runtime: performance 3.6 days / proactive 6 days / standby 30 days",
+      "built-in two-way audio (mic + speaker)",
+      "120 dB WDR, BLC, HLC, 3D DNR, 4 privacy masks",
+      "adjustable solar panel (pan 0-358°, tilt -40-0°) and camera (pan 0-340°, tilt -5-105°)"
+    ],
+    "environment": [
+      "outdoor"
+    ],
+    "power_source": [
+      "solar",
+      "battery"
+    ],
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "Use ONVIF integration. Default ONVIF port 80. Solar/4G camera — low frame rate and battery power modes affect stream availability."
+      },
+      "blue_iris": {
+        "profile": "Hikvision",
+        "notes": "Select 'Hikvision' profile."
+      }
+    },
+    "sources": [
+      "https://assets.hikvision.com/prd/normal/all/doc/m000069081/DS-2XS3Q47G1-LD_4G_Datasheet_20230708.pdf"
+    ],
+    "last_verified": "2026-08-07",
+    "release_notes": "Solar-powered 4G ColorVu bullet kit with 40 W solar panel and built-in lithium battery. Datasheet notes no specific anti-corrosion protection."
+  },
+  {
+    "id": "hikvision-ds-2xs3q47g1-ldh",
+    "brand": "Hikvision",
+    "model": "DS-2XS3Q47G1-LDH",
+    "aliases": [
+      "DS-2XS3Q47G1-LDH/4G",
+      "DS-2XS3Q47G1-LDH/4G/C18S40",
+      "4MP ColorVu Solar-Powered 4G Bullet"
+    ],
+    "type": "bullet",
+    "connectivity": [
+      "4g"
+    ],
+    "resolution": {
+      "megapixels": 4,
+      "max_width": 2688,
+      "max_height": 1520,
+      "label": "4MP"
+    },
+    "sensor": "1/3\" Progressive Scan CMOS",
+    "lens": {
+      "focal_length_mm": "4 and 6 optional",
+      "aperture": "F1.0"
+    },
+    "field_of_view_deg": "4 mm: 75 horizontal; 6 mm: 49 horizontal",
+    "night_vision": {
+      "type": "color",
+      "range_m": 30,
+      "min_lux_color": 0.0005
+    },
+    "power": {
+      "method": "40 W (±2 W) solar panel with built-in ternary lithium battery; 12 VDC ± 25% (debugging only)",
+      "consumption_w": 6,
+      "voltage": "12 VDC"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": true,
+      "notes": "Built-in eMMC up to 64 GB (50 GB available for recording) plus microSD up to 256 GB"
+    },
+    "protocols": [
+      "onvif",
+      "rtsp",
+      "http"
+    ],
+    "ip_rating": "IP65",
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "operating_temp_c": "-20 to 50",
+    "dimensions_mm": "686.6 x 442.6 x 760",
+    "weight_g": 11700,
+    "video": {
+      "codecs": [
+        "H.265+",
+        "H.265",
+        "H.264+",
+        "H.264",
+        "MJPEG"
+      ],
+      "max_fps": 15,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2688x1520",
+          "fps": 15,
+          "codec": "H.265"
+        },
+        {
+          "name": "sub",
+          "resolution": "1280x720",
+          "fps": 15,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "features": [
+      "24/7 ColorVu full-color imaging (0.0005 lux @ F1.0, 0 lux with light)",
+      "solar-powered standalone with built-in ternary lithium battery (8.4 Ah x 2 packs)",
+      "4G LTE-TDD/LTE-FDD/WCDMA/GSM (Cat 4, up 50 Mbps / down 150 Mbps), Micro SIM",
+      "white-light supplement: performance mode up to 30 m, proactive mode up to 10 m",
+      "fixed lens 4 mm or 6 mm optional, F1.0 super-aperture",
+      "battery runtime: performance 3.6 days / proactive 6 days / standby 30 days",
+      "built-in two-way audio (mic + speaker)",
+      "120 dB WDR, BLC, HLC, 3D DNR, 4 privacy masks",
+      "adjustable solar panel (pan 0-358°, tilt -40-0°) and camera (pan 0-340°, tilt -5-105°)",
+      "wider operating temperature range (-20 °C to 50 °C) vs. LD variant"
+    ],
+    "environment": [
+      "outdoor"
+    ],
+    "power_source": [
+      "solar",
+      "battery"
+    ],
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "Use ONVIF integration. Default ONVIF port 80. Solar/4G camera — low frame rate and battery power modes affect stream availability."
+      },
+      "blue_iris": {
+        "profile": "Hikvision",
+        "notes": "Select 'Hikvision' profile."
+      }
+    },
+    "sources": [
+      "https://assets.hikvision.com/prd/public/all/doc/m000069080/DS-2XS3Q47G1-LDH_4G_Datasheet_20240422.pdf"
+    ],
+    "last_verified": "2026-08-07",
+    "release_notes": "Solar-powered 4G ColorVu bullet kit (LDH variant) with 40 W solar panel and built-in lithium battery; wider operating temperature range than the LD. Datasheet notes no specific anti-corrosion protection."
   },
   {
     "id": "hikvision-ds-2xs6a25g0-i",
@@ -190879,6 +191259,1060 @@
       "outdoor"
     ],
     "added": "2026-06-06"
+  },
+  {
+    "id": "hikvision-ds-2xs6a46g1-izs",
+    "brand": "Hikvision",
+    "model": "DS-2XS6A46G1-IZS",
+    "aliases": [
+      "DS-2XS6A46G1-IZS/C36S80",
+      "DS-2XS6A46G1-IZS/4G",
+      "4MP Motorized Varifocal Bullet Solar 4G Camera Kit"
+    ],
+    "type": "bullet",
+    "connectivity": [
+      "4g"
+    ],
+    "resolution": {
+      "megapixels": 4,
+      "max_width": 2560,
+      "max_height": 1440,
+      "label": "4MP"
+    },
+    "sensor": "1/1.8\" Progressive Scan CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8-12 / 8-32",
+      "aperture": "F1.2 (2.8-12mm), F1.6 (8-32mm)",
+      "varifocal": true
+    },
+    "field_of_view_deg": "107.4 to 39.8 horizontal (2.8-12mm); 40.3 to 14.5 horizontal (8-32mm)",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 50,
+      "min_lux_color": 0.0005
+    },
+    "power": {
+      "method": "12 VDC ± 20%, 4-pin M8 waterproof connector; solar kit: 80 W photovoltaic panel + 360 Wh lithium battery"
+    },
+    "storage": {
+      "onboard": true,
+      "nvr_compatible": true,
+      "cloud": false
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "ip_rating": "IP66",
+    "dimensions_mm": "816.2 x 735.9 x 760 (solar kit, fully assembled)",
+    "weight_g": 2300,
+    "video": {
+      "codecs": [
+        "H.265+",
+        "H.265",
+        "H.264+",
+        "H.264",
+        "MJPEG"
+      ],
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2560x1440",
+          "codec": "H.265"
+        },
+        {
+          "name": "sub",
+          "resolution": "640x480",
+          "codec": "H.265"
+        },
+        {
+          "name": "third",
+          "resolution": "1280x720",
+          "codec": "H.265"
+        }
+      ]
+    },
+    "features": [
+      "solar-powered wire-free — 80 W photovoltaic panel + 360 Wh (4x 90 Wh) chargeable lithium battery (C36S80 kit)",
+      "battery management: display, high/low-temperature protection, charge-discharge protection, low-battery sleep, remote wakeup",
+      "4G cellular transmission (LTE-TDD/LTE-FDD/WCDMA/GSM), Micro SIM; Wi-Fi module AP mode on Channel 11 for local setup",
+      "AcuSense deep-learning human/vehicle target classification",
+      "120 dB true WDR",
+      "motorized varifocal (2.8-12mm or 8-32mm), IR supplement light up to 30m / 50m",
+      "smart supplement light, built-in eMMC/SSD storage (up to 1 TB) + microSD up to 256 GB",
+      "wind resistance up to 40 m/s"
+    ],
+    "environment": [
+      "outdoor"
+    ],
+    "power_source": [
+      "solar",
+      "battery",
+      "dc"
+    ],
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "Use ONVIF integration. Default ONVIF port 80."
+      },
+      "blue_iris": {
+        "profile": "Hikvision",
+        "notes": "Select 'Hikvision' profile."
+      }
+    },
+    "sources": [
+      "https://assets.hikvision.com/prd/public/all/doc/m000069240/DS-2XS6A46G1-IZS_C36S80_Datasheet_20250416.pdf",
+      "https://assets.hikvision.com/prd/public/all/doc/m000091100/DS-2XS6A46G1-IZS_4G_Datasheet_20250416.pdf"
+    ],
+    "last_verified": "2026-08-07",
+    "release_notes": "4MP solar/4G motorized-varifocal bullet. Merged from two config bundles: /C36S80 (80 W solar panel + 360 Wh battery kit) and /4G (4G bullet camera, 12 VDC). Weight is the camera body only; the assembled solar-kit dimension is listed. No specific anti-corrosion protection per datasheet."
+  },
+  {
+    "id": "hikvision-ds-2xs6a46g1-lizs",
+    "brand": "Hikvision",
+    "model": "DS-2XS6A46G1-LIZS",
+    "aliases": [
+      "DS-2XS6A46G1-LIZS/4G",
+      "4MP Motorized Varifocal 4G Bullet Network Camera"
+    ],
+    "type": "bullet",
+    "connectivity": [
+      "4g"
+    ],
+    "resolution": {
+      "megapixels": 4,
+      "max_width": 2688,
+      "max_height": 1520,
+      "label": "4MP"
+    },
+    "sensor": "1/1.8\" Progressive Scan CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8-12 / 8-32",
+      "aperture": "F1.4 (2.8-12mm), F1.7 (8-32mm)",
+      "varifocal": true
+    },
+    "field_of_view_deg": "103.9 to 48.2 horizontal (2.8-12mm); 42.5 to 15.2 horizontal (8-32mm)",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 50,
+      "min_lux_color": 0.0005
+    },
+    "power": {
+      "method": "12 VDC ± 10%"
+    },
+    "storage": {
+      "onboard": true,
+      "nvr_compatible": true,
+      "cloud": false
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "ip_rating": "IP66",
+    "dimensions_mm": "286.6 x 102.22 x 105",
+    "weight_g": 1130,
+    "video": {
+      "codecs": [
+        "H.265+",
+        "H.265",
+        "H.264+",
+        "H.264",
+        "MJPEG"
+      ],
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2688x1520",
+          "codec": "H.265"
+        },
+        {
+          "name": "sub",
+          "resolution": "640x480",
+          "codec": "H.265"
+        },
+        {
+          "name": "third",
+          "resolution": "1280x720",
+          "codec": "H.265"
+        }
+      ]
+    },
+    "features": [
+      "4G cellular transmission (LTE-TDD/LTE-FDD/WCDMA/GSM), Micro SIM, external antenna expansion supported",
+      "Smart Hybrid Light — IR + white supplement light, long range (up to 30m / 50m)",
+      "active strobe light and audio alarm to warn intruders off",
+      "built-in two-way audio (microphone + speaker, 98 dB SPL)",
+      "AcuSense deep-learning human/vehicle target classification",
+      "120 dB true WDR",
+      "motorized varifocal (2.8-12mm or 8-32mm)",
+      "built-in eMMC storage up to 256 GB"
+    ],
+    "environment": [
+      "outdoor"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "Use ONVIF integration. Default ONVIF port 80."
+      },
+      "blue_iris": {
+        "profile": "Hikvision",
+        "notes": "Select 'Hikvision' profile."
+      }
+    },
+    "sources": [
+      "https://assets.hikvision.com/prd/normal/all/doc/m000173264/DS-2XS6A46G1-LIZS_4G_Datasheet_20251220.pdf"
+    ],
+    "last_verified": "2026-08-07",
+    "release_notes": "4MP motorized-varifocal 4G bullet with Smart Hybrid Light, active strobe + audio deterrence and two-way audio. 12 VDC powered (no built-in battery/solar in this datasheet). Documented from the /4G config bundle. No specific anti-corrosion protection."
+  },
+  {
+    "id": "hikvision-ds-2xs6a46g1-p-izs",
+    "brand": "Hikvision",
+    "model": "DS-2XS6A46G1/P-IZS",
+    "aliases": [
+      "DS-2XS6A46G1/P-IZS/4G",
+      "4MP ANPR Bullet 4G Network Camera"
+    ],
+    "type": "bullet",
+    "connectivity": [
+      "4g"
+    ],
+    "resolution": {
+      "megapixels": 4,
+      "max_width": 2560,
+      "max_height": 1440,
+      "label": "4MP"
+    },
+    "sensor": "1/1.8\" Progressive Scan CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8-12 / 8-32",
+      "aperture": "F1.2 (2.8-12mm), F1.6 (8-32mm)",
+      "varifocal": true
+    },
+    "field_of_view_deg": "107.4 to 39.8 horizontal (2.8-12mm); 40.3 to 14.5 horizontal (8-32mm)",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 50,
+      "min_lux_color": 0.0005
+    },
+    "power": {
+      "method": "12 VDC ± 20%, 4-pin M8 waterproof connector"
+    },
+    "storage": {
+      "onboard": true,
+      "nvr_compatible": true,
+      "cloud": false
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "ip_rating": "IP66",
+    "dimensions_mm": "816.2 x 735.9 x 760 (fully assembled)",
+    "video": {
+      "codecs": [
+        "H.265+",
+        "H.265",
+        "H.264+",
+        "H.264",
+        "MJPEG"
+      ],
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2560x1440",
+          "codec": "H.265"
+        },
+        {
+          "name": "sub",
+          "resolution": "640x480",
+          "codec": "H.265"
+        },
+        {
+          "name": "third",
+          "resolution": "1280x720",
+          "codec": "H.265"
+        }
+      ]
+    },
+    "features": [
+      "ANPR / license plate recognition — embedded deep-learning LPR (vehicles and motorcycles, checkpoint scenario), blocklist/allowlist, 4 LPR regions (Europe, Middle East, Asia-Pacific, Africa)",
+      "4G cellular transmission (LTE-TDD/LTE-FDD/WCDMA/GSM), Micro SIM",
+      "AcuSense deep-learning human/vehicle target classification",
+      "120 dB true WDR",
+      "motorized varifocal (2.8-12mm or 8-32mm), IR supplement light up to 30m / 50m",
+      "smart supplement light, built-in 8 GB eMMC storage"
+    ],
+    "environment": [
+      "outdoor"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "Use ONVIF integration. Default ONVIF port 80."
+      },
+      "blue_iris": {
+        "profile": "Hikvision",
+        "notes": "Select 'Hikvision' profile."
+      }
+    },
+    "sources": [
+      "https://assets.hikvision.com/prd/public/all/doc/m000128283/DS-2XS6A46G1_P-IZS_4G_Datasheet_20250414.pdf"
+    ],
+    "last_verified": "2026-08-07",
+    "release_notes": "4MP ANPR (license-plate) motorized-varifocal 4G bullet with on-camera LPR. 12 VDC powered (no built-in battery/solar block in this datasheet; assembled dimension is the pole/bracket mount). Documented from the /4G config bundle. No specific anti-corrosion protection."
+  },
+  {
+    "id": "hikvision-ds-2xs6a46g1e-lizs",
+    "brand": "Hikvision",
+    "model": "DS-2XS6A46G1E-LIZS",
+    "aliases": [
+      "DS-2XS6A46G1E-LIZS/C36S80",
+      "4MP Strobe Light and Audible Warning Solar Power 4G Network Camera Kit"
+    ],
+    "type": "bullet",
+    "connectivity": [
+      "4g"
+    ],
+    "resolution": {
+      "megapixels": 4,
+      "max_width": 2688,
+      "max_height": 1520,
+      "label": "4MP"
+    },
+    "sensor": "1/1.8\" Progressive Scan CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8-12 / 8-32",
+      "aperture": "F1.4 (2.8-12mm), F1.7 (8-32mm)",
+      "varifocal": true
+    },
+    "field_of_view_deg": "103.9 to 48.2 horizontal (2.8-12mm); 42.5 to 15.2 horizontal (8-32mm)",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 50,
+      "min_lux_color": 0.0005
+    },
+    "power": {
+      "method": "12 VDC ± 10%; solar kit: 80 W photovoltaic panel + 360 Wh lithium battery"
+    },
+    "storage": {
+      "onboard": true,
+      "nvr_compatible": true,
+      "cloud": false
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "ip_rating": "IP66",
+    "dimensions_mm": "662.11 x 720 x 579.76 (solar kit, fully assembled)",
+    "weight_g": 13045,
+    "video": {
+      "codecs": [
+        "H.265+",
+        "H.265",
+        "H.264+",
+        "H.264",
+        "MJPEG"
+      ],
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2688x1520",
+          "codec": "H.265"
+        },
+        {
+          "name": "sub",
+          "resolution": "640x480",
+          "codec": "H.265"
+        },
+        {
+          "name": "third",
+          "resolution": "1280x720",
+          "codec": "H.265"
+        }
+      ]
+    },
+    "features": [
+      "solar-powered wire-free — 80 W photovoltaic panel + 360 Wh (4x 90 Wh) chargeable lithium battery (C36S80 kit)",
+      "battery management: display, high/low-temperature protection, charge-discharge protection, low-battery sleep, remote wakeup",
+      "4G cellular transmission (LTE-TDD/LTE-FDD/WCDMA/GSM), Micro SIM, external antenna expansion supported",
+      "Smart Hybrid Light — IR + white supplement light, long range (up to 30m / 50m)",
+      "active strobe light and audio alarm to warn intruders off",
+      "built-in two-way audio",
+      "AcuSense deep-learning human/vehicle target classification",
+      "120 dB true WDR, motorized varifocal (2.8-12mm or 8-32mm)",
+      "built-in eMMC storage up to 256 GB, wind resistance up to 40 m/s"
+    ],
+    "environment": [
+      "outdoor"
+    ],
+    "power_source": [
+      "solar",
+      "battery",
+      "dc"
+    ],
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "Use ONVIF integration. Default ONVIF port 80."
+      },
+      "blue_iris": {
+        "profile": "Hikvision",
+        "notes": "Select 'Hikvision' profile."
+      }
+    },
+    "sources": [
+      "https://assets.hikvision.com/prd/normal/all/doc/m000164709/DS-2XS6A46G1E-LIZS_C36S80_Datasheet_20250926.pdf"
+    ],
+    "last_verified": "2026-08-07",
+    "release_notes": "4MP solar-powered 4G bullet kit with Smart Hybrid Light, active strobe + audio deterrence and two-way audio. Documented from the /C36S80 config bundle (80 W panel + 360 Wh battery). Weight/dimension are the assembled solar kit. No specific anti-corrosion protection."
+  },
+  {
+    "id": "hikvision-ids-2cd5347g2-v-xs",
+    "brand": "Hikvision",
+    "model": "iDS-2CD5347G2/V-XS",
+    "aliases": [
+      "4MP DeepinViewX Fixed Lens Turret"
+    ],
+    "type": "turret",
+    "connectivity": [
+      "ethernet"
+    ],
+    "resolution": {
+      "megapixels": 4,
+      "max_width": 2688,
+      "max_height": 1520,
+      "label": "4MP"
+    },
+    "sensor": "1/1.8\" Progressive Scan CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8 or 4",
+      "aperture": "F1.0",
+      "varifocal": false
+    },
+    "field_of_view_deg": "111 (2.8mm), 95 (4mm) horizontal",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 40,
+      "min_lux_color": 0.0001
+    },
+    "power": {
+      "method": "PoE (802.3at, Type 2, Class 4), max. 12.7W, or 12 VDC max. 11.2W"
+    },
+    "power_source": [
+      "poe",
+      "dc"
+    ],
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 1024,
+      "nvr_compatible": true,
+      "cloud": false
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "ip_rating": "IP67",
+    "dimensions_mm": "138.63 diameter x 123.42",
+    "weight_g": 820,
+    "video": {
+      "codecs": [
+        "H.265+",
+        "H.265",
+        "H.264+",
+        "H.264",
+        "MJPEG"
+      ],
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2688x1520",
+          "codec": "H.265+",
+          "max_fps": 30
+        },
+        {
+          "name": "sub",
+          "resolution": "704x576",
+          "codec": "H.265",
+          "max_fps": 30
+        },
+        {
+          "name": "third",
+          "resolution": "1920x1080",
+          "codec": "H.265",
+          "max_fps": 30
+        }
+      ]
+    },
+    "features": [
+      "DeepinViewX turret with dedicated Guanlan large-scale AI model for perimeter protection (~90% fewer false alarms)",
+      "AI Encoding — cuts storage ~50% while preserving human/vehicle image quality",
+      "multi-target-type detection — simultaneous human body, face and vehicle capture with feature extraction",
+      "face capture — up to 60 faces simultaneously (swing -60 to 60, tilt -30 to 30)",
+      "regional people counting — density / people-exception / waiting-time exception detection, up to 8 regions",
+      "heat map (space + time), on/off duty detection, AcuSeek search (with AcuSeek NVR/servers)",
+      "perimeter protection: line crossing, intrusion, region entrance/exiting with combined event alarms",
+      "AI Open Platform — 4 loadable model packages, up to 16 target types each",
+      "140 dB WDR, DarkFighter 2.0 low-light, blue-glass day/night module",
+      "2 built-in mics + speaker, RS-485"
+    ],
+    "environment": [
+      "outdoor"
+    ],
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "Use ONVIF integration. Default ONVIF port 80."
+      },
+      "blue_iris": {
+        "profile": "Hikvision",
+        "notes": "Select 'Hikvision' profile."
+      }
+    },
+    "sources": [
+      "https://assets.hikvision.com/prd/normal/all/doc/m000172232/iDS-2CD5347G2_V-XS_Datasheet_20260630.pdf"
+    ],
+    "last_verified": "2026-08-07",
+    "release_notes": "4MP DeepinViewX fixed-lens turret for perimeter protection with face capture, regional people counting, heat map and AI Encoding (Guanlan model)."
+  },
+  {
+    "id": "hikvision-ids-2cd5387g2-v-xs",
+    "brand": "Hikvision",
+    "model": "iDS-2CD5387G2/V-XS",
+    "aliases": [
+      "8MP DeepinViewX Fixed Lens Turret"
+    ],
+    "type": "turret",
+    "connectivity": [
+      "ethernet"
+    ],
+    "resolution": {
+      "megapixels": 8,
+      "max_width": 3840,
+      "max_height": 2160,
+      "label": "8MP"
+    },
+    "sensor": "1/1.8\" Progressive Scan CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8 or 4",
+      "aperture": "F1.0",
+      "varifocal": false
+    },
+    "field_of_view_deg": "108.8 (2.8mm), 93.0 (4mm) horizontal",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 40,
+      "min_lux_color": 0.0005
+    },
+    "power": {
+      "method": "PoE (802.3at, Type 2, Class 4), max. 12.7W, or 12 VDC max. 11.2W"
+    },
+    "power_source": [
+      "poe",
+      "dc"
+    ],
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 1024,
+      "nvr_compatible": true,
+      "cloud": false
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "ip_rating": "IP67",
+    "dimensions_mm": "138.63 diameter x 123.42",
+    "weight_g": 820,
+    "video": {
+      "codecs": [
+        "H.265+",
+        "H.265",
+        "H.264+",
+        "H.264",
+        "MJPEG"
+      ],
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "3840x2160",
+          "codec": "H.265+",
+          "max_fps": 30
+        },
+        {
+          "name": "sub",
+          "resolution": "704x576",
+          "codec": "H.265",
+          "max_fps": 30
+        },
+        {
+          "name": "third",
+          "resolution": "1920x1080",
+          "codec": "H.265",
+          "max_fps": 30
+        }
+      ]
+    },
+    "features": [
+      "DeepinViewX 8MP turret with dedicated Guanlan large-scale AI model for perimeter protection (~90% fewer false alarms)",
+      "AI Encoding — cuts storage ~50% while preserving human/vehicle image quality",
+      "multi-target-type detection — simultaneous human body, face and vehicle capture with feature extraction",
+      "face capture — up to 60 faces simultaneously (swing -60 to 60, tilt -30 to 30)",
+      "regional people counting — density / people-exception / waiting-time exception detection, up to 8 regions",
+      "heat map (space + time), on/off duty detection, AcuSeek search (with AcuSeek NVR/servers)",
+      "perimeter protection: line crossing, intrusion, region entrance/exiting with combined event alarms",
+      "AI Open Platform — 4 loadable model packages, up to 16 target types each",
+      "130 dB WDR, DarkFighter 2.0 low-light, blue-glass day/night module",
+      "2 built-in mics + speaker, RS-485"
+    ],
+    "environment": [
+      "outdoor"
+    ],
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "Use ONVIF integration. Default ONVIF port 80."
+      },
+      "blue_iris": {
+        "profile": "Hikvision",
+        "notes": "Select 'Hikvision' profile."
+      }
+    },
+    "sources": [
+      "https://assets.hikvision.com/prd/normal/all/doc/m000172233/iDS-2CD5387G2_V-XS_Datasheet_20260630.pdf"
+    ],
+    "last_verified": "2026-08-07",
+    "release_notes": "8MP DeepinViewX fixed-lens turret for perimeter protection with face capture, regional people counting, heat map and AI Encoding (Guanlan model). 8MP sibling of the iDS-2CD5347G2/V-XS."
+  },
+  {
+    "id": "hikvision-ids-2cd5a46g2-v-xzhsy",
+    "brand": "Hikvision",
+    "model": "iDS-2CD5A46G2/V-XZHSY",
+    "aliases": [
+      "iDS-2CD5A46G2/V-XZ(H)S(Y)",
+      "4MP DeepinViewX Moto Varifocal Bullet"
+    ],
+    "type": "bullet",
+    "connectivity": [
+      "ethernet"
+    ],
+    "resolution": {
+      "megapixels": 4,
+      "max_width": 2688,
+      "max_height": 1520,
+      "label": "4MP"
+    },
+    "sensor": "1/1.8\" Progressive Scan CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8-12 or 8-32",
+      "aperture": "F1.47-F2.53 (2.8-12mm), F1.7 constant (8-32mm)",
+      "varifocal": true
+    },
+    "field_of_view_deg": "114.6 to 41.8 (2.8-12mm), 42.5 to 15.2 (8-32mm) horizontal",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 100,
+      "min_lux_color": 0.0005
+    },
+    "power": {
+      "method": "PoE (802.3at, Type 2, Class 4), max. 22.8W, or 12 VDC max. 19.2W"
+    },
+    "power_source": [
+      "poe",
+      "dc"
+    ],
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 1024,
+      "nvr_compatible": true,
+      "cloud": false
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "ip_rating": "IP67",
+    "ik_rating": "IK10",
+    "dimensions_mm": "323.4 x 114.5 x 114.5",
+    "weight_g": 1450,
+    "video": {
+      "codecs": [
+        "H.265+",
+        "H.265",
+        "H.264+",
+        "H.264",
+        "MJPEG"
+      ],
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2688x1520",
+          "codec": "H.265+",
+          "max_fps": 30
+        },
+        {
+          "name": "sub",
+          "resolution": "704x576",
+          "codec": "H.265",
+          "max_fps": 30
+        },
+        {
+          "name": "third",
+          "resolution": "1920x1080",
+          "codec": "H.265",
+          "max_fps": 30
+        }
+      ]
+    },
+    "features": [
+      "DeepinViewX 4MP motorized-varifocal (P-iris) bullet with dedicated Guanlan large-scale AI model for perimeter protection (~90% fewer false alarms)",
+      "AI Encoding — cuts storage ~50% while preserving human/vehicle image quality",
+      "multi-target-type detection — simultaneous human body, face and vehicle capture with feature extraction",
+      "face capture, regional people counting, heat map, on/off duty detection, AcuSeek search (with AcuSeek NVR/servers)",
+      "perimeter protection: line crossing, intrusion, region entrance/exiting",
+      "AI Open Platform — 4 loadable model packages, up to 16 target types each",
+      "hybrid supplement light — IR up to 100m (8-32mm) / 80m (2.8-12mm), white light up to 60m",
+      "140 dB WDR, DarkFighter 2.0 low-light, built-in front window heater",
+      "optional NEMA 4X anti-corrosion (-Y)"
+    ],
+    "environment": [
+      "outdoor"
+    ],
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "Use ONVIF integration. Default ONVIF port 80."
+      },
+      "blue_iris": {
+        "profile": "Hikvision",
+        "notes": "Select 'Hikvision' profile."
+      }
+    },
+    "sources": [
+      "https://assets.hikvision.com/prd/normal/all/doc/sm000100540/iDS-2CD5A46G2_V-XZHSY_Datasheet_20260805.pdf"
+    ],
+    "last_verified": "2026-08-07",
+    "release_notes": "4MP DeepinViewX motorized-varifocal (P-iris, 2.8-12mm or 8-32mm) bullet for perimeter protection (Guanlan model) with face capture, people counting, heat map, AI Encoding. 4MP sibling of the iDS-2CD5A86G2/V-XZHSY. -H heater, -Y NEMA 4X."
+  },
+  {
+    "id": "hikvision-ids-2cd5a86g2-v-xzhsy",
+    "brand": "Hikvision",
+    "model": "iDS-2CD5A86G2/V-XZHSY",
+    "aliases": [
+      "iDS-2CD5A86G2/V-XZ(H)S(Y)",
+      "8MP DeepinViewX Moto Varifocal Bullet"
+    ],
+    "type": "bullet",
+    "connectivity": [
+      "ethernet"
+    ],
+    "resolution": {
+      "megapixels": 8,
+      "max_width": 3840,
+      "max_height": 2160,
+      "label": "8MP"
+    },
+    "sensor": "1/1.8\" Progressive Scan CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8-12 or 8-32",
+      "aperture": "F1.47-F2.53 (2.8-12mm), F1.7 constant (8-32mm)",
+      "varifocal": true
+    },
+    "field_of_view_deg": "112.0 to 47.5 (2.8-12mm), 41.8 to 15.0 (8-32mm) horizontal",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 100,
+      "min_lux_color": 0.001
+    },
+    "power": {
+      "method": "PoE (802.3at, Type 2, Class 4), max. 22.8W, or 12 VDC max. 19.2W"
+    },
+    "power_source": [
+      "poe",
+      "dc"
+    ],
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 1024,
+      "nvr_compatible": true,
+      "cloud": false
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "ip_rating": "IP67",
+    "ik_rating": "IK10",
+    "dimensions_mm": "323.4 x 114.5 x 114.5",
+    "weight_g": 1440,
+    "video": {
+      "codecs": [
+        "H.265+",
+        "H.265",
+        "H.264+",
+        "H.264",
+        "MJPEG"
+      ],
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "3840x2160",
+          "codec": "H.265+",
+          "max_fps": 30
+        },
+        {
+          "name": "sub",
+          "resolution": "704x576",
+          "codec": "H.265",
+          "max_fps": 30
+        },
+        {
+          "name": "third",
+          "resolution": "1920x1080",
+          "codec": "H.265",
+          "max_fps": 30
+        }
+      ]
+    },
+    "features": [
+      "DeepinViewX 8MP motorized-varifocal (P-iris) bullet with dedicated Guanlan large-scale AI model for perimeter protection (~90% fewer false alarms)",
+      "AI Encoding — cuts storage ~50% while preserving human/vehicle image quality",
+      "multi-target-type detection — simultaneous human body, face and vehicle capture with feature extraction",
+      "face capture, regional people counting, heat map, on/off duty detection, AcuSeek search (with AcuSeek NVR/servers)",
+      "perimeter protection: line crossing, intrusion, region entrance/exiting",
+      "AI Open Platform — 4 loadable model packages, built-in construction-site PPE algorithm (hard hat / reflective clothing)",
+      "hybrid supplement light — IR up to 100m (8-32mm) / 80m (2.8-12mm), white light up to 60m",
+      "130 dB WDR, DarkFighter 2.0 low-light, built-in front window heater",
+      "optional NEMA 4X anti-corrosion (-Y)"
+    ],
+    "environment": [
+      "outdoor"
+    ],
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "Use ONVIF integration. Default ONVIF port 80."
+      },
+      "blue_iris": {
+        "profile": "Hikvision",
+        "notes": "Select 'Hikvision' profile."
+      }
+    },
+    "sources": [
+      "https://assets.hikvision.com/prd/normal/all/doc/sm000100543/iDS-2CD5A86G2_V-XZHSY_Datasheet_20260805.pdf"
+    ],
+    "last_verified": "2026-08-07",
+    "release_notes": "8MP DeepinViewX motorized-varifocal (P-iris, 2.8-12mm or 8-32mm) bullet for perimeter protection (Guanlan model) with face capture, people counting, heat map, AI Encoding. -H heater, -Y NEMA 4X anti-corrosion."
+  },
+  {
+    "id": "hikvision-ids-2cd5d47g2-v-xs",
+    "brand": "Hikvision",
+    "model": "iDS-2CD5D47G2/V-XS",
+    "aliases": [
+      "4MP DeepinViewX Fixed Lens Dome"
+    ],
+    "type": "dome",
+    "connectivity": [
+      "ethernet"
+    ],
+    "resolution": {
+      "megapixels": 4,
+      "max_width": 2688,
+      "max_height": 1520,
+      "label": "4MP"
+    },
+    "sensor": "1/1.8\" Progressive Scan CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8 or 4",
+      "aperture": "F1.0",
+      "varifocal": false
+    },
+    "field_of_view_deg": "111 (2.8mm), 95 (4mm) horizontal",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 40,
+      "min_lux_color": 0.0001
+    },
+    "power": {
+      "method": "PoE (802.3at, Type 2, Class 4), max. 15.6W, or 12 VDC"
+    },
+    "power_source": [
+      "poe",
+      "dc"
+    ],
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 1024,
+      "nvr_compatible": true,
+      "cloud": false
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "ip_rating": "IP67",
+    "ik_rating": "IK10",
+    "dimensions_mm": "121.5 diameter x 97.6",
+    "weight_g": 630,
+    "video": {
+      "codecs": [
+        "H.265+",
+        "H.265",
+        "H.264+",
+        "H.264",
+        "MJPEG"
+      ],
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2688x1520",
+          "codec": "H.265+",
+          "max_fps": 30
+        },
+        {
+          "name": "sub",
+          "resolution": "704x576",
+          "codec": "H.265",
+          "max_fps": 30
+        },
+        {
+          "name": "third",
+          "resolution": "1920x1080",
+          "codec": "H.265",
+          "max_fps": 30
+        }
+      ]
+    },
+    "features": [
+      "DeepinViewX 4MP dome with dedicated Guanlan large-scale AI model for perimeter protection (~90% fewer false alarms)",
+      "AI Encoding — cuts storage ~50% while preserving human/vehicle image quality",
+      "multi-target-type detection — simultaneous human body, face and vehicle capture with feature extraction",
+      "face capture — up to 60 faces simultaneously (swing -60 to 60, tilt -30 to 30)",
+      "regional people counting — density / people-exception / waiting-time exception detection, up to 8 regions",
+      "heat map (space + time), on/off duty detection, AcuSeek search (with AcuSeek NVR/servers)",
+      "perimeter protection: line crossing, intrusion, region entrance/exiting with combined event alarms",
+      "AI Open Platform — 4 loadable model packages, up to 16 target types each",
+      "140 dB WDR, DarkFighter 2.0 low-light, blue-glass day/night module",
+      "IK10 vandal-resistant aluminum-alloy dome"
+    ],
+    "environment": [
+      "outdoor"
+    ],
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "Use ONVIF integration. Default ONVIF port 80."
+      },
+      "blue_iris": {
+        "profile": "Hikvision",
+        "notes": "Select 'Hikvision' profile."
+      }
+    },
+    "sources": [
+      "https://assets.hikvision.com/prd/normal/all/doc/m000172230/iDS-2CD5D47G2_V-XS_Datasheet_20260630.pdf"
+    ],
+    "last_verified": "2026-08-07",
+    "release_notes": "4MP DeepinViewX fixed-lens dome for perimeter protection (Guanlan model) with face capture, regional people counting, heat map, AI Encoding. Datasheet lists it as a single-lens IK10 dome despite the 'D' model designator."
   },
   {
     "id": "hikvision-ids-2cd7a46g0-p-izhs-y",
@@ -191020,6 +192454,128 @@
       }
     },
     "added": "2026-07-07"
+  },
+  {
+    "id": "hikvision-ids-2cd7t46g2-vx3-ihsy",
+    "brand": "Hikvision",
+    "model": "iDS-2CD7T46G2/VX3-IHSY",
+    "aliases": [
+      "iDS-2CD7T46G2/VX3-IS",
+      "iDS-2CD7T46G2/VX3-I(H)S(Y)",
+      "4MP DeepinView Triple Fixed Lens Bullet"
+    ],
+    "type": "bullet",
+    "connectivity": [
+      "ethernet"
+    ],
+    "resolution": {
+      "megapixels": 4,
+      "max_width": 2688,
+      "max_height": 1520,
+      "label": "4MP"
+    },
+    "sensor": "1/2.7\" Progressive Scan CMOS",
+    "lens": {
+      "count": 3,
+      "focal_length_mm": "4 / 12 / 25",
+      "aperture": "F1.6 (4mm), F1.6 (12mm), F2.8 (25mm)",
+      "varifocal": false
+    },
+    "field_of_view_deg": "82.5 (4mm), 25.4 (12mm), 13.0 (25mm) horizontal",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 120,
+      "min_lux_color": 0.005,
+      "min_lux": 0.002
+    },
+    "power": {
+      "method": "PoE (802.3at, Type 2, Class 4), max. 25.5W, or 12 VDC max. 25.2W"
+    },
+    "power_source": [
+      "poe",
+      "dc"
+    ],
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 1024,
+      "nvr_compatible": true,
+      "cloud": false
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "ip_rating": "IP67",
+    "ik_rating": "IK10",
+    "dimensions_mm": "128.9 x 139.5 x 337",
+    "weight_g": 2510,
+    "video": {
+      "codecs": [
+        "H.265+",
+        "H.265",
+        "H.264+",
+        "H.264",
+        "MJPEG"
+      ],
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2688x1520",
+          "codec": "H.265+",
+          "max_fps": 30
+        },
+        {
+          "name": "sub",
+          "resolution": "704x576",
+          "codec": "H.265",
+          "max_fps": 30
+        },
+        {
+          "name": "third",
+          "resolution": "1920x1080",
+          "codec": "H.265",
+          "max_fps": 30
+        }
+      ]
+    },
+    "features": [
+      "DeepinView triple fixed-lens bullet (4mm + 12mm + 25mm) — 4MP + 2 x 2MP, 3 channels",
+      "Guanlan large-scale AI model for perimeter protection — reduces false alarms by ~90% vs conventional AI, detects person/vehicle up to 120m",
+      "perimeter protection: line crossing, intrusion, region entrance, region exiting (human/vehicle target classification)",
+      "DarkFighter 2.0 Sharpmotion low-light, Digital WDR",
+      "hybrid supplement light — IR up to 120m (850nm), smart supplement light",
+      "red/blue alarm LED and audible warning, motorized tilt -10 to 10 for install",
+      "2 built-in mics + speaker, 2 alarm in / 2 alarm out",
+      "TPM 2.0 (FIPS 140-2 level 2) cyber security",
+      "metadata output: intrusion, line crossing, region entrance/exiting"
+    ],
+    "environment": [
+      "outdoor"
+    ],
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "Use ONVIF integration. Default ONVIF port 80."
+      },
+      "blue_iris": {
+        "profile": "Hikvision",
+        "notes": "Select 'Hikvision' profile."
+      }
+    },
+    "sources": [
+      "https://assets.hikvision.com/prd/public/all/doc/sm000086677/iDS-2CD7T46G2_VX3-IHSY_Datasheet_20250616.pdf"
+    ],
+    "last_verified": "2026-08-07",
+    "release_notes": "4MP DeepinView triple fixed-lens bullet (4/12/25mm, 3 channels) for perimeter protection. -H adds heater/wide temp, -Y adds RS-485, alarm/audio expansion, NEMA 4X anti-corrosion and 12 VDC out."
   },
   {
     "id": "hilook-ipc-b129haa-lu",
