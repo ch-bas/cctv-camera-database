@@ -72,11 +72,10 @@ for (const file of files) {
     errors.push(`${id}: weight_g ${JSON.stringify(cam.weight_g)} is out of range (expected 0 < g ≤ 100000).`);
   }
 
-  // W3 — field_of_view_deg should be normalised (no "°" symbol; see the ACTi /
-  // Uniview convention). Advisory: a clean strip sometimes also wants the
-  // "horizontal"/"vertical" wording, so it's a nudge rather than a gate.
+  // E6 — field_of_view_deg must be normalised without the "°" symbol (the whole
+  // dataset was normalised in #231, so this stays enforced).
   if (typeof cam.field_of_view_deg === "string" && cam.field_of_view_deg.includes("°")) {
-    warnings.push(`${id}: field_of_view_deg contains "°" — consider normalising (strip the degree symbol).`);
+    errors.push(`${id}: field_of_view_deg contains "°" — strip the degree symbol.`);
   }
 
   // E4 — last_verified, when present, must be an ISO date (YYYY-MM-DD).
@@ -84,15 +83,16 @@ for (const file of files) {
     errors.push(`${id}: last_verified "${cam.last_verified}" is not an ISO date (YYYY-MM-DD).`);
   }
 
-  // W1 — canonical formatting (2-space indent + trailing newline). Keeps diffs
-  // clean. `--fix` rewrites; otherwise it's an advisory warning.
+  // E5 — canonical formatting (2-space indent + trailing newline). Keeps diffs
+  // clean. `--fix` rewrites; otherwise it's a hard error (the whole dataset was
+  // canonicalised in #230, so this now stays enforced).
   const canonical = JSON.stringify(cam, null, 2) + "\n";
   if (raw !== canonical) {
     if (FIX) {
       fs.writeFileSync(file, canonical);
       fixed++;
     } else {
-      warnings.push(`${file}: not in canonical 2-space JSON form (run \`npm run lint -- --fix\`).`);
+      errors.push(`${file}: not in canonical 2-space JSON form (run \`npm run lint -- --fix\`).`);
     }
   }
 
@@ -103,12 +103,20 @@ for (const file of files) {
   }
 }
 
-// W2 — the same source URL on >1 camera. Often legitimate (shared manuals /
-// brand asset pages / multi-packs), so advisory only — but it surfaces the
-// class of mistake where a new entry was sourced from another model's page.
+// W2 — the same source URL on >1 camera. Most sharing is legitimate — brand
+// hubs, category/family pages, manuals & datasheet PDFs, comparison/news
+// articles, and regional/lens/colour variants of one model — so those are
+// suppressed (audited in #232). What's left is the actionable class: a
+// *specific product page* cited by cameras that aren't variants of each other
+// (the #226 "sourced from another model's page" mistake).
+const BENIGN_SHARE = /manualslib|manuals\.plus|\/dam\/|assets\.|\/support|\/brands?\/|\/category|\/collections?\/|\/products\/?(\?|#|$)|user-?manual|\.pdf(\?|$)|\/downloads?\/|\/faq|\/news|\/press|\/blog|\/article|difference|comparison|businesswire|notebookcheck|9to5|ces|\/(en|us|uk|in-en|kz\/en|mena-en)\/?$/i;
+// Strip trailing region / lens / colour / resolution suffixes to a "model root".
+const modelRoot = (id) => id.replace(/-(mena|india|in|eu|us|uk|ca)$|-\d+mm$|-(white|black|w|b|telephoto|kit)$|-\d(mp|k)$/gi, "");
 const shared = Object.entries(bySource).filter(([, ids]) => ids.length > 1);
 for (const [url, ids] of shared) {
-  warnings.push(`source shared by ${ids.length} cameras: ${url}  → ${ids.slice(0, 4).join(", ")}${ids.length > 4 ? " …" : ""}`);
+  if (BENIGN_SHARE.test(url)) continue;
+  if (new Set(ids.map(modelRoot)).size <= 1) continue; // same model, different variant — fine
+  warnings.push(`source shared across ${ids.length} distinct models — verify it covers each: ${url}  → ${ids.slice(0, 4).join(", ")}${ids.length > 4 ? " …" : ""}`);
 }
 
 // ── report ──────────────────────────────────────────────────────────────────

@@ -9,7 +9,7 @@
 | Resolution | 6MP (6MP, 2816×2112) |
 | Sensor | 1/1.8 inch CMOS |
 | Lens | 1× 2.5mm f/2.4 |
-| Field of view | 131.1° horizontal, 96.5° vertical° |
+| Field of view | 131.1 horizontal, 96.5 vertical° |
 | Night vision | ir (15m) |
 | Power | PoE IEEE 802.3at Type 1 Class 3 / 12 VDC / 24 VAC |
 | Storage | NVR |

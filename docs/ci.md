@@ -47,10 +47,11 @@ Cross-field invariants a JSON Schema can't express.
   (`IP66/IP67`) and partial (`IPX5`, `IP5X`) forms.
 - **E3** `weight_g` must be a positive number ≤ 100 000.
 - **E4** `last_verified`, when present, must be an ISO date (`YYYY-MM-DD`).
+- **E5** canonical JSON formatting (2-space indent + trailing newline) — the
+  dataset was canonicalised in #230, so this stays enforced. `--fix` auto-formats.
+- **E6** `field_of_view_deg` must not contain a `°` symbol (normalised in #231).
 
 **Warnings (advisory):**
-- non-canonical JSON formatting — run `npm run lint -- --fix` to auto-format;
-- `field_of_view_deg` containing a `°` symbol (strip it, per convention);
 - a `sources[]` URL shared by more than one camera (often legitimate — shared
   manuals/asset pages — but catches an entry sourced from another model's page).
 
@@ -70,9 +71,11 @@ npm run lint -- --fix   # auto-fix JSON formatting
 - **`docs/cameras/**.md`** — per-camera docs (`scripts/gen-docs.js`).
 - **`COVERAGE.md`** — field-coverage report (`scripts/coverage-report.js`,
   `npm run coverage`). A table of how completely each important field is filled,
-  with progress bars, linked to the data-lane issues (#123/#161/#162/#177/#178/
-  #179/#166/#170). This replaces the old manual coverage tallies. Regenerate
-  locally with `COVERAGE_DATE=$(git log -1 --format=%cs) npm run coverage`.
+  with progress bars + shields.io badges, linked to the data-lane issues
+  (#123/#161/#162/#177/#178/#179/#166/#170). This replaces the old manual
+  coverage tallies. The same script also refreshes the badge row in the README
+  between the `<!-- coverage:start -->` / `<!-- coverage:end -->` markers (#234).
+  Regenerate locally with `COVERAGE_DATE=$(git log -1 --format=%cs) npm run coverage`.
 
 ---
 
@@ -80,15 +83,21 @@ npm run lint -- --fix   # auto-fix JSON formatting
 
 ### Wayback archiving — `scripts/archive-sources.js` (`npm run archive-sources`)
 Manufacturer pages and datasheet PDFs disappear; several entries have already
-been recovered from the Wayback Machine after link-rot. On every push to `main`,
-`archive-sources.yml` submits the **changed** cameras' `sources[]` to the Wayback
-"Save Page Now" API, guaranteeing a permanent snapshot.
+been recovered from the Wayback Machine after link-rot. `archive-sources.yml`:
+- on every **push** to `main`, archives the **changed** cameras' `sources[]`;
+- on a **monthly cron** (5th, 03:00 UTC), runs a full-catalogue sweep (`--all`).
+
+The archiver is **idempotent/resumable**: before saving, it asks Wayback's
+availability API whether a snapshot already exists within `ARCHIVE_SKIP_DAYS`
+(default 45) and skips if so. That's why the monthly full sweep is cheap — it
+only saves what's missing or stale, and converges over runs.
 ```bash
 node scripts/archive-sources.js cameras/hikvision/ds-2df4420wg-xey.json   # specific files
 node scripts/archive-sources.js --brand hikvision                          # one brand
-node scripts/archive-sources.js --all                                      # everything (slow)
+node scripts/archive-sources.js --all                                      # everything
 ```
-Env: `ARCHIVE_DELAY_MS` (default 6000, be polite to IA), `ARCHIVE_MAX` (default 400).
+Env: `ARCHIVE_DELAY_MS` (default 6000, be polite to IA), `ARCHIVE_MAX` (default 400),
+`ARCHIVE_SKIP_DAYS` (default 45).
 
 ### Dead-link sweep — `scripts/check-sources.js` (`npm run check-sources`)
 Weekly probe of every `sources[]` URL; reports dead/moved links into tracking

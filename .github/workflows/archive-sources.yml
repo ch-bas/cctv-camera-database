@@ -12,6 +12,8 @@ on:
     branches: [main]
     paths:
       - "cameras/**"
+  schedule:
+    - cron: "0 3 5 * *" # 5th of each month, 03:00 UTC — full-catalogue sweep
   workflow_dispatch:
     inputs:
       scope:
@@ -30,7 +32,9 @@ concurrency:
 jobs:
   archive:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    # Long timeout for the monthly `all` sweep; per-push runs finish in minutes.
+    # Re-runs are cheap because already-archived URLs are skipped (ARCHIVE_SKIP_DAYS).
+    timeout-minutes: 350
     steps:
       - uses: actions/checkout@v4
         with:
@@ -42,7 +46,10 @@ jobs:
 
       - name: Archive source URLs to the Wayback Machine
         run: |
-          scope="${{ github.event.inputs.scope || 'changed' }}"
+          # Resolve scope: scheduled run = full sweep; dispatch = input; push = changed.
+          scope="${{ github.event.inputs.scope }}"
+          if [ "${{ github.event_name }}" = "schedule" ]; then scope="all"; fi
+          if [ -z "$scope" ]; then scope="changed"; fi
           if [ "$scope" = "all" ]; then
             node scripts/archive-sources.js --all
           elif [ "$scope" != "changed" ] && [ -n "$scope" ]; then

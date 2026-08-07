@@ -11,7 +11,7 @@
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/3" Progressive Scan CMOS |
 | Lens | 2.8/4mm F2.0 |
-| Field of view | 2.8mm: H 98.8°, V 53.5°, D 117° / 4mm: H 75.2°, V 40.8°, D 88.3°° |
+| Field of view | 2.8mm: H 98.8, V 53.5, D 117 / 4mm: H 75.2, V 40.8, D 88.3° |
 | Night vision | hybrid (30m) |
 | Power | PoE / DC |
 | Storage | NVR |

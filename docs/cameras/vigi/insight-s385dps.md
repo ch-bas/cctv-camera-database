@@ -11,7 +11,7 @@
 | Resolution | 8MP (dual-lens stitched panorama) (8MP, 5456×1520) |
 | Sensor | Dual 1/1.79" Progressive Scan CMOS |
 | Lens | 2× 5mm F1.0 |
-| Field of view | Horizontal: 180°, Vertical: 51°, Diagonal: 180°° |
+| Field of view | Horizontal: 180, Vertical: 51, Diagonal: 180° |
 | Night vision | hybrid (50m), 0.0005 lux color |
 | Power | PoE / DC |
 | Storage | microSD ≤ 512GB, NVR |

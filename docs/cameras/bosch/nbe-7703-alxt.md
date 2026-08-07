@@ -9,7 +9,7 @@
 | Resolution | 4MP (4.1MP, 2688×1520) |
 | Sensor | 1/1.8-inch CMOS |
 | Lens | 1× 10.5-47mm F1.35-F1.55 |
-| Field of view | 9.3°-41.6° (horizontal)° |
+| Field of view | 9.3-41.6 (horizontal)° |
 | Night vision | ir |
 | Power | PoE (IEEE 802.3af/at), 12 VDC, 24 VAC |
 | Protocols | onvif, rtsp, http |

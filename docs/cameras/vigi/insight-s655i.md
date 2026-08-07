@@ -11,7 +11,7 @@
 | Resolution | 5MP (5MP, 2560×1920) |
 | Sensor | 1/2.7" Progressive Scan CMOS |
 | Lens | 1.44mm F2.0 |
-| Field of view | Horizontal: 180°, Vertical: 180°, Diagonal: 180°° |
+| Field of view | Horizontal: 180, Vertical: 180, Diagonal: 180° |
 | Night vision | ir (10m) |
 | Power | PoE / DC |
 | Storage | microSD ≤ 512GB, NVR |

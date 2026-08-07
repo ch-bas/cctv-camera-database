@@ -11,7 +11,7 @@
 | Resolution | 12MP (12MP, 4000×3000) |
 | Sensor | 1/1.7" Progressive Scan CMOS |
 | Lens | 1.65mm F2.0 |
-| Field of view | Horizontal (wall): 180°, Horizontal (ceiling): 360°° |
+| Field of view | Horizontal (wall): 180, Horizontal (ceiling): 360° |
 | Night vision | ir (20m), 0.01 lux color |
 | Power | DC12V / PoE (IEEE 802.3af) |
 | Storage | microSD ≤ 256GB, NVR |
