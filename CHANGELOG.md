@@ -6,6 +6,12 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.58.1] — 2026-08-07
+
+### Changed
+- **Canonicalised JSON formatting across the dataset (#230).** Reformatted 109 camera files to canonical 2-space indent + trailing newline via `npm run lint -- --fix`. No spec values changed (the generated `data/` aggregate is byte-identical) — purely whitespace, to keep future diffs clean.
+- **Promoted the formatting check to a hard error** in `scripts/lint-data.js`, so PRs now fail on non-canonical JSON. Docs updated in `docs/ci.md`.
+
 ## [1.58.0] — 2026-08-07
 
 ### Added — Hikvision specialty cameras (+23)

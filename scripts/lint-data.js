@@ -84,15 +84,16 @@ for (const file of files) {
     errors.push(`${id}: last_verified "${cam.last_verified}" is not an ISO date (YYYY-MM-DD).`);
   }
 
-  // W1 — canonical formatting (2-space indent + trailing newline). Keeps diffs
-  // clean. `--fix` rewrites; otherwise it's an advisory warning.
+  // E5 — canonical formatting (2-space indent + trailing newline). Keeps diffs
+  // clean. `--fix` rewrites; otherwise it's a hard error (the whole dataset was
+  // canonicalised in #230, so this now stays enforced).
   const canonical = JSON.stringify(cam, null, 2) + "\n";
   if (raw !== canonical) {
     if (FIX) {
       fs.writeFileSync(file, canonical);
       fixed++;
     } else {
-      warnings.push(`${file}: not in canonical 2-space JSON form (run \`npm run lint -- --fix\`).`);
+      errors.push(`${file}: not in canonical 2-space JSON form (run \`npm run lint -- --fix\`).`);
     }
   }
 

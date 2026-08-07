@@ -47,9 +47,10 @@ Cross-field invariants a JSON Schema can't express.
   (`IP66/IP67`) and partial (`IPX5`, `IP5X`) forms.
 - **E3** `weight_g` must be a positive number ≤ 100 000.
 - **E4** `last_verified`, when present, must be an ISO date (`YYYY-MM-DD`).
+- **E5** canonical JSON formatting (2-space indent + trailing newline) — the
+  dataset was canonicalised in #230, so this stays enforced. `--fix` auto-formats.
 
 **Warnings (advisory):**
-- non-canonical JSON formatting — run `npm run lint -- --fix` to auto-format;
 - `field_of_view_deg` containing a `°` symbol (strip it, per convention);
 - a `sources[]` URL shared by more than one camera (often legitimate — shared
   manuals/asset pages — but catches an entry sourced from another model's page).
