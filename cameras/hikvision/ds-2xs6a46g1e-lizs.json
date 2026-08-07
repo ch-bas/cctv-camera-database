@@ -1,0 +1,116 @@
+{
+  "id": "hikvision-ds-2xs6a46g1e-lizs",
+  "brand": "Hikvision",
+  "model": "DS-2XS6A46G1E-LIZS",
+  "aliases": [
+    "DS-2XS6A46G1E-LIZS/C36S80",
+    "4MP Strobe Light and Audible Warning Solar Power 4G Network Camera Kit"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "4g"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12 / 8-32",
+    "aperture": "F1.4 (2.8-12mm), F1.7 (8-32mm)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "103.9 to 48.2 horizontal (2.8-12mm); 42.5 to 15.2 horizontal (8-32mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 50,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "12 VDC ± 10%; solar kit: 80 W photovoltaic panel + 360 Wh lithium battery"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "dimensions_mm": "662.11 x 720 x 579.76 (solar kit, fully assembled)",
+  "weight_g": 13045,
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1280x720",
+        "codec": "H.265"
+      }
+    ]
+  },
+  "features": [
+    "solar-powered wire-free — 80 W photovoltaic panel + 360 Wh (4x 90 Wh) chargeable lithium battery (C36S80 kit)",
+    "battery management: display, high/low-temperature protection, charge-discharge protection, low-battery sleep, remote wakeup",
+    "4G cellular transmission (LTE-TDD/LTE-FDD/WCDMA/GSM), Micro SIM, external antenna expansion supported",
+    "Smart Hybrid Light — IR + white supplement light, long range (up to 30m / 50m)",
+    "active strobe light and audio alarm to warn intruders off",
+    "built-in two-way audio",
+    "AcuSense deep-learning human/vehicle target classification",
+    "120 dB true WDR, motorized varifocal (2.8-12mm or 8-32mm)",
+    "built-in eMMC storage up to 256 GB, wind resistance up to 40 m/s"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "power_source": [
+    "solar",
+    "battery",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile."
+    }
+  },
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000164709/DS-2XS6A46G1E-LIZS_C36S80_Datasheet_20250926.pdf"
+  ],
+  "last_verified": "2026-08-07",
+  "release_notes": "4MP solar-powered 4G bullet kit with Smart Hybrid Light, active strobe + audio deterrence and two-way audio. Documented from the /C36S80 config bundle (80 W panel + 360 Wh battery). Weight/dimension are the assembled solar kit. No specific anti-corrosion protection."
+}

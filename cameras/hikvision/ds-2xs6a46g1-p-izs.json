@@ -1,0 +1,110 @@
+{
+  "id": "hikvision-ds-2xs6a46g1-p-izs",
+  "brand": "Hikvision",
+  "model": "DS-2XS6A46G1/P-IZS",
+  "aliases": [
+    "DS-2XS6A46G1/P-IZS/4G",
+    "4MP ANPR Bullet 4G Network Camera"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "4g"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12 / 8-32",
+    "aperture": "F1.2 (2.8-12mm), F1.6 (8-32mm)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "107.4 to 39.8 horizontal (2.8-12mm); 40.3 to 14.5 horizontal (8-32mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "12 VDC ± 20%, 4-pin M8 waterproof connector"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "dimensions_mm": "816.2 x 735.9 x 760 (fully assembled)",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1280x720",
+        "codec": "H.265"
+      }
+    ]
+  },
+  "features": [
+    "ANPR / license plate recognition — embedded deep-learning LPR (vehicles and motorcycles, checkpoint scenario), blocklist/allowlist, 4 LPR regions (Europe, Middle East, Asia-Pacific, Africa)",
+    "4G cellular transmission (LTE-TDD/LTE-FDD/WCDMA/GSM), Micro SIM",
+    "AcuSense deep-learning human/vehicle target classification",
+    "120 dB true WDR",
+    "motorized varifocal (2.8-12mm or 8-32mm), IR supplement light up to 30m / 50m",
+    "smart supplement light, built-in 8 GB eMMC storage"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile."
+    }
+  },
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000128283/DS-2XS6A46G1_P-IZS_4G_Datasheet_20250414.pdf"
+  ],
+  "last_verified": "2026-08-07",
+  "release_notes": "4MP ANPR (license-plate) motorized-varifocal 4G bullet with on-camera LPR. 12 VDC powered (no built-in battery/solar block in this datasheet; assembled dimension is the pole/bracket mount). Documented from the /4G config bundle. No specific anti-corrosion protection."
+}

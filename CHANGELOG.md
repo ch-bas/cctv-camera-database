@@ -6,6 +6,19 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.58.0] — 2026-08-07
+
+### Added — Hikvision specialty cameras (+23)
+- **Explosion-proof / anti-corrosion (8):** `DS-2XE6646G0-LIZSADC` (4MP varifocal bullet), and the full `DS-2DF4420` 20x explosion-proof speed-dome family in every enclosure grade — `WG-XEY` & `WG-XEYADCE` (aluminum-alloy / ADC), `-DXS6C304` & `-DX304E` (304 stainless), `-DXS6/316LC` & `-DX316LE` (316L marine-grade, NEMA 4X). All ATEX/IECEx Ex db IIC T6, IP68; spark-safe (no IR, starlight sensor).
+- **Solar / 4G (7):** the `DS-2XS6A46G1` series (4 models — IR `-IZS`, hybrid `-LIZS`/`E-LIZS`, and `/P-IZS` ANPR; solar-kit + 4G configs folded into aliases), `DS-2SE7C432IWG-K` TandemVu 4G PTZ (32x, solar+battery), and `DS-2XS3Q47G1-LD`/`-LDH` 24/7 ColorVu solar bullets.
+- **iDS DeepinView (8):** `iDS-2CD5347G2`/`5387G2/V-XS` (4/8MP turrets), `iDS-2CD5D47G2`/`5D87G2/V-XS` (4/8MP domes), `iDS-2CD5A46G2`/`5A86G2/V-XZHSY` (4/8MP motorized bullets, incl. construction-PPE algorithm), `iDS-2CD5T87G2/V-XZHSY` (8MP bullet), `iDS-2CD7T46G2/VX3-IHSY` (triple-lens Guanlan perimeter bullet, IR 120m), and `iDS-2CD70166G2-AP` (16MP box). The last two carry only confidently-derivable specs — their motorized-lens / new-product datasheets aren't published yet, so lens-specific fields were omitted rather than guessed.
+- Authored from official Hikvision datasheet PDFs. Camera count 2,861 → **2,884**.
+
+## [1.57.1] — 2026-08-07
+
+### Fixed
+- **LaView L2 (#226, reported by @empireryu)** — the entry only reflected the 4G/cloud variant. The L2 actually ships in three connectivity variants (2.4GHz Wi-Fi, 2.4/5GHz dual-band Wi-Fi, 4G LTE): `connectivity` → `["wifi","4g"]`, SKU variants added to `aliases`. The Wi-Fi variants expose ONVIF + RTSP after a firmware update, so `nvr_compatible` → `true` with `protocols: [onvif, rtsp]` and a config/release note scoping this to the Wi-Fi variants (the 4G variant stays cloud-only).
+
 ## [1.57.0] — 2026-08-06
 
 **Pro-install & consumer catalog expansion — SnapAV (Luma + ClareVision) and Resideo, plus SV3C audit + LaView/Yale.** Camera count 2,797 → **2,861** (+64).

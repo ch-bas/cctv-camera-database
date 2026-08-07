@@ -1,0 +1,133 @@
+{
+  "id": "hikvision-ds-2se7c432iwg-k",
+  "brand": "Hikvision",
+  "model": "DS-2SE7C432IWG-K",
+  "aliases": [
+    "DS-2SE7C432IWG-K/4G/14(F0)",
+    "TandemVu 7-inch 4MP 32x Solar-powered Speed Dome"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "4g",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "focal_length_mm": "5.9-188.8",
+    "aperture": "F1.5",
+    "varifocal": true
+  },
+  "field_of_view_deg": "60.2 to 2.3 horizontal (PTZ channel)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 200,
+    "min_lux_color": 0.005,
+    "min_lux": 0.001
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "12 VDC ± 25%, max. 28 W; solar-powered with lithium battery",
+    "consumption_w": 28,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 65",
+  "dimensions_mm": "Ø220 x 382.1",
+  "weight_g": 6000,
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 25,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "features": [
+    "TandemVu dual-channel: 4MP ColorVu bullet + 4MP 32x PTZ speed dome",
+    "32x optical zoom + 16x digital zoom (PTZ channel)",
+    "pan 360° endless, tilt -15° to 90°, 300 presets, 8 patrols",
+    "IR up to 200 m (PTZ channel), IR up to 30 m (bullet channel)",
+    "ColorVu low-light bullet channel (0.0005 lux @ F1.0, 0 lux with light)",
+    "smart tracking / auto tracking (PTZ channel)",
+    "120 dB WDR, HLC, BLC, 3D DNR, defog, EIS with built-in gyroscope",
+    "solar-powered with lithium battery (360 WH), scheduled/low-power sleep mode (0.5 W)",
+    "line crossing, intrusion, region entrance/exiting detection; face capture (PTZ channel)",
+    "12 VDC power output (max. 1000 mA), 2 alarm in / 1 alarm out, audio in/out"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "power_source": [
+    "solar",
+    "battery",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80. Dual-channel (bullet + PTZ) device."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile."
+    }
+  },
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000111081/DS-2SE7C432IWG-K_4G_14F0_Datasheet_20260622.pdf"
+  ],
+  "last_verified": "2026-08-07",
+  "release_notes": "Solar-powered 4G TandemVu speed dome kit pairing a 4MP ColorVu bullet channel with a 4MP 32x IR PTZ channel (IR up to 200 m). Datasheet notes no specific anti-corrosion protection."
+}
