@@ -1,0 +1,89 @@
+name: check-staleness
+
+# Monthly `last_verified` staleness sweep (CI idea #4) — the freshness companion
+# to check-sources.yml (which verifies a source still *resolves*). This flags
+# entries not re-verified against their source in a while, plus any with no
+# last_verified at all, into a self-updating tracking issue. Advisory only.
+on:
+  schedule:
+    - cron: "0 8 1 * *" # 1st of each month, 08:00 UTC
+  workflow_dispatch:
+    inputs:
+      months:
+        description: "Staleness threshold in months (default 18)"
+        required: false
+        default: "18"
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run staleness check
+        id: check
+        run: |
+          months="${{ github.event.inputs.months || '18' }}"
+          node scripts/check-staleness.js --months "$months" | tee staleness-report.txt
+          stale=$(grep -oE 'Found [0-9]+ stale' staleness-report.txt | grep -oE '[0-9]+' | head -1)
+          unver=$(grep -oE ', [0-9]+ unverified' staleness-report.txt | grep -oE '[0-9]+' | head -1)
+          echo "stale=${stale:-0}" >> "$GITHUB_OUTPUT"
+          echo "unver=${unver:-0}" >> "$GITHUB_OUTPUT"
+
+      - name: Write job summary
+        run: |
+          {
+            echo "## last_verified staleness"
+            echo "- Stale (> threshold): **${{ steps.check.outputs.stale }}**"
+            echo "- Unverified (no date): **${{ steps.check.outputs.unver }}**"
+            echo ""
+            echo '```'
+            sed -n '/--- STALENESS REPORT ---/,$p' staleness-report.txt | head -n 300
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload full report
+        uses: actions/upload-artifact@v4
+        with:
+          name: staleness-report
+          path: staleness-report.txt
+
+      - name: Upsert tracking issue
+        if: steps.check.outputs.stale != '0' || steps.check.outputs.unver != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE="🕰️ last_verified staleness (automated monthly check)"
+          {
+            echo "_Automated monthly \`last_verified\` staleness check (\`scripts/check-staleness.js\`). Last run: $(date -u '+%Y-%m-%d %H:%M UTC') — [run log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})._"
+            echo ""
+            echo "**${{ steps.check.outputs.stale }}** entries are stale (>threshold) and **${{ steps.check.outputs.unver }}** have no \`last_verified\` date. Re-verify each against its source and bump \`last_verified\`."
+            echo ""
+            sed -n '/--- STALENESS REPORT ---/,$p' staleness-report.txt | head -n 300
+          } > issue-body.md
+          NUM=$(gh issue list --state open --search "in:title last_verified staleness (automated monthly check)" --json number --jq '.[0].number // empty')
+          if [ -n "$NUM" ]; then
+            gh issue edit "$NUM" --body-file issue-body.md
+            echo "Updated tracking issue #$NUM"
+          else
+            gh issue create --title "$TITLE" --label "help wanted" --body-file issue-body.md
+          fi
+
+      - name: Close tracking issue (all fresh)
+        if: steps.check.outputs.stale == '0' && steps.check.outputs.unver == '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          NUM=$(gh issue list --state open --search "in:title last_verified staleness (automated monthly check)" --json number --jq '.[0].number // empty')
+          if [ -n "$NUM" ]; then
+            gh issue comment "$NUM" --body "✅ All entries have a recent last_verified as of run #${{ github.run_id }} — closing."
+            gh issue close "$NUM"
+          fi
