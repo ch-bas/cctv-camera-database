@@ -8,11 +8,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [1.58.0] — 2026-08-07
 
-### Added — Hikvision specialty cameras (+15)
-- **Explosion-proof (2):** `DS-2DF4420WG-XEY` (4MP 20x speed dome) and `DS-2XE6646G0-LIZSADC` (4MP varifocal bullet) — ATEX/IECEx Ex db IIC T6, IP68, aluminum-alloy.
+### Added — Hikvision specialty cameras (+23)
+- **Explosion-proof / anti-corrosion (8):** `DS-2XE6646G0-LIZSADC` (4MP varifocal bullet), and the full `DS-2DF4420` 20x explosion-proof speed-dome family in every enclosure grade — `WG-XEY` & `WG-XEYADCE` (aluminum-alloy / ADC), `-DXS6C304` & `-DX304E` (304 stainless), `-DXS6/316LC` & `-DX316LE` (316L marine-grade, NEMA 4X). All ATEX/IECEx Ex db IIC T6, IP68; spark-safe (no IR, starlight sensor).
 - **Solar / 4G (7):** the `DS-2XS6A46G1` series (4 models — IR `-IZS`, hybrid `-LIZS`/`E-LIZS`, and `/P-IZS` ANPR; solar-kit + 4G configs folded into aliases), `DS-2SE7C432IWG-K` TandemVu 4G PTZ (32x, solar+battery), and `DS-2XS3Q47G1-LD`/`-LDH` 24/7 ColorVu solar bullets.
-- **iDS DeepinView (6):** `iDS-2CD5347G2/V-XS` + `iDS-2CD5387G2/V-XS` (4/8MP DeepinViewX turrets), `iDS-2CD5D47G2/V-XS` (IK10 dome), `iDS-2CD5A46G2`/`iDS-2CD5A86G2/V-XZHSY` (4/8MP motorized-varifocal bullets, incl. construction-PPE algorithm), and `iDS-2CD7T46G2/VX3-IHSY` (triple-lens Guanlan perimeter bullet, IR 120m).
-- All authored from official Hikvision datasheet PDFs. Camera count 2,861 → **2,876**.
+- **iDS DeepinView (8):** `iDS-2CD5347G2`/`5387G2/V-XS` (4/8MP turrets), `iDS-2CD5D47G2`/`5D87G2/V-XS` (4/8MP domes), `iDS-2CD5A46G2`/`5A86G2/V-XZHSY` (4/8MP motorized bullets, incl. construction-PPE algorithm), `iDS-2CD5T87G2/V-XZHSY` (8MP bullet), `iDS-2CD7T46G2/VX3-IHSY` (triple-lens Guanlan perimeter bullet, IR 120m), and `iDS-2CD70166G2-AP` (16MP box). The last two carry only confidently-derivable specs — their motorized-lens / new-product datasheets aren't published yet, so lens-specific fields were omitted rather than guessed.
+- Authored from official Hikvision datasheet PDFs. Camera count 2,861 → **2,884**.
 
 ## [1.57.1] — 2026-08-07
 
