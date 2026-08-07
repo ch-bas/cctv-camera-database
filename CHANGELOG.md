@@ -6,6 +6,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.57.1] — 2026-08-07
+
+### Fixed
+- **LaView L2 (#226, reported by @empireryu)** — the entry only reflected the 4G/cloud variant. The L2 actually ships in three connectivity variants (2.4GHz Wi-Fi, 2.4/5GHz dual-band Wi-Fi, 4G LTE): `connectivity` → `["wifi","4g"]`, SKU variants added to `aliases`. The Wi-Fi variants expose ONVIF + RTSP after a firmware update, so `nvr_compatible` → `true` with `protocols: [onvif, rtsp]` and a config/release note scoping this to the Wi-Fi variants (the 4G variant stays cloud-only).
+
 ## [1.57.0] — 2026-08-06
 
 **Pro-install & consumer catalog expansion — SnapAV (Luma + ClareVision) and Resideo, plus SV3C audit + LaView/Yale.** Camera count 2,797 → **2,861** (+64).

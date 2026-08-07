@@ -207852,8 +207852,16 @@
     "id": "laview-l2",
     "brand": "LaView",
     "model": "L2",
+    "aliases": [
+      "LV-PWL2-W",
+      "LV-PWL2-W-5G",
+      "LV-PWL2-B",
+      "LV-PWL2-B-5G",
+      "LV-PWL2-W-4K"
+    ],
     "type": "dome",
     "connectivity": [
+      "wifi",
       "4g"
     ],
     "release_year": 2024,
@@ -207871,9 +207879,13 @@
     },
     "storage": {
       "onboard": true,
-      "nvr_compatible": false,
+      "nvr_compatible": true,
       "cloud": true
     },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
     "audio": {
       "microphone": true,
       "speaker": true,
@@ -207881,19 +207893,27 @@
     },
     "features": [
       "light bulb form factor (E27)",
-      "4G LTE (no WiFi needed)",
+      "three connectivity variants: 2.4GHz Wi-Fi, 2.4/5GHz dual-band Wi-Fi, and 4G LTE",
       "12x zoom",
       "355° motion tracking",
       "color + IR night vision",
       "two-way audio"
     ],
+    "configs": {
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "Wi-Fi variants (2.4GHz / 2.4-5GHz dual-band) expose ONVIF + RTSP after a firmware update, enabling local NVR/HA use. The 4G variant is cloud-only. ONVIF is surfaced in the LaView app rather than the public datasheet."
+      }
+    },
+    "release_notes": "Sold in three connectivity variants (2.4GHz Wi-Fi, 2.4/5GHz dual-band Wi-Fi, 4G LTE) plus a 4K Wi-Fi option. NVR compatibility applies to the Wi-Fi variants via ONVIF/RTSP after a firmware update (community-verified, #226); the 4G variant remains cloud-only.",
     "sources": [
+      "https://www.laviewusa.com/products/laview-4mp-light-bulb",
       "https://www.laviewusa.com/products/l2-light-bulb-camera-4g"
     ],
     "power_source": [
       "ac-mains"
     ],
-    "last_verified": "2026-07-06",
+    "last_verified": "2026-08-07",
     "environment": [
       "indoor",
       "outdoor"
