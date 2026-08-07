@@ -59,8 +59,14 @@ git push origin add/reolink-rlc-823a
 
 1. Create `cameras/<brand-slug>/<model-slug>.json`
 2. Follow the schema below
-3. Run `npm run build` to validate
+3. Run `npm run build` to validate (schema) and `npm run lint` to check
+   cross-field consistency (`npm run lint -- --fix` auto-formats the JSON)
 4. Open a pull request
+
+Both the schema build and the consistency lint run on every PR — see
+[`docs/ci.md`](docs/ci.md) for the full CI overview (validation, coverage
+reporting, Wayback source archiving, and the weekly/monthly link & freshness
+sweeps).
 
 > **You only commit source files** — the camera JSON under `cameras/`, and (for
 > tooling changes) `schema/` and `docs/glossary.md`. Everything under `cameras/`

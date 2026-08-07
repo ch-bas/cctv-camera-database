@@ -1,0 +1,62 @@
+name: archive-sources
+
+# Datasheet preservation (CI idea #3). On every push to main that touches a
+# camera file, submit that camera's source URLs to the Internet Archive's
+# Wayback "Save Page Now" API, so a permanent snapshot survives manufacturer
+# link-rot. Scoped to CHANGED cameras so we only archive what's new.
+#
+# Advisory only: Wayback rate-limits / downtime never fail the workflow.
+# Manual runs can re-archive a whole brand or the entire catalogue.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "cameras/**"
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: "Scope: 'changed' (default), a brand name (e.g. hikvision), or 'all'"
+        required: false
+        default: "changed"
+
+permissions:
+  contents: read
+
+# One run at a time — keeps us well under Wayback's rate limits.
+concurrency:
+  group: archive-sources
+  cancel-in-progress: false
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # need history to diff the pushed range
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+        # No `npm ci` — scripts/archive-sources.js only uses Node built-ins + fetch.
+
+      - name: Archive source URLs to the Wayback Machine
+        run: |
+          scope="${{ github.event.inputs.scope || 'changed' }}"
+          if [ "$scope" = "all" ]; then
+            node scripts/archive-sources.js --all
+          elif [ "$scope" != "changed" ] && [ -n "$scope" ]; then
+            node scripts/archive-sources.js --brand "$scope"
+          else
+            base='${{ github.event.before }}'
+            if [ -z "$base" ] || [ "$base" = "0000000000000000000000000000000000000000" ]; then
+              base="HEAD~1"
+            fi
+            files=$(git diff --name-only "$base" "${{ github.sha }}" -- 'cameras/**/*.json' 2>/dev/null || true)
+            if [ -z "$files" ]; then
+              echo "No changed camera files in this push — nothing to archive."
+              exit 0
+            fi
+            echo "Changed camera files:"; echo "$files"
+            node scripts/archive-sources.js $files
+          fi

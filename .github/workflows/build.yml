@@ -35,21 +35,31 @@ jobs:
       - name: Generate docs
         run: node scripts/gen-docs.js
 
-      # On push to main, keep the committed artifacts (data/, docs/) in sync by
-      # regenerating and committing them here — so no contributor or maintainer
-      # ever has to. Skipped on pull_request (validation above is the only gate).
+      # Cross-field consistency lint (scripts/lint-data.js) — the invariants a
+      # JSON Schema can't express (environment↔IP weatherproofing, ip_rating
+      # shape, weight sanity, ISO last_verified …). ERRORS fail the PR; warnings
+      # are advisory. Complements the schema gate above. See docs/ci.md.
+      - name: Lint data consistency
+        run: node scripts/lint-data.js
+
+      # On push to main, keep the committed artifacts (data/, docs/, COVERAGE.md)
+      # in sync by regenerating and committing them here — so no contributor or
+      # maintainer ever has to. Skipped on pull_request (validation is the gate).
       # The [skip ci] tag stops this commit from re-triggering workflows.
       - name: Sync generated artifacts (main only)
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
-          if [ -z "$(git status --porcelain data/ docs/)" ]; then
+          # Refresh the field-coverage report (COVERAGE.md), stamped with the
+          # commit date for a deterministic, diff-friendly output.
+          COVERAGE_DATE="$(git log -1 --format=%cs)" node scripts/coverage-report.js
+          if [ -z "$(git status --porcelain data/ docs/ COVERAGE.md)" ]; then
             echo "Generated artifacts already up to date — nothing to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/ docs/
-          git commit -m "chore: regenerate data/docs artifacts [skip ci]"
+          git add data/ docs/ COVERAGE.md
+          git commit -m "chore: regenerate data/docs/coverage artifacts [skip ci]"
           if git push; then
             echo "Regenerated artifacts committed to main."
           else
