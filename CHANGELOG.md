@@ -6,6 +6,14 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.58.0] — 2026-08-07
+
+### Added — Hikvision specialty cameras (+15)
+- **Explosion-proof (2):** `DS-2DF4420WG-XEY` (4MP 20x speed dome) and `DS-2XE6646G0-LIZSADC` (4MP varifocal bullet) — ATEX/IECEx Ex db IIC T6, IP68, aluminum-alloy.
+- **Solar / 4G (7):** the `DS-2XS6A46G1` series (4 models — IR `-IZS`, hybrid `-LIZS`/`E-LIZS`, and `/P-IZS` ANPR; solar-kit + 4G configs folded into aliases), `DS-2SE7C432IWG-K` TandemVu 4G PTZ (32x, solar+battery), and `DS-2XS3Q47G1-LD`/`-LDH` 24/7 ColorVu solar bullets.
+- **iDS DeepinView (6):** `iDS-2CD5347G2/V-XS` + `iDS-2CD5387G2/V-XS` (4/8MP DeepinViewX turrets), `iDS-2CD5D47G2/V-XS` (IK10 dome), `iDS-2CD5A46G2`/`iDS-2CD5A86G2/V-XZHSY` (4/8MP motorized-varifocal bullets, incl. construction-PPE algorithm), and `iDS-2CD7T46G2/VX3-IHSY` (triple-lens Guanlan perimeter bullet, IR 120m).
+- All authored from official Hikvision datasheet PDFs. Camera count 2,861 → **2,876**.
+
 ## [1.57.1] — 2026-08-07
 
 ### Fixed
