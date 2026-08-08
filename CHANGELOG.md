@@ -6,6 +6,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.58.3] — 2026-08-08
+
+### Backfilled
+- **Dahua `min_lux_color` (#161).** Filled **139** color min-illumination values from official Dahua datasheets (`material.dahuasecurity.com`), extracted as the published `… lux (Color, 30 IRE)` figure — never the B/W value or the "0 lux (Illuminator on)" sentinel, and handling the wrapped-line datasheet format. Covers IPC fixed domes/bullets, PTZ, traffic, and panoramic models. Dahua `min_lux_color` coverage 179 → **318 / 335 (95%)**; dataset-wide 36% → **43%**. The 12 skipped models publish only a single unlabeled illumination figure (no Color/B-W split) and were left blank rather than guessed. A handful of values came from an optically-identical regional/chipset variant datasheet (e.g. `-AUS`, `-S2`) where the exact SKU's PDF wasn't reachable — noted per model in the PR.
+
 ## [1.58.2] — 2026-08-08
 
 ### Backfilled

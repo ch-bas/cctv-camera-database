@@ -11,7 +11,7 @@
 | Resolution | 4K UHD (8MP, 3840×2160) |
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 2.7-13.5 (motorized varifocal)mm |
-| Night vision | ir (60m) |
+| Night vision | ir (60m), 0.008 lux color |
 | Power | PoE / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
