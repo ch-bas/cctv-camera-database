@@ -10,7 +10,7 @@
 | Connectivity | ethernet |
 | Resolution | 12MP UHD (12MP, 4000×3000) |
 | Sensor | 1/1.7" Progressive Scan CMOS |
-| Night vision | none |
+| Night vision | none, 0.0009 lux color |
 | Power | ePoE / DC 12V / AC 24V |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |

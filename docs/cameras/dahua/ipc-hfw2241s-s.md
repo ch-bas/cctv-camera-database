@@ -8,7 +8,7 @@
 | Connectivity | ethernet |
 | Resolution | 1080p HD (2MP) |
 | Field of view | 106h° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.002 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
