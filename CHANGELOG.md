@@ -6,6 +6,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.58.2] — 2026-08-08
+
+### Backfilled
+- **ACTi `min_lux_color` (#161) + `ik_rating` (#162).** Filled **43** color min-illumination values and **1** IK rating, extracted deterministically from ACTi's `.ashx` spec API (the published `Color: … lux` AGC-on figure — never the "0 lux (IR LED on)" B/W sentinel). ACTi `min_lux_color` coverage 201 → **244 / 248** (99%). The remaining ACTi blanks are genuinely non-IK (plastic/indoor) or specify no color-lux figure.
+
 ## [1.58.1] — 2026-08-07
 
 ### Changed
