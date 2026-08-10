@@ -321,6 +321,7 @@ function updateReadme(cameras) {
     "│   └── camera.schema.json",
     "├── scripts/",
     "│   └── build.js          # aggregates + validates cameras/ → data/",
+    "├── tools/                # local QA tool (qa.html) + browser schema validator",
     "├── docs/",
     "│   ├── glossary.md       # field reference (source — edit when adding fields)",
     "│   ├── cameras.json      # GENERATED — aggregate copy for the demo/Pages API",

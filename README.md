@@ -78,6 +78,7 @@ cctv-camera-database/
 │   └── camera.schema.json
 ├── scripts/
 │   └── build.js          # aggregates + validates cameras/ → data/
+├── tools/                # local QA tool (qa.html) + browser schema validator
 ├── docs/
 │   ├── glossary.md       # field reference (source — edit when adding fields)
 │   ├── cameras.json      # GENERATED — aggregate copy for the demo/Pages API
@@ -97,6 +98,14 @@ npm run build # validates all JSON, writes data/cameras.json + data/cameras.csv
 ```
 
 Other scripts: `npm run add` (interactive add-a-camera wizard) and `npm run check-sources [brand]` (probes every `sources` URL for dead/moved links — see [`docs/check-sources.md`](docs/check-sources.md); also runs weekly in CI).
+
+### Local QA tool
+
+`tools/qa.html` is a zero-dependency, offline browser tool for **previewing and sanity-checking camera data before you open a PR** — a wide grid view across the dataset, gap highlighting, outlier flags, and in-browser schema validation (the schema is compiled to `tools/qa-validator.js` via `node tools/build-qa-validator.js`, regenerate after any schema change). Open it from the repo root (it reads `../data/cameras.json`, or use the file picker). See [`tools/plan-demo-and-tools.md`](tools/plan-demo-and-tools.md).
+
+### Verifying Frigate configs
+
+The shipped `configs.frigate` snippets are generated; run one of these cameras and you can mark it **community-verified** (`configs.frigate.verified` / `tested_by` / `tested_version`) via the [Verify a Frigate config](../../issues/new?template=verify-frigate-config.yml) issue form.
 
 ### Querying the data
 

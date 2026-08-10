@@ -1,0 +1,89 @@
+name: "✅ Verify a Frigate config"
+description: "Confirm whether the generated Frigate config for a camera in the database works on your setup."
+title: "Verify: [Brand] [Model] — Frigate"
+labels: ["config-verification", "community"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The database ships a generated Frigate config for many cameras, but most are untested.
+        If you run one of these cameras in Frigate, two minutes of your time turns a generated config into a **community-verified** one — shown with a ✓ badge on the site.
+
+        You can find the generated config on the camera's page at [cctv-database.com](https://www.cctv-database.com/) or in the camera's JSON file under `configs.frigate`.
+
+  - type: input
+    id: brand
+    attributes:
+      label: "Brand *"
+      placeholder: "e.g. Reolink, Hikvision, Dahua"
+    validations:
+      required: true
+
+  - type: input
+    id: model
+    attributes:
+      label: "Model *"
+      placeholder: "e.g. RLC-823A, DS-2CD2387G2-LU"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: result
+    attributes:
+      label: "Did the generated config work? *"
+      options:
+        - "Yes — worked as-is"
+        - "Worked, but I had to change something"
+        - "No — did not work"
+    validations:
+      required: true
+
+  - type: input
+    id: frigate_version
+    attributes:
+      label: "Frigate version *"
+      placeholder: "e.g. 0.17.2"
+    validations:
+      required: true
+
+  - type: input
+    id: firmware
+    attributes:
+      label: "Camera firmware version"
+      placeholder: "e.g. v3.1.0.2347 (optional, but helps when configs break between firmwares)"
+
+  - type: textarea
+    id: config
+    attributes:
+      label: "Your working config (if you changed something)"
+      description: "Only needed if you picked 'worked with changes' or 'did not work'. Paste the config that actually works for you. Replace passwords and IPs with placeholders like {user}, {pass}, {ip}."
+      placeholder: |
+        cameras:
+          front_door:
+            ffmpeg:
+              inputs:
+                - path: rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main
+                  roles: [record]
+                - path: rtsp://{user}:{pass}@{ip}:554/h264Preview_01_sub
+                  roles: [detect]
+      render: yaml
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: "Notes"
+      placeholder: "Anything worth knowing — stream quirks, go2rtc needed, audio issues, substream limits…"
+
+  - type: input
+    id: credit
+    attributes:
+      label: "Credit as"
+      placeholder: "GitHub handle or name to record in tested_by (defaults to your GitHub username)"
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: "Confirmation"
+      options:
+        - label: "I replaced all passwords, IPs, and personal data with placeholders."
+          required: true

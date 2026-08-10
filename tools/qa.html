@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QA Grid — CCTV Camera Database</title>
+  <meta name="description" content="Local QA tool for the CCTV Camera Database: grid view with gap highlighting and consistency checks. Runs offline, before you PR." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:          #0d1117;
+      --bg-card:     #161b22;
+      --bg-input:    #1c2128;
+      --border:      #30363d;
+      --border-soft: #21262d;
+      --text:        #e6edf3;
+      --text-muted:  #8b949e;
+      --text-dim:    #484f58;
+      --accent:      #2f81f7;
+      --accent-soft: rgba(47,129,247,0.12);
+      --green:       #3fb950;
+      --green-soft:  rgba(63,185,80,0.12);
+      --orange:      #d29922;
+      --orange-soft: rgba(210,153,34,0.16);
+      --red:         #f85149;
+      --red-soft:    rgba(248,81,73,0.16);
+      --purple:      #bc8cff;
+      --purple-soft: rgba(188,140,255,0.14);
+      --radius:      8px;
+      --font-mono:   'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+      --font-sans:   'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-sans); font-size: 13px; line-height: 1.5; }
+    .page { max-width: 100%; padding: 0 16px 40px; }
+
+    header { padding: 16px 0 12px; display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+    header h1 { font-size: 16px; font-family: var(--font-mono); }
+    header h1 .qa { color: var(--accent); }
+    .subtitle { color: var(--text-muted); font-size: 12px; }
+    .subtitle a { color: var(--accent); text-decoration: none; }
+    .load-state { margin-left: auto; font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); }
+    .load-state .n { color: var(--green); }
+
+    /* ── Drop zone ── */
+    .dropzone {
+      border: 1px dashed var(--border); border-radius: var(--radius);
+      padding: 22px; text-align: center; color: var(--text-muted); margin-bottom: 12px;
+      background: var(--bg-card); cursor: pointer; transition: border-color 0.15s, background 0.15s;
+    }
+    .dropzone.dragover { border-color: var(--accent); background: var(--accent-soft); }
+    .dropzone strong { color: var(--text); }
+    .dropzone .hint { font-size: 11px; margin-top: 4px; color: var(--text-dim); }
+    .dropzone.hidden { display: none; }
+
+    /* ── Controls ── */
+    .controls { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
+    input[type="search"], select, textarea, button {
+      background: var(--bg-input); color: var(--text); border: 1px solid var(--border);
+      border-radius: 6px; padding: 5px 10px; font-size: 12px; font-family: var(--font-sans);
+    }
+    input[type="search"] { width: 240px; }
+    input[type="search"]:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); }
+    button { cursor: pointer; }
+    button:hover { border-color: var(--accent); }
+    button.active { border-color: var(--accent); color: var(--accent); }
+    .count { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); margin-left: auto; }
+    #id-paste-wrap { display: none; width: 100%; }
+    #id-paste-wrap.open { display: block; }
+    #id-paste { width: 100%; height: 60px; font-family: var(--font-mono); font-size: 11px; resize: vertical; }
+
+    /* ── Legend ── */
+    .legend { display: flex; gap: 14px; font-size: 11px; color: var(--text-muted); margin-bottom: 8px; flex-wrap: wrap; }
+    .legend span { display: inline-flex; align-items: center; gap: 5px; }
+    .swatch { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+    .swatch.gap { background: var(--purple-soft); border: 1px solid var(--purple); }
+    .swatch.warn { background: var(--orange-soft); border: 1px solid var(--orange); }
+    .swatch.err { background: var(--red-soft); border: 1px solid var(--red); }
+    .swatch.absent { background: transparent; border: 1px solid var(--border-soft); }
+
+    /* ── Issues panel ── */
+    .issues { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; }
+    .issues-head { padding: 8px 12px; cursor: pointer; font-family: var(--font-mono); font-size: 12px; display: flex; gap: 12px; user-select: none; }
+    .issues-head .err-n { color: var(--red); }
+    .issues-head .warn-n { color: var(--orange); }
+    .issues-head .ok { color: var(--green); }
+    .issues-head .arrow { margin-left: auto; color: var(--text-dim); }
+    .issues-body { display: none; border-top: 1px solid var(--border-soft); max-height: 220px; overflow-y: auto; }
+    .issues.open .issues-body { display: block; }
+    .issue-row { padding: 5px 12px; font-size: 12px; display: flex; gap: 10px; cursor: pointer; border-bottom: 1px solid var(--border-soft); }
+    .issue-row:hover { background: var(--accent-soft); }
+    .issue-row .sev { font-family: var(--font-mono); width: 44px; flex-shrink: 0; }
+    .issue-row .sev.err { color: var(--red); }
+    .issue-row .sev.warn { color: var(--orange); }
+    .issue-row .cid { font-family: var(--font-mono); color: var(--accent); width: 260px; flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .issue-row .msg { color: var(--text-muted); }
+
+    /* ── Grid ── */
+    .grid-wrap { overflow: auto; border: 1px solid var(--border); border-radius: var(--radius); max-height: calc(100vh - 130px); background: var(--bg-card); }
+    table { border-collapse: separate; border-spacing: 0; font-size: 12px; width: max-content; min-width: 100%; }
+    th, td { padding: 4px 9px; border-bottom: 1px solid var(--border-soft); border-right: 1px solid var(--border-soft); white-space: nowrap; }
+    thead th {
+      position: sticky; top: 0; z-index: 3; background: var(--bg-input);
+      font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.04em;
+      color: var(--text-muted); text-align: left; cursor: pointer; user-select: none;
+    }
+    thead th:hover { color: var(--text); }
+    thead th .dir { color: var(--accent); }
+    tbody td.id-cell, thead th.id-cell {
+      position: sticky; left: 0; z-index: 2; background: var(--bg-card);
+      font-family: var(--font-mono); color: var(--accent); max-width: 280px; overflow: hidden; text-overflow: ellipsis;
+    }
+    thead th.id-cell { z-index: 4; background: var(--bg-input); }
+    tbody tr:hover td { background: var(--accent-soft); }
+    tbody tr.flash td { animation: flash 1.2s; }
+    @keyframes flash { 0% { background: var(--accent-soft); } 100% { background: transparent; } }
+    td.mono { font-family: var(--font-mono); }
+    td.dim { color: var(--text-dim); }
+    td.ok-cell { color: var(--green); }
+    td.gap { background: var(--purple-soft); box-shadow: inset 0 0 0 1px var(--purple); }
+    td.warn { background: var(--orange-soft); box-shadow: inset 0 0 0 1px var(--orange); }
+    td.err { background: var(--red-soft); box-shadow: inset 0 0 0 1px var(--red); }
+    .truncate-note { padding: 8px 12px; color: var(--orange); font-size: 12px; font-family: var(--font-mono); }
+    .empty { padding: 40px; text-align: center; color: var(--text-muted); }
+
+    /* ── Diff bar ── */
+    .diff-bar { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 0 0 8px; }
+    .diff-bar input[type="url"] { width: 420px; max-width: 60vw; font-family: var(--font-mono); font-size: 11px; background: var(--bg-input); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 5px 10px; }
+    .diff-bar input[type="url"]:focus { outline: none; border-color: var(--accent); }
+    .diff-summary { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
+    .diff-summary .add { color: var(--green); }
+    .diff-summary .mod { color: var(--orange); }
+    .diff-summary .del { color: var(--red); }
+    td.diff-add { color: var(--green); font-weight: 600; }
+    td.diff-mod { color: var(--orange); font-weight: 600; }
+    .removed-panel { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; padding: 8px 12px; font-size: 12px; }
+    .removed-panel .title { font-family: var(--font-mono); font-size: 11px; color: var(--red); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; }
+    .removed-panel code { font-family: var(--font-mono); color: var(--text-muted); }
+
+    /* ── Frigate coverage strip ── */
+    .frigate-strip { display: flex; gap: 16px; align-items: center; font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); padding: 6px 2px 8px; flex-wrap: wrap; }
+    .frigate-strip .v { color: var(--green); }
+    .frigate-strip .g { color: var(--accent); }
+    .frigate-strip .p { color: var(--orange); }
+    .frigate-strip .label { color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* ── Frigate preview modal ── */
+    .fp-overlay { display: none; position: fixed; inset: 0; background: rgba(1,4,9,0.7); z-index: 20; }
+    .fp-overlay.open { display: flex; align-items: center; justify-content: center; padding: 24px; }
+    .fp-modal { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); max-width: 720px; width: 100%; max-height: 85vh; overflow-y: auto; padding: 16px 18px; }
+    .fp-modal h2 { font-size: 14px; font-family: var(--font-mono); margin-bottom: 2px; }
+    .fp-modal .fp-sub { font-size: 12px; color: var(--text-muted); margin-bottom: 10px; }
+    .fp-modal .fp-sub .verified-badge { display: inline-block; margin-left: 8px; padding: 1px 8px; font-size: 11px; font-weight: 600; border-radius: 10px; background: var(--green-soft); color: var(--green); }
+    .fp-yaml { background: var(--bg); border: 1px solid var(--border-soft); border-radius: 6px; padding: 10px 12px; font-family: var(--font-mono); font-size: 12px; white-space: pre; overflow-x: auto; color: var(--text); }
+    .fp-note { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+    .fp-actions { margin-top: 10px; display: flex; gap: 8px; }
+    .fp-close { float: right; }
+    .fp-empty { color: var(--text-muted); font-size: 12px; padding: 8px 0; }
+
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+    @media (prefers-reduced-motion: reduce) { tbody tr.flash td { animation: none; } }
+  </style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1><span class="qa">qa</span>.grid</h1>
+    <span class="subtitle">local consistency check for <a href="https://github.com/ch-bas/cctv-camera-database" target="_blank" rel="noopener">cctv-camera-database</a> — nothing leaves your machine</span>
+    <span class="load-state" id="load-state">no data loaded</span>
+  </header>
+
+  <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Load camera JSON files">
+    <strong>Drop camera JSON files here</strong> or click to pick — accepts <code>cameras.json</code> or individual <code>cameras/**/*.json</code> files
+    <div class="hint">Serving the repo locally? <code>../docs/cameras.json</code> is loaded automatically when reachable.</div>
+    <input type="file" id="file-input" accept=".json,application/json" multiple style="display:none" />
+  </div>
+
+  <div class="controls" id="controls" style="display:none">
+    <input type="search" id="search" placeholder="Filter brand, model, id…  ( / )" autocomplete="off" />
+    <select id="brand-select"><option value="">All brands</option></select>
+    <select id="type-select"><option value="">All types</option></select>
+    <select id="frigate-select" title="Filter by Frigate config state">
+      <option value="">Frigate: any</option>
+      <option value="verified">✓ verified</option>
+      <option value="generated">generated (unverified)</option>
+      <option value="partial">partial (no RTSP template)</option>
+      <option value="none">no config</option>
+    </select>
+    <button id="id-paste-toggle" title="Paste a list of camera IDs to select exactly those">Paste IDs</button>
+    <button id="gaps-only" title="Show only rows with at least one gap, warning, or error">Flagged only</button>
+    <span class="count" id="count"></span>
+    <div id="id-paste-wrap">
+      <textarea id="id-paste" placeholder="one camera id per line (or comma/space separated) — overrides the filters above while non-empty"></textarea>
+    </div>
+  </div>
+
+  <div class="legend" id="legend" style="display:none">
+    <span><span class="swatch err"></span> rule violation (likely wrong)</span>
+    <span><span class="swatch warn"></span> suspicious (check the datasheet)</span>
+    <span><span class="swatch gap"></span> gap — siblings in same brand+type have this field</span>
+    <span><span class="swatch absent"></span> absent everywhere (fine — omit rather than guess)</span>
+  </div>
+
+  <div class="diff-bar" id="diff-bar" style="display:none">
+    <input type="url" id="baseline-url" value="https://raw.githubusercontent.com/ch-bas/cctv-camera-database/main/docs/cameras.json" spellcheck="false" aria-label="Baseline URL" />
+    <button id="diff-load">Diff vs baseline</button>
+    <button id="diff-file-btn" title="Use a local cameras.json as baseline instead">baseline file…</button>
+    <input type="file" id="diff-file" accept=".json,application/json" style="display:none" />
+    <button id="changed-only" style="display:none">Changed only</button>
+    <span class="diff-summary" id="diff-summary"></span>
+  </div>
+
+  <div class="removed-panel" id="removed-panel" style="display:none"></div>
+
+  <div class="frigate-strip" id="frigate-strip" style="display:none"></div>
+
+  <div class="issues" id="issues" style="display:none">
+    <div class="issues-head" id="issues-head">
+      <span id="issues-summary"></span>
+      <span class="arrow">▾</span>
+    </div>
+    <div class="issues-body" id="issues-body"></div>
+  </div>
+
+  <div class="grid-wrap" id="grid-wrap" style="display:none">
+    <table>
+      <thead><tr id="thead-row"></tr></thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <div class="truncate-note" id="truncate-note" style="display:none"></div>
+  </div>
+</div>
+
+<div class="fp-overlay" id="fp-overlay">
+  <div class="fp-modal">
+    <button class="fp-close" id="fp-close">✕ close</button>
+    <h2 id="fp-title"></h2>
+    <div class="fp-sub" id="fp-sub"></div>
+    <div id="fp-body"></div>
+  </div>
+</div>
+
+<script src="qa-validator.js"></script>
+<script>
+'use strict';
+// ═══════════════════════════════════════════════════════════════════
+// qa.grid — grid view + gap highlighting + consistency rules
+// Data policy context: absent fields are allowed (omit rather than
+// guess). A "gap" is only flagged when most siblings in the same
+// brand+type group DO have the field — i.e. it was probably in the
+// datasheet and missed.
+// ═══════════════════════════════════════════════════════════════════
+
+const $ = id => document.getElementById(id);
+const MAX_ROWS = 500;
+
+let cameras = [];        // loaded cameras
+let rows = [];           // filtered
+let sortKey = 'id', sortDir = 'asc';
+let issuesById = {};     // id -> [{col, sev, msg, rule}]
+let schemaErrsById = {}; // id -> [error strings] (only when qa-validator.js is present)
+let gapsById = {};       // id -> Set(colKey)
+let flaggedOnly = false;
+let changedOnly = false;
+let diffById = null;     // id -> {status:'add'|'mod', changes:[{path,from,to}]} (null until a baseline is diffed)
+let removedIds = [];
+
+// ── Columns ─────────────────────────────────────────────────────
+// get: display value. has: does the camera carry this field at all
+// (drives gap logic). mono: monospace cell.
+const px = r => { const m = /^(\d+)\s*[x×]\s*(\d+)$/.exec(r || ''); return m ? (+m[1]) * (+m[2]) : null; };
+const streams = c => c.video?.streams ?? [];
+const mainStream = c => streams(c).find(s => /main|stream\s*1/i.test(s.name || '')) ?? streams(c)[0] ?? null;
+const subStreams = c => { const m = mainStream(c); return streams(c).filter(s => s !== m); };
+const fmtStream = s => s ? `${s.resolution ?? '?'}@${s.fps ?? '?'}${s.codec ? ' ' + s.codec : ''}` : null;
+const frigateState = c => {
+  const f = c.configs?.frigate;
+  if (!f) return 'none';
+  if (f.verified) return 'verified';
+  if (!f.rtsp_url_template) return 'partial';
+  return 'generated';
+};
+
+const COLS = [
+  { key: 'id',        label: 'id',        id: true, get: c => c.id, has: c => true },
+  { key: 'brand',     label: 'brand',     get: c => c.brand, has: c => c.brand != null },
+  { key: 'model',     label: 'model',     mono: true, get: c => c.model, has: c => c.model != null },
+  { key: 'schema',    label: 'schema',    mono: true, get: c => window.validateCamera ? (schemaErrsById[c.id]?.length ? '✗ ' + schemaErrsById[c.id].length : '✓') : 'n/a', has: c => true },
+  { key: 'type',      label: 'type',      get: c => c.type, has: c => c.type != null },
+  { key: 'mp',        label: 'mp',        mono: true, get: c => c.resolution?.megapixels, has: c => c.resolution?.megapixels != null },
+  { key: 'maxres',    label: 'max res',   mono: true, get: c => c.resolution?.max_width ? c.resolution.max_width + 'x' + c.resolution.max_height : null, has: c => c.resolution?.max_width != null },
+  { key: 'sensor',    label: 'sensor',    get: c => c.sensor, has: c => c.sensor != null },
+  { key: 'lens',      label: 'lens',      mono: true, get: c => c.lens?.focal_length_mm ? c.lens.focal_length_mm + (c.lens.aperture ? ' ' + c.lens.aperture : '') : null, has: c => c.lens?.focal_length_mm != null },
+  { key: 'fov',       label: 'fov°',      mono: true, get: c => c.field_of_view_deg, has: c => c.field_of_view_deg != null },
+  { key: 'nv',        label: 'night',     get: c => c.night_vision?.type, has: c => c.night_vision?.type != null },
+  { key: 'nvrange',   label: 'ir m',      mono: true, get: c => c.night_vision?.range_m, has: c => c.night_vision?.range_m != null },
+  { key: 'lux',       label: 'min lux',   mono: true, get: c => c.night_vision?.min_lux, has: c => c.night_vision?.min_lux != null },
+  { key: 'ip',        label: 'ip',        mono: true, get: c => c.ip_rating, has: c => c.ip_rating != null },
+  { key: 'ik',        label: 'ik',        mono: true, get: c => c.ik_rating, has: c => c.ik_rating != null },
+  { key: 'power',     label: 'power',     get: c => c.power?.method, has: c => c.power?.method != null },
+  { key: 'watts',     label: 'w',         mono: true, get: c => c.power?.consumption_w, has: c => c.power?.consumption_w != null },
+  { key: 'codecs',    label: 'codecs',    mono: true, get: c => (c.video?.codecs ?? []).join(' ') || null, has: c => (c.video?.codecs ?? []).length > 0 },
+  { key: 'maxfps',    label: 'max fps',   mono: true, get: c => c.video?.max_fps, has: c => c.video?.max_fps != null },
+  { key: 'smain',     label: 'main stream', mono: true, get: c => fmtStream(mainStream(c)), has: c => mainStream(c) != null },
+  { key: 'ssub',      label: 'sub streams', mono: true, get: c => subStreams(c).map(fmtStream).join(' · ') || null, has: c => subStreams(c).length > 0 },
+  { key: 'mic',       label: 'mic',       get: c => c.audio?.microphone == null ? null : (c.audio.microphone ? 'yes' : 'no'), has: c => c.audio?.microphone != null },
+  { key: 'twoway',    label: '2-way',     get: c => c.audio?.two_way == null ? null : (c.audio.two_way ? 'yes' : 'no'), has: c => c.audio?.two_way != null },
+  { key: 'sd',        label: 'sd gb',     mono: true, get: c => c.storage?.onboard ? (c.storage.max_microsd_gb ?? 'yes') : (c.storage?.onboard === false ? 'no' : null), has: c => c.storage?.onboard != null },
+  { key: 'protocols', label: 'protocols', mono: true, get: c => (c.protocols ?? []).join(' ') || null, has: c => (c.protocols ?? []).length > 0 },
+  { key: 'frigate',   label: 'frigate',   get: c => ({ verified: '✓ verified', generated: 'generated', partial: 'partial', none: null })[frigateState(c)], has: c => c.configs?.frigate != null },
+  { key: 'sources',   label: 'src#',      mono: true, get: c => (c.sources ?? []).length || null, has: c => (c.sources ?? []).length > 0 },
+  { key: 'diff',      label: 'Δ',         mono: true, get: c => diffById ? ({ add: '+', mod: '~' }[diffById[c.id]?.status] ?? '=') : null, has: c => true },
+];
+
+// ── Consistency rules ───────────────────────────────────────────
+// Kept as a plain array so they can move to tools/qa-rules.json later.
+// sev: 'err' = almost certainly wrong · 'warn' = check the datasheet.
+const RULES = [
+  {
+    id: 'poe-class-power', col: 'watts', sev: 'err',
+    test(c) {
+      const m = c.power?.method ?? '', w = c.power?.consumption_w;
+      if (w == null) return null;
+      const at = /802\.3\s*at|af\/at|poe\+/i.test(m), bt = /802\.3\s*bt|poe\+\+/i.test(m), af = /802\.3\s*af/i.test(m);
+      if (bt) return null;
+      if (at && w > 25.5) return `draws ${w}W but PoE class is 802.3at (max 25.5W)`;
+      if (af && !at && w > 12.95) return `draws ${w}W but PoE class is 802.3af (max 12.95W) — af/at misreport pattern`;
+      return null;
+    }
+  },
+  {
+    id: 'ir-no-range', col: 'nvrange', sev: 'warn',
+    test(c) {
+      const nv = c.night_vision;
+      if (nv?.type && /^(ir|hybrid)$/.test(nv.type) && nv.range_m == null) return `night vision type "${nv.type}" but no IR range — was it in the datasheet?`;
+      return null;
+    }
+  },
+  {
+    id: 'lux-high', col: 'lux', sev: 'warn',
+    test(c) {
+      const l = c.night_vision?.min_lux;
+      if (l != null && l > 1) return `min_lux ${l} is unusually high — possible unit or field mix-up`;
+      return null;
+    }
+  },
+  {
+    id: 'sub-gt-main', col: 'ssub', sev: 'err',
+    test(c) {
+      const m = mainStream(c); if (!m) return null;
+      const mp = px(m.resolution); if (!mp) return null;
+      const bad = subStreams(c).find(s => (px(s.resolution) ?? 0) > mp);
+      if (bad) return `sub stream ${bad.resolution} exceeds main ${m.resolution}`;
+      return null;
+    }
+  },
+  {
+    id: 'stream-gt-sensor', col: 'smain', sev: 'err',
+    test(c) {
+      const maxp = c.resolution?.max_width && c.resolution?.max_height ? c.resolution.max_width * c.resolution.max_height : null;
+      if (!maxp) return null;
+      const bad = streams(c).find(s => (px(s.resolution) ?? 0) > maxp);
+      if (bad) return `stream ${bad.resolution} exceeds sensor max ${c.resolution.max_width}x${c.resolution.max_height}`;
+      return null;
+    }
+  },
+  {
+    id: 'fps-gt-max', col: 'maxfps', sev: 'warn',
+    test(c) {
+      const mx = c.video?.max_fps; if (mx == null) return null;
+      const bad = streams(c).find(s => (s.fps ?? 0) > mx);
+      if (bad) return `stream "${bad.name}" is ${bad.fps}fps but video.max_fps is ${mx}`;
+      return null;
+    }
+  },
+  {
+    id: 'watts-nonpos', col: 'watts', sev: 'err',
+    test(c) {
+      const w = c.power?.consumption_w;
+      if (w != null && w <= 0) return `consumption_w is ${w}`;
+      return null;
+    }
+  },
+  {
+    // Real IPs must never ship in templates — placeholders only.
+    id: 'frigate-real-ip', col: 'frigate', sev: 'err',
+    test(c) {
+      const t = c.configs?.frigate?.rtsp_url_template ?? '';
+      const m = /(\d{1,3}\.){3}\d{1,3}/.exec(t);
+      if (m) return `template contains a literal IP (${m[0]}) — use {ip}`;
+      return null;
+    }
+  },
+  {
+    // A fixed username (e.g. SV3C's admin:{pass}) is fine; a literal
+    // password is never fine.
+    id: 'frigate-real-creds', col: 'frigate', sev: 'err',
+    test(c) {
+      const t = c.configs?.frigate?.rtsp_url_template ?? '';
+      const m = /^rtsps?:\/\/([^@\/]+)@/.exec(t);
+      if (!m) return null;
+      const parts = m[1].split(':');
+      if (parts.length === 2 && parts[1] && !/^\{[a-z_]+\}$/i.test(parts[1])) return `template carries a literal password — use {pass}`;
+      return null;
+    }
+  },
+  {
+    id: 'frigate-no-ip-placeholder', col: 'frigate', sev: 'warn',
+    test(c) {
+      const t = c.configs?.frigate?.rtsp_url_template ?? '';
+      if (/^rtsps?:\/\//.test(t) && !t.includes('{ip}')) return `RTSP template has no {ip} placeholder`;
+      return null;
+    }
+  },
+  {
+    id: 'frigate-substream-dup', col: 'frigate', sev: 'warn',
+    test(c) {
+      const f = c.configs?.frigate;
+      if (f?.best_substream && f.best_substream === f.rtsp_url_template) return `best_substream is identical to the main template — copy-paste?`;
+      return null;
+    }
+  },
+  {
+    // Detect below stream res is fine (Frigate downscales). Detect
+    // ABOVE every known stream means it would have to upscale — wrong.
+    id: 'detect-upscale', col: 'frigate', sev: 'warn',
+    test(c) {
+      const d = c.configs?.frigate?.detect;
+      if (!d?.width || !d?.height || !streams(c).length) return null;
+      const dp = d.width * d.height;
+      const maxSp = Math.max(...streams(c).map(s => px(s.resolution) ?? 0));
+      if (maxSp > 0 && dp > maxSp) return `frigate detect ${d.width}x${d.height} exceeds every known stream — would upscale`;
+      return null;
+    }
+  },
+];
+
+// ── Analysis: gaps + rules ──────────────────────────────────────
+function analyze() {
+  issuesById = {}; gapsById = {}; schemaErrsById = {};
+  // schema validation (only when tools/qa-validator.js is built and loaded)
+  if (window.validateCamera) {
+    for (const c of cameras) {
+      if (!window.validateCamera(c)) {
+        const msgs = (window.validateCamera.errors ?? []).map(e => (e.instancePath || '/') + ' ' + e.message);
+        schemaErrsById[c.id] = msgs;
+        (issuesById[c.id] ??= []).push({ col: 'schema', sev: 'err', rule: 'schema', msg: msgs.slice(0, 3).join(' · ') + (msgs.length > 3 ? ' · +' + (msgs.length - 3) + ' more' : '') });
+      }
+    }
+  }
+  // rules
+  for (const c of cameras) {
+    for (const r of RULES) {
+      let msg = null;
+      try { msg = r.test(c); } catch (e) { /* malformed entry — schema validation is the next feature */ }
+      if (msg) (issuesById[c.id] ??= []).push({ col: r.col, sev: r.sev, msg, rule: r.id });
+    }
+  }
+  // gaps: group brand|type, field expected if ≥60% of a group (≥3 members) has it
+  const groups = {};
+  for (const c of cameras) (groups[(c.brand ?? '?') + '|' + (c.type ?? '?')] ??= []).push(c);
+  for (const members of Object.values(groups)) {
+    if (members.length < 3) continue;
+    for (const col of COLS) {
+      if (col.id) continue;
+      const n = members.filter(c => col.has(c)).length;
+      if (n / members.length >= 0.6 && n < members.length) {
+        for (const c of members) if (!col.has(c)) (gapsById[c.id] ??= new Set()).add(col.key);
+      }
+    }
+  }
+}
+
+// ── Load ────────────────────────────────────────────────────────
+function normalize(parsed, filename) {
+  if (Array.isArray(parsed)) return parsed;
+  if (parsed && typeof parsed === 'object' && parsed.id && parsed.brand) return [parsed];
+  throw new Error((filename ?? 'file') + ': not a camera object or camera array');
+}
+function setData(list, sourceLabel) {
+  const seen = new Set();
+  cameras = list.filter(c => c && c.id && !seen.has(c.id) && seen.add(c.id));
+  $('load-state').innerHTML = '<span class="n">' + cameras.length.toLocaleString() + '</span> cameras · ' + sourceLabel;
+  $('dropzone').classList.add('hidden');
+  ['controls', 'legend', 'issues', 'grid-wrap', 'diff-bar'].forEach(id => $(id).style.display = '');
+  populateSelects();
+  analyze();
+  applyFilters();
+  if (window.QA_VALIDATOR_INFO) {
+    $('load-state').innerHTML += ' · schema validator ' + window.QA_VALIDATOR_INFO.generated;
+  }
+}
+async function tryAutoFetch() {
+  for (const url of ['../docs/cameras.json', 'cameras.json', '../data/cameras.json']) {
+    try {
+      const res = await fetch(url);
+      if (!res.ok) continue;
+      setData(normalize(await res.json(), url), url);
+      return;
+    } catch (e) { /* next candidate */ }
+  }
+}
+async function loadFiles(fileList) {
+  const all = [];
+  const errors = [];
+  for (const f of fileList) {
+    try { all.push(...normalize(JSON.parse(await f.text()), f.name)); }
+    catch (e) { errors.push(f.name + ': ' + e.message); }
+  }
+  if (errors.length) alert('Skipped ' + errors.length + ' file(s):\n' + errors.slice(0, 8).join('\n'));
+  if (all.length) setData(all, fileList.length + ' local file(s)');
+}
+const dz = $('dropzone');
+dz.addEventListener('click', () => $('file-input').click());
+dz.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') $('file-input').click(); });
+$('file-input').addEventListener('change', e => loadFiles([...e.target.files]));
+dz.addEventListener('dragover', e => { e.preventDefault(); dz.classList.add('dragover'); });
+dz.addEventListener('dragleave', () => dz.classList.remove('dragover'));
+dz.addEventListener('drop', e => { e.preventDefault(); dz.classList.remove('dragover'); loadFiles([...e.dataTransfer.files]); });
+
+// ── Filters ─────────────────────────────────────────────────────
+function populateSelects() {
+  const fill = (id, vals) => {
+    const sel = $(id); sel.length = 1;
+    vals.forEach(([v, n]) => { const o = document.createElement('option'); o.value = v; o.textContent = v + ' (' + n + ')'; sel.appendChild(o); });
+  };
+  const counted = key => Object.entries(cameras.reduce((a, c) => (a[c[key] ?? '—'] = (a[c[key] ?? '—'] ?? 0) + 1, a), {})).sort((a, b) => a[0].localeCompare(b[0]));
+  fill('brand-select', counted('brand'));
+  fill('type-select', counted('type'));
+}
+function applyFilters() {
+  const q = $('search').value.trim().toLowerCase();
+  const brand = $('brand-select').value, type = $('type-select').value;
+  const idText = $('id-paste').value.trim();
+  const idSet = idText ? new Set(idText.split(/[\s,]+/).filter(Boolean)) : null;
+  rows = cameras.filter(c => {
+    if (idSet) return idSet.has(c.id);
+    if (brand && (c.brand ?? '—') !== brand) return false;
+    const fst = $('frigate-select').value;
+    if (fst && frigateState(c) !== fst) return false;
+    if (type && (c.type ?? '—') !== type) return false;
+    if (q && !((c.id ?? '') + ' ' + (c.brand ?? '') + ' ' + (c.model ?? '')).toLowerCase().includes(q)) return false;
+    return true;
+  });
+  if (flaggedOnly) rows = rows.filter(c => issuesById[c.id]?.length || gapsById[c.id]?.size);
+  if (changedOnly && diffById) rows = rows.filter(c => diffById[c.id]);
+  applySort();
+  render();
+}
+function applySort() {
+  const col = COLS.find(c => c.key === sortKey) ?? COLS[0];
+  rows.sort((a, b) => {
+    const av = col.get(a), bv = col.get(b);
+    if (av == null && bv == null) return 0;
+    if (av == null) return 1;
+    if (bv == null) return -1;
+    const cmp = (typeof av === 'number' && typeof bv === 'number') ? av - bv : String(av).localeCompare(String(bv));
+    return sortDir === 'asc' ? cmp : -cmp;
+  });
+}
+
+// ── Render ──────────────────────────────────────────────────────
+function render() {
+  const thead = $('thead-row');
+  thead.innerHTML = COLS.map(c =>
+    `<th class="${c.id ? 'id-cell' : ''}" data-key="${c.key}">${c.label}${sortKey === c.key ? ' <span class="dir">' + (sortDir === 'asc' ? '↑' : '↓') + '</span>' : ''}</th>`
+  ).join('');
+  thead.querySelectorAll('th').forEach(th => th.addEventListener('click', () => {
+    const k = th.dataset.key;
+    if (sortKey === k) sortDir = sortDir === 'asc' ? 'desc' : 'asc'; else { sortKey = k; sortDir = 'asc'; }
+    applySort(); render();
+  }));
+
+  const slice = rows.slice(0, MAX_ROWS);
+  $('tbody').innerHTML = slice.map(c => {
+    const iss = issuesById[c.id] ?? [], gaps = gapsById[c.id] ?? new Set();
+    return '<tr data-id="' + c.id + '">' + COLS.map(col => {
+      const v = col.get(c);
+      const hit = iss.filter(i => i.col === col.key);
+      let cls = col.id ? 'id-cell' : (col.mono ? 'mono' : '');
+      let title = '';
+      if (col.key === 'frigate' && c.configs?.frigate) {
+        const st = frigateState(c);
+        const stCls = { verified: 'ok-cell', generated: '', partial: 'dim' }[st] ?? '';
+        cls += ' mono fp-open ' + stCls;
+        const extra = hit.length ? (hit.some(i => i.sev === 'err') ? ' err' : ' warn') : '';
+        const t = hit.length ? hit.map(i => i.msg).join(' · ') : 'click to preview the generated config';
+        return '<td class="' + cls + extra + '" data-fp="' + c.id + '" style="cursor:pointer" title="' + t.replace(/"/g, '&quot;') + '">' + (v ?? '—') + '</td>';
+      }
+      if (col.key === 'diff') {
+        if (!diffById) return '<td class="mono dim">·</td>';
+        const d = diffById[c.id];
+        if (!d) return '<td class="mono dim">=</td>';
+        if (d.status === 'add') return '<td class="mono diff-add" title="not in baseline — new entry">+</td>';
+        const t = d.changes.slice(0, 6).map(ch => ch.path + ': ' + ch.from + ' → ' + ch.to).join(' · ') + (d.changes.length > 6 ? ' · +' + (d.changes.length - 6) + ' more' : '');
+        return '<td class="mono diff-mod" title="' + t.replace(/"/g, '&quot;') + '">~' + d.changes.length + '</td>';
+      }
+      if (col.key === 'schema') {
+        if (v === 'n/a') return '<td class="mono dim" title="build tools/qa-validator.js to enable: node tools/build-qa-validator.js">n/a</td>';
+        if (v === '✓') return '<td class="mono ok-cell">✓</td>';
+        const msgs = schemaErrsById[c.id] ?? [];
+        return '<td class="mono err" title="' + msgs.join(' · ').replace(/"/g, '&quot;') + '">' + v + '</td>';
+      }
+      if (hit.length) {
+        cls += hit.some(i => i.sev === 'err') ? ' err' : ' warn';
+        title = hit.map(i => i.msg).join(' · ');
+      } else if (v == null && gaps.has(col.key)) {
+        cls += ' gap';
+        title = 'siblings in this brand+type have this field — check the datasheet';
+      } else if (v == null) {
+        cls += ' dim';
+      }
+      return `<td class="${cls}"${title ? ' title="' + title.replace(/"/g, '&quot;') + '"' : ''}>${v ?? '—'}</td>`;
+    }).join('') + '</tr>';
+  }).join('') || '<tr><td colspan="' + COLS.length + '"><div class="empty">No cameras match. An empty grid is an invitation to widen the filters.</div></td></tr>';
+  $('tbody').querySelectorAll('td[data-fp]').forEach(td => td.addEventListener('click', e => {
+    e.stopPropagation();
+    const cam = cameras.find(c => c.id === td.dataset.fp);
+    if (cam) openFrigatePreview(cam);
+  }));
+
+  const note = $('truncate-note');
+  if (rows.length > MAX_ROWS) { note.style.display = ''; note.textContent = 'Showing first ' + MAX_ROWS + ' of ' + rows.length.toLocaleString() + ' — narrow by brand, type, or ID list for full detail.'; }
+  else note.style.display = 'none';
+
+  const nErr = rows.reduce((n, c) => n + (issuesById[c.id] ?? []).filter(i => i.sev === 'err').length, 0);
+  const nWarn = rows.reduce((n, c) => n + (issuesById[c.id] ?? []).filter(i => i.sev === 'warn').length, 0);
+  const nGap = rows.reduce((n, c) => n + (gapsById[c.id]?.size ?? 0), 0);
+  $('count').textContent = rows.length.toLocaleString() + ' of ' + cameras.length.toLocaleString() + ' cameras';
+  const fc = { verified: 0, generated: 0, partial: 0, none: 0 };
+  rows.forEach(c => fc[frigateState(c)]++);
+  const withCfg = fc.verified + fc.generated + fc.partial;
+  $('frigate-strip').style.display = '';
+  $('frigate-strip').innerHTML =
+    '<span class="label">frigate coverage (current view)</span>' +
+    '<span>' + withCfg.toLocaleString() + '/' + rows.length.toLocaleString() + ' configs</span>' +
+    '<span class="v">✓ ' + fc.verified + ' verified' + (withCfg ? ' (' + (100 * fc.verified / withCfg).toFixed(1) + '%)' : '') + '</span>' +
+    '<span class="g">' + fc.generated.toLocaleString() + ' generated</span>' +
+    '<span class="p">' + fc.partial + ' partial</span>' +
+    '<span>' + fc.none.toLocaleString() + ' without</span>';
+  $('issues-summary').innerHTML = (nErr || nWarn)
+    ? '<span class="err-n">' + nErr + ' rule violation(s)</span> <span class="warn-n">' + nWarn + ' suspicious</span> · ' + nGap + ' gap(s) — click to browse'
+    : '<span class="ok">✓ no rule violations in current view</span> · ' + nGap + ' gap(s)';
+  renderIssueList();
+}
+function renderIssueList() {
+  const items = [];
+  for (const c of rows) for (const i of (issuesById[c.id] ?? [])) items.push({ id: c.id, ...i });
+  items.sort((a, b) => (a.sev === b.sev ? a.id.localeCompare(b.id) : a.sev === 'err' ? -1 : 1));
+  $('issues-body').innerHTML = items.map(i =>
+    `<div class="issue-row" data-id="${i.id}"><span class="sev ${i.sev}">${i.sev}</span><span class="cid">${i.id}</span><span class="msg">[${i.rule}] ${i.msg}</span></div>`
+  ).join('') || '<div class="issue-row"><span class="msg">Nothing flagged in the current view.</span></div>';
+  $('issues-body').querySelectorAll('.issue-row[data-id]').forEach(el => el.addEventListener('click', () => {
+    const tr = document.querySelector('tr[data-id="' + CSS.escape(el.dataset.id) + '"]');
+    if (tr) { tr.scrollIntoView?.({ block: 'center' }); tr.classList.remove('flash'); void tr.offsetWidth; tr.classList.add('flash'); }
+  }));
+}
+
+// ── Frigate preview modal ───────────────────────────────────────
+function frigateYaml(c) {
+  const f = c.configs?.frigate ?? {};
+  if (!f.rtsp_url_template && !f.best_substream && !f.detect) return null;
+  let y = '# generated from database fields — preview before publish\ncameras:\n  ' + c.id.replace(/-/g, '_') + ':\n';
+  if (f.rtsp_url_template || f.best_substream) {
+    y += '    ffmpeg:\n      inputs:\n';
+    if (f.rtsp_url_template) y += '        - path: ' + f.rtsp_url_template + '\n          roles: [record]\n';
+    if (f.best_substream) y += '        - path: ' + f.best_substream + '\n          roles: [detect]\n';
+  }
+  if (f.detect) {
+    y += '    detect:\n';
+    if (f.detect.width) y += '      width: ' + f.detect.width + '\n';
+    if (f.detect.height) y += '      height: ' + f.detect.height + '\n';
+    if (f.detect.fps) y += '      fps: ' + f.detect.fps + '\n';
+  }
+  return y;
+}
+let fpYamlText = '';
+function openFrigatePreview(cam) {
+  const f = cam.configs?.frigate ?? {};
+  $('fp-title').textContent = cam.id;
+  $('fp-sub').innerHTML = (cam.brand ?? '') + ' ' + (cam.model ?? '') +
+    (f.verified ? '<span class="verified-badge">✓ verified' + (f.tested_version ? ' · Frigate ' + f.tested_version : '') + (f.tested_by ? ' · ' + f.tested_by : '') + '</span>' : ' · <em>unverified — worth a community confirmation</em>');
+  const yaml = frigateYaml(cam);
+  fpYamlText = yaml ?? '';
+  let body = yaml
+    ? '<div class="fp-yaml">' + yaml.replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</div>'
+    : '<div class="fp-empty">Config entry exists but has no template/detect fields yet — a partial entry.</div>';
+  if (f.notes) body += '<div class="fp-note">' + String(f.notes).replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</div>';
+  body += '<div class="fp-actions">' + (yaml ? '<button id="fp-copy">Copy YAML</button>' : '') +
+    '<a href="https://github.com/ch-bas/cctv-camera-database/issues/new?template=verify-frigate-config.yml&title=' + encodeURIComponent('Verify: ' + (cam.brand ?? '') + ' ' + (cam.model ?? '') + ' — Frigate') + '" target="_blank" rel="noopener"><button>Report a test result ↗</button></a></div>';
+  $('fp-body').innerHTML = body;
+  const cp = $('fp-copy');
+  if (cp) cp.addEventListener('click', () => {
+    const done = () => { cp.textContent = '✓ Copied'; setTimeout(() => cp.textContent = 'Copy YAML', 1500); };
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(fpYamlText).then(done);
+    else {
+      const ta = document.createElement('textarea');
+      ta.value = fpYamlText; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); done(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+  });
+  $('fp-overlay').classList.add('open');
+}
+$('fp-close').addEventListener('click', () => $('fp-overlay').classList.remove('open'));
+$('fp-overlay').addEventListener('click', e => { if (e.target === $('fp-overlay')) $('fp-overlay').classList.remove('open'); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') $('fp-overlay').classList.remove('open'); });
+
+// ── Diff vs baseline ────────────────────────────────────────────
+const fmtVal = v => { const j = JSON.stringify(v); return j == null ? '∅' : (j.length > 60 ? j.slice(0, 57) + '…' : j); };
+function deepDiff(a, b, path, out) {
+  if (a === b) return;
+  const ta = Object.prototype.toString.call(a), tb = Object.prototype.toString.call(b);
+  if (ta !== tb || typeof a !== 'object' || a == null || b == null || Array.isArray(a)) {
+    if (JSON.stringify(a) !== JSON.stringify(b)) out.push({ path: path || '/', from: fmtVal(b), to: fmtVal(a) });
+    return;
+  }
+  for (const k of new Set([...Object.keys(a), ...Object.keys(b)])) deepDiff(a[k], b[k], path + '/' + k, out);
+}
+function runDiff(baseline) {
+  const base = new Map(baseline.filter(c => c && c.id).map(c => [c.id, c]));
+  diffById = {}; removedIds = [];
+  for (const c of cameras) {
+    const b = base.get(c.id);
+    if (!b) { diffById[c.id] = { status: 'add', changes: [] }; continue; }
+    const changes = [];
+    deepDiff(c, b, '', changes);
+    if (changes.length) diffById[c.id] = { status: 'mod', changes };
+  }
+  const local = new Set(cameras.map(c => c.id));
+  for (const id of base.keys()) if (!local.has(id)) removedIds.push(id);
+  const nAdd = Object.values(diffById).filter(d => d.status === 'add').length;
+  const nMod = Object.values(diffById).filter(d => d.status === 'mod').length;
+  $('diff-summary').innerHTML = '<span class="add">+' + nAdd + ' new</span> <span class="mod">~' + nMod + ' modified</span> <span class="del">−' + removedIds.length + ' removed</span> vs baseline (' + base.size.toLocaleString() + ')';
+  $('changed-only').style.display = '';
+  const rp = $('removed-panel');
+  if (removedIds.length) {
+    rp.style.display = '';
+    rp.innerHTML = '<div class="title">in baseline but not local (' + removedIds.length + ')</div><code>' + removedIds.slice(0, 40).join(', ') + (removedIds.length > 40 ? ' … +' + (removedIds.length - 40) + ' more' : '') + '</code>';
+  } else rp.style.display = 'none';
+  applyFilters();
+}
+$('diff-load').addEventListener('click', async () => {
+  const btn = $('diff-load');
+  btn.textContent = 'loading…'; btn.disabled = true;
+  try {
+    const res = await fetch($('baseline-url').value);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    runDiff(await res.json());
+  } catch (e) {
+    $('diff-summary').textContent = 'baseline fetch failed (' + e.message + ') — try the file option';
+  }
+  btn.textContent = 'Diff vs baseline'; btn.disabled = false;
+});
+$('diff-file-btn').addEventListener('click', () => $('diff-file').click());
+$('diff-file').addEventListener('change', async e => {
+  const f = e.target.files[0];
+  if (!f) return;
+  try { runDiff(JSON.parse(await f.text())); }
+  catch (err) { $('diff-summary').textContent = 'baseline file unreadable: ' + err.message; }
+});
+$('changed-only').addEventListener('click', () => {
+  changedOnly = !changedOnly;
+  $('changed-only').classList.toggle('active', changedOnly);
+  applyFilters();
+});
+
+// ── Wiring ──────────────────────────────────────────────────────
+['search', 'brand-select', 'type-select', 'frigate-select', 'id-paste'].forEach(id => {
+  $(id).addEventListener('input', applyFilters);
+  $(id).addEventListener('change', applyFilters);
+});
+$('id-paste-toggle').addEventListener('click', () => {
+  $('id-paste-wrap').classList.toggle('open');
+  $('id-paste-toggle').classList.toggle('active');
+});
+$('gaps-only').addEventListener('click', () => {
+  flaggedOnly = !flaggedOnly;
+  $('gaps-only').classList.toggle('active', flaggedOnly);
+  applyFilters();
+});
+$('issues-head').addEventListener('click', () => $('issues').classList.toggle('open'));
+document.addEventListener('keydown', e => {
+  if (e.key === '/' && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) { e.preventDefault(); $('search').focus(); }
+});
+
+tryAutoFetch();
+</script>
+</body>
+</html>
