@@ -6,6 +6,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.58.4] — 2026-08-10
+
+### Backfilled
+- **Hikvision `min_lux_color` (#161).** Filled **119** color min-illumination values from official Hikvision datasheets (`assets.hikvision.com` + verified mirrors), extracted as the published `Color: … Lux` figure — never the "0 Lux with IR/Light" value or a B/W-only figure. Covers IP domes/bullets/turrets, ColorVu (F1.0 → 0.0005), PTZ, and TurboHD. Hikvision `min_lux_color` coverage 309 → **428 / 448 (96%)**; dataset-wide 43% → **47%**. ~20 skipped models were left blank — most flagged as likely model-ID errors (routed to #186), the rest publish no color-lux figure.
+
 ## [1.58.3] — 2026-08-08
 
 ### Backfilled

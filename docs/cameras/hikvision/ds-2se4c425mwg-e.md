@@ -10,7 +10,7 @@
 | Sensor | Dual CMOS |
 | Lens | 2× 2.8mm wide + 4.8-120mm 25x PTZmm |
 | Field of view | 60-2.5h° |
-| Night vision | color (60m) |
+| Night vision | color (60m), 0.005 lux color |
 | Power | PoE (802.3bt) |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |

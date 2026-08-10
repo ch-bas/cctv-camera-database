@@ -8,7 +8,7 @@
 | Connectivity | ethernet |
 | Resolution | 16MP (4×4MP multisensor) (16MP) |
 | Field of view | 180h° |
-| Night vision | none |
+| Night vision | none, 0.009 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |

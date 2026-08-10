@@ -12,7 +12,7 @@
 | Sensor | 2MP CMOS |
 | Lens | 1× 2.8 / 3.6 (fixed)mm F1.6 |
 | Field of view | 105 horizontal (2.8mm) / 87 horizontal (3.6mm)° |
-| Night vision | hybrid (30m), 0.01 lux |
+| Night vision | hybrid (30m), 0.01 lux, 0.01 lux color |
 | Power | 12 VDC |
 | Storage | NVR |
 | IP rating | IP67 |

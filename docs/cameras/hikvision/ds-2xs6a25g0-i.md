@@ -8,7 +8,7 @@
 | Connectivity | wifi |
 | Resolution | 1080p HD (2MP) |
 | Field of view | 103h° |
-| Night vision | ir (60m) |
+| Night vision | ir (60m), 0.004 lux color |
 | Power | Built-in solar panel + 10,400mAh battery |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
