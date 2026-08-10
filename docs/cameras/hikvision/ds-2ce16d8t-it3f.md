@@ -8,7 +8,7 @@
 | Connectivity | coax |
 | Resolution | 1080p HD (2MP) |
 | Field of view | 103h° |
-| Night vision | ir (60m) |
+| Night vision | ir (60m), 0.003 lux color |
 | Power | DC 12V (coaxial HDCVI) |
 | Storage | NVR |
 | IP rating | IP67 |

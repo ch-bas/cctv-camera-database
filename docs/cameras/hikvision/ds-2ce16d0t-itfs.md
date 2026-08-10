@@ -12,7 +12,7 @@
 | Sensor | 2MP Progressive Scan CMOS |
 | Lens | 1× 2.8 / 3.6 / 6 (fixed)mm F2.0 |
 | Field of view | 106.4-51.9 horizontal (2.8mm-6mm options)° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.01 lux color |
 | Power | 12 VDC |
 | Storage | NVR |
 | IP rating | IP67 |

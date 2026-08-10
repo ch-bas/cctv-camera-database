@@ -8,7 +8,7 @@
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP) |
 | Field of view | 103h° |
-| Night vision | ir (40m) |
+| Night vision | ir (40m), 0.005 lux color |
 | Power | PoE/DC12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |

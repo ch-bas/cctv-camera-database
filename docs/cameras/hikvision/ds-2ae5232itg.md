@@ -10,7 +10,7 @@
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 4.8-153.6mm |
 | Field of view | 55h° |
-| Night vision | ir (150m) |
+| Night vision | ir (150m), 0.005 lux color |
 | Power | 36 VDC |
 | Storage | NVR |
 | IP rating | IP66 |
