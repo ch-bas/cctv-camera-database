@@ -61,10 +61,13 @@ const bar = (pct) => {
   return "`" + "█".repeat(filled) + "░".repeat(10 - filled) + "`";
 };
 
-// shields.io badge helpers (#234). Colour by coverage; `-` in a value must be
-// escaped as `--` for shields, so we keep labels simple.
+// shields.io badge helpers (#234). Colour by coverage. shields treats `-` as the
+// label/message/color separator, and encodeURIComponent leaves `-` untouched, so a
+// literal `-` in a label (e.g. "color min-lux") must be doubled to `--` or the
+// badge 404s. Escape here so any dashed label is safe.
 const badgeColor = (p) => (p >= 80 ? "brightgreen" : p >= 60 ? "green" : p >= 40 ? "yellow" : p >= 20 ? "orange" : "red");
-const badge = (label, pct) => `![${label} ${pct}%](https://img.shields.io/badge/${encodeURIComponent(label)}-${pct}%25-${badgeColor(pct)})`;
+const badgeField = (s) => encodeURIComponent(s).replace(/-/g, "--");
+const badge = (label, pct) => `![${label} ${pct}%](https://img.shields.io/badge/${badgeField(label)}-${pct}%25-${badgeColor(pct)})`;
 // Lanes shown as README/COVERAGE badges → [display label, matches rows[].label].
 const BADGE_LANES = [
   ["environment", "Environment (in/outdoor)"],
