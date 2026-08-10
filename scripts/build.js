@@ -352,6 +352,31 @@ function updateReadme(cameras) {
     .replace(/(inspect )[\d,]+( cameras across )\d+( brands)/, `$1${total}$2${brandCount}$3`)
     .replace(/(page through all )[\d,]+( cameras)/, `$1${total}$2`);
 
+  // "By the numbers" stat rows — computed from the dataset so they never drift
+  // (previously hand-written and went stale, e.g. the color-lux count).
+  const n = (f) => cameras.filter(f).length.toLocaleString("en-US");
+  const psHas = (k) => (x) => x.power_source && x.power_source.includes(k);
+  const mpOf = (x) => (x.resolution && x.resolution.megapixels) || 0;
+  const stats = {
+    poe: n((x) => psHas("poe")(x)),
+    wifi: n((x) => x.connectivity && x.connectivity.includes("wifi")),
+    batt: n((x) => psHas("battery")(x)),
+    uhd: n((x) => mpOf(x) >= 8),
+    mid: n((x) => mpOf(x) >= 4 && mpOf(x) < 8),
+    fhd: n((x) => mpOf(x) > 0 && mpOf(x) < 4),
+    cfg: n((x) => x.configs && (x.configs.frigate || x.configs.home_assistant)),
+    clux: n((x) => x.night_vision && x.night_vision.min_lux_color != null),
+  };
+  readme = readme
+    .replace(/(\| PoE wired \| )[\d,]+( \|)/, `$1${stats.poe}$2`)
+    .replace(/(\| WiFi \| )[\d,]+( \|)/, `$1${stats.wifi}$2`)
+    .replace(/(\| Battery \/ wire-free \| )[\d,]+( \|)/, `$1${stats.batt}$2`)
+    .replace(/(\| 4K \/ 8MP\+ \| )[\d,]+( \|)/, `$1${stats.uhd}$2`)
+    .replace(/(\| 4–5MP \| )[\d,]+( \|)/, `$1${stats.mid}$2`)
+    .replace(/(\| 1080p–2MP \| )[\d,]+( \|)/, `$1${stats.fhd}$2`)
+    .replace(/(\| With integration configs \(Frigate \/ Home Assistant\) \| )[\d,]+( \|)/, `$1${stats.cfg}$2`)
+    .replace(/(\| With color-lux rating \(`night_vision\.min_lux_color`\) \| )[\d,]+( \|)/, `$1${stats.clux}$2`);
+
   // "All brands" table (between brands-table markers): auto-refresh the Cameras
   // column and re-sort by count, but PRESERVE the hand-written display name and
   // Segment text (parsed back from the current table, keyed by brand field).

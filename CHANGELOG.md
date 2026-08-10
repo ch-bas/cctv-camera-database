@@ -23,6 +23,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [1.58.1] — 2026-08-07
 
+### Added — data-quality CI (#229, #235)
+- **Consistency-lint PR gate** (`scripts/lint-data.js`, `npm run lint`) — cross-field invariants a JSON Schema can't express (environment↔IP weatherproofing, `ip_rating` shape, `weight_g` sanity, ISO `last_verified`, canonical formatting, FOV normalisation), wired into the `build` workflow so PRs fail on violations.
+- **Auto coverage report** (`scripts/coverage-report.js` → `COVERAGE.md` + README badges), regenerated on every push to `main`.
+- **Wayback source archiving** (`scripts/archive-sources.js` + `archive-sources.yml`) — preserves each camera's `sources[]` against manufacturer link-rot.
+- **Monthly `last_verified` staleness sweep** (`scripts/check-staleness.js` + `check-staleness.yml`), companion to the weekly dead-link sweep (#222).
+- All documented in [`docs/ci.md`](docs/ci.md).
+
 ### Changed
 - **Canonicalised JSON formatting across the dataset (#230).** Reformatted 109 camera files to canonical 2-space indent + trailing newline via `npm run lint -- --fix`. No spec values changed (the generated `data/` aggregate is byte-identical) — purely whitespace, to keep future diffs clean.
 - **Normalised `field_of_view_deg` (#231).** Stripped the `°` symbol from 62 values (Bosch/Dahua/Luma/Tapo/VIGI), preserving descriptive wording (thermal, tele/wide, per-focal).
