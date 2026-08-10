@@ -138,14 +138,14 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | Total cameras | **2,884** |
 | Brands | **74** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
-| PoE wired | 1,669 |
-| WiFi | 544 |
-| Battery / wire-free | 190 |
-| 4K / 8MP+ | 639 |
-| 4–5MP | 885 |
-| 1080p–2MP | 588 |
-| With integration configs (Frigate / Home Assistant) | 1,912 |
-| With color-lux rating (`night_vision.min_lux_color`) | 516 |
+| PoE wired | 2,105 |
+| WiFi | 596 |
+| Battery / wire-free | 203 |
+| 4K / 8MP+ | 797 |
+| 4–5MP | 1,204 |
+| 1080p–2MP | 882 |
+| With integration configs (Frigate / Home Assistant) | 2,409 |
+| With color-lux rating (`night_vision.min_lux_color`) | 1,353 |
 
 ### All 74 brands
 
