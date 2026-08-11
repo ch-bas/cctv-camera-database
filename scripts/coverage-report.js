@@ -86,9 +86,24 @@ const rows = LANES.map(([label, emoji, issue, pred]) => {
 }).sort((a, b) => b.pct - a.pct);
 
 const brandCount = new Set(cameras.map((c) => c.brand)).size;
-const date = process.env.COVERAGE_DATE && /^\d{4}-\d{2}-\d{2}$/.test(process.env.COVERAGE_DATE)
-  ? process.env.COVERAGE_DATE
-  : null;
+// "Last updated" date. Prefer an explicit COVERAGE_DATE; otherwise default to the
+// last commit date so a plain local `node scripts/coverage-report.js` produces
+// byte-identical output to CI (which used to pass COVERAGE_DATE). Without this
+// default, a local regen strips the date line and CI then tries to restore it —
+// a perpetual diff that fails the main build under branch protection. Falls back
+// to null (no date) outside a git checkout.
+const gitCommitDate = () => {
+  try {
+    return require("child_process")
+      .execSync("git log -1 --format=%cs", { stdio: ["ignore", "pipe", "ignore"] })
+      .toString()
+      .trim() || null;
+  } catch {
+    return null;
+  }
+};
+const rawDate = process.env.COVERAGE_DATE || gitCommitDate();
+const date = rawDate && /^\d{4}-\d{2}-\d{2}$/.test(rawDate) ? rawDate : null;
 
 // Badge row shared by COVERAGE.md and the README marker.
 const pctFor = (rowLabel) => (rows.find((r) => r.label === rowLabel) || { pct: 0 }).pct;

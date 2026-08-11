@@ -63,11 +63,15 @@ jobs:
           if git push; then
             echo "Regenerated artifacts committed to main."
           else
-            echo "::error::Could not push regenerated artifacts to main. Allow \
-              github-actions[bot] to bypass the branch-protection 'require a pull \
-              request' rule (Settings → Branches), or regenerate manually with \
-              'npm run build' and commit."
-            exit 1
+            # Non-fatal: branch protection (require-PR / required status check)
+            # blocks a direct bot push. That's a deliberate setting, not a build
+            # failure — the artifacts are regenerated on the next PR (and the
+            # Pages job below always deploys freshly-built output regardless).
+            # To re-enable auto-sync, allow github-actions[bot] to bypass the
+            # 'require a pull request' rule (Settings → Branches).
+            echo "::warning::Skipped auto-sync of regenerated artifacts — branch \
+              protection blocked the bot push. Regenerate in a PR with 'npm run \
+              build' when the committed data/docs/COVERAGE.md matter."
           fi
 
   pages:
