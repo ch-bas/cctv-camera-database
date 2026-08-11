@@ -12,7 +12,7 @@
 | Sensor | 1/2.5" CMOS |
 | Lens | 1× 4.7-150 (32x optical zoom)mm |
 | Field of view | 59-1.9 horizontal° |
-| Night vision | ir (100m) |
+| Night vision | ir (100m), 0.03 lux color |
 | Power | High PoE (802.3bt) / AC 24V |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
@@ -33,6 +33,7 @@
 ## Sources
 
 - https://www.vivotek.com/sd9384-ehl
+- https://www.vivotek.vn/downloads/sd9384-ehldatasheet_en.pdf
 
 ---
 *Auto-generated from vivotek-sd9384-ehl.json — do not edit by hand.*

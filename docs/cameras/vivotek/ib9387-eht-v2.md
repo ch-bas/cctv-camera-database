@@ -12,7 +12,7 @@
 | Sensor | 1/2.7" Progressive Scan CMOS |
 | Lens | 1× 2.7-13.5 (motorized varifocal)mm |
 | Field of view | 105-31 horizontal° |
-| Night vision | ir (50m) |
+| Night vision | ir (50m), 0.075 lux color |
 | Power | PoE (802.3af) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
@@ -34,6 +34,7 @@
 ## Sources
 
 - https://www.vivotek.com/products/network-cameras/bullet/ib9387-eht-a
+- https://www.vivotek.com/resource/download_center/product/download/27828
 
 ---
 *Auto-generated from vivotek-ib9387-eht-v2.json — do not edit by hand.*

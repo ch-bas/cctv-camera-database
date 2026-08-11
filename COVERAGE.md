@@ -15,7 +15,7 @@
 | 🔬 Sensor | `█████████░` 87% | 2,498 |  |
 | 🔧 Frigate config | `████████░░` 82% | 2,375 | [#170](https://github.com/ch-bas/cctv-camera-database/issues/170) |
 | 🎞️ Video streams | `██████░░░░` 60% | 1,738 | [#177](https://github.com/ch-bas/cctv-camera-database/issues/177) |
-| 🌙 Min-lux (color) | `██████░░░░` 55% | 1,578 | [#161](https://github.com/ch-bas/cctv-camera-database/issues/161) |
+| 🌙 Min-lux (color) | `██████░░░░` 55% | 1,589 | [#161](https://github.com/ch-bas/cctv-camera-database/issues/161) |
 | 📐 Dimensions | `█████░░░░░` 54% | 1,546 | [#178](https://github.com/ch-bas/cctv-camera-database/issues/178) |
 | 🗺️ Markets | `█████░░░░░` 52% | 1,489 | [#166](https://github.com/ch-bas/cctv-camera-database/issues/166) |
 | ⚖️ Weight | `█████░░░░░` 47% | 1,347 | [#178](https://github.com/ch-bas/cctv-camera-database/issues/178) |

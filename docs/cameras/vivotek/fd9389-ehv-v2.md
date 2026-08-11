@@ -12,7 +12,7 @@
 | Sensor | 1/2.7" Progressive Scan CMOS |
 | Lens | 1× 2.8 (fixed)mm |
 | Field of view | 105 horizontal° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.06 lux color |
 | Power | PoE (802.3af) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
@@ -34,6 +34,7 @@
 ## Sources
 
 - https://www.bhphotovideo.com/c/product/1653617-REG/vivotek_fd9389_ehv_v2_fd9389_ehv_v2_5mp_outdoor.html
+- https://www.vivotek.com/resource/download-center/product/download/53495
 
 ---
 *Auto-generated from vivotek-fd9389-ehv-v2.json — do not edit by hand.*
