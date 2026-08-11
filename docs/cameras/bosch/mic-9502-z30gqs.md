@@ -10,7 +10,7 @@
 | Sensor | Visible: 1/2.8-type Exmor R CMOS (starlight); Thermal: uncooled vanadium oxide microbolometer FPA |
 | Lens | 2× 4.3-129 (visible) / 19 (thermal)mm F1.6-F4.7 (visible), F1.1 (thermal) |
 | Field of view | 2.3-64.7 (visible) / 16x12 (thermal)° |
-| Night vision | none |
+| Night vision | none, 0.0077 lux color |
 | Power | High PoE (95W) and/or 24 VAC (56 VDC nominal PoE); 72W typical |
 | Storage | NVR |
 | Protocols | onvif, rtsp, http |

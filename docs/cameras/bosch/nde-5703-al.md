@@ -12,7 +12,7 @@
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 3.2-10.5 (motorized varifocal)mm F1.6 |
 | Field of view | 96-29 horizontal° |
-| Night vision | ir (45m) |
+| Night vision | ir (45m), 0.044 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 2048GB, NVR |
 | Protocols | onvif, rtsp |
@@ -32,6 +32,7 @@
 ## Sources
 
 - https://www.bhphotovideo.com/c/product/1853701-REG/bosch_nde_5703_al_flexidome_outdoor_5100i_fixed.html
+- https://assets.catalog.boschbuildingtechnologies.com/public/documents/NDE_5703_AL_Data_sheet_enUS_98577430411.pdf
 
 ---
 *Auto-generated from bosch-nde-5703-al.json — do not edit by hand.*

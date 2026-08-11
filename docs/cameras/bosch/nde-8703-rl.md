@@ -10,7 +10,7 @@
 | Sensor | 1/1.8" CMOS |
 | Lens | 1× 3.9-10mm F1.6 |
 | Field of view | 117-44° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.036 lux color |
 | Power | PoE+ (IEEE 802.3at Type 2, Class 4), 12-26V DC, 24V AC |
 | Storage | microSD ≤ 2048GB, NVR |
 | Protocols | onvif, rtsp |
@@ -38,6 +38,7 @@
 - https://netcamcenter.com/en/products/ip-cameras/nde-8703-rl
 - https://madison.tech/products/bosch-flexidome-8100i-ir-nde-8703-rl/
 - https://networkcamerastore.com/products/bosch-nde-8703-rl-dome-6mp-hdr-3-9-10mm-ptrz-ip67-ir
+- https://keenfinity.blob.core.windows.net/public/documents/FLEXIDOME_8100i_IR_Data_sheet_enUS_125842951307.pdf
 
 ---
 *Auto-generated from bosch-nde-8703-rl.json — do not edit by hand.*

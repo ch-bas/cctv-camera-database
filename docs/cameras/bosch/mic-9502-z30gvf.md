@@ -10,7 +10,7 @@
 | Sensor | 1/2.8-type Exmor R CMOS (visible) + uncooled Vanadium Oxide microbolometer 640x480 (thermal) |
 | Lens | 2× 4.3 to 129 (visible 30x zoom); 50 (thermal)mm F1.6 to F4.7 (visible); F1.2 (thermal) |
 | Field of view | 2.3 to 64.7 (visible); 12.4 x 9.3 (thermal)° |
-| Night vision | none |
+| Night vision | none, 0.0077 lux color |
 | Power | High PoE (95W, requires NPD-9501-E midspan; 56VDC) and/or 21-30 VAC |
 | Storage | NVR |
 | Protocols | onvif, rtsp, http |

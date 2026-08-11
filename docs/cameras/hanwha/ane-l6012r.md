@@ -10,7 +10,7 @@
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 3.0 (fixed)mm F1.6 |
 | Field of view | 108 horizontal / 59 vertical° |
-| Night vision | ir (20m) |
+| Night vision | ir (20m), 0.03 lux color |
 | Power | PoE (IEEE 802.3af, Class 3) |
 | Storage | microSD ≤ 32GB, NVR |
 | Protocols | onvif, rtsp, http |
@@ -34,6 +34,7 @@
 ## Sources
 
 - https://www.hanwhavision.com/en/products/product-details/ane-l6012r
+- https://www.surveillance-video.com/camera-ane-l6012r.html
 
 ---
 *Auto-generated from hanwha-ane-l6012r.json — do not edit by hand.*

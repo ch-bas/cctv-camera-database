@@ -10,7 +10,7 @@
 | Sensor | 1/1.8 inch CMOS |
 | Lens | 1× 2.5mm f/2.4 |
 | Field of view | 131.1 horizontal, 96.5 vertical° |
-| Night vision | ir (15m) |
+| Night vision | ir (15m), 0.072 lux color |
 | Power | PoE IEEE 802.3at Type 1 Class 3 / 12 VDC / 24 VAC |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
@@ -34,6 +34,7 @@
 ## Sources
 
 - https://commerce.boschsecurity.com/xl/en/FLEXIDOME-corner-7100i-IR/p/F.01U.418.462/
+- https://cdn.commerce.boschsecurity.com/public/documents/NCE_7703_FK_Data_sheet_enUS_104889400459.pdf
 - https://www.networkwebcams.co.uk/content/pdf/bosch/bosch-NCE-7703-FK-datasheet.pdf
 - https://netcamcenter.de/de/produkte/ip-kameras/nce-7703-fk
 - https://www.use-ip.co.uk/bosch-nce-7703-fk.html

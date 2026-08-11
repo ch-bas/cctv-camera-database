@@ -10,7 +10,7 @@
 | Sensor | 1/1.8" CMOS (2.0 μm) |
 | Lens | 1× 12-38mm F2.05-F2.25 |
 | Field of view | 36-12° |
-| Night vision | color |
+| Night vision | color, 0.0885 lux color |
 | Power | PoE (IEEE 802.3af/at), 12-26 VDC, 24 VAC |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
@@ -36,6 +36,7 @@
 - https://commerce.keenfinity.tech/au/en/FLEXIDOME-8100i/p/104629967371/
 - https://www.bhphotovideo.com/c/product/1882866-REG/bosch_nde_8704_rt_flexidome_8100i_ptrz_8mp.html
 - https://netcamcenter.de/de/produkte/ip-kameras/nde-8704-rt
+- https://resources.keenfinity.tech/public/documents/NDE_8704_RT_Data_sheet_enUS_125843080331.pdf
 
 ---
 *Auto-generated from bosch-nde-8704-rt.json — do not edit by hand.*

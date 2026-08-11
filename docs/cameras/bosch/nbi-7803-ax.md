@@ -10,7 +10,7 @@
 | Sensor | 1/1.8-inch CMOS |
 | Lens | 1× 4.4-10mm f/1.35-f/1.97 |
 | Field of view | 103-49 (horizontal)° |
-| Night vision | none |
+| Night vision | none, 0.009 lux color |
 | Power | PoE (IEEE 802.3at Type 1, Class 3) / 12 VDC / 24 VAC |
 | Storage | NVR |
 | Protocols | onvif, rtsp, http |
@@ -36,6 +36,7 @@
 - https://netcamcenter.de/de/produkte/ip-kameras/nbi-7803-ax
 - https://www.keenfinity-group.com/media/en/pb/images/news/online_tools/video-systems-product-overview.pdf
 - https://keenfinity.blob.core.windows.net/public/documents/NBI_7802_AX_Data_sheet_enUS_172743006091.pdf
+- https://resources.keenfinity.tech/public/documents/NBI_7803S_AX_Data_sheet_enUS_172775820171.pdf
 - https://keenfinity.blob.core.windows.net/public/documents/DINION_7100s_IM_Installation_Manual_enUS_172776920075.pdf
 
 ---

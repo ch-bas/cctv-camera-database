@@ -12,7 +12,7 @@
 | Sensor | 4x 1/2.8" CMOS |
 | Lens | 4× 3.3-5.7 (1.7x) per channelmm F1.5-1.9 |
 | Field of view | 100-53 horizontal / 54-30 vertical / 125-61 diagonal (per channel)° |
-| Night vision | ir (20m) |
+| Night vision | ir (20m), 0.075 lux color |
 | Power | PoE+ (IEEE 802.3at, Class 4) / PoE++ (IEEE 802.3bt Type 3, Class 6) |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp, http |
@@ -40,6 +40,7 @@
 ## Sources
 
 - https://www.hanwhavision.com/en/products/product-details/pnm-c16083rvq
+- https://www.surveillance-video.com/camera-pnm-c16083rvq.html
 
 ---
 *Auto-generated from hanwha-pnm-c16083rvq.json — do not edit by hand.*

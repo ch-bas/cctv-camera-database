@@ -10,7 +10,7 @@
 | Sensor | 1/2.8-type Exmor R CMOS (visible); uncooled Vanadium Oxide microbolometer FPA (thermal) |
 | Lens | 2× 4.3-129mm F1.6-F4.7 |
 | Field of view | 2.3-64.7 (optical); 12.4x9.3 (thermal)° |
-| Night vision | none |
+| Night vision | none, 0.0077 lux color |
 | Power | High PoE (95W, requires NPD-9501-E midspan) or 24 VAC (21-30 VAC) |
 | Storage | NVR |
 | Protocols | onvif, rtsp, http |
@@ -44,6 +44,7 @@
 ## Sources
 
 - https://commerce.boschsecurity.com/gb/en/MIC-IP-fusion-9000i/p/F.01U.368.927/
+- https://cdn.commerce.boschsecurity.com/public/documents/MIC_IP_fusion_9000i_Data_sheet_enUS_75058032907.pdf
 
 ---
 *Auto-generated from bosch-mic-9502-z30bvf.json — do not edit by hand.*

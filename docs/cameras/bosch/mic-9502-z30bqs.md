@@ -10,7 +10,7 @@
 | Sensor | Visible: 1/2.8" CMOS; Thermal: uncooled VOx microbolometer |
 | Lens | 2× 4.3-129 (visible); 19 (thermal)mm |
 | Field of view | 16 (thermal)° |
-| Night vision | none |
+| Night vision | none, 0.0077 lux color |
 | Power | High PoE (95 W); 24 V AC / 56 V DC |
 | Storage | NVR |
 | Protocols | onvif, rtsp, http |

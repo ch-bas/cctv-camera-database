@@ -10,7 +10,7 @@
 | Sensor | 1/2.8-inch CMOS |
 | Lens | 1× 3.3-10.2mm F1.6 |
 | Field of view | 31 to 106 (horizontal)° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.06 lux color |
 | Power | PoE (IEEE 802.3af) |
 | Storage | microSD ≤ 2048GB, NVR |
 | Protocols | onvif, rtsp |
@@ -39,6 +39,7 @@
 - https://www.bhphotovideo.com/c/product/1832246-REG/bosch_nbe_3702_al_dinion_3100i_ir.html
 - https://www.ipsecuritydepot.com/bosch-nbe-3702-al/nbe-3702-al/
 - https://www.orbitadigital.com/en/cctv-ip/ip-cameras/bullet/51983-bosch-nbe-3702-al-tubular-dinion-3100i-2mp-hdr-33-102mm-ip66.html
+- https://image.makewebeasy.net/makeweb/0/upnyp4ixT/Document/DINION_3100i_IR_Data_sheet_enUS_120604864011.pdf
 
 ---
 *Auto-generated from bosch-nbe-3702-al.json — do not edit by hand.*

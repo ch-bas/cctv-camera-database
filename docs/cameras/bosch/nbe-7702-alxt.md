@@ -12,7 +12,7 @@
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 10.5-47 (motorized varifocal)mm F1.6 |
 | Field of view | 31-8 horizontal° |
-| Night vision | ir (200m) |
+| Night vision | ir (200m), 0.0061 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
@@ -32,6 +32,7 @@
 ## Sources
 
 - https://www.anixter.com/en_us/products/NBE-7702-ALX/BOSCH-SECURITY-SYSTEMS/Surveillance-Cameras/p/10362187
+- https://resources.keenfinity.tech/public/documents/DINION_7100i_IR_Data_Data_sheet_enUS_118826844939.pdf
 
 ---
 *Auto-generated from bosch-nbe-7702-alxt.json — do not edit by hand.*

@@ -12,7 +12,7 @@
 | Sensor | 1/1.8" CMOS (starlight) |
 | Lens | 1× 3-9 (motorized varifocal)mm F1.2 |
 | Field of view | 100-35 horizontal° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.0061 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
@@ -33,6 +33,7 @@
 ## Sources
 
 - https://commerce.boschsecurity.com/nlexp/en/FLEXIDOME-IP-starlight-8000i-2MP/p/23543250187/
+- https://resources.keenfinity.tech/public/documents/NDE_8512_RX_Fixed_do_Data_sheet_enUS_92200431755.pdf
 
 ---
 *Auto-generated from bosch-nde-8512-rx.json — do not edit by hand.*

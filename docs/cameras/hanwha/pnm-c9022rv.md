@@ -12,7 +12,7 @@
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 2.8 (fixed)mm F2.0 |
 | Field of view | 209 horizontal / 60 vertical° |
-| Night vision | ir (20m) |
+| Night vision | ir (20m), 0.1 lux color |
 | Power | PoE+ (IEEE 802.3at, Class 4) / 12VDC |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp, http |
@@ -38,6 +38,7 @@
 ## Sources
 
 - https://www.hanwhavision.com/en/products/product-details/pnm-c9022rv
+- https://allsecurityequipment.com/products/hanwha-vision-pnm-c9022rv
 
 ---
 *Auto-generated from hanwha-pnm-c9022rv.json — do not edit by hand.*

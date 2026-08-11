@@ -12,7 +12,7 @@
 | Sensor | 1/2.9" Progressive Scan CMOS |
 | Lens | 1× 3-10 (AVF motorized varifocal)mm |
 | Field of view | 98-29 horizontal° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.24 lux color |
 | Power | PoE (802.3af) / DC 12V / AC 24V |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
@@ -32,6 +32,7 @@
 
 ## Sources
 
+- https://best-vsec.com/documents/datasheet/FLEXIDOME_IP_5000i_IR_outdoor_5000i_Data_sheet_enUS_32585941003.pdf
 - https://networkcamerastore.com/products/bosch-nde-5503-al-flexidome-ip-5000i-5mp-hdr-3-10mm-avf-h-265-v
 
 ---

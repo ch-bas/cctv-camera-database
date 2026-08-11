@@ -12,7 +12,7 @@
 | Sensor | 4x exchangeable CMOS lens modules (2MP/5MP) + 1/2.8" CMOS (PTZ channel) |
 | Lens | 5× PTZ: 4.44-142.6 (32x optical); modules: 2.4/2.8/3.6/6.0/12.0 (2MP) or 3.7/4.6/7.0 (5MP) fixedmm PTZ: F1.6 (wide) - F4.4 (tele); modules: F2.0 |
 | Field of view | PTZ: 61.8 (wide) - 2.19 (tele) horizontal; modules: per lens option° |
-| Night vision | none |
+| Night vision | none, 0.055 lux color |
 | Power | HPoE (IEEE 802.3bt, Class 8), injector included |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp, http |
