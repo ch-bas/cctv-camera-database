@@ -10,7 +10,7 @@
 | Sensor | 1/2.8-inch CMOS |
 | Lens | 1× 3.2-10.5mm F1.6 |
 | Field of view | 31-105 (horizontal)° |
-| Night vision | ir (40m) |
+| Night vision | ir (40m), 0.046 lux color |
 | Power | PoE (IEEE 802.3af/at), 12 VDC, 24 VAC |
 | Storage | microSD ≤ 2048GB, NVR |
 | Protocols | onvif, rtsp |
@@ -38,6 +38,7 @@
 - https://www.a1securitycameras.com/bosch-nde-5704-al.html
 - https://www.surveillance-video.com/camera-nde-5704-al.html
 - https://netcamcenter.de/de/produkte/ip-kameras/nde-5704-al
+- https://assets.catalog.boschbuildingtechnologies.com/public/documents/NDE_5704_AL_Data_sheet_enUS_98577433355.pdf
 
 ---
 *Auto-generated from bosch-nde-5704-al.json — do not edit by hand.*

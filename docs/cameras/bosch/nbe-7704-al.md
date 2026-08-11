@@ -10,7 +10,7 @@
 | Sensor | 1/1.8-inch CMOS |
 | Lens | 1× 4.4-10mm F1.6 |
 | Field of view | 44-108° |
-| Night vision | ir (60m) |
+| Night vision | ir (60m), 0.037 lux color |
 | Power | PoE (IEEE 802.3at), 12 VDC, 24 VAC |
 | Storage | microSD ≤ 2000GB, NVR |
 | Protocols | onvif, rtsp |
@@ -39,6 +39,7 @@
 - https://www.csd.com.au/products/BOS-NBE-7704-AL
 - https://www.use-ip.co.uk/bosch-nbe-7704-al.html
 - https://www.bhphotovideo.com/c/product/1831956-REG/bosch_nbe_7704_al_dinion_7100i_ir.html
+- https://resources.keenfinity.tech/public/documents/NBE_7704_AL_Bullet_8_Data_sheet_enUS_104883607051.pdf
 
 ---
 *Auto-generated from bosch-nbe-7704-al.json — do not edit by hand.*

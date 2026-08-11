@@ -10,7 +10,7 @@
 | Sensor | 1/1.8 inch CMOS, 2.9 μm |
 | Lens | 1× 4.4-10mm F1.3-F1.97 |
 | Field of view | 110-48 (horizontal), 56-27 (vertical)° |
-| Night vision | ir (50m) |
+| Night vision | ir (50m), 0.009 lux color |
 | Power | PoE+ (IEEE 802.3at Type 2), 24 VAC, 12-26 VDC |
 | Storage | microSD ≤ 2048GB, NVR |
 | Protocols | onvif, rtsp, http |
@@ -40,6 +40,7 @@
 ## Sources
 
 - https://cdn.commerce.boschsecurity.com/public/documents/NDE_8703_RXT_Data_sheet_zhTW_125843041291.pdf
+- https://resources.keenfinity.tech/public/documents/NDE_8703_RXL_Data_sheet_enUS_125843025163.pdf
 
 ---
 *Auto-generated from bosch-nde-8703-rxl.json — do not edit by hand.*

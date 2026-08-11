@@ -9,7 +9,7 @@
 | Resolution | 2x 3MP (2048×1536 per imager) (6MP, 2048×1536) |
 | Lens | 2× 3.2–8.1mm |
 | Field of view | 37–104 horizontal (per lens, varifocal)° |
-| Night vision | ir (25m) |
+| Night vision | ir (25m), 0.035 lux color |
 | Power | PoE (IEEE 802.3bt) / 12 VDC / 24 VAC |
 | Storage | microSD ≤ 2048GB, NVR |
 | Protocols | onvif, rtsp, http |
@@ -37,6 +37,7 @@
 
 - https://netcamcenter.de/de/produkte/ip-kameras/ndd-7802-al
 - https://netcamcenter.com/en/products/ip-cameras/ndd-7802-al
+- https://netcamcenter.com/media/documents/PB-NDD7802AL_Product-Data-Sheet_2026-03-26-145725_njcu.pdf
 - https://networkcamerastore.com/products/bosch-ndd-7802-al-dual-dome-2x3mp-3-2-8-1mm-ip67-ir-ik10-includes-iva-pro-buildings-perimeter-privacy-integrated-mic
 - https://smartsd.com/product/10951181/bosch-ndd-7802-al
 - https://www.iqsight.com/en/news/product-news/flexidome-dual-7100i-ir/

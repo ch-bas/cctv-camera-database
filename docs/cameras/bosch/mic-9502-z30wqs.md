@@ -10,7 +10,7 @@
 | Sensor | 1/2.8-inch Exmor R CMOS (visible) + uncooled vanadium oxide (VOx) microbolometer (thermal, QVGA) |
 | Lens | 2× 4.3-129mm F1.6-4.7 |
 | Field of view | 61-90 (optical horizontal), 16 (thermal)° |
-| Night vision | none |
+| Night vision | none, 0.0077 lux color |
 | Power | High PoE (95W) or 24 VAC (21-30 VAC) |
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
@@ -37,6 +37,7 @@
 - https://commerce.keenfinity.tech/tw/en/MIC-IP-fusion-9000i/p/F.01U.368.926/
 - https://netcamcenter.de/de/produkte/ip-kameras/mic-9502-z30wqs
 - https://www.a1securitycameras.com/bosch-mic-9502-z30wqs.html
+- https://cdn.commerce.boschsecurity.com/public/documents/MIC_IP_fusion_9000i_Data_sheet_enUS_75058032907.pdf
 
 ---
 *Auto-generated from bosch-mic-9502-z30wqs.json — do not edit by hand.*

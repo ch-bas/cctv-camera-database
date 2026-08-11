@@ -10,7 +10,7 @@
 | Sensor | 2x 1/2.8" CMOS |
 | Lens | 2× 3.2-8.1mm |
 | Field of view | 104 to 37 (horizontal)° |
-| Night vision | ir (25m) |
+| Night vision | ir (25m), 0.035 lux color |
 | Power | PoE (IEEE 802.3 Power-over-Ethernet) |
 | Storage | microSD ≤ 2048GB, NVR |
 | Protocols | onvif, rtsp |
@@ -39,6 +39,7 @@
 
 - https://netcamcenter.de/de/produkte/ip-kameras/ndd-7803-al
 - https://netcamcenter.com/en/products/ip-cameras/ndd-7803-al
+- https://janexint.com.pl/files/794/kk_NDD-7803-AL_eng.pdf
 - https://www.bhphotovideo.com/c/product/1953490-REG/bosch_ndd_7803_al_flexidome_dual_7100i_ir.html
 - https://networkcamerastore.com/products/bosch-ndd-7803-al-dual-dome-2x5mp-3-2-8-1mm-ip67-ir-ik10-includes-iva-pro-buildings-perimeter-privacy-integrated-mic
 - https://commerce.keenfinity.tech/us/en/Dual-dome-2x5MP-3-2-8-1mm-IP67-IR/p/F.01U.435.385/

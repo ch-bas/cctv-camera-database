@@ -10,7 +10,7 @@
 | Sensor | 1/2.7-inch CMOS |
 | Lens | 1× 3.3-10.2mm F1.6 |
 | Field of view | 30-101° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.14 lux color |
 | Power | PoE IEEE 802.3af/802.3at Type 1, Class 3 |
 | Storage | microSD ≤ 2048GB, NVR |
 | Protocols | onvif, rtsp |
@@ -36,6 +36,7 @@
 - https://www.networkwebcams.co.uk/content/pdf/bosch/bosch-nbe-3703-al-datasheet.pdf
 - https://www.digital-key-world.com/en/Bosch-NBE-3703-AL/240036
 - https://www.bhphotovideo.com/c/product/1832248-REG/bosch_nbe_3703_al_dinion_3100i_ir.html
+- https://image.makewebeasy.net/makeweb/0/upnyp4ixT/Document/DINION_3100i_IR_Data_sheet_enUS_120604864011.pdf
 
 ---
 *Auto-generated from bosch-nbe-3703-al.json — do not edit by hand.*

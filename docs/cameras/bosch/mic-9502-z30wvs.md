@@ -10,7 +10,7 @@
 | Sensor | 1/2.8-type Exmor R CMOS |
 | Lens | 2× 4.3-129 (optical); 50 (thermal, F1.2 athermal)mm F1.6-F4.7 |
 | Field of view | 2.3 to 64.7 (optical); 12.4 x 9.3 (thermal)° |
-| Night vision | none |
+| Night vision | none, 0.0077 lux color |
 | Power | 95W High Power-over-Ethernet (56VDC nominal, requires NPD-9501-E midspan) and/or 24VAC (21-30VAC, 50/60Hz) |
 | Storage | NVR |
 | Protocols | onvif, rtsp, http |

@@ -10,7 +10,7 @@
 | Sensor | 1/1.8 inch CMOS |
 | Lens | 1× 4.7-10mm F/1.35-F/1.97 |
 | Field of view | 103 to 48 horizontal, 53 to 27 vertical° |
-| Night vision | ir (80m) |
+| Night vision | ir (80m), 0.009 lux color |
 | Power | PoE IEEE 802.3af/802.3at Type 1 Class 3, 12VDC, 24VAC |
 | Storage | microSD ≤ 2048GB, NVR |
 | Protocols | onvif, rtsp, http |
@@ -42,6 +42,7 @@
 - https://catalog.boschbuildingtechnologies.com/xf/en/DINION-7100i-IR/p/F.01U.390.688/
 - https://madison.tech/wp-content/uploads/2023/12/NBE_7703_ALX_Bullet__Data_sheet_enUS.pdf
 - https://netcamcenter.de/de/produkte/ip-kameras/nbe-7703-alx
+- https://resources.keenfinity.tech/public/documents/DINION_7100i_IR_Data_Data_sheet_enUS_118826844939.pdf
 
 ---
 *Auto-generated from bosch-nbe-7703-alx.json — do not edit by hand.*

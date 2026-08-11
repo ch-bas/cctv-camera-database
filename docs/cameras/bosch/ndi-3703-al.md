@@ -10,7 +10,7 @@
 | Sensor | 1/2.7-inch CMOS |
 | Lens | 1× 3.3-10.2mm F1.6 |
 | Field of view | 30.1-101.4° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.14 lux color |
 | Power | PoE (IEEE 802.3af/at) |
 | Storage | microSD ≤ 2048GB, NVR |
 | Protocols | onvif, rtsp |
@@ -33,6 +33,7 @@
 - https://commerce.boschsecurity.com/xf/en/FLEXIDOME-indoor-3100i-IR/p/F.01U.406.609/
 - https://www.networkwebcams.co.uk/content/pdf/bosch/bosch-NDI-3703-AL-datasheet.pdf
 - https://www.a1securitycameras.com/bosch-ndi-3703-al.html
+- https://cdn.commerce.boschsecurity.com/public/documents/NDI_3703_AL_Data_sheet_enUS_121023012491.pdf
 
 ---
 *Auto-generated from bosch-ndi-3703-al.json — do not edit by hand.*

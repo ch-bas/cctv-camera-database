@@ -10,7 +10,7 @@
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 3.3-10.2mm |
 | Field of view | 31.2-106° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.06 lux color |
 | Power | Power over Ethernet (IEEE 802.3af) |
 | Storage | microSD ≤ 2048GB, NVR |
 | Protocols | onvif, rtsp |
@@ -32,7 +32,7 @@
 
 - https://netcamcenter.de/de/produkte/ip-kameras/nde-3702-al
 - https://www.digital-key-world.com/en/Bosch-NDE-3702-AL/239992
-- https://assets.catalog.boschbuildingtechnologies.com/public/documents/NDE_3702_AL_GOV_Data_sheet_enUS_121019040139.pdf
+- https://cdn.commerce.boschsecurity.com/public/documents/NDE_3702_AL_Data_sheet_enUS_121019036811.pdf
 - https://www.networkwebcams.co.uk/content/pdf/bosch/bosch-NDE-3702-AL-datasheet.pdf
 
 ---

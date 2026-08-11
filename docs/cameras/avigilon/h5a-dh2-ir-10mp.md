@@ -12,7 +12,7 @@
 | Sensor | 2x 1/2.8" CMOS |
 | Lens | 2× 3.3-5.7 (motorized per sensor)mm |
 | Field of view | Up to 180 combined° |
-| Night vision | ir (20m) |
+| Night vision | ir (20m), 0.1 lux color |
 | Power | High PoE (802.3bt) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
@@ -32,6 +32,7 @@
 ## Sources
 
 - https://www.avigilon.com/security-cameras/h5a-dual-head
+- https://www.avigilon.com/fs/documents/avigilon-h5a-dual-head-camera-datasheet-en.pdf
 
 ---
 *Auto-generated from avigilon-h5a-dh2-ir-10mp.json — do not edit by hand.*

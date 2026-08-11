@@ -12,7 +12,7 @@
 | Sensor | 4x 1/2.7" CMOS |
 | Lens | 4× 3.2-10.5 (per sensor varifocal)mm |
 | Field of view | 360° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.091 lux color |
 | Power | High PoE (802.3bt) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
@@ -32,6 +32,7 @@
 ## Sources
 
 - https://media.boschsecurity.com/fs/media/en/pb/media/support_1/tools/ip_video_product_overview.pdf
+- https://resources.keenfinity.tech/public/documents/NDM_7703_AL_Fixed_do_Data_sheet_enUS_84181084299.pdf
 
 ---
 *Auto-generated from bosch-ndm-7703-al.json — do not edit by hand.*

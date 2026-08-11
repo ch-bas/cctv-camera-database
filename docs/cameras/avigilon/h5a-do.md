@@ -12,7 +12,7 @@
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 3-9 (motorized)mm F1.6 |
 | Field of view | 108-37 horizontal° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.058 lux color |
 | Power | PoE (802.3af) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
@@ -33,6 +33,7 @@
 ## Sources
 
 - https://www.avigilon.com/security-cameras/h5-dome
+- https://assets.avigilon.com/documents/avigilon-h5a-line-camera-datasheet-en.pdf
 
 ---
 *Auto-generated from avigilon-h5a-do.json — do not edit by hand.*

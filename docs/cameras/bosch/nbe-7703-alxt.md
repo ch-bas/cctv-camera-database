@@ -10,7 +10,7 @@
 | Sensor | 1/1.8-inch CMOS |
 | Lens | 1× 10.5-47mm F1.35-F1.55 |
 | Field of view | 9.3-41.6 (horizontal)° |
-| Night vision | ir |
+| Night vision | ir, 0.0078 lux color |
 | Power | PoE (IEEE 802.3af/at), 12 VDC, 24 VAC |
 | Protocols | onvif, rtsp, http |
 | IP rating | IP66/IP67 |
@@ -37,6 +37,7 @@
 - https://www.adiglobaldistribution.co.uk/Product/NBE-7703-ALXT
 - https://www.jvsg.com/cameras/bosch/NBE-7703-ALXT/
 - https://commerce.boschsecurity.com/xf/en/DINION-7100i-IR/p/F.01U.390.689/
+- https://resources.keenfinity.tech/public/documents/DINION_7100i_IR_Data_Data_sheet_enUS_118826844939.pdf
 
 ---
 *Auto-generated from bosch-nbe-7703-alxt.json — do not edit by hand.*

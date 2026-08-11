@@ -9,7 +9,7 @@
 | Resolution | 1080p (2.1MP, 1920×1080) |
 | Sensor | 1/1.8-inch CMOS |
 | Lens | 1× 4.4-10mm |
-| Night vision | none |
+| Night vision | none, 0.0061 lux color |
 | Power | Power over Ethernet (IEEE 802.3af/802.3at) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
@@ -34,6 +34,7 @@
 - https://catalog.boschbuildingtechnologies.com/xm/en/FLEXIDOME-IP-indoor-8000i-2MP-X-series/p/86449737227/
 - https://www.securityinformed.com/bosch-ndv-8502-rx-ip-dome-camera-technical-details.html
 - https://madison.tech/products/bosch-flexidome-ip-indoor-8000i-ndv-8502-rx/
+- https://resources.keenfinity.tech/public/documents/NDV_8502_RX_Fixed_do_Data_sheet_enUS_87395275019.pdf
 
 ---
 *Auto-generated from bosch-ndv-8502-rx.json — do not edit by hand.*

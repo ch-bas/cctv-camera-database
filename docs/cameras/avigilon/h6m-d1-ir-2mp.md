@@ -12,7 +12,7 @@
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 2.9 (fixed)mm |
 | Field of view | 100-36 horizontal° |
-| Night vision | ir (20m) |
+| Night vision | ir (20m), 0.01 lux color |
 | Power | PoE (802.3af) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
@@ -32,6 +32,7 @@
 ## Sources
 
 - https://www.avigilon.com/security-cameras/h6m-indoor-dome
+- https://www.avigilon.com/fs/documents/avigilon-h6m-dome-datasheet-en.pdf
 
 ---
 *Auto-generated from avigilon-h6m-d1-ir-2mp.json — do not edit by hand.*

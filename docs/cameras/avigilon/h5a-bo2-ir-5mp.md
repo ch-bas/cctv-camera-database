@@ -12,7 +12,7 @@
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 9-22 (motorized varifocal)mm |
 | Field of view | 97-33 horizontal° |
-| Night vision | ir (40m) |
+| Night vision | ir (40m), 0.058 lux color |
 | Power | PoE (802.3af/at) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
@@ -32,6 +32,7 @@
 ## Sources
 
 - https://www.avigilon.com/security-cameras/h5a-bullet
+- https://www.avigilon.com/fs/documents/avigilon-h5a-line-camera-datasheet-en.pdf
 
 ---
 *Auto-generated from avigilon-h5a-bo2-ir-5mp.json — do not edit by hand.*

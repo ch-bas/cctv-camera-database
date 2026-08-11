@@ -10,7 +10,7 @@
 | Sensor | 1/2.7 inch CMOS |
 | Lens | 1× 3.3 to 10.2mm |
 | Field of view | 30.1 to 101.4° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.14 lux color |
 | Power | PoE (IEEE 802.3af/802.3at Type 1 Class 3); 24V AC |
 | Storage | microSD ≤ 2048GB, NVR |
 | Protocols | onvif, rtsp |
@@ -32,6 +32,7 @@
 
 ## Sources
 
+- https://cdn.commerce.boschsecurity.com/public/documents/__Data_sheet_enUS_125014589451.pdf
 - https://commerce.boschsecurity.com/xl/en/FLEXIDOME-outdoor-3100i-IR/p/F.01U.427.710
 - https://netcamcenter.de/de/produkte/ip-kameras/nde-3703-al-io
 - https://www.networkwebcams.co.uk/content/pdf/bosch/bosch-NDE-3703-AL-datasheet.pdf

@@ -12,7 +12,7 @@
 | Sensor | 1/1.8" CMOS (starlight) |
 | Lens | 1× 3-9 (motorized varifocal)mm F1.2 |
 | Field of view | 100-33 horizontal° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.007 lux color |
 | Power | PoE (802.3at) / DC 12V |
 | Storage | NVR |
 | Protocols | onvif, rtsp |

@@ -11,7 +11,7 @@
 | Resolution | D1 (analog SD) (0.38MP, 768×494) |
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 4.7-94 (20x optical zoom)mm |
-| Night vision | ir (120m), 0.0052 lux |
+| Night vision | ir (120m), 0.0052 lux, 0.66 lux color |
 | Power | High PoE (802.3at) / AC 24V |
 | Storage | NVR |
 | IP rating | IP68 |

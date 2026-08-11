@@ -12,7 +12,7 @@
 | Sensor | 5x 1/2.8" CMOS (4 multi-directional + 1 PTZ) |
 | Lens | 5× 4x 3.3-5.7 (1.7x) + PTZ 4.25-170 (40x optical)mm F1.5-1.9 (4ch) / F1.6-4.95 (PTZ) |
 | Field of view | 109-56 horizontal / 55-31 vertical per 4K channel; 65.66-1.88 horizontal (PTZ)° |
-| Night vision | ir (200m) |
+| Night vision | ir (200m), 0.1 lux color |
 | Power | PoE++ (IEEE 802.3bt Type 4, Class 8) |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp, http |
@@ -39,6 +39,7 @@
 ## Sources
 
 - https://www.hanwhavision.com/en/products/product-details/pnm-c34404rqpz
+- https://www.alarmax.com/customer/docs/skudocs/datasheet-pnm-c34404rqpz-230809-en.pdf
 
 ---
 *Auto-generated from hanwha-pnm-c34404rqpz.json — do not edit by hand.*

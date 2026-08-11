@@ -10,7 +10,7 @@
 | Sensor | 1/1.2-inch CMOS |
 | Lens | 1× 5.9-13mm F1.6-F2.7 |
 | Field of view | 48-110° |
-| Night vision | color |
+| Night vision | color, 0.011 lux color |
 | Power | PoE IEEE 802.3at / 12-26 VDC / 24 VAC |
 | Storage | microSD ≤ 2048GB, NVR |
 | Protocols | onvif, rtsp |
@@ -37,6 +37,7 @@
 - https://www.a1securitycameras.com/bosch-nde-8704-rx.html
 - https://www.alldataresource.com/Bosch-NDE-8704-RX-Flexidome-8100i-Series-Dome-Camera-Outdoor-8MP-110%C2%B0--48%C2%B0-Field-of-View-Starlight-and-HDR-Technology_p_683716.html
 - https://www.boschsecurity.com/us/en/products/cameras/fixed-cameras/flexidome-8100i/nde-8704-rx/
+- https://resources.keenfinity.tech/public/documents/FD_8100i_X_series_Data_sheet_enUS_125842917643.pdf
 
 ---
 *Auto-generated from bosch-nde-8704-rx.json — do not edit by hand.*

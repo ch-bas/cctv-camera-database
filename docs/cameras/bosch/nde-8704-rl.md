@@ -10,7 +10,7 @@
 | Sensor | 1/1.8" CMOS, 2.0 μm |
 | Lens | 1× 3.9-10mm F1.6-F2.7 |
 | Field of view | 117-62 horizontal, 44-24 vertical° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.036 lux color |
 | Power | PoE+ (IEEE 802.3at Type 2, Class 4); 24 VAC; 12-26 VDC |
 | Storage | microSD ≤ 2048GB, NVR |
 | Protocols | onvif, rtsp, http |
@@ -46,6 +46,7 @@
 - https://netcamcenter.de/de/produkte/ip-kameras/nde-8704-rl
 - https://madison.tech/products/bosch-flexidome-8100i-ir-nde-8704-rl/
 - https://www.ipsecuritydepot.com/bosch-nde-8704-rl/nde-8704-rl/
+- https://resources.keenfinity.tech/public/documents/NDE_8704_RL_Data_sheet_enUS_125843049867.pdf
 
 ---
 *Auto-generated from bosch-nde-8704-rl.json — do not edit by hand.*
