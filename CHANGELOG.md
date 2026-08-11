@@ -6,6 +6,15 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.58.5] — 2026-08-11
+
+### Backfilled
+- **Bosch + Axis `min_lux_color` (#161).** Filled **166** color min-illumination values from official datasheets, extracted as the published **Color** figure only — never the Monochrome/B&W value or a "0 Lux with IR" figure.
+  - **Bosch (+101 → 133/153, 87%):** color `Sensitivity` at 30 IRE / SensUp-off from Bosch datasheet PDFs (MIC, FLEXIDOME, DINION, NDE/NDI/NDM/NDP/NDS/NDV lines). Thermal (NBT/NHT), radar, and Aviotec fire-detection units skipped (no color-lux figure); several optical PTZs carry a valid color sensitivity even where `night_vision.type` is `none`.
+  - **Axis (+65 → 76/81, 94%):** the `Minimum illumination — Color:` value from axis.com spec pages (M/P/Q lines). Thermal (Q19xx) and the FA54 modular main unit skipped.
+- **Reolink lane closed as not-applicable.** All 127 Reolink models checked: Reolink publishes no numeric color min-illumination (only IR range, spotlight lumens, and the B/W "0 Lux with IR" figure), so none were fillable — recorded on #161 so it isn't re-attempted.
+- Dataset-wide `min_lux_color` coverage **47% → 53%** (1,353 → **1,519 / 2,884**).
+
 ## [1.58.4] — 2026-08-10
 
 ### Backfilled
