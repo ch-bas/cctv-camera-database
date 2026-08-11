@@ -12,7 +12,7 @@
 | Sensor | 1/3" progressive scan CMOS |
 | Lens | 2.1 (L0210)mm |
 | Field of view | 143.3° |
-| Night vision | none |
+| Night vision | none, 0.03 lux color |
 | Power | DC12V / PoE (IEEE802.3af) |
 | Protocols | onvif, rtsp, http |
 | Two-way audio | Yes |

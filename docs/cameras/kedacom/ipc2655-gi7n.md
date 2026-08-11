@@ -9,7 +9,7 @@
 | Resolution | 6MP (6MP, 3072×2048) |
 | Sensor | 1/1.8" progressive scan CMOS |
 | Lens | 1× 15-50mm F1.4 |
-| Night vision | color (30m) |
+| Night vision | color (30m), 0.01 lux color |
 | Power | AC 24V |
 | Storage | microSD ≤ 128GB |
 | Protocols | onvif, rtsp, http |

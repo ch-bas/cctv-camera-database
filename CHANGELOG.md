@@ -9,7 +9,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 ## [1.58.6] — 2026-08-11
 
 ### Backfilled
-- **Vivotek `min_lux_color` (#161).** Filled **all 11** remaining Vivotek cameras (0 → **11/11, 100%**) with the `Minimum Illumination … (Color)` value from official Vivotek datasheet PDFs (CC/FD/FE/IB/MS/SD lines) — the standard 30 IRE color figure (e.g. FD9167-HT-V2 `0.035 lux @ F1.4`, not the 50 IRE 0.080), never the `(B/W)` value or "0 lux with IR". Dataset-wide `min_lux_color` **55% → 55%** (1,578 → **1,589 / 2,884**).
+- **Vivotek + Kedacom `min_lux_color` (#161).** Filled **66** color min-illumination values, extracted as the published **Color** figure only — never the `(B/W)` value or a "0 lux with IR" figure.
+  - **Vivotek (+11 → 11/11, 100%):** the `Minimum Illumination … (Color)` value from official Vivotek datasheet PDFs (CC/FD/FE/IB/MS/SD lines) — the standard 30 IRE color figure (e.g. FD9167-HT-V2 `0.035 lux @ F1.4`, not the 50 IRE 0.080).
+  - **Kedacom (+55 → 58/58, 100%):** the `Min. Illumination Color:` value (@ AGC ON) from official kedacom.com product-page specs (IPC2xxx / IPC4xx / LC2xxx lines; figures 0.0002–0.05 lux).
+- Dataset-wide `min_lux_color` coverage **55% → 57%** (1,578 → **1,644 / 2,884**).
 
 ## [1.58.5] — 2026-08-11
 

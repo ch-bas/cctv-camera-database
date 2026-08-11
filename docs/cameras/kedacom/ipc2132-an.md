@@ -12,7 +12,7 @@
 | Sensor | 1/3" progressive scan CMOS |
 | Lens | 2.8-12 (DIR1/DL1) / 2.8 (DIR3/DL3) / 2.1 (DL4)mm F1.6 |
 | Field of view | 87.6-31.3 (varifocal) / 101 (2.8mm) / 134 (2.1mm)° |
-| Night vision | ir (40m) |
+| Night vision | ir (40m), 0.01 lux color |
 | Power | DC12V |
 | Storage | microSD ≤ 128GB |
 | Protocols | onvif, rtsp, http |
