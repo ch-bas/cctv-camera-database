@@ -9,12 +9,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 ## [1.58.5] — 2026-08-11
 
 ### Backfilled
-- **Bosch + Axis + Hanwha `min_lux_color` (#161).** Filled **210** color min-illumination values from official datasheets, extracted as the published **Color** figure only — never the Monochrome/B&W value or a "0 Lux with IR / IR LED on" figure.
+- **Bosch + Axis + Hanwha + Avigilon `min_lux_color` (#161).** Filled **225** color min-illumination values from official datasheets, extracted as the published **Color** figure only — never the Monochrome/B&W value or a "0 Lux with IR / IR LED on" figure.
   - **Bosch (+101 → 133/153, 87%):** color `Sensitivity` at 30 IRE / SensUp-off from Bosch datasheet PDFs (MIC, FLEXIDOME, DINION, NDE/NDI/NDM/NDP/NDS/NDV lines). Thermal (NBT/NHT), radar, and Aviotec fire-detection units skipped (no color-lux figure); several optical PTZs carry a valid color sensitivity even where `night_vision.type` is `none`.
   - **Axis (+65 → 76/81, 94%):** the `Minimum illumination — Color:` value from axis.com spec pages (M/P/Q lines). Thermal (Q19xx) and the FA54 modular main unit skipped.
   - **Hanwha / Wisenet (+44 → 44/45, 98%):** the `Minimum illumination — Color:` value from Hanwha datasheet PDFs (ANE/ANO/ANV, PNB/PND/PNM/PNO/PNV, QND/QNE/QNO/QNV, TNV, XND/XNO/XNP/XNV lines). Only the PNM-9000VQ modular-lens body skipped (module-dependent figure).
+  - **Avigilon (+15 → 15/18, 83%):** the LightCatcher `Color` minimum-illumination value from Avigilon/Motorola datasheet PDFs (H4/H5A/H5SL/H6A/H6M/H6SL lines). 3 skipped as **likely model-ID errors** — H6A bullet/dome SKUs recorded at resolutions/lenses that don't exist in Avigilon's lineup (no 5MP H6A-BO1/DO1, a phantom 3-9mm H6A-DC1); values left null and flagged for a data-quality pass.
 - **Reolink lane closed as not-applicable.** All 127 Reolink models checked: Reolink publishes no numeric color min-illumination (only IR range, spotlight lumens, and the B/W "0 Lux with IR" figure), so none were fillable — recorded on #161 so it isn't re-attempted.
-- Dataset-wide `min_lux_color` coverage **47% → 54%** (1,353 → **1,563 / 2,884**).
+- Dataset-wide `min_lux_color` coverage **47% → 55%** (1,353 → **1,578 / 2,884**).
 
 ## [1.58.4] — 2026-08-10
 

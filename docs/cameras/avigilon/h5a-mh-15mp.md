@@ -12,7 +12,7 @@
 | Sensor | 3x 1/2.8" CMOS |
 | Lens | 3× 3.3-5.7 (motorized)mm |
 | Field of view | 270 maximum° |
-| Night vision | ir (20m) |
+| Night vision | ir (20m), 0.02 lux color |
 | Power | High PoE (802.3bt) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
@@ -33,6 +33,7 @@
 ## Sources
 
 - https://www.avigilon.com/security-cameras/h5a-multisensor
+- https://www.avigilon.com/fs/documents/avigilon-h5a-mh-datasheet-en.pdf
 
 ---
 *Auto-generated from avigilon-h5a-mh-15mp.json — do not edit by hand.*

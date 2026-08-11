@@ -12,7 +12,7 @@
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 3.1-8.4 (motorized varifocal)mm |
 | Field of view | 97-33 horizontal° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.03 lux color |
 | Power | PoE (802.3af) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
@@ -33,6 +33,7 @@
 ## Sources
 
 - https://www.avigilon.com/security-cameras/h5sl-dome
+- https://www.avigilon.com/fs/documents/avigilon-h5sl-combo-datasheet-en-rev10.pdf
 
 ---
 *Auto-generated from avigilon-h5sl-do1-ir-3mp.json — do not edit by hand.*

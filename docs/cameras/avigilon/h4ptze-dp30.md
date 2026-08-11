@@ -12,7 +12,7 @@
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 4.3-129 (30x optical zoom)mm |
 | Field of view | 60-2.5 horizontal° |
-| Night vision | ir (250m) |
+| Night vision | ir (250m), 0.1 lux color |
 | Power | High PoE (802.3at) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
@@ -34,6 +34,7 @@
 ## Sources
 
 - https://www.avigilon.com/security-cameras/h4-ptz
+- https://d8eqw8u9b6kgn.cloudfront.net/file_library/pdf/h4-ir-ptz/avigilon-h4-ir-ptz-datasheet-en-rev9.pdf
 
 ---
 *Auto-generated from avigilon-h4ptze-dp30.json — do not edit by hand.*

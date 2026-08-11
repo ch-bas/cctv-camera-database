@@ -12,7 +12,7 @@
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 6.5-162.5 (30x optical zoom)mm |
 | Field of view | 60-2.5 horizontal° |
-| Night vision | ir (150m) |
+| Night vision | ir (150m), 0.1 lux color |
 | Power | High PoE (802.3at) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
@@ -33,6 +33,7 @@
 ## Sources
 
 - https://www.avigilon.com/security-cameras/h6a-ptz
+- https://d8eqw8u9b6kgn.cloudfront.net/documents/avigilon-h6a-ptz-2mp-4mp-camera-datasheet-en.pdf
 
 ---
 *Auto-generated from avigilon-h6ptze-dp30.json — do not edit by hand.*
