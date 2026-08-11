@@ -16,6 +16,16 @@ An open, structured database of 2,884 CCTV / IP camera models and their technica
 
 ---
 
+<p align="center">
+  <a href="https://cctv-database.com">
+    <img src="assets/cctv-database-showcase.gif" alt="CCTV Camera Database — search 2,884 cameras, browse full specs, copy ready-to-use Frigate configs, and audit the open dataset with the built-in QA tool" width="640">
+  </a>
+  <br>
+  <sub><b><a href="https://cctv-database.com">cctv-database.com</a></b> — search 2,884 cameras · full spec sheets · copy-paste Frigate configs · open &amp; auditable</sub>
+</p>
+
+---
+
 ## Why this exists
 
 Camera spec sheets are scattered across vendor PDFs, retailer pages, and paywalled databases (IPVM, etc.) in inconsistent formats. This repo normalises them into one machine-readable structure so they can be compared, filtered, and reused.
@@ -30,9 +40,7 @@ Camera spec sheets are scattered across vendor PDFs, retailer pages, and paywall
 
 Prefer to self-host or browse offline? A [standalone demo](docs/demo.html) (just `demo.html` + `cameras.json`, no build step) is included — serve the `docs/` folder locally with any static server, e.g. `python3 -m http.server` inside `docs/`, then open it.  
 
-<p align="center">
-  <img src="docs/demo.gif" alt="CCTV Camera Database — browse, search, filter, and inspect 2,884 cameras across 74 brands" width="800" />
-</p>
+
 
 **What you see above:**
 - **Search** — instant full-text search across brand, model, and features
