@@ -10,7 +10,7 @@
 | Sensor | 1/2.7" CMOS |
 | Lens | 2× 4 (optical), 3.2 (thermal)mm F1.6 (optical), F1.1 (thermal) |
 | Field of view | 81 (H), 56.7 (V) optical; 56 (H), 42.2 (V) thermal° |
-| Night vision | hybrid (30m) |
+| Night vision | hybrid (30m), 0.02 lux color |
 | Power | PoE (IEEE 802.3af) / 12VDC |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | rtsp, onvif |
@@ -36,6 +36,7 @@
 ## Sources
 
 - https://specotech.com/product/o5tmlb1/
+- https://specotech.com/wp-content/uploads/2023/08/O5TMLB1_specsheet.pdf
 
 ---
 *Auto-generated from speco-o5tmlb1.json — do not edit by hand.*

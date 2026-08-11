@@ -12,7 +12,7 @@
 | Sensor | 1/2.8" progressive scan CMOS |
 | Lens | 1× 2.8mm F1.6 |
 | Field of view | Horizontal 101, Vertical 53, Diagonal 120° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.02 lux color |
 | Power | PoE (IEEE 802.3af) or 12VDC |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -36,6 +36,7 @@
 - https://www.bhphotovideo.com/c/product/1776453-REG/speco_technologies_o8vt3_8mp_outdoor_network.html
 - https://www.a1securitycameras.com/speco-o8vt3-8mp-4k-night-vision-outdoor-turret-ip-security-camera-with-2-8mm-fixed-lens-and-built-in-mic.html
 - https://www.networkhardwares.com/products/speco-o8vt3-speco-o8vt3-surveillance-network-cameras
+- https://specotech.com/wp-content/uploads/2023/07/O8VT3-specsheet.pdf
 
 ---
 *Auto-generated from speco-o8vt3.json — do not edit by hand.*

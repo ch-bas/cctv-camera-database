@@ -10,7 +10,7 @@
 | Sensor | 1/3" progressive scan CMOS |
 | Lens | 1× 2.8-12mm |
 | Field of view | 100-28.9 H° |
-| Night vision | ir (70m) |
+| Night vision | ir (70m), 0.003 lux color |
 | Power | PoE (IEEE 802.3af) or 12VDC |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -31,6 +31,7 @@
 ## Sources
 
 - https://specotech.com/product/o4b9m/
+- https://specotech.com/wp-content/uploads/2025/06/O4B9M-Specsheet-6.29.26.pdf
 - https://www.bhphotovideo.com/c/product/1796909-REG/speco_technologies_o4b9m_4mp_outdoor_network.html
 - https://www.a1securitycameras.com/speco-technologies-o4b9m.html
 

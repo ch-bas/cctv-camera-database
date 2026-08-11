@@ -10,7 +10,7 @@
 | Sensor | 1/1.8" progressive scan CMOS |
 | Lens | 1× 2.8-12mm |
 | Field of view | 108-45.5 H° |
-| Night vision | hybrid (70m) |
+| Night vision | hybrid (70m), 0.006 lux color |
 | Power | PoE (IEEE 802.3af) |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -32,6 +32,7 @@
 
 - https://specotech.com/product/o8fb1m/
 - https://www.a1securitycameras.com/speco-o8fb1m-8mp-4k-outdoor-night-vision-bullet-ip-security-camera-flexible-intensifier-advanced-analytics-motorized-lens.html
+- https://specotech.com/wp-content/uploads/2023/07/O8FB1M_specsheet.pdf
 
 ---
 *Auto-generated from speco-o8fb1m.json — do not edit by hand.*

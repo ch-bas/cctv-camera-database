@@ -9,7 +9,7 @@
 | Resolution | 4K (8MP, 3840×2160) |
 | Sensor | 1/1.8" progressive scan CMOS |
 | Lens | 1× 2.8-12mm |
-| Night vision | hybrid (50m) |
+| Night vision | hybrid (50m), 0.006 lux color |
 | Power | PoE (IEEE 802.3af) |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -32,6 +32,7 @@
 
 - https://specotech.com/product/o8fd1m/
 - https://www.adiglobaldistribution.us/Catalog/shop-brands/speco-technologies/SO-O8FD1M
+- https://specotech.com/wp-content/uploads/2023/07/O8FD1M_specsheet.pdf
 
 ---
 *Auto-generated from speco-o8fd1m.json — do not edit by hand.*

@@ -10,7 +10,7 @@
 | Sensor | 1/2.8" progressive scan CMOS |
 | Lens | 1× 2.8-12mm |
 | Field of view | 96-32 H° |
-| Night vision | ir (50m) |
+| Night vision | ir (50m), 0.015 lux color |
 | Power | PoE (IEEE 802.3af) |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -35,6 +35,7 @@
 - https://specotech.com/product/o8d9m/
 - https://www.bhphotovideo.com/c/product/1764161-REG/speco_technologies_o8d9m_8mp_outdoor_network.html
 - https://www.a1securitycameras.com/speco-o8d9m.html
+- https://specotech.com/wp-content/uploads/2023/07/O8D9M_specsheet.pdf
 
 ---
 *Auto-generated from speco-o8d9m.json — do not edit by hand.*

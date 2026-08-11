@@ -8,7 +8,7 @@
 | Connectivity | ethernet |
 | Resolution | 4K (8MP, 3840×2160) |
 | Lens | 1× 2.8mm |
-| Night vision | hybrid |
+| Night vision | hybrid, 0.02 lux color |
 | Power | PoE (IEEE 802.3af) |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -30,6 +30,7 @@
 
 - https://specotech.com/product/o8vlt1/
 - https://www.bhphotovideo.com/c/product/1879956-REG/speco_technologies_white_light_intensifier_o8vlt1.html
+- https://specotech.com/wp-content/uploads/2025/06/O8VLT1-specsheet.pdf
 
 ---
 *Auto-generated from speco-o8vlt1.json — do not edit by hand.*
