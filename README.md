@@ -40,9 +40,7 @@ Camera spec sheets are scattered across vendor PDFs, retailer pages, and paywall
 
 Prefer to self-host or browse offline? A [standalone demo](docs/demo.html) (just `demo.html` + `cameras.json`, no build step) is included — serve the `docs/` folder locally with any static server, e.g. `python3 -m http.server` inside `docs/`, then open it.  
 
-<p align="center">
-  <img src="docs/demo.gif" alt="CCTV Camera Database — browse, search, filter, and inspect 2,884 cameras across 74 brands" width="800" />
-</p>
+
 
 **What you see above:**
 - **Search** — instant full-text search across brand, model, and features
