@@ -18,10 +18,10 @@ An open, structured database of 2,884 CCTV / IP camera models and their technica
 
 <p align="center">
   <a href="https://cctv-database.com">
-    <img src="assets/cctv-database-showcase.gif" alt="CCTV Camera Database — search 2,884 cameras, browse full specs, and copy ready-to-use Frigate configs" width="640">
+    <img src="assets/cctv-database-showcase.gif" alt="CCTV Camera Database — search 2,884 cameras, browse full specs, copy ready-to-use Frigate configs, and audit the open dataset with the built-in QA tool" width="640">
   </a>
   <br>
-  <sub><b><a href="https://cctv-database.com">cctv-database.com</a></b> — search 2,884 cameras · full spec sheets · copy-paste Frigate configs</sub>
+  <sub><b><a href="https://cctv-database.com">cctv-database.com</a></b> — search 2,884 cameras · full spec sheets · copy-paste Frigate configs · open &amp; auditable</sub>
 </p>
 
 ---
