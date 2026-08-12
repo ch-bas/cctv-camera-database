@@ -10,7 +10,7 @@
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 3-9mm |
 | Field of view | 96-34 horizontal° |
-| Night vision | ir (50m) |
+| Night vision | ir (50m), 0.0169 lux color |
 | Power | PoE (IEEE 802.3af) |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -29,6 +29,7 @@
 ## Sources
 
 - https://www.pelco.com/products/sarix-professional/
+- https://www.surveillance-video.com/camera-imp231-1ers.html
 
 ---
 *Auto-generated from pelco-sarix-professional-4-imp231-1ers.json — do not edit by hand.*

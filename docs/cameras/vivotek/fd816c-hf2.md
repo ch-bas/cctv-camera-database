@@ -8,7 +8,7 @@
 | Connectivity | ethernet |
 | Resolution | 1080p HD (2MP) |
 | Field of view | 110h° |
-| Night vision | ir (15m) |
+| Night vision | ir (15m), 0.07 lux color |
 | Power | PoE (802.3af) |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -30,6 +30,7 @@
 ## Sources
 
 - https://www.vivotek.com/en-US/products/network-cameras/dome
+- https://www.vivotek.com.my/product-vivotek-fd816chf2.html
 
 ---
 *Auto-generated from vivotek-fd816c-hf2.json — do not edit by hand.*

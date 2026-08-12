@@ -10,7 +10,7 @@
 | Sensor | 1/3" progressive scan CMOS |
 | Lens | 1× 2.8-12mm F1.6 |
 | Field of view | Horizontal 92-31, Vertical 48-17.2, Diagonal 112-35.6° |
-| Night vision | ir (50m) |
+| Night vision | ir (50m), 0.005 lux color |
 | Power | PoE (IEEE 802.3af) or 12VDC |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -34,6 +34,7 @@
 ## Sources
 
 - https://specotech.com/product/o4vt2m/
+- https://specotech.com/wp-content/uploads/2022/12/O4VT2M_specsheet.pdf
 
 ---
 *Auto-generated from speco-o4vt2m.json — do not edit by hand.*

@@ -12,7 +12,7 @@
 | Sensor | 1/3" progressive scan CMOS |
 | Lens | 1× 2.8mm |
 | Field of view | Horizontal 94, Vertical 50, Diagonal 115° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.005 lux color |
 | Power | PoE (IEEE 802.3af) or 12V DC |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -36,6 +36,7 @@
 - https://www.bhphotovideo.com/c/product/1759012-REG/speco_technologies_o4vt2_4mp_outdoor_network.html
 - https://www.a1securitycameras.com/speco-o4vt2-4mp-night-vision-outdoor-turret-ip-security-camera-with-built-in-microphone-2-8mm-fixed-lens.html
 - https://www.networkhardwares.com/products/speco-o4vt2-speco-o4vt2-4-megapixel-outdoor-network-camera-color-turret-1
+- https://specotech.com/wp-content/uploads/2022/12/O4VT2_specsheet_.pdf
 
 ---
 *Auto-generated from speco-o4vt2.json — do not edit by hand.*

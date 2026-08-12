@@ -9,7 +9,7 @@
 | Resolution | 4K (8MP, 3840×2160) |
 | Sensor | 1/1.8" progressive scan CMOS |
 | Lens | 1× 10-50mm F1.4 |
-| Night vision | ir (100m) |
+| Night vision | ir (100m), 0.0005 lux color |
 | Power | AC 24V |
 | Protocols | onvif, rtsp, http |
 | IP rating | IP66 |

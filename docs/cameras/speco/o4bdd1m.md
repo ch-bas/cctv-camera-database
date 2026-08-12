@@ -10,7 +10,7 @@
 | Sensor | 1/3" progressive scan CMOS |
 | Lens | 1× 2.8-12mm |
 | Field of view | 94.2-29.8 H° |
-| Night vision | hybrid (50m) |
+| Night vision | hybrid (50m), 0.005 lux color |
 | Power | PoE (IEEE 802.3af) or 12VDC |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -32,6 +32,7 @@
 ## Sources
 
 - https://specotech.com/product/o4bdd1m/
+- https://specotech.com/wp-content/uploads/2022/05/O4BDD1M_specsheet.pdf
 - https://www.bhphotovideo.com/c/product/1705460-REG/speco_technologies_o4bdd1m_4mp_network_bullet.html
 
 ---

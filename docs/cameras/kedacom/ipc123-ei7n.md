@@ -8,7 +8,7 @@
 | Connectivity | ethernet |
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/1.9" progressive scan CMOS |
-| Night vision | none |
+| Night vision | none, 0.002 lux color |
 | Power | DC 12V / PoE (802.3af) |
 | Storage | microSD ≤ 128GB |
 | Protocols | onvif, rtsp, http |

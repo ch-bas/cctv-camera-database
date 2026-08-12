@@ -10,7 +10,7 @@
 | Sensor | 1/2.5" progressive scan CMOS |
 | Lens | 1× 2.8-12mm |
 | Field of view | 108-36 H / 57-20 V / 129-42 D° |
-| Night vision | ir (70m), 0.008 lux |
+| Night vision | ir (70m), 0.008 lux, 0.008 lux color |
 | Power | PoE (IEEE 802.3af) or 12VDC |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | rtsp, onvif |
@@ -35,6 +35,7 @@
 ## Sources
 
 - https://specotech.com/product/o6b1m/
+- https://specotech.com/wp-content/uploads/2024/08/O6B1M_specsheet.pdf
 
 ---
 *Auto-generated from speco-o6b1m.json — do not edit by hand.*

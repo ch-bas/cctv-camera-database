@@ -10,7 +10,7 @@
 | Sensor | 4x progressive scan CMOS (multi-sensor panoramic array) |
 | Lens | 4× 3.3mm |
 | Field of view | Horizontal 175, Vertical 80° |
-| Night vision | ir (20m) |
+| Night vision | ir (20m), 0.008 lux color |
 | Power | PoE |
 | Storage | NVR |
 | Protocols | onvif, rtsp, http |
@@ -31,6 +31,7 @@
 
 - https://specotech.com/product/o8fbms1/
 - https://www.homecontrols.com/Speco-8MP-Panoramic-IP-Camera-SPO8FBMS1
+- https://specotech.com/wp-content/uploads/2021/01/O8FBMS1_specsheet_.pdf
 
 ---
 *Auto-generated from speco-o8fbms1.json — do not edit by hand.*

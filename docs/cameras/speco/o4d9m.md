@@ -9,7 +9,7 @@
 | Resolution | 4MP (4MP, 2592×1520) |
 | Sensor | 1/3" progressive scan CMOS |
 | Lens | 1× 2.8-12mm |
-| Night vision | ir (50m) |
+| Night vision | ir (50m), 0.003 lux color |
 | Power | PoE (IEEE 802.3af) or 12VDC |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -32,6 +32,7 @@
 ## Sources
 
 - https://specotech.com/product/o4d9m/
+- https://specotech.com/wp-content/uploads/2022/11/O4D9M_specsheet.pdf
 - https://www.bhphotovideo.com/c/product/1777286-REG/speco_technologies_o4d9m_4mp_outdoor_network.html
 - https://www.a1securitycameras.com/speco-o4d9m-4mp-outdoor-ip-dome-camera-with-advanced-analytics.html
 

@@ -12,7 +12,7 @@
 | Sensor | 1/1.8" progressive scan CMOS |
 | Lens | 1× 2.8-12 (Z2812) / 8-32 (Z8032)mm |
 | Field of view | 45.5-91 (Z2812) / 15-38 (Z8032)° |
-| Night vision | ir (50m) |
+| Night vision | ir (50m), 0.005 lux color |
 | Power | DC 12V / AC 24V / PoE (802.3at) |
 | Storage | microSD ≤ 128GB |
 | Protocols | onvif, rtsp, http |

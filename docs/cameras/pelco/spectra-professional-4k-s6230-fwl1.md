@@ -10,7 +10,7 @@
 | Sensor | 1/1.8" CMOS |
 | Lens | 1× 6.5-202mm |
 | Field of view | 54-2.1 horizontal° |
-| Night vision | ir (250m) |
+| Night vision | ir (250m), 0.03 lux color |
 | Power | PoE++ (IEEE 802.3bt) / 24VAC |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
@@ -29,6 +29,7 @@
 ## Sources
 
 - https://www.pelco.com/products/spectra-professional-4k/
+- https://www.surveillance-video.com/camera-s6230-fwl0.html
 
 ---
 *Auto-generated from pelco-spectra-professional-4k-s6230-fwl1.json — do not edit by hand.*

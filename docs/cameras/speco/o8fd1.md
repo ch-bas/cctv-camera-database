@@ -10,7 +10,7 @@
 | Sensor | 1/1.8" progressive scan CMOS |
 | Lens | 1× 2.8mm F1.4 |
 | Field of view | 110 H° |
-| Night vision | hybrid (30m), 0.008 lux |
+| Night vision | hybrid (30m), 0.008 lux, 0.008 lux color |
 | Power | PoE (IEEE 802.3af) |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -34,6 +34,7 @@
 - https://specotech.com/product/o8fd1/
 - https://www.specotech.com/wp-content/uploads/2023/07/O8FD1_specsheet.pdf
 - https://www.a1securitycameras.com/speco-o8fd1.html
+- https://specotech.com/wp-content/uploads/2023/07/O8FD1_specsheet.pdf
 
 ---
 *Auto-generated from speco-o8fd1.json — do not edit by hand.*

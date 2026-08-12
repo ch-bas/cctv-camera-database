@@ -12,7 +12,7 @@
 | Sensor | 1/2.8" progressive scan CMOS |
 | Lens | 2.8-12 (Z2812) / 6-22 (Z6022)mm F1.6 |
 | Field of view | 30.3-107 (Z2812) / 17.6-42.9 (Z6022)° |
-| Night vision | ir (70m) |
+| Night vision | ir (70m), 0.005 lux color |
 | Power | PoE (IEEE802.3af) / 12V DC |
 | Storage | NVR |
 | Protocols | onvif, rtsp, http |

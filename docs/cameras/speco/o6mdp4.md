@@ -10,7 +10,7 @@
 | Sensor | 1/2.5" progressive scan CMOS |
 | Lens | 1× 1.65mm |
 | Field of view | 360 (ceiling mount) or 180 (wall mount)° |
-| Night vision | ir (30m), 0.01 lux |
+| Night vision | ir (30m), 0.01 lux, 0.01 lux color |
 | Power | PoE (IEEE 802.3af) |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -29,6 +29,7 @@
 ## Sources
 
 - https://specotech.com/product/o6mdp4/
+- https://specotech.com/wp-content/uploads/2024/04/O6MDP4_spec.pdf
 
 ---
 *Auto-generated from speco-o6mdp4.json — do not edit by hand.*

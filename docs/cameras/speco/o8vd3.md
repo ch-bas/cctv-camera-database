@@ -12,7 +12,7 @@
 | Sensor | 1/2.8" progressive scan CMOS |
 | Lens | 1× 2.8mm |
 | Field of view | Horizontal 108.9° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.02 lux color |
 | Power | PoE (IEEE 802.3af) |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -36,6 +36,7 @@
 - https://www.a1securitycameras.com/speco-o8vd3.html
 - https://www.bhphotovideo.com/c/product/1810383-REG/speco_technologies_o8vd3_8mp_outdoor_network.html
 - https://www.specotech.com/wp-content/uploads/2024/04/IP_ProductSheet_2025.pdf
+- https://specotech.com/wp-content/uploads/2022/10/O8VD3_specsheet1.pdf
 
 ---
 *Auto-generated from speco-o8vd3.json — do not edit by hand.*

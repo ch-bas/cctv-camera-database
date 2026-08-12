@@ -10,7 +10,7 @@
 | Sensor | 1/1.8" progressive scan CMOS |
 | Lens | 1× 2.8mm |
 | Field of view | 110 H° |
-| Night vision | hybrid (50m) |
+| Night vision | hybrid (50m), 0.008 lux color |
 | Power | PoE (IEEE 802.3af) |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -32,6 +32,7 @@
 - https://specotech.com/product/o8fb1/
 - https://www.a1securitycameras.com/speco-o8fb1.html
 - https://www.bhphotovideo.com/c/product/1765711-REG/speco_technologies_flexible_intensifier_o8fb1_8mp.html
+- https://specotech.com/wp-content/uploads/2023/07/O8FB1_specsheet.pdf
 
 ---
 *Auto-generated from speco-o8fb1.json — do not edit by hand.*

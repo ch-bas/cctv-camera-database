@@ -9,7 +9,7 @@
 | Resolution | 4MP (4MP, 2592×1520) |
 | Sensor | 1/3" progressive scan CMOS |
 | Field of view | depends on interchangeable C/CS lens° |
-| Night vision | none |
+| Night vision | none, 0.05 lux color |
 | Power | AC 24V / 12V DC / PoE (IEEE802.3af) |
 | Storage | NVR |
 | Protocols | onvif, rtsp, http |

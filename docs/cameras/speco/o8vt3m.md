@@ -10,7 +10,7 @@
 | Sensor | 1/2.8" progressive scan CMOS |
 | Lens | 1× 2.8-12mm F1.6 |
 | Field of view | Horizontal 100-34, Vertical 54-18, Diagonal 117-35.5° |
-| Night vision | ir (50m) |
+| Night vision | ir (50m), 0.02 lux color |
 | Power | PoE (IEEE 802.3af) or 12VDC |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -35,6 +35,7 @@
 ## Sources
 
 - https://specotech.com/product/o8vt3m/
+- https://specotech.com/wp-content/uploads/2023/07/O8VT3M_specsheet_.pdf
 
 ---
 *Auto-generated from speco-o8vt3m.json — do not edit by hand.*

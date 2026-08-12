@@ -8,7 +8,7 @@
 | Connectivity | ethernet |
 | Resolution | 4K (8MP, 3840×2160) |
 | Lens | 1× 2.8mm |
-| Night vision | hybrid (30m) |
+| Night vision | hybrid (30m), 0.01 lux color |
 | Power | PoE (IEEE 802.3af) |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -28,6 +28,7 @@
 ## Sources
 
 - https://specotech.com/product/o8kt1b/
+- https://specotech.com/wp-content/uploads/2026/06/O8KT1B_specsheet.pdf
 
 ---
 *Auto-generated from speco-o8kt1b.json — do not edit by hand.*

@@ -10,7 +10,7 @@
 | Sensor | Two 1/3" progressive scan CMOS (one per imager) |
 | Lens | 2× 2.8mm |
 | Field of view | 101 H / 55 V / 122 D (per lens)° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.05 lux color |
 | Power | PoE (IEEE 802.3af) or 12VDC |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
@@ -32,6 +32,7 @@
 ## Sources
 
 - https://specotech.com/product/o4fdms1/
+- https://specotech.com/wp-content/uploads/2025/06/O4FDMS1_specsheet-04-23-2026.pdf
 - https://www.surveillance-video.com/camera-o4fdms1.html
 - https://www.a1securitycameras.com/speco-o4fdms1.html
 

@@ -10,7 +10,7 @@
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 4.3-170mm |
 | Field of view | 59.2-1.8 horizontal° |
-| Night vision | ir (300m) |
+| Night vision | ir (300m), 0.035 lux color |
 | Power | PoE++ (IEEE 802.3bt) / 24VAC |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
@@ -29,6 +29,7 @@
 ## Sources
 
 - https://www.pelco.com/products/spectra-enhanced-7/
+- https://www.surveillance-video.com/camera-s7240l-pw.html
 
 ---
 *Auto-generated from pelco-spectra-enhanced-7-s7240l-ew1.json — do not edit by hand.*

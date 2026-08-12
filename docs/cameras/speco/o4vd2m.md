@@ -8,7 +8,7 @@
 | Connectivity | ethernet |
 | Resolution | 1440p/4MP (4MP, 2560×1440) |
 | Lens | 1× 2.8-12mm |
-| Night vision | ir (51m), 0.005 lux |
+| Night vision | ir (51m), 0.005 lux, 0.005 lux color |
 | Power | PoE (IEEE 802.3af) |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -30,6 +30,7 @@
 ## Sources
 
 - https://specotech.com/product/o4vd2m/
+- https://specotech.com/wp-content/uploads/2024/07/O4VD2M_specsheet.pdf
 
 ---
 *Auto-generated from speco-o4vd2m.json — do not edit by hand.*
