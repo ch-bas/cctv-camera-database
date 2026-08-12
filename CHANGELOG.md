@@ -6,7 +6,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
-## [1.58.6] — 2026-08-11
+## [1.58.6] — 2026-08-12
 
 ### Backfilled
 - **Vivotek + Kedacom + Speco + Pelco `min_lux_color` (#161).** Filled **128** color min-illumination values, extracted as the published **Color** figure only — never the `(B/W)`/mono value or a "0 lux with IR / white-LED on" figure.
