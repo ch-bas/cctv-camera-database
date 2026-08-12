@@ -10,7 +10,7 @@
 | Sensor | 1/2.7" CMOS (x4) |
 | Lens | 4× 2.0mm |
 | Field of view | 360 horizontal° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.3 lux color |
 | Power | PoE+ (IEEE 802.3at) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
@@ -31,6 +31,7 @@
 ## Sources
 
 - https://www.pelco.com/products/optera/
+- https://media.pelco.com/wp-content/uploads/2020/12/16134350/EN_C4015_Optera_IMM_Series_121620.pdf
 
 ---
 *Auto-generated from pelco-optera-4k-imo-panoramic.json — do not edit by hand.*

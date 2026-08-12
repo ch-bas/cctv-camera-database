@@ -10,7 +10,7 @@
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 4.3-129mm |
 | Field of view | 59.2-2.4 horizontal° |
-| Night vision | ir (200m) |
+| Night vision | ir (200m), 0.02 lux color |
 | Power | PoE++ (IEEE 802.3bt) / 24VAC |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
@@ -29,6 +29,7 @@
 ## Sources
 
 - https://www.pelco.com/products/spectra-enhanced-7/
+- https://media.pelco.com/wp-content/uploads/2020/06/22125949/C5005S_Spectra_Enhanced-7_Spec_4K_061920.pdf
 
 ---
 *Auto-generated from pelco-spectra-enhanced-7-s7230l-ew1.json — do not edit by hand.*

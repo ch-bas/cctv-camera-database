@@ -10,7 +10,7 @@
 | Sensor | 1/1.8" CMOS |
 | Lens | 1× 3.6-11mm |
 | Field of view | 100-33 horizontal° |
-| Night vision | ir (35m) |
+| Night vision | ir (35m), 0.12 lux color |
 | Power | PoE (IEEE 802.3af) |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -30,6 +30,7 @@
 ## Sources
 
 - https://www.pelco.com/products/sarix-enhanced/
+- https://www.surveillance-video.com/camera-ime832-1irs.html
 
 ---
 *Auto-generated from pelco-sarix-enhanced-4-ime832-1irs.json — do not edit by hand.*
