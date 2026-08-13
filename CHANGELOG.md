@@ -6,6 +6,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.60.0] — 2026-08-13
+
+### Added
+- **+11 i-PRO cameras (2,893 → 2,904).** Expanded the i-PRO (Panasonic Security) brand from 3 → 14 with a representative set across all product lines, sourced from official i-PRO datasheets: **X-series** flagship AI (WV-X86531-Z2 multi-sensor + 21× PTZ, WV-X22300-V3L, WV-X2571LN), **S-series** (WV-S15700-V2LN 4K bullet, WV-S25700-V2L / WV-S25500-V3L / WV-S22500-V3L domes, WV-S8574L 4-sensor 360°, WV-S6532LN 22× PTZ, WV-S1536LN bullet), and **U-series** value (WV-U2532LA). Lane fill on the 11 is near-complete — min_lux_color, ik_rating, field_of_view_deg, dimensions_mm, weight_g and video.streams **11/11**, SoC 6/11, release_year 9/11 — verified data only, undocumented fields left blank. i-PRO RTSP is `/Src/MediaInput/stream_1`; ONVIF Profile S/T/G/M.
+
 ## [1.59.0] — 2026-08-13
 
 ### Added
