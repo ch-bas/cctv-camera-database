@@ -1,0 +1,141 @@
+{
+  "id": "i-pro-wv-x86531-z2",
+  "brand": "i-PRO",
+  "model": "WV-X86531-Z2",
+  "aliases": [
+    "Panasonic WV-X86531-Z2",
+    "WV-X86531-Z2"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 3072,
+    "max_height": 1728,
+    "label": "4 x 5MP multi-directional + 1080p 21x PTZ"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3072x1728",
+        "fps": 15,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x360",
+        "fps": 15,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "4x 1/2.7\" CMOS (multi-directional) + 1/2.8\" CMOS (PTZ)",
+  "lens": {
+    "count": 5,
+    "focal_length_mm": "4.0-84.6 (PTZ 21x); 3.2 fixed (multi)",
+    "aperture": "F1.6-F4.5 (PTZ); F2.0 (multi)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "PTZ 3.7-77 horizontal / 2.2-44 vertical; multi 97 horizontal / 71 vertical (per sensor)",
+  "night_vision": {
+    "type": "color",
+    "min_lux_color": 0.011
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "PoE++ (IEEE 802.3bt) / DC 54V",
+    "consumption_w": 35.6,
+    "voltage": "54V",
+    "poe_class": 5
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "4x 5MP 1/2.7\" multi-directional fixed sensors (each 3.2mm F2.0, 97 deg horizontal FoV) — independently adjustable tilt 40 +/-7 deg",
+    "2MP (1080p) 21x optical zoom PTZ head (4.0-84.6mm, F1.6-F4.5, motorized zoom/focus), up to 31x extra zoom",
+    "360 deg endless panning; tilt -15 to +195 deg",
+    "pan/tilt manual speed 0.065-150 deg/s, preset speed up to 500 deg/s; 256 preset positions",
+    "AI auto tracking (no calibration required)",
+    "up to 6 Edge AI analytics apps: AI VMD, AI Privacy Guard, AI Face Detection, AI People Detection, AI Vehicle Detection, AI Non-mask Detection, AI Occupancy Detection, AI Scene Change Detection",
+    "AI Sound Classification (gunshot, yell, vehicle horn, glass break)",
+    "Super Dynamic WDR up to 144 dB (PTZ) / 108 dB (multi)",
+    "Ambarella CV2 (multi) + CV25m (PTZ) SoC",
+    "built-in FIPS 140-2 Level 3 certified SecureElement (NXP EdgeLock SE050F)",
+    "GlobalSign device certificate pre-installed, alteration detection, 802.1X",
+    "ONVIF Profile G/M/S/T",
+    "NDAA compliant",
+    "IP66/IP67, IK10, NEMA 4X / Type 4X, wind resistance up to 40 m/s",
+    "dual IP address (one network interface) — may require 2 VMS licenses"
+  ],
+  "operating_temp_c": "-40 to 55",
+  "dimensions_mm": "250 (diameter) x 195 (H)",
+  "weight_g": 3800,
+  "release_year": 2023,
+  "environment": [
+    "outdoor"
+  ],
+  "soc": "Ambarella CV2 (multi) + Ambarella CV25m (PTZ)",
+  "markets": [
+    "US",
+    "global"
+  ],
+  "sources": [
+    "https://i-pro.com/products_and_solutions/sites/default/files/2024-01/WV-X86531-Z2%20_%20i-PRO%20US_R8_240105_0.pdf",
+    "https://i-pro.com/global/en/surveillance/products/i-pro-extreme/wv-x86531-z2"
+  ],
+  "last_verified": "2026-08-13",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 360,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Src/MediaInput/stream_1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Src/MediaInput/stream_2",
+      "verified": false,
+      "notes": "i-PRO RTSP: /Src/MediaInput/stream_1 (main) and /Src/MediaInput/stream_2 (sub). This model exposes the 4 fixed multi-directional sensors AND the PTZ head as SEPARATE channels — address each channel via /Src/MediaInput/stream_1/ch_N (ch_1..ch_4 = fixed sensors, ch_5 = PTZ). Note the camera presents 2 IP addresses on one NIC, so multi and PTZ heads may sit on different IPs. Use the substream (640x360) for the detect role at 5 fps.",
+      "autotracking": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "i-PRO; ONVIF Profile G/M/S/T. Add each channel (4 fixed + PTZ) separately; camera uses 2 IP addresses on a single network interface."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use the generic ONVIF profile; add the 4 fixed sensor channels and the PTZ channel individually. Camera exposes 2 IP addresses."
+    }
+  },
+  "status": "available"
+}

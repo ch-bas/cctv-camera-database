@@ -18,7 +18,20 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 ### Changed
 - **Hikvision `DS-2CD2147G3-LIS2UY` and `DS-2CD2187G3-LIS2UY` re-verified against the official G3 datasheets** — corrected datasheet-contradicted dimensions/weight, added missing lanes (FOV, min_lux_color, power/PoE class, sensor, video streams), and removed a `min_lux = 0` sentinel (#180).
 
-Dataset total: **2,910 cameras / 76 brands.**
+Dataset total: **2,930 cameras / 76 brands.**
+
+## [1.60.0] — 2026-08-13
+
+### Added
+- **+11 i-PRO cameras (2,893 → 2,904).** Expanded the i-PRO (Panasonic Security) brand from 3 → 14 with a representative set across all product lines, sourced from official i-PRO datasheets: **X-series** flagship AI (WV-X86531-Z2 multi-sensor + 21× PTZ, WV-X22300-V3L, WV-X2571LN), **S-series** (WV-S15700-V2LN 4K bullet, WV-S25700-V2L / WV-S25500-V3L / WV-S22500-V3L domes, WV-S8574L 4-sensor 360°, WV-S6532LN 22× PTZ, WV-S1536LN bullet), and **U-series** value (WV-U2532LA). Lane fill on the 11 is near-complete — min_lux_color, ik_rating, field_of_view_deg, dimensions_mm, weight_g and video.streams **11/11**, SoC 6/11, release_year 9/11 — verified data only, undocumented fields left blank. i-PRO RTSP is `/Src/MediaInput/stream_1`; ONVIF Profile S/T/G/M.
+
+## [1.59.0] — 2026-08-13
+
+### Added
+- **+9 Amcrest cameras (2,884 → 2,893).** Current Amcrest models sourced from official datasheets, filling the open backfill lanes as they were built (#161/#162/#177/#178/#179/#166/#170): **IP8M-2597E** (4K@30fps bullet), **IP8M-VB2896EW-AI** + **IP8M-VT2779EW** (4K 5× optical-zoom varifocal bullet/turret), **IP8M-FCT2999EW-AI** (dual-lens 4K panoramic, full-color 0.0005 lx), **IP8M-2899EW-AI-V2** (4K 25× PTZ, auto-tracking), **IP8M-2493EW-AI-V3** + **IP5M-D1188EW-AI-V3** (4K/5MP AI vandal domes, IK10), **IP4M-1041B** (indoor pan/tilt), **IP4M-1055E** (4MP PoE dome). Per record, every field the datasheet documented is populated (FOV, dimensions, weight, streams, sensor, operating temp, Frigate/HA/Blue Iris configs 9/9; min_lux_color 7/9) — verified data only, undocumented fields left blank rather than guessed.
+
+### Fixed
+- **`IP4M-1041W` mis-description.** The existing record was typed `box` and carried copy-pasted "outdoor bullet / IP67 / 30m IR" features that contradicted its own indoor fields — it's actually the white variant of the indoor pan/tilt IP4M-1041. Corrected from the official shared W/B datasheet (type → `ptz`, real features, `ptz.autotracking`) and enriched to parity with IP4M-1041B (lens, sensor, streams, dimensions, weight, min_lux_color).
 
 ## [1.58.6] — 2026-08-12
 

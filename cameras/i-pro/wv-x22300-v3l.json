@@ -1,0 +1,126 @@
+{
+  "id": "i-pro-wv-x22300-v3l",
+  "brand": "i-PRO",
+  "model": "WV-X22300-V3L",
+  "aliases": [
+    "Panasonic WV-X22300-V3L"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x360",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.9-9",
+    "aperture": "F1.3-2.5",
+    "varifocal": true
+  },
+  "field_of_view_deg": "36 (tele) - 114 (wide) horizontal / 20 - 60 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 70,
+    "min_lux_color": 0.007
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at, Class 4) / DC 12V",
+    "consumption_w": 14,
+    "voltage": "DC 12V / PoE+ DC 54V",
+    "poe_class": 4
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "Up to 9 edge AI analytic apps",
+    "AI Video Motion Detection, AI People/Vehicle/Face Detection",
+    "AI Occupancy Detection, AI Privacy Guard, AI Scene Change Detection",
+    "AI Non-mask Detection, AI On-site Learning, AI Processing Relay",
+    "AI Sound Classification (gunshot, yell, vehicle horn, glass break)",
+    "Super Dynamic (144 dB WDR)",
+    "Built-in image stabilizer (gyro sensor)",
+    "IK10 vandal resistance",
+    "FIPS 140-2 Level 3 certified SecureElement (NXP EdgeLock SE050F)",
+    "Secure boot, signed firmware, IEEE 802.1X",
+    "NDAA compliant",
+    "3.1x motorized optical zoom (extra zoom up to 9.3x)"
+  ],
+  "operating_temp_c": "-10 to 50",
+  "dimensions_mm": "ø129.5 x 102.5 (H)",
+  "weight_g": 820,
+  "release_year": 2023,
+  "environment": [
+    "indoor"
+  ],
+  "soc": "Ambarella CV52",
+  "markets": [
+    "global"
+  ],
+  "status": "available",
+  "sources": [
+    "https://i-pro.com/products_and_solutions/sites/default/files/2024-03/WV-X22300-V3L%20_%20i-PRO%20Global_R3_240319.pdf",
+    "https://i-pro.com/products_and_solutions/en/surveillance/products/i-pro-extreme/wv-x22300-v3l"
+  ],
+  "last_verified": "2026-08-13",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 360,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Src/MediaInput/stream_1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Src/MediaInput/stream_2",
+      "verified": false,
+      "notes": "i-PRO RTSP path: stream_1 = main, stream_2 = sub. Run the detect role on the substream at ~5 fps. Enable RTSP and set stream profiles in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF Profile G/S/T/M supported; use the ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use the ONVIF profile (or i-PRO/Panasonic); RTSP path /Src/MediaInput/stream_1."
+    }
+  }
+}

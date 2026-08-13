@@ -1,0 +1,142 @@
+{
+  "id": "i-pro-wv-s6532ln",
+  "brand": "i-PRO",
+  "model": "WV-S6532LN",
+  "aliases": [
+    "Panasonic WV-S6532LN",
+    "i-PRO S-Series 1080p 22x IR PTZ"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "release_year": 2022,
+  "status": "discontinued",
+  "markets": [
+    "US",
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.25-95 (22x optical zoom)",
+    "aperture": "F1.6 (WIDE) - F3.7 (TELE)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "66-3.4 horizontal",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x360",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 100,
+    "min_lux_color": 0.001
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at) / AC 24V",
+    "consumption_w": 25,
+    "voltage": "DC 54V (PoE+) / AC 24V",
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to +60 (PoE+); -40 to +60 (AC 24V)",
+  "dimensions_mm": "ø249 x 465 (H)",
+  "weight_g": 8200,
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "22x optical zoom (34x HD Extra Optical Zoom at 1280x720)",
+    "16x digital zoom",
+    "100m IR LED illumination",
+    "Color night vision (0.001 lx)",
+    "built-in imaging stabilizer",
+    "360 degree endless panning",
+    "256 preset positions",
+    "auto track / auto pan / preset sequence / patrol",
+    "iA (intelligent Auto)",
+    "i-VMD Type4 bundled license",
+    "Super Dynamic 144dB WDR",
+    "ClearSight Coating",
+    "Defroster / heater",
+    "ONVIF Profile G/S/T",
+    "NDAA Compliant"
+  ],
+  "sources": [
+    "https://i-pro.com/products_and_solutions/sites/default/files/2024-01/WV-S6532LN%20_%20i-PRO%20US_R4_240122.pdf",
+    "https://i-pro.com/products_and_solutions/en/surveillance/products/wv-s6532ln"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 360,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/MediaInput/stream_1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/MediaInput/stream_2",
+      "autotracking": false,
+      "notes": "stream_1 = main (1080p), stream_2 = sub. PTZ control via ONVIF; camera exposes continuous PTZ, not relative, so Frigate PTZ autotracking is unsupported (camera has its own onboard Auto track).",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profile G/S/T)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use ONVIF profile. i-PRO is the successor to Panasonic security cameras (also selectable as 'Panasonic')."
+    }
+  },
+  "last_verified": "2026-08-13"
+}
