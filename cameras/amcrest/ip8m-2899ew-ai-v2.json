@@ -1,0 +1,136 @@
+{
+  "id": "amcrest-ip8m-2899ew-ai-v2",
+  "brand": "Amcrest",
+  "model": "IP8M-2899EW-AI-V2",
+  "aliases": [
+    "IP8M-2899EW-AI V2",
+    "IP8M-2899EW-AIV2"
+  ],
+  "type": "ptz",
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "relative"
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub1",
+        "resolution": "640x480",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub2",
+        "resolution": "640x480",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" STARVIS CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5-125",
+    "aperture": "F1.6-F3.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "59.3-3.9",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "PoE+ (802.3at) / DC 12V",
+    "voltage": "DC 12V",
+    "poe_class": 4,
+    "consumption_w": 20
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true
+  },
+  "features": [
+    "25x optical zoom",
+    "16x digital zoom",
+    "human detection",
+    "vehicle detection",
+    "face detection",
+    "perimeter protection",
+    "auto-tracking",
+    "120dB WDR",
+    "electronic image stabilization"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "160 x 160 x 269.9",
+  "weight_g": 3000,
+  "release_year": 2022,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://support.amcrest.com/hc/en-us/articles/25039301718285-Technical-Specifications-IP8M-2899EW-AI-V2",
+    "https://amcrest.com/4k-8-megapixel-ip-poe-camera-ptz-25x-optical-zoom-ai-ip8m-2899ew-ai-v2.html"
+  ],
+  "last_verified": "2026-08-13",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "notes": "Amcrest (Dahua OEM) RTSP. Enable RTSP in the Amcrest web UI; use the sub-stream (subtype=1) at 5fps for Frigate detect. PTZ via ONVIF.",
+      "verified": false,
+      "autotracking": true
+    },
+    "home_assistant": {
+      "integration": "amcrest",
+      "notes": "Use the native Amcrest integration for stream, motion events, and PTZ; ONVIF (Profile S/T) also supported."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Add as a Dahua-protocol camera (Amcrest is Dahua OEM); PTZ supported over the Dahua protocol."
+    }
+  }
+}

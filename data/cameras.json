@@ -41806,37 +41806,71 @@
     "added": "2026-06-06"
   },
   {
-    "id": "amcrest-ip4m-1041w",
+    "id": "amcrest-ip4m-1041b",
     "brand": "Amcrest",
-    "model": "IP4M-1041W",
-    "type": "box",
+    "model": "IP4M-1041B",
+    "aliases": [],
+    "type": "ptz",
     "connectivity": [
       "wifi"
     ],
     "environment": [
       "indoor"
     ],
-    "release_year": 2022,
+    "release_year": 2021,
     "resolution": {
       "megapixels": 4,
+      "max_width": 2688,
+      "max_height": 1520,
       "label": "4MP"
     },
+    "sensor": "1/3\" 4MP progressive scan CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "4 (fixed)",
+      "aperture": "F2.0",
+      "varifocal": false
+    },
     "field_of_view_deg": "90",
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2560x1440",
+          "fps": 30,
+          "codec": "H.265"
+        },
+        {
+          "name": "sub",
+          "resolution": "640x480",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
     "night_vision": {
       "type": "ir",
-      "range_m": 10
+      "range_m": 10,
+      "min_lux_color": 0.084
     },
     "power": {
-      "method": "DC 12V"
+      "method": "DC 5V 1.5A"
     },
     "storage": {
       "onboard": true,
       "max_microsd_gb": 256,
       "nvr_compatible": true,
-      "cloud": false
+      "cloud": true
     },
     "protocols": [
-      "rtsp"
+      "onvif",
+      "rtsp",
+      "http"
     ],
     "audio": {
       "microphone": true,
@@ -41844,30 +41878,35 @@
       "two_way": true
     },
     "features": [
-      "4MP WiFi outdoor bullet",
-      "IP67 weatherproof",
-      "microSD recording",
-      "30m IR night vision",
-      "H.264",
-      "RTSP",
-      "Blue Iris compatible",
-      "355° pan / 90° tilt"
+      "4MP indoor pan/tilt WiFi camera",
+      "355° pan / 90° tilt",
+      "two-way audio",
+      "auto tracking",
+      "privacy mode",
+      "H.265 / H.264",
+      "10m IR night vision",
+      "microSD recording up to 256GB",
+      "Blue Iris compatible"
     ],
+    "operating_temp_c": "-10 to 45",
+    "dimensions_mm": "103 x 100 x 118",
+    "weight_g": 290,
     "sources": [
-      "https://amcrest.com/4mp-wifi-camera-pan-tilt-ip4m-1041w.html"
+      "https://support.amcrest.com/hc/en-us/articles/360036479531-Technical-Specifications-IP4M-1041",
+      "https://amcrest.com/4mp-wifi-camera-pan-tilt-ip4m-1041b.html"
     ],
     "markets": [
       "global"
     ],
-    "last_verified": "2026-07-04",
+    "last_verified": "2026-08-13",
     "power_source": [
       "dc"
     ],
     "configs": {
       "frigate": {
         "detect": {
-          "width": 1280,
-          "height": 720,
+          "width": 640,
+          "height": 480,
           "fps": 5
         },
         "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -41881,6 +41920,133 @@
         "profile": "Dahua",
         "notes": "Select 'Dahua' profile. Amcrest uses Dahua protocol. Also works with 'Amcrest' profile if available."
       }
+    },
+    "ptz": {
+      "autotracking": true
+    },
+    "added": "2026-08-13"
+  },
+  {
+    "id": "amcrest-ip4m-1041w",
+    "brand": "Amcrest",
+    "model": "IP4M-1041W",
+    "aliases": [
+      "Amcrest 4MP Pan/Tilt WiFi (white)"
+    ],
+    "type": "ptz",
+    "connectivity": [
+      "wifi"
+    ],
+    "environment": [
+      "indoor"
+    ],
+    "release_year": 2021,
+    "resolution": {
+      "megapixels": 4,
+      "max_width": 2688,
+      "max_height": 1520,
+      "label": "4MP"
+    },
+    "sensor": "1/3\" 4MP progressive scan CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "4 (fixed)",
+      "aperture": "F2.0",
+      "varifocal": false
+    },
+    "field_of_view_deg": "90",
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2560x1440",
+          "fps": 30,
+          "codec": "H.265"
+        },
+        {
+          "name": "sub",
+          "resolution": "640x480",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "night_vision": {
+      "type": "ir",
+      "range_m": 10,
+      "min_lux_color": 0.084
+    },
+    "power": {
+      "method": "DC 5V 1.5A"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp",
+      "http"
+    ],
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "4MP indoor pan/tilt WiFi camera",
+      "355° pan / 90° tilt",
+      "two-way audio",
+      "auto tracking",
+      "privacy mode",
+      "H.265 / H.264",
+      "10m IR night vision",
+      "microSD recording up to 256GB",
+      "Blue Iris compatible"
+    ],
+    "operating_temp_c": "-10 to 45",
+    "dimensions_mm": "103 x 100 x 118",
+    "weight_g": 290,
+    "sources": [
+      "https://amcrest.com/4mp-wifi-camera-pan-tilt-ip4m-1041w.html",
+      "https://support.amcrest.com/hc/en-us/articles/360036479531-Technical-Specifications-IP4M-1041",
+      "https://amcrest.com/4mp-wifi-camera-pan-tilt-ip4m-1041b.html"
+    ],
+    "markets": [
+      "global"
+    ],
+    "last_verified": "2026-08-13",
+    "power_source": [
+      "dc"
+    ],
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 640,
+          "height": 480,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1"
+      },
+      "home_assistant": {
+        "integration": "amcrest",
+        "notes": "Native Amcrest integration or ONVIF. Default ONVIF port 80."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select 'Dahua' profile. Amcrest uses Dahua protocol. Also works with 'Amcrest' profile if available."
+      }
+    },
+    "ptz": {
+      "autotracking": true
     },
     "added": "2026-06-09"
   },
@@ -41965,6 +42131,131 @@
     "added": "2026-06-06"
   },
   {
+    "id": "amcrest-ip4m-1055e",
+    "brand": "Amcrest",
+    "model": "IP4M-1055E",
+    "aliases": [
+      "IP4M-1055EB",
+      "IP4M-1055EW"
+    ],
+    "type": "dome",
+    "connectivity": [
+      "ethernet"
+    ],
+    "power_source": [
+      "poe"
+    ],
+    "resolution": {
+      "megapixels": 4,
+      "max_width": 2688,
+      "max_height": 1520,
+      "label": "4MP"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 20,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2688x1520",
+          "fps": 20,
+          "codec": "H.265"
+        },
+        {
+          "name": "sub",
+          "resolution": "640x480",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/3\" 4Megapixel progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8",
+      "aperture": "F2.0",
+      "varifocal": false
+    },
+    "field_of_view_deg": "104 horizontal, 57 vertical",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 30,
+      "min_lux_color": 0.08
+    },
+    "power": {
+      "method": "PoE (802.3af) / DC 12V",
+      "poe_class": 0,
+      "consumption_w": 5.5
+    },
+    "storage": {
+      "onboard": false,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp",
+      "http"
+    ],
+    "ip_rating": "IP67",
+    "audio": {
+      "microphone": false,
+      "speaker": false,
+      "two_way": false
+    },
+    "features": [
+      "H.265 / H.264 dual compression",
+      "WDR (120dB)",
+      "Smart IR",
+      "16x digital zoom",
+      "motion detection (4 zone)",
+      "region of interest",
+      "privacy masking",
+      "Blue Iris compatible",
+      "NAS / FTP edge storage"
+    ],
+    "operating_temp_c": "-30 to 60",
+    "dimensions_mm": "108 (diameter) x 84.9",
+    "weight_g": 230,
+    "release_year": 2019,
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "sources": [
+      "https://s3.amazonaws.com/amcrest-files/Documentation/IP4M-1055E+Technical+Specification.pdf",
+      "https://support.amcrest.com/hc/en-us/articles/360001558992-Technical-Specifications-IP4M-1055E"
+    ],
+    "last_verified": "2026-08-13",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "detect": {
+          "width": 640,
+          "height": 480,
+          "fps": 5
+        },
+        "notes": "Amcrest (Dahua OEM) RTSP. Enable RTSP in the Amcrest web UI; use the sub-stream (subtype=1) for Frigate detect.",
+        "verified": false
+      },
+      "home_assistant": {
+        "integration": "amcrest",
+        "notes": "Native Amcrest integration or ONVIF. Default ONVIF port 80."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select 'Dahua' profile. Amcrest uses the Dahua protocol. Also works with 'Amcrest' profile if available."
+      }
+    },
+    "added": "2026-08-13"
+  },
+  {
     "id": "amcrest-ip5m-b1186ew",
     "brand": "Amcrest",
     "model": "IP5M-B1186EW",
@@ -42044,6 +42335,135 @@
       "outdoor"
     ],
     "added": "2026-06-09"
+  },
+  {
+    "id": "amcrest-ip5m-d1188ew-ai-v3",
+    "brand": "Amcrest",
+    "model": "IP5M-D1188EW-AI-V3",
+    "aliases": [
+      "IP5M-D1188EB-AI-V3",
+      "IP5M-D1188EW-28MM"
+    ],
+    "type": "dome",
+    "connectivity": [
+      "ethernet"
+    ],
+    "power_source": [
+      "poe",
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 5,
+      "max_width": 2592,
+      "max_height": 1944,
+      "label": "5MP"
+    },
+    "video": {
+      "codecs": [
+        "H.264",
+        "MJPEG"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2592x1944",
+          "fps": 20,
+          "codec": "H.264"
+        },
+        {
+          "name": "main",
+          "resolution": "2688x1520",
+          "fps": 30,
+          "codec": "H.264"
+        },
+        {
+          "name": "sub",
+          "resolution": "704x480",
+          "fps": 30,
+          "codec": "H.264"
+        }
+      ]
+    },
+    "sensor": "1/2.7\" CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8mm",
+      "aperture": "F1.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "132",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 30,
+      "min_lux_color": 0.008
+    },
+    "power": {
+      "method": "PoE (802.3af) / DC 12V",
+      "consumption_w": 6.1,
+      "voltage": "DC 12V",
+      "poe_class": 3
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp",
+      "http"
+    ],
+    "ip_rating": "IP67",
+    "ik_rating": "IK10",
+    "features": [
+      "vandal-resistant",
+      "IK10",
+      "AI human/vehicle detection",
+      "smart motion detection",
+      "IVS tripwire & intrusion",
+      "120 dB WDR",
+      "3D noise reduction",
+      "smart IR",
+      "H.264"
+    ],
+    "operating_temp_c": "-40 to 60",
+    "dimensions_mm": "109.9 x 109.9 x 81",
+    "weight_g": 350,
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "sources": [
+      "https://support.amcrest.com/hc/en-us/articles/25855591714573-Technical-Specifications-IP5M-D1188EW-AI-V3",
+      "https://amcrest.com/5mp-poe-camera-dome-ip5m-d1188ew-ai-v3.html"
+    ],
+    "last_verified": "2026-08-13",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "detect": {
+          "width": 704,
+          "height": 480,
+          "fps": 5
+        },
+        "notes": "Amcrest (Dahua OEM) RTSP. Enable RTSP in the Amcrest web UI; use the sub-stream (subtype=1) at 5fps for Frigate detect. AI human/vehicle detection available on-camera.",
+        "verified": false
+      },
+      "home_assistant": {
+        "integration": "amcrest",
+        "notes": "Native Amcrest integration or ONVIF (Profile S/G/T). Default ONVIF port 80."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile (Amcrest uses the Dahua protocol). Also works via ONVIF/RTSP."
+      }
+    },
+    "added": "2026-08-13"
   },
   {
     "id": "amcrest-ip5m-t1179e",
@@ -42403,6 +42823,126 @@
     "added": "2026-06-06"
   },
   {
+    "id": "amcrest-ip8m-2493ew-ai-v3",
+    "brand": "Amcrest",
+    "model": "IP8M-2493EW-AI-V3",
+    "aliases": [
+      "IP8M-2493EB-AI-V3",
+      "IP8M-2493EW-AI V3",
+      "IP8M-2493EB-AI V3"
+    ],
+    "type": "dome",
+    "connectivity": [
+      "ethernet"
+    ],
+    "power_source": [
+      "poe"
+    ],
+    "resolution": {
+      "megapixels": 8,
+      "max_width": 3840,
+      "max_height": 2160,
+      "label": "4K"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264",
+        "MJPEG"
+      ],
+      "max_fps": 20,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "3840x2160",
+          "fps": 20,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/2.7\" CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8 (fixed)",
+      "aperture": "F2.0",
+      "varifocal": false
+    },
+    "field_of_view_deg": "125 diagonal",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 30,
+      "min_lux_color": 0.009
+    },
+    "power": {
+      "method": "PoE (802.3af) / DC 12V",
+      "voltage": "DC 12V",
+      "poe_class": 0,
+      "consumption_w": 6.2
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp",
+      "http"
+    ],
+    "ip_rating": "IP67",
+    "ik_rating": "IK10",
+    "audio": {
+      "microphone": true
+    },
+    "features": [
+      "AI human detection",
+      "AI vehicle detection",
+      "tripwire",
+      "intrusion detection",
+      "120dB WDR",
+      "3D DNR",
+      "smart IR"
+    ],
+    "operating_temp_c": "-40 to 60",
+    "dimensions_mm": "109.6 x 109.6 x 80.9",
+    "weight_g": 350,
+    "release_year": 2023,
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "sources": [
+      "https://support.amcrest.com/hc/en-us/articles/24606154802573-Technical-Specifications-IP8M-2493EW-AI-V3",
+      "https://amcrest.com/4k-ip-camera-poe-security-camera-dome-ip8m-2493eb-ai-v3.html"
+    ],
+    "last_verified": "2026-08-13",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "detect": {
+          "width": 704,
+          "height": 480,
+          "fps": 5
+        },
+        "notes": "Amcrest (Dahua OEM) RTSP. Enable RTSP in the Amcrest web UI; use the sub-stream (subtype=1) at 5fps for Frigate detect.",
+        "verified": false
+      },
+      "home_assistant": {
+        "integration": "amcrest",
+        "notes": "Use the native Amcrest integration for stream and motion events; ONVIF (Profile S/T) also supported. Default ONVIF port 80."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Add as a Dahua-protocol camera (Amcrest is Dahua OEM); the 'Amcrest' make also works where available."
+      }
+    },
+    "added": "2026-08-13"
+  },
+  {
     "id": "amcrest-ip8m-2496e",
     "brand": "Amcrest",
     "model": "UltraHD 4K Bullet PoE (IP8M-2496E)",
@@ -42495,6 +43035,120 @@
       "outdoor"
     ],
     "added": "2026-06-06"
+  },
+  {
+    "id": "amcrest-ip8m-2597e",
+    "brand": "Amcrest",
+    "model": "UltraHD 4K Bullet PoE 30fps (IP8M-2597E)",
+    "aliases": [
+      "IP8M-2597EB",
+      "IP8M-2597EW",
+      "IP8M-2597EB-28MM",
+      "IP8M-2597EW-28MM"
+    ],
+    "type": "bullet",
+    "connectivity": [
+      "ethernet"
+    ],
+    "release_year": 2020,
+    "resolution": {
+      "megapixels": 8,
+      "max_width": 3840,
+      "max_height": 2160,
+      "label": "4K UHD"
+    },
+    "sensor": "1/1.8\" 8MP progressive CMOS",
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "3840x2160",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8 (fixed)",
+      "aperture": "F2.4",
+      "varifocal": false
+    },
+    "field_of_view_deg": "111 horizontal",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 50
+    },
+    "power": {
+      "method": "PoE (802.3af) / DC 12V"
+    },
+    "storage": {
+      "onboard": false,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "ip_rating": "IP67",
+    "audio": {
+      "microphone": false,
+      "speaker": false,
+      "two_way": false
+    },
+    "features": [
+      "4K UHD @ 30fps",
+      "1/1.8\" CMOS sensor",
+      "H.265 / H.264 dual compression",
+      "120dB True WDR",
+      "metal weatherproof housing",
+      "Amcrest View app"
+    ],
+    "operating_temp_c": "-30 to 60",
+    "dimensions_mm": "175 x 69 x 69",
+    "weight_g": 500,
+    "sources": [
+      "https://amcrest.com/prohd-4k-8mp-bullet-poe-ip-camera-security-3840x2160-164ft-nightvision-2-8mm-lens-ip67-weatherproof-black-ip8m-2597eb-28mm.html",
+      "https://support.amcrest.com/hc/en-us/articles/360037122792-Technical-Specifications-IP8M-2597E"
+    ],
+    "markets": [
+      "global"
+    ],
+    "last_verified": "2026-08-13",
+    "power_source": [
+      "poe"
+    ],
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 704,
+          "height": 480,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "notes": "Amcrest (Dahua OEM) RTSP. Enable RTSP in the Amcrest web UI; use the sub-stream (subtype=1) for Frigate detect.",
+        "verified": false
+      },
+      "home_assistant": {
+        "integration": "amcrest",
+        "notes": "Native Amcrest integration; also works via ONVIF."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the Dahua profile."
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "added": "2026-08-13"
   },
   {
     "id": "amcrest-ip8m-2693ew",
@@ -42772,6 +43426,260 @@
     "added": "2026-07-05"
   },
   {
+    "id": "amcrest-ip8m-2899ew-ai-v2",
+    "brand": "Amcrest",
+    "model": "IP8M-2899EW-AI-V2",
+    "aliases": [
+      "IP8M-2899EW-AI V2",
+      "IP8M-2899EW-AIV2"
+    ],
+    "type": "ptz",
+    "ptz": {
+      "autotracking": true,
+      "onvif_ptz": "relative"
+    },
+    "connectivity": [
+      "ethernet"
+    ],
+    "power_source": [
+      "poe"
+    ],
+    "resolution": {
+      "megapixels": 8,
+      "max_width": 3840,
+      "max_height": 2160,
+      "label": "4K"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 25,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "3840x2160",
+          "fps": 25,
+          "codec": "H.265"
+        },
+        {
+          "name": "sub1",
+          "resolution": "640x480",
+          "fps": 25,
+          "codec": "H.265"
+        },
+        {
+          "name": "sub2",
+          "resolution": "640x480",
+          "fps": 25,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/2.8\" STARVIS CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "5-125",
+      "aperture": "F1.6-F3.6",
+      "varifocal": true
+    },
+    "field_of_view_deg": "59.3-3.9",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 100,
+      "min_lux_color": 0.0005
+    },
+    "power": {
+      "method": "PoE+ (802.3at) / DC 12V",
+      "voltage": "DC 12V",
+      "poe_class": 4,
+      "consumption_w": 20
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp",
+      "http"
+    ],
+    "ip_rating": "IP66",
+    "audio": {
+      "microphone": true,
+      "speaker": true
+    },
+    "features": [
+      "25x optical zoom",
+      "16x digital zoom",
+      "human detection",
+      "vehicle detection",
+      "face detection",
+      "perimeter protection",
+      "auto-tracking",
+      "120dB WDR",
+      "electronic image stabilization"
+    ],
+    "operating_temp_c": "-40 to 70",
+    "dimensions_mm": "160 x 160 x 269.9",
+    "weight_g": 3000,
+    "release_year": 2022,
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "sources": [
+      "https://support.amcrest.com/hc/en-us/articles/25039301718285-Technical-Specifications-IP8M-2899EW-AI-V2",
+      "https://amcrest.com/4k-8-megapixel-ip-poe-camera-ptz-25x-optical-zoom-ai-ip8m-2899ew-ai-v2.html"
+    ],
+    "last_verified": "2026-08-13",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "detect": {
+          "width": 640,
+          "height": 480,
+          "fps": 5
+        },
+        "notes": "Amcrest (Dahua OEM) RTSP. Enable RTSP in the Amcrest web UI; use the sub-stream (subtype=1) at 5fps for Frigate detect. PTZ via ONVIF.",
+        "verified": false,
+        "autotracking": true
+      },
+      "home_assistant": {
+        "integration": "amcrest",
+        "notes": "Use the native Amcrest integration for stream, motion events, and PTZ; ONVIF (Profile S/T) also supported."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Add as a Dahua-protocol camera (Amcrest is Dahua OEM); PTZ supported over the Dahua protocol."
+      }
+    },
+    "added": "2026-08-13"
+  },
+  {
+    "id": "amcrest-ip8m-fct2999ew-ai",
+    "brand": "Amcrest",
+    "model": "IP8M-FCT2999EW-AI",
+    "aliases": [
+      "IP8M-FCT2999EW"
+    ],
+    "type": "panoramic",
+    "connectivity": [
+      "ethernet"
+    ],
+    "power_source": [
+      "poe",
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 8,
+      "max_width": 4096,
+      "max_height": 1800,
+      "label": "4096x1800 panoramic"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 25,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "4096x1800",
+          "fps": 25,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "2 x 1/1.8\" CMOS (dual 4MP, stitched panoramic)",
+    "lens": {
+      "count": 2,
+      "focal_length_mm": "3.6 (fixed, dual lens)",
+      "aperture": "F1.0",
+      "varifocal": false
+    },
+    "field_of_view_deg": "180",
+    "night_vision": {
+      "type": "color",
+      "range_m": 40,
+      "min_lux_color": 0.0005
+    },
+    "power": {
+      "method": "PoE / DC 12V"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp",
+      "http"
+    ],
+    "ip_rating": "IP67",
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "dual-lens",
+      "panoramic",
+      "full-color night vision",
+      "human detection",
+      "vehicle detection",
+      "perimeter protection",
+      "people counting",
+      "heat map"
+    ],
+    "operating_temp_c": "-40 to 60",
+    "dimensions_mm": "122 x 122 x 132",
+    "weight_g": 989,
+    "release_year": 2023,
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "sources": [
+      "https://amcrest.com/4k-dual-lens-panoramic-poe-ai-camera-turret-ip8m-fct2999ew-ai.html",
+      "https://support.amcrest.com/hc/en-us/articles/16094320992141-Technical-Specifications-IP8M-FCT2999EW-AI"
+    ],
+    "last_verified": "2026-08-13",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "notes": "Amcrest (Dahua OEM) RTSP; enable RTSP in the web UI. Dual-lens: the two 4MP sensors are stitched in-camera into a single 4096x1800 panoramic stream on channel=1 (not two separate channels). Use the sub-stream (subtype=1) for Frigate detect.",
+        "verified": false
+      },
+      "home_assistant": {
+        "integration": "amcrest",
+        "notes": "Native Amcrest integration or ONVIF. Default ONVIF port 80."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select 'Dahua' profile. Amcrest uses Dahua protocol. Also works with 'Amcrest' profile if available."
+      }
+    },
+    "added": "2026-08-13"
+  },
+  {
     "id": "amcrest-ip8m-t2599ew",
     "brand": "Amcrest",
     "model": "IP8M-T2599EW",
@@ -42850,6 +43758,241 @@
       "outdoor"
     ],
     "added": "2026-06-09"
+  },
+  {
+    "id": "amcrest-ip8m-vb2896ew-ai",
+    "brand": "Amcrest",
+    "model": "IP8M-VB2896EW-AI 8MP Veri-focal AI PoE Bullet Network Camera",
+    "aliases": [
+      "IP8M-VB2896EW-AI",
+      "Amcrest 4K Optical Zoom AI Bullet"
+    ],
+    "type": "bullet",
+    "connectivity": [
+      "ethernet"
+    ],
+    "power_source": [
+      "poe",
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 8,
+      "max_width": 3840,
+      "max_height": 2160,
+      "label": "4K"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 15,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "3840x2160",
+          "fps": 15,
+          "codec": "H.265"
+        },
+        {
+          "name": "sub",
+          "resolution": "704x576",
+          "fps": 25,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/2.8\" 8MP progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.7-13.5mm",
+      "aperture": "F1.5",
+      "varifocal": true
+    },
+    "field_of_view_deg": "31-113",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 60,
+      "min_lux_color": 0.007
+    },
+    "power": {
+      "method": "PoE (802.3af) / 12V DC",
+      "consumption_w": 10.7,
+      "voltage": "12V DC"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": true,
+      "cloud": false
+    },
+    "protocols": [
+      "onvif",
+      "rtsp",
+      "http"
+    ],
+    "ip_rating": "IP67",
+    "audio": {
+      "microphone": true
+    },
+    "features": [
+      "5x optical zoom",
+      "motorized varifocal lens",
+      "human detection",
+      "vehicle detection",
+      "tripwire",
+      "intrusion detection",
+      "120dB WDR",
+      "3D noise reduction",
+      "smart illumination"
+    ],
+    "operating_temp_c": "-30 to 60",
+    "dimensions_mm": "241.8 x 84.9 x 78.1",
+    "weight_g": 816,
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "sources": [
+      "https://support.amcrest.com/hc/en-us/articles/360060839851-Technical-Specifications-IP8M-VB2896EW-AI",
+      "https://amcrest.com/4k-poe-camera-bullet-optical-zoom-ai-ip8m-vb2896ew-ai.html"
+    ],
+    "last_verified": "2026-08-13",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 704,
+          "height": 576,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "notes": "Amcrest (Dahua OEM) RTSP. Enable RTSP in the Amcrest web UI; main stream subtype=0, sub-stream subtype=1 for Frigate detect.",
+        "verified": false
+      },
+      "home_assistant": {
+        "integration": "amcrest",
+        "notes": "Use the Amcrest integration for stream, snapshots, and motion/AI events."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Add using the Dahua profile (Amcrest is Dahua OEM); RTSP main subtype=0, sub subtype=1."
+      }
+    },
+    "added": "2026-08-13"
+  },
+  {
+    "id": "amcrest-ip8m-vt2779ew",
+    "brand": "Amcrest",
+    "model": "IP8M-VT2779EW",
+    "aliases": [
+      "IP8M-VT2779EW-AI"
+    ],
+    "type": "turret",
+    "connectivity": [
+      "ethernet"
+    ],
+    "power_source": [
+      "poe"
+    ],
+    "resolution": {
+      "megapixels": 8,
+      "max_width": 3840,
+      "max_height": 2160,
+      "label": "4K"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 15,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "3840x2160",
+          "fps": 15,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/2.7\" CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.7-13.5mm",
+      "aperture": "F1.5",
+      "varifocal": true
+    },
+    "field_of_view_deg": "31-113",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 44
+    },
+    "power": {
+      "method": "PoE"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp",
+      "http"
+    ],
+    "ip_rating": "IP67",
+    "audio": {
+      "microphone": true
+    },
+    "features": [
+      "5x optical zoom",
+      "varifocal 2.7-13.5mm",
+      "IVS (tripwire, intrusion detection)",
+      "motion detection"
+    ],
+    "operating_temp_c": "-30 to 60",
+    "dimensions_mm": "135 x 135 x 104",
+    "weight_g": 690,
+    "release_year": 2021,
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "sources": [
+      "https://support.amcrest.com/hc/en-us/articles/4411633630733-Technical-Specifications-IP8M-VT2779EW",
+      "https://amcrest.com/4k-poe-camera-turret-optical-zoom-ip8m-vt2779ew.html"
+    ],
+    "last_verified": "2026-08-13",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "notes": "Amcrest (Dahua OEM) RTSP. Enable RTSP in the Amcrest web UI; use the sub-stream (subtype=1) for Frigate detect.",
+        "verified": false
+      },
+      "home_assistant": {
+        "integration": "amcrest",
+        "notes": "Native Amcrest integration (Dahua protocol) or ONVIF. Default ONVIF port 80."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select 'Dahua' profile. Amcrest uses the Dahua protocol. Also works with 'Amcrest' profile if available."
+      }
+    },
+    "added": "2026-08-13"
   },
   {
     "id": "amcrest-ip8m-vt2879ew-ai",

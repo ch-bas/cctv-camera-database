@@ -1,0 +1,124 @@
+{
+  "id": "amcrest-ip8m-vb2896ew-ai",
+  "brand": "Amcrest",
+  "model": "IP8M-VB2896EW-AI 8MP Veri-focal AI PoE Bullet Network Camera",
+  "aliases": [
+    "IP8M-VB2896EW-AI",
+    "Amcrest 4K Optical Zoom AI Bullet"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 15,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" 8MP progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5mm",
+    "aperture": "F1.5",
+    "varifocal": true
+  },
+  "field_of_view_deg": "31-113",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 60,
+    "min_lux_color": 0.007
+  },
+  "power": {
+    "method": "PoE (802.3af) / 12V DC",
+    "consumption_w": 10.7,
+    "voltage": "12V DC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true
+  },
+  "features": [
+    "5x optical zoom",
+    "motorized varifocal lens",
+    "human detection",
+    "vehicle detection",
+    "tripwire",
+    "intrusion detection",
+    "120dB WDR",
+    "3D noise reduction",
+    "smart illumination"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "241.8 x 84.9 x 78.1",
+  "weight_g": 816,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://support.amcrest.com/hc/en-us/articles/360060839851-Technical-Specifications-IP8M-VB2896EW-AI",
+    "https://amcrest.com/4k-poe-camera-bullet-optical-zoom-ai-ip8m-vb2896ew-ai.html"
+  ],
+  "last_verified": "2026-08-13",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 576,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "notes": "Amcrest (Dahua OEM) RTSP. Enable RTSP in the Amcrest web UI; main stream subtype=0, sub-stream subtype=1 for Frigate detect.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "amcrest",
+      "notes": "Use the Amcrest integration for stream, snapshots, and motion/AI events."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Add using the Dahua profile (Amcrest is Dahua OEM); RTSP main subtype=0, sub subtype=1."
+    }
+  }
+}
