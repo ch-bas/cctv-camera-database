@@ -1,0 +1,119 @@
+{
+  "id": "amcrest-ip8m-2493ew-ai-v3",
+  "brand": "Amcrest",
+  "model": "IP8M-2493EW-AI-V3",
+  "aliases": [
+    "IP8M-2493EB-AI-V3",
+    "IP8M-2493EW-AI V3",
+    "IP8M-2493EB-AI V3"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "125 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.009
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V",
+    "voltage": "DC 12V",
+    "poe_class": 0,
+    "consumption_w": 6.2
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true
+  },
+  "features": [
+    "AI human detection",
+    "AI vehicle detection",
+    "tripwire",
+    "intrusion detection",
+    "120dB WDR",
+    "3D DNR",
+    "smart IR"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "109.6 x 109.6 x 80.9",
+  "weight_g": 350,
+  "release_year": 2023,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://support.amcrest.com/hc/en-us/articles/24606154802573-Technical-Specifications-IP8M-2493EW-AI-V3",
+    "https://amcrest.com/4k-ip-camera-poe-security-camera-dome-ip8m-2493eb-ai-v3.html"
+  ],
+  "last_verified": "2026-08-13",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "detect": {
+        "width": 704,
+        "height": 480,
+        "fps": 5
+      },
+      "notes": "Amcrest (Dahua OEM) RTSP. Enable RTSP in the Amcrest web UI; use the sub-stream (subtype=1) at 5fps for Frigate detect.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "amcrest",
+      "notes": "Use the native Amcrest integration for stream and motion events; ONVIF (Profile S/T) also supported. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Add as a Dahua-protocol camera (Amcrest is Dahua OEM); the 'Amcrest' make also works where available."
+    }
+  }
+}

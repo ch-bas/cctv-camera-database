@@ -1,0 +1,116 @@
+{
+  "id": "amcrest-ip8m-fct2999ew-ai",
+  "brand": "Amcrest",
+  "model": "IP8M-FCT2999EW-AI",
+  "aliases": [
+    "IP8M-FCT2999EW"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 4096,
+    "max_height": 1800,
+    "label": "4096x1800 panoramic"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4096x1800",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "2 x 1/1.8\" CMOS (dual 4MP, stitched panoramic)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "3.6 (fixed, dual lens)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180",
+  "night_vision": {
+    "type": "color",
+    "range_m": 40,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "PoE / DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "dual-lens",
+    "panoramic",
+    "full-color night vision",
+    "human detection",
+    "vehicle detection",
+    "perimeter protection",
+    "people counting",
+    "heat map"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "122 x 122 x 132",
+  "weight_g": 989,
+  "release_year": 2023,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://amcrest.com/4k-dual-lens-panoramic-poe-ai-camera-turret-ip8m-fct2999ew-ai.html",
+    "https://support.amcrest.com/hc/en-us/articles/16094320992141-Technical-Specifications-IP8M-FCT2999EW-AI"
+  ],
+  "last_verified": "2026-08-13",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "notes": "Amcrest (Dahua OEM) RTSP; enable RTSP in the web UI. Dual-lens: the two 4MP sensors are stitched in-camera into a single 4096x1800 panoramic stream on channel=1 (not two separate channels). Use the sub-stream (subtype=1) for Frigate detect.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "amcrest",
+      "notes": "Native Amcrest integration or ONVIF. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile. Amcrest uses Dahua protocol. Also works with 'Amcrest' profile if available."
+    }
+  }
+}
