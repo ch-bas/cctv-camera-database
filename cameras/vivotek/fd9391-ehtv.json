@@ -1,0 +1,120 @@
+{
+  "id": "vivotek-fd9391-ehtv",
+  "brand": "Vivotek",
+  "model": "FD9391-EHTV",
+  "aliases": [
+    "FD9391-EHTV"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "sensor": "1/2\" Progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.9-10 (motorized varifocal, remote focus)",
+    "aperture": "F1.5-F2.7",
+    "varifocal": true
+  },
+  "field_of_view_deg": "119-45 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux": 0.01,
+    "min_lux_color": 0.02
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 120,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "high-fps",
+        "resolution": "1920x1080",
+        "fps": 120,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": true
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "power": {
+    "method": "IEEE 802.3at Class 4 PoE / DC 12V / AC 24V",
+    "consumption_w": 24.8,
+    "poe_class": 4
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "dimensions_mm": "155 (diameter) x 138",
+  "weight_g": 1300,
+  "operating_temp_c": "-50 to 60",
+  "features": [
+    "WDR Pro (120 dB)",
+    "SNV (Supreme Night Visibility)",
+    "Smart Stream III",
+    "Smart IR II",
+    "Smart Motion Detection (deep learning, people detection)",
+    "Smart VCA (intrusion, loitering, line crossing, object, face, crowd, running detection)",
+    "P-iris",
+    "NEMA 4X",
+    "Trend Micro IoT Security"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://download.vivotek.com/downloadfile/downloads/datasheets/fd9391-ehtvdatasheet_en.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live.sdp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/live2.sdp"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Vivotek",
+      "notes": "Select 'Vivotek' profile. ONVIF supported."
+    }
+  },
+  "release_notes": "Specs per VIVOTEK FD9391-EHTV datasheet Ver. 11.",
+  "last_verified": "2026-08-13"
+}

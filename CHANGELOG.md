@@ -6,6 +6,20 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.61.0] — 2026-08-13
+
+### Added — 2 new brands + 26 cameras (four-brand batch)
+
+- **D-Link (new brand, +8).** Seeded the brand across both lines from official D-Link datasheets/spec pages. Vigilance PoE: `DCS-4718E` (8MP/4K motorized-varifocal bullet), `DCS-4714E` (4MP bullet), `DCS-4614EK` (4MP IK10 vandal dome), `DCS-4605EV` (5MP IK10 vandal dome), `DCS-4612EK` (2MP IK10 vandal dome), `DCS-4622` (1080p fisheye). mydlink Wi-Fi: `DCS-8635LH` (2K pan/zoom outdoor), `DCS-8526LH` (2K pan/tilt indoor). Verified RTSP pattern `/live1.sdp` (main) + `/live2.sdp` (sub) for the Vigilance line; ONVIF for the consumer models (no officially documented RTSP path).
+- **Grandstream (new brand, +4).** Current GSC36xx line from official Grandstream datasheets/manuals: `GSC3610` (2MP dome), `GSC3615` (2MP bullet), `GSC3620` (2MP varifocal auto-focus dome), `GSC3625` (2MP varifocal box). Verified RTSP pattern `/0` (main) + `/4` (sub). (The legacy GXV36xx line is EOL — product pages 404 — so it was intentionally not seeded.)
+- **Hikvision ColorVu 3.0 Smart Hybrid Light — G3/G3T generation (+6).** The current shipping flagship line (supersedes G2/G2H): `DS-2CD2047G3-LI2UY` (4MP bullet), `DS-2CD2087G3-LI2UY` (8MP bullet), `DS-2CD2347G3-LI2UY` (4MP F1.0 turret), `DS-2CD2687G3T-LIZSY` (8MP motorized-varifocal bullet), `DS-2CD2647G3T-LIZSY` (4MP 1/1.8" motorized-varifocal bullet), and `iDS-2CD7A47G2-XZHSY` (4MP DarkfighterS DeepinView, 150 dB WDR). All from dated `assets.hikvision.com` datasheet PDFs, with `min_lux_color` (ColorVu 3.0 color-at-night) filled throughout.
+- **Vivotek (+8).** Fills form-factor gaps: `IP9191-HP` (4K box), `FE9382-EHV-V2` (6MP fisheye), `SD9366-EHL` (2MP 30× PTZ), `MS9321-EHV-V2` (multi-sensor panoramic), plus `IB9391-EHT` (4K bullet), `FD9391-EHTV` (4K dome), `IB9383-HTV` (5MP bullet), `IB9389-EHTV-V3` (5MP bullet). All from official Vivotek datasheets/spec pages.
+
+### Changed
+- **Hikvision `DS-2CD2147G3-LIS2UY` and `DS-2CD2187G3-LIS2UY` re-verified against the official G3 datasheets** — corrected datasheet-contradicted dimensions/weight, added missing lanes (FOV, min_lux_color, power/PoE class, sensor, video streams), and removed a `min_lux = 0` sentinel (#180).
+
+Dataset total: **2,930 cameras / 76 brands.**
+
 ## [1.60.0] — 2026-08-13
 
 ### Added

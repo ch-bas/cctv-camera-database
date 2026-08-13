@@ -1,0 +1,122 @@
+{
+  "id": "d-link-dcs-4605ev",
+  "brand": "D-Link",
+  "model": "DCS-4605EV",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "release_year": 2018,
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2560,
+    "max_height": 1920,
+    "label": "5MP"
+  },
+  "sensor": "1/2.9\" 5-megapixel progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "87 horizontal, 65 vertical, 110 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux": 0.008,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / DC 12V",
+    "consumption_w": 6,
+    "voltage": "12V DC",
+    "poe_class": 3
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1920",
+        "fps": 15,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x360",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "weight_g": 365,
+  "operating_temp_c": "-30 to 50",
+  "environment": [
+    "outdoor"
+  ],
+  "status": "available",
+  "features": [
+    "Wide Dynamic Range (WDR)",
+    "10x digital zoom",
+    "Built-in Infrared-Cut Removable (ICR) filter module",
+    "Motion detection and tamper detection",
+    "Configurable privacy mask zones",
+    "ePTZ",
+    "Auto White Balance (AWB) and Auto Gain Control (AGC)",
+    "802.1x port-based authentication",
+    "ONVIF-compliant",
+    "D-ViewCam management software support"
+  ],
+  "release_notes": "Specs per D-Link DCS-4605EV REVA datasheet v1.01 US (updated 08/03/2018).",
+  "sources": [
+    "https://support.dlink.com/resource/products/dcs-4605ev/REVA/DCS-4605EV_REVA_DATASHEET_v1.01_US.pdf",
+    "https://www.dlink.com/uk/en/products/dcs-4605ev-vigilance-5megapixel-vandal_proof-outdoor-dome-camera"
+  ],
+  "last_verified": "2026-08-13",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 360,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live1.sdp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/live2.sdp"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Select 'ONVIF' profile. ONVIF supported."
+    }
+  }
+}

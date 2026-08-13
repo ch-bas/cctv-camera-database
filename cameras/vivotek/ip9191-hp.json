@@ -1,0 +1,120 @@
+{
+  "id": "vivotek-ip9191-hp",
+  "brand": "Vivotek",
+  "model": "IP9191-HP",
+  "aliases": [
+    "Vivotek 8MP 4K Box Network Camera"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "sensor": "1/2\" Progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.9-10 (vari-focal, remote back focus)",
+    "aperture": "F1.5-F2.7",
+    "varifocal": true
+  },
+  "field_of_view_deg": "45-119 horizontal",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.01,
+    "min_lux_color": 0.02
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 120,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "high-fps",
+        "resolution": "1920x1080",
+        "fps": 120,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "IEEE 802.3af PoE Class 0 / DC 12V / AC 24V",
+    "consumption_w": 12,
+    "poe_class": 0
+  },
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "dimensions_mm": "209 x 70 x 61 (w/ lens); 151 x 70 x 61 (w/o lens)",
+  "weight_g": 743,
+  "operating_temp_c": "-10 to 50",
+  "features": [
+    "WDR Pro (120 dB)",
+    "SNV (Supreme Night Visibility)",
+    "Smart Stream III",
+    "Remote Back Focus",
+    "P-iris (DC-iris reserved)",
+    "DIS (Digital Image Stabilization)",
+    "Video rotation / corridor view",
+    "ePTZ 48x digital zoom",
+    "C/CS-mount box camera (optional AE enclosure for outdoor use)",
+    "Trend Micro IoT Security"
+  ],
+  "sources": [
+    "https://download.vivotek.com/downloadfile/downloads/datasheets/ip9191-hpdatasheet_en.pdf"
+  ],
+  "release_notes": "Specs from VIVOTEK IP9191-HP datasheet Ver. 7 (EN).",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live.sdp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/live2.sdp"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Vivotek",
+      "notes": "Select 'Vivotek' profile. ONVIF supported."
+    }
+  },
+  "last_verified": "2026-08-13",
+  "environment": [
+    "indoor"
+  ]
+}

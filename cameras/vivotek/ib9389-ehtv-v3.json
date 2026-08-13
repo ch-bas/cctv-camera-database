@@ -1,0 +1,124 @@
+{
+  "id": "vivotek-ib9389-ehtv-v3",
+  "brand": "Vivotek",
+  "model": "IB9389-EHTV-V3",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2560,
+    "max_height": 1920,
+    "label": "5MP"
+  },
+  "sensor": "1/2.8\" Progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12 (motorized varifocal)",
+    "aperture": "F1.6-F3.3",
+    "varifocal": true
+  },
+  "field_of_view_deg": "95.4-28.7 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40,
+    "min_lux": 0.005,
+    "min_lux_color": 0.04
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "Main Stream",
+        "resolution": "2560x1920",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "2nd Stream",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "3rd Stream",
+        "resolution": "1280x720",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "power": {
+    "method": "IEEE 802.3af PoE Class 3",
+    "consumption_w": 12.4,
+    "poe_class": 3
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "dimensions_mm": "ø 92 x 258.5",
+  "weight_g": 1040,
+  "operating_temp_c": "-35 to 60",
+  "features": [
+    "motorized varifocal",
+    "WDR Pro 120 dB",
+    "Smart Stream III",
+    "Smart IR III",
+    "Smart Motion Detection",
+    "Smart VCA",
+    "Deep Learning VCA",
+    "TPM 2.0",
+    "Signed firmware / Secure boot",
+    "EIS (built-in gyro)"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "status": "available",
+  "sources": [
+    "https://www.vivotek.com/en-US/products/network-cameras/bullet/ib9389-ehtv-v3?tab=spec"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live.sdp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/live2.sdp"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Vivotek",
+      "notes": "Select 'Vivotek' profile. ONVIF supported."
+    }
+  },
+  "last_verified": "2026-08-13"
+}

@@ -1,0 +1,96 @@
+{
+  "id": "grandstream-gsc3620",
+  "brand": "Grandstream",
+  "model": "GSC3620",
+  "type": "dome",
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.9\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12 (motorized varifocal, auto-focus)",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 25
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "H.265",
+      "MJPEG",
+      "JPEG"
+    ],
+    "streams": [
+      {
+        "name": "Primary Stream",
+        "resolution": "1920x1080"
+      },
+      {
+        "name": "Secondary Stream",
+        "resolution": "1280x720"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V ±10%, 1A",
+    "voltage": "12V DC / PoE",
+    "poe_class": 3
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-20 to 60",
+  "dimensions_mm": "128 x 108 (H)",
+  "weight_g": 720,
+  "features": [
+    "2.8-12mm motorized varifocal lens with electronic auto-focus for plug-and-play install without manual tuning",
+    "Smart infrared technology for optimal white balance and exposure",
+    "IR-CUT day/night (color / black & white), IR LEDs (42u x 2) up to 25m auto control",
+    "Motion detection with alert notifications via outbound voice/video call and email snapshot",
+    "SIP/VoIP support for video and audio streaming to endpoints (external microphone required)",
+    "Line-In 3.5mm (1-50mVpp) and Line-Out 3.5mm (560Ohm, 4.0Vpp) audio interfaces",
+    "ONVIF Profile S compliant; manageable via GSURF Pro VMS",
+    "4 rectangular privacy mask zones",
+    "Metal IP67 weatherproof housing"
+  ],
+  "status": "available",
+  "release_notes": "Grandstream GSC3620 datasheet (English), version 5.2020.01",
+  "last_verified": "2026-08-13",
+  "sources": [
+    "https://www.grandstream.com/hubfs/Product_Documentation/GSC3620/Datasheet_GSC3620_English.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": { "width": 1280, "height": 720, "fps": 5 },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/4"
+    },
+    "home_assistant": { "integration": "onvif", "notes": "Use ONVIF integration." },
+    "blue_iris": { "profile": "ONVIF", "notes": "Select 'ONVIF' profile. ONVIF Profile S supported." }
+  }
+}
