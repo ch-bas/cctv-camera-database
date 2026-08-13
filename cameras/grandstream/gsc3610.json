@@ -1,0 +1,107 @@
+{
+  "id": "grandstream-gsc3610",
+  "brand": "Grandstream",
+  "model": "GSC3610",
+  "type": "dome",
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.9\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6 (fixed)",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "H.265",
+      "MJPEG",
+      "JPEG"
+    ],
+    "streams": [
+      {
+        "name": "Primary Stream",
+        "resolution": "1920x1080"
+      },
+      {
+        "name": "Secondary Stream",
+        "resolution": "1280x720"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V ±10%, 1A",
+    "voltage": "12V DC / PoE",
+    "poe_class": 3
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-20 to 50",
+  "dimensions_mm": "109 x 93",
+  "weight_g": 390,
+  "features": [
+    "Fixed 3.6mm lens for wide-angle monitoring of nearby subjects",
+    "Smart infrared technology for optimal white balance and exposure",
+    "IR-CUT day/night (color / black & white), IR LEDs up to 20m auto control",
+    "Motion detection with alert notifications via outbound voice/video call and email screenshot",
+    "SIP/VoIP support for video and audio streaming to endpoints (external microphone required)",
+    "Line-In 3.5mm (1-50mVpp) and Line-Out 3.5mm (560Ω, 4.0Vpp) audio interfaces",
+    "ONVIF Profile S compliant; manageable via GSURF Pro VMS",
+    "4 rectangular privacy mask zones",
+    "Metal weatherproof housing"
+  ],
+  "release_year": 2020,
+  "release_notes": "Datasheet version 10.2020.01 (English)",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/4"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Select 'ONVIF' profile. ONVIF Profile S supported."
+    }
+  },
+  "sources": [
+    "https://www.grandstream.com/hubfs/Product_Documentation/Datasheet_GSC3610_English.pdf",
+    "https://www.grandstream.com/products/facility-management/full-hd-ip-cameras/product/gsc3610"
+  ],
+  "last_verified": "2026-08-13"
+}

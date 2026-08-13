@@ -1,0 +1,150 @@
+{
+  "id": "hikvision-ids-2cd7a47g2-xzhsy",
+  "brand": "Hikvision",
+  "model": "iDS-2CD7A47G2-XZHSY",
+  "aliases": [
+    "iDS-2CD7A47G2-XZHS(Y)",
+    "4MP DarkfighterS DeepinView Moto Varifocal Bullet Camera"
+  ],
+  "generation": "DeepinView Series",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 60
+      },
+      {
+        "name": "main-120fps",
+        "resolution": "1920x1080",
+        "fps": 120
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 30
+      }
+    ]
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12 (motorized varifocal, P-iris)",
+    "aperture": "F1.0-F1.2",
+    "varifocal": true
+  },
+  "field_of_view_deg": "91.3-44.2 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 60,
+    "min_lux": 0.0001,
+    "min_lux_color": 0.0003
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3at, Type 2, Class 4) / 12 VDC / 24 VAC",
+    "consumption_w": 25.2,
+    "voltage": "12 VDC / 24 VAC / 42.5-57 V (PoE)",
+    "poe_class": 4
+  },
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "features": [
+    "DeepinView deep learning AI (2.5 TOPS, HEOP 2.0 OpendevSDK, up to 4 custom models)",
+    "DarkFighter 2.0 low-light: 0.0003 lux color / 0.0001 lux B/W",
+    "150 dB AWDR",
+    "ShotN technology (capture vehicles/humans of different speeds)",
+    "high frame rate up to 2MP@120fps and 4MP@60fps",
+    "5 streams",
+    "face capture (7 face features, up to 120 faces detected)",
+    "multi-target-type detection (face, human body, vehicle)",
+    "perimeter protection (line crossing, intrusion, region entrance/exiting)",
+    "people counting, queue management, heat map, regional people counting",
+    "hard hat / PPE detection, on/off duty detection, activity analysis",
+    "smart supplement light (IR + white light, 850 nm)",
+    "EIS image stabilization",
+    "built-in heater and demist",
+    "built-in G-sensor for vibration detection",
+    "built-in power meter for historical power statistics",
+    "ONVIF Profile S/G/T/M",
+    "TPM 2.0 (FIPS 140-2 level 2), TLS 1.2/1.3, AES128/256",
+    "alarm 2 in / 2 out",
+    "1000M Gigabit Ethernet",
+    "IK10 vandal proof aluminum alloy body",
+    "-Y variant: NEMA 4X anti-corrosion, RS-485, 12 VDC power output"
+  ],
+  "operating_temp_c": "-40 to 65",
+  "dimensions_mm": "140 x 377.4 (dia x L, -Y)",
+  "weight_g": 2380,
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000066340/iDS-2CD7A47G2-XZHSY_Datasheet_20251205.pdf"
+  ],
+  "release_notes": "Specs per iDS-2CD7A47G2-XZHSY Datasheet, version dated 2025-12-05.",
+  "last_verified": "2026-08-13",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "notes": "Deep-learning analytics on-board; events available via ISAPI/ONVIF. Requires PoE (802.3at)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profile S/G/T/M). Enable in Configuration > Network > Integration Protocol."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile. ONVIF supported. Main stream /Streaming/Channels/101, sub /Streaming/Channels/102."
+    }
+  }
+}

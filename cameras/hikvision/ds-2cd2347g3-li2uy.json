@@ -1,0 +1,128 @@
+{
+  "id": "hikvision-ds-2cd2347g3-li2uy",
+  "brand": "Hikvision",
+  "model": "DS-2CD2347G3-LI2UY",
+  "aliases": [
+    "4 MP Smart Hybrid Light with ColorVu Fixed Turret Network Camera"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 and 4 (fixed, optional)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "111.1 horizontal (2.8mm) / 95.2 horizontal (4mm)",
+  "night_vision": {
+    "type": "color",
+    "range_m": 30,
+    "min_lux_color": 0.0001
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 10,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "power": {
+    "method": "PoE (802.3af, Class 3, max. 11 W) / DC 12V ±25%, 0.7 A, max. 8.5 W",
+    "consumption_w": 11,
+    "voltage": "12 VDC / PoE",
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "ip_rating": "IP67",
+  "dimensions_mm": "Ø138.3 x 115.4",
+  "weight_g": 750,
+  "operating_temp_c": "-30 to 60",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "ColorVu 24/7 full-color imaging",
+    "Smart Hybrid Light (IR + White light, 3 supplemental lighting modes)",
+    "F1.0 super-aperture",
+    "HikAI-ISP noise reduction",
+    "Person and vehicle deep-learning classification",
+    "Scene-adaptive WDR (130 dB)",
+    "Built-in arrayed dual-microphone",
+    "Anti-corrosion design (NEMA 4X)",
+    "H.265+ compression"
+  ],
+  "release_notes": "Per DS-2CD2347G3-LI2UY Datasheet 20260713.",
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000077863/DS-2CD2347G3-LI2UY_Datasheet_20260713.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile. ONVIF supported."
+    }
+  },
+  "last_verified": "2026-08-13"
+}

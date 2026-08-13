@@ -1,0 +1,125 @@
+{
+  "id": "vivotek-ib9383-htv",
+  "brand": "Vivotek",
+  "model": "IB9383-HTV",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2560,
+    "max_height": 1920,
+    "label": "5MP"
+  },
+  "sensor": "1/2.8\" Progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12 (motorized varifocal)",
+    "aperture": "F1.6-F3.3",
+    "varifocal": true
+  },
+  "field_of_view_deg": "95.4-28.7 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux": 0.005,
+    "min_lux_color": 0.04
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "Main Stream",
+        "resolution": "2560x1920",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "2nd Stream",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "3rd Stream",
+        "resolution": "1280x720",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3)",
+    "consumption_w": 12.4,
+    "poe_class": 3
+  },
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "dimensions_mm": "91.0 diameter x 226.6",
+  "weight_g": 940,
+  "operating_temp_c": "-30 to 55",
+  "features": [
+    "WDR Pro 120 dB",
+    "Supreme Night Visibility (SNV)",
+    "Smart Stream III",
+    "Smart IR",
+    "ePTZ 48x digital zoom",
+    "Vision Object Analytics",
+    "Smart VCA",
+    "Trend Micro IoT Security",
+    "H.265"
+  ],
+  "release_year": 2024,
+  "release_notes": "Vivotek IB9383-HTV datasheet Ver. 2024050102, May 2024.",
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://www.vivotek.com/en-US/products/network_cameras/bullet/ib9383-htv?tab=spec",
+    "https://download.vivotek.com/downloadfile/downloads/datasheets/ib9383-htvdatasheet_en.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live.sdp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/live2.sdp"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Vivotek",
+      "notes": "Select 'Vivotek' profile. ONVIF supported."
+    }
+  },
+  "last_verified": "2026-08-13"
+}

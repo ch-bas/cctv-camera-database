@@ -1,0 +1,115 @@
+{
+  "id": "vivotek-ms9321-ehv-v2",
+  "brand": "Vivotek",
+  "model": "MS9321-EHV-V2",
+  "aliases": [
+    "Vivotek 18MP Multi-sensor Panoramic AI Camera"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 18,
+    "max_width": 6912,
+    "max_height": 2624,
+    "label": "18MP"
+  },
+  "sensor": "1/2.8\" Progressive CMOS (4 x 5MP sensors)",
+  "lens": {
+    "count": 4,
+    "focal_length_mm": "3.5 (fixed)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux": 0.005,
+    "min_lux_color": 0.055
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "6912x2624",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "dimensions_mm": "308 x 167 x 130",
+  "weight_g": 2400,
+  "operating_temp_c": "-40 to 55",
+  "power": {
+    "method": "PoE (IEEE 802.3at, Class 4) / AC 24V",
+    "consumption_w": 18.81,
+    "voltage": "AC 24V",
+    "poe_class": 4
+  },
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "features": [
+    "4 x 5MP multi-sensor 180deg panoramic",
+    "WDR Pro 120 dB",
+    "Smart IR II",
+    "video alignment (seamless stitching)",
+    "built-in AI CNN accelerator",
+    "Vision Object Analytics (people/vehicle)",
+    "ONVIF Profile G/S/T",
+    "IP66 / IK10"
+  ],
+  "sources": [
+    "https://www.vivotek.com/products/network-cameras/panoramic/ms9321-ehv-v2?tab=spec",
+    "https://www.vivotek.com/resource/download-center/product/download/30385"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live.sdp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/live2.sdp"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Vivotek",
+      "notes": "Select 'Vivotek' profile. ONVIF supported."
+    }
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "last_verified": "2026-08-13"
+}

@@ -1,0 +1,132 @@
+{
+  "id": "hikvision-ds-2cd2687g3t-lizsy",
+  "brand": "Hikvision",
+  "model": "DS-2CD2687G3T-LIZSY",
+  "aliases": [
+    "8 MP Smart Hybrid Light Varifocal Bullet Network Camera"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12 (motorized varifocal)",
+    "aperture": "F1.2",
+    "varifocal": true
+  },
+  "field_of_view_deg": "112.3 to 41.2 horizontal",
+  "night_vision": {
+    "type": "color",
+    "range_m": 60,
+    "min_lux_color": 0.001
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 10,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3at, Class 4, max 15W) / DC 12V",
+    "consumption_w": 13,
+    "voltage": "12 VDC",
+    "poe_class": 4
+  },
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "dimensions_mm": "298 x 97.9 x 95.7",
+  "weight_g": 1520,
+  "operating_temp_c": "-30 to 60",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "ColorVu 24/7 full-color imaging",
+    "Smart Hybrid Light (IR + white light, 3 supplemental lighting modes)",
+    "motorized varifocal lens",
+    "HikAI-ISP noise reduction",
+    "person and vehicle classification (deep learning)",
+    "scene-adaptive 130 dB WDR",
+    "perimeter protection (line crossing, intrusion, region entrance/exiting)",
+    "face capture",
+    "850 nm IR",
+    "line audio in/out, alarm I/O",
+    "NEMA 4X anti-corrosion (moderate protection)"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/sm000077889/DS-2CD2687G3T-LIZSY_Datasheet_20241018.pdf"
+  ],
+  "release_notes": "Specifications per Hikvision datasheet DS-2CD2687G3T-LIZSY_Datasheet_20241018 (2024-10-18).",
+  "last_verified": "2026-08-13",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Enable in Configuration > Network > Advanced Settings > Integration Protocol."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile. Main stream 101 for recording, sub stream 102 for live view. ONVIF supported."
+    }
+  }
+}

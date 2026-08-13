@@ -1,0 +1,123 @@
+{
+  "id": "vivotek-ib9391-eht",
+  "brand": "Vivotek",
+  "model": "IB9391-EHT",
+  "aliases": [
+    "Vivotek 8MP 4K Outdoor Bullet"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "sensor": "1/2\" Progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.9-10 (motorized varifocal)",
+    "aperture": "F1.5-F2.7",
+    "varifocal": true
+  },
+  "field_of_view_deg": "95-45 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux": 0.01,
+    "min_lux_color": 0.02
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 120,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "high-fps",
+        "resolution": "1920x1080",
+        "fps": 120,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "IEEE 802.3at Class 4 PoE / DC 12V / AC 24V",
+    "consumption_w": 24.8,
+    "poe_class": 4
+  },
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66/IP67",
+  "ik_rating": "IK10",
+  "dimensions_mm": "118 x 118 x 333 (w/o junction box)",
+  "weight_g": 1800,
+  "operating_temp_c": "-50 to 60",
+  "features": [
+    "WDR Pro (120 dB)",
+    "SNV (Supreme Night Visibility)",
+    "Smart Stream III",
+    "Smart IR II",
+    "P-iris",
+    "Deep Learning VCA / Smart VCA",
+    "Smart Motion Detection",
+    "NEMA 4X housing",
+    "Trend Micro IoT Security",
+    "ONVIF Profile G/S/T"
+  ],
+  "sources": [
+    "https://download.vivotek.com/downloadfile/downloads/datasheets/ib9391-ehtdatasheet_en.pdf"
+  ],
+  "release_notes": "Specs from VIVOTEK IB9391-EHT datasheet Ver. 13 (EN).",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live.sdp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/live2.sdp"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Vivotek",
+      "notes": "Select 'Vivotek' profile. ONVIF supported."
+    }
+  },
+  "last_verified": "2026-08-13",
+  "environment": [
+    "outdoor"
+  ]
+}

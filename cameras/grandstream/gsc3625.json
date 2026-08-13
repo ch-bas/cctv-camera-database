@@ -1,0 +1,107 @@
+{
+  "id": "grandstream-gsc3625",
+  "brand": "Grandstream",
+  "model": "GSC3625",
+  "type": "box",
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12 (motorized varifocal)",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40
+  },
+  "ip_rating": "IP67",
+  "video": {
+    "codecs": [
+      "H.264",
+      "H.265",
+      "MJPEG",
+      "JPEG"
+    ],
+    "streams": [
+      {
+        "name": "Primary Stream",
+        "resolution": "1920x1080"
+      },
+      {
+        "name": "Secondary Stream",
+        "resolution": "640x480"
+      }
+    ]
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "power": {
+    "method": "PoE (802.3af) / DC 12V",
+    "voltage": "DC 12V ±10%, 1A",
+    "poe_class": 0
+  },
+  "dimensions_mm": "95 x 88.1 x 268",
+  "weight_g": 1200,
+  "operating_temp_c": "-30 to 60",
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "features": [
+    "Motorized varifocal auto-focus lens",
+    "Smart infrared",
+    "Motion detection",
+    "Privacy mask",
+    "IR-CUT day/night",
+    "ONVIF Profile S",
+    "SIP/VoIP support"
+  ],
+  "status": "available",
+  "aliases": [
+    "GSC362X"
+  ],
+  "release_notes": "GSC362X Series User Manual Version 0.0.0.5, Table 3: GSC3625 Technical Specifications",
+  "sources": [
+    "https://fccid.io/YZZGSC3625/User-Manual/User-Manual-5216668",
+    "https://www.grandstream.com/hubfs/Product_Documentation/GSC362X_usermanual.pdf"
+  ],
+  "last_verified": "2026-08-13",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/4"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Select 'ONVIF' profile. ONVIF Profile S supported."
+    }
+  }
+}

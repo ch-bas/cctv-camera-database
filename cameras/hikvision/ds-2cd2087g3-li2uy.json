@@ -1,0 +1,121 @@
+{
+  "id": "hikvision-ds-2cd2087g3-li2uy",
+  "brand": "Hikvision",
+  "model": "DS-2CD2087G3-LI2UY",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP (4K)"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8/4 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "108.8 horizontal (2.8mm) / 93.3 horizontal (4mm)",
+  "night_vision": {
+    "type": "color",
+    "range_m": 40,
+    "min_lux_color": 0.0005
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.265+",
+      "H.264",
+      "H.264+",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3, max. 7 W) / 12 VDC ± 25%, max. 5.4 W",
+    "consumption_w": 7,
+    "voltage": "12 VDC / PoE",
+    "poe_class": 3
+  },
+  "ip_rating": "IP67",
+  "dimensions_mm": "Ø74.4 x 176.3",
+  "weight_g": 530,
+  "operating_temp_c": "-30 to 60",
+  "features": [
+    "ColorVu 3.0 24/7 full-color imaging (F1.0 aperture)",
+    "Smart Hybrid Light: IR + white light, 3 supplemental lighting modes",
+    "850nm IR / white supplement light up to 40m",
+    "AcuSense person and vehicle classification (deep learning)",
+    "Scene-adaptive WDR (130 dB)",
+    "Arrayed dual-microphone",
+    "Anti-corrosion design (NEMA 4X)",
+    "Face capture, line crossing, intrusion, region entrance/exiting"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "status": "available",
+  "release_notes": "8 MP Smart Hybrid Light with ColorVu Fixed Mini Bullet. Datasheet DS-2CD2087G3-LI2UY_Datasheet_20260105.",
+  "last_verified": "2026-08-13",
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000077852/DS-2CD2087G3-LI2UY_Datasheet_20260105.pdf",
+    "https://www.hikvision.com/en/products/IP-Products/Network-Cameras/Pro-Series-EasyIP-/ds-2cd2087g3-li-2u-y/"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile. Use main stream for recording, sub stream for live view. ONVIF supported."
+    }
+  }
+}

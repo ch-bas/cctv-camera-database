@@ -1,0 +1,104 @@
+{
+  "id": "grandstream-gsc3615",
+  "brand": "Grandstream",
+  "model": "GSC3615",
+  "type": "bullet",
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.9\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6 (fixed)",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20
+  },
+  "ip_rating": "IP67",
+  "video": {
+    "codecs": [
+      "H.264",
+      "H.265",
+      "MJPEG",
+      "JPEG"
+    ],
+    "streams": [
+      {
+        "name": "Primary Stream",
+        "resolution": "1920x1080"
+      },
+      {
+        "name": "Secondary Stream",
+        "resolution": "1280x720"
+      }
+    ]
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "power": {
+    "method": "PoE (802.3af) / DC 12V",
+    "voltage": "DC 12V ±10%, 1A",
+    "poe_class": 0
+  },
+  "dimensions_mm": "171 x 73 x 73",
+  "weight_g": 430,
+  "operating_temp_c": "-20 to 50",
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "features": [
+    "Smart infrared",
+    "Motion detection",
+    "Privacy mask",
+    "IR-CUT day/night",
+    "ONVIF Profile S",
+    "SIP/VoIP support"
+  ],
+  "status": "available",
+  "release_year": 2020,
+  "release_notes": "Datasheet Datasheet_GSC3615_English.pdf version 10.2020.01",
+  "sources": [
+    "https://www.grandstream.com/hubfs/Product_Documentation/Datasheet_GSC3615_English.pdf",
+    "https://www.grandstream.com/products/facility-management/full-hd-ip-cameras/product/gsc3615"
+  ],
+  "last_verified": "2026-08-13",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/4"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Select 'ONVIF' profile. ONVIF Profile S supported."
+    }
+  }
+}
