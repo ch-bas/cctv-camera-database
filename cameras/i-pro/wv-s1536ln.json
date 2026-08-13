@@ -1,0 +1,131 @@
+{
+  "id": "i-pro-wv-s1536ln",
+  "brand": "i-PRO",
+  "model": "WV-S1536LN",
+  "aliases": [
+    "Panasonic WV-S1536LN",
+    "i-PRO S-Series 1080p IR Bullet"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "status": "discontinued",
+  "markets": [
+    "US",
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.9-9 (3.1x optical zoom)",
+    "aperture": "F1.3 (WIDE) - F2.5 (TELE)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "37-117 horizontal, 21-62 vertical",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x360",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 70,
+    "min_lux_color": 0.007
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 9.1,
+    "voltage": "DC 12V / PoE DC 48V",
+    "poe_class": 0
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-40 to +60",
+  "dimensions_mm": "133 (W) x 133 (H) x 383 (D)",
+  "weight_g": 2400,
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "Super Dynamic 144dB WDR",
+    "Color night vision (0.007 lx)",
+    "70m IR LED illumination (30IRE)",
+    "3.1x optical zoom (motorized zoom / motorized focus), 9.3x Extra Optical Zoom at 640x360",
+    "iA (intelligent Auto)",
+    "AI Sound classification (gunshot / yell / vehicle horn / glass break)",
+    "Video Motion Detection / Scene Change Detection",
+    "Type 4X (UL50E) / IK10 impact resistance",
+    "microSDXC/SDHC/SD card slot",
+    "ONVIF Conformant",
+    "NDAA Compliant"
+  ],
+  "sources": [
+    "https://i-pro.com/products_and_solutions/sites/default/files/2023-04/PGQP3373XAC1_WV-S1536LN-B_BI_en.pdf",
+    "https://i-pro.com/global/en/surveillance/products/wv-s1536ln"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 360,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Src/MediaInput/stream_1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Src/MediaInput/stream_2",
+      "notes": "stream_1 = main (1080p), stream_2 = sub. Use the sub-stream for Frigate detect at 5 fps.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (i-PRO S-series is ONVIF conformant)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use ONVIF profile. i-PRO is the successor to Panasonic security cameras (also selectable as 'Panasonic')."
+    }
+  },
+  "last_verified": "2026-08-13"
+}
