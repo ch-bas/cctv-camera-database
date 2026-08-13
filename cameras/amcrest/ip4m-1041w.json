@@ -2,34 +2,70 @@
   "id": "amcrest-ip4m-1041w",
   "brand": "Amcrest",
   "model": "IP4M-1041W",
-  "type": "box",
+  "aliases": [
+    "Amcrest 4MP Pan/Tilt WiFi (white)"
+  ],
+  "type": "ptz",
   "connectivity": [
     "wifi"
   ],
   "environment": [
     "indoor"
   ],
-  "release_year": 2022,
+  "release_year": 2021,
   "resolution": {
     "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
     "label": "4MP"
   },
+  "sensor": "1/3\" 4MP progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4 (fixed)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
   "field_of_view_deg": "90",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
   "night_vision": {
     "type": "ir",
-    "range_m": 10
+    "range_m": 10,
+    "min_lux_color": 0.084
   },
   "power": {
-    "method": "DC 12V"
+    "method": "DC 5V 1.5A"
   },
   "storage": {
     "onboard": true,
     "max_microsd_gb": 256,
     "nvr_compatible": true,
-    "cloud": false
+    "cloud": true
   },
   "protocols": [
-    "rtsp"
+    "onvif",
+    "rtsp",
+    "http"
   ],
   "audio": {
     "microphone": true,
@@ -37,30 +73,36 @@
     "two_way": true
   },
   "features": [
-    "4MP WiFi outdoor bullet",
-    "IP67 weatherproof",
-    "microSD recording",
-    "30m IR night vision",
-    "H.264",
-    "RTSP",
-    "Blue Iris compatible",
-    "355° pan / 90° tilt"
+    "4MP indoor pan/tilt WiFi camera",
+    "355° pan / 90° tilt",
+    "two-way audio",
+    "auto tracking",
+    "privacy mode",
+    "H.265 / H.264",
+    "10m IR night vision",
+    "microSD recording up to 256GB",
+    "Blue Iris compatible"
   ],
+  "operating_temp_c": "-10 to 45",
+  "dimensions_mm": "103 x 100 x 118",
+  "weight_g": 290,
   "sources": [
-    "https://amcrest.com/4mp-wifi-camera-pan-tilt-ip4m-1041w.html"
+    "https://amcrest.com/4mp-wifi-camera-pan-tilt-ip4m-1041w.html",
+    "https://support.amcrest.com/hc/en-us/articles/360036479531-Technical-Specifications-IP4M-1041",
+    "https://amcrest.com/4mp-wifi-camera-pan-tilt-ip4m-1041b.html"
   ],
   "markets": [
     "global"
   ],
-  "last_verified": "2026-07-04",
+  "last_verified": "2026-08-13",
   "power_source": [
     "dc"
   ],
   "configs": {
     "frigate": {
       "detect": {
-        "width": 1280,
-        "height": 720,
+        "width": 640,
+        "height": 480,
         "fps": 5
       },
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -74,5 +116,8 @@
       "profile": "Dahua",
       "notes": "Select 'Dahua' profile. Amcrest uses Dahua protocol. Also works with 'Amcrest' profile if available."
     }
+  },
+  "ptz": {
+    "autotracking": true
   }
 }

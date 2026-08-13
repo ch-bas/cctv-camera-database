@@ -11,6 +11,9 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 ### Added
 - **+9 Amcrest cameras (2,884 → 2,893).** Current Amcrest models sourced from official datasheets, filling the open backfill lanes as they were built (#161/#162/#177/#178/#179/#166/#170): **IP8M-2597E** (4K@30fps bullet), **IP8M-VB2896EW-AI** + **IP8M-VT2779EW** (4K 5× optical-zoom varifocal bullet/turret), **IP8M-FCT2999EW-AI** (dual-lens 4K panoramic, full-color 0.0005 lx), **IP8M-2899EW-AI-V2** (4K 25× PTZ, auto-tracking), **IP8M-2493EW-AI-V3** + **IP5M-D1188EW-AI-V3** (4K/5MP AI vandal domes, IK10), **IP4M-1041B** (indoor pan/tilt), **IP4M-1055E** (4MP PoE dome). Per record, every field the datasheet documented is populated (FOV, dimensions, weight, streams, sensor, operating temp, Frigate/HA/Blue Iris configs 9/9; min_lux_color 7/9) — verified data only, undocumented fields left blank rather than guessed.
 
+### Fixed
+- **`IP4M-1041W` mis-description.** The existing record was typed `box` and carried copy-pasted "outdoor bullet / IP67 / 30m IR" features that contradicted its own indoor fields — it's actually the white variant of the indoor pan/tilt IP4M-1041. Corrected from the official shared W/B datasheet (type → `ptz`, real features, `ptz.autotracking`) and enriched to parity with IP4M-1041B (lens, sensor, streams, dimensions, weight, min_lux_color).
+
 ## [1.58.6] — 2026-08-12
 
 ### Backfilled
