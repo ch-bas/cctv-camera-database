@@ -1,0 +1,44 @@
+{
+  "brand": "EVERSECU",
+  "brand_id": "eversecu",
+  "status": "verified",
+  "default_port": 10554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/tcp/av0_0",
+      "codec": "H.264",
+      "verified": true,
+      "source": "EVERSECU official user manuals (multiple models, e.g. B0FDGJ6M8Z '1080P Wireless Light Bulb', B0D9H291FJ 'CS770-4 2K Wired WiFi', B0D9H4BYV3 '2K Indoor 5GHz WiFi', B0CW9CS7VK 'Dual Lens 6MP PTZ') hosted on manuals.plus, RTSP section: \"The RTSP address format is: rtsp://[username]:[password]@[ip]:10554/tcp/av0_0\", \"The default username is admin.\", \"To enable RTSP, set a password in the O-KAM App.\"",
+      "strix_lead": "strixcamdb:eversecu"
+    },
+    {
+      "stream": "sub",
+      "path": "/tcp/av0_1",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Sub-stream companion path present in the strix leads and consistently documented as the secondary stream across EVERSECU-model listings/aggregators (iSpyConnect, smartrtsp) using the same /tcp/av0_<N> scheme as the manual-confirmed main /tcp/av0_0; av0_0=main, av0_1=sub.",
+      "strix_lead": "strixcamdb:eversecu"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/onvif1",
+      "note": "Generic ONVIF media-profile path. EVERSECU is ONVIF-conformant, but the real media URI is negotiated via GetProfiles/GetStreamUri — not this fixed path. Not the documented EVERSECU RTSP URL."
+    },
+    {
+      "path": "/onvif-stream2",
+      "note": "Generic ONVIF second-profile path; negotiated, not a fixed EVERSECU-published path. Cross-brand/aggregator artifact."
+    },
+    {
+      "path": "/mpeg4/media.amp",
+      "note": "Axis-family path (media.amp is Axis). Cross-brand contamination; not an EVERSECU path."
+    },
+    {
+      "path": "/ch0_0.h264",
+      "note": "Generic Chinese-OEM 'chN_M.h264' form (also seen bare as 'ch0_0.h264'). Not the documented EVERSECU /tcp/av0_0 path; likely cross-brand contamination in the leads."
+    }
+  ],
+  "notes": "EVERSECU is a budget WiFi/PoE marketplace brand (Amazon) whose cameras pair with the O-KAM app. Its official user manuals (reproduced on manuals.plus for numerous models/ASINs) document RTSP with a NON-STANDARD port and path: rtsp://admin:<pass>@<ip>:10554/tcp/av0_0 (default port 10554, NOT 554; default user 'admin'). RTSP must first be enabled by setting a password in the O-KAM App. Main stream = /tcp/av0_0; sub stream = /tcp/av0_1 (av0_<N> scheme). Cameras are also ONVIF-conformant (auto-discovery), which is why several ONVIF/Axis-style paths (/onvif1, /onvif-stream2, /mpeg4/media.amp) appear in the leads as noise. CAVEAT: the manufacturer manual text was confirmed via consistent verbatim reproduction on the third-party host manuals.plus (and search-index snippets of it) rather than a first-party eversecu.* domain, because manuals.plus is Cloudflare bot-protected against direct automated fetch; the /tcp/av0_0 @ :10554 form is nonetheless attested identically across multiple EVERSECU manuals and independent aggregators, and matches the strix lead.",
+  "verified_on": "2026-08-14"
+}

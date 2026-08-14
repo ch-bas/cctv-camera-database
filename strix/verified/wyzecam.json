@@ -1,0 +1,52 @@
+{
+  "brand": "Wyze",
+  "brand_id": "wyzecam",
+  "status": "verified",
+  "default_port": 8554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/live",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Legacy Wyze RTSP firmware for Wyze Cam v2, Wyze Cam v3 and Wyze Cam Pan. Official Wyze support article 'Wyze Cam RTSP' (support.wyze.com/hc/en-us/articles/360026245231-Wyze-Cam-RTSP): RTSP is a separate optional firmware you flash (copy .bin to a microSD card, insert, boot), then Settings > Advanced Settings > RTSP > set 4-10 char user/pass (a-z, 0-9 only) > 'Generate URL'. The generated URL uses port 8554 and path /live, i.e. rtsp://{user}:{pass}@{ip}:8554/live (default RTSP port 554 is NOT used by this firmware). Confirmed against the iSpy/Agent DVR crowd catalog (ispyconnect.com/camera/wyzecam) and multiple firmware install guides referencing the Wyze KB flow.",
+      "strix_lead": "strixcamdb:wyzecam"
+    },
+    {
+      "stream": "main",
+      "path": "/stream0",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Newer official Wyze RTSP feature for Wyze Cam v3 and Wyze Cam Pan v3 (released Feb 2026, firmware 4.36.x / 4.55.x). Wyze's own RTSP testing/setup instructions (wyze-beta.s3.us-west-2.amazonaws.com/rtsp.html) document: unsecured rtsp://{ip}:554/stream0/ and secured rtsps://{ip}:322/stream0/ (the default port may be omitted). Enabled via Device Settings > Advanced Settings > RTSP; not on by default. Different port (554/322) and path (/stream0) than the legacy v2/v3/Pan RTSP firmware above.",
+      "strix_lead": "strixcamdb:wyzecam"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/video3/unicast",
+      "note": "Appears in the crowd-sourced iSpy Wyze list as a v2 variant guess, but not printed in any official Wyze doc; excluded as unconfirmed."
+    },
+    {
+      "path": "/unicast",
+      "note": "Crowd-sourced iSpy guess (Cam Pan / v2 variant); not in official Wyze documentation. Excluded."
+    },
+    {
+      "path": "/mia_cam",
+      "note": "User-chosen custom stream name, not a Wyze default path — not officially documented. Excluded."
+    },
+    {
+      "path": "/wyze-1",
+      "note": "User-chosen custom RTSP stream label (iSpy v3 variant), not a fixed Wyze default. Excluded."
+    },
+    {
+      "path": "/wyze-2",
+      "note": "User-chosen custom RTSP stream label, not a fixed Wyze default. Excluded."
+    },
+    {
+      "path": "/living-room-cam",
+      "note": "User-chosen custom stream name from a crowd entry, not a Wyze default path. Excluded."
+    }
+  ],
+  "notes": "Wyze cameras do NOT ship with RTSP enabled — RTSP is an optional feature that must be turned on, and on the older cameras it requires flashing a SEPARATE optional RTSP firmware. There are TWO official Wyze RTSP families with DIFFERENT ports and paths: (1) Legacy RTSP firmware for Wyze Cam v2, Wyze Cam v3 and Wyze Cam Pan (v1) — flash the RTSP .bin via microSD, then Settings > Advanced Settings > RTSP > Generate URL produces rtsp://{user}:{pass}@{ip}:8554/live (port 8554, path /live). Wyze pulled these legacy firmware files for a period and treats them as an aging beta with no active maintenance. (2) Newer built-in official RTSP for Wyze Cam v3 and Wyze Cam Pan v3 (Feb 2026, fw 4.36.x/4.55.x) — no separate flash, enabled in-app; uses rtsp://{ip}:554/stream0 (unsecured) or rtsps://{ip}:322/stream0 (encrypted). Credentials are set in-app (4-10 chars, a-z/0-9). Other models (v4, OG, newer Pan) have no official RTSP firmware and rely on the community Docker-Wyze-Bridge instead (out of scope). Default port recorded as 8554 for the primary/legacy family; the /stream0 template documents the 554/322 newer family.",
+  "verified_on": "2026-08-14"
+}

@@ -1,0 +1,43 @@
+{
+  "brand": "InkoVideo",
+  "brand_id": "inkovideo",
+  "status": "unverified",
+  "default_port": 554,
+  "templates": [],
+  "unverified_leads": [
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+      "note": "Generic 'user=..._password=..._channel=N_stream=M.sdp' path used by many Hisilicon/HiSharp/GW-Security style OEM cams. Not printed in any official InkoVideo document; cross-brand contamination, excluded."
+    },
+    {
+      "path": "/Streaming/Channels/1",
+      "note": "Hikvision ISAPI RTSP path. InkoVideo's own-branded V-series manual (V-140-8MW) is clearly Hikvision-lineage (ISAPI, HTTP 80 / RTSP 554 / HTTPS 443 / Server-Port 8000, Main/Sub/Third stream, H.264+/H.265+), so this Hikvision form is very likely correct on those units — but the InkoVideo manual never PRINTS a literal rtsp:// path, so it cannot be published as verified. Excluded per the confirm-against-official-doc rule."
+    },
+    {
+      "path": "/Streaming/Channels/2",
+      "note": "Hikvision ISAPI sub-stream path (channel 1, stream 2 = /Streaming/Channels/102 short form). Same reasoning as /Streaming/Channels/1: likely correct for InkoVideo's Hikvision-OEM V-series but not literally documented by InkoVideo. Excluded."
+    },
+    {
+      "path": "/22/",
+      "note": "Non-standard fragment; not a documented InkoVideo path. Cross-brand/scan noise, excluded."
+    },
+    {
+      "path": "/live.sdp",
+      "note": "Generic /live.sdp path. Not printed in any official InkoVideo doc; excluded."
+    },
+    {
+      "path": "live.sdp",
+      "note": "Duplicate of /live.sdp (no leading slash). Generic, not documented by InkoVideo; excluded."
+    },
+    {
+      "path": "ch0_0.h264",
+      "note": "Generic Hisilicon-style ch<N>_<N>.h264 path. Not documented by InkoVideo; excluded."
+    },
+    {
+      "path": "cam/realmonitor?channel=[CHANNEL]&subtype=1",
+      "note": "Dahua RTSP path. InkoVideo resells Dahua/Imou cameras, but its own-branded V-series is Hikvision-lineage, and no InkoVideo doc prints this path. Dahua cross-brand contamination, excluded."
+    }
+  ],
+  "notes": "InkoVideo (inkovideo.de, Germany) is both a surveillance RETAILER (reselling Reolink, EZVIZ, Foscam, HiLook, Dahua/Imou, Annke) and a house BRAND with its own-branded cameras (V-series: V-111/V-116/V-117/V-120/V-125/V-130/V-140 etc.). The dataset's InkoVideo cameras are the house-branded units, which are OEM rebadges: the official INKOVIDEO V-140-8MW user manual (mirrored at asset.re-in.de/.../AN_Inkovideo-V-140-8MW-...pdf and asset.conrad.com; NVR manual likewise) and the V-130-8MW product page (inkovideo.de/netzwerkkamera-inkovideo-130-8mw.html, listing 'ONVIF PROFILE S/G, ISAPI') are unmistakably Hikvision/HiLook-lineage: ISAPI, default HTTP 80 / RTSP 554 / HTTPS 443 / Server-Port 8000, RTSP authentication (basic/disable), Main/Sub/Third stream, H.264 / H.265 / H.264+ / H.265+. So on those units the Hikvision RTSP form (/Streaming/Channels/101 main, /Streaming/Channels/102 sub, port 554) is very likely correct in practice. HOWEVER, no official InkoVideo document (manual, product page, or the hilfe.inkovideo.de support portal, which mostly relays Reolink/Foscam vendor docs) PRINTS a literal rtsp:// URL/path. Per the non-negotiable rule (publish only paths literally confirmed in the manufacturer's own doc), and because InkoVideo spans multiple OEM lineages (Hikvision own-brand + Reolink/Foscam/Dahua resale) with no single unified RTSP scheme, status is 'unverified'. Confirmed from official docs: RTSP is supported on default port 554 with configurable Main/Sub/Third streams; retrieve the exact stream URI per unit via ONVIF (Profile S) GetStreamUri, or use the Hikvision /Streaming/Channels/10<N> form for the Hikvision-OEM V-series. All StrixCamDB leads are unconfirmed against official InkoVideo documentation.",
+  "verified_on": "2026-08-14"
+}

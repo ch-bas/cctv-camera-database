@@ -1,0 +1,56 @@
+{
+  "brand": "3S Vision",
+  "brand_id": "3svision",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/cam<N>/h264-1",
+      "codec": "H.264 (Baseline/Main/High profile)",
+      "verified": true,
+      "source": "3S (3S System Tech. / 3S Pocketnet Technology, 3svision.com.tw) N3072 Network Dome Camera User Manual, 'RTSP / Mobile' streaming section (pp.111-112): example URI rtsp://xxx.xxx.xxx.xxx:554/cam1/h264-1 ; 'Modify the cam number of URI link to change the channel. E.g. Channel 2: rtsp://xxx.xxx.xxx.xxx:554/cam2/h264-1' ; default RTSP port 554 (manualslib.com/manual/822078/3s-N3072.html)",
+      "strix_lead": "strixcamdb:3svision"
+    },
+    {
+      "stream": "sub",
+      "path": "/cam<N>/h264-2",
+      "codec": "H.264 (Baseline/Main/High profile)",
+      "verified": true,
+      "source": "3S N3072 User Manual, same RTSP/Mobile section (pp.110-112): 'The \"-2\" mean the sub stream' — the sub-stream is addressed as /cam<N>/h264-2, sharing the /cam<N>/<codec>-<idx> syntax of the main stream; default RTSP port 554 (manualslib.com/manual/822078/3s-N3072.html)",
+      "strix_lead": "strixcamdb:3svision"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/cam1/onvif-h264",
+      "note": "ONVIF Profile S negotiated path (3S firmware release notes, 3svision.com.tw / 3S Pocketnet Technology, confirm 'ONVIF Profile S Support' + H.264 Baseline/Main/High). Widely reported as the default for N-series (e.g. N3011), but the official N3072 user manual's RTSP examples use /cam1/h264-1, not a verbatim /cam1/onvif-h264. The onvif-* URL is the ONVIF-media-service stream path, typically obtained via ONVIF GetStreamUri rather than fixed in the manual — consistent with the documented /cam<N>/<codec> scheme but not officially spelled out, so left unverified."
+    },
+    {
+      "path": "/cam1/onvif-h264-1",
+      "note": "Same as above with explicit -1 (main) index; ONVIF-service variant of the documented /cam1/h264-1. Not printed verbatim in the official manual."
+    },
+    {
+      "path": "cam[CHANNEL]/h264",
+      "note": "Templated form of the official channel rule (rtsp://.../cam<N>/h264-1, N=1..4; 'Modify the cam number of URI link to change the channel'). The bare '/cam1/h264' (no -1/-2 stream index) is the aggregator short-form; the manual's canonical paths carry the -1 (main)/-2 (sub) suffix. Consistent lineage, kept here because it drops the documented stream-index suffix."
+    },
+    {
+      "path": "cam1/mpeg4",
+      "note": "MPEG-4 codec variant of the same /cam<N>/<codec> scheme (3S N-series support H.264 and MPEG-4/MJPEG). Structurally consistent with the documented URI, but the official N3072 manual examples show only the H.264 (h264-1/-2) and 3gpp paths, not a verbatim /cam1/mpeg4, so left unverified pending an official MPEG-4-era manual."
+    },
+    {
+      "path": "cam2/mpeg4",
+      "note": "Channel-2 MPEG-4 variant of the above; same reasoning — matches the documented cam<N> channel rule but the /mpeg4 codec path is not spelled out in the official manual seen."
+    },
+    {
+      "path": "cam3/mpeg4",
+      "note": "Channel-3 MPEG-4 variant; cam<N> channel rule is official (N=1..4 for the 4-channel video-server models), /mpeg4 codec path not verbatim in the official manual."
+    },
+    {
+      "path": "cam4/mpeg4",
+      "note": "Channel-4 MPEG-4 variant; cam<N> channel rule is official (up to 4 channels), /mpeg4 codec path not verbatim in the official manual."
+    }
+  ],
+  "notes": "3S Vision (brand of 3S System Tech. Inc. / 3S Pocketnet Technology Inc., Taiwan; site 3svision.com.tw / 3svision.us). Official RTSP URI syntax is documented in the N3072 user manual: rtsp://<ip>:554/cam<N>/<codec>-<idx>, default port 554, where cam<N> selects the channel (N=1..4; single cameras use cam1, 4-channel video servers use cam1..cam4) and the trailing -1 = main stream, -2 = sub stream. Confirmed variants: /cam1/h264-1 (main), /cam1/h264-2 (sub), plus /cam1/3gpp for mobile. Firmware release notes (3svision.com.tw, 2013-2014) confirm ONVIF Profile S support and H.264 Baseline/Main/High profiles. The ONVIF-media paths (/cam1/onvif-h264[-1]) reported by third-party aggregators are ONVIF-service URIs consistent with this scheme but not printed verbatim in the official manual, and the /mpeg4 codec paths, while structurally valid, likewise are not shown verbatim in the manual seen — all left under unverified_leads.",
+  "verified_on": "2026-08-14"
+}

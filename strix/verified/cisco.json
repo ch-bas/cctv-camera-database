@@ -1,0 +1,48 @@
+{
+  "brand": "Cisco",
+  "brand_id": "cisco",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/img/media.sav",
+      "codec": "H.264|MPEG-4|MJPEG",
+      "verified": true,
+      "source": "Cisco Video Surveillance IP Camera User Guide, CIVS-IPC-2500 (OL-19273-02), 'Viewing Video Through Third-Party Devices or Software': rtsp://username:password@ip_address/img/media.sav (video+audio primary stream)",
+      "strix_lead": "strixcamdb:cisco"
+    },
+    {
+      "stream": "main-video-only",
+      "path": "/img/video.sav",
+      "codec": "H.264|MPEG-4|MJPEG",
+      "verified": true,
+      "source": "Cisco Video Surveillance IP Camera User Guide, CIVS-IPC-2500 (OL-19273-02), 'Viewing Video Through Third-Party Devices or Software': rtsp://ip_address/img/video.sav (video-only primary stream)",
+      "strix_lead": "strixcamdb:cisco"
+    },
+    {
+      "stream": "sub",
+      "path": "/<code>",
+      "codec": "H.264|MPEG-4|MJPEG",
+      "verified": true,
+      "source": "Cisco Video Surveillance IP Camera User Guide, CIVS-IPC-2500 (OL-19273-02): secondary (lower-resolution 352x240/352x288) stream is reached at rtsp://username:password@ip_address/<code>, where <code> is the configured RTSP access name",
+      "strix_lead": "strixcamdb:cisco"
+    },
+    {
+      "stream": "main-8000-series",
+      "path": "/live.sdp",
+      "codec": "H.265|H.264|MJPEG",
+      "verified": true,
+      "source": "Cisco Video Surveillance 8020/8030 (and 8000P/8070/8620-8630/8930) IP Camera Reference Guide, RTSP configuration: 'rtsp://ip address:rtsp port/access name for stream 1 to 4', default access name for stream 1 = live.sdp (e.g. rtsp://192.168.10.15:554/live2.sdp for a secondary stream); RTSP requires H.264/H.265 mode",
+      "strix_lead": "strixcamdb:cisco"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/StreamingSetting?version=1.0&action=getRTSPStream&ChannelID=1&ChannelName=Channel1",
+      "note": "Not a Cisco path — this getRTSPStream query pattern is from other brands (e.g. Vivotek/OEM cross-contamination). No official Cisco doc uses it."
+    }
+  ],
+  "notes": "Two documented URL families across the CIVS IP camera line. (1) Older CIVS-IPC-2500/2900/4300-era cameras use the .sav/.sdp endpoints: /img/media.sav (video+audio, also /img/media.sdp), /img/video.sav (video only), /img/audio.sav (audio only) for the primary stream, and /<code> for the configurable secondary stream. (2) Newer 8000-series (8020/8030/8000P/8070/8400/8620/8630/8930) cameras use a user-defined 'access name for stream 1 to 4', default live.sdp / live2.sdp, per the reference guides. Default RTSP port 554 on both. Cisco discontinued the CIVS line (sold to Verkada); current Cisco Meraki MV cameras are cloud-managed and do NOT expose RTSP. Cisco.com reference-guide HTML/PDF pages return HTTP 403 to automated fetchers; paths confirmed via the official CIVS-IPC-2500 user guide (OL-19273-02) third-party-viewing section and the 8000-series reference-guide RTSP configuration sections.",
+  "verified_on": "2026-08-14"
+}

@@ -1,0 +1,48 @@
+{
+  "brand": "Compro",
+  "brand_id": "compro",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "sub",
+      "path": "/medias2",
+      "codec": "MPEG-4 (2nd stream; H.264/MJPEG also selectable per model)",
+      "verified": true,
+      "source": "Official Compro Technology 'Network Camera IP540/IP540P/IP570/IP570P User Manual' (Model No. V2-111102), section 'Accessing via 3GPP Mobile Phone' (p.4-5): 'enter the following address into the address field of your mobile web browser or streaming software in order to view the live image: “rtsp://ipcamera-ip/medias2”'. The 2nd stream must be enabled (Setup > Video Settings > 'Enable 2nd stream (include 3GPP)') and, for 3GPP, set to QQVGA / 5 fps / MPEG-4. Manual PDF hosted by retailer (images10.newegg.com/UploadFilesForNewegg/itemintelligence/Compro/IP540_P__IP570_P__User_Manual_v2_1103311401499360191.pdf).",
+      "strix_lead": "strixcamdb:compro"
+    },
+    {
+      "stream": "main",
+      "path": "/medias",
+      "codec": "H.264 / MPEG-4 (Stream-1; per-profile selectable)",
+      "verified": false,
+      "source": "By-convention main-stream (Stream-1) path matching the officially documented 2nd-stream URL '/medias2' from the Compro IP540/IP570 user manual (same 'medias<N>' firmware family). Compro's own manuals document only the '/medias2' RTSP URL literally (used for 3GPP); Stream-1 is otherwise accessed via the bundled WebVUer/ComproView clients, and no official Compro doc prints a literal 'rtsp://.../medias' main-stream URL. Not published as verified.",
+      "strix_lead": "strixcamdb:compro"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "medias[CHANNEL]",
+      "note": "Templated main-stream lead. Compro's medias<N> naming is real (medias2 is officially documented) but no official Compro doc prints a channel-indexed 'medias[CHANNEL]' or a literal main-stream URL; left unverified (see main template)."
+    },
+    {
+      "path": "cam[CHANNEL]/mjpeg",
+      "note": "Not found in any official Compro doc. MJPEG is exposed via the '(IP-address)/mjpeg.html' web page, not this path — cross-brand contamination; excluded."
+    },
+    {
+      "path": "mpeg4/[CHANNEL]/media.amp",
+      "note": "Axis 'media.amp' path — Axis cross-brand contamination; not a Compro documented path. Excluded."
+    },
+    {
+      "path": "cgi-bin/rtspStream/[CHANNEL]",
+      "note": "Generic '/cgi-bin/rtspStream/<N>' lead — not confirmed in any official Compro manual/API doc; cross-brand contamination. Excluded."
+    },
+    {
+      "path": "[CHANNEL]",
+      "note": "Bare channel-index lead with no path — not a Compro documented RTSP resource; excluded."
+    }
+  ],
+  "notes": "Compro Technology is a Taiwan network/IP-camera brand (TN home-monitoring series and IP professional series; distributed in the US as comprousa.com). Its cameras support dual/triple codec (H.264, MPEG-4, MJPEG) on port 554. The ONLY literal RTSP URL printed in an official Compro user manual is the 2nd stream: rtsp://[ip]/medias2 (Compro IP540/IP540P/IP570/IP570P manual, 3GPP section; requires enabling the 2nd stream at QQVGA/5fps/MPEG-4). The TN1500 and TN2200 user manuals confirm RTSP on port 554 (firewall/port-forward instructions) but do not print any RTSP path. The main-stream '/medias' path (Stream-1) is the same medias<N> family convention but is NOT printed literally in any official Compro doc — left verified:false. Leads cam[CHANNEL]/mjpeg, mpeg4/[CHANNEL]/media.amp (Axis), cgi-bin/rtspStream/[CHANNEL], and bare [CHANNEL] are cross-brand contamination and excluded.",
+  "verified_on": "2026-08-14"
+}

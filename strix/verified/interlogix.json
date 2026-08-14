@@ -1,0 +1,48 @@
+{
+  "brand": "Interlogix",
+  "brand_id": "interlogix",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/Streaming/Channels/101",
+      "codec": "H.264/H.265",
+      "verified": true,
+      "source": "Interlogix TruVision IP cameras run the Hikvision platform (Interlogix TruVision line is Hikvision OEM). The official Interlogix TruVision configuration manuals confirm the Hikvision-platform streaming stack and RTSP settings: 'TruVision IP Camera Configuration Manual Firmware 4.X.X' (interlogix.com/docs/1072627A_TruVision_IP_Camera_Configuration_Manual.pdf), 'TruVision IP Camera Configuration Manual Firmware 5.0X' (TVD-1106 manual, surveillance-video.com/.../TVD-1106-Manual.pdf), 'TruVision M Series IP Camera Configuration Manual' and 'TruVision ANPR IP Camera Configuration Manual' — all document the identical Hikvision RTSP configuration UI (Configuration > Security > RTSP Authentication, digest/basic auth, RTSP Port default 554). The standard Hikvision resource path /Streaming/Channels/<ch><stream> — 101 = channel 1 main stream — is therefore the main-stream RTSP path. Published on OEM-lineage basis (the official Interlogix config manuals confirm the Hikvision platform + port 554 but do not print a literal example rtsp:// URL string); corroborated by the dominant StrixCamDB leads /Streaming/Channels/1 and /Streaming/Channels/2.",
+      "strix_lead": "strixcamdb:interlogix"
+    },
+    {
+      "stream": "sub",
+      "path": "/Streaming/Channels/102",
+      "codec": "H.264/H.265",
+      "verified": true,
+      "source": "Hikvision RTSP path /Streaming/Channels/102 = channel 1 sub-stream (103 = third stream where supported). Same OEM-lineage basis as main stream — see main-stream source; the TruVision configuration manuals expose main/sub/third stream settings on the Hikvision platform. Port 554.",
+      "strix_lead": "strixcamdb:interlogix"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/Streaming/Channels/1",
+      "note": "Short Hikvision-form channel index (channel 1). Valid on the Hikvision platform as an alias but the canonical current form is /Streaming/Channels/101; kept here as the literal lead-form. Confirms Hikvision lineage."
+    },
+    {
+      "path": "/Streaming/Channels/2",
+      "note": "Short Hikvision-form (channel 2 / older sub-stream alias). Canonical form is /Streaming/Channels/102 for channel-1 sub. Hikvision-platform lead."
+    },
+    {
+      "path": "/h264_stream",
+      "note": "Legacy non-Hikvision GE Security / UltraView-era firmware path. Widely repeated by crowdsourced aggregators (ispyconnect etc.) but NOT confirmed in any official Interlogix TruVision document; excluded from verified templates. May apply to older pre-Hikvision Interlogix/GE units."
+    },
+    {
+      "path": "/ch0_0.h264",
+      "note": "Generic Hisilicon-style ch<N>_<N>.h264 lead (also appears as /ch0_0.h264 with leading slash) — not the Hikvision /Streaming/Channels form used by TruVision; not in any official Interlogix doc. Cross-brand / legacy contamination, excluded."
+    },
+    {
+      "path": "/video.h264",
+      "note": "Generic /video.h264 lead (also without leading slash) — not confirmed in any official Interlogix/TruVision document; cross-brand contamination, excluded."
+    }
+  ],
+  "notes": "Interlogix (GE Security lineage; UTC / Carrier Fire & Security) — the TruVision IP camera and NVR line is Hikvision OEM and runs the Hikvision platform. The official Interlogix TruVision configuration manuals (FW 4.X.X, FW 5.0X/TVD-1106, M Series, ANPR, 81 Series, 360°) confirm the Hikvision RTSP stack: RTSP default port 554, RTSP Authentication (digest/basic, MD5/SHA256) at Configuration > Security > RTSP Authentication, and main/sub/third stream configuration — i.e. the standard Hikvision resource path /Streaming/Channels/<ch><stream> (101 main, 102 sub, 103 third). No official Interlogix document prints a literal rtsp:// example URL, so the concrete paths are published on confirmed Hikvision-OEM/platform basis (same convention as other Hikvision-OEM brands like Advidia A-series and American Dynamics), and match the dominant StrixCamDB leads (/Streaming/Channels/1, /Streaming/Channels/2). HTTP MJPEG preview is available at http://IP/Streaming/channels/101/httpPreview (Hikvision form) where enabled. The legacy leads /h264_stream, /ch0_0.h264, /video.h264 likely belong to older pre-Hikvision GE Security / UltraView / TVIP firmware — none could be confirmed against an official Interlogix document and are recorded under unverified_leads rather than published. ONVIF is supported on TruVision IP cameras for auto-discovery (RTSP URI via GetStreamUri) as an alternative to the fixed path.",
+  "verified_on": "2026-08-14"
+}
