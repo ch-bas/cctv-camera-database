@@ -1,0 +1,100 @@
+name: strix-ingest
+
+# Weekly StrixCamDB lead sweep (STUB). Pulls StrixCamDB, diffs it against the
+# committed snapshot, junk-filters + triages the delta, and reports the
+# candidates into a self-updating tracking issue. Advisory only — it never
+# fails the workflow on an upstream outage.
+#
+# IMPORTANT: this workflow stops at "here are N candidate leads to verify". It
+# NEVER publishes. StrixCamDB is a lead source, not a data source — every
+# candidate must be confirmed against the manufacturer's own docs (stage 4, the
+# agent fleet + build-spec) and lands via a human-merged PR. See
+# docs/strix-ingest-design.md.
+on:
+  # Weekly cron is intentionally DISABLED until StrixCamDB reciprocity is
+  # confirmed — re-enable by uncommenting the schedule block below.
+  # schedule:
+  #   - cron: "0 6 * * 2" # Tuesdays 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Ensure sqlite3 CLI
+        run: sqlite3 --version || sudo apt-get update && sudo apt-get install -y sqlite3
+
+      - name: Fetch + diff StrixCamDB (stage 0-1)
+        run: node scripts/strix-fetch.js | tee strix-run.txt
+
+      - name: Filter + triage leads (stage 2-3)
+        run: node scripts/strix-filter.js | tee -a strix-run.txt
+
+      - name: Read candidate count
+        id: q
+        run: |
+          if [ -f strix/verify-queue.json ]; then
+            c=$(node -e "const q=require('./strix/verify-queue.json');console.log(q.summary.candidates||0)")
+            n=$(node -e "const q=require('./strix/verify-queue.json');console.log(q.summary.new_coverage||0)")
+          else
+            c=0; n=0
+          fi
+          echo "candidates=$c" >> "$GITHUB_OUTPUT"
+          echo "new_coverage=$n" >> "$GITHUB_OUTPUT"
+
+      - name: Write job summary
+        run: |
+          {
+            echo "## StrixCamDB ingest"
+            if [ "${{ steps.q.outputs.candidates }}" = "0" ]; then
+              echo "🟢 No new candidate leads this run."
+            else
+              echo "🔎 **${{ steps.q.outputs.candidates }}** candidate lead(s) to verify (${{ steps.q.outputs.new_coverage }} in brands we don't yet cover)."
+              echo ""
+              echo '```'
+              sed -n '1,80p' strix-run.txt
+              echo '```'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload verify queue
+        if: steps.q.outputs.candidates != '0'
+        uses: actions/upload-artifact@v4
+        with:
+          name: strix-verify-queue
+          path: strix/verify-queue.json
+
+      - name: Upsert tracking issue (candidates found)
+        if: steps.q.outputs.candidates != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE="🛰️ StrixCamDB ingest — leads to verify (automated weekly)"
+          {
+            echo "_Automated weekly StrixCamDB lead sweep (\`scripts/strix-fetch.js\` + \`scripts/strix-filter.js\`). Last run: $(date -u '+%Y-%m-%d %H:%M UTC') — [run log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})._"
+            echo ""
+            echo "**${{ steps.q.outputs.candidates }}** candidate lead(s) survived junk-filtering (**${{ steps.q.outputs.new_coverage }}** in brands not yet covered)."
+            echo ""
+            echo "⚠️ These are **unverified leads, not data.** Next step (manual / agent fleet): confirm each against the manufacturer's own docs per the build-spec, then open a \`release/*\` PR. Nothing here ships until a human merges it."
+            echo ""
+            echo "Queue attached as the \`strix-verify-queue\` artifact on the run."
+          } > issue-body.md
+          NUM=$(gh issue list --state open --search "in:title StrixCamDB ingest — leads to verify" --json number --jq '.[0].number // empty')
+          if [ -n "$NUM" ]; then
+            gh issue edit "$NUM" --body-file issue-body.md
+            echo "Updated tracking issue #$NUM"
+          else
+            gh issue create --title "$TITLE" --label "help wanted" --body-file issue-body.md
+          fi
