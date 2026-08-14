@@ -1,0 +1,84 @@
+{
+  "brand": "Vivotek",
+  "brand_id": "vivotek",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/live1s1.sdp",
+      "codec": "H.264 or H.265 (per camera configuration)",
+      "verified": true,
+      "source": "Vivotek IB9367-EHT-v2 User Manual (ManualsLib manual/2744629, p.35, p.99): 'The address format is rtsp://<ip address>:<rtsp port>/<RTSP streaming access name for stream1 or stream2>', example 'rtsp://192.168.5.151:554/live1s1.sdp'. Confirmed by Vivotek Support KB 'Unable to get HTTP/RTSP streaming via 3rd party software after upgrading firmware to 0x13 or above' (vivotek.zendesk.com/hc/en-001/articles/900006469063): default access name changed from live.sdp to live1s1.sdp at firmware 0x13+; access name configurable under Configuration > Network > Streaming Protocols > RTSP > Access name for stream 1.",
+      "strix_lead": "strixcamdb:vivotek"
+    },
+    {
+      "stream": "sub",
+      "path": "/live1s2.sdp",
+      "codec": "H.264 or H.265 (per camera configuration)",
+      "verified": true,
+      "source": "Vivotek Support KB (vivotek.zendesk.com/hc/en-001/articles/900006469063): stream indexing follows live1s<N>.sdp pattern — 'replace s0 with s1, s2, or s3 for stream2, stream3, or stream4 respectively'; stream 2 access name is therefore live1s2.sdp by the documented convention. Confirmed in Vivotek IB9367-EHT-v2 User Manual (ManualsLib manual/2744629): 'URL format rtsp://<ip>:<port>/<access name for stream 1 to 3>'.",
+      "strix_lead": "strixcamdb:vivotek"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/live.sdp",
+      "note": "Legacy firmware default (pre-0x13): documented in Vivotek Support KB as the old stream 1 access name before firmware 0x13 changed it to live1s1.sdp. Still functionally valid on cameras that were not factory-reset after firmware upgrade, but not the current documented default."
+    },
+    {
+      "path": "live.sdp",
+      "note": "Same as /live.sdp (missing leading slash variant in strix lead). See /live.sdp note."
+    },
+    {
+      "path": "/live2.sdp",
+      "note": "Legacy firmware default for stream 2 (pre-0x13). Superseded by /live1s2.sdp in current firmware. Not a current documented default."
+    },
+    {
+      "path": "/live1.sdp",
+      "note": "Not documented in any official Vivotek manual found. May be a community-observed variant or confusion with live1s1.sdp. No official Vivotek source confirms this as a fixed path."
+    },
+    {
+      "path": "/live3.sdp",
+      "note": "Possible legacy stream 3 path (old naming convention). Superseded by /live1s3.sdp in current firmware. Not confirmed in official docs reviewed."
+    },
+    {
+      "path": "/live4.sdp",
+      "note": "Possible legacy stream 4 path. Superseded by /live1s4.sdp in current firmware. Not confirmed in official docs reviewed."
+    },
+    {
+      "path": "/live1s3.sdp",
+      "note": "Stream 3 path under current firmware naming convention (live1s<N>.sdp). Follows the documented pattern but not confirmed with a specific example in the manuals reviewed."
+    },
+    {
+      "path": "/root/stream0",
+      "note": "Not found in any official Vivotek documentation. Pattern resembles other brands. Likely cross-brand contamination."
+    },
+    {
+      "path": "/video.mp4",
+      "note": "Not an RTSP path in official Vivotek docs. No official Vivotek RTSP documentation confirms this path."
+    },
+    {
+      "path": "/live/ch00_0",
+      "note": "Not found in official Vivotek documentation. Pattern resembles Dahua or other brands. Likely cross-brand contamination."
+    },
+    {
+      "path": "/img/video.sav",
+      "note": "Not found in any official Vivotek RTSP documentation. Likely cross-brand contamination."
+    },
+    {
+      "path": "/stream2",
+      "note": "ACTi-style path. Not documented in any official Vivotek source."
+    },
+    {
+      "path": "[USERNAME]/stream0",
+      "note": "Malformed path with bracket placeholder. Not found in official Vivotek documentation."
+    },
+    {
+      "path": "//stream0",
+      "note": "Malformed double-slash path. Not documented in any official Vivotek source."
+    }
+  ],
+  "notes": "Vivotek (vivotek.com, Taiwanese manufacturer) uses user-configurable RTSP access names. Factory defaults changed at firmware 0x13: stream 1 changed from live.sdp to live1s1.sdp, stream 2 from live2.sdp to live1s2.sdp. The naming convention is live1s<N>.sdp where N is the 1-based stream index. Default RTSP port is 554. Access names are configurable under Configuration > Network > Streaming Protocols > RTSP > Access name for stream <N>. Newer firmware (2.2002.x.x+) also supports ONVIF Media2 at /media2/stream.sdp?profile=token (documented in Vivotek Support KB vivotek.zendesk.com/hc/en-001/articles/4952515434649) but this profile-based URL is outside the fixed-template scope of this dataset.",
+  "verified_on": "2026-08-14"
+}

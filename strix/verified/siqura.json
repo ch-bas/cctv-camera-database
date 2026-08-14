@@ -1,0 +1,52 @@
+{
+  "brand": "Siqura",
+  "brand_id": "siqura",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/VideoInput/<x>/h264/<z>",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Siqura/TKH Security S-60 E Firmware v4.22 User Manual, ch. 'Stream media via RTSP' - RTSP URL format: rtsp://<IP>:<RTSP Port>/VideoInput/<x>/<y>/<z> (proficomms.cz/files/datasheets/TKH/s60e-4.22_v10-UM-EN.pdf); also BC620WDR FW 4.0 User Manual (tkhsecurity.it/media/import/siqura_bc620wdr_4_0_v2_um_en.pdf)",
+      "strix_lead": "strixcamdb:siqura"
+    },
+    {
+      "stream": "sub",
+      "path": "/VideoInput/<x>/mpeg4/<z>",
+      "codec": "MPEG-4",
+      "verified": true,
+      "source": "Siqura/TKH Security S-60 E Firmware v4.22 User Manual, RTSP URL format rtsp://<IP>:<RTSP Port>/VideoInput/<x>/<y>/<z>, <y> = media type (mpeg4/h264/mpeg2)",
+      "strix_lead": "strixcamdb:siqura"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/ProfileToken_1_1",
+      "note": "ONVIF auto-generated profile-token stream path; not a fixed URL documented in Siqura manuals (Siqura's own RTSP scheme is /VideoInput/<x>/<y>/<z>). ONVIF Profile S is supported but stream URIs are queried via ONVIF, not fixed."
+    },
+    {
+      "path": "/ProfileToken_1_4",
+      "note": "ONVIF auto-generated profile-token stream path; not documented in official Siqura RTSP URL format."
+    },
+    {
+      "path": "/h264",
+      "note": "Generic codec path; does not match Siqura's official /VideoInput/<x>/h264/<z> format. Cross-brand contamination."
+    },
+    {
+      "path": "/h264_stream",
+      "note": "Generic; not in any official Siqura doc."
+    },
+    {
+      "path": "h264",
+      "note": "Bare codec token, not a real path; contamination."
+    },
+    {
+      "path": "mpeg4",
+      "note": "Bare codec token, not a real path; contamination."
+    }
+  ],
+  "notes": "Dutch professional brand (TKH Security). Official RTSP URL format from Siqura user manuals: rtsp://<IP>:<port>/VideoInput/<x>/<y>/<z> where <x>=Video Input number, <y>=media type (h264/mpeg4/mpeg2/mjpeg), <z>=encoder number (only ENABLED encoders of that media type are counted for the index). Default RTSP port 554. Leads 'VideoInput/1/h264/1' and 'VideoInput/1/mpeg4/1' match this format exactly and are confirmed. Cameras/encoders also support ONVIF Profile S (stream URIs queried via ONVIF, not fixed URLs). Same URL scheme documented across S-60 E, C-60 E, S-64 E, BC620WDR and other Siqura encoders/cameras.",
+  "verified_on": "2026-08-14"
+}

@@ -1,0 +1,76 @@
+{
+  "brand": "Dahua",
+  "brand_id": "dahua",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/cam/realmonitor?channel=<N>&subtype=0",
+      "codec": "H.264|H.265 (per-profile)",
+      "verified": true,
+      "source": "Dahua Wiki — 'Remote Access / RTSP via VLC' (official Dahua documentation wiki, dahuawiki.com): 'rtsp://<username>:<password>@<ip>:<port>/cam/realmonitor?channel=<channel>&subtype=<typeNo>. The <typeNo> of main stream is 0, extra stream 1 is 1, extra stream 2 is 2. The channel number starts from 1. The default port is 554.' — https://dahuawiki.com/Remote_Access/RTSP_via_VLC",
+      "strix_lead": "strixcamdb:dahua"
+    },
+    {
+      "stream": "sub",
+      "path": "/cam/realmonitor?channel=<N>&subtype=1",
+      "codec": "H.264|H.265 (per-profile)",
+      "verified": true,
+      "source": "Dahua Wiki — 'Remote Access / RTSP via VLC': subtype=1 = extra stream 1 (sub stream). Same source as main stream entry. — https://dahuawiki.com/Remote_Access/RTSP_via_VLC",
+      "strix_lead": "strixcamdb:dahua"
+    },
+    {
+      "stream": "third",
+      "path": "/cam/realmonitor?channel=<N>&subtype=2",
+      "codec": "H.264|H.265 (per-profile)",
+      "verified": true,
+      "source": "Dahua Wiki — 'Remote Access / RTSP via VLC': subtype=2 = extra stream 2 (third stream). Same source. — https://dahuawiki.com/Remote_Access/RTSP_via_VLC",
+      "strix_lead": "strixcamdb:dahua"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/live",
+      "note": "Generic /live path, not documented in any Dahua official source. Likely cross-brand contamination. Excluded."
+    },
+    {
+      "path": "/live2.sdp",
+      "note": "SDP endpoint not documented in Dahua official sources. Generic cross-brand path. Excluded."
+    },
+    {
+      "path": "/live.sdp",
+      "note": "SDP endpoint not documented in Dahua official sources. Cross-brand contamination. Excluded."
+    },
+    {
+      "path": "/rtsp_live0",
+      "note": "Not a Dahua-documented path. Cross-brand contamination (common on cheap OEM boards). Excluded."
+    },
+    {
+      "path": "/videoMain",
+      "note": "Not documented in Dahua official sources. Cross-brand contamination. Excluded."
+    },
+    {
+      "path": "/video.pro2",
+      "note": "Not documented in Dahua official sources. Likely Vivotek or other brand contamination. Excluded."
+    },
+    {
+      "path": "/tcp/av0_0",
+      "note": "Not documented in Dahua official sources. Cross-brand contamination. Excluded."
+    },
+    {
+      "path": "/h264_stream",
+      "note": "Not documented in Dahua official sources. Cross-brand contamination. Excluded."
+    },
+    {
+      "path": "/1/stream1/Profile1",
+      "note": "Not documented in Dahua official sources. Cross-brand contamination. Excluded."
+    },
+    {
+      "path": "VideoInput/1/mpeg4/1",
+      "note": "Axis-style path, not documented in Dahua official sources. Cross-brand contamination. Excluded."
+    }
+  ],
+  "notes": "Dahua's official RTSP URL format is /cam/realmonitor?channel=<N>&subtype=<typeNo>. Channel numbering starts at 1. subtype: 0=main stream, 1=extra stream 1 (sub), 2=extra stream 2 (third stream). Default RTSP port is 554 and may be omitted if unchanged. Both basic and digest authentication are supported (credentials embedded in the URL as rtsp://{user}:{pass}@{ip}:{port}/...). The `unicast=true&proto=Onvif` query params seen in some leads are optional ONVIF-layer hints, not required by the base RTSP URL. Many budget brands (realmonitor OEMs) share this exact URL scheme — confirm via brand's own docs before attributing. The leads with hardcoded base64 `authbasic=` values are device-specific credential injections, not a Dahua URL schema feature.",
+  "verified_on": "2026-08-14"
+}

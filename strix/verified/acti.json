@@ -1,0 +1,68 @@
+{
+  "brand": "ACTi",
+  "brand_id": "acti",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/stream1",
+      "codec": "H.264 or H.265 (per camera configuration)",
+      "verified": true,
+      "source": "ACTi 'Viewing video stream using VLC player' (download.acti.com/?id=29560): 'Command: rtsp://IPaddress:RTSPport/stream#' with example rtsp://172.16.26.14:4014/stream1. Corroborated by ACTi Camera Firmware Manual A713/A950/A951/Q450 (download.acti.com/?id=28964): RTSP format is rtsp://<ip address>:<rtsp port>/<access name>, default RTSP port 554.",
+      "strix_lead": "strixcamdb:acti"
+    },
+    {
+      "stream": "sub",
+      "path": "/stream2",
+      "codec": "H.264 or H.265 (per camera configuration)",
+      "verified": true,
+      "source": "ACTi 'Viewing video stream using VLC player' (download.acti.com/?id=29560): 'Command: rtsp://IPaddress:RTSPport/stream#' — stream number is 1-based index; Stream 2 documented as sub-stream in ACTi Camera Firmware Manual A713/A950/A951/Q450 (download.acti.com/?id=28964).",
+      "strix_lead": "strixcamdb:acti"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/onvif-stream1",
+      "note": "Not found in any official ACTi documentation; appears community-observed via ONVIF Device Manager discovery. ONVIF GetStreamUri response paths are not published as fixed templates by ACTi."
+    },
+    {
+      "path": "/onvif-stream2",
+      "note": "Same as /onvif-stream1 — community-observed only, no official ACTi doc."
+    },
+    {
+      "path": "/onvif-media/media.amp",
+      "note": "Axis-style ONVIF path; not documented in any official ACTi source. Cross-brand contamination likely."
+    },
+    {
+      "path": "/onvif&event&video1",
+      "note": "Community-observed ONVIF path; not documented in any official ACTi source."
+    },
+    {
+      "path": "/onvif&event&video2",
+      "note": "Community-observed ONVIF path; not documented in any official ACTi source."
+    },
+    {
+      "path": "/onvif&event&audio&video1",
+      "note": "Community-observed ONVIF path; not documented in any official ACTi source."
+    },
+    {
+      "path": "/cgi-bin/cmd/encoder?GET_STREAM",
+      "note": "Possibly an HTTP CGI command, not an RTSP path; not confirmed as an RTSP stream URI in any official ACTi RTSP documentation."
+    },
+    {
+      "path": "/cam0/h264",
+      "note": "Not found in official ACTi RTSP documentation; pattern resembles other brands (e.g. Foscam). No official ACTi source confirms this path."
+    },
+    {
+      "path": "cam[CHANNEL]/h264",
+      "note": "Same as /cam0/h264 — not in official ACTi docs; likely cross-brand contamination."
+    },
+    {
+      "path": "h264",
+      "note": "Bare path with no leading slash; not confirmed in any official ACTi RTSP documentation."
+    }
+  ],
+  "notes": "ACTi cameras expose RTSP streams at /stream<N> (1-based: /stream1 = main, /stream2 = sub, up to /stream4 on some models). The RTSP access name is user-configurable in the camera web UI (Streaming > RTSP > Access Name); /stream1 is the typical factory default observed in ACTi's own VLC guide. Default RTSP port is 554 per the current firmware manual. Port 7070 documented in the older ACTi Streaming Explorer tool (2011) is ACTi's proprietary SDK streaming protocol port — not standard RTSP. Cameras supporting up to 4 streams use /stream1–/stream4. ACTi is a Taiwanese manufacturer (acti.com), not an OEM of Dahua or Hikvision.",
+  "verified_on": "2026-08-14"
+}

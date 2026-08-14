@@ -1,0 +1,80 @@
+{
+  "brand": "D-Link",
+  "brand_id": "d-link",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/live1.sdp",
+      "codec": "H.264 (per camera configuration)",
+      "verified": true,
+      "source": "D-Link official FAQ 'Wie kann ich das ein LiveBild in eine Webseite einbinden?' (dlink.com/de/de/support/faq/cameras/de_dcs_urls): 'rtsp://benutzername:passwort@ip_der_kamera/live1.sdp bzw. rtsp://benutzername:passwort@ip_der_kamera/play1.sdp'. Corroborated by D-Link DCS-2132L User Manual v2.00 (dlink.com/cz/cs/…/dcs_2132l_manual_v2_00_ww_revb.pdf), page 45: 'live1.sdp can be accessed at rtsp://x.x.x.x/video1.sdp' with RTSP port 554.",
+      "strix_lead": "strixcamdb:d-link"
+    },
+    {
+      "stream": "main-alt",
+      "path": "/play1.sdp",
+      "codec": "H.264 (per camera configuration)",
+      "verified": true,
+      "source": "D-Link official FAQ (dlink.com/de/de/support/faq/cameras/de_dcs_urls): explicitly lists /play1.sdp alongside /live1.sdp as an equally documented form. Used on older consumer DCS models (e.g. DCS-2121, DCS-2130 generation).",
+      "strix_lead": "strixcamdb:d-link"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/live2.sdp",
+      "note": "Widely cited in third-party NVR/VMS guides as the D-Link sub-stream path, but no official D-Link manual or support document confirmed /live2.sdp as a documented sub-stream access name. The DCS-5220 manual (ManualsLib page 22) uses the generic format rtsp://<ip>:<port>/<access name for stream1 or stream2> without naming the actual values. Not confirmed — excluded per spec."
+    },
+    {
+      "path": "/live3.sdp",
+      "note": "No official D-Link documentation found. Appears in third-party scan databases and community references for DCS-2132L/DCS-2330L only; not in any D-Link manual or support page."
+    },
+    {
+      "path": "live3.sdp",
+      "note": "Same as /live3.sdp (without leading slash) — no official D-Link documentation; scan-DB artifact."
+    },
+    {
+      "path": "/live.sdp",
+      "note": "Cited in some community sources for DCS-5220 stream 1 default, but not confirmed in any official D-Link text-extractable documentation. Excluded pending confirmation."
+    },
+    {
+      "path": "live.sdp",
+      "note": "Same as /live.sdp without leading slash — no official D-Link documentation."
+    },
+    {
+      "path": "live1.sdp",
+      "note": "Same as /live1.sdp without leading slash — the confirmed path always appears with a leading slash in official D-Link documentation. Bare form is a scan artifact."
+    },
+    {
+      "path": "/live2.sdp",
+      "note": "Duplicate entry — see /live2.sdp above."
+    },
+    {
+      "path": "/h264_hd.sdp",
+      "note": "No official D-Link documentation found. Pattern resembles some Foscam/no-brand cameras. No official D-Link source confirms this path."
+    },
+    {
+      "path": "/stream1",
+      "note": "ACTi-style path; no official D-Link documentation confirms /stream1 as a D-Link RTSP access name. Cross-brand contamination likely."
+    },
+    {
+      "path": "/OVProfile00",
+      "note": "ONVIF GetStreamUri profile path; not a static D-Link-documented RTSP template. ONVIF-derived paths are device-negotiated and not published as fixed templates by D-Link."
+    },
+    {
+      "path": "/OVProfile01",
+      "note": "Same as /OVProfile00 — ONVIF-negotiated, not a documented static D-Link RTSP path."
+    },
+    {
+      "path": "/OVProfile02",
+      "note": "Same as /OVProfile00 — ONVIF-negotiated, not a documented static D-Link RTSP path."
+    },
+    {
+      "path": "/live/profile.0",
+      "note": "No official D-Link documentation found. Resembles some generic/OEM paths. No D-Link manual or support page confirms this pattern."
+    }
+  ],
+  "notes": "D-Link DCS cameras expose RTSP on port 554 (standard). The official D-Link FAQ documents two main stream URL forms: /live1.sdp (newer/prosumer DCS models, e.g. DCS-2132L, DCS-5222L) and /play1.sdp (older consumer models, e.g. DCS-2121, DCS-2130). Both refer to the main (high-resolution) stream. The DCS-5220 manual describes a two-stream camera using generic access-name placeholders for stream1/stream2 but the official FAQ does not name a specific sub-stream path. The pilot StrixCamDB verification note for D-Link specifically flagged /play*.sdp variants (beyond play1) as scan-DB-only artifacts not confirmed in official manuals; /play1.sdp however IS in the D-Link official FAQ. D-Link is a Taiwanese manufacturer (dlink.com); its DCS series are D-Link-proprietary cameras, not OEMs of Dahua or Hikvision.",
+  "verified_on": "2026-08-14"
+}

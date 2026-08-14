@@ -1,0 +1,52 @@
+{
+  "brand": "AvertX",
+  "brand_id": "avertx",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/h264",
+      "codec": "H.264",
+      "verified": true,
+      "source": "AvertX HD40D Night Vision HD IP Dome Camera User Manual (32332AE), 'Connecting a Stream' — lists rtsp://<ipaddress>/h264; Streaming Port (RTSP) 554. https://www.avertx.com/content/cameras/32332AE_AvertX_HD40_Manual_web.pdf",
+      "strix_lead": "strixcamdb:avertx"
+    },
+    {
+      "stream": "sub",
+      "path": "/h264_2",
+      "codec": "H.264",
+      "verified": true,
+      "source": "AvertX camera manuals document two RTSP streams (H.264-1 = stream 1, H.264-2 = stream 2); stream 2 URL rtsp://<ipaddress>/h264_2. HD40D manual confirms dual H.264-1/H.264-2 streaming; AvertX docs list h264 and h264_2 as the two RTSP stream URLs.",
+      "strix_lead": "strixcamdb:avertx"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/onvif-stream1",
+      "note": "ONVIF media-profile stream token used by AvertX 510-series (per third-party aggregators); not documented in AvertX's own manuals. ONVIF profile paths are auto-negotiated, not a fixed AvertX URL — excluded."
+    },
+    {
+      "path": "/onvif-stream2",
+      "note": "ONVIF media-profile stream 2 token (510-series); same as above, not in official AvertX docs."
+    },
+    {
+      "path": "/media/video1",
+      "note": "Not found in any official AvertX manual; generic aggregator entry — excluded."
+    },
+    {
+      "path": "/live_st1",
+      "note": "Not found in any official AvertX manual; likely cross-brand contamination (Chinese OEM pattern) — excluded."
+    },
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+      "note": "Generic Chinese-OEM .sdp pattern; not in official AvertX docs — excluded."
+    },
+    {
+      "path": "cam[CHANNEL]/h264",
+      "note": "Not documented by AvertX; aggregator variant — excluded."
+    }
+  ],
+  "notes": "AvertX is a US professional brand with mixed OEM lineage. Its native IP cameras (HD40D, HD Dome, HD-series) document rtsp://<ip>/h264 (stream 1) and rtsp://<ip>/h264_2 (stream 2) plus rtsp://<ip>/mjpeg, rtsp://<ip>/mpeg4, and MJPEG-over-HTTP on port 8008; RTSP port is 554. NOTE: newer models are Hikvision-OEM — the AvertX HD458IR manual documents Hikvision-style paths rtsp://admin:<pass>@<ip>:554/Streaming/Channels/101 (main) and /102 (sub). So for HD458IR (and similar Hikvision-OEM AvertX units) use the Hikvision template instead. ONVIF is the recommended/preferred integration protocol on AvertX products. The /onvif-stream1//onvif-stream2 leads are ONVIF profile tokens, not fixed AvertX URLs.",
+  "verified_on": "2026-08-14"
+}

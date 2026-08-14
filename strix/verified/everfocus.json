@@ -1,0 +1,64 @@
+{
+  "brand": "EverFocus",
+  "brand_id": "everfocus",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/ch01/0",
+      "codec": "H.264|H.265",
+      "verified": true,
+      "source": "EverFocus EZN Series (IP camera) User Manual, 'RTSP' section: RTSP URL syntax rtsp://[IP]:[Port]/ch01/[A] where A=0 main / 1 sub / 2 mobile, example rtsp://192.168.31.33:554/ch01/0 (https://www.manualslib.com/manual/1659189/Everfocus-Ezn-Series.html?page=44)",
+      "strix_lead": "strixcamdb:everfocus"
+    },
+    {
+      "stream": "sub",
+      "path": "/ch01/1",
+      "codec": "H.264|H.265",
+      "verified": true,
+      "source": "EverFocus EZN Series (IP camera) User Manual, 'RTSP' section: /ch01/[A], A=1 = sub stream (https://www.manualslib.com/manual/1659189/Everfocus-Ezn-Series.html?page=44)",
+      "strix_lead": "strixcamdb:everfocus"
+    },
+    {
+      "stream": "third",
+      "path": "/ch01/2",
+      "codec": "H.264|H.265",
+      "verified": true,
+      "source": "EverFocus EZN Series (IP camera) User Manual, 'RTSP' section: /ch01/[A], A=2 = mobile stream (https://www.manualslib.com/manual/1659189/Everfocus-Ezn-Series.html?page=44)",
+      "strix_lead": "strixcamdb:everfocus"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/cgi-bin/rtspStreamOvf/1",
+      "note": "Cited only by third-party setup sites (smartvision.dev, ispyconnect, camlytics) for older EverFocus models (e.g. '1360'), not in any official EverFocus manual accessible here. Possible legacy ONVIF-profile path (Ovf = ONVIF) but unconfirmed against manufacturer doc."
+    },
+    {
+      "path": "/cgi-bin/rtspStreamOvf/0",
+      "note": "Same as above — third-party origin only, no official EverFocus doc. Excluded."
+    },
+    {
+      "path": "/cgi-bin/rtspStream/0",
+      "note": "Third-party/generic variant of the legacy cgi-bin path; not found in any official EverFocus manual. Excluded."
+    },
+    {
+      "path": "/live1.sdp",
+      "note": "Generic Sony-style .sdp path; not in any official EverFocus doc. Cross-brand contamination."
+    },
+    {
+      "path": "/h264",
+      "note": "Generic h264 path; not in any official EverFocus doc. Contamination."
+    },
+    {
+      "path": "streaming/channels/0",
+      "note": "Hikvision-style /Streaming/Channels/ path; not an EverFocus format. Cross-brand contamination."
+    },
+    {
+      "path": "/ch01/0",
+      "note": "This IS the official EverFocus IP-camera path (see templates) — the lead /ch01/0 is confirmed; listed here only to note the lead file's '/ch01/0' entry maps to the verified main stream."
+    }
+  ],
+  "notes": "Taiwan professional brand (everfocus.com), EverFocus Electronics Corp. Official EverFocus IP-camera RTSP path (EZN Series manual) is rtsp://[IP]:[Port]/ch01/[A] with A=0 main / 1 sub / 2 mobile; default port 554 (configurable 1024-65535). This confirms the lead /ch01/0. NOTE: EverFocus RECORDERS use different syntax not published as camera templates — EPRO NVR Series uses /ip[A]/[B] (e.g. /ip01/0), and EMV800-HD/older DVRs use /3GPP/[channel]. The legacy /cgi-bin/rtspStreamOvf/[N] path (main=1 or per some sources) appears only in third-party VMS setup guides for older EverFocus models and could not be confirmed against an official manufacturer manual, so it is left in unverified_leads.",
+  "verified_on": "2026-08-14"
+}

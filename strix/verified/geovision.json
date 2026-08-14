@@ -1,0 +1,72 @@
+{
+  "brand": "GeoVision",
+  "brand_id": "geovision",
+  "status": "verified",
+  "default_port": 8554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/CH001.sdp",
+      "codec": "H.264",
+      "verified": true,
+      "source": "GeoVision GV-BX120D User Manual (ManualsLib #910108, p.419 and #945271, p.522): 'rtsp://<IP of the GV-IPCAM H.264:8554/<CH No.>.sdp', example rtsp://192.168.3.111:8554/CH001.sdp. Corroborated by GV-BX110D (ManualsLib #826301, p.477), GV-BX2400-1F (ManualsLib #1229109, p.265), and GeoVision official FAQ 'How do I use the RTSP protocol to connect GV IP devices?' (pd.geovision.tw/faq/IPDevice/RTSP_protocol-j_revised6.pdf).",
+      "strix_lead": "strixcamdb:geovision"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/CH002.sdp",
+      "note": "CH002 refers to channel 2 on a multi-channel NVR — not documented in any GeoVision manual as a standalone-camera sub stream. Official docs only show CH001.sdp as the single-camera RTSP example. CH002+ are valid NVR channel paths but are not a sub/secondary stream designation."
+    },
+    {
+      "path": "/Streaming/Channels/1",
+      "note": "Hikvision-style path; not found in any GeoVision official documentation. Cross-brand contamination."
+    },
+    {
+      "path": "/media/video1",
+      "note": "Not confirmed in any official GeoVision RTSP documentation. No GeoVision manual references this path."
+    },
+    {
+      "path": "/PSIA/Streaming/channels/1?videoCodecType=MPEG4",
+      "note": "PSIA path; not documented as a GeoVision RTSP stream URI in any official GeoVision source."
+    },
+    {
+      "path": "/h264_stream",
+      "note": "Not found in any official GeoVision documentation."
+    },
+    {
+      "path": "/rtsph2641080p",
+      "note": "Not found in any official GeoVision documentation."
+    },
+    {
+      "path": "/media2/video2",
+      "note": "Not found in any official GeoVision documentation."
+    },
+    {
+      "path": "/0/{user}:{pass}/main",
+      "note": "Community-observed path; not in any official GeoVision RTSP documentation."
+    },
+    {
+      "path": "/CH000.sdp",
+      "note": "GeoVision official docs use 1-based channel numbering (CH001, CH002…); CH000 is not documented."
+    },
+    {
+      "path": "/CH010.sdp",
+      "note": "Valid NVR channel-10 path by the documented pattern but not explicitly confirmed as a standalone camera RTSP path in official docs. Included under unverified leads pending NVR scope."
+    },
+    {
+      "path": "/CH012.sdp",
+      "note": "Same as CH010.sdp — NVR channel path, not confirmed as standalone camera sub stream."
+    },
+    {
+      "path": "/CH013.sdp",
+      "note": "Same as CH010.sdp."
+    },
+    {
+      "path": "/CH014.sdp",
+      "note": "Same as CH010.sdp."
+    }
+  ],
+  "notes": "GeoVision (geovision.com.tw, Taiwan) cameras expose RTSP at rtsp://<ip>:8554/<CHN>.sdp where N is a 1-based, 3-digit zero-padded channel number (CH001, CH002, …). On a standalone IP camera CH001.sdp is the single stream; on a GeoVision NVR each numeric channel maps to a connected camera input. Official manuals do not document a separate sub-stream path via this scheme — the GeoVision web UI controls stream resolution/quality, not a distinct RTSP path. Default RTSP/TCP port is 8554 across the BX/EBD/FD/ABL series (not the standard 554), though some newer H.265 models (e.g. GV-EBD4700) revert to port 554 per their own appendix. GeoVision is an independent Taiwanese OEM; the SDP-based RTSP scheme is proprietary and unrelated to Dahua/Hikvision patterns.",
+  "verified_on": "2026-08-14"
+}

@@ -1,0 +1,52 @@
+{
+  "brand": "3xLOGIC",
+  "brand_id": "3xlogic",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/ch0_unicast_firststream",
+      "codec": "H.264 (MPEG4/JPEG also selectable)",
+      "verified": true,
+      "source": "Official 3xLOGIC VISIX camera user manual 'VX-2A-B-IWD' (manualslib.com/manual/1148283/3xlogic-Vx-2a-B-Iwd.html?page=27, VIGIL Server Configuration — Network Camera Settings): 'For 3xLOGIC All-in-One cameras, the url will be automatically set to rtsp://[ip address]/ch0_unicasy_firststream' with stream type selectable as MPEG4 / JPEG / H264. The manual's literal 'ch0_unicasy_firststream' is a documented typo for the standard firmware path 'ch0_unicast_firststream' (ch0 = channel 0, unicast, firststream = main). Corroborated by the 3xLOGIC VISIX Gen III User Interface Manual RTSP Information/Authentication sections (manualslib.com/manual/1888140).",
+      "strix_lead": "strixcamdb:3xlogic"
+    },
+    {
+      "stream": "sub",
+      "path": "/ch0_unicast_secondstream",
+      "codec": "H.264 (MPEG4/JPEG also selectable)",
+      "verified": false,
+      "source": "By-convention second/sub stream matching the officially documented main path 'ch0_unicast_firststream' (same ch0_unicast_<Nstream> firmware family). The 3xLOGIC VX-2A-B-IWD manual documents only the auto-set first stream literally; the VISIX Gen III UI manual confirms a configurable second/sub stream exists (RTSP 'Target Stream' selector) but does not print the literal sub-stream URL. Not published as verified.",
+      "strix_lead": "strixcamdb:3xlogic"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/ch0_0.h264",
+      "note": "generic ch<N>_<N>.h264 lead (Hisilicon-style) — not the documented 3xLOGIC ch0_unicast_firststream form; cross-brand contamination, excluded."
+    },
+    {
+      "path": "/video.h264",
+      "note": "generic /video.h264 lead — not confirmed in any official 3xLOGIC/VISIX doc; excluded."
+    },
+    {
+      "path": "/stream0",
+      "note": "generic /stream0 lead — not the documented VISIX path; cross-brand, excluded."
+    },
+    {
+      "path": "live/mpeg4",
+      "note": "generic legacy MPEG4 lead — 3xLOGIC lets you select MPEG4 stream type but the resource path is ch0_unicast_firststream, not this; excluded."
+    },
+    {
+      "path": "/Streaming/Channels/1",
+      "note": "Hikvision RTSP path — Hikvision cross-brand contamination; not a 3xLOGIC/VISIX documented path. Excluded."
+    },
+    {
+      "path": "/cam/realmonitor?channel=1&subtype=00&authbasic=[AUTH]",
+      "note": "Dahua-style path — Dahua cross-brand contamination; not confirmed for VISIX. Excluded."
+    }
+  ],
+  "notes": "3xLOGIC is a US professional surveillance brand (VISIX IP camera line, integrates with 3xLOGIC VIGIL Server/VMS). The only literal RTSP URL printed in an official 3xLOGIC document is the auto-set main-stream path in the VISIX VX-2A-B-IWD user manual: rtsp://[ip]/ch0_unicasy_firststream — a typo for the well-known generic 'ch0_unicast_firststream' first-stream path (port 554). Stream type is selectable (MPEG4/JPEG/H264). The sub/second stream follows the same ch0_unicast_secondstream convention but is NOT printed literally in an official doc, so it is left verified:false. VISIX cameras are also ONVIF Profile S compliant (VIGIL Server can auto-detect via ONVIF Device Manager), so the RTSP URI can alternatively be obtained via ONVIF GetStreamUri. All of the StrixCamDB leads (ch0_0.h264, video.h264, stream0, live/mpeg4, Hikvision /Streaming/Channels/1, Dahua /cam/realmonitor) are cross-brand contamination and none match the official 3xLOGIC path — excluded.",
+  "verified_on": "2026-08-14"
+}

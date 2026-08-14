@@ -1,0 +1,47 @@
+{
+  "brand": "SUPEREYE",
+  "brand_id": "supereye",
+  "status": "unverified",
+  "default_port": null,
+  "templates": [],
+  "unverified_leads": [
+    {
+      "path": "/cam/realmonitor?channel=[CHANNEL]&subtype=1",
+      "note": "Dahua proprietary /cam/realmonitor path; cross-brand contamination. Only appears in third-party aggregators (iSpyConnect/Agent DVR, camlytics) whose data is explicitly crowd-sourced with no Supereye affiliation. Not in any official Supereye doc."
+    },
+    {
+      "path": "/cam/realmonitor?channel=[CHANNEL]&subtype=1&authBasic=[AUTH]",
+      "note": "Dahua-derived crowd-sourced variant; authBasic query is an aggregator artifact, not officially documented by Supereye."
+    },
+    {
+      "path": "/cam/realmonitor?channel=[CHANNEL]&subtype=00",
+      "note": "Dahua-derived crowd-sourced guess (subtype=00); not in Supereye documentation."
+    },
+    {
+      "path": "/cam/realmonitor?channel=0&subtype=1&authBasic=[AUTH]",
+      "note": "Dahua-derived crowd-sourced variant; not officially documented by Supereye."
+    },
+    {
+      "path": "/cam/realmonitor?channel=0&subtype=1",
+      "note": "Dahua proprietary path (crowd-sourced iSpy listing for 'pc100/pc200'); not in official Supereye docs."
+    },
+    {
+      "path": "/cam/realmonitor?channel=0&subtype=00",
+      "note": "Dahua-derived crowd-sourced guess; not in Supereye documentation."
+    },
+    {
+      "path": "/cam/realmonitor?channel=554&subtype=1",
+      "note": "Scan artifact: the RTSP port (554) leaked into the channel parameter. Invalid/nonsensical and not officially documented."
+    },
+    {
+      "path": "/live/ch0",
+      "note": "Generic cross-brand /live path from crowd-sourced aggregator; not in any official Supereye doc."
+    },
+    {
+      "path": "/live/ch00_0",
+      "note": "Generic cross-brand /live path (common to many low-cost OEMs); crowd-sourced guess, not officially documented by Supereye."
+    }
+  ],
+  "notes": "SUPEREYE is a budget Amazon-tier WiFi camera brand (e.g. PC100, PC200/PC200-EU bullet cameras). It publishes NO official fixed RTSP path. Its Amazon listings and product materials only state generic 'Onvif/RTSP' compatibility, and its own setup flow routes through the vendor mobile app and ONVIF auto-discovery rather than a documented RTSP URL. Every specific path in the leads originates from third-party aggregators (iSpyConnect/Agent DVR and camlytics), which explicitly disclaim any Supereye affiliation and state their connection data is crowd-sourced and may be inaccurate. The circulated /cam/realmonitor paths are Dahua proprietary (cross-brand contamination) and the /live/* paths are generic OEM guesses; the channel=554 entry is a scan artifact. Per the CC0 no-guessing rule, no template is published. To integrate, use ONVIF auto-discovery rather than a hand-built RTSP URL.",
+  "verified_on": "2026-08-14"
+}

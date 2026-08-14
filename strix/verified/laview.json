@@ -1,0 +1,83 @@
+{
+  "brand": "LaView",
+  "brand_id": "laview",
+  "status": "unverified",
+  "default_port": 554,
+  "templates": [],
+  "unverified_leads": [
+    {
+      "path": "/Streaming/Channels/101",
+      "note": "Hikvision-style main-stream path. Confirmed by community users and implied by LaView NVRs exposing /ISAPI/Streaming/channels/101/picture (ISAPI is Hikvision's proprietary API), but LaView's own published documentation (user manuals, support KB) does not state this path. Reverse-engineered by community — explicitly noted as such in the earliest public write-up (kernelmanic.com, 2015: 'I couldn't find the RTSP URL in LaView's documentation')."
+    },
+    {
+      "path": "/Streaming/Channels/102",
+      "note": "Hikvision-style sub-stream path (channel 1 sub). Same basis as /Streaming/Channels/101 — community-observed on LaView NVR hardware, not in any official LaView document."
+    },
+    {
+      "path": "/Streaming/channels/101",
+      "note": "Case variant of the Hikvision path. Appears in community examples; same unverified basis."
+    },
+    {
+      "path": "/Streaming/Channels/1",
+      "note": "Shorter Hikvision-style variant. Community-sourced (Agent DVR / iSpy database); not in official LaView documentation."
+    },
+    {
+      "path": "/Streaming/Channels/2",
+      "note": "Shorter Hikvision-style sub-stream variant. Community-sourced; not in official LaView documentation."
+    },
+    {
+      "path": "/Streaming/Channels/201",
+      "note": "Hikvision NVR channel-2 main stream. Community-observed; not in official LaView documentation."
+    },
+    {
+      "path": "/Streaming/Channels/102",
+      "note": "Hikvision NVR channel-1 sub stream (alternate indexing). Community-observed; not in official LaView documentation."
+    },
+    {
+      "path": "/Streaming/Channels/101/?transportmode=unicast.sdp",
+      "note": "Extended Hikvision path variant with transport hint. Community-sourced; not in official LaView documentation."
+    },
+    {
+      "path": "/PSIA/streaming/channels/101",
+      "note": "PSIA-protocol path documented by kernelmanic.com (2015) for the LV-N9808C8E NVR and confirmed by wiki.terrabase.info for 'LaView NVR/DVR devices'. Both sources explicitly state this was reverse-engineered, not found in official LaView documentation. PSIA is also a Hikvision-affiliated protocol."
+    },
+    {
+      "path": "/PSIA/streaming/channels/201",
+      "note": "PSIA path for channel 2 main stream, per community sources. Same unverified basis as /PSIA/streaming/channels/101."
+    },
+    {
+      "path": "cam/realmonitor?channel=[CHANNEL]&subtype=00",
+      "note": "Dahua-style main-stream path. LaView has used both Hikvision and Dahua OEM platforms across product lines (the 'Saturn by LaView' line was explicitly marketed as Dahua-based). No LaView official document confirms this path."
+    },
+    {
+      "path": "cam/realmonitor?channel=[CHANNEL]&subtype=1",
+      "note": "Dahua-style sub-stream path. Same basis as the subtype=00 variant — no official LaView document confirms this."
+    },
+    {
+      "path": "/cam/realmonitor?channel=0&subtype=00",
+      "note": "Dahua-style path with 0-indexed channel. Community-sourced; not in official LaView documentation."
+    },
+    {
+      "path": "/cam/realmonitor?channel=0&subtype=1",
+      "note": "Dahua-style sub-stream with 0-indexed channel. Community-sourced; not in official LaView documentation."
+    },
+    {
+      "path": "/h264/ch01/main/av_stream",
+      "note": "Cross-brand contamination (common in Foscam/Hisilicon-based cameras). No LaView document references this path."
+    },
+    {
+      "path": "/ch0_0.h264",
+      "note": "Cross-brand contamination (Hisilicon/HiChip pattern). No LaView document references this path."
+    },
+    {
+      "path": "ipcam.sdp",
+      "note": "Generic SDP path found in lower-end budget brands. No LaView document references this path."
+    },
+    {
+      "path": "/live/channel0",
+      "note": "Non-standard path, port 5543 in leads. Does not match either Hikvision or Dahua conventions. Likely cross-brand contamination or a specific consumer-model app-only variant."
+    }
+  ],
+  "notes": "LaView (laviewsecurity.com / laviewusa.com) is a US-market security camera brand. Their official documentation (LV-N9808C8E user manual on laviewsecurity.com and ManualsLib; LV-N9808C8E/LV-N9916C6E NVR manuals; LV-PWB10B WiFi camera user guide) documents only the RTSP service port (default 554, configurable) — no stream URL paths are ever stated. The official LaView support KB article on connecting to Blue Iris VMS instructs users to select 'LaView' as the make and set the RTSP port to 554, again without specifying a path. Community evidence strongly indicates Hikvision OEM lineage for NVR product lines: (1) LaView NVRs expose /ISAPI/Streaming/channels/101/picture for HTTP snapshots (ISAPI is Hikvision's proprietary CGI API); (2) community members on ipcamtalk and home-assistant confirm /Streaming/Channels/102 works on LaView NVRs; (3) LaView branded at least one product line (Saturn) as an explicit Dahua OEM. Multiple LaView product lines exist with likely different OEM bases (Hikvision for NVR/PoE IP cameras, Dahua for Saturn line, possibly app-only cloud ecosystem for WiFi cameras like F1). Port 8554 appears in leads for some models (e.g. LV-PWB10B documents RTSP Port 8554 in its port-forwarding section), while NVR lines default to 554.",
+  "verified_on": "2026-08-14"
+}

@@ -1,0 +1,80 @@
+{
+  "brand": "Xvision",
+  "brand_id": "xvision",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/ch00/0",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Y3K (Xvision brand owner) KB: 'RTSP Stream Info for XVision IP cameras' — X2C/X4C/X5C cameras: rtsp://{ip}:554/ch00/0 (https://support.y3k.com/portal/en/kb/articles/rtsp-stream-info-for-xvision-ip-cameras)",
+      "strix_lead": "strixcamdb:xvision"
+    },
+    {
+      "stream": "sub",
+      "path": "/ch00/1",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Y3K KB 'RTSP Stream Info for XVision IP cameras' — X2C/X4C/X5C sub stream: rtsp://{ip}:554/ch00/1",
+      "strix_lead": "strixcamdb:xvision"
+    },
+    {
+      "stream": "main",
+      "path": "/ch01.264",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Y3K KB 'RTSP Stream Info for XVision IP cameras' — XC720/XC1080 cameras: rtsp://{ip}:554/ch01.264",
+      "strix_lead": "strixcamdb:xvision"
+    },
+    {
+      "stream": "sub",
+      "path": "/ch01_sub.264",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Y3K KB 'RTSP Stream Info for XVision IP cameras' — XC720/XC1080 sub stream: rtsp://{ip}:554/ch01_sub.264",
+      "strix_lead": "strixcamdb:xvision"
+    },
+    {
+      "stream": "main",
+      "path": "/cam/realmonitor?channel=1&subtype=0&unicast=true",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Y3K KB 'RTSP Stream Info for XVision IP cameras' — X/XP720/XP1080 (Dahua-OEM) cameras",
+      "strix_lead": "strixcamdb:xvision"
+    },
+    {
+      "stream": "sub",
+      "path": "/cam/realmonitor?channel=1&subtype=1&unicast=true",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Y3K KB 'RTSP Stream Info for XVision IP cameras' — X/XP720/XP1080 (Dahua-OEM) sub stream",
+      "strix_lead": "strixcamdb:xvision"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/ch01.264",
+      "note": "Lead was '/ch01.264' — confirmed; note official MJPEG variant is /h264/media.amp (H.264->MJPEG mode), NOT the Axis 'mpeg4/media.amp?resolution=640x480' lead"
+    },
+    {
+      "path": "mpeg4/media.amp?resolution=640x480",
+      "note": "Axis-flavoured lead; not in Xvision docs. Xvision's only media.amp form is /h264/media.amp for the MJPEG stream — the resolution query string is Axis contamination"
+    },
+    {
+      "path": "live/h264",
+      "note": "Not documented in any Y3K/Xvision official RTSP guide — generic cross-brand lead, excluded"
+    },
+    {
+      "path": "ch0_0.h264",
+      "note": "Not in official Y3K doc (closest documented is /ch00/0 and /ch01.264) — excluded as unconfirmed variant"
+    },
+    {
+      "path": "/cam1/onvif-h264-1",
+      "note": "Instar/generic ONVIF-style path; not in Xvision docs — excluded"
+    }
+  ],
+  "notes": "Xvision is a UK-designed brand owned/manufactured by Y3K (Australia HQ), so Y3K's support KB is the manufacturer's own official documentation. Xvision is a multi-OEM line: X2C/X4C/X5C use /ch00/<0|1>; XC720/XC1080 use /ch01.264 & /ch01_sub.264; X/XP720/XP1080 are Dahua-OEM using /cam/realmonitor. NVR/DVR channels use /ip0<N>/0 (main) & /ip0<N>/1 (sub) — not included above (device is a recorder, not a camera). Default port 554 across all families. Both '/ch00/0' and '/ch00/1' leads confirmed exactly.",
+  "verified_on": "2026-08-14"
+}

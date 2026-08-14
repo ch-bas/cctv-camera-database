@@ -1,0 +1,52 @@
+{
+  "brand": "Canon",
+  "brand_id": "canon",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/rtpstream/config1=r",
+      "codec": "H.264 or JPEG (per RTP Streaming 1 video size setting)",
+      "verified": true,
+      "source": "Canon Network Camera VB-H41/VB-H41B/VB-H610VE/VB-H610D/VB-H710F Operation Guide — [RTP] section p.57, http://gdlp01.c-wss.com/gds/1/0300009671/03/VBH467OG_E.pdf",
+      "strix_lead": "strixcamdb:canon"
+    },
+    {
+      "stream": "sub",
+      "path": "/rtpstream/config2=r",
+      "codec": "H.264 or JPEG (per RTP Streaming 2 video size setting)",
+      "verified": true,
+      "source": "Canon Network Camera VB-H41/VB-H41B/VB-H610VE/VB-H610D/VB-H710F Operation Guide — [RTP] section p.57, http://gdlp01.c-wss.com/gds/1/0300009671/03/VBH467OG_E.pdf",
+      "strix_lead": "strixcamdb:canon"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/stream/profile1=r",
+      "note": "Appears in third-party integration docs (Crestron test report for VB-H41) but not found in any official Canon operation guide PDF from gdlp01.c-wss.com. Official Canon docs exclusively document /rtpstream/config<N>=r|u|m."
+    },
+    {
+      "path": "/stream/profile2=r",
+      "note": "Same as above — no official Canon source found; likely cross-contamination or older/undocumented alias."
+    },
+    {
+      "path": "/stream/profile0=r",
+      "note": "Same as above — not in any official Canon operation guide."
+    },
+    {
+      "path": "profile1=u",
+      "note": "Malformed lead (missing leading slash and /stream/ prefix); not in any official Canon source."
+    },
+    {
+      "path": "profile1=r",
+      "note": "Malformed lead (missing leading slash and /stream/ prefix); not in any official Canon source."
+    },
+    {
+      "path": "cam[CHANNEL]/h264",
+      "note": "Dahua/generic path (cam/realmonitor style); no official Canon source confirms this."
+    }
+  ],
+  "notes": "Canon VB series (VB-H41, VB-H610VE, VB-H710F, VB-S800D, VB-S900F, VB-M series, etc.) all use /rtpstream/config<N>=r|u|m where N=1..5 (five independently configurable RTP streams). The =r|u|m transport hint is optional; r=TCP, u=UDP, m=multicast. config1 is the first/main stream; config2 is typically the sub/secondary stream. Port default is 554 (configurable to 1024–65535). RTSP authentication method (Basic/Digest/None) is configurable per camera. Does NOT use /stream/profile<N> paths — those appear only in community/third-party docs and are unconfirmed against official Canon manuals.",
+  "verified_on": "2026-08-14"
+}

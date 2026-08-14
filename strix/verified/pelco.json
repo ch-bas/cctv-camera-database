@@ -1,0 +1,78 @@
+{
+  "brand": "Pelco",
+  "brand_id": "pelco",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/stream1",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Pelco Support KB: 'How To View Different Types Of RTSP Streams Via VLC Player' — https://support.pelco.com/s/article/Can-I-access-the-Sarix-stream-from-any-computer-via-a-RTSP-URL-If-so-what-is-the-format-of-the-URL-Pelco-uses-What-is-the-Web-Url-RTSP-Stream-1538586565420",
+      "strix_lead": "strixcamdb:pelco",
+      "scope": "Sarix Pro / Enhanced / IXE and most single-channel Pelco IP cameras"
+    },
+    {
+      "stream": "sub",
+      "path": "/stream2",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Pelco Support KB: 'How To View Different Types Of RTSP Streams Via VLC Player' — https://support.pelco.com/s/article/Can-I-access-the-Sarix-stream-from-any-computer-via-a-RTSP-URL-If-so-what-is-the-format-of-the-URL-Pelco-uses-What-is-the-Web-Url-RTSP-Stream-1538586565420",
+      "strix_lead": "strixcamdb:pelco",
+      "scope": "Sarix Pro / Enhanced / IXE and most single-channel Pelco IP cameras"
+    },
+    {
+      "stream": "main",
+      "path": "/channel<N>/stream1",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Pelco NET5500 Series Firmware Release Notes v2.2.1.1 (official Pelco doc C1068RN 7/23) — https://www.pelco.com/fs/documents/NET5500-Series-Firmware-Release-Notes-v2.2.1.1.pdf",
+      "strix_lead": "strixcamdb:pelco",
+      "scope": "NET5500 Series multi-channel encoders (NET5501/NET5504/NET5508/NET5516); <N>=channel number 1-16"
+    },
+    {
+      "stream": "sub",
+      "path": "/channel<N>/stream2",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Pelco NET5500 Series Firmware Release Notes v2.2.1.1 (official Pelco doc C1068RN 7/23) — https://www.pelco.com/fs/documents/NET5500-Series-Firmware-Release-Notes-v2.2.1.1.pdf",
+      "strix_lead": "strixcamdb:pelco",
+      "scope": "NET5500 Series multi-channel encoders; <N>=channel number 1-16"
+    },
+    {
+      "stream": "main",
+      "path": "/media/stream.sdp?profile=Profile100",
+      "codec": "per-profile",
+      "verified": true,
+      "source": "Pelco Support KB: 'What is the RTSP Stream URI for the Sarix Value range of IP cameras' — https://support.pelco.com/s/article/What-is-the-RTSP-Stream-for-the-Value-range",
+      "strix_lead": null,
+      "scope": "Sarix Value series only; Profile100=primary, Profile101=secondary, Profile102=tertiary"
+    },
+    {
+      "stream": "sub",
+      "path": "/media/stream.sdp?profile=Profile101",
+      "codec": "per-profile",
+      "verified": true,
+      "source": "Pelco Support KB: 'What is the RTSP Stream URI for the Sarix Value range of IP cameras' — https://support.pelco.com/s/article/What-is-the-RTSP-Stream-for-the-Value-range",
+      "strix_lead": null,
+      "scope": "Sarix Value series only"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/LowResolutionVideo",
+      "note": "Not found in any official Pelco documentation; possibly a different brand contamination"
+    },
+    {
+      "path": "/sstream1",
+      "note": "Not found in any official Pelco documentation; unrecognised variant"
+    },
+    {
+      "path": "stream[CHANNEL]",
+      "note": "Malformed lead; official encoder path is /channel<N>/stream1 not stream[CHANNEL]"
+    }
+  ],
+  "notes": "Two distinct RTSP path families in the Pelco line: (1) Sarix Pro/Enhanced/IXE single-channel cameras use /stream1 and /stream2 at port 554; multicast variants are /stream1m and /stream2m. (2) NET5500 Series multi-channel encoders use /channel<N>/stream1 and /channel<N>/stream2 where N is 1-16; port must be 554. (3) Sarix Value series cameras use ONVIF-style /media/stream.sdp?profile=Profile100/101/102. RTSP authentication is enabled by default on all models. The leads /1/stream1 and /stream1 are both confirmed: /stream1 for single-channel cameras and /channel1/stream1 (equivalent to /1/stream1) for the encoder channel 1. PDN (pdn.pelco.com) is offline as of 2026; the support portal (support.pelco.com) loads but requires JS — KB article text was confirmed via Google search snippet extraction.",
+  "verified_on": "2026-08-14"
+}

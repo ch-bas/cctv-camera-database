@@ -1,0 +1,62 @@
+{
+  "brand": "Axis Communications",
+  "brand_id": "axis",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/axis-media/media.amp",
+      "codec": "H.264|H.265|AV1|MJPEG (per videocodec= param or stream profile)",
+      "verified": true,
+      "source": "Axis VAPIX Video Streaming API — https://developer.axis.com/vapix/network-video/video-streaming/",
+      "strix_lead": "strixcamdb:axis"
+    },
+    {
+      "stream": "sub",
+      "path": "/axis-media/media.amp?streamprofile=<profile>",
+      "codec": "per profile (H.264|H.265|MJPEG)",
+      "verified": true,
+      "source": "Axis VAPIX Stream Profiles API — https://developer.axis.com/vapix/network-video/stream-profiles/ ; Video Streaming API — https://developer.axis.com/vapix/network-video/video-streaming/",
+      "strix_lead": "strixcamdb:axis",
+      "note": "Axis does not expose a separate fixed RTSP path for sub/secondary streams. Lower-resolution or secondary streams are accessed via the same /axis-media/media.amp path with a named stream profile (e.g. streamprofile=Bandwidth) or explicit params (resolution=640x480&fps=5). NVRs/VMS systems configure this as a second RTSP request with different query params."
+    },
+    {
+      "stream": "onvif",
+      "path": "/onvif-media/media.amp",
+      "codec": "per ONVIF profile",
+      "verified": true,
+      "source": "Axis Help — How to access your device: https://help.axis.com/en-US/access-your-device",
+      "strix_lead": "strixcamdb:axis",
+      "note": "Requires an ONVIF user account configured on the device (separate from VAPIX/root account). Standard ONVIF Profile S/T endpoint."
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/live3.sdp",
+      "note": "Legacy MPEG-4 era SDP path (pre-VAPIX 3). Not present in current Axis documentation; superseded by /axis-media/media.amp."
+    },
+    {
+      "path": "/live1.sdp",
+      "note": "Same as live3.sdp — legacy MPEG-4 SDP path, not documented in current VAPIX API."
+    },
+    {
+      "path": "/mpeg4/media.amp",
+      "note": "Legacy MPEG-4 path. Replaced by /axis-media/media.amp with videocodec=mpeg4 parameter. Not in current VAPIX docs."
+    },
+    {
+      "path": "/Streaming/Channels/101",
+      "note": "Hikvision RTSP path — cross-brand contamination in StrixCamDB. No Axis documentation for this path."
+    },
+    {
+      "path": "/live/ch00_0",
+      "note": "Generic/Dahua-style path — cross-brand contamination. No Axis documentation for this path."
+    },
+    {
+      "path": "/ucast/12",
+      "note": "No Axis documentation found for this path. Likely a third-party or firmware-specific variant, not a standard VAPIX endpoint."
+    }
+  ],
+  "notes": "Axis uses a single RTSP endpoint /axis-media/media.amp (VAPIX) for all stream qualities; main vs sub distinction is achieved via query parameters (resolution, fps, compression, videocodec) or named stream profiles (?streamprofile=<name>). Default RTSP port is 554. Default VAPIX username is 'root'. For multi-sensor/multi-channel encoders, use ?camera=<N> to select the input channel. SSM (source-specific multicast) uses /axis-media/ssm/media.amp. The /onvif-media/media.amp path is a separate ONVIF-compliant endpoint requiring a dedicated ONVIF user.",
+  "verified_on": "2026-08-14"
+}

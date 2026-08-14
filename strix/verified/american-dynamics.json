@@ -1,0 +1,80 @@
+{
+  "brand": "American Dynamics",
+  "brand_id": "american-dynamics",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/primarystream",
+      "codec": "H.264 (also MJPEG per configured codec)",
+      "verified": true,
+      "source": "Illustra 600 & 610 Indoor HD Mini-Dome Installation & Operation Guide (Tyco/JCI official CDN, cdn.tycosp.com/docs/illustra.products/pro-600-mini-dome/Manuals/Illustra-600-610-Indoor-Mini-Dome-Installation-and-Operation-Guide-e0_lt_en.pdf), RTSP section: 'rtsp://<IP Address>:<primary A/V codec port>/primarystream'. Also documented in the official Illustra 600 Installation & Operation Manual.",
+      "strix_lead": "strixcamdb:american-dynamics"
+    },
+    {
+      "stream": "sub",
+      "path": "/secondarystream",
+      "codec": "H.264 (also MJPEG per configured codec)",
+      "verified": true,
+      "source": "Illustra 600 & 610 Indoor HD Mini-Dome Installation & Operation Guide (Tyco/JCI official, cdn.tycosp.com), RTSP section: 'rtsp://<IP Address>:<secondary A/V codec port>/secondarystream'. An '/audio' path is also documented for the audio-only stream.",
+      "strix_lead": "strixcamdb:american-dynamics"
+    },
+    {
+      "stream": "main-pro-series",
+      "path": "/ufirststream",
+      "codec": "H.264 / H.265 (per configured codec)",
+      "verified": true,
+      "source": "Illustra Pro Configuration Guide (Tyco/JCI official CDN, cdn.tycosp.com/docs/illustra.products/edge-mini-dome/Manuals/Illustra-Pro-Configuration-Guide-B0_lt_en.pdf), RTSP section: 'rtsp://<IP Address>:[primary A/V codec port]/ufirststream', default RTSP port 554. Newer-generation Illustra Pro/Standard-HD path naming.",
+      "strix_lead": "strixcamdb:american-dynamics"
+    },
+    {
+      "stream": "sub-pro-series",
+      "path": "/usecondstream",
+      "codec": "H.264 / H.265 (per configured codec)",
+      "verified": true,
+      "source": "Illustra Pro Configuration Guide (Tyco/JCI official, cdn.tycosp.com), RTSP section: 'rtsp://<IP Address>:[primary A/V codec port]/usecondstream', default RTSP port 554.",
+      "strix_lead": "strixcamdb:american-dynamics"
+    },
+    {
+      "stream": "main-essentials-oem",
+      "path": "/cam/realmonitor?channel=1&subtype=0",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Illustra Essentials Network Camera Web3.0 User Manual 8200-1102-07 B0 (illustracameras.com/wp-content/uploads/2019/07/Illustra-Essentials-Network-Camera-Web3.0-User-Manual-b0_lt_EN-1.pdf) — a Dahua-OEM product; RTSP section: 'Main stream: rtsp://username:password@ip:port/cam/realmonitor?channel=1&subtype=0', 'Sub stream: ...&subtype=1', default port 554.",
+      "strix_lead": "strixcamdb:american-dynamics"
+    },
+    {
+      "stream": "sub-essentials-oem",
+      "path": "/cam/realmonitor?channel=1&subtype=1",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Illustra Essentials Network Camera Web3.0 User Manual 8200-1102-07 B0 (illustracameras.com, Dahua OEM): 'Sub stream: rtsp://username:password@ip:port/cam/realmonitor?channel=1&subtype=1', default port 554.",
+      "strix_lead": "strixcamdb:american-dynamics"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/Video?Codec=MPEG4&Width=720&Height=576&Fps=30",
+      "note": "Not found in any official American Dynamics/Illustra doc — resembles a Brickcom/Vivotek-style query path; contamination."
+    },
+    {
+      "path": "/Video",
+      "note": "Not found in any official Illustra doc; generic contamination."
+    },
+    {
+      "path": "live1.sdp",
+      "note": "Not in any official Illustra doc; generic .sdp session-name lead, cross-brand contamination."
+    },
+    {
+      "path": "/live2.sdp",
+      "note": "Not in any official Illustra doc; generic .sdp lead, contamination."
+    },
+    {
+      "path": "ch0_0.h264",
+      "note": "Not in any official Illustra doc; generic ONVIF/other-brand path, contamination."
+    }
+  ],
+  "notes": "American Dynamics = Illustra line (Sensormatic/Tyco/Johnson Controls). Path names differ by product generation, all confirmed against Tyco/JCI official manuals: (1) Illustra 600/610 use /primarystream + /secondarystream (+ /audio); note this older generation defaults its stream ports to 7777-7781, but standard/default RTSP is 554 and paths are the load-bearing part. (2) Illustra Pro / Standard HD use /ufirststream + /usecondstream on default port 554. (3) Illustra Essentials is a Dahua OEM and uses the Dahua path /cam/realmonitor?channel=1&subtype=<0|1>. Session/stream names are configurable in the camera Web-UI (Setup > Network > RTSP/RTP). Two leads (/primarystream, /ufirststream) directly match official docs and are confirmed; the .sdp / ch0_0.h264 / /Video leads are contamination.",
+  "verified_on": "2026-08-14"
+}

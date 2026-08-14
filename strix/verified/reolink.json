@@ -1,0 +1,116 @@
+{
+  "brand": "Reolink",
+  "brand_id": "reolink",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/Preview_{channel}_main",
+      "codec": "H.264 or H.265 (model-dependent; 8 MP models use H.265 for main stream)",
+      "verified": true,
+      "source": "Reolink Support KB — Introduction to RTSP: https://support.reolink.com/articles/900000630706-Introduction-to-RTSP/",
+      "strix_lead": "strixcamdb:reolink"
+    },
+    {
+      "stream": "sub",
+      "path": "/Preview_{channel}_sub",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Reolink Support KB — Introduction to RTSP: https://support.reolink.com/articles/900000630706-Introduction-to-RTSP/",
+      "strix_lead": "strixcamdb:reolink"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/h264Preview_01_main",
+      "note": "Not documented in any official Reolink KB or manual; likely a community-discovered firmware variant. Official docs use /Preview_{channel}_main without codec prefix."
+    },
+    {
+      "path": "/h264Preview_01_sub",
+      "note": "Same as above — no-codec-prefix form /Preview_{channel}_sub is the official documented path."
+    },
+    {
+      "path": "/h265Preview_01_main",
+      "note": "Not in official Reolink RTSP KB; codec is selected automatically by the path /Preview_{channel}_main on supported models."
+    },
+    {
+      "path": "/h265Preview_01_sub",
+      "note": "Not in official Reolink RTSP KB."
+    },
+    {
+      "path": "/e1/mainStream",
+      "note": "Port 8554 variant — not documented in Reolink's official RTSP KB; possibly a product-specific or firmware variant path."
+    },
+    {
+      "path": "/e1/subStream",
+      "note": "Port 8554 variant — not documented in official Reolink RTSP KB."
+    },
+    {
+      "path": "/livingroom/mainStream",
+      "note": "User-defined camera-name path variant at port 8554 — not documented in official Reolink RTSP KB."
+    },
+    {
+      "path": "/CarPort/mainStream",
+      "note": "User-defined camera-name path variant at port 8554 — not documented in official Reolink RTSP KB."
+    },
+    {
+      "path": "/dome/mainStream",
+      "note": "Port 8554 variant — not documented in official Reolink RTSP KB."
+    },
+    {
+      "path": "/dome/subStream",
+      "note": "Port 8554 variant — not documented in official Reolink RTSP KB."
+    },
+    {
+      "path": "/ucast/12",
+      "note": "No official Reolink documentation found for this path."
+    },
+    {
+      "path": "/mpeg4/media.amp?resolution=640x480",
+      "note": "Axis-pattern path — cross-brand contamination; Reolink does not use this format."
+    },
+    {
+      "path": "/img/media.sav",
+      "note": "Axis-pattern path — cross-brand contamination."
+    },
+    {
+      "path": "/stream1",
+      "note": "Generic path, no official Reolink documentation."
+    },
+    {
+      "path": "/videoMain",
+      "note": "No official Reolink documentation found for this path."
+    },
+    {
+      "path": "/videoSub",
+      "note": "No official Reolink documentation found for this path."
+    },
+    {
+      "path": "/live",
+      "note": "Generic path, no official Reolink documentation."
+    },
+    {
+      "path": "/h264",
+      "note": "Generic path, no official Reolink documentation."
+    },
+    {
+      "path": "/s0",
+      "note": "No official Reolink documentation found for this path."
+    },
+    {
+      "path": "/ROH/channel/11",
+      "note": "No official Reolink documentation found; pattern does not match any known Reolink firmware."
+    },
+    {
+      "path": "/media/video1",
+      "note": "No official Reolink documentation found for this path."
+    },
+    {
+      "path": "/1/h264major",
+      "note": "No official Reolink documentation found for this path."
+    }
+  ],
+  "notes": "Channel number is 2-digit zero-padded (e.g. 01, 02). For standalone cameras the channel is always 01. For multi-channel NVR/Home Hub systems, channels start at 01 (1-based). Codec is determined by camera model and firmware, not by path; the official documented path prefix is /Preview_{channel}_{stream} without a codec prefix. Port 8554 paths (e1/mainStream etc.) appear in community sources and may be a distinct firmware family; they are not confirmed by Reolink's official RTSP KB article. RTSP and ONVIF are disabled by default on Reolink cameras and must be enabled in the camera settings.",
+  "verified_on": "2026-08-14"
+}

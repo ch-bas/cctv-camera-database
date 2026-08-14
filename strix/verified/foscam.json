@@ -1,0 +1,60 @@
+{
+  "brand": "Foscam",
+  "brand_id": "foscam",
+  "status": "verified",
+  "default_port": 88,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/videoMain",
+      "codec": "per-profile",
+      "verified": true,
+      "source": "Foscam official support FAQ 'How to get the RTSP stream of Foscam HD cameras?' (foscam.com/faqs/view.html?id=81): 'rtsp://username:pwd@IP address:RTSP port/videoMain'",
+      "strix_lead": "strixcamdb:foscam"
+    },
+    {
+      "stream": "sub",
+      "path": "/videoSub",
+      "codec": "per-profile",
+      "verified": true,
+      "source": "Foscam official support FAQ 'How to get the RTSP stream of Foscam HD cameras?' (foscam.com/faqs/view.html?id=81): 'rtsp://username:pwd@IP address:RTSP port/videoSub'",
+      "strix_lead": "strixcamdb:foscam"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/ucast/11",
+      "note": "Not found in any official Foscam documentation — likely cross-brand contamination."
+    },
+    {
+      "path": "/user=admin_password=[PASSWORD]_channel=1_stream=0.sdp",
+      "note": "This .sdp path pattern (and the variant /user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp) does not appear in any official Foscam documentation. Foscam's official FAQ documents only /videoMain and /videoSub as the RTSP resource paths — cross-brand contamination."
+    },
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+      "note": "See above — cross-brand contamination; not in any official Foscam RTSP doc."
+    },
+    {
+      "path": "H264",
+      "note": "Bare 'H264' path (port 8554) — not documented by Foscam; likely cross-brand contamination."
+    },
+    {
+      "path": "video.mp4",
+      "note": "Generic video.mp4 lead — not a documented Foscam RTSP resource path."
+    },
+    {
+      "path": "/cam1/onvif-h264",
+      "note": "Generic ONVIF-style path — not documented by Foscam; cross-brand contamination."
+    },
+    {
+      "path": "/2.3gp",
+      "note": "Legacy 3GP lead — not in any official Foscam documentation."
+    },
+    {
+      "path": "live.sdp",
+      "note": "Generic live.sdp lead — not documented by Foscam; cross-brand contamination."
+    }
+  ],
+  "notes": "Foscam's official FAQ documents exactly two RTSP video paths: /videoMain (main stream) and /videoSub (sub stream). A third path /audio provides audio-only with no video. The default RTSP port is 88 (matches the HTTP port default). A subset of models — including C1, C1 Lite, FI9816P, FI9800P, FI9803P V2, C1 Lite V3, C1 V3, FI9800P V3, FI9803P V4, FI9816P V3, FI9821EP V2, FI9821P V3, FI9826P V3, FI9831P V3, FI9851P V3, and FI9853EP V2 — use RTSP port 554 instead of 88. No codec is specified in the official FAQ (codec depends on the camera model's configured profile). Full URL form: rtsp://{user}:{pass}@{ip}:{port}/videoMain. Foscam is an independent brand (not a known Dahua/Hikvision OEM at firmware level); the .sdp-style paths in leads are cross-brand contamination.",
+  "verified_on": "2026-08-14"
+}

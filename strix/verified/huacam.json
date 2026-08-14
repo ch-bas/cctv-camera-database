@@ -1,0 +1,39 @@
+{
+  "brand": "Huacam",
+  "brand_id": "huacam",
+  "status": "unverified",
+  "default_port": 554,
+  "templates": [],
+  "unverified_leads": [
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+      "note": "Generic cross-brand SDP path (widely associated with SunEyes/generic Chinese IPC firmware); not in any official Huacam manual."
+    },
+    {
+      "path": "ch0_0.h264",
+      "note": "Generic aggregator path; not documented by Huacam."
+    },
+    {
+      "path": "VideoInput/[CHANNEL]/h264/1",
+      "note": "Bosch-style path; cross-brand contamination, not Huacam."
+    },
+    {
+      "path": "cam[CHANNEL]/h264",
+      "note": "Generic aggregator path; not in Huacam docs."
+    },
+    {
+      "path": "video.mp4",
+      "note": "Generic HTTP/RTSP filename; not officially documented by Huacam."
+    },
+    {
+      "path": "LowResolutionVideo",
+      "note": "Generic aggregator path; not in Huacam docs."
+    },
+    {
+      "path": "live.sdp",
+      "note": "Generic SDP path; not in Huacam docs."
+    }
+  ],
+  "notes": "Huacam's OWN official documentation (HCV822, HCV701, HCV725 user manuals on manualslib/huacam.com) documents ONVIF support and the RTSP PORT rule only — 'If the web port is 80, the RTSP port is 554; otherwise the RTSP port = web port + 2000' (e.g. web port 88 -> RTSP 2088). The manuals do NOT publish a fixed RTSP stream PATH. The commonly-cited path '/0' (e.g. rtsp://admin:admin@192.168.1.188:554/0, default IP 192.168.1.188, default admin/admin) appears ONLY in third-party aggregators (GeniusVision, iSpy/Agent DVR, camlytics, camera-sdk, smartvision), never in Huacam's own docs. None of the Strix leads match any official Huacam documentation — all are generic cross-brand aggregator paths. Per the CC0 no-guessing rule, no template is published. default_port 554 is the documented port for the standard web-port-80 case. To integrate, use ONVIF auto-discovery rather than a hand-built RTSP path.",
+  "verified_on": "2026-08-14"
+}
