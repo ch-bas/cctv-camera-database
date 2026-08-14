@@ -82,7 +82,7 @@ cctv-camera-database/
 ├── data/                 # GENERATED — do not edit by hand
 │   ├── cameras.json      # all 2,930 cameras as one array
 │   ├── cameras.csv       # flattened, spreadsheet-friendly
-│   └── rtsp-patterns.json  # CC0 brand-level RTSP URL layer (122 brands)
+│   └── rtsp-patterns.json  # CC0 brand-level RTSP URL layer (170 brands)
 ├── strix/
 │   └── verified/         # per-brand RTSP source files → rtsp-patterns.json
 ├── schema/
@@ -112,7 +112,7 @@ Other scripts: `npm run add` (interactive add-a-camera wizard) and `npm run chec
 
 ### RTSP reference layer
 
-`data/rtsp-patterns.json` is a **CC0 brand-level RTSP URL reference** for 122 brands (91 verified / 31 unverified / 290 stream templates). Each path is confirmed against the manufacturer's own documentation — never copied from aggregators. Regenerate after editing `strix/verified/`:
+`data/rtsp-patterns.json` is a **CC0 brand-level RTSP URL reference** for 170 brands (116 verified / 54 unverified / 344 stream templates). Each path is confirmed against the manufacturer's own documentation — never copied from aggregators. Regenerate after editing `strix/verified/`:
 
 ```bash
 RTSP_PATTERNS_DATE=$(date +%Y-%m-%d) node scripts/build-rtsp-patterns.js

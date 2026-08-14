@@ -6,6 +6,30 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.63.0] — 2026-08-14
+
+### Added — RTSP patterns expanded to 170 brands (waves 2–5)
+
+Adds 48 more brand entries to `data/rtsp-patterns.json` and `strix/verified/`, bringing the layer to **170 brands / 116 verified / 54 honest-unverified / 344 stream templates**.
+
+**Wave 2 — PR #263 (20 brands):**
+- ✅ **Luma** `/Streaming/channels/1` (Hikvision OEM, SnapAV) · **ClareVision** `/0`, `/1`, `/2` (Hikvision OEM — differs from standard paths) · **HiLook** `/Streaming/Channels/<N>01` (Hikvision sub-brand) · **Milesight** `/main`, `/sub`, `/third` · **Camius** `/rtsp/streaming?channel=<N>&subtype=0` @port 80 · **Grandstream** `/0` (main), `/4` (sub) · **Wisenet** `/profile2/media.smp` (Hanwha consumer brand) · **Loryta** `/cam/realmonitor` (Dahua OEM via EmpireTech) · **ieGeek** `/11`, `/12`
+- ⬜ Tiandy, Resideo (cloud-only), Kasa (no RTSP per TP-Link FAQ), Galayou (no static path), Provision-ISR (path in UI screenshot only), EBITCAM (cloud-only), IPC360 (P2P), Ctronics, Merkury (Tuya/app-only), ZXTech (path undisclosed)
+
+**Wave 3 (in `release/next` — PR #266, 10 brands):**
+- ✅ **TVT Digital** `/profile1`, `/profile2`, `/profile3` · **LTS Security** `/Streaming/Channels/101` (Hikvision OEM) · **Synology** `/1`, `/2` · **IDIS** `/trackID=1`, `/trackID=2` · **Wansview** `/live/ch0`, `/live/ch1` · **Kedacom** `/id=0`, `/id=1` · **Lupus Electronics** `/cam/realmonitor` (Dahua-style) · **Sunell** `/snl/live/1/1`, `/snl/live/1/2`
+- ⬜ ZKTeco (no official path in public docs), March Networks (path not disclosed)
+
+**Wave 4 (in `release/next` — PR #266, 10 brands):**
+- ✅ **Holowits** `/LiveMedia/ch1/Media1` (Huawei brand) · **Surveon** `/stream1`, `/stream2` · **Brickcom** `/channel1`, `/channel2` · **Motorola Solutions** `/defaultPrimary?streamType=u` (Avigilon Alta)
+- ⬜ Aqara (app-generated URL), Netatmo (cloud-only/HLS), Safire (dual OEM lineage, no single path), CoStar Technologies (holding company), Qubo (app-only)
+
+**Wave 5 (in `release/next` — PR #266, 10 brands):**
+- ✅ **Messoa** `/stream1`, `/stream2`, `/stream3` · **Genie CCTV** `/profile1`, `/profile2` · **Nuvico** `/profile1`, `/profile2` · **Vitek** `/profile1`, `/profile2`
+- ⬜ CNB Technology (site inaccessible), Yale (ONVIF-only/cloud-only), Toucan (cloud-only), Safevant (site unreachable), Bosch Smart Home (cloud-only, distinct from Bosch Security), LG Business Solutions (path not documented)
+
+---
+
 ## [1.62.0] — 2026-08-14
 
 ### Added — CC0 RTSP URL reference layer (`data/rtsp-patterns.json`)
