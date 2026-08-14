@@ -6,6 +6,23 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.62.0] — 2026-08-14
+
+### Added — CC0 RTSP URL reference layer (`data/rtsp-patterns.json`)
+
+- **`data/rtsp-patterns.json`** — a new CC0 brand-level RTSP reference layer covering **122 brands / 91 verified / 31 unverified / 290 stream templates**. Each template is independently confirmed against the manufacturer's own documentation (manual, API, or knowledge base), with `source` (the official doc) and `strix_lead` (StrixCamDB discovery credit) per entry. `status: "unverified"` with empty `templates` is an honest, intentional result — brands that publish no official RTSP path are recorded as such rather than guessing.
+
+- **122 per-brand source files** under `strix/verified/<brand_id>.json` — the authoritative input; `data/rtsp-patterns.json` is generated from these by `scripts/build-rtsp-patterns.js`.
+
+- **Methodology:** StrixCamDB is used only as a lead source. Every path here was re-verified against the manufacturer's own docs, so the layer is independently sourced and CC0-clean. Notable verification findings:
+  - Canon: all StrixCamDB leads were wrong; real path is `/rtpstream/config1=r`
+  - ABUS: all 26 leads were Hikvision cross-contamination; real path is `/h264`/`/mpeg4`
+  - Reolink: leads carried a codec prefix (`/h264Preview_01_main`) not in official docs; real path is `/Preview_01_main`
+  - TRENDnet/Dericam: real paths were in none of the leads (all cross-contamination)
+  - Port anomalies caught: Foscam @88, GeoVision @8554, Speco @9008, Eversecu/VStarcam/Zmodo @10554, Hiseeu @80
+
+- Regenerate after editing `strix/verified/`: `RTSP_PATTERNS_DATE=<date> node scripts/build-rtsp-patterns.js`
+
 ## [1.61.0] — 2026-08-13
 
 ### Added — 2 new brands + 26 cameras (four-brand batch)
