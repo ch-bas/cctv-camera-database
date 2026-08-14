@@ -1,0 +1,108 @@
+{
+  "brand": "Bosch Security Systems",
+  "brand_id": "bosch",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/?inst=1",
+      "codec": "H.264 (h26x=4 parameter) or per-profile",
+      "verified": true,
+      "source": "Bosch 'RTSP VIP Configuration Note' (doc 9007200806939915, www.boschsecurity.com / ipp.boschsecurity.com) — archived at usermanual.wiki/Bosch/RTSPVIPConfigurationNoteenUS9007200806939915.2663841228.pdf; and Bosch community post 'How to request a RTSP multicast stream from a BOSCH IP camera' (community.boschsecurity.com/t5/Security-Video/ta-p/16494). Document states: 'Stream 1 is the live video from the Dinion IP camera using encoding stream 1. Reception of stream 2 is accomplished by handing over the parameter inst to the RTSP server. The RTSP server does not need a web page addressed in the URL but needs the slash after the IP followed by ? as separator for the query string. Request: RTSP://160.10.0.1/?inst=2.'",
+      "strix_lead": "strixcamdb:bosch"
+    },
+    {
+      "stream": "sub",
+      "path": "/?inst=2",
+      "codec": "H.264 or per-profile",
+      "verified": true,
+      "source": "Bosch 'RTSP VIP Configuration Note' (doc 9007200806939915, www.boschsecurity.com) — same document as main stream; inst=2 selects encoding stream 2 (sub). Example full URL with all parameters: RTSP://160.10.0.40/?h26x=4&line=3&inst=2&multicast=1&enableaudio=1&audio_line=1",
+      "strix_lead": "strixcamdb:bosch"
+    },
+    {
+      "stream": "main-tunnel",
+      "path": "/rtsp_tunnel",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Bosch community (community.boschsecurity.com) and multiple Bosch VIP device integration references — /rtsp_tunnel on port 10600 is the RTSP-over-HTTP tunneling endpoint used on certain Bosch camera series (e.g. 4000 IP HD, FLEXIDOME IP). Port 10600 is Bosch-specific for this tunneled path. Referenced by Bosch community KB 'RTSP usage with Bosch VIP Devices' PDF (community.boschsecurity.com/varuj77995/attachments/varuj77995/bt_community-tkb-video/241/1/RTSP%20usage%20with%20Bosch%20Video%20IP%20Devices.pdf).",
+      "strix_lead": "strixcamdb:bosch"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "video.h264",
+      "note": "No leading slash — malformed lead. Likely cross-brand contamination (FOSCAM or similar uses /video.h264). Not present in any official Bosch RTSP documentation."
+    },
+    {
+      "path": "/video.h264",
+      "note": "Fixed-path H.264 stream URL — not documented in the Bosch RTSP VIP Configuration Note. Bosch uses query-string inst= parameter, not a fixed codec-named path. Possibly cross-brand (e.g. older Bosch VIDOS encoder, but not confirmed in official current docs)."
+    },
+    {
+      "path": "ch0_0.h264",
+      "note": "Dahua/Hikvision-style channel+stream path. No leading slash. Not documented in any official Bosch material — cross-brand contamination."
+    },
+    {
+      "path": "/ch0_0.h264",
+      "note": "Same Dahua/Hikvision cross-contamination as ch0_0.h264 above. Not a Bosch path."
+    },
+    {
+      "path": "/1/stream1/Profile1",
+      "note": "ONVIF media profile path format; may appear via ONVIF discovery on Bosch cameras but is not Bosch's native/documented RTSP path. Excluded as not from Bosch's own RTSP documentation."
+    },
+    {
+      "path": "h264",
+      "note": "No leading slash — malformed. Not documented in any official Bosch source."
+    },
+    {
+      "path": "/h264",
+      "note": "Fixed /h264 path — not found in Bosch VIP RTSP documentation. Cross-brand contamination (Axis/generic). Not confirmed."
+    },
+    {
+      "path": "video",
+      "note": "No leading slash — malformed. Not a documented Bosch path."
+    },
+    {
+      "path": "/video",
+      "note": "Fixed /video path — not documented in Bosch RTSP VIP Configuration Note. Cross-brand contamination."
+    },
+    {
+      "path": "cgi-bin/rtspStream/[CHANNEL]",
+      "note": "CGI-based RTSP URL format — not documented in official Bosch RTSP docs. Possibly community-sourced or third-party aggregator artifact. Not confirmed in Bosch documentation."
+    },
+    {
+      "path": "live/ch00_0",
+      "note": "Dahua-style live stream path. Not a Bosch path — cross-brand contamination."
+    },
+    {
+      "path": "/ch1-s1",
+      "note": "Generic channel-stream notation. Not documented in Bosch RTSP VIP Configuration Note. Cross-brand contamination."
+    },
+    {
+      "path": "user=[USERNAME]&password=[PASSWORD]&channel=1&stream=0.sdp?",
+      "note": "Dahua/generic credential-in-query-string format with .sdp extension. Completely foreign to Bosch's documented RTSP URL scheme. Cross-brand contamination."
+    },
+    {
+      "path": "user=[USERNAME]&password=[PASSWORD]&channel=1&stream=[CHANNEL].sdp?",
+      "note": "Same Dahua-style pattern as above. Not a Bosch path."
+    },
+    {
+      "path": "rtsp_tunnel",
+      "note": "Missing leading slash — malformed variant of /rtsp_tunnel. The verified form with leading slash and port 10600 is captured in templates as main-tunnel."
+    },
+    {
+      "path": "live3.sdp",
+      "note": "SDP-based RTSP path — not documented in Bosch's RTSP VIP Configuration Note. Cross-brand contamination (common in Axis or generic ONVIF devices)."
+    },
+    {
+      "path": "/live/mpeg4",
+      "note": "MPEG-4 named path — not a Bosch-documented RTSP path. Cross-brand contamination."
+    },
+    {
+      "path": "/line=2",
+      "note": "Malformed — 'line' is a Bosch RTSP query parameter (for multi-channel encoders: ?line=<N>), not a path segment. This appears to be a StrixCamDB parsing artifact of the query string. The valid usage is /?line=2&inst=1 as documented in the Bosch RTSP VIP Configuration Note."
+    }
+  ],
+  "notes": "Bosch VIP (Video IP) cameras use a query-string-only RTSP URL format with no fixed path beyond '/': rtsp://{user}:{pass}@{ip}:{port}/?inst=<N>. inst=1 = stream 1 (main/primary), inst=2 = stream 2 (sub/secondary). Additional documented parameters: line=<N> (selects camera/channel on multi-channel encoders), h26x=4 (selects H.264 encoding), multicast=1 (multicast transport), enableaudio=1&audio_line=<N> (audio). Port 554 is the standard RTSP port for direct streaming. Port 10600 is Bosch-specific for the RTSP-over-HTTP tunneling endpoint (/rtsp_tunnel), used on certain camera series (4000 IP HD and others) for firewall traversal. Applies to Bosch DINION IP, FLEXIDOME IP, AUTODOME IP, and VIP encoder product lines. Bosch is a proprietary OEM — these paths are not shared with Dahua/Hikvision/Axis. The 'RTSP VIP Configuration Note' is the authoritative source (doc 9007200806939915, originally at ipp.boschsecurity.com/en_US).",
+  "verified_on": "2026-08-14"
+}

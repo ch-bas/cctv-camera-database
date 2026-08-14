@@ -1,0 +1,72 @@
+{
+  "brand": "Intelbras",
+  "brand_id": "intelbras",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/cam/realmonitor?channel=<N>&subtype=0",
+      "codec": "H.264/H.265 or per-profile",
+      "verified": true,
+      "source": "Multiple official Intelbras VIP-series user manuals (backend.intelbras.com): 'Manual do usuário VIP 3260 Z' (backend.intelbras.com/sites/default/files/2021-03/Manual_VIP_3260Z_01-21_A3_0.pdf), 'Manual do usuário VIP 3240 Z G2 VIP 3240 DZ G2' (backend.intelbras.com/sites/default/files/2020-12/Manual_VIP_3240DZ_G2_02-20.pdf), 'Manual do usuário VIP 3230 W/3430 W' (backend.intelbras.com/sites/default/files/2020-10/Manual-do-usuario-VIP-3230-W-VIP-3230-D-W-VIP-3430-W-E-VIP-3430-D-W-V2.pdf), 'Manual do usuário VIP 5550 DZ IA' (backend.intelbras.com/sites/default/files/2020-10/Manual_VIP_5550_DZ_IA_05-20.pdf); and 'TIP 638V — Guia para Acesso à Câmeras de Segurança' (backend.intelbras.com/sites/default/files/integration/tip_638v_-_guia_para_acessar_cameras_de_seguranca.pdf). All document rtsp://USUÁRIO:SENHA@IP:PORTA/cam/realmonitor?channel=1&subtype=0 as the main (principal) stream.",
+      "strix_lead": "strixcamdb:intelbras"
+    },
+    {
+      "stream": "sub",
+      "path": "/cam/realmonitor?channel=<N>&subtype=1",
+      "codec": "H.264/H.265 or per-profile",
+      "verified": true,
+      "source": "Same official Intelbras VIP-series manuals as main stream (VIP 3260 Z, VIP 3240 DZ G2, VIP 3230 W/3430 W, VIP 5550 DZ IA; TIP 638V guide). All document rtsp://USUÁRIO:SENHA@IP:PORTA/cam/realmonitor?channel=1&subtype=1 as the extra (sub) stream.",
+      "strix_lead": "strixcamdb:intelbras"
+    },
+    {
+      "stream": "legacy-main",
+      "path": "/user={user}&password={pass}&channel=<N>&stream=0.sdp",
+      "codec": "H.264 or per-profile",
+      "verified": true,
+      "source": "Intelbras 'Manual do usuário VIP 1120 D G2 VIP 1120 B G2' (backend.intelbras.com/sites/default/files/2020-07/Manual-do-usuario-vip-1120-b-g2-vip-1120-d-g2.pdf), page 23 — confirmed by Intelbras technical support in forum post (forum.intelbras.com.br/viewtopic.php?f=1984&t=61632): rtsp://IP:PORTA/user=USUÁRIO&password=SENHA&channel=1&stream=0.sdp as main stream for older VIP 1120/1130-era models.",
+      "strix_lead": "strixcamdb:intelbras"
+    },
+    {
+      "stream": "legacy-sub",
+      "path": "/user={user}&password={pass}&channel=<N>&stream=1.sdp",
+      "codec": "H.264 or per-profile",
+      "verified": true,
+      "source": "Intelbras 'Manual do usuário VIP 1120 D G2 VIP 1120 B G2' page 23, confirmed by Intelbras technical support (forum.intelbras.com.br/viewtopic.php?f=1984&t=61632): rtsp://IP:PORTA/user=USUÁRIO&password=SENHA&channel=1&stream=1.sdp as sub stream for older VIP 1120/1130-era models.",
+      "strix_lead": "strixcamdb:intelbras"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/cam/realmonitor?channel=3&subtype=00",
+      "note": "subtype=00 (double-zero) variant — not the documented form; excluded in favour of the canonical subtype=0 documented in Intelbras manuals."
+    },
+    {
+      "path": "/cam/realmonitor?channel=1&subtype=0&unicast=true&proto=Onvif",
+      "note": "Extra query params (unicast, proto=Onvif) not part of the officially documented Intelbras RTSP URL form; likely client-injected and not required."
+    },
+    {
+      "path": "/cam/realmonitor?channel=1&subtype=0&unicast=true",
+      "note": "unicast=true not in the officially documented Intelbras URL template; excluded."
+    },
+    {
+      "path": "/cam/realmonitor?channel=1&subtype=1&authBasic=YWRtaW46KkFkMzFuMTV0UjJjWDAj",
+      "note": "authBasic base64 token injected by client software — not part of the official URL template; core path /cam/realmonitor?channel=1&subtype=1 is confirmed."
+    },
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=1.sdp",
+      "note": "Underscore-delimited variant of the .sdp path — official documentation uses ampersand delimiters (&); underscore form appears to be a community variant without official documentation."
+    },
+    {
+      "path": "/user=[PASSWORD]_password=[PASSWORD]_channel=1_stream=1.sdp",
+      "note": "Malformed lead (user field contains password placeholder) — excluded."
+    },
+    {
+      "path": "/cam/realmonitor",
+      "note": "Bare path without required channel/subtype parameters — not a complete usable template."
+    }
+  ],
+  "notes": "Intelbras is a major Brazilian security brand and a confirmed Dahua OEM. Their VIP-series IP cameras (VIP 3260 Z, VIP 3240 DZ G2, VIP 3230 W, VIP 3430 W, VIP 5550 DZ IA, Mibo series, and many others) use the standard Dahua /cam/realmonitor RTSP path, documented in official Portuguese-language Intelbras manuals (backend.intelbras.com). channel=<N> is 1 for single-channel IP cameras; subtype=0 = main (principal) stream, subtype=1 = sub (extra) stream. A legacy .sdp-style path (/user=...&password=...&channel=...&stream=N.sdp) is documented in older VIP 1120/1130-era manuals and confirmed by Intelbras technical support. Default RTSP port is 554; some StrixCamDB leads show 8554 (configurable per device, not the published default). authBasic and unicast query parameters found in leads are client-injected, not part of the official URL template.",
+  "verified_on": "2026-08-14"
+}

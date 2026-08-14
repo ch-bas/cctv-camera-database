@@ -1,0 +1,52 @@
+{
+  "brand": "CP Plus",
+  "brand_id": "cp-plus",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/cam/realmonitor?channel=<N>&subtype=0",
+      "codec": "H.264|H.265|per-profile",
+      "verified": true,
+      "source": "CP Plus 'User Manual Network Camera Version 1.0.1' (cpplusworld.com/prodassets/usermannual/d2dd5472-aa4e-4e25-964f-616a4e6a6dd2.pdf) — 'URL format example: rtsp://username:password@ip:port/cam/realmonitor?channel=1&subtype=0 … Subtype: The bit stream type; 0 means mainstream (Subtype=0)'",
+      "strix_lead": "strixcamdb:cp-plus"
+    },
+    {
+      "stream": "sub",
+      "path": "/cam/realmonitor?channel=<N>&subtype=1",
+      "codec": "H.264|H.265|per-profile",
+      "verified": true,
+      "source": "CP Plus 'User Manual Network Camera Version 1.0.1' (cpplusworld.com/prodassets/usermannual/d2dd5472-aa4e-4e25-964f-616a4e6a6dd2.pdf) — 'Subtype: 1 means sub stream (Subtype=1). Example: If you require the sub stream of channel 2 … rtsp://admin:admin@10.12.4.84:554/cam/realmonitor?channel=2&subtype=1'",
+      "strix_lead": "strixcamdb:cp-plus"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "live",
+      "note": "Bare relative path; not documented in any CP Plus official manual — likely cross-contamination from another brand"
+    },
+    {
+      "path": "/live/av0",
+      "note": "Not in CP Plus official documentation; appears in generic RTSP lead databases but absent from CP Plus manuals"
+    },
+    {
+      "path": "live/av0?user=[USERNAME]&passwd=[PASSWORD]",
+      "note": "Same unconfirmed /live/av0 path with credential query params; not in CP Plus official docs"
+    },
+    {
+      "path": "VideoInput/1/mpeg4/1",
+      "note": "Not in CP Plus official documentation; Hikvision PSIA-era legacy path, cross-contamination"
+    },
+    {
+      "path": "/live/channel1",
+      "note": "Port 5543 non-standard; not in CP Plus official documentation"
+    },
+    {
+      "path": "/live/channel0",
+      "note": "Port 5543 non-standard; not in CP Plus official documentation"
+    }
+  ],
+  "notes": "CP Plus (cpplusworld.com / cpplus.in) is a major Indian security brand and confirmed Dahua OEM. The /cam/realmonitor path with channel and subtype query parameters is explicitly documented in CP Plus's own published Network Camera User Manual (v1.0.1) hosted at cpplusworld.com. Default RTSP port is 554. Channel index is 1-based. subtype=0 = main/primary stream, subtype=1 = sub/secondary stream. The NVR Orange Series manual (cpplusworld.com/orange-series/img/User_Manual_NVR.pdf) documents the same RTSP port default (554) but does not spell out a stream URL path — path is confirmed via the camera-side manual. Several leads (/live/av0, VideoInput/1/mpeg4/1, /live/channel0, /live/channel1) are cross-contaminated from other brands and have no basis in CP Plus official documentation.",
+  "verified_on": "2026-08-14"
+}

@@ -1,0 +1,40 @@
+{
+  "brand": "ADT",
+  "brand_id": "adt",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/img/video.sav",
+      "codec": "H.264|MPEG-4",
+      "verified": true,
+      "source": "Sercomm camera built-in API documentation — edent/Sercomm-API on GitHub ('A comprehensive guide to the controlling Sercomm IP Cameras via their inbuilt API'): documents /img/video.sav as the RTSP video-only stream endpoint with default RTSP port 554. ADT OC810/OC835/RC8025B and most ADT Pulse cameras are confirmed Sercomm OEMs (see Amazon ASIN B0763V5Y5F 'Sercomm ADT Pulse OC835-V3' and FCC ID P27OC835 filed by Sercomm Corporation). — https://github.com/edent/Sercomm-API/blob/master/README.md",
+      "strix_lead": "strixcamdb:adt"
+    },
+    {
+      "stream": "main_audio",
+      "path": "/img/media.sav",
+      "codec": "H.264|MPEG-4 (video) + audio",
+      "verified": true,
+      "source": "Sercomm built-in API documentation (same source): /img/media.sav = video + audio RTSP stream. Independently confirmed for ADT NV412A-ADT via GeniusVision community platform with 9 unique verifications. — https://github.com/edent/Sercomm-API/blob/master/README.md ; https://community.geniusvision.net/platform/cprndr/manurtsp/5591689816895455597",
+      "strix_lead": "strixcamdb:adt"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/cam/realmonitor?channel=<N>&subtype=1",
+      "note": "Dahua standard RTSP path (see strix/verified/dahua.json). Appears in leads for a small number of ADT models (1600hd, A-ADT4HS2 per iSpy) that may be Dahua OEMs, but no ADT official documentation confirms this path for ADT-branded cameras. Cross-brand contamination from the Dahua OEM ecosystem. Excluded."
+    },
+    {
+      "path": "/cam4/mpeg4",
+      "note": "No ADT or Sercomm official documentation confirms this path. Likely cross-brand contamination. Excluded."
+    },
+    {
+      "path": "/user={user}_password={pass}_channel=1_stream=0.sdp",
+      "note": "D-Link / cheap OEM style SDP path. No ADT official documentation confirms this path. Cross-brand contamination. Excluded."
+    }
+  ],
+  "notes": "ADT-branded IP cameras sold under the ADT Pulse program (OC810, OC835, OC845, RC8010, RC8021, RC8025B, RC8325, NV412A, etc.) are manufactured by Sercomm Corporation, confirmed by FCC filings (FCC ID P27OC835 by Sercomm) and Amazon product listings. The Sercomm platform exposes two RTSP endpoints: /img/video.sav (video only) and /img/media.sav (video + audio); the latter is the more complete stream. Both share RTSP port 554 (configurable). /img/audio.sav (audio only) and /img/video.mjpeg (MJPEG HTTP) also exist per Sercomm docs but are not primary RTSP video streams. ADT does not appear to publish its own RTSP integration guide — the Sercomm OEM firmware is the authoritative reference for these paths. A minority of ADT-branded hardware may use Dahua OEM firmware (/cam/realmonitor) but this is not confirmed by any ADT official source and is excluded here.",
+  "verified_on": "2026-08-14"
+}

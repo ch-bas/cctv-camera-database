@@ -1,0 +1,80 @@
+{
+  "brand": "Mobotix",
+  "brand_id": "mobotix",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/mobotix.h264",
+      "codec": "H.264",
+      "verified": true,
+      "source": "MOBOTIX Community — 'RTSP Streaming with Mobotix Cameras' (https://community.mobotix.com/t/rtsp-streaming-with-mobotix-cameras/4912): 'H.264: rtsp://192.168.178.31:554/mobotix.h264' — documented for Mx4/5/6 cameras (pre-firmware 5.4.0.44).",
+      "strix_lead": "strixcamdb:mobotix"
+    },
+    {
+      "stream": "main",
+      "path": "/stream/profile0",
+      "codec": "H.264",
+      "verified": true,
+      "source": "MOBOTIX Community — 'X16/x26: RTSP URL since Firmware 5.4.0.44' (https://community.mobotix.com/t/x16-x26-rtsp-url-since-firmware-5-4-0-44/4916) and 'RTSP Streaming with Mobotix Cameras' (https://community.mobotix.com/t/rtsp-streaming-with-mobotix-cameras/4912): 'Stream 1: rtsp://ip-address-camera:554/stream/profile0' — documented for Mx6/Mx7/X16/X26 cameras on firmware 5.4.0.44 and later.",
+      "strix_lead": "strixcamdb:mobotix"
+    },
+    {
+      "stream": "sub",
+      "path": "/stream/profile1",
+      "codec": "H.264",
+      "verified": true,
+      "source": "MOBOTIX Community — 'X16/x26: RTSP URL since Firmware 5.4.0.44' (https://community.mobotix.com/t/x16-x26-rtsp-url-since-firmware-5-4-0-44/4916): 'Stream 2: rtsp://ip-address-camera:554/stream/profile1' — documented for Mx6/Mx7/X16/X26 cameras on firmware 5.4.0.44 and later.",
+      "strix_lead": "strixcamdb:mobotix"
+    },
+    {
+      "stream": "main",
+      "path": "/h264",
+      "codec": "H.264",
+      "verified": true,
+      "source": "MOBOTIX Community — 'RTSP Streams for the Mobotix Move Cameras (h264 and Mjpeg)' (https://community.mobotix.com/t/rtsp-streams-for-the-mobotix-move-cameras-h264-and-mjpeg/1960): 'Stream 1: rtsp://(camera ip)/h264' — documented for MOBOTIX Move series cameras.",
+      "strix_lead": "strixcamdb:mobotix"
+    },
+    {
+      "stream": "sub",
+      "path": "/h264_2",
+      "codec": "H.264",
+      "verified": true,
+      "source": "MOBOTIX Community — 'RTSP Streams for the Mobotix Move Cameras (h264 and Mjpeg)' (https://community.mobotix.com/t/rtsp-streams-for-the-mobotix-move-cameras-h264-and-mjpeg/1960): 'Stream 2: rtsp://(camera ip)/h264_2' — documented for MOBOTIX Move series cameras.",
+      "strix_lead": "strixcamdb:mobotix"
+    },
+    {
+      "stream": "main",
+      "path": "/stream0/mobotix.mxg",
+      "codec": "MxPEG",
+      "verified": true,
+      "source": "MOBOTIX Community — 'RTSP Streaming with Mobotix Cameras' (https://community.mobotix.com/t/rtsp-streaming-with-mobotix-cameras/4912): 'MxPEG: rtsp://192.168.178.31:554/stream0/mobotix.mxg' — documented for Mx4/5/6 cameras (pre-firmware 5.4.0.44). stream0–stream3 available.",
+      "strix_lead": "strixcamdb:mobotix"
+    },
+    {
+      "stream": "sub",
+      "path": "/stream1/mobotix.mxg",
+      "codec": "MxPEG",
+      "verified": true,
+      "source": "MOBOTIX Community — 'RTSP Streaming with Mobotix Cameras' (https://community.mobotix.com/t/rtsp-streaming-with-mobotix-cameras/4912): stream0–stream3 are all documented variants of the MxPEG RTSP path for Mx4/5/6 cameras (pre-firmware 5.4.0.44).",
+      "strix_lead": "strixcamdb:mobotix"
+    },
+    {
+      "stream": "main",
+      "path": "/onvif/mobotix.h264",
+      "codec": "H.264",
+      "verified": true,
+      "source": "MOBOTIX Community — 'RTSP Streaming with Mobotix Cameras' (https://community.mobotix.com/t/rtsp-streaming-with-mobotix-cameras/4912): 'H.264 + ONVIF: rtsp://192.168.178.31:554/onvif/mobotix.h264' — documented ONVIF variant for Mx4/5/6 cameras (pre-firmware 5.4.0.44).",
+      "strix_lead": "strixcamdb:mobotix"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/live/ch00_0",
+      "note": "Appears only in third-party crowd-sourced databases (e.g. iSpyConnect, attributed to Mobotix D12). Not documented in any official Mobotix manual, community KB, or developer guide. Likely cross-brand contamination — this path pattern is common in generic/Chinese OEM cameras."
+    }
+  ],
+  "notes": "Mobotix has three distinct RTSP path families depending on camera series and firmware generation. (1) Classic series (Mx4/5/6, pre-firmware 5.4.0.44): H.264 uses /mobotix.h264 or /onvif/mobotix.h264; MxPEG (Mobotix proprietary codec) uses /stream<N>/mobotix.mxg (N=0–3); MJPEG uses /stream<N>/mobotix.mjpeg. Mx2 and older cannot do RTSP at all. Mx4/5 are H.264-incapable (MJPEG only). (2) Mx6/Mx7/X16/X26 (firmware 5.4.0.44+): /stream/profile<N> where N=0 (main) through 3; default0–default1 are H.264, default2–3 are MJPeg. Also supports Genetec (/stream/genetec_video0) and ONVIF (/stream/onvif-default<N>) integration modes. (3) Move series (MxMove/BC/VD cameras): /h264 through /h264_4 for H.264 streams; /mjpeg for motion JPEG. Authentication format: rtsp://{user}:{pass}@{ip}:{port}/{path}. Default RTSP port is 554 across all series.",
+  "verified_on": "2026-08-14"
+}

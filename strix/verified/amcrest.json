@@ -1,0 +1,48 @@
+{
+  "brand": "Amcrest",
+  "brand_id": "amcrest",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/cam/realmonitor?channel=<N>&subtype=0",
+      "codec": "H.264|H.265",
+      "verified": true,
+      "source": "Amcrest Support KB — 'Accessing Amcrest Products Using RTSP' (https://support.amcrest.com/hc/en-us/articles/360052688931-Accessing-Amcrest-Products-Using-RTSP)",
+      "strix_lead": "strixcamdb:amcrest"
+    },
+    {
+      "stream": "sub",
+      "path": "/cam/realmonitor?channel=<N>&subtype=1",
+      "codec": "H.264|H.265",
+      "verified": true,
+      "source": "Amcrest Support KB — 'Accessing Amcrest Products Using RTSP' (https://support.amcrest.com/hc/en-us/articles/360052688931-Accessing-Amcrest-Products-Using-RTSP)",
+      "strix_lead": "strixcamdb:amcrest"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+      "note": "No official Amcrest doc references this .sdp path; not confirmed"
+    },
+    {
+      "path": "/h264Preview_01_main",
+      "note": "Reolink-style path; no official Amcrest doc references this format"
+    },
+    {
+      "path": "/live",
+      "note": "Generic path; not referenced in any official Amcrest RTSP documentation"
+    },
+    {
+      "path": "/rtsp",
+      "note": "Generic path; not referenced in any official Amcrest RTSP documentation"
+    },
+    {
+      "path": "/realmonitor",
+      "note": "Truncated variant; official docs always use /cam/realmonitor"
+    }
+  ],
+  "notes": "Amcrest is a Dahua OEM (confirmed by Amcrest's own RTSP KB article using the Dahua /cam/realmonitor path). subtype=0 = main stream, subtype=1 = sub stream, subtype=2 = third stream (when supported). channel=1 for standalone IP cameras; for NVRs channel indexes per-camera (1–N). Authentication is passed in the URL as rtsp://{user}:{pass}@{ip}:{port}/... Some Smart Home product docs append &authbasic=64 but the core path is identical. Default port 554.",
+  "verified_on": "2026-08-14"
+}

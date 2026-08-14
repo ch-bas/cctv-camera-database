@@ -1,0 +1,86 @@
+{
+  "brand": "INSTAR",
+  "brand_id": "instar",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/livestream/11",
+      "codec": "per-profile",
+      "verified": true,
+      "source": "https://wiki.instar.com/en/Outdoor_Cameras/IN-9808_QFHD/Video_Streaming/ — '3 independent video streams named 11, 12 and 13'; stream 11 = highest resolution (e.g. 2160p on 4K models)",
+      "strix_lead": "strixcamdb:instar",
+      "series": "WQHD / 2K+ / QFHD (newer models)"
+    },
+    {
+      "stream": "sub",
+      "path": "/livestream/12",
+      "codec": "per-profile",
+      "verified": true,
+      "source": "https://wiki.instar.com/en/Outdoor_Cameras/IN-9808_QFHD/Video_Streaming/ — stream 12 = mid-resolution (e.g. 1080p on 4K models); 'preferable if you only have a limited bandwidth available'",
+      "strix_lead": "strixcamdb:instar",
+      "series": "WQHD / 2K+ / QFHD (newer models)"
+    },
+    {
+      "stream": "third",
+      "path": "/livestream/13",
+      "codec": "per-profile",
+      "verified": true,
+      "source": "https://wiki.instar.com/en/Outdoor_Cameras/IN-9808_QFHD/Video_Streaming/ — stream 13 = lowest resolution (e.g. 360p on 4K models)",
+      "strix_lead": "strixcamdb:instar",
+      "series": "WQHD / 2K+ / QFHD (newer models)"
+    },
+    {
+      "stream": "main",
+      "path": "/11",
+      "codec": "per-profile",
+      "verified": true,
+      "source": "https://wiki.instar.com/en/Outdoor_Cameras/IN-9008_HD/Video_Streaming/ and https://wiki.instar.com/en/Indoor_Cameras/IN-8003_HD/Video_Streaming/ — older Full HD series uses bare /11 /12 /13 paths",
+      "strix_lead": "strixcamdb:instar",
+      "series": "HD / Full HD (older models)"
+    },
+    {
+      "stream": "sub",
+      "path": "/12",
+      "codec": "per-profile",
+      "verified": true,
+      "source": "https://wiki.instar.com/en/Outdoor_Cameras/IN-9008_HD/Video_Streaming/ — older HD series sub stream",
+      "strix_lead": "strixcamdb:instar",
+      "series": "HD / Full HD (older models)"
+    },
+    {
+      "stream": "third",
+      "path": "/13",
+      "codec": "per-profile",
+      "verified": true,
+      "source": "https://wiki.instar.com/en/Outdoor_Cameras/IN-9008_HD/Video_Streaming/ — older HD series third stream",
+      "strix_lead": "strixcamdb:instar",
+      "series": "HD / Full HD (older models)"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/live.sdp",
+      "note": "Generic SDP path not found in any INSTAR official documentation; likely cross-brand contamination"
+    },
+    {
+      "path": "/MediaInput/mpeg4",
+      "note": "Not documented in INSTAR wiki; appears to be a Mobotix or generic MPEG-4 path"
+    },
+    {
+      "path": "/cam[CHANNEL]/h264",
+      "note": "Not documented in INSTAR wiki; Hikvision-style path, likely cross-brand contamination"
+    },
+    {
+      "path": "/medias[CHANNEL]",
+      "note": "Not documented in INSTAR wiki; unrecognised pattern"
+    },
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+      "note": "Not documented in INSTAR wiki; resembles a third-party aggregator convention, not an official INSTAR path"
+    }
+  ],
+  "notes": "Two distinct path families depending on camera generation. Older HD/Full HD models (e.g. IN-9008, IN-8003, IN-6012): bare /11 /12 /13. Newer WQHD/2K+/QFHD models (e.g. IN-9408, IN-9420, IN-9808, IN-8401, IN-8403): /livestream/11 /livestream/12 /livestream/13. In both families, stream 11 = main (highest res), 12 = sub (mid), 13 = third (lowest/mobile). Default RTSP port is 554 (configurable in camera UI). Codec is model/profile-dependent and not stated in the wiki streaming pages. URL format: rtsp://{user}:{pass}@{ip}:{port}/livestream/11 (newer) or rtsp://{user}:{pass}@{ip}:{port}/11 (older). DDNS access supported using the same paths.",
+  "verified_on": "2026-08-14"
+}

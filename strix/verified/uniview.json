@@ -1,0 +1,87 @@
+{
+  "brand": "Uniview",
+  "brand_id": "uniview",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/media/video1",
+      "codec": "H.264|H.265",
+      "device_type": "IPC",
+      "verified": true,
+      "source": "Uniview official guide: \"How to Get a Uniview Camera's RTSP Stream\" (global.uniview.com, Oct 2023) — https://global.uniview.com/res/202310/26/20231026_1890310_How%20to%20Get%20a%20Uniview%20Camera's%20RTSP%20Stream_974039_168459_0.pdf",
+      "strix_lead": "strixcamdb:uniview"
+    },
+    {
+      "stream": "sub",
+      "path": "/media/video2",
+      "codec": "H.264|H.265",
+      "device_type": "IPC",
+      "verified": true,
+      "source": "Uniview official guide: \"How to Get a Uniview Camera's RTSP Stream\" (global.uniview.com, Oct 2023) — https://global.uniview.com/res/202310/26/20231026_1890310_How%20to%20Get%20a%20Uniview%20Camera's%20RTSP%20Stream_974039_168459_0.pdf",
+      "strix_lead": "strixcamdb:uniview"
+    },
+    {
+      "stream": "third",
+      "path": "/media/video3",
+      "codec": "H.264|H.265",
+      "device_type": "IPC",
+      "verified": true,
+      "source": "Uniview official guide: \"How to Get a Uniview Camera's Multicast Stream\" (uniview.com, Oct 2023) — https://www.uniview.com/res/202310/26/20231026_1890309_How%20to%20Get%20a%20Uniview%20Camera's%20Multicast%20Stream_974038_168459_0.pdf",
+      "strix_lead": "strixcamdb:uniview"
+    },
+    {
+      "stream": "main",
+      "path": "/unicast/c<N>/s0/live",
+      "codec": "H.264|H.265",
+      "device_type": "NVR",
+      "notes": "<N> = channel number (1-based); s0 = main stream",
+      "verified": true,
+      "source": "Uniview official guide: \"How to Get a Uniview Camera's RTSP Stream\" (global.uniview.com, Oct 2023) — https://global.uniview.com/res/202310/26/20231026_1890310_How%20to%20Get%20a%20Uniview%20Camera's%20RTSP%20Stream_974039_168459_0.pdf",
+      "strix_lead": "strixcamdb:uniview"
+    },
+    {
+      "stream": "sub",
+      "path": "/unicast/c<N>/s1/live",
+      "codec": "H.264|H.265",
+      "device_type": "NVR",
+      "notes": "<N> = channel number (1-based); s1 = sub stream",
+      "verified": true,
+      "source": "Uniview official guide: \"How to Get a Uniview Camera's RTSP Stream\" (global.uniview.com, Oct 2023) — https://global.uniview.com/res/202310/26/20231026_1890310_How%20to%20Get%20a%20Uniview%20Camera's%20RTSP%20Stream_974039_168459_0.pdf",
+      "strix_lead": "strixcamdb:uniview"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/media/video0/",
+      "note": "Not documented by Uniview — official IPC indexing starts at 1 (/media/video1). Trailing slash also atypical."
+    },
+    {
+      "path": "/videoMain",
+      "note": "Not in any Uniview official documentation. Appears in third-party camera databases but no Uniview manual or guide uses this path."
+    },
+    {
+      "path": "/h264_stream",
+      "note": "Not documented by Uniview. Common cross-brand contamination in StrixCamDB."
+    },
+    {
+      "path": "/onvif1",
+      "note": "ONVIF media profile URI, not a native Uniview-documented RTSP path."
+    },
+    {
+      "path": "/mediavideo",
+      "note": "Not in any Uniview official documentation."
+    },
+    {
+      "path": "/video1",
+      "note": "Not in any Uniview official documentation — Uniview's IPC path is /media/video1 (with /media/ prefix)."
+    },
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+      "note": "Not a Uniview format — this is a generic/other-brand .sdp credential-embedding pattern not found in any Uniview documentation."
+    }
+  ],
+  "notes": "IPC streams use 1-based indexing: video1=main, video2=sub, video3=third. NVR unicast paths use c<N> for channel (1-based) and s0/s1 for main/sub stream. Default RTSP port is 554. RTSP authentication uses standard rtsp://{user}:{pass}@{ip}:{port}/{path} prefix. H.264 and H.265 share the same URL path — codec is selected by camera profile configuration. The leads /unicast/c1/s1/live and /unicast/c2/s1/live from StrixCamDB match the NVR sub-stream pattern (s1); the main-stream lead /unicast/c1/s0/live also matches.",
+  "verified_on": "2026-08-14"
+}

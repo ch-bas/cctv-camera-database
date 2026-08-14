@@ -1,0 +1,36 @@
+{
+  "brand": "Hanwha Vision",
+  "brand_id": "hanwha",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/profile2/media.smp",
+      "codec": "H.264/H.265",
+      "verified": true,
+      "source": "Hanwha Vision Support Portal — 'Camera - RTSP URL' (https://support.hanwhavision.com/hc/en-001/articles/47782445700243-Camera-RTSP-URL): format rtsp://<DeviceIP>/profile<no>/media.smp; profile2 is the documented main (H.264/H.265) stream; profile1 is MJPEG/reserved for internal use. Same article also at https://support.hanwhavision.com/hc/en-us/articles/8423621839897-Camera-RTSP-URL",
+      "strix_lead": "strixcamdb:hanwha"
+    },
+    {
+      "stream": "sub",
+      "path": "/profile3/media.smp",
+      "codec": "H.264/H.265",
+      "verified": true,
+      "source": "Hanwha Vision Support Portal — 'Camera - RTSP URL' (https://support.hanwhavision.com/hc/en-001/articles/47782445700243-Camera-RTSP-URL): profile3 is the documented sub stream. Also confirmed by 'RTSP URLs' (https://support.hanwhavision.eu/hc/en-gb/articles/4414178841746-RTSP-URLs) and 'What are the RTSP URLs of Hanwha Devices?' (https://support.hanwhavision.com/hc/en-001/articles/47257361792659-What-are-the-RTSP-URLs-of-Hanwha-Devices)",
+      "strix_lead": "strixcamdb:hanwha"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/profile02/media.smp",
+      "note": "Zero-padded variant of /profile2/media.smp — semantically the same path; the official Hanwha docs write 'profile2' without zero-padding. Treated as confirmed by the main-stream entry above but not listed separately as a distinct template."
+    },
+    {
+      "path": "/0/profile4/media.smp",
+      "note": "The '/0/' prefix is the documented multi-sensor channel prefix (sensor# 0–3), but profile4 is not the documented main (profile2) or sub (profile3) stream number. Not confirmed as a standard single-camera template; may reflect a custom or non-standard profile configuration. Multi-sensor format is documented as /<sensor#>/profile2/media.smp (see notes)."
+    }
+  ],
+  "notes": "Hanwha Vision (formerly Samsung Techwin / Hanwha Techwin) markets cameras under the Wisenet brand. Official RTSP URL format: rtsp://{user}:{pass}@{ip}:{port}/profile<N>/media.smp. Profile numbering: profile1=MJPEG (internal/reserved), profile2=main H.264/H.265 stream, profile3=sub stream. Profile assignments are configurable in the camera web UI under Video Profile, but profile2/profile3 are the factory defaults for main/sub. Default RTSP port is 554; configurable in range 1024–65535 (ports 3702 and 49152 not available). Multi-sensor cameras (e.g. PNM-9081VQ, PNM-9322VQP) use the format rtsp://{ip}:{port}/<sensor#>/profile2/media.smp where sensor# is 0–3 (0=Sensor1, etc.). Authentication credentials are embedded in the URL as rtsp://{user}:{pass}@{ip}:{port}/... The leads '/profile02/media.smp' and '/0/profile4/media.smp' are the only two StrixCamDB candidates — the first is a zero-padded alias for the confirmed /profile2/media.smp main stream; the second has a valid multi-sensor prefix but an unconfirmed profile4 number.",
+  "verified_on": "2026-08-14"
+}

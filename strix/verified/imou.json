@@ -1,0 +1,43 @@
+{
+  "brand": "IMOU",
+  "brand_id": "imou",
+  "status": "unverified",
+  "default_port": 554,
+  "templates": [],
+  "unverified_leads": [
+    {
+      "path": "/cam/realmonitor?channel=1&subtype=0",
+      "note": "Dahua OEM path — confirmed working by community and third-party guides (cln.io, camtuber.com, visioforge.com), but IMOU publishes NO official RTSP documentation on imoulife.com or imou.com. The path originates from Dahua firmware (verified in strix/verified/dahua.json via dahuawiki.com). Cannot attribute to official IMOU docs."
+    },
+    {
+      "path": "/cam/realmonitor?channel=1&subtype=1",
+      "note": "Same Dahua-lineage sub stream path. No official IMOU source. See dahua.json."
+    },
+    {
+      "path": "/cam/realmonitor?channel=1&subtype=0&unicast=true&proto=Onvif",
+      "note": "Dahua-style path with optional ONVIF hints. No official IMOU source documents this variant."
+    },
+    {
+      "path": "/cam/realmonitor?channel=1&subtype=1&unicast=true&proto=Onvif",
+      "note": "Dahua-style sub stream with ONVIF hints. No official IMOU source."
+    },
+    {
+      "path": "/cam/realmonitor?channel=1&subtype=00",
+      "note": "Variant with two-digit subtype '00' — appears in several leads with hardcoded authbasic values. Non-standard; not documented in Dahua Wiki or IMOU sources. Likely device-specific quirk or cross-contamination."
+    },
+    {
+      "path": "/cam/realmonitor?channel=1&subtype=0&resolution=2560x1440",
+      "note": "Resolution hint appended to base Dahua path; not a documented parameter in any official Dahua or IMOU source. Excluded."
+    },
+    {
+      "path": "/live",
+      "note": "Generic /live path. Not documented by IMOU or Dahua officially. Cross-brand contamination. Excluded."
+    },
+    {
+      "path": "/h264_stream",
+      "note": "Not a Dahua or IMOU documented path (also excluded in dahua.json). Cross-brand contamination. Excluded."
+    }
+  ],
+  "notes": "IMOU (brand_id: imou) is Dahua Technology's consumer sub-brand (imoulife.com / imou.com). All IMOU IP cameras run Dahua firmware and use the Dahua /cam/realmonitor?channel=<N>&subtype=<typeNo> RTSP URL scheme. However, IMOU publishes NO official RTSP documentation: their support pages (imou.com/support, FAQs, product quick-start guides) contain no RTSP URL specification; their Open Platform developer API (open.imoulife.com) documents only HLS and RTMP live-stream endpoints. The path is universally confirmed by the community as inherited from Dahua firmware — see strix/verified/dahua.json (source: dahuawiki.com) for the verified Dahua template. Additional IMOU-specific access requirements: (1) RTSP must be enabled in the IMOU Life app (disabled by default on many models); (2) TLS/Encryption must be disabled in the app for plain-RTSP access; (3) authentication uses username 'admin' and the SAFETY CODE printed on the camera label (not the app password). Battery-powered Cell-series cameras have limited or no RTSP support (cloud-only). The leads with hardcoded base64 authbasic= values are per-device credential injections, not a URL schema feature.",
+  "verified_on": "2026-08-14"
+}

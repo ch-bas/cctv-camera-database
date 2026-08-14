@@ -1,0 +1,60 @@
+{
+  "brand": "Longse",
+  "brand_id": "longse",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/0",
+      "codec": "H.264|H.265",
+      "verified": true,
+      "source": "Longse official FAQ — 'How to use RTSP stream to view network IP camera?' https://www.longse.com/SUPPORT/FAQ/Camera/2017/0822/973.html",
+      "strix_lead": "strixcamdb:longse"
+    },
+    {
+      "stream": "sub",
+      "path": "/1",
+      "codec": "H.264|H.265",
+      "verified": true,
+      "source": "Longse official FAQ — 'How to use RTSP stream to view network IP camera?' https://www.longse.com/SUPPORT/FAQ/Camera/2017/0822/973.html",
+      "strix_lead": "strixcamdb:longse"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+      "note": "Cross-brand contamination — this .sdp credential-in-path pattern appears across many unrelated brands (ESCAM, generic OEMs); not found in any official Longse documentation"
+    },
+    {
+      "path": "/user=admin_password=[PASSWORD]_channel=1_stream=0.sdp",
+      "note": "Same cross-brand .sdp pattern; not in official Longse docs"
+    },
+    {
+      "path": "ch0_0.h264",
+      "note": "No leading slash; not documented in any official Longse source; likely contamination from a different OEM platform"
+    },
+    {
+      "path": "/h264_stream",
+      "note": "Not in official Longse documentation; generic path seen across multiple unrelated brands"
+    },
+    {
+      "path": "/cam1/onvif-h264",
+      "note": "Not in official Longse documentation; may be an ONVIF-auto-generated path specific to certain third-party NVR integrations"
+    },
+    {
+      "path": "/cam/realmonitor",
+      "note": "Dahua native OEM path (requires ?channel=1&subtype=0 params); while Longse is a Dahua partner/OEM, this path is not confirmed by Longse's own documentation"
+    },
+    {
+      "path": "live/ch00_0",
+      "note": "No leading slash; not documented in any official Longse source"
+    },
+    {
+      "path": "VideoInput/[CHANNEL]/h264/1",
+      "note": "No leading slash; not documented in any official Longse source"
+    }
+  ],
+  "notes": "Official Longse RTSP template: rtsp://{user}:{pass}@{ip}:{port}/{stream_index} where 0=main, 1=sub, 2=third stream. Port 554 is standard; exception: cameras using the Ambarella AL200 solution default to port 80 for RTSP/ONVIF/HTTP. Recorder RTSP uses a different format (port 8950, composite channel+stream encoding). The .sdp leads with credentials embedded in the path are cross-brand contamination and are excluded.",
+  "verified_on": "2026-08-14"
+}

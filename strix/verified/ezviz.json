@@ -1,0 +1,60 @@
+{
+  "brand": "EZVIZ",
+  "brand_id": "ezviz",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/ch1/main",
+      "codec": "H.264|H.265",
+      "verified": true,
+      "source": "EZVIZ official support FAQ: 'How to set up C6N/TY1/TY2 as a webcam?' — documents rtsp://admin:<verification_code>@<device_ip>:554/ch1/main as the RTSP URL for local LAN access. https://support.ezviz.com/faq/article/How-to-set-up-C6N-TY1-TY2-as-a-webcam",
+      "strix_lead": "strixcamdb:ezviz"
+    },
+    {
+      "stream": "sub",
+      "path": "/ch1/sub",
+      "codec": "H.264",
+      "verified": true,
+      "source": "EZVIZ community KB article: 'How to configure RTSP stream?' on community.ezvizlife.com (EZVIZ's own community/help-desk platform) — documents /ch1/sub as the sub-stream counterpart to /ch1/main. Article is unreachable at time of verification but is consistently and independently cited by third-party integrators (VisioForge, SmartRTSP, Home Assistant EZVIZ integration) as the source for both paths. https://community.ezvizlife.com/hc/en-us/articles/360034827754-How-to-configure-RTSP-stream-",
+      "strix_lead": "strixcamdb:ezviz"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/channel1",
+      "note": "Not found in any official EZVIZ documentation. Generic path present across many brands; likely cross-brand contamination. Excluded."
+    },
+    {
+      "path": "/H.264",
+      "note": "Appears in a quoted snippet attributed to the ezvizlife community article alongside /h264_stream and /stream_h264 as older/alternative variants, but the same article's primary documented paths are /ch1/main and /ch1/sub. Could not confirm /H.264 as a current official EZVIZ path; article was unreachable for direct verification. Excluded from templates."
+    },
+    {
+      "path": "/Streaming/Channels/101",
+      "note": "Hikvision ISAPI path. EZVIZ is Hikvision's consumer brand and shares firmware lineage, so this path works on some EZVIZ models, but EZVIZ's own support documentation does not publish it — it is noted only as a fallback by third-party sources. Excluded from primary templates per spec (publish only what official docs document)."
+    },
+    {
+      "path": "/Streaming/Channels/102",
+      "note": "Hikvision ISAPI sub-stream path. Same rationale as /Streaming/Channels/101. Excluded."
+    },
+    {
+      "path": "/H_264",
+      "note": "No official EZVIZ documentation. Likely cross-brand contamination or typo variant. Excluded."
+    },
+    {
+      "path": "/h265_stream",
+      "note": "No official EZVIZ documentation confirms this path. Excluded."
+    },
+    {
+      "path": "/h264_stream",
+      "note": "Appears in ezvizlife snippet alongside /H.264 as an older variant, but cannot be confirmed from a directly fetchable official source. Excluded."
+    },
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+      "note": "D-Link / cheap OEM SDP-style path. No EZVIZ documentation confirms this. Cross-brand contamination. Excluded."
+    }
+  ],
+  "notes": "EZVIZ is Hikvision's consumer brand (launched 2013). Most AC-powered EZVIZ cameras with wired/Wi-Fi LAN support local RTSP via port 554; RTSP is disabled by default and must be enabled in the EZVIZ mobile app (Settings > Local Network > Third-party access or equivalent). Authentication uses username 'admin' and the device's 6-character uppercase verification code printed on the label (NOT the EZVIZ cloud account password). Battery-powered models (BC series) and most video doorbells (DB series) do NOT support local RTSP and stream exclusively via EZVIZ cloud. The Hikvision ISAPI paths /Streaming/Channels/101 (main) and /Streaming/Channels/102 (sub) reportedly work on many EZVIZ models due to shared firmware but are not published in EZVIZ's own support documentation. The officially documented paths are the /ch1/main and /ch1/sub family.",
+  "verified_on": "2026-08-14"
+}

@@ -1,0 +1,60 @@
+{
+  "brand": "Avigilon",
+  "brand_id": "avigilon",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/defaultPrimary?streamType=u",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Avigilon H3-B1 Web Interface User Manual (ManualsLib, manual/833559, p.17) and Avigilon H.264 Series User Manual (ManualsLib, manual/1683537, p.14) — both show example rtsp://admin:admin@192.168.1.79/defaultPrimary?streamType=u; streamType=u = unicast",
+      "strix_lead": "strixcamdb:avigilon"
+    },
+    {
+      "stream": "main-multicast",
+      "path": "/defaultPrimary?streamType=m",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Avigilon H3-B1 and H.264 Series manuals (ManualsLib, same sources as main): same path, streamType=m selects multicast transport — protocol is selectable as Unicast or Multicast in the camera web UI RTSP configuration page",
+      "strix_lead": "strixcamdb:avigilon"
+    },
+    {
+      "stream": "sub",
+      "path": "/defaultSecondary?streamType=u",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Avigilon Support Community article 'Access the RTSP Stream or Latest JPEG Image from an H-264 Camera or Encoder' (support.avigilon.com) — documents defaultSecondary as the secondary (sub) stream; confirmed via search engine snippet citing the official KB article. Applies to cameras that support a second stream (not configurable on HDSM 2.0 models).",
+      "strix_lead": "strixcamdb:avigilon"
+    },
+    {
+      "stream": "third",
+      "path": "/defaultTertiary?streamType=u",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Avigilon Support Community article 'Access the RTSP Stream or Latest JPEG Image from an H-264 Camera or Encoder' (support.avigilon.com) — documents defaultTertiary for HDSM 2.0 cameras with 4.0 MP and above. Confirmed via search engine snippet citing official KB.",
+      "strix_lead": "strixcamdb:avigilon"
+    },
+    {
+      "stream": "multi-sensor-main",
+      "path": "/defaultPrimary-<N>?streamType=u",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Streamie tutorial 'Tutorial: Avigilon CCTV Video Walls with Streamie' (help.streamieapp.com) cites Avigilon Support document 'Examples of RTSP Stream URI of an Avigilon Multi-sensor Camera' — format is /defaultPrimary-<N>?streamType=u where N=0–3 for up to quad-sensor cameras (e.g. /defaultPrimary-3?streamType=u for 4th sensor). Also confirmed by CamioCam/rtsp GitHub issue #228 showing real-device usage.",
+      "strix_lead": "strixcamdb:avigilon"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/defaultPrimary3?streamType=u",
+      "note": "No-dash variant — not confirmed in any official Avigilon documentation. The documented multi-sensor format uses a dash: /defaultPrimary-<N>?streamType=u. Likely a StrixCamDB OCR/parsing artifact of the dash form. Excluded."
+    },
+    {
+      "path": "/defaultPrimary-3?streamType=u",
+      "note": "This is a valid instantiation of the multi-sensor template /defaultPrimary-<N>?streamType=u (N=3 = 4th sensor head). Promoted to templates as multi-sensor-main; retained here only to document the lead was accounted for."
+    }
+  ],
+  "notes": "Avigilon (now Motorola Solutions) is a proprietary enterprise IP camera brand with its own RTSP path scheme: /default{Primary|Secondary|Tertiary}?streamType={u|m}. Port 554 is standard. streamType=u is unicast; streamType=m is multicast — selectable in the camera web UI. Secondary/tertiary streams cannot be configured on HDSM 2.0 cameras. Multi-sensor cameras (dual/quad-head models) use /defaultPrimary-<N>?streamType=u with N=0–3 indexing each sensor head; this is documented in Avigilon's own KB article 'Examples of RTSP Stream URI of an Avigilon Multi-sensor Camera'. Codec is H.264 across the H3/H4/H5 product lines covered by these manuals; H.265 support may exist on newer H5A models but is not broken out in the RTSP path — same template applies. Avigilon is NOT an OEM of Dahua/Hikvision/Axis — its path scheme is entirely proprietary. The docs.avigilon.com portal and support.avigilon.com require login for full article text; path confirmation comes from ManualsLib-hosted official Avigilon manuals and search-result snippets of the official KB.",
+  "verified_on": "2026-08-14"
+}

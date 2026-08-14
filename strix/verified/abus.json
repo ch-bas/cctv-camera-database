@@ -1,0 +1,132 @@
+{
+  "brand": "ABUS",
+  "brand_id": "abus",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/h264",
+      "codec": "H.264",
+      "verified": true,
+      "source": "ABUS TVIP62000 User Manual (ManualsLib manual/1100998, p.17 and p.55): documents rtsp://{user}:{pass}@{ip}:554/h264 as the H.264 stream URL. Independently confirmed in the ABUS TVIP11502 User Manual (ManualsLib manual/1134406, p.15) and ABUS TVIP21502 User Manual (ManualsLib manual/1085508, p.16), both documenting the same /h264 path for H.264 streams on the native ABUS TVIP camera platform. — https://www.manualslib.com/manual/1100998/Abus-Tvip62000.html?page=55",
+      "strix_lead": "strixcamdb:abus"
+    },
+    {
+      "stream": "sub",
+      "path": "/mpeg4",
+      "codec": "MPEG-4",
+      "verified": true,
+      "source": "ABUS TVIP62000 User Manual (ManualsLib manual/1100998, p.17 and p.55): documents rtsp://{user}:{pass}@{ip}:554/mpeg4 as the MPEG-4 stream URL. Same path confirmed in TVIP11502 (p.15) and TVIP21502 (p.16). /mjpeg is a third variant (MJPEG). The TVIP platform supports all three codecs via distinct paths; /mpeg4 is the documented lower-bitrate second stream option. — https://www.manualslib.com/manual/1100998/Abus-Tvip62000.html?page=55",
+      "strix_lead": "strixcamdb:abus"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/Streaming/Channels/[CHANNEL+1]01",
+      "note": "Hikvision standard RTSP path. Appears heavily in ABUS leads (and as /Streaming/Channels/101, /Streaming/Channels/[CHANNEL]01, /Streaming/Unicast/channels/101.sdp variants). No official ABUS user manual or technical document reviewed confirms this path for any ABUS-branded camera line. All community references citing this path for ABUS (iSpy, smartvision.dev, etc.) are community-sourced and explicitly disclaim accuracy. Cross-brand contamination from Hikvision OEM ecosystem. Excluded."
+    },
+    {
+      "path": "/Streaming/Channels/[CHANNEL]01",
+      "note": "Hikvision path variant. Same exclusion reasoning as /Streaming/Channels/[CHANNEL+1]01 above. No official ABUS documentation confirms this. Excluded."
+    },
+    {
+      "path": "/Streaming/Channels/[CHANNEL+1]02",
+      "note": "Hikvision sub-stream path variant. No official ABUS documentation confirms this. Excluded."
+    },
+    {
+      "path": "/Streaming/Channels/[CHANNEL]02",
+      "note": "Hikvision sub-stream path variant. No official ABUS documentation confirms this. Excluded."
+    },
+    {
+      "path": "/Streaming/Channels/101",
+      "note": "Hikvision standard RTSP path. No official ABUS documentation confirms this. Excluded."
+    },
+    {
+      "path": "/Streaming/Channels/102",
+      "note": "Hikvision sub-stream path. No official ABUS documentation confirms this. Excluded."
+    },
+    {
+      "path": "/Streaming/Channels/1",
+      "note": "Hikvision path. No official ABUS documentation confirms this. Excluded."
+    },
+    {
+      "path": "/Streaming/Channels/2",
+      "note": "Hikvision path. No official ABUS documentation confirms this. Excluded."
+    },
+    {
+      "path": "/Streaming/Unicast/channels/101.sdp",
+      "note": "Hikvision Unicast RTSP path variant. No official ABUS documentation confirms this. Excluded."
+    },
+    {
+      "path": "/Streaming/Unicast/channels/102.sdp",
+      "note": "Hikvision Unicast sub-stream path. No official ABUS documentation confirms this. Excluded."
+    },
+    {
+      "path": "/Streaming/Unicast/channels/201.sdp",
+      "note": "Hikvision Unicast path (channel 2). No official ABUS documentation confirms this. Excluded."
+    },
+    {
+      "path": "/Streaming/Unicast/channels/202.sdp",
+      "note": "Hikvision Unicast sub-stream (channel 2). No official ABUS documentation confirms this. Excluded."
+    },
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+      "note": "D-Link / OEM-style SDP credential-in-URL path. Official ABUS TVIP21502 manual (ManualsLib p.16) documents this exact format for the TVIP21502 (which uses a different platform from the main TVIP62000/TVIP11502 series): rtsp://192.168.1.14:554/video.h264 is that model's documented path — not the credential-in-URL variant. The credential-in-URL form matches D-Link / Foscam OEM firmware, not the ABUS platform. Excluded."
+    },
+    {
+      "path": "/live.sdp",
+      "note": "Partially plausible: the ABUS TVIP41550 manual (ManualsLib manual/1016305, p.28 and p.72) documents a configurable RTSP access name scheme (rtsp://<ip>:<port>/<accessname>), with /live.sdp cited as one example value. However, the access name is user-configurable — it is not a fixed path. Cannot be published as a reliable template. Excluded as a canonical path, but noted here for reference."
+    },
+    {
+      "path": "/stream1",
+      "note": "Generic path found across many brands. No official ABUS documentation confirms this. Excluded."
+    },
+    {
+      "path": "/h264_stream",
+      "note": "No official ABUS documentation confirms this path. Excluded."
+    },
+    {
+      "path": "/s2",
+      "note": "No official ABUS documentation confirms this path. Excluded."
+    },
+    {
+      "path": "/video.h264",
+      "note": "Variant of the /h264 path, possibly from older firmware. No official ABUS manual reviewed documents /video.h264 (documented paths are /h264, /mpeg4, /mjpeg). Excluded pending a source."
+    },
+    {
+      "path": "/ch0_0.h264",
+      "note": "Generic OEM-style path. No official ABUS documentation confirms this. Excluded."
+    },
+    {
+      "path": "cam[CHANNEL]/h264",
+      "note": "No official ABUS documentation confirms this. Excluded."
+    },
+    {
+      "path": "/VideoInput/0/h264/1",
+      "note": "No official ABUS documentation confirms this. Excluded."
+    },
+    {
+      "path": "VideoInput/[CHANNEL]/h264/1",
+      "note": "No official ABUS documentation confirms this. Excluded."
+    },
+    {
+      "path": "/mpeg4/media.amp?resolution=640x480",
+      "note": "Axis-style RTSP path. No official ABUS documentation confirms this. Excluded."
+    },
+    {
+      "path": "video.mp4",
+      "note": "No official ABUS documentation confirms a bare video.mp4 path. Excluded."
+    },
+    {
+      "path": "video.h264",
+      "note": "No official ABUS documentation confirms a bare video.h264 path (the documented path is /h264). Excluded."
+    },
+    {
+      "path": "live.sdp",
+      "note": "Bare path (no leading slash) — same comment as /live.sdp above. Configurable access name in TVIP41550, not a fixed template. Excluded."
+    }
+  ],
+  "notes": "ABUS (ABUS Security-Center GmbH, Affing, Germany) runs its own native IP camera firmware platform across the TVIP and IPCB/IPCS series. Official ABUS user manuals (TVIP62000, TVIP11502, TVIP21502 — confirmed via ManualsLib) document three RTSP path variants on the native platform: /h264 (H.264), /mpeg4 (MPEG-4), /mjpeg (MJPEG), all on port 554 with credentials in the URL (rtsp://{user}:{pass}@{ip}:554/<codec>). The older TVIP41550 uses a configurable access-name scheme rather than fixed paths. The heavily-represented Hikvision /Streaming/Channels/101 path appears only in community aggregators for ABUS and is not confirmed by any official ABUS documentation reviewed — it is treated as cross-brand lead contamination. ABUS may sell some Hikvision-OEM models (community sources mention a 'CF3' model), but no official ABUS document was found confirming Hikvision RTSP paths for ABUS-branded hardware. The /mjpeg path is a valid third stream option not listed as a separate template here since the spec focuses on main/sub; integrators should use /mjpeg for MJPEG access.",
+  "verified_on": "2026-08-14"
+}

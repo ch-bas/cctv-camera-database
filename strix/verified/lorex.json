@@ -1,0 +1,104 @@
+{
+  "brand": "Lorex",
+  "brand_id": "lorex",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/cam/realmonitor?channel=<N>&subtype=0",
+      "codec": "H.264/H.265",
+      "verified": true,
+      "source": "Lorex official RTSP guide 'IP Cameras: Using Real Time Streaming Protocol (RTSP) with your DVR/NVR' (lorex-help.freshdesk.com/support/solutions/articles/72000640829): 'rtsp://<user>:<pass>@<ip>:<port>/cam/realmonitor?channel=<channelNo>&subtype=<typeNo> — subtype 0 = Main Stream'. Corroborated by lorextechnology.com official product manuals: LHV5100W RTSP Streaming section (lorextechnology.com/downloads/security-dvr/LHV5100W/manual/LHV5100W_EN_R1/sect1sect17.html) and DV800-Series RTSP Streaming section (lorextechnology.com/downloads/security-dvr/DV800-Series/manual-EN/sect1sect21.html), both quoting the identical URL template and noting subtype=0 for Main Stream.",
+      "strix_lead": "strixcamdb:lorex"
+    },
+    {
+      "stream": "sub",
+      "path": "/cam/realmonitor?channel=<N>&subtype=1",
+      "codec": "H.264/H.265",
+      "verified": true,
+      "source": "Same three official Lorex sources as main stream (Freshdesk KB 72000640829; LHV5100W manual; DV800-Series manual): 'subtype 1 = Sub Stream — recommended when connecting over the Internet'.",
+      "strix_lead": "strixcamdb:lorex"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/ch01/0",
+      "note": "Generic /chNN/0 style path; not mentioned in any official Lorex documentation. Cross-brand contamination (seen in many consumer DVR brands). Excluded."
+    },
+    {
+      "path": "/ch07/0",
+      "note": "Same /chNN/0 family — not in official Lorex docs. Excluded."
+    },
+    {
+      "path": "/ch09/0",
+      "note": "Same /chNN/0 family — excluded."
+    },
+    {
+      "path": "/ch02/0",
+      "note": "Same /chNN/0 family — excluded."
+    },
+    {
+      "path": "/ch03/0",
+      "note": "Same /chNN/0 family — excluded."
+    },
+    {
+      "path": "/ch04/0",
+      "note": "Same /chNN/0 family — excluded."
+    },
+    {
+      "path": "/ch05/0",
+      "note": "Same /chNN/0 family — excluded."
+    },
+    {
+      "path": "/ch06/0",
+      "note": "Same /chNN/0 family — excluded."
+    },
+    {
+      "path": "/ch08/0",
+      "note": "Same /chNN/0 family — excluded."
+    },
+    {
+      "path": "/cam/realmonitor?channel=1&subtype=00&authbasic=[AUTH]",
+      "note": "Variant of confirmed path but with hardcoded base64 auth in URL — the official template places credentials in the standard rtsp://user:pass@ prefix, not as an authbasic query parameter. Malformed lead variant; excluded."
+    },
+    {
+      "path": "/cam/realmonitor?channel=1&subtype=1;subtype:1",
+      "note": "Malformed duplicate-parameter variant — not a documented path. Excluded."
+    },
+    {
+      "path": "/cam/realmonitor?channel=1&subtype=0&unicast=true&proto=Onvif",
+      "note": "ONVIF-appended variant; not in official Lorex RTSP docs. Extra params may be ONVIF media proxy artefacts. Excluded from template."
+    },
+    {
+      "path": "/Streaming/Channels/1",
+      "note": "Hikvision-style path. One search result mentioned a small number of early Lorex models (LNB2153/MCNB2153) may have used Hikvision firmware, but this is not confirmed in any official Lorex RTSP documentation found. Treated as cross-brand contamination. Excluded."
+    },
+    {
+      "path": "/Streaming/Channels/2",
+      "note": "Hikvision-style path — same reasoning as /Streaming/Channels/1. Excluded."
+    },
+    {
+      "path": "ch0_0.h264",
+      "note": "Generic legacy h264 path — not documented by Lorex. Excluded."
+    },
+    {
+      "path": "user=[USERNAME]&password=[PASSWORD]&channel=1&stream=0.sdp?",
+      "note": "Malformed / generic lead (query-string-only, no path). Not in official Lorex docs. Excluded."
+    },
+    {
+      "path": "/Video?Codec=MPEG4&Width=720&Height=576&Fps=30",
+      "note": "MPEG-4 legacy path. Not in official Lorex docs; cross-brand contamination. Excluded."
+    },
+    {
+      "path": "video.mp4",
+      "note": "Generic mp4 lead — not in official Lorex docs. Excluded."
+    },
+    {
+      "path": "/video.mp4",
+      "note": "Generic mp4 lead — excluded."
+    }
+  ],
+  "notes": "Lorex (formerly a FLIR brand, now independent) is a Dahua OEM for the vast majority of its IP camera and DVR/NVR product lines. The identical /cam/realmonitor RTSP path is documented directly in three official Lorex sources: the Lorex Help Center KB article (Freshdesk), the LHV5100W product manual, and the DV800-Series manual. Official template: rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=<N>&subtype=<N> — subtype=0 for main (mainstream), subtype=1 for sub (sub-stream). Channel numbering starts at 1. Some very old or niche Lorex units may use Hikvision firmware (/Streaming/Channels/) but this is unconfirmed by official Lorex documentation and treated as cross-brand contamination here. Default RTSP port is 554; some NVR products also support port 8554 (seen in leads) but 554 is the documented default.",
+  "verified_on": "2026-08-14"
+}

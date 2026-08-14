@@ -1,0 +1,72 @@
+{
+  "brand": "Ubiquiti",
+  "brand_id": "ubiquiti",
+  "status": "verified",
+  "default_port": null,
+  "templates": [
+    {
+      "stream": "main (UniFi Protect — high quality)",
+      "path": "/{token}",
+      "codec": "H.264|H.265 (per-camera profile)",
+      "verified": true,
+      "source": "UniFi Protect UI (Settings → Advanced → RTSP): each camera generates a unique random token per quality level; the RTSP URL displayed is rtsp://{nvr_ip}:7447/{token} for plain RTSP, or rtsps://{nvr_ip}:7441/{token}?enableSrtp for encrypted. Confirmed by: CamTuber Ubiquiti RTSP guide (https://www.camtuber.com/rtsp-guide/ubiquiti), HostiFi guide (https://www.hostifi.com/blog/how-to-stream-a-unifi-protect-rtsp-feed-to-wordpress), VisioForge docs (https://www.visioforge.com/help/docs/dotnet/camera-brands/ubiquiti/). No static path exists — token is system-generated and shown in Protect UI.",
+      "strix_lead": "strixcamdb:ubiquiti"
+    },
+    {
+      "stream": "main (legacy AirCam — HD 1280×720)",
+      "path": "/live/ch00_0",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Ubiquiti AirCam Streaming Manual (referenced at readkong.com/page/streaming-manual-for-the-aircam-unifi-video-camera-or-9711537): 'rtsp://<your local webcam IP address>/live/ch00_0 — 1280x720 px (HD)'. Port 554. Default credentials ubnt/ubnt. Also documented at GeniusVision community (https://community.geniusvision.net/platform/cprndr/modelrtsp/7710137223771791232) citing rtsp://ip-addr/live/ch00_0.",
+      "strix_lead": "strixcamdb:ubiquiti"
+    },
+    {
+      "stream": "sub (legacy AirCam — 640×368)",
+      "path": "/live/ch01_0",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Ubiquiti AirCam Streaming Manual (same source as ch00_0 entry): '/live/ch01_0 — 640×368 px (Standard resolution)'. Port 554.",
+      "strix_lead": "strixcamdb:ubiquiti"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "live/ch00_0",
+      "note": "Same as /live/ch00_0 but without leading slash — confirmed as valid for legacy AirCam; listed separately in leads as no-slash variant."
+    },
+    {
+      "path": "/ch00_0",
+      "note": "Missing the /live/ prefix documented in official AirCam guides. Not confirmed in official Ubiquiti documentation. Likely a mis-scraped variant of /live/ch00_0."
+    },
+    {
+      "path": "ch0[CHANNEL]_0",
+      "note": "Templated variant not matching official AirCam path format /live/ch00_0. No official Ubiquiti source confirms this pattern. Excluded."
+    },
+    {
+      "path": "/s0",
+      "note": "Used in standalone (non-Protect) UniFi camera mode per community reports, but no official Ubiquiti documentation found confirming this path for a published camera product. Cannot verify against official source — excluded."
+    },
+    {
+      "path": "s0",
+      "note": "No-leading-slash variant of /s0. Same exclusion reason."
+    },
+    {
+      "path": "/s1",
+      "note": "Possible sub-stream for standalone UniFi cameras. Not confirmed in official Ubiquiti documentation. Excluded."
+    },
+    {
+      "path": "/s2",
+      "note": "Possible third stream for standalone UniFi cameras. Not confirmed in official Ubiquiti documentation. Excluded."
+    },
+    {
+      "path": "/5e254c28900822014a06053a_0",
+      "note": "This is a device-specific unique RTSP token from a UniFi Protect system — not a reusable path template. Token is per-camera and shown only in the Protect UI. Port 7447 confirms UniFi Protect NVR origin. Excluded as template (token-based, not a fixed path)."
+    },
+    {
+      "path": "/DRELXB66JxT9T4XW",
+      "note": "Another device-specific unique RTSP token from a UniFi Protect system (port 7447). Not a reusable template. Excluded for same reason as /5e254c28900822014a06053a_0."
+    }
+  ],
+  "notes": "Ubiquiti has two distinct RTSP paradigms: (1) UniFi Protect (modern): RTSP is proxied through the NVR/console on port 7447 (plain) or 7441 (encrypted RTSPS). Each camera gets a unique random token per quality tier (high/medium/low), shown in Protect UI under Settings → Advanced → RTSP. There is NO fixed path — the token changes if RTSP is disabled/re-enabled or the camera is reset. The full URL format is rtsp://{nvr_ip}:7447/{token} or rtsps://{nvr_ip}:7441/{token}?enableSrtp. (2) Legacy AirCam / early UniFi Video cameras: direct RTSP on port 554, fixed paths /live/ch00_0 (HD 1280×720), /live/ch01_0 (640×368), /live/ch02_0 (320×176), /live/ch03_0 (160×96). Default credentials ubnt/ubnt. No fixed-path RTSP template can be published for modern UniFi Protect cameras; the token must be retrieved from the Protect UI per camera.",
+  "verified_on": "2026-08-14"
+}
