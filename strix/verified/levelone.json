@@ -1,0 +1,45 @@
+{
+  "brand": "LevelOne",
+  "brand_id": "levelone",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/live.sdp",
+      "codec": "H.264/MPEG-4 (per-profile)",
+      "verified": true,
+      "source": "LevelOne FCS-1060/WCS-2060 P/T/Z IP Network Camera User Manual Ver 1.2, 'RTSP Streaming' section: default RTSP access name <live.sdp>, connect via rtsp://<ip address>/<access name>, default RTSP port 554 (download.level1.com/level1/manual/FCS-1060_WCS-2060_UM_V1.2.pdf)",
+      "strix_lead": "strixcamdb:levelone"
+    },
+    {
+      "stream": "main",
+      "path": "/live1.sdp",
+      "codec": "H.264/MPEG-4 (per-profile)",
+      "verified": true,
+      "source": "LevelOne FCS-5044 Network Camera User's Manual Ver 1.0, 'RTSP stream access names setting': audio/video URL rtsp://<ip>/liveN.sdp (N = stream index, e.g. live1.sdp / live2.sdp); RTSP port 554 (download.level1.com/level1/manual/FCS-5044-V1_UM_1.0.pdf)",
+      "strix_lead": "strixcamdb:levelone"
+    },
+    {
+      "stream": "sub",
+      "path": "/live2.sdp",
+      "codec": "H.264/MPEG-4 (per-profile)",
+      "verified": true,
+      "source": "LevelOne FCS-5044 User Manual Ver 1.0 (liveN.sdp, N as second/sub stream index) and FCS-3021 User Manual Ver 1.2 'RTSP Streaming' (Access name for stream 1 / stream 2, rtsp://<ip address>/<access name>) — two independently-configurable RTSP access names per camera (download.level1.info/manual/FCS-3021_UM_V1.2.pdf)",
+      "strix_lead": "strixcamdb:levelone"
+    }
+  ],
+  "unverified_leads": [
+    { "path": "/Streaming/Channels/101", "note": "Hikvision path; not in any official LevelOne manual. LevelOne's Hikvision-OEM manual (User Manual of Network Camera V5.3.21, 'Enable LevelOne' integration protocol) documents RTSP only via port 554 with no explicit /Streaming/Channels URL." },
+    { "path": "/Streaming/Channels/102", "note": "Hikvision sub-stream path; not documented in any official LevelOne manual." },
+    { "path": "/Streaming/Channels/[CHANNEL]02", "note": "Hikvision templated path; contamination, no official LevelOne source." },
+    { "path": "/channel1", "note": "Not documented in any official LevelOne manual; likely cross-brand contamination." },
+    { "path": "/channel0", "note": "Not documented in any official LevelOne manual." },
+    { "path": "/h264", "note": "Generic path not documented by LevelOne." },
+    { "path": "/onvif-stream1", "note": "Generic ONVIF-profile path; not an explicitly documented LevelOne RTSP URL (LevelOne devices are ONVIF-conformant, but the discovered RTSP URL is device-assigned, not a fixed /onvif-stream1)." },
+    { "path": "/onvif-stream2", "note": "Generic ONVIF-profile path; not a fixed documented LevelOne URL." },
+    { "path": "/video.mp4", "note": "Appears in the older FCS-1101 manual only as a 3G/mobile example (rtsp://servername:554/video.mp4, MPEG4-mobile mode, non-default port 8554/8050); not the primary H.264 live path." }
+  ],
+  "notes": "LevelOne IP cameras are VIVOTEK-lineage on the classic FCS/WCS lines: RTSP default port 554, connect via rtsp://<ip>/<access name>. The documented default access name is 'live.sdp' (single-stream models, FCS-1060/WCS-2060, FCS-1030) and 'liveN.sdp' for multi-stream models (FCS-5044), where N indexes the stream (live1.sdp main / live2.sdp sub) and each RTSP access name is independently user-configurable (FCS-3021: 'Access name for stream 1' / 'stream 2'). The access name is editable, so live.sdp / live1.sdp / live2.sdp are factory defaults, not immutable. Newer LevelOne models ship Hikvision-OEM firmware (User Manual of Network Camera V5.3.21, port set 80/8000/554, 'Enable LevelOne' integration protocol) — that manual documents RTSP via port 554 but does NOT publish a fixed /Streaming/Channels/101 URL, so the Streaming/Channels leads are excluded as Hikvision contamination.",
+  "verified_on": "2026-08-14"
+}

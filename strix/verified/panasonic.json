@@ -1,0 +1,64 @@
+{
+  "brand": "Panasonic i-PRO",
+  "brand_id": "panasonic",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/Src/MediaInput/stream_1",
+      "codec": "H.265|H.264 (per-profile, codec-agnostic form)",
+      "verified": true,
+      "source": "i-PRO Command Interface (i-PRO Network Camera, H.265 models) ver1.09, Section 2.3.3 'RTSP URL' — https://i-pro.com/products_and_solutions/sites/default/files/2024-06/Command_interface_iPRO_H.265models_ver1.09.pdf",
+      "strix_lead": "strixcamdb:panasonic"
+    },
+    {
+      "stream": "sub",
+      "path": "/Src/MediaInput/stream_2",
+      "codec": "H.265|H.264 (per-profile, codec-agnostic form)",
+      "verified": true,
+      "source": "i-PRO Command Interface ver1.09, Section 2.3.3 'RTSP URL' — stream_2/stream_3/stream_4 documented as streams (2)-(4)",
+      "strix_lead": "strixcamdb:panasonic"
+    },
+    {
+      "stream": "main",
+      "path": "/Src/MediaInput/h264/stream_1",
+      "codec": "H.264",
+      "verified": true,
+      "source": "i-PRO Command Interface ver1.09, Section 2.3.3 — labeled 'legacy URL', H.264 only (camera replies 503 if encode type is not H.264)",
+      "strix_lead": "strixcamdb:panasonic"
+    },
+    {
+      "stream": "sub",
+      "path": "/Src/MediaInput/h264/stream_2",
+      "codec": "H.264",
+      "verified": true,
+      "source": "i-PRO Command Interface ver1.09, Section 2.3.3 — legacy H.264-only form, stream (2)",
+      "strix_lead": "strixcamdb:panasonic"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/MediaInput/h264/stream_1",
+      "note": "Older i-PRO/Panasonic firmware variant WITHOUT the 'Src/' prefix. Widely deployed and cross-listed by integrators (ispyconnect/Agent DVR), but the i-PRO Command Interface spec ver1.09 documents the path only in its 'Src/MediaInput/...' form. Kept unverified until confirmed against a firmware-specific Panasonic doc."
+    },
+    {
+      "path": "/nphMpeg4/g726-<WxH>",
+      "note": "Legacy Panasonic BB-HCM / BL-C series MPEG-4 URL (e.g. /nphMpeg4/g726-640x480 with G.726 audio, or nil-<WxH> for no audio). Attested by Crestron/ZoneMinder integrator reports and the leads (nphMpeg4/g726-640x48), but I could not render the exact string from a Panasonic-hosted manual PDF, so not marked verified. Applies only to the old consumer BB/BL MPEG-4 cameras, NOT the current i-PRO H.264/H.265 line."
+    },
+    {
+      "path": "/ONVIF/MediaInput",
+      "note": "ONVIF media profile endpoint (also /ONVIF/MediaInput?profile=def_profile1 etc.). Standard ONVIF, resolved via ONVIF Media service GetStreamUri rather than a fixed manufacturer RTSP URL — not a Panasonic-specific fixed path, so left unverified here."
+    },
+    {
+      "path": "/VideoInput/[CHANNEL]/h264/1",
+      "note": "Not present in the i-PRO Command Interface RTSP URL chapter; likely cross-brand contamination. Excluded."
+    },
+    {
+      "path": "/live.sdp",
+      "note": "Generic SDP endpoint, not documented for Panasonic/i-PRO. Cross-brand contamination. Excluded."
+    }
+  ],
+  "notes": "Panasonic Security is now i-PRO Co., Ltd. Current/official RTSP scheme (i-PRO Command Interface spec, Section 2.3.3): rtsp://{ip}:554/Src/MediaInput/stream_<N> for N=1..4 (codec-agnostic, follows the per-stream encode profile H.264 or H.265). A legacy H.264-only form /Src/MediaInput/h264/stream_<N> (and /Src/MediaInput/h264) is also officially documented and returns error 503 if the stream is not set to H.264. Multi-sensor / Fisheye-quad models append /ch_<N> (e.g. /Src/MediaInput/stream_1/ch_1). Requesting rtsp://{ip}/Src/MediaInput with stream+ch omitted returns the configured Initial Stream. Default RTSP port 554. Legacy consumer BB-HCM/BL-C MPEG-4 cameras used /nphMpeg4/g726-<WxH> (recorded under unverified_leads pending a Panasonic-own manual).",
+  "verified_on": "2026-08-14"
+}
