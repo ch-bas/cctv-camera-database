@@ -1,0 +1,68 @@
+{
+  "brand": "Anpviz",
+  "brand_id": "anpviz",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/Streaming/Channels/101",
+      "codec": "H.264|H.265",
+      "verified": true,
+      "source": "Anpviz HK Series Network Dome Camera User Manual (manuals.plus/anpviz/hk-series-network-dome-camera-manual) — 'rtsp://<username>:<password>@<IP>:<RTSP port>/Streaming/channels/<channel number><stream number>', example rtsp://admin:a1234567@192.168.1.48:554/Streaming/channels/101",
+      "strix_lead": "strixcamdb:anpviz"
+    },
+    {
+      "stream": "sub",
+      "path": "/Streaming/Channels/102",
+      "codec": "H.264|H.265",
+      "verified": true,
+      "source": "Anpviz HK Series Network Dome Camera User Manual (manuals.plus/anpviz/hk-series-network-dome-camera-manual) — channel 1, stream 02, example rtsp://admin:a1234567@192.168.1.48:554/Streaming/channels/102",
+      "strix_lead": "strixcamdb:anpviz"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/h264?username=[USERNAME]&password=[PASSWORD]",
+      "note": "Not in the official Anpviz manual; generic RTSP lead, unconfirmed for Anpviz's Hikvision-OEM firmware."
+    },
+    {
+      "path": "/h264cif?username=[USERNAME]&password=[PASSWORD]",
+      "note": "Not in the official Anpviz manual; generic/aggregator lead, unconfirmed."
+    },
+    {
+      "path": "/cam1/mpeg4",
+      "note": "Aggregator-style default; not in Anpviz docs. Anpviz uses Hikvision-OEM /Streaming/Channels/."
+    },
+    {
+      "path": "/live/mpeg4",
+      "note": "Cross-brand lead; not documented by Anpviz."
+    },
+    {
+      "path": "/live/stream1",
+      "note": "Cross-brand lead; not documented by Anpviz."
+    },
+    {
+      "path": "/stream0",
+      "note": "Cross-brand lead; not documented by Anpviz."
+    },
+    {
+      "path": "/stream1",
+      "note": "Cross-brand lead; not documented by Anpviz."
+    },
+    {
+      "path": "/h264_stream",
+      "note": "Cross-brand lead; not documented by Anpviz."
+    },
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+      "note": "Cross-brand (SDP-style) lead; not documented by Anpviz."
+    },
+    {
+      "path": "/user=[USERNAME]&password=[PASSWORD]&channel=1&stream=0.sdp?",
+      "note": "Cross-brand (SDP-style) lead; not documented by Anpviz."
+    }
+  ],
+  "notes": "Anpviz is an Amazon reseller of Hikvision-OEM cameras; firmware uses the Hikvision RTSP scheme /Streaming/Channels/<channel><stream>. Path format: <channel number><stream number> (101 = ch1 main, 102 = ch1 sub); third stream 103 exists on Hikvision firmware but is not explicitly documented in the Anpviz manual, so it is not published here. Default RTSP port 554; default user 'admin', password = activation password. The two Hikvision-OEM leads (/Streaming/Channels/101 and /102) are confirmed by the official Anpviz HK Series manual; all other leads are cross-brand noise and excluded.",
+  "verified_on": "2026-08-14"
+}

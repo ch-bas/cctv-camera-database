@@ -1,0 +1,100 @@
+{
+  "brand": "RVi",
+  "brand_id": "rvi",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/RVi/1/1",
+      "codec": "per-profile (H.264/H.265)",
+      "verified": true,
+      "source": "RVi official support KB — 'RTSP-ссылки для оборудования RVi' (https://rvigroup.ru/support/question-answer/instrukcii/rtsp-ssylki-dlya-oborudovaniya-rvi/): 1st/2nd-gen cameras rtsp://user:pass@ip:554/RVi/1/1, stream type 1=main",
+      "strix_lead": "strixcamdb:rvi"
+    },
+    {
+      "stream": "sub",
+      "path": "/RVi/1/2",
+      "codec": "per-profile (H.264/H.265)",
+      "verified": true,
+      "source": "RVi official support KB — 'RTSP-ссылки для оборудования RVi': 1st/2nd-gen cameras, stream type 2=secondary",
+      "strix_lead": "strixcamdb:rvi"
+    },
+    {
+      "stream": "main",
+      "path": "/cam/realmonitor?channel=<N>&subtype=0",
+      "codec": "per-profile (H.264/H.265)",
+      "verified": true,
+      "source": "RVi official support KB — 'RTSP-ссылки для оборудования RVi': 1st-gen recorders (Dahua-platform) rtsp://user:pass@ip:554/cam/realmonitor?channel=1&subtype=0, subtype=0=main",
+      "strix_lead": "strixcamdb:rvi"
+    },
+    {
+      "stream": "sub",
+      "path": "/cam/realmonitor?channel=<N>&subtype=1",
+      "codec": "per-profile (H.264/H.265)",
+      "verified": true,
+      "source": "RVi official support KB — 'RTSP-ссылки для оборудования RVi': 1st-gen recorders (Dahua-platform), subtype=1=secondary",
+      "strix_lead": "strixcamdb:rvi"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/Streaming/Channels/101",
+      "note": "Hikvision-style path; officially used only by RVi 2nd-gen RECORDERS (as /Streaming/Unicast/channels/101 or /PSIA/streaming/channels/101), not by the bare Hikvision form — this exact lead not confirmed by RVi doc; classic cross-brand Hikvision contamination"
+    },
+    {
+      "path": "/Streaming/channels/201",
+      "note": "same Hikvision-style contamination; RVi 2nd-gen recorders use /Streaming/Unicast/channels/### not this bare form"
+    },
+    {
+      "path": "/Streaming/Channels/1",
+      "note": "Hikvision-style, not in RVi doc"
+    },
+    {
+      "path": "/Streaming/Channels/2",
+      "note": "Hikvision-style, not in RVi doc"
+    },
+    {
+      "path": "/Streaming/channels/101",
+      "note": "Hikvision-style, not in RVi doc"
+    },
+    {
+      "path": "/cam/realmonitor?channel=1&subtype=00&authbasic=[AUTH]",
+      "note": "malformed subtype=00 + injected authbasic scan artifact; correct RVi form is subtype=0/1"
+    },
+    {
+      "path": "/cam/realmonitor?channel=1&subtype=00&authbasic=YWRtaW46UFAxNTMzMDY=",
+      "note": "scan artifact with embedded base64 credentials; not an official template"
+    },
+    {
+      "path": "VideoInput/1/h264/1",
+      "note": "cross-brand path, not in RVi doc"
+    },
+    {
+      "path": "/VideoInput/1/h264/1",
+      "note": "cross-brand path, not in RVi doc"
+    },
+    {
+      "path": "/channel1",
+      "note": "generic cross-brand path, not in RVi doc"
+    },
+    {
+      "path": "/channel3",
+      "note": "generic cross-brand path, not in RVi doc"
+    },
+    {
+      "path": "video.h264",
+      "note": "generic cross-brand path, not in RVi doc"
+    },
+    {
+      "path": "/RVi/2/1",
+      "note": "RVi-branded prefix but channel/stream ordering not documented as a stream template in RVi KB (main path is /RVi/1/1); left unverified"
+    },
+    {
+      "path": "/1/2?transmode=unicast&profile=vam",
+      "note": "cross-brand (Arecont/AV-style vam profile), not in RVi doc"
+    }
+  ],
+  "notes": "RVi (rvigroup.ru) is a Russian-market brand built largely on Dahua hardware (Dahua OEM), with some Hikvision-platform models. Per the official RVi support KB, RTSP path depends on device family: (a) 1st/2nd-gen cameras -> /RVi/1/1 main, /RVi/1/2 sub; (b) camera models RVi-1NCT2162 & RVi-1NCE2166 -> /ch01/0 (main), /ch01/1, /ch01/2; (c) RVi-2NCXxxxx series -> /stream1 (main), /stream2, /stream3; (d) 1st-gen RECORDERS -> Dahua-style /cam/realmonitor?channel=N&subtype=0|1; (e) 2nd-gen RECORDERS -> Hikvision-style /Streaming/Unicast/channels/### or /PSIA/streaming/channels/###. Published templates cover the two primary camera/recorder families (/RVi/* and /cam/realmonitor). Channel <N> is 1-based; subtype 0=main, 1=sub. Dahua OEM lineage confirmed against RVi's own documentation, not solely the lead.",
+  "verified_on": "2026-08-14"
+}

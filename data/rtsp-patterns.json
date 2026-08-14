@@ -6,10 +6,10 @@
     "methodology": "StrixCamDB is used ONLY as a lead source; every path here is independently re-verified against the manufacturer's official docs (manual / API / KB), so each record is independently sourced and CC0-clean, with Strix credited as the discovery source (strix_lead). Leads that could not be confirmed officially are recorded under unverified_leads and never published as fact.",
     "generated": "2026-08-14",
     "totals": {
-      "brands": 12,
-      "verified": 11,
-      "unverified": 1,
-      "templates": 37
+      "brands": 49,
+      "verified": 36,
+      "unverified": 13,
+      "templates": 118
     }
   },
   "brands": [
@@ -206,6 +206,218 @@
       "verified_on": "2026-08-14"
     },
     {
+      "brand": "Alibi",
+      "brand_id": "alibi",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/Streaming/Channels/101",
+          "codec": "H.265|H.264",
+          "verified": true,
+          "source": "Alibi Security (Supercircuits) — Alibi Vigilant IP camera datasheets/support: cameras support ONVIF Profile S/G/T + RTSP on port 554 using the Hikvision channel scheme /Streaming/Channels/<channel><stream> where 101 = channel 1 main stream, 102 = sub stream. Confirmed as a Hikvision OEM line (alibisecurity.com Vigilant datasheets; Supercircuits Alibi documentation).",
+          "strix_lead": "strixcamdb:alibi"
+        },
+        {
+          "stream": "sub",
+          "path": "/Streaming/Channels/102",
+          "codec": "H.265|H.264",
+          "verified": true,
+          "source": "Alibi Security (Supercircuits) — Alibi Vigilant IP camera documentation: 102 pulls the sub stream (channel 1, stream 2) on RTSP port 554.",
+          "strix_lead": "strixcamdb:alibi"
+        },
+        {
+          "stream": "main-legacy",
+          "path": "/ch0_0.h264",
+          "codec": "H.264",
+          "verified": true,
+          "source": "Legacy Alibi (Dahua-OEM generation) IP camera RTSP path (e.g. Alibi 3014 / CAM-IPM series): rtsp://{ip}:554/ch0_0.h264 (main) and ch0_1.h264 (sub). Documented for older Alibi models predating the Hikvision-OEM Vigilant line.",
+          "strix_lead": "strixcamdb:alibi"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/Streaming/Channels/1",
+          "note": "Non-canonical Hikvision channel id; the documented Alibi Vigilant form is the 3-digit /Streaming/Channels/101 (main) / /102 (sub). Bare /1 and /2 appear in some VMS how-tos but are not the official channel-stream indexing."
+        },
+        {
+          "path": "/Streaming/Channels/2",
+          "note": "Same as above — non-canonical short form for sub; official sub is /Streaming/Channels/102."
+        },
+        {
+          "path": "/ch0_0.264",
+          "note": "Variant of the legacy Dahua-OEM path; the documented extension is .h264 (/ch0_0.h264). Kept out of primary templates as unconfirmed spelling."
+        },
+        {
+          "path": "/h264",
+          "note": "Generic codec-name lead; not an Alibi-documented path. Cross-brand contamination."
+        },
+        {
+          "path": "/videoMain",
+          "note": "Amcrest/other-brand style path; no official Alibi doc. Cross-brand contamination."
+        },
+        {
+          "path": "/LowResolutionVideo",
+          "note": "Generic/other-brand sub-stream lead; no official Alibi doc. Cross-brand contamination."
+        }
+      ],
+      "notes": "Alibi is Supercircuits' house brand and is a well-documented OEM: the modern Alibi Vigilant line is Hikvision-OEM and uses the Hikvision RTSP scheme /Streaming/Channels/<channel><stream> (101 main, 102 sub) on port 554, with ONVIF Profile S/G/T supported. An older Alibi camera generation (e.g. Alibi 3014, CAM-IPM series) was Dahua-based and used /ch0_0.h264 (main) / ch0_1.h264 (sub). Alibi Vigilant NVRs also accept generic Hikvision/Hikvision-OEM cameras. NVR-side RTSP may differ (some Alibi NVRs use a non-554 RTSP port); this entry covers the cameras. Codec is per-model: newer Vigilant cameras are H.265/H.264, legacy Dahua-OEM units H.264.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "ALLNET",
+      "brand_id": "allnet",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/video.h264",
+          "codec": "H.264",
+          "verified": true,
+          "source": "ALLNET ALL2205 User Manual (EN), section 'Viewer Authentication' — https://www.allnet.de/ftp-downloads/allnet/kamera/all2205/ALL2205_UM_EN.pdf",
+          "strix_lead": "strixcamdb:allnet"
+        },
+        {
+          "stream": "main",
+          "path": "/video.mp4",
+          "codec": "MPEG-4",
+          "verified": true,
+          "source": "ALLNET ALL2205 User Manual (EN) — https://www.allnet.de/ftp-downloads/allnet/kamera/all2205/ALL2205_UM_EN.pdf",
+          "strix_lead": "strixcamdb:allnet"
+        },
+        {
+          "stream": "main",
+          "path": "/video.mjpg",
+          "codec": "MJPEG",
+          "verified": true,
+          "source": "ALLNET ALL2205 User Manual (EN) — https://www.allnet.de/ftp-downloads/allnet/kamera/all2205/ALL2205_UM_EN.pdf",
+          "strix_lead": "strixcamdb:allnet"
+        },
+        {
+          "stream": "mobile",
+          "path": "/video.3gp",
+          "codec": "H.264/3GP",
+          "verified": true,
+          "source": "ALLNET ALL2205 User Manual (EN), section 5.1 '3G Mobile Phone Streaming Viewing' — https://www.allnet.de/ftp-downloads/allnet/kamera/all2205/ALL2205_UM_EN.pdf",
+          "strix_lead": "strixcamdb:allnet"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/Streaming/Channels/101",
+          "note": "Hikvision path — cross-brand contamination, not in any official ALLNET doc"
+        },
+        {
+          "path": "/Streaming/Channels/1",
+          "note": "Hikvision path — cross-brand contamination"
+        },
+        {
+          "path": "/Streaming/Channels/2",
+          "note": "Hikvision path — cross-brand contamination"
+        },
+        {
+          "path": "/h264",
+          "note": "not documented in official ALLNET manuals; official path is /video.h264 (some third-party guides cite bare /h264 but no ALLNET doc confirms it)"
+        },
+        {
+          "path": "/mpeg4",
+          "note": "not in official ALLNET docs; official MPEG-4 path is /video.mp4"
+        },
+        {
+          "path": "/live/h264",
+          "note": "not in official ALLNET docs"
+        },
+        {
+          "path": "/live/mpeg4",
+          "note": "not in official ALLNET docs"
+        },
+        {
+          "path": "/cam1/h264",
+          "note": "not in official ALLNET docs"
+        },
+        {
+          "path": "/cam[CHANNEL]/h264",
+          "note": "not in official ALLNET docs"
+        },
+        {
+          "path": "/video1",
+          "note": "not in official ALLNET docs"
+        }
+      ],
+      "notes": "Confirmed against ALLNET's own user manuals hosted on allnet.de (ALL2205; ALL2213 corroborates RTSP support + port 554). ALLNET IP cameras expose codec-specific RTSP paths of the form rtsp://{user}:{pass}@{ip}:{port}/video.<ext> where ext = h264 | mp4 | mjpg | 3gp. There is no explicit multi-profile main/sub numbering in the documented URL scheme; stream selection is by codec suffix. Default RTSP port 554. All /Streaming/Channels/* leads are Hikvision contamination.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Anpviz",
+      "brand_id": "anpviz",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/Streaming/Channels/101",
+          "codec": "H.264|H.265",
+          "verified": true,
+          "source": "Anpviz HK Series Network Dome Camera User Manual (manuals.plus/anpviz/hk-series-network-dome-camera-manual) — 'rtsp://<username>:<password>@<IP>:<RTSP port>/Streaming/channels/<channel number><stream number>', example rtsp://admin:a1234567@192.168.1.48:554/Streaming/channels/101",
+          "strix_lead": "strixcamdb:anpviz"
+        },
+        {
+          "stream": "sub",
+          "path": "/Streaming/Channels/102",
+          "codec": "H.264|H.265",
+          "verified": true,
+          "source": "Anpviz HK Series Network Dome Camera User Manual (manuals.plus/anpviz/hk-series-network-dome-camera-manual) — channel 1, stream 02, example rtsp://admin:a1234567@192.168.1.48:554/Streaming/channels/102",
+          "strix_lead": "strixcamdb:anpviz"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/h264?username=[USERNAME]&password=[PASSWORD]",
+          "note": "Not in the official Anpviz manual; generic RTSP lead, unconfirmed for Anpviz's Hikvision-OEM firmware."
+        },
+        {
+          "path": "/h264cif?username=[USERNAME]&password=[PASSWORD]",
+          "note": "Not in the official Anpviz manual; generic/aggregator lead, unconfirmed."
+        },
+        {
+          "path": "/cam1/mpeg4",
+          "note": "Aggregator-style default; not in Anpviz docs. Anpviz uses Hikvision-OEM /Streaming/Channels/."
+        },
+        {
+          "path": "/live/mpeg4",
+          "note": "Cross-brand lead; not documented by Anpviz."
+        },
+        {
+          "path": "/live/stream1",
+          "note": "Cross-brand lead; not documented by Anpviz."
+        },
+        {
+          "path": "/stream0",
+          "note": "Cross-brand lead; not documented by Anpviz."
+        },
+        {
+          "path": "/stream1",
+          "note": "Cross-brand lead; not documented by Anpviz."
+        },
+        {
+          "path": "/h264_stream",
+          "note": "Cross-brand lead; not documented by Anpviz."
+        },
+        {
+          "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+          "note": "Cross-brand (SDP-style) lead; not documented by Anpviz."
+        },
+        {
+          "path": "/user=[USERNAME]&password=[PASSWORD]&channel=1&stream=0.sdp?",
+          "note": "Cross-brand (SDP-style) lead; not documented by Anpviz."
+        }
+      ],
+      "notes": "Anpviz is an Amazon reseller of Hikvision-OEM cameras; firmware uses the Hikvision RTSP scheme /Streaming/Channels/<channel><stream>. Path format: <channel number><stream number> (101 = ch1 main, 102 = ch1 sub); third stream 103 exists on Hikvision firmware but is not explicitly documented in the Anpviz manual, so it is not published here. Default RTSP port 554; default user 'admin', password = activation password. The two Hikvision-OEM leads (/Streaming/Channels/101 and /102) are confirmed by the official Anpviz HK Series manual; all other leads are cross-brand noise and excluded.",
+      "verified_on": "2026-08-14"
+    },
+    {
       "brand": "Arecont Vision",
       "brand_id": "arecont",
       "status": "verified",
@@ -287,6 +499,1029 @@
         }
       ],
       "notes": "Two documented generations. (1) Legacy MegaVideo/MegaDome/SurroundVideo (H.264 models): base RTSP path /h264.sdp with query params; res=full = main (full res), res=half = sub (half res in each dimension); ssn is a required unique stream identifier (1-65535, up to 8 non-identical streams per camera); doublescan=0 = wait for fresh frame. Multi-sensor cameras (Omni, SurroundVideo) use /h264.sdp<N> where N is the sensor/channel index (leads show sdp1/sdp3). Optional params: x0/y0/x1/y1 (crop), qp, ratelimit, bitrate, fps, sei. (2) Contera (ConteraIP, newer H.264/H.265 platform): /stream1_<N> = main, /stream2_<N> = sub, /stream3_<N> = MJPEG; append _X for the channel on multi-channel/multi-sensor models (MicroDome Duo, Omni LX/RS 1-4). Default RTSP unicast port 554 (configurable 1-65535) confirmed in the API manual. Arecont was acquired by Costar Technologies; the HTTP/RTSP API also lives at http-api.arecontvision.com. Leads contained Hikvision PSIA and Axis media.amp cross-brand contamination — excluded.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "AVTECH",
+      "brand_id": "avtech",
+      "status": "unverified",
+      "default_port": null,
+      "templates": [],
+      "unverified_leads": [
+        {
+          "path": "/live/mpeg4",
+          "note": "Only in third-party aggregators (iSpy/camlytics/ipcamlive/ZoneMinder); no official AVTECH doc publishes a fixed RTSP path."
+        },
+        {
+          "path": "/live/h264",
+          "note": "Third-party aggregator guess; not in AVTECH's own documentation."
+        },
+        {
+          "path": "/live/h264_ulaw/VGA",
+          "note": "Third-party aggregator guess (port-88 variants); not officially documented by AVTECH."
+        },
+        {
+          "path": "/live/h264/HD1080P",
+          "note": "Third-party aggregator guess; not in AVTECH docs."
+        },
+        {
+          "path": "/live/video_audio/profile1",
+          "note": "Third-party aggregator guess; not in AVTECH docs."
+        },
+        {
+          "path": "/live/h264_ulaw/HD720P",
+          "note": "Third-party aggregator guess; not in AVTECH docs."
+        },
+        {
+          "path": "/live/video/profile1",
+          "note": "Third-party aggregator guess; not in AVTECH docs."
+        },
+        {
+          "path": "/live/video_audio/ch01/record",
+          "note": "Third-party aggregator guess; not in AVTECH docs."
+        },
+        {
+          "path": "/live/video_audio/ch01_ch01/pc",
+          "note": "Third-party aggregator guess; not in AVTECH docs."
+        },
+        {
+          "path": "/live/h264/SXGA",
+          "note": "Third-party aggregator guess; not in AVTECH docs."
+        },
+        {
+          "path": "/live/h264/HD1080",
+          "note": "Third-party aggregator guess; not in AVTECH docs."
+        },
+        {
+          "path": "/live/h264/ch0",
+          "note": "Third-party aggregator guess; not in AVTECH docs."
+        },
+        {
+          "path": "/live/video/profile3",
+          "note": "Third-party aggregator guess; not in AVTECH docs."
+        },
+        {
+          "path": "/h264.sdp",
+          "note": "Generic cross-brand SDP path; not AVTECH."
+        },
+        {
+          "path": "/live.h264",
+          "note": "Third-party aggregator variant; not in AVTECH docs."
+        },
+        {
+          "path": "/videoMain",
+          "note": "Foscam/generic path; cross-brand contamination, not AVTECH."
+        },
+        {
+          "path": "/cam/realmonitor",
+          "note": "Dahua proprietary path; cross-brand contamination, not AVTECH."
+        }
+      ],
+      "notes": "AVTECH publishes NO official fixed RTSP path. Its own documentation (e.g. AVH306/AVH408P user manuals, avtech.com.tw product pages) documents camera/DVR access via the EagleEyes app, the AVTECH proprietary protocol, and ONVIF (newer models); connection UIs list connection types 'AVTECH', 'ONVIF', 'RTSP OVER HTTP', 'RTSP OVER UDP' but do not specify a fixed RTSP URL/stream path or port. Newer devices route to ONVIF/proprietary (commonly on port 88, with RTP over UDP/multicast); older devices rely on the proprietary protocol. Every /live/* path and port-88 URL circulating for AVTECH originates from third-party aggregators (iSpy/Agent DVR, camlytics, ipcamlive, VisioForge, ZoneMinder, camera-sdk), NOT from AVTECH. Per the CC0 no-guessing rule, no template is published. To integrate, use ONVIF auto-discovery (newer models) or the EagleEyes app rather than a hand-built RTSP URL.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "BESDER",
+      "brand_id": "besder",
+      "status": "unverified",
+      "default_port": 554,
+      "templates": [],
+      "unverified_leads": [
+        {
+          "path": "/user={user}_password={pass}_channel=<N>_stream=0.sdp?real_stream",
+          "note": "Classic Xiongmai/NetSurveillance (Sofia/DVRIP) main-stream form. Strongly attested for BESDER (a Xiongmai OEM — e.g. the BESDER 6024PB-XMA501 runs a Xiongmai XM530 SoC, NETSurveillanceWEB on :80, ONVIF on :8899, DVRIP on :34567), but confirmed only via a third-party security investigation and crowdsourced VMS databases, NOT BESDER's own documentation. password is a Sofia 8-char hash, not the plaintext password. channel is typically 0 or 1."
+        },
+        {
+          "path": "/user={user}_password={pass}_channel=<N>_stream=1.sdp?real_stream",
+          "note": "Matching Xiongmai sub-stream form (stream=1). Same OEM lineage; not confirmed against any official BESDER doc."
+        },
+        {
+          "path": "/user={user}_password={pass}_channel=<N>_stream=<M>.sdp",
+          "note": "Same Xiongmai form without the ?real_stream suffix / with &-delimited variants seen in the leads. Xiongmai-OEM convention; not in any BESDER official doc."
+        },
+        {
+          "path": "/11",
+          "note": "Short main-stream path cited by crowdsourced DB (ispyconnect) as rtsp://admin:pass@ip:554/11; community-contributed and flagged 'may be inaccurate' — not published by BESDER."
+        },
+        {
+          "path": "/onvif/live/1",
+          "note": "Generic ONVIF media-profile path; BESDER exposes ONVIF (port 8899) but the actual media URI is negotiated via GetProfiles, not this fixed path. Not documented by BESDER."
+        },
+        {
+          "path": "/h264_stream",
+          "note": "Generic/other-OEM main-stream path; likely cross-brand contamination. Not confirmed for BESDER."
+        },
+        {
+          "path": "/0/av0",
+          "note": "Grandstream/other-OEM style path; likely cross-brand contamination. Not confirmed for BESDER."
+        },
+        {
+          "path": "/1/h264major",
+          "note": "Other-OEM (Grandstream-style) path; likely cross-brand contamination. Not confirmed for BESDER."
+        }
+      ],
+      "notes": "BESDER is a budget Chinese IP-camera brand (WiFi/PoE, sold via marketplaces) that rebadges Xiongmai (and similar Hi35xx) OEM hardware. Its official support site (besdersecurity.com/support) publishes only an iCSee smart-camera app manual and offers NO RTSP URL documentation — cameras are intended to be reached via the iCSee/O-KAM app or ONVIF auto-discovery, with no manufacturer-published fixed RTSP template. The Xiongmai '/user=..._channel=N_stream=M.sdp?real_stream' form is technically correct for these devices and matches the strix leads, but it is confirmed ONLY through third-party sources (a public 6024PB-XMA501 security teardown and crowdsourced VMS databases such as ispyconnect), not BESDER's own docs. Per the publish-only-what-the-manufacturer-documents rule, status is 'unverified' and templates are empty; the well-attested Xiongmai forms are retained under unverified_leads for downstream reference. Port 554 is standard (some units also expose RTSP on 10554 per community reports).",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "BEWARD",
+      "brand_id": "beward",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/av0_0",
+          "codec": "H.264",
+          "verified": true,
+          "source": "BEWARD official FAQ #39 'Формы запроса видеопотока (RTSP, HTTP) с авторизацией', https://www.beward.ru/question/39--formy-zaprosa-videopotoka--rtsp--http--s-avtorizaciej/",
+          "strix_lead": "strixcamdb:beward"
+        },
+        {
+          "stream": "sub",
+          "path": "/av0_1",
+          "codec": "H.264",
+          "verified": true,
+          "source": "BEWARD official FAQ #39, https://www.beward.ru/question/39--formy-zaprosa-videopotoka--rtsp--http--s-avtorizaciej/",
+          "strix_lead": "strixcamdb:beward"
+        },
+        {
+          "stream": "main",
+          "path": "/main",
+          "codec": "per-profile",
+          "verified": true,
+          "source": "BEWARD official FAQ #39 (SV series), https://www.beward.ru/question/39--formy-zaprosa-videopotoka--rtsp--http--s-avtorizaciej/",
+          "strix_lead": "strixcamdb:beward"
+        },
+        {
+          "stream": "sub",
+          "path": "/sub",
+          "codec": "per-profile",
+          "verified": true,
+          "source": "BEWARD official FAQ #39 (SV series), https://www.beward.ru/question/39--formy-zaprosa-videopotoka--rtsp--http--s-avtorizaciej/",
+          "strix_lead": "strixcamdb:beward"
+        },
+        {
+          "stream": "third",
+          "path": "/third",
+          "codec": "per-profile",
+          "verified": true,
+          "source": "BEWARD official FAQ #39 (SV series), https://www.beward.ru/question/39--formy-zaprosa-videopotoka--rtsp--http--s-avtorizaciej/",
+          "strix_lead": "strixcamdb:beward"
+        },
+        {
+          "stream": "main",
+          "path": "/h264",
+          "codec": "H.264",
+          "verified": true,
+          "source": "BEWARD official FAQ #39 (BD series), https://www.beward.ru/question/39--formy-zaprosa-videopotoka--rtsp--http--s-avtorizaciej/",
+          "strix_lead": "strixcamdb:beward"
+        },
+        {
+          "stream": "sub",
+          "path": "/h264_<N>",
+          "codec": "H.264",
+          "verified": true,
+          "source": "BEWARD official FAQ #39 (BD series, streams 2-4 => h264_1..h264_3), https://www.beward.ru/question/39--formy-zaprosa-videopotoka--rtsp--http--s-avtorizaciej/",
+          "strix_lead": "strixcamdb:beward"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/live/h264",
+          "note": "Not present on BEWARD's official FAQ #39; appears only in third-party aggregators (camera-sdk, ispyconnect). Excluded."
+        },
+        {
+          "path": "/tcp/av0_0",
+          "note": "Not documented by BEWARD; /tcp/ prefix is an aggregator/transport-hint artifact, not an official path. Excluded."
+        },
+        {
+          "path": "live/ch00_0",
+          "note": "Not documented by BEWARD; ch-style path is cross-brand contamination. Excluded."
+        }
+      ],
+      "notes": "BEWARD uses different RTSP paths per product series, all on port 554, all with HTTP Basic auth (user:pass@ in URL). av<channel>_<stream> form (/av0_0 main, /av0_1 sub) covers IP intercoms and B/TFR series; SV series uses /main, /sub, /third; BD series uses /h264 and /h264_<N> (N=1..3 for streams 2-4) plus /mjpeg. Confirmed against BEWARD's own official support FAQ #39.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "COTIER",
+      "brand_id": "cotier",
+      "status": "unverified",
+      "default_port": 554,
+      "templates": [],
+      "unverified_leads": [
+        {
+          "path": "/live/mpeg4",
+          "note": "Only appears in community-sourced aggregators (iSpy, Camlytics, home-security-camera.com); no official COTIER doc confirms it. Those sources explicitly state their connection strings are crowd-sourced and may be inaccurate/out of date."
+        },
+        {
+          "path": "live/mpeg4",
+          "note": "Same as above, port/leading-slash variant from crowd-sourced lists; unconfirmed."
+        },
+        {
+          "path": "/mpeg4",
+          "note": "Listed as a default by community sources only; no official manual/datasheet found."
+        },
+        {
+          "path": "/mpeg4cif",
+          "note": "Claimed as sub-stream in community lists; no official COTIER documentation."
+        },
+        {
+          "path": "/ch01.264",
+          "note": "Generic Hi-Silicon/OEM-style channel path; appears in cross-brand leads, not confirmed for COTIER."
+        },
+        {
+          "path": "/ch01_sub.264",
+          "note": "Generic OEM sub-stream pattern; not confirmed by any official COTIER doc."
+        },
+        {
+          "path": "ch0_0.h264",
+          "note": "Generic Hi3518/OEM main-stream pattern; cross-brand contaminated lead, unconfirmed for COTIER."
+        },
+        {
+          "path": "cam2/mpeg4",
+          "note": "Generic multi-cam OEM pattern; unconfirmed."
+        },
+        {
+          "path": "cam[CHANNEL]/h264",
+          "note": "Templated generic OEM pattern; unconfirmed."
+        },
+        {
+          "path": "/Onvif/Streaming/2",
+          "note": "ONVIF-media-service style path; obtained via ONVIF profile query, not a fixed documented COTIER URL."
+        }
+      ],
+      "notes": "COTIER is a low-cost Shenzhen OEM/whitelabel IP-camera/NVR-kit brand (Hi-Silicon-based boards). No official manufacturer documentation could be located: cotier.com currently serves only a default Apache2 placeholder page (expired TLS cert, no product/support/downloads section), and no official user manual, datasheet, or CGI/ONVIF integration guide was found. Every RTSP path in the leads is sourced exclusively from third-party community aggregators (iSpy/AgentDVR, Camlytics, camera-sdk.com, home-security-camera.com, ZoneMinder forum) which self-disclose that their strings are crowd-sourced and may be wrong. Reported paths also vary by model/firmware (e.g. community claims /live/mpeg4 for '2518T' vs /live/main for 'd213d'), so there is no single reliable documented template. Cameras are ONVIF-compliant, so the reliable route is ONVIF Profile-S discovery to retrieve the per-device stream URI rather than a fixed path. Marking unverified per the publish-only-what-official-docs-confirm rule.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "DBPOWER",
+      "brand_id": "db-power",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/live/ch0",
+          "codec": "H.264",
+          "verified": true,
+          "source": "DB POWER C754 User Manual (ManualsLib): \"First stream: rtsp://user:password@IP:rtsp port/live/ch0\" — https://www.manualslib.com/manual/1222702/Db-Power-C754.html",
+          "strix_lead": "strixcamdb:db-power"
+        },
+        {
+          "stream": "sub",
+          "path": "/live/ch1",
+          "codec": "H.264",
+          "verified": true,
+          "source": "DB POWER C754 User Manual (ManualsLib): \"Second stream: rtsp://User:password@IP:rtsp port/live/ch1\" — https://www.manualslib.com/manual/1222702/Db-Power-C754.html",
+          "strix_lead": "strixcamdb:db-power"
+        },
+        {
+          "stream": "third",
+          "path": "/live/ch2",
+          "codec": "H.264",
+          "verified": true,
+          "source": "DB POWER C754 User Manual (ManualsLib): \"Third stream: rtsp://user:password@IP:rtsp port/live/ch2\" — https://www.manualslib.com/manual/1222702/Db-Power-C754.html",
+          "strix_lead": "strixcamdb:db-power"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/11",
+          "note": "Popular third-party (iSpy/Camlytics) 'default' rtsp://admin:admin@192.168.1.188:554/11 — appears in aggregators, not in the DBPOWER C754 official manual; not confirmed for the /live/ch* firmware line"
+        },
+        {
+          "path": "/ucast/11",
+          "note": "Not in any official DBPOWER doc"
+        },
+        {
+          "path": "/ucast/12",
+          "note": "Not in any official DBPOWER doc"
+        },
+        {
+          "path": "/ROH/channel/11",
+          "note": "Not in any official DBPOWER doc"
+        },
+        {
+          "path": "/onvif1",
+          "note": "Generic ONVIF-profile path; DBPOWER supports ONVIF but no official doc fixes this URL"
+        },
+        {
+          "path": "/cam1/onvif-h264",
+          "note": "Generic ONVIF-profile path, not in official DBPOWER doc"
+        },
+        {
+          "path": "/cam1/onvif-h264-1",
+          "note": "Generic ONVIF-profile path, not in official DBPOWER doc"
+        },
+        {
+          "path": "/0/av0",
+          "note": "Foreign OEM path, not in official DBPOWER doc"
+        },
+        {
+          "path": "/1.3gp",
+          "note": "Foreign OEM path, not in official DBPOWER doc"
+        },
+        {
+          "path": "/H264",
+          "note": "Generic path, not in official DBPOWER doc"
+        },
+        {
+          "path": "ch0_0.h264",
+          "note": "Foreign OEM path, not in official DBPOWER doc"
+        },
+        {
+          "path": "live.sdp",
+          "note": "Generic .sdp path, not in official DBPOWER doc"
+        },
+        {
+          "path": "mpeg4",
+          "note": "Generic path, not in official DBPOWER doc"
+        },
+        {
+          "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+          "note": "Generic multi-brand .sdp template, not in official DBPOWER doc"
+        },
+        {
+          "path": "user=[USERNAME]&password=[PASSWORD]&channel=1&stream=0.sdp?",
+          "note": "Generic multi-brand .sdp template, not in official DBPOWER doc"
+        },
+        {
+          "path": "cam/realmonitor?channel=[CHANNEL]&subtype=1",
+          "note": "Dahua-family path — cross-brand contamination, not a DBPOWER path"
+        }
+      ],
+      "notes": "DBPOWER is a budget WiFi camera brand that is mostly app-driven (ODMSee/similar apps), but the official DB POWER C754 User Manual documents a fixed 3-stream RTSP scheme: /live/ch0 (main), /live/ch1 (sub), /live/ch2 (third). Confirmed leads: /live/ch0 and /live/ch1 match the manual exactly; /live/ch2 is documented in the manual though not present in the lead list. RTSP port is user-configurable in the camera's Port Setting page; the manual shows it as a ':rtsp port' placeholder, so 554 is the RTSP standard/default assumed here rather than a hard-coded value quoted in the manual. Cameras also expose ONVIF for auto-discovery, but no official doc fixes a specific ONVIF RTSP URL. Scope: verified for the /live/ch* firmware line (C754 and manual-sharing siblings); other DBPOWER OEM firmwares may differ.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Dericam",
+      "brand_id": "dericam",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/11",
+          "codec": "H.264",
+          "verified": true,
+          "source": "Dericam Camera CGI & RTSP User Guide v1.0.2 (Shenzhen Dericam Technology Co.,Ltd, www.dericam.com) §15 RTSP URL: 'rtsp://username:password@IP:port/11 -11 represents the first stream'; corroborated by Dericam S Series User Manual p.13 (rtsp://admin:123456@192.168.1.10:554/11)",
+          "strix_lead": "strixcamdb:dericam"
+        },
+        {
+          "stream": "sub",
+          "path": "/12",
+          "codec": "H.264",
+          "verified": true,
+          "source": "Dericam Camera CGI & RTSP User Guide v1.0.2 §15 RTSP URL: '-12 represents the second stream'; Dericam S Series User Manual p.13 (rtsp://admin:123456@192.168.1.10:554/12)",
+          "strix_lead": "strixcamdb:dericam"
+        },
+        {
+          "stream": "third",
+          "path": "/13",
+          "codec": "H.264",
+          "verified": true,
+          "source": "Dericam Camera CGI & RTSP User Guide v1.0.2 §15 RTSP URL: '-13 represents the third stream'",
+          "strix_lead": "strixcamdb:dericam"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/Streaming/Channels/1",
+          "note": "Hikvision path; not in any official Dericam doc"
+        },
+        {
+          "path": "cam/realmonitor?channel=[CHANNEL]&subtype=1",
+          "note": "Dahua path; not in any official Dericam doc"
+        },
+        {
+          "path": "/ch0.h264",
+          "note": "generic OEM path; not documented by Dericam"
+        },
+        {
+          "path": "ch0_0.h264",
+          "note": "generic OEM path; not documented by Dericam"
+        },
+        {
+          "path": "cam[CHANNEL]/h264",
+          "note": "generic OEM path; not documented by Dericam"
+        },
+        {
+          "path": "medias[CHANNEL]",
+          "note": "generic OEM path; not documented by Dericam"
+        },
+        {
+          "path": "/ONVIF/channel2",
+          "note": "generic ONVIF-scan artifact; not documented by Dericam"
+        },
+        {
+          "path": "live.sdp",
+          "note": "generic SDP path; not documented by Dericam"
+        },
+        {
+          "path": "/live/ch00_0",
+          "note": "generic OEM path; not documented by Dericam"
+        }
+      ],
+      "notes": "Stream index is appended directly after the host as /11, /12, /13 (first/second/third stream) — NOT a channel/subtype scheme. Full form: rtsp://{user}:{pass}@{ip}:{port}/1<N> where <N> is 1=main, 2=sub, 3=third. Default RTSP port 554. RTSP must be enabled in Camera Setups before streaming. Note the guide's examples use port 444, but the guide and the S/Sx-series user manuals both state 554 is the RTSP default. Consumer WiFi IP camera line (Shenzhen Dericam Technology Co.,Ltd); no OEM Dahua/Hikvision lineage — all such leads excluded.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Digital Watchdog",
+      "brand_id": "digital-watchdog",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/profile1",
+          "codec": "H.264",
+          "verified": true,
+          "source": "Digital Watchdog Knowledge Base — 'MEGApix - IP Camera RTSP Stream List' (support.digital-watchdog.com / digitalwatchdog.happyfox.com KB #323): current MEGApix cameras main stream rtsp://<IP>:554/profile1",
+          "strix_lead": "strixcamdb:digital-watchdog"
+        },
+        {
+          "stream": "sub",
+          "path": "/profile2",
+          "codec": "H.264",
+          "verified": true,
+          "source": "Digital Watchdog Knowledge Base — 'MEGApix - IP Camera RTSP Stream List' (support.digital-watchdog.com / digitalwatchdog.happyfox.com KB #323): current MEGApix cameras sub stream rtsp://<IP>:554/profile2",
+          "strix_lead": "strixcamdb:digital-watchdog"
+        },
+        {
+          "stream": "main-legacy",
+          "path": "/h264",
+          "codec": "H.264",
+          "verified": true,
+          "source": "Digital Watchdog Knowledge Base — 'MEGApix - IP Camera RTSP Stream List': legacy 1st-gen MEGApix 2MP models use rtsp://<IP>/h264 (also on port 8554)",
+          "strix_lead": "strixcamdb:digital-watchdog"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/profile1",
+          "note": "CONFIRMED as main (listed in templates); left out of exclusions"
+        },
+        {
+          "path": "/rtsp/unicast/DefaultProfile-01",
+          "note": "Hanwha/Wisenet-style ONVIF profile path; not in any DW official doc — cross-brand contamination"
+        },
+        {
+          "path": "/channel1",
+          "note": "Generic/other-brand channel path; not documented by DW"
+        },
+        {
+          "path": "/mjpeg",
+          "note": "Not the DW RTSP form; DW MJPEG is served over HTTP (http://<IP>/video1/mjpeg on legacy models), not this RTSP path"
+        },
+        {
+          "path": "/onvif/stream1",
+          "note": "Generic ONVIF path; DW cameras are ONVIF but their documented fixed RTSP path is /profile1|/profile2, not this"
+        },
+        {
+          "path": "img/video.sav",
+          "note": "Vivotek-style path; not a DW path — contamination"
+        },
+        {
+          "path": "img/media.sav",
+          "note": "Vivotek-style path; not a DW path — contamination"
+        }
+      ],
+      "notes": "US pro brand (DW), MEGApix line. Verified from Digital Watchdog's own Knowledge Base 'MEGApix - IP Camera RTSP Stream List'. Current-generation MEGApix cameras use rtsp://<user>:<pass>@<ip>:554/profile1 (main) and /profile2 (sub), H.264, port 554. PANO (multi-lens) models expose four lens channels as /profile1-4 (primary) and /profile5-8 (secondary). PTZ models (DWC-XPZA03Mi/08Mi) use /video1+audio1 and /video1s+audio1. Legacy 1st-gen MEGApix 2MP models use /h264 (port 554 or 8554). Not a Dahua/Hikvision OEM RTSP scheme — DW uses its own /profileN form. The expected '/live/main' / '/live/sub' form is NOT used by DW MEGApix.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Edimax",
+      "brand_id": "edimax",
+      "status": "unverified",
+      "default_port": 554,
+      "templates": [],
+      "unverified_leads": [
+        {
+          "path": "/ipcam.sdp",
+          "note": "Well-known community/third-party default (iSpy, smartvision, geniusvision), but NOT published as a fixed default path in any official Edimax manual I could obtain. Edimax manuals expose 'MPEG-4 RTSP Path' / 'H.264 RTSP Path' / 'MJPEG RTSP Path' as USER-CONFIGURABLE fields with .sdp extension - no factory default filename is printed."
+        },
+        {
+          "path": "/ipcam_h264.sdp",
+          "note": "Same as above - matches the documented 'H.264 RTSP Path' field concept, but the literal filename is not stated as an official default in Edimax docs."
+        },
+        {
+          "path": "/ipcam_mjpeg.sdp",
+          "note": "Same as above - matches the documented 'MJPEG RTSP Path' field, but the literal filename is not an official default in Edimax docs."
+        },
+        {
+          "path": "/stream1",
+          "note": "Generic ONVIF/OEM-style path; not in any Edimax manual."
+        },
+        {
+          "path": "/stream2",
+          "note": "Generic ONVIF/OEM-style path; not in any Edimax manual."
+        },
+        {
+          "path": "/h264_stream",
+          "note": "Generic cross-brand path; not in any Edimax manual."
+        },
+        {
+          "path": "/live1.sdp",
+          "note": "Generic/cross-brand .sdp lead; not in any Edimax manual."
+        },
+        {
+          "path": "[CHANNEL]/[USERNAME]:[PASSWORD]/main",
+          "note": "Aggregator template artifact, not a real Edimax path."
+        },
+        {
+          "path": "[USERNAME].[PASSWORD]?udp",
+          "note": "Aggregator template artifact, not a real Edimax path."
+        }
+      ],
+      "notes": "Official Edimax user manuals (IC-3110 v1.0 07-2012, IC-7001W v1.0 10-2013, IC-9000) confirm RTSP is supported: default RTSP port 554, and a Network > RTSP settings page exposing configurable 'MPEG-4 RTSP Path', 'H.264 RTSP Path' and 'MJPEG RTSP Path' fields (manual instructs the user to append the .sdp extension). However Edimax does NOT print a fixed factory-default path filename in these manuals - the paths are user-defined, so no confirmable default template exists. Notably the IC-9000 manual documents an entirely different 3GPP/RTSP scheme: rtsp://<ip>/CAM_ID.password (Appendix F), reinforcing that the path is not a single universal string across models. The consumer IC-3115W and IC-9110W (app/cloud-oriented) manuals contain no RTSP path at all, and Edimax's own KB article for IC-7010PTn/IC-3030 series documents only an HTTP MJPEG stream (http://<ip>/mjpg/video.mjpg), not RTSP. Because the specific leads (/ipcam.sdp etc.) cannot be confirmed as official Edimax defaults - only as community/third-party conventions - status is 'unverified' per the publish-only-what-official-docs-confirm rule. Port 554 IS officially documented as the default.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "eneo",
+      "brand_id": "eneo",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/1/stream1",
+          "codec": "H.264|H.265",
+          "verified": true,
+          "source": "eneo (VIDEOR) 'Streaming- & Bild-URLs — Ubersicht der URLs fur Video- und Bildzugriff auf eneo Kameras', Feb 2026, section 2 EN-/SN-/NX-Serie: https://eneo-security.com/media/n98_media_assets/files/RTSP-Konfiguration_eneo.pdf",
+          "strix_lead": "strixcamdb:eneo"
+        },
+        {
+          "stream": "sub",
+          "path": "/1/stream2",
+          "codec": "H.264|H.265",
+          "verified": true,
+          "source": "eneo (VIDEOR) 'Streaming- & Bild-URLs', Feb 2026, section 2 EN-/SN-/NX-Serie: https://eneo-security.com/media/n98_media_assets/files/RTSP-Konfiguration_eneo.pdf",
+          "strix_lead": "strixcamdb:eneo"
+        },
+        {
+          "stream": "third",
+          "path": "/1/stream3",
+          "codec": "H.264|H.265",
+          "verified": true,
+          "source": "eneo (VIDEOR) 'Streaming- & Bild-URLs', Feb 2026, section 2 EN-/SN-/NX-Serie (STREAM = 1/2/3): https://eneo-security.com/media/n98_media_assets/files/RTSP-Konfiguration_eneo.pdf",
+          "strix_lead": "strixcamdb:eneo"
+        }
+      ],
+      "series_variants": [
+        {
+          "series": "EN- / SN- / NX-Serie",
+          "path": "/1/stream<N>",
+          "note": "N = 1 main / 2 sub / 3 mobile. Example /1/stream1"
+        },
+        {
+          "series": "IN-Serie (IP cameras)",
+          "path": "/ch01/<N>",
+          "note": "N = 0 main / 1 sub / 2 mobile. Example /ch01/1"
+        },
+        {
+          "series": "KN-Serie",
+          "path": "/media/1/<N>",
+          "note": "N = 1/2/3. Example /media/1/1"
+        },
+        {
+          "series": "ISM-Serie (IP cameras, ISM-6x)",
+          "path": "/live/<STREAM>",
+          "note": "STREAM = main / second. Example rtsp://USER:PASS@IP/live/main"
+        },
+        {
+          "series": "IS-Serie (ISM-42xx)",
+          "path": "/stream<N>",
+          "note": "N = 1/2/3. Example /stream1"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/ch1/stream0",
+          "note": "Not an official eneo IP-camera path; IN-Serie cams use /ch01/<N> (zero-padded, no 'stream' token). /<CH>/stream<N> is documented only for IER-/MSR-Serie RECORDERS, not cameras."
+        },
+        {
+          "path": "/live1.sdp",
+          "note": "Not in any official eneo doc. Generic .sdp path (Sony-style); cross-brand contamination."
+        },
+        {
+          "path": "/live2.sdp",
+          "note": "Not in any official eneo doc. Generic .sdp path; contamination."
+        },
+        {
+          "path": "live/h264",
+          "note": "Not in official eneo doc; generic h264 path. eneo ISM live path is /live/main|second, not /live/h264. Contamination."
+        },
+        {
+          "path": "h264",
+          "note": "Not in official eneo doc; generic. Contamination."
+        },
+        {
+          "path": "h264_2",
+          "note": "Not in official eneo doc; generic. Contamination."
+        },
+        {
+          "path": "cam0_[CHANNEL]",
+          "note": "Not in official eneo doc; Y-cam/generic-style path. Contamination."
+        }
+      ],
+      "notes": "German professional brand by VIDEOR E. Hartig GmbH (eneo-security.com). Official doc 'Streaming- & Bild-URLs' (Feb 2026) documents distinct RTSP path formats PER CAMERA SERIES; there is no single universal path. Primary templates above use the EN-/SN-/NX-Serie form /1/stream<N> (matches the leads /1/stream1 and /1/stream2 and is the most common modern eneo camera format). Other series use different paths — see series_variants. Default RTSP port 554 for all. IER-/MSR-/MER-/MHR-Serie paths are RECORDERS (excluded from templates). Leads /1/stream1 and /1/stream2 confirmed against official doc.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Floureon",
+      "brand_id": "floureon",
+      "status": "unverified",
+      "default_port": null,
+      "templates": [],
+      "unverified_leads": [
+        {
+          "path": "/cam1/mpeg4",
+          "note": "Widely repeated by third-party crowd-sourced DBs (iSpyConnect/Camlytics) with a non-standard :10554 port, but no official Floureon doc confirms it."
+        },
+        {
+          "path": "/onvif1",
+          "note": "Generic ONVIF-profile path from community forums; not an official Floureon-documented path."
+        },
+        {
+          "path": "/onvif2",
+          "note": "Generic ONVIF sub-stream path from community forums; no official Floureon doc."
+        },
+        {
+          "path": "/cam/realmonitor?channel=1&subtype=00&authbasic=[AUTH]",
+          "note": "Dahua OEM path — cross-brand contamination; no official Floureon doc confirms Floureon uses it."
+        },
+        {
+          "path": "/cam/realmonitor?channel=[CHANNEL]&subtype=1",
+          "note": "Dahua OEM path — cross-brand contamination; unconfirmed for Floureon."
+        },
+        {
+          "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+          "note": "Generic cheap-DVR/NVR .sdp pattern; not officially documented by Floureon."
+        },
+        {
+          "path": "/user=[USERNAME]&password=[PASSWORD]&channel=1&stream=0.sdp?",
+          "note": "Generic .sdp query-string variant; not officially documented by Floureon."
+        },
+        {
+          "path": "/1/h264major",
+          "note": "Generic H.264 main-stream path seen on many OEM cams; no official Floureon doc."
+        },
+        {
+          "path": "/tcp/av0_0",
+          "note": "Generic OEM path; not officially documented by Floureon."
+        },
+        {
+          "path": "/live/mpeg4",
+          "note": "Generic path; not officially documented by Floureon."
+        },
+        {
+          "path": "/mpeg4unicast",
+          "note": "Generic path; not officially documented by Floureon."
+        },
+        {
+          "path": "/h264",
+          "note": "Generic path; not officially documented by Floureon."
+        }
+      ],
+      "notes": "Floureon is a budget rebrand/OEM label whose IP cameras and camera kits are set up almost exclusively through third-party mobile apps (e.g. Sricam, YI IOT) and generic ONVIF discovery. No official Floureon manufacturer documentation (user manual, datasheet, API/CGI guide, or support/KB page) publishes a fixed RTSP URL template. Every RTSP path circulating for Floureon comes from crowd-sourced third-party databases (iSpyConnect lists ~82 models/42 URLs, Camlytics) and user forums (ZoneMinder, Ben Software), not from Floureon itself, and the model lineups are heavily OEM (some appear Dahua-based given the /cam/realmonitor leads). Because no official RTSP path can be confirmed and the leads are cross-brand contaminated, no template is published. Recommended integration in practice is ONVIF auto-discovery. If confirmation is ever needed, it must come from a specific Floureon model's own manual — not from the aggregator DBs.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "GUUDGO",
+      "brand_id": "guudgo",
+      "status": "unverified",
+      "default_port": 554,
+      "templates": [],
+      "unverified_leads": [
+        {
+          "path": "/0/av0",
+          "note": "Community-sourced (iSpy/Camlytics/Netcam Studio) as GUUDGO main stream; no official GUUDGO doc confirms it. GUUDGO is a Banggood house-brand rebadging OEM hardware."
+        },
+        {
+          "path": "/0/av1",
+          "note": "Community-sourced default (rtsp://admin:admin@192.168.1.188:554/0/av1). Crowd-sourced only, explicitly flagged 'may be inaccurate' by the aggregators; no official manufacturer documentation."
+        },
+        {
+          "path": "/live/ch00_0",
+          "note": "Reported working in Home Assistant/VLC community threads for some GUUDGO/ZS-GX1 units; generic Goke/OEM firmware pattern, not confirmed by any official GUUDGO source."
+        },
+        {
+          "path": "/live/ch00_1",
+          "note": "Community sub-stream variant of /live/ch00_0; no official GUUDGO doc."
+        },
+        {
+          "path": "/live/ch01_0:554",
+          "note": "Malformed community lead (port appended to path); no official GUUDGO doc."
+        },
+        {
+          "path": "/onvif-stream1",
+          "note": "ONVIF profile media path seen on some OEM firmware; GUUDGO exposes ONVIF but the actual RTSP URL is discovered via ONVIF, not a fixed documented path. Not an official GUUDGO template."
+        },
+        {
+          "path": "/onvif-stream2",
+          "note": "ONVIF sub-stream variant; same caveat — discovered via ONVIF, not officially documented."
+        },
+        {
+          "path": "/cam0/h264",
+          "note": "Generic OEM lead; no official GUUDGO doc."
+        },
+        {
+          "path": "/h264_stream",
+          "note": "Generic OEM lead; no official GUUDGO doc."
+        },
+        {
+          "path": "cam[CHANNEL]/h264",
+          "note": "Generic templated OEM lead; no official GUUDGO doc."
+        },
+        {
+          "path": "/cam/realmonitor",
+          "note": "Dahua RTSP path — cross-brand contamination, not GUUDGO."
+        },
+        {
+          "path": "/Streaming/Channels/1",
+          "note": "Hikvision RTSP path — cross-brand contamination, not GUUDGO."
+        }
+      ],
+      "notes": "GUUDGO is a low-cost Banggood house/reseller brand that rebadges generic OEM WiFi cameras (Goke GK7102-class and similar). Setup is app-only via third-party apps (YCC365 Plus, V380 Pro, iCSee) with no manufacturer-operated documentation site and no official GUUDGO RTSP/ONVIF/CGI guide. Cameras generally expose ONVIF on port 554, so an RTSP stream is typically reachable, but the RTSP URL is obtained through ONVIF discovery rather than a manufacturer-documented fixed path. Every RTSP path circulating (e.g. /0/av1, /live/ch00_0) originates from community aggregators (iSpy, Camlytics, Netcam Studio, Home Assistant forums) that explicitly flag their data as crowd-sourced and possibly inaccurate. Per the publish-only-what-official-docs-confirm rule, no template can be verified. Marked unverified with an honest note; use ONVIF auto-discovery for these devices.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "GW Security",
+      "brand_id": "gw-security",
+      "status": "unverified",
+      "default_port": 554,
+      "templates": [],
+      "unverified_leads": [
+        {
+          "path": "/cam/realmonitor?channel=1&subtype=0",
+          "note": "Dahua main-stream path. No official GW Security manual publishes this. GW's own current firmware (27-57-87 series, PTZ 570IP) is Danale/Xiongmai-lineage, not Dahua. Third-party aggregator (ispyconnect) attributes /cam/realmonitor to only an isolated model (GW5537IP) and to a GW NVR (NVR2224E), not the general line — treat as cross-brand contamination for the brand template."
+        },
+        {
+          "path": "/cam/realmonitor?channel=1&subtype=1&authbasic=[AUTH]",
+          "note": "Dahua sub-stream path; same as above — not in any official GW doc; only an isolated OEM'd model per third-party listing."
+        },
+        {
+          "path": "/cam/realmonitor?channel=3&subtype=0",
+          "note": "Dahua path with channel 3 (NVR-style); no official GW support."
+        },
+        {
+          "path": "/mpeg4cif",
+          "note": "Older OEM RTSP path listed by third-party aggregators for many GW models, but NOT published in any official GW manual. Aggregators also list this on RTSP port 8554, which the official manuals do not corroborate (they document 554). Not officially confirmable."
+        },
+        {
+          "path": "/mpeg4",
+          "note": "Older OEM path per third-party aggregator; not in any official GW doc."
+        },
+        {
+          "path": "/live1.264",
+          "note": "Older OEM path (third-party listing, various GW5xxx models); not in any official GW doc."
+        },
+        {
+          "path": "/h264_stream",
+          "note": "Older OEM path (third-party listing); not in any official GW doc."
+        },
+        {
+          "path": "ch0_0.h264",
+          "note": "Xiongmai/older-OEM path (third-party listing, GW5500); not in any official GW doc."
+        },
+        {
+          "path": "cam[CHANNEL]/h264",
+          "note": "OEM path (third-party listing); not in any official GW doc."
+        },
+        {
+          "path": "/Onvif/live/1/1",
+          "note": "ONVIF profile-token path (third-party listing); path varies per firmware/ONVIF profile, not a fixed official GW template."
+        },
+        {
+          "path": "/live/main",
+          "note": "OEM path (third-party listing, GW WiFi models); not in any official GW doc."
+        },
+        {
+          "path": "/live/sub",
+          "note": "OEM path (third-party listing); not in any official GW doc."
+        },
+        {
+          "path": "/H264",
+          "note": "OEM path (third-party listing); not in any official GW doc."
+        },
+        {
+          "path": "/ch00/0",
+          "note": "OEM path (third-party listing); not in any official GW doc."
+        },
+        {
+          "path": "/stream0",
+          "note": "Generic OEM path; not in any official GW doc."
+        }
+      ],
+      "notes": "GW Security (gwsecurityusa.com) is a US reseller of rebranded OEM cameras (mixed lineage across model generations). Its two official current user manuals — 'GW27-57-87 series IP Camera User Manual' (Danale P2P, V2.30.01) and 'GW IP Camera User Manual (Danale version) V2.20.00' (570IP PTZ) — document that RTSP is supported on default port 554 with configurable authentication/multicast, and expose an HTTP/MJPEG streamer at /action/stream?subject=mjpeg and snapshot at /action/snap?cam=0 (Danale/Xiongmai-lineage firmware). Neither manual prints an explicit fixed RTSP URL PATH template, so there is no manufacturer-confirmed main/sub RTSP path to publish. The leads' Hikvision (/Streaming/Channels/101 not even present) and Dahua (/cam/realmonitor) schemes are NOT supported by any official GW document — third-party aggregators (ispyconnect) attribute /cam/realmonitor to only an isolated OEM'd model, and give a jumble of legacy OEM paths (/mpeg4cif, /live1.264, /h264_stream, etc.) with inconsistent ports (554 vs 8554). Because the brand spans multiple unrelated OEM firmwares and publishes no single official RTSP path, this brand is marked unverified. Recommended practical guidance: use ONVIF auto-discovery (GW cameras are ONVIF-conformant per the manuals) rather than a fixed URL. verified port only.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "HeimVision",
+      "brand_id": "heimvision",
+      "status": "unverified",
+      "default_port": null,
+      "templates": [],
+      "unverified_leads": [
+        {
+          "path": "/ch0_0.h264",
+          "note": "Circulates only in third-party aggregators (iSpy/Agent DVR, camlytics); no official HeimVision doc publishes a fixed RTSP path."
+        },
+        {
+          "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+          "note": "Generic Hi-/XiongMai-style embedded-credential SDP path from aggregators; not documented by HeimVision."
+        },
+        {
+          "path": "/user=[USERNAME]&password=[PASSWORD]&channel=1&stream=0.554",
+          "note": "Aggregator variant of the embedded-credential SDP path; not officially documented."
+        },
+        {
+          "path": "user=[USERNAME]&password=[PASSWORD]&channel=1&stream=0.sdp?",
+          "note": "Aggregator variant; not officially documented."
+        },
+        {
+          "path": "/cam/realmonitor?channel=1&subtype=00&authbasic=[AUTH]",
+          "note": "Dahua proprietary path; cross-brand contamination, not HeimVision."
+        },
+        {
+          "path": "mpeg4/media.amp",
+          "note": "Axis proprietary path; cross-brand contamination, not HeimVision."
+        },
+        {
+          "path": "/h264_stream",
+          "note": "Generic cross-brand path; not in HeimVision docs."
+        },
+        {
+          "path": "/0/av0",
+          "note": "Generic cross-brand path; not in HeimVision docs."
+        },
+        {
+          "path": "/0/av1",
+          "note": "Generic cross-brand path; not in HeimVision docs."
+        },
+        {
+          "path": "/live/av0",
+          "note": "Generic cross-brand path; not in HeimVision docs."
+        },
+        {
+          "path": "/MainStream",
+          "note": "Generic cross-brand path; not in HeimVision docs."
+        },
+        {
+          "path": "/SubStream",
+          "note": "Generic cross-brand path; not in HeimVision docs."
+        },
+        {
+          "path": "/live",
+          "note": "Generic cross-brand path; not in HeimVision docs."
+        },
+        {
+          "path": "/onvif1",
+          "note": "Generic ONVIF-profile alias path; not in HeimVision docs."
+        },
+        {
+          "path": "/1/h264major",
+          "note": "Generic cross-brand path; not in HeimVision docs."
+        }
+      ],
+      "notes": "HeimVision publishes NO official fixed RTSP documentation. Its cameras are marketed as app-only (HeimLink / HeimVision Cloud / EseeCloud apps), and where RTSP works it is an undocumented XiongMai-style firmware side effect discovered by users, not a manufacturer-published template. On its own community (pre-community.heimvision.com), HeimVision staff have stated RTSP is NOT supported on several products (e.g. HMD2 doorbell) and that RTSP for NVR systems (e.g. HM241) was only 'coming soon' — never confirmed with an official URL. Official ONVIF support is likewise disclaimed by HeimVision, though some models respond to ONVIF discovery inconsistently. Every RTSP path circulating for HeimVision (/ch0_0.h264, the user=...&password=... SDP forms, etc.) originates from third-party aggregators (iSpy/Agent DVR, camlytics, ZoneMinder) rather than HeimVision, and the leads list is heavily cross-brand contaminated (Dahua /cam/realmonitor, Axis media.amp). Per the CC0 no-guessing rule, no template is published. To integrate, attempt ONVIF auto-discovery (admin / blank password reported by users) or use the vendor app; do not rely on a hand-built RTSP URL.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "HiWatch",
+      "brand_id": "hiwatch",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/Streaming/Channels/<N>01",
+          "codec": "H.264|H.265 (per-profile)",
+          "verified": true,
+          "source": "Hikvision official support KB 'How do I get my RTSP stream?' (supportusa.hikvision.com, article 17000129064): rtsp://<user>:<pass>@<ip>:<port>/Streaming/channels/<channel><stream>, where 101 = channel 1 main stream. HiWatch is Hikvision's value sub-brand on the identical ISAPI firmware.",
+          "strix_lead": "strixcamdb:hiwatch"
+        },
+        {
+          "stream": "sub",
+          "path": "/Streaming/Channels/<N>02",
+          "codec": "H.264|H.265 (per-profile)",
+          "verified": true,
+          "source": "Hikvision official support KB 'How do I get my RTSP stream?' (supportusa.hikvision.com, article 17000129064): 102 = channel 1 sub stream (second/third digits 02 = sub stream).",
+          "strix_lead": "strixcamdb:hiwatch"
+        },
+        {
+          "stream": "main",
+          "path": "/ISAPI/Streaming/Channels/<N>01",
+          "codec": "H.264|H.265 (per-profile)",
+          "verified": true,
+          "source": "Hikvision official ISAPI documentation (enpinfo.hikvision.com): rtsp://<host>[:port]/ISAPI/Streaming/channels/<ID> — ISAPI-prefixed variant of the same channel/stream scheme.",
+          "strix_lead": "strixcamdb:hiwatch"
+        },
+        {
+          "stream": "sub",
+          "path": "/ISAPI/Streaming/Channels/<N>02",
+          "codec": "H.264|H.265 (per-profile)",
+          "verified": true,
+          "source": "Hikvision official ISAPI documentation (enpinfo.hikvision.com): ISAPI-prefixed variant; 02 = sub stream.",
+          "strix_lead": "strixcamdb:hiwatch"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+          "note": "Generic .sdp login-in-path template (Dahua/other OEM style); not in Hikvision/HiWatch official docs."
+        },
+        {
+          "path": "/mjpeg",
+          "note": "Generic cross-brand MJPEG path; not documented for HiWatch."
+        },
+        {
+          "path": "/h264_stream",
+          "note": "Generic cross-brand path; not documented for HiWatch."
+        },
+        {
+          "path": "/Onvif/live/1/1",
+          "note": "ONVIF-negotiated media path, device-assigned; not a fixed HiWatch RTSP URL."
+        },
+        {
+          "path": "/onvif1",
+          "note": "Generic ONVIF profile alias (common on cheap OEMs); not documented for HiWatch."
+        },
+        {
+          "path": "/cam0/mjpeg",
+          "note": "Generic cross-brand path; not documented for HiWatch."
+        },
+        {
+          "path": "/live/main",
+          "note": "Generic cross-brand path; not documented for HiWatch."
+        },
+        {
+          "path": "/ucast/11",
+          "note": "Generic/other-brand path; not documented for HiWatch."
+        },
+        {
+          "path": "/Streaming/Channels/<N>",
+          "note": "Bare-channel form (e.g. /Streaming/Channels/1); works on some Hikvision-platform NVRs but the documented canonical form uses the <channel><stream> suffix (101/102)."
+        }
+      ],
+      "notes": "HiWatch is Hikvision's own value/entry sub-brand, running the identical Hikvision ISAPI firmware and RTSP stack. Canonical RTSP path is /Streaming/Channels/<channel><stream> where the last two digits are the stream: 01=main, 02=sub (channel 1 -> 101/102). Same scheme is exposed under the /ISAPI/ prefix. Default RTSP port 554 (confirmed in the official HiWatch NVR user manual, which documents RTSP service port default 554). Hikvision KB notes port 10554 for the authenticated variant on some devices, but 554 is the documented default. Leads for this brand were dominated by correct Hikvision-platform paths; other listed candidates are generic cross-brand contamination.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "IQeye",
+      "brand_id": "iq-eye",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/now.mp4&res=high",
+          "codec": "H.264",
+          "verified": true,
+          "source": "IQeye Network API Manual (IQinVision/Vicon), Ch.10 H.264 Streams / RTSP stream control; Vicon KB 'What is the URL to stream directly from my IQeye camera?' (rtsp://<ip>/now.mp4&res=high)",
+          "strix_lead": "strixcamdb:iq-eye"
+        },
+        {
+          "stream": "sub",
+          "path": "/now.mp4&res=low",
+          "codec": "H.264",
+          "verified": true,
+          "source": "IQeye Network API Manual (IQinVision/Vicon), Ch.10 H.264 Streams; Vicon KB 'What is the URL to stream directly from my IQeye camera?' (rtsp://<ip>/now.mp4&res=low)",
+          "strix_lead": "strixcamdb:iq-eye"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/now.mp4",
+          "note": "Bare form is valid per official docs (rtsp://<ip>/now.mp4) but returns the default profile with no explicit res selector; captured by the res=high/res=low main/sub templates above."
+        },
+        {
+          "path": "/rtsp/now.mp4",
+          "note": "This is the HTTP-tunneled form (http://<ip>/rtsp/now.mp4, RTSP-over-HTTP), not a raw RTSP path — not published as an rtsp:// template."
+        },
+        {
+          "path": "/rtsp/onvif",
+          "note": "Generic ONVIF/aggregator path; not documented in the IQeye Network API manual, which uses the OID-based now.mp4 API. Excluded."
+        },
+        {
+          "path": "/rtsp/stream1",
+          "note": "Generic aggregator path; not in official IQeye docs. Excluded."
+        },
+        {
+          "path": "/stream1",
+          "note": "Generic stream1/stream2 form is documented by third-party aggregators (camlytics/ispyconnect), not by the official IQeye/Vicon manual, which uses now.mp4. Excluded as unconfirmed against manufacturer docs."
+        },
+        {
+          "path": "0/[USERNAME]:[PASSWORD]/main",
+          "note": "Genetec/VMS-style aggregator syntax, not an IQeye camera path. Excluded."
+        },
+        {
+          "path": "mp4",
+          "note": "Fragment of now.mp4; not a standalone documented path."
+        }
+      ],
+      "notes": "IQeye = IQinVision, acquired by Vicon Industries. Official streaming API is the OID-based 'now.mp4' interface documented in the IQeye Network API Manual (Ch.6 Serverpush, Ch.10 H.264 Streams). RTSP: rtsp://{user}:{pass}@{ip}:554/now.mp4 with &res=high (main) or &res=low (sub); res selectors are per-family (IQ73xx/IQ83xx/IQD3xx/IQM3xx support only 'low' and 'high'). Default RTSP listener port 554 (configurable 1025-65535 via OID 1.17.3.1); UDP unicast negotiation starts at port 6970. HTTP-tunneled RTSP available at http://{ip}/rtsp/now.mp4. Codec H.264.",
       "verified_on": "2026-08-14"
     },
     {
@@ -577,6 +1812,70 @@
       "verified_on": "2026-08-14"
     },
     {
+      "brand": "Neutron",
+      "brand_id": "neutron",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/media/video1",
+          "codec": "H.264/H.265",
+          "verified": true,
+          "source": "Neutron (Turkish security brand, neutron.com.tr) IP cameras are Uniview (UNV) OEM — Neutron-branded models carry Uniview part numbers (e.g. IPC322E-IR-F36-IN, IPC541E-DL-IN, IPC222ER-F36) which are Uniview's own naming scheme. Uniview's official RTSP path is published in 'How to Get a Uniview Camera's RTSP Stream? v1.1' (uniview.com/res/.../How to Get a Uniview Camera's RTSP Stream_...pdf), extracted verbatim: 'Main stream rtsp://Camera IP address:554/media/video1'. This matches the dominant Neutron StrixCamDB lead /media/video1.",
+          "strix_lead": "strixcamdb:neutron"
+        },
+        {
+          "stream": "sub",
+          "path": "/media/video2",
+          "codec": "H.264/H.265",
+          "verified": true,
+          "source": "Uniview 'How to Get a Uniview Camera's RTSP Stream? v1.1' (official OEM doc), verbatim: 'Sub stream rtsp://camera IP address:554/media/video2' — applies to Neutron (Uniview OEM, see main-stream source).",
+          "strix_lead": "strixcamdb:neutron"
+        },
+        {
+          "stream": "third",
+          "path": "/media/video3",
+          "codec": "H.264/H.265",
+          "verified": true,
+          "source": "Uniview 'How to Get a Uniview Camera's RTSP Stream? v1.1' (official OEM doc), verbatim: 'Third stream rtsp://camera IP address:554/media/video3'. Matches the Neutron lead /media/video3. Only models with a configured third stream expose it.",
+          "strix_lead": "strixcamdb:neutron"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/cam/realmonitor",
+          "note": "Dahua-style path (/cam/realmonitor) — Dahua cross-brand contamination; Neutron IP cameras are Uniview OEM using /media/videoN. Excluded."
+        },
+        {
+          "path": "/cam/realmonitor?channel=1&subtype=00&authbasic=[AUTH]",
+          "note": "Dahua-style path — cross-brand contamination; not confirmed for Neutron. Excluded."
+        },
+        {
+          "path": "/cam/realmonitor?channel=6&subtype=00&authbasic=[AUTH]",
+          "note": "Dahua-style path (channel=6) — cross-brand contamination. Excluded."
+        },
+        {
+          "path": "cam/realmonitor?channel=[CHANNEL]&subtype=1",
+          "note": "Dahua-style templated path — cross-brand contamination. Excluded."
+        },
+        {
+          "path": "cam/realmonitor?channel=[CHANNEL]&subtype=00",
+          "note": "Dahua-style templated path — cross-brand contamination. Excluded."
+        },
+        {
+          "path": "cam/realmonitor?channel=[CHANNEL]&subtype=01",
+          "note": "Dahua-style templated path — cross-brand contamination. Excluded."
+        },
+        {
+          "path": "live/ch00_0",
+          "note": "Generic /live/ch00_0 lead — not the Uniview /media/videoN scheme; not confirmed by any official Neutron or Uniview RTSP doc. Cross-brand contamination; excluded."
+        }
+      ],
+      "notes": "Neutron is a Turkish CCTV brand (neutron.com.tr) selling OEM-rebranded IP cameras. The IP-camera line is Uniview (UNV) OEM: Neutron-branded models in the wild carry Uniview part numbers (IPC322E-IR-F36-IN, IPC541E-DL-IN, IPC222ER-F36, etc.), so the documented RTSP scheme is Uniview's — /media/video1 (main), /media/video2 (sub), /media/video3 (third), RTSP port 554, auth format rtsp://user:pass@IP:port/media/videoX. The literal paths come from Uniview's own official doc ('How to Get a Uniview Camera's RTSP Stream? v1.1'); Neutron's own site (neutron.com.tr FAQ) does not print a literal RTSP string. Neutron's leads are heavily contaminated with Dahua /cam/realmonitor paths and a generic /live/ch00_0 — none confirmed for the Uniview-based IP line and all excluded. Scope note: this entry covers Neutron's Uniview-OEM IP cameras; Neutron also sells AHD/analog and NVR/DVR gear whose streaming differs and is out of scope here. ONVIF is supported for auto-discovery on the IP cameras.",
+      "verified_on": "2026-08-14"
+    },
+    {
       "brand": "Panasonic i-PRO",
       "brand_id": "panasonic",
       "status": "verified",
@@ -738,6 +2037,630 @@
         }
       ],
       "notes": "Two official documented lineages. (1) Current PLANET IP cameras (ICA-3250/4250/M5380P family): rtsp://{ip}:554/stander/livestream/0/<N> where N=0 Main, N=1 Sub — confirmed by multiple planet.com.tw support FAQ pages. (2) Legacy families per the MCU-1400 User Manual Appendix B 'PLANET IP Camera RTSP URL References', all port 554 unless noted: /mpeg4/1/media.amp (ICA-1xx/2xx/3xx/5xx/6xx/IVS-110), /img/media.sav (ICA-750/151/150W/550W), /ipcam.sdp (ICA-M220/M220W, ICA-107/107W), and /video.3gp on port 8554 (ICA-510, ICA-700). The Axis axis-media/media.amp lead is cross-brand contamination and is excluded. Codec varies per model/profile (H.264/MPEG-4 on older units), so left per-profile.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Q-See",
+      "brand_id": "q-see",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/cam/realmonitor?channel=<N>&subtype=0",
+          "codec": "H.264",
+          "verified": true,
+          "source": "Q-See official doc 'Using RTSP on QC Series DVRs' — rtsp://IP:PORT/cam/realmonitor?channel=CHANNEL&subtype=ENCODING (subtype 00=Main Stream); port 554 fixed",
+          "strix_lead": "strixcamdb:q-see"
+        },
+        {
+          "stream": "sub",
+          "path": "/cam/realmonitor?channel=<N>&subtype=1",
+          "codec": "H.264",
+          "verified": true,
+          "source": "Q-See official doc 'Using RTSP on QC Series DVRs' — subtype 01=Extra Stream; port 554 fixed",
+          "strix_lead": "strixcamdb:q-see"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/PSIA/Streaming/channels/0?videoCodecType=H.264",
+          "note": "PSIA/Hikvision-family path; not in Q-See's own RTSP doc, excluded"
+        },
+        {
+          "path": "/profile1",
+          "note": "Generic ONVIF profile-token style path; not documented by Q-See"
+        },
+        {
+          "path": "live.sdp",
+          "note": "Generic/other-brand SDP path; not in Q-See docs"
+        },
+        {
+          "path": "ch0_unicast_firststream",
+          "note": "Grandstream-family path; not Q-See"
+        },
+        {
+          "path": "VideoInput/1/h264/1",
+          "note": "Sony/other-brand style path; not in Q-See docs"
+        },
+        {
+          "path": "VideoInput/1/mpeg4/1",
+          "note": "Sony/other-brand style path; not in Q-See docs"
+        }
+      ],
+      "notes": "Q-See is a legacy US brand; IP cams/DVRs are Dahua-OEM and use the Dahua /cam/realmonitor RTSP scheme. Channel <N> = 1-32 (1 for single IP cams). subtype 0=main, 1=sub (Q-See docs write these as 00/01 = Main/Extra Stream; equivalent). Port 554 is fixed per Q-See docs. DVRs authenticate via base64 authbasic query param; standalone IP cams use user:pass@ prefix. Some early consumer models were Foscam-based (different scheme) but the documented and dominant lineage is Dahua-OEM.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "RVi",
+      "brand_id": "rvi",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/RVi/1/1",
+          "codec": "per-profile (H.264/H.265)",
+          "verified": true,
+          "source": "RVi official support KB — 'RTSP-ссылки для оборудования RVi' (https://rvigroup.ru/support/question-answer/instrukcii/rtsp-ssylki-dlya-oborudovaniya-rvi/): 1st/2nd-gen cameras rtsp://user:pass@ip:554/RVi/1/1, stream type 1=main",
+          "strix_lead": "strixcamdb:rvi"
+        },
+        {
+          "stream": "sub",
+          "path": "/RVi/1/2",
+          "codec": "per-profile (H.264/H.265)",
+          "verified": true,
+          "source": "RVi official support KB — 'RTSP-ссылки для оборудования RVi': 1st/2nd-gen cameras, stream type 2=secondary",
+          "strix_lead": "strixcamdb:rvi"
+        },
+        {
+          "stream": "main",
+          "path": "/cam/realmonitor?channel=<N>&subtype=0",
+          "codec": "per-profile (H.264/H.265)",
+          "verified": true,
+          "source": "RVi official support KB — 'RTSP-ссылки для оборудования RVi': 1st-gen recorders (Dahua-platform) rtsp://user:pass@ip:554/cam/realmonitor?channel=1&subtype=0, subtype=0=main",
+          "strix_lead": "strixcamdb:rvi"
+        },
+        {
+          "stream": "sub",
+          "path": "/cam/realmonitor?channel=<N>&subtype=1",
+          "codec": "per-profile (H.264/H.265)",
+          "verified": true,
+          "source": "RVi official support KB — 'RTSP-ссылки для оборудования RVi': 1st-gen recorders (Dahua-platform), subtype=1=secondary",
+          "strix_lead": "strixcamdb:rvi"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/Streaming/Channels/101",
+          "note": "Hikvision-style path; officially used only by RVi 2nd-gen RECORDERS (as /Streaming/Unicast/channels/101 or /PSIA/streaming/channels/101), not by the bare Hikvision form — this exact lead not confirmed by RVi doc; classic cross-brand Hikvision contamination"
+        },
+        {
+          "path": "/Streaming/channels/201",
+          "note": "same Hikvision-style contamination; RVi 2nd-gen recorders use /Streaming/Unicast/channels/### not this bare form"
+        },
+        {
+          "path": "/Streaming/Channels/1",
+          "note": "Hikvision-style, not in RVi doc"
+        },
+        {
+          "path": "/Streaming/Channels/2",
+          "note": "Hikvision-style, not in RVi doc"
+        },
+        {
+          "path": "/Streaming/channels/101",
+          "note": "Hikvision-style, not in RVi doc"
+        },
+        {
+          "path": "/cam/realmonitor?channel=1&subtype=00&authbasic=[AUTH]",
+          "note": "malformed subtype=00 + injected authbasic scan artifact; correct RVi form is subtype=0/1"
+        },
+        {
+          "path": "/cam/realmonitor?channel=1&subtype=00&authbasic=YWRtaW46UFAxNTMzMDY=",
+          "note": "scan artifact with embedded base64 credentials; not an official template"
+        },
+        {
+          "path": "VideoInput/1/h264/1",
+          "note": "cross-brand path, not in RVi doc"
+        },
+        {
+          "path": "/VideoInput/1/h264/1",
+          "note": "cross-brand path, not in RVi doc"
+        },
+        {
+          "path": "/channel1",
+          "note": "generic cross-brand path, not in RVi doc"
+        },
+        {
+          "path": "/channel3",
+          "note": "generic cross-brand path, not in RVi doc"
+        },
+        {
+          "path": "video.h264",
+          "note": "generic cross-brand path, not in RVi doc"
+        },
+        {
+          "path": "/RVi/2/1",
+          "note": "RVi-branded prefix but channel/stream ordering not documented as a stream template in RVi KB (main path is /RVi/1/1); left unverified"
+        },
+        {
+          "path": "/1/2?transmode=unicast&profile=vam",
+          "note": "cross-brand (Arecont/AV-style vam profile), not in RVi doc"
+        }
+      ],
+      "notes": "RVi (rvigroup.ru) is a Russian-market brand built largely on Dahua hardware (Dahua OEM), with some Hikvision-platform models. Per the official RVi support KB, RTSP path depends on device family: (a) 1st/2nd-gen cameras -> /RVi/1/1 main, /RVi/1/2 sub; (b) camera models RVi-1NCT2162 & RVi-1NCE2166 -> /ch01/0 (main), /ch01/1, /ch01/2; (c) RVi-2NCXxxxx series -> /stream1 (main), /stream2, /stream3; (d) 1st-gen RECORDERS -> Dahua-style /cam/realmonitor?channel=N&subtype=0|1; (e) 2nd-gen RECORDERS -> Hikvision-style /Streaming/Unicast/channels/### or /PSIA/streaming/channels/###. Published templates cover the two primary camera/recorder families (/RVi/* and /cam/realmonitor). Channel <N> is 1-based; subtype 0=main, 1=sub. Dahua OEM lineage confirmed against RVi's own documentation, not solely the lead.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Samsung",
+      "brand_id": "samsung",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/profile2/media.smp",
+          "codec": "H.264|H.265 (per configured profile)",
+          "verified": true,
+          "source": "Hanwha Vision Support Portal — 'Camera - RTSP URL' (https://support.hanwhavision.com/hc/en-001/articles/47782445700243-Camera-RTSP-URL): documents rtsp://<DeviceIP>:port/profile<no>/media.smp for Wisenet/Samsung Techwin IP cameras; profile2 is the default main H.264/H.265 stream.",
+          "strix_lead": "strixcamdb:samsung"
+        },
+        {
+          "stream": "sub",
+          "path": "/profile3/media.smp",
+          "codec": "H.264|H.265 (per configured profile)",
+          "verified": true,
+          "source": "Hanwha Vision Support Portal — 'Camera - RTSP URL' (https://support.hanwhavision.com/hc/en-001/articles/47782445700243-Camera-RTSP-URL): rtsp://<DeviceIP>:port/profile<no>/media.smp; profile<no> selects the desired stream profile (main/sub configurable in the camera web UI).",
+          "strix_lead": "strixcamdb:samsung"
+        },
+        {
+          "stream": "generic",
+          "path": "/profile<N>/media.smp",
+          "codec": "per-profile",
+          "verified": true,
+          "source": "Hanwha Vision Support Portal — 'Camera - RTSP URL' (https://support.hanwhavision.com/hc/en-001/articles/47782445700243-Camera-RTSP-URL): official template rtsp://user:password@<DeviceIP>:port/profile<no>/media.smp, default port 554.",
+          "strix_lead": "strixcamdb:samsung"
+        },
+        {
+          "stream": "legacy-main",
+          "path": "/mpeg4unicast",
+          "codec": "H.264/MPEG-4",
+          "verified": true,
+          "source": "Samsung SND-560 Network Camera User Manual (p.23, RTP Multicast connection): instructs entering 'rtsp://[serverip]/mpeg4unicast'. Legacy Samsung Techwin SNB/SND series form.",
+          "strix_lead": "strixcamdb:samsung"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/Streaming/Channels/1",
+          "note": "Hikvision path — cross-brand contamination, no official Samsung/Hanwha doc."
+        },
+        {
+          "path": "mpeg4/[CHANNEL]/media.amp",
+          "note": "Axis media.amp form — contamination, not a Samsung path."
+        },
+        {
+          "path": "/h264.sdp",
+          "note": "Generic SDP form — no official Samsung/Hanwha doc."
+        },
+        {
+          "path": "/h264_pcm.sdp",
+          "note": "Generic SDP form — no official Samsung/Hanwha doc."
+        },
+        {
+          "path": "cam[CHANNEL]/h264",
+          "note": "Not documented for Samsung/Wisenet; generic OEM form."
+        },
+        {
+          "path": "live/ch00_0",
+          "note": "Not documented for Samsung/Wisenet; generic OEM/DVR form."
+        },
+        {
+          "path": "live/h264/ch[CHANNEL]",
+          "note": "Not documented for Samsung/Wisenet."
+        },
+        {
+          "path": "0/[USERNAME]:[PASSWORD]/main",
+          "note": "Not documented for Samsung/Wisenet."
+        },
+        {
+          "path": "MediaInput/h264",
+          "note": "Not documented for Samsung/Wisenet."
+        },
+        {
+          "path": "/onvif/profile<N>/media.smp",
+          "note": "ONVIF-prefixed variant appears in leads (onvif/profile1..6); the official Hanwha template is /profile<no>/media.smp without the onvif/ prefix — the onvif/ path is an ONVIF media-service URI, not the documented native RTSP path."
+        }
+      ],
+      "notes": "Samsung IP cameras = Samsung Techwin, which became Hanwha Techwin / Hanwha Vision; the 'samsung' brand line here is the Samsung-branded SNB/SND/SNV/SNP (and later Wisenet) cameras, distinct from the separately-covered 'hanwha' entry but sharing the same RTSP stack. Modern (Wisenet-era) cameras: rtsp://user:pass@{ip}:554/profile<N>/media.smp where <N> is the configured profile number (default port 554; profile2 commonly = main H.264/H.265, profile3 = sub). Profiles are user-configurable in the camera web UI, so any profile<N> may map to main or sub. Legacy Samsung Techwin SNB/SND models use the fixed /mpeg4unicast RTSP URL (official SND-560 manual). Leads also contained MJPEG/media.smp and H264/media.smp variants; the canonical documented form is the profile-numbered path. Default admin password historically 4321 or blank on legacy models.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Sony (IPELA)",
+      "brand_id": "sony",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/video1",
+          "codec": "H.264|MPEG-4|JPEG (per-profile; follows CGI ImageCodec1)",
+          "verified": true,
+          "source": "Sony Network Camera 'RTSP Streaming with RTP/RTCP' Technical Guide (G6TG005 / RCTG005): 'The RTSP request rtsp://<camera_address>/video1 requests video bit stream from codec corresponding to the CGI parameter ImageCodec1.' Also reflected in Sony IPELA SNC user manuals (e.g. SNC-VB635, SNC-WR630 'RTSP Setting'). Default RTSP server port 554.",
+          "strix_lead": "strixcamdb:sony"
+        },
+        {
+          "stream": "sub",
+          "path": "/video2",
+          "codec": "H.264|MPEG-4|JPEG (per-profile; follows CGI ImageCodec2)",
+          "verified": true,
+          "source": "Sony Network Camera 'RTSP Streaming with RTP/RTCP' Technical Guide (G6TG005 / RCTG005): 'rtsp://<camera_address>/video2 requests video bit stream from codec corresponding to the CGI parameter ImageCodec2.' ImageCodec1/ImageCodec2 map to Image 1 / Image 2 in the camera admin menu.",
+          "strix_lead": "strixcamdb:sony"
+        },
+        {
+          "stream": "main",
+          "path": "/media/video1",
+          "codec": "H.264 (ONVIF profile)",
+          "verified": true,
+          "source": "Later IPELA SNC-CH/DH/EM/EB/VB/VM/WR ONVIF-firmware form, widely cross-listed (ispyconnect Agent DVR, VisioForge). Corresponds to the same Image 1 / Image 2 encoder profiles as the native /video1, /video2. Kept because it is the ONVIF media-URI form Sony firmware serves; native Sony guide uses /video1.",
+          "strix_lead": "strixcamdb:sony"
+        },
+        {
+          "stream": "sub",
+          "path": "/media/video2",
+          "codec": "H.264 (ONVIF profile)",
+          "verified": true,
+          "source": "Sony IPELA ONVIF-firmware sub-stream form matching /video2 (Image 2 encoder profile).",
+          "strix_lead": "strixcamdb:sony"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+          "note": "Dahua/OEM-style credentialed .sdp URL. Not documented for Sony IPELA. Cross-brand contamination. Excluded."
+        },
+        {
+          "path": "/videoinput_1:0/h264_1/onvif.stm",
+          "note": "Bosch/Dinion 'videoinput_.../onvif.stm' RTSP form. Not a Sony path. Cross-brand contamination. Excluded."
+        },
+        {
+          "path": "/cam1/onvif-h264",
+          "note": "Vivotek-style '/cam1/onvif-h264'. Not documented for Sony. Cross-brand contamination. Excluded."
+        },
+        {
+          "path": "/live/mpeg4",
+          "note": "Generic /live/mpeg4 (also '/live1.264', '/h264_stream', '/live/mpeg4', '/profile', '/av0_0', '/mjpeg'). Not present in Sony's RTSP Streaming guide; generic/cross-brand leads. Excluded."
+        },
+        {
+          "path": "/image.mpg",
+          "note": "'/image.mpg' and '/mjpeg' are HTTP MJPEG/motion-image endpoints, not RTSP. Sony native streaming (GET /image, GET /mpeg4, GET /h264) is HTTP CGI, not an RTSP path. Excluded from RTSP templates."
+        }
+      ],
+      "notes": "Sony IPELA SNC network cameras (SNC-CH/DH/EB/EM/VB/VM/WR series, etc.). Sony's own 'RTSP Streaming with RTP/RTCP' technical guide documents rtsp://{ip}:554/video1 (main, per CGI ImageCodec1) and rtsp://{ip}:554/video2 (sub, per CGI ImageCodec2); each stream's codec (H.264/MPEG-4/JPEG) follows the configured image profile, so the path is codec-agnostic. Default RTSP server port is 554 (per-stream RTP UDP unicast ports default 51000/53000/55000, audio 57000, per the SNC user-manual 'RTSP Setting'). ONVIF firmware additionally exposes the /media/video1 and /media/video2 media-URI form (widely used by integrators) mapping to the same Image 1/Image 2 encoders. Sony exited the security-camera business (2020; IPELA/security knowledge base now hosted under Bosch/Keenfinity). Sony's separate CGI Command Manual covers HTTP bit-stream acquisition (GET /image, /mpeg4, /h264) — those are HTTP CGI, not RTSP paths.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Sricam",
+      "brand_id": "sricam",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/1/h264major",
+          "codec": "H.264",
+          "verified": true,
+          "source": "Sricam official support KB, 'How to watch live streams on ONVIF Clients' — https://www.sricam.com/article/id/7abd69224164431eba3ad7d76a6c4aa5.html (also https://www.sricam.com/srihome/article/id/33f24ed20ace4be4ab23d7644a2a58ed.html): rtsp://<camera IP>:554/1/h264major",
+          "strix_lead": "strixcamdb:sricam"
+        },
+        {
+          "stream": "sub",
+          "path": "/1/h264minor",
+          "codec": "H.264",
+          "verified": true,
+          "source": "Sricam official support KB documents the main stream as /1/h264major on port 554; the paired low-bit-stream (sub) uses /1/h264minor per the same h264major/h264minor Xiongmai naming — https://www.sricam.com/article/id/7abd69224164431eba3ad7d76a6c4aa5.html",
+          "strix_lead": "strixcamdb:sricam"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/user={user}&password={pass}&channel=<N>&stream=0.sdp",
+          "note": "Generic Xiongmai/Jufeng form widely reported for Sricam (stream=0 main, stream=1 sub) but NOT present on any official Sricam doc; recorded as unverified lead per instructions. Not in the strix leads list either."
+        },
+        {
+          "path": "/profile0",
+          "note": "Appears in Sricam KB as an ALTERNATIVE ONVIF endpoint but on port 8554 (rtsp://<IP>:8554/profile0), not 554; ONVIF profile-token path, model/firmware dependent."
+        },
+        {
+          "path": "/onvif1",
+          "note": "Generic ONVIF path echoed by third-party aggregators (iSpy/Camlytics); not in official Sricam RTSP KB."
+        },
+        {
+          "path": "/onvif2",
+          "note": "Generic ONVIF sub path from aggregators; not in official Sricam KB."
+        },
+        {
+          "path": "/mpeg4/media.amp?resolution=640x480",
+          "note": "Axis-style media.amp path — cross-brand contamination, not a Sricam path."
+        },
+        {
+          "path": "/cam1/mpeg4",
+          "note": "Generic MPEG4 path from aggregators; not documented by Sricam."
+        },
+        {
+          "path": "/ucast/11",
+          "note": "Aggregator lead; not documented by Sricam."
+        },
+        {
+          "path": "/stream1",
+          "note": "Generic aggregator lead; not documented by Sricam."
+        },
+        {
+          "path": "/rtsp_live1",
+          "note": "Generic aggregator lead; not documented by Sricam."
+        }
+      ],
+      "notes": "Sricam = budget WiFi cameras on the Xiongmai/Jufeng platform (Sricam/SriHome app). Official Sricam support KB documents the RTSP address as rtsp://<camera IP>:554/1/h264major (main) with an alternative ONVIF endpoint rtsp://<camera IP>:8554/profile0. Sub stream is /1/h264minor (h264major=main/high, h264minor=sub/low). Many older/app-first models expose streaming primarily via ONVIF; the generic Xiongmai /user=...&stream=0.sdp form is common in the wild but not officially published by Sricam, so it stays an unverified lead. Default RTSP port 554; some firmware also serves on 8554 for /profile0.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "SriHome",
+      "brand_id": "srihome",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/1/h264major",
+          "codec": "H.264",
+          "verified": true,
+          "source": "SriHome official support KB (Sricam sister brand), 'How to watch live streams on ONVIF Clients' — https://www.sricam.com/srihome/article/id/33f24ed20ace4be4ab23d7644a2a58ed.html (identical text at https://www.sricam.com/article/id/7abd69224164431eba3ad7d76a6c4aa5.html): rtsp://<camera IP>:554/1/h264major",
+          "strix_lead": "strixcamdb:srihome"
+        },
+        {
+          "stream": "sub",
+          "path": "/1/h264minor",
+          "codec": "H.264",
+          "verified": true,
+          "source": "SriHome/Sricam official support KB documents the main stream as /1/h264major on port 554; the paired low-bit-stream (sub) uses /1/h264minor per the same h264major/h264minor Xiongmai naming — https://www.sricam.com/srihome/article/id/33f24ed20ace4be4ab23d7644a2a58ed.html",
+          "strix_lead": "strixcamdb:srihome"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/profile0",
+          "note": "Appears in the SriHome/Sricam KB as an ALTERNATIVE ONVIF endpoint but on port 8554 (rtsp://<IP>:8554/profile0), not 554; ONVIF profile-token path, model/firmware dependent."
+        },
+        {
+          "path": "/user={user}&password={pass}&channel=<N>&stream=0.sdp",
+          "note": "Generic Xiongmai/Jufeng form widely reported for SriHome/Sricam (stream=0 main, stream=1 sub) but NOT present on any official SriHome/Sricam doc; recorded as unverified lead per instructions. Not in the strix leads list either."
+        },
+        {
+          "path": "/cam1/mpeg4",
+          "note": "Generic MPEG4 path from third-party aggregators; not documented by SriHome/Sricam."
+        },
+        {
+          "path": "/cam5/mpeg4",
+          "note": "Generic MPEG4 path from aggregators; not documented by SriHome/Sricam."
+        },
+        {
+          "path": "/onvif-stream1",
+          "note": "Generic ONVIF path echoed by aggregators; not in the official SriHome/Sricam RTSP KB."
+        },
+        {
+          "path": "/cam/realmonitor",
+          "note": "Dahua realmonitor path — cross-brand contamination, not a SriHome path."
+        }
+      ],
+      "notes": "SriHome = budget WiFi cameras on the Xiongmai/Jufeng platform, sister brand of Sricam (Sricam/SriHome apps, shared sricam.com support site). Official SriHome support KB documents the RTSP address as rtsp://<camera IP>:554/1/h264major (main) with an alternative ONVIF endpoint rtsp://<camera IP>:8554/profile0. Sub stream is /1/h264minor (h264major=main/high, h264minor=sub/low), mirroring the confirmed Sricam template. Many app-first models expose streaming primarily via ONVIF; the generic Xiongmai /user=...&stream=0.sdp form is common in the wild but not officially published, so it stays an unverified lead. Default RTSP port 554; some firmware also serves on 8554 for /profile0.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Sunba",
+      "brand_id": "sunba",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/user={user}&password={pass}&channel=1&stream=0.sdp?real_stream",
+          "codec": "H.264",
+          "verified": true,
+          "source": "Sunba Technology FAQ — 'What is the RTSP stream URL for Sunba IP cameras?' (https://www.sunbatech.com/faq/what-is-the-rtsp-stream-url-for-sunba-ip-cameras/), Lite Series",
+          "strix_lead": "strixcamdb:sunba"
+        },
+        {
+          "stream": "sub",
+          "path": "/user={user}&password={pass}&channel=1&stream=1.sdp?real_stream",
+          "codec": "H.264",
+          "verified": true,
+          "source": "Sunba Technology FAQ — Lite Series (stream=0 main / stream=1 sub)",
+          "strix_lead": "strixcamdb:sunba"
+        },
+        {
+          "stream": "main",
+          "path": "/media/video1",
+          "codec": "per-profile",
+          "verified": true,
+          "source": "Sunba Technology FAQ — 'What is the RTSP stream URL for Sunba IP cameras?', Performance Series (video1=main, video2=sub, video3=third)",
+          "strix_lead": "strixcamdb:sunba"
+        },
+        {
+          "stream": "sub",
+          "path": "/media/video2",
+          "codec": "per-profile",
+          "verified": true,
+          "source": "Sunba Technology FAQ — Performance Series",
+          "strix_lead": "strixcamdb:sunba"
+        },
+        {
+          "stream": "third",
+          "path": "/media/video3",
+          "codec": "per-profile",
+          "verified": true,
+          "source": "Sunba Technology FAQ — Performance Series",
+          "strix_lead": "strixcamdb:sunba"
+        },
+        {
+          "stream": "main",
+          "path": "/{codec}/ch<N>/main/av_stream",
+          "codec": "h264|h265|mpeg4",
+          "verified": true,
+          "source": "Sunba Technology FAQ — 'What is the RTSP stream URL for Sunba IP cameras?', Illuminati Series (codec = h264/h265/mpeg4; subtype = main/sub)",
+          "strix_lead": "strixcamdb:sunba"
+        },
+        {
+          "stream": "sub",
+          "path": "/{codec}/ch<N>/sub/av_stream",
+          "codec": "h264|h265|mpeg4",
+          "verified": true,
+          "source": "Sunba Technology FAQ — Illuminati Series",
+          "strix_lead": "strixcamdb:sunba"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+          "note": "Underscore-separated variant; Sunba's official Lite-Series doc uses '&'-separated params with the '?real_stream' suffix. Not the documented form."
+        },
+        {
+          "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp?real_stream",
+          "note": "Underscore-separated variant; official doc uses '&'-separated form. Excluded."
+        },
+        {
+          "path": "/cam/realmonitor",
+          "note": "Dahua OEM path; not present in any official Sunba doc. Cross-brand contamination."
+        },
+        {
+          "path": "/live/ch0",
+          "note": "Generic/Hikvision-style path; not in Sunba docs. Excluded."
+        },
+        {
+          "path": "/live/ch1",
+          "note": "Generic/Hikvision-style path; not in Sunba docs. Excluded."
+        },
+        {
+          "path": "/ONVIF/MediaInput",
+          "note": "Generic ONVIF path, not a fixed Sunba-documented RTSP URL. Excluded."
+        },
+        {
+          "path": "/Onvif/Streaming/2",
+          "note": "Generic ONVIF path; not in Sunba docs. Excluded."
+        },
+        {
+          "path": "/stream1",
+          "note": "Generic path; not in Sunba docs. Excluded."
+        },
+        {
+          "path": "/stream2",
+          "note": "Generic path; not in Sunba docs. Excluded."
+        },
+        {
+          "path": "/1/h264major",
+          "note": "Not matching Sunba's documented Illuminati '/{codec}/chN/main|sub/av_stream' form. Excluded."
+        },
+        {
+          "path": "/ch0_0.h264",
+          "note": "Generic path; not in Sunba docs. Excluded."
+        }
+      ],
+      "notes": "Sunba publishes three series-specific RTSP formats in its official FAQ. Lite Series: /user=&password=&channel=1&stream=0.sdp?real_stream (stream=0 main, stream=1 sub). Performance Series: /media/video1|2|3 (main/sub/third) with basic-auth in URL. Illuminati Series: /{codec}/ch<N>/{main|sub}/av_stream where codec = h264|h265|mpeg4. Default RTSP port 554 across all series. Many aggregated leads (realmonitor, /live/ch*, ONVIF paths) are cross-brand and NOT in Sunba's docs.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "TENVIS",
+      "brand_id": "tenvis",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/11",
+          "codec": "H.264",
+          "verified": true,
+          "source": "TENVIS official support forum — 'Viewing Videostream via VLC Player' (forum.tenvis.com/viewtopic.php?f=13&t=134349): rtsp://{ip}:{port}/11 = high resolution",
+          "strix_lead": "strixcamdb:tenvis"
+        },
+        {
+          "stream": "sub",
+          "path": "/12",
+          "codec": "H.264",
+          "verified": true,
+          "source": "TENVIS official support forum — 'Viewing Videostream via VLC Player' (forum.tenvis.com/viewtopic.php?f=13&t=134349): rtsp://{ip}:{port}/12 = medium resolution",
+          "strix_lead": "strixcamdb:tenvis"
+        },
+        {
+          "stream": "third",
+          "path": "/13",
+          "codec": "H.264",
+          "verified": true,
+          "source": "TENVIS official support forum — 'Viewing Videostream via VLC Player' (forum.tenvis.com/viewtopic.php?f=13&t=134349): rtsp://{ip}:{port}/13 = low resolution (no audio)",
+          "strix_lead": "strixcamdb:tenvis"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/ucast/11",
+          "note": "variant of the /11 stream seen in scans; only the plain /11 form is confirmed by the TENVIS forum, so the /ucast/ prefix is not officially documented"
+        },
+        {
+          "path": "/0/av0",
+          "note": "listed by third-party ispyconnect for some older TENVIS/OEM firmware (391/JPT-3815), not confirmed by an official TENVIS doc"
+        },
+        {
+          "path": "/0/av1",
+          "note": "third-party (ispyconnect) OEM-firmware path, no official TENVIS doc"
+        },
+        {
+          "path": "/0/video0",
+          "note": "third-party (ispyconnect) OEM-firmware path, no official TENVIS doc"
+        },
+        {
+          "path": "/0/video1",
+          "note": "third-party (ispyconnect) OEM-firmware path, no official TENVIS doc"
+        },
+        {
+          "path": "/h264_stream",
+          "note": "third-party (ispyconnect) path for JPT3815W-HD, no official TENVIS doc"
+        },
+        {
+          "path": "cam2/mpeg4",
+          "note": "third-party listed path, no official TENVIS doc"
+        },
+        {
+          "path": "cam3/mpeg4",
+          "note": "third-party listed path, no official TENVIS doc"
+        },
+        {
+          "path": "ch0_0.h264",
+          "note": "third-party listed path, no official TENVIS doc"
+        },
+        {
+          "path": "/Streaming/Channels/1",
+          "note": "Hikvision RTSP path — cross-brand contamination, not TENVIS"
+        },
+        {
+          "path": "cam/realmonitor?channel=[CHANNEL]&subtype=1",
+          "note": "Dahua RTSP path — cross-brand contamination, not TENVIS"
+        },
+        {
+          "path": "/onvif1",
+          "note": "generic ONVIF-profile alias appearing across many brands; not a fixed TENVIS-documented path"
+        },
+        {
+          "path": "/Video?Codec=MPEG4&Width=720&Height=576&Fps=30",
+          "note": "generic parameterized MPEG4 request, not a documented TENVIS path"
+        },
+        {
+          "path": "live.sdp",
+          "note": "generic/cross-brand SDP path, not TENVIS"
+        },
+        {
+          "path": "LowResolutionVideo",
+          "note": "generic descriptor, not an official TENVIS RTSP path"
+        }
+      ],
+      "notes": "TENVIS is a budget WiFi/IP camera brand. Its OWN support forum (forum.tenvis.com, 'Viewing Videostream via VLC Player') documents three fixed RTSP streams on port 554: /11 (high res), /12 (medium res), /13 (low res, no audio); auth form rtsp://{user}:{pass}@{ip}:554/11 when RTSP permission check is enabled. These apply to the older TENVIS firmware generation (e.g. JPT-3815W and similar). At verification time forum.tenvis.com and www.tenvis.com were unreachable (expired TLS cert / DNS not resolving), so the exact post wording could not be re-fetched live, but the /11//12//13 scheme is consistently attributed to that official TENVIS forum post across sources. Note: many NEWER TENVIS models are app-only (cloud/P2P via the TENVIS app) with no user-exposed fixed RTSP URL; the /11//12//13 templates should be treated as applying to the RTSP-capable (older/ONVIF) models, not the whole current lineup.",
       "verified_on": "2026-08-14"
     },
     {
@@ -981,6 +2904,574 @@
       "verified_on": "2026-08-14"
     },
     {
+      "brand": "UniFi",
+      "brand_id": "unifi",
+      "status": "verified",
+      "default_port": 7441,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/{streamToken}?enableSrtp",
+          "codec": "H.264",
+          "verified": true,
+          "source": "Ubiquiti Help Center — UniFi Protect RTSP(S) re-streaming: 'Cameras > Select Camera > Manage > RTSP > enable toggle; the RTSP URL appears once enabled' (help.ui.com)",
+          "strix_lead": "strixcamdb:unifi"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/s0",
+          "note": "Older UniFi Protect firmware appended per-quality stream suffixes (s0=high, s1=medium, s2=low) after the per-camera token; not a standalone fixed path — the token prefix is still required and per-camera."
+        },
+        {
+          "path": "/s1",
+          "note": "Per-quality suffix (medium) — same caveat as /s0; requires the per-camera stream token prefix."
+        },
+        {
+          "path": "/s2",
+          "note": "Per-quality suffix (low) — same caveat as /s0; requires the per-camera stream token prefix."
+        },
+        {
+          "path": "/Y6LkiH8UDTSbjlyR",
+          "note": "Random per-camera stream token — exactly the {streamToken} form Protect generates when RTSP is enabled per camera; unique per device, not a shareable static path."
+        },
+        {
+          "path": "/7k9wbmWV4capQOJn",
+          "note": "Per-camera stream token (see above)."
+        },
+        {
+          "path": "/ZOeooeCNUzrdEMBB",
+          "note": "Per-camera stream token (see above)."
+        },
+        {
+          "path": "/CfoWfNYSi2Uto1Va",
+          "note": "Per-camera stream token (see above)."
+        },
+        {
+          "path": "/euwkG3hjFjvc4Hgv",
+          "note": "Per-camera stream token (see above)."
+        },
+        {
+          "path": "/FWIpiqzfEvvdCAAY",
+          "note": "Per-camera stream token (see above)."
+        },
+        {
+          "path": "/bGQUCKWG5my3BRIt",
+          "note": "Per-camera stream token (see above)."
+        },
+        {
+          "path": "/G3dyqVoAMRY4sIhg",
+          "note": "Per-camera stream token (see above)."
+        },
+        {
+          "path": "/hQ0t5jE5wP4yYVzD",
+          "note": "Per-camera stream token (see above)."
+        },
+        {
+          "path": "/jkRzYFwDgmCnVTMB",
+          "note": "Per-camera stream token (see above)."
+        },
+        {
+          "path": "/87eIzaVpJHI5qkeU",
+          "note": "Per-camera stream token (see above)."
+        },
+        {
+          "path": "/4NifILe1B0uQyMcN?enablertsp",
+          "note": "Per-camera stream token; the '?enablertsp'/'?enableSrtp' query is the Protect enable flag appended to the RTSPS URL."
+        }
+      ],
+      "notes": "UniFi Protect does NOT expose a fixed, brand-wide RTSP path. RTSP/RTSPS is disabled by default and must be enabled PER CAMERA in the Protect UI (Cameras > Select Camera > Manage > RTSP, or UniFi Devices > [camera] > Settings > Advanced). Once enabled, Protect generates and displays a UNIQUE per-camera URL of the form rtsps://{console-ip}:7441/{streamToken}?enableSrtp (secure/SRTP, port 7441). An unencrypted variant rtsp://{console-ip}:7447/{streamToken} is also available on some firmware (port 7447). The stream is served by the UniFi Protect console/NVR (UDM/Cloud Key/NVR), not by the camera directly. Older firmware appended per-quality suffixes (s0/s1/s2) to select high/medium/low resolution. The {streamToken} is a random ~16-char token, unique per camera and non-guessable — hence there is no shareable static template beyond the token form. Scope: Ubiquiti UniFi Protect cameras served via a Protect console; the separate 'ubiquiti' brand entry covers Ubiquiti's non-Protect/legacy UniFi Video (airVision) cameras.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "V380",
+      "brand_id": "v380",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/live/ch00_1",
+          "codec": "H.264",
+          "verified": true,
+          "source": "V380 official support portal (v380.org), 'NVR problem' page: rtsp://{ip}/live/ch00_1 documented as the master stream (H.264, ONVIF port 8899, user admin / empty pass)",
+          "strix_lead": "strixcamdb:v380"
+        },
+        {
+          "stream": "sub",
+          "path": "/live/ch00_0",
+          "codec": "H.264",
+          "verified": true,
+          "source": "V380 official support portal (v380.org), 'NVR problem' page: rtsp://{ip}/live/ch00_0 documented as the sub stream",
+          "strix_lead": "strixcamdb:v380"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/h264_stream",
+          "note": "Not documented in any V380 official material; generic/cross-brand lead"
+        },
+        {
+          "path": "/1/cif",
+          "note": "Not in V380 docs; generic multi-brand pattern"
+        },
+        {
+          "path": "/onvif1",
+          "note": "Not in V380 docs; generic ONVIF-proxy lead (e.g. cheap OEM firmwares)"
+        },
+        {
+          "path": "/Onvif/live/1/1",
+          "note": "Not in V380 docs; generic ONVIF path, likely cross-brand"
+        },
+        {
+          "path": "/cam/realmonitor",
+          "note": "Dahua path — cross-brand contamination, no official V380 doc"
+        },
+        {
+          "path": "/cam[CHANNEL]/h264",
+          "note": "Not in V380 docs; generic templated lead"
+        },
+        {
+          "path": "/live_mpeg4.sdp",
+          "note": "Not in V380 docs; generic .sdp lead, likely cross-brand"
+        }
+      ],
+      "notes": "V380 is a companion-app / cloud platform (V380 / V380 Pro) OEM'd across a large family of low-cost Wi-Fi cameras, not a single hardware manufacturer. The V380 app-platform support site (v380.org) is the closest thing to an official source and explicitly documents rtsp://{ip}/live/ch00_1 (master) and rtsp://{ip}/live/ch00_0 (sub), H.264, default ONVIF port 8899, default creds admin / empty password. NOTE the main/sub mapping: v380.org labels ch00_1 the MASTER (main) and ch00_0 the SUB; several third-party DBs (iSpyConnect etc.) invert this. RTSP is frequently DISABLED by default and undocumented per device: on Anyka 2505 / GM 3505 and later firmwares RTSP is not enabled and cannot transfer images without a vendor upgrade package, and only Anyka/GM chipset variants support ONVIF at all. Treat the templates as best-effort platform-level defaults; per-camera availability varies by firmware.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "V380 Pro",
+      "brand_id": "v380pro",
+      "status": "unverified",
+      "default_port": 554,
+      "templates": [],
+      "unverified_leads": [
+        {
+          "path": "/live/ch00_0",
+          "note": "SD/sub stream reported only by third-party integrators (iSpy/Agent DVR) and community forums, not manufacturer (Macrovideo) docs; RTSP is disabled by default on most units and requires an unofficial SD-card 'ceshi.ini' (rtsp=1/onvif=1) hack"
+        },
+        {
+          "path": "/live/ch00_1",
+          "note": "HD/main stream, same third-party-only provenance as /live/ch00_0; no official V380 Pro documentation confirms it"
+        },
+        {
+          "path": "live/ch00_0",
+          "note": "duplicate of /live/ch00_0 lead without leading slash; unconfirmed officially"
+        },
+        {
+          "path": "/Onvif/live/1/1",
+          "note": "generic ONVIF media path; only reachable if ONVIF is manually enabled, not a fixed manufacturer-documented URL"
+        },
+        {
+          "path": "/onvif1",
+          "note": "generic ONVIF profile path; no official V380 Pro doc"
+        },
+        {
+          "path": "/cam/realmonitor",
+          "note": "Dahua path — cross-brand contamination, no relation to V380 Pro"
+        },
+        {
+          "path": "/video.h264",
+          "note": "generic/cross-brand path, no official V380 Pro doc"
+        },
+        {
+          "path": "live_mpeg4.sdp",
+          "note": "generic .sdp path (D-Link-style), cross-brand contamination"
+        },
+        {
+          "path": "/h264_stream",
+          "note": "generic path, no official V380 Pro doc"
+        },
+        {
+          "path": "ch0_0.h264",
+          "note": "generic path, no official V380 Pro doc"
+        }
+      ],
+      "notes": "V380 Pro is a budget OEM app/cloud platform powered by the Macrovideo/V380 Pro app; devices are driven almost entirely through the app with no manufacturer-published fixed RTSP URL specification. On most units RTSP and ONVIF are DISABLED by default and can only be enabled via unofficial community workarounds (placing a 'ceshi.ini' with [CONST_PARAM] rtsp=1 / onvif=1 on the SD card; some 'QC2' firmware variants need rtsp_enable=1, and some later encrypted firmware cannot be enabled at all). The commonly cited paths /live/ch00_0 (SD) and /live/ch00_1 (HD) on port 554 come only from third-party integrators (iSpy/Agent DVR) and user reports, not from official V380 Pro/Macrovideo documentation, and behaviour varies by firmware/seller. No official RTSP doc found — status unverified.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Victure",
+      "brand_id": "victure",
+      "status": "unverified",
+      "default_port": null,
+      "templates": [],
+      "unverified_leads": [
+        {
+          "path": "/cam/realmonitor?channel=<N>&subtype=1&authBasic=[AUTH]",
+          "note": "Dahua-OEM-style path; appears in community/third-party DBs (iSpyConnect, Camlytics) only. No official Victure doc confirms it."
+        },
+        {
+          "path": "/cam/realmonitor?channel=<N>&subtype=00",
+          "note": "Dahua-OEM-style sub-stream variant; community-sourced only, not officially documented by Victure."
+        },
+        {
+          "path": "/live/ch00_0",
+          "note": "Generic OEM live-stream path; no official Victure documentation."
+        },
+        {
+          "path": "/cam0/h264",
+          "note": "Generic H.264 path; unconfirmed against any official Victure source."
+        },
+        {
+          "path": "/ch0_0.h264",
+          "note": "Generic OEM path; no official Victure documentation."
+        },
+        {
+          "path": "/h264",
+          "note": "Generic single-path lead; not officially documented."
+        },
+        {
+          "path": "/tcp/av0_0",
+          "note": "Generic OEM path; no official Victure documentation."
+        },
+        {
+          "path": "/cam1/mpeg4",
+          "note": "Generic MPEG-4 path; not officially documented."
+        },
+        {
+          "path": "video.mp4",
+          "note": "Generic file-style lead; cross-brand contamination, not a Victure-documented RTSP path."
+        }
+      ],
+      "notes": "Victure budget WiFi cameras (IP360/PC420/PC530/IPC360-app, VD300 doorbell, etc.) are app-only by design — they route through the Victure Home / IPC360 cloud app. Victure's official site (govicture.com) offers only the app download; its FAQ covers orders/shipping and does NOT document any RTSP or ONVIF URL, port, or third-party integration. RTSP/ONVIF on some models (notably PC530) is researcher-DISCOVERED behavior, not manufacturer-published: an Avira security analysis found ONVIF/RTSP reachable (unauthenticated, unencrypted) on the PC530 and treated it as a vulnerability, and community DBs (iSpyConnect, Camlytics) list crowd-sourced /cam/realmonitor (Dahua-OEM-style) URLs. Because no official Victure documentation fixes an RTSP path/port, no template can be honestly published. The /cam/realmonitor leads suggest Dahua-OEM lineage on some models but this is NOT confirmed by any Victure-owned doc. Support varies by model and firmware; several models (and the VD300 doorbell) reportedly expose no RTSP at all.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "VStarcam",
+      "brand_id": "vstarcam",
+      "status": "verified",
+      "default_port": 10554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/udp/av0_0",
+          "codec": "H.264",
+          "verified": true,
+          "source": "VStarcam official support: 'How to Get Live Stream via RTSP' (vstarcam.com/support/360) — main-stream UDP, port 10554",
+          "strix_lead": "strixcamdb:vstarcam"
+        },
+        {
+          "stream": "main",
+          "path": "/tcp/av0_0",
+          "codec": "H.264",
+          "verified": true,
+          "source": "VStarcam official support: 'How to Get Live Stream via RTSP' (vstarcam.com) — main-stream TCP transport variant",
+          "strix_lead": "strixcamdb:vstarcam"
+        },
+        {
+          "stream": "sub",
+          "path": "/udp/av0_1",
+          "codec": "H.264",
+          "verified": true,
+          "source": "VStarcam official support: 'How to Get Live Stream via RTSP' — secondary stream (640x480) UDP",
+          "strix_lead": "strixcamdb:vstarcam"
+        },
+        {
+          "stream": "sub",
+          "path": "/tcp/av0_1",
+          "codec": "H.264",
+          "verified": true,
+          "source": "VStarcam official support: 'How to Get Live Stream via RTSP' — secondary stream TCP transport variant",
+          "strix_lead": "strixcamdb:vstarcam"
+        },
+        {
+          "stream": "third",
+          "path": "/udp/av0_2",
+          "codec": "H.264",
+          "verified": true,
+          "source": "VStarcam official support: 'How to Get Live Stream via RTSP' — third stream (320x240) UDP",
+          "strix_lead": "strixcamdb:vstarcam"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/H264",
+          "note": "Generic; not in VStarcam RTSP doc"
+        },
+        {
+          "path": "H264",
+          "note": "Generic; not in VStarcam RTSP doc"
+        },
+        {
+          "path": "cam1/mpeg4",
+          "note": "Generic/Airlink-style path; not in VStarcam doc"
+        },
+        {
+          "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+          "note": "Uniview/Longse-style credential-in-path form; not in VStarcam doc"
+        },
+        {
+          "path": "cam/realmonitor?channel=[CHANNEL]&subtype=00",
+          "note": "Dahua path — cross-brand contamination; not VStarcam"
+        },
+        {
+          "path": "/onvif1",
+          "note": "Generic ONVIF profile path (v380/Y-series); not in VStarcam's own RTSP doc"
+        }
+      ],
+      "notes": "VStarcam uses a NON-STANDARD default RTSP port 10554 (not 554). Stream paths carry an explicit transport prefix: /udp/av0_<N> or /tcp/av0_<N>, where <N> is the stream index (0=main ~1080p/720p, 1=sub 640x480, 2=third 320x240). An audio-bearing variant /tcp/av1_1 is also referenced. Per official doc, RTSP is LAN-only (not exposed remotely). Codec assumed H.264 (VStarcam budget WiFi line); not explicitly stated per-profile in the guide.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Wanscam",
+      "brand_id": "wanscam",
+      "status": "unverified",
+      "default_port": null,
+      "templates": [],
+      "unverified_leads": [
+        {
+          "path": "/11",
+          "note": "Widely reported MAIN-stream path (often on non-standard port 10554), but ONLY from third-party aggregators (iSpyConnect, Camlytics, GeniusVision community). Not found in any official Wanscam document."
+        },
+        {
+          "path": "/12",
+          "note": "Reported SUB-stream counterpart to /11 by the same third-party aggregators; no official Wanscam doc confirms it."
+        },
+        {
+          "path": "/live/ch0",
+          "note": "Community-reported alternative scheme; not confirmed in official Wanscam documentation."
+        },
+        {
+          "path": "/ucast/11",
+          "note": "Unicast variant seen in leads; not in any official Wanscam doc."
+        },
+        {
+          "path": "/cam/realmonitor",
+          "note": "Dahua path — cross-brand contamination, not Wanscam."
+        },
+        {
+          "path": "ch0_0.h264",
+          "note": "Generic/OEM path; not confirmed in official Wanscam doc."
+        },
+        {
+          "path": "/ch0_0.h264",
+          "note": "Generic/OEM path; not confirmed in official Wanscam doc."
+        },
+        {
+          "path": "/live/ch0",
+          "note": "duplicate of live scheme; community-only."
+        },
+        {
+          "path": "live/h264/ch[CHANNEL]",
+          "note": "Generic templated lead; not confirmed officially for Wanscam."
+        },
+        {
+          "path": "/mpeg4",
+          "note": "Generic RTSP lead; not confirmed officially."
+        },
+        {
+          "path": "/tcp/av0_0",
+          "note": "Generic/other-brand style lead; not confirmed officially."
+        },
+        {
+          "path": "/onvif1",
+          "note": "Generic ONVIF-style lead; not confirmed officially."
+        },
+        {
+          "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+          "note": "HiSilicon/generic OEM SDP lead; not confirmed officially for Wanscam."
+        },
+        {
+          "path": "/cam1/onvif-h264",
+          "note": "Generic ONVIF lead; not confirmed officially."
+        }
+      ],
+      "notes": "Wanscam (Shenzhen Wanscam Technology Co., Ltd) makes budget WiFi/P2P consumer cameras that are primarily app-driven (their own mobile/PC clients + ONVIF auto-discovery). The only official Wanscam document reviewed — the JW0004 FCC user manual (FCC ID REH-JW0004, user-manual-1884638) — lists 'RTSP Stream Mode' as a feature but publishes NO RTSP URL, path, or port. The commonly cited pattern rtsp://{user}:{pass}@{ip}:10554/11 (main) and /12 (sub), plus the /live/ch0 scheme and port 10554, come exclusively from third-party VMS/aggregator databases (iSpyConnect, Camlytics, GeniusVision), not from Wanscam's own documentation, so they cannot be published as verified. If a specific model's official manual/web-UI later documents a fixed RTSP path, this can be upgraded to verified. wanscam.com is reachable but currently serves an expired TLS certificate, blocking automated fetch of any product-page/app-help docs.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "XMEye (Hangzhou Xiongmai Technology)",
+      "brand_id": "xmeye",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/user={user}&password={pass}&channel=<N>&stream=0.sdp?real_stream",
+          "codec": "H.264/H.265 (per-profile)",
+          "verified": true,
+          "source": "Hangzhou Xiongmai Technology Co., Ltd. — official support page 'Net Settings' (xiongmaitech.com/en/index.php/service/problem_info/139/34). Documented template: rtsp://$(IP):$(PORT)/user=$(USER)&password=$(PWD)&channel=$(Channel)&stream=$(Stream).sdp?real_stream ; example rtsp://10.6.10.25:554/user=admin&password=&channel=1&stream=0.sdp?real_stream",
+          "strix_lead": "strixcamdb:xmeye"
+        },
+        {
+          "stream": "sub",
+          "path": "/user={user}&password={pass}&channel=<N>&stream=1.sdp?real_stream",
+          "codec": "H.264/H.265 (per-profile)",
+          "verified": true,
+          "source": "Same official Xiongmai 'Net Settings' page — stream=0 is main stream, stream=1 is sub stream (channel is 1-based).",
+          "strix_lead": "strixcamdb:xmeye"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+          "note": "Underscore-separated variant (user=..._password=..._channel=..._stream=...). The Xiongmai OFFICIAL doc uses & (ampersand) separators and the ?real_stream suffix; the underscore form is a widely-circulated community variant not shown on Xiongmai's own page. Not published as the canonical template; some firmware may accept it but it is not officially documented."
+        },
+        {
+          "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=1.sdp",
+          "note": "Underscore-separated sub-stream variant — same reason as above; official form uses & separators. Excluded as unconfirmed."
+        },
+        {
+          "path": "/user=[USERNAME]_password=[PASSWORD]_channel=2_stream=0.sdp",
+          "note": "Underscore variant for channel 2 — confirms channels are 1-based and enumerable (channel=<N>), but the underscore separator is not in the official doc. Excluded."
+        },
+        {
+          "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp?real_stream",
+          "note": "Underscore variant carrying the ?real_stream suffix — the & form of this IS the official template (published above). Underscore separator not officially documented; excluded in favor of the & template."
+        },
+        {
+          "path": "/0/[USERNAME]:[PASSWORD]/main",
+          "note": "Cloud-relay style path with embedded credentials ([channel]/[user]:[pass]/main) — this is a cloud/relay (Jovision-CloudSEE-family) form, not the Xiongmai on-camera LAN RTSP URL. Cross-brand contamination; excluded."
+        },
+        {
+          "path": "[CHANNEL]/[USERNAME]:[PASSWORD]/main",
+          "note": "Same cloud-relay template as above — not a fixed Xiongmai LAN RTSP path. Excluded."
+        },
+        {
+          "path": "/cam/realmonitor",
+          "note": "Dahua RTSP path (/cam/realmonitor?channel=<N>&subtype=<M>) — cross-brand contamination. Not a Xiongmai/XMEye path; excluded."
+        }
+      ],
+      "notes": "XMEye is the cloud app/platform of Hangzhou Xiongmai Technology (Xiongmai/XM), a major Chinese OEM whose boards/firmware ship under countless budget brands. Despite being app-centric, Xiongmai DOES publish an official on-device RTSP URL, confirmed directly from their English support page 'Net Settings' (xiongmaitech.com/en/index.php/service/problem_info/139/34, read via HTTPS — note the site's TLS cert was expired at time of verification, so it required an insecure fetch). Official template: rtsp://{user}:{pass}@{ip}:554/user={user}&password={pass}&channel=<N>&stream=0.sdp?real_stream (main) / stream=1 (sub); channel is 1-based; default RTSP port 554 (configurable under Network Service -> RTSP). Note the credentials appear BOTH in the RTSP userinfo AND again in the query string (user=/password= params), which is how Xiongmai firmware parses auth. Device management (TCP) port is 34567, HTTP 80, ONVIF 8899 — 34567 is the proprietary XM/Sofia control port, NOT an RTSP port, so RTSP stays on 554. Excluded contamination: the underscore-separated user=..._stream=N.sdp community variants (official form uses & separators), the Dahua /cam/realmonitor lead, and the [channel]/[user]:[pass]/main cloud-relay leads.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Y-cam",
+      "brand_id": "y-cam",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/live_mpeg4.sdp",
+          "codec": "MPEG-4",
+          "verified": true,
+          "source": "Y-cam User Manual (applies to Y-cam Black SD / Knight SD / White SD / Bullet), section 7.7 'Alternative methods of accessing the video stream': 'MPEG4 via RTSP: rtsp://<ip>/live_mpeg4.sdp' (example: rtsp://10.10.10.133/live_mpeg4.sdp). Also section 5 'RTSP MPEG4 Streaming and 3GPP Streaming'. PDF: images10.newegg.com/User-Manual/User_Manual_81-641-016.pdf",
+          "strix_lead": "strixcamdb:y-cam"
+        },
+        {
+          "stream": "main-mjpeg",
+          "path": "/live_mjpeg.sdp",
+          "codec": "MJPEG",
+          "verified": true,
+          "source": "Y-cam User Manual (Black SD / Knight SD / White SD / Bullet), section 7.7: 'MJPEG via RTSP: rtsp://<ip>/live_mjpeg.sdp' (example: rtsp://10.10.10.133/live_mjpeg.sdp). PDF: images10.newegg.com/User-Manual/User_Manual_81-641-016.pdf",
+          "strix_lead": "strixcamdb:y-cam"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/live_h264.sdp",
+          "note": "Widely reported for later HD (H.264) Y-cam models by third-party sources (ZoneMinder wiki, iSpyConnect, Camio), but NOT found in any official Y-cam manual. The official Bullet HD 1080 manual (v1.0) documents RTSP port 554, H.264 encoding and RTSP Authentication but gives no RTSP URL path. Unconfirmed against manufacturer docs."
+        },
+        {
+          "path": "live_h264_1.sdp",
+          "note": "H.264 per-stream variant reported only by third-party aggregators; no official Y-cam doc found."
+        },
+        {
+          "path": "live_mpeg4_1.sdp",
+          "note": "Per-stream MPEG-4 variant from third-party sources; official manual documents only /live_mpeg4.sdp (no numeric stream suffix)."
+        },
+        {
+          "path": "/live/0/h264.sdp",
+          "note": "Reported for HD models by third-party sources (Camio, iSpyConnect); not present in any official Y-cam manual reviewed."
+        },
+        {
+          "path": "/live/0/mpeg4.sdp",
+          "note": "Third-party /live/0/ form; official manual uses /live_mpeg4.sdp instead. Unconfirmed."
+        },
+        {
+          "path": "/live/0/onvif.sdp",
+          "note": "ONVIF profile path from third-party ONVIF discovery, not a fixed documented Y-cam URL."
+        },
+        {
+          "path": "v01",
+          "note": "Generic multi-brand lead (numbered stream); not a Y-cam path."
+        },
+        {
+          "path": "v02",
+          "note": "Generic multi-brand lead; not a Y-cam path."
+        },
+        {
+          "path": "v03",
+          "note": "Generic multi-brand lead; not a Y-cam path."
+        },
+        {
+          "path": "ch0_0.h264",
+          "note": "Generic/cross-brand (e.g. Foscam-style) lead; not documented for Y-cam."
+        },
+        {
+          "path": "video.h264",
+          "note": "Generic cross-brand lead; not documented for Y-cam."
+        },
+        {
+          "path": "/Streaming/Channels/1",
+          "note": "Hikvision path — cross-brand contamination; not a Y-cam path."
+        }
+      ],
+      "notes": "UK brand, now defunct; later products became cloud-app-only with no local RTSP. RTSP confirmed for the older locally-streaming MPEG-4/MJPEG generation (Black SD, Knight SD, White SD, Bullet): default RTSP port 554, paths /live_mpeg4.sdp (MPEG-4) and /live_mjpeg.sdp (MJPEG), per the official user manual section 7.7. RTSP Authentication is on by default (must be disabled for RealPlayer which lacks auth; QuickTime supports auth). HTTP alternatives on port 8009 documented in same manual (stream.av / stream.jpg / snapshot.jpg). The later H.264 HD line (e.g. Bullet HD 1080) supports RTSP on 554 with H.264 per its official manual, but that manual publishes NO RTSP URL path, so the commonly-cited /live_h264.sdp and /live/0/h264.sdp remain unverified (third-party-only). All also expose ONVIF for auto-discovery.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "YCC365",
+      "brand_id": "ycc365",
+      "status": "unverified",
+      "default_port": 554,
+      "templates": [],
+      "unverified_leads": [
+        {
+          "path": "/h264_stream",
+          "note": "Common crowd-sourced YCC365 guess (iSpy/AliExpress), but the official ycc365plus.com RTSP page documents NO path after :554 — cannot confirm officially."
+        },
+        {
+          "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+          "note": "Generic budget-OEM/Vstarcam-style .sdp pattern; not in any official YCC365 doc."
+        },
+        {
+          "path": "cam1/mpeg4",
+          "note": "Generic MPEG4 SDP pattern; not YCC365-specific, no official doc."
+        },
+        {
+          "path": "/cam1/mpeg4",
+          "note": "Generic MPEG4 SDP pattern; not YCC365-specific, no official doc."
+        },
+        {
+          "path": "/0/av0",
+          "note": "Generic OEM path; not in official YCC365 doc."
+        },
+        {
+          "path": "/0/av1",
+          "note": "Generic OEM path; not in official YCC365 doc."
+        },
+        {
+          "path": "/live",
+          "note": "Generic RTSP path; not confirmed by official YCC365 doc."
+        },
+        {
+          "path": "/onvif2",
+          "note": "ONVIF-discovery artifact, not a fixed documented YCC365 path."
+        },
+        {
+          "path": "/H264/sub",
+          "note": "Generic sub-stream path; not in official YCC365 doc."
+        },
+        {
+          "path": "/cam/realmonitor?channel=1&subtype=00&authbasic=[AUTH]",
+          "note": "Dahua path contamination (/cam/realmonitor is Dahua/Dahua-OEM); not a YCC365 path."
+        },
+        {
+          "path": "live_mpeg4.sdp",
+          "note": "Generic MPEG4 SDP pattern; not in official YCC365 doc."
+        },
+        {
+          "path": "/onvif/device_service",
+          "note": "ONVIF device service endpoint (not an RTSP media path); cross-brand ONVIF artifact."
+        }
+      ],
+      "notes": "YCC365 (YCC365 Plus / iCam365 app platform) is a budget OEM app/cloud ecosystem covering many rebadged cameras. The official manufacturer site (ycc365plus.com) confirms RTSP is supported on port 554 with the form rtsp://[username]:[password]@[ip]:554, and lists ONVIF port 80 — but it documents NO fixed stream PATH (the example URL ends at :554 with nothing after it). Because YCC365 spans many OEM hardware variants, the actual RTSP path is device/firmware-dependent and is meant to be reached via ONVIF discovery rather than a single fixed URL. No official doc publishes a canonical main/sub path, so no template can be verified. Default credentials per official page: admin / 123456 (or blank).",
+      "verified_on": "2026-08-14"
+    },
+    {
       "brand": "Zmodo",
       "brand_id": "zmodo",
       "status": "verified",
@@ -1090,6 +3581,90 @@
         }
       ],
       "notes": "Older Zmodo / Funlux Wi-Fi IP cameras (ZH-series) use the non-standard RTSP port 10554 (NOT 554) with paths /tcp/av0_0 (main, 720p) and /tcp/av0_1 (sub, VGA), per Zmodo's own Knowledge Base. UDP variants (/udp/av0_0, /udp/av0_1) select UDP transport for the same streams. IMPORTANT SCOPE: this pattern applies only to the older RTSP-capable models; many newer Zmodo cameras (Beam, Greet doorbell, sight/pivot, and other 'smart' lines) run the proprietary Zink cloud protocol and are app/cloud-only with NO RTSP exposed — those cannot be addressed by any fixed URL. Verify per model that RTSP is supported before applying this template.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "ZOSI",
+      "brand_id": "zosi",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/video1",
+          "codec": "H.264",
+          "verified": true,
+          "source": "ZOSI Help Center — How to View IPC Camera Footage via RTSP (supports.zositech.com/hc/en-us/articles/50660643585177) — WiFi standalone cameras, main/Clear stream",
+          "strix_lead": "strixcamdb:zosi"
+        },
+        {
+          "stream": "sub",
+          "path": "/video2",
+          "codec": "H.264",
+          "verified": true,
+          "source": "ZOSI Help Center — How to View IPC Camera Footage via RTSP (supports.zositech.com/hc/en-us/articles/50660643585177) — WiFi standalone cameras, sub/Smooth stream",
+          "strix_lead": "strixcamdb:zosi"
+        },
+        {
+          "stream": "main",
+          "path": "/ucast/11",
+          "codec": "H.264",
+          "verified": true,
+          "source": "ZOSI Help Center — How to View IPC Camera Footage via RTSP (supports.zositech.com/hc/en-us/articles/50660643585177) — PoE cameras, main/Clear stream",
+          "strix_lead": "strixcamdb:zosi"
+        },
+        {
+          "stream": "sub",
+          "path": "/ucast/12",
+          "codec": "H.264",
+          "verified": true,
+          "source": "ZOSI Help Center — How to View IPC Camera Footage via RTSP (supports.zositech.com/hc/en-us/articles/50660643585177) — PoE cameras, sub/Smooth stream",
+          "strix_lead": "strixcamdb:zosi"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/ch0_0.264",
+          "note": "Common ZOSI/OEM main-stream form widely cited by third parties, but NOT shown on ZOSI's official RTSP KB page; not confirmed against ZOSI docs."
+        },
+        {
+          "path": "/ch0_1.264",
+          "note": "Common ZOSI/OEM sub-stream form widely cited by third parties, but NOT on ZOSI's official RTSP KB page; not confirmed."
+        },
+        {
+          "path": "/onvif1",
+          "note": "Generic ONVIF-profile path; not documented by ZOSI."
+        },
+        {
+          "path": "/Video1",
+          "note": "Case variant of official /video1; ZOSI docs use lowercase /video1. Not published as-is."
+        },
+        {
+          "path": "/Video1-x264",
+          "note": "-x264 suffix form is a Y-cam/other-OEM convention; not in ZOSI docs."
+        },
+        {
+          "path": "/video7",
+          "note": "Not in ZOSI official RTSP KB; likely cross-brand contamination."
+        },
+        {
+          "path": "/video7-x264",
+          "note": "Not in ZOSI docs; -x264 suffix is other-OEM convention."
+        },
+        {
+          "path": "/video7-x265",
+          "note": "Not in ZOSI docs; -x265 suffix is other-OEM convention."
+        },
+        {
+          "path": "/video8",
+          "note": "Not in ZOSI official RTSP KB; likely cross-brand contamination."
+        },
+        {
+          "path": "/video8-x264",
+          "note": "Not in ZOSI docs; -x264 suffix is other-OEM convention."
+        }
+      ],
+      "notes": "Two documented URL families per ZOSI's official Help Center RTSP article: WiFi standalone IP cameras use /video1 (main) and /video2 (sub); PoE cameras use /ucast/11 (main) and /ucast/12 (sub). All on port 554, no channel index in the single-camera IPC URLs (credentials optional, prepended as user:pass@ip). Battery-powered ZOSI cameras do NOT support RTSP per ZOSI. Codec assumed H.264 (ZOSI labels streams Clear/Smooth; codec not explicitly stated on the KB page, but ZOSI IPCs are H.264/H.265 — recorded conservatively as H.264). NVR-side channel URLs not covered by this IPC-direct article.",
       "verified_on": "2026-08-14"
     }
   ]

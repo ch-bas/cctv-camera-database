@@ -1,0 +1,76 @@
+{
+  "brand": "VStarcam",
+  "brand_id": "vstarcam",
+  "status": "verified",
+  "default_port": 10554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/udp/av0_0",
+      "codec": "H.264",
+      "verified": true,
+      "source": "VStarcam official support: 'How to Get Live Stream via RTSP' (vstarcam.com/support/360) — main-stream UDP, port 10554",
+      "strix_lead": "strixcamdb:vstarcam"
+    },
+    {
+      "stream": "main",
+      "path": "/tcp/av0_0",
+      "codec": "H.264",
+      "verified": true,
+      "source": "VStarcam official support: 'How to Get Live Stream via RTSP' (vstarcam.com) — main-stream TCP transport variant",
+      "strix_lead": "strixcamdb:vstarcam"
+    },
+    {
+      "stream": "sub",
+      "path": "/udp/av0_1",
+      "codec": "H.264",
+      "verified": true,
+      "source": "VStarcam official support: 'How to Get Live Stream via RTSP' — secondary stream (640x480) UDP",
+      "strix_lead": "strixcamdb:vstarcam"
+    },
+    {
+      "stream": "sub",
+      "path": "/tcp/av0_1",
+      "codec": "H.264",
+      "verified": true,
+      "source": "VStarcam official support: 'How to Get Live Stream via RTSP' — secondary stream TCP transport variant",
+      "strix_lead": "strixcamdb:vstarcam"
+    },
+    {
+      "stream": "third",
+      "path": "/udp/av0_2",
+      "codec": "H.264",
+      "verified": true,
+      "source": "VStarcam official support: 'How to Get Live Stream via RTSP' — third stream (320x240) UDP",
+      "strix_lead": "strixcamdb:vstarcam"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/H264",
+      "note": "Generic; not in VStarcam RTSP doc"
+    },
+    {
+      "path": "H264",
+      "note": "Generic; not in VStarcam RTSP doc"
+    },
+    {
+      "path": "cam1/mpeg4",
+      "note": "Generic/Airlink-style path; not in VStarcam doc"
+    },
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+      "note": "Uniview/Longse-style credential-in-path form; not in VStarcam doc"
+    },
+    {
+      "path": "cam/realmonitor?channel=[CHANNEL]&subtype=00",
+      "note": "Dahua path — cross-brand contamination; not VStarcam"
+    },
+    {
+      "path": "/onvif1",
+      "note": "Generic ONVIF profile path (v380/Y-series); not in VStarcam's own RTSP doc"
+    }
+  ],
+  "notes": "VStarcam uses a NON-STANDARD default RTSP port 10554 (not 554). Stream paths carry an explicit transport prefix: /udp/av0_<N> or /tcp/av0_<N>, where <N> is the stream index (0=main ~1080p/720p, 1=sub 640x480, 2=third 320x240). An audio-bearing variant /tcp/av1_1 is also referenced. Per official doc, RTSP is LAN-only (not exposed remotely). Codec assumed H.264 (VStarcam budget WiFi line); not explicitly stated per-profile in the guide.",
+  "verified_on": "2026-08-14"
+}

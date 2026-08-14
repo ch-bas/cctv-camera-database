@@ -1,0 +1,80 @@
+{
+  "brand": "BEWARD",
+  "brand_id": "beward",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/av0_0",
+      "codec": "H.264",
+      "verified": true,
+      "source": "BEWARD official FAQ #39 'Формы запроса видеопотока (RTSP, HTTP) с авторизацией', https://www.beward.ru/question/39--formy-zaprosa-videopotoka--rtsp--http--s-avtorizaciej/",
+      "strix_lead": "strixcamdb:beward"
+    },
+    {
+      "stream": "sub",
+      "path": "/av0_1",
+      "codec": "H.264",
+      "verified": true,
+      "source": "BEWARD official FAQ #39, https://www.beward.ru/question/39--formy-zaprosa-videopotoka--rtsp--http--s-avtorizaciej/",
+      "strix_lead": "strixcamdb:beward"
+    },
+    {
+      "stream": "main",
+      "path": "/main",
+      "codec": "per-profile",
+      "verified": true,
+      "source": "BEWARD official FAQ #39 (SV series), https://www.beward.ru/question/39--formy-zaprosa-videopotoka--rtsp--http--s-avtorizaciej/",
+      "strix_lead": "strixcamdb:beward"
+    },
+    {
+      "stream": "sub",
+      "path": "/sub",
+      "codec": "per-profile",
+      "verified": true,
+      "source": "BEWARD official FAQ #39 (SV series), https://www.beward.ru/question/39--formy-zaprosa-videopotoka--rtsp--http--s-avtorizaciej/",
+      "strix_lead": "strixcamdb:beward"
+    },
+    {
+      "stream": "third",
+      "path": "/third",
+      "codec": "per-profile",
+      "verified": true,
+      "source": "BEWARD official FAQ #39 (SV series), https://www.beward.ru/question/39--formy-zaprosa-videopotoka--rtsp--http--s-avtorizaciej/",
+      "strix_lead": "strixcamdb:beward"
+    },
+    {
+      "stream": "main",
+      "path": "/h264",
+      "codec": "H.264",
+      "verified": true,
+      "source": "BEWARD official FAQ #39 (BD series), https://www.beward.ru/question/39--formy-zaprosa-videopotoka--rtsp--http--s-avtorizaciej/",
+      "strix_lead": "strixcamdb:beward"
+    },
+    {
+      "stream": "sub",
+      "path": "/h264_<N>",
+      "codec": "H.264",
+      "verified": true,
+      "source": "BEWARD official FAQ #39 (BD series, streams 2-4 => h264_1..h264_3), https://www.beward.ru/question/39--formy-zaprosa-videopotoka--rtsp--http--s-avtorizaciej/",
+      "strix_lead": "strixcamdb:beward"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/live/h264",
+      "note": "Not present on BEWARD's official FAQ #39; appears only in third-party aggregators (camera-sdk, ispyconnect). Excluded."
+    },
+    {
+      "path": "/tcp/av0_0",
+      "note": "Not documented by BEWARD; /tcp/ prefix is an aggregator/transport-hint artifact, not an official path. Excluded."
+    },
+    {
+      "path": "live/ch00_0",
+      "note": "Not documented by BEWARD; ch-style path is cross-brand contamination. Excluded."
+    }
+  ],
+  "notes": "BEWARD uses different RTSP paths per product series, all on port 554, all with HTTP Basic auth (user:pass@ in URL). av<channel>_<stream> form (/av0_0 main, /av0_1 sub) covers IP intercoms and B/TFR series; SV series uses /main, /sub, /third; BD series uses /h264 and /h264_<N> (N=1..3 for streams 2-4) plus /mjpeg. Confirmed against BEWARD's own official support FAQ #39.",
+  "verified_on": "2026-08-14"
+}

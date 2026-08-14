@@ -1,0 +1,71 @@
+{
+  "brand": "GW Security",
+  "brand_id": "gw-security",
+  "status": "unverified",
+  "default_port": 554,
+  "templates": [],
+  "unverified_leads": [
+    {
+      "path": "/cam/realmonitor?channel=1&subtype=0",
+      "note": "Dahua main-stream path. No official GW Security manual publishes this. GW's own current firmware (27-57-87 series, PTZ 570IP) is Danale/Xiongmai-lineage, not Dahua. Third-party aggregator (ispyconnect) attributes /cam/realmonitor to only an isolated model (GW5537IP) and to a GW NVR (NVR2224E), not the general line — treat as cross-brand contamination for the brand template."
+    },
+    {
+      "path": "/cam/realmonitor?channel=1&subtype=1&authbasic=[AUTH]",
+      "note": "Dahua sub-stream path; same as above — not in any official GW doc; only an isolated OEM'd model per third-party listing."
+    },
+    {
+      "path": "/cam/realmonitor?channel=3&subtype=0",
+      "note": "Dahua path with channel 3 (NVR-style); no official GW support."
+    },
+    {
+      "path": "/mpeg4cif",
+      "note": "Older OEM RTSP path listed by third-party aggregators for many GW models, but NOT published in any official GW manual. Aggregators also list this on RTSP port 8554, which the official manuals do not corroborate (they document 554). Not officially confirmable."
+    },
+    {
+      "path": "/mpeg4",
+      "note": "Older OEM path per third-party aggregator; not in any official GW doc."
+    },
+    {
+      "path": "/live1.264",
+      "note": "Older OEM path (third-party listing, various GW5xxx models); not in any official GW doc."
+    },
+    {
+      "path": "/h264_stream",
+      "note": "Older OEM path (third-party listing); not in any official GW doc."
+    },
+    {
+      "path": "ch0_0.h264",
+      "note": "Xiongmai/older-OEM path (third-party listing, GW5500); not in any official GW doc."
+    },
+    {
+      "path": "cam[CHANNEL]/h264",
+      "note": "OEM path (third-party listing); not in any official GW doc."
+    },
+    {
+      "path": "/Onvif/live/1/1",
+      "note": "ONVIF profile-token path (third-party listing); path varies per firmware/ONVIF profile, not a fixed official GW template."
+    },
+    {
+      "path": "/live/main",
+      "note": "OEM path (third-party listing, GW WiFi models); not in any official GW doc."
+    },
+    {
+      "path": "/live/sub",
+      "note": "OEM path (third-party listing); not in any official GW doc."
+    },
+    {
+      "path": "/H264",
+      "note": "OEM path (third-party listing); not in any official GW doc."
+    },
+    {
+      "path": "/ch00/0",
+      "note": "OEM path (third-party listing); not in any official GW doc."
+    },
+    {
+      "path": "/stream0",
+      "note": "Generic OEM path; not in any official GW doc."
+    }
+  ],
+  "notes": "GW Security (gwsecurityusa.com) is a US reseller of rebranded OEM cameras (mixed lineage across model generations). Its two official current user manuals — 'GW27-57-87 series IP Camera User Manual' (Danale P2P, V2.30.01) and 'GW IP Camera User Manual (Danale version) V2.20.00' (570IP PTZ) — document that RTSP is supported on default port 554 with configurable authentication/multicast, and expose an HTTP/MJPEG streamer at /action/stream?subject=mjpeg and snapshot at /action/snap?cam=0 (Danale/Xiongmai-lineage firmware). Neither manual prints an explicit fixed RTSP URL PATH template, so there is no manufacturer-confirmed main/sub RTSP path to publish. The leads' Hikvision (/Streaming/Channels/101 not even present) and Dahua (/cam/realmonitor) schemes are NOT supported by any official GW document — third-party aggregators (ispyconnect) attribute /cam/realmonitor to only an isolated OEM'd model, and give a jumble of legacy OEM paths (/mpeg4cif, /live1.264, /h264_stream, etc.) with inconsistent ports (554 vs 8554). Because the brand spans multiple unrelated OEM firmwares and publishes no single official RTSP path, this brand is marked unverified. Recommended practical guidance: use ONVIF auto-discovery (GW cameras are ONVIF-conformant per the manuals) rather than a fixed URL. verified port only.",
+  "verified_on": "2026-08-14"
+}

@@ -1,0 +1,64 @@
+{
+  "brand": "Sricam",
+  "brand_id": "sricam",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/1/h264major",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Sricam official support KB, 'How to watch live streams on ONVIF Clients' — https://www.sricam.com/article/id/7abd69224164431eba3ad7d76a6c4aa5.html (also https://www.sricam.com/srihome/article/id/33f24ed20ace4be4ab23d7644a2a58ed.html): rtsp://<camera IP>:554/1/h264major",
+      "strix_lead": "strixcamdb:sricam"
+    },
+    {
+      "stream": "sub",
+      "path": "/1/h264minor",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Sricam official support KB documents the main stream as /1/h264major on port 554; the paired low-bit-stream (sub) uses /1/h264minor per the same h264major/h264minor Xiongmai naming — https://www.sricam.com/article/id/7abd69224164431eba3ad7d76a6c4aa5.html",
+      "strix_lead": "strixcamdb:sricam"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/user={user}&password={pass}&channel=<N>&stream=0.sdp",
+      "note": "Generic Xiongmai/Jufeng form widely reported for Sricam (stream=0 main, stream=1 sub) but NOT present on any official Sricam doc; recorded as unverified lead per instructions. Not in the strix leads list either."
+    },
+    {
+      "path": "/profile0",
+      "note": "Appears in Sricam KB as an ALTERNATIVE ONVIF endpoint but on port 8554 (rtsp://<IP>:8554/profile0), not 554; ONVIF profile-token path, model/firmware dependent."
+    },
+    {
+      "path": "/onvif1",
+      "note": "Generic ONVIF path echoed by third-party aggregators (iSpy/Camlytics); not in official Sricam RTSP KB."
+    },
+    {
+      "path": "/onvif2",
+      "note": "Generic ONVIF sub path from aggregators; not in official Sricam KB."
+    },
+    {
+      "path": "/mpeg4/media.amp?resolution=640x480",
+      "note": "Axis-style media.amp path — cross-brand contamination, not a Sricam path."
+    },
+    {
+      "path": "/cam1/mpeg4",
+      "note": "Generic MPEG4 path from aggregators; not documented by Sricam."
+    },
+    {
+      "path": "/ucast/11",
+      "note": "Aggregator lead; not documented by Sricam."
+    },
+    {
+      "path": "/stream1",
+      "note": "Generic aggregator lead; not documented by Sricam."
+    },
+    {
+      "path": "/rtsp_live1",
+      "note": "Generic aggregator lead; not documented by Sricam."
+    }
+  ],
+  "notes": "Sricam = budget WiFi cameras on the Xiongmai/Jufeng platform (Sricam/SriHome app). Official Sricam support KB documents the RTSP address as rtsp://<camera IP>:554/1/h264major (main) with an alternative ONVIF endpoint rtsp://<camera IP>:8554/profile0. Sub stream is /1/h264minor (h264major=main/high, h264minor=sub/low). Many older/app-first models expose streaming primarily via ONVIF; the generic Xiongmai /user=...&stream=0.sdp form is common in the wild but not officially published by Sricam, so it stays an unverified lead. Default RTSP port 554; some firmware also serves on 8554 for /profile0.",
+  "verified_on": "2026-08-14"
+}

@@ -1,0 +1,80 @@
+{
+  "brand": "UniFi",
+  "brand_id": "unifi",
+  "status": "verified",
+  "default_port": 7441,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/{streamToken}?enableSrtp",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Ubiquiti Help Center — UniFi Protect RTSP(S) re-streaming: 'Cameras > Select Camera > Manage > RTSP > enable toggle; the RTSP URL appears once enabled' (help.ui.com)",
+      "strix_lead": "strixcamdb:unifi"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/s0",
+      "note": "Older UniFi Protect firmware appended per-quality stream suffixes (s0=high, s1=medium, s2=low) after the per-camera token; not a standalone fixed path — the token prefix is still required and per-camera."
+    },
+    {
+      "path": "/s1",
+      "note": "Per-quality suffix (medium) — same caveat as /s0; requires the per-camera stream token prefix."
+    },
+    {
+      "path": "/s2",
+      "note": "Per-quality suffix (low) — same caveat as /s0; requires the per-camera stream token prefix."
+    },
+    {
+      "path": "/Y6LkiH8UDTSbjlyR",
+      "note": "Random per-camera stream token — exactly the {streamToken} form Protect generates when RTSP is enabled per camera; unique per device, not a shareable static path."
+    },
+    {
+      "path": "/7k9wbmWV4capQOJn",
+      "note": "Per-camera stream token (see above)."
+    },
+    {
+      "path": "/ZOeooeCNUzrdEMBB",
+      "note": "Per-camera stream token (see above)."
+    },
+    {
+      "path": "/CfoWfNYSi2Uto1Va",
+      "note": "Per-camera stream token (see above)."
+    },
+    {
+      "path": "/euwkG3hjFjvc4Hgv",
+      "note": "Per-camera stream token (see above)."
+    },
+    {
+      "path": "/FWIpiqzfEvvdCAAY",
+      "note": "Per-camera stream token (see above)."
+    },
+    {
+      "path": "/bGQUCKWG5my3BRIt",
+      "note": "Per-camera stream token (see above)."
+    },
+    {
+      "path": "/G3dyqVoAMRY4sIhg",
+      "note": "Per-camera stream token (see above)."
+    },
+    {
+      "path": "/hQ0t5jE5wP4yYVzD",
+      "note": "Per-camera stream token (see above)."
+    },
+    {
+      "path": "/jkRzYFwDgmCnVTMB",
+      "note": "Per-camera stream token (see above)."
+    },
+    {
+      "path": "/87eIzaVpJHI5qkeU",
+      "note": "Per-camera stream token (see above)."
+    },
+    {
+      "path": "/4NifILe1B0uQyMcN?enablertsp",
+      "note": "Per-camera stream token; the '?enablertsp'/'?enableSrtp' query is the Protect enable flag appended to the RTSPS URL."
+    }
+  ],
+  "notes": "UniFi Protect does NOT expose a fixed, brand-wide RTSP path. RTSP/RTSPS is disabled by default and must be enabled PER CAMERA in the Protect UI (Cameras > Select Camera > Manage > RTSP, or UniFi Devices > [camera] > Settings > Advanced). Once enabled, Protect generates and displays a UNIQUE per-camera URL of the form rtsps://{console-ip}:7441/{streamToken}?enableSrtp (secure/SRTP, port 7441). An unencrypted variant rtsp://{console-ip}:7447/{streamToken} is also available on some firmware (port 7447). The stream is served by the UniFi Protect console/NVR (UDM/Cloud Key/NVR), not by the camera directly. Older firmware appended per-quality suffixes (s0/s1/s2) to select high/medium/low resolution. The {streamToken} is a random ~16-char token, unique per camera and non-guessable — hence there is no shareable static template beyond the token form. Scope: Ubiquiti UniFi Protect cameras served via a Protect console; the separate 'ubiquiti' brand entry covers Ubiquiti's non-Protect/legacy UniFi Video (airVision) cameras.",
+  "verified_on": "2026-08-14"
+}

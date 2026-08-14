@@ -1,0 +1,43 @@
+{
+  "brand": "BESDER",
+  "brand_id": "besder",
+  "status": "unverified",
+  "default_port": 554,
+  "templates": [],
+  "unverified_leads": [
+    {
+      "path": "/user={user}_password={pass}_channel=<N>_stream=0.sdp?real_stream",
+      "note": "Classic Xiongmai/NetSurveillance (Sofia/DVRIP) main-stream form. Strongly attested for BESDER (a Xiongmai OEM — e.g. the BESDER 6024PB-XMA501 runs a Xiongmai XM530 SoC, NETSurveillanceWEB on :80, ONVIF on :8899, DVRIP on :34567), but confirmed only via a third-party security investigation and crowdsourced VMS databases, NOT BESDER's own documentation. password is a Sofia 8-char hash, not the plaintext password. channel is typically 0 or 1."
+    },
+    {
+      "path": "/user={user}_password={pass}_channel=<N>_stream=1.sdp?real_stream",
+      "note": "Matching Xiongmai sub-stream form (stream=1). Same OEM lineage; not confirmed against any official BESDER doc."
+    },
+    {
+      "path": "/user={user}_password={pass}_channel=<N>_stream=<M>.sdp",
+      "note": "Same Xiongmai form without the ?real_stream suffix / with &-delimited variants seen in the leads. Xiongmai-OEM convention; not in any BESDER official doc."
+    },
+    {
+      "path": "/11",
+      "note": "Short main-stream path cited by crowdsourced DB (ispyconnect) as rtsp://admin:pass@ip:554/11; community-contributed and flagged 'may be inaccurate' — not published by BESDER."
+    },
+    {
+      "path": "/onvif/live/1",
+      "note": "Generic ONVIF media-profile path; BESDER exposes ONVIF (port 8899) but the actual media URI is negotiated via GetProfiles, not this fixed path. Not documented by BESDER."
+    },
+    {
+      "path": "/h264_stream",
+      "note": "Generic/other-OEM main-stream path; likely cross-brand contamination. Not confirmed for BESDER."
+    },
+    {
+      "path": "/0/av0",
+      "note": "Grandstream/other-OEM style path; likely cross-brand contamination. Not confirmed for BESDER."
+    },
+    {
+      "path": "/1/h264major",
+      "note": "Other-OEM (Grandstream-style) path; likely cross-brand contamination. Not confirmed for BESDER."
+    }
+  ],
+  "notes": "BESDER is a budget Chinese IP-camera brand (WiFi/PoE, sold via marketplaces) that rebadges Xiongmai (and similar Hi35xx) OEM hardware. Its official support site (besdersecurity.com/support) publishes only an iCSee smart-camera app manual and offers NO RTSP URL documentation — cameras are intended to be reached via the iCSee/O-KAM app or ONVIF auto-discovery, with no manufacturer-published fixed RTSP template. The Xiongmai '/user=..._channel=N_stream=M.sdp?real_stream' form is technically correct for these devices and matches the strix leads, but it is confirmed ONLY through third-party sources (a public 6024PB-XMA501 security teardown and crowdsourced VMS databases such as ispyconnect), not BESDER's own docs. Per the publish-only-what-the-manufacturer-documents rule, status is 'unverified' and templates are empty; the well-attested Xiongmai forms are retained under unverified_leads for downstream reference. Port 554 is standard (some units also expose RTSP on 10554 per community reports).",
+  "verified_on": "2026-08-14"
+}

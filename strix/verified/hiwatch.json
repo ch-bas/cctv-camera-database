@@ -1,0 +1,80 @@
+{
+  "brand": "HiWatch",
+  "brand_id": "hiwatch",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/Streaming/Channels/<N>01",
+      "codec": "H.264|H.265 (per-profile)",
+      "verified": true,
+      "source": "Hikvision official support KB 'How do I get my RTSP stream?' (supportusa.hikvision.com, article 17000129064): rtsp://<user>:<pass>@<ip>:<port>/Streaming/channels/<channel><stream>, where 101 = channel 1 main stream. HiWatch is Hikvision's value sub-brand on the identical ISAPI firmware.",
+      "strix_lead": "strixcamdb:hiwatch"
+    },
+    {
+      "stream": "sub",
+      "path": "/Streaming/Channels/<N>02",
+      "codec": "H.264|H.265 (per-profile)",
+      "verified": true,
+      "source": "Hikvision official support KB 'How do I get my RTSP stream?' (supportusa.hikvision.com, article 17000129064): 102 = channel 1 sub stream (second/third digits 02 = sub stream).",
+      "strix_lead": "strixcamdb:hiwatch"
+    },
+    {
+      "stream": "main",
+      "path": "/ISAPI/Streaming/Channels/<N>01",
+      "codec": "H.264|H.265 (per-profile)",
+      "verified": true,
+      "source": "Hikvision official ISAPI documentation (enpinfo.hikvision.com): rtsp://<host>[:port]/ISAPI/Streaming/channels/<ID> — ISAPI-prefixed variant of the same channel/stream scheme.",
+      "strix_lead": "strixcamdb:hiwatch"
+    },
+    {
+      "stream": "sub",
+      "path": "/ISAPI/Streaming/Channels/<N>02",
+      "codec": "H.264|H.265 (per-profile)",
+      "verified": true,
+      "source": "Hikvision official ISAPI documentation (enpinfo.hikvision.com): ISAPI-prefixed variant; 02 = sub stream.",
+      "strix_lead": "strixcamdb:hiwatch"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+      "note": "Generic .sdp login-in-path template (Dahua/other OEM style); not in Hikvision/HiWatch official docs."
+    },
+    {
+      "path": "/mjpeg",
+      "note": "Generic cross-brand MJPEG path; not documented for HiWatch."
+    },
+    {
+      "path": "/h264_stream",
+      "note": "Generic cross-brand path; not documented for HiWatch."
+    },
+    {
+      "path": "/Onvif/live/1/1",
+      "note": "ONVIF-negotiated media path, device-assigned; not a fixed HiWatch RTSP URL."
+    },
+    {
+      "path": "/onvif1",
+      "note": "Generic ONVIF profile alias (common on cheap OEMs); not documented for HiWatch."
+    },
+    {
+      "path": "/cam0/mjpeg",
+      "note": "Generic cross-brand path; not documented for HiWatch."
+    },
+    {
+      "path": "/live/main",
+      "note": "Generic cross-brand path; not documented for HiWatch."
+    },
+    {
+      "path": "/ucast/11",
+      "note": "Generic/other-brand path; not documented for HiWatch."
+    },
+    {
+      "path": "/Streaming/Channels/<N>",
+      "note": "Bare-channel form (e.g. /Streaming/Channels/1); works on some Hikvision-platform NVRs but the documented canonical form uses the <channel><stream> suffix (101/102)."
+    }
+  ],
+  "notes": "HiWatch is Hikvision's own value/entry sub-brand, running the identical Hikvision ISAPI firmware and RTSP stack. Canonical RTSP path is /Streaming/Channels/<channel><stream> where the last two digits are the stream: 01=main, 02=sub (channel 1 -> 101/102). Same scheme is exposed under the /ISAPI/ prefix. Default RTSP port 554 (confirmed in the official HiWatch NVR user manual, which documents RTSP service port default 554). Hikvision KB notes port 10554 for the authenticated variant on some devices, but 554 is the documented default. Leads for this brand were dominated by correct Hikvision-platform paths; other listed candidates are generic cross-brand contamination.",
+  "verified_on": "2026-08-14"
+}

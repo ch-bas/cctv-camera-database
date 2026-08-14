@@ -46,17 +46,50 @@
     }
   ],
   "unverified_leads": [
-    { "path": "/cam/realmonitor?channel=1&subtype=00&authbasic=[AUTH]", "note": "Dahua-style path — Dahua cross-brand contamination; not confirmed for any Advidia line (current M-series is Uniview, legacy A-series is Hikvision). Excluded." },
-    { "path": "/cam/realmonitor?channel=2&subtype=00&authbasic=[AUTH]", "note": "Dahua contamination — excluded, see above." },
-    { "path": "/cam/realmonitor?channel=3&subtype=00&authbasic=[AUTH]", "note": "Dahua contamination — excluded." },
-    { "path": "/cam/realmonitor?channel=101&subtype=00&authbasic=[AUTH]", "note": "malformed Dahua/Hikvision channel mashup lead — not a valid documented path." },
-    { "path": "/MediaInput/mpeg4", "note": "generic legacy MPEG-4 lead (also seen without leading slash) — not confirmed by Uniview or Hikvision official docs for Advidia." },
-    { "path": "/live/mpeg4", "note": "generic legacy MPEG-4 lead — not in Uniview/Hikvision official RTSP docs; cross-brand." },
-    { "path": "/ch0_0.h264", "note": "generic ch<N>_<N>.h264 lead (also /ch2_0.h264) — not the Uniview /media/videoN nor Hikvision /Streaming/Channels form; cross-brand contamination." },
-    { "path": "/video.mp4", "note": "generic lead — not a documented Advidia RTSP resource path." },
-    { "path": "/stream1", "note": "generic /stream1 lead — not the documented Uniview or Hikvision path for Advidia." },
-    { "path": "/ONVIF/MediaInput", "note": "ONVIF media entry lead — Advidia supports ONVIF for auto-discovery, but the RTSP resource URL is delivered via the ONVIF GetStreamUri response, not this fixed path." },
-    { "path": "/Streaming/Channels/901", "note": "Hikvision NVR-style high channel index (901/902/1103) — NVR/multi-channel lead, not a single-camera main/sub path; case-varied duplicates ignored." }
+    {
+      "path": "/cam/realmonitor?channel=1&subtype=00&authbasic=[AUTH]",
+      "note": "Dahua-style path — Dahua cross-brand contamination; not confirmed for any Advidia line (current M-series is Uniview, legacy A-series is Hikvision). Excluded."
+    },
+    {
+      "path": "/cam/realmonitor?channel=2&subtype=00&authbasic=[AUTH]",
+      "note": "Dahua contamination — excluded, see above."
+    },
+    {
+      "path": "/cam/realmonitor?channel=3&subtype=00&authbasic=[AUTH]",
+      "note": "Dahua contamination — excluded."
+    },
+    {
+      "path": "/cam/realmonitor?channel=101&subtype=00&authbasic=[AUTH]",
+      "note": "malformed Dahua/Hikvision channel mashup lead — not a valid documented path."
+    },
+    {
+      "path": "/MediaInput/mpeg4",
+      "note": "generic legacy MPEG-4 lead (also seen without leading slash) — not confirmed by Uniview or Hikvision official docs for Advidia."
+    },
+    {
+      "path": "/live/mpeg4",
+      "note": "generic legacy MPEG-4 lead — not in Uniview/Hikvision official RTSP docs; cross-brand."
+    },
+    {
+      "path": "/ch0_0.h264",
+      "note": "generic ch<N>_<N>.h264 lead (also /ch2_0.h264) — not the Uniview /media/videoN nor Hikvision /Streaming/Channels form; cross-brand contamination."
+    },
+    {
+      "path": "/video.mp4",
+      "note": "generic lead — not a documented Advidia RTSP resource path."
+    },
+    {
+      "path": "/stream1",
+      "note": "generic /stream1 lead — not the documented Uniview or Hikvision path for Advidia."
+    },
+    {
+      "path": "/ONVIF/MediaInput",
+      "note": "ONVIF media entry lead — Advidia supports ONVIF for auto-discovery, but the RTSP resource URL is delivered via the ONVIF GetStreamUri response, not this fixed path."
+    },
+    {
+      "path": "/Streaming/Channels/901",
+      "note": "Hikvision NVR-style high channel index (901/902/1103) — NVR/multi-channel lead, not a single-camera main/sub path; case-varied duplicates ignored."
+    }
   ],
   "notes": "Advidia is a Panasonic i-PRO reseller brand whose cameras are OEM'd, and the OEM has changed across generations — so there are TWO documented RTSP families. (1) Current M-series (M-24-FW-T, M-26-FW, M-29-FW, M-46-FW, M-49-FW, M-400-P, etc.) = Uniview (UNV) OEM: the official i-PRO Advidia 2MP/4MP user manuals show the Uniview Web-UI, and Uniview's official RTSP doc gives /media/video1 (main), /media/video2 (sub), /media/video3 (third), port 554. (2) Legacy A-series and some VP-series (A-34W, A-37FW, A-47, VP-16-V2) = Hikvision OEM: standard Hikvision /Streaming/Channels/<ch><stream> — 101 main, 102 sub, 103 third; published on OEM-lineage basis (this also matches the dominant leads). No single official Advidia document prints a literal RTSP URL string (i-PRO's NVR manual explicitly says to 'contact the camera manufacturer for the resource path'), so the literal paths come from the confirmed OEMs' own docs. Also note some very old Advidia/VP units (Dahua-based /cam/realmonitor) exist in leads but were NOT confirmed and are excluded as cross-brand contamination. All families default to RTSP port 554; ONVIF is supported for auto-discovery on all.",
   "verified_on": "2026-08-14"

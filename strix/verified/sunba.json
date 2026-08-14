@@ -1,0 +1,112 @@
+{
+  "brand": "Sunba",
+  "brand_id": "sunba",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/user={user}&password={pass}&channel=1&stream=0.sdp?real_stream",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Sunba Technology FAQ — 'What is the RTSP stream URL for Sunba IP cameras?' (https://www.sunbatech.com/faq/what-is-the-rtsp-stream-url-for-sunba-ip-cameras/), Lite Series",
+      "strix_lead": "strixcamdb:sunba"
+    },
+    {
+      "stream": "sub",
+      "path": "/user={user}&password={pass}&channel=1&stream=1.sdp?real_stream",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Sunba Technology FAQ — Lite Series (stream=0 main / stream=1 sub)",
+      "strix_lead": "strixcamdb:sunba"
+    },
+    {
+      "stream": "main",
+      "path": "/media/video1",
+      "codec": "per-profile",
+      "verified": true,
+      "source": "Sunba Technology FAQ — 'What is the RTSP stream URL for Sunba IP cameras?', Performance Series (video1=main, video2=sub, video3=third)",
+      "strix_lead": "strixcamdb:sunba"
+    },
+    {
+      "stream": "sub",
+      "path": "/media/video2",
+      "codec": "per-profile",
+      "verified": true,
+      "source": "Sunba Technology FAQ — Performance Series",
+      "strix_lead": "strixcamdb:sunba"
+    },
+    {
+      "stream": "third",
+      "path": "/media/video3",
+      "codec": "per-profile",
+      "verified": true,
+      "source": "Sunba Technology FAQ — Performance Series",
+      "strix_lead": "strixcamdb:sunba"
+    },
+    {
+      "stream": "main",
+      "path": "/{codec}/ch<N>/main/av_stream",
+      "codec": "h264|h265|mpeg4",
+      "verified": true,
+      "source": "Sunba Technology FAQ — 'What is the RTSP stream URL for Sunba IP cameras?', Illuminati Series (codec = h264/h265/mpeg4; subtype = main/sub)",
+      "strix_lead": "strixcamdb:sunba"
+    },
+    {
+      "stream": "sub",
+      "path": "/{codec}/ch<N>/sub/av_stream",
+      "codec": "h264|h265|mpeg4",
+      "verified": true,
+      "source": "Sunba Technology FAQ — Illuminati Series",
+      "strix_lead": "strixcamdb:sunba"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+      "note": "Underscore-separated variant; Sunba's official Lite-Series doc uses '&'-separated params with the '?real_stream' suffix. Not the documented form."
+    },
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp?real_stream",
+      "note": "Underscore-separated variant; official doc uses '&'-separated form. Excluded."
+    },
+    {
+      "path": "/cam/realmonitor",
+      "note": "Dahua OEM path; not present in any official Sunba doc. Cross-brand contamination."
+    },
+    {
+      "path": "/live/ch0",
+      "note": "Generic/Hikvision-style path; not in Sunba docs. Excluded."
+    },
+    {
+      "path": "/live/ch1",
+      "note": "Generic/Hikvision-style path; not in Sunba docs. Excluded."
+    },
+    {
+      "path": "/ONVIF/MediaInput",
+      "note": "Generic ONVIF path, not a fixed Sunba-documented RTSP URL. Excluded."
+    },
+    {
+      "path": "/Onvif/Streaming/2",
+      "note": "Generic ONVIF path; not in Sunba docs. Excluded."
+    },
+    {
+      "path": "/stream1",
+      "note": "Generic path; not in Sunba docs. Excluded."
+    },
+    {
+      "path": "/stream2",
+      "note": "Generic path; not in Sunba docs. Excluded."
+    },
+    {
+      "path": "/1/h264major",
+      "note": "Not matching Sunba's documented Illuminati '/{codec}/chN/main|sub/av_stream' form. Excluded."
+    },
+    {
+      "path": "/ch0_0.h264",
+      "note": "Generic path; not in Sunba docs. Excluded."
+    }
+  ],
+  "notes": "Sunba publishes three series-specific RTSP formats in its official FAQ. Lite Series: /user=&password=&channel=1&stream=0.sdp?real_stream (stream=0 main, stream=1 sub). Performance Series: /media/video1|2|3 (main/sub/third) with basic-auth in URL. Illuminati Series: /{codec}/ch<N>/{main|sub}/av_stream where codec = h264|h265|mpeg4. Default RTSP port 554 across all series. Many aggregated leads (realmonitor, /live/ch*, ONVIF paths) are cross-brand and NOT in Sunba's docs.",
+  "verified_on": "2026-08-14"
+}
