@@ -1,0 +1,60 @@
+{
+  "brand": "Arecont Vision",
+  "brand_id": "arecont",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/h264.sdp?res=full&doublescan=0&ssn=<uniq>",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Arecont Vision API and Camera Web Page Manual (2017-06-30), Chapter IV - Alternative Access Protocols, 'RTSP Request Format for Continuous H.264 Video Streaming' (sales.arecontvision.com/marketing/contents/Arecont%20Vision%20API%20and%20Camera%20Web%20Page%20Manual_2017-06-30_1.pdf); minimal form rtsp://camera_ip/h264.sdp?res=full&doublescan=0&fps=fps&ssn=[1..65535], res=full = full resolution (main)",
+      "strix_lead": "strixcamdb:arecont"
+    },
+    {
+      "stream": "sub",
+      "path": "/h264.sdp?res=half&doublescan=0&ssn=<uniq>",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Arecont Vision API and Camera Web Page Manual (2017-06-30), same RTSP section; res=half reduces resolution by a factor of 2 in each direction (sub/second stream)",
+      "strix_lead": "strixcamdb:arecont"
+    },
+    {
+      "stream": "main-multisensor",
+      "path": "/h264.sdp<N>?res=full&doublescan=0&ssn=<uniq>",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Arecont Vision API and Camera Web Page Manual (2017-06-30): multi-sensor form rtsp://camera_ip/h264.sdp<channel>?res=(half|full)... for Omni, SurroundVideo and other multi-sensor MegaVideo models; <N> = sensor/channel index (1-based, seen as sdp1/sdp3 in leads)",
+      "strix_lead": "strixcamdb:arecont"
+    },
+    {
+      "stream": "contera-main",
+      "path": "/stream1_<N>",
+      "codec": "H.264/H.265",
+      "verified": true,
+      "source": "Arecont Vision Support KB, 'How to connect to RTSP streams on Contera cameras' (support.arecontvision.com/hc/en-us/articles/360026045753); e.g. rtsp://<ip>:554/stream1_1 main stream, append _X for channel X on multi-channel Contera (MicroDome Duo, Omni LX/RS)",
+      "strix_lead": "strixcamdb:arecont"
+    },
+    {
+      "stream": "contera-sub",
+      "path": "/stream2_<N>",
+      "codec": "H.264/H.265",
+      "verified": true,
+      "source": "Arecont Vision Support KB, 'How to connect to RTSP streams on Contera cameras' (support.arecontvision.com/hc/en-us/articles/360026045753); e.g. rtsp://<ip>:554/stream2_1 sub stream (stream3_<N> = MJPEG)",
+      "strix_lead": "strixcamdb:arecont"
+    }
+  ],
+  "unverified_leads": [
+    { "path": "/PSIA/Streaming/channels/0?videoCodecType=H.264", "note": "Hikvision/PSIA contamination — not an Arecont path; no official Arecont doc uses this" },
+    { "path": "/onvif-media/media.amp", "note": "Axis media.amp contamination — not documented by Arecont" },
+    { "path": "/onvif-media/media.amp (variant)", "note": "cross-brand ONVIF profile lead, not an Arecont fixed URL" },
+    { "path": "/cam1/mpeg4", "note": "generic cam<N>/mpeg4 lead — not in Arecont docs (Arecont uses h264.sdp / stream1_N); likely cross-brand" },
+    { "path": "/live/ch00_0", "note": "generic live/ch lead — not in Arecont docs; cross-brand" },
+    { "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp", "note": "generic cheap-DVR template — not an Arecont path" },
+    { "path": "/ch0.h264", "note": "generic ch0.h264 lead — not in Arecont docs" },
+    { "path": "/ONVIF/channel2", "note": "generic ONVIF channel lead — not an Arecont fixed URL" }
+  ],
+  "notes": "Two documented generations. (1) Legacy MegaVideo/MegaDome/SurroundVideo (H.264 models): base RTSP path /h264.sdp with query params; res=full = main (full res), res=half = sub (half res in each dimension); ssn is a required unique stream identifier (1-65535, up to 8 non-identical streams per camera); doublescan=0 = wait for fresh frame. Multi-sensor cameras (Omni, SurroundVideo) use /h264.sdp<N> where N is the sensor/channel index (leads show sdp1/sdp3). Optional params: x0/y0/x1/y1 (crop), qp, ratelimit, bitrate, fps, sei. (2) Contera (ConteraIP, newer H.264/H.265 platform): /stream1_<N> = main, /stream2_<N> = sub, /stream3_<N> = MJPEG; append _X for the channel on multi-channel/multi-sensor models (MicroDome Duo, Omni LX/RS 1-4). Default RTSP unicast port 554 (configurable 1-65535) confirmed in the API manual. Arecont was acquired by Costar Technologies; the HTTP/RTSP API also lives at http-api.arecontvision.com. Leads contained Hikvision PSIA and Axis media.amp cross-brand contamination — excluded.",
+  "verified_on": "2026-08-14"
+}

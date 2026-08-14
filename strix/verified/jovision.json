@@ -1,0 +1,45 @@
+{
+  "brand": "Jovision",
+  "brand_id": "jovision",
+  "status": "unverified",
+  "default_port": 8554,
+  "templates": [],
+  "candidate_unconfirmed": [
+    {
+      "stream": "main",
+      "path": "/live0.264",
+      "port": 8554,
+      "codec": "H.264",
+      "verified": false,
+      "note": "Strong Jovision-specific candidate: rtsp://{user}:{pass}@{ip}:8554/live0.264 (main). This exact path+port is consistent across every independent technical reference (LinkSprite Learning Center 'How to access Jovision camera RTSP stream', ispyconnect, camlytics, unifore, router-switch), matches the StrixCamDB lead /live0.264, and is NOT a cross-brand path. NOT published as verified because I could not open Jovision's OWN documentation from this environment: the English support FAQ 'FAQ of Jovision NVR and IP Camera' at us.jovision.com/Service/ProblemContent.aspx (and en.jovision.com, 168.235.107.36) is DNS-blocked / firewall-unreachable here (ENOTFOUND / connection timeout), and the only reachable Jovision-owned host, www.jovision.com, renders its FAQ article list via JavaScript so the RTSP article text could not be extracted via static fetch. Re-verify once a Jovision-hosted page is reachable.",
+      "strix_lead": "strixcamdb:jovision"
+    },
+    {
+      "stream": "sub",
+      "path": "/live1.264",
+      "port": 8554,
+      "codec": "H.264",
+      "verified": false,
+      "note": "Strong Jovision-specific candidate: rtsp://{user}:{pass}@{ip}:8554/live1.264 (sub/secondary). Same corroboration and same reason-unverified as the main-stream candidate above. Matches the StrixCamDB lead /live1.264.",
+      "strix_lead": "strixcamdb:jovision"
+    }
+  ],
+  "unverified_leads": [
+    { "path": "/Streaming/Channels/1", "note": "Hikvision RTSP path — cross-brand contamination (Hikvision /Streaming/Channels/<ch><stream>). Not a Jovision path; excluded." },
+    { "path": "/0/cloud:Baltu912/main", "note": "Jovision CloudSEE cloud-relay path with an embedded per-device relay id (cloud:<serial>) — this is the proprietary CloudSEE/EagleEyes-style cloud stream, not a fixed on-camera LAN RTSP URL. Not a reusable template; excluded." },
+    { "path": "/0/admin:ZaZa1970/main", "note": "Same CloudSEE cloud-relay form as above with a leaked credential (admin:ZaZa1970). Device-specific relay, not a documented fixed path; excluded." },
+    { "path": "/h264", "note": "Generic /h264 lead — not the Jovision liveN.264 form; cross-brand generic. Not confirmed for Jovision; excluded." },
+    { "path": "live/h264", "note": "Generic live/h264 lead — cross-brand generic; not the Jovision liveN.264 form. Excluded." },
+    { "path": "live3.sdp", "note": "Generic .sdp lead — not a documented Jovision path; cross-brand. Excluded." },
+    { "path": "live_mpeg4.sdp", "note": "Generic MPEG-4 .sdp lead — cross-brand contamination; not confirmed for Jovision. Excluded." },
+    { "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp", "note": "This is the Longse/XMeye/'user=..._channel=..._stream=...sdp' family — cross-brand contamination, not Jovision's documented form. Excluded." },
+    { "path": "[CHANNEL]/[USERNAME]:[PASSWORD]/main", "note": "Cloud-relay style path template (mirrors the /0/cloud:.../main CloudSEE form) — device/relay-specific, not a fixed LAN RTSP URL. Excluded." },
+    { "path": "/live/1", "note": "Generic /live/<N> lead — cross-brand generic (Vivotek/others); not the Jovision liveN.264 form. Not confirmed; excluded." },
+    { "path": "/live/0", "note": "Generic /live/<N> lead — see /live/1; excluded." },
+    { "path": "/live/2", "note": "Generic /live/<N> lead — see /live/1; excluded." },
+    { "path": "medias2", "note": "Generic 'medias2' lead — not a documented Jovision path; cross-brand. Excluded." },
+    { "path": "/onvif1", "note": "ONVIF media-profile lead — Jovision supports ONVIF for discovery, but the RTSP URL is returned via the ONVIF GetStreamUri response, not this fixed /onvif1 path. Not a confirmed Jovision fixed path; excluded." }
+  ],
+  "notes": "Jovision (Jovision Technology Co., Ltd. / 中维世纪; CloudSEE / JVS-* models) almost certainly uses rtsp://{user}:{pass}@{ip}:8554/live0.264 (main) and /live1.264 (sub) on the non-standard RTSP port 8554 — this is a distinctive, non-contaminated, Jovision-specific pattern corroborated by every independent technical source and by the leads themselves. HOWEVER, per the verification rule (publish only what is confirmed against the manufacturer's OWN documentation), this brand is marked UNVERIFIED because Jovision's own English support FAQ ('FAQ of Jovision NVR and IP Camera', us.jovision.com / en.jovision.com) was not reachable from this environment (us.jovision.com does not resolve; en.jovision.com 168.235.107.36 times out / connection refused on 80 and 443), and the only reachable Jovision-owned host (www.jovision.com, the Chinese site) serves its FAQ article list via JavaScript, so the RTSP article body could not be read via static fetch. The candidate main/sub paths are recorded under candidate_unconfirmed for a quick re-verify once a Jovision-hosted doc is reachable. Contamination excluded: the Hikvision /Streaming/Channels/1 lead, the CloudSEE cloud-relay paths (/0/cloud:<serial>/main, /0/admin:<cred>/main, [CHANNEL]/[USER]:[PASS]/main), the Longse-style user=..._stream=N.sdp lead, and assorted generic /h264, /live/<N>, .sdp and /onvif1 leads.",
+  "verified_on": "2026-08-14"
+}

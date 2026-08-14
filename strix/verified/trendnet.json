@@ -1,0 +1,57 @@
+{
+  "brand": "TRENDnet",
+  "brand_id": "trendnet",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/Src/MediaInput/stream_1",
+      "codec": "H.265/H.264",
+      "verified": true,
+      "source": "TRENDnet Official User's Guide TV-IP310PI (v1.1R), section 2.3.3 'RTSP URL' — downloads.trendnet.com/TV-IP310PI(v1.1R)/Manuals/UG_TV-IP310PI(v1.1R).pdf",
+      "strix_lead": "strixcamdb:trendnet"
+    },
+    {
+      "stream": "sub",
+      "path": "/Src/MediaInput/stream_2",
+      "codec": "H.265/H.264",
+      "verified": true,
+      "source": "TRENDnet Official User's Guide TV-IP310PI (v1.1R), section 2.3.3 'RTSP URL'",
+      "strix_lead": "strixcamdb:trendnet"
+    },
+    {
+      "stream": "third",
+      "path": "/Src/MediaInput/stream_3",
+      "codec": "H.265/H.264",
+      "verified": true,
+      "source": "TRENDnet Official User's Guide TV-IP310PI (v1.1R), section 2.3.3 'RTSP URL'",
+      "strix_lead": "strixcamdb:trendnet"
+    },
+    {
+      "stream": "fourth",
+      "path": "/Src/MediaInput/stream_4",
+      "codec": "H.265/H.264",
+      "verified": true,
+      "source": "TRENDnet Official User's Guide TV-IP310PI (v1.1R), section 2.3.3 'RTSP URL'",
+      "strix_lead": "strixcamdb:trendnet"
+    }
+  ],
+  "unverified_leads": [
+    { "path": "/Streaming/Channels/101", "note": "Hikvision path — cross-brand contamination; not the documented TRENDnet path (TRENDnet uses /Src/MediaInput/stream_N)" },
+    { "path": "/Streaming/Channels/102", "note": "Hikvision sub-stream path — cross-brand contamination" },
+    { "path": "/Streaming/Channels/1", "note": "Hikvision-style path — not confirmed by any official TRENDnet doc reviewed" },
+    { "path": "/Streaming/Channels/2", "note": "Hikvision-style path — not confirmed by official TRENDnet doc" },
+    { "path": "PSIA/Streaming/channels/1?videoCodecType=MPEG4", "note": "PSIA/Hikvision path — cross-brand contamination" },
+    { "path": "axis-media/media.amp", "note": "Axis path — cross-brand contamination" },
+    { "path": "/cam/realmonitor", "note": "Dahua path — cross-brand contamination" },
+    { "path": "/cam1/mpeg4", "note": "Attributed to older TRENDnet MPEG4 models (e.g. TV-IP422W) by third-party DBs; not confirmable via a quotable official TRENDnet path in the reviewed manuals (TV-IP262P manual only documents a /3gp mobile endpoint), so left unverified" },
+    { "path": "/mpeg4", "note": "Same older-generation MPEG4 attribution as /cam1/mpeg4; no official quotable path found" },
+    { "path": "/live/h264/ch0", "note": "Third-party-attributed; not confirmed by official TRENDnet doc reviewed" },
+    { "path": "/ch0_0.h264", "note": "Third-party-attributed; not confirmed by official TRENDnet doc reviewed" },
+    { "path": "/VideoInput/0/h264/1", "note": "Third-party-attributed; not confirmed by official TRENDnet doc reviewed" },
+    { "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp", "note": "Generic OEM SDP pattern; not confirmed by official TRENDnet doc" }
+  ],
+  "notes": "Default RTSP port 554 (confirmed in official manual: set_rtsp?rtsp_port=554). Modern TRENDnet PoE camera line (TV-IP310PI and siblings) uses the fully-documented path /Src/MediaInput/stream_N where N=1..4 (stream_1=main, stream_2=sub, plus stream_3/stream_4), each selectable H.264 or H.265. For multi-sensor / quad-stream fisheye models, append /ch_N (e.g. /Src/MediaInput/stream_1/ch_1). None of the Strix leads matched this real documented path — the lead list is heavily contaminated with Hikvision (/Streaming/Channels), Axis (axis-media/media.amp) and Dahua (/cam/realmonitor) paths. Older MPEG4-era TRENDnet models (pre-PoE, e.g. TV-IP262P/TV-IP422W) predate this URL scheme and their exact main-stream RTSP path was not confirmable from an official quotable doc (the TV-IP262P manual only documents a /3gp mobile endpoint); those older leads are left unverified. Scope of verification: modern H.264/H.265 PoE network camera line.",
+  "verified_on": "2026-08-14"
+}

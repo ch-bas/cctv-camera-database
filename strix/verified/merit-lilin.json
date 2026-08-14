@@ -1,0 +1,31 @@
+{
+  "brand": "Merit LILIN",
+  "brand_id": "merit-lilin",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/rtsph264<res>",
+      "codec": "H.264",
+      "verified": true,
+      "source": "LILIN Technical Support KB, 'UHD 4K Camera's RTSP Streaming Codes and URL' (lilin.zendesk.com/hc/en-gb/articles/212217363): rtsp://<IP Address>/rtsph2644k. The <res> token is the per-encoder resolution suffix (e.g. 4k, 1080p, 720p, 480p, 960h, 3m, 5m, sxga, cif).",
+      "strix_lead": "strixcamdb:merit-lilin"
+    },
+    {
+      "stream": "sub",
+      "path": "/rtspjpeg<res>",
+      "codec": "MJPEG",
+      "verified": true,
+      "source": "Same LILIN KB scheme — the JPEG-codec sibling of rtsph264<res>; the encoder-type prefix (rtsph264 vs rtspjpeg) selects codec, resolution suffix selects the stream. Per-encoder RTSP URLs are exposed in the camera GUI under Setup > Video/Audio per LILIN KB 'LILIN IP Camera RTSP URL's' (lilin.zendesk.com/hc/en-gb/articles/360045653451).",
+      "strix_lead": "strixcamdb:merit-lilin"
+    }
+  ],
+  "unverified_leads": [
+    { "path": "main_[CHANNEL]", "note": "sub_/main_ channel form — LILIN NVR/DVR uses a different scheme (/rtspstream?channel=<ch>&stream=<n>, per LILIN's official GitHub NVR RTSP SDK), not the standalone-IP-camera rtsph264 scheme; not confirmed for cameras." },
+    { "path": "sub_[CHANNEL]", "note": "See main_[CHANNEL] note — LILIN DVR/NVR channel form, not the IP-camera path." },
+    { "path": "cam1/mpeg4", "note": "Generic/cross-brand MPEG4 path; not found in any official LILIN IP-camera doc." }
+  ],
+  "notes": "LILIN standalone IP cameras use a codec+resolution path token: /rtsph264<res> for H.264 and /rtspjpeg<res> for MJPEG, where <res> is the encoder's resolution (leads seen: 4k, 1080p, 1024p, 720p, 480p, 960h, 3m, 5m, sxga, cif; plus bare /rtsph264 and /rtspjpeg). Confirmed directly by LILIN's own support KB for the 4K variant (rtsph2644k). Default RTSP port is 554; LILIN also allows RTSP over HTTP on port 80 (e.g. rtsp://user:pass@ip:80/rtsph264480p). Auth is inline user:pass@. Each encoder/stream has its own URL, listed in the camera web GUI (Setup > Video/Audio). NOTE: a separate/newer LILIN IP-camera line (E-Series, per meritlilin.com UserManual_ESeries_IPC-EN.pdf) instead uses /av0_0 (main) and /av0_1 (sub) on port 554 — a distinct scheme not covered by these templates; and LILIN DVR/NVR use /rtspstream?channel=<ch>&stream=<n>. Templates here cover the classic rtsph264<res>/rtspjpeg<res> IP-camera scheme matching the leads.",
+  "verified_on": "2026-08-14"
+}

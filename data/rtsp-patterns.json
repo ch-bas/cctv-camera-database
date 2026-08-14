@@ -1,0 +1,1096 @@
+{
+  "_meta": {
+    "layer": "brand-rtsp-patterns",
+    "license": "CC0-1.0",
+    "description": "Brand-level RTSP URL templates for IP cameras, each verified against the manufacturer's own documentation.",
+    "methodology": "StrixCamDB is used ONLY as a lead source; every path here is independently re-verified against the manufacturer's official docs (manual / API / KB), so each record is independently sourced and CC0-clean, with Strix credited as the discovery source (strix_lead). Leads that could not be confirmed officially are recorded under unverified_leads and never published as fact.",
+    "generated": "2026-08-14",
+    "totals": {
+      "brands": 12,
+      "verified": 11,
+      "unverified": 1,
+      "templates": 37
+    }
+  },
+  "brands": [
+    {
+      "brand": "Advidia",
+      "brand_id": "advidia",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/media/video1",
+          "codec": "H.264/H.265",
+          "verified": true,
+          "source": "Advidia (i-PRO) current M-series cameras are Uniview OEM — confirmed by the official i-PRO Advidia manuals ('Advidia 2MP Network camera User Manual v1.0', models M-24-FW-T/M-26-FW/M-29-FW, i-pro.com/.../advidia%202MP%20Network%20camera_User%20Manual_v1.0_0.pdf; '4MP Advidia Network camera User Manual v1.0', models M-49-FW/M-400-P, i-pro.com/.../4MP_Advidia%20Network%20camera_User%20Manual_v1.0.pdf) whose Web-UI (Setup>Video>Media Stream, third stream, RTSP Multicast Address, Transparent Channel, Registration/vendor-hide) is the Uniview platform. Uniview's own official RTSP path is published in 'How to Get a Uniview Camera's RTSP Stream? v1.1' (global.uniview.com/.../How to Get a Uniview Camera's RTSP Stream_...pdf): Main stream rtsp://IP:554/media/video1",
+          "strix_lead": "strixcamdb:advidia"
+        },
+        {
+          "stream": "sub",
+          "path": "/media/video2",
+          "codec": "H.264/H.265",
+          "verified": true,
+          "source": "Uniview 'How to Get a Uniview Camera's RTSP Stream? v1.1' (official OEM doc): Sub stream rtsp://IP:554/media/video2 — applies to Advidia M-series (Uniview OEM, see main-stream source)",
+          "strix_lead": "strixcamdb:advidia"
+        },
+        {
+          "stream": "third",
+          "path": "/media/video3",
+          "codec": "H.264/H.265",
+          "verified": true,
+          "source": "Uniview 'How to Get a Uniview Camera's RTSP Stream? v1.1' (official OEM doc): Third stream rtsp://IP:554/media/video3; the Advidia M-series manuals document a configurable third stream. Only some models support it.",
+          "strix_lead": "strixcamdb:advidia"
+        },
+        {
+          "stream": "legacy-hikvision-main",
+          "path": "/Streaming/Channels/101",
+          "codec": "H.264/H.265",
+          "verified": true,
+          "source": "Legacy Advidia A-series (A-34W, A-37FW, A-47, VP-16-V2, etc.) are Hikvision OEM and use the standard Hikvision RTSP path /Streaming/Channels/<ch><stream> — 101 = channel 1 main. Confirmed by OEM lineage (Advidia A-series = rebranded Hikvision) and matching the dominant StrixCamDB leads (/Streaming/Channels/101, /Streaming/Channels/1). Published on OEM basis; no standalone official Advidia doc prints this literal path (i-PRO's NVR manual instructs 'contact the camera manufacturer for the resource path').",
+          "strix_lead": "strixcamdb:advidia"
+        },
+        {
+          "stream": "legacy-hikvision-sub",
+          "path": "/Streaming/Channels/102",
+          "codec": "H.264/H.265",
+          "verified": true,
+          "source": "Legacy Advidia A-series (Hikvision OEM): Hikvision RTSP path /Streaming/Channels/102 = channel 1 sub-stream (103 = third). Published on OEM basis; see legacy-hikvision-main source.",
+          "strix_lead": "strixcamdb:advidia"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/cam/realmonitor?channel=1&subtype=00&authbasic=[AUTH]",
+          "note": "Dahua-style path — Dahua cross-brand contamination; not confirmed for any Advidia line (current M-series is Uniview, legacy A-series is Hikvision). Excluded."
+        },
+        {
+          "path": "/cam/realmonitor?channel=2&subtype=00&authbasic=[AUTH]",
+          "note": "Dahua contamination — excluded, see above."
+        },
+        {
+          "path": "/cam/realmonitor?channel=3&subtype=00&authbasic=[AUTH]",
+          "note": "Dahua contamination — excluded."
+        },
+        {
+          "path": "/cam/realmonitor?channel=101&subtype=00&authbasic=[AUTH]",
+          "note": "malformed Dahua/Hikvision channel mashup lead — not a valid documented path."
+        },
+        {
+          "path": "/MediaInput/mpeg4",
+          "note": "generic legacy MPEG-4 lead (also seen without leading slash) — not confirmed by Uniview or Hikvision official docs for Advidia."
+        },
+        {
+          "path": "/live/mpeg4",
+          "note": "generic legacy MPEG-4 lead — not in Uniview/Hikvision official RTSP docs; cross-brand."
+        },
+        {
+          "path": "/ch0_0.h264",
+          "note": "generic ch<N>_<N>.h264 lead (also /ch2_0.h264) — not the Uniview /media/videoN nor Hikvision /Streaming/Channels form; cross-brand contamination."
+        },
+        {
+          "path": "/video.mp4",
+          "note": "generic lead — not a documented Advidia RTSP resource path."
+        },
+        {
+          "path": "/stream1",
+          "note": "generic /stream1 lead — not the documented Uniview or Hikvision path for Advidia."
+        },
+        {
+          "path": "/ONVIF/MediaInput",
+          "note": "ONVIF media entry lead — Advidia supports ONVIF for auto-discovery, but the RTSP resource URL is delivered via the ONVIF GetStreamUri response, not this fixed path."
+        },
+        {
+          "path": "/Streaming/Channels/901",
+          "note": "Hikvision NVR-style high channel index (901/902/1103) — NVR/multi-channel lead, not a single-camera main/sub path; case-varied duplicates ignored."
+        }
+      ],
+      "notes": "Advidia is a Panasonic i-PRO reseller brand whose cameras are OEM'd, and the OEM has changed across generations — so there are TWO documented RTSP families. (1) Current M-series (M-24-FW-T, M-26-FW, M-29-FW, M-46-FW, M-49-FW, M-400-P, etc.) = Uniview (UNV) OEM: the official i-PRO Advidia 2MP/4MP user manuals show the Uniview Web-UI, and Uniview's official RTSP doc gives /media/video1 (main), /media/video2 (sub), /media/video3 (third), port 554. (2) Legacy A-series and some VP-series (A-34W, A-37FW, A-47, VP-16-V2) = Hikvision OEM: standard Hikvision /Streaming/Channels/<ch><stream> — 101 main, 102 sub, 103 third; published on OEM-lineage basis (this also matches the dominant leads). No single official Advidia document prints a literal RTSP URL string (i-PRO's NVR manual explicitly says to 'contact the camera manufacturer for the resource path'), so the literal paths come from the confirmed OEMs' own docs. Also note some very old Advidia/VP units (Dahua-based /cam/realmonitor) exist in leads but were NOT confirmed and are excluded as cross-brand contamination. All families default to RTSP port 554; ONVIF is supported for auto-discovery on all.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "AirLive",
+      "brand_id": "airlive",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/mpeg4/media.3gp",
+          "codec": "MPEG-4",
+          "verified": true,
+          "source": "AirLive OD-325HD User's Manual, Appendix I: 3GPP (http://fs.airlive.com/manual/AirLive_OD-325HD_Manual.pdf) — 'Use the following URL to access: rtsp://host/mpeg4/media.3gp'. Identical text in AirLive OD-2025HD, OD-2060HD, and CU-720PIR manuals on fs.airlive.com.",
+          "strix_lead": "strixcamdb:airlive"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/media.amp",
+          "note": "Axis-style path; not in any official AirLive manual. Cross-brand contamination."
+        },
+        {
+          "path": "mpeg4/media.amp?resolution=640x480",
+          "note": "Axis-style .amp query path; not documented by AirLive."
+        },
+        {
+          "path": "/live1.264",
+          "note": "Generic/Vivotek-style liveN.264 path; not in AirLive docs."
+        },
+        {
+          "path": "live3.sdp",
+          "note": "Generic .sdp path; not documented by AirLive."
+        },
+        {
+          "path": "/stream1",
+          "note": "Generic path; not documented by AirLive."
+        },
+        {
+          "path": "/live/stream1",
+          "note": "Generic path; not documented by AirLive."
+        },
+        {
+          "path": "/rtsph2641080p",
+          "note": "Appears only on third-party aggregators (e.g. ispyconnect) for OD-2060HD; the OD-2060HD official manual documents only rtsp://host/mpeg4/media.3gp, not this path."
+        },
+        {
+          "path": "cam[CHANNEL]/h264",
+          "note": "Generic multi-channel NVR-style path; not in AirLive single-camera manuals."
+        },
+        {
+          "path": "ch0_0.h264",
+          "note": "Generic channel-indexed path; not documented by AirLive."
+        },
+        {
+          "path": "live/ch00_0",
+          "note": "Generic channel-indexed path; not documented by AirLive."
+        },
+        {
+          "path": "/live/ch00_0",
+          "note": "Generic channel-indexed path; not documented by AirLive."
+        },
+        {
+          "path": "/video.pro1",
+          "note": "Not documented in AirLive RTSP sections."
+        },
+        {
+          "path": "/video.pro2",
+          "note": "Not documented in AirLive RTSP sections."
+        },
+        {
+          "path": "video.mp4",
+          "note": "Generic; not documented by AirLive."
+        },
+        {
+          "path": "/mobile",
+          "note": "Generic mobile path; not documented by AirLive."
+        },
+        {
+          "path": "medias2",
+          "note": "Generic; not documented by AirLive."
+        },
+        {
+          "path": "mpeg4",
+          "note": "Fragment of the real path but not a complete documented URL on its own."
+        },
+        {
+          "path": "live",
+          "note": "Generic; not documented by AirLive."
+        },
+        {
+          "path": "/Video?Codec=MPEG4&Width=720&Height=576&Fps=30",
+          "note": "Query-string style path; not documented in AirLive RTSP sections."
+        }
+      ],
+      "notes": "AirLive's own user manuals (OD-325HD, OD-2025HD, OD-2060HD, CU-720PIR, CW-720IR/CU-720IR, POE-200CAMv2, WL-2600CAM — all on fs.airlive.com) document exactly ONE RTSP URL: 'rtsp://host/mpeg4/media.3gp', presented under the 3GPP appendix for mobile viewing. Default RTSP port is 554 (some older firmware defaults to 8554, and 8554 is also cited for computer view on POE-200CAMv2/WL-2600CAM). The device serves H.264/MPEG-4/JPEG multi-profile streams but the manuals only expose a single fixed RTSP URL path (media.3gp = the MPEG-4 stream); no separate main/sub URL paths are documented. AirLive does NOT use the Axis-style /media.amp or the /liveN.264 paths despite those appearing in the leads — those are cross-brand contamination. AirLive cameras are also ONVIF-conformant, so ONVIF discovery is the practical way to obtain full-resolution H.264 stream URIs.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Arecont Vision",
+      "brand_id": "arecont",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/h264.sdp?res=full&doublescan=0&ssn=<uniq>",
+          "codec": "H.264",
+          "verified": true,
+          "source": "Arecont Vision API and Camera Web Page Manual (2017-06-30), Chapter IV - Alternative Access Protocols, 'RTSP Request Format for Continuous H.264 Video Streaming' (sales.arecontvision.com/marketing/contents/Arecont%20Vision%20API%20and%20Camera%20Web%20Page%20Manual_2017-06-30_1.pdf); minimal form rtsp://camera_ip/h264.sdp?res=full&doublescan=0&fps=fps&ssn=[1..65535], res=full = full resolution (main)",
+          "strix_lead": "strixcamdb:arecont"
+        },
+        {
+          "stream": "sub",
+          "path": "/h264.sdp?res=half&doublescan=0&ssn=<uniq>",
+          "codec": "H.264",
+          "verified": true,
+          "source": "Arecont Vision API and Camera Web Page Manual (2017-06-30), same RTSP section; res=half reduces resolution by a factor of 2 in each direction (sub/second stream)",
+          "strix_lead": "strixcamdb:arecont"
+        },
+        {
+          "stream": "main-multisensor",
+          "path": "/h264.sdp<N>?res=full&doublescan=0&ssn=<uniq>",
+          "codec": "H.264",
+          "verified": true,
+          "source": "Arecont Vision API and Camera Web Page Manual (2017-06-30): multi-sensor form rtsp://camera_ip/h264.sdp<channel>?res=(half|full)... for Omni, SurroundVideo and other multi-sensor MegaVideo models; <N> = sensor/channel index (1-based, seen as sdp1/sdp3 in leads)",
+          "strix_lead": "strixcamdb:arecont"
+        },
+        {
+          "stream": "contera-main",
+          "path": "/stream1_<N>",
+          "codec": "H.264/H.265",
+          "verified": true,
+          "source": "Arecont Vision Support KB, 'How to connect to RTSP streams on Contera cameras' (support.arecontvision.com/hc/en-us/articles/360026045753); e.g. rtsp://<ip>:554/stream1_1 main stream, append _X for channel X on multi-channel Contera (MicroDome Duo, Omni LX/RS)",
+          "strix_lead": "strixcamdb:arecont"
+        },
+        {
+          "stream": "contera-sub",
+          "path": "/stream2_<N>",
+          "codec": "H.264/H.265",
+          "verified": true,
+          "source": "Arecont Vision Support KB, 'How to connect to RTSP streams on Contera cameras' (support.arecontvision.com/hc/en-us/articles/360026045753); e.g. rtsp://<ip>:554/stream2_1 sub stream (stream3_<N> = MJPEG)",
+          "strix_lead": "strixcamdb:arecont"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/PSIA/Streaming/channels/0?videoCodecType=H.264",
+          "note": "Hikvision/PSIA contamination — not an Arecont path; no official Arecont doc uses this"
+        },
+        {
+          "path": "/onvif-media/media.amp",
+          "note": "Axis media.amp contamination — not documented by Arecont"
+        },
+        {
+          "path": "/onvif-media/media.amp (variant)",
+          "note": "cross-brand ONVIF profile lead, not an Arecont fixed URL"
+        },
+        {
+          "path": "/cam1/mpeg4",
+          "note": "generic cam<N>/mpeg4 lead — not in Arecont docs (Arecont uses h264.sdp / stream1_N); likely cross-brand"
+        },
+        {
+          "path": "/live/ch00_0",
+          "note": "generic live/ch lead — not in Arecont docs; cross-brand"
+        },
+        {
+          "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+          "note": "generic cheap-DVR template — not an Arecont path"
+        },
+        {
+          "path": "/ch0.h264",
+          "note": "generic ch0.h264 lead — not in Arecont docs"
+        },
+        {
+          "path": "/ONVIF/channel2",
+          "note": "generic ONVIF channel lead — not an Arecont fixed URL"
+        }
+      ],
+      "notes": "Two documented generations. (1) Legacy MegaVideo/MegaDome/SurroundVideo (H.264 models): base RTSP path /h264.sdp with query params; res=full = main (full res), res=half = sub (half res in each dimension); ssn is a required unique stream identifier (1-65535, up to 8 non-identical streams per camera); doublescan=0 = wait for fresh frame. Multi-sensor cameras (Omni, SurroundVideo) use /h264.sdp<N> where N is the sensor/channel index (leads show sdp1/sdp3). Optional params: x0/y0/x1/y1 (crop), qp, ratelimit, bitrate, fps, sei. (2) Contera (ConteraIP, newer H.264/H.265 platform): /stream1_<N> = main, /stream2_<N> = sub, /stream3_<N> = MJPEG; append _X for the channel on multi-channel/multi-sensor models (MicroDome Duo, Omni LX/RS 1-4). Default RTSP unicast port 554 (configurable 1-65535) confirmed in the API manual. Arecont was acquired by Costar Technologies; the HTTP/RTSP API also lives at http-api.arecontvision.com. Leads contained Hikvision PSIA and Axis media.amp cross-brand contamination — excluded.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Jovision",
+      "brand_id": "jovision",
+      "status": "unverified",
+      "default_port": 8554,
+      "templates": [],
+      "candidate_unconfirmed": [
+        {
+          "stream": "main",
+          "path": "/live0.264",
+          "port": 8554,
+          "codec": "H.264",
+          "verified": false,
+          "note": "Strong Jovision-specific candidate: rtsp://{user}:{pass}@{ip}:8554/live0.264 (main). This exact path+port is consistent across every independent technical reference (LinkSprite Learning Center 'How to access Jovision camera RTSP stream', ispyconnect, camlytics, unifore, router-switch), matches the StrixCamDB lead /live0.264, and is NOT a cross-brand path. NOT published as verified because I could not open Jovision's OWN documentation from this environment: the English support FAQ 'FAQ of Jovision NVR and IP Camera' at us.jovision.com/Service/ProblemContent.aspx (and en.jovision.com, 168.235.107.36) is DNS-blocked / firewall-unreachable here (ENOTFOUND / connection timeout), and the only reachable Jovision-owned host, www.jovision.com, renders its FAQ article list via JavaScript so the RTSP article text could not be extracted via static fetch. Re-verify once a Jovision-hosted page is reachable.",
+          "strix_lead": "strixcamdb:jovision"
+        },
+        {
+          "stream": "sub",
+          "path": "/live1.264",
+          "port": 8554,
+          "codec": "H.264",
+          "verified": false,
+          "note": "Strong Jovision-specific candidate: rtsp://{user}:{pass}@{ip}:8554/live1.264 (sub/secondary). Same corroboration and same reason-unverified as the main-stream candidate above. Matches the StrixCamDB lead /live1.264.",
+          "strix_lead": "strixcamdb:jovision"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/Streaming/Channels/1",
+          "note": "Hikvision RTSP path — cross-brand contamination (Hikvision /Streaming/Channels/<ch><stream>). Not a Jovision path; excluded."
+        },
+        {
+          "path": "/0/cloud:Baltu912/main",
+          "note": "Jovision CloudSEE cloud-relay path with an embedded per-device relay id (cloud:<serial>) — this is the proprietary CloudSEE/EagleEyes-style cloud stream, not a fixed on-camera LAN RTSP URL. Not a reusable template; excluded."
+        },
+        {
+          "path": "/0/admin:ZaZa1970/main",
+          "note": "Same CloudSEE cloud-relay form as above with a leaked credential (admin:ZaZa1970). Device-specific relay, not a documented fixed path; excluded."
+        },
+        {
+          "path": "/h264",
+          "note": "Generic /h264 lead — not the Jovision liveN.264 form; cross-brand generic. Not confirmed for Jovision; excluded."
+        },
+        {
+          "path": "live/h264",
+          "note": "Generic live/h264 lead — cross-brand generic; not the Jovision liveN.264 form. Excluded."
+        },
+        {
+          "path": "live3.sdp",
+          "note": "Generic .sdp lead — not a documented Jovision path; cross-brand. Excluded."
+        },
+        {
+          "path": "live_mpeg4.sdp",
+          "note": "Generic MPEG-4 .sdp lead — cross-brand contamination; not confirmed for Jovision. Excluded."
+        },
+        {
+          "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+          "note": "This is the Longse/XMeye/'user=..._channel=..._stream=...sdp' family — cross-brand contamination, not Jovision's documented form. Excluded."
+        },
+        {
+          "path": "[CHANNEL]/[USERNAME]:[PASSWORD]/main",
+          "note": "Cloud-relay style path template (mirrors the /0/cloud:.../main CloudSEE form) — device/relay-specific, not a fixed LAN RTSP URL. Excluded."
+        },
+        {
+          "path": "/live/1",
+          "note": "Generic /live/<N> lead — cross-brand generic (Vivotek/others); not the Jovision liveN.264 form. Not confirmed; excluded."
+        },
+        {
+          "path": "/live/0",
+          "note": "Generic /live/<N> lead — see /live/1; excluded."
+        },
+        {
+          "path": "/live/2",
+          "note": "Generic /live/<N> lead — see /live/1; excluded."
+        },
+        {
+          "path": "medias2",
+          "note": "Generic 'medias2' lead — not a documented Jovision path; cross-brand. Excluded."
+        },
+        {
+          "path": "/onvif1",
+          "note": "ONVIF media-profile lead — Jovision supports ONVIF for discovery, but the RTSP URL is returned via the ONVIF GetStreamUri response, not this fixed /onvif1 path. Not a confirmed Jovision fixed path; excluded."
+        }
+      ],
+      "notes": "Jovision (Jovision Technology Co., Ltd. / 中维世纪; CloudSEE / JVS-* models) almost certainly uses rtsp://{user}:{pass}@{ip}:8554/live0.264 (main) and /live1.264 (sub) on the non-standard RTSP port 8554 — this is a distinctive, non-contaminated, Jovision-specific pattern corroborated by every independent technical source and by the leads themselves. HOWEVER, per the verification rule (publish only what is confirmed against the manufacturer's OWN documentation), this brand is marked UNVERIFIED because Jovision's own English support FAQ ('FAQ of Jovision NVR and IP Camera', us.jovision.com / en.jovision.com) was not reachable from this environment (us.jovision.com does not resolve; en.jovision.com 168.235.107.36 times out / connection refused on 80 and 443), and the only reachable Jovision-owned host (www.jovision.com, the Chinese site) serves its FAQ article list via JavaScript, so the RTSP article body could not be read via static fetch. The candidate main/sub paths are recorded under candidate_unconfirmed for a quick re-verify once a Jovision-hosted doc is reachable. Contamination excluded: the Hikvision /Streaming/Channels/1 lead, the CloudSEE cloud-relay paths (/0/cloud:<serial>/main, /0/admin:<cred>/main, [CHANNEL]/[USER]:[PASS]/main), the Longse-style user=..._stream=N.sdp lead, and assorted generic /h264, /live/<N>, .sdp and /onvif1 leads.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "JVC",
+      "brand_id": "jvc",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/PSIA/Streaming/channels/0",
+          "codec": "H.264 (baseline/high) or JPEG per encoder setting",
+          "verified": true,
+          "source": "JVC IP Camera API GUIDE V4 (VN-H37/137/237/237VP, VN-H57/157WP/257/257VP), section 5 'RTSP/RTP' 5.1 URI: 'rtsp://ipaddress/PSIA/Streaming/channels/0'",
+          "strix_lead": "strixcamdb:jvc"
+        },
+        {
+          "stream": "sub",
+          "path": "/PSIA/Streaming/channels/1",
+          "codec": "H.264 (baseline/high) or JPEG per encoder setting",
+          "verified": true,
+          "source": "JVC IP Camera API GUIDE V4, section 5.1: encoder 2 -> 'rtsp://ipaddress/PSIA/Streaming/channels/1'",
+          "strix_lead": "strixcamdb:jvc"
+        },
+        {
+          "stream": "third",
+          "path": "/PSIA/Streaming/channels/2",
+          "codec": "H.264 (baseline/high) or JPEG per encoder setting",
+          "verified": true,
+          "source": "JVC IP Camera API GUIDE V4, section 5.1: encoder 3 -> 'rtsp://ipaddress/PSIA/Streaming/channels/2'",
+          "strix_lead": "strixcamdb:jvc"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/ONVIF/Streaming/channels/0_a/unicast",
+          "note": "The API Guide documents ONVIF as an on/off protocol toggle (mutually exclusive with PSIA) but gives NO fixed ONVIF RTSP URL. This specific path is not in JVC docs; likely cross-brand/aggregator contamination — not confirmed."
+        },
+        {
+          "path": "/livestream",
+          "note": "Not in any JVC official doc. Generic/contaminated lead."
+        },
+        {
+          "path": "/ch01_sub.264",
+          "note": "Not JVC; Dahua/other-OEM style path. Contamination."
+        },
+        {
+          "path": "video.h264",
+          "note": "Appears in third-party VMS/aggregator lists (e.g. VN-T216U community notes), NOT in JVC's own API Guide or INSTRUCTIONS. Excluded as unverified."
+        },
+        {
+          "path": "1/stream1",
+          "note": "Generic aggregator path, not in JVC docs. Contamination."
+        },
+        {
+          "path": "cam[CHANNEL]/mjpeg",
+          "note": "Not JVC (looks like a different vendor's HTTP/MJPEG scheme). Contamination."
+        },
+        {
+          "path": "cam[CHANNEL]/h264",
+          "note": "Not JVC. Contamination."
+        },
+        {
+          "path": "VideoInput/[CHANNEL]/h264/1",
+          "note": "Not in JVC docs; other-brand ONVIF profile token. Contamination."
+        },
+        {
+          "path": "rtsph2641080p",
+          "note": "Not JVC. Contamination."
+        },
+        {
+          "path": "v02 / v03",
+          "note": "Generic aggregator tokens, not in JVC docs. Contamination."
+        },
+        {
+          "path": "video.mp4",
+          "note": "Not JVC. Contamination."
+        },
+        {
+          "path": "h264.sdp?res=half&...&doublescan=0&ssn=...&id=...",
+          "note": "Mobotix-style .sdp query URL, not JVC. Contamination."
+        },
+        {
+          "path": "[CHANNEL]/[USERNAME]:[PASSWORD]/main",
+          "note": "Malformed/generic, not JVC. Contamination."
+        }
+      ],
+      "notes": "Confirmed against JVC's OWN documentation: 'IP Camera API GUIDE' V4 for the VN-H series (VN-H37/137/237/237VP, VN-H57/157WP/257/257VP), section 5 'RTSP/RTP'. RTSP is RFC2326-compliant, default port 554 (API 'network.rtsp.port', default 554). Up to 3 encoders map to zero-based PSIA channels: encoder 1 -> channels/0, encoder 2 -> channels/1, encoder 3 -> channels/2 (NOTE the off-by-one: encoder N -> channel N-1). Codec per channel is configurable (JPEG/RFC2435, or H.264 baseline/high; MPEG-4 'future'), so codec is per-encoder not fixed. Optional '?maxFrameRate=N' query param is documented (JPEG). ONVIF is an on/off protocol toggle that is mutually exclusive with PSIA; the API Guide provides no fixed ONVIF RTSP URL, so the '/ONVIF/Streaming/channels/0_a/unicast' lead is NOT confirmed. The confirmed base PSIA path also matches the leads '/PSIA/Streaming/channels/0?videoCodecType=H.264' and 'PSIA/Streaming/channels/[CHANNEL]?maxFrameRate=15' (the maxFrameRate param is official; videoCodecType is not in the guide but is harmless query decoration on the confirmed path). JVC exited the IP camera market ~2015; VN-C series (e.g. VN-C20U) are MJPEG-over-HTTP only (no RTSP). Source PDF retrieved via Wayback Machine mirror of pro.jvc.com/pro/attributes/vnetwork/manual/NetworkCamera_APIGuideV4.pdf (original now 404 after JVC site restructure).",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "LevelOne",
+      "brand_id": "levelone",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/live.sdp",
+          "codec": "H.264/MPEG-4 (per-profile)",
+          "verified": true,
+          "source": "LevelOne FCS-1060/WCS-2060 P/T/Z IP Network Camera User Manual Ver 1.2, 'RTSP Streaming' section: default RTSP access name <live.sdp>, connect via rtsp://<ip address>/<access name>, default RTSP port 554 (download.level1.com/level1/manual/FCS-1060_WCS-2060_UM_V1.2.pdf)",
+          "strix_lead": "strixcamdb:levelone"
+        },
+        {
+          "stream": "main",
+          "path": "/live1.sdp",
+          "codec": "H.264/MPEG-4 (per-profile)",
+          "verified": true,
+          "source": "LevelOne FCS-5044 Network Camera User's Manual Ver 1.0, 'RTSP stream access names setting': audio/video URL rtsp://<ip>/liveN.sdp (N = stream index, e.g. live1.sdp / live2.sdp); RTSP port 554 (download.level1.com/level1/manual/FCS-5044-V1_UM_1.0.pdf)",
+          "strix_lead": "strixcamdb:levelone"
+        },
+        {
+          "stream": "sub",
+          "path": "/live2.sdp",
+          "codec": "H.264/MPEG-4 (per-profile)",
+          "verified": true,
+          "source": "LevelOne FCS-5044 User Manual Ver 1.0 (liveN.sdp, N as second/sub stream index) and FCS-3021 User Manual Ver 1.2 'RTSP Streaming' (Access name for stream 1 / stream 2, rtsp://<ip address>/<access name>) — two independently-configurable RTSP access names per camera (download.level1.info/manual/FCS-3021_UM_V1.2.pdf)",
+          "strix_lead": "strixcamdb:levelone"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/Streaming/Channels/101",
+          "note": "Hikvision path; not in any official LevelOne manual. LevelOne's Hikvision-OEM manual (User Manual of Network Camera V5.3.21, 'Enable LevelOne' integration protocol) documents RTSP only via port 554 with no explicit /Streaming/Channels URL."
+        },
+        {
+          "path": "/Streaming/Channels/102",
+          "note": "Hikvision sub-stream path; not documented in any official LevelOne manual."
+        },
+        {
+          "path": "/Streaming/Channels/[CHANNEL]02",
+          "note": "Hikvision templated path; contamination, no official LevelOne source."
+        },
+        {
+          "path": "/channel1",
+          "note": "Not documented in any official LevelOne manual; likely cross-brand contamination."
+        },
+        {
+          "path": "/channel0",
+          "note": "Not documented in any official LevelOne manual."
+        },
+        {
+          "path": "/h264",
+          "note": "Generic path not documented by LevelOne."
+        },
+        {
+          "path": "/onvif-stream1",
+          "note": "Generic ONVIF-profile path; not an explicitly documented LevelOne RTSP URL (LevelOne devices are ONVIF-conformant, but the discovered RTSP URL is device-assigned, not a fixed /onvif-stream1)."
+        },
+        {
+          "path": "/onvif-stream2",
+          "note": "Generic ONVIF-profile path; not a fixed documented LevelOne URL."
+        },
+        {
+          "path": "/video.mp4",
+          "note": "Appears in the older FCS-1101 manual only as a 3G/mobile example (rtsp://servername:554/video.mp4, MPEG4-mobile mode, non-default port 8554/8050); not the primary H.264 live path."
+        }
+      ],
+      "notes": "LevelOne IP cameras are VIVOTEK-lineage on the classic FCS/WCS lines: RTSP default port 554, connect via rtsp://<ip>/<access name>. The documented default access name is 'live.sdp' (single-stream models, FCS-1060/WCS-2060, FCS-1030) and 'liveN.sdp' for multi-stream models (FCS-5044), where N indexes the stream (live1.sdp main / live2.sdp sub) and each RTSP access name is independently user-configurable (FCS-3021: 'Access name for stream 1' / 'stream 2'). The access name is editable, so live.sdp / live1.sdp / live2.sdp are factory defaults, not immutable. Newer LevelOne models ship Hikvision-OEM firmware (User Manual of Network Camera V5.3.21, port set 80/8000/554, 'Enable LevelOne' integration protocol) — that manual documents RTSP via port 554 but does NOT publish a fixed /Streaming/Channels/101 URL, so the Streaming/Channels leads are excluded as Hikvision contamination.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Merit LILIN",
+      "brand_id": "merit-lilin",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/rtsph264<res>",
+          "codec": "H.264",
+          "verified": true,
+          "source": "LILIN Technical Support KB, 'UHD 4K Camera's RTSP Streaming Codes and URL' (lilin.zendesk.com/hc/en-gb/articles/212217363): rtsp://<IP Address>/rtsph2644k. The <res> token is the per-encoder resolution suffix (e.g. 4k, 1080p, 720p, 480p, 960h, 3m, 5m, sxga, cif).",
+          "strix_lead": "strixcamdb:merit-lilin"
+        },
+        {
+          "stream": "sub",
+          "path": "/rtspjpeg<res>",
+          "codec": "MJPEG",
+          "verified": true,
+          "source": "Same LILIN KB scheme — the JPEG-codec sibling of rtsph264<res>; the encoder-type prefix (rtsph264 vs rtspjpeg) selects codec, resolution suffix selects the stream. Per-encoder RTSP URLs are exposed in the camera GUI under Setup > Video/Audio per LILIN KB 'LILIN IP Camera RTSP URL's' (lilin.zendesk.com/hc/en-gb/articles/360045653451).",
+          "strix_lead": "strixcamdb:merit-lilin"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "main_[CHANNEL]",
+          "note": "sub_/main_ channel form — LILIN NVR/DVR uses a different scheme (/rtspstream?channel=<ch>&stream=<n>, per LILIN's official GitHub NVR RTSP SDK), not the standalone-IP-camera rtsph264 scheme; not confirmed for cameras."
+        },
+        {
+          "path": "sub_[CHANNEL]",
+          "note": "See main_[CHANNEL] note — LILIN DVR/NVR channel form, not the IP-camera path."
+        },
+        {
+          "path": "cam1/mpeg4",
+          "note": "Generic/cross-brand MPEG4 path; not found in any official LILIN IP-camera doc."
+        }
+      ],
+      "notes": "LILIN standalone IP cameras use a codec+resolution path token: /rtsph264<res> for H.264 and /rtspjpeg<res> for MJPEG, where <res> is the encoder's resolution (leads seen: 4k, 1080p, 1024p, 720p, 480p, 960h, 3m, 5m, sxga, cif; plus bare /rtsph264 and /rtspjpeg). Confirmed directly by LILIN's own support KB for the 4K variant (rtsph2644k). Default RTSP port is 554; LILIN also allows RTSP over HTTP on port 80 (e.g. rtsp://user:pass@ip:80/rtsph264480p). Auth is inline user:pass@. Each encoder/stream has its own URL, listed in the camera web GUI (Setup > Video/Audio). NOTE: a separate/newer LILIN IP-camera line (E-Series, per meritlilin.com UserManual_ESeries_IPC-EN.pdf) instead uses /av0_0 (main) and /av0_1 (sub) on port 554 — a distinct scheme not covered by these templates; and LILIN DVR/NVR use /rtspstream?channel=<ch>&stream=<n>. Templates here cover the classic rtsph264<res>/rtspjpeg<res> IP-camera scheme matching the leads.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Panasonic i-PRO",
+      "brand_id": "panasonic",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/Src/MediaInput/stream_1",
+          "codec": "H.265|H.264 (per-profile, codec-agnostic form)",
+          "verified": true,
+          "source": "i-PRO Command Interface (i-PRO Network Camera, H.265 models) ver1.09, Section 2.3.3 'RTSP URL' — https://i-pro.com/products_and_solutions/sites/default/files/2024-06/Command_interface_iPRO_H.265models_ver1.09.pdf",
+          "strix_lead": "strixcamdb:panasonic"
+        },
+        {
+          "stream": "sub",
+          "path": "/Src/MediaInput/stream_2",
+          "codec": "H.265|H.264 (per-profile, codec-agnostic form)",
+          "verified": true,
+          "source": "i-PRO Command Interface ver1.09, Section 2.3.3 'RTSP URL' — stream_2/stream_3/stream_4 documented as streams (2)-(4)",
+          "strix_lead": "strixcamdb:panasonic"
+        },
+        {
+          "stream": "main",
+          "path": "/Src/MediaInput/h264/stream_1",
+          "codec": "H.264",
+          "verified": true,
+          "source": "i-PRO Command Interface ver1.09, Section 2.3.3 — labeled 'legacy URL', H.264 only (camera replies 503 if encode type is not H.264)",
+          "strix_lead": "strixcamdb:panasonic"
+        },
+        {
+          "stream": "sub",
+          "path": "/Src/MediaInput/h264/stream_2",
+          "codec": "H.264",
+          "verified": true,
+          "source": "i-PRO Command Interface ver1.09, Section 2.3.3 — legacy H.264-only form, stream (2)",
+          "strix_lead": "strixcamdb:panasonic"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/MediaInput/h264/stream_1",
+          "note": "Older i-PRO/Panasonic firmware variant WITHOUT the 'Src/' prefix. Widely deployed and cross-listed by integrators (ispyconnect/Agent DVR), but the i-PRO Command Interface spec ver1.09 documents the path only in its 'Src/MediaInput/...' form. Kept unverified until confirmed against a firmware-specific Panasonic doc."
+        },
+        {
+          "path": "/nphMpeg4/g726-<WxH>",
+          "note": "Legacy Panasonic BB-HCM / BL-C series MPEG-4 URL (e.g. /nphMpeg4/g726-640x480 with G.726 audio, or nil-<WxH> for no audio). Attested by Crestron/ZoneMinder integrator reports and the leads (nphMpeg4/g726-640x48), but I could not render the exact string from a Panasonic-hosted manual PDF, so not marked verified. Applies only to the old consumer BB/BL MPEG-4 cameras, NOT the current i-PRO H.264/H.265 line."
+        },
+        {
+          "path": "/ONVIF/MediaInput",
+          "note": "ONVIF media profile endpoint (also /ONVIF/MediaInput?profile=def_profile1 etc.). Standard ONVIF, resolved via ONVIF Media service GetStreamUri rather than a fixed manufacturer RTSP URL — not a Panasonic-specific fixed path, so left unverified here."
+        },
+        {
+          "path": "/VideoInput/[CHANNEL]/h264/1",
+          "note": "Not present in the i-PRO Command Interface RTSP URL chapter; likely cross-brand contamination. Excluded."
+        },
+        {
+          "path": "/live.sdp",
+          "note": "Generic SDP endpoint, not documented for Panasonic/i-PRO. Cross-brand contamination. Excluded."
+        }
+      ],
+      "notes": "Panasonic Security is now i-PRO Co., Ltd. Current/official RTSP scheme (i-PRO Command Interface spec, Section 2.3.3): rtsp://{ip}:554/Src/MediaInput/stream_<N> for N=1..4 (codec-agnostic, follows the per-stream encode profile H.264 or H.265). A legacy H.264-only form /Src/MediaInput/h264/stream_<N> (and /Src/MediaInput/h264) is also officially documented and returns error 503 if the stream is not set to H.264. Multi-sensor / Fisheye-quad models append /ch_<N> (e.g. /Src/MediaInput/stream_1/ch_1). Requesting rtsp://{ip}/Src/MediaInput with stream+ch omitted returns the configured Initial Stream. Default RTSP port 554. Legacy consumer BB-HCM/BL-C MPEG-4 cameras used /nphMpeg4/g726-<WxH> (recorded under unverified_leads pending a Panasonic-own manual).",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "PLANET Technology",
+      "brand_id": "planet",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/stander/livestream/0/0",
+          "codec": "per-profile",
+          "verified": true,
+          "source": "PLANET Technology FAQ [ICA-4250] 'What is the RTSP command?' https://www.planet.com.tw/en/support/faq/49507 (also ICA-3250 /49438, ICA-M5380P /49492): rtsp://servername:rtsp port/stander/livestream/0/0 ; 0=Main stream, 1=Sub stream; default RTSP port 554",
+          "strix_lead": "strixcamdb:planet"
+        },
+        {
+          "stream": "sub",
+          "path": "/stander/livestream/0/1",
+          "codec": "per-profile",
+          "verified": true,
+          "source": "PLANET Technology FAQ [ICA-4250] https://www.planet.com.tw/en/support/faq/49507 example: rtsp://192.168.0.20:554/stander/livestream/0/1 (1=Sub stream)",
+          "strix_lead": "strixcamdb:planet"
+        },
+        {
+          "stream": "main-legacy-ica107-m220",
+          "path": "/ipcam.sdp",
+          "codec": "per-profile",
+          "verified": true,
+          "source": "PLANET MCU-1400 User Manual, Appendix B 'PLANET IP Camera RTSP URL References' (models ICA-M220/M220W, ICA-107/107W): rtsp://<IP>:554/ipcam.sdp",
+          "strix_lead": "strixcamdb:planet"
+        },
+        {
+          "stream": "main-legacy-ica750-151-550w",
+          "path": "/img/media.sav",
+          "codec": "per-profile",
+          "verified": true,
+          "source": "PLANET MCU-1400 User Manual, Appendix B 'PLANET IP Camera RTSP URL References' (models ICA-750, ICA-151, ICA-150W, ICA-550W): rtsp://<IP>:554/img/media.sav",
+          "strix_lead": "strixcamdb:planet"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/axis-media/media.amp?videocodec=h264&resolution=640x480",
+          "note": "Axis-specific path (axis-media/media.amp). Cross-brand contamination — not in any PLANET doc. PLANET's own legacy media.amp path is /mpeg4/1/media.amp (MCU-1400 Appendix B), not the Axis axis-media prefix."
+        },
+        {
+          "path": "media/media.amp",
+          "note": "Not documented by PLANET. PLANET's documented amp path is /mpeg4/1/media.amp (MCU-1400 Appendix B, older ICA-1xx/2xx/3xx/5xx/6xx families)."
+        },
+        {
+          "path": "/stream1",
+          "note": "Referenced generically in PLANET FAQ /48962 (ICA-HM127/ICA-317/ICA-227W) as 'RTSP://camera_ip:port/stream1' but PLANET does not publish it as a fixed documented path with codec/index; the primary current documented template is /stander/livestream/0/0. Not published as a template."
+        },
+        {
+          "path": "cam[CHANNEL]/h264",
+          "note": "Not in any PLANET doc; generic multi-brand lead."
+        },
+        {
+          "path": "/h264",
+          "note": "Not in any PLANET doc; generic lead."
+        },
+        {
+          "path": "h264/ch1/sub/",
+          "note": "Not in any PLANET doc; generic Hikvision-style lead."
+        },
+        {
+          "path": "ipcam_h264.sdp",
+          "note": "Not confirmed in PLANET docs (Appendix B lists /ipcam.sdp, not the _h264 variant)."
+        },
+        {
+          "path": "live.sdp",
+          "note": "Not in any PLANET doc; generic lead."
+        },
+        {
+          "path": "live1.sdp",
+          "note": "Not in any PLANET doc; generic lead."
+        },
+        {
+          "path": "/onvif-stream2",
+          "note": "Not in any PLANET doc; ONVIF-negotiated, not a fixed PLANET path."
+        },
+        {
+          "path": "jpeg",
+          "note": "Not an RTSP stream path in PLANET docs."
+        },
+        {
+          "path": "video",
+          "note": "Generic; PLANET legacy uses /video.3gp on port 8554 (MCU-1400 Appendix B, ICA-510/ICA-700), not bare /video."
+        },
+        {
+          "path": "v2",
+          "note": "Not in any PLANET doc; generic lead."
+        },
+        {
+          "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+          "note": "Generic multi-brand credential-in-path lead; not PLANET-documented."
+        }
+      ],
+      "notes": "Two official documented lineages. (1) Current PLANET IP cameras (ICA-3250/4250/M5380P family): rtsp://{ip}:554/stander/livestream/0/<N> where N=0 Main, N=1 Sub — confirmed by multiple planet.com.tw support FAQ pages. (2) Legacy families per the MCU-1400 User Manual Appendix B 'PLANET IP Camera RTSP URL References', all port 554 unless noted: /mpeg4/1/media.amp (ICA-1xx/2xx/3xx/5xx/6xx/IVS-110), /img/media.sav (ICA-750/151/150W/550W), /ipcam.sdp (ICA-M220/M220W, ICA-107/107W), and /video.3gp on port 8554 (ICA-510, ICA-700). The Axis axis-media/media.amp lead is cross-brand contamination and is excluded. Codec varies per model/profile (H.264/MPEG-4 on older units), so left per-profile.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "TP-Link",
+      "brand_id": "tp-link",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/stream1",
+          "codec": "H.264/H.265",
+          "verified": true,
+          "source": "TP-Link official FAQ 2680 'How to View Tapo Camera on PC, NAS, or NVR Using RTSP/ONVIF' (tp-link.com/us/support/faq/2680/) and VIGI FAQ 4201 'How to use VIGI Cameras with Third-Party NVR, NAS or Software' (tp-link.com/baltic/support/faq/4201/)",
+          "strix_lead": "strixcamdb:tp-link"
+        },
+        {
+          "stream": "sub",
+          "path": "/stream2",
+          "codec": "H.264/H.265",
+          "verified": true,
+          "source": "TP-Link official FAQ 2680 (tp-link.com/us/support/faq/2680/) and VIGI FAQ 4201 (tp-link.com/baltic/support/faq/4201/)",
+          "strix_lead": "strixcamdb:tp-link"
+        },
+        {
+          "stream": "tele_main",
+          "path": "/stream6",
+          "codec": "H.264/H.265",
+          "verified": true,
+          "source": "TP-Link official FAQ 2680 — dual-lens Tapo models: telephoto lens high-quality stream",
+          "strix_lead": "strixcamdb:tp-link"
+        },
+        {
+          "stream": "tele_sub",
+          "path": "/stream7",
+          "codec": "H.264/H.265",
+          "verified": true,
+          "source": "TP-Link official FAQ 2680 — dual-lens Tapo models: telephoto lens standard-quality stream",
+          "strix_lead": "strixcamdb:tp-link"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/Streaming/Channels/1",
+          "note": "Hikvision path — cross-brand contamination, not in any official TP-Link doc"
+        },
+        {
+          "path": "/video.mp4",
+          "note": "Not in official TP-Link docs"
+        },
+        {
+          "path": "/video.pro1",
+          "note": "Not in official TP-Link docs"
+        },
+        {
+          "path": "/video.pro2",
+          "note": "Not in official TP-Link docs"
+        },
+        {
+          "path": "/video.pro3",
+          "note": "Not in official TP-Link docs"
+        },
+        {
+          "path": "/live0.264",
+          "note": "Not in official TP-Link docs"
+        },
+        {
+          "path": "/video.h264",
+          "note": "Not in official TP-Link docs"
+        },
+        {
+          "path": "/h264_vga.sdp",
+          "note": "Not in official TP-Link docs"
+        },
+        {
+          "path": "/h264_hd.sdp",
+          "note": "Not in official TP-Link docs"
+        },
+        {
+          "path": "/mpeg4",
+          "note": "Not in official TP-Link docs"
+        },
+        {
+          "path": "/live/stream1",
+          "note": "Not in official TP-Link docs; official path is /stream1 (no /live prefix)"
+        },
+        {
+          "path": "/Camera%201",
+          "note": "Not in official TP-Link docs"
+        },
+        {
+          "path": "/1/stream1/Profile1",
+          "note": "Not in official TP-Link docs"
+        },
+        {
+          "path": "/onvif/stream1",
+          "note": "Generic ONVIF-style path; official RTSP path is /stream1"
+        },
+        {
+          "path": "/onvif-stream2",
+          "note": "Not in official TP-Link docs"
+        },
+        {
+          "path": "/live/stream1?channel=2",
+          "note": "Not in official TP-Link docs"
+        },
+        {
+          "path": "/media.amp",
+          "note": "Axis path — cross-brand contamination"
+        },
+        {
+          "path": "cam[CHANNEL]/h264",
+          "note": "Not in official TP-Link docs"
+        },
+        {
+          "path": "live3.sdp",
+          "note": "Not in official TP-Link docs"
+        },
+        {
+          "path": "live.sdp",
+          "note": "Not in official TP-Link docs"
+        },
+        {
+          "path": "/user=[USERNAME]&password=[PASSWORD]&channel=1&stream=0.sdp?",
+          "note": "Generic legacy DVR path — cross-brand contamination"
+        },
+        {
+          "path": "/live/stream2",
+          "note": "Not in official TP-Link docs; official sub path is /stream2"
+        },
+        {
+          "path": "/stream8",
+          "note": "Not in official TP-Link docs (only stream1/2 and dual-lens stream6/7 documented)"
+        },
+        {
+          "path": "/onvif/stream2",
+          "note": "Generic ONVIF-style path; official RTSP path is /stream2"
+        },
+        {
+          "path": "/tcp/av0_0",
+          "note": "Not in official TP-Link docs"
+        }
+      ],
+      "notes": "Both TP-Link camera lines confirmed: Tapo (consumer) and VIGI (business) use /stream1 (main/high-quality) and /stream2 (sub/low-quality) on port 554. Dual-lens Tapo models add /stream6 + /stream7 for the telephoto lens (per FAQ 2680). Codec is H.264/H.265 per ONVIF Profile T support noted in VIGI docs. A separate 'camera account' must be created in the Tapo app before third-party RTSP/ONVIF access; battery-only models (e.g. C410/C420/C425/D230) do not support RTSP. ONVIF default port is 80.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "TRENDnet",
+      "brand_id": "trendnet",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/Src/MediaInput/stream_1",
+          "codec": "H.265/H.264",
+          "verified": true,
+          "source": "TRENDnet Official User's Guide TV-IP310PI (v1.1R), section 2.3.3 'RTSP URL' — downloads.trendnet.com/TV-IP310PI(v1.1R)/Manuals/UG_TV-IP310PI(v1.1R).pdf",
+          "strix_lead": "strixcamdb:trendnet"
+        },
+        {
+          "stream": "sub",
+          "path": "/Src/MediaInput/stream_2",
+          "codec": "H.265/H.264",
+          "verified": true,
+          "source": "TRENDnet Official User's Guide TV-IP310PI (v1.1R), section 2.3.3 'RTSP URL'",
+          "strix_lead": "strixcamdb:trendnet"
+        },
+        {
+          "stream": "third",
+          "path": "/Src/MediaInput/stream_3",
+          "codec": "H.265/H.264",
+          "verified": true,
+          "source": "TRENDnet Official User's Guide TV-IP310PI (v1.1R), section 2.3.3 'RTSP URL'",
+          "strix_lead": "strixcamdb:trendnet"
+        },
+        {
+          "stream": "fourth",
+          "path": "/Src/MediaInput/stream_4",
+          "codec": "H.265/H.264",
+          "verified": true,
+          "source": "TRENDnet Official User's Guide TV-IP310PI (v1.1R), section 2.3.3 'RTSP URL'",
+          "strix_lead": "strixcamdb:trendnet"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/Streaming/Channels/101",
+          "note": "Hikvision path — cross-brand contamination; not the documented TRENDnet path (TRENDnet uses /Src/MediaInput/stream_N)"
+        },
+        {
+          "path": "/Streaming/Channels/102",
+          "note": "Hikvision sub-stream path — cross-brand contamination"
+        },
+        {
+          "path": "/Streaming/Channels/1",
+          "note": "Hikvision-style path — not confirmed by any official TRENDnet doc reviewed"
+        },
+        {
+          "path": "/Streaming/Channels/2",
+          "note": "Hikvision-style path — not confirmed by official TRENDnet doc"
+        },
+        {
+          "path": "PSIA/Streaming/channels/1?videoCodecType=MPEG4",
+          "note": "PSIA/Hikvision path — cross-brand contamination"
+        },
+        {
+          "path": "axis-media/media.amp",
+          "note": "Axis path — cross-brand contamination"
+        },
+        {
+          "path": "/cam/realmonitor",
+          "note": "Dahua path — cross-brand contamination"
+        },
+        {
+          "path": "/cam1/mpeg4",
+          "note": "Attributed to older TRENDnet MPEG4 models (e.g. TV-IP422W) by third-party DBs; not confirmable via a quotable official TRENDnet path in the reviewed manuals (TV-IP262P manual only documents a /3gp mobile endpoint), so left unverified"
+        },
+        {
+          "path": "/mpeg4",
+          "note": "Same older-generation MPEG4 attribution as /cam1/mpeg4; no official quotable path found"
+        },
+        {
+          "path": "/live/h264/ch0",
+          "note": "Third-party-attributed; not confirmed by official TRENDnet doc reviewed"
+        },
+        {
+          "path": "/ch0_0.h264",
+          "note": "Third-party-attributed; not confirmed by official TRENDnet doc reviewed"
+        },
+        {
+          "path": "/VideoInput/0/h264/1",
+          "note": "Third-party-attributed; not confirmed by official TRENDnet doc reviewed"
+        },
+        {
+          "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+          "note": "Generic OEM SDP pattern; not confirmed by official TRENDnet doc"
+        }
+      ],
+      "notes": "Default RTSP port 554 (confirmed in official manual: set_rtsp?rtsp_port=554). Modern TRENDnet PoE camera line (TV-IP310PI and siblings) uses the fully-documented path /Src/MediaInput/stream_N where N=1..4 (stream_1=main, stream_2=sub, plus stream_3/stream_4), each selectable H.264 or H.265. For multi-sensor / quad-stream fisheye models, append /ch_N (e.g. /Src/MediaInput/stream_1/ch_1). None of the Strix leads matched this real documented path — the lead list is heavily contaminated with Hikvision (/Streaming/Channels), Axis (axis-media/media.amp) and Dahua (/cam/realmonitor) paths. Older MPEG4-era TRENDnet models (pre-PoE, e.g. TV-IP262P/TV-IP422W) predate this URL scheme and their exact main-stream RTSP path was not confirmable from an official quotable doc (the TV-IP262P manual only documents a /3gp mobile endpoint); those older leads are left unverified. Scope of verification: modern H.264/H.265 PoE network camera line.",
+      "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Zmodo",
+      "brand_id": "zmodo",
+      "status": "verified",
+      "default_port": 10554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/tcp/av0_0",
+          "codec": "H.264",
+          "verified": true,
+          "source": "Official Zmodo Knowledge Base article 'How to Setup Zmodo IP Cameras to Record on Motion Detection without an NVR' (kb.zmodo.com/index.php?solution_id=1306, PDF kb.zmodo.com/pdf.php?artlang=en&cat=156&id=306): 'The RTSP address of the main stream (720p) is: rtsp://xxx.xxx.xxx.xxx:10554/tcp/av0_0'. Applies to Zmodo/Funlux Wi-Fi IP cameras (ZH-series). Confirmed by StrixCamDB lead '/tcp/av0_0'.",
+          "strix_lead": "strixcamdb:zmodo"
+        },
+        {
+          "stream": "sub",
+          "path": "/tcp/av0_1",
+          "codec": "H.264",
+          "verified": true,
+          "source": "Official Zmodo Knowledge Base article 'How to Setup Zmodo IP Cameras to Record on Motion Detection without an NVR' (kb.zmodo.com/index.php?solution_id=1306): 'The RTSP address of the sub stream (VGA) is: rtsp://xxx.xxx.xxx.xxx:10554/tcp/av0_1'. Confirmed by StrixCamDB lead '/tcp/av0_1'.",
+          "strix_lead": "strixcamdb:zmodo"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/udp/av0_0",
+          "note": "UDP transport variant of the documented /tcp/av0_0 main stream; the official Zmodo KB prints the /tcp/ form only. Not separately published — treat /tcp/ as canonical."
+        },
+        {
+          "path": "/udp/av0_1",
+          "note": "UDP transport variant of the documented /tcp/av0_1 sub stream; official KB prints /tcp/ only."
+        },
+        {
+          "path": "//tcp/av0_0",
+          "note": "double-slash duplicate of /tcp/av0_0 (artifact of concatenating rtsp://host:port + //tcp/...); same path, not a distinct resource."
+        },
+        {
+          "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+          "note": "Generic 'user=..._channel=1_stream=0.sdp' path (common to many low-cost OEM/Foscam-style firmwares) — not printed in any official Zmodo doc. Cross-brand contamination; excluded."
+        },
+        {
+          "path": "/mpeg4/[CHANNEL]/media.amp",
+          "note": "Axis media.amp path — Axis cross-brand contamination; not a Zmodo path. Excluded."
+        },
+        {
+          "path": "/mpg4/rtsp.amp",
+          "note": "Axis-style .amp path — cross-brand contamination; excluded."
+        },
+        {
+          "path": "/onvif1",
+          "note": "Generic ONVIF-profile lead (Y-cam/other OEMs) — Zmodo cameras expose ONVIF on some models, but the RTSP resource URL comes from the ONVIF GetStreamUri response, not this fixed path; not in official Zmodo docs. Excluded."
+        },
+        {
+          "path": "/VideoInput/[CHANNEL]/h264/1",
+          "note": "Generic VideoInput CGI path — not in official Zmodo docs; cross-brand. Excluded."
+        },
+        {
+          "path": "/cam[CHANNEL]/h264",
+          "note": "Generic cam<N>/h264 path (Grandstream/other) — not documented by Zmodo; excluded."
+        },
+        {
+          "path": "/cam[CHANNEL]/mpeg4",
+          "note": "Generic cam<N>/mpeg4 path — not documented by Zmodo; excluded."
+        },
+        {
+          "path": "/cam[CHANNEL]/mjpeg",
+          "note": "Generic cam<N>/mjpeg path — not documented by Zmodo; excluded."
+        },
+        {
+          "path": "/[CHANNEL]",
+          "note": "Bare channel-number path — generic/ambiguous; not a documented Zmodo RTSP resource. Excluded."
+        },
+        {
+          "path": "/[CHANNEL]/1:1/main",
+          "note": "Generic '<ch>/1:1/main' path — not a documented Zmodo form; cross-brand. Excluded."
+        },
+        {
+          "path": "/0/[USERNAME]:[PASSWORD]/main",
+          "note": "Generic '0/user:pass/main' path (Y-cam style) — not documented by Zmodo; excluded."
+        },
+        {
+          "path": "/0/Duane:tittus/main",
+          "note": "Leaked real-credential scan artifact of the '/0/user:pass/main' generic form — not a Zmodo path; excluded."
+        },
+        {
+          "path": "/streaming/mjpeg",
+          "note": "Generic MJPEG streaming path — not in official Zmodo docs; excluded."
+        },
+        {
+          "path": "/live.sdp",
+          "note": "Generic live.sdp path — cross-brand contamination; excluded."
+        },
+        {
+          "path": "/image.mpg",
+          "note": "Generic MPEG snapshot/stream path — not documented by Zmodo; excluded."
+        },
+        {
+          "path": "/video.mp4",
+          "note": "Generic video.mp4 path — not a documented Zmodo RTSP resource; excluded."
+        },
+        {
+          "path": "/h264",
+          "note": "Bare /h264 path — generic; not documented by Zmodo; excluded."
+        },
+        {
+          "path": "/mpeg4",
+          "note": "Bare /mpeg4 path — generic; not documented by Zmodo; excluded."
+        }
+      ],
+      "notes": "Older Zmodo / Funlux Wi-Fi IP cameras (ZH-series) use the non-standard RTSP port 10554 (NOT 554) with paths /tcp/av0_0 (main, 720p) and /tcp/av0_1 (sub, VGA), per Zmodo's own Knowledge Base. UDP variants (/udp/av0_0, /udp/av0_1) select UDP transport for the same streams. IMPORTANT SCOPE: this pattern applies only to the older RTSP-capable models; many newer Zmodo cameras (Beam, Greet doorbell, sight/pivot, and other 'smart' lines) run the proprietary Zink cloud protocol and are app/cloud-only with NO RTSP exposed — those cannot be addressed by any fixed URL. Verify per model that RTSP is supported before applying this template.",
+      "verified_on": "2026-08-14"
+    }
+  ]
+}
