@@ -84,7 +84,7 @@ cctv-camera-database/
 │   ├── cameras.csv       # flattened, spreadsheet-friendly
 │   └── rtsp-patterns.json  # CC0 brand-level RTSP URL layer (122 brands)
 ├── strix/
-│   └── verified/         # per-brand RTSP source files (input for rtsp-patterns.json)
+│   └── verified/         # per-brand RTSP source files → rtsp-patterns.json
 ├── schema/
 │   └── camera.schema.json
 ├── scripts/
