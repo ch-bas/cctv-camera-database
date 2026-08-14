@@ -1,0 +1,76 @@
+{
+  "brand": "Y-cam",
+  "brand_id": "y-cam",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/live_mpeg4.sdp",
+      "codec": "MPEG-4",
+      "verified": true,
+      "source": "Y-cam User Manual (applies to Y-cam Black SD / Knight SD / White SD / Bullet), section 7.7 'Alternative methods of accessing the video stream': 'MPEG4 via RTSP: rtsp://<ip>/live_mpeg4.sdp' (example: rtsp://10.10.10.133/live_mpeg4.sdp). Also section 5 'RTSP MPEG4 Streaming and 3GPP Streaming'. PDF: images10.newegg.com/User-Manual/User_Manual_81-641-016.pdf",
+      "strix_lead": "strixcamdb:y-cam"
+    },
+    {
+      "stream": "main-mjpeg",
+      "path": "/live_mjpeg.sdp",
+      "codec": "MJPEG",
+      "verified": true,
+      "source": "Y-cam User Manual (Black SD / Knight SD / White SD / Bullet), section 7.7: 'MJPEG via RTSP: rtsp://<ip>/live_mjpeg.sdp' (example: rtsp://10.10.10.133/live_mjpeg.sdp). PDF: images10.newegg.com/User-Manual/User_Manual_81-641-016.pdf",
+      "strix_lead": "strixcamdb:y-cam"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/live_h264.sdp",
+      "note": "Widely reported for later HD (H.264) Y-cam models by third-party sources (ZoneMinder wiki, iSpyConnect, Camio), but NOT found in any official Y-cam manual. The official Bullet HD 1080 manual (v1.0) documents RTSP port 554, H.264 encoding and RTSP Authentication but gives no RTSP URL path. Unconfirmed against manufacturer docs."
+    },
+    {
+      "path": "live_h264_1.sdp",
+      "note": "H.264 per-stream variant reported only by third-party aggregators; no official Y-cam doc found."
+    },
+    {
+      "path": "live_mpeg4_1.sdp",
+      "note": "Per-stream MPEG-4 variant from third-party sources; official manual documents only /live_mpeg4.sdp (no numeric stream suffix)."
+    },
+    {
+      "path": "/live/0/h264.sdp",
+      "note": "Reported for HD models by third-party sources (Camio, iSpyConnect); not present in any official Y-cam manual reviewed."
+    },
+    {
+      "path": "/live/0/mpeg4.sdp",
+      "note": "Third-party /live/0/ form; official manual uses /live_mpeg4.sdp instead. Unconfirmed."
+    },
+    {
+      "path": "/live/0/onvif.sdp",
+      "note": "ONVIF profile path from third-party ONVIF discovery, not a fixed documented Y-cam URL."
+    },
+    {
+      "path": "v01",
+      "note": "Generic multi-brand lead (numbered stream); not a Y-cam path."
+    },
+    {
+      "path": "v02",
+      "note": "Generic multi-brand lead; not a Y-cam path."
+    },
+    {
+      "path": "v03",
+      "note": "Generic multi-brand lead; not a Y-cam path."
+    },
+    {
+      "path": "ch0_0.h264",
+      "note": "Generic/cross-brand (e.g. Foscam-style) lead; not documented for Y-cam."
+    },
+    {
+      "path": "video.h264",
+      "note": "Generic cross-brand lead; not documented for Y-cam."
+    },
+    {
+      "path": "/Streaming/Channels/1",
+      "note": "Hikvision path — cross-brand contamination; not a Y-cam path."
+    }
+  ],
+  "notes": "UK brand, now defunct; later products became cloud-app-only with no local RTSP. RTSP confirmed for the older locally-streaming MPEG-4/MJPEG generation (Black SD, Knight SD, White SD, Bullet): default RTSP port 554, paths /live_mpeg4.sdp (MPEG-4) and /live_mjpeg.sdp (MJPEG), per the official user manual section 7.7. RTSP Authentication is on by default (must be disabled for RealPlayer which lacks auth; QuickTime supports auth). HTTP alternatives on port 8009 documented in same manual (stream.av / stream.jpg / snapshot.jpg). The later H.264 HD line (e.g. Bullet HD 1080) supports RTSP on 554 with H.264 per its official manual, but that manual publishes NO RTSP URL path, so the commonly-cited /live_h264.sdp and /live/0/h264.sdp remain unverified (third-party-only). All also expose ONVIF for auto-discovery.",
+  "verified_on": "2026-08-14"
+}

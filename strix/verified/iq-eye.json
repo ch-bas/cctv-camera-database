@@ -1,0 +1,56 @@
+{
+  "brand": "IQeye",
+  "brand_id": "iq-eye",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/now.mp4&res=high",
+      "codec": "H.264",
+      "verified": true,
+      "source": "IQeye Network API Manual (IQinVision/Vicon), Ch.10 H.264 Streams / RTSP stream control; Vicon KB 'What is the URL to stream directly from my IQeye camera?' (rtsp://<ip>/now.mp4&res=high)",
+      "strix_lead": "strixcamdb:iq-eye"
+    },
+    {
+      "stream": "sub",
+      "path": "/now.mp4&res=low",
+      "codec": "H.264",
+      "verified": true,
+      "source": "IQeye Network API Manual (IQinVision/Vicon), Ch.10 H.264 Streams; Vicon KB 'What is the URL to stream directly from my IQeye camera?' (rtsp://<ip>/now.mp4&res=low)",
+      "strix_lead": "strixcamdb:iq-eye"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/now.mp4",
+      "note": "Bare form is valid per official docs (rtsp://<ip>/now.mp4) but returns the default profile with no explicit res selector; captured by the res=high/res=low main/sub templates above."
+    },
+    {
+      "path": "/rtsp/now.mp4",
+      "note": "This is the HTTP-tunneled form (http://<ip>/rtsp/now.mp4, RTSP-over-HTTP), not a raw RTSP path — not published as an rtsp:// template."
+    },
+    {
+      "path": "/rtsp/onvif",
+      "note": "Generic ONVIF/aggregator path; not documented in the IQeye Network API manual, which uses the OID-based now.mp4 API. Excluded."
+    },
+    {
+      "path": "/rtsp/stream1",
+      "note": "Generic aggregator path; not in official IQeye docs. Excluded."
+    },
+    {
+      "path": "/stream1",
+      "note": "Generic stream1/stream2 form is documented by third-party aggregators (camlytics/ispyconnect), not by the official IQeye/Vicon manual, which uses now.mp4. Excluded as unconfirmed against manufacturer docs."
+    },
+    {
+      "path": "0/[USERNAME]:[PASSWORD]/main",
+      "note": "Genetec/VMS-style aggregator syntax, not an IQeye camera path. Excluded."
+    },
+    {
+      "path": "mp4",
+      "note": "Fragment of now.mp4; not a standalone documented path."
+    }
+  ],
+  "notes": "IQeye = IQinVision, acquired by Vicon Industries. Official streaming API is the OID-based 'now.mp4' interface documented in the IQeye Network API Manual (Ch.6 Serverpush, Ch.10 H.264 Streams). RTSP: rtsp://{user}:{pass}@{ip}:554/now.mp4 with &res=high (main) or &res=low (sub); res selectors are per-family (IQ73xx/IQ83xx/IQD3xx/IQM3xx support only 'low' and 'high'). Default RTSP listener port 554 (configurable 1025-65535 via OID 1.17.3.1); UDP unicast negotiation starts at port 6970. HTTP-tunneled RTSP available at http://{ip}/rtsp/now.mp4. Codec H.264.",
+  "verified_on": "2026-08-14"
+}

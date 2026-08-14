@@ -1,0 +1,64 @@
+{
+  "brand": "Neutron",
+  "brand_id": "neutron",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/media/video1",
+      "codec": "H.264/H.265",
+      "verified": true,
+      "source": "Neutron (Turkish security brand, neutron.com.tr) IP cameras are Uniview (UNV) OEM — Neutron-branded models carry Uniview part numbers (e.g. IPC322E-IR-F36-IN, IPC541E-DL-IN, IPC222ER-F36) which are Uniview's own naming scheme. Uniview's official RTSP path is published in 'How to Get a Uniview Camera's RTSP Stream? v1.1' (uniview.com/res/.../How to Get a Uniview Camera's RTSP Stream_...pdf), extracted verbatim: 'Main stream rtsp://Camera IP address:554/media/video1'. This matches the dominant Neutron StrixCamDB lead /media/video1.",
+      "strix_lead": "strixcamdb:neutron"
+    },
+    {
+      "stream": "sub",
+      "path": "/media/video2",
+      "codec": "H.264/H.265",
+      "verified": true,
+      "source": "Uniview 'How to Get a Uniview Camera's RTSP Stream? v1.1' (official OEM doc), verbatim: 'Sub stream rtsp://camera IP address:554/media/video2' — applies to Neutron (Uniview OEM, see main-stream source).",
+      "strix_lead": "strixcamdb:neutron"
+    },
+    {
+      "stream": "third",
+      "path": "/media/video3",
+      "codec": "H.264/H.265",
+      "verified": true,
+      "source": "Uniview 'How to Get a Uniview Camera's RTSP Stream? v1.1' (official OEM doc), verbatim: 'Third stream rtsp://camera IP address:554/media/video3'. Matches the Neutron lead /media/video3. Only models with a configured third stream expose it.",
+      "strix_lead": "strixcamdb:neutron"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/cam/realmonitor",
+      "note": "Dahua-style path (/cam/realmonitor) — Dahua cross-brand contamination; Neutron IP cameras are Uniview OEM using /media/videoN. Excluded."
+    },
+    {
+      "path": "/cam/realmonitor?channel=1&subtype=00&authbasic=[AUTH]",
+      "note": "Dahua-style path — cross-brand contamination; not confirmed for Neutron. Excluded."
+    },
+    {
+      "path": "/cam/realmonitor?channel=6&subtype=00&authbasic=[AUTH]",
+      "note": "Dahua-style path (channel=6) — cross-brand contamination. Excluded."
+    },
+    {
+      "path": "cam/realmonitor?channel=[CHANNEL]&subtype=1",
+      "note": "Dahua-style templated path — cross-brand contamination. Excluded."
+    },
+    {
+      "path": "cam/realmonitor?channel=[CHANNEL]&subtype=00",
+      "note": "Dahua-style templated path — cross-brand contamination. Excluded."
+    },
+    {
+      "path": "cam/realmonitor?channel=[CHANNEL]&subtype=01",
+      "note": "Dahua-style templated path — cross-brand contamination. Excluded."
+    },
+    {
+      "path": "live/ch00_0",
+      "note": "Generic /live/ch00_0 lead — not the Uniview /media/videoN scheme; not confirmed by any official Neutron or Uniview RTSP doc. Cross-brand contamination; excluded."
+    }
+  ],
+  "notes": "Neutron is a Turkish CCTV brand (neutron.com.tr) selling OEM-rebranded IP cameras. The IP-camera line is Uniview (UNV) OEM: Neutron-branded models in the wild carry Uniview part numbers (IPC322E-IR-F36-IN, IPC541E-DL-IN, IPC222ER-F36, etc.), so the documented RTSP scheme is Uniview's — /media/video1 (main), /media/video2 (sub), /media/video3 (third), RTSP port 554, auth format rtsp://user:pass@IP:port/media/videoX. The literal paths come from Uniview's own official doc ('How to Get a Uniview Camera's RTSP Stream? v1.1'); Neutron's own site (neutron.com.tr FAQ) does not print a literal RTSP string. Neutron's leads are heavily contaminated with Dahua /cam/realmonitor paths and a generic /live/ch00_0 — none confirmed for the Uniview-based IP line and all excluded. Scope note: this entry covers Neutron's Uniview-OEM IP cameras; Neutron also sells AHD/analog and NVR/DVR gear whose streaming differs and is out of scope here. ONVIF is supported for auto-discovery on the IP cameras.",
+  "verified_on": "2026-08-14"
+}

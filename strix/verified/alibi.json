@@ -1,0 +1,60 @@
+{
+  "brand": "Alibi",
+  "brand_id": "alibi",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/Streaming/Channels/101",
+      "codec": "H.265|H.264",
+      "verified": true,
+      "source": "Alibi Security (Supercircuits) — Alibi Vigilant IP camera datasheets/support: cameras support ONVIF Profile S/G/T + RTSP on port 554 using the Hikvision channel scheme /Streaming/Channels/<channel><stream> where 101 = channel 1 main stream, 102 = sub stream. Confirmed as a Hikvision OEM line (alibisecurity.com Vigilant datasheets; Supercircuits Alibi documentation).",
+      "strix_lead": "strixcamdb:alibi"
+    },
+    {
+      "stream": "sub",
+      "path": "/Streaming/Channels/102",
+      "codec": "H.265|H.264",
+      "verified": true,
+      "source": "Alibi Security (Supercircuits) — Alibi Vigilant IP camera documentation: 102 pulls the sub stream (channel 1, stream 2) on RTSP port 554.",
+      "strix_lead": "strixcamdb:alibi"
+    },
+    {
+      "stream": "main-legacy",
+      "path": "/ch0_0.h264",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Legacy Alibi (Dahua-OEM generation) IP camera RTSP path (e.g. Alibi 3014 / CAM-IPM series): rtsp://{ip}:554/ch0_0.h264 (main) and ch0_1.h264 (sub). Documented for older Alibi models predating the Hikvision-OEM Vigilant line.",
+      "strix_lead": "strixcamdb:alibi"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/Streaming/Channels/1",
+      "note": "Non-canonical Hikvision channel id; the documented Alibi Vigilant form is the 3-digit /Streaming/Channels/101 (main) / /102 (sub). Bare /1 and /2 appear in some VMS how-tos but are not the official channel-stream indexing."
+    },
+    {
+      "path": "/Streaming/Channels/2",
+      "note": "Same as above — non-canonical short form for sub; official sub is /Streaming/Channels/102."
+    },
+    {
+      "path": "/ch0_0.264",
+      "note": "Variant of the legacy Dahua-OEM path; the documented extension is .h264 (/ch0_0.h264). Kept out of primary templates as unconfirmed spelling."
+    },
+    {
+      "path": "/h264",
+      "note": "Generic codec-name lead; not an Alibi-documented path. Cross-brand contamination."
+    },
+    {
+      "path": "/videoMain",
+      "note": "Amcrest/other-brand style path; no official Alibi doc. Cross-brand contamination."
+    },
+    {
+      "path": "/LowResolutionVideo",
+      "note": "Generic/other-brand sub-stream lead; no official Alibi doc. Cross-brand contamination."
+    }
+  ],
+  "notes": "Alibi is Supercircuits' house brand and is a well-documented OEM: the modern Alibi Vigilant line is Hikvision-OEM and uses the Hikvision RTSP scheme /Streaming/Channels/<channel><stream> (101 main, 102 sub) on port 554, with ONVIF Profile S/G/T supported. An older Alibi camera generation (e.g. Alibi 3014, CAM-IPM series) was Dahua-based and used /ch0_0.h264 (main) / ch0_1.h264 (sub). Alibi Vigilant NVRs also accept generic Hikvision/Hikvision-OEM cameras. NVR-side RTSP may differ (some Alibi NVRs use a non-554 RTSP port); this entry covers the cameras. Codec is per-model: newer Vigilant cameras are H.265/H.264, legacy Dahua-OEM units H.264.",
+  "verified_on": "2026-08-14"
+}

@@ -1,0 +1,64 @@
+{
+  "brand": "Sony (IPELA)",
+  "brand_id": "sony",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/video1",
+      "codec": "H.264|MPEG-4|JPEG (per-profile; follows CGI ImageCodec1)",
+      "verified": true,
+      "source": "Sony Network Camera 'RTSP Streaming with RTP/RTCP' Technical Guide (G6TG005 / RCTG005): 'The RTSP request rtsp://<camera_address>/video1 requests video bit stream from codec corresponding to the CGI parameter ImageCodec1.' Also reflected in Sony IPELA SNC user manuals (e.g. SNC-VB635, SNC-WR630 'RTSP Setting'). Default RTSP server port 554.",
+      "strix_lead": "strixcamdb:sony"
+    },
+    {
+      "stream": "sub",
+      "path": "/video2",
+      "codec": "H.264|MPEG-4|JPEG (per-profile; follows CGI ImageCodec2)",
+      "verified": true,
+      "source": "Sony Network Camera 'RTSP Streaming with RTP/RTCP' Technical Guide (G6TG005 / RCTG005): 'rtsp://<camera_address>/video2 requests video bit stream from codec corresponding to the CGI parameter ImageCodec2.' ImageCodec1/ImageCodec2 map to Image 1 / Image 2 in the camera admin menu.",
+      "strix_lead": "strixcamdb:sony"
+    },
+    {
+      "stream": "main",
+      "path": "/media/video1",
+      "codec": "H.264 (ONVIF profile)",
+      "verified": true,
+      "source": "Later IPELA SNC-CH/DH/EM/EB/VB/VM/WR ONVIF-firmware form, widely cross-listed (ispyconnect Agent DVR, VisioForge). Corresponds to the same Image 1 / Image 2 encoder profiles as the native /video1, /video2. Kept because it is the ONVIF media-URI form Sony firmware serves; native Sony guide uses /video1.",
+      "strix_lead": "strixcamdb:sony"
+    },
+    {
+      "stream": "sub",
+      "path": "/media/video2",
+      "codec": "H.264 (ONVIF profile)",
+      "verified": true,
+      "source": "Sony IPELA ONVIF-firmware sub-stream form matching /video2 (Image 2 encoder profile).",
+      "strix_lead": "strixcamdb:sony"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+      "note": "Dahua/OEM-style credentialed .sdp URL. Not documented for Sony IPELA. Cross-brand contamination. Excluded."
+    },
+    {
+      "path": "/videoinput_1:0/h264_1/onvif.stm",
+      "note": "Bosch/Dinion 'videoinput_.../onvif.stm' RTSP form. Not a Sony path. Cross-brand contamination. Excluded."
+    },
+    {
+      "path": "/cam1/onvif-h264",
+      "note": "Vivotek-style '/cam1/onvif-h264'. Not documented for Sony. Cross-brand contamination. Excluded."
+    },
+    {
+      "path": "/live/mpeg4",
+      "note": "Generic /live/mpeg4 (also '/live1.264', '/h264_stream', '/live/mpeg4', '/profile', '/av0_0', '/mjpeg'). Not present in Sony's RTSP Streaming guide; generic/cross-brand leads. Excluded."
+    },
+    {
+      "path": "/image.mpg",
+      "note": "'/image.mpg' and '/mjpeg' are HTTP MJPEG/motion-image endpoints, not RTSP. Sony native streaming (GET /image, GET /mpeg4, GET /h264) is HTTP CGI, not an RTSP path. Excluded from RTSP templates."
+    }
+  ],
+  "notes": "Sony IPELA SNC network cameras (SNC-CH/DH/EB/EM/VB/VM/WR series, etc.). Sony's own 'RTSP Streaming with RTP/RTCP' technical guide documents rtsp://{ip}:554/video1 (main, per CGI ImageCodec1) and rtsp://{ip}:554/video2 (sub, per CGI ImageCodec2); each stream's codec (H.264/MPEG-4/JPEG) follows the configured image profile, so the path is codec-agnostic. Default RTSP server port is 554 (per-stream RTP UDP unicast ports default 51000/53000/55000, audio 57000, per the SNC user-manual 'RTSP Setting'). ONVIF firmware additionally exposes the /media/video1 and /media/video2 media-URI form (widely used by integrators) mapping to the same Image 1/Image 2 encoders. Sony exited the security-camera business (2020; IPELA/security knowledge base now hosted under Bosch/Keenfinity). Sony's separate CGI Command Manual covers HTTP bit-stream acquisition (GET /image, /mpeg4, /h264) — those are HTTP CGI, not RTSP paths.",
+  "verified_on": "2026-08-14"
+}

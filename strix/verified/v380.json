@@ -1,0 +1,56 @@
+{
+  "brand": "V380",
+  "brand_id": "v380",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/live/ch00_1",
+      "codec": "H.264",
+      "verified": true,
+      "source": "V380 official support portal (v380.org), 'NVR problem' page: rtsp://{ip}/live/ch00_1 documented as the master stream (H.264, ONVIF port 8899, user admin / empty pass)",
+      "strix_lead": "strixcamdb:v380"
+    },
+    {
+      "stream": "sub",
+      "path": "/live/ch00_0",
+      "codec": "H.264",
+      "verified": true,
+      "source": "V380 official support portal (v380.org), 'NVR problem' page: rtsp://{ip}/live/ch00_0 documented as the sub stream",
+      "strix_lead": "strixcamdb:v380"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/h264_stream",
+      "note": "Not documented in any V380 official material; generic/cross-brand lead"
+    },
+    {
+      "path": "/1/cif",
+      "note": "Not in V380 docs; generic multi-brand pattern"
+    },
+    {
+      "path": "/onvif1",
+      "note": "Not in V380 docs; generic ONVIF-proxy lead (e.g. cheap OEM firmwares)"
+    },
+    {
+      "path": "/Onvif/live/1/1",
+      "note": "Not in V380 docs; generic ONVIF path, likely cross-brand"
+    },
+    {
+      "path": "/cam/realmonitor",
+      "note": "Dahua path — cross-brand contamination, no official V380 doc"
+    },
+    {
+      "path": "/cam[CHANNEL]/h264",
+      "note": "Not in V380 docs; generic templated lead"
+    },
+    {
+      "path": "/live_mpeg4.sdp",
+      "note": "Not in V380 docs; generic .sdp lead, likely cross-brand"
+    }
+  ],
+  "notes": "V380 is a companion-app / cloud platform (V380 / V380 Pro) OEM'd across a large family of low-cost Wi-Fi cameras, not a single hardware manufacturer. The V380 app-platform support site (v380.org) is the closest thing to an official source and explicitly documents rtsp://{ip}/live/ch00_1 (master) and rtsp://{ip}/live/ch00_0 (sub), H.264, default ONVIF port 8899, default creds admin / empty password. NOTE the main/sub mapping: v380.org labels ch00_1 the MASTER (main) and ch00_0 the SUB; several third-party DBs (iSpyConnect etc.) invert this. RTSP is frequently DISABLED by default and undocumented per device: on Anyka 2505 / GM 3505 and later firmwares RTSP is not enabled and cannot transfer images without a vendor upgrade package, and only Anyka/GM chipset variants support ONVIF at all. Treat the templates as best-effort platform-level defaults; per-camera availability varies by firmware.",
+  "verified_on": "2026-08-14"
+}

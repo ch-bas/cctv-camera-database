@@ -1,0 +1,56 @@
+{
+  "brand": "XMEye (Hangzhou Xiongmai Technology)",
+  "brand_id": "xmeye",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/user={user}&password={pass}&channel=<N>&stream=0.sdp?real_stream",
+      "codec": "H.264/H.265 (per-profile)",
+      "verified": true,
+      "source": "Hangzhou Xiongmai Technology Co., Ltd. — official support page 'Net Settings' (xiongmaitech.com/en/index.php/service/problem_info/139/34). Documented template: rtsp://$(IP):$(PORT)/user=$(USER)&password=$(PWD)&channel=$(Channel)&stream=$(Stream).sdp?real_stream ; example rtsp://10.6.10.25:554/user=admin&password=&channel=1&stream=0.sdp?real_stream",
+      "strix_lead": "strixcamdb:xmeye"
+    },
+    {
+      "stream": "sub",
+      "path": "/user={user}&password={pass}&channel=<N>&stream=1.sdp?real_stream",
+      "codec": "H.264/H.265 (per-profile)",
+      "verified": true,
+      "source": "Same official Xiongmai 'Net Settings' page — stream=0 is main stream, stream=1 is sub stream (channel is 1-based).",
+      "strix_lead": "strixcamdb:xmeye"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+      "note": "Underscore-separated variant (user=..._password=..._channel=..._stream=...). The Xiongmai OFFICIAL doc uses & (ampersand) separators and the ?real_stream suffix; the underscore form is a widely-circulated community variant not shown on Xiongmai's own page. Not published as the canonical template; some firmware may accept it but it is not officially documented."
+    },
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=1.sdp",
+      "note": "Underscore-separated sub-stream variant — same reason as above; official form uses & separators. Excluded as unconfirmed."
+    },
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=2_stream=0.sdp",
+      "note": "Underscore variant for channel 2 — confirms channels are 1-based and enumerable (channel=<N>), but the underscore separator is not in the official doc. Excluded."
+    },
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp?real_stream",
+      "note": "Underscore variant carrying the ?real_stream suffix — the & form of this IS the official template (published above). Underscore separator not officially documented; excluded in favor of the & template."
+    },
+    {
+      "path": "/0/[USERNAME]:[PASSWORD]/main",
+      "note": "Cloud-relay style path with embedded credentials ([channel]/[user]:[pass]/main) — this is a cloud/relay (Jovision-CloudSEE-family) form, not the Xiongmai on-camera LAN RTSP URL. Cross-brand contamination; excluded."
+    },
+    {
+      "path": "[CHANNEL]/[USERNAME]:[PASSWORD]/main",
+      "note": "Same cloud-relay template as above — not a fixed Xiongmai LAN RTSP path. Excluded."
+    },
+    {
+      "path": "/cam/realmonitor",
+      "note": "Dahua RTSP path (/cam/realmonitor?channel=<N>&subtype=<M>) — cross-brand contamination. Not a Xiongmai/XMEye path; excluded."
+    }
+  ],
+  "notes": "XMEye is the cloud app/platform of Hangzhou Xiongmai Technology (Xiongmai/XM), a major Chinese OEM whose boards/firmware ship under countless budget brands. Despite being app-centric, Xiongmai DOES publish an official on-device RTSP URL, confirmed directly from their English support page 'Net Settings' (xiongmaitech.com/en/index.php/service/problem_info/139/34, read via HTTPS — note the site's TLS cert was expired at time of verification, so it required an insecure fetch). Official template: rtsp://{user}:{pass}@{ip}:554/user={user}&password={pass}&channel=<N>&stream=0.sdp?real_stream (main) / stream=1 (sub); channel is 1-based; default RTSP port 554 (configurable under Network Service -> RTSP). Note the credentials appear BOTH in the RTSP userinfo AND again in the query string (user=/password= params), which is how Xiongmai firmware parses auth. Device management (TCP) port is 34567, HTTP 80, ONVIF 8899 — 34567 is the proprietary XM/Sofia control port, NOT an RTSP port, so RTSP stays on 554. Excluded contamination: the underscore-separated user=..._stream=N.sdp community variants (official form uses & separators), the Dahua /cam/realmonitor lead, and the [channel]/[user]:[pass]/main cloud-relay leads.",
+  "verified_on": "2026-08-14"
+}

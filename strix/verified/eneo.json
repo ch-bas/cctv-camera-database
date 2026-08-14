@@ -1,0 +1,91 @@
+{
+  "brand": "eneo",
+  "brand_id": "eneo",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/1/stream1",
+      "codec": "H.264|H.265",
+      "verified": true,
+      "source": "eneo (VIDEOR) 'Streaming- & Bild-URLs — Ubersicht der URLs fur Video- und Bildzugriff auf eneo Kameras', Feb 2026, section 2 EN-/SN-/NX-Serie: https://eneo-security.com/media/n98_media_assets/files/RTSP-Konfiguration_eneo.pdf",
+      "strix_lead": "strixcamdb:eneo"
+    },
+    {
+      "stream": "sub",
+      "path": "/1/stream2",
+      "codec": "H.264|H.265",
+      "verified": true,
+      "source": "eneo (VIDEOR) 'Streaming- & Bild-URLs', Feb 2026, section 2 EN-/SN-/NX-Serie: https://eneo-security.com/media/n98_media_assets/files/RTSP-Konfiguration_eneo.pdf",
+      "strix_lead": "strixcamdb:eneo"
+    },
+    {
+      "stream": "third",
+      "path": "/1/stream3",
+      "codec": "H.264|H.265",
+      "verified": true,
+      "source": "eneo (VIDEOR) 'Streaming- & Bild-URLs', Feb 2026, section 2 EN-/SN-/NX-Serie (STREAM = 1/2/3): https://eneo-security.com/media/n98_media_assets/files/RTSP-Konfiguration_eneo.pdf",
+      "strix_lead": "strixcamdb:eneo"
+    }
+  ],
+  "series_variants": [
+    {
+      "series": "EN- / SN- / NX-Serie",
+      "path": "/1/stream<N>",
+      "note": "N = 1 main / 2 sub / 3 mobile. Example /1/stream1"
+    },
+    {
+      "series": "IN-Serie (IP cameras)",
+      "path": "/ch01/<N>",
+      "note": "N = 0 main / 1 sub / 2 mobile. Example /ch01/1"
+    },
+    {
+      "series": "KN-Serie",
+      "path": "/media/1/<N>",
+      "note": "N = 1/2/3. Example /media/1/1"
+    },
+    {
+      "series": "ISM-Serie (IP cameras, ISM-6x)",
+      "path": "/live/<STREAM>",
+      "note": "STREAM = main / second. Example rtsp://USER:PASS@IP/live/main"
+    },
+    {
+      "series": "IS-Serie (ISM-42xx)",
+      "path": "/stream<N>",
+      "note": "N = 1/2/3. Example /stream1"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/ch1/stream0",
+      "note": "Not an official eneo IP-camera path; IN-Serie cams use /ch01/<N> (zero-padded, no 'stream' token). /<CH>/stream<N> is documented only for IER-/MSR-Serie RECORDERS, not cameras."
+    },
+    {
+      "path": "/live1.sdp",
+      "note": "Not in any official eneo doc. Generic .sdp path (Sony-style); cross-brand contamination."
+    },
+    {
+      "path": "/live2.sdp",
+      "note": "Not in any official eneo doc. Generic .sdp path; contamination."
+    },
+    {
+      "path": "live/h264",
+      "note": "Not in official eneo doc; generic h264 path. eneo ISM live path is /live/main|second, not /live/h264. Contamination."
+    },
+    {
+      "path": "h264",
+      "note": "Not in official eneo doc; generic. Contamination."
+    },
+    {
+      "path": "h264_2",
+      "note": "Not in official eneo doc; generic. Contamination."
+    },
+    {
+      "path": "cam0_[CHANNEL]",
+      "note": "Not in official eneo doc; Y-cam/generic-style path. Contamination."
+    }
+  ],
+  "notes": "German professional brand by VIDEOR E. Hartig GmbH (eneo-security.com). Official doc 'Streaming- & Bild-URLs' (Feb 2026) documents distinct RTSP path formats PER CAMERA SERIES; there is no single universal path. Primary templates above use the EN-/SN-/NX-Serie form /1/stream<N> (matches the leads /1/stream1 and /1/stream2 and is the most common modern eneo camera format). Other series use different paths — see series_variants. Default RTSP port 554 for all. IER-/MSR-/MER-/MHR-Serie paths are RECORDERS (excluded from templates). Leads /1/stream1 and /1/stream2 confirmed against official doc.",
+  "verified_on": "2026-08-14"
+}

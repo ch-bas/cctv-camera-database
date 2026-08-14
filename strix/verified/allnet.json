@@ -1,0 +1,84 @@
+{
+  "brand": "ALLNET",
+  "brand_id": "allnet",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/video.h264",
+      "codec": "H.264",
+      "verified": true,
+      "source": "ALLNET ALL2205 User Manual (EN), section 'Viewer Authentication' — https://www.allnet.de/ftp-downloads/allnet/kamera/all2205/ALL2205_UM_EN.pdf",
+      "strix_lead": "strixcamdb:allnet"
+    },
+    {
+      "stream": "main",
+      "path": "/video.mp4",
+      "codec": "MPEG-4",
+      "verified": true,
+      "source": "ALLNET ALL2205 User Manual (EN) — https://www.allnet.de/ftp-downloads/allnet/kamera/all2205/ALL2205_UM_EN.pdf",
+      "strix_lead": "strixcamdb:allnet"
+    },
+    {
+      "stream": "main",
+      "path": "/video.mjpg",
+      "codec": "MJPEG",
+      "verified": true,
+      "source": "ALLNET ALL2205 User Manual (EN) — https://www.allnet.de/ftp-downloads/allnet/kamera/all2205/ALL2205_UM_EN.pdf",
+      "strix_lead": "strixcamdb:allnet"
+    },
+    {
+      "stream": "mobile",
+      "path": "/video.3gp",
+      "codec": "H.264/3GP",
+      "verified": true,
+      "source": "ALLNET ALL2205 User Manual (EN), section 5.1 '3G Mobile Phone Streaming Viewing' — https://www.allnet.de/ftp-downloads/allnet/kamera/all2205/ALL2205_UM_EN.pdf",
+      "strix_lead": "strixcamdb:allnet"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/Streaming/Channels/101",
+      "note": "Hikvision path — cross-brand contamination, not in any official ALLNET doc"
+    },
+    {
+      "path": "/Streaming/Channels/1",
+      "note": "Hikvision path — cross-brand contamination"
+    },
+    {
+      "path": "/Streaming/Channels/2",
+      "note": "Hikvision path — cross-brand contamination"
+    },
+    {
+      "path": "/h264",
+      "note": "not documented in official ALLNET manuals; official path is /video.h264 (some third-party guides cite bare /h264 but no ALLNET doc confirms it)"
+    },
+    {
+      "path": "/mpeg4",
+      "note": "not in official ALLNET docs; official MPEG-4 path is /video.mp4"
+    },
+    {
+      "path": "/live/h264",
+      "note": "not in official ALLNET docs"
+    },
+    {
+      "path": "/live/mpeg4",
+      "note": "not in official ALLNET docs"
+    },
+    {
+      "path": "/cam1/h264",
+      "note": "not in official ALLNET docs"
+    },
+    {
+      "path": "/cam[CHANNEL]/h264",
+      "note": "not in official ALLNET docs"
+    },
+    {
+      "path": "/video1",
+      "note": "not in official ALLNET docs"
+    }
+  ],
+  "notes": "Confirmed against ALLNET's own user manuals hosted on allnet.de (ALL2205; ALL2213 corroborates RTSP support + port 554). ALLNET IP cameras expose codec-specific RTSP paths of the form rtsp://{user}:{pass}@{ip}:{port}/video.<ext> where ext = h264 | mp4 | mjpg | 3gp. There is no explicit multi-profile main/sub numbering in the documented URL scheme; stream selection is by codec suffix. Default RTSP port 554. All /Streaming/Channels/* leads are Hikvision contamination.",
+  "verified_on": "2026-08-14"
+}

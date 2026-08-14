@@ -1,0 +1,47 @@
+{
+  "brand": "Edimax",
+  "brand_id": "edimax",
+  "status": "unverified",
+  "default_port": 554,
+  "templates": [],
+  "unverified_leads": [
+    {
+      "path": "/ipcam.sdp",
+      "note": "Well-known community/third-party default (iSpy, smartvision, geniusvision), but NOT published as a fixed default path in any official Edimax manual I could obtain. Edimax manuals expose 'MPEG-4 RTSP Path' / 'H.264 RTSP Path' / 'MJPEG RTSP Path' as USER-CONFIGURABLE fields with .sdp extension - no factory default filename is printed."
+    },
+    {
+      "path": "/ipcam_h264.sdp",
+      "note": "Same as above - matches the documented 'H.264 RTSP Path' field concept, but the literal filename is not stated as an official default in Edimax docs."
+    },
+    {
+      "path": "/ipcam_mjpeg.sdp",
+      "note": "Same as above - matches the documented 'MJPEG RTSP Path' field, but the literal filename is not an official default in Edimax docs."
+    },
+    {
+      "path": "/stream1",
+      "note": "Generic ONVIF/OEM-style path; not in any Edimax manual."
+    },
+    {
+      "path": "/stream2",
+      "note": "Generic ONVIF/OEM-style path; not in any Edimax manual."
+    },
+    {
+      "path": "/h264_stream",
+      "note": "Generic cross-brand path; not in any Edimax manual."
+    },
+    {
+      "path": "/live1.sdp",
+      "note": "Generic/cross-brand .sdp lead; not in any Edimax manual."
+    },
+    {
+      "path": "[CHANNEL]/[USERNAME]:[PASSWORD]/main",
+      "note": "Aggregator template artifact, not a real Edimax path."
+    },
+    {
+      "path": "[USERNAME].[PASSWORD]?udp",
+      "note": "Aggregator template artifact, not a real Edimax path."
+    }
+  ],
+  "notes": "Official Edimax user manuals (IC-3110 v1.0 07-2012, IC-7001W v1.0 10-2013, IC-9000) confirm RTSP is supported: default RTSP port 554, and a Network > RTSP settings page exposing configurable 'MPEG-4 RTSP Path', 'H.264 RTSP Path' and 'MJPEG RTSP Path' fields (manual instructs the user to append the .sdp extension). However Edimax does NOT print a fixed factory-default path filename in these manuals - the paths are user-defined, so no confirmable default template exists. Notably the IC-9000 manual documents an entirely different 3GPP/RTSP scheme: rtsp://<ip>/CAM_ID.password (Appendix F), reinforcing that the path is not a single universal string across models. The consumer IC-3115W and IC-9110W (app/cloud-oriented) manuals contain no RTSP path at all, and Edimax's own KB article for IC-7010PTn/IC-3030 series documents only an HTTP MJPEG stream (http://<ip>/mjpg/video.mjpg), not RTSP. Because the specific leads (/ipcam.sdp etc.) cannot be confirmed as official Edimax defaults - only as community/third-party conventions - status is 'unverified' per the publish-only-what-official-docs-confirm rule. Port 554 IS officially documented as the default.",
+  "verified_on": "2026-08-14"
+}

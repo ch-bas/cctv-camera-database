@@ -1,0 +1,52 @@
+{
+  "brand": "Q-See",
+  "brand_id": "q-see",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/cam/realmonitor?channel=<N>&subtype=0",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Q-See official doc 'Using RTSP on QC Series DVRs' — rtsp://IP:PORT/cam/realmonitor?channel=CHANNEL&subtype=ENCODING (subtype 00=Main Stream); port 554 fixed",
+      "strix_lead": "strixcamdb:q-see"
+    },
+    {
+      "stream": "sub",
+      "path": "/cam/realmonitor?channel=<N>&subtype=1",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Q-See official doc 'Using RTSP on QC Series DVRs' — subtype 01=Extra Stream; port 554 fixed",
+      "strix_lead": "strixcamdb:q-see"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/PSIA/Streaming/channels/0?videoCodecType=H.264",
+      "note": "PSIA/Hikvision-family path; not in Q-See's own RTSP doc, excluded"
+    },
+    {
+      "path": "/profile1",
+      "note": "Generic ONVIF profile-token style path; not documented by Q-See"
+    },
+    {
+      "path": "live.sdp",
+      "note": "Generic/other-brand SDP path; not in Q-See docs"
+    },
+    {
+      "path": "ch0_unicast_firststream",
+      "note": "Grandstream-family path; not Q-See"
+    },
+    {
+      "path": "VideoInput/1/h264/1",
+      "note": "Sony/other-brand style path; not in Q-See docs"
+    },
+    {
+      "path": "VideoInput/1/mpeg4/1",
+      "note": "Sony/other-brand style path; not in Q-See docs"
+    }
+  ],
+  "notes": "Q-See is a legacy US brand; IP cams/DVRs are Dahua-OEM and use the Dahua /cam/realmonitor RTSP scheme. Channel <N> = 1-32 (1 for single IP cams). subtype 0=main, 1=sub (Q-See docs write these as 00/01 = Main/Extra Stream; equivalent). Port 554 is fixed per Q-See docs. DVRs authenticate via base64 authbasic query param; standalone IP cams use user:pass@ prefix. Some early consumer models were Foscam-based (different scheme) but the documented and dominant lineage is Dahua-OEM.",
+  "verified_on": "2026-08-14"
+}

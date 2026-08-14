@@ -1,0 +1,84 @@
+{
+  "brand": "Samsung",
+  "brand_id": "samsung",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/profile2/media.smp",
+      "codec": "H.264|H.265 (per configured profile)",
+      "verified": true,
+      "source": "Hanwha Vision Support Portal — 'Camera - RTSP URL' (https://support.hanwhavision.com/hc/en-001/articles/47782445700243-Camera-RTSP-URL): documents rtsp://<DeviceIP>:port/profile<no>/media.smp for Wisenet/Samsung Techwin IP cameras; profile2 is the default main H.264/H.265 stream.",
+      "strix_lead": "strixcamdb:samsung"
+    },
+    {
+      "stream": "sub",
+      "path": "/profile3/media.smp",
+      "codec": "H.264|H.265 (per configured profile)",
+      "verified": true,
+      "source": "Hanwha Vision Support Portal — 'Camera - RTSP URL' (https://support.hanwhavision.com/hc/en-001/articles/47782445700243-Camera-RTSP-URL): rtsp://<DeviceIP>:port/profile<no>/media.smp; profile<no> selects the desired stream profile (main/sub configurable in the camera web UI).",
+      "strix_lead": "strixcamdb:samsung"
+    },
+    {
+      "stream": "generic",
+      "path": "/profile<N>/media.smp",
+      "codec": "per-profile",
+      "verified": true,
+      "source": "Hanwha Vision Support Portal — 'Camera - RTSP URL' (https://support.hanwhavision.com/hc/en-001/articles/47782445700243-Camera-RTSP-URL): official template rtsp://user:password@<DeviceIP>:port/profile<no>/media.smp, default port 554.",
+      "strix_lead": "strixcamdb:samsung"
+    },
+    {
+      "stream": "legacy-main",
+      "path": "/mpeg4unicast",
+      "codec": "H.264/MPEG-4",
+      "verified": true,
+      "source": "Samsung SND-560 Network Camera User Manual (p.23, RTP Multicast connection): instructs entering 'rtsp://[serverip]/mpeg4unicast'. Legacy Samsung Techwin SNB/SND series form.",
+      "strix_lead": "strixcamdb:samsung"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/Streaming/Channels/1",
+      "note": "Hikvision path — cross-brand contamination, no official Samsung/Hanwha doc."
+    },
+    {
+      "path": "mpeg4/[CHANNEL]/media.amp",
+      "note": "Axis media.amp form — contamination, not a Samsung path."
+    },
+    {
+      "path": "/h264.sdp",
+      "note": "Generic SDP form — no official Samsung/Hanwha doc."
+    },
+    {
+      "path": "/h264_pcm.sdp",
+      "note": "Generic SDP form — no official Samsung/Hanwha doc."
+    },
+    {
+      "path": "cam[CHANNEL]/h264",
+      "note": "Not documented for Samsung/Wisenet; generic OEM form."
+    },
+    {
+      "path": "live/ch00_0",
+      "note": "Not documented for Samsung/Wisenet; generic OEM/DVR form."
+    },
+    {
+      "path": "live/h264/ch[CHANNEL]",
+      "note": "Not documented for Samsung/Wisenet."
+    },
+    {
+      "path": "0/[USERNAME]:[PASSWORD]/main",
+      "note": "Not documented for Samsung/Wisenet."
+    },
+    {
+      "path": "MediaInput/h264",
+      "note": "Not documented for Samsung/Wisenet."
+    },
+    {
+      "path": "/onvif/profile<N>/media.smp",
+      "note": "ONVIF-prefixed variant appears in leads (onvif/profile1..6); the official Hanwha template is /profile<no>/media.smp without the onvif/ prefix — the onvif/ path is an ONVIF media-service URI, not the documented native RTSP path."
+    }
+  ],
+  "notes": "Samsung IP cameras = Samsung Techwin, which became Hanwha Techwin / Hanwha Vision; the 'samsung' brand line here is the Samsung-branded SNB/SND/SNV/SNP (and later Wisenet) cameras, distinct from the separately-covered 'hanwha' entry but sharing the same RTSP stack. Modern (Wisenet-era) cameras: rtsp://user:pass@{ip}:554/profile<N>/media.smp where <N> is the configured profile number (default port 554; profile2 commonly = main H.264/H.265, profile3 = sub). Profiles are user-configurable in the camera web UI, so any profile<N> may map to main or sub. Legacy Samsung Techwin SNB/SND models use the fixed /mpeg4unicast RTSP URL (official SND-560 manual). Leads also contained MJPEG/media.smp and H264/media.smp variants; the canonical documented form is the profile-numbered path. Default admin password historically 4321 or blank on legacy models.",
+  "verified_on": "2026-08-14"
+}
