@@ -1,0 +1,72 @@
+{
+  "brand": "Hiseeu",
+  "brand_id": "hiseeu",
+  "status": "verified",
+  "default_port": 80,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/live/main",
+      "codec": "H.264/H.265 (not stated in doc)",
+      "verified": true,
+      "source": "Hiseeu official support article 'FAQ : 4K camera RTSP stream' (www.hiseeu.com/a/help/article/27730). Documented verbatim: 'Mainstream URL: rtsp://192.168.1.201201:80/live/main' — the host '201201' is an obvious typo for the doc's stated default IP 192.168.1.120; the path token and port are '/live/main' on port 80. Also lists 'HTTP port: 80'.",
+      "strix_lead": "strixcamdb:hiseeu"
+    },
+    {
+      "stream": "sub",
+      "path": "/live/sub",
+      "codec": "H.264/H.265 (not stated in doc)",
+      "verified": true,
+      "source": "Same Hiseeu article 27730. The RTSP 'Sub-stream URL' line reads 'rtsp://192.168.1.120:80/live/main' — a copy-paste error repeating /live/main; the intended sub token is /live/sub, confirmed by the SAME article's RTMP section which lists 'Mainstream: rtmp://...:1935/livemain' and 'Sub-stream: rtmp://...:1935/livesub' (main->livemain, sub->livesub). Also corroborated by the strix lead '/live/sub'. Published as /live/sub with this caveat.",
+      "strix_lead": "strixcamdb:hiseeu"
+    },
+    {
+      "stream": "snapshot",
+      "path": "/live/jpeg",
+      "codec": "MJPEG",
+      "verified": true,
+      "source": "Hiseeu official support article 27730 (www.hiseeu.com/a/help/article/27730). Documented verbatim: 'Snap URL: rtsp://192.168.1.120:80/live/jpeg' — an RTSP JPEG snapshot URL on the same /live/ family, port 80.",
+      "strix_lead": "strixcamdb:hiseeu"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/live/ch0",
+      "note": "Not shown in Hiseeu's official RTSP article (which documents /live/main, /live/sub, /live/jpeg). Plausible per-channel variant on the same /live/ family but not officially documented; excluded."
+    },
+    {
+      "path": "/cam1/mpeg4",
+      "note": "Not in any official Hiseeu doc. Generic/community 'cam1/mpeg4' form (widely repeated by third-party aggregators like iSpy/camlytics). Not confirmed by Hiseeu; excluded."
+    },
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+      "note": "Xiongmai (XMEye)-family .sdp template. Some Hiseeu NVR KITS run Xiongmai/XM firmware (Hiseeu docs reference the XMEye Pro / VMS apps and xm030.cn downloads for their PoE/NVR line), but Hiseeu's OWN published RTSP article documents the /live/main scheme on port 80, not this .sdp form. Not confirmed by a Hiseeu doc; see brand_id 'xmeye' for the officially-documented Xiongmai .sdp template. Excluded here."
+    },
+    {
+      "path": "/user=[USERNAME]&password=[PASSWORD]&channel=1&stream=0.sdp?",
+      "note": "Ampersand-separated Xiongmai/XMEye .sdp variant — same lineage note as above; official Xiongmai form is documented under brand_id 'xmeye', not under a Hiseeu-published doc. Excluded."
+    },
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=1&onvif=0.sdp?real_st",
+      "note": "Xiongmai .sdp sub-stream variant (truncated in lead). Same lineage note; not in a Hiseeu-published doc. Excluded."
+    },
+    {
+      "path": "/ch0_0.264",
+      "note": "Hi3518/generic '/chN_M.264' form used by many OEM boards; also matches the community-reported 'ch[cam]_[feed].264' Hiseeu wireless-gateway URL, but that is crowd-sourced (gobowen/iSpy), NOT in a Hiseeu official doc. Excluded."
+    },
+    {
+      "path": "/ch0_1.264",
+      "note": "Sub-stream of the same generic '/chN_M.264' form — community-sourced, not officially documented by Hiseeu. Excluded."
+    },
+    {
+      "path": "/ch2_0.264",
+      "note": "Channel-2 generic '/chN_M.264' variant — community-sourced, not in a Hiseeu official doc. Excluded."
+    },
+    {
+      "path": "/cam/realmonitor?channel=3&subtype=1",
+      "note": "Dahua RTSP path (/cam/realmonitor?channel=<N>&subtype=<M>) — cross-brand contamination; not a Hiseeu path. Excluded."
+    }
+  ],
+  "notes": "Hiseeu is a budget CCTV brand (kits + standalone IP cams). Its product families use TWO different firmware lineages: (1) standalone/4K IP cameras, for which Hiseeu publishes an official RTSP article (27730) using rtsp://{ip}:80/live/main (main), /live/sub (sub), /live/jpeg (snapshot) on HTTP/RTSP port 80 (NOT 554); default cam IP 192.168.1.120, user admin / no password, TCP service port 6000, RTMP 1935. (2) PoE/NVR kits, which are Xiongmai (XM) OEM (Hiseeu docs reference XMEye Pro & VMS apps and xm030.cn firmware) and follow the Xiongmai .sdp RTSP scheme documented separately under brand_id 'xmeye' (rtsp://.../user=...&password=...&channel=<N>&stream=0.sdp?real_stream on port 554). This entry publishes ONLY the Hiseeu-documented /live/main + /live/sub (port 80) because that is the path Hiseeu's own official support article confirms; the Xiongmai .sdp leads are real for the kit line but are verified under 'xmeye', not by a Hiseeu-published doc, so they are recorded here as unverified leads with the OEM note. Port note: unlike most brands, Hiseeu's documented standalone-cam RTSP runs on port 80, so default_port is 80.",
+  "verified_on": "2026-08-14"
+}

@@ -1,0 +1,55 @@
+{
+  "brand": "JOOAN",
+  "brand_id": "jooan",
+  "status": "unverified",
+  "default_port": 554,
+  "templates": [],
+  "unverified_leads": [
+    {
+      "path": "/user={user}_password={pass}_channel=1_stream=0.sdp",
+      "note": "Generic Xiongmai/Jufeng-style main-stream form (stream=0 main, stream=1 sub) widely reported for JOOAN on third-party aggregators (iSpyConnect, Camlytics) and community forums, but NOT confirmed on any official JOOAN manual or support doc. Reported working on some models via VLC, not officially published."
+    },
+    {
+      "path": "/user={user}_password={pass}_channel=1_stream=1.sdp",
+      "note": "Paired sub-stream of the .sdp form above; same aggregator/community source, no official JOOAN doc."
+    },
+    {
+      "path": "/channel=1_stream=0.sdp",
+      "note": "Credential-less variant of the .sdp form; aggregator lead only."
+    },
+    {
+      "path": "/user={user}&password={pass}&channel=1&stream=0.sdp?real_stream--rtp-caching=100",
+      "note": "VLC-caching decorated variant of the .sdp form; not an official JOOAN path."
+    },
+    {
+      "path": "/live/ch00_0",
+      "note": "Main-stream path reported working on JOOAN JA-C9C-Y and similar via VLC/forums (ch00_0 main, ch00_1 sub); crowdsourced only, not in any official JOOAN documentation."
+    },
+    {
+      "path": "/live/ch00_1",
+      "note": "Sub-stream pair of /live/ch00_0; community-reported, not officially published."
+    },
+    {
+      "path": "/live/ch01_0",
+      "note": "Second-channel variant of the /live/ chNN_N form; aggregator lead, unconfirmed for JOOAN officially."
+    },
+    {
+      "path": "/live/ch01_1",
+      "note": "Sub of /live/ch01_0; aggregator lead, unconfirmed."
+    },
+    {
+      "path": "/onvif1",
+      "note": "Generic ONVIF main path echoed by iSpy/Camlytics for many app-first brands; JOOAN exposes streaming via ONVIF where enabled but publishes no fixed /onvif1 URL of its own."
+    },
+    {
+      "path": "/onvif2",
+      "note": "Generic ONVIF sub path from aggregators; not an official JOOAN path."
+    },
+    {
+      "path": "/stream1",
+      "note": "Generic aggregator lead; not documented by JOOAN."
+    }
+  ],
+  "notes": "JOOAN = budget WiFi/PoE consumer cameras operated primarily through the JOOAN mobile app (App Store id6475136302). No official JOOAN manufacturer documentation (user manual, datasheet, CGI/API/ONVIF guide, or support/KB page) could be found that publishes a fixed RTSP URL template. The official manual host (k.jooan.cc/manual.pdf) was unreachable during verification; jooan.com is an unrelated Korean company, not the camera brand. Every RTSP path circulating for JOOAN comes from third-party aggregators (iSpyConnect lists ~109 models / 24 URLs, all community-crowdsourced and explicitly flagged as possibly inaccurate), community forums (IPCamTalk, Raspberry Pi, Monocle), and YouTube — NOT from JOOAN itself. Two path families appear in the wild: a Xiongmai/Jufeng-style /user=..._channel=1_stream=0.sdp form and a /live/chNN_N form, plus generic ONVIF /onvif1|/onvif2. RTSP works on many models only via ONVIF (port 554) where enabled; some app-locked models expose no direct RTSP at all. Because no manufacturer doc confirms any single template, status is unverified. Recommend ONVIF auto-discovery for integration rather than a hardcoded JOOAN URL.",
+  "verified_on": "2026-08-14"
+}

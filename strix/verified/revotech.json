@@ -1,0 +1,86 @@
+{
+  "brand": "Revotech",
+  "brand_id": "revotech",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/mpeg4",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Official 'Revotech IP Camera User Manual' (manuals.plus/revotech/ip-camera-manual-4): RTSP main stream rtsp://username:password@IPaddress/mpeg4, default RTSP port 554, default login admin/123456. This is the classic (port-554) Revotech generation.",
+      "strix_lead": "strixcamdb:revotech"
+    },
+    {
+      "stream": "sub",
+      "path": "/mpeg4cif",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Official 'Revotech IP Camera User Manual' (manuals.plus/revotech/ip-camera-manual-4): RTSP second/sub stream rtsp://username:password@IPaddress/mpeg4cif on port 554.",
+      "strix_lead": "strixcamdb:revotech"
+    },
+    {
+      "stream": "main",
+      "path": "/profile0",
+      "codec": "H.264/H.265",
+      "verified": true,
+      "source": "Official 'REVOTECH I712-P-FHW Zoom Mini POE IP Camera Instructions' (manuals.plus/revotech/i712-p-fhw-zoom-mini-poe-ip-camera-manual): main stream rtsp://IPAddress:8554/profile0 (auth form rtsp://username:password@IPAddress:8554/profile0). Newer FHW generation uses RTSP port 8554. Confirms StrixCamDB lead /profile0.",
+      "strix_lead": "strixcamdb:revotech",
+      "port": 8554
+    },
+    {
+      "stream": "sub",
+      "path": "/profile1",
+      "codec": "H.264/H.265",
+      "verified": true,
+      "source": "Official 'REVOTECH I712-P-FHW Zoom Mini POE IP Camera Instructions' (manuals.plus/revotech/i712-p-fhw-zoom-mini-poe-ip-camera-manual): secondary stream rtsp://IPAddress:8554/profile1 on port 8554. Confirms StrixCamDB lead /profile1.",
+      "strix_lead": "strixcamdb:revotech",
+      "port": 8554
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/live1.264",
+      "note": "Generic RTSP-media-module path (appears in third-party lists like ispyconnect, not in any official Revotech manual). Not confirmed by Revotech docs — excluded."
+    },
+    {
+      "path": "/live0.264",
+      "note": "Generic module path; not in official Revotech manuals — excluded."
+    },
+    {
+      "path": "/cam0/h264",
+      "note": "Generic multi-brand module path (typically port 8554); not documented by Revotech — excluded."
+    },
+    {
+      "path": "/ch0_0.264",
+      "note": "Generic module path; not in official Revotech docs — excluded."
+    },
+    {
+      "path": "cam[CHANNEL]/h264",
+      "note": "Generic templated module path; not documented officially — excluded."
+    },
+    {
+      "path": "cam1/mpeg4",
+      "note": "Not the documented Revotech path (official is /mpeg4 without cam prefix) — excluded."
+    },
+    {
+      "path": "/cam1/mpeg4",
+      "note": "Not the documented Revotech path — excluded."
+    },
+    {
+      "path": "/1/stream1",
+      "note": "Not in any official Revotech manual — cross-brand contamination; excluded."
+    },
+    {
+      "path": "1/stream1",
+      "note": "Not in any official Revotech manual — excluded."
+    },
+    {
+      "path": "/stream1",
+      "note": "Reported by third parties for some Revotech PoE units but not printed in the official manuals reviewed — not confirmed; excluded."
+    }
+  ],
+  "notes": "Revotech (budget PoE cameras) has TWO documented RTSP generations, both confirmed against official Revotech manuals: (1) classic units on RTSP port 554 use /mpeg4 (main) and /mpeg4cif (sub); (2) newer FHW units (e.g. I712-P-FHW) use RTSP port 8554 with /profile0 (main) and /profile1 (sub). Default credentials admin/123456 on classic models; FHW models force a password change on first access. No /11, /12, or /live official form was found in Revotech's own documentation despite such leads appearing in third-party aggregators — those are excluded.",
+  "verified_on": "2026-08-14"
+}

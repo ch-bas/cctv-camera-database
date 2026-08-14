@@ -1,0 +1,92 @@
+{
+  "brand": "SANNCE",
+  "brand_id": "sannce",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/{codec}/ch<N>/main/av_stream",
+      "codec": "H264 (per-profile: also H265/MPEG-4 on capable models)",
+      "verified": true,
+      "source": "SANNCE Support — 'Sannce Home - How to View the Cameras on VLC Player by RTSP?' (support.sannce.com/hc/en-us/articles/900004773983) — documented format rtsp://[user]:[pass]@[ip]:[port]/[codec]/[channel]/[subtype]/av_stream, example rtsp://admin:ARGDAK@192.168.133.48:554/H264/ch1/main/av_stream",
+      "strix_lead": "strixcamdb:sannce"
+    },
+    {
+      "stream": "sub",
+      "path": "/{codec}/ch<N>/sub/av_stream",
+      "codec": "H264 (per-profile)",
+      "verified": true,
+      "source": "SANNCE Support — 'Sannce Home - How to View the Cameras on VLC Player by RTSP?' (support.sannce.com/hc/en-us/articles/900004773983) — subtype values main/sub, port 554",
+      "strix_lead": "strixcamdb:sannce"
+    },
+    {
+      "stream": "main",
+      "path": "/<N>/1",
+      "codec": "H264",
+      "verified": true,
+      "source": "SANNCE Support — 'N98PBM - How to View the Cameras on VLC Player by RTSP?' (support.sannce.com/hc/en-us/articles/46861609047833) — format rtsp://[user]:[pass]@[ip]:[port]/[channel]/[stream], stream 1=main 2=sub 3=triple, example rtsp://admin:admin@192.168.1.3:554/1/1",
+      "strix_lead": "strixcamdb:sannce"
+    },
+    {
+      "stream": "sub",
+      "path": "/<N>/2",
+      "codec": "H264",
+      "verified": true,
+      "source": "SANNCE Support — 'N98PBM - How to View the Cameras on VLC Player by RTSP?' (support.sannce.com/hc/en-us/articles/46861609047833) — stream index 2 = sub stream, port 554",
+      "strix_lead": "strixcamdb:sannce"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/tcp/av0_0",
+      "note": "Xiongmai/generic-OEM standalone-IPC path circulated by community DBs (iSpyConnect/Camlytics/GeniusVision, all marked community-sourced); NOT in either official SANNCE support RTSP article."
+    },
+    {
+      "path": "/Streaming/Unicast/channels/101",
+      "note": "Hikvision RTSP path — cross-brand contamination. SANNCE shares Hikvision OEM lineage but its own support docs publish the /[codec]/ch<N>/[subtype]/av_stream and /<N>/<stream> forms, not this ISAPI channels form. Not confirmed by SANNCE docs."
+    },
+    {
+      "path": "/user=[USERNAME]&password=[PASSWORD]&channel=1&stream=0.sdp?real_stream",
+      "note": "Generic cheap-DVR/Xiongmai .sdp credential-in-path pattern; not documented by SANNCE."
+    },
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+      "note": "Underscore-delimited .sdp variant; generic OEM, not in SANNCE official docs."
+    },
+    {
+      "path": "/ch0_0.h264",
+      "note": "Generic OEM main-stream form (also seen bare as 'ch0_0.h264'); not in SANNCE official RTSP articles."
+    },
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=1.sdp?real_stream",
+      "note": "Generic .sdp sub-stream variant; not documented by SANNCE."
+    },
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=2_stream=0.sdp",
+      "note": "Generic .sdp channel-2 variant; not documented by SANNCE."
+    },
+    {
+      "path": "/user=[USERNAME]&password=[PASSWORD]&channel=1&stream=0.sdp?",
+      "note": "Generic .sdp query-string variant; not documented by SANNCE."
+    },
+    {
+      "path": "/1/h264major",
+      "note": "Generic H.264 main-stream path seen on many OEM cams; not in SANNCE official docs."
+    },
+    {
+      "path": "/live_mpeg4.sdp",
+      "note": "Generic MPEG-4 .sdp path; not documented by SANNCE."
+    },
+    {
+      "path": "/MediaInput/mpeg4",
+      "note": "Generic/other-OEM MPEG-4 path; not documented by SANNCE."
+    },
+    {
+      "path": "/user=[USERNAME]&password=[PASSWORD]&channel=1&stream=0.sdp",
+      "note": "Generic .sdp credential-in-path pattern; not documented by SANNCE."
+    }
+  ],
+  "notes": "SANNCE is a budget CCTV-kit brand, sister to ANNKE, both on Hikvision OEM lineage. Its own support site (support.sannce.com) publishes TWO official RTSP URL families, both on port 554: (1) the Hikvision-style /[codec]/ch<N>/[subtype]/av_stream form — e.g. /H264/ch1/main/av_stream (main) and /H264/ch1/sub/av_stream (sub), used by its DVR/NVR kits (models DN81BL/DN41CK/DT61BB etc.); and (2) a simpler /<channel>/<stream> form for the N98PBM standalone camera where stream 1=main, 2=sub, 3=triple (e.g. /1/1, /1/2). {codec} is H264 on most models (some capable of H265/MPEG-4 — record per model profile); <N> is the 1-based channel index (ch1, 1, ...). Credentials are prepended as user:pass@ip (DVR channels use the DVR/NVR login; camera default admin/admin). None of the StrixCamDB leads match either official path — they are all generic Xiongmai/cheap-OEM .sdp/av0_0 forms or a Hikvision ISAPI /Streaming/Unicast path (cross-brand contamination), so all leads are excluded. Verified only against SANNCE's own KB (Zendesk portal blocks bots; content confirmed via indexed article text quoting the exact templates and example URLs).",
+  "verified_on": "2026-08-14"
+}
