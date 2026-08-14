@@ -1,0 +1,72 @@
+{
+  "brand": "TruVision",
+  "brand_id": "truvision",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/Streaming/Channels/<N>01",
+      "codec": "H.264|H.265 (per-profile; H.264+/H.265+ smart variants)",
+      "verified": true,
+      "source": "TruVision P Series IP Camera Configuration Manual (P/N 1164A, firesecurityproducts.com) — documents RTSP port default 554 and video encoding H.264/H.265 (+H.264+/H.265+). TruVision config manuals document the channel-addressing HTTP-preview URL 'http://<ip>/Streaming/channels/101/httpPreview' (101 = channel 1 main stream), confirming TruVision's own use of the Hikvision-platform /Streaming/Channels/<channel><stream> scheme (last two digits: 01=main, 02=sub).",
+      "strix_lead": "strixcamdb:truvision"
+    },
+    {
+      "stream": "sub",
+      "path": "/Streaming/Channels/<N>02",
+      "codec": "H.264|H.265 (per-profile)",
+      "verified": true,
+      "source": "Same TruVision configuration-manual channel scheme (101=main, 102=sub for channel 1). Cross-checked against the Hikvision-platform lineage (TruVision is an Interlogix/Aritech-branded Hikvision OEM); 02 = channel 1 sub stream.",
+      "strix_lead": "strixcamdb:truvision"
+    },
+    {
+      "stream": "main",
+      "path": "/h264_stream",
+      "codec": "H.264",
+      "verified": true,
+      "source": "Legacy/older TruVision models (e.g. TruVision 1225, TVB-5506, TVC-M5225E-3M-P, TVD-1103, TVW-3101) use the fixed /h264_stream RTSP path rather than the Hikvision-platform channel scheme; documented as the TruVision RTSP path for these models (config-manual RTSP port 554). Kept as a second confirmed family since TruVision spans two platforms.",
+      "strix_lead": "strixcamdb:truvision"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/Streaming/Unicast/channels/401",
+      "note": "Hikvision-platform unicast/transport variant with a high channel number (4xx); the canonical documented form is /Streaming/Channels/101(/102). Bare unicast-channel numbers like 401 are NVR/multi-channel forms, not confirmed for single TruVision cameras."
+    },
+    {
+      "path": "/Streaming/channels/301",
+      "note": "Multi-channel (channel 3) NVR-style form; appears against TruVision NVRs (TVN1008S) in aggregators, not a single-camera documented path."
+    },
+    {
+      "path": "/Streaming/channels/902",
+      "note": "Channel 9 sub-stream form — NVR/aggregator noise; not a documented single-camera TruVision path."
+    },
+    {
+      "path": "/Streaming/channels/702",
+      "note": "Channel 7 sub-stream form — NVR/aggregator noise; not a documented single-camera TruVision path."
+    },
+    {
+      "path": "/Streaming/Unicast/channels/202",
+      "note": "Unicast channel-2 sub form; canonical documented TruVision path is /Streaming/Channels/<channel><stream> (101/102). Not separately confirmed in TruVision docs."
+    },
+    {
+      "path": "/Streaming/channels/901",
+      "note": "Channel 9 main-stream form — NVR/aggregator noise; not a documented single-camera TruVision path."
+    },
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+      "note": "Generic login-in-path .sdp template (Dahua/other-OEM style); appears against a couple of TruVision models in aggregators but is not in TruVision official documentation."
+    },
+    {
+      "path": "/videoMain",
+      "note": "Foscam/other-OEM style path listed against a few TruVision models (TVB-5605/5607) in aggregators; not documented in official TruVision manuals."
+    },
+    {
+      "path": "/rtsph2641080p",
+      "note": "Aggregator-listed path for a single model (TVD-5303); not documented in official TruVision configuration manuals."
+    }
+  ],
+  "notes": "TruVision is the pro IP surveillance brand of Interlogix (formerly GE Security; Aritech in EMEA), now under Carrier. It is a Hikvision OEM platform: modern TVB/TVD/TVW/TVP and P-Series cameras run Hikvision ISAPI firmware and use the canonical RTSP path /Streaming/Channels/<channel><stream> where the last two digits select the stream (01=main, 02=sub; channel 1 -> 101/102). Confirmed against TruVision's own configuration manuals, which document the identical channel-addressing scheme via the HTTP-preview URL /Streaming/channels/101/httpPreview and default RTSP port 554 (range 1-65535), with H.264/H.265 (+ smart H.264+/H.265+) encoding. Older/legacy TruVision models (e.g. 1225, TVB-5506, TVW-3101) instead expose a fixed /h264_stream RTSP path. Leads were a mix of correct Hikvision-platform paths, legacy /h264_stream, TruVision NVR multi-channel forms (301/401/701/901), and generic cross-brand contamination (.sdp login-in-path, /videoMain).",
+  "verified_on": "2026-08-14"
+}

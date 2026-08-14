@@ -1,0 +1,80 @@
+{
+  "brand": "HOSAFE",
+  "brand_id": "hosafe",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/11",
+      "codec": "H.264",
+      "verified": true,
+      "source": "HOSAFE WIFI Camera Quick Setup Guide (hosafe.com official setup guide): 'two live H.264 RTSP streams — main stream rtsp://[ip]:554/11', e.g. rtsp://192.168.1.123:554/11. Also cited by HOSAFE support (support.hosafe.com, H-series article).",
+      "strix_lead": "strixcamdb:hosafe"
+    },
+    {
+      "stream": "sub",
+      "path": "/12",
+      "codec": "H.264",
+      "verified": true,
+      "source": "HOSAFE WIFI Camera Quick Setup Guide (hosafe.com official setup guide): 'sub stream rtsp://[ip]:554/12'.",
+      "strix_lead": "strixcamdb:hosafe"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/ucast/11",
+      "note": "Same '/11' main-stream index published by HOSAFE, here prefixed with the '/ucast/' (unicast) group. The bare '/11' is the documented form; the '/ucast/11' variant is seen in scans/leads but is not the string HOSAFE publishes."
+    },
+    {
+      "path": "/live/ch0",
+      "note": "Widely repeated in crowdsourced VMS databases (ispyconnect, camlytics, smartvision) as the HOSAFE 1080P default 'rtsp://admin:admin@192.168.1.188:554/live/ch0'. Attributed to those third-party DBs, NOT to any HOSAFE-authored document — excluded from templates on that basis; may work on some older HOSAFE units."
+    },
+    {
+      "path": "/cam[CHANNEL]/h264",
+      "note": "Listed by ispyconnect (rtsp://[ip]:5544/cam[CHANNEL]/h264, note port 5544). Community-sourced only; not in HOSAFE docs. Likely a specific/older model or cross-brand contamination."
+    },
+    {
+      "path": "/live1.264",
+      "note": "Generic '/liveN.264' form; community/cross-brand. Not documented by HOSAFE."
+    },
+    {
+      "path": "/live0.264",
+      "note": "Generic '/liveN.264' form (community reports pair it with port 5544, no auth); not in HOSAFE docs."
+    },
+    {
+      "path": "/ch01.264",
+      "note": "Generic channel-index form; not documented by HOSAFE. Likely cross-brand contamination."
+    },
+    {
+      "path": "/ch0_0.h264",
+      "note": "Dahua/other-OEM style channel_stream path; likely cross-brand contamination. Not a HOSAFE path."
+    },
+    {
+      "path": "/cam1/mpeg4",
+      "note": "Generic MPEG4 profile path; not documented by HOSAFE. Likely cross-brand contamination."
+    },
+    {
+      "path": "/cam1/onvif-h264-1",
+      "note": "Generic ONVIF media-profile path; HOSAFE exposes ONVIF (port 8080) but the real media URI is negotiated via GetProfiles/GetStreamUri, not this fixed path. Not documented by HOSAFE."
+    },
+    {
+      "path": "/onvif1",
+      "note": "Generic ONVIF profile path; media URI is negotiated, not fixed. Not documented by HOSAFE."
+    },
+    {
+      "path": "/stream1",
+      "note": "Generic main-stream path common to many OEMs; likely cross-brand contamination. Not confirmed for HOSAFE."
+    },
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+      "note": "Xiongmai/NetSurveillance (Sofia/DVRIP) form; classic budget-OEM contamination in the leads. Not published by HOSAFE."
+    },
+    {
+      "path": "/live.sdp",
+      "note": "Generic SDP path; cross-brand. Not documented by HOSAFE."
+    }
+  ],
+  "notes": "HOSAFE is a budget Chinese IP-camera brand (WiFi/PoE, sold via Amazon/marketplaces). Its own WIFI Camera Quick Setup Guide documents two live H.264 RTSP streams on port 554 — main '/11' and sub '/12' — e.g. rtsp://[ip]:554/11 (the '/11' main index also appears in the strix leads as '/ucast/11'). Documented default ports: HTTP 80, RTSP 554, ONVIF 8080, RTMP 1935 (editable under Settings > Network). CAVEAT ON LIVE CONFIRMATION: the primary manufacturer sources could not be loaded live during this pass — support.hosafe.com currently returns a Cloudflare DNS-resolution error (site down/misconfigured) and the manuals.plus copy of the quick-setup guide is bot-blocked (403). The '/11' and '/12' paths are taken from search-engine snippets that quote HOSAFE's own quick-setup guide verbatim and are internally consistent, so they are marked verified; if a stricter live-doc citation is required, re-fetch support.hosafe.com once it resolves. The commonly crowdsourced '/live/ch0' (port 554) and '/cam[CHANNEL]/h264' (port 5544) forms come only from third-party VMS databases (ispyconnect/camlytics/smartvision), not from HOSAFE docs, so they are recorded under unverified_leads rather than published as templates.",
+  "verified_on": "2026-08-14"
+}

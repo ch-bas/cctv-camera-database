@@ -1,0 +1,47 @@
+{
+  "brand": "Siemens",
+  "brand_id": "siemens",
+  "status": "unverified",
+  "default_port": 554,
+  "templates": [],
+  "unverified_leads": [
+    {
+      "path": "/video.mp4",
+      "note": "Crowd-sourced (iSpy/Camlytics), not in any official Siemens doc"
+    },
+    {
+      "path": "/live/ch0",
+      "note": "Crowd-sourced lead; no official Siemens manual documents this path"
+    },
+    {
+      "path": "/livestream",
+      "note": "Crowd-sourced lead; not confirmed by official Siemens docs"
+    },
+    {
+      "path": "/video",
+      "note": "Generic crowd-sourced lead; not in any official Siemens doc"
+    },
+    {
+      "path": "/ch0_0.h264",
+      "note": "Crowd-sourced lead; not confirmed by official Siemens docs"
+    },
+    {
+      "path": "/live/ch00_0",
+      "note": "Crowd-sourced lead; not confirmed by official Siemens docs"
+    },
+    {
+      "path": "/cam/realmonitor?channel=[CHANNEL]&subtype=1",
+      "note": "Dahua path (/cam/realmonitor) — cross-brand contamination, no official Siemens doc"
+    },
+    {
+      "path": "/livestream/trackID=1",
+      "note": "Crowd-sourced lead; not confirmed by official Siemens docs"
+    },
+    {
+      "path": "/stream1",
+      "note": "Generic crowd-sourced lead; not in any official Siemens doc"
+    }
+  ],
+  "notes": "Siemens' security/CCTV line (CVMS/CCMS/CCIS/CCMW IP cameras, e.g. CVMS2025-IR, CCMS2025) is legacy/discontinued; Siemens sold its Security Products division to Vanderbilt Industries in 2015, and later spec sheets for the same SKUs (e.g. CVMS2025-IR) list the manufacturer as Vanderbilt. The official CVMS2025-IR configuration manual (ManualsLib) and Vanderbilt spec list RTSP (RTP/RTCP) + ONVIF as supported protocols but document NO fixed RTSP stream path. Siemens' own WinCC/TIA 'Monitoring Machines and Plants with Network Cameras' application example (support.industry.siemens.com view 62383298), which uses the CCMS2025 as its sample camera, states only the generic format 'rtsp://username:password@......' and explicitly defers the actual URL/path to 'the manual of the network camera' — it never publishes a concrete path. The candidate leads are crowd-sourced (iSpy/Camlytics) and cross-brand contaminated (they include a Dahua /cam/realmonitor path and, on iSpy, an Axis /axis-cgi/mjpg/video.cgi path), so none can be confirmed. Default RTSP port 554 is the ONVIF/standard default (protocol supported per spec) but no path is officially documented. Result: unverified — use ONVIF discovery to obtain the per-model stream URI.",
+  "verified_on": "2026-08-14"
+}

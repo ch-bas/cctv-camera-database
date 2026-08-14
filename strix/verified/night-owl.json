@@ -1,0 +1,68 @@
+{
+  "brand": "Night Owl",
+  "brand_id": "night-owl",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/ch{NN}/0",
+      "codec": "H.264|H.265",
+      "verified": true,
+      "source": "Night Owl H5 NVR Series User Manual (www.NightOwlSP.com), RTSP section: 'rtsp://NVR_IP_address:rtsp_port/ch00/1 (1 for Substream; 0 for Mainstream)'; 'Example: rtsp://192.168.1.10:00554/ch01/1'; '*A leading zero is required for channels 1-9 e.g. ch01'",
+      "strix_lead": "strixcamdb:night-owl"
+    },
+    {
+      "stream": "sub",
+      "path": "/ch{NN}/1",
+      "codec": "H.264|H.265",
+      "verified": true,
+      "source": "Night Owl H5 NVR Series User Manual (www.NightOwlSP.com), RTSP section: 'rtsp://NVR_IP_address:rtsp_port/ch00/1 (1 for Substream; 0 for Mainstream)'",
+      "strix_lead": "strixcamdb:night-owl"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/Streaming/Channels/[CHANNEL+1]01",
+      "note": "Hikvision-style path; not in any official Night Owl doc"
+    },
+    {
+      "path": "/Streaming/Channels/[CHANNEL]01",
+      "note": "Hikvision-style path; not in any official Night Owl doc"
+    },
+    {
+      "path": "/Streaming/channels/301",
+      "note": "Hikvision-style path; not in any official Night Owl doc"
+    },
+    {
+      "path": "/ch1_1.264",
+      "note": "Generic .264 pattern; does not match the documented Night Owl /chNN/S format"
+    },
+    {
+      "path": "/ch2_1.264",
+      "note": "Generic .264 pattern; not in official Night Owl doc"
+    },
+    {
+      "path": "/ch3_1.264",
+      "note": "Generic .264 pattern; not in official Night Owl doc"
+    },
+    {
+      "path": "/ch0_1.264",
+      "note": "Generic .264 pattern; not in official Night Owl doc"
+    },
+    {
+      "path": "/ch0_0.264",
+      "note": "Generic .264 pattern; not in official Night Owl doc"
+    },
+    {
+      "path": "/user=[USERNAME]&password=[PASSWORD]&channel=5&stream=1",
+      "note": "Dahua/query-string-style path; not in any official Night Owl doc"
+    },
+    {
+      "path": "/user=[USERNAME]&password=[PASSWORD]&channel=3&stream=1",
+      "note": "Dahua/query-string-style path; not in any official Night Owl doc"
+    }
+  ],
+  "notes": "Confirmed against the official Night Owl H5 NVR Series User Manual RTSP section. Format is rtsp://{ip}:{port}/ch{NN}/{S} where {NN} is a leading-zero-padded 2-digit channel (ch01..ch32) and {S} is 0=Mainstream, 1=Substream. Default RTSP port 554 (manual example shows 00554). Codec selectable H.264/H.265. RTSP must be enabled in the NVR (Enable/Disable toggle, optional password 'Verify'). Note the NVR distinguishes 'Private' protocol for Night Owl cameras vs 'ONVIF' for third-party cameras; ONVIF 2.4 Profile S is supported. This verified path applies to the H5 NVR recorder line; Night Owl uses multiple OEMs across its DVR/WiFi/app-only product lines, so other model families may differ. None of the Strix candidate leads (Hikvision /Streaming/Channels, generic /chN_N.264, Dahua query-string) match the documented Night Owl format and are excluded.",
+  "verified_on": "2026-08-14"
+}

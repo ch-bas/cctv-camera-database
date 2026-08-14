@@ -1,0 +1,51 @@
+{
+  "brand": "ANRAN",
+  "brand_id": "anran",
+  "status": "unverified",
+  "default_port": 554,
+  "templates": [],
+  "unverified_leads": [
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp",
+      "note": "Generic Chinese-OEM/CamHi-family main-stream SDP path. Dominates every third-party aggregator (iSpyConnect, camlytics, smartvision, camera-sdk, ZoneMinder) but is NOT documented in any ANRAN-owned material; ANRAN's own manuals (CamHi Quick Guide, S02 guide, AR24NW guide) publish no RTSP URL."
+    },
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=1.sdp",
+      "note": "Same OEM family sub-stream variant; aggregator-sourced only, not in any official ANRAN doc."
+    },
+    {
+      "path": "user=[USERNAME]&password=[PASSWORD]&channel=1&stream=0.sdp?",
+      "note": "Query-string variant of the same generic SDP path; aggregator-sourced, not officially documented by ANRAN."
+    },
+    {
+      "path": "user=[USERNAME]&password=[PASSWORD]&channel=1&stream=[CHANNEL].sdp?",
+      "note": "Parameterized aggregator variant; not in any official ANRAN doc."
+    },
+    {
+      "path": "/user=[USERNAME]&password=[PASSWORD]&channel=1&stream=101.sdp?",
+      "note": "Malformed/aggregator variant (stream=101 mixes Hikvision channel indexing into the SDP form); not officially documented."
+    },
+    {
+      "path": "/user=[USERNAME]_password=[PASSWORD]_channel=1_stream=0.sdp?real_stream",
+      "note": "Aggregator variant with trailing real_stream flag; not in any official ANRAN doc."
+    },
+    {
+      "path": "/user=[PASSWORD]_password=[PASSWORD]_channel=1_stream=0.sdp",
+      "note": "Malformed lead (username field duplicated with password token); scan artifact, not a real ANRAN path."
+    },
+    {
+      "path": "/ch0_0.264",
+      "note": "Generic cross-brand main-stream path (common on many low-cost OEM cams); not confirmed in any ANRAN document."
+    },
+    {
+      "path": "/ch0_1.264",
+      "note": "Generic cross-brand sub-stream path; not confirmed in any ANRAN document."
+    },
+    {
+      "path": "/Streaming/Channels/101",
+      "note": "Hikvision proprietary path; cross-brand contamination, not ANRAN."
+    }
+  ],
+  "notes": "ANRAN (budget PoE and solar/Wi-Fi camera kits, anran-cctv.com) publishes NO official fixed RTSP URL template. Its own documentation and support pages route users to the ANRAN / ARCCTV / CamHi mobile apps and, for some models, ONVIF; the accessible official manuals (WIFI-HD-IP-Camera Quick Guide (CamHi), S02 solar guide, AR24NW installation manual, all hosted on anran-cctv.com / their CDN) contain no RTSP path, port, or stream syntax. Many ANRAN models expose ONVIF/RTSP on port 554 (some also 8899), but ANRAN itself does not document the URL. The dominant `/user=..._password=..._channel=1_stream=0.sdp` template is a generic Chinese-OEM/CamHi-family path echoed by third-party aggregators (iSpyConnect, camlytics, smartvision, camera-sdk, ZoneMinder), NOT sourced from ANRAN. Per the CC0 no-guessing rule, no template is published. To integrate, use ONVIF auto-discovery (supported models) or the ANRAN/CamHi app rather than a hand-built RTSP URL; note ANRAN's own guidance states some models (e.g. P3 5MP WiFi) do not support ONVIF/RTSP at all.",
+  "verified_on": "2026-08-14"
+}
