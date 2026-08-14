@@ -1,0 +1,27 @@
+{
+  "brand": "Tiandy",
+  "brand_id": "tiandy",
+  "status": "unverified",
+  "default_port": null,
+  "templates": [],
+  "unverified_leads": [
+    {
+      "path": "/cam/realmonitor?channel=<N>&subtype=0",
+      "note": "Widely reported by third-party aggregators (iSpy, security.world, visioforge) as Tiandy main-stream path matching Dahua format. No official Tiandy document confirms this path — all sources trace back to community observation. visioforge.com explicitly admits 'it's an observed pattern rather than a formally cited standard.'"
+    },
+    {
+      "path": "/cam/realmonitor?channel=<N>&subtype=1",
+      "note": "Sub-stream variant of the Dahua-style path. Same caveat — community-reported only, no official Tiandy doc."
+    },
+    {
+      "path": "/<N>/1",
+      "note": "Format documented in the Tiandy NVR official user manual (section 4.4.2.1, e.g. rtsp://admin:pass@ip:554/1/1) but in the context of adding third-party RTSP cameras to the NVR, not as the Tiandy camera's own RTSP output path. Firmware reverse-engineering (github.com/zb3/tiandy-research, 2020) independently found the IPC native path to be /S (stream type only, e.g. /1 for main) while NVR path is /C/S — neither confirmed from official docs."
+    },
+    {
+      "path": "/live/ch0",
+      "note": "Reported for older Tiandy models by community sources. No official documentation found."
+    }
+  ],
+  "notes": "Tiandy Technologies (tiandy.com / en.tiandy.com) is a Chinese manufacturer founded in 1994, ranked among the top 10 global surveillance brands. Despite checking the official download portal (en.tiandy.com/download.html), multiple official distributor-hosted PDF manuals (tiandy.sk, g4cctv.com, pliki.genway.pl — all image-based scanned PDFs with no extractable RTSP text), the official NVR user manual (anabon.com), the ManualsLib catalog, and the Korean regional Tiandy PDF, no official Tiandy document was found that explicitly publishes the RTSP stream URL path for their IP cameras. A 2020 firmware security research report (github.com/zb3/tiandy-research) explicitly states 'Tiandy's official documentation does not provide instructions for accessing streams via [RTSP] protocols.' The /cam/realmonitor?channel=<N>&subtype=0 path circulates heavily in community databases but is attributed to Dahua-compatibility observation, not an official Tiandy source. Tiandy cameras do support RTSP (port 554) and ONVIF Profile S/T per product spec sheets, but the actual RTSP path is not published in accessible official documentation. Re-verify if Tiandy publishes a developer guide or SDK documentation via their partner portal (partner.tiandy.com, requires login).",
+  "verified_on": "2026-08-14"
+}
