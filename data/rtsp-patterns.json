@@ -6,10 +6,10 @@
     "methodology": "StrixCamDB is used ONLY as a lead source; every path here is independently re-verified against the manufacturer's official docs (manual / API / KB), so each record is independently sourced and CC0-clean, with Strix credited as the discovery source (strix_lead). Leads that could not be confirmed officially are recorded under unverified_leads and never published as fact.",
     "generated": "2026-08-14",
     "totals": {
-      "brands": 162,
-      "verified": 114,
-      "unverified": 48,
-      "templates": 339
+      "brands": 172,
+      "verified": 118,
+      "unverified": 54,
+      "templates": 349
     }
   },
   "brands": [
@@ -1785,6 +1785,15 @@
       "verified_on": "2026-08-14"
     },
     {
+      "brand_id": "bosch-smart-home",
+      "status": "unverified",
+      "templates": [],
+      "port": 554,
+      "source": "https://www.bosch-smarthome.com/uk/en/support/help/product-help/360-indoor-camera-help/",
+      "notes": "Bosch Smart Home cameras (bosch-smarthome.com) are cloud-only and stream exclusively through the Bosch Smart Camera App. No RTSP support is documented on any official Bosch Smart Home product page or help documentation. This is a distinct product line from Bosch Security (boschsecurity.com), which does support RTSP.",
+      "last_verified": "2026-08-14"
+    },
+    {
       "brand_id": "brickcom",
       "status": "verified",
       "templates": [
@@ -1955,6 +1964,15 @@
       ],
       "notes": "ClareVision is a Hikvision OEM by Clare Controls (SnapAV). Despite the Hikvision OEM relationship, ClareVision cameras use simple zero-indexed numeric RTSP paths (/0, /1, /2) rather than Hikvision's /Streaming/Channels/101 format. Main stream = /0, 2nd stream = /1, 3rd stream = /2. V100 cameras support only 2 streams; V200 and V300 support 3 streams. Port 554. Full URL: rtsp://{user}:{pass}@{ip}:554/0",
       "verified_on": "2026-08-14"
+    },
+    {
+      "brand_id": "cnb",
+      "status": "unverified",
+      "templates": [],
+      "port": 554,
+      "source": "",
+      "notes": "CNB Technology (cnbtec.com) blocks all direct access (HTTP 403). ManualsLib installation guides for XNET series (IVC5055VR, IDC4000T, IBP5030CR, IDP4030VR) only document RTSP port numbers (default 554 for MPEG4, 8554 for MJPEG) without providing RTSP path strings. No official CNB CGI/API developer guide or stream URL documentation was found via web search or direct fetch. All sources with URL paths (e.g. /mpeg4) are third-party aggregators, not manufacturer documentation.",
+      "last_verified": "2026-08-14"
     },
     {
       "brand": "Compro",
@@ -3355,6 +3373,26 @@
       ],
       "notes": "Galayou cameras (galayou-store.com) support RTSP/ONVIF but do not publish a static RTSP URL path in any official documentation. Their official support instructs users to enable RTSP via the Wansview Cloud app under Settings > Local Application, where the RTSP URL is displayed dynamically — the path is never disclosed in writing. The Wansview Cloud platform is the underlying infrastructure (Galayou uses the same 'Wansview Cloud' app). No official Galayou or Wansview manual, KB article, or developer guide publishes the RTSP path template. CVE-2025-9983 (CERT Polska, 2025-09) confirms these cameras stream via RTSP on default port 554 but does not reveal the path.",
       "verified_on": "2026-08-14"
+    },
+    {
+      "brand_id": "genie",
+      "status": "verified",
+      "templates": [
+        {
+          "label": "Main stream",
+          "url": "{user}:{pass}@{ip}:554/profile1",
+          "subtype": 0
+        },
+        {
+          "label": "Sub stream",
+          "url": "{user}:{pass}@{ip}:554/profile2",
+          "subtype": 1
+        }
+      ],
+      "port": 554,
+      "source": "https://genieproducts.co.uk/documents/2021/10/wip6f-user-manual.pdf",
+      "notes": "Section 4.5.7 RTSP of the official WIP6F Network Camera User Manual (genieproducts.co.uk) documents the RTSP address format. Unicast paths are /profile1 (main stream) and /profile2 (sub stream). The manual also references /profile3 for a third stream on the fisheye model. Multicast appends ?transportmode=mcast to the same path. The manual example is rtsp://192.168.226.201:554/profile1. Applies to Genie WISH IP (WIP) series cameras.",
+      "last_verified": "2026-08-14"
     },
     {
       "brand": "GeoVision",
@@ -5475,6 +5513,15 @@
       "verified_on": "2026-08-14"
     },
     {
+      "brand_id": "lg",
+      "status": "unverified",
+      "templates": [],
+      "port": 554,
+      "source": "",
+      "notes": "LG Business Solutions IP camera manuals (LNB/LND/LNU/LNV/LNP series) are available on lg.com/global/business and gscs-b2c.lge.com but are all scanned image-based PDFs (Adobe Illustrator/Photoshop exports) with no machine-readable text. No RTSP URL path could be extracted from any official LG document. Third-party aggregators (iSpyConnect, security.world) cite paths such as /video1+audio1 for the LG 7210R, but these are community-sourced and do not meet the official-documentation requirement.",
+      "last_verified": "2026-08-14"
+    },
+    {
       "brand": "Longse",
       "brand_id": "longse",
       "status": "verified",
@@ -5803,6 +5850,31 @@
       "verified_on": "2026-08-14"
     },
     {
+      "brand_id": "messoa",
+      "status": "verified",
+      "templates": [
+        {
+          "label": "Main stream",
+          "url": "{user}:{pass}@{ip}:554/stream1",
+          "subtype": 0
+        },
+        {
+          "label": "Sub stream",
+          "url": "{user}:{pass}@{ip}:554/stream2",
+          "subtype": 1
+        },
+        {
+          "label": "Third stream",
+          "url": "{user}:{pass}@{ip}:554/stream3",
+          "subtype": 2
+        }
+      ],
+      "port": 554,
+      "source": "https://www.messoa.com/faq_detail.php?i=5",
+      "notes": "Paths /stream1, /stream2, /stream3 documented in official Messoa FAQ. Port 554 is the RTSP default; not explicitly stated in the FAQ. Older NVR/fisheye models (e.g. NDR891) used non-standard ports (8554-8558) with codec-specific paths (/h264, /mpeg4, /mjpeg) — those are model-specific exceptions.",
+      "last_verified": "2026-08-14"
+    },
+    {
       "brand": "Milesight",
       "brand_id": "milesight",
       "status": "verified",
@@ -6076,6 +6148,26 @@
       ],
       "notes": "Confirmed against the official Night Owl H5 NVR Series User Manual RTSP section. Format is rtsp://{ip}:{port}/ch{NN}/{S} where {NN} is a leading-zero-padded 2-digit channel (ch01..ch32) and {S} is 0=Mainstream, 1=Substream. Default RTSP port 554 (manual example shows 00554). Codec selectable H.264/H.265. RTSP must be enabled in the NVR (Enable/Disable toggle, optional password 'Verify'). Note the NVR distinguishes 'Private' protocol for Night Owl cameras vs 'ONVIF' for third-party cameras; ONVIF 2.4 Profile S is supported. This verified path applies to the H5 NVR recorder line; Night Owl uses multiple OEMs across its DVR/WiFi/app-only product lines, so other model families may differ. None of the Strix candidate leads (Hikvision /Streaming/Channels, generic /chN_N.264, Dahua query-string) match the documented Night Owl format and are excluded.",
       "verified_on": "2026-08-14"
+    },
+    {
+      "brand_id": "nuvico",
+      "status": "verified",
+      "templates": [
+        {
+          "label": "Main stream",
+          "url": "{user}:{pass}@{ip}:554/profile1",
+          "subtype": 0
+        },
+        {
+          "label": "Sub stream",
+          "url": "{user}:{pass}@{ip}:554/profile2",
+          "subtype": 1
+        }
+      ],
+      "port": 554,
+      "source": "https://nuvico.com/index.php?did=367&route=extension%2Fmodule%2Fproduct_downloads%2Fget",
+      "notes": "RTSP Address field in camera web UI (Config > Network > RTSP) shows three stream paths: /profile1, /profile2, /profile3. Confirmed via NCT-4M-E2 Eyeball Camera User Manual page 35 screenshot. Port 554 is the default RTSP port.",
+      "last_verified": "2026-08-14"
     },
     {
       "brand": "Panasonic i-PRO",
@@ -6710,6 +6802,15 @@
       ],
       "notes": "RVi (rvigroup.ru) is a Russian-market brand built largely on Dahua hardware (Dahua OEM), with some Hikvision-platform models. Per the official RVi support KB, RTSP path depends on device family: (a) 1st/2nd-gen cameras -> /RVi/1/1 main, /RVi/1/2 sub; (b) camera models RVi-1NCT2162 & RVi-1NCE2166 -> /ch01/0 (main), /ch01/1, /ch01/2; (c) RVi-2NCXxxxx series -> /stream1 (main), /stream2, /stream3; (d) 1st-gen RECORDERS -> Dahua-style /cam/realmonitor?channel=N&subtype=0|1; (e) 2nd-gen RECORDERS -> Hikvision-style /Streaming/Unicast/channels/### or /PSIA/streaming/channels/###. Published templates cover the two primary camera/recorder families (/RVi/* and /cam/realmonitor). Channel <N> is 1-based; subtype 0=main, 1=sub. Dahua OEM lineage confirmed against RVi's own documentation, not solely the lead.",
       "verified_on": "2026-08-14"
+    },
+    {
+      "brand_id": "safevant",
+      "status": "unverified",
+      "templates": [],
+      "port": 554,
+      "source": "",
+      "notes": "Safevant's official website (safevant.com / safevantcctv.com) is unreachable. Their official manuals (hosted on Amazon/Safevantcctv.com) only document proprietary CMS software and cloud-based viewing; no RTSP URL paths appear anywhere in official documentation. All RTSP path references found online originate from third-party aggregators (ispyconnect, camlytics, smartvision.dev), not Safevant's own documentation.",
+      "last_verified": "2026-08-14"
     },
     {
       "brand_id": "safire",
@@ -8046,6 +8147,15 @@
       "verified_on": "2026-08-14"
     },
     {
+      "brand_id": "toucan",
+      "status": "unverified",
+      "templates": [],
+      "port": 554,
+      "source": "https://www.toucan.solutions/security-cam-faq",
+      "notes": "Toucan cameras are cloud-only consumer devices (toucan.solutions / toucansolution.com). They operate exclusively through the Kuna Smart Home Security mobile app with Amazon Alexa and Google Assistant integration. No RTSP support, local stream access, or third-party NVR/VMS integration is mentioned in any official documentation or product pages. Likely cloud-only with no RTSP capability.",
+      "last_verified": "2026-08-14"
+    },
+    {
       "brand": "TP-Link",
       "brand_id": "tp-link",
       "status": "verified",
@@ -8874,6 +8984,31 @@
       "verified_on": "2026-08-14"
     },
     {
+      "brand_id": "vitek",
+      "status": "verified",
+      "templates": [
+        {
+          "label": "Main stream",
+          "url": "{user}:{pass}@{ip}:554/profile1",
+          "subtype": 0
+        },
+        {
+          "label": "Sub stream",
+          "url": "{user}:{pass}@{ip}:554/profile2",
+          "subtype": 1
+        },
+        {
+          "label": "Third stream",
+          "url": "{user}:{pass}@{ip}:554/profile3",
+          "subtype": 2
+        }
+      ],
+      "port": 554,
+      "source": "https://vitekcctv.com/wp-content/uploads/PRODUCTS/MULTI-USE_MATERIALS/VITEK_Transcendent-RTSP-Streaming.pdf",
+      "notes": "Vitek Transcendent Series IP cameras use profile-based RTSP paths (profile1/profile2/profile3). Vitek recommends reserving profile1 for the recorder and using profile2 or profile3 for third-party streaming.",
+      "last_verified": "2026-08-14"
+    },
+    {
       "brand": "Vivotek",
       "brand_id": "vivotek",
       "status": "verified",
@@ -9495,6 +9630,15 @@
       ],
       "notes": "UK brand, now defunct; later products became cloud-app-only with no local RTSP. RTSP confirmed for the older locally-streaming MPEG-4/MJPEG generation (Black SD, Knight SD, White SD, Bullet): default RTSP port 554, paths /live_mpeg4.sdp (MPEG-4) and /live_mjpeg.sdp (MJPEG), per the official user manual section 7.7. RTSP Authentication is on by default (must be disabled for RealPlayer which lacks auth; QuickTime supports auth). HTTP alternatives on port 8009 documented in same manual (stream.av / stream.jpg / snapshot.jpg). The later H.264 HD line (e.g. Bullet HD 1080) supports RTSP on 554 with H.264 per its official manual, but that manual publishes NO RTSP URL path, so the commonly-cited /live_h264.sdp and /live/0/h264.sdp remain unverified (third-party-only). All also expose ONVIF for auto-discovery.",
       "verified_on": "2026-08-14"
+    },
+    {
+      "brand_id": "yale",
+      "status": "unverified",
+      "templates": [],
+      "port": 554,
+      "source": "",
+      "notes": "Yale sells two distinct camera lineages. (1) Older WIPC-series IP cameras (WIPC-301W stationary, WIPC-303W PTZ) appear to support RTSP based on the existence of official manuals hosted at yalehome.com and yalehome.co.uk, but those PDFs are binary-encoded and WebFetch cannot extract their text content to confirm any RTSP path. No readable official text document on yalehome.com, yalehome.co.uk, or help.yale.co.uk publishes a static RTSP URL path. (2) Newer Yale Smart cameras (Smart Indoor Camera, Smart Outdoor Camera, Smart Video Doorbell, CCTV WiFi Smart Home Kit) are app-centric (Yale Home View / Yale View app); no official support pages on yalehome.com mention RTSP or third-party NVR integration. All RTSP path data found in research came exclusively from third-party aggregators (smartvision.dev, ispyconnect.com, community forums) — excluded per mandatory rules. Recommend sourcing official English-language WIPC manual in text-searchable form to confirm paths.",
+      "last_verified": "2026-08-14"
     },
     {
       "brand": "YCC365",
