@@ -1,0 +1,41 @@
+{
+  "brand": "TVT Digital",
+  "brand_id": "tvt",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/profile1",
+      "codec": "H.264|H.265 (per-profile)",
+      "verified": true,
+      "source": "TVT Digital TD-5422E1 User Manual (ManualsLib manual/2558336, pages 58-59, section 4.6.7 RTSP): main stream unicast/multicast address format 'rtsp://IP address: rtsp port/profile1?transportmode=mcast'; example 'rtsp://192.168.226.201:554/profile1?transportmode=mcast'. Default RTSP port is 554. — https://www.manualslib.com/manual/2558336/Tvt-Digital-Td-5422e1.html?page=58"
+    },
+    {
+      "stream": "sub",
+      "path": "/profile2",
+      "codec": "H.264|H.265 (per-profile)",
+      "verified": true,
+      "source": "TVT Digital TD-5422E1 User Manual (ManualsLib manual/2558336, pages 58-59): sub stream address format 'rtsp://IP address: rtsp port/profile2?transportmode=mcast'. Same source as main stream entry. — https://www.manualslib.com/manual/2558336/Tvt-Digital-Td-5422e1.html?page=59"
+    },
+    {
+      "stream": "third",
+      "path": "/profile3",
+      "codec": "H.264|H.265 (per-profile)",
+      "verified": true,
+      "source": "TVT Digital TD-5422E1 User Manual (ManualsLib manual/2558336, pages 58-59): third stream address format 'rtsp://IP address: rtsp port/profile3?transportmode=mcast'. Same source. — https://www.manualslib.com/manual/2558336/Tvt-Digital-Td-5422e1.html?page=59"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "/?chID=1&streamType=main&linkType=tcp",
+      "note": "Query-parameter format reported in community sources for NVR models (e.g. TD-2104TS-C). Not found in the official TVT camera user manual; may apply to DVR/NVR products with multi-channel access. Not confirmed in manufacturer documentation for standalone IP cameras."
+    },
+    {
+      "path": "/profile4",
+      "note": "Thermal stream documented in the TD-5422E1 manual (thermal camera model). Not applicable to standard IP cameras; excluded from primary templates."
+    }
+  ],
+  "notes": "TVT Digital (Shenzhen TVT Digital Technology Co., Ltd.) IP cameras use /profile1 for main stream, /profile2 for sub stream, /profile3 for third stream. These paths are documented in the official TVT Digital TD-5422E1 User Manual (section 4.6.7 RTSP). The manual shows both unicast and multicast access; for unicast VLC playback the path is the same (/profile1) without authentication required if anonymous login is enabled, or with credentials embedded as rtsp://{user}:{pass}@{ip}:554/profile1. Default RTSP port is 554. The ?chID= query-parameter format appears in community reports for NVR products but is not found in the standalone IP camera user manual. Direct PDF downloads from en.tvt.net.cn are access-restricted (HTTP 403); the official manufacturer manual was accessed via ManualsLib.",
+  "verified_on": "2026-08-14"
+}
