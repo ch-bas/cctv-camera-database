@@ -31,12 +31,18 @@ const QUEUE = path.join(ROOT, 'strix', 'verify-queue.json');
 // Brands whose OFFICIAL scheme is a bare numeric path — so "/0","/4" are NOT junk.
 const NUMERIC_PATH_OK = new Set(['grandstream']);
 
-// Brand-slug tokens that legitimately own a path fragment, used to catch
-// cross-brand misfiles (e.g. a Dahua "realmonitor" path filed under Reolink).
-const PATH_OWNER = [
-  { fragment: 'realmonitor', brands: ['dahua', 'amcrest'] },   // Dahua/Amcrest OEM
-  { fragment: 'cam/realmonitor', brands: ['dahua', 'amcrest'] },
-];
+// `/cam/realmonitor` is Dahua's path — but a LARGE share of budget brands are
+// Dahua OEMs and legitimately use it, so we must NOT reject it wholesale (that
+// would discard valid Imou/Intelbras/Lorex/CP-Plus/RVI/... leads). We only treat
+// it as a misfile under brands that are definitively NOT Dahua-OEM and ship their
+// own documented scheme (the pilot's Reolink case). Everything else flows to
+// verification, which confirms per-brand whether the brand is a Dahua OEM.
+const REALMONITOR_MISFILE = new Set([
+  'reolink', 'hikvision', 'hilook', 'hiwatch', 'ezviz', 'hanwha', 'samsung',
+  'axis', 'bosch', 'vivotek', 'ubiquiti', 'panasonic', 'i-pro', 'sony', 'pelco',
+  'avigilon', 'mobotix', 'flir', 'honeywell', 'tp-link', 'tapo', 'trendnet',
+  'foscam', 'wyze',
+]);
 
 main();
 
@@ -125,11 +131,9 @@ function junkReason(lead) {
   // user-custom go2rtc friendly names (e.g. /Salon/mainstream, /Driveway/sub)
   if (/^\/[A-Z][A-Za-z]+\/(main|sub)stream$/.test(p)) return 'user-custom go2rtc friendly-name path';
 
-  // cross-brand misfile (a path owned by another brand filed under this one)
-  for (const { fragment, brands } of PATH_OWNER) {
-    if (p.toLowerCase().includes(fragment) && !brands.includes(slug)) {
-      return `cross-brand misfile: '${fragment}' path filed under ${slug}`;
-    }
+  // cross-brand misfile: the Dahua realmonitor path under a non-Dahua-OEM brand
+  if (/realmonitor/i.test(p) && REALMONITOR_MISFILE.has(slug)) {
+    return `cross-brand misfile: Dahua realmonitor path filed under ${slug} (not a Dahua OEM)`;
   }
 
   // obvious typo
