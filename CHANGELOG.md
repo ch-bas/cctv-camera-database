@@ -16,7 +16,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
   - WV-S/X/U 2xxx/15xxx/22xxx/25xxx fixed dome and bullet cameras
   - WV-S1xxx/32xxx/33xxx/34xxx compact and outdoor dome series
 - All entries include: resolution, sensor, lens, night vision, IP/IK ratings, codec list, RTSP stream configs, power specs, and audio info sourced directly from i-PRO product pages.
-- **Digital Watchdog**: 73 new MEGApix IP camera models added as a new brand (`cameras/digital-watchdog/`), sourced from digital-watchdog.com product pages. Coverage includes:
+- **Digital Watchdog**: 70 new MEGApix IP camera models added as a new brand (`cameras/digital-watchdog/`), sourced from digital-watchdog.com product pages. Coverage includes:
   - MB/MV/MT/MPB/MPV series — 5MP–8MP bullet, turret, and dome cameras
   - MF/MPF series — 5MP turret cameras (2.8mm, 4mm, 4–8mm focal lengths)
   - VSTB/VSBD/VSDG series — 4MP vandal-proof turret/dome/fisheye
