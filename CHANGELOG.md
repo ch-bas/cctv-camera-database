@@ -26,6 +26,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
   - XMDF/XMDS/PDS/PVX series — panoramic multi-sensor and license plate recognition
   - All MEGApix cameras use Dahua-compatible firmware; RTSP path `/cam/realmonitor?channel=1&subtype=0`
   - Includes `strix/verified/digital-watchdog.json` for RTSP pattern registry
+  - Physical specs (dimensions, weight, operating temperature, power draw, release year) backfilled from official DW datasheet PDFs, linked as a second source on 69/70 models
 
 ---
 
