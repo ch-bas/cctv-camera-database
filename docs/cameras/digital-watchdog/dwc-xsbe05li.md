@@ -17,6 +17,8 @@
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | Yes |
+| Operating temp | -20 to +50°C |
+| Released | 2026 |
 
 ## Features
 
@@ -35,6 +37,7 @@
 ## Sources
 
 - https://digital-watchdog.com/productdetail/DWC-XSBE05Li/
+- https://digital-watchdog.com/admin/assets/_downloads/DW_DS_DWC-XSBE05Li_Rev0826.pdf
 
 ---
 *Auto-generated from digital-watchdog-dwc-xsbe05li.json — do not edit by hand.*

@@ -17,6 +17,8 @@
 | IP rating | IP66 |
 | IK rating | IK10 |
 | Two-way audio | Yes |
+| Operating temp | -20 to +50°C |
+| Released | 2025 |
 
 ## Features
 
@@ -32,6 +34,7 @@
 ## Sources
 
 - https://digital-watchdog.com/productdetail/DWC-M(P)F2Wi28TW_4TW/
+- https://digitalwatchdog.s3.us-west-1.amazonaws.com/_downloads_2025/DW_DS_DWC-MF2WixTW_Rev0325.pdf
 
 ---
 *Auto-generated from digital-watchdog-dwc-mf2wi28tw.json — do not edit by hand.*

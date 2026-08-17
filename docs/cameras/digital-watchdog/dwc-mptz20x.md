@@ -15,6 +15,7 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | Two-way audio | Yes |
+| Operating temp | -10 to +55°C |
 
 ## Features
 
@@ -44,6 +45,7 @@
 - https://digital-watchdog.com/productdetail/DWC-MPTZ20X/
 - https://www.surveillance-video.com/camera-dwc-mptz20x.html
 - https://www.jmac.com/Digital_Watchdog_DWC_MPTZ20X_p/DIGITAL-WATCHDOG-DWC-MPTZ20X.htm
+- https://digitalwatchdog.s3.us-west-1.amazonaws.com/_downloads_2025/_archives/DW_AE_MEGApix1080p_DWC-MPTZ20X_Rev0315.docx
 
 ---
 *Auto-generated from digital-watchdog-dwc-mptz20x.json — do not edit by hand.*

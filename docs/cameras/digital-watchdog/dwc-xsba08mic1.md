@@ -17,6 +17,8 @@
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | Yes |
+| Operating temp | -40 to +50°C |
+| Released | 2026 |
 
 ## Features
 
@@ -32,6 +34,7 @@
 ## Sources
 
 - https://digital-watchdog.com/productdetail/DWC-XSBA08MiC1/
+- https://digital-watchdog.com/admin/assets/_downloads/DW_DS_DWC-XSBA08MiC1_Rev0726.pdf
 
 ---
 *Auto-generated from digital-watchdog-dwc-xsba08mic1.json — do not edit by hand.*

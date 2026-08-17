@@ -16,6 +16,8 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
+| Operating temp | -30 to +60°C |
+| Released | 2025 |
 
 ## Features
 
@@ -32,6 +34,7 @@
 ## Sources
 
 - https://digital-watchdog.com/productdetail/DWC-MB95Wi28TW/
+- https://digitalwatchdog.s3.us-west-1.amazonaws.com/_downloads_2025/DW_DS_DWC-MB95WixTW_Rev0125.pdf
 
 ---
 *Auto-generated from digital-watchdog-dwc-mb95wi28tw.json — do not edit by hand.*

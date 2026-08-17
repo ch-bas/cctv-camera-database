@@ -15,6 +15,8 @@
 | Storage | microSD ≤ 1024GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
+| Operating temp | -20 to +50°C |
+| Released | 2025 |
 
 ## Features
 
@@ -30,6 +32,7 @@
 ## Sources
 
 - https://digital-watchdog.com/productdetail/DWC-MB72Wi4TW/
+- https://digitalwatchdog.s3.us-west-1.amazonaws.com/_downloads_2025/DW_DS_DWC-MB72Wi4TW_Rev0225.pdf
 
 ---
 *Auto-generated from digital-watchdog-dwc-mb72wi4tw.json — do not edit by hand.*

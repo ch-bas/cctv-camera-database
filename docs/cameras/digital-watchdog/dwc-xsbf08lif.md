@@ -17,6 +17,8 @@
 | IP rating | IP66 |
 | IK rating | IK10 |
 | Two-way audio | Yes |
+| Operating temp | -20 to +50°C |
+| Released | 2026 |
 
 ## Features
 
@@ -31,6 +33,7 @@
 ## Sources
 
 - https://digital-watchdog.com/productdetail/DWC-XSBF08LiF/
+- https://digital-watchdog.com/admin/assets/_downloads/DS_DWC-XSBF08LiF_0226.pdf
 
 ---
 *Auto-generated from digital-watchdog-dwc-xsbf08lif.json — do not edit by hand.*

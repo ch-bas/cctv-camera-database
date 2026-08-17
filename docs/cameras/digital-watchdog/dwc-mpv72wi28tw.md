@@ -17,6 +17,8 @@
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |
+| Operating temp | -20 to +50°C |
+| Released | 2023 |
 
 ## Features
 
@@ -32,6 +34,7 @@
 ## Sources
 
 - https://digital-watchdog.com/productdetail/DWC-M(P)V72WixTW/
+- https://digitalwatchdog.s3.us-west-1.amazonaws.com/_downloads_2025/DW_DS_DWC-MV72WixTW_Rev0225.pdf
 
 ---
 *Auto-generated from digital-watchdog-dwc-mpv72wi28tw.json — do not edit by hand.*

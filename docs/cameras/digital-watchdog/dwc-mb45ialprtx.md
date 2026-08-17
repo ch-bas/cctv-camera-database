@@ -17,6 +17,8 @@
 | IP rating | IP66 |
 | IK rating | IK09 |
 | Two-way audio | Yes |
+| Operating temp | -40 to +50°C |
+| Released | 2026 |
 
 ## Features
 
@@ -31,6 +33,7 @@
 ## Sources
 
 - https://digital-watchdog.com/productdetail/DWC-MB45iALPRTX/
+- https://digital-watchdog.com/admin/assets/_downloads/DW_DS_DWC-MB45iALPRTX_Rev0726.pdf
 
 ---
 *Auto-generated from digital-watchdog-dwc-mb45ialprtx.json — do not edit by hand.*

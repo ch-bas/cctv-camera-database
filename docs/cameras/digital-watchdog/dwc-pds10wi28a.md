@@ -17,6 +17,8 @@
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | Yes |
+| Operating temp | -20 to +50°C |
+| Released | 2026 |
 
 ## Features
 
@@ -30,6 +32,7 @@
 ## Sources
 
 - https://digital-watchdog.com/productdetail/DWC-PDS10Wi28A/
+- https://digital-watchdog.com/admin/assets/_downloads/DS_DWC-PDS10Wi28A_0226.pdf
 
 ---
 *Auto-generated from digital-watchdog-dwc-pds10wi28a.json — do not edit by hand.*

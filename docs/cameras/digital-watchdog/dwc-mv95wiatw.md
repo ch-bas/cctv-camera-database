@@ -17,10 +17,13 @@
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | Yes |
+| Operating temp | -30 to +60°C |
+| Released | 2021 |
 
 ## Sources
 
 - https://digital-watchdog.com/productdetail/DWC-MV95WiATW/
+- https://digitalwatchdog.s3.us-west-1.amazonaws.com/_downloads_2025/aa7c6040-1030-464e-ab36-8e432e424831/DW_DS_DWC-MV95WiATW_Rev1221.pdf
 
 ---
 *Auto-generated from digital-watchdog-dwc-mv95wiatw.json — do not edit by hand.*

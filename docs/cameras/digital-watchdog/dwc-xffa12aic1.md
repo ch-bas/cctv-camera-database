@@ -17,10 +17,13 @@
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | Yes |
+| Operating temp | -20 to +50°C |
+| Released | 2026 |
 
 ## Sources
 
 - https://digital-watchdog.com/productdetail/DWC-XFFA12AiC1/
+- https://digital-watchdog.com/admin/assets/_downloads/DW_DS_DWC-XFFA12AiC1_Rev0726.pdf
 
 ---
 *Auto-generated from digital-watchdog-dwc-xffa12aic1.json — do not edit by hand.*

@@ -17,6 +17,8 @@
 | IP rating | IP66 |
 | IK rating | IK09 |
 | Two-way audio | Yes |
+| Operating temp | -40 to +50°C |
+| Released | 2026 |
 
 ## Features
 
@@ -39,6 +41,7 @@
 ## Sources
 
 - https://digital-watchdog.com/productdetail/DWC-M(P)B45Wi650TW/
+- https://digital-watchdog.com/admin/assets/_downloads/DW_DS_%20DWC-MB45Wi650TW_Rev0726.pdf
 
 ---
 *Auto-generated from digital-watchdog-dwc-mpb45wi650tw.json — do not edit by hand.*

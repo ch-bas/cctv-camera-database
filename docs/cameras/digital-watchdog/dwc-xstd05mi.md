@@ -15,6 +15,8 @@
 | Protocols | onvif, rtsp, http |
 | IP rating | IP67 |
 | IK rating | IK10 |
+| Operating temp | -20 to +50°C |
+| Released | 2026 |
 
 ## Features
 
@@ -34,6 +36,7 @@
 ## Sources
 
 - https://digital-watchdog.com/productdetail/DWC-XSTD05Mi/
+- https://digital-watchdog.com/admin/assets/_downloads/DS_DWC-XSTD05Mi_0226.pdf
 
 ---
 *Auto-generated from digital-watchdog-dwc-xstd05mi.json — do not edit by hand.*

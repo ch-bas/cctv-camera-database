@@ -16,6 +16,7 @@
 | Protocols | onvif, rtsp, http |
 | IP rating | IP66 |
 | Two-way audio | Yes |
+| Operating temp | -40 to +50°C |
 | Released | 2024 |
 
 ## Features
@@ -37,6 +38,7 @@
 ## Sources
 
 - https://digital-watchdog.com/productdetail/DWC-MB45Wi650TW/
+- https://digitalwatchdog.s3.us-west-1.amazonaws.com/_downloads_2025/DW_DS_DWC-MB45Wi650TW_Rev0225.pdf
 
 ---
 *Auto-generated from digital-watchdog-dwc-mb45wi650tw.json — do not edit by hand.*

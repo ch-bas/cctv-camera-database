@@ -17,10 +17,13 @@
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |
+| Operating temp | -30 to +50°C |
+| Released | 2026 |
 
 ## Sources
 
 - https://digital-watchdog.com/productdetail/DWC-XMDF32H/
+- https://digital-watchdog.com/admin/assets/_downloads/DW_DS_DWC-XMDF32H_Rev0726.pdf
 
 ---
 *Auto-generated from digital-watchdog-dwc-xmdf32h.json — do not edit by hand.*

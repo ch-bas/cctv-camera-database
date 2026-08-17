@@ -16,10 +16,13 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
+| Operating temp | -20 to +50°C |
+| Released | 2021 |
 
 ## Sources
 
 - https://digital-watchdog.com/productdetail/DWC-MV72Di4TW/
+- https://digitalwatchdog.s3.us-west-1.amazonaws.com/_downloads_2025/72dc8e16-5eea-4f41-89e1-9d3d14adc142/DW_DS_DWC-MV72Di4TW_REV0421.pdf
 
 ---
 *Auto-generated from digital-watchdog-dwc-mv72di4tw.json — do not edit by hand.*

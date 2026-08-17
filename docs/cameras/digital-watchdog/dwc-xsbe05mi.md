@@ -17,6 +17,7 @@
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | Yes |
+| Operating temp | -20 to +50°C |
 
 ## Features
 
@@ -34,6 +35,7 @@
 ## Sources
 
 - https://digital-watchdog.com/productdetail/DWC-XSBE05Mi/
+- https://digital-watchdog.com/admin/assets/_downloads/DW_DS_DWC-XSBE05Mi_Rev0826.pdf
 
 ---
 *Auto-generated from digital-watchdog-dwc-xsbe05mi.json — do not edit by hand.*

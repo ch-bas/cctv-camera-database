@@ -17,11 +17,13 @@
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | Yes |
+| Operating temp | -30 to +60°C |
 | Released | 2024 |
 
 ## Sources
 
 - https://digital-watchdog.com/productdetail/DWC-VSTB04Bi/
+- https://digitalwatchdog.s3.us-west-1.amazonaws.com/_downloads_2025/DW_DS_DWC-VSTB04Bi_B_Rev0125.pdf
 
 ---
 *Auto-generated from digital-watchdog-dwc-vstb04bi.json — do not edit by hand.*

@@ -16,6 +16,7 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | Yes |
+| Operating temp | -20 to +50°C |
 
 ## Features
 
@@ -28,6 +29,7 @@
 ## Sources
 
 - https://digital-watchdog.com/productdetail/DWC-MBW8Wi2TX/
+- https://digital-watchdog.com/admin/assets/_downloads/DW_DS_DWC-MBW8Wi2TX_Rev0726.pdf
 
 ---
 *Auto-generated from digital-watchdog-dwc-mbw8wi2tx.json — do not edit by hand.*

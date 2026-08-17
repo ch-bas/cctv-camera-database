@@ -17,6 +17,8 @@
 | IP rating | IP67 |
 | IK rating | IK09 |
 | Two-way audio | Yes |
+| Operating temp | -40 to +50°C |
+| Released | 2026 |
 
 ## Features
 
@@ -32,6 +34,7 @@
 ## Sources
 
 - https://digital-watchdog.com/productdetail/DWC-XSBC08BiC1/
+- https://digital-watchdog.com/admin/assets/_downloads/DW_DS_DWC-XSBC08BiC1_Rev0726.pdf
 
 ---
 *Auto-generated from digital-watchdog-dwc-xsbc08bic1.json — do not edit by hand.*

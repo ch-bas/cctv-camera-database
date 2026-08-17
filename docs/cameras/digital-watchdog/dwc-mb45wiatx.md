@@ -16,6 +16,8 @@
 | Protocols | onvif, rtsp, http |
 | IP rating | IP66 |
 | Two-way audio | Yes |
+| Operating temp | -40 to +50°C |
+| Released | 2026 |
 
 ## Features
 
@@ -32,6 +34,7 @@
 ## Sources
 
 - https://digital-watchdog.com/productdetail/DWC-MB45WiATX/
+- https://digital-watchdog.com/admin/assets/_downloads/DW_DS_DWC-MB45WiATX_Rev0726.pdf
 
 ---
 *Auto-generated from digital-watchdog-dwc-mb45wiatx.json — do not edit by hand.*

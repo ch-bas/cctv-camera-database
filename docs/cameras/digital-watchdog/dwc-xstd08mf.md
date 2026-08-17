@@ -16,6 +16,8 @@
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | Yes |
+| Operating temp | -20 to +50°C |
+| Released | 2026 |
 
 ## Features
 
@@ -37,6 +39,7 @@
 ## Sources
 
 - https://digital-watchdog.com/productdetail/DWC-XSTD08MF/
+- https://digital-watchdog.com/admin/assets/_downloads/DS_DWC-XSTD08MF_0226.pdf
 
 ---
 *Auto-generated from digital-watchdog-dwc-xstd08mf.json — do not edit by hand.*
