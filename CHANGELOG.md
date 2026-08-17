@@ -16,6 +16,16 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
   - WV-S/X/U 2xxx/15xxx/22xxx/25xxx fixed dome and bullet cameras
   - WV-S1xxx/32xxx/33xxx/34xxx compact and outdoor dome series
 - All entries include: resolution, sensor, lens, night vision, IP/IK ratings, codec list, RTSP stream configs, power specs, and audio info sourced directly from i-PRO product pages.
+- **Digital Watchdog**: 73 new MEGApix IP camera models added as a new brand (`cameras/digital-watchdog/`), sourced from digital-watchdog.com product pages. Coverage includes:
+  - MB/MV/MT/MPB/MPV series — 5MP–8MP bullet, turret, and dome cameras
+  - MF/MPF series — 5MP turret cameras (2.8mm, 4mm, 4–8mm focal lengths)
+  - VSTB/VSBD/VSDG series — 4MP vandal-proof turret/dome/fisheye
+  - XSBA/XSBC/XSBE/XSBF/XSBJ/XSWA/XSTD series — StarLight bullet and turret cameras
+  - XFFA/XDBJ series — fisheye and hemispheric panoramic cameras
+  - XPZA/MPTZ series — PTZ cameras (3MP–20× optical zoom)
+  - XMDF/XMDS/PDS/PVX series — panoramic multi-sensor and license plate recognition
+  - All MEGApix cameras use Dahua-compatible firmware; RTSP path `/cam/realmonitor?channel=1&subtype=0`
+  - Includes `strix/verified/digital-watchdog.json` for RTSP pattern registry
 
 ---
 

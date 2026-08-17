@@ -5,7 +5,8 @@
 | Brand | Digital Watchdog |
 | Model | DWC-V6SN28W |
 | Type | dome |
-| Resolution | 6MP (6MP) |
+| Connectivity | ethernet |
+| Resolution | 6MP (6MP, 3072×2048) |
 
 ## Sources
 

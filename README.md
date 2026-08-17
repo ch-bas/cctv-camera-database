@@ -166,7 +166,7 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | Total cameras | **3,343** |
 | Brands | **77** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
-| PoE wired | 2,560 |
+| PoE wired | 2,561 |
 | WiFi | 599 |
 | Battery / wire-free | 203 |
 | 4K / 8MP+ | 928 |
