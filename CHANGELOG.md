@@ -6,6 +6,19 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.64.0] — 2026-08-17
+
+### Added
+- **i-PRO**: 340 new network camera models extracted from the official i-PRO documentation database (https://i-pro.com/products_and_solutions/en/surveillance/documentation-database), bringing the i-PRO total from 14 → 354 entries. Coverage includes:
+  - WV-S85xxx multi-sensor panoramic domes (2–4 sensor, 4K)
+  - WV-X86xxx multi-directional + PTZ combo cameras
+  - WV-X67xxx ruggedized PTZ speed domes (4K 30× optical zoom)
+  - WV-S/X/U 2xxx/15xxx/22xxx/25xxx fixed dome and bullet cameras
+  - WV-S1xxx/32xxx/33xxx/34xxx compact and outdoor dome series
+- All entries include: resolution, sensor, lens, night vision, IP/IK ratings, codec list, RTSP stream configs, power specs, and audio info sourced directly from i-PRO product pages.
+
+---
+
 ## [1.63.0] — 2026-08-14
 
 ### Added — RTSP patterns expanded to 170 brands (waves 2–5)
