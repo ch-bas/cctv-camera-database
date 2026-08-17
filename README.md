@@ -1,8 +1,8 @@
 # CCTV Camera Database
 
-An open, structured database of 2,990 CCTV / IP camera models and their technical specifications, covering 76 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
+An open, structured database of 3,030 CCTV / IP camera models and their technical specifications, covering 76 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
 
-[![cameras](https://img.shields.io/badge/cameras-2%2C990-blue)](data/cameras.json)
+[![cameras](https://img.shields.io/badge/cameras-3%2C030-blue)](data/cameras.json)
 [![brands](https://img.shields.io/badge/brands-76-green)](cameras/)
 [![license](https://img.shields.io/badge/license-CC0-lightgrey)](LICENSE)
 
@@ -47,7 +47,7 @@ Prefer to self-host or browse offline? A [standalone demo](docs/demo.html) (just
 - **Filter** — narrow by brand, camera type, night vision, resolution, or market
 - **Sort** — click any column header to sort ascending/descending
 - **Detail drawer** — click a row to slide open the full spec sheet (resolution, connectivity, protocols, storage, audio, pricing, source links)
-- **Pagination** — page through all 2,990 cameras, 25 per page
+- **Pagination** — page through all 3,030 cameras, 25 per page
 - **Stats bar** — live counts for total cameras, brands, 4K+, WiFi, and no-subscription models
 
 ---
@@ -80,7 +80,7 @@ cctv-camera-database/
 │   ├── reolink/          # 127 cameras
 │   └── …70 more brands
 ├── data/                 # GENERATED — do not edit by hand
-│   ├── cameras.json      # all 2,990 cameras as one array
+│   ├── cameras.json      # all 3,030 cameras as one array
 │   ├── cameras.csv       # flattened, spreadsheet-friendly
 │   └── rtsp-patterns.json  # CC0 brand-level RTSP URL layer (122 brands)
 ├── strix/
@@ -163,17 +163,17 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 
 | Metric | Count |
 |--------|-------|
-| Total cameras | **2,990** |
+| Total cameras | **3,030** |
 | Brands | **76** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
-| PoE wired | 2,208 |
+| PoE wired | 2,248 |
 | WiFi | 599 |
 | Battery / wire-free | 203 |
-| 4K / 8MP+ | 825 |
-| 4–5MP | 1,245 |
-| 1080p–2MP | 919 |
-| With integration configs (Frigate / Home Assistant) | 2,515 |
-| With color-lux rating (`night_vision.min_lux_color`) | 1,798 |
+| 4K / 8MP+ | 826 |
+| 4–5MP | 1,270 |
+| 1080p–2MP | 933 |
+| With integration configs (Frigate / Home Assistant) | 2,555 |
+| With color-lux rating (`night_vision.min_lux_color`) | 1,831 |
 
 ### All 76 brands
 
@@ -186,10 +186,10 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | Bosch | 153 | Enterprise + thermal, EU/global |
 | ABUS | 142 | Consumer + professional, GDPR-first, DE/AT/CH |
 | Reolink | 127 | Prosumer, no-subscription, global |
+| i-PRO | 114 | Enterprise AI (ex-Panasonic), JP/global |
 | Uniview | 101 | Enterprise NDAA, global |
 | EZVIZ (Hikvision) | 87 | Consumer, global |
 | Axis | 81 | Enterprise premium, global |
-| i-PRO | 74 | Enterprise AI (ex-Panasonic), JP/global |
 | Annke | 64 | Prosumer, global |
 | Speco | 61 | Professional/commercial (NDAA), US |
 | Hi-Focus | 60 | Made-in-India, BIS certified, IN |
