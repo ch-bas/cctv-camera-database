@@ -1,0 +1,26 @@
+# i-PRO WV-X15502A-Z1LN
+
+| Field | Spec |
+|-------|------|
+| Brand | i-PRO |
+| Model | WV-X15502A-Z1LN |
+| Type | bullet |
+| Connectivity | ethernet |
+| Resolution | 5MP (5MP, 3072×1728) |
+| Sensor | 1/2.8" CMOS |
+| Lens | 1× 4.7-47mm F1.6-F3.0 |
+| Field of view | 6.1-58° |
+| Night vision | ir (180m), 0.04 lux color |
+| Power | DC12V / PoE+ / PoE++ |
+| Storage | microSD ≤ 512GB, NVR |
+| Protocols | onvif, rtsp |
+| IP rating | IP66/IP67 |
+| IK rating | IK10 |
+| Two-way audio | No |
+
+## Sources
+
+- https://i-pro.com/products_and_solutions/en/surveillance/products/wv-x15502a-z1ln
+
+---
+*Auto-generated from i-pro-wv-x15502a-z1ln.json — do not edit by hand.*

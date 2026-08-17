@@ -6,6 +6,30 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.64.0] — 2026-08-17
+
+### Added
+- **i-PRO**: 340 new network camera models extracted from the official i-PRO documentation database (https://i-pro.com/products_and_solutions/en/surveillance/documentation-database), bringing the i-PRO total from 14 → 354 entries. Coverage includes:
+  - WV-S85xxx multi-sensor panoramic domes (2–4 sensor, 4K)
+  - WV-X86xxx multi-directional + PTZ combo cameras
+  - WV-X67xxx ruggedized PTZ speed domes (4K 30× optical zoom)
+  - WV-S/X/U 2xxx/15xxx/22xxx/25xxx fixed dome and bullet cameras
+  - WV-S1xxx/32xxx/33xxx/34xxx compact and outdoor dome series
+- All entries include: resolution, sensor, lens, night vision, IP/IK ratings, codec list, RTSP stream configs, power specs, and audio info sourced directly from i-PRO product pages.
+- **Digital Watchdog**: 70 new MEGApix IP camera models added as a new brand (`cameras/digital-watchdog/`), sourced from digital-watchdog.com product pages. Coverage includes:
+  - MB/MV/MT/MPB/MPV series — 5MP–8MP bullet, turret, and dome cameras
+  - MF/MPF series — 5MP turret cameras (2.8mm, 4mm, 4–8mm focal lengths)
+  - VSTB/VSBD/VSDG series — 4MP vandal-proof turret/dome/fisheye
+  - XSBA/XSBC/XSBE/XSBF/XSBJ/XSWA/XSTD series — StarLight bullet and turret cameras
+  - XFFA/XDBJ series — fisheye and hemispheric panoramic cameras
+  - XPZA/MPTZ series — PTZ cameras (3MP–20× optical zoom)
+  - XMDF/XMDS/PDS/PVX series — panoramic multi-sensor and license plate recognition
+  - All MEGApix cameras use Dahua-compatible firmware; RTSP path `/cam/realmonitor?channel=1&subtype=0`
+  - Includes `strix/verified/digital-watchdog.json` for RTSP pattern registry
+  - Physical specs (dimensions, weight, operating temperature, power draw, release year) backfilled from official DW datasheet PDFs, linked as a second source on 69/70 models
+
+---
+
 ## [1.63.0] — 2026-08-14
 
 ### Added — RTSP patterns expanded to 170 brands (waves 2–5)
