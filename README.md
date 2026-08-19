@@ -1,8 +1,8 @@
 # CCTV Camera Database
 
-An open, structured database of 3,350 CCTV / IP camera models and their technical specifications, covering 77 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
+An open, structured database of 3,357 CCTV / IP camera models and their technical specifications, covering 77 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
 
-[![cameras](https://img.shields.io/badge/cameras-3%2C350-blue)](data/cameras.json)
+[![cameras](https://img.shields.io/badge/cameras-3%2C357-blue)](data/cameras.json)
 [![brands](https://img.shields.io/badge/brands-77-green)](cameras/)
 [![license](https://img.shields.io/badge/license-CC0-lightgrey)](LICENSE)
 
@@ -47,7 +47,7 @@ Prefer to self-host or browse offline? A [standalone demo](docs/demo.html) (just
 - **Filter** — narrow by brand, camera type, night vision, resolution, or market
 - **Sort** — click any column header to sort ascending/descending
 - **Detail drawer** — click a row to slide open the full spec sheet (resolution, connectivity, protocols, storage, audio, pricing, source links)
-- **Pagination** — page through all 3,350 cameras, 25 per page
+- **Pagination** — page through all 3,357 cameras, 25 per page
 - **Stats bar** — live counts for total cameras, brands, 4K+, WiFi, and no-subscription models
 
 ---
@@ -80,7 +80,7 @@ cctv-camera-database/
 │   ├── abus/             # 142 cameras
 │   └── …71 more brands
 ├── data/                 # GENERATED — do not edit by hand
-│   ├── cameras.json      # all 3,350 cameras as one array
+│   ├── cameras.json      # all 3,357 cameras as one array
 │   ├── cameras.csv       # flattened, spreadsheet-friendly
 │   └── rtsp-patterns.json  # CC0 brand-level RTSP URL layer (122 brands)
 ├── strix/
@@ -163,17 +163,17 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 
 | Metric | Count |
 |--------|-------|
-| Total cameras | **3,350** |
+| Total cameras | **3,357** |
 | Brands | **77** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
-| PoE wired | 2,568 |
+| PoE wired | 2,575 |
 | WiFi | 599 |
 | Battery / wire-free | 203 |
-| 4K / 8MP+ | 929 |
-| 4–5MP | 1,369 |
-| 1080p–2MP | 1,051 |
+| 4K / 8MP+ | 931 |
+| 4–5MP | 1,373 |
+| 1080p–2MP | 1,052 |
 | With integration configs (Frigate / Home Assistant) | 2,865 |
-| With color-lux rating (`night_vision.min_lux_color`) | 2,132 |
+| With color-lux rating (`night_vision.min_lux_color`) | 2,139 |
 
 ### All 77 brands
 
@@ -213,11 +213,11 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | Ajax | 22 | Professional alarm + wired PoE cameras, EU/UK |
 | Foscam | 22 | Consumer WiFi/PoE, global |
 | Ring (Amazon) | 21 | Consumer ecosystem, global |
+| Verkada | 20 | Cloud-managed enterprise, US/CA |
 | Vivotek | 19 | Enterprise AI, global |
 | Avigilon | 18 | Enterprise NDAA, global |
 | SV3C | 17 | Budget consumer, CN/US |
 | Wyze | 14 | Budget consumer, US |
-| Verkada | 13 | Cloud-managed enterprise, US/CA |
 | Blink (Amazon) | 12 | Budget battery, US/UK/EU |
 | GeoVision | 12 | Enterprise, TW/Asia/global |
 | Google Nest | 12 | Consumer smart home, global |
