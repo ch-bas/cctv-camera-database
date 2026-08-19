@@ -1,18 +1,18 @@
-# Avigilon H5A Dome
+# Avigilon H5A 5MP Dome (5.0C-H5A-DO2)
 
-*Also known as: 5.0C-H5A-DO1-IR*
+*Also known as: 5.0C-H5A-DO2*
 
 | Field | Spec |
 |-------|------|
 | Brand | Avigilon |
-| Model | H5A Dome |
+| Model | H5A 5MP Dome (5.0C-H5A-DO2) |
 | Type | dome |
 | Connectivity | ethernet |
 | Resolution | 5MP (5MP, 2592×1944) |
 | Sensor | 1/2.8" CMOS |
-| Lens | 1× 3-9 (motorized)mm F1.6 |
-| Field of view | 108-37 horizontal° |
-| Night vision | ir (30m), 0.058 lux color |
+| Lens | 1× 9-22 (motorized)mm |
+| Field of view | 31-14 horizontal° |
+| Night vision | none, 0.058 lux color |
 | Power | PoE (802.3af) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
