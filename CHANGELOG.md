@@ -6,6 +6,19 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.65.0] — 2026-08-19
+
+### Added
+- **Verkada**: 17 new cloud-managed cameras across four form factors, sourced from Verkada spec pages + official datasheet PDFs, expanding the existing Verkada brand:
+  - **Dome (10):** CD22 / CD32 / CD43 / CD53 / CD63 (indoor) plus their weatherproof `-E` outdoor variants
+  - **Fisheye (1):** CF83-E — 12MP 180° hemispheric
+  - **Mini (4):** CM22, CM41-E, CM42, CM42-S (split-body / remote-head)
+  - **PTZ (2):** CP52-E (5MP, 28× optical) and CP63-E (4K, 32× optical)
+- Full specs per model: resolution, sensor, lens, field of view, IR range, color min-lux, IP/IK ratings, operating temperature, dimensions, weight, PoE class + consumption, onboard microSD storage, codecs, audio, PTZ pan/tilt + zoom.
+- Cloud-managed (Verkada Command): `storage.cloud: true`, `nvr_compatible: false`. RTSP is supported (RTSP 1.0) but Command-gated per-camera with device-specific URLs, so `strix/verified/verkada.json` is recorded honestly as `unverified`. No ONVIF.
+
+---
+
 ## [1.64.0] — 2026-08-17
 
 ### Added
