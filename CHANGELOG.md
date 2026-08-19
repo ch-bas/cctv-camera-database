@@ -6,6 +6,16 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [1.66.0] — 2026-08-19
+
+### Added
+- **Annke** — series-completeness pass: added **76 network/PoE IP cameras** missing from the catalog, bringing Annke from 64 → 140. Enumerated the full Annke catalog via its Shopify `products.json`, deduped against existing records, and extracted specs from each product page. Coverage spans the current lineup: NightChroma full-color & smart-hybrid-light bullets/turrets/domes, dual-lens & 180° panoramic, fisheye and 4-directional multisensor, PTZ / speed domes, ANPR/LPR, plus specialty models (thermal/optical bi-spectrum, solar/4G, underwater, fire/thermal detection). TVI/analog duplicates, NVR/DVRs, kits and accessories were excluded.
+
+### Fixed
+- **Annke datasheet enrichment** — cross-checked records against 22 datasheet PDFs (17 linked on product pages + 5 recovered from Annke's Shopify CDN via web.archive.org, per the #217 technique). Filled sensor, field-of-view, dimensions, weight, operating temperature, lens/aperture, min-lux, IR range, codecs and fps on spec-light records, and corrected real product-page errors (e.g. I51DL FOV 71.5→99°, min-lux 0.028→0.01; I51EM/I51EH turret dimensions + weight). Applied through a sanity gate that rejects packaging-vs-body dimensions and gross-vs-net weight mis-reads.
+
+---
+
 ## [1.65.1] — 2026-08-19
 
 Data-quality pass across several open issues (no new brands).
