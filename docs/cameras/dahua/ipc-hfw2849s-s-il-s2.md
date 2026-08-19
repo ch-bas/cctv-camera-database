@@ -6,7 +6,7 @@
 | Model | IPC-HFW2849S-S-IL-S2 |
 | Type | bullet |
 | Connectivity | ethernet |
-| Resolution | 4K UHD (8MP) |
+| Resolution | 4K UHD (8MP, 3840×2160) |
 | Field of view | 106h° |
 | Night vision | hybrid (30m), 0.008 lux color |
 | Power | PoE (802.3af) / DC 12V |

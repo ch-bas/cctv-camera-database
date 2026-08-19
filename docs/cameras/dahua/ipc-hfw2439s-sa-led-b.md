@@ -6,7 +6,7 @@
 | Model | IPC-HFW2439S-SA-LED-B |
 | Type | bullet |
 | Connectivity | ethernet |
-| Resolution | 4MP (4MP) |
+| Resolution | 4MP (4MP, 2688×1520) |
 | Field of view | 107h° |
 | Night vision | color (30m), 0.004 lux color |
 | Power | PoE/DC12V |

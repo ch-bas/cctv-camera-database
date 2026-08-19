@@ -6,7 +6,7 @@
 | Model | IPC-HFW2441S-S |
 | Type | bullet |
 | Connectivity | ethernet |
-| Resolution | 4MP (4MP) |
+| Resolution | 4MP (4MP, 2688×1520) |
 | Field of view | 106h° |
 | Night vision | ir (30m), 0.006 lux color |
 | Power | PoE (802.3af) / DC 12V |
