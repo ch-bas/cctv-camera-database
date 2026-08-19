@@ -6,7 +6,7 @@
 | Model | IPC-HDW2439T-AS-LED-S2 |
 | Type | turret |
 | Connectivity | ethernet |
-| Resolution | 4MP (4MP) |
+| Resolution | 4MP (4MP, 2688×1520) |
 | Field of view | 96° |
 | Night vision | color (30m), 0.004 lux color |
 | Power | PoE/DC12V |

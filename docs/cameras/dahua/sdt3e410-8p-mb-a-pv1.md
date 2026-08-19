@@ -9,6 +9,7 @@
 | Resolution | 8MP panoramic (5376×1520) + 4MP PTZ (2560×1440) (8MP, 5376×1520) |
 | Sensor | Overview 1/2.8" + PTZ 1/2.8" CMOS |
 | Lens | 2× 2.8 (panoramic) / 4–40 (PTZ)mm |
+| Field of view | 180 horizontal (panoramic) / 58-11.3 (PTZ)° |
 | Night vision | hybrid, 0.005 lux color |
 | Power | PoE+ (802.3at) / 12 VDC 3 A |
 | Storage | microSD ≤ 512GB, NVR |

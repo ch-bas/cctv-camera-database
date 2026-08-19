@@ -8,6 +8,7 @@
 | Connectivity | ethernet |
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/2.8" CMOS |
+| Field of view | 58.5-2.8 horizontal° |
 | Night vision | color, 0.0005 lux, 0.005 lux color |
 | Power | PoE+ (802.3at) / 24V DC |
 | Storage | microSD ≤ 512GB, NVR |

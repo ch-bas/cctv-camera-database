@@ -6,7 +6,7 @@
 | Model | IPC-HFW2841T-ZAS-S2 |
 | Type | bullet |
 | Connectivity | ethernet |
-| Resolution | 4K UHD (8MP) |
+| Resolution | 4K UHD (8MP, 3840×2160) |
 | Field of view | 110-30h° |
 | Night vision | ir (60m), 0.0008 lux color |
 | Power | PoE/DC12V |

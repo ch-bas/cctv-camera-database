@@ -9,15 +9,17 @@
 | Type | bullet |
 | Connectivity | ethernet |
 | Resolution | 1080p (2MP, 1920×1080) |
-| Sensor | 1/2.8" CMOS |
-| Lens | 1× 3.3-9 (motorized varifocal)mm |
+| Sensor | 1/2.8" progressive scan CMOS |
+| Lens | 1× 3.3-9 (motorized varifocal)mm F1.3 |
 | Field of view | 97-33 horizontal° |
-| Night vision | ir (30m), 0.027 lux color |
+| Night vision | ir (30m), 0.014 lux, 0.027 lux color |
 | Power | PoE (802.3af/at) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
+| IK rating | IK10 |
 | Two-way audio | No |
+| Operating temp | -40 to 65°C |
 
 ## Features
 
@@ -27,6 +29,7 @@
 - LightCatcher
 - HDSM SmartCodec
 - H.265
+- WDR (83 dB)
 
 ## Sources
 

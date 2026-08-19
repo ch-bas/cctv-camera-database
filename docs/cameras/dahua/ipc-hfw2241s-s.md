@@ -6,7 +6,7 @@
 | Model | IPC-HFW2241S-S |
 | Type | bullet |
 | Connectivity | ethernet |
-| Resolution | 1080p HD (2MP) |
+| Resolution | 1080p HD (2MP, 1920×1080) |
 | Field of view | 106h° |
 | Night vision | ir (30m), 0.002 lux color |
 | Power | PoE (802.3af) / DC 12V |

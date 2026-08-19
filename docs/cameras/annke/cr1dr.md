@@ -12,7 +12,7 @@
 | Sensor | CMOS |
 | Lens | 1× 2.8mm F1.0 |
 | Field of view | 180 horizontal, 75 vertical° |
-| Night vision | color (40m), 0.0005 lux |
+| Night vision | color (40m), 0.0005 lux, 0.0005 lux color |
 | Power | DC 12V |
 | IP rating | IP67 |
 | Two-way audio | No |

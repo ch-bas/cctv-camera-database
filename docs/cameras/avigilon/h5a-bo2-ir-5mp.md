@@ -9,15 +9,17 @@
 | Type | bullet |
 | Connectivity | ethernet |
 | Resolution | 5MP (5MP, 2592×1944) |
-| Sensor | 1/2.8" CMOS |
-| Lens | 1× 9-22 (motorized varifocal)mm |
+| Sensor | 1/1.8" progressive scan CMOS |
+| Lens | 1× 9-22 (motorized varifocal)mm F1.6 |
 | Field of view | 97-33 horizontal° |
-| Night vision | ir (40m), 0.058 lux color |
+| Night vision | ir (40m), 0.029 lux, 0.058 lux color |
 | Power | PoE (802.3af/at) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
+| IK rating | IK10 |
 | Two-way audio | No |
+| Operating temp | -40 to 65°C |
 
 ## Features
 
@@ -28,6 +30,7 @@
 - HDSM SmartCodec
 - H.265
 - remote focus and zoom
+- WDR (85 dB)
 
 ## Sources
 
