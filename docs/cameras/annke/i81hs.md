@@ -7,12 +7,16 @@
 | Type | turret |
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2560×1440) |
-| Night vision | ir |
+| Sensor | 1/2.7" Progressive Scan CMOS |
+| Lens | 1× 2.8mm F2.0 |
+| Field of view | 113.31 x 59.85° |
+| Night vision | ir (30m), 0.01 lux color |
 | Power | PoE |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | Yes |
+| Operating temp | -30 to 60°C |
 
 ## Features
 
@@ -29,6 +33,7 @@
 ## Sources
 
 - https://www.annkecctv.com/products/i81hs
+- https://cdn.shopify.com/s/files/1/0110/6385/3156/files/I81HS-2.8mm.pdf
 
 ---
 *Auto-generated from annke-i81hs.json — do not edit by hand.*

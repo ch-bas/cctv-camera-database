@@ -28,6 +28,7 @@
 
 - https://www.annkecctv.com/products/i41chwb
 - https://www.annkecctv.com/products/i41chwb.json
+- https://cdn.shopify.com/s/files/1/0110/6385/3156/files/I41CH.pdf
 
 ---
 *Auto-generated from annke-i41chwb.json — do not edit by hand.*
