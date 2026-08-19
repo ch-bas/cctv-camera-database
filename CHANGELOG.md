@@ -15,7 +15,7 @@ Data-quality pass across several open issues (no new brands).
 - **Avigilon/Pelco SKU corrections (#251):** fixed `avigilon-h6a-dc1-ir-2mp` lens 3-9mm → 2.8-12mm; retargeted `avigilon-h5a-do` to the real 5MP dome `5.0C-H5A-DO2` (9-22mm, non-IR).
 - **Avigilon H5A line enrichment:** backfilled all 9 H5A records from the H5A line / multisensor / dual-head datasheets — monochrome `min_lux`, lens apertures (F1.3 / F1.6 / F1.5 / F1.93), codecs, max fps, IK10, operating temperature, dimensions/weight, and WDR (up to 120 dB). Fixed two sensor/lens bugs (5MP single-sensor `1/2.8"` → `1/1.8"`; DH2 lens `3.3-5.7mm` → `3.35-7.0mm`).
 - **`field_of_view_deg` saturation (#179):** backfilled 110 Dahua cameras (fixed/varifocal + PTZ) from datasheets — dataset-wide FOV coverage **89.9% → 93.2%**.
-- **Dahua color min-lux (#161):** recovered color-mode minimum illumination on 6 hybrid/full-color Dahua cameras where the datasheet's wrapped color line had been missed.
+- **Color min-lux (#161):** recovered color-mode minimum illumination on 26 cameras where the datasheet figure had been missed — 6 hybrid/full-color Dahua (wrapped color line) plus 20 Hikvision-family ColorVu (Hikvision, Annke, HiLook). Color figure only — never the B/W value or the "0 lux with IR/white light" sentinel.
 
 ### Removed
 - `avigilon-h6a-bo1-ir-5mp`, `avigilon-h6a-do1-ir-5mp`, `pelco-sarix-enhanced-4-ibv532-1er` — nonexistent SKUs (no 5MP H6A bullet/dome; `IBV532-1ER` is not a real Pelco model).
