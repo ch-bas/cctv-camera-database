@@ -17,6 +17,8 @@ Data-quality pass across several open issues (no new brands).
 - **`field_of_view_deg` saturation (#179):** backfilled 110 Dahua cameras (fixed/varifocal + PTZ) from datasheets — dataset-wide FOV coverage **89.9% → 93.2%**.
 - **Color min-lux (#161):** recovered color-mode minimum illumination on 26 cameras where the datasheet figure had been missed — 6 hybrid/full-color Dahua (wrapped color line) plus 20 Hikvision-family ColorVu (Hikvision, Annke, HiLook). Color figure only — never the B/W value or the "0 lux with IR/white light" sentinel.
 
+- **`ik_rating` quick-win (#162):** promoted the explicit `IK10` rating from `features[]` into the structured `ik_rating` field for 15 ABUS vandal cameras. Rejected a Speco fisheye whose "IK10" referred to the included junction box, not the camera.
+
 ### Removed
 - `avigilon-h6a-bo1-ir-5mp`, `avigilon-h6a-do1-ir-5mp`, `pelco-sarix-enhanced-4-ibv532-1er` — nonexistent SKUs (no 5MP H6A bullet/dome; `IBV532-1ER` is not a real Pelco model).
 
