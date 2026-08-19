@@ -10,7 +10,7 @@
 | Connectivity | ethernet |
 | Resolution | 2x5MP dual sensor (10MP, 5184×1944) |
 | Sensor | 2x 1/2.7" progressive scan CMOS |
-| Lens | 2× 3.3-5.7 (motorized per sensor)mm |
+| Lens | 2× 3.35-7.0 (motorized per sensor)mm F1.93 |
 | Field of view | Up to 180 combined° |
 | Night vision | ir (15m), 0.05 lux, 0.1 lux color |
 | Power | High PoE (802.3bt) |

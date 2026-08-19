@@ -10,7 +10,7 @@
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2688×1520) |
 | Sensor | 1/2.8" progressive scan CMOS |
-| Lens | 1× 3.3-9 (motorized varifocal)mm |
+| Lens | 1× 3.3-9 (motorized varifocal)mm F1.3 |
 | Field of view | 97-33 horizontal° |
 | Night vision | ir (30m), 0.015 lux, 0.03 lux color |
 | Power | PoE (802.3af/at) |

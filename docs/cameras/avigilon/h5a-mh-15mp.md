@@ -10,7 +10,7 @@
 | Connectivity | ethernet |
 | Resolution | 3x5MP (15MP) |
 | Sensor | 3x 1/2.8" CMOS |
-| Lens | 3× 3.3-5.7 (motorized)mm |
+| Lens | 3× 3.3-5.7 (motorized)mm F1.5 |
 | Field of view | 270 maximum° |
 | Night vision | ir (30m), 0.016 lux, 0.02 lux color |
 | Power | High PoE (802.3bt) |

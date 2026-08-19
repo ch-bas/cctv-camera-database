@@ -10,7 +10,7 @@
 | Connectivity | ethernet |
 | Resolution | 3x8MP (24MP) (24MP) |
 | Sensor | 3x 1/2.8" CMOS |
-| Lens | 3× 3.3-5.7 (motorized per sensor)mm |
+| Lens | 3× 3.3-5.7 (motorized per sensor)mm F1.5 |
 | Field of view | 270° |
 | Night vision | ir (30m), 0.02 lux color |
 | Power | High PoE (802.3bt) |
