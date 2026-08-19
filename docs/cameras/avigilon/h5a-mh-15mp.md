@@ -12,13 +12,14 @@
 | Sensor | 3x 1/2.8" CMOS |
 | Lens | 3× 3.3-5.7 (motorized)mm |
 | Field of view | 270 maximum° |
-| Night vision | ir (20m), 0.02 lux color |
+| Night vision | ir (30m), 0.016 lux, 0.02 lux color |
 | Power | High PoE (802.3bt) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | IK rating | IK10 |
 | Two-way audio | No |
+| Operating temp | -40 to 60°C |
 
 ## Features
 
@@ -29,6 +30,7 @@
 - HDSM SmartCodec
 - H.265
 - IK10
+- WDR (120 dB, true WDR)
 
 ## Sources
 

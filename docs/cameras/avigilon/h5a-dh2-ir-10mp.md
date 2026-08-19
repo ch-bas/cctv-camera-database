@@ -8,16 +8,18 @@
 | Model | H5A 10MP Dual Head (10C-H5A-DH2-IR) |
 | Type | dual-lens |
 | Connectivity | ethernet |
-| Resolution | 2x5MP dual sensor (10MP) |
-| Sensor | 2x 1/2.8" CMOS |
+| Resolution | 2x5MP dual sensor (10MP, 5184×1944) |
+| Sensor | 2x 1/2.7" progressive scan CMOS |
 | Lens | 2× 3.3-5.7 (motorized per sensor)mm |
 | Field of view | Up to 180 combined° |
-| Night vision | ir (20m), 0.1 lux color |
+| Night vision | ir (15m), 0.05 lux, 0.1 lux color |
 | Power | High PoE (802.3bt) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
+| IK rating | IK10 |
 | Two-way audio | No |
+| Operating temp | -30 to 60°C |
 
 ## Features
 
@@ -28,6 +30,7 @@
 - LightCatcher
 - HDSM SmartCodec
 - H.265
+- WDR (120 dB, true WDR)
 
 ## Sources
 
