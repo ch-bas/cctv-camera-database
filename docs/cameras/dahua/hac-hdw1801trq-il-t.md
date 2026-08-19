@@ -10,7 +10,7 @@
 | Sensor | 4K CMOS |
 | Lens | 1× 2.8mm F2.0 |
 | Field of view | 105.5h° |
-| Night vision | hybrid (25m) |
+| Night vision | hybrid (25m), 0.001 lux, 0.01 lux color |
 | Power | DC 12V |
 | Storage | NVR |
 | Protocols | hdcvi |
