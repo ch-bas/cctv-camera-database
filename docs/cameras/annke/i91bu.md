@@ -7,7 +7,7 @@
 | Type | bullet |
 | Connectivity | 4g |
 | Resolution | 4K (8MP, 3840×2160) |
-| Sensor | 1/1.2" CMOS |
+| Sensor | 1/1.2" Progressive Scan CMOS |
 | Lens | 1× 2.8mm F1.0 |
 | Field of view | 101.6 x 52.4° |
 | Night vision | color (30m), 0.0005 lux color |

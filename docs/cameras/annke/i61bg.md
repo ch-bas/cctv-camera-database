@@ -7,7 +7,7 @@
 | Type | ptz |
 | Connectivity | ethernet |
 | Resolution | 1080P (2MP, 1920×1080) |
-| Sensor | 1/1.8" CMOS |
+| Sensor | 1/1.8" progressive scan CMOS |
 | Lens | 1× 5.9-188.8mm F1.5 |
 | Field of view | 59.8 to 3.3 x 33.7 to 1.9° |
 | Night vision | color, 0.002 lux, 0.002 lux color |

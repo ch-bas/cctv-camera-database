@@ -7,9 +7,9 @@
 | Type | bullet |
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2688×1520) |
-| Sensor | 1/1.8" CMOS |
+| Sensor | 1/1.8" progressive scan CMOS |
 | Lens | 1× 3-9mm F1.0 |
-| Field of view | 87 to 45.8° |
+| Field of view | 87 to 45.8 x 46 to 25.6° |
 | Night vision | hybrid (10m), 0.001 lux color |
 | Power | PoE (802.3at) |
 | Storage | microSD ≤ 256GB, NVR |

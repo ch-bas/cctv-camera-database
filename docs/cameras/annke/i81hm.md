@@ -7,7 +7,8 @@
 | Type | bullet |
 | Connectivity | 4g |
 | Resolution | 4MP (4MP, 2560×1440) |
-| Sensor | 1/3" CMOS |
+| Sensor | 1/3" Progressive Scan CMOS |
+| Lens | F1.28 |
 | Field of view | 75 x 40° |
 | Night vision | ir (30m), 0.01 lux |
 | Power | Solar panel (40W) + built-in battery (51.46Wh), 12 VDC |

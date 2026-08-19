@@ -8,9 +8,9 @@
 | Connectivity | ethernet |
 | Resolution | 3K (3.87MP, 3027×1278) |
 | Sensor | 1/3" Progressive Scan CMOS |
-| Lens | 1× 2.8mm |
-| Field of view | 71.5 x 53° |
-| Night vision | ir (30m), 0.028 lux color |
+| Lens | 1× 2.8mm F2.0 |
+| Field of view | 99 x 55° |
+| Night vision | ir (30m), 0.01 lux color |
 | Power | DC 12V; PoE (802.3af) |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |

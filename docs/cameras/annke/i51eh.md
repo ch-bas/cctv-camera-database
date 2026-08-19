@@ -7,7 +7,7 @@
 | Type | turret |
 | Connectivity | ethernet |
 | Resolution | 3K (5.3MP, 3072×1728) |
-| Sensor | 1/3" CMOS |
+| Sensor | 1/3" Progressive Scan CMOS |
 | Lens | 1× 2.8mm F1.6 |
 | Field of view | 98 x 54° |
 | Night vision | hybrid (30m), 0.005 lux color |
