@@ -9,6 +9,7 @@
 | Resolution | 12MP (12MP, 4000×3000) |
 | Sensor | 1/1.7" CMOS |
 | Lens | 1× 2.7-12mm |
+| Field of view | 98° |
 | Night vision | ir (60m) |
 | Power | PoE / DC 12V / 24 VAC |
 | Storage | microSD ≤ 256GB, NVR |
