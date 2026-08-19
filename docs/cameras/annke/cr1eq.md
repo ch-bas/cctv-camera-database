@@ -12,7 +12,7 @@
 | Sensor | CMOS |
 | Lens | 1× 2.8mm F1.6 |
 | Field of view | 180 horizontal, 59 vertical, diagonal 127° |
-| Night vision | hybrid (25m), 0.01 lux |
+| Night vision | hybrid (25m), 0.01 lux, 0.01 lux color |
 | Power | DC 12V |
 | IP rating | IP67 |
 | Two-way audio | No |
