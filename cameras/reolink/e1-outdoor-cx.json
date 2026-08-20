@@ -64,10 +64,10 @@
         "height": 720,
         "fps": 5
       },
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_sub",
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Preview_01_main",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Preview_01_sub",
       "autotracking": false,
-      "notes": "Frigate autotracking unsupported: Reolink uses absolute ONVIF PTZ; Frigate autotracking requires relative movement."
+      "notes": "Frigate autotracking unsupported: Reolink uses absolute ONVIF PTZ; Frigate autotracking requires relative movement. Use the official /Preview_01_main path (Reolink RTSP KB); it serves the stream at the codec configured in the camera. The legacy /h264Preview_01_main path forces an H.264 re-encode and delivers noticeably lower quality on current firmware (community report, GitHub #280)."
     },
     "home_assistant": {
       "integration": "reolink",
@@ -75,7 +75,7 @@
     },
     "blue_iris": {
       "profile": "Reolink",
-      "notes": "Select 'Reolink' profile. If not listed, use Generic/ONVIF with RTSP path /h264Preview_01_main."
+      "notes": "Select 'Reolink' profile. If not listed, use Generic/ONVIF with RTSP path /Preview_01_main."
     }
   },
   "sensor": "1/1.8\" CMOS",
