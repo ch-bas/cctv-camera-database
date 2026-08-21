@@ -6,6 +6,24 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.0.0] — 2026-08-21
+
+Major milestone: a full redesign of the companion website ([cctv-database.com](https://cctv-database.com)) alongside a Reolink RTSP-path correction. No dataset schema changes.
+
+### Website (cctv-database.com)
+- **Complete redesign** of the main pages — camera detail, homepage, recently-added, Frigate configs, and the RTSP reference — plus a **new Brands directory** (`/brands`). Consistent dark, theme-aware (light/dark) UI throughout.
+- Camera pages gain an at-a-glance **spec strip**, an **icon feature grid**, typed **source cards**, and honest **generated-vs-verified** / cloud-required labeling.
+- A community **"Did this config work?"** verification flow — Generated → Community-tested → Verified status with a ✓ badge and a two-click report — turns page visits into config verifications.
+- List pages get **KPI cards, quick filters, and sortable/searchable tables**; `/blog` now aliases `/articles`.
+
+### Fixed
+- **Reolink RTSP paths (#280):** switched every non-verified Reolink `configs.frigate` template from the legacy `/h264Preview_01_main` (+ `_sub`) to the official `/Preview_01_main` (+ `_sub`) path documented in `strix/verified/reolink.json` (Reolink RTSP KB) — **83 cameras**. The `h264Preview` path forces an in-camera H.264 re-encode and delivers noticeably lower quality on current firmware; `Preview` serves the stream at the camera's configured codec. Matching Blue Iris notes updated; `video-doorbell-poe` (community-verified on the legacy path) left unchanged.
+
+### Verified
+- **Reolink Lumus (#280):** marked `configs.frigate.verified` — confirmed working by @Uthrom on Frigate 0.18-beta3.
+
+---
+
 ## [1.66.0] — 2026-08-19
 
 ### Added
