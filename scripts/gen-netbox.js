@@ -29,6 +29,15 @@ const REPORT = args.includes('--report');
 
 const SPEED_TYPE = { 10: '10base-t', 100: '100base-tx', 1000: '1000base-t', 2500: '2.5gbase-t', 10000: '10gbase-t' };
 
+// devicetype-library's manufacturer name / directory can differ from the dataset's
+// brand casing. Match the library's existing convention exactly or CI creates a
+// duplicate manufacturer (and macOS's case-insensitive FS clobbers the real dir).
+// lowerFile mirrors vendors whose existing files are lowercased (e.g. AXIS).
+const BRAND_OVERRIDE = {
+  axis: { name: 'AXIS', lowerFile: true },
+};
+const brandInfo = (brand) => BRAND_OVERRIDE[brand.toLowerCase()] || { name: brand };
+
 // Mirror devicetype-library's exact slug rules (tests/device_types.py) — the
 // ordered replace chains must match theirs char-for-char, or their CI rejects
 // the slug (e.g. a model like "…2UY/SL" must slugify to "…2uy-sl", not "…2uysl").
@@ -78,10 +87,11 @@ function toYaml(c) {
   const pt = poeType(method);
   const dcV = dcVoltage(method);
   const draw = c.power && c.power.consumption_w;
-  const slug = `${slugifyManufacturer(c.brand)}-${slugifyModel(c.model)}`;
+  const mfr = brandInfo(c.brand).name;
+  const slug = `${slugifyManufacturer(mfr)}-${slugifyModel(c.model)}`;
 
-  const L = [];
-  L.push(`manufacturer: ${yamlStr(c.brand)}`);
+  const L = ['---']; // devicetype-library's yamllint requires the document-start marker
+  L.push(`manufacturer: ${yamlStr(mfr)}`);
   L.push(`model: ${yamlStr(c.model)}`);
   L.push(`slug: ${slug}`);
   L.push(`part_number: ${yamlStr(c.model)}`);
@@ -144,14 +154,16 @@ let n = 0, skipped = 0;
 for (const c of cams) {
   const r = toYaml(c);
   if (!r) { skipped++; continue; }
-  const dir = path.join(OUT, 'device-types', c.brand);
+  const info = brandInfo(c.brand);
+  const dir = path.join(OUT, 'device-types', info.name);
   fs.mkdirSync(dir, { recursive: true });
   // Filename must equal the model or its slug (their CI checks this, case-insensitively).
   // Raw model when filesystem-safe (keeps parens, matching library convention); for a
   // model with a slash, drop the slash + parens so the name still resolves to the slug.
-  const fname = /[/\\]/.test(c.model)
+  let fname = /[/\\]/.test(c.model)
     ? c.model.replace(/[/\\]/g, '-').replace(/[()]/g, '')
     : c.model;
+  if (info.lowerFile) fname = fname.toLowerCase();
   const file = path.join(dir, `${fname}.yaml`);
   if (fs.existsSync(file)) { console.error(`EXISTS - skip ${file}`); continue; }
   fs.writeFileSync(file, r.yaml);

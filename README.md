@@ -135,7 +135,7 @@ node scripts/gen-netbox.js --brand Hikvision            # → netbox-out/device-
 node scripts/gen-netbox.js --brand Hikvision --report   # list PoE cameras still missing a link speed
 ```
 
-A device type is only emitted when the camera has a known RJ45 link speed (`network.ethernet_speed_mbps`), since the library requires an interface `type` and it is never guessed.
+A device type is only emitted when the camera has a known RJ45 link speed (`network.ethernet_speed_mbps`), since the library requires an interface `type` and it is never guessed. Before opening a PR against devicetype-library, run the generated files through that repo's `yamlfmt` pre-commit hook so they match its canonical formatting.
 
 ### Querying the data
 
