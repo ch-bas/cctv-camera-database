@@ -1,0 +1,112 @@
+{
+  "id": "dahua-sd22404db-gny",
+  "brand": "Dahua",
+  "model": "SD22404DB-GNY",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12",
+    "aperture": "F1.6-F3.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "90.3-29.4 horizontal",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.0005,
+    "min_lux_color": 0.005
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "relative"
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V",
+    "consumption_w": 6.1
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-30 to +60",
+  "dimensions_mm": "122 x 89",
+  "weight_g": 500,
+  "release_year": 2023,
+  "sensor": "1/2.8\" CMOS",
+  "features": [
+    "WizSense",
+    "4x optical zoom",
+    "16x digital zoom",
+    "Auto-tracking",
+    "SMD 3.0",
+    "IVS",
+    "Face detection",
+    "AI person/vehicle detection",
+    "Starlight",
+    "DWDR",
+    "speed dome",
+    "6000V surge protection"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/all-products/ptz-cameras/wizsense-series/sd2/sd22404db-gny",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/DH-SD22404DB-GNY_S0_datasheet-20251104.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": true,
+      "tested_by": "Geoff-S (GitHub #281)",
+      "tested_version": "0.17",
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI. Reported working on Frigate 0.17 (GitHub #281).",
+      "autotracking": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "last_verified": "2026-08-21",
+  "environment": [
+    "outdoor"
+  ]
+}

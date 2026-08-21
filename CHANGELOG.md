@@ -8,7 +8,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.0.0] — 2026-08-21
 
-Major milestone: a full redesign of the companion website ([cctv-database.com](https://cctv-database.com)) alongside a Reolink RTSP-path correction. No dataset schema changes.
+Major milestone: a full redesign of the companion website ([cctv-database.com](https://cctv-database.com)), a new Dahua PTZ, three community-verified Frigate configs, and a Reolink RTSP-path correction. No dataset schema changes.
 
 ### Website (cctv-database.com)
 - **Complete redesign** of the main pages — camera detail, homepage, recently-added, Frigate configs, and the RTSP reference — plus a **new Brands directory** (`/brands`). Consistent dark, theme-aware (light/dark) UI throughout.
@@ -16,11 +16,16 @@ Major milestone: a full redesign of the companion website ([cctv-database.com](h
 - A community **"Did this config work?"** verification flow — Generated → Community-tested → Verified status with a ✓ badge and a two-click report — turns page visits into config verifications.
 - List pages get **KPI cards, quick filters, and sortable/searchable tables**; `/blog` now aliases `/articles`.
 
+### Added
+- **Dahua SD22404DB-GNY (#281):** new 4MP Starlight WizSense PTZ — 4× optical zoom (2.8–12 mm, F1.6–3.0), 2560×1440 @ 30 fps H.265/H.264, no-IR starlight (0.005 lux colour / 0.0005 B/W), SMD 3.0 + IVS + face detection, IP66 · IK10, PoE (802.3af). Specs sourced from the official datasheet; the `/cam/realmonitor` Frigate config was reported working on Frigate 0.17 by @Geoff-S.
+
 ### Fixed
 - **Reolink RTSP paths (#280):** switched every non-verified Reolink `configs.frigate` template from the legacy `/h264Preview_01_main` (+ `_sub`) to the official `/Preview_01_main` (+ `_sub`) path documented in `strix/verified/reolink.json` (Reolink RTSP KB) — **83 cameras**. The `h264Preview` path forces an in-camera H.264 re-encode and delivers noticeably lower quality on current firmware; `Preview` serves the stream at the camera's configured codec. Matching Blue Iris notes updated; `video-doorbell-poe` (community-verified on the legacy path) left unchanged.
 
 ### Verified
 - **Reolink Lumus (#280):** marked `configs.frigate.verified` — confirmed working by @Uthrom on Frigate 0.18-beta3.
+- **Tapo C216 (#282):** config verified — @michaelhrunyon on Frigate 0.17.2 and 0.18-beta3 (both streams, no changes needed).
+- **Reolink RLC-510WA (#283):** config verified — @Eysenor on Frigate 0.17 (confirmed on the prior `/h264Preview_01` path; now shipped on the official `/Preview_01` path per #280).
 
 ---
 
