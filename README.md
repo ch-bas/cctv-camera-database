@@ -355,11 +355,11 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the full field reference, naming conv
 ## Roadmap
 
 - [x] JSON Schema validation in CI (GitHub Actions)
-- [ ] Static web frontend — search, filter, compare
-- [ ] Side-by-side comparison view (2–4 cameras)
-- [ ] Frigate-compatible config export
-- [ ] Home Assistant integration template
-- [ ] API endpoint (read-only, hosted)
+- [x] Static web frontend — search, filter, compare
+- [x] Side-by-side comparison view (2–4 cameras)
+- [x] Frigate-compatible config export
+- [x] Home Assistant integration template
+- [x] API endpoint (read-only, hosted)
 
 ---
 
