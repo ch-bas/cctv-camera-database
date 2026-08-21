@@ -92,8 +92,10 @@ function toYaml(c) {
   L.push(`interfaces:`);
   L.push(`  - name: eth0`);
   L.push(`    type: ${ifType}`);
-  L.push(`    poe_mode: pd`);
-  if (pt) L.push(`    poe_type: ${pt}`);
+  // devicetype-library rejects poe_mode without a matching poe_type, so only annotate
+  // PoE when the datasheet gave us the standard (802.3af/at/bt); otherwise leave the
+  // interface as a plain port rather than guess the PoE type.
+  if (pt) { L.push(`    poe_mode: pd`); L.push(`    poe_type: ${pt}`); }
   if (draw || (c.power && c.power.poe_class != null)) {
     const d = [];
     if (c.power.poe_class != null) d.push(`PoE Class ${c.power.poe_class}`);
