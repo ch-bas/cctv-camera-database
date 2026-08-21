@@ -29,9 +29,24 @@ const REPORT = args.includes('--report');
 
 const SPEED_TYPE = { 10: '10base-t', 100: '100base-tx', 1000: '1000base-t', 2500: '2.5gbase-t', 10000: '10gbase-t' };
 
-function slugify(s) {
-  // devicetype-library rule: lowercase, keep letters/digits/hyphens, dots and whitespace -> hyphen, drop everything else
-  return s.toLowerCase().replace(/[.\s_]+/g, '-').replace(/[^a-z0-9-]/g, '').replace(/-+/g, '-').replace(/^-+|-+$/g, '');
+// Mirror devicetype-library's exact slug rules (tests/device_types.py) — the
+// ordered replace chains must match theirs char-for-char, or their CI rejects
+// the slug (e.g. a model like "…2UY/SL" must slugify to "…2uy-sl", not "…2uysl").
+function slugifyManufacturer(s) {
+  return s.toLowerCase()
+    .replaceAll(' ', '-').replaceAll('sfp+', 'sfpp').replaceAll('poe+', 'poep')
+    .replaceAll('-+', '-plus-').replaceAll('+', '-plus').replaceAll('_', '-')
+    .replaceAll('!', '').replaceAll('/', '-').replaceAll(',', '').replaceAll("'", '')
+    .replaceAll('*', '-').replaceAll('&', 'and').replaceAll('.', '-');
+}
+function slugifyModel(s) {
+  let x = s.toLowerCase()
+    .replaceAll(' ', '-').replaceAll('sfp+', 'sfpp').replaceAll('poe+', 'poep')
+    .replaceAll('-+', '-plus').replaceAll('+', '-plus-').replaceAll('_', '-')
+    .replaceAll('&', '-and-').replaceAll('!', '').replaceAll('/', '-').replaceAll(',', '')
+    .replaceAll("'", '').replaceAll('*', '-').replaceAll('(', '').replaceAll(')', '')
+    .replaceAll(';', '').replaceAll('.', '-');
+  return x.endsWith('-') ? x.slice(0, -1) : x;
 }
 
 function poeType(method) {
@@ -63,7 +78,7 @@ function toYaml(c) {
   const pt = poeType(method);
   const dcV = dcVoltage(method);
   const draw = c.power && c.power.consumption_w;
-  const slug = `${slugify(c.brand)}-${slugify(c.model)}`;
+  const slug = `${slugifyManufacturer(c.brand)}-${slugifyModel(c.model)}`;
 
   const L = [];
   L.push(`manufacturer: ${yamlStr(c.brand)}`);
@@ -129,7 +144,13 @@ for (const c of cams) {
   if (!r) { skipped++; continue; }
   const dir = path.join(OUT, 'device-types', c.brand);
   fs.mkdirSync(dir, { recursive: true });
-  const file = path.join(dir, `${c.model.replace(/[\/\\]/g, '-')}.yaml`);
+  // Filename must equal the model or its slug (their CI checks this, case-insensitively).
+  // Raw model when filesystem-safe (keeps parens, matching library convention); for a
+  // model with a slash, drop the slash + parens so the name still resolves to the slug.
+  const fname = /[/\\]/.test(c.model)
+    ? c.model.replace(/[/\\]/g, '-').replace(/[()]/g, '')
+    : c.model;
+  const file = path.join(dir, `${fname}.yaml`);
   if (fs.existsSync(file)) { console.error(`EXISTS - skip ${file}`); continue; }
   fs.writeFileSync(file, r.yaml);
   n++;
