@@ -6,6 +6,15 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [Unreleased]
+
+### Added
+- **`network` schema block** — optional `network.ethernet_speed_mbps` (RJ45 link speed: 10 / 100 / 1000 / 2500 / 10000) and `network.ethernet_ports`, read from the datasheet's Ethernet / Network Interface row. The field is optional; no existing record is affected.
+- **Ethernet link speed for 46 Hikvision PoE cameras** — backfilled from the official datasheets (44 × 100 Mbps `10M/100M self-adaptive`, 2 × Gigabit on the iDS-2CD7A DeepinView pair). No values estimated. Two records (DS-2CD1027G2H-LIU, DS-2CD3086G2-IS) also had their `sources` upgraded from JS product pages to the official `assets.hikvision.com` datasheet PDFs.
+- **`scripts/gen-netbox.js`** — exports cameras that have a known link speed to [netbox-community/devicetype-library](https://github.com/netbox-community/devicetype-library) YAML device types. Skips any camera missing `ethernet_speed_mbps`, so the NetBox interface `type` is never guessed.
+
+---
+
 ## [2.0.0] — 2026-08-21
 
 Major milestone: a full redesign of the companion website ([cctv-database.com](https://cctv-database.com)), a new Dahua PTZ, three community-verified Frigate configs, and a Reolink RTSP-path correction. No dataset schema changes.

@@ -126,6 +126,17 @@ RTSP_PATTERNS_DATE=$(date +%Y-%m-%d) node scripts/build-rtsp-patterns.js
 
 The shipped `configs.frigate` snippets are generated; run one of these cameras and you can mark it **community-verified** (`configs.frigate.verified` / `tested_by` / `tested_version`) via the [Verify a Frigate config](../../issues/new?template=verify-frigate-config.yml) issue form.
 
+### NetBox device-type export
+
+`scripts/gen-netbox.js` exports cameras into [netbox-community/devicetype-library](https://github.com/netbox-community/devicetype-library) YAML device types — PoE interface (with the standard parsed from `power.method`), DC power port, microSD module bay, and weight, sourced from each camera's datasheet.
+
+```bash
+node scripts/gen-netbox.js --brand Hikvision            # → netbox-out/device-types/Hikvision/*.yaml
+node scripts/gen-netbox.js --brand Hikvision --report   # list PoE cameras still missing a link speed
+```
+
+A device type is only emitted when the camera has a known RJ45 link speed (`network.ethernet_speed_mbps`), since the library requires an interface `type` and it is never guessed.
+
 ### Querying the data
 
 ```js
@@ -306,6 +317,7 @@ Common optional fields:
 | `night_vision.range_m` | `number` | `30` |
 | `night_vision.min_lux_color` | `number` | `0.01` |
 | `power.method` | `string` | `"PoE (802.3af) / DC 12V"` |
+| `network.ethernet_speed_mbps` | `number` | `100` (RJ45 link speed) |
 | `ip_rating` | `string` | `"IP67"` |
 | `ik_rating` | `string` | `"IK10"` |
 | `audio.two_way` | `boolean` | `true` |
