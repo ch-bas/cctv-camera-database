@@ -9,6 +9,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 ## [Unreleased]
 
 ### Added
+- **Release archive** — GitHub Releases now include `cameras.zip`, bundling `cameras.json`, `cameras.csv`, and machine-readable `release-metadata.json` with release/commit provenance, camera count, byte sizes, and SHA-256 checksums. The standalone JSON and CSV assets remain available for compatibility.
 - **`network` schema block** — optional `network.ethernet_speed_mbps` (RJ45 link speed: 10 / 100 / 1000 / 2500 / 10000) and `network.ethernet_ports`, read from the datasheet's Ethernet / Network Interface row. The field is optional; no existing record is affected.
 - **Ethernet link speed for 46 Hikvision PoE cameras** — backfilled from the official datasheets (44 × 100 Mbps `10M/100M self-adaptive`, 2 × Gigabit on the iDS-2CD7A DeepinView pair). No values estimated. Two records (DS-2CD1027G2H-LIU, DS-2CD3086G2-IS) also had their `sources` upgraded from JS product pages to the official `assets.hikvision.com` datasheet PDFs.
 - **Ethernet link speed for 30 Dahua PoE cameras** — backfilled from the official datasheets' `Network Port RJ-45` row (26 × 100 Mbps, 4 × Gigabit on the WizSense-3 PRO models). `IPC-HDW1439V-IL-K` was deliberately left unfilled — its exact `-IL-K` datasheet isn't publicly published, and the family value wasn't read from that model's own sheet.

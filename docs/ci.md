@@ -17,11 +17,25 @@ All scripts live in `scripts/` and are runnable locally via `npm run <name>`.
 | **archive-sources.yml** | push to `main` (`cameras/**`) + manual | Submits changed cameras' `sources[]` to the Wayback Machine | advisory |
 | **check-sources.yml** | weekly (Mon 07:00 UTC) + manual | Probes every `sources[]` URL for dead/moved links → tracking issue #222 | advisory |
 | **check-staleness.yml** | monthly (1st, 08:00 UTC) + manual | Flags entries with an old / missing `last_verified` → tracking issue | advisory |
-| **release.yml** | version tag | Publishes a GitHub Release with data assets | — |
+| **release.yml** | version bump on `main` / version tag | Publishes a GitHub Release with data assets | — |
 
 "Advisory" workflows never fail — external sites rot and rate-limit, which is
 not a code regression. They surface findings in a **self-updating tracking
 issue** (opened when there's something to fix, closed automatically when clear).
+
+### Release assets
+
+Each GitHub Release keeps the standalone `cameras.json` and `cameras.csv`
+downloads and also publishes `cameras.zip`. The archive contains both dataset
+files plus `release-metadata.json`, which records the release version and tag,
+source commit SHA and date, repository and release URL, generation time, camera
+count, and each dataset file's byte size and SHA-256 checksum.
+
+Build the same archive locally after generating the dataset:
+
+```bash
+RELEASE_VERSION=2.0.0 npm run package-release
+```
 
 ---
 
