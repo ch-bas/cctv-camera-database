@@ -58,14 +58,14 @@
   "configs": {
     "frigate": {
       "detect": {
-        "width": 1280,
-        "height": 720,
+        "width": 640,
+        "height": 480,
         "fps": 5
       },
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Preview_01_main",
       "best_substream": "rtsp://{user}:{pass}@{ip}:554/Preview_01_sub",
       "autotracking": false,
-      "notes": "Frigate autotracking unsupported: Reolink uses absolute ONVIF PTZ; Frigate autotracking requires relative movement. Use the official /Preview_01_main path (Reolink RTSP KB); it serves the stream at the codec configured in the camera. The legacy /h264Preview_01_main path forces an H.264 re-encode and delivers noticeably lower quality on current firmware (community report, GitHub #280)."
+      "notes": "Detect width/height match the sub-stream (/Preview_01_sub), which on the E1 Zoom is locked at 640x480 — set these to your camera's actual sub-stream resolution so Frigate isn't resizing every frame. Frigate autotracking unsupported: Reolink uses absolute ONVIF PTZ; Frigate autotracking requires relative movement. Use the official /Preview_01_main path (Reolink RTSP KB); it serves the stream at the codec configured in the camera. The legacy /h264Preview_01_main path forces an H.264 re-encode and delivers noticeably lower quality on current firmware (community report, GitHub #280)."
     },
     "home_assistant": {
       "integration": "reolink",
