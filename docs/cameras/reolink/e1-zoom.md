@@ -34,5 +34,13 @@
 
 - https://reolink.com/product/e1-zoom/
 
+## Community notes (unverified)
+
+*Reported by users. Not from the datasheet, not verified by the project.*
+
+- For Reolink, the HTTP-FLV streams tend to be more reliable in Frigate than RTSP (which can stall / throw non-monotonic-timestamp errors); go2rtc can use the http source and add a secondary RTSP stream only for audio.
+  
+  rtsp · reported by ch-bas · 2026-08-22 · [source](https://docs.frigate.video/configuration/camera_specific/)
+
 ---
 *Auto-generated from reolink-e1-zoom.json — do not edit by hand.*

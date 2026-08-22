@@ -41661,6 +41661,15 @@
     "environment": [
       "outdoor"
     ],
+    "community_notes": [
+      {
+        "note": "go2rtc opens the Dahua two-way-audio backchannel by default, which can disrupt the doorbell's button/chime. Append #backchannel=0 to the go2rtc stream URL for normal behavior; #backchannel=1 enables two-way audio (needs extra setup).",
+        "category": "frigate",
+        "source": "https://github.com/ch-bas/cctv-camera-database/issues/301",
+        "reported_by": "ch-bas",
+        "date": "2026-08-22"
+      }
+    ],
     "added": "2026-06-06"
   },
   {
@@ -183558,6 +183567,15 @@
     "environment": [
       "outdoor"
     ],
+    "community_notes": [
+      {
+        "note": "Substream lives at /Streaming/Channels/102 (main is /101), which isn't in the datasheet. Frigate/go2rtc also needs the camera set to RTSP Authentication digest/basic with Digest Algorithm MD5, or the stream fails to open.",
+        "category": "rtsp",
+        "source": "https://docs.frigate.video/configuration/camera_specific/",
+        "reported_by": "ch-bas",
+        "date": "2026-08-22"
+      }
+    ],
     "added": "2026-06-06"
   },
   {
@@ -277389,6 +277407,15 @@
       "onvif_ptz": "absolute",
       "autotracking": true
     },
+    "community_notes": [
+      {
+        "note": "For Reolink, the HTTP-FLV streams tend to be more reliable in Frigate than RTSP (which can stall / throw non-monotonic-timestamp errors); go2rtc can use the http source and add a secondary RTSP stream only for audio.",
+        "category": "rtsp",
+        "source": "https://docs.frigate.video/configuration/camera_specific/",
+        "reported_by": "ch-bas",
+        "date": "2026-08-22"
+      }
+    ],
     "added": "2026-06-06"
   },
   {
@@ -295238,6 +295265,15 @@
     "last_verified": "2026-08-21",
     "environment": [
       "outdoor"
+    ],
+    "community_notes": [
+      {
+        "note": "go2rtc's native RTSP client hangs on this camera (live view spins forever); prefixing the URL with ffmpeg: (ffmpeg:rtsp://.../11) fixes it. Stream paths are /11 (main) and /12 (sub), not the /stream0 & /stream1 shown in older docs.",
+        "category": "rtsp",
+        "source": "https://github.com/ch-bas/cctv-camera-database/issues/300",
+        "reported_by": "ch-bas",
+        "date": "2026-08-22"
+      }
     ],
     "added": "2026-06-12"
   },
