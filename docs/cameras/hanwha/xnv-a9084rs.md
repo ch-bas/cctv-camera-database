@@ -20,6 +20,12 @@
 | Operating temp | -40 to 50°C |
 | Released | 2025 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 30 | H.265 |
+
 ## Features
 
 - 8MP AI stainless-steel IR vandal dome

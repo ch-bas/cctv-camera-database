@@ -18,6 +18,12 @@
 | Operating temp | -10 to 55°C |
 | Released | 2024 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Clear/Main | 5120x1440 | 15 | H.265 |
+
 ## Features
 
 - 4K battery/solar

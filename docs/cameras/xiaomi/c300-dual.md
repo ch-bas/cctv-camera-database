@@ -13,6 +13,12 @@
 | Storage | microSD ≤ 256GB |
 | Operating temp | -10 to 40°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2304x1296 | — | H.265 |
+
 ## Features
 
 - true dual camera: fixed wide + 6mm telephoto PTZ

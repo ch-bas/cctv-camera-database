@@ -19,6 +19,12 @@
 | Two-way audio | No |
 | Operating temp | -5 to 55 (-20 to 55 with optional heater accessory)°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | — | H.264 |
+
 ## Features
 
 - predecessor housing/design later reused for the IN-9408 2K+

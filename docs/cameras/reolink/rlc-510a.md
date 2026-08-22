@@ -19,6 +19,13 @@
 | Operating temp | -10 to 55°C |
 | Released | 2020 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1920 | 25 | H.265 |
+| sub | unknown | 10 | H.264 |
+
 ## Features
 
 - person detection

@@ -20,6 +20,12 @@
 | Operating temp | -10 to 55°C |
 | Released | 2021 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Mainstream | 2560x1920 | 30 | H.264 |
+
 ## Features
 
 - 5x optical zoom (2.7-13.5mm motorized varifocal)

@@ -20,6 +20,12 @@
 | Operating temp | -20 to 45°C |
 | Released | 2025 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2304x1296 | 20 | — |
+
 ## Features
 
 - solar-powered floodlight pan/tilt camera

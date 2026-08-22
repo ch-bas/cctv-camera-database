@@ -19,6 +19,12 @@
 | Operating temp | -10 to 55°C |
 | Released | 2021 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Main | 2560x1440 | 15 | H.264 |
+
 ## Features
 
 - 2K plug-in outdoor spotlight camera

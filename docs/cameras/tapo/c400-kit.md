@@ -17,6 +17,12 @@
 | Two-way audio | Yes |
 | Operating temp | -20 to 45°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 15 | H.264 |
+
 ## Features
 
 - wire-free battery/solar bullet camera, no hub required

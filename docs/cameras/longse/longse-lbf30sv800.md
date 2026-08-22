@@ -16,6 +16,12 @@
 | IP rating | IP66 |
 | Two-way audio | No |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3864x2218 | 20 | H.265 |
+
 ## Features
 
 - WDR 120dB, BLC/HLC backlight compensation, DNR, defog

@@ -16,6 +16,13 @@
 | Two-way audio | No |
 | Released | 2023 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2688x1520 | 20 | H.265 |
+| sub | 704x576 | 25 | H.265 |
+
 ## Features
 
 - WizSense 2 4MP full-color bullet LED mic

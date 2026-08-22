@@ -19,6 +19,12 @@
 | Two-way audio | No |
 | Operating temp | -30 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2880x1620 | 25 | H.265 |
+
 ## Features
 
 - hybrid illumination (IR + white LED)

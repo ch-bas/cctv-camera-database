@@ -18,6 +18,14 @@
 | IP rating | IP67 |
 | IK rating | IK10 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | — | H.265+ |
+| sub | 704x576 | — | H.265 |
+| third | 1920x1080 | — | H.265 |
+
 ## Features
 
 - DeepinViewX 8MP motorized-varifocal bullet with dedicated large-scale AI model for perimeter protection (~90% fewer false alarms vs conventional AI cameras)

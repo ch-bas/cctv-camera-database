@@ -18,6 +18,14 @@
 | Two-way audio | No |
 | Operating temp | -10 to +50°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2688x1520 | 30 | H.265 |
+| sub | 1920x1080 | 30 | H.265 |
+| sub2 | 704x576 | 30 | H.265 |
+
 ## Features
 
 - X-Spans dual-sensor panoramic PTZ (4MP panorama + 4MP 4x optical zoom detail)

@@ -21,6 +21,13 @@
 | Operating temp | -10 to 55°C |
 | Released | 2021 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Main stream | 2880x1620 | 15 | H.265 |
+| Sub stream | unknown | 15 | H.264 |
+
 ## Features
 
 - 5MP 2K+ wire-free battery outdoor camera

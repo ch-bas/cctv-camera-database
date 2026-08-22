@@ -20,6 +20,15 @@
 | Operating temp | -40°C - 70°C (IR off) / -40°C - 60°C (IR on)°C |
 | Released | 2023 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | — | H.265+ |
+| sub | 704x480 | — | H.264 |
+| third | 704x480 | — | H.264 |
+| fourth | 1920x1080 | — | H.264 |
+
 ## Features
 
 - 4x optical zoom

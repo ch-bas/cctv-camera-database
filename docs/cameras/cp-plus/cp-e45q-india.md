@@ -16,6 +16,12 @@
 | Protocols | http |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 20 | H.265 |
+
 ## Features
 
 - ezyKam+ consumer indoor Wi-Fi pan/tilt

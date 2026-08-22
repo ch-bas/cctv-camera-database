@@ -19,6 +19,12 @@
 | Two-way audio | No |
 | Operating temp | -40 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 30 | H.265 |
+
 ## Features
 
 - 4K/8MP Dual Light (warm white LED + IR) flateye turret

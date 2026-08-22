@@ -17,6 +17,14 @@
 | IP rating | IP54 |
 | Two-way audio | No |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 30 | H.265 |
+| sub | 704x480 | 30 | H.265 |
+| third | 1920x1080 | 30 | H.265 |
+
 ## Features
 
 - 25x optical zoom + 16x digital

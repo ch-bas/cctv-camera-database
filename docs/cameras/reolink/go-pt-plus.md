@@ -19,6 +19,12 @@
 | Operating temp | -10 to 55°C |
 | Released | 2022 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Main | 2880x1660 | 15 | H.265 |
+
 ## Features
 
 - 4G LTE pan/tilt color night vision

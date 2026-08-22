@@ -18,6 +18,12 @@
 | Operating temp | -10 to 55°C |
 | Released | 2021 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2312x1304 | 15 | H.264 |
+
 ## Features
 
 - 3MP 2K upgrade over Argus 2

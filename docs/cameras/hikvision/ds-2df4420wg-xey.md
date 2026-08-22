@@ -18,6 +18,12 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP68 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | — | H.265 |
+
 ## Features
 
 - explosion-proof — ATEX/IECEx Ex db IIC T6 Gb / Ex tb IIIC T80°C Db

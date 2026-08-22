@@ -19,6 +19,13 @@
 | Two-way audio | Yes |
 | Operating temp | -40 to 65°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Visible | 1920x1080 | 60 | H.265 |
+| Thermal | 320x240 | 9 | H.265 |
+
 ## Features
 
 - Dual visible/thermal imaging in one housing with unique metadata fusion

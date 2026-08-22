@@ -16,6 +16,12 @@
 | IP rating | IP67 |
 | Two-way audio | No |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 25 | H.265 |
+
 ## Features
 
 - ONVIF conformance explicitly confirmed by retailer documentation

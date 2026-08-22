@@ -18,6 +18,13 @@
 | IK rating | IK10 |
 | Two-way audio | No |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 15 | H.265 |
+| sub | 704x576 | 25 | H.265 |
+
 ## Features
 
 - 120dB WDR

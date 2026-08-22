@@ -17,6 +17,12 @@
 | Two-way audio | No |
 | Released | 2023 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3504x3504 | 30 | H.265 |
+
 ## Features
 
 - DeepinView 360deg fisheye

@@ -20,6 +20,13 @@
 | Operating temp | -20 to 45°C |
 | Released | 2026 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| fixed lens | 3840x2160 | 15 | — |
+| pan-tilt lens | 3840x2160 | 15 | — |
+
 ## Features
 
 - solar-powered dual-lens 4K camera

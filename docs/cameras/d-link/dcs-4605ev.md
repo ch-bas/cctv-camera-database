@@ -20,6 +20,13 @@
 | Operating temp | -30 to 50°C |
 | Released | 2018 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1920 | 15 | H.265 |
+| sub | 640x360 | 30 | H.265 |
+
 ## Features
 
 - Wide Dynamic Range (WDR)

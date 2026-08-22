@@ -17,6 +17,13 @@
 | Two-way audio | Yes |
 | Operating temp | -20 to 45°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| wide-angle lens | 2304x1296 | 15 | — |
+| telephoto lens | 2304x1296 | 15 | — |
+
 ## Features
 
 - dual-lens pan/tilt battery/solar camera

@@ -16,6 +16,12 @@
 | Protocols | rtsp |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | — | H.264 |
+
 ## Features
 
 - remote-controlled pan/tilt (350/100 degrees), no zoom

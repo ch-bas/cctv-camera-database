@@ -17,6 +17,12 @@
 | Two-way audio | Yes |
 | Released | 2026 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2880x1620 | 20 | H.265 |
+
 ## Features
 
 - indoor pan/tilt

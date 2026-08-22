@@ -18,6 +18,14 @@
 | IP rating | IP67 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 20 | — |
+| sub | 720x480 | 30 | — |
+| third | 352x288 | 30 | — |
+
 ## Features
 
 - motorized varifocal

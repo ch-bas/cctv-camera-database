@@ -21,6 +21,12 @@
 | Operating temp | -20 to 55°C |
 | Released | 2024 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 15 | H.265 |
+
 ## Features
 
 - world-first 4K continuous-recording battery PTZ camera

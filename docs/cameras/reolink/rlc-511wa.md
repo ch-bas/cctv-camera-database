@@ -19,6 +19,13 @@
 | Operating temp | -10 to 55°C |
 | Released | 2022 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Clear (Main) | 2560x1920 | 20 | H.264 |
+| Fluent (Sub) | — | 10 | H.264 |
+
 ## Features
 
 - 4K 5× varifocal WiFi outdoor bullet

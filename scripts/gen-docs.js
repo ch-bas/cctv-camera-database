@@ -59,6 +59,14 @@ function render(c) {
   md += row("Two-way audio", c.audio ? (c.audio.two_way ? "Yes" : "No") : "");
   md += row("Operating temp", c.operating_temp_c && `${c.operating_temp_c}°C`);
   md += row("Released", c.release_year);
+  // Full per-stream table (main / sub / third …) — the single Resolution row
+  // above only shows the main stream; substream res/fps/codec live here.
+  if (c.video?.streams?.length) {
+    md += `\n## Streams\n\n| Stream | Resolution | FPS | Codec |\n|--------|-----------|-----|-------|\n`;
+    for (const s of c.video.streams) {
+      md += `| ${s.name || "—"} | ${s.resolution || "—"} | ${s.fps ?? "—"} | ${s.codec || "—"} |\n`;
+    }
+  }
   if (c.features?.length) md += `\n## Features\n\n${c.features.map((f) => `- ${f}`).join("\n")}\n`;
   if (c.sources?.length) md += `\n## Sources\n\n${c.sources.map((s) => `- ${s}`).join("\n")}\n`;
   if (c.community_notes?.length) {

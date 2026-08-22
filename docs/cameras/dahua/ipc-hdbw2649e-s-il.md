@@ -19,6 +19,13 @@
 | Two-way audio | No |
 | Operating temp | -40 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3288x1850 | 20 | H.265 |
+| sub | 704x576 | 20 | H.265 |
+
 ## Features
 
 - WizSense

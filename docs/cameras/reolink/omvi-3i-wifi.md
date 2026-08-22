@@ -21,6 +21,13 @@
 | Operating temp | -10 to 55°C |
 | Released | 2026 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Panoramic (upper dual-lens) | 5120x1920 | 20 | H.265 |
+| PT (lower) | 3840x2160 | 20 | H.265 |
+
 ## Features
 
 - triple-lens 18MP WiFi version

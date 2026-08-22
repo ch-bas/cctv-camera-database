@@ -19,6 +19,14 @@
 | Operating temp | -40 to +65°C |
 | Released | 2022 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| panoramic main | 3840x1080 | 25 | H.265 |
+| panoramic sub | 960x268 | 25 | H.264 |
+| PTZ main | 2560x1440 | 25 | H.265 |
+
 ## Features
 
 - dual-channel: 180° panoramic 4MP stitched + 4MP PTZ 25x zoom

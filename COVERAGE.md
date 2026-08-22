@@ -15,12 +15,13 @@
 | 🔬 Sensor | `█████████░` 87% | 2,993 |  |
 | 🔧 Frigate config | `████████░░` 82% | 2,827 | [#170](https://github.com/ch-bas/cctv-camera-database/issues/170) |
 | 🌙 Min-lux (color) | `██████░░░░` 64% | 2,187 | [#161](https://github.com/ch-bas/cctv-camera-database/issues/161) |
-| 🎞️ Video streams | `█████░░░░░` 53% | 1,827 | [#177](https://github.com/ch-bas/cctv-camera-database/issues/177) |
+| 🎞️ Video streams (any) | `█████░░░░░` 53% | 1,827 | [#177](https://github.com/ch-bas/cctv-camera-database/issues/177) |
 | 📐 Dimensions | `█████░░░░░` 50% | 1,708 | [#178](https://github.com/ch-bas/cctv-camera-database/issues/178) |
 | 🗺️ Markets | `█████░░░░░` 49% | 1,671 | [#166](https://github.com/ch-bas/cctv-camera-database/issues/166) |
 | ⚖️ Weight | `████░░░░░░` 44% | 1,505 | [#178](https://github.com/ch-bas/cctv-camera-database/issues/178) |
 | 🛡️ IK / impact rating | `████░░░░░░` 43% | 1,460 | [#162](https://github.com/ch-bas/cctv-camera-database/issues/162) |
 | 📅 Release year | `████░░░░░░` 35% | 1,194 | [#166](https://github.com/ch-bas/cctv-camera-database/issues/166) |
+| 🎞️ Substream data | `██░░░░░░░░` 24% | 817 | [#177](https://github.com/ch-bas/cctv-camera-database/issues/177) |
 
 Cameras with community notes: 4 (4 notes total).
 

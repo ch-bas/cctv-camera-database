@@ -21,6 +21,12 @@
 | Two-way audio | No |
 | Operating temp | -40 to 55°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1920 | 30 | H.265 |
+
 ## Features
 
 - pan/tilt/zoom

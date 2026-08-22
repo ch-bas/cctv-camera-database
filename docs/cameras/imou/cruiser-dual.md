@@ -19,6 +19,12 @@
 | IP rating | IP66 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2304x1296 | 15 | H.265 |
+
 ## Features
 
 - dual lens (fixed wide + motorized pan/tilt)

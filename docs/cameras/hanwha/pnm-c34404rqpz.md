@@ -22,6 +22,13 @@
 | Operating temp | -40 to 50°C |
 | Released | 2023 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| 4K channel (x4) | 3840x2160 | 15 | H.265 |
+| PTZ channel | 1920x1080 | 60 | H.265 |
+
 ## Features
 
 - 4x 4K PTRZ multi-directional channels (360° coverage) + 2MP 40x optical zoom PTZ

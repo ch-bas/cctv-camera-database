@@ -17,6 +17,12 @@
 | Two-way audio | No |
 | Released | 2023 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2688x1520 | 25 | H.265 |
+
 ## Features
 
 - 1.68mm 180deg ultra-wide panoramic (panomorph) lens

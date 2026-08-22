@@ -18,6 +18,12 @@
 | Operating temp | 0 to 40°C |
 | Released | 2025 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Main | 1920x1080 | 30 | H.265 |
+
 ## Features
 
 - IVA Pro Buildings deep-learning person/vehicle detection

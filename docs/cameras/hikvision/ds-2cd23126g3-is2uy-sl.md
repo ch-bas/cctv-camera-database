@@ -19,6 +19,13 @@
 | Operating temp | -30 to 60°C |
 | Released | 2025 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 4608x2592 | 20 | H.265 |
+| main | 3840x2160 | 25 | H.265 |
+
 ## Features
 
 - AcuSense deep-learning human/vehicle classification

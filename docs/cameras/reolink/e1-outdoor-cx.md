@@ -19,6 +19,12 @@
 | Operating temp | -10 to 55°C |
 | Released | 2024 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Main stream | 2560x1440 | 20 | H.264 |
+
 ## Features
 
 - 2K ColorX WiFi outdoor F1.0 1/1.8" sensor

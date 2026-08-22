@@ -17,6 +17,12 @@
 | Two-way audio | Yes |
 | Operating temp | -40 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 30 | H.265 |
+
 ## Features
 
 - dual light: IR + warm light (30m) full-color night vision

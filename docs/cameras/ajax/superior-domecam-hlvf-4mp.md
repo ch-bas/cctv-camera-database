@@ -19,6 +19,12 @@
 | Two-way audio | Yes |
 | Operating temp | -40 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2688x1520 | 25 | H.265 |
+
 ## Features
 
 - motorized varifocal (HLVF) P-Iris lens

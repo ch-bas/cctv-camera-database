@@ -18,6 +18,12 @@
 | Operating temp | 0 to 40°C |
 | Released | 2024 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | — | H.265 |
+
 ## Features
 
 - 340° pan / 105° tilt

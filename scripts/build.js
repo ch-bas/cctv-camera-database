@@ -466,11 +466,12 @@ function main() {
   const entries = loadCameras();
   const cameras = entries.map((e) => e.cam);
   validate(cameras);
-  // Inject the git-derived `added` date into the generated aggregate only —
-  // never into the per-camera source files (the schema stays authoritative
-  // there; `added` is provenance metadata, not dataset content). Injected
+  // Inject derived fields into the generated aggregate only — never into the
+  // per-camera source files (the schema stays authoritative there; these are
+  // computed provenance/convenience metadata, not dataset content). Injected
   // after validation because the schema's additionalProperties: false would
-  // otherwise reject it.
+  // otherwise reject them. Kept flat (like `added`/`sensor_size_inch`) so the
+  // site consumes them uniformly.
   const added = addedDates();
   const haveHistory = Object.keys(added).length > 0;
   for (const { file, cam } of entries) {
@@ -478,6 +479,19 @@ function main() {
     if (d) cam.added = d;
     const ssi = sensorSizeInch(cam.sensor);
     if (ssi != null) cam.sensor_size_inch = Math.round(ssi * 10000) / 10000;
+    // Substream coverage/convenience: only when video.streams exists. count=0
+    // (streams present but main-only) is distinct from the field being absent
+    // (no stream data at all).
+    const streams = cam.video && cam.video.streams;
+    if (Array.isArray(streams)) {
+      const subs = streams.filter((s) => s.name && s.name !== "main");
+      cam.substream_count = subs.length;
+      cam.substream_max_resolution = subs.reduce((best, s) => {
+        const [w, h] = (s.resolution || "0x0").split("x").map(Number);
+        const px = (w || 0) * (h || 0);
+        return px > best.px ? { px, res: s.resolution || null } : best;
+      }, { px: 0, res: null }).res;
+    }
   }
   if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
   const jsonData = JSON.stringify(cameras, null, 2) + "\n";

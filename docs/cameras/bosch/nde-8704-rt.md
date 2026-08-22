@@ -17,6 +17,12 @@
 | IP rating | IP66/IP67/IP6K9K |
 | IK rating | IK11 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 30 | H.265 |
+
 ## Features
 
 - Starlight low-light technology

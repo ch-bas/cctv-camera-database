@@ -19,6 +19,12 @@
 | Two-way audio | Yes |
 | Operating temp | 0 to 40°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 30 | H.264 |
+
 ## Sources
 
 - https://www.tp-link.com/en/home-networking/cloud-camera/tapo-c222/

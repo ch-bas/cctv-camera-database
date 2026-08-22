@@ -17,6 +17,13 @@
 | IP rating | IP66 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3632x1632 | 30 | H.265 |
+| sub | 1200x536 | 30 | H.265 |
+
 ## Features
 
 - 32x optical zoom

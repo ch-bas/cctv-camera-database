@@ -19,6 +19,13 @@
 | Operating temp | -10 to 55°C |
 | Released | 2023 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Main stream | 3840x2160 | 20 | H.265 |
+| Sub stream | 640x360 | 20 | H.265 |
+
 ## Features
 
 - dual-lens dual-view

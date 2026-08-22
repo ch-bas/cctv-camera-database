@@ -18,6 +18,12 @@
 | Operating temp | -20 to 55°C |
 | Released | 2026 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2880x1616 | 15 | H.265 |
+
 ## Features
 
 - 5MP battery/solar wire-free camera

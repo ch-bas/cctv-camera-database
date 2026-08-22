@@ -18,6 +18,12 @@
 | Operating temp | -10 to 55°C |
 | Released | 2021 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Main | 1920x1080 | 15 | H.264 |
+
 ## Features
 
 - 4G LTE cellular pan/tilt

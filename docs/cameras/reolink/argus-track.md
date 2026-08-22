@@ -21,6 +21,13 @@
 | Operating temp | -10 to 55°C |
 | Released | 2024 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Main stream | 3840x2160 | 15 | H.265 |
+| Sub stream | 1920x1080 | 15 | H.265 |
+
 ## Features
 
 - 355° pan / 50° tilt battery PTZ

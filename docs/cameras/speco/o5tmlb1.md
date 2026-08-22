@@ -19,6 +19,12 @@
 | Operating temp | -30 to 60°C |
 | Released | 2024 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2592x1944 | 30 | H.265 |
+
 ## Features
 
 - dual-lens thermal + optical (256x192 uncooled VOx thermal detector)

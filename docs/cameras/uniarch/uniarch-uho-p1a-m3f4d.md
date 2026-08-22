@@ -15,6 +15,12 @@
 | IP rating | IP66 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2304x1296 | 20 | H.265 |
+
 ## Features
 
 - auto-tracking mini pan/tilt with active deterrence (sound + light warning)

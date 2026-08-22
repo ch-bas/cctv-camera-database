@@ -16,6 +16,13 @@
 | Two-way audio | No |
 | Released | 2022 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 30 | H.265 |
+| sub | 704x576 | 25 | H.265 |
+
 ## Features
 
 - WizSense 2 Series 2MP IR bullet

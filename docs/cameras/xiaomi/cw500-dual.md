@@ -16,6 +16,12 @@
 | IP rating | IP66 |
 | Operating temp | -30 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | — | H.265 |
+
 ## Features
 
 - dual 4MP cameras: fixed wide + controllable PTZ

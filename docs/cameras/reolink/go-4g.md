@@ -19,6 +19,12 @@
 | Operating temp | -10 to 55°C |
 | Released | 2019 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 15 | H.264 |
+
 ## Features
 
 - 4G LTE cellular no WiFi / no mains

@@ -21,6 +21,12 @@
 | Operating temp | -10 to 55°C |
 | Released | 2022 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Main | 2560x1440 | 15 | H.265 |
+
 ## Features
 
 - 4G LTE cellular (no WiFi required)

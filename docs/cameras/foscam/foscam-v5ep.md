@@ -17,6 +17,12 @@
 | IP rating | IP66 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3072x1728 | 25 | H.264 |
+
 ## Features
 
 - human/vehicle detection

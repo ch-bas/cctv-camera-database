@@ -18,6 +18,14 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | — | H.265 |
+| sub | 640x480 | — | H.265 |
+| third | 1280x720 | — | H.265 |
+
 ## Features
 
 - solar-powered wire-free — 80 W photovoltaic panel + 360 Wh (4x 90 Wh) chargeable lithium battery (C36S80 kit)

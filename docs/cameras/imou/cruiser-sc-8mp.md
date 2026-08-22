@@ -19,6 +19,12 @@
 | IP rating | IP66 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 30 | H.265 |
+
 ## Features
 
 - 4K/8MP outdoor pan/tilt

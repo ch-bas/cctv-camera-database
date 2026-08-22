@@ -19,6 +19,14 @@
 | IP rating | IP67 |
 | IK rating | IK10 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2688x1520 | — | H.265+ |
+| sub | 704x576 | — | H.265 |
+| third | 1920x1080 | — | H.265 |
+
 ## Features
 
 - DeepinView triple fixed-lens bullet (4mm + 12mm + 25mm) — 4MP + 2 x 2MP, 3 channels

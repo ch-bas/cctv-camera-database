@@ -21,6 +21,12 @@
 | Operating temp | -30 to 60°C |
 | Released | 2021 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 15 | H.265 |
+
 ## Features
 
 - 5x optical zoom

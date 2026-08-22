@@ -19,6 +19,12 @@
 | Two-way audio | No |
 | Released | 2023 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 25 | H.265 |
+
 ## Features
 
 - 32X optical zoom

@@ -13,6 +13,12 @@
 | Protocols | onvif, rtsp |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | — | H.265 |
+
 ## Features
 
 - pan/tilt with saved/recalled preset positions

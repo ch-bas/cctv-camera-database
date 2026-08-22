@@ -22,6 +22,12 @@
 | Operating temp | -40 to 55°C |
 | Released | 2022 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 5120x1568 | 20 | H.265 |
+
 ## Features
 
 - 8MP panoramic stitching image

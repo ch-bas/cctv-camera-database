@@ -18,6 +18,12 @@
 | Operating temp | -10 to 55°C |
 | Released | 2024 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Main stream | 4608x1728 | 15 | H.265 |
+
 ## Features
 
 - 170° panoramic dual-lens

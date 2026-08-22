@@ -20,6 +20,12 @@
 | Operating temp | -50 to 60°C |
 | Released | 2025 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Main | 3840x2160 | 30 | H.265 |
+
 ## Features
 
 - PTRZ remote pan-tilt-roll-zoom commissioning

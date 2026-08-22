@@ -18,6 +18,12 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP68 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | — | H.265 |
+
 ## Features
 
 - aluminum alloy (ADC12) housing with anti-corrosion surface treatment (ADC)

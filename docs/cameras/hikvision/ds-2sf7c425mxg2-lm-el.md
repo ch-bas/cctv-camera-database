@@ -22,6 +22,13 @@
 | Operating temp | -40 to 70°C |
 | Released | 2026 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| panoramic main | 3680x1656 | 30 | H.265 |
+| PTZ main | 2688x1520 | 60 | H.265 |
+
 ## Features
 
 - TandemVu: fixed 6MP panoramic (190° H) + 4MP 25x DarkFighter PTZ, tracked together

@@ -18,6 +18,12 @@
 | Operating temp | -10 to 50°C |
 | Released | 2022 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1280x960 | 60 | H.265 |
+
 ## Features
 
 - 1.3MP indoor PTZ dome (pan 340 / tilt 100)

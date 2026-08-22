@@ -16,6 +16,12 @@
 | IP rating | IP66 |
 | Operating temp | -30 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1280x960 | 30 | H.264 |
+
 ## Features
 
 - motion detection

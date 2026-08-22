@@ -19,6 +19,14 @@
 | Two-way audio | No |
 | Operating temp | -30 to 55°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1536 | 30 | — |
+| sub | 720x480 | 30 | — |
+| third | 1280x720 | 15 | — |
+
 ## Features
 
 - motorized varifocal lens

@@ -20,6 +20,12 @@
 | Operating temp | -40 to 60 (PoE) / -50 to 60 (12VDC/24VAC)°C |
 | Released | 2023 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Main | 3840x2160 | 30 | H.265 |
+
 ## Features
 
 - Starlight X low-light technology

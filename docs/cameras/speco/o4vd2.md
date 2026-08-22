@@ -15,6 +15,12 @@
 | IP rating | IP67 |
 | IK rating | IK10 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 30 | H.265 |
+
 ## Features
 
 - ONVIF Profile G/S/T conformant

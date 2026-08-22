@@ -21,6 +21,13 @@
 | Operating temp | -10 to 55°C |
 | Released | 2023 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Mainstream (wide lens) | 3840x2160 | 20 | H.265 |
+| Telephoto lens | 2304x1296 | 20 | H.265 |
+
 ## Features
 
 - dual fixed lens (wide + tele)

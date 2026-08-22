@@ -18,6 +18,12 @@
 | Two-way audio | Yes |
 | Operating temp | -10 to 55°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2880x1616 | 15 | H.265 |
+
 ## Features
 
 - 5MP (2K+) battery pan/tilt

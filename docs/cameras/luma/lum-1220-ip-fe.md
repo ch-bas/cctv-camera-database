@@ -22,6 +22,14 @@
 | Operating temp | -30°C - 60°C°C |
 | Released | 2023 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 4000x3000 | 15 | H.265+ |
+| sub | 1920x1080 | 15 | H.265+ |
+| third | 1280x720 | 15 | H.265+ |
+
 ## Features
 
 - 360° panoramic view

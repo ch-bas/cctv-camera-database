@@ -22,6 +22,12 @@
 | Operating temp | -40 to 55°C |
 | Released | 2023 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 30 | H.265 |
+
 ## Features
 
 - 30x optical zoom (5-150mm)

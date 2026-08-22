@@ -17,6 +17,15 @@
 | IP rating | IP67 |
 | Two-way audio | No |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2592x1944 | — | H.265+ |
+| 2nd | 704x480 | — | H.264 |
+| 3rd | 704x480 | — | H.264 |
+| 4th | 1920x1080 | — | H.265 |
+
 ## Features
 
 - WDR

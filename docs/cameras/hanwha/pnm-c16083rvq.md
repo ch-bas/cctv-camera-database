@@ -22,6 +22,12 @@
 | Operating temp | -40 to 55°C |
 | Released | 2023 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| per channel | 2592x1520 | 30 | H.265 |
+
 ## Features
 
 - 4x 4MP AI multi-directional camera (360° coverage)

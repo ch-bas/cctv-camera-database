@@ -18,6 +18,12 @@
 | Operating temp | -20 to 50°C |
 | Released | 2026 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1600x1200 | — | H.264 |
+
 ## Features
 
 - 2K resolution with 165 ultra-wide FOV (3:4 vertical aspect)

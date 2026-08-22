@@ -16,6 +16,12 @@
 | Two-way audio | Yes |
 | Operating temp | -10 to 45°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2960x1666 | — | H.265 |
+
 ## Features
 
 - 5MP 3K with HDR mode

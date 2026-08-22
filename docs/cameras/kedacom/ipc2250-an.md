@@ -20,6 +20,12 @@
 | Two-way audio | Yes |
 | Operating temp | -40 to 70°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 30 | H.264 |
+
 ## Features
 
 - motorized varifocal

@@ -16,6 +16,12 @@
 | Two-way audio | Yes |
 | Operating temp | -40 to 70°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2592x1520 | 30 | H.265 |
+
 ## Features
 
 - C/CS mount (lens sold separately)

@@ -18,6 +18,14 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2688x1520 | — | H.265 |
+| sub | 640x480 | — | H.265 |
+| third | 1280x720 | — | H.265 |
+
 ## Features
 
 - 4G cellular transmission (LTE-TDD/LTE-FDD/WCDMA/GSM), Micro SIM, external antenna expansion supported

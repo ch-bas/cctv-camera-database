@@ -21,6 +21,12 @@
 | Two-way audio | Yes |
 | Operating temp | -40 to 55°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 60 | H.265 |
+
 ## Features
 
 - 30x optical zoom

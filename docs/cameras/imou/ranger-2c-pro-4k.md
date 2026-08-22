@@ -18,6 +18,12 @@
 | Protocols | onvif, rtsp |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 15 | H.265 |
+
 ## Features
 
 - 4K/8MP compact pan/tilt

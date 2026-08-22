@@ -19,6 +19,12 @@
 | Operating temp | -10 to 55°C |
 | Released | 2019 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Mainstream | 2560x1440 | 30 | H.264 |
+
 ## Features
 
 - dual-band WiFi 2.4/5 GHz

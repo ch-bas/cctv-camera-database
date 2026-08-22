@@ -22,6 +22,13 @@
 | Operating temp | -30 to 60°C |
 | Released | 2026 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 5456x1520 | 25 | H.265+ |
+| sub | 2160x608 | 25 | H.265 |
+
 ## Features
 
 - dual-lens stitched 180 panorama

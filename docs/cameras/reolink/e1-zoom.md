@@ -18,6 +18,12 @@
 | Operating temp | -10 to 55°C |
 | Released | 2020 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 20 | — |
+
 ## Features
 
 - 4K indoor WiFi with 3× optical zoom

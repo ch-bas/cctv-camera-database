@@ -18,6 +18,14 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2688x1520 | — | H.265+ |
+| sub | 704x576 | — | H.265 |
+| third | 1920x1080 | — | H.265 |
+
 ## Features
 
 - DeepinViewX turret with dedicated Guanlan large-scale AI model for perimeter protection (~90% fewer false alarms)

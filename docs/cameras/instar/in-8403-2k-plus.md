@@ -13,6 +13,12 @@
 | Protocols | onvif, rtsp |
 | Two-way audio | No |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | — | H.265 |
+
 ## Features
 
 - two IR LEDs, switchable between infrared and white-light illumination; PIR-linked in recent firmware

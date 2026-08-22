@@ -19,6 +19,13 @@
 | Operating temp | -10 to 55°C |
 | Released | 2018 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Mainstream | 2560x1440 | 30 | H.264 |
+| Substream | 640x360 | 15 | H.264 |
+
 ## Features
 
 - built-in microSD slot

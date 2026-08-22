@@ -19,6 +19,13 @@
 | Two-way audio | Yes |
 | Operating temp | -30 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x2560 | 30 | H.265 |
+| sub | 1024x1024 | 30 | H.265 |
+
 ## Features
 
 - 360° panoramic fisheye view

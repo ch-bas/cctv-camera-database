@@ -19,6 +19,12 @@
 | IP rating | IP66 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2880x1620 | 20 | H.265 |
+
 ## Features
 
 - 4G LTE pan/tilt

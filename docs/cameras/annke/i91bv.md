@@ -17,6 +17,12 @@
 | IP rating | IP67 |
 | Two-way audio | No |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 25 | H.265 |
+
 ## Features
 
 - 4K 8MP PoE turret

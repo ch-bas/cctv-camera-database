@@ -18,6 +18,12 @@
 | Two-way audio | Yes |
 | Operating temp | -20 to 55°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 60 | H.265 |
+
 ## Features
 
 - Starlight X low-light technology (0.008 lx color, 0.0007 lx mono)

@@ -20,6 +20,13 @@
 | Operating temp | -15 to 45°C |
 | Released | 2023 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 5120x1552 | 20 | H.265 |
+| sub | 640x192 | 20 | H.264 |
+
 ## Features
 
 - 180deg dual-lens panoramic

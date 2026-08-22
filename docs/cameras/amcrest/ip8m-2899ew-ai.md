@@ -17,6 +17,12 @@
 | IP rating | IP66 |
 | Operating temp | -40 to 70°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 25 | H.265 |
+
 ## Features
 
 - 25x optical zoom

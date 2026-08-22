@@ -17,6 +17,13 @@
 | IK rating | IK10 |
 | Operating temp | -40 to 65°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| visible | 1920x1080 | — | H.265 |
+| thermal | 640x480 | 9 | — |
+
 ## Features
 
 - Bispectral thermal + optical PTZ (MIC IP fusion 9000i)

@@ -19,6 +19,12 @@
 | Two-way audio | No |
 | Operating temp | -40 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2592x1944 | 30 | H.265 |
+
 ## Features
 
 - 5MP Dual Light (warm white LED + IR) flateye turret

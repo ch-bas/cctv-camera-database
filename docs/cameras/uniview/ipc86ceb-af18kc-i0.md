@@ -19,6 +19,13 @@
 | Two-way audio | Yes |
 | Operating temp | -30 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 4000x3000 | 20 | H.265 |
+| sub | 2000x1500 | 20 | H.265 |
+
 ## Features
 
 - 180° fisheye panoramic (fisheye/panorama/PTZ dewarp modes)

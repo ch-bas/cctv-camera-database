@@ -19,6 +19,14 @@
 | Two-way audio | No |
 | Operating temp | -30 to 55°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 30 | H.265+ |
+| sub | 1280x720 | 30 | — |
+| third | 352x288 | 15 | — |
+
 ## Features
 
 - 24/7 full-color (Color at Night)

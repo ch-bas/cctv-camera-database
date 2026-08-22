@@ -21,6 +21,12 @@
 | Operating temp | -20 to 45°C |
 | Released | 2023 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 20 | H.264 |
+
 ## Features
 
 - 4MP ColorPro color night vision

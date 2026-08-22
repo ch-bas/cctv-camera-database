@@ -19,6 +19,12 @@
 | IK rating | IK10 |
 | Two-way audio | No |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3072x1728 | 15 | H.265 |
+
 ## Features
 
 - Mini dome PTZ

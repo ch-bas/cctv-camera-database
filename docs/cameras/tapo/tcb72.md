@@ -19,6 +19,12 @@
 | Two-way audio | Yes |
 | Operating temp | 0 to 40°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 30 | H.264 |
+
 ## Features
 
 - 2K QHD (4MP) smart AI pan/tilt

@@ -18,6 +18,12 @@
 | Two-way audio | Yes |
 | Operating temp | -40 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 30 | H.265 |
+
 ## Features
 
 - Digital Deterrent: built-in speaker with preset/custom sounds (audio deterrence) plus high-power red and blue warning lights (visual deterrence)

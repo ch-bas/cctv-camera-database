@@ -18,6 +18,12 @@
 | IP rating | IP66 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3072x1728 | 20 | H.265 |
+
 ## Features
 
 - mini PT speed dome (pan-tilt)

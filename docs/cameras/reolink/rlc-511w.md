@@ -19,6 +19,13 @@
 | Operating temp | -10 to 55°C |
 | Released | 2020 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Mainstream | 2560x1920 | 30 | H.264 |
+| Substream | 640x480 | 30 | H.264 |
+
 ## Features
 
 - 5MP WiFi outdoor bullet fixed lens

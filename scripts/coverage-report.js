@@ -47,7 +47,8 @@ const T = cameras.length;
 const LANES = [
   ["Field of view", "📡", "#179", (c) => !!c.field_of_view_deg],
   ["Environment (in/outdoor)", "🌍", "#123", (c) => c.environment && c.environment.length > 0],
-  ["Video streams", "🎞️", "#177", (c) => c.video && c.video.streams && c.video.streams.length > 0],
+  ["Video streams (any)", "🎞️", "#177", (c) => c.video && c.video.streams && c.video.streams.length > 0],
+  ["Substream data", "🎞️", "#177", (c) => c.video && c.video.streams && c.video.streams.some((s) => s.name && s.name !== "main")],
   ["Dimensions", "📐", "#178", (c) => !!c.dimensions_mm],
   ["Weight", "⚖️", "#178", (c) => c.weight_g != null],
   ["Markets", "🗺️", "#166", (c) => c.markets && c.markets.length > 0],
@@ -76,7 +77,7 @@ const badge = (label, pct) => `![${label} ${pct}%](https://img.shields.io/badge/
 const BADGE_LANES = [
   ["environment", "Environment (in/outdoor)"],
   ["FOV", "Field of view"],
-  ["streams", "Video streams"],
+  ["streams", "Video streams (any)"],
   ["dimensions", "Dimensions"],
   ["IK rating", "IK / impact rating"],
   ["color min-lux", "Min-lux (color)"],

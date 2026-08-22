@@ -18,6 +18,13 @@
 | Operating temp | -10 to 40°C |
 | Released | 2019 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Main Stream | 2560x1440 | 15 | — |
+| Sub Stream | 640x480 | 10 | — |
+
 ## Features
 
 - 1080p indoor WiFi pan/tilt entry

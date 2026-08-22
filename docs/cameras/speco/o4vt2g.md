@@ -18,6 +18,12 @@
 | Two-way audio | No |
 | Operating temp | -40 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 30 | H.265 |
+
 ## Features
 
 - fixed 2.8mm lens

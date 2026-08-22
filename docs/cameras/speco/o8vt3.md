@@ -20,6 +20,12 @@
 | Two-way audio | No |
 | Operating temp | -40 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 30 | H.265 |
+
 ## Features
 
 - ONVIF Profile G, S, and T conformant (confirmed consistently across multiple retailer datasheets)

@@ -19,6 +19,14 @@
 | Operating temp | -20 to +50°C |
 | Released | 2026 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 30 | — |
+| sub | 1920x1080 | 30 | — |
+| third | 352x240 | 30 | MJPEG |
+
 ## Features
 
 - varifocal

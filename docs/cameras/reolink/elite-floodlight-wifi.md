@@ -19,6 +19,12 @@
 | Operating temp | -10 to 55°C |
 | Released | 2025 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Main stream | 5120x1552 | 20 | — |
+
 ## Features
 
 - dual-lens 4K AI floodlight camera

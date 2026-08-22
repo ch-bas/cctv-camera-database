@@ -19,6 +19,12 @@
 | Operating temp | -10 to 55°C |
 | Released | 2025 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 5120x1552 | 20 | — |
+
 ## Features
 
 - 180° panoramic dual-lens

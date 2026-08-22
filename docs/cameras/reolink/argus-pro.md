@@ -18,6 +18,12 @@
 | Operating temp | -10 to 55°C |
 | Released | 2018 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 15 | H.264 |
+
 ## Features
 
 - dual-power: battery OR mains adapter

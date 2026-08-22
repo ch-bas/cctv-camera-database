@@ -21,6 +21,12 @@
 | Two-way audio | Yes |
 | Operating temp | -30 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1280x960 | 60 | — |
+
 ## Features
 
 - Ultra WDR (>=120dB)

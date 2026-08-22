@@ -21,6 +21,15 @@
 | Two-way audio | Yes |
 | Operating temp | -40 to 65°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2688x1520 | 60 | — |
+| main-120fps | 1920x1080 | 120 | — |
+| sub | 1280x720 | 30 | — |
+| third | 1920x1080 | 30 | — |
+
 ## Features
 
 - DeepinView deep learning AI (2.5 TOPS, HEOP 2.0 OpendevSDK, up to 4 custom models)

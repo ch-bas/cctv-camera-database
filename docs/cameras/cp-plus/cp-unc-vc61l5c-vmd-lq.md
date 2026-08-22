@@ -19,6 +19,12 @@
 | Two-way audio | Yes |
 | Operating temp | -40 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3288x1850 | 30 | H.265 |
+
 ## Features
 
 - vandal-resistant dome

@@ -19,6 +19,12 @@
 | IK rating | IK10 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 4000x3000 | — | H.265 |
+
 ## Features
 
 - 360 degree panoramic fisheye with multiple dewarping/decoding modes

@@ -19,6 +19,12 @@
 | Two-way audio | Yes |
 | Operating temp | -20 to 45°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2304x1296 | 15 | H.264 |
+
 ## Sources
 
 - https://www.tp-link.com/us/home-networking/cloud-camera/tc82/

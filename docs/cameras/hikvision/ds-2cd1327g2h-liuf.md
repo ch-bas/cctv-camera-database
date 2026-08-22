@@ -18,6 +18,12 @@
 | Two-way audio | No |
 | Released | 2023 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 30 | H.265 |
+
 ## Features
 
 - ColorVu Smart Hybrid Light (IR + white light)

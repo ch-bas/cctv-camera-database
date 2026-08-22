@@ -17,6 +17,12 @@
 | Two-way audio | Yes |
 | Operating temp | -10 to 55°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 25 | H.265 |
+
 ## Features
 
 - pan/tilt with auto-tracking

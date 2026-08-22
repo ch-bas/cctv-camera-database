@@ -18,6 +18,12 @@
 | Two-way audio | Yes |
 | Released | 2023 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3040x1368 | 24 | H.265 |
+
 ## Features
 
 - dual-lens 180deg panoramic single stitched image

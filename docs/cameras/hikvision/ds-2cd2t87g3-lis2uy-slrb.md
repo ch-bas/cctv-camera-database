@@ -18,6 +18,14 @@
 | Two-way audio | Yes |
 | Released | 2023 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 30 | H.265 |
+| sub | 1280x720 | 30 | H.265 |
+| third | 1920x1080 | 10 | H.265 |
+
 ## Features
 
 - G3 ColorVu Smart Hybrid Light F1.0

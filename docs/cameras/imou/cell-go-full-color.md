@@ -16,6 +16,12 @@
 | IP rating | IP65 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2304x1296 | 15 | H.265 |
+
 ## Features
 
 - full-color night vision (spotlight/white light)

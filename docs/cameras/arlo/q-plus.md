@@ -15,6 +15,12 @@
 | Protocols | http |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 30 | H.264 |
+
 ## Features
 
 - 1080p indoor camera

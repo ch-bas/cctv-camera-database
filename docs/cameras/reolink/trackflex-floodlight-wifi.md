@@ -21,6 +21,13 @@
 | Operating temp | -10 to 55°C |
 | Released | 2025 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Wide-angle (8MP) | 3840x2160 | 20 | — |
+| Secondary (2MP) | 1920x1080 | 20 | — |
+
 ## Features
 
 - dual-lens 4K auto-tracking floodlight

@@ -21,6 +21,12 @@
 | Two-way audio | No |
 | Operating temp | -30 to 55°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2592x1944 | 30 | H.265 |
+
 ## Features
 
 - Wisenet Q 5MP vandal dome (black housing)

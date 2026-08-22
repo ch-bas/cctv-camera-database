@@ -19,6 +19,12 @@
 | IP rating | IP67 |
 | Two-way audio | No |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 15 | H.265 |
+
 ## Features
 
 - 3-axis adjustment (pan 0-355, tilt 0-90, rotate 0-355)

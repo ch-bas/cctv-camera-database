@@ -18,6 +18,13 @@
 | Two-way audio | Yes |
 | Operating temp | -30 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 30 | H.265 |
+| sub | 1920x1080 | 30 | H.265 |
+
 ## Features
 
 - dual-channel MultiView (4mm fixed 8MP + 10-50mm 5X zoom detail)

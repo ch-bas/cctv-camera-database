@@ -18,6 +18,12 @@
 | Two-way audio | Yes |
 | Operating temp | -20 to 50°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 25 | H.265 |
+
 ## Features
 
 - human/vehicle detection

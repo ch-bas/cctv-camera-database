@@ -18,6 +18,13 @@
 | Two-way audio | Yes |
 | Operating temp | -20 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 25 | H.265 |
+| sub | 1280x720 | 25 | H.265 |
+
 ## Features
 
 - dual-lens (fixed panorama + PTZ detail)

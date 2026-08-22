@@ -21,6 +21,12 @@
 | Two-way audio | No |
 | Operating temp | -40 to 50°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 30 | H.265 |
+
 ## Features
 
 - dual NPU AI processing (Wisenet 9 SoC)

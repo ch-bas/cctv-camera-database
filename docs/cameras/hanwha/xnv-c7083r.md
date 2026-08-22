@@ -22,6 +22,12 @@
 | Operating temp | -40 to 55°C |
 | Released | 2022 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2592x1520 | 60 | H.265 |
+
 ## Features
 
 - AI object detection and IVA (virtual line/area, loitering, intrusion)

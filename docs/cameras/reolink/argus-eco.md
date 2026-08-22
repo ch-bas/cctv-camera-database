@@ -18,6 +18,12 @@
 | Operating temp | -10 to 55°C |
 | Released | 2019 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2304x1296 | 15 | H.264 |
+
 ## Features
 
 - 3MP IR budget battery camera

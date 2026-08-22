@@ -17,6 +17,12 @@
 | IP rating | IP66 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2880x1620 | 15 | H.265 |
+
 ## Features
 
 - Always-On-Video (AOV) low-power recording

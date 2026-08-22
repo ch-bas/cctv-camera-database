@@ -21,6 +21,13 @@
 | Two-way audio | Yes |
 | Operating temp | -30 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 5200x2320 | 20 | H.265 |
+| sub | 1200x536 | 20 | H.265 |
+
 ## Features
 
 - 180° panoramic view

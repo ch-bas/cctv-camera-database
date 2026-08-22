@@ -18,6 +18,13 @@
 | Two-way audio | No |
 | Operating temp | -30 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 25 | H.265 |
+| sub | 640x360 | 25 | H.265 |
+
 ## Features
 
 - Wi-Fi (2.4 GHz IEEE 802.11b/g/n)

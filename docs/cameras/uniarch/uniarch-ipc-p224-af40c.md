@@ -17,6 +17,13 @@
 | Two-way audio | Yes |
 | Operating temp | -30 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 25 | H.265 |
+| sub | 640x360 | 25 | H.265 |
+
 ## Features
 
 - Smart IR
