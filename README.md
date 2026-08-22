@@ -2,7 +2,7 @@
 
 An open, structured database of 3,433 CCTV / IP camera models and their technical specifications, covering 77 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
 
-[![cameras](https://img.shields.io/badge/cameras-3%2C431-blue)](data/cameras.json)
+[![cameras](https://img.shields.io/badge/cameras-3%2C433-blue)](data/cameras.json)
 [![brands](https://img.shields.io/badge/brands-77-green)](cameras/)
 [![license](https://img.shields.io/badge/license-CC0-lightgrey)](LICENSE)
 
@@ -80,7 +80,7 @@ cctv-camera-database/
 │   ├── abus/             # 142 cameras
 │   └── …71 more brands
 ├── data/                 # GENERATED — do not edit by hand
-│   ├── cameras.json      # all 3,431 cameras as one array
+│   ├── cameras.json      # all 3,433 cameras as one array
 │   ├── cameras.csv       # flattened, spreadsheet-friendly
 │   └── rtsp-patterns.json  # CC0 brand-level RTSP URL layer (122 brands)
 ├── strix/
@@ -177,14 +177,14 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | Total cameras | **3,433** |
 | Brands | **77** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
-| PoE wired | 2,640 |
-| WiFi | 600 |
+| PoE wired | 2,641 |
+| WiFi | 601 |
 | Battery / wire-free | 206 |
 | 4K / 8MP+ | 951 |
-| 4–5MP | 1,422 |
-| 1080p–2MP | 1,057 |
-| With integration configs (Frigate / Home Assistant) | 2,863 |
-| With color-lux rating (`night_vision.min_lux_color`) | 2,188 |
+| 4–5MP | 1,423 |
+| 1080p–2MP | 1,058 |
+| With integration configs (Frigate / Home Assistant) | 2,865 |
+| With color-lux rating (`night_vision.min_lux_color`) | 2,189 |
 
 ### All 77 brands
 
@@ -207,10 +207,10 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | Hi-Focus | 60 | Made-in-India, BIS certified, IN |
 | Kedacom | 58 | Enterprise, CN/global |
 | IMOU (Dahua) | 56 | Consumer + prosumer, global |
-| Tapo (TP-Link) | 54 | Consumer budget, global |
+| Tapo (TP-Link) | 55 | Consumer budget, global |
 | Eufy (Anker) | 46 | Consumer no-subscription, global |
+| Hanwha | 46 | Enterprise AI, Korea/global |
 | Ubiquiti UniFi | 46 | Prosumer/SMB, US/global |
-| Hanwha | 45 | Enterprise AI, Korea/global |
 | Uniarch (Uniview) | 43 | Budget NDAA sub-brand, global |
 | Lorex | 40 | Consumer NVR systems, CA/US |
 | Luma | 33 | Custom-install (SnapAV), US |

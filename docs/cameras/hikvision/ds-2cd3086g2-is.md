@@ -38,7 +38,7 @@
 
 ## Sources
 
-- https://www.hikvision.com/en/products/IP-Products/Network-Cameras/Ultra-Series-SmartIP-/ds-2cd3086g2-is/
+- https://assets.hikvision.com/prd/public/all/doc/sm000050059/DS-2CD3086G2-IS-H_Datasheet_20230712.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd3086g2-is.json — do not edit by hand.*

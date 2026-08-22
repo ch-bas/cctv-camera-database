@@ -33,7 +33,7 @@
 
 ## Sources
 
-- https://www.hikvision.com/en/products/IP-Products/Network-Cameras/value-series/ds-2cd1027g2h-liu-f-/
+- https://assets.hikvision.com/prd/public/all/doc/sm000059821/DS-2CD1027G2H-LIUF_Datasheet_20240718.pdf
 - https://assets.hikvision.com/prd/public/all/doc/sm000059821/DS-2CD1027G2H-LIUF_Datasheet_20240718.pdf
 
 ---

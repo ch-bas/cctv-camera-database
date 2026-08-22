@@ -11,7 +11,7 @@
 | Lens | 1× 5-125mm F1.6 |
 | Field of view | 54.1-3.4h° |
 | Night vision | hybrid (100m), 0.005 lux color |
-| Power | 12VDC/PoE+ |
+| Power | 12VDC/PoE+ (802.3at) |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |

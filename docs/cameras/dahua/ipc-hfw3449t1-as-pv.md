@@ -13,7 +13,7 @@
 | Lens | 1× 2.8 (fixed)mm F1.0 |
 | Field of view | 103 (2.8mm)° |
 | Night vision | hybrid (30m), 0.003 lux color |
-| Power | 12VDC/PoE |
+| Power | 12VDC/PoE (802.3af) |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp, http |
 | IP rating | IP67 |
