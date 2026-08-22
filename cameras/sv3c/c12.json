@@ -36,7 +36,6 @@
     "cloud": false
   },
   "protocols": [
-    "onvif",
     "rtsp"
   ],
   "ip_rating": "IP66",
@@ -61,18 +60,19 @@
         "height": 720,
         "fps": 5
       },
-      "rtsp_url_template": "rtsp://admin:{pass}@{ip}/stream0",
-      "best_substream": "rtsp://admin:{pass}@{ip}/stream1",
-      "verified": false,
-      "notes": "SV3C RTSP: default user 'admin', main /stream0 + sub /stream1. Many newer SV3C models are ONVIF-conformant (enable in the web UI)."
+      "rtsp_url_template": "rtsp://admin:{pass}@{ip}:554/11",
+      "best_substream": "rtsp://admin:{pass}@{ip}:554/12",
+      "verified": true,
+      "notes": "SV3C RTSP: default user 'admin'. On the C25/C12 the working stream paths are /11 (main) and /12 (sub) — owner-confirmed via #12; the generic /stream0 and /stream1 paths do NOT work on these. In go2rtc/Frigate, prefix the URL with ffmpeg: (e.g. ffmpeg:rtsp://admin:PASS@IP:554/11) — go2rtc's native RTSP client hangs on these (live view spins forever) and the ffmpeg: prefix resolves it.",
+      "tested_by": "Ricky6360 (GitHub #12)"
     },
     "home_assistant": {
-      "integration": "onvif",
-      "notes": "ONVIF-conformant — use the ONVIF integration."
+      "integration": "generic",
+      "notes": "RTSP-only (no ONVIF) — use the Generic Camera integration with the /11 stream URL."
     },
     "blue_iris": {
       "profile": "Generic/RTSP",
-      "notes": "Use the Generic/RTSP (or ONVIF) profile."
+      "notes": "Use the Generic/RTSP profile."
     }
   },
   "power_source": [
@@ -81,7 +81,7 @@
   "sources": [
     "https://www.sv3c.com/SV3C-PTZ-WiFi-Security-Camera-Outdoor-15X-Optical-Zoom-Auto-Tracking-5MP-8MP-Floodlight-Color-Night-Vision-Wireless-IP-Cam-2-Way-Audio-Metal-Shell-RTSP-FTP-SD-Card-Record-BlueIris-p2032033.html"
   ],
-  "last_verified": "2026-08-05",
+  "last_verified": "2026-08-21",
   "field_of_view_deg": "pan 350 / tilt 90",
   "environment": [
     "outdoor"

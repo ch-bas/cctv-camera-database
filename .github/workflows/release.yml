@@ -47,6 +47,13 @@ jobs:
         if: steps.check.outputs.exists == 'false'
         run: node scripts/build.js
 
+      - name: Package release archive
+        if: steps.check.outputs.exists == 'false'
+        env:
+          RELEASE_VERSION: ${{ steps.version.outputs.version }}
+          RELEASE_TAG: v${{ steps.version.outputs.version }}
+        run: npm run package-release
+
       - name: Extract changelog for this version
         if: steps.check.outputs.exists == 'false'
         id: changelog
@@ -67,5 +74,6 @@ jobs:
           name: v${{ steps.version.outputs.version }}
           body: ${{ steps.changelog.outputs.body }}
           files: |
+            cameras.zip
             data/cameras.json
             data/cameras.csv

@@ -1,0 +1,130 @@
+{
+  "id": "hanwha-qnp-6250r",
+  "brand": "Hanwha",
+  "model": "QNP-6250R",
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet Q 2MP 25x IR PTZ"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.44-111 (25x optical zoom)",
+    "aperture": "F1.6-3.9",
+    "varifocal": true
+  },
+  "field_of_view_deg": "64.66-2.99 horizontal / 38.08-1.68 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100,
+    "min_lux": 0.005,
+    "min_lux_color": 0.05
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at, Class 4)",
+    "consumption_w": 25.5,
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "25x optical zoom (4.44-111mm)",
+    "auto-tracking",
+    "Wise IR 100m (850nm)",
+    "Day & Night (ICR)",
+    "120 dB WDR",
+    "DIS (built-in gyro sensor)",
+    "H.265 / H.264 / MJPEG, WiseStream II",
+    "pan 360 endless, tilt 90 to -20 degrees",
+    "ONVIF S/G/T",
+    "IP66 / IK10 / NEMA4X",
+    "PoE+ Class 4",
+    "audio in/out + alarm I/O via optional I/O box"
+  ],
+  "release_year": 2021,
+  "release_notes": "2MP 25x IR PTZ (Wisenet Q). Specs verified against the official Hanwha Vision datasheet DataSheet_QNP-6250R (2025-09-05). Community-submitted via #293.",
+  "sources": [
+    "https://www.hanwhavision.com/en/products/product-details/qnp-6250r",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/QNP-6250R/DataSheet_QNP-6250R_20250905_EN_200804.pdf"
+  ],
+  "last_verified": "2026-08-21",
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "dimensions_mm": "Ø158 x 293.3",
+  "weight_g": 3100,
+  "operating_temp_c": "-35 to 55",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

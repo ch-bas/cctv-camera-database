@@ -67,7 +67,8 @@
         "fps": 5
       },
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/stream1",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/stream2"
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/stream2",
+      "notes": "go2rtc alternative: TP-Link's proprietary protocol via go2rtc (tapo://<tapo-account-password>@{ip}) is often more stable than RTSP (fewer timeouts / non-monotonic-timestamp errors). The password form is firmware-dependent: either your Tapo app/cloud account password, or user `admin` + the UPPERCASE SHA-256 of the camera password (`tapo://admin:<UPPERCASE-SHA256>@{ip}`) — see go2rtc's Tapo docs. It is not the camera's plain RTSP/Device password. If non-monotonic-timestamp errors persist, disable audio for that camera in Frigate. Chrome may render the go2rtc live view with a squashed aspect ratio (a browser live-view quirk, not the stream); Firefox is correct. The go2rtc tapo:// source also carries a two-way-audio backchannel, so Frigate's live view gets a talk button (mic+speaker)."
     },
     "home_assistant": {
       "integration": "tapo",

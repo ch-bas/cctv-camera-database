@@ -6,19 +6,39 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
-## [Unreleased]
+## [2.0.1] — 2026-08-22
+
+Adds a `network.ethernet_speed_mbps` schema field and backfills it for 280 PoE cameras across five brands (with a companion NetBox devicetype-library export), plus a batch of community-reported camera/config fixes and deeper Frigate/go2rtc integration notes.
 
 ### Added
+- **Release archive** — GitHub Releases now include `cameras.zip`, bundling `cameras.json`, `cameras.csv`, and machine-readable `release-metadata.json` with release/commit provenance, camera count, byte sizes, and SHA-256 checksums. The standalone JSON and CSV assets remain available for compatibility.
 - **`network` schema block** — optional `network.ethernet_speed_mbps` (RJ45 link speed: 10 / 100 / 1000 / 2500 / 10000) and `network.ethernet_ports`, read from the datasheet's Ethernet / Network Interface row. The field is optional; no existing record is affected.
 - **Ethernet link speed for 46 Hikvision PoE cameras** — backfilled from the official datasheets (44 × 100 Mbps `10M/100M self-adaptive`, 2 × Gigabit on the iDS-2CD7A DeepinView pair). No values estimated. Two records (DS-2CD1027G2H-LIU, DS-2CD3086G2-IS) also had their `sources` upgraded from JS product pages to the official `assets.hikvision.com` datasheet PDFs.
 - **Ethernet link speed for 30 Dahua PoE cameras** — backfilled from the official datasheets' `Network Port RJ-45` row (26 × 100 Mbps, 4 × Gigabit on the WizSense-3 PRO models). `IPC-HDW1439V-IL-K` was deliberately left unfilled — its exact `-IL-K` datasheet isn't publicly published, and the family value wasn't read from that model's own sheet.
 - **Ethernet link speed for 86 Uniview PoE cameras** — backfilled from each model's official spec sheet (`RJ45 … Base-TX` row; 83 × 100 Mbps, 3 × Gigabit on the Pro PTZ / high-end models). Two `-WP-L2` Owlview variants were left unfilled — their published datasheets omit the network-interface row.
 - **Ethernet link speed for 73 Axis PoE cameras** — backfilled from each official datasheet's `RJ45 …BASE-T` connector row (60 × 100 Mbps, 13 × Gigabit). Four were left unfilled: `AXIS F4105-LRE` (a modular sensor unit with no network port of its own) and three discontinued models (`P3265-LVE`, `P3344`, `Q2101-E`) whose datasheets aren't currently obtainable.
 - **Ethernet link speed for all 45 Hanwha PoE cameras** — backfilled from each model's official datasheet `Ethernet RJ-45 (…BASE-T)` row (32 × 100 Mbps, 13 × Gigabit on the Wisenet P / multi-sensor models). Complete coverage — no Hanwha PoE camera left unfilled.
-- **`scripts/gen-netbox.js`** — exports cameras that have a known link speed to [netbox-community/devicetype-library](https://github.com/netbox-community/devicetype-library) YAML device types. Skips any camera missing `ethernet_speed_mbps`, so the NetBox interface `type` is never guessed, and only annotates PoE (`poe_mode`/`poe_type`) when the datasheet states the 802.3 standard. Emits the `---` document-start marker and maps dataset brand names to the library's manufacturer/directory convention (e.g. `Axis` → `AXIS`); run the output through the library's `yamlfmt` pre-commit hook before submitting.
+- **`scripts/gen-netbox.js`** — exports cameras that have a known link speed to [netbox-community/devicetype-library](https://github.com/netbox-community/devicetype-library) YAML device types. Skips any camera missing `ethernet_speed_mbps`, so the NetBox interface `type` is never guessed, and only annotates PoE (`poe_mode`/`poe_type`) when the datasheet states the 802.3 standard. Emits the `---` document-start marker and maps dataset brand names to the library's manufacturer/directory convention (e.g. `Axis` → `AXIS`); run the output through the library's `yamlfmt` pre-commit hook before submitting. Upstream PRs: netbox-community/devicetype-library #4485–#4489.
+- **Hanwha QNP-6250R (#293):** community-submitted 2MP 25x IR PTZ (Wisenet Q). Full spec from the official datasheet — 1/2.8" CMOS, 4.44–111 mm 25x zoom, 100 m Wise IR, 120 dB WDR, auto-tracking, PoE+ Class 4, IP66/IK10, 256 GB microSD — including `network.ethernet_speed_mbps`.
+- **Tapo TCB72:** 2K QHD (4MP) pan/tilt AI Wi-Fi camera (retail SKU) — 1/3" starlight CMOS, 4 mm F2.0, 850 nm IR 12 m, 12x digital zoom, two-way audio + 99 dB siren, RTSP+ONVIF, DC 9 V, indoor. Specs from the official TP-Link product page.
 
 ### Changed
 - **PoE standard added to `power.method` for 22 Dahua cameras** — where the datasheet's Power Supply row states it (e.g. `12VDC/PoE` → `12VDC/PoE (802.3af)`, `12VDC/PoE+` → `12VDC/PoE+ (802.3at)`). Datasheet-grounded; enables a correct NetBox `poe_type`.
+- **go2rtc `tapo://` note on 36 Tapo cameras (#297):** documents TP-Link's proprietary go2rtc protocol as a more-stable alternative to RTSP on the mains/USB models with local streaming — including the firmware-dependent password form (Tapo cloud account password, or `admin` + UPPERCASE SHA-256 of the camera password), the audio-disable workaround for non-monotonic-timestamp errors, and a Chrome live-view aspect-ratio quirk. Battery/hub/app-only models skipped.
+- **Tapo ONVIF PTZ + go2rtc two-way audio documented** — on the 20 pan/tilt models, Tapo exposes ONVIF PTZ on **port 2020** (wire Frigate's `onvif` block there for manual pan/tilt); on the 34 mic+speaker models, the go2rtc `tapo://` backchannel enables Frigate's live-view talk button.
+
+### Fixed
+- **Reolink RLC-1212A form factor (#294):** was mislabeled a dome throughout (id/model/type/feature); it's a bullet (Φ67 × 187 mm barrel). Corrected and the `-dome` slug dropped → `reolink-rlc-1212a` (old URL 301-redirected in the web repo).
+- **Axis multi-sensor Frigate configs (#296):** the 5 panoramic multi-sensor models (P3727-PLE, P3737-PLE, P3818-PVE, Q3819-PVE, Q6100-E) lacked `?camera=` on `/axis-media/media.amp`, so Frigate only saw the first channel. Templates now pin `?camera=1` with per-sensor notes.
+- **Reolink E1 Zoom detect resolution:** `configs.frigate.detect` was the 1280×720 default but the camera's sub-stream (`/Preview_01_sub`) is locked at 640×480 — corrected to match so Frigate isn't resizing every frame.
+- **SV3C C25 / C12 RTSP paths (#12, #300):** owner-reported the shipped `/stream0`+`/stream1` don't work — corrected to `/11` (main) + `/12` (sub), and documented that go2rtc needs the `ffmpeg:` prefix (its native RTSP client hangs → spinning live view).
+- **SV3C C12 is RTSP-only (#12):** removed the incorrect `onvif` protocol (Home Assistant integration switched to generic); confirmed by the owner and the product listing. C25 keeps ONVIF.
+- **Amcrest AD410 go2rtc backchannel (#301):** documented `#backchannel=0` (two-way off / normal button+chime — the recommended default) vs `#backchannel=1` (two-way audio on, needs extra setup).
+
+### Verified
+- **Tapo C545D (#289):** Frigate config confirmed working; documented the community-reported per-lens RTSP mapping (wide lens `/stream1` + `/stream2`, telephoto lens `/stream6` + `/stream7`).
+- **Tapo C510W (#303):** Frigate config confirmed working (both streams, Frigate 0.18.0-344efb6).
+- **Amcrest AD410 doorbell (#302):** Frigate config confirmed working (main stream, Frigate 0.17).
 
 ---
 
