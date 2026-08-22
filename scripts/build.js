@@ -46,7 +46,10 @@ function sensorSizeInch(sensor) {
   if (!sensor) return null;
   const frac = sensor.match(/\b1\s*\/\s*(\d+(?:\.\d+)?)\s*["″”]?/);
   if (frac) { const d = parseFloat(frac[1]); return Number.isFinite(d) && d > 0 ? 1 / d : null; }
-  const big = sensor.match(/\b(1|4\s*\/\s*3|2\s*\/\s*3)\s*["″”]/);
+  // Accept a quote (1"), a Unicode prime, OR the worded unit ("1-inch", "1 in.",
+  // "1 inch") so worded-format flagships (e.g. Bosch's 1" MIC 7504 / NDP-7804)
+  // sort by their true size instead of collapsing to null.
+  const big = sensor.match(/\b(1|4\s*\/\s*3|2\s*\/\s*3)\s*(?:["″”]|[-\s]*in(?:ch(?:es)?)?\b\.?)/i);
   if (big) { const t = big[1].replace(/\s+/g, ""); return t === "1" ? 1 : t === "4/3" ? 4 / 3 : t === "2/3" ? 2 / 3 : null; }
   return null;
 }
@@ -69,7 +72,10 @@ function loadCameras() {
         process.exit(1);
       }
     })
-    .sort((a, b) => a.cam.id.localeCompare(b.cam.id));
+    // Guard the id so a contributor file missing `id` sorts harmlessly and then
+    // fails with Ajv's friendly "must have required property 'id'" error, rather
+    // than a bare TypeError here that names no file.
+    .sort((a, b) => (a.cam.id || "").localeCompare(b.cam.id || ""));
 }
 
 // Repo-relative camera file -> date (YYYY-MM-DD) the file was first added to
@@ -400,9 +406,11 @@ function updateReadme(cameras) {
     poe: n((x) => psHas("poe")(x)),
     wifi: n((x) => x.connectivity && x.connectivity.includes("wifi")),
     batt: n((x) => psHas("battery")(x)),
+    // MP bins partition the whole catalogue (labels must match these ranges):
+    // ≥8MP, 4–7MP, and everything under 4MP (incl. the 0-MP Reolink hub).
     uhd: n((x) => mpOf(x) >= 8),
     mid: n((x) => mpOf(x) >= 4 && mpOf(x) < 8),
-    fhd: n((x) => mpOf(x) > 0 && mpOf(x) < 4),
+    fhd: n((x) => mpOf(x) < 4),
     cfg: n((x) => x.configs && (x.configs.frigate || x.configs.home_assistant)),
     clux: n((x) => x.night_vision && x.night_vision.min_lux_color != null),
   };
@@ -411,8 +419,8 @@ function updateReadme(cameras) {
     .replace(/(\| WiFi \| )[\d,]+( \|)/, `$1${stats.wifi}$2`)
     .replace(/(\| Battery \/ wire-free \| )[\d,]+( \|)/, `$1${stats.batt}$2`)
     .replace(/(\| 4K \/ 8MP\+ \| )[\d,]+( \|)/, `$1${stats.uhd}$2`)
-    .replace(/(\| 4–5MP \| )[\d,]+( \|)/, `$1${stats.mid}$2`)
-    .replace(/(\| 1080p–2MP \| )[\d,]+( \|)/, `$1${stats.fhd}$2`)
+    .replace(/(\| 4–7MP \| )[\d,]+( \|)/, `$1${stats.mid}$2`)
+    .replace(/(\| Under 4MP \| )[\d,]+( \|)/, `$1${stats.fhd}$2`)
     .replace(/(\| With integration configs \(Frigate \/ Home Assistant\) \| )[\d,]+( \|)/, `$1${stats.cfg}$2`)
     .replace(/(\| With color-lux rating \(`night_vision\.min_lux_color`\) \| )[\d,]+( \|)/, `$1${stats.clux}$2`);
 

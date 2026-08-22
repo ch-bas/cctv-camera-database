@@ -82,9 +82,19 @@ function main() {
 
     fs.mkdirSync(path.dirname(outputPath), { recursive: true });
     fs.rmSync(outputPath, { force: true });
-    execFileSync("zip", ["-9", "-q", outputPath, ...DATA_FILES, METADATA_FILE], {
-      cwd: stagingDir,
-    });
+    try {
+      execFileSync("zip", ["-9", "-q", outputPath, ...DATA_FILES, METADATA_FILE], {
+        cwd: stagingDir,
+      });
+    } catch (err) {
+      if (err.code === "ENOENT") {
+        throw new Error(
+          "The `zip` binary is required to build the release archive but was not found on PATH. " +
+            "Install it (e.g. `brew install zip` / `apt-get install zip`) and re-run."
+        );
+      }
+      throw err;
+    }
   } finally {
     fs.rmSync(stagingDir, { recursive: true, force: true });
   }

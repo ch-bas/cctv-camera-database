@@ -26,7 +26,14 @@ const CATEGORIES = ["rtsp", "onvif", "firmware", "audio", "ptz", "power", "netwo
 
 // ── arg parsing ──────────────────────────────────────────────────────────────
 const argv = process.argv.slice(2);
-const opt = (k) => { const i = argv.indexOf(`--${k}`); return i >= 0 ? argv[i + 1] : undefined; };
+const opt = (k) => {
+  const i = argv.indexOf(`--${k}`);
+  if (i < 0) return undefined;
+  const next = argv[i + 1];
+  // Don't swallow the following flag as this one's value (e.g. `--category
+  // --firmware x` must leave category empty, not set it to "--firmware").
+  return next && !next.startsWith("--") ? next : undefined;
+};
 const args = {
   id: opt("id"),
   note: opt("note"),

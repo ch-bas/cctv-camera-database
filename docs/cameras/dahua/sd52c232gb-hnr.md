@@ -10,7 +10,7 @@
 | Sensor | 1/2.8" STARVIS CMOS |
 | Lens | 1× 4.8-153mm |
 | Field of view | 58.4-3.0 (H)° |
-| Night vision | undefined, 0.005 lux color |
+| Night vision | 0.005 lux color |
 | Power | PoE+ (802.3at) / DC 24V |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | rtsp, onvif |

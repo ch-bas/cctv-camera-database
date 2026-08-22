@@ -183,8 +183,8 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | WiFi | 601 |
 | Battery / wire-free | 206 |
 | 4K / 8MP+ | 949 |
-| 4–5MP | 1,421 |
-| 1080p–2MP | 1,058 |
+| 4–7MP | 1,421 |
+| Under 4MP | 1,059 |
 | With integration configs (Frigate / Home Assistant) | 2,861 |
 | With color-lux rating (`night_vision.min_lux_color`) | 2,187 |
 

@@ -66,6 +66,12 @@ function camerasFromArgs(args) {
     }
   } else if (brandIdx !== -1 && args[brandIdx + 1]) {
     const d = path.join("cameras", args[brandIdx + 1]);
+    // A typo'd/absent brand dir must not throw an unhandled rejection in the
+    // IIFE below (this workflow promises never to fail CI) — return empty.
+    if (!fs.existsSync(d) || !fs.statSync(d).isDirectory()) {
+      console.log(`⚠  No such brand directory: cameras/${args[brandIdx + 1]} — nothing to archive.`);
+      return files;
+    }
     for (const f of fs.readdirSync(d)) if (f.endsWith(".json")) files.push(path.join(d, f));
   } else {
     for (const a of args) if (a.endsWith(".json") && fs.existsSync(a)) files.push(a);
@@ -99,7 +105,9 @@ async function save(url) {
       signal: ctrl.signal,
     });
     clearTimeout(t);
-    return { ok: res.ok || res.status === 429, status: res.status };
+    // A 429 is Wayback rate-limiting us, NOT a successful capture — count it as a
+    // failure so scoped runs don't overstate what was preserved and DO revisit.
+    return { ok: res.ok, status: res.status, rateLimited: res.status === 429 };
   } catch (err) {
     return { ok: false, status: 0, error: err.message };
   }
@@ -123,7 +131,7 @@ async function save(url) {
     if (await recentlyArchived(urls[i])) { skipped++; console.log(`  ⤻ [${i + 1}/${urls.length}] already archived — skip`); continue; }
     const r = await save(urls[i]);
     if (r.ok) { ok++; console.log(`  ✓ [${i + 1}/${urls.length}] ${urls[i]}`); }
-    else { fail++; console.log(`  ✗ [${i + 1}/${urls.length}] (${r.status}${r.error ? " " + r.error : ""}) ${urls[i]}`); }
+    else { fail++; console.log(`  ✗ [${i + 1}/${urls.length}] (${r.status}${r.rateLimited ? " rate-limited, will retry next run" : r.error ? " " + r.error : ""}) ${urls[i]}`); }
     await sleep(DELAY); // only delay after an actual save
   }
   console.log(`\nDone: ${ok} archived, ${skipped} already-fresh (skipped), ${fail} failed (advisory — failures don't fail CI).`);
