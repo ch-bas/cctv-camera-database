@@ -8,7 +8,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.1.1] — 2026-08-22
 
-Data-quality fixes: removed four duplicate camera entries (3,433 → 3,429).
+Data-quality fixes: removed four duplicate camera entries (3,433 → 3,429), plus a community-verified Frigate config.
+
+### Verified
+- **Hikvision DS-2CD2143G2-I Frigate config (#311):** community-confirmed working on Frigate 0.17.x and 0.18.0-beta3 (both main + sub streams, no changes needed) — marked `configs.frigate.verified` and `last_verified` bumped. Thanks @IAmKonni.
 
 ### Removed
 - **Fake "NetCamCenter" brand (2 entries):** `netcamcenter-ndm-7702-a` and `-ndm-7703-al` were Bosch FLEXIDOME multi 7000i cameras (their own aliases said so), duplicating the better-sourced `bosch/ndm-7702-a` / `bosch/ndm-7703-al`. NetCamCenter is a German retailer, not a manufacturer.
