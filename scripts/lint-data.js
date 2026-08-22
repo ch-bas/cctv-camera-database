@@ -25,6 +25,26 @@ const path = require("path");
 const CAM_DIR = "cameras";
 const FIX = process.argv.includes("--fix");
 
+// Manufacturer / datasheet-mirror domains. Mirrors build.js's OFFICIAL_DOMAINS
+// (the isOfficialSource list) plus known datasheet-mirror hosts. A community
+// note sourced from one of these is a datasheet fact → it's a spec, not a note.
+const DATASHEET_DOMAINS = [
+  "boschsecurity.com", "boschbuildingtechnologies.com", "keenfinity.tech",
+  "tp-link.com", "tapo.com", "ui.com", "ubnt.com", "ajax.systems",
+  "hanwhavision.com", "hanwhavisionamerica.com", "dahuasecurity.com",
+  "hikvision.com", "reolink.com", "eufy.com", "arlo.com", "wyze.com",
+  "ezviz.com", "imou.com", "aqara.com", "acti.com", "kedacom.com",
+  "uniview.com", "uniarch.com", "avigilon.com", "axis.com", "vivotek.com",
+  "tiandy.com", "annke.com", "amcrest.com", "lorex.com", "foscam.com",
+  "instar.com", "instar.de", "cpplusworld.com", "specotech.com",
+  "mi.com", "xiaomi.com", "tvt.net.cn", "arecontvision.com", "geovision.com",
+  "hilook.com", "milesight.com", "sunell.com",
+  // datasheet mirrors
+  "axilogi.com",
+];
+const isDatasheetHost = (host) =>
+  DATASHEET_DOMAINS.some((d) => host === d || host.endsWith("." + d));
+
 // ── collect camera files ────────────────────────────────────────────────────
 const files = [];
 for (const brand of fs.readdirSync(CAM_DIR)) {
@@ -81,6 +101,34 @@ for (const file of files) {
   // E4 — last_verified, when present, must be an ISO date (YYYY-MM-DD).
   if (cam.last_verified != null && !/^\d{4}-\d{2}-\d{2}$/.test(String(cam.last_verified))) {
     errors.push(`${id}: last_verified "${cam.last_verified}" is not an ISO date (YYYY-MM-DD).`);
+  }
+
+  // E7 — community_notes hygiene (observed behaviors, NOT specs — see CONTRIBUTING).
+  if (Object.prototype.hasOwnProperty.call(cam, "community_notes")) {
+    const cn = cam.community_notes;
+    if (Array.isArray(cn) && cn.length === 0) {
+      errors.push(`${id}: community_notes is an empty array — remove the key instead.`);
+    }
+    for (const n of Array.isArray(cn) ? cn : []) {
+      const src = typeof n.source === "string" ? n.source : "";
+      // Error — sourced from a manufacturer/datasheet domain → it's a spec, not a note.
+      let host = "";
+      try { host = new URL(src).host.toLowerCase(); } catch { /* not a URL (e.g. "empirical") */ }
+      if (host && isDatasheetHost(host)) {
+        errors.push(`${id}: community_note source "${src}" is a manufacturer/datasheet domain — a datasheet fact is a spec, not a community note.`);
+      }
+      // Warning — spec-like text suggesting this is really a correction.
+      const text = String(n.note || "");
+      if (/\b\d+\s?(MP|mp|fps|lux|mm|W|watt)\b/.test(text) && /\b(actually|really|should be|not\s+\d)\b/i.test(text)) {
+        warnings.push(`${id}: community_note looks like a spec correction — should this go in the spec fields with a datasheet source? "${text.slice(0, 80)}${text.length > 80 ? "…" : ""}"`);
+      }
+      // Warning — implausible date (>30 days future, or before 2015).
+      if (typeof n.date === "string" && /^\d{4}-\d{2}-\d{2}$/.test(n.date)) {
+        const t = new Date(n.date + "T00:00:00Z").getTime();
+        if (t - Date.now() > 30 * 24 * 3600 * 1000) warnings.push(`${id}: community_note date ${n.date} is >30 days in the future.`);
+        if (new Date(n.date + "T00:00:00Z").getUTCFullYear() < 2015) warnings.push(`${id}: community_note date ${n.date} is before 2015 — check it.`);
+      }
+    }
   }
 
   // E5 — canonical formatting (2-space indent + trailing newline). Keeps diffs

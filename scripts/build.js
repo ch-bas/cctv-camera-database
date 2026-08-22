@@ -269,6 +269,7 @@ function toCsv(cameras) {
     "resolution_label", "megapixels", "sensor",
     "field_of_view_deg", "night_vision_type", "ip_rating",
     "ik_rating", "two_way_audio", "release_year",
+    "community_notes_count",
   ];
   const esc = (v) => {
     const s = v == null ? "" : String(v);
@@ -280,6 +281,7 @@ function toCsv(cameras) {
       c.resolution?.label, c.resolution?.megapixels, c.sensor,
       c.field_of_view_deg, c.night_vision?.type, c.ip_rating,
       c.ik_rating, c.audio?.two_way, c.release_year,
+      Array.isArray(c.community_notes) ? c.community_notes.length : 0,
     ].map(esc).join(",")
   );
   return [cols.join(","), ...rows].join("\n") + "\n";

@@ -225,6 +225,47 @@ See [`configs/README.md`](configs/README.md) for templates and full details.
 
 ---
 
+## Community notes (quirks and behaviors)
+
+Datasheets tell you what a camera claims to do. They don't tell you that the substream drops to 5fps when WDR is on, or that ONVIF events stop working after a specific firmware. That knowledge is spread across forum threads and gets lost.
+
+Each camera can carry a `community_notes` array for exactly this. These are **observed behaviors, not specs**, and they are **not verified by the project** — the source link and reporter name carry the accountability.
+
+### What belongs here
+- RTSP/ONVIF oddities (wrong default path, substream limits, auth quirks)
+- Firmware-specific regressions or fixes
+- Integration gotchas for Frigate / Home Assistant / Blue Iris
+- Power/PoE behavior under load, hardware revisions with different behavior
+
+### What does NOT belong here
+- Spec corrections. If the database says 20m IR and the datasheet says 30m, that's a correction — use the spec fields and link the datasheet.
+- Opinions ("image quality is bad"), purchasing advice, or comparisons.
+- Anything without a source.
+
+### How to add one
+**Easiest:** open a [quirk report issue](https://github.com/ch-bas/cctv-camera-database/issues/new?template=camera-quirk.yml) and we'll file it.
+
+**PR:** add to the camera's JSON:
+
+```json
+"community_notes": [
+  {
+    "note": "Substream drops to 5fps when WDR is enabled, regardless of the fps set in the UI.",
+    "category": "rtsp",
+    "firmware": "V5.7.3 build 230801",
+    "source": "https://github.com/blakeblackshear/frigate/discussions/12345",
+    "reported_by": "yourhandle",
+    "date": "2026-08-22"
+  }
+]
+```
+
+Or run `npm run add-note -- --id hikvision-ds-2cd2387g2-lu`.
+
+`source` is a URL, or the literal word `empirical` if you observed it on your own device. Contradicting notes are fine — different firmware, different behavior. We don't delete old notes; `firmware` and `date` let readers judge.
+
+---
+
 ## Corrections
 
 Found a mistake? [Open a correction issue](../../issues/new?template=correction.yml) — no need to fork anything.

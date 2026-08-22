@@ -1,0 +1,47 @@
+name: "🔧 Report a quirk / behavior"
+description: "Something this camera does that isn't in the datasheet — RTSP oddities, ONVIF bugs, firmware regressions, etc."
+title: "Quirk: [Brand] [Model] — [short description]"
+labels: ["community-note"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is for **observed behavior**, not spec corrections. If a spec value in the database is wrong, use the "Correct an existing entry" template instead.
+
+  - type: input
+    id: camera
+    attributes:
+      label: "Which camera?"
+      placeholder: "e.g. Hikvision DS-2CD2387G2-LU"
+    validations:
+      required: true
+
+  - type: textarea
+    id: note
+    attributes:
+      label: "What does it do?"
+      description: "One behavior per issue. What happens, under what condition."
+      placeholder: "e.g. Substream drops to 5fps when WDR is enabled, regardless of the fps set in the UI."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: "Category"
+      options: ["rtsp", "onvif", "firmware", "audio", "ptz", "power", "network", "frigate", "home_assistant", "blue_iris", "other"]
+
+  - type: input
+    id: firmware
+    attributes:
+      label: "Firmware version (if known)"
+      placeholder: "e.g. V5.7.3 build 230801"
+
+  - type: input
+    id: source
+    attributes:
+      label: "Source"
+      description: "Link to the thread / issue / video where this is discussed. If you found it yourself on your own device, write: empirical"
+      placeholder: "https://… or empirical"
+    validations:
+      required: true
