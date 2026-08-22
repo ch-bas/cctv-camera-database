@@ -14,6 +14,12 @@
 | Protocols | http |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | — | H.265 |
+
 ## Features
 
 - smart full-color night vision (auto IR/color switch)

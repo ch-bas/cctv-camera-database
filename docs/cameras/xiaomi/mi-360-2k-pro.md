@@ -16,6 +16,12 @@
 | Storage | microSD ≤ 32GB |
 | Operating temp | -10 to 50°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2304x1296 | — | H.265 |
+
 ## Features
 
 - F1.4 aperture with 6P lens

@@ -22,6 +22,13 @@
 | Operating temp | -30 to +60 (PoE+); -40 to +60 (AC 24V)°C |
 | Released | 2022 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 60 | H.265 |
+| sub | 640x360 | 30 | H.264 |
+
 ## Features
 
 - 22x optical zoom (34x HD Extra Optical Zoom at 1280x720)

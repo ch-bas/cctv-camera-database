@@ -17,6 +17,12 @@
 | Two-way audio | No |
 | Operating temp | -5 to 55 (-20 to 55 with optional heater accessory)°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 25 | H.265 |
+
 ## Features
 
 - microphone built in; no built-in speaker, but supports an optional active speaker via 3.5mm jack for two-way audio

@@ -18,6 +18,12 @@
 | IP rating | IP67 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 25 | H.265 |
+
 ## Features
 
 - 4K 8MP NightChroma full-color bullet (1/1.8" sensor, F1.0)

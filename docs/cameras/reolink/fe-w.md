@@ -17,6 +17,12 @@
 | Two-way audio | Yes |
 | Released | 2024 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x2560 | 20 | H.265 |
+
 ## Features
 
 - 360deg panoramic fisheye

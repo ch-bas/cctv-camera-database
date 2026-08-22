@@ -17,6 +17,12 @@
 | IP rating | IP66 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2304x1296 | 15 | H.265 |
+
 ## Features
 
 - 4G LTE cellular (no Wi-Fi needed)

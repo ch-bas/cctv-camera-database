@@ -18,6 +18,12 @@
 | IK rating | IK10 |
 | Two-way audio | No |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 24 | H.265 |
+
 ## Features
 
 - ColorVu

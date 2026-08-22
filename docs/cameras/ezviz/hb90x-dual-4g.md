@@ -19,6 +19,12 @@
 | Two-way audio | Yes |
 | Operating temp | -20 to 50°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 15 | H.265 |
+
 ## Features
 
 - dual-lens pan/tilt battery camera with 4G LTE cellular connectivity (Nano SIM required), bundled with 8W solar panel

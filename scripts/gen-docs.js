@@ -25,6 +25,19 @@ function walk(dir) {
 
 const row = (k, v) => (v == null || v === "" ? "" : `| ${k} | ${v} |\n`);
 
+// Night-vision cell. Guards a missing `type` (45 entries carry only a
+// min_lux_color) so the page never renders a literal "undefined" or a stray
+// leading comma; identical output to before when `type` is present.
+function nightVision(nv) {
+  if (!nv) return "";
+  const head = [nv.type || "", nv.range_m ? `(${nv.range_m}m)` : ""].filter(Boolean).join(" ");
+  const tail = [
+    nv.min_lux ? `${nv.min_lux} lux` : "",
+    nv.min_lux_color ? `${nv.min_lux_color} lux color` : "",
+  ].filter(Boolean).join(", ");
+  return [head, tail].filter(Boolean).join(", ");
+}
+
 function render(c) {
   let md = `# ${c.brand} ${c.model}\n\n`;
   if (c.aliases?.length) md += `*Also known as: ${c.aliases.join(", ")}*\n\n`;
@@ -37,7 +50,7 @@ function render(c) {
   md += row("Sensor", c.sensor);
   md += row("Lens", c.lens && [c.lens.count ? `${c.lens.count}×` : "", c.lens.focal_length_mm ? `${c.lens.focal_length_mm}mm` : "", c.lens.aperture].filter(Boolean).join(" "));
   md += row("Field of view", c.field_of_view_deg && `${c.field_of_view_deg}°`);
-  md += row("Night vision", c.night_vision && `${c.night_vision.type}${c.night_vision.range_m ? ` (${c.night_vision.range_m}m)` : ""}${c.night_vision.min_lux ? `, ${c.night_vision.min_lux} lux` : ""}${c.night_vision.min_lux_color ? `, ${c.night_vision.min_lux_color} lux color` : ""}`);
+  md += row("Night vision", nightVision(c.night_vision));
   md += row("Power", c.power?.method);
   md += row("Storage", c.storage && [c.storage.max_microsd_gb ? `microSD ≤ ${c.storage.max_microsd_gb}GB` : "", c.storage.nvr_compatible ? "NVR" : ""].filter(Boolean).join(", "));
   md += row("Protocols", c.protocols?.join(", "));
@@ -46,6 +59,14 @@ function render(c) {
   md += row("Two-way audio", c.audio ? (c.audio.two_way ? "Yes" : "No") : "");
   md += row("Operating temp", c.operating_temp_c && `${c.operating_temp_c}°C`);
   md += row("Released", c.release_year);
+  // Full per-stream table (main / sub / third …) — the single Resolution row
+  // above only shows the main stream; substream res/fps/codec live here.
+  if (c.video?.streams?.length) {
+    md += `\n## Streams\n\n| Stream | Resolution | FPS | Codec |\n|--------|-----------|-----|-------|\n`;
+    for (const s of c.video.streams) {
+      md += `| ${s.name || "—"} | ${s.resolution || "—"} | ${s.fps ?? "—"} | ${s.codec || "—"} |\n`;
+    }
+  }
   if (c.features?.length) md += `\n## Features\n\n${c.features.map((f) => `- ${f}`).join("\n")}\n`;
   if (c.sources?.length) md += `\n## Sources\n\n${c.sources.map((s) => `- ${s}`).join("\n")}\n`;
   if (c.community_notes?.length) {
@@ -67,11 +88,33 @@ function render(c) {
 }
 
 let count = 0;
+const written = new Set();
 for (const f of walk(CAMERAS_DIR)) {
   const c = JSON.parse(fs.readFileSync(f, "utf8"));
   const out = path.join(DOCS_CAMERAS_DIR, path.relative(CAMERAS_DIR, f).replace(/\.json$/, ".md"));
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, render(c));
+  written.add(path.resolve(out));
   count++;
 }
-console.log(`✓ Generated ${count} markdown doc(s) → docs/cameras/`);
+
+// Prune docs for deleted/renamed cameras — the generator used to only ever
+// write, so docs/cameras/ accumulated ghost pages (e.g. removed duplicates)
+// that kept getting served via Pages. Remove any .md with no source JSON, then
+// drop the brand dirs left empty.
+let pruned = 0;
+if (fs.existsSync(DOCS_CAMERAS_DIR)) {
+  const walkMd = (dir) =>
+    fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) => {
+      const p = path.join(dir, e.name);
+      return e.isDirectory() ? walkMd(p) : e.name.endsWith(".md") ? [p] : [];
+    });
+  for (const md of walkMd(DOCS_CAMERAS_DIR)) {
+    if (!written.has(path.resolve(md))) { fs.unlinkSync(md); pruned++; }
+  }
+  for (const d of fs.readdirSync(DOCS_CAMERAS_DIR)) {
+    const dp = path.join(DOCS_CAMERAS_DIR, d);
+    if (fs.statSync(dp).isDirectory() && fs.readdirSync(dp).length === 0) fs.rmdirSync(dp);
+  }
+}
+console.log(`✓ Generated ${count} markdown doc(s)${pruned ? `, pruned ${pruned} stale` : ""} → docs/cameras/`);

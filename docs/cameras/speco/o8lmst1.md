@@ -17,6 +17,12 @@
 | IK rating | IK10 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 4096x1800 | — | H.265 |
+
 ## Features
 
 - 180-degree multi-sensor with in-camera image stitching

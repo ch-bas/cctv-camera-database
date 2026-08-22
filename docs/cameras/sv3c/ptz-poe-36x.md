@@ -17,6 +17,12 @@
 | Protocols | rtsp |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 20 | H.265 |
+
 ## Features
 
 - 36X optical zoom

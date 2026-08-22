@@ -19,6 +19,12 @@
 | IP rating | IP67 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | — | H.265 |
+
 ## Features
 
 - compact corded Wi-Fi bullet

@@ -15,6 +15,12 @@
 | IP rating | IP66 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2304x1296 | — | H.265 |
+
 ## Features
 
 - 360 pan & tilt

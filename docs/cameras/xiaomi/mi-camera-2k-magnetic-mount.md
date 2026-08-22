@@ -15,6 +15,12 @@
 | Two-way audio | No |
 | Operating temp | -10 to 50°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2304x1296 | — | H.265 |
+
 ## Features
 
 - ultra-compact (60 x 48 x 67.5mm) with detachable adjustable magnetic base

@@ -22,7 +22,9 @@
 const fs = require("fs");
 const path = require("path");
 
-const CAM_DIR = "cameras";
+// Anchor to the repo root, not the cwd, so it lints correctly when run from
+// anywhere (CI, a subdir, an editor task) — matches build.js/gen-docs.js.
+const CAM_DIR = path.join(__dirname, "..", "cameras");
 const FIX = process.argv.includes("--fix");
 
 // Manufacturer / datasheet-mirror domains. Mirrors build.js's OFFICIAL_DOMAINS

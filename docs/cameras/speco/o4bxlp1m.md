@@ -17,6 +17,12 @@
 | IP rating | IP67 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1520 | 60 | H.265 |
+
 ## Features
 
 - License Plate Recognition, built-in database stores up to 10,000 plates for onboard search/match (or use with a compatible Speco recorder)

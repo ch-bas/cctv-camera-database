@@ -20,6 +20,12 @@
 | Operating temp | -20 to 55°C |
 | Released | 2021 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2688x1512 | 60 | H.265 |
+
 ## Features
 
 - Motorized PTRZ (pan/tilt/roll/zoom) remote commissioning

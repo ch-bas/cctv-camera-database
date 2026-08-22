@@ -16,6 +16,13 @@
 | Protocols | onvif, rtsp |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 20 | H.264 |
+| sub | unknown | 20 | H.264 |
+
 ## Features
 
 - 4K@20fps

@@ -22,6 +22,14 @@
 | Operating temp | -30 to 60°C |
 | Released | 2025 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 4608x3456 | 15 | H.265 |
+| sub | 1280x720 | 30 | H.265 |
+| third | 1920x1080 | 10 | H.265 |
+
 ## Features
 
 - Active strobe light and audio alarm (/SL: white light, /SRB: red & blue light)

@@ -20,6 +20,12 @@
 | Two-way audio | Yes |
 | Operating temp | -25 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2688x1520 | — | H.264 |
+
 ## Features
 
 - AI object detection (people / pets / vehicles)

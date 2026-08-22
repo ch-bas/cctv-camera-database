@@ -17,6 +17,12 @@
 | Two-way audio | Yes |
 | Released | 2024 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | — | H.265 |
+
 ## Features
 
 - 4G LTE cellular trail/security camera (Camovue line)

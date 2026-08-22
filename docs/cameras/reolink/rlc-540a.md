@@ -20,6 +20,12 @@
 | Operating temp | -10 to 55°C |
 | Released | 2024 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Main stream | 2560x1920 | 30 | H.265 |
+
 ## Features
 
 - IK10 vandal-proof

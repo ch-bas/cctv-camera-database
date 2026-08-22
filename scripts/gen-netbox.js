@@ -61,7 +61,8 @@ function slugifyModel(s) {
 function poeType(method) {
   if (!method) return null;
   const m = method.toLowerCase();
-  if (/802\.3 ?bt|poe\+\+|hi-?poe|90 ?w|60 ?w/.test(m)) return 'type3-ieee802.3bt';
+  // Wattage is word-anchored so a battery spec like "360 Wh" can't match "60 W".
+  if (/802\.3 ?bt|poe\+\+|hi-?poe|\b(?:60|90) ?w\b/.test(m)) return 'type3-ieee802.3bt';
   if (/802\.3 ?at|poe\+/.test(m)) return 'type2-ieee802.3at';
   if (/802\.3 ?af/.test(m)) return 'type1-ieee802.3af';
   return null; // plain "PoE" — don't guess the standard
@@ -85,7 +86,10 @@ function toYaml(c) {
   if (!ifType) return null;
   const method = c.power && c.power.method;
   const pt = poeType(method);
-  const dcV = dcVoltage(method);
+  // Only emit a DC power port when the camera actually takes DC input. Otherwise
+  // a PoE nominal voltage in the method string ("PoE 802.3af, 48 VDC nominal")
+  // would fabricate a nonexistent DC-terminal port on a PoE-only device.
+  const dcV = (c.power_source || []).includes('dc') ? dcVoltage(method) : null;
   const draw = c.power && c.power.consumption_w;
   const mfr = brandInfo(c.brand).name;
   const slug = `${slugifyManufacturer(mfr)}-${slugifyModel(c.model)}`;

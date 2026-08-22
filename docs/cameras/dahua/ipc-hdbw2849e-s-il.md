@@ -21,6 +21,13 @@
 | Two-way audio | No |
 | Released | 2024 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 20 | H.265 |
+| sub | 704x576 | 25 | H.265 |
+
 ## Features
 
 - WizSense 4K dual-light mini dome

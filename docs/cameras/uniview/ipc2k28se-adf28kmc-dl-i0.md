@@ -19,6 +19,13 @@
 | Two-way audio | Yes |
 | Operating temp | -30 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 4096x1860 | 20 | H.265 |
+| sub | 2048x936 | 20 | H.265 |
+
 ## Features
 
 - dual-light (IR 850nm + warm light, 30m) / ColorHunter

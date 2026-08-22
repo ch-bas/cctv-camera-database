@@ -18,6 +18,12 @@
 | Two-way audio | Yes |
 | Operating temp | -20 to 45°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 20 | H.264 |
+
 ## Features
 
 - millimeter-wave radar with 360 auto human tracking (detects motion outside the lens's field of view)

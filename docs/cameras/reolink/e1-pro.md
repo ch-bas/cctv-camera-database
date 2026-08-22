@@ -18,6 +18,13 @@
 | Operating temp | -10 to 55°C |
 | Released | 2020 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Main/Clear | 2880x1616 | 20 | — |
+| Sub/Fluent | 640x360 | 10 | — |
+
 ## Features
 
 - 355° pan / 50° tilt

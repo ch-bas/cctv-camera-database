@@ -20,6 +20,14 @@
 | Operating temp | -30 to 55°C |
 | Released | 2024 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Main Stream | 2560x1920 | 30 | H.265 |
+| 2nd Stream | 1920x1080 | 60 | H.265 |
+| 3rd Stream | 1280x720 | 60 | H.265 |
+
 ## Features
 
 - WDR Pro 120 dB

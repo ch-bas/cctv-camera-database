@@ -18,6 +18,12 @@
 | IP rating | IP67 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3632x1632 | 20 | H.265 |
+
 ## Features
 
 - 6MP dual-lens panoramic bullet (2x 1/2.5" sensors)

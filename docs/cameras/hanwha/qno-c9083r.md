@@ -22,6 +22,12 @@
 | Operating temp | -30 to 55°C |
 | Released | 2023 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 30 | H.265 |
+
 ## Features
 
 - AI object detection (person/vehicle: car, truck, bus, bicycle, motorcycle)

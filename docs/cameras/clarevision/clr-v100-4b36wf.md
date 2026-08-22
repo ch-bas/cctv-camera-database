@@ -19,6 +19,13 @@
 | IP rating | IP67 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 30 | H.265+ |
+| sub | 720x480 | 30 | H.265 |
+
 ## Features
 
 - WiFi (2.4 GHz)

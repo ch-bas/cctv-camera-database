@@ -21,6 +21,13 @@
 | Operating temp | -10 to 55°C |
 | Released | 2024 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Main stream | 5120x1440 | 15 | H.265 |
+| Sub stream | 640x360 | 15 | H.265 |
+
 ## Features
 
 - 4K 180deg dual-lens ColorX color night vision (no IR needed)

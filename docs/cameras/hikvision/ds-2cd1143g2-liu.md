@@ -21,6 +21,13 @@
 | Two-way audio | No |
 | Released | 2023 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2688x1520 | 20 | H.265 |
+| sub | 1280x720 | 24 | H.265 |
+
 ## Features
 
 - Smart Hybrid Light (IR + warm supplement)

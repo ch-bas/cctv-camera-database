@@ -18,6 +18,13 @@
 | Operating temp | -40 to 65°C |
 | Released | 2019 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Visible | 1920x1080 | 30 | H.265 |
+| Thermal | 320x240 | 9 | H.265 |
+
 ## Features
 
 - Thermal + optical (visible) fusion dual-imager PTZ

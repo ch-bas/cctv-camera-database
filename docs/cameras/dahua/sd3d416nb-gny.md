@@ -17,6 +17,13 @@
 | IP rating | IP66 |
 | Operating temp | -30 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 30 | H.265 |
+| sub | 704x576 | 30 | H.265 |
+
 ## Features
 
 - WizSense

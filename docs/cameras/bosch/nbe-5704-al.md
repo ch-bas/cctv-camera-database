@@ -19,6 +19,12 @@
 | Two-way audio | Yes |
 | Operating temp | -40 to 55°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| 4K UHD | 3840x2160 | 30 | H.265 |
+
 ## Features
 
 - Intelligent Video Analytics Pro (IVA Pro Buildings) - deep-learning person/vehicle detection

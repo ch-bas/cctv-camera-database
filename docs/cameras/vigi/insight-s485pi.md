@@ -22,6 +22,13 @@
 | Operating temp | -30 to 60°C |
 | Released | 2025 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 30 | H.265+ |
+| sub | 640x480 | 30 | H.265 |
+
 ## Features
 
 - 180 panorama

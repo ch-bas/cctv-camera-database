@@ -20,6 +20,14 @@
 | Two-way audio | Yes |
 | Operating temp | -40 to +60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2592x1944 | 20 | H.265 |
+| sub | 704x576 | 25 | H.265 |
+| sub2 | 1920x1080 | 30 | H.265 |
+
 ## Features
 
 - TiOC full-color active deterrence

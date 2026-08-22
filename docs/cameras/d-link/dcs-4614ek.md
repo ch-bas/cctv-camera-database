@@ -22,6 +22,12 @@
 | Operating temp | -30 to 50°C |
 | Released | 2020 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2592x1520 | 30 | H.265 |
+
 ## Features
 
 - Wide Dynamic Range (WDR)

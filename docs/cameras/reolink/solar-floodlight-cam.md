@@ -21,6 +21,12 @@
 | Operating temp | -20 to 55°C |
 | Released | 2026 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Mainstream | 2560x1440 | 15 | H.265 |
+
 ## Features
 
 - solar-powered wire-free floodlight camera

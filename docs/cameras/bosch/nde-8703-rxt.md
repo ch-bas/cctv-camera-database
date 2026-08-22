@@ -20,6 +20,12 @@
 | Operating temp | -50 to 60°C |
 | Released | 2024 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Main | 2688x1520 | 60 | H.265 |
+
 ## Features
 
 - Starlight X low-light technology

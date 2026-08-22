@@ -17,6 +17,12 @@
 | IK rating | IK10 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2592x1520 | 30 | H.265 |
+
 ## Features
 
 - advanced analytics

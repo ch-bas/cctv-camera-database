@@ -18,6 +18,13 @@
 | IK rating | IK10 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3680x1656 | 30 | H.265 |
+| sub | 1200x536 | 30 | H.265 |
+
 ## Features
 
 - 42x optical zoom

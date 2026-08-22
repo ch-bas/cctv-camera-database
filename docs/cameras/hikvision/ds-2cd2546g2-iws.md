@@ -19,6 +19,12 @@
 | Two-way audio | No |
 | Released | 2023 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2688x1520 | 30 | H.265 |
+
 ## Features
 
 - built-in Wi-Fi (2.4GHz 802.11b/g/n)

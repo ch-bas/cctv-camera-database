@@ -22,6 +22,12 @@
 | Operating temp | -40 to 55 (max 60 intermittent)°C |
 | Released | 2021 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2592x1520 | 60 | H.265 |
+
 ## Features
 
 - AI object detection (person/face/vehicle/license plate)

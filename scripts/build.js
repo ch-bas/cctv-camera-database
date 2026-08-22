@@ -46,7 +46,10 @@ function sensorSizeInch(sensor) {
   if (!sensor) return null;
   const frac = sensor.match(/\b1\s*\/\s*(\d+(?:\.\d+)?)\s*["″”]?/);
   if (frac) { const d = parseFloat(frac[1]); return Number.isFinite(d) && d > 0 ? 1 / d : null; }
-  const big = sensor.match(/\b(1|4\s*\/\s*3|2\s*\/\s*3)\s*["″”]/);
+  // Accept a quote (1"), a Unicode prime, OR the worded unit ("1-inch", "1 in.",
+  // "1 inch") so worded-format flagships (e.g. Bosch's 1" MIC 7504 / NDP-7804)
+  // sort by their true size instead of collapsing to null.
+  const big = sensor.match(/\b(1|4\s*\/\s*3|2\s*\/\s*3)\s*(?:["″”]|[-\s]*in(?:ch(?:es)?)?\b\.?)/i);
   if (big) { const t = big[1].replace(/\s+/g, ""); return t === "1" ? 1 : t === "4/3" ? 4 / 3 : t === "2/3" ? 2 / 3 : null; }
   return null;
 }
@@ -69,7 +72,10 @@ function loadCameras() {
         process.exit(1);
       }
     })
-    .sort((a, b) => a.cam.id.localeCompare(b.cam.id));
+    // Guard the id so a contributor file missing `id` sorts harmlessly and then
+    // fails with Ajv's friendly "must have required property 'id'" error, rather
+    // than a bare TypeError here that names no file.
+    .sort((a, b) => (a.cam.id || "").localeCompare(b.cam.id || ""));
 }
 
 // Repo-relative camera file -> date (YYYY-MM-DD) the file was first added to
@@ -234,16 +240,18 @@ function validate(cameras) {
       ok = false;
     }
     // WARNING part (non-fatal): megapixels vs pixel count. Skipped for
-    // multi-imager types (panoramic / dual-lens) where the stated megapixels is
-    // the COMBINED total across sensors and legitimately exceeds a single
-    // max_width×max_height. For single-sensor cameras a large gap usually means
-    // one of the two was updated without the other (e.g. resolution bumped to 4K
-    // but megapixels left at 2).
+    // multi-imager cameras — the panoramic / dual-lens types, but ALSO any
+    // camera with lens.count > 1 (e.g. a multi-directional PTZ/dome typed `ptz`
+    // or `dome`) — where the stated megapixels is the COMBINED total across
+    // sensors and legitimately exceeds a single max_width×max_height. For
+    // single-sensor cameras a large gap usually means one of the two was updated
+    // without the other (e.g. resolution bumped to 4K but megapixels left at 2).
     const MULTI_IMAGER = new Set(["panoramic", "dual-lens"]);
+    const isMultiImager = MULTI_IMAGER.has(cam.type) || (cam.lens && cam.lens.count > 1);
     if (r.megapixels != null && hasW && hasH) {
       const computed = (r.max_width * r.max_height) / 1e6;
       const ratio = computed / r.megapixels;
-      if (!MULTI_IMAGER.has(cam.type) && Math.abs(computed - r.megapixels) > 1.0 && (ratio < 0.6 || ratio > 1.6)) {
+      if (!isMultiImager && Math.abs(computed - r.megapixels) > 1.0 && (ratio < 0.6 || ratio > 1.6)) {
         warnResMismatch.push(`${cam.id}: stated ${r.megapixels}MP vs ${r.max_width}×${r.max_height}=${computed.toFixed(2)}MP (type=${cam.type})`);
       }
     } else if (r.megapixels != null && !hasW && !hasH) {
@@ -311,6 +319,14 @@ function updateReadme(cameras) {
   if (!fs.existsSync(readmePath)) return false;
   let readme = fs.readFileSync(readmePath, "utf8");
 
+  // RTSP-layer totals live in the (separately generated) rtsp-patterns.json;
+  // read them so the README's brand/verified/template counts can't drift from
+  // the actual layer (they previously disagreed across three spots).
+  const rtspPath = path.join(DATA_DIR, "rtsp-patterns.json");
+  const rtsp = fs.existsSync(rtspPath)
+    ? (JSON.parse(fs.readFileSync(rtspPath, "utf8"))._meta || {}).totals || {}
+    : {};
+
   const brandDirs = fs.readdirSync(CAMERAS_DIR, { withFileTypes: true })
     .filter((e) => e.isDirectory())
     .map((e) => ({
@@ -333,7 +349,7 @@ function updateReadme(cameras) {
     "├── data/                 # GENERATED — do not edit by hand",
     `│   ├── cameras.json      # all ${total} cameras as one array`,
     "│   ├── cameras.csv       # flattened, spreadsheet-friendly",
-    "│   └── rtsp-patterns.json  # CC0 brand-level RTSP URL layer (122 brands)",
+    `│   └── rtsp-patterns.json  # CC0 brand-level RTSP URL layer (${rtsp.brands ?? "?"} brands)`,
     "├── strix/",
     "│   └── verified/         # per-brand RTSP source files → rtsp-patterns.json",
     "├── schema/",
@@ -370,7 +386,18 @@ function updateReadme(cameras) {
     .replace(/(database of )[\d,]+( CCTV \/ IP camera models)/, `$1${total}$2`)
     .replace(/(covering )\d+( brands across)/, `$1${brandCount}$2`)
     .replace(/(inspect )[\d,]+( cameras across )\d+( brands)/, `$1${total}$2${brandCount}$3`)
-    .replace(/(page through all )[\d,]+( cameras)/, `$1${total}$2`);
+    .replace(/(page through all )[\d,]+( cameras)/, `$1${total}$2`)
+    // Showcase GIF alt-text + caption ("search N cameras", appears twice).
+    .replace(/(search )[\d,]+( cameras)/g, `$1${total}$2`);
+
+  // RTSP-layer counts (tree line above + the prose sentence) — kept in lockstep
+  // with rtsp-patterns.json's _meta.totals so the two never disagree again.
+  if (rtsp.brands != null) {
+    readme = readme.replace(
+      /(reference\*\* for )\d+( brands \()\d+( verified \/ )\d+( unverified \/ )\d+( stream templates\))/,
+      `$1${rtsp.brands}$2${rtsp.verified}$3${rtsp.unverified}$4${rtsp.templates}$5`
+    );
+  }
 
   // "By the numbers" stat rows — computed from the dataset so they never drift
   // (previously hand-written and went stale, e.g. the color-lux count).
@@ -381,9 +408,11 @@ function updateReadme(cameras) {
     poe: n((x) => psHas("poe")(x)),
     wifi: n((x) => x.connectivity && x.connectivity.includes("wifi")),
     batt: n((x) => psHas("battery")(x)),
+    // MP bins partition the whole catalogue (labels must match these ranges):
+    // ≥8MP, 4–7MP, and everything under 4MP (incl. the 0-MP Reolink hub).
     uhd: n((x) => mpOf(x) >= 8),
     mid: n((x) => mpOf(x) >= 4 && mpOf(x) < 8),
-    fhd: n((x) => mpOf(x) > 0 && mpOf(x) < 4),
+    fhd: n((x) => mpOf(x) < 4),
     cfg: n((x) => x.configs && (x.configs.frigate || x.configs.home_assistant)),
     clux: n((x) => x.night_vision && x.night_vision.min_lux_color != null),
   };
@@ -392,8 +421,8 @@ function updateReadme(cameras) {
     .replace(/(\| WiFi \| )[\d,]+( \|)/, `$1${stats.wifi}$2`)
     .replace(/(\| Battery \/ wire-free \| )[\d,]+( \|)/, `$1${stats.batt}$2`)
     .replace(/(\| 4K \/ 8MP\+ \| )[\d,]+( \|)/, `$1${stats.uhd}$2`)
-    .replace(/(\| 4–5MP \| )[\d,]+( \|)/, `$1${stats.mid}$2`)
-    .replace(/(\| 1080p–2MP \| )[\d,]+( \|)/, `$1${stats.fhd}$2`)
+    .replace(/(\| 4–7MP \| )[\d,]+( \|)/, `$1${stats.mid}$2`)
+    .replace(/(\| Under 4MP \| )[\d,]+( \|)/, `$1${stats.fhd}$2`)
     .replace(/(\| With integration configs \(Frigate \/ Home Assistant\) \| )[\d,]+( \|)/, `$1${stats.cfg}$2`)
     .replace(/(\| With color-lux rating \(`night_vision\.min_lux_color`\) \| )[\d,]+( \|)/, `$1${stats.clux}$2`);
 
@@ -437,11 +466,12 @@ function main() {
   const entries = loadCameras();
   const cameras = entries.map((e) => e.cam);
   validate(cameras);
-  // Inject the git-derived `added` date into the generated aggregate only —
-  // never into the per-camera source files (the schema stays authoritative
-  // there; `added` is provenance metadata, not dataset content). Injected
+  // Inject derived fields into the generated aggregate only — never into the
+  // per-camera source files (the schema stays authoritative there; these are
+  // computed provenance/convenience metadata, not dataset content). Injected
   // after validation because the schema's additionalProperties: false would
-  // otherwise reject it.
+  // otherwise reject them. Kept flat (like `added`/`sensor_size_inch`) so the
+  // site consumes them uniformly.
   const added = addedDates();
   const haveHistory = Object.keys(added).length > 0;
   for (const { file, cam } of entries) {
@@ -449,6 +479,19 @@ function main() {
     if (d) cam.added = d;
     const ssi = sensorSizeInch(cam.sensor);
     if (ssi != null) cam.sensor_size_inch = Math.round(ssi * 10000) / 10000;
+    // Substream coverage/convenience: only when video.streams exists. count=0
+    // (streams present but main-only) is distinct from the field being absent
+    // (no stream data at all).
+    const streams = cam.video && cam.video.streams;
+    if (Array.isArray(streams)) {
+      const subs = streams.filter((s) => s.name && s.name !== "main");
+      cam.substream_count = subs.length;
+      cam.substream_max_resolution = subs.reduce((best, s) => {
+        const [w, h] = (s.resolution || "0x0").split("x").map(Number);
+        const px = (w || 0) * (h || 0);
+        return px > best.px ? { px, res: s.resolution || null } : best;
+      }, { px: 0, res: null }).res;
+    }
   }
   if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
   const jsonData = JSON.stringify(cameras, null, 2) + "\n";

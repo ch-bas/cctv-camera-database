@@ -19,6 +19,12 @@
 | IP rating | IP66 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1920 | — | H.264 |
+
 ## Features
 
 - 5MP

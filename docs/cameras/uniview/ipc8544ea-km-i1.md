@@ -18,6 +18,13 @@
 | Two-way audio | Yes |
 | Operating temp | -40 to 70°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 4800x2688 | 30 | H.265 |
+| sub | 2688x1520 | 30 | H.265 |
+
 ## Features
 
 - 180° OmniView panoramic

@@ -21,6 +21,14 @@
 | Two-way audio | Yes |
 | Operating temp | -30 to 65°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 25 | H.265+ |
+| sub | 704x576 | 25 | H.265 |
+| third | 1920x1080 | 25 | H.265 |
+
 ## Features
 
 - TandemVu dual-channel: 4MP ColorVu bullet + 4MP 32x PTZ speed dome

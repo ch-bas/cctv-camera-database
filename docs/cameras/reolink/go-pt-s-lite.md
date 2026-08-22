@@ -17,6 +17,12 @@
 | Two-way audio | Yes |
 | Released | 2024 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 15 | H.265 |
+
 ## Features
 
 - battery-powered + solar option

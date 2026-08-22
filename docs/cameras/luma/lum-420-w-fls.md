@@ -20,6 +20,15 @@
 | Two-way audio | Yes |
 | Operating temp | -20 to 50°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | — | — | H.265 |
+| sub | — | — | H.265 |
+| third | — | — | H.265 |
+| fourth | — | — | H.265 |
+
 ## Features
 
 - active deterrence

@@ -21,6 +21,12 @@
 | Operating temp | -20 to 45°C |
 | Released | 2024 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1920 | 20 | H.264 |
+
 ## Features
 
 - 3K 5MP wired doorbell

@@ -18,6 +18,12 @@
 | Two-way audio | Yes |
 | Operating temp | -30 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 4640x1760 | 30 | H.265 |
+
 ## Features
 
 - 8MP 180 degree dual-sensor with image stitching

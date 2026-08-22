@@ -17,6 +17,13 @@
 | Two-way audio | Yes |
 | Operating temp | -10 to 50°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2304x1296 | 25 | H.265 |
+| sub | 640x360 | 30 | H.265 |
+
 ## Features
 
 - indoor pan/tilt (pan 0-338 deg, tilt -5 to 55 deg)

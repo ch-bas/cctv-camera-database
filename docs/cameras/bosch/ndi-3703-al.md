@@ -17,6 +17,12 @@
 | Operating temp | 0 to 40°C |
 | Released | 2024 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2592x1944 | 30 | H.265 |
+
 ## Features
 
 - High Dynamic Range (HDR)

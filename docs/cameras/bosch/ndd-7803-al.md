@@ -20,6 +20,13 @@
 | Operating temp | -40 to 55°C |
 | Released | 2025 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Imager 1 | 5MP | 30 | — |
+| Imager 2 | 5MP | 30 | — |
+
 ## Features
 
 - Dual-imager (two independent 5MP streams on a single IP address)

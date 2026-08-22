@@ -22,6 +22,12 @@
 | Operating temp | -25 to 50°C |
 | Released | 2020 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 30 | H.265 |
+
 ## Features
 
 - 4K AI IR indoor vandal dome (Wisenet P AI series)

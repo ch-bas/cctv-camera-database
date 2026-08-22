@@ -19,6 +19,12 @@
 | Operating temp | -10 to 55°C |
 | Released | 2026 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Main | 7680x2160 | 20 | H.265 |
+
 ## Features
 
 - 16MP dual-lens 180deg panoramic

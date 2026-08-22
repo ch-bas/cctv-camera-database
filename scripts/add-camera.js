@@ -10,10 +10,13 @@
 
 const fs   = require('fs');
 const path = require('path');
+const Ajv  = require('ajv');
+const addFormats = require('ajv-formats');
 const rl   = require('readline').createInterface({ input: process.stdin, output: process.stdout });
 
-const ROOT     = path.resolve(__dirname, '..');
-const CAM_DIR  = path.join(ROOT, 'cameras');
+const ROOT        = path.resolve(__dirname, '..');
+const CAM_DIR     = path.join(ROOT, 'cameras');
+const SCHEMA_PATH = path.join(ROOT, 'schema', 'camera.schema.json');
 
 // ── helpers ──────────────────────────────────────────────────────
 const ask = (q, fallback = '') => new Promise(res =>
@@ -26,8 +29,12 @@ const askList = async (q, options) => {
     const ans = await ask(`${q}\n${opts}\n> `);
     const n = parseInt(ans, 10);
     if (n >= 1 && n <= options.length) return options[n - 1];
-    const match = options.find(o => o.toLowerCase().startsWith(ans.toLowerCase()));
-    if (match) return match;
+    // Guard against empty input: '' .startsWith('') is true and would silently
+    // pick the first option. Require a real prefix, otherwise re-prompt.
+    if (ans) {
+      const match = options.find(o => o.toLowerCase().startsWith(ans.toLowerCase()));
+      if (match) return match;
+    }
     console.log(`  ✗  Please enter a number 1–${options.length} or type the first few letters.`);
   }
 };
@@ -63,44 +70,62 @@ async function run() {
   cam.id = slugify(customId);
 
   cam.type = await askList('Form factor :', [
-    'bullet', 'dome', 'turret', 'ptz', 'dual-lens', 'panoramic', 'fisheye', 'covert', 'box'
+    'bullet', 'dome', 'turret', 'ptz', 'dual-lens', 'panoramic', 'fisheye', 'covert', 'box', 'floodlight', 'doorbell'
   ]);
 
-  // Resolution
-  const mpRaw = await ask('Resolution  (megapixels, e.g. 8 for 4K, 4 for QHD, 2 for 1080p) : ');
-  const mp    = parseFloat(mpRaw);
+  // Resolution — megapixels is required by the schema; re-prompt until it's a
+  // real positive number rather than defaulting to 2 with a "NaNMP" label.
+  let mp;
+  while (true) {
+    const mpRaw = await ask('Resolution  (megapixels, e.g. 8 for 4K, 4 for QHD, 2 for 1080p) : ');
+    mp = parseFloat(mpRaw);
+    if (Number.isFinite(mp) && mp > 0) break;
+    console.log('  ✗  Megapixels is required — enter a positive number (e.g. 4).');
+  }
   const labelMap = { 2:'1080p HD', 4:'4MP QHD', 5:'5MP', 6:'6MP', 8:'4K UHD', 12:'12MP', 16:'16MP' };
   const autoLabel = labelMap[mp] || (mp >= 8 ? '4K UHD' : `${mp}MP`);
   const label = await ask(`Resolution label (auto: ${autoLabel}) : `, autoLabel);
-  cam.resolution = { megapixels: mp || 2, label };
+  cam.resolution = { megapixels: mp, label };
 
-  // Connectivity
-  console.log('\nConnectivity (enter numbers separated by commas, e.g. 1,2):');
-  console.log('  1) PoE (wired)');
-  console.log('  2) WiFi');
-  console.log('  3) Ethernet (non-PoE wired)');
-  console.log('  4) Battery / wire-free');
-  console.log('  5) 4G / LTE cellular');
-  console.log('  6) Analog (coax HDCVI/TVI/AHD)');
+  // Connectivity — the network transport only (schema enum: wifi/ethernet/4g/5g/
+  // coax). PoE/battery are NOT connectivity; they go in power_source below.
+  console.log('\nNetwork connectivity (enter numbers separated by commas, e.g. 1,2):');
+  console.log('  1) WiFi');
+  console.log('  2) Ethernet (wired)');
+  console.log('  3) 4G / LTE cellular');
+  console.log('  4) 5G cellular');
+  console.log('  5) Coax (analog HDCVI/TVI/AHD)');
   const connRaw = await ask('> ');
-  const connMap  = { '1':'poe','2':'wifi','3':'ethernet','4':'battery','5':'battery','6':'ethernet' };
-  const connType = { '1':'poe','2':'wifi','3':'ethernet','4':'battery','5':'4g','6':'analog' };
-  const connNums = connRaw.split(',').map(s => s.trim()).filter(Boolean);
-  cam.connectivity = [...new Set(connNums.map(n => connType[n]).filter(Boolean))];
+  const connMap = { '1':'wifi','2':'ethernet','3':'4g','4':'5g','5':'coax' };
+  const conn = [...new Set(connRaw.split(',').map(s => s.trim()).map(n => connMap[n]).filter(Boolean))];
+  if (conn.length) cam.connectivity = conn;
+
+  // Power source (schema enum: poe/dc/usb/battery/solar/ac-mains) — this is where
+  // PoE lives, so a PoE camera can actually be recorded.
+  console.log('\nPower source (enter numbers separated by commas):');
+  console.log('  1) PoE');
+  console.log('  2) DC (barrel / terminal)');
+  console.log('  3) USB');
+  console.log('  4) Battery / wire-free');
+  console.log('  5) Solar');
+  console.log('  6) AC mains');
+  const psRaw = await ask('> ');
+  const psMap = { '1':'poe','2':'dc','3':'usb','4':'battery','5':'solar','6':'ac-mains' };
+  const ps = [...new Set(psRaw.split(',').map(s => s.trim()).map(n => psMap[n]).filter(Boolean))];
+  if (ps.length) cam.power_source = ps;
 
   // Night vision
   const nvType = await askList('\nNight vision type :', ['ir','color','hybrid','none']);
+  cam.night_vision = { type: nvType };
   if (nvType !== 'none') {
-    const rangeRaw = await ask('Night vision range in metres (e.g. 30) : ');
-    const minluxRaw = await ask('Minimum illumination (lux) required for color image (e.g. 0.005) : ');
-    cam.night_vision = { type: nvType, range_m: parseInt(rangeRaw) || 20};
+    // Only record range/lux when actually given — never invent 20 m / 0 lux.
+    const rangeRaw = await ask('Night vision range in metres (e.g. 30, blank if unknown) : ');
+    const range = parseInt(rangeRaw, 10);
+    if (Number.isFinite(range) && range > 0) cam.night_vision.range_m = range;
 
-    const minluxParsed = parseFloat(minluxRaw);
-    if (!isNaN(minluxParsed)) {
-      cam.night_vision.min_lux_color = minluxParsed;
-    }
-  } else {
-    cam.night_vision = { type: 'none', range_m: 0 };
+    const minluxRaw = await ask('Min illumination in lux for a color image (e.g. 0.005, blank if unknown) : ');
+    const minlux = parseFloat(minluxRaw);
+    if (!isNaN(minlux)) cam.night_vision.min_lux_color = minlux;
   }
 
   // Power
@@ -158,8 +183,8 @@ async function run() {
   const releaseRaw = await ask('\nRelease year (e.g. 2023, leave blank if unknown) : ');
   if (releaseRaw) cam.release_year = parseInt(releaseRaw);
 
-  const msrpRaw = await ask('Approx. price in USD (e.g. 79.99, leave blank if unknown) : ');
-  if (msrpRaw) cam.msrp_usd = parseFloat(msrpRaw);
+  // (Price is intentionally NOT collected — it was removed from the dataset and
+  // the schema rejects unknown fields like msrp_usd.)
 
   console.log('\nKey features — enter one per line (e.g. "no subscription", "person/vehicle AI").');
   console.log('Press Enter on a blank line when done.');
@@ -188,6 +213,18 @@ async function run() {
   if (fs.existsSync(filePath)) {
     const overwrite = await askYN(`\n⚠  ${filePath} already exists. Overwrite?`);
     if (!overwrite) { console.log('Aborted.'); rl.close(); return; }
+  }
+
+  // Validate against the schema before writing — never emit an invalid record
+  // (same guard add-note.js uses).
+  const ajv = new Ajv({ allErrors: true, strict: false });
+  addFormats(ajv);
+  const validate = ajv.compile(JSON.parse(fs.readFileSync(SCHEMA_PATH, 'utf8')));
+  if (!validate(cam)) {
+    console.error('\n✗ Schema validation failed — nothing written. Fix these and re-run:');
+    for (const e of validate.errors) console.error(`   ${e.instancePath || '(root)'} ${e.message}`);
+    rl.close();
+    process.exit(1);
   }
 
   fs.writeFileSync(filePath, JSON.stringify(cam, null, 2) + '\n');

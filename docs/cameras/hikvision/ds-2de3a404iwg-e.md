@@ -18,6 +18,12 @@
 | Two-way audio | Yes |
 | Released | 2023 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 30 | H.265 |
+
 ## Features
 
 - 4X optical zoom

@@ -20,6 +20,12 @@
 | Two-way audio | Yes |
 | Operating temp | -35 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 30 | H.265 |
+
 ## Features
 
 - full-color spotlight (white light) + IR (25m)

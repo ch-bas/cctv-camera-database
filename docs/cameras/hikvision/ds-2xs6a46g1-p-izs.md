@@ -18,6 +18,14 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | — | H.265 |
+| sub | 640x480 | — | H.265 |
+| third | 1280x720 | — | H.265 |
+
 ## Features
 
 - ANPR / license plate recognition — embedded deep-learning LPR (vehicles and motorcycles, checkpoint scenario), blocklist/allowlist, 4 LPR regions (Europe, Middle East, Asia-Pacific, Africa)

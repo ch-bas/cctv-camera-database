@@ -20,6 +20,12 @@
 | Operating temp | -10 to 50°C |
 | Released | 2019 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2592x1944 | 30 | H.265 |
+
 ## Features
 
 - Wisenet Q 5MP indoor dome

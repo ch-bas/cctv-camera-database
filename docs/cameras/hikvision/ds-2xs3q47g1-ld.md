@@ -20,6 +20,13 @@
 | Two-way audio | Yes |
 | Operating temp | 0 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2688x1520 | 15 | H.265 |
+| sub | 1280x720 | 15 | H.265 |
+
 ## Features
 
 - 24/7 ColorVu full-color imaging (0.0005 lux @ F1.0, 0 lux with light)

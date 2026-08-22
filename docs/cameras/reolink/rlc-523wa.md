@@ -19,6 +19,12 @@
 | Operating temp | -10 to 55°C |
 | Released | 2021 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Mainstream | 2560x1920 | 20 | H.264 |
+
 ## Features
 
 - 360° pan / 90° tilt PTZ with auto-tracking

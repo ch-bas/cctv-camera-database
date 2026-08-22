@@ -18,6 +18,12 @@
 | Two-way audio | Yes |
 | Released | 2024 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 25 | H.265 |
+
 ## Features
 
 - 355deg pan / 50deg tilt

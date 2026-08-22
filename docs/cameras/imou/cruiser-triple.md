@@ -19,6 +19,12 @@
 | IP rating | IP66 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2880x1620 | 15 | H.265 |
+
 ## Features
 
 - triple lens (two 3MP fixed + one 5MP motorized pan/tilt)

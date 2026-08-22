@@ -21,6 +21,12 @@
 | Operating temp | -10 to 50°C |
 | Released | 2024 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Clear (main) | 3840x2160 | 20 | H.265 |
+
 ## Features
 
 - WiFi 6 (802.11ax)

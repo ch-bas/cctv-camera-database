@@ -13,6 +13,12 @@
 | Protocols | onvif, rtsp |
 | Two-way audio | No |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | — | H.265 |
+
 ## Features
 
 - two IR LED types: 940nm invisible IR plus 850nm slightly-visible-red LEDs for stronger illumination when needed

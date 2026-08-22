@@ -18,6 +18,12 @@
 | IP rating | IP66 |
 | Two-way audio | No |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 30 | H.265 |
+
 ## Features
 
 - 2-in-1 dual-lens: fixed bullet (2.8mm F1.0) + 25x optical zoom PTZ (4.8-120mm)

@@ -13,6 +13,12 @@
 | Power | 5V DC 2A power adapter |
 | Storage | microSD ≤ 256GB |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | — | H.265 |
+
 ## Features
 
 - true dual camera: fixed 4MP + 6mm telephoto PTZ (both 4MP F1.6)

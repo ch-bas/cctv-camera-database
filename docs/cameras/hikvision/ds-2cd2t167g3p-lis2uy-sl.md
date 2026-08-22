@@ -22,6 +22,13 @@
 | Operating temp | -30 to 60°C |
 | Released | 2025 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 5968x2688 | 15 | H.265 |
+| sub | 1200x536 | 15 | H.265 |
+
 ## Features
 
 - 180 degree panoramic view

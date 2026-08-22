@@ -15,6 +15,12 @@
 | Protocols | rtsp |
 | Two-way audio | No |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | — | H.264 |
+
 ## Features
 
 - integrated PIR sensor with 4 configurable alarm areas linked to software motion detection

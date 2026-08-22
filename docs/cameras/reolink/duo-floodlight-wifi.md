@@ -18,6 +18,12 @@
 | Two-way audio | Yes |
 | Released | 2024 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 4608x1728 | 20 | H.265 |
+
 ## Features
 
 - integrated floodlight (1800 lumens, 4200K)

@@ -19,6 +19,12 @@
 | IP rating | IP65 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 15 | H.265 |
+
 ## Features
 
 - PIR human detection

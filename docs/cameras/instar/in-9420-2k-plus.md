@@ -17,6 +17,12 @@
 | IP rating | IP66 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 25 | H.265 |
+
 ## Features
 
 - 5x optical zoom with autofocus (auto-triggered on every pan/tilt move)

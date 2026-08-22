@@ -19,6 +19,12 @@
 | IP rating | IP66 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2880x1620 | 30 | H.265 |
+
 ## Features
 
 - dual-lens 12x mixed zoom (3x optical + 4x digital)

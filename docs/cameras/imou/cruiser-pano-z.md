@@ -19,6 +19,12 @@
 | IP rating | IP66 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2880x1620 | 15 | H.265 |
+
 ## Features
 
 - quad-lens: dual 4MP panoramic stitch + 5MP 12x mixed-zoom pan/tilt

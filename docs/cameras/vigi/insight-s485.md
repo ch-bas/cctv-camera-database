@@ -20,6 +20,13 @@
 | Two-way audio | Yes |
 | Operating temp | -30 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 25 | H.265+ |
+| sub | 640x480 | 25 | H.265 |
+
 ## Features
 
 - people & vehicle analytics

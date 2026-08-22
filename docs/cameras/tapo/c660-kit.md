@@ -20,6 +20,12 @@
 | Operating temp | -20 to 45°C |
 | Released | 2025 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 20 | H.264 |
+
 ## Features
 
 - VistaCam 360 Solar 4K pan/tilt

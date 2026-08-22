@@ -20,6 +20,12 @@
 | Two-way audio | No |
 | Operating temp | -30 to 55°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2880x1620 | 30 | H.265 |
+
 ## Features
 
 - color night vision (0.002 lux F1.2) + IR to 30m

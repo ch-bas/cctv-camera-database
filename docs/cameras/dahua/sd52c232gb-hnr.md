@@ -10,13 +10,21 @@
 | Sensor | 1/2.8" STARVIS CMOS |
 | Lens | 1× 4.8-153mm |
 | Field of view | 58.4-3.0 (H)° |
-| Night vision | undefined, 0.005 lux color |
+| Night vision | 0.005 lux color |
 | Power | PoE+ (802.3at) / DC 24V |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | rtsp, onvif |
 | IK rating | IK10 |
 | Two-way audio | No |
 | Operating temp | -30 to 60°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 60 | H.265 |
+| sub | 704x576 | 30 | H.265 |
+| sub2 | 1920x1080 | 30 | H.265 |
 
 ## Features
 

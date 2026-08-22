@@ -17,6 +17,13 @@
 | IP rating | IP67 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 5120x1440 | 20 | H.265 |
+| sub | 1920x536 | 20 | H.265 |
+
 ## Features
 
 - ColorVu full-color

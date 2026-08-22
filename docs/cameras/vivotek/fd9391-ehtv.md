@@ -21,6 +21,13 @@
 | Two-way audio | Yes |
 | Operating temp | -50 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 30 | H.265 |
+| high-fps | 1920x1080 | 120 | H.265 |
+
 ## Features
 
 - WDR Pro (120 dB)

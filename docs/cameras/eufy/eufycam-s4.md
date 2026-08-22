@@ -21,6 +21,12 @@
 | Operating temp | -20 to 55°C |
 | Released | 2025 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 15 | H.265 |
+
 ## Features
 
 - 3-lens hybrid: fixed 4K bullet + dual 2K PTZ

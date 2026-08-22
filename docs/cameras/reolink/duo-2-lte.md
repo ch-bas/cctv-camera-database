@@ -18,6 +18,12 @@
 | Operating temp | -10 to 55°C |
 | Released | 2023 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 4608x1296 | 15 | H.265 |
+
 ## Features
 
 - 4G LTE 6MP 180° dual-lens battery camera

@@ -17,6 +17,13 @@
 | Two-way audio | No |
 | Operating temp | -40 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 30 | — |
+| sub | 720x576 | 30 | — |
+
 ## Features
 
 - WDR

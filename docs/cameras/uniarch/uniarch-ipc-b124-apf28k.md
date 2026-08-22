@@ -18,6 +18,13 @@
 | Two-way audio | No |
 | Operating temp | -30 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 20 | H.265 |
+| sub | 720x576 | 30 | H.265 |
+
 ## Features
 
 - DWDR (digital wide dynamic range)

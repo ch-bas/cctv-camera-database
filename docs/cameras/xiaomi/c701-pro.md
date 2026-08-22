@@ -18,6 +18,12 @@
 | Operating temp | -10 to 40°C |
 | Released | 2026 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | — | H.265 |
+
 ## Features
 
 - dual camera: 8MP ultra-wide + 5MP ultra-telephoto, 9x hybrid zoom

@@ -21,6 +21,12 @@
 | Two-way audio | Yes |
 | Operating temp | -40 to 55°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 6912x2624 | 30 | H.265 |
+
 ## Features
 
 - 4 x 5MP multi-sensor 180deg panoramic

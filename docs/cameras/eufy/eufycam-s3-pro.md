@@ -21,6 +21,12 @@
 | Operating temp | -20 to 50°C |
 | Released | 2024 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 15 | H.265 |
+
 ## Features
 
 - 4K MaxColor Vision full-color night

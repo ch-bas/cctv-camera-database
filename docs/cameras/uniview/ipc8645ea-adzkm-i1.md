@@ -19,6 +19,13 @@
 | Two-way audio | Yes |
 | Operating temp | -30 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2880x1620 | 30 | H.265 |
+| sub | 1280x720 | 30 | H.265 |
+
 ## Features
 
 - 4-directional multi-sensor (4x5MP, independently adjustable lenses)

@@ -19,6 +19,12 @@
 | Two-way audio | Yes |
 | Operating temp | -30 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 20 | H.265 |
+
 ## Features
 
 - motorized varifocal zoom (2.7-13.5mm)

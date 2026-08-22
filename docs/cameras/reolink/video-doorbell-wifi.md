@@ -19,6 +19,13 @@
 | Operating temp | -10 to 50°C |
 | Released | 2022 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x2560 | 20 | H.264 |
+| sub | unknown | 10 | H.264 |
+
 ## Features
 
 - 5MP wired WiFi doorbell (also has wired Ethernet RJ45 option)

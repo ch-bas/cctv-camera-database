@@ -18,6 +18,12 @@
 | Two-way audio | Yes |
 | Released | 2023 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2688x1520 | 30 | H.265 |
+
 ## Features
 
 - G2H Smart Hybrid Light (F1.0, 30m IR)

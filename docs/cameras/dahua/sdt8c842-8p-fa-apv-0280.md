@@ -18,6 +18,12 @@
 | Two-way audio | No |
 | Operating temp | -40 to +70°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 5376x1520 | 30 | H.265 |
+
 ## Features
 
 - X-Spans dual-channel panoramic PTZ (panorama + 42x optical zoom detail)

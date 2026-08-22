@@ -21,6 +21,12 @@
 | Two-way audio | No |
 | Operating temp | -50 to 55°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 30 | H.265 |
+
 ## Features
 
 - PTRZ gimbal (pan 0-350 deg / tilt 0-85 deg / rotate 0-340 deg) for remote installation

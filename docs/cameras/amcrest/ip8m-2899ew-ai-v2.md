@@ -21,6 +21,14 @@
 | Operating temp | -40 to 70°C |
 | Released | 2022 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 25 | H.265 |
+| sub1 | 640x480 | 25 | H.265 |
+| sub2 | 640x480 | 25 | H.265 |
+
 ## Features
 
 - 25x optical zoom

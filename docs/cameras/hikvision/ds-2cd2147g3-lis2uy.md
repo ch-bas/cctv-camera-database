@@ -20,6 +20,13 @@
 | Operating temp | -30 to 60°C |
 | Released | 2025 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2688x1520 | 30 | H.265 |
+| sub | 1280x720 | 30 | H.265 |
+
 ## Features
 
 - ColorVu Smart Hybrid Light (IR + white, 3 supplemental lighting modes)

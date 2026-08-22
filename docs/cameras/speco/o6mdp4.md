@@ -16,6 +16,12 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3072x2048 | 30 | H.265 |
+
 ## Features
 
 - 360 degree ceiling-mount or 180 degree wall-mount fisheye view

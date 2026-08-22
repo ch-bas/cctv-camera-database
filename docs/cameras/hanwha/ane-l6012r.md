@@ -20,6 +20,12 @@
 | Operating temp | -30 to 55°C |
 | Released | 2022 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 30 | H.265 |
+
 ## Features
 
 - 2MP AI IR flateye (turret)

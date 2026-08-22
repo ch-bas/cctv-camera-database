@@ -20,6 +20,14 @@
 | IK rating | IK10 |
 | Operating temp | -40 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2592x1944 | 20 | H.264 |
+| main | 2688x1520 | 30 | H.264 |
+| sub | 704x480 | 30 | H.264 |
+
 ## Features
 
 - vandal-resistant

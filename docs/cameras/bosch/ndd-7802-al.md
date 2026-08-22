@@ -19,6 +19,12 @@
 | Operating temp | -40 to 60°C |
 | Released | 2025 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2048x1536 | 30 | H.265 |
+
 ## Features
 
 - Dual varifocal imagers in one housing (two directions or 180° overview) on a single IP address

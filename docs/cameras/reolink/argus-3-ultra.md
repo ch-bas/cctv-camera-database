@@ -19,6 +19,12 @@
 | Operating temp | -10 to 55°C |
 | Released | 2023 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Main stream | 3840x2160 | 15 | H.265 |
+
 ## Features
 
 - person/vehicle/animal detection

@@ -18,6 +18,12 @@
 | Two-way audio | No |
 | Operating temp | -10 to 40°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 30 | H.265 |
+
 ## Features
 
 - AcuSense human/vehicle detection

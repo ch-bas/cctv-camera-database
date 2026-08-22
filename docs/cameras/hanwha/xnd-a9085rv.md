@@ -20,6 +20,12 @@
 | Operating temp | -25 to 50°C |
 | Released | 2025 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 30 | H.265 |
+
 ## Features
 
 - 8MP AI indoor modular dome

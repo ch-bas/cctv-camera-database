@@ -18,6 +18,14 @@
 | Two-way audio | No |
 | Operating temp | -30 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | — | H.265+ |
+| sub | 640x480 | — | H.265 |
+| third | 1920x1080 | — | H.265 |
+
 ## Features
 
 - Starlight

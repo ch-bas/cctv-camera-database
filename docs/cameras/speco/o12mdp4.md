@@ -18,6 +18,12 @@
 | Two-way audio | Yes |
 | Operating temp | -40 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3000x3000 | 30 | H.265 |
+
 ## Features
 
 - two-way audio possible with an external speaker connected to the audio output

@@ -22,6 +22,13 @@
 | Operating temp | -30 to 50°C |
 | Released | 2022 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 30 | H.265 |
+| sub | 640x360 | 30 | H.265 |
+
 ## Features
 
 - 2MP (1080p) U-Series outdoor value dome

@@ -22,6 +22,12 @@
 | Operating temp | -40 to 55°C |
 | Released | 2021 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 6720x2240 | 20 | H.265 |
+
 ## Features
 
 - 15MP 192° panoramic stitching image

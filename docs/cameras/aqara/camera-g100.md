@@ -18,6 +18,12 @@
 | Operating temp | -10 to 40°C |
 | Released | 2025 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2304x1296 | — | H.264 |
+
 ## Features
 
 - 2K (2304x1296) resolution

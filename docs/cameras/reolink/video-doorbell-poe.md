@@ -19,6 +19,13 @@
 | Operating temp | -10 to 55°C |
 | Released | 2022 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x2560 | 20 | H.264 |
+| sub | unknown | 10 | H.264 |
+
 ## Features
 
 - person/vehicle/animal detection

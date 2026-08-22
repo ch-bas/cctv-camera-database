@@ -17,6 +17,12 @@
 | Two-way audio | No |
 | Released | 2023 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1920 | 30 | H.265 |
+
 ## Features
 
 - 180deg fisheye panoramic

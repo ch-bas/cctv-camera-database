@@ -18,6 +18,13 @@
 | Two-way audio | Yes |
 | Operating temp | -40 to 70°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3680x1656 | 30 | H.265 |
+| sub | 1200x536 | 30 | H.265 |
+
 ## Features
 
 - panoramic dual-lens splicing, three-lens design

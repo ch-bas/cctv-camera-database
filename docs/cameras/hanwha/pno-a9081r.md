@@ -20,6 +20,12 @@
 | Two-way audio | No |
 | Released | 2020 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 30 | H.265 |
+
 ## Features
 
 - 4K AI IR bullet (Wisenet P AI series)

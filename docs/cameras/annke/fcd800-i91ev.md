@@ -18,6 +18,12 @@
 | IP rating | IP67 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 4096x1860 | 20 | H.265 |
+
 ## Features
 
 - 4K 8MP seamless dual-lens panoramic bullet (2x 1/2.4" sensors)

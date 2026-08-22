@@ -20,6 +20,15 @@
 | Two-way audio | Yes |
 | Operating temp | -30 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2592x1944 | — | H.265+ |
+| sub | 704x480 | — | H.264 |
+| third | 704x480 | — | H.264 |
+| fourth | 1920x1080 | — | H.265 |
+
 ## Features
 
 - WDR

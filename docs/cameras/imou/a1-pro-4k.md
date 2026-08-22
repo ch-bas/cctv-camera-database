@@ -15,6 +15,12 @@
 | Protocols | onvif, rtsp |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | — | H.265 |
+
 ## Features
 
 - 4K/8MP pan/tilt (A1 body)

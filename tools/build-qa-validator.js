@@ -24,11 +24,15 @@ fs.writeFileSync(tmpPath, standaloneCode(ajv, validate));
 
 // Bundle the CJS standalone output (it requires ajv runtime helpers) into
 // a single IIFE exposing window.validateCamera.
-execSync(
-  `npx esbuild ${JSON.stringify(tmpPath)} --bundle --minify --format=iife --global-name=__qaValidate --outfile=${JSON.stringify(outPath)}`,
-  { cwd: root, stdio: 'inherit' }
-);
-fs.unlinkSync(tmpPath);
+// try/finally so a failed esbuild run doesn't leave the temp .cjs behind.
+try {
+  execSync(
+    `npx esbuild ${JSON.stringify(tmpPath)} --bundle --minify --format=iife --global-name=__qaValidate --outfile=${JSON.stringify(outPath)}`,
+    { cwd: root, stdio: 'inherit' }
+  );
+} finally {
+  if (fs.existsSync(tmpPath)) fs.unlinkSync(tmpPath);
+}
 
 // Append the browser-facing wrapper + provenance stamp.
 const stamp = {

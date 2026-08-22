@@ -19,6 +19,12 @@
 | Operating temp | -25 to 45°C |
 | Released | 2024 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | — | H.265 |
+
 ## Features
 
 - 270° motorized pan (-135° to +135°)

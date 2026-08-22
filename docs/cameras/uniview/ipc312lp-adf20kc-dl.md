@@ -18,6 +18,13 @@
 | Two-way audio | Yes |
 | Operating temp | -10 to 40°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 30 | H.265 |
+| sub | 1280x720 | 30 | H.265 |
+
 ## Features
 
 - dual-light (IR 10m + white light) active deterrence

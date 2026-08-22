@@ -18,6 +18,12 @@
 | IP rating | IP67 |
 | Two-way audio | Yes |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 5120x1440 | 20 | H.265 |
+
 ## Features
 
 - 8MP dual-lens panoramic (2x 1/1.8" sensors)

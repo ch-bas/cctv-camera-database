@@ -30,12 +30,26 @@ const argMonths = (() => {
   const i = process.argv.indexOf("--months");
   return i !== -1 && process.argv[i + 1] ? Number(process.argv[i + 1]) : null;
 })();
-const MONTHS = argMonths || Number(process.env.STALE_MONTHS || 18);
+// Validate the threshold: a garbage STALE_MONTHS (Number("x") → NaN) must not
+// silently make cutoff an Invalid Date and report 0 stale — fall back to 18.
+const validMonths = (v) => (Number.isFinite(v) && v > 0 ? v : null);
+const envMonths = process.env.STALE_MONTHS;
+if (envMonths != null && validMonths(Number(envMonths)) == null) {
+  console.warn(`⚠  Ignoring invalid STALE_MONTHS="${envMonths}" — using 18.`);
+}
+const MONTHS = validMonths(argMonths) ?? validMonths(Number(envMonths)) ?? 18;
 const asOf = process.env.STALE_AS_OF && /^\d{4}-\d{2}-\d{2}$/.test(process.env.STALE_AS_OF)
   ? new Date(process.env.STALE_AS_OF + "T00:00:00Z")
   : new Date();
+// Subtract months without the month-end drift setMonth causes (Aug 31 − 6mo
+// would roll Feb 31 → Mar 3): pin to day 1 first, then clamp the day back to the
+// target month's length. Done in UTC to match the UTC-parsed last_verified dates.
 const cutoff = new Date(asOf);
-cutoff.setMonth(cutoff.getMonth() - MONTHS);
+const day = cutoff.getUTCDate();
+cutoff.setUTCDate(1);
+cutoff.setUTCMonth(cutoff.getUTCMonth() - MONTHS);
+const lastDay = new Date(Date.UTC(cutoff.getUTCFullYear(), cutoff.getUTCMonth() + 1, 0)).getUTCDate();
+cutoff.setUTCDate(Math.min(day, lastDay));
 
 const stale = [];
 const unverified = [];

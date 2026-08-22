@@ -19,6 +19,13 @@
 | Operating temp | -10 to 55°C |
 | Released | 2021 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2880x1620 | 15 | H.265 |
+| sub | unknown | 15 | H.264 |
+
 ## Features
 
 - person detection

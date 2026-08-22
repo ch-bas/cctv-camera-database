@@ -17,6 +17,15 @@
 | IP rating | IP67 |
 | Two-way audio | No |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | — | H.265+ |
+| sub | 704x480 | — | H.264 |
+| third | 704x480 | — | H.264 |
+| fourth | 1920x1080 | — | H.265 |
+
 ## Features
 
 - Starlight

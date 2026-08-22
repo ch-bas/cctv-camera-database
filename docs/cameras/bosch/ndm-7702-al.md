@@ -20,6 +20,13 @@
 | Operating temp | -50 to 55°C |
 | Released | 2021 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Main (per imager, 4:3) | 2048x1536 | 30 | H.265 |
+| Main (per imager, 16:9) | 1920x1080 | 30 | H.265 |
+
 ## Features
 
 - Four independent 3MP imagers on a single IP address

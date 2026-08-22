@@ -6,6 +6,44 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.2.0] — 2026-08-22
+
+A correctness release: removed four duplicate camera entries (3,433 → 3,429), a community-verified Frigate config, a README/docs accuracy pass, and a wide **audit sweep of the build/generator tooling** — including making `npm run add` produce valid records and stopping several generators from fabricating or mis-reporting data. Also surfaces substream coverage/specs.
+
+### Added
+- **Substream surfacing (#177)** — no schema change; `video.streams[]` already carries it, it was just invisible. `coverage-report.js` splits the "Video streams" lane into **"Video streams (any)"** (53%) and **"Substream data"** (24%, any non-`main` stream) so the gap is trackable on its own line. `build.js` injects two derived fields into the aggregate (flat, alongside `sensor_size_inch`/`added` — kept out of the AJV schema, which validates source not build output): `substream_count` and `substream_max_resolution` (highest-pixel non-`main` stream). Per-camera docs now render a full **Streams** table (every stream's resolution/fps/codec), not just the main resolution.
+
+### Verified
+- **Hikvision DS-2CD2143G2-I Frigate config (#311):** community-confirmed working on Frigate 0.17.x and 0.18.0-beta3 (both main + sub streams, no changes needed) — marked `configs.frigate.verified` and `last_verified` bumped. Thanks @IAmKonni.
+
+### Removed
+- **Fake "NetCamCenter" brand (2 entries):** `netcamcenter-ndm-7702-a` and `-ndm-7703-al` were Bosch FLEXIDOME multi 7000i cameras (their own aliases said so), duplicating the better-sourced `bosch/ndm-7702-a` / `bosch/ndm-7703-al`. NetCamCenter is a German retailer, not a manufacturer.
+- **Two Hikvision same-model duplicates:** `ds-2cd1143g2-liuf-n` and `ds-2cd2h43g2-izs-uk` — sparse entries citing generic hikvision.com homepages whose conflicting specs are wrong per the official datasheet (LIUF-N: microSD 256→512 GB, FOV 107→98°/78°; IZS-UK: IR 60→40 m, microSD 256→512 GB, FOV 106-32→95.8-29.2°). The datasheet-accurate base entries are kept; the one real signal from IZS-UK (UK market) was merged into the base.
+
+### Docs
+- **README accuracy pass:** fixed the broken "Querying the data" example (`connectivity` → `power_source` for PoE), corrected the `connectivity` field example (PoE lives in `power_source`), unified three disagreeing RTSP counts to the actual `rtsp-patterns.json` totals (172 brands / 118 verified / 54 unverified / 349 templates), dropped the hand-maintained (badly stale) Market coverage table in favor of a query snippet, replaced the all-checked Roadmap with the real open work (#164/#165 re-sourcing, #169 resolution backfill, Frigate verification, `community_notes`), documented the hosted JSON API, and added a CI status badge plus Releases/citation sections.
+- **`build.js` now auto-maintains** the "search N cameras" showcase caption and the RTSP-layer counts, so they can't drift from the dataset again (joining the brand/stat counts it already syncs).
+- **Corrected a miscount in the historical [1.55.0] entry:** that release actually added +159 cameras (2,617 → 2,776), not +147 → 2,764 — Uniarch gained 37 files, not 25 (12 motorized-varifocal/PTZ + UHO models were never itemized). Verified against the `v1.54.3`/`v1.55.0`/`v1.56.0` tags; the count chain now reconciles end-to-end.
+
+### Fixed — tooling & generators (audit sweep)
+Data-affecting:
+- **Sensor sort for worded 1" formats:** `sensorSizeInch` (build.js + the site parser) now accepts `1-inch` / `1 in.` / `1 inch`, so Bosch's 1" flagships (MIC 7504 ×3, NDP-7804) sort by true sensor size instead of collapsing to null/last.
+- **README "By the numbers" MP bins** now match their labels: `4K / 8MP+`, `4–7MP` (was mislabeled "4–5MP" but counted <8MP), `Under 4MP` (was "1080p–2MP" but counted <4MP, and dropped the 0-MP hub). The three bins now partition the whole catalogue.
+- **Doc pages:** guarded `night_vision.type` so 45 ACTi pages no longer render `| Night vision | undefined |`; `gen-docs` now **prunes** pages for deleted/renamed cameras (removed 22 ghost `.md`, incl. the deleted `ds-2cd2h43g2-izs-uk`, that were still served via Pages).
+- **`npm run add` wizard** was writing invalid/fabricated data — now it validates against the schema before writing (like `add-note`), records PoE correctly (`power_source`, not the wrong `connectivity` enum), stops fabricating `range_m: 20` / `megapixels: 2` / `NaNMP` / an Enter-selected form factor, drops the schema-rejected `msrp_usd`, and adds `floodlight`/`doorbell`.
+
+Robustness (no data change):
+- **check-sources** now flags datasheets that 301 to the vendor homepage (the exact rot the weekly cron exists to catch), surfaces the real `err.cause`, and exits non-zero when a filter matches nothing.
+- **archive-sources** no longer counts a Wayback `429` as a successful capture (so it revisits), and a typo'd `--brand` can't throw an unhandled rejection in the never-fail-CI job.
+- **gen-netbox** no longer fabricates a DC power port from a PoE nominal voltage (gated on `power_source: dc`), and the 60/90 W 802.3bt detector is word-anchored so a `360 Wh` battery spec can't match.
+- **strix-fetch** snapshot-key separator is now the `\u0000` escape instead of a raw NUL byte (an editor/formatter stripping the control char would have silently invalidated ~17k keys).
+- **build.js** guards the pre-validation `id` sort so a contributor file missing `id` gets Ajv's friendly error, not a bare `TypeError`.
+- **build.js** #169 megapixels-vs-pixels warning no longer false-flags the 13 multi-imager cameras with `lens.count > 1` (multi-directional PTZ/domes typed `ptz`/`dome`, e.g. Hanwha PNM-9322VQP) whose stated megapixels is the combined multi-sensor total; the skip now keys on `lens.count > 1`, not just the `panoramic`/`dual-lens` type.
+- **check-staleness** rejects a garbage `STALE_MONTHS` (was silently reporting 0 stale) and computes the month cutoff without the ±3-day month-end drift.
+- **lint-data / coverage-report** anchor to the repo root, not the cwd; **package-release** gives a clear error when the `zip` binary is missing; **build-qa-validator** cleans up its temp file even on esbuild failure; **add-note**'s flag parser no longer swallows the following flag as a value.
+
+---
+
 ## [2.1.0] — 2026-08-22
 
 Adds the **`community_notes`** layer — per-camera observed behaviors/quirks that aren't in the datasheet — plus a build-time `sensor_size_inch` field for the site's sort-by-sensor, and a community data fix.
@@ -317,7 +355,7 @@ Camera count 2,776 → **2,797**.
 
 ## [1.55.0] — 2026-08-02
 
-**Annke + Camius + Uniview + Uniarch catalog expansion (+147 cameras).**
+**Annke + Camius + Uniview + Uniarch catalog expansion (+159 cameras).**
 
 ### Added — Annke (+21) — #217, @fvdpol
 - **+21 Annke analog/coax cameras** (HD-TVI/AHD/CVI — bullets, turrets, dome, PTZ): C51 (BY/BZ/EZ), CR1 (CJ/CV/CW/CX/CY/CZ/DD/DR/EQ/ES/FC), CT1 (DW/FC/GR/GS/GT/GU/GV). Each sourced to an official Annke datasheet PDF (Shopify CDN) where available.
@@ -329,15 +367,16 @@ Camera count 2,776 → **2,797**.
 ### Added — Uniview (+94)
 - **EasyBasic (23)**, **Owlview / Owlview Plus / Owlview PTZ (32)**, **PRIMEI / II / III (29)** — incl. fisheye and dual-lens stitched panoramic, **Pro / ProBasic / Alphaview (3)** — fisheye, 180° OmniView, 4-directional multi-sensor, **Pro / Prime PTZ (5)** — 4x–42x zoom w/ laser illuminators, and **EasyProject (8)** — LightHunter/dual-light + 4G cellular. Specs from official Uniview datasheets. Two `RVS441-2D` **security-radar** units were excluded (not IP cameras).
 
-### Added — Uniarch (+25)
+### Added — Uniarch (+37)
 - **Halo (4):** IPC-T242/B242/T244/B244-ADF28K-WP — ColorHunter full-color turrets/bullets (2/4MP).
 - **Entry (21):** ECO IR + dual-light bullets/turrets/domes (IPC-B/T/D 1/2-series, 2/4MP), the `APF28K`/`PF28K` hardware variants, and 2 pan-tilt models (IPC-P222/P224-AF40C). Specs from official uniarch.cn datasheets.
+- **Motorized varifocal + PTZ (12):** `ADZK` 3-series motorized-zoom — IPC-B314 (4MP bullet), IPC-D312/D314 (2/4MP domes), IPC-T312/T314 (2/4MP turrets); the IPC-P413-X20K (3MP, 20× PTZ); and six UHO-line units — UHO-B1R-M2F3-A (2MP bullet) plus the UHO-P1A-M5F4D / UHO-S2-M3-A / UHO-S2-M4 / UHO-S2E-M3-A / UHO-S2E-M4 PTZ (3–5MP). Specs from official uniarch.cn datasheets.
 
 ### Changed / Fixed — Annke maintainer review
 - **2 slug corrections** (301 redirects added on the web deploy): `annke-c800x` → `annke-c800x-i91by`, `annke-c800-i91db` → `annke-c800x-i91db`.
 - Datasheet-verified: `cr1dd` / `cr1dr` resolution `2328×1504` → **`3328×1504`** (transposed-digit typo); `cr1fc` → **`2592×1944`**; `cr1cj` warm-light range 20 → **30 m**; `ct1fc` — removed a mismatched datasheet source.
 
-Camera count 2,617 → **2,764**.
+Camera count 2,617 → **2,776**.
 
 ## [1.54.3] — 2026-07-31
 

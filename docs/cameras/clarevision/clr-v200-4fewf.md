@@ -19,6 +19,14 @@
 | Two-way audio | Yes |
 | Operating temp | -20 to 50°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1920 | 30 | — |
+| sub | 720x480 | 30 | — |
+| third | 1280x720 | 15 | — |
+
 ## Features
 
 - 360° panoramic / de-warp view modes

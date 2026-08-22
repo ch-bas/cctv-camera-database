@@ -18,6 +18,12 @@
 | Protocols | rtsp |
 | Two-way audio | No |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 25 | H.264 |
+
 ## Features
 
 - 4x optical zoom with autofocus — the only camera in the legacy Full HD line with true optical (not just digital) zoom

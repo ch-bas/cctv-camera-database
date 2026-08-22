@@ -19,6 +19,13 @@
 | IP rating | IP68 |
 | IK rating | IK10 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2688x1520 | — | H.265 |
+| sub | — | — | H.265 |
+
 ## Features
 
 - explosion-proof — ATEX/IECEx Ex db IIC T6 Gb / Ex tb IIIC T80°C Db

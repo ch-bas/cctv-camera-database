@@ -22,6 +22,12 @@
 | Operating temp | -10 to 55°C |
 | Released | 2023 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2048x1536 | 30 | H.265 |
+
 ## Features
 
 - 3MP AI corner mount camera

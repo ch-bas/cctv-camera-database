@@ -19,6 +19,12 @@
 | IP rating | IP67 |
 | Operating temp | -40 to 70°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2592x1520 | 20 | H.265 |
+
 ## Features
 
 - PIR detection

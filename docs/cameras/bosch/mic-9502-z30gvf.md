@@ -20,6 +20,14 @@
 | Operating temp | -40 to +65°C |
 | Released | 2022 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Visible HD | 1920x1080 | 60 | H.265 |
+| Visible HD H.264 | 1920x1080 | 60 | H.264 |
+| Thermal VGA | 640x480 | 30 | H.265 |
+
 ## Features
 
 - Dual visible/thermal PTZ (metadata fusion)

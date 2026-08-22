@@ -22,6 +22,14 @@
 | Operating temp | -40 to +60°C |
 | Released | 2023 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 30 | H.265 |
+| sub | 704x576 | 30 | H.265 |
+| sub2 | 1920x1080 | 30 | H.265 |
+
 ## Features
 
 - WizMind 4K full-color F1.0 bullet

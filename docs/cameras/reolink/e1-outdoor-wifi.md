@@ -19,6 +19,12 @@
 | Operating temp | -10 to 55°C |
 | Released | 2020 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Main | 2560x1920 | 20 | H.264 |
+
 ## Features
 
 - 5MP outdoor WiFi PTZ

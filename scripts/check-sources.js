@@ -58,6 +58,25 @@ async function findJsonFiles(dir, baseDir = dir) {
 }
 
 /**
+ * Detects the "silent rot" mode the weekly cron exists to catch: a deep
+ * datasheet/product URL that 301s to the site root (vendor homepage). Benign
+ * redirects that preserve the path (http→https, www, trailing slash) are NOT
+ * flagged — only a real path collapsing to "/".
+ */
+function redirectedToHome(originalUrl, finalUrl, redirected) {
+  if (!redirected || !finalUrl) return false;
+  try {
+    const o = new URL(originalUrl);
+    const f = new URL(finalUrl);
+    const oPath = o.pathname.replace(/\/+$/, '');
+    const fPath = f.pathname.replace(/\/+$/, '');
+    return oPath.length > 0 && fPath === '';
+  } catch {
+    return false;
+  }
+}
+
+/**
  * Checks if a URL is accessible using HEAD with a GET fallback.
  */
 async function checkUrl(url) {
@@ -101,13 +120,18 @@ async function checkUrl(url) {
       ok: response.ok,
       status: response.status,
       statusText: response.statusText,
+      moved: redirectedToHome(url, response.url, response.redirected),
+      finalUrl: response.url,
     };
   } catch (err) {
+    // Node's fetch masks the real problem as a bare "fetch failed"; the actual
+    // DNS/TLS/connection error lives on err.cause — surface it.
+    const cause = err.cause && (err.cause.code || err.cause.message);
     return {
       url,
       ok: false,
       status: 0,
-      error: err.name === 'AbortError' ? 'Timeout' : err.message,
+      error: err.name === 'AbortError' ? 'Timeout' : cause ? `${err.message} (${cause})` : err.message,
     };
   } finally {
     clearTimeout(timer);
@@ -145,8 +169,10 @@ async function run() {
   });
 
   if (matchedFiles.length === 0) {
+    // A filter that matches nothing is almost always a typo'd brand/path; exit
+    // non-zero so it can't pass CI having silently checked nothing.
     console.log('\n❌ No camera files matched your search filter.');
-    process.exit(0);
+    process.exit(userFilter ? 1 : 0);
   }
 
   // Group matched files by Brand / Vendor folder name
@@ -192,7 +218,9 @@ async function run() {
 
     const results = await processInBatches(urls, BATCH_SIZE, async (url) => {
       const res = await checkUrl(url);
-      if (res.ok) {
+      if (res.moved) {
+        process.stdout.write('↷ '); // reachable, but redirected to homepage (rot)
+      } else if (res.ok) {
         process.stdout.write('✓ ');
       } else {
         process.stdout.write('✗ ');
@@ -203,11 +231,13 @@ async function run() {
     process.stdout.write('\n\n');
 
     for (const res of results) {
-      if (!res.ok) {
+      if (!res.ok || res.moved) {
         deadUrlsReport.push({
           url: res.url,
-          status: res.status,
-          error: res.error || res.statusText,
+          status: res.moved ? `${res.status} → homepage` : res.status,
+          error: res.moved
+            ? `redirects to site root (${res.finalUrl}) — datasheet likely moved/removed`
+            : res.error || res.statusText,
           usedIn: urlToEntriesMap.get(res.url),
         });
       }

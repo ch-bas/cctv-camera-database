@@ -21,6 +21,15 @@
 | Two-way audio | Yes |
 | Operating temp | -30 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3200x1800 | 20 | — |
+| sub | 1280x720 | 30 | — |
+| third | 1920x1080 | 10 | — |
+| fourth | 1280x720 | 10 | — |
+
 ## Features
 
 - AcuSense human/vehicle classification

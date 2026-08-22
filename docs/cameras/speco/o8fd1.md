@@ -18,6 +18,12 @@
 | IK rating | IK07 |
 | Two-way audio | No |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 30 | H.265 |
+
 ## Features
 
 - Flexible Intensifier low-light color
