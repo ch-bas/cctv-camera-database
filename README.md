@@ -389,7 +389,7 @@ Tagged releases ship a versioned, checksummed `cameras.zip` (JSON + CSV) — see
 If you use this dataset, a link back is appreciated:
 
 ```
-CCTV Camera Database (v2.1.1), CC0 1.0. https://cctv-database.com — https://github.com/ch-bas/cctv-camera-database
+CCTV Camera Database (v2.2.0), CC0 1.0. https://cctv-database.com — https://github.com/ch-bas/cctv-camera-database
 ```
 
 ## License
