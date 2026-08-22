@@ -48,6 +48,20 @@ function render(c) {
   md += row("Released", c.release_year);
   if (c.features?.length) md += `\n## Features\n\n${c.features.map((f) => `- ${f}`).join("\n")}\n`;
   if (c.sources?.length) md += `\n## Sources\n\n${c.sources.map((s) => `- ${s}`).join("\n")}\n`;
+  if (c.community_notes?.length) {
+    md += `\n## Community notes (unverified)\n\n`;
+    md += `*Reported by users. Not from the datasheet, not verified by the project.*\n\n`;
+    for (const n of c.community_notes) {
+      const meta = [
+        n.category,
+        n.firmware ? `firmware ${n.firmware}` : "",
+        n.reported_by ? `reported by ${n.reported_by}` : "",
+        n.date,
+        n.source === "empirical" ? "tested on own device" : (n.source ? `[source](${n.source})` : ""),
+      ].filter(Boolean).join(" · ");
+      md += `- ${n.note}${meta ? `\n  \n  ${meta}` : ""}\n`;
+    }
+  }
   md += `\n---\n*Auto-generated from ${c.id}.json — do not edit by hand.*\n`;
   return md;
 }

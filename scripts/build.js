@@ -37,6 +37,20 @@ const SCHEMA_PATH = path.join(ROOT, "schema", "camera.schema.json");
   }
 })();
 
+// Precise numeric sensor size in inches parsed from the raw `sensor` string,
+// injected into the *generated* aggregate so the site can sort by it without
+// re-parsing 3k+ strings at runtime. `1/1.79"` → 0.5587, `1"` → 1, `2/3"` →
+// 0.667, `4/3"` → 1.333. Returns null when no optical format is stated (so the
+// site sorts those rows last rather than as 0). Mirrors the web's sensorSizeInch.
+function sensorSizeInch(sensor) {
+  if (!sensor) return null;
+  const frac = sensor.match(/\b1\s*\/\s*(\d+(?:\.\d+)?)\s*["″”]?/);
+  if (frac) { const d = parseFloat(frac[1]); return Number.isFinite(d) && d > 0 ? 1 / d : null; }
+  const big = sensor.match(/\b(1|4\s*\/\s*3|2\s*\/\s*3)\s*["″”]/);
+  if (big) { const t = big[1].replace(/\s+/g, ""); return t === "1" ? 1 : t === "4/3" ? 4 / 3 : t === "2/3" ? 2 / 3 : null; }
+  return null;
+}
+
 function walk(dir) {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) => {
     const p = path.join(dir, e.name);
@@ -269,6 +283,7 @@ function toCsv(cameras) {
     "resolution_label", "megapixels", "sensor",
     "field_of_view_deg", "night_vision_type", "ip_rating",
     "ik_rating", "two_way_audio", "release_year",
+    "community_notes_count",
   ];
   const esc = (v) => {
     const s = v == null ? "" : String(v);
@@ -280,6 +295,7 @@ function toCsv(cameras) {
       c.resolution?.label, c.resolution?.megapixels, c.sensor,
       c.field_of_view_deg, c.night_vision?.type, c.ip_rating,
       c.ik_rating, c.audio?.two_way, c.release_year,
+      Array.isArray(c.community_notes) ? c.community_notes.length : 0,
     ].map(esc).join(",")
   );
   return [cols.join(","), ...rows].join("\n") + "\n";
@@ -431,6 +447,8 @@ function main() {
   for (const { file, cam } of entries) {
     const d = added[file] || (haveHistory ? addedDateFollow(file) : null);
     if (d) cam.added = d;
+    const ssi = sensorSizeInch(cam.sensor);
+    if (ssi != null) cam.sensor_size_inch = Math.round(ssi * 10000) / 10000;
   }
   if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
   const jsonData = JSON.stringify(cameras, null, 2) + "\n";
