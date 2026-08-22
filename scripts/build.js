@@ -240,16 +240,18 @@ function validate(cameras) {
       ok = false;
     }
     // WARNING part (non-fatal): megapixels vs pixel count. Skipped for
-    // multi-imager types (panoramic / dual-lens) where the stated megapixels is
-    // the COMBINED total across sensors and legitimately exceeds a single
-    // max_width×max_height. For single-sensor cameras a large gap usually means
-    // one of the two was updated without the other (e.g. resolution bumped to 4K
-    // but megapixels left at 2).
+    // multi-imager cameras — the panoramic / dual-lens types, but ALSO any
+    // camera with lens.count > 1 (e.g. a multi-directional PTZ/dome typed `ptz`
+    // or `dome`) — where the stated megapixels is the COMBINED total across
+    // sensors and legitimately exceeds a single max_width×max_height. For
+    // single-sensor cameras a large gap usually means one of the two was updated
+    // without the other (e.g. resolution bumped to 4K but megapixels left at 2).
     const MULTI_IMAGER = new Set(["panoramic", "dual-lens"]);
+    const isMultiImager = MULTI_IMAGER.has(cam.type) || (cam.lens && cam.lens.count > 1);
     if (r.megapixels != null && hasW && hasH) {
       const computed = (r.max_width * r.max_height) / 1e6;
       const ratio = computed / r.megapixels;
-      if (!MULTI_IMAGER.has(cam.type) && Math.abs(computed - r.megapixels) > 1.0 && (ratio < 0.6 || ratio > 1.6)) {
+      if (!isMultiImager && Math.abs(computed - r.megapixels) > 1.0 && (ratio < 0.6 || ratio > 1.6)) {
         warnResMismatch.push(`${cam.id}: stated ${r.megapixels}MP vs ${r.max_width}×${r.max_height}=${computed.toFixed(2)}MP (type=${cam.type})`);
       }
     } else if (r.megapixels != null && !hasW && !hasH) {
