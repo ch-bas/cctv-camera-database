@@ -1,6 +1,6 @@
 # CCTV Camera Database
 
-An open, structured database of 3,432 CCTV / IP camera models and their technical specifications, covering 77 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
+An open, structured database of 3,433 CCTV / IP camera models and their technical specifications, covering 77 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
 
 [![cameras](https://img.shields.io/badge/cameras-3%2C431-blue)](data/cameras.json)
 [![brands](https://img.shields.io/badge/brands-77-green)](cameras/)
@@ -47,7 +47,7 @@ Prefer to self-host or browse offline? A [standalone demo](docs/demo.html) (just
 - **Filter** — narrow by brand, camera type, night vision, resolution, or market
 - **Sort** — click any column header to sort ascending/descending
 - **Detail drawer** — click a row to slide open the full spec sheet (resolution, connectivity, protocols, storage, audio, pricing, source links)
-- **Pagination** — page through all 3,432 cameras, 25 per page
+- **Pagination** — page through all 3,433 cameras, 25 per page
 - **Stats bar** — live counts for total cameras, brands, 4K+, WiFi, and no-subscription models
 
 ---
@@ -174,7 +174,7 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 
 | Metric | Count |
 |--------|-------|
-| Total cameras | **3,432** |
+| Total cameras | **3,433** |
 | Brands | **77** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
 | PoE wired | 2,640 |
