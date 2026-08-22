@@ -311,6 +311,14 @@ function updateReadme(cameras) {
   if (!fs.existsSync(readmePath)) return false;
   let readme = fs.readFileSync(readmePath, "utf8");
 
+  // RTSP-layer totals live in the (separately generated) rtsp-patterns.json;
+  // read them so the README's brand/verified/template counts can't drift from
+  // the actual layer (they previously disagreed across three spots).
+  const rtspPath = path.join(DATA_DIR, "rtsp-patterns.json");
+  const rtsp = fs.existsSync(rtspPath)
+    ? (JSON.parse(fs.readFileSync(rtspPath, "utf8"))._meta || {}).totals || {}
+    : {};
+
   const brandDirs = fs.readdirSync(CAMERAS_DIR, { withFileTypes: true })
     .filter((e) => e.isDirectory())
     .map((e) => ({
@@ -333,7 +341,7 @@ function updateReadme(cameras) {
     "├── data/                 # GENERATED — do not edit by hand",
     `│   ├── cameras.json      # all ${total} cameras as one array`,
     "│   ├── cameras.csv       # flattened, spreadsheet-friendly",
-    "│   └── rtsp-patterns.json  # CC0 brand-level RTSP URL layer (122 brands)",
+    `│   └── rtsp-patterns.json  # CC0 brand-level RTSP URL layer (${rtsp.brands ?? "?"} brands)`,
     "├── strix/",
     "│   └── verified/         # per-brand RTSP source files → rtsp-patterns.json",
     "├── schema/",
@@ -370,7 +378,18 @@ function updateReadme(cameras) {
     .replace(/(database of )[\d,]+( CCTV \/ IP camera models)/, `$1${total}$2`)
     .replace(/(covering )\d+( brands across)/, `$1${brandCount}$2`)
     .replace(/(inspect )[\d,]+( cameras across )\d+( brands)/, `$1${total}$2${brandCount}$3`)
-    .replace(/(page through all )[\d,]+( cameras)/, `$1${total}$2`);
+    .replace(/(page through all )[\d,]+( cameras)/, `$1${total}$2`)
+    // Showcase GIF alt-text + caption ("search N cameras", appears twice).
+    .replace(/(search )[\d,]+( cameras)/g, `$1${total}$2`);
+
+  // RTSP-layer counts (tree line above + the prose sentence) — kept in lockstep
+  // with rtsp-patterns.json's _meta.totals so the two never disagree again.
+  if (rtsp.brands != null) {
+    readme = readme.replace(
+      /(reference\*\* for )\d+( brands \()\d+( verified \/ )\d+( unverified \/ )\d+( stream templates\))/,
+      `$1${rtsp.brands}$2${rtsp.verified}$3${rtsp.unverified}$4${rtsp.templates}$5`
+    );
+  }
 
   // "By the numbers" stat rows — computed from the dataset so they never drift
   // (previously hand-written and went stale, e.g. the color-lux count).

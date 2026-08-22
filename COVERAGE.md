@@ -4,23 +4,23 @@
 
 ![environment 100%](https://img.shields.io/badge/environment-100%25-brightgreen) ![FOV 92%](https://img.shields.io/badge/FOV-92%25-brightgreen) ![streams 53%](https://img.shields.io/badge/streams-53%25-yellow) ![dimensions 50%](https://img.shields.io/badge/dimensions-50%25-yellow) ![IK rating 43%](https://img.shields.io/badge/IK%20rating-43%25-yellow) ![color min-lux 64%](https://img.shields.io/badge/color%20min--lux-64%25-green) ![Frigate 82%](https://img.shields.io/badge/Frigate-82%25-brightgreen)
 
-**3,433 cameras** across **77 brands**.
+**3,429 cameras** across **76 brands**.
 
 | Field | Coverage | Filled | Lane |
 |---|---|---:|:---:|
-| 🌍 Environment (in/outdoor) | `██████████` 100% | 3,428 | [#123](https://github.com/ch-bas/cctv-camera-database/issues/123) |
-| 🔎 Lens | `█████████░` 94% | 3,220 |  |
-| 📡 Field of view | `█████████░` 92% | 3,155 | [#179](https://github.com/ch-bas/cctv-camera-database/issues/179) |
-| 💧 IP rating | `█████████░` 88% | 3,035 |  |
-| 🔬 Sensor | `█████████░` 87% | 2,996 |  |
-| 🔧 Frigate config | `████████░░` 82% | 2,831 | [#170](https://github.com/ch-bas/cctv-camera-database/issues/170) |
-| 🌙 Min-lux (color) | `██████░░░░` 64% | 2,189 | [#161](https://github.com/ch-bas/cctv-camera-database/issues/161) |
+| 🌍 Environment (in/outdoor) | `██████████` 100% | 3,424 | [#123](https://github.com/ch-bas/cctv-camera-database/issues/123) |
+| 🔎 Lens | `█████████░` 94% | 3,217 |  |
+| 📡 Field of view | `█████████░` 92% | 3,151 | [#179](https://github.com/ch-bas/cctv-camera-database/issues/179) |
+| 💧 IP rating | `█████████░` 88% | 3,031 |  |
+| 🔬 Sensor | `█████████░` 87% | 2,993 |  |
+| 🔧 Frigate config | `████████░░` 82% | 2,827 | [#170](https://github.com/ch-bas/cctv-camera-database/issues/170) |
+| 🌙 Min-lux (color) | `██████░░░░` 64% | 2,187 | [#161](https://github.com/ch-bas/cctv-camera-database/issues/161) |
 | 🎞️ Video streams | `█████░░░░░` 53% | 1,827 | [#177](https://github.com/ch-bas/cctv-camera-database/issues/177) |
 | 📐 Dimensions | `█████░░░░░` 50% | 1,708 | [#178](https://github.com/ch-bas/cctv-camera-database/issues/178) |
-| 🗺️ Markets | `█████░░░░░` 49% | 1,673 | [#166](https://github.com/ch-bas/cctv-camera-database/issues/166) |
+| 🗺️ Markets | `█████░░░░░` 49% | 1,671 | [#166](https://github.com/ch-bas/cctv-camera-database/issues/166) |
 | ⚖️ Weight | `████░░░░░░` 44% | 1,505 | [#178](https://github.com/ch-bas/cctv-camera-database/issues/178) |
-| 🛡️ IK / impact rating | `████░░░░░░` 43% | 1,463 | [#162](https://github.com/ch-bas/cctv-camera-database/issues/162) |
-| 📅 Release year | `████░░░░░░` 35% | 1,196 | [#166](https://github.com/ch-bas/cctv-camera-database/issues/166) |
+| 🛡️ IK / impact rating | `████░░░░░░` 43% | 1,460 | [#162](https://github.com/ch-bas/cctv-camera-database/issues/162) |
+| 📅 Release year | `████░░░░░░` 35% | 1,194 | [#166](https://github.com/ch-bas/cctv-camera-database/issues/166) |
 
 Cameras with community notes: 4 (4 notes total).
 
