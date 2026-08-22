@@ -33,5 +33,13 @@
 
 - https://www.hikvision.com/en/products/IP-Products/Network-Cameras/Pro-Series-EasyIP-/ds-2cd2387g2-l-u-/
 
+## Community notes (unverified)
+
+*Reported by users. Not from the datasheet, not verified by the project.*
+
+- Substream lives at /Streaming/Channels/102 (main is /101), which isn't in the datasheet. Frigate/go2rtc also needs the camera set to RTSP Authentication digest/basic with Digest Algorithm MD5, or the stream fails to open.
+  
+  rtsp · reported by ch-bas · 2026-08-22 · [source](https://docs.frigate.video/configuration/camera_specific/)
+
 ---
 *Auto-generated from hikvision-ds-2cd2387g2-lu.json — do not edit by hand.*

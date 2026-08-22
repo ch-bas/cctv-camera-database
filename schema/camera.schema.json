@@ -348,6 +348,50 @@
       "type": "string",
       "description": "Free-text notes about the release (launch events, pending specs, etc.)."
     },
+    "community_notes": {
+      "type": "array",
+      "description": "Observed behaviors and quirks reported by users. NOT from the datasheet, NOT verified by the project. Never use this for spec corrections.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["note", "source", "reported_by", "date"],
+        "properties": {
+          "note": {
+            "type": "string",
+            "minLength": 20,
+            "maxLength": 600,
+            "description": "One observed behavior, stated plainly. What happens, under what condition."
+          },
+          "category": {
+            "type": "string",
+            "enum": ["rtsp", "onvif", "firmware", "audio", "ptz", "power", "network", "frigate", "home_assistant", "blue_iris", "other"],
+            "description": "Rough topic bucket for filtering/rendering."
+          },
+          "firmware": {
+            "type": "string",
+            "description": "Firmware version this was observed on, if known. E.g. 'V5.7.3 build 230801'."
+          },
+          "source": {
+            "type": "string",
+            "description": "URL to the thread/issue/video where this is documented, or the literal string 'empirical' if the reporter tested it on their own device.",
+            "anyOf": [
+              { "format": "uri" },
+              { "const": "empirical" }
+            ]
+          },
+          "reported_by": {
+            "type": "string",
+            "description": "GitHub username or handle of the person who reported it.",
+            "pattern": "^[A-Za-z0-9_.-]{1,64}$"
+          },
+          "date": {
+            "type": "string",
+            "format": "date",
+            "description": "Date the note was added (YYYY-MM-DD)."
+          }
+        }
+      }
+    },
     "sources": {
       "type": "array",
       "items": {
