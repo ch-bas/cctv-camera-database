@@ -6,6 +6,20 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.1.0] — 2026-08-22
+
+Adds the **`community_notes`** layer — per-camera observed behaviors/quirks that aren't in the datasheet — plus a build-time `sensor_size_inch` field for the site's sort-by-sensor, and a community data fix.
+
+### Added
+- **`community_notes` schema block** — an optional array of user-reported behaviors/quirks (RTSP/ONVIF oddities, firmware regressions, integration gotchas). Explicitly **not specs** and **not project-verified**: each note carries a `source` (URL or the literal `empirical`) + `reported_by` + `date`, rendered under an "unverified" heading. The datasheet-only rule for specs is unchanged.
+  - Tooling: `npm run add-note` CLI (revalidates before writing), a `camera-quirk.yml` issue template (label `community-note`), lint checks (reject empty arrays / datasheet-domain sources; warn on spec-correction-looking text and implausible dates), a `community_notes_count` CSV column, per-camera docs section, and a coverage summary line. Seeded with 4 sourced notes.
+- **`sensor_size_inch`** — a numeric sensor size derived at build time from the `sensor` string (`1/2.8"` → 0.3571), injected into `data/cameras.json` so the site can sort by sensor size without runtime parsing. ~2,776 cameras get it.
+
+### Fixed
+- **Amcrest AD410 doorbell is NVR-compatible (#307):** `storage.nvr_compatible` corrected false → true (Dahua-protocol doorbell; owner-confirmed on an Amcrest NVR).
+
+---
+
 ## [2.0.1] — 2026-08-22
 
 Adds a `network.ethernet_speed_mbps` schema field and backfills it for 280 PoE cameras across five brands (with a companion NetBox devicetype-library export), plus a batch of community-reported camera/config fixes and deeper Frigate/go2rtc integration notes.

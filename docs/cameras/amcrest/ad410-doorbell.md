@@ -13,7 +13,7 @@
 | Field of view | 163 diagonal (head-to-toe)° |
 | Night vision | ir (5m) |
 | Power | Hardwired (16-24V AC) / battery |
-| Storage | microSD ≤ 128GB |
+| Storage | microSD ≤ 128GB, NVR |
 | Protocols | onvif, rtsp, http |
 | IP rating | IP65 |
 | Two-way audio | Yes |
