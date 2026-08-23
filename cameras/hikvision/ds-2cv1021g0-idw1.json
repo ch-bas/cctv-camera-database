@@ -1,0 +1,128 @@
+{
+  "id": "hikvision-ds-2cv1021g0-idw1",
+  "brand": "Hikvision",
+  "model": "DS-2CV1021G0-IDW1",
+  "aliases": [
+    "2 MP Fixed Bullet WiFi Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed options)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "114.5 horizontal (2.8mm) / 86 horizontal (4mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.028
+  },
+  "power": {
+    "method": "12 VDC",
+    "consumption_w": 5,
+    "voltage": "12 VDC"
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": true,
+    "notes": "microSD up to 128GB + NAS (NFS, SMB/CIFS) with ANR; Hik-Connect cloud."
+  },
+  "protocols": [
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "2.4 GHz WiFi (802.11b/g/n, up to 150 Mbps, ~80m range) + RJ45 fallback",
+    "IR up to 30m (850nm)",
+    "built-in microphone (mono) with environment noise filtering",
+    "microSD up to 128GB + NAS/ANR, Hik-Connect cloud",
+    "Digital WDR, 3D DNR, BLC/HLC, H.265+ compression",
+    "fixed 2.8mm or 4mm lens, metal front cover, IP66"
+  ],
+  "release_notes": "The Hikvision DS-2CV1021G0-IDW1 is a 2MP fixed-bullet WiFi camera (2.4 GHz 802.11b/g/n, RJ45 fallback) with 30m IR, a built-in microphone, and a microSD slot up to 128GB. Consumer/value line — no ONVIF; Hik-Connect / RTSP for integration.",
+  "sources": [
+    "https://www.hikvision.com/mena-en/products/IP-Products/Network-Cameras/value-series/DS-2CV1021G0-IDW1/"
+  ],
+  "last_verified": "2026-08-23",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 360,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "verified": false,
+      "notes": "Hikvision native RTSP (main 101 / sub 102) — enable RTSP in the Hik-Connect app / web UI. WiFi 2.4GHz only; a wired substream is steadier for detect.",
+      "recommended_stream_type": "rtsp"
+    },
+    "home_assistant": {
+      "integration": "generic",
+      "notes": "No ONVIF on this consumer WiFi model — use the Generic Camera integration with the RTSP URL, or Hik-Connect."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile; add via RTSP."
+    }
+  },
+  "dimensions_mm": "177.6 x 67.8 x 66.2",
+  "weight_g": 270,
+  "operating_temp_c": "-30 to 60",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x360",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}
