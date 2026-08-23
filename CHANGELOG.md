@@ -8,14 +8,21 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.3.0] — 2026-08-23
 
-Hikvision PTZ / multi-sensor expansion (3,429 → 3,435).
+Hikvision expansion — PTZ / PanoVu multi-sensor + compact Smart Hybrid Light (3,429 → 3,441).
 
-### Added
+### Added — PTZ / multi-sensor
 - **DS-2SF7C442MXG2/LM-EL** — TandemVu: fixed 6MP panoramic + 4MP **42x** DarkFighter PTZ (the 42x sibling of the DS-2SF7C425MXG2).
 - **DS-2DE7A425IWG1-E**, **DS-2DE7A432IWG1-E** — 4MP **25x / 32x** DarkFighter IR AcuSense speed domes (IR 200m; single 30m speaker + audio-visual alarm).
 - **DS-2DE7A432IWG-EB/SL** — 4MP 32x IR AcuSense with **100m sound + strobe** active deterrence.
 - **DS-2DP8A440IXG1-LEF/624(F0)** — PanoVu **24MP 270°** 6-sensor panoramic + integrated 40x IR PTZ.
 - **DS-2DP7D836IXG1-LEF/432(IR)** — PanoVu **4×8MP 360°** (four individually motorized panoramic lenses) + 8MP 36x IR PTZ.
+
+### Added — compact Smart Hybrid Light (DS-2CD3xxx G3)
+- **DS-2CD3021G3-LIUF**, **DS-2CD3021G3E-LIU** — 2MP fixed bullets.
+- **DS-2CD3041G3-LIUF**, **DS-2CD3041G3-LIU** — 4MP fixed bullets.
+- **DS-2CD3047G3E-LIU** — 4MP **ColorVu** (F1.0) mini bullet, 24/7 full-colour.
+- **DS-2CD3121G3-LIUF** — 2MP fixed dome.
+- All: Smart Hybrid Light (IR + white, 30m, 3 modes), AcuSense human/vehicle, built-in microphone, IP67, PoE 802.3af. Frame rate verified per datasheet (2MP → 30 fps, 4MP → 24 fps).
 
 ### Changed
 - Backfilled the 5 existing DS-2DE7A2xx/4xx IWG speed domes (225/232 × IWG1-E/EB-SL, 425 EB/SL) with the fields they were missing — `lens.focal_length_mm`, `lens.aperture` (F1.6), `operating_temp_c` (-30 to 65), `network` (100 Mbps) — from their official datasheets.
