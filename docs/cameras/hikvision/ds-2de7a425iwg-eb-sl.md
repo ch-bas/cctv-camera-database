@@ -8,7 +8,7 @@
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2560×1440) |
 | Sensor | 1/2.8" CMOS |
-| Lens | 1× |
+| Lens | 1× 4.8-120 (25x optical)mm F1.6 |
 | Field of view | 55 horizontal/33 vertical/61.5 diagonal (wide end)° |
 | Night vision | ir (200m), 0.005 lux color |
 | Power | Hi-PoE / 36 VDC |
@@ -17,6 +17,7 @@
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | Yes |
+| Operating temp | -30 to 65°C |
 
 ## Streams
 
