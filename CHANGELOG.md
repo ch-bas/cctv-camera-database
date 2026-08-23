@@ -6,6 +6,20 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.3.0] — 2026-08-23
+
+Hikvision PTZ / multi-sensor expansion (3,429 → 3,435).
+
+### Added
+- **DS-2SF7C442MXG2/LM-EL** — TandemVu: fixed 6MP panoramic + 4MP **42x** DarkFighter PTZ (the 42x sibling of the DS-2SF7C425MXG2).
+- **DS-2DE7A425IWG1-E**, **DS-2DE7A432IWG1-E** — 4MP **25x / 32x** DarkFighter IR AcuSense speed domes (IR 200m; single 30m speaker + audio-visual alarm).
+- **DS-2DE7A432IWG-EB/SL** — 4MP 32x IR AcuSense with **100m sound + strobe** active deterrence.
+- **DS-2DP8A440IXG1-LEF/624(F0)** — PanoVu **24MP 270°** 6-sensor panoramic + integrated 40x IR PTZ.
+- **DS-2DP7D836IXG1-LEF/432(IR)** — PanoVu **4×8MP 360°** (four individually motorized panoramic lenses) + 8MP 36x IR PTZ.
+
+### Changed
+- Backfilled the 5 existing DS-2DE7A2xx/4xx IWG speed domes (225/232 × IWG1-E/EB-SL, 425 EB/SL) with the fields they were missing — `lens.focal_length_mm`, `lens.aperture` (F1.6), `operating_temp_c` (-30 to 65), `network` (100 Mbps) — from their official datasheets.
+
 ## [2.2.0] — 2026-08-22
 
 A correctness release: removed four duplicate camera entries (3,433 → 3,429), a community-verified Frigate config, a README/docs accuracy pass, and a wide **audit sweep of the build/generator tooling** — including making `npm run add` produce valid records and stopping several generators from fabricating or mis-reporting data. Also surfaces substream coverage/specs.
