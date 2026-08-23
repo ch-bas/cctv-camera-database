@@ -1,0 +1,132 @@
+{
+  "id": "hikvision-ds-2dp8a440ixg1-lef",
+  "brand": "Hikvision",
+  "model": "DS-2DP8A440IXG1-LEF/624(F0)",
+  "aliases": [
+    "PanoVu 24MP 270° Panoramic & PTZ Camera",
+    "DS-2DP8A440IXG1-LEF/416(F0)"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 24,
+    "max_width": 9024,
+    "max_height": 2656,
+    "label": "24MP 270° panoramic (6-sensor) + 40x PTZ (PanoVu)"
+  },
+  "sensor": "6x 1/1.8\" CMOS (panoramic channel) + 1/1.8\" CMOS (PTZ channel)",
+  "lens": {
+    "count": 7,
+    "focal_length_mm": "2 (panoramic) + 6-240 (40x optical, PTZ)",
+    "aperture": "F1.0 (panoramic) / F1.2 (PTZ)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "270 horizontal / 110 vertical (panoramic)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 300,
+    "min_lux_color": 0.0005
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3bt) / 36VDC",
+    "consumption_w": 135,
+    "voltage": "36VDC"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "PanoVu: 270° stitched 24MP panorama from 6 sensors (8160×2400 @30fps) + integrated 40x PTZ",
+    "one-click on the panorama drives the PTZ to the detail automatically",
+    "40x optical / 16x digital zoom PTZ, 300 presets, 8 patrols",
+    "IR up to 300m",
+    "AI on the panoramic view: intrusion, line crossing, region entrance/exit detection",
+    "pan up to 500°/s, tilt up to 350°/s",
+    "IP67, IK10, ±6kV lightning/surge protection",
+    "configurations: /624 (6-sensor 270°, 24MP) and /416 (4-sensor 180°)"
+  ],
+  "release_year": 2026,
+  "release_notes": "The Hikvision DS-2DP8A440IXG1-LEF/624(F0) is a 24MP 270° stitched PanoVu panoramic camera (6 sensors) with an integrated 40x IR PTZ. This entry documents the /624 (6-sensor, 270°) configuration; a /416 (4-sensor, 180°) configuration also exists. Verified against the official Hikvision datasheet (Ver. 20260511).",
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000100844/DS-2DP8A440IXG1-LEF_624F0_Datasheet_20260511.pdf",
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000100845/DS-2DP8A440IXG1-LEF_416F0_Datasheet_20260511.pdf"
+  ],
+  "last_verified": "2026-08-23",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "verified": false,
+      "notes": "Multi-channel PanoVu: panoramic channel(s) and the PTZ channel are exposed separately (Streaming/Channels/101, 201, …). Add each channel you need; the stitched 9024×2656 panorama is heavy — use the sub-stream for detect.",
+      "autotracking": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision; ONVIF integration works (default port 80). Add panoramic and PTZ channels separately."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile. Add panoramic and PTZ channels separately."
+    }
+  },
+  "dimensions_mm": "Ø427.6 x 425.9",
+  "weight_g": 14600,
+  "operating_temp_c": "-40 to 70",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "panoramic main",
+        "resolution": "8160x2400",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  }
+}

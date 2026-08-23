@@ -1,0 +1,131 @@
+{
+  "id": "hikvision-ds-2dp7d836ixg1-lef",
+  "brand": "Hikvision",
+  "model": "DS-2DP7D836IXG1-LEF/432(IR)",
+  "aliases": [
+    "PanoVu 8MPx4 360° Panoramic with IR & 8MP 36x PTZ Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 40,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4x8MP 360° panoramic + 8MP 36x PTZ (PanoVu)"
+  },
+  "sensor": "4x 1/1.8\" CMOS (panoramic channel) + 1/1.8\" CMOS (PTZ channel)",
+  "lens": {
+    "count": 5,
+    "focal_length_mm": "2.8 (panoramic) + 6-216 (36x optical, PTZ)",
+    "aperture": "F1.0 (panoramic) / F1.36 (PTZ)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "360 horizontal (4-lens panoramic)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 300,
+    "min_lux_color": 0.002
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3bt) / 36VDC",
+    "consumption_w": 105,
+    "voltage": "36VDC"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "PanoVu: four 8MP (3840×2160) panoramic lenses covering 360° + an 8MP 36x IR PTZ",
+    "each of the 4 panoramic lenses has motorized pan/tilt/rotation for flexible coverage",
+    "36x optical / 16x digital zoom PTZ, 300 presets, 8 patrols",
+    "IR: panoramic up to 20m, PTZ up to 300m",
+    "panoramic pan 0-175° / tilt 9-65°; PTZ pan 0-360° / tilt -20-90°",
+    "IP67, IK10, TVS 6000V lightning/surge protection"
+  ],
+  "release_year": 2026,
+  "release_notes": "The Hikvision DS-2DP7D836IXG1-LEF/432(IR) is a PanoVu multi-sensor camera: four individually motorized 8MP panoramic lenses covering 360° plus an integrated 8MP 36x IR PTZ. Verified against the official Hikvision datasheet (Ver. 20260812).",
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000095835/DS-2DP7D836IXG1-LEF_432IR_Datasheet_20260812.pdf"
+  ],
+  "last_verified": "2026-08-23",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "verified": false,
+      "notes": "Multi-channel PanoVu: the four panoramic lenses and the PTZ are exposed as separate channels (Streaming/Channels/101, 201, 301, …). Add each channel you need.",
+      "autotracking": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision; ONVIF integration works (default port 80). Add panoramic and PTZ channels separately."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile. Add each panoramic lens and the PTZ separately."
+    }
+  },
+  "dimensions_mm": "Ø402.37 x 363.22",
+  "weight_g": 9670,
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "panoramic main",
+        "resolution": "3840x2160",
+        "codec": "H.265"
+      },
+      {
+        "name": "PTZ main",
+        "resolution": "3840x2160",
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  }
+}
