@@ -1,7 +1,10 @@
 {
-  "id": "hikvision-ds-2de7a425iwg-eb-sl",
+  "id": "hikvision-ds-2de7a432iwg-eb-sl",
   "brand": "Hikvision",
-  "model": "DS-2DE7A425IWG-EB/SL",
+  "model": "DS-2DE7A432IWG-EB/SL",
+  "aliases": [
+    "4 MP 32X DarkFighter IR AcuSense Network Speed Dome with active deterrence"
+  ],
   "type": "ptz",
   "connectivity": [
     "ethernet"
@@ -15,10 +18,11 @@
   "sensor": "1/2.8\" CMOS",
   "lens": {
     "count": 1,
-    "focal_length_mm": "4.8-120 (25x optical)",
-    "aperture": "F1.6",
+    "focal_length_mm": "5.9-188.8 (32x optical)",
+    "aperture": "F1.5",
     "varifocal": true
   },
+  "field_of_view_deg": "50.8-2.6 horizontal / 29.4-1.5 vertical",
   "night_vision": {
     "type": "ir",
     "range_m": 200,
@@ -30,6 +34,10 @@
   "power": {
     "method": "Hi-PoE / 36 VDC"
   },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
   "storage": {
     "onboard": true,
     "nvr_compatible": true,
@@ -37,36 +45,34 @@
   },
   "protocols": [
     "onvif",
-    "rtsp"
+    "rtsp",
+    "http"
   ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
   "audio": {
     "microphone": false,
     "speaker": true,
     "two_way": true
   },
   "features": [
-    "25x optical zoom",
-    "powered-by-DarkFighter low-light",
-    "AcuSense human/vehicle classification",
-    "active deterrence: sound + strobe light to 100m",
-    "IR up to 200m (850nm)",
-    "2 built-in speakers",
-    "300 presets",
-    "face capture",
-    "pan/tilt: pan 360 / tilt -15 to 90",
-    "IK10 vandal-resistant"
+    "32x optical / 16x digital zoom, powered-by-DarkFighter low-light",
+    "AcuSense human/vehicle classification + false-alarm filtering",
+    "active deterrence: sound + strobe white-light flashing, effective up to 100m (/SL)",
+    "IR up to 200m + Smart Supplement Light",
+    "2 built-in speakers (effective to 100m)",
+    "300 presets, 8 patrols, pan 360° / tilt -15° to 90° (auto-flip)",
+    "smart tracking, face capture, EIS",
+    "IP67, IK10, TVS 6000V lightning/surge protection"
   ],
   "markets": [
     "global"
   ],
-  "release_notes": "The Hikvision DS-2DE7A425IWG-EB/SL is a 4MP 25x IR AcuSense PTZ speed dome; the /SL variant adds sound + strobe-light active deterrence effective to 100m.",
+  "release_notes": "The Hikvision DS-2DE7A432IWG-EB/SL is a 4MP 32x IR AcuSense PTZ speed dome; the /SL adds sound + strobe-light active deterrence effective to 100m. The 32x (5.9-188.8 mm) sibling of the DS-2DE7A425IWG-EB/SL.",
   "sources": [
-    "https://assets.hikvision.com/prd/public/all/doc/m000161011/DS-2DE7A425IWG-EB_SL_Datasheet_20250514.pdf"
+    "https://assets.hikvision.com/prd/normal/all/doc/m000161012/DS-2DE7A432IWG-EB_SL_Datasheet_20250514.pdf"
   ],
-  "power_source": [
-    "poe",
-    "dc"
-  ],
+  "last_verified": "2026-08-23",
   "configs": {
     "frigate": {
       "detect": {
@@ -77,7 +83,7 @@
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
       "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
       "verified": false,
-      "notes": "Hikvision native RTSP (main 101 / sub 102). Multi-channel/TandemVu units expose each channel as 201/301 etc. — enable RTSP in the web UI.",
+      "notes": "Hikvision native RTSP (main 101 / sub 102). Enable RTSP in the web UI.",
       "autotracking": false
     },
     "home_assistant": {
@@ -89,9 +95,9 @@
       "notes": "Select the 'Hikvision' profile."
     }
   },
-  "last_verified": "2026-08-03",
-  "ip_rating": "IP67",
-  "ik_rating": "IK10",
+  "dimensions_mm": "Ø220 x 363.3",
+  "weight_g": 5000,
+  "operating_temp_c": "-30 to 65",
   "video": {
     "codecs": [
       "H.265+",
@@ -122,13 +128,9 @@
       }
     ]
   },
-  "dimensions_mm": "Ø220 x 363.3",
-  "weight_g": 5000,
-  "field_of_view_deg": "55 horizontal/33 vertical/61.5 diagonal (wide end)",
   "environment": [
     "outdoor"
   ],
-  "operating_temp_c": "-30 to 65",
   "network": {
     "ethernet_speed_mbps": 100,
     "ethernet_ports": 1

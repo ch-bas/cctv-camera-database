@@ -1,0 +1,44 @@
+# Hikvision DS-2CD3047G3E-LIU
+
+*Also known as: 4 MP Fixed Bullet Smart Hybrid Light AcuSense Network Camera*
+
+| Field | Spec |
+|-------|------|
+| Brand | Hikvision |
+| Model | DS-2CD3047G3E-LIU |
+| Type | bullet |
+| Connectivity | ethernet |
+| Resolution | 4MP (4MP, 2560×1440) |
+| Sensor | 1/2.8" Progressive Scan CMOS |
+| Lens | 1× 2.8 / 4 (fixed options)mm F1.0 |
+| Field of view | 101.5 horizontal (2.8mm) / 84.1 horizontal (4mm)° |
+| Night vision | hybrid (30m), 0.0005 lux color |
+| Power | PoE (802.3af, Class 3) / 12 VDC |
+| Storage | microSD ≤ 512GB, NVR |
+| Protocols | onvif, rtsp, http |
+| IP rating | IP67 |
+| Two-way audio | No |
+| Released | 2026 |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 24 | H.265 |
+| sub | 640x480 | 24 | H.265 |
+
+## Features
+
+- Smart Hybrid Light: integrated IR + white light, 3 supplemental modes (up to 30m) with ColorVu F1.0 optics for 24/7 color
+- AcuSense: human/vehicle target classification + false-alarm filtering
+- built-in microphone
+- 120 dB WDR, 3D DNR, H.265+ compression
+- fixed 2.8mm or 4mm lens option
+- IP67 weatherproof
+
+## Sources
+
+- https://assets.hikvision.com/prd/normal/all/doc/m000178684/DS-2CD3047G3E-LIU_Datasheet_20260606.pdf
+
+---
+*Auto-generated from hikvision-ds-2cd3047g3e-liu.json — do not edit by hand.*
