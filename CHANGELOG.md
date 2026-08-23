@@ -8,7 +8,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.3.0] — 2026-08-23
 
-Hikvision expansion — PTZ / PanoVu multi-sensor + compact Smart Hybrid Light (3,429 → 3,441).
+Hikvision expansion — PTZ / PanoVu multi-sensor + compact Smart Hybrid Light + value/WiFi (3,429 → 3,444).
 
 ### Added — PTZ / multi-sensor
 - **DS-2SF7C442MXG2/LM-EL** — TandemVu: fixed 6MP panoramic + 4MP **42x** DarkFighter PTZ (the 42x sibling of the DS-2SF7C425MXG2).
@@ -23,6 +23,11 @@ Hikvision expansion — PTZ / PanoVu multi-sensor + compact Smart Hybrid Light (
 - **DS-2CD3047G3E-LIU** — 4MP **ColorVu** (F1.0) mini bullet, 24/7 full-colour.
 - **DS-2CD3121G3-LIUF** — 2MP fixed dome.
 - All: Smart Hybrid Light (IR + white, 30m, 3 modes), AcuSense human/vehicle, built-in microphone, IP67, PoE 802.3af. Frame rate verified per datasheet (2MP → 30 fps, 4MP → 24 fps).
+
+### Added — value series (DS-2CD1xxx / DS-2CV)
+- **DS-2CD1021G2-IU** — value 2MP fixed bullet, IR 20m, built-in mic.
+- **DS-2CD1021G2-LIU** — value 2MP fixed bullet, Smart Hybrid Light (IR 20m + white 15m), built-in mic.
+- **DS-2CV1021G0-IDW1** — 2MP **WiFi** fixed bullet (2.4 GHz 802.11b/g/n + RJ45), IR 30m, microSD 128GB + Hik-Connect, IP66 (consumer line — no ONVIF).
 
 ### Changed
 - Backfilled the 5 existing DS-2DE7A2xx/4xx IWG speed domes (225/232 × IWG1-E/EB-SL, 425 EB/SL) with the fields they were missing — `lens.focal_length_mm`, `lens.aperture` (F1.6), `operating_temp_c` (-30 to 65), `network` (100 Mbps) — from their official datasheets.
