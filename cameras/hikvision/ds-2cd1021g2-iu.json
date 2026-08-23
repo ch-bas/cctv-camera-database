@@ -1,0 +1,127 @@
+{
+  "id": "hikvision-ds-2cd1021g2-iu",
+  "brand": "Hikvision",
+  "model": "DS-2CD1021G2-IU",
+  "aliases": [
+    "2 MP Fixed Bullet Network Camera (Value series)"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.9\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed options)",
+    "aperture": "F2.2",
+    "varifocal": false
+  },
+  "field_of_view_deg": "94 horizontal (2.8mm) / 80 horizontal (4mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / 12 VDC",
+    "consumption_w": 5,
+    "poe_class": 3,
+    "voltage": "12V (DC) / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "value-series 2MP fixed bullet with IR up to 20m (850nm)",
+    "Smart Supplement Light",
+    "built-in microphone with environment noise filtering",
+    "motion detection with human target classification",
+    "Digital WDR, 3D DNR, BLC/HLC, H.265+ compression",
+    "fixed 2.8mm or 4mm lens option, IP67"
+  ],
+  "release_year": 2026,
+  "release_notes": "The Hikvision DS-2CD1021G2-IU is a value-series 2MP fixed bullet with 20m IR and a built-in microphone. The IR-only sibling of the DS-2CD1021G2-LIU Smart Hybrid Light model.",
+  "sources": [
+    "https://www.hikvision.com/mena-en/products/IP-Products/Network-Cameras/value-series/ds-2cd1021g2-iu/"
+  ],
+  "last_verified": "2026-08-23",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "verified": false,
+      "notes": "Hikvision native RTSP (main 101 / sub 102). Enable RTSP in the web UI.",
+      "recommended_stream_type": "rtsp"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "dimensions_mm": "138.8 x 60.9 x 57.9",
+  "weight_g": 175,
+  "operating_temp_c": "-30 to 60",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}
