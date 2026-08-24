@@ -17,6 +17,12 @@ Uniview HA-series expansion (3,444 → 3,455).
   - 6MP **180° panoramic** ColorVu + Smart Hybrid Light: **IPC-B469HAD-LUF** (bullet), **IPC-T269HAD-LUF** (turret).
   - Frame rate per datasheet (2MP → 30 fps, 4MP / 6MP-180° → 20 fps).
 
+### Changed
+- **Datasheet backfills:** ACTi **A973** (add IP66); Hanwha **PNB-A9001** (power consumption, operating temp, dimensions, weight) and **PNO-A9081R** (dimensions, weight, operating temp).
+
+### Fixed
+- **9 ACTi color min-illumination values** (`a315`, `a424`, `a78`, `z318`, `z510`, `z64`, `k71`, `k72`, `k73`) carried a placeholder `night_vision.min_lux_color` of `0.001` that disagreed with the datasheet — corrected to the real values (0.002–0.005).
+
 ## [2.3.0] — 2026-08-23
 
 Hikvision expansion — PTZ / PanoVu multi-sensor + compact Smart Hybrid Light + value/WiFi (3,429 → 3,444).
