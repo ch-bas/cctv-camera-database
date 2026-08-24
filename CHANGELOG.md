@@ -6,6 +6,29 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.4.0] — 2026-08-24
+
+Uniview HA-series + Dahua Wi-Fi / WizMind-X expansion (3,444 → 3,469).
+
+### Added — Dahua (14)
+- **Wi-Fi series (9)** — 2.4 GHz, from official Dahua datasheets: IPC-HDW1230DT-SAW (2MP turret), IPC-HFW1230DS1-SAW / -1430DS-SAW (2/4MP bullets), IPC-HFW1539DTK1-SAW-IL / -1339DTK1-SAW-IL (5/3MP Smart Dual Illumination), **F3D-PV / F5D-PV** (3/5MP active deterrence — red/blue strobe + siren + two-way), **F2C-LED / F4C-LED** (2/4MP full-colour warm-light).
+- **WizMind-X large-model AI (5)** — motorized varifocal, PoE+, IP67/IK10: IPC-HDBW7442E1-Z-X (4MP), IPC-HFW71242H-Z-X + IPC-HDBW71242E1-Z-X (12MP bullet/dome), IPC-HDBW7842E1-Z4-X (8MP 4× zoom) + IPC-HDBW7842E1-Z-X (8MP).
+
+### Added — Uniview (11)
+- **11 Uniview HA-series cameras** from official datasheets:
+  - MD 2.0 IR bullets: **IPC-B120HA** (2MP), **IPC-B140HA** (4MP).
+  - ColorVu 3.0 / Smart Hybrid Light (IR + white, built-in mic; most with two-way audio + strobe alarm): **IPC-B129HAA-LU**, **IPC-B429HAA-LU**, **IPC-B529HAA-LU**, **IPC-D129HA-LU** (IK08 dome), **IPC-T229HA-LU**, **IPC-T229HAA-LU**, **IPC-T249HA-LU** (4MP).
+  - 6MP **180° panoramic** ColorVu + Smart Hybrid Light: **IPC-B469HAD-LUF** (bullet), **IPC-T269HAD-LUF** (turret).
+  - Frame rate per datasheet (2MP → 30 fps, 4MP / 6MP-180° → 20 fps).
+
+### Changed
+- **Datasheet backfills:** ACTi **A973** (add IP66); Hanwha **PNB-A9001** (power consumption, operating temp, dimensions, weight) and **PNO-A9081R** (dimensions, weight, operating temp).
+- **11 existing Dahua entries backfilled** from datasheets (6 PROX/PRO + 5 Wi-Fi/WizMind-X): weight, dimensions, ethernet speed, power consumption, and — for the two thin **IPC-HFW7842H-Z(4)-X** WizMind-X entries — the missing sensor / lens / resolution / video / power blocks.
+
+### Fixed
+- **9 ACTi color min-illumination values** (`a315`, `a424`, `a78`, `z318`, `z510`, `z64`, `k71`, `k72`, `k73`) carried a placeholder `night_vision.min_lux_color` of `0.001` that disagreed with the datasheet — corrected to the real values (0.002–0.005).
+- **Dahua datasheet contradictions:** IPC-HFW7842H-Z-X `night_vision.range_m` 80→60 m, FOV 106-30→105-48, microSD 256→1024 GB; IPC-HFW7842H-Z4-X microSD 512→1024 GB; IPC-HFW1230DS-SAW aperture F1.6→F2.0; IPC-HFW1539DTK1-SW-PV `min_lux_color` 0.008→0.007.
+
 ## [2.3.0] — 2026-08-23
 
 Hikvision expansion — PTZ / PanoVu multi-sensor + compact Smart Hybrid Light + value/WiFi (3,429 → 3,444).

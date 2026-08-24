@@ -1,0 +1,129 @@
+{
+  "id": "uniview-ipc-b469had-luf",
+  "brand": "Uniview",
+  "model": "IPC-B469HAD-LUF/S(L)(RB)",
+  "aliases": [
+    "6 MP ColorVu Smart Hybrid Light 180° Fixed Bullet Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3632,
+    "max_height": 1632,
+    "label": "6MP"
+  },
+  "sensor": "1/2.5\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 horizontal / 79 vertical (2.8mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.001
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / DC 12V",
+    "poe_class": 3,
+    "voltage": "12V (DC) / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "microSD/SDHC/SDXC up to 512GB on -F/-SL/-SRB variants (optional on some SKUs)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "ColorVu Smart Hybrid Light 180°: IR up to 30m + white light up to 30m (3 supplemental lighting modes)",
+    "180° panoramic field of view (fixed 2.8mm)",
+    "built-in microphone",
+    "two-way audio + strobe-light alarm (/SL, /SRB, /SLRB variants)",
+    "smart intrusion prevention (line crossing / intrusion), human & vehicle classification",
+    "Ultra 265 / H.265 / H.264 compression, 120 dB WDR, 3D DNR",
+    "IP67 weatherproof"
+  ],
+  "release_year": 2026,
+  "release_notes": "The Uniview IPC-B469HAD-LUF/S(L)(RB) is a 6MP ColorVu Smart Hybrid Light 180° fixed bullet network camera with a built-in microphone. Specs verified against the official Uniview datasheet IPC-B469HAD-LUF_SLRB_Datasheet_20241108.",
+  "sources": [
+    "https://www.uniview.com/Products/Network_Cameras/"
+  ],
+  "last_verified": "2026-08-24",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/media/video1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/media/video2",
+      "verified": false,
+      "notes": "Uniview native RTSP: main /media/video1, sub /media/video2 (enable RTSP in the web UI; some firmware uses /unicast/c1/s1/live)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Uniview; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use the generic ONVIF/RTSP profile."
+    }
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3632x1632",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x360",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "dimensions_mm": "103.6 x 76 x 234.5",
+  "weight_g": 560
+}

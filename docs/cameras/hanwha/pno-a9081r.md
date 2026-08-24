@@ -18,6 +18,7 @@
 | Protocols | onvif, rtsp, http |
 | IP rating | IP66/IP67/IP6K9K |
 | Two-way audio | No |
+| Operating temp | -50 to 55°C |
 | Released | 2020 |
 
 ## Streams

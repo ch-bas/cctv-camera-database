@@ -1,0 +1,132 @@
+{
+  "id": "ipc-hdbw7842e1-z-x",
+  "brand": "Dahua",
+  "model": "IPC-HDBW7842E1-Z-X",
+  "aliases": [
+    "8 MP WizMind-X AI Dome Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-12 (motorized varifocal)",
+    "aperture": "F1.2",
+    "varifocal": true
+  },
+  "field_of_view_deg": "105-48 horizontal (wide-tele)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40,
+    "min_lux_color": 0.0006
+  },
+  "ptz": {
+    "autotracking": false
+  },
+  "power": {
+    "method": "PoE+ (802.3at) / ePoE / 12 VDC / 24 VAC",
+    "voltage": "12 VDC / 24 VAC / PoE+"
+  },
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "microSD/SDHC/SDXC up to 1TB; NAS + ANR."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "WizMind-X large-model AI: face recognition/detection, IVS, people counting, PPE detection, parking-space management, ANPR",
+    "2.7-12mm motorized varifocal, 140 dB WDR, IR up to 40m",
+    "dual built-in microphones + speaker, two-way audio, 1 audio in / 1 out",
+    "PoE+ (802.3at) / ePoE / 12 VDC / 24 VAC power",
+    "electronic image stabilization, defog, scene self-adaptation",
+    "IP67, IK10, anti-corrosion coating optional"
+  ],
+  "release_year": 2026,
+  "release_notes": "The Dahua IPC-HDBW7842E1-Z-X is a 8MP WizMind-X large-model AI dome with a 2.7-12mm motorized varifocal lens and deep-learning analytics (face/IVS/ANPR/PPE). Verified against the official Dahua product datasheet.",
+  "sources": [
+    "https://www.dahuasecurity.com/de/products/All-Products/Network-Cameras/WizMind-X-Series/8MP/IPC-HDBW7842E1-Z-X"
+  ],
+  "last_verified": "2026-08-24",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP (main subtype=0 / sub subtype=1). High-res AI camera — use the sub-stream for Frigate detect, main for record."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "dimensions_mm": "118 x Ø159",
+  "weight_g": 1160,
+  "operating_temp_c": "-40 to 65",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "720x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}
