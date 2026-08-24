@@ -6,6 +6,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.4.1] — 2026-08-24
+
+### Fixed
+- **Frigate `detect` resolution now matches the sub-stream (#298).** `configs.frigate.detect` was a heuristic default (mostly `1280x720@5`), not the resolution Frigate runs inference on. For the **411 cameras** that carry a `video.streams` entry named `sub` with a known resolution, `detect.width`/`height` now match that sub-stream (`fps` unchanged). Only the explicit `sub` stream is used, so cameras with ambiguous `Stream N` naming are left untouched. Fixes the mismatch class first reported on the Reolink E1 Zoom (e.g. ClareVision CLR-V100/V200: `1280x720` → real sub `720x480`).
+
+---
+
 ## [2.4.0] — 2026-08-24
 
 Uniview HA-series + Dahua Wi-Fi / WizMind-X expansion (3,444 → 3,469).
