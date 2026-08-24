@@ -1,0 +1,132 @@
+{
+  "id": "ipc-hfw71242h-z-x",
+  "brand": "Dahua",
+  "model": "IPC-HFW71242H-Z-X",
+  "aliases": [
+    "12 MP WizMind-X AI Bullet Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 12,
+    "max_width": 4000,
+    "max_height": 3000,
+    "label": "12MP"
+  },
+  "sensor": "1/1.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-12 (motorized varifocal)",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "106-45 horizontal (wide-tele)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 60,
+    "min_lux_color": 0.0009
+  },
+  "ptz": {
+    "autotracking": false
+  },
+  "power": {
+    "method": "PoE+ (802.3at) / ePoE / 12 VDC / 24 VAC",
+    "voltage": "12 VDC / 24 VAC / PoE+"
+  },
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "microSD/SDHC/SDXC up to 512GB; NAS + ANR."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "WizMind-X large-model AI: face recognition/detection, IVS, people counting, PPE detection, parking-space management, ANPR",
+    "2.7-12mm motorized varifocal, DWDR WDR, IR up to 60m",
+    "dual built-in microphones + speaker, two-way audio, 1 audio in / 1 out",
+    "PoE+ (802.3at) / ePoE / 12 VDC / 24 VAC power",
+    "electronic image stabilization, defog, scene self-adaptation",
+    "IP67, IK10, anti-corrosion coating optional"
+  ],
+  "release_year": 2026,
+  "release_notes": "The Dahua IPC-HFW71242H-Z-X is a 12MP WizMind-X large-model AI bullet with a 2.7-12mm motorized varifocal lens and deep-learning analytics (face/IVS/ANPR/PPE). Verified against the official Dahua product datasheet.",
+  "sources": [
+    "https://www.dahuasecurity.com/de/products/All-Products/Network-Cameras/WizMind-X-Series/12MP/IPC-HFW71242H-Z-X"
+  ],
+  "last_verified": "2026-08-24",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP (main subtype=0 / sub subtype=1). High-res AI camera — use the sub-stream for Frigate detect, main for record."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "dimensions_mm": "345.6 x 134.2 x 135.1",
+  "weight_g": 1650,
+  "operating_temp_c": "-40 to 65",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4000x3000",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "720x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  }
+}
