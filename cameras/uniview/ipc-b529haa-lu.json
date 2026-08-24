@@ -1,0 +1,124 @@
+{
+  "id": "uniview-ipc-b529haa-lu",
+  "brand": "Uniview",
+  "model": "IPC-B529HAA-LU",
+  "aliases": [
+    "2 MP ColorVu 3.0 Fixed Bullet Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed options)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "106 horizontal (2.8mm) / 88 horizontal (4mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 50,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / DC 12V",
+    "poe_class": 3,
+    "voltage": "12V (DC) / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "ColorVu 3.0: IR up to 50m + white light up to 50m (3 supplemental lighting modes)",
+    "ColorVu F1.0 optics for 24/7 full-colour imaging",
+    "built-in microphone",
+    "smart intrusion prevention (line crossing / intrusion), human & vehicle classification",
+    "Ultra 265 / H.265 / H.264 compression, 120 dB WDR, 3D DNR",
+    "IP67 weatherproof"
+  ],
+  "release_year": 2026,
+  "release_notes": "The Uniview IPC-B529HAA-LU is a 2MP ColorVu 3.0 fixed bullet network camera with a built-in microphone. Specs verified against the official Uniview datasheet IPC-B529HAA-LU_Datasheet_20250925.",
+  "sources": [
+    "https://www.uniview.com/Products/Network_Cameras/"
+  ],
+  "last_verified": "2026-08-24",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/media/video1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/media/video2",
+      "verified": false,
+      "notes": "Uniview native RTSP: main /media/video1, sub /media/video2 (enable RTSP in the web UI; some firmware uses /unicast/c1/s1/live)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Uniview; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use the generic ONVIF/RTSP profile."
+    }
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x360",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "dimensions_mm": "285.8 x 88.1 x 83.4",
+  "weight_g": 665
+}
