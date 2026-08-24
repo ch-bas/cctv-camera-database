@@ -23,9 +23,11 @@ Uniview HA-series + Dahua Wi-Fi / WizMind-X expansion (3,444 → 3,469).
 
 ### Changed
 - **Datasheet backfills:** ACTi **A973** (add IP66); Hanwha **PNB-A9001** (power consumption, operating temp, dimensions, weight) and **PNO-A9081R** (dimensions, weight, operating temp).
+- **11 existing Dahua entries backfilled** from datasheets (6 PROX/PRO + 5 Wi-Fi/WizMind-X): weight, dimensions, ethernet speed, power consumption, and — for the two thin **IPC-HFW7842H-Z(4)-X** WizMind-X entries — the missing sensor / lens / resolution / video / power blocks.
 
 ### Fixed
 - **9 ACTi color min-illumination values** (`a315`, `a424`, `a78`, `z318`, `z510`, `z64`, `k71`, `k72`, `k73`) carried a placeholder `night_vision.min_lux_color` of `0.001` that disagreed with the datasheet — corrected to the real values (0.002–0.005).
+- **Dahua datasheet contradictions:** IPC-HFW7842H-Z-X `night_vision.range_m` 80→60 m, FOV 106-30→105-48, microSD 256→1024 GB; IPC-HFW7842H-Z4-X microSD 512→1024 GB; IPC-HFW1230DS-SAW aperture F1.6→F2.0; IPC-HFW1539DTK1-SW-PV `min_lux_color` 0.008→0.007.
 
 ## [2.3.0] — 2026-08-23
 
