@@ -6,6 +6,17 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.4.0] — 2026-08-24
+
+Uniview HA-series expansion (3,444 → 3,455).
+
+### Added
+- **11 Uniview HA-series cameras** from official datasheets:
+  - MD 2.0 IR bullets: **IPC-B120HA** (2MP), **IPC-B140HA** (4MP).
+  - ColorVu 3.0 / Smart Hybrid Light (IR + white, built-in mic; most with two-way audio + strobe alarm): **IPC-B129HAA-LU**, **IPC-B429HAA-LU**, **IPC-B529HAA-LU**, **IPC-D129HA-LU** (IK08 dome), **IPC-T229HA-LU**, **IPC-T229HAA-LU**, **IPC-T249HA-LU** (4MP).
+  - 6MP **180° panoramic** ColorVu + Smart Hybrid Light: **IPC-B469HAD-LUF** (bullet), **IPC-T269HAD-LUF** (turret).
+  - Frame rate per datasheet (2MP → 30 fps, 4MP / 6MP-180° → 20 fps).
+
 ## [2.3.0] — 2026-08-23
 
 Hikvision expansion — PTZ / PanoVu multi-sensor + compact Smart Hybrid Light + value/WiFi (3,429 → 3,444).
