@@ -1,0 +1,128 @@
+{
+  "id": "uniview-uho-b2d-m3f4d",
+  "brand": "Uniview",
+  "model": "Uho-B2D-M3F4D",
+  "aliases": [
+    "Uho-B2D-M3F4D-U",
+    "3MP HD Outdoor Bullet Wi-Fi Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "3MP"
+  },
+  "sensor": "1/3.0\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.0",
+    "aperture": "F1.6"
+  },
+  "field_of_view_deg": "87.3 horizontal / 47.4 vertical",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 20,
+    "min_lux_color": 0.003
+  },
+  "power": {
+    "method": "DC 12V±25%",
+    "consumption_w": 5.7,
+    "voltage": "12V (DC)"
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "3MP 1/3.0\" CMOS, 2304x1296 @ 25fps main stream",
+    "2.4G Wi-Fi (IEEE 802.11b/g/n) with built-in antenna",
+    "dual-light Smart IR: 20m IR and 10m warm-light distance",
+    "built-in mic and speaker with two-way audio",
+    "512 GB microSD edge storage with ANR",
+    "digital WDR and Smart IR",
+    "3-axis adjustment, IP67 outdoor housing"
+  ],
+  "release_year": 2026,
+  "release_notes": "The Uniview Uho-B2D-M3F4D is a 3MP 1/3.0\" outdoor Wi-Fi bullet camera with a 4.0mm F1.6 lens, dual-light Smart IR to 20m and two-way audio. Verified against the official Uniview datasheet.",
+  "sources": [
+    "https://www.uniview.com/Products/Network_Cameras/"
+  ],
+  "last_verified": "2026-08-25",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 360,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/media/video1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/media/video2",
+      "verified": false,
+      "notes": "Uniview native RTSP: main /media/video1, sub /media/video2 (enable RTSP in the web UI). Verify on your unit."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Uniview; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use the generic ONVIF/RTSP profile."
+    }
+  },
+  "dimensions_mm": "148 x 78 x 78",
+  "weight_g": 310,
+  "operating_temp_c": "-30 to 60",
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x360",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}
