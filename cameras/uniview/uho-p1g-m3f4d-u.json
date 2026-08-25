@@ -1,0 +1,130 @@
+{
+  "id": "uniview-uho-p1g-m3f4d-u",
+  "brand": "Uniview",
+  "model": "Uho-P1G-M3F4D-U",
+  "aliases": [
+    "Uho-P1G-M3F4D-U-LA",
+    "3MP Outdoor 4G PT Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "4g",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "3MP"
+  },
+  "sensor": "1/3.0\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.0",
+    "aperture": "F1.6"
+  },
+  "field_of_view_deg": "75.0 horizontal / 40.0 vertical",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.003
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "DC 12V",
+    "consumption_w": 8,
+    "voltage": "12V (DC)"
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "3MP 1/3.0\" CMOS, 2304x1296 @ 25fps main stream",
+    "4G LTE-FDD / LTE-TDD network access (Nano-SIM)",
+    "pan 0 to 345 deg, tilt 0 to 90 deg, 20 presets",
+    "camera-side auto-tracking",
+    "dual-light Smart IR: 30m IR and 30m warm-light distance",
+    "built-in mic and speaker with two-way audio, sound and light warning",
+    "digital WDR and 4x digital zoom"
+  ],
+  "release_year": 2026,
+  "release_notes": "The Uniview Uho-P1G-M3F4D-U is a 3MP 1/3.0\" outdoor 4G pan-tilt camera with auto-tracking, dual-light Smart IR to 30m and two-way audio. Verified against the official Uniview datasheet.",
+  "sources": [
+    "https://www.uniview.com/Products/Network_Cameras/"
+  ],
+  "last_verified": "2026-08-25",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 360,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/media/video1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/media/video2",
+      "verified": false,
+      "notes": "Uniview native RTSP: main /media/video1, sub /media/video2 (enable RTSP in the web UI). Verify on your unit."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Uniview; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use the generic ONVIF/RTSP profile."
+    }
+  },
+  "dimensions_mm": "110 (dia) x 141 x 151",
+  "weight_g": 390,
+  "operating_temp_c": "-30 to 60",
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x360",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}
