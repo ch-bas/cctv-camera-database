@@ -1,0 +1,129 @@
+{
+  "id": "uniview-uho-s3e-m5td-u",
+  "brand": "Uniview",
+  "model": "Uho-S3E-M5TD-U",
+  "aliases": [
+    "5MP Indoor Pan & Tilt Wi-Fi Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2880,
+    "max_height": 1620,
+    "label": "5MP"
+  },
+  "sensor": "1/3.0\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.0",
+    "aperture": "F2.0"
+  },
+  "field_of_view_deg": "84.0 horizontal / 47.0 vertical",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 10,
+    "min_lux_color": 0.02
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "DC 5V/1.5A via USB Type-C",
+    "consumption_w": 6,
+    "voltage": "5V (DC)"
+  },
+  "power_source": [
+    "dc",
+    "usb"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "5MP 1/3.0\" CMOS, 2880x1620 @ 25fps main stream",
+    "pan 0 to 355 deg, tilt -15 to 90 deg, 20 presets",
+    "camera-side auto-tracking",
+    "dual-light Smart IR: 10m IR and 10m warm-light distance",
+    "Action Touch physical button for calling and privacy mode",
+    "2.4G Wi-Fi (IEEE 802.11b/g/n/ax) with built-in antenna",
+    "built-in mic and speaker with two-way audio"
+  ],
+  "release_year": 2026,
+  "release_notes": "The Uniview Uho-S3E-M5TD-U is a 5MP 1/3.0\" indoor Wi-Fi pan-tilt camera with a 4.0mm lens, dual-light Smart IR to 10m, auto-tracking, an Action Touch button and two-way audio. Verified against the official Uniview datasheet.",
+  "sources": [
+    "https://www.uniview.com/Products/Network_Cameras/"
+  ],
+  "last_verified": "2026-08-25",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 360,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/media/video1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/media/video2",
+      "verified": false,
+      "notes": "Uniview native RTSP: main /media/video1, sub /media/video2 (enable RTSP in the web UI). Verify on your unit."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Uniview; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use the generic ONVIF/RTSP profile."
+    }
+  },
+  "dimensions_mm": "80 (dia) x 126",
+  "weight_g": 210,
+  "operating_temp_c": "-10 to 50",
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2880x1620",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x360",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

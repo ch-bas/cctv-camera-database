@@ -1,0 +1,124 @@
+{
+  "id": "uniview-uho-p2g-m3f4dh-u",
+  "brand": "Uniview",
+  "model": "Uho-P2G-M3F4DH-U",
+  "aliases": [
+    "Uho-P2G-M3F4DH-U-AS",
+    "Uho-P2G-M3F4DH-U-LA",
+    "Uho-P2G-M3F4DH-U-EU",
+    "3MP 4G Solar Battery PT Camera"
+  ],
+  "markets": [
+    "EU",
+    "LATAM",
+    "AS"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "4g"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "3MP"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.0",
+    "aperture": "F1.0"
+  },
+  "field_of_view_deg": "84.3 horizontal / 46.1 vertical",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.0005
+  },
+  "ptz": {
+    "autotracking": false
+  },
+  "power": {
+    "method": "DC 5V/2A via USB Type-C, solar panel (5V/2A, 10W), 10 Ah battery",
+    "consumption_w": 6.5,
+    "voltage": "5V (DC)"
+  },
+  "power_source": [
+    "dc",
+    "usb",
+    "solar",
+    "battery"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "3MP 1/2.7\" CMOS, 2304x1296 @ 15fps main stream",
+    "4G LTE-FDD / LTE-TDD network access (Nano-SIM)",
+    "pan 0 to 345 deg, tilt 0 to 90 deg",
+    "dual-light Smart IR: 30m IR and 30m warm-light distance",
+    "sub-zero charging down to -20 C by heating the battery with solar energy",
+    "built-in mic and speaker with two-way audio",
+    "standard and polar night scene modes"
+  ],
+  "release_year": 2026,
+  "release_notes": "The Uniview Uho-P2G-M3F4DH-U is a 3MP 1/2.7\" solar-battery 4G pan-tilt camera with dual-light Smart IR to 30m and sub-zero charging down to -20 C. Verified against the official Uniview datasheet.",
+  "sources": [
+    "https://www.uniview.com/Products/Network_Cameras/"
+  ],
+  "last_verified": "2026-08-25",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 360,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/media/video1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/media/video2",
+      "verified": false,
+      "notes": "Uniview native RTSP: main /media/video1, sub /media/video2 (enable RTSP in the web UI). Single-stream 4G solar camera; verify on your unit."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Uniview; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use the generic ONVIF/RTSP profile."
+    }
+  },
+  "dimensions_mm": "197.2 (dia) x 293.2 x 287.9",
+  "weight_g": 940,
+  "operating_temp_c": "-20 to 50",
+  "video": {
+    "codecs": [
+      "H.265"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 15,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ]
+}
