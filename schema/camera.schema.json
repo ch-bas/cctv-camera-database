@@ -460,6 +460,14 @@
             "autotracking": {
               "type": "boolean",
               "description": "Whether Frigate can drive PTZ autotracking on this camera. Requires ONVIF relative movement (ptz.onvif_ptz: relative); false for absolute-only cameras like Reolink. Distinct from camera-side ptz.autotracking."
+            },
+            "onvif_port": {
+              "type": "integer",
+              "description": "ONVIF control port for Frigate's onvif: block (manual PTZ). Most brands default to 80 (the HTTP service port); set this only when a verified source gives a NON-default port, e.g. Tapo 2020 or Reolink 8000. Omit when it is the 80 default."
+            },
+            "two_way_audio": {
+              "type": "boolean",
+              "description": "Whether two-way audio (Frigate live-view talk, via the go2rtc backchannel) is available. Set true only when the datasheet confirms two-way audio AND the camera exposes ONVIF/RTSP. The exact backchannel method (go2rtc tapo://, RTSP #backchannel=1, ONVIF) is documented once in the Frigate guide rather than per camera."
             }
           }
         },
