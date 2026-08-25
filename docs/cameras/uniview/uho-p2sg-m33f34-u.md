@@ -1,6 +1,6 @@
 # Uniview Uho-P2SG-M33F34-U
 
-*Also known as: Uho-P2SG-M33F34-U-EU, 3MP+3MP Dual Lens 4G Outdoor PT Camera*
+*Also known as: Uho-P2SG-M33F34-U-LA, Uho-P2SG-M33F34-U-EU, 3MP+3MP Dual Lens 4G Outdoor PT Camera*
 
 | Field | Spec |
 |-------|------|

@@ -1,6 +1,6 @@
 # Uniview Uho-P1G-M3F4D-U
 
-*Also known as: Uho-P1G-M3F4D-U-LA, 3MP Outdoor 4G PT Camera*
+*Also known as: Uho-P1G-M3F4D-U-EU, Uho-P1G-M3F4D-U-LA, 3MP Outdoor 4G PT Camera*
 
 | Field | Spec |
 |-------|------|
