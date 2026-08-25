@@ -8,7 +8,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.5.0] — 2026-08-25
 
-Uniview expansion (3,469 → 3,479) — 10 cameras from official datasheets.
+Uniview expansion (3,469 → 3,491) — 22 cameras from official datasheets.
 
 ### Added
 - **IPC2324LB-ADZK-H** — 4MP 1/3" motorized-varifocal (2.8-12mm) IR bullet, 120 dB WDR, Smart IR 50m, built-in mic. (The model raised in Frigate discussion #19451 — the go2rtc-restream workaround for its h264 `sps_id` quirk is noted, unconfirmed, in `configs.frigate.notes`.)
@@ -18,6 +18,10 @@ Uniview expansion (3,469 → 3,479) — 10 cameras from official datasheets.
   - **Uho-P1A-M5F4D-U** (5MP Wi-Fi) / **Uho-P1A-M3F4D-U** (3MP Wi-Fi 6) / **Uho-P1G-M3F4D-U** (3MP 4G).
   - **Uho-P2SG-M33F34-U** / **Uho-P2S-M33F34-U** (dual 3MP) / **Uho-P2S-M55F34-U** (dual 5MP) — dual-lens panoramic + PTZ.
   - All IR + warm-light hybrid night vision, pan/tilt with auto-tracking where the datasheet states it.
+- **12 more UHO cameras** — the B2D / S3S / S3E lines:
+  - **UHO-B2D** (4) — 3/5MP outdoor Wi-Fi bullets (2.8/4mm), hybrid IR + warm light, IP67.
+  - **UHO-S3S** (4) — 3+3MP / 5+5MP indoor **dual-lens** pan-tilt (fixed panorama + PT detail channel), USB-C.
+  - **UHO-S3E** (4) — 3/5MP indoor Pan & Tilt with auto-tracking, USB-C.
 
 ### Changed
 - Backfilled `network.ethernet_speed_mbps` on **IPC2A12LP-ADF40KC-4G-JP** (the 4G ColorHunter bullet also carries a 10/100 RJ45 per its datasheet).
