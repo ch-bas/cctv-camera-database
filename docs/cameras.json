@@ -59314,6 +59314,107 @@
     "added": "2026-06-06"
   },
   {
+    "id": "asecam-8mp-poe-dome",
+    "brand": "ASECAM",
+    "model": "8MP PoE Dome",
+    "aliases": [
+      "ASECAM 8MP IP Camera",
+      "ASECAM Face Detection IP Camera",
+      "8MP PoE Dome (Xiongmai/XMEye OEM)"
+    ],
+    "type": "dome",
+    "connectivity": [
+      "ethernet"
+    ],
+    "resolution": {
+      "megapixels": 8,
+      "label": "4K UHD"
+    },
+    "sensor": "Sony CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8 / 3.6 (fixed options)",
+      "aperture": "F1.2",
+      "varifocal": false
+    },
+    "field_of_view_deg": "130 horizontal (2.8mm)",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 30,
+      "min_lux": 0.001
+    },
+    "power": {
+      "method": "PoE (48V) / DC 12V",
+      "voltage": "12V (DC) / PoE"
+    },
+    "power_source": [
+      "poe",
+      "dc"
+    ],
+    "storage": {
+      "onboard": false,
+      "nvr_compatible": true,
+      "cloud": false
+    },
+    "protocols": [
+      "onvif",
+      "rtsp",
+      "http"
+    ],
+    "ip_rating": "IP67",
+    "audio": {
+      "microphone": false,
+      "speaker": false,
+      "two_way": false
+    },
+    "features": [
+      "8MP (4K) fixed-lens dome, Sony CMOS sensor",
+      "AI: face / motion detection (varies by listing)",
+      "IR night vision 10-50m (listing-dependent), IR-CUT filter",
+      "H.265 / H.264 video compression",
+      "vandal-proof aluminium-alloy metal housing, IP67",
+      "XMEye (Xiongmai) P2P app; ONVIF / RTSP capable",
+      "motion detection with FTP / email photo + local alarm"
+    ],
+    "environment": [
+      "indoor",
+      "outdoor"
+    ],
+    "release_notes": "ASECAM-branded white-label 8MP PoE dome built on the Xiongmai (XMEye, www.xmeye.net) OEM platform. Sold on AliExpress / asecam.net under generic listing names (\"8MP IP Camera\", \"Face Detection IP Camera\") with minor marketing variants — face- vs motion-detection AI and IR 10-30m / 30-50m — on what is the same hardware; captured here as one representative entry. No official manufacturer datasheet exists; specs are taken verbatim from the retailer listings (megapixel WxH, IK rating, and exact IR distance are not published, so are omitted rather than guessed).",
+    "sources": [
+      "https://de.aliexpress.com/i/1005004641662711.html",
+      "https://www.asecam.net/asecam-8mp-4k-ip-ptz-30x-outdoor-camera.html"
+    ],
+    "last_verified": "2026-08-25",
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 640,
+          "height": 480,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/user={user}&password={pass}&channel=1&stream=0.sdp?",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/user={user}&password={pass}&channel=1&stream=1.sdp?",
+        "verified": false,
+        "notes": "Xiongmai/XMEye OEM — RTSP path is firmware-dependent and UNVERIFIED for this unit. The legacy path shown (main stream=0 / sub stream=1) is the classic Xiongmai form; newer firmware uses '/live/main' and '/live/sub' on port 80 instead (see Hiseeu, same OEM). Confirm the exact path via ONVIF auto-discovery or the camera's own docs before relying on it."
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "Xiongmai/XMEye OEM — use the ONVIF integration (default port 80). The XMEye cloud app is proprietary; ONVIF/RTSP is the local path."
+      },
+      "blue_iris": {
+        "profile": "ONVIF",
+        "notes": "Use the generic ONVIF/RTSP profile (Xiongmai OEM)."
+      }
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ]
+    }
+  },
+  {
     "id": "avigilon-h4ptze-dp30",
     "brand": "Avigilon",
     "model": "H4 PTZ 30x (2.0C-H4IRPTZ-DP30)",
@@ -285933,6 +286034,9 @@
         "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Preview_01_main",
         "best_substream": "rtsp://{user}:{pass}@{ip}:554/Preview_01_sub",
         "autotracking": false,
+        "verified": true,
+        "tested_by": "roger-shrop (GitHub #319)",
+        "tested_version": "0.17.2",
         "notes": "Frigate autotracking unsupported: Reolink uses absolute ONVIF PTZ; Frigate autotracking requires relative movement. Use the official /Preview_01_main path (Reolink RTSP KB); it serves the stream at the codec configured in the camera. The legacy /h264Preview_01_main path forces an H.264 re-encode and delivers noticeably lower quality on current firmware (community report, GitHub #280)."
       },
       "home_assistant": {
@@ -285962,7 +286066,7 @@
     "environment": [
       "outdoor"
     ],
-    "last_verified": "2026-07-06",
+    "last_verified": "2026-08-25",
     "added": "2026-07-06",
     "sensor_size_inch": 0.3704,
     "substream_count": 0,

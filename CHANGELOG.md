@@ -8,7 +8,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.5.0] — 2026-08-25
 
-Uniview expansion (3,469 → 3,491) — 22 cameras from official datasheets.
+Uniview + ASECAM expansion (3,469 → 3,492) — 23 new cameras, plus a community config verification.
 
 ### Added
 - **IPC2324LB-ADZK-H** — 4MP 1/3" motorized-varifocal (2.8-12mm) IR bullet, 120 dB WDR, Smart IR 50m, built-in mic. (The model raised in Frigate discussion #19451 — the go2rtc-restream workaround for its h264 `sps_id` quirk is noted, unconfirmed, in `configs.frigate.notes`.)
@@ -22,6 +22,10 @@ Uniview expansion (3,469 → 3,491) — 22 cameras from official datasheets.
   - **UHO-B2D** (4) — 3/5MP outdoor Wi-Fi bullets (2.8/4mm), hybrid IR + warm light, IP67.
   - **UHO-S3S** (4) — 3+3MP / 5+5MP indoor **dual-lens** pan-tilt (fixed panorama + PT detail channel), USB-C.
   - **UHO-S3E** (4) — 3/5MP indoor Pan & Tilt with auto-tracking, USB-C.
+- **ASECAM 8MP PoE dome** (new brand) — a white-label 8MP fixed-lens dome on the Xiongmai (XMEye) OEM platform, sold on AliExpress / asecam.net. Reseller-sourced (no official datasheet); unpublished fields omitted, near-duplicate listings consolidated, Frigate RTSP path marked unverified. Added after a Frigate user (discussion #19451) flagged that the site had no ASECAM entry.
+
+### Verified
+- **Reolink E1 Outdoor SE PoE (#319)** — community-confirmed working on Frigate 0.17.2 (both streams, no changes). Marked `configs.frigate.verified`; thanks @roger-shrop.
 
 ### Changed
 - Backfilled `network.ethernet_speed_mbps` on **IPC2A12LP-ADF40KC-4G-JP** (the 4G ColorHunter bullet also carries a 10/100 RJ45 per its datasheet).
