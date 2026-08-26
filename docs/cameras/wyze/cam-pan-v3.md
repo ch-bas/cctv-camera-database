@@ -33,6 +33,7 @@
 ## Sources
 
 - https://www.wyze.com/products/wyze-cam-pan
+- https://thingino.com/cameras/131
 
 ---
 *Auto-generated from wyze-cam-pan-v3.json — do not edit by hand.*

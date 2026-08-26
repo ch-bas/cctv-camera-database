@@ -29,6 +29,7 @@
 ## Sources
 
 - https://www.wyze.com/products/wyze-video-doorbell-v2
+- https://thingino.com/cameras/132
 
 ---
 *Auto-generated from wyze-video-doorbell-v2.json — do not edit by hand.*
