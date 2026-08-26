@@ -1,0 +1,111 @@
+{
+  "id": "jovision-jvs-n59-z40",
+  "brand": "Jovision",
+  "model": "JVS-N59-Z40",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2496,
+    "max_height": 1792,
+    "label": "5MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2496x1792",
+        "fps": 25
+      }
+    ]
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.3-215",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 250
+  },
+  "power": {
+    "method": "DC 12V/3.33A or PoE",
+    "consumption_w": 25
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "features": [
+    "40x optical zoom (5.3-215 mm)",
+    "pan 0-360° continuous, tilt -15° to 90° (pan 180°/s, tilt 75°/s)",
+    "Starlight ultra-low-light with built-in GPU chip; IR up to 250 m, warm light 60 m",
+    "Humanoid tracking zoom (auto-tracking)",
+    "Perimeter prevention: region intrusion, line crossing, motion detection",
+    "External audio input/output with two-way intercom",
+    "2 alarm inputs and 2 alarm outputs"
+  ],
+  "dimensions_mm": "400 x 325 x 325",
+  "weight_g": 3500,
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://img.bjyyb.net/sites/69500/69884/20250710110350133.pdf",
+    "https://www.jovisionsecurity.com/products/ip_camera/"
+  ],
+  "last_verified": "2026-08-26",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:8554/live0.264",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:8554/live1.264",
+      "two_way_audio": true,
+      "verified": false,
+      "notes": "Jovision (CloudSEE) RTSP on non-standard port 8554 — main /live0.264, sub /live1.264. Enable ONVIF/RTSP in the web UI; paths vary by firmware — use ONVIF autodiscovery if these fail."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Generic ONVIF integration; Jovision RTSP is on port 8554."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use Generic ONVIF/RTSP; Jovision default RTSP port is 8554."
+    }
+  }
+}

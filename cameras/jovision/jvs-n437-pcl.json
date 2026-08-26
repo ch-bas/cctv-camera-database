@@ -1,0 +1,112 @@
+{
+  "id": "jovision-jvs-n437-pcl",
+  "brand": "Jovision",
+  "model": "JVS-N437-PCL",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 25
+      }
+    ]
+  },
+  "sensor": "1/3\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "varifocal": false
+  },
+  "field_of_view_deg": "98.4 horizontal / 53.4 vertical",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 9
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512
+  },
+  "features": [
+    "Passenger-flow / people counting statistics",
+    "VQC (Video Quality Catalyst) technology",
+    "Built-in mic and speaker",
+    "4 white LEDs + 4 IR LEDs (IR 30 m, white 20 m)",
+    "Humanoid and vehicle detection",
+    "Region intrusion, line crossing detection",
+    "WDR",
+    "Smart defog",
+    "Privacy mask (up to 8 areas)",
+    "Ceiling mount"
+  ],
+  "dimensions_mm": "108 x 104 x 106",
+  "weight_g": 370,
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://img.bjyyb.net/sites/69500/69884/20260116144347544.pdf",
+    "https://www.jovisionsecurity.com/products/ip_camera/"
+  ],
+  "last_verified": "2026-08-26",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:8554/live0.264",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:8554/live1.264",
+      "two_way_audio": true,
+      "verified": false,
+      "notes": "Jovision (CloudSEE) RTSP on non-standard port 8554 — main /live0.264, sub /live1.264. Enable ONVIF/RTSP in the web UI; paths vary by firmware — use ONVIF autodiscovery if these fail."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Generic ONVIF integration; Jovision RTSP is on port 8554."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use Generic ONVIF/RTSP; Jovision default RTSP port is 8554."
+    }
+  }
+}

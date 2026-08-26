@@ -1,0 +1,103 @@
+{
+  "id": "jovision-jvs-n913-k1-pe",
+  "brand": "Jovision",
+  "model": "JVS-N913-K1-PE",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "3MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 25
+      }
+    ]
+  },
+  "sensor": "1/2.9\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4",
+    "varifocal": false
+  },
+  "field_of_view_deg": "78.5 horizontal / 42.8 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20
+  },
+  "power": {
+    "method": "PoE / DC 12V",
+    "consumption_w": 6
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "4 high-power IR LEDs, IR up to 20 m",
+    "Starlight low-light function",
+    "BLC/HLC, 3D DNR, smart defog",
+    "motion detection, 8-area privacy mask",
+    "built-in mic with audio recording",
+    "CloudSEE 2.0 / ONVIF 2.4"
+  ],
+  "dimensions_mm": "178 x 88 x 85.7",
+  "weight_g": 170,
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://img.bjyyb.net/sites/69500/69884/20220512144551128.pdf",
+    "https://www.jovisionsecurity.com/products/ip_camera/"
+  ],
+  "last_verified": "2026-08-26",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:8554/live0.264",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:8554/live1.264",
+      "verified": false,
+      "notes": "Jovision (CloudSEE) RTSP on non-standard port 8554 — main /live0.264, sub /live1.264. Enable ONVIF/RTSP in the web UI; paths vary by firmware — use ONVIF autodiscovery if these fail."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Generic ONVIF integration; Jovision RTSP is on port 8554."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use Generic ONVIF/RTSP; Jovision default RTSP port is 8554."
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "id": "jovision-jvs-n97-sw",
+  "brand": "Jovision",
+  "model": "JVS-N97-SW",
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "power_source": [
+    "battery"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "3MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 25
+      }
+    ]
+  },
+  "sensor": "1/2.9\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "78.6 horizontal / 42 vertical",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 40
+  },
+  "power": {
+    "method": "Built-in 10000 mAh lithium battery with 8W solar panel; DC 5V/2A",
+    "consumption_w": 6
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256
+  },
+  "features": [
+    "Solar-powered with built-in 10000 mAh lithium battery and 8W solar panel",
+    "Full-color imaging",
+    "Pan/tilt movement",
+    "Wi-Fi and AP connection (IEEE 802.11b/g/n 2.4GHz)",
+    "4 warm LEDs + 2 IR LEDs (white 30 m, IR 40 m)",
+    "Warm light, infrared, intelligent dual light, sound and light warning modes",
+    "Humanoid detection",
+    "Two-way voice intercom with volume adjustment",
+    "Low-battery standby with PIR and app wake-up",
+    "Digital 3D noise reduction",
+    "DWDR",
+    "Privacy mask (up to 8 areas)"
+  ],
+  "dimensions_mm": "150 x 155 x 255",
+  "weight_g": 700,
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://img.bjyyb.net/sites/69500/69884/20251203152524157.pdf",
+    "https://www.jovisionsecurity.com/products/ip_camera/"
+  ],
+  "last_verified": "2026-08-26",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:8554/live0.264",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:8554/live1.264",
+      "two_way_audio": true,
+      "verified": false,
+      "notes": "Jovision (CloudSEE) RTSP on non-standard port 8554 — main /live0.264, sub /live1.264. Battery/solar camera — RTSP may sleep between PIR wake-ups; enable ONVIF/RTSP in the web UI. Paths vary by firmware — use ONVIF autodiscovery if these fail."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Generic ONVIF integration; Jovision RTSP is on port 8554. Battery/solar camera may sleep between events."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use Generic ONVIF/RTSP; Jovision default RTSP port is 8554."
+    }
+  }
+}
