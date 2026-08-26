@@ -8,9 +8,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.6.0] — 2026-08-26
 
-Frigate configs go beyond the detect/record baseline (#299).
+Frigate configs go beyond the detect/record baseline (#299), plus two new Dahua cameras (3,492 → 3,494).
 
 ### Added
+- **Dahua IPC-HFW3441T-AS-P** (bullet) + **IPC-HDBW3441R-AS-P** (dome, IK10) — 4MP 1/2.7" starlight wide-angle (2.1mm / 180° FOV) WizSense cameras with built-in mic.
 - **`configs.frigate.onvif_port`** and **`configs.frigate.two_way_audio`** schema fields — for Frigate manual PTZ and live-view talk.
 - **`onvif_port` populated on 2,715 cameras**: `80` on ONVIF-capable cameras (the HTTP/ONVIF service port), plus the verified non-defaults `2020` (Tapo) and `8000` (Reolink). Only set on ONVIF cameras — never guessed onto cloud-only devices.
 - **`two_way_audio: true` on 1,376 cameras** — every camera whose datasheet confirms two-way audio *and* that exposes ONVIF/RTSP (so Frigate's talk button works via the go2rtc backchannel).
