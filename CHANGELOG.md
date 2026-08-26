@@ -8,16 +8,25 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.6.0] — 2026-08-26
 
-Frigate configs go beyond the detect/record baseline (#299), plus two new Dahua cameras (3,492 → 3,494).
+A new brand (Jovision, 57 cameras), Frigate configs beyond the detect/record baseline (#299), and a large ABUS datasheet-verification pass. **3,492 → 3,559 cameras (+67); 78 brands.**
 
 ### Added
-- **Dahua IPC-HFW3441T-AS-P** (bullet) + **IPC-HDBW3441R-AS-P** (dome, IK10) — 4MP 1/2.7" starlight wide-angle (2.1mm / 180° FOV) WizSense cameras with built-in mic.
-- **`configs.frigate.onvif_port`** and **`configs.frigate.two_way_audio`** schema fields — for Frigate manual PTZ and live-view talk.
-- **`onvif_port` populated on 2,715 cameras**: `80` on ONVIF-capable cameras (the HTTP/ONVIF service port), plus the verified non-defaults `2020` (Tapo) and `8000` (Reolink). Only set on ONVIF cameras — never guessed onto cloud-only devices.
-- **`two_way_audio: true` on 1,376 cameras** — every camera whose datasheet confirms two-way audio *and* that exposes ONVIF/RTSP (so Frigate's talk button works via the go2rtc backchannel).
-- **[docs/frigate-beyond-baseline.md](docs/frigate-beyond-baseline.md)** — the go2rtc backchannel methods, per-brand ONVIF-port table, and PTZ autotracking rules, documented once instead of repeated per record.
+- **New brand — Jovision (57 cameras).** The JVS-* / CloudSEE line, authored from official Jovision datasheets: full-color PoE bullets & turrets (EDL / YDL / TDL / SDL / MDL / UDL / XDL / JDL), 6MP & 8MP UDL, 4K-metal (N410K / N430K-SDL), motorized-zoom (ZDL) and the **N819-LPR** ANPR camera, VDB vandal domes, Z-series PTZ, WiFi pan/tilt (incl. a solar model), specialty **face-capture / people-counting / starlight** domes, and two analog-HD (AHD/TVI/CVI/CVBS) full-color cameras. RTSP on the brand's non-standard port **8554** (`/live0.264` main, `/live1.264` sub); ONVIF/CloudSEE. Illuminator-on "0 lux" figures were omitted, not recorded as min-lux.
+- **ACTi A984** — 8MP outdoor PTZ (36× zoom, 150 dB WDR, deep-learning AI 2.0); the one model on ACTi's new-products page not already covered.
+- **5 Kedacom cameras** — IPC2411-HN-DIR / -PIR / -SIR (4MP), IPC2211-HN-SIR (2MP), IPC2232-AN-DIR (2MP vandal IR).
+- **Dahua IPC-HFW3441T-AS-P** (bullet) + **IPC-HDBW3441R-AS-P** (dome, IK10) — 4MP 1/2.7" starlight wide-angle (2.1mm / 180° FOV) WizSense with built-in mic.
+- **2 ABUS analog cameras** — TVCC32512 (tube) + TVCC52512 (dome), FlexNiteView HD.
+- **`configs.frigate.onvif_port` and `two_way_audio` schema fields** (#299), populated dataset-wide: `onvif_port` on 2,715 ONVIF cameras (`80`, plus the verified non-defaults `2020` Tapo / `8000` Reolink — never guessed onto cloud-only devices), and `two_way_audio: true` on 1,376 cameras with datasheet-confirmed two-way audio over ONVIF/RTSP (so Frigate's talk button works via the go2rtc backchannel).
+- **[docs/frigate-beyond-baseline.md](docs/frigate-beyond-baseline.md)** — go2rtc backchannel methods, per-brand ONVIF-port table, and PTZ autotracking rules, documented once instead of per record.
 
-All values are datasheet- or brand-documentation-verified (no fabricated ports or methods).
+### Changed / Fixed
+- **ABUS datasheet-verification pass** — 11 records re-sourced to official ABUS product sheets / RS-online datasheet PDFs and cross-checked field-by-field. Real corrections: net weight on **IPCS64611A / IPCS54611A / IPCB58511A** (gross/net mix-ups, 500 g → true net); horizontal FOV on **IPCB58511A** (102°→110°) and **IPCB78521** (35–115°→45–108°); main-stream fps on **IPCB38511B** (20→25). Full backfills of the sparse EOL records **IPCA32500** and **IPCA66500** (sensor / FOV / IR / dimensions / power). Substreams and color min-lux added across the set.
+- **Dahua / Hikvision stream accuracy** — fixed wrong sub-stream resolutions on the Dahua WizMind-X + Wi-Fi records and added their real third stream; backfilled the missing 1280×720 third stream on 6 Hikvision DS-2CD30xx.
+
+### Sources (#222)
+- Resolved the ABUS entries in the automated dead-source-URL report: dropped confirmed-dead URLs where a live source remained (28 cameras) and replaced all-dead source lists with verified-live official ABUS URLs (IPCB74515B + the PPIC consumer line). Side effect: `field_of_view_deg` coverage (#179) rose to ~92%.
+
+All values are datasheet- or brand-documentation-verified — no fabricated specs, ports, or sources.
 
 ## [2.5.0] — 2026-08-25
 
