@@ -12,7 +12,7 @@
 | Sensor | 1/2.7" starlight CMOS |
 | Lens | 1× 2.1 (fixed, wide angle)mm F2.0 |
 | Field of view | 180 horizontal / 78 vertical° |
-| Night vision | ir (20m), 0.001 lux |
+| Night vision | ir (20m), 0.001 lux, 0.01 lux color |
 | Power | PoE / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp, http |
@@ -27,6 +27,7 @@
 |--------|-----------|-----|-------|
 | main | 2688x1520 | 30 | H.265 |
 | sub | 704x576 | 25 | H.265 |
+| third | 1920x1080 | 30 | H.265 |
 
 ## Features
 
