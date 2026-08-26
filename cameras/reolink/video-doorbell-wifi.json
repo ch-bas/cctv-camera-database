@@ -88,7 +88,9 @@
       },
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Preview_01_main",
       "best_substream": "rtsp://{user}:{pass}@{ip}:554/Preview_01_sub",
-      "notes": "Portrait 3:4 aspect ratio (white model 1920x2560). Set detect to 720x960 to maintain ratio. For two-way audio: use go2rtc as the RTSP proxy — Frigate does not natively handle talk-back. In go2rtc config add the camera as an RTSP source, then enable WebRTC with opus re-encoding for the back-channel: 'streams: doorbell: - rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main - ffmpeg:doorbell#audio=opus'. Button press events are not exposed via RTSP; use HA Reolink integration's Visitor binary_sensor or subscribe to ONVIF events via MQTT. Use the official /Preview_01_main path (Reolink RTSP KB); it serves the stream at the codec configured in the camera. The legacy /h264Preview_01_main path forces an H.264 re-encode and delivers noticeably lower quality on current firmware (community report, GitHub #280)."
+      "notes": "Portrait 3:4 aspect ratio (white model 1920x2560). Set detect to 720x960 to maintain ratio. For two-way audio: use go2rtc as the RTSP proxy — Frigate does not natively handle talk-back. In go2rtc config add the camera as an RTSP source, then enable WebRTC with opus re-encoding for the back-channel: 'streams: doorbell: - rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main - ffmpeg:doorbell#audio=opus'. Button press events are not exposed via RTSP; use HA Reolink integration's Visitor binary_sensor or subscribe to ONVIF events via MQTT. Use the official /Preview_01_main path (Reolink RTSP KB); it serves the stream at the codec configured in the camera. The legacy /h264Preview_01_main path forces an H.264 re-encode and delivers noticeably lower quality on current firmware (community report, GitHub #280).",
+      "onvif_port": 8000,
+      "two_way_audio": true
     },
     "home_assistant": {
       "integration": "reolink",

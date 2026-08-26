@@ -29,6 +29,18 @@
         "resolution": "2688x1520",
         "fps": 25,
         "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 10,
+        "codec": "H.265"
       }
     ]
   },
@@ -39,10 +51,11 @@
     "aperture": "F1.0",
     "varifocal": false
   },
-  "field_of_view_deg": "110 horizontal",
+  "field_of_view_deg": "110 horizontal / 57 vertical",
   "night_vision": {
     "type": "hybrid",
-    "range_m": 30
+    "range_m": 30,
+    "min_lux_color": 0.0005
   },
   "power": {
     "method": "PoE (IEEE 802.3af) / 12V DC"
@@ -64,14 +77,13 @@
     "two_way": true
   },
   "features": [
-    "120dB WDR",
-    "AI object detection (people/vehicles)",
-    "full-color night vision",
-    "white-light deterrence LEDs",
-    "IR LEDs",
+    "120dB WDR, BLC, HLC, 3D DNR",
+    "AI object detection (people/vehicles), VCA-switched IR/color night vision (Gecko)",
+    "VCA: tripwire, intrusion, area entry, area exit",
+    "full-color night vision, white-light LEDs up to 30 m + IR up to 30 m",
+    "2-way audio (integrated mic + loudspeaker), flashing-light + audio deterrence",
     "digital zoom",
-    "backlight compensation",
-    "alarm I/O",
+    "alarm I/O (1 in / 1 out), relay output",
     "ONVIF Profile G/S/T"
   ],
   "operating_temp_c": "-30 to 60",
@@ -85,9 +97,7 @@
     "EU"
   ],
   "sources": [
-    "https://www.expert-security.de/abus-ipca54572a-ip-kamera-4mpx-t-n-ir-poe-ip67.html",
-    "https://firstmall.de/ABUS-IPCA54572A-IP-Kamera-Kugeldome-4-MPx-IR-WL-mit-2WAY-Audio-Alarmierung",
-    "https://fr.rs-online.com/web/p/videosurveillance-cameras/0180161"
+    "https://docs.rs-online.com/d280/A700000012602163.pdf"
   ],
   "configs": {
     "frigate": {
@@ -100,7 +110,9 @@
       "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
       "recommended_stream_type": "go2rtc",
       "verified": false,
-      "notes": "ABUS Performance Line is Hikvision OEM — Hikvision-style RTSP paths (101 main / 102 sub / 103 third). Enable ONVIF/RTSP in the camera web UI (Network > Integration Protocol) first. Pattern from the IPCx OEM family (iSpyConnect, HA community); not individually bench-tested."
+      "notes": "ABUS Performance Line is Hikvision OEM — Hikvision-style RTSP paths (101 main / 102 sub / 103 third). Enable ONVIF/RTSP in the camera web UI (Network > Integration Protocol) first. Pattern from the IPCx OEM family (iSpyConnect, HA community); not individually bench-tested.",
+      "onvif_port": 80,
+      "two_way_audio": true
     },
     "home_assistant": {
       "integration": "onvif",
@@ -113,5 +125,5 @@
       "notes": "ABUS Performance Line is Hikvision OEM — select the 'Hikvision' profile (or Generic ONVIF/RTSP)."
     }
   },
-  "last_verified": "2026-07-05"
+  "last_verified": "2026-08-26"
 }

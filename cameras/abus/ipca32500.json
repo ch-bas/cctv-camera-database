@@ -15,7 +15,8 @@
   "video": {
     "max_fps": 30,
     "codecs": [
-      "H.264"
+      "H.264",
+      "MJPEG"
     ],
     "streams": [
       {
@@ -32,11 +33,16 @@
     "focal_length_mm": "3.0 to 9.0",
     "varifocal": true
   },
+  "field_of_view_deg": "35-96 horizontal",
   "night_vision": {
-    "type": "ir"
+    "type": "ir",
+    "range_m": 20,
+    "min_lux": 0.005,
+    "min_lux_color": 0.01
   },
   "storage": {
     "onboard": true,
+    "max_microsd_gb": 128,
     "nvr_compatible": true
   },
   "protocols": [
@@ -44,29 +50,35 @@
     "rtsp"
   ],
   "ip_rating": "IP24",
+  "ik_rating": "IK10",
   "power": {
-    "method": "PoE"
+    "method": "PoE (802.3af) / 12V DC"
   },
   "power_source": [
-    "poe"
+    "poe",
+    "dc"
   ],
   "audio": {
+    "microphone": false,
     "two_way": true
   },
   "features": [
     "Sony STARVIS sensor with Tamron 3-9 mm lens",
     "True WDR",
     "IR LEDs",
-    "16 GB internal memory for edge recording",
-    "ONVIF"
+    "16 GB microSD internal storage for edge recording (optional up to 128 GB)",
+    "3x optical motor-zoom (Tamron), CVBS/BNC output",
+    "ONVIF Profile S"
   ],
+  "dimensions_mm": "141 x 141 x 98",
+  "weight_g": 680,
   "environment": [
     "indoor"
   ],
   "status": "discontinued",
-  "release_notes": "Archived/EOL Advanced-line (2017 generation) indoor IP dome 2 MPx — predecessor platform of the IPCA72510. Specs from the RS Components (authorized distributor) product listing: Sony STARVIS + Tamron 3-9 mm, 1080p @ 30 fps, IP24 indoor, PoE, audio, 16 GB internal memory, 141 mm width. Single-distributor sourced and flagged accordingly — aperture, FOV, IR range, full dimensions, and temperature omitted pending an official datasheet. Sibling IPCA22500 (official 2017 manual exists on abus.com) remains excluded: identity and resolution unconfirmed.",
+  "release_notes": "Archived/EOL Advanced-line (2017 generation, © ABUS 08/2018) indoor IP dome 2 MPx — predecessor platform of the IPCA72510. Verified against the official ABUS product-sheet datasheet: Sony Starvis Exmor R + Sony Xarina DSP, Tamron 3.0-9.0 mm motor-zoom (3x optical), 1080p @ 30 fps, H.264/MJPEG, True WDR 120 dB, IR up to 20 m (12 LEDs), 35-96° FOV, IP24 / IK10 indoor, PoE 802.3af + 12V DC, 2-way audio (no built-in mic), 16 GB microSD (opt. 128 GB), 141x141x98 mm, 0.68 kg, min operating temp -10 °C. Aperture not stated on the datasheet (omitted). Sibling IPCA22500 remains excluded: identity and resolution unconfirmed.",
   "sources": [
-    "https://uk.rs-online.com/web/p/cctv-cameras/1774399"
+    "https://docs.rs-online.com/2411/0900766b8166ee22.pdf"
   ],
   "configs": {
     "frigate": {
@@ -77,7 +89,9 @@
       },
       "recommended_stream_type": "go2rtc",
       "verified": false,
-      "notes": "2017 Advanced line (Sony/Tamron platform, not Hikvision OEM) — RTSP path undocumented. Use go2rtc ONVIF autodiscovery (onvif://{user}:{pass}@{ip}) to resolve the stream URL."
+      "notes": "2017 Advanced line (Sony/Tamron platform, not Hikvision OEM) — RTSP path undocumented. Use go2rtc ONVIF autodiscovery (onvif://{user}:{pass}@{ip}) to resolve the stream URL.",
+      "onvif_port": 80,
+      "two_way_audio": true
     },
     "home_assistant": {
       "integration": "onvif",
@@ -90,5 +104,5 @@
       "notes": "Use Generic ONVIF/RTSP with 'Find/inspect' to discover the stream path."
     }
   },
-  "last_verified": "2026-07-26"
+  "last_verified": "2026-08-26"
 }

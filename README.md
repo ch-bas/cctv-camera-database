@@ -1,10 +1,10 @@
 # CCTV Camera Database
 
-An open, structured database of 3,492 CCTV / IP camera models and their technical specifications, covering 77 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
+An open, structured database of 3,559 CCTV / IP camera models and their technical specifications, covering 78 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
 
 [![build](https://github.com/ch-bas/cctv-camera-database/actions/workflows/build.yml/badge.svg)](https://github.com/ch-bas/cctv-camera-database/actions/workflows/build.yml)
-[![cameras](https://img.shields.io/badge/cameras-3%2C492-blue)](data/cameras.json)
-[![brands](https://img.shields.io/badge/brands-77-green)](cameras/)
+[![cameras](https://img.shields.io/badge/cameras-3%2C559-blue)](data/cameras.json)
+[![brands](https://img.shields.io/badge/brands-78-green)](cameras/)
 [![license](https://img.shields.io/badge/license-CC0-lightgrey)](LICENSE)
 
 ### Field coverage
@@ -19,10 +19,10 @@ An open, structured database of 3,492 CCTV / IP camera models and their technica
 
 <p align="center">
   <a href="https://cctv-database.com">
-    <img src="assets/cctv-database-showcase.gif" alt="CCTV Camera Database — search 3,492 cameras, browse full specs, copy ready-to-use Frigate configs, and audit the open dataset with the built-in QA tool" width="640">
+    <img src="assets/cctv-database-showcase.gif" alt="CCTV Camera Database — search 3,559 cameras, browse full specs, copy ready-to-use Frigate configs, and audit the open dataset with the built-in QA tool" width="640">
   </a>
   <br>
-  <sub><b><a href="https://cctv-database.com">cctv-database.com</a></b> — search 3,492 cameras · full spec sheets · copy-paste Frigate configs · open &amp; auditable</sub>
+  <sub><b><a href="https://cctv-database.com">cctv-database.com</a></b> — search 3,559 cameras · full spec sheets · copy-paste Frigate configs · open &amp; auditable</sub>
 </p>
 
 ---
@@ -49,7 +49,7 @@ Prefer to self-host or browse offline? A [standalone demo](docs/demo.html) (just
 - **Sort** — click any column header to sort ascending/descending
 - **Detail drawer** — click a row to slide open the full spec sheet (resolution, connectivity, protocols, storage, audio, source links)
 - **Community notes** — user-reported quirks and behaviors per camera, sourced and attributed, kept separate from datasheet specs
-- **Pagination** — page through all 3,492 cameras, 25 per page
+- **Pagination** — page through all 3,559 cameras, 25 per page
 - **Stats bar** — live counts for total cameras, brands, 4K+, WiFi, and no-subscription models
 
 ---
@@ -76,13 +76,13 @@ cctv-camera-database/
 ├── cameras/              # source of truth — one JSON file per camera, grouped by brand
 │   ├── hikvision/        # 467 cameras
 │   ├── i-pro/            # 354 cameras
-│   ├── dahua/            # 350 cameras
-│   ├── acti/             # 248 cameras
+│   ├── dahua/            # 352 cameras
+│   ├── acti/             # 249 cameras
 │   ├── bosch/            # 153 cameras
-│   ├── abus/             # 142 cameras
-│   └── …71 more brands
+│   ├── abus/             # 144 cameras
+│   └── …72 more brands
 ├── data/                 # GENERATED — do not edit by hand
-│   ├── cameras.json      # all 3,492 cameras as one array
+│   ├── cameras.json      # all 3,559 cameras as one array
 │   ├── cameras.csv       # flattened, spreadsheet-friendly
 │   └── rtsp-patterns.json  # CC0 brand-level RTSP URL layer (172 brands)
 ├── strix/
@@ -127,6 +127,10 @@ RTSP_PATTERNS_DATE=$(date +%Y-%m-%d) node scripts/build-rtsp-patterns.js
 ### Verifying Frigate configs
 
 The shipped `configs.frigate` snippets are generated; run one of these cameras and you can mark it **community-verified** (`configs.frigate.verified` / `tested_by` / `tested_version`) via the [Verify a Frigate config](../../issues/new?template=verify-frigate-config.yml) issue form.
+
+### Frigate: beyond the baseline (ONVIF PTZ + two-way audio)
+
+Each `configs.frigate` block ships a working detect/record baseline, plus structured fields for the deeper integrations: `autotracking`, **`onvif_port`** (the ONVIF control port for manual PTZ — 80 on most cameras, `2020` on Tapo, `8000` on Reolink), and **`two_way_audio`** (Frigate live-view talk via the go2rtc backchannel, set where the datasheet confirms two-way audio). The go2rtc methods, per-brand port table, and autotracking rules are documented once in **[docs/frigate-beyond-baseline.md](docs/frigate-beyond-baseline.md)** rather than repeated per camera.
 
 ### NetBox device-type export
 
@@ -176,38 +180,39 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 
 | Metric | Count |
 |--------|-------|
-| Total cameras | **3,492** |
-| Brands | **77** |
+| Total cameras | **3,559** |
+| Brands | **78** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
-| PoE wired | 2,670 |
-| WiFi | 627 |
-| Battery / wire-free | 208 |
-| 4K / 8MP+ | 957 |
-| 4–7MP | 1,445 |
-| Under 4MP | 1,090 |
-| With integration configs (Frigate / Home Assistant) | 2,924 |
-| With color-lux rating (`night_vision.min_lux_color`) | 2,246 |
+| PoE wired | 2,727 |
+| WiFi | 633 |
+| Battery / wire-free | 209 |
+| 4K / 8MP+ | 969 |
+| 4–7MP | 1,473 |
+| Under 4MP | 1,117 |
+| With integration configs (Frigate / Home Assistant) | 2,987 |
+| With color-lux rating (`night_vision.min_lux_color`) | 2,270 |
 
-### All 77 brands
+### All 78 brands
 
 <!-- brands-table:start (auto-generated by scripts/build.js — do not edit counts by hand; edit the Segment text and it is preserved) -->
 | Brand | Cameras | Segment |
 |-------|---------|---------|
 | Hikvision | 467 | Enterprise + consumer, global |
 | i-PRO | 354 | Enterprise AI (ex-Panasonic), JP/global |
-| Dahua | 350 | Enterprise + consumer, global |
-| ACTi | 248 | Enterprise IP + analog, NDAA, TW/global |
+| Dahua | 352 | Enterprise + consumer, global |
+| ACTi | 249 | Enterprise IP + analog, NDAA, TW/global |
 | Bosch | 153 | Enterprise + thermal, EU/global |
-| ABUS | 142 | Consumer + professional, GDPR-first, DE/AT/CH |
+| ABUS | 144 | Consumer + professional, GDPR-first, DE/AT/CH |
 | Annke | 140 | Prosumer, global |
 | Uniview | 134 | Enterprise NDAA, global |
 | Reolink | 127 | Prosumer, no-subscription, global |
 | EZVIZ (Hikvision) | 87 | Consumer, global |
 | Axis | 81 | Enterprise premium, global |
 | Digital Watchdog | 70 | — |
+| Kedacom | 63 | Enterprise, CN/global |
 | Speco | 61 | Professional/commercial (NDAA), US |
 | Hi-Focus | 60 | Made-in-India, BIS certified, IN |
-| Kedacom | 58 | Enterprise, CN/global |
+| Jovision | 57 | — |
 | IMOU (Dahua) | 56 | Consumer + prosumer, global |
 | Tapo (TP-Link) | 55 | Consumer budget, global |
 | Eufy (Anker) | 46 | Consumer no-subscription, global |

@@ -27,9 +27,19 @@
     ],
     "streams": [
       {
-        "name": "main",
+        "name": "Stream 1",
         "resolution": "3840x2160",
         "fps": 20
+      },
+      {
+        "name": "Stream 2",
+        "resolution": "640x480",
+        "fps": 25
+      },
+      {
+        "name": "Stream 3",
+        "resolution": "1920x1080",
+        "fps": 10
       }
     ]
   },
@@ -39,13 +49,20 @@
     "focal_length_mm": "2.8",
     "varifocal": false
   },
-  "field_of_view_deg": "107 horizontal, 55 vertical",
+  "field_of_view_deg": "107 horizontal, 57 vertical",
   "night_vision": {
     "type": "ir",
-    "range_m": 40
+    "range_m": 40,
+    "min_lux_color": 0.005
   },
   "power": {
-    "method": "PoE (IEEE 802.3af) / 12V DC"
+    "method": "PoE (IEEE 802.3af) / 12V DC",
+    "consumption_w": 6
+  },
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
   },
   "storage": {
     "onboard": true,
@@ -62,13 +79,15 @@
     "120dB WDR",
     "IK10 vandal resistant",
     "person/vehicle detection (object recognition)",
+    "tripwire detection",
+    "intrusion detection",
     "backlight compensation",
     "4 privacy zones",
     "NAS recording support"
   ],
   "operating_temp_c": "-25 to 60",
   "dimensions_mm": "170 x 70 x 69",
-  "weight_g": 500,
+  "weight_g": 560,
   "environment": [
     "indoor",
     "outdoor"
@@ -92,7 +111,8 @@
       "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
       "recommended_stream_type": "go2rtc",
       "verified": false,
-      "notes": "ABUS TVIP Performance Line is Hikvision OEM (TVIP82561 shares an ABUS manual with the IPCS84511) — Hikvision-style RTSP paths (101 main / 102 sub / 103 third); /ch1/main also accepted. Enable ONVIF/RTSP + create an ONVIF user in the web UI first. Not individually bench-tested."
+      "notes": "ABUS TVIP Performance Line is Hikvision OEM (TVIP82561 shares an ABUS manual with the IPCS84511) — Hikvision-style RTSP paths (101 main / 102 sub / 103 third); /ch1/main also accepted. Enable ONVIF/RTSP + create an ONVIF user in the web UI first. Not individually bench-tested.",
+      "onvif_port": 80
     },
     "home_assistant": {
       "integration": "onvif",
@@ -105,5 +125,5 @@
       "notes": "ABUS Performance Line is Hikvision OEM — select the 'Hikvision' profile (or Generic ONVIF/RTSP)."
     }
   },
-  "last_verified": "2026-07-05"
+  "last_verified": "2026-08-26"
 }

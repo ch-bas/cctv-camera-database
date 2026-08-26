@@ -48,7 +48,7 @@
     "aperture": "F1.0",
     "varifocal": false
   },
-  "field_of_view_deg": "108 horizontal",
+  "field_of_view_deg": "108 horizontal / 55 vertical",
   "night_vision": {
     "type": "color",
     "range_m": 30,
@@ -73,10 +73,11 @@
   "features": [
     "full-color day/night",
     "white light LEDs",
-    "object detection (person/vehicle)",
-    "video content analysis",
+    "object classification (person/vehicle)",
+    "VCA: tripwire, intrusion, region entrance, region exit",
     "smart events",
-    "120dB WDR",
+    "120dB WDR, BLC, HLC, 3D DNR",
+    "digital zoom",
     "motion detection (8 zones)",
     "4 privacy zones",
     "region of interest",
@@ -84,15 +85,13 @@
   ],
   "operating_temp_c": "-25 to 60",
   "dimensions_mm": "139 x 139 x 128",
-  "weight_g": 500,
+  "weight_g": 1000,
   "environment": [
     "indoor",
     "outdoor"
   ],
   "sources": [
-    "https://www.expert-security.de/abus-ipcs54611a-ip-kamera-4mpx-t-n-weisslicht-poe.html",
-    "https://www.alarm-technik.eu/IP-Kugeldome-4-MPx-2.8-mm-WL-ABUS-IPCS54611A",
-    "https://de.rs-online.com/web/p/uberwachungskamera/2728628"
+    "https://docs.rs-online.com/9eff/A700000010137263.pdf"
   ],
   "configs": {
     "frigate": {
@@ -105,7 +104,8 @@
       "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
       "recommended_stream_type": "go2rtc",
       "verified": false,
-      "notes": "ABUS Performance Line is Hikvision OEM — Hikvision-style RTSP paths (101 main / 102 sub / 103 third). Enable ONVIF/RTSP in the camera web UI (Network > Integration Protocol) first. Pattern from the IPCx OEM family (iSpyConnect, HA community); not individually bench-tested."
+      "notes": "ABUS Performance Line is Hikvision OEM — Hikvision-style RTSP paths (101 main / 102 sub / 103 third). Enable ONVIF/RTSP in the camera web UI (Network > Integration Protocol) first. Pattern from the IPCx OEM family (iSpyConnect, HA community); not individually bench-tested.",
+      "onvif_port": 80
     },
     "home_assistant": {
       "integration": "onvif",
@@ -118,5 +118,5 @@
       "notes": "ABUS Performance Line is Hikvision OEM — select the 'Hikvision' profile (or Generic ONVIF/RTSP)."
     }
   },
-  "last_verified": "2026-07-05"
+  "last_verified": "2026-08-26"
 }

@@ -1,0 +1,99 @@
+{
+  "id": "jovision-jvs-n935sl-hy-r2",
+  "brand": "Jovision",
+  "model": "JVS-N935SL-HY-R2",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2048,
+    "max_height": 1520,
+    "label": "3MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2048x1520",
+        "fps": 30
+      }
+    ]
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "varifocal": false
+  },
+  "field_of_view_deg": "88.5 horizontal / 65.3 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 12
+  },
+  "power": {
+    "method": "DC 12V/1.5A, PoE (IEEE 802.3af)",
+    "consumption_w": 9
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "starlight low-light imaging",
+    "IR night vision up to 12 m (2x array IR LEDs)",
+    "2.8mm wide-angle lens",
+    "built-in microphone",
+    "CloudSEE / standard ONVIF 2.4"
+  ],
+  "dimensions_mm": "102 x 100 x 90",
+  "weight_g": 210,
+  "environment": [
+    "indoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://img.bjyyb.net/sites/69500/69884/20251203150024514.pdf",
+    "https://www.jovisionsecurity.com/products/ip_camera/"
+  ],
+  "last_verified": "2026-08-26",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:8554/live0.264",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:8554/live1.264",
+      "verified": false,
+      "notes": "Jovision (CloudSEE) RTSP on non-standard port 8554 — main /live0.264, sub /live1.264. Enable ONVIF/RTSP in the web UI; paths vary by firmware — use ONVIF autodiscovery if these fail."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Generic ONVIF integration; Jovision RTSP is on port 8554."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use Generic ONVIF/RTSP; Jovision default RTSP port is 8554."
+    }
+  }
+}

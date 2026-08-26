@@ -1,0 +1,108 @@
+{
+  "id": "jovision-jvs-h950e",
+  "brand": "Jovision",
+  "model": "JVS-H950E",
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "3MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 25
+      }
+    ]
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "87 horizontal / 41 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10
+  },
+  "power": {
+    "method": "DC 5V/1.5A",
+    "consumption_w": 5.42
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "features": [
+    "Wi-Fi pan/tilt indoor camera, pan 347° / tilt 86° (-35° to +51°)",
+    "two-way voice intercom (built-in mic + speaker), one-key family calling",
+    "humanoid tracking, region intrusion and line-crossing detection",
+    "one-click physical privacy shielding, privacy masking up to 8 areas",
+    "AP hotspot plus QR-code and sound-wave assisted Wi-Fi setup",
+    "DWDR, digital 3D noise reduction, day/night auto switching"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256
+  },
+  "dimensions_mm": "75.5 x 75.5 x 115.5",
+  "weight_g": 175,
+  "environment": [
+    "indoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://img.bjyyb.net/sites/69500/69884/20251222113147421.pdf",
+    "https://www.jovisionsecurity.com/products/ip_camera/"
+  ],
+  "last_verified": "2026-08-26",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:8554/live0.264",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:8554/live1.264",
+      "two_way_audio": true,
+      "verified": false,
+      "notes": "Jovision (CloudSEE) RTSP on non-standard port 8554 — main /live0.264, sub /live1.264. Enable ONVIF/RTSP in the web UI; paths vary by firmware — use ONVIF autodiscovery if these fail."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Generic ONVIF integration; Jovision RTSP is on port 8554."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use Generic ONVIF/RTSP; Jovision default RTSP port is 8554."
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "id": "acti-a984",
+  "brand": "ACTi",
+  "model": "A984",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6.5-234 (zoom, 36x optical/12x digital)",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "64.16 - 1.97 horizontal / 37.73 - 1.13 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 300,
+    "min_lux": 0.01,
+    "min_lux_color": 0.002
+  },
+  "power": {
+    "method": "AC 24V / PoE Type 3 Class 6 (IEEE 802.3bt); 53.1 W (AC), 51 W (PoE)"
+  },
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "operating_temp_c": "-40 to 50",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "features": [
+    "zoom lens: 36x optical zoom, 12x digital zoom, P-Iris auto iris",
+    "PTZ: 360° endless pan, -20° to 100° tilt, 256 presets, 8 tours, PTZ auto tracking",
+    "Extreme WDR (150 dB)",
+    "deep-learning AI 2.0",
+    "adaptive IR LED, IR working distance 300m",
+    "built-in analytics: Smart Motion Detection (people/vehicle), Smart Intrusion Protection, face detection/capture/recognition, ANPR, object metadata (age/gender/mask/vehicle type)",
+    "audio: 2-way, Line-in, Line-out (no built-in mic/speaker)",
+    "digital image stabilizer (DIS/EIS), built-in heater",
+    "ONVIF Compliant: Profile S, Profile G, Profile T, Profile M"
+  ],
+  "dimensions_mm": "241 diameter x 349",
+  "weight_g": 5500,
+  "sources": [
+    "https://www.acti.com/product/A984?tab=specifications"
+  ],
+  "last_verified": "2026-08-26",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  }
+}

@@ -42,10 +42,12 @@
   "field_of_view_deg": "107 horizontal, 57 vertical",
   "night_vision": {
     "type": "ir",
-    "range_m": 30
+    "range_m": 30,
+    "min_lux_color": 0.005
   },
   "power": {
-    "method": "12V DC (Wi-Fi)"
+    "method": "12V DC (Wi-Fi)",
+    "consumption_w": 7
   },
   "storage": {
     "onboard": true,
@@ -84,12 +86,9 @@
     "UK"
   ],
   "sources": [
-    "https://www.expert-security.de/abus-tvip62562-ip-kamera-1080p-t-n-ir-wlan-ip66.html",
-    "https://www.rapidonline.com/abus-tvip62562-performance-line-2mpx-mini-tube-ip-camera-full-hd-ip67-01-0347",
-    "https://my.rs-online.com/web/p/cctv-cameras/2528334",
-    "https://www.ispyconnect.com/camera/abus"
+    "https://docs.rs-online.com/02f5/A700000009215450.pdf"
   ],
-  "last_verified": "2026-07-05",
+  "last_verified": "2026-08-26",
   "configs": {
     "frigate": {
       "detect": {
@@ -100,7 +99,9 @@
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
       "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
       "verified": false,
-      "notes": "ABUS Performance Line is Hikvision OEM — Hikvision-style RTSP paths. Enable ONVIF/RTSP in the camera web UI first."
+      "notes": "ABUS Performance Line is Hikvision OEM — Hikvision-style RTSP paths. Enable ONVIF/RTSP in the camera web UI first.",
+      "onvif_port": 80,
+      "two_way_audio": true
     },
     "home_assistant": {
       "integration": "onvif",
