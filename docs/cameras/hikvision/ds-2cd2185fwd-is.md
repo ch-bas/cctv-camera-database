@@ -28,6 +28,7 @@
 ## Sources
 
 - https://www.hikvision.com/en/products/
+- https://ipcamtalk.com/threads/hikvision-ds-2cd2185fwd-is-wont-boot-up-after-firmware-update.47109/
 
 ---
 *Auto-generated from hikvision-ds-2cd2185fwd-is.json — do not edit by hand.*
