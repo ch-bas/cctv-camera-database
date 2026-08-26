@@ -128,6 +128,10 @@ RTSP_PATTERNS_DATE=$(date +%Y-%m-%d) node scripts/build-rtsp-patterns.js
 
 The shipped `configs.frigate` snippets are generated; run one of these cameras and you can mark it **community-verified** (`configs.frigate.verified` / `tested_by` / `tested_version`) via the [Verify a Frigate config](../../issues/new?template=verify-frigate-config.yml) issue form.
 
+### Frigate: beyond the baseline (ONVIF PTZ + two-way audio)
+
+Each `configs.frigate` block ships a working detect/record baseline, plus structured fields for the deeper integrations: `autotracking`, **`onvif_port`** (the ONVIF control port for manual PTZ — 80 on most cameras, `2020` on Tapo, `8000` on Reolink), and **`two_way_audio`** (Frigate live-view talk via the go2rtc backchannel, set where the datasheet confirms two-way audio). The go2rtc methods, per-brand port table, and autotracking rules are documented once in **[docs/frigate-beyond-baseline.md](docs/frigate-beyond-baseline.md)** rather than repeated per camera.
+
 ### NetBox device-type export
 
 `scripts/gen-netbox.js` exports cameras into [netbox-community/devicetype-library](https://github.com/netbox-community/devicetype-library) YAML device types — PoE interface (with the standard parsed from `power.method`), DC power port, microSD module bay, and weight, sourced from each camera's datasheet.

@@ -6,6 +6,18 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.6.0] — 2026-08-26
+
+Frigate configs go beyond the detect/record baseline (#299).
+
+### Added
+- **`configs.frigate.onvif_port`** and **`configs.frigate.two_way_audio`** schema fields — for Frigate manual PTZ and live-view talk.
+- **`onvif_port` populated on 2,715 cameras**: `80` on ONVIF-capable cameras (the HTTP/ONVIF service port), plus the verified non-defaults `2020` (Tapo) and `8000` (Reolink). Only set on ONVIF cameras — never guessed onto cloud-only devices.
+- **`two_way_audio: true` on 1,376 cameras** — every camera whose datasheet confirms two-way audio *and* that exposes ONVIF/RTSP (so Frigate's talk button works via the go2rtc backchannel).
+- **[docs/frigate-beyond-baseline.md](docs/frigate-beyond-baseline.md)** — the go2rtc backchannel methods, per-brand ONVIF-port table, and PTZ autotracking rules, documented once instead of repeated per record.
+
+All values are datasheet- or brand-documentation-verified (no fabricated ports or methods).
+
 ## [2.5.0] — 2026-08-25
 
 Uniview + ASECAM expansion (3,469 → 3,492) — 23 new cameras, plus a community config verification.
