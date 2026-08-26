@@ -15,7 +15,8 @@
   "video": {
     "max_fps": 24,
     "codecs": [
-      "H.264"
+      "H.264",
+      "MJPEG"
     ],
     "streams": [
       {
@@ -26,13 +27,26 @@
       }
     ]
   },
+  "sensor": "1/1.8\" Sony Exmor R STARVIS CMOS",
   "lens": {
     "count": 1,
+    "focal_length_mm": "2.8 - 12",
     "varifocal": true
   },
+  "field_of_view_deg": "94.5 to 30.5 horizontal",
   "night_vision": {
-    "type": "ir"
+    "type": "ir",
+    "range_m": 50,
+    "min_lux_color": 0.014
   },
+  "power": {
+    "method": "PoE (802.3at) / 12V DC",
+    "consumption_w": 12
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
   "storage": {
     "onboard": true,
     "nvr_compatible": true
@@ -41,23 +55,26 @@
     "onvif",
     "rtsp"
   ],
+  "ip_rating": "IP67",
   "features": [
-    "motor zoom with remote zoom/focus",
-    "WDR",
+    "2.8-12 mm motorized zoom (4.2x optical), auto-focus, remote zoom/focus",
+    "DWDR, BLC, HLC, defog, 3D/2D DNR",
+    "VCA: tripwire, intrusion, face detection, object counting",
+    "auto backup recording (ANR)",
+    "5 IR LEDs up to 50 m",
     "SD-card edge recording with in-browser playback",
     "master/installer user model"
   ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "390 x 160 x 160",
   "environment": [
     "outdoor",
     "indoor"
   ],
   "status": "discontinued",
-  "release_notes": "Archived/EOL Advanced-line camera (2017 generation, Sony platform). Identity, resolution, and max frame rate from the official joint IPCA-series software manual (IPCA33500/53000/62520/63500/66500/72520/73500/76500, version 09/2017) and the official ABUS Viewer compatibility document; motor-zoom (remote zoom/focus) per the manual's per-model function table. Sensor, focal length, IR range, IP rating, power, and dimensions omitted: not stated per-model in recovered official sources. Outdoor IP tube 6 MPx. Max 24 fps at 3072x2048, 25 fps at 3072x1728 per the official manual. Official joint hardware manual with IPCA62520/63500.",
+  "release_notes": "Archived/EOL Advanced-line outdoor IP tube 6 MPx (2017 generation, Sony STARVIS platform). Now verified against the official ABUS product-sheet datasheet: 1/1.8\" Sony Exmor R STARVIS CMOS, 3072x2048 @ 24 fps (25 fps at 3072x1728), 2.8-12 mm motor-zoom (4.2x optical) auto-focus, 5 IR LEDs up to 50 m, DWDR, decentralized VCA (tripwire / intrusion / face detection / object counting), H.264/MJPEG, PoE 802.3at + 12V DC (12 W), 390x160x160 mm, -30 to 60 °C, min illum color 0.014 lx. Note: the datasheet's tech-data table lists IP67 while its marketing text says IP66 — recorded IP67 per the spec table. Net weight not stated on the sheet (only gross 2.45 kg); aperture not stated. Both omitted.",
   "sources": [
-    "https://www.manualslib.de/manual/270023/Abus-Ipca33500.html",
-    "https://assets.abus.com/dam/132269_originalFile.pdf",
-    "https://c1.abus.com/asc-pim-assets-01/medias/docus/18/20170124-IPCA6x500_BDA_Hardware_DE_UK.pdf",
-    "https://www.libble.eu/abus-ipca66500/online-manual-964589/"
+    "https://docs.rs-online.com/6db5/0900766b8151e4e8.pdf"
   ],
   "configs": {
     "frigate": {
@@ -82,5 +99,5 @@
       "notes": "Use Generic ONVIF/RTSP with 'Find/inspect' to discover the stream path."
     }
   },
-  "last_verified": "2026-07-26"
+  "last_verified": "2026-08-26"
 }
