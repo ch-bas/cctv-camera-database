@@ -17,7 +17,7 @@
     "megapixels": 8
   },
   "video": {
-    "max_fps": 20,
+    "max_fps": 25,
     "codecs": [
       "H.264",
       "H.265",
@@ -27,7 +27,19 @@
       {
         "name": "main",
         "resolution": "3840x2160",
-        "fps": 20,
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1280x720",
+        "fps": 25,
         "codec": "H.265"
       }
     ]
@@ -39,13 +51,15 @@
     "aperture": "F1.4",
     "varifocal": false
   },
-  "field_of_view_deg": "78 horizontal",
+  "field_of_view_deg": "78 horizontal / 43 vertical",
   "night_vision": {
     "type": "ir",
-    "range_m": 30
+    "range_m": 30,
+    "min_lux_color": 0.003
   },
   "power": {
-    "method": "PoE (802.3af) / 12 V DC"
+    "method": "PoE (802.3af) / 12 V DC",
+    "consumption_w": 7
   },
   "storage": {
     "onboard": true,
@@ -63,14 +77,13 @@
     "two_way": false
   },
   "features": [
-    "120 dB WDR",
-    "IR cut filter",
+    "120 dB WDR, BLC, HLC, 3D DNR",
     "Ultra Low-Light",
     "digital zoom",
-    "backlight compensation",
-    "motion detection",
-    "privacy zones",
-    "object recognition"
+    "object classification (person/vehicle)",
+    "VCA: tripwire, intrusion, area entry, area exit",
+    "8-zone motion detection, 4 privacy zones",
+    "ONVIF Profile G/S/T"
   ],
   "operating_temp_c": "-25 to 60",
   "dimensions_mm": "170 x 70 x 69",
@@ -80,7 +93,7 @@
     "outdoor"
   ],
   "sources": [
-    "https://www.expert-security.de/abus-ipcb38511b-ip-bullet-4k-t-n-ir-poe-ip67.html"
+    "https://www.abus.com/int/abusproductsheet.pdf/224019/eng-ZZ"
   ],
   "configs": {
     "frigate": {
@@ -107,5 +120,5 @@
       "notes": "ABUS Performance Line is Hikvision OEM — select the 'Hikvision' profile (or Generic ONVIF/RTSP)."
     }
   },
-  "last_verified": "2026-07-05"
+  "last_verified": "2026-08-26"
 }
