@@ -36,6 +36,7 @@
 
 ## Sources
 
+- https://dlcdn.geovision.com.tw/Manual/IPCAM/Datasheet/Eyeball/Datasheet_GV-GEBF4813.pdf
 - https://www.geovision.com.tw/product/GV-GEBF4813
 
 ---

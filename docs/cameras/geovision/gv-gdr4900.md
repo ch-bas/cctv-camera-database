@@ -1,22 +1,22 @@
-# GeoVision GV-GEBN4800
+# GeoVision GV-GDR4900
 
 | Field | Spec |
 |-------|------|
 | Brand | GeoVision |
-| Model | GV-GEBN4800 |
+| Model | GV-GDR4900 |
 | Type | dome |
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2688×1520) |
-| Sensor | 1/1.79" Progressive Scan CMOS |
+| Sensor | 1/3" progressive scan CMOS |
 | Lens | 1× 2.8mm |
-| Field of view | 112 horizontal° |
-| Night vision | color, 0.0001 lux color |
+| Field of view | 95.3 horizontal° |
+| Night vision | ir (20m), 0.005 lux color |
 | Power | PoE (IEEE 802.3af) / DC 12V |
-| Storage | microSD ≤ 512GB, NVR |
+| Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
-| Two-way audio | No |
+| Two-way audio | Yes |
 | Operating temp | -30 to 60°C |
 
 ## Streams
@@ -28,16 +28,16 @@
 ## Features
 
 - WDR Pro
-- AI-ISP full color
-- smart warm-LED full color
+- smart IR
+- H.265 compression
 - AI human/vehicle detection
-- defog
+- two-way audio
 - IK10 vandal resistant
 
 ## Sources
 
-- https://dlcdn.geovision.com.tw/Manual/IPCAM/Datasheet/Eyeball/Datasheet_GV-GEBN4800.pdf
-- https://www.geovision.com.tw/product/GV-GEBN4800
+- https://dlcdn.geovision.com.tw/Manual/IPCAM/Datasheet/Dome/Datasheet_GV-GDR4900.pdf
+- https://www.geovision.com.tw/product/GV-GDR4900
 
 ---
-*Auto-generated from geovision-gv-gebn4800.json — do not edit by hand.*
+*Auto-generated from geovision-gv-gdr4900.json — do not edit by hand.*

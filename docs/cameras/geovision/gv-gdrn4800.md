@@ -1,13 +1,13 @@
-# GeoVision GV-GEBN4800
+# GeoVision GV-GDRN4800
 
 | Field | Spec |
 |-------|------|
 | Brand | GeoVision |
-| Model | GV-GEBN4800 |
+| Model | GV-GDRN4800 |
 | Type | dome |
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2688×1520) |
-| Sensor | 1/1.79" Progressive Scan CMOS |
+| Sensor | 1/1.79" progressive scan CMOS |
 | Lens | 1× 2.8mm |
 | Field of view | 112 horizontal° |
 | Night vision | color, 0.0001 lux color |
@@ -27,17 +27,17 @@
 
 ## Features
 
+- AI-ISP warm-LED full color
 - WDR Pro
-- AI-ISP full color
-- smart warm-LED full color
+- H.265 compression
 - AI human/vehicle detection
-- defog
+- 3D noise reduction
 - IK10 vandal resistant
 
 ## Sources
 
-- https://dlcdn.geovision.com.tw/Manual/IPCAM/Datasheet/Eyeball/Datasheet_GV-GEBN4800.pdf
-- https://www.geovision.com.tw/product/GV-GEBN4800
+- https://dlcdn.geovision.com.tw/Manual/IPCAM/Datasheet/Dome/Datasheet_GV-GDRN4800.pdf
+- https://www.geovision.com.tw/product/GV-GDRN4800
 
 ---
-*Auto-generated from geovision-gv-gebn4800.json — do not edit by hand.*
+*Auto-generated from geovision-gv-gdrn4800.json — do not edit by hand.*

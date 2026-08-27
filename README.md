@@ -1,9 +1,9 @@
 # CCTV Camera Database
 
-An open, structured database of 3,571 CCTV / IP camera models and their technical specifications, covering 78 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
+An open, structured database of 3,579 CCTV / IP camera models and their technical specifications, covering 78 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
 
 [![build](https://github.com/ch-bas/cctv-camera-database/actions/workflows/build.yml/badge.svg)](https://github.com/ch-bas/cctv-camera-database/actions/workflows/build.yml)
-[![cameras](https://img.shields.io/badge/cameras-3%2C571-blue)](data/cameras.json)
+[![cameras](https://img.shields.io/badge/cameras-3%2C579-blue)](data/cameras.json)
 [![brands](https://img.shields.io/badge/brands-78-green)](cameras/)
 [![license](https://img.shields.io/badge/license-CC0-lightgrey)](LICENSE)
 
@@ -19,10 +19,10 @@ An open, structured database of 3,571 CCTV / IP camera models and their technica
 
 <p align="center">
   <a href="https://cctv-database.com">
-    <img src="assets/cctv-database-showcase.gif" alt="CCTV Camera Database — search 3,571 cameras, browse full specs, copy ready-to-use Frigate configs, and audit the open dataset with the built-in QA tool" width="640">
+    <img src="assets/cctv-database-showcase.gif" alt="CCTV Camera Database — search 3,579 cameras, browse full specs, copy ready-to-use Frigate configs, and audit the open dataset with the built-in QA tool" width="640">
   </a>
   <br>
-  <sub><b><a href="https://cctv-database.com">cctv-database.com</a></b> — search 3,571 cameras · full spec sheets · copy-paste Frigate configs · open &amp; auditable</sub>
+  <sub><b><a href="https://cctv-database.com">cctv-database.com</a></b> — search 3,579 cameras · full spec sheets · copy-paste Frigate configs · open &amp; auditable</sub>
 </p>
 
 ---
@@ -49,7 +49,7 @@ Prefer to self-host or browse offline? A [standalone demo](docs/demo.html) (just
 - **Sort** — click any column header to sort ascending/descending
 - **Detail drawer** — click a row to slide open the full spec sheet (resolution, connectivity, protocols, storage, audio, source links)
 - **Community notes** — user-reported quirks and behaviors per camera, sourced and attributed, kept separate from datasheet specs
-- **Pagination** — page through all 3,571 cameras, 25 per page
+- **Pagination** — page through all 3,579 cameras, 25 per page
 - **Stats bar** — live counts for total cameras, brands, 4K+, WiFi, and no-subscription models
 
 ---
@@ -82,7 +82,7 @@ cctv-camera-database/
 │   ├── abus/             # 144 cameras
 │   └── …72 more brands
 ├── data/                 # GENERATED — do not edit by hand
-│   ├── cameras.json      # all 3,571 cameras as one array
+│   ├── cameras.json      # all 3,579 cameras as one array
 │   ├── cameras.csv       # flattened, spreadsheet-friendly
 │   └── rtsp-patterns.json  # CC0 brand-level RTSP URL layer (172 brands)
 ├── strix/
@@ -180,17 +180,17 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 
 | Metric | Count |
 |--------|-------|
-| Total cameras | **3,571** |
+| Total cameras | **3,579** |
 | Brands | **78** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
-| PoE wired | 2,739 |
+| PoE wired | 2,747 |
 | WiFi | 633 |
 | Battery / wire-free | 209 |
-| 4K / 8MP+ | 971 |
-| 4–7MP | 1,482 |
-| Under 4MP | 1,118 |
-| With integration configs (Frigate / Home Assistant) | 2,999 |
-| With color-lux rating (`night_vision.min_lux_color`) | 2,282 |
+| 4K / 8MP+ | 972 |
+| 4–7MP | 1,487 |
+| Under 4MP | 1,120 |
+| With integration configs (Frigate / Home Assistant) | 3,007 |
+| With color-lux rating (`night_vision.min_lux_color`) | 2,290 |
 
 ### All 78 brands
 
@@ -221,13 +221,13 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | Uniarch (Uniview) | 43 | Budget NDAA sub-brand, global |
 | Lorex | 40 | Consumer NVR systems, CA/US |
 | Luma | 33 | Custom-install (SnapAV), US |
+| GeoVision | 32 | Enterprise, TW/Asia/global |
 | CP Plus | 26 | India #2 brand, IN |
 | Xiaomi | 26 | Consumer smart home, CN/global |
 | Amcrest | 25 | Prosumer, global |
 | Arlo | 25 | Consumer premium wire-free, global |
 | VIGI (TP-Link) | 25 | Business/SMB PoE, global |
 | ClareVision | 24 | — |
-| GeoVision | 24 | Enterprise, TW/Asia/global |
 | HiLook (Hikvision) | 23 | Budget installer, EU/UK/AU |
 | Ajax | 22 | Professional alarm + wired PoE cameras, EU/UK |
 | Foscam | 22 | Consumer WiFi/PoE, global |

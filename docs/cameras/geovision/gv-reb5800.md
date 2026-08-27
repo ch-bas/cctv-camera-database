@@ -36,6 +36,7 @@
 
 ## Sources
 
+- https://dlcdn.geovision.com.tw/Manual/IPCAM/Datasheet/Eyeball/Datasheet_GV-REB5800.pdf
 - https://www.geovision.com.tw/product/GV-REB5800
 
 ---
