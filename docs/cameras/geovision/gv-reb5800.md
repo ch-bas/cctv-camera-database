@@ -17,6 +17,7 @@
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |
+| Operating temp | -35 to 60°C |
 
 ## Streams
 
