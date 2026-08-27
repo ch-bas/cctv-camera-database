@@ -8,14 +8,18 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.7.0] — 2026-08-27
 
-12 new GeoVision AI eyeball-dome cameras, plus the first seeding of the `soc` (chipset) field (#284). **3,559 → 3,571 cameras (+12).**
+Full GeoVision IP-camera catalog import (brand 12 → 93, +81 cameras) plus the first seeding of the `soc` (chipset) field (#284). **3,559 → 3,640 cameras (+81).**
 
 ### Added
-- **12 GeoVision AI eyeball-dome IP cameras** (from official GeoVision datasheets), H.265 / WDR Pro:
-  - **GV-EBD** — EBD4701 (4MP IR), EBD8800 (8MP IR), EBD4813 (4MP, 5× motorized zoom, IK10), EBD8813 (8MP, 4.3× motorized zoom, IK10).
-  - **GV-GEB / REB** — GEB4900 (4MP IR, two-way audio), REB5800 (5MP IR + face recognition).
-  - **Full-color warm-LED** — GEBF2802 (2MP), GEBF4802 (4MP), GEBF4813 (4MP zoom), GEBF4911 (4MP zoom, IP66, two-way audio + active deterrence), EBFC5800 (5MP), and GEBN4800 (AI-ISP full-color, 0.0001 lux).
-  - RTSP on port 8554 (`/CH001.sdp`); ONVIF; GeoVision Blue Iris profile.
+- **GeoVision — 81 new cameras** (the brand went from 12 to **93**), authored from the official GeoVision datasheet catalog + master spec table, spanning every product line — all H.265 / WDR Pro, RTSP on port 8554 (`/CH001.sdp`), ONVIF, GeoVision Blue Iris profile:
+  - **Eyeball & turret** — GEB / GEBF / GEBN / REB and EBD / EBFC (2–8 MP; AI; motorized-zoom and full-color warm-LED variants; GEBN4800 down to 0.0001 lux).
+  - **Dome** — GDR / GDRN / GDRF / GVD (incl. **12 MP GVD12810**), TFD / TDR / TVD / AVD / VD (indoor & vandal, Starlight, plus the face-detection **MD8710-FD**).
+  - **Bullet** — GBL / GBLN / GBLF / RBL / BLFC and TBL / ABL (2–12 MP; motorized-zoom; full-color).
+  - **Fisheye** — FER / GFER / RFER / PFER / QFER (5–12 MP, 180°, people-flow + heat-map AI).
+  - **Multi-sensor / panoramic** — GBLP / GEBP (dual-lens 8 MP), **TMS20811** (quad 20 MP / 360°), TMS8800, and PDR / EBDP / PBL / TBLP (180° panoramic).
+  - **PTZ speed domes** — SD / QSD / GPTZ / PTZ (up to **33× optical zoom**, 200 m IR, auto-tracking).
+  - **Thermal** — **TMEB5800** (bispectral 256×192 thermal + 5 MP visible, fire/temperature detection).
+  - Datasheet-verified across the set: `consumption_w`, `operating_temp_c`, IK/IP, `min_lux_color`, dimensions/weight, `markets` (#166 / #162 / #178 / #161).
 - **`soc` (chipset) field seeded (#284)** — first pass, from verifiable sources only:
   - **Axis (12)** — ARTPEC-7/8/9, extracted from the "System on chip" line stated in the official Axis datasheets.
   - **Wyze (5)** — Ingenic T20/T31, from thingino's per-device pages (added as a source).
