@@ -11,6 +11,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 ### Changed
 - **Backfilled `weight_g` on 66 Axis cameras** (coverage 4 → 70) from the NetBox device-type library (community PR [netbox-community/devicetype-library#4488](https://github.com/netbox-community/devicetype-library/pull/4488) — 72 curated AXIS device types). Weights are the manufacturer-datasheet figures cross-referenced in those YAMLs; `consumption_w` was already present for the models NetBox lists PoE wattage for (values matched).
 - **Backfilled the `network` field on 82 GeoVision cameras** — `ethernet_speed_mbps` (100 for 10/100 RJ45; 1000 on the 12 MP fisheye + 20 MP multi-sensor models) + `ethernet_ports`, from each datasheet's Ethernet/RJ45 row. (The v2.7.0 GeoVision import used a record template that omitted the field.)
+- **Completed `network.ethernet_ports` on 74 Hikvision cameras** — cross-checked against netbox-community/devicetype-library#4500 (74 Hikvision device types, which round-trip our own data); those records had `ethernet_speed_mbps` but were missing the single-port `ethernet_ports: 1`.
 
 No new cameras.
 
