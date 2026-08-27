@@ -6,6 +6,17 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.7.1] — 2026-08-27
+
+### Changed
+- **Backfilled `weight_g` on 66 Axis cameras** (coverage 4 → 70) from the NetBox device-type library (community PR [netbox-community/devicetype-library#4488](https://github.com/netbox-community/devicetype-library/pull/4488) — 72 curated AXIS device types). Weights are the manufacturer-datasheet figures cross-referenced in those YAMLs; `consumption_w` was already present for the models NetBox lists PoE wattage for (values matched).
+- **Backfilled the `network` field on 82 GeoVision cameras** — `ethernet_speed_mbps` (100 for 10/100 RJ45; 1000 on the 12 MP fisheye + 20 MP multi-sensor models) + `ethernet_ports`, from each datasheet's Ethernet/RJ45 row. (The v2.7.0 GeoVision import used a record template that omitted the field.)
+- **Completed `network.ethernet_ports` on 74 Hikvision cameras** — cross-checked against netbox-community/devicetype-library#4500 (74 Hikvision device types, which round-trip our own data); those records had `ethernet_speed_mbps` but were missing the single-port `ethernet_ports: 1`.
+- **Backfilled the `network` field on 163 more Hikvision cameras** — `ethernet_speed_mbps` from each datasheet's Ethernet-interface row (157 × 100 for 10/100 RJ45; 6 × 1000 on high-res fisheye/multisensor models). The two DS-2SF8C PanoVu multi-sensor + PTZ units were datasheet-verified as 10/100 single-port (`ethernet_ports: 1`).
+- **Added the `video.streams[]` breakdown for Hikvision DS-2CD2743G2-IZS** (#177) — main 2688×1520@30 / sub 1280×720@30 / third 1920×1080@10, codecs H.265+/H.265/H.264+/H.264/MJPEG, verified against the official datasheet. Community contribution by [@elkampu](https://github.com/elkampu) ([#326](https://github.com/ch-bas/cctv-camera-database/pull/326)).
+
+No new cameras.
+
 ## [2.7.0] — 2026-08-27
 
 Full GeoVision IP-camera catalog import (brand 12 → 93, +81 cameras) plus the first seeding of the `soc` (chipset) field (#284). **3,559 → 3,640 cameras (+81).**
