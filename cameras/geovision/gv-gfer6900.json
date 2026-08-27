@@ -1,0 +1,108 @@
+{
+  "id": "geovision-gv-gfer6900",
+  "brand": "GeoVision",
+  "model": "GV-GFER6900",
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3200,
+    "max_height": 1800,
+    "label": "6MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "resolution": "3200x1800",
+        "fps": 30
+      }
+    ]
+  },
+  "sensor": "1/2.5\" progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.65",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "130.6 diameter x 46.3",
+  "weight_g": 516.2,
+  "features": [
+    "360° panoramic fisheye",
+    "de-warping",
+    "AI people counting",
+    "AI heat map",
+    "WDR Pro",
+    "H.265",
+    "vandal-resistant IK10"
+  ],
+  "sources": [
+    "https://dlcdn.geovision.com.tw/Manual/IPCAM/Datasheet/Fisheye/Datasheet_GV-GFER6900.pdf",
+    "https://www.geovision.com.tw/product/GV-GFER6900"
+  ],
+  "last_verified": "2026-08-27",
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:8554/CH001.sdp",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port may vary (8554 or 554)."
+    },
+    "blue_iris": {
+      "profile": "GeoVision",
+      "notes": "Select 'GeoVision' profile. Default RTSP port may be 8554."
+    }
+  }
+}

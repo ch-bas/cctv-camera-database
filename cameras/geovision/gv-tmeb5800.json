@@ -1,0 +1,122 @@
+{
+  "id": "geovision-gv-tmeb5800",
+  "brand": "GeoVision",
+  "model": "GV-TMEB5800",
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.05,
+    "max_width": 256,
+    "max_height": 192,
+    "label": "256x192 thermal (1280x720 output)"
+  },
+  "sensor": "Vanadium oxide uncooled focal plane detector, 12 um pixel size (thermal); 1/2.7\" progressive scan CMOS (optical, 2592x1944)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "3.2 (thermal) / 4 (optical)",
+    "varifocal": false
+  },
+  "field_of_view_deg": "56 horizontal (thermal) / 81 horizontal (optical)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.02
+  },
+  "power": {
+    "method": "DC 12V / PoE (IEEE 802.3af)"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1280x720",
+        "fps": 17
+      }
+    ]
+  },
+  "features": [
+    "bispectral thermal + optical camera",
+    "thermal sensor 256x192, 12 um pixel size, output 1280x720",
+    "thermal sensitivity (NETD) <=50 mK (@25C, F#=1.0)",
+    "spectral range 8-14 um",
+    "thermal focal length 3.2 mm, F/1.1",
+    "up to 17 fps thermal, 30 fps optical at 2592x1944",
+    "fire detection (object 0.1x0.1 m up to 11 m)",
+    "temperature measurement (object 1x1 m up to 30 m)",
+    "temperature alarm range -20C to 150C / 100C to 550C, accuracy +/-8C",
+    "temperature exception alarm",
+    "dual image fusion (thermal + optical overlay)",
+    "AI perimeter protection (human/vehicle)",
+    "AI analytics: line crossing, region intrusion/entrance/exiting, loitering, illegal parking, target counting",
+    "face detection",
+    "active deterrence: white LED and alarm sound",
+    "WDR Pro (up to 120 dB)",
+    "Defog",
+    "3D noise reduction",
+    "intelligent IR",
+    "3-axis mechanism (pan/tilt/rotate)",
+    "color palettes: black hot, white hot, iron oxide red, rainbow, lava"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Ø 111.5 x 99.6",
+  "weight_g": 680,
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://s3.amazonaws.com/geovision_downloads/Manual/IPCAM/Datasheet/TM/Datasheet_GV-TMEB5800.pdf",
+    "https://www.geovision.com.tw/product/GV-TMEB5800"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:8554/CH001.sdp",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port may vary (8554 or 554)."
+    },
+    "blue_iris": {
+      "profile": "GeoVision",
+      "notes": "Select 'GeoVision' profile. Default RTSP port may be 8554."
+    }
+  },
+  "last_verified": "2026-08-27",
+  "environment": [
+    "outdoor"
+  ]
+}

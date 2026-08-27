@@ -1,0 +1,120 @@
+{
+  "id": "geovision-gv-gptz4810",
+  "brand": "GeoVision",
+  "model": "GV-GPTZ4810",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/2.7\" progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.18-7.42",
+    "varifocal": true
+  },
+  "field_of_view_deg": "113.6-44.3 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux_color": 0.02
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "DC 12V / PoE (IEEE 802.3af)"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": true
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30
+      }
+    ]
+  },
+  "features": [
+    "2.3x optical zoom",
+    "motorized varifocal lens (3.18-7.42 mm) for remote focus/zoom",
+    "pan travel 0° to 355°, tilt travel 15° to 90°",
+    "manual speed pan/tilt 0.5-80°/s",
+    "preset speed pan/tilt 80°/s",
+    "up to 360 presets",
+    "PTZ movement (Preset, Cruise, Smart Tracking), patrol by schedule",
+    "smart tracking triggered by AI analytics (line crossing, region entrance/exiting/intrusion)",
+    "AI perimeter protection (human/vehicle)",
+    "intelligent IR (4 IR LEDs)",
+    "WDR (108 dB)",
+    "3D noise reduction",
+    "auto focus",
+    "IK10 vandal resistant (metal casing)",
+    "two-way audio (external speaker required)"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Ø 116.14 x 75",
+  "weight_g": 460,
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://dlcdn.geovision.com.tw/Manual/IPCAM/Datasheet/PTZ/Datasheet_GV-GPTZ4810.pdf",
+    "https://www.geovision.com.tw/product/GV-GPTZ4810"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:8554/CH001.sdp",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port may vary (8554 or 554)."
+    },
+    "blue_iris": {
+      "profile": "GeoVision",
+      "notes": "Select 'GeoVision' profile. Default RTSP port may be 8554."
+    }
+  },
+  "last_verified": "2026-08-27",
+  "environment": [
+    "outdoor"
+  ]
+}
