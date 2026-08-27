@@ -6,6 +6,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.7.1] — 2026-08-27
+
+### Changed
+- **Backfilled `weight_g` on 66 Axis cameras** (coverage 4 → 70) from the NetBox device-type library (community PR [netbox-community/devicetype-library#4488](https://github.com/netbox-community/devicetype-library/pull/4488) — 72 curated AXIS device types). Weights are the manufacturer-datasheet figures cross-referenced in those YAMLs; `consumption_w` was already present for the models NetBox lists PoE wattage for (values matched). No new cameras.
+
 ## [2.7.0] — 2026-08-27
 
 Full GeoVision IP-camera catalog import (brand 12 → 93, +81 cameras) plus the first seeding of the `soc` (chipset) field (#284). **3,559 → 3,640 cameras (+81).**
