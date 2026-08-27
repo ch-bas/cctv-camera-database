@@ -6,6 +6,22 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.7.0] — 2026-08-27
+
+12 new GeoVision AI eyeball-dome cameras, plus the first seeding of the `soc` (chipset) field (#284). **3,559 → 3,571 cameras (+12).**
+
+### Added
+- **12 GeoVision AI eyeball-dome IP cameras** (from official GeoVision datasheets), H.265 / WDR Pro:
+  - **GV-EBD** — EBD4701 (4MP IR), EBD8800 (8MP IR), EBD4813 (4MP, 5× motorized zoom, IK10), EBD8813 (8MP, 4.3× motorized zoom, IK10).
+  - **GV-GEB / REB** — GEB4900 (4MP IR, two-way audio), REB5800 (5MP IR + face recognition).
+  - **Full-color warm-LED** — GEBF2802 (2MP), GEBF4802 (4MP), GEBF4813 (4MP zoom), GEBF4911 (4MP zoom, IP66, two-way audio + active deterrence), EBFC5800 (5MP), and GEBN4800 (AI-ISP full-color, 0.0001 lux).
+  - RTSP on port 8554 (`/CH001.sdp`); ONVIF; GeoVision Blue Iris profile.
+- **`soc` (chipset) field seeded (#284)** — first pass, from verifiable sources only:
+  - **Axis (12)** — ARTPEC-7/8/9, extracted from the "System on chip" line stated in the official Axis datasheets.
+  - **Wyze (5)** — Ingenic T20/T31, from thingino's per-device pages (added as a source).
+  - **Hikvision (1)** — DS-2CD2185FWD-I(S) = Ambarella S3L, from a device-tree boot log in an ipcamtalk teardown.
+  - SoC is never fabricated: it's only recorded where datasheet-printed or community-documented for the exact model. Coverage 17 → 35.
+
 ## [2.6.0] — 2026-08-26
 
 A new brand (Jovision, 57 cameras), Frigate configs beyond the detect/record baseline (#299), and a large ABUS datasheet-verification pass. **3,492 → 3,559 cameras (+67); 78 brands.**
