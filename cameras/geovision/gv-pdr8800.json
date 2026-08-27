@@ -1,0 +1,111 @@
+{
+  "id": "geovision-gv-pdr8800",
+  "brand": "GeoVision",
+  "model": "GV-PDR8800",
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP"
+  },
+  "sensor": "1/2.8\" progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.68",
+    "aperture": "F2.0"
+  },
+  "field_of_view_deg": "180 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 15,
+    "min_lux_color": 0.012
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 9
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 25
+      }
+    ]
+  },
+  "features": [
+    "180° panoramic view (single fisheye imager)",
+    "AI human/vehicle detection",
+    "WDR Pro",
+    "intelligent IR",
+    "H.265 compression",
+    "3D noise reduction",
+    "SIP/VoIP support",
+    "IK10 vandal resistant"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "127.2 x 107",
+  "weight_g": 850,
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://dlcdn.geovision.com.tw/Manual/IPCAM/Datasheet/Multi-Sensor_Panoramic/Datasheet_GV-PDR8800.pdf",
+    "https://www.geovision.com.tw/product/GV-PDR8800"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:8554/CH001.sdp",
+      "onvif_port": 80,
+      "two_way_audio": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port may vary (8554 or 554)."
+    },
+    "blue_iris": {
+      "profile": "GeoVision",
+      "notes": "Select 'GeoVision' profile. Default RTSP port may be 8554."
+    }
+  },
+  "last_verified": "2026-08-27",
+  "environment": [
+    "outdoor"
+  ]
+}

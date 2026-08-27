@@ -1,0 +1,109 @@
+{
+  "id": "geovision-gv-gblp8900",
+  "brand": "GeoVision",
+  "model": "GV-GBLP8900",
+  "type": "dual-lens",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 4640,
+    "max_height": 1760,
+    "label": "8MP dual-lens"
+  },
+  "sensor": "1/2.7\" progressive scan (super low lux) CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6"
+  },
+  "field_of_view_deg": "180 horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.0032
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4640x1760",
+        "fps": 30
+      }
+    ]
+  },
+  "features": [
+    "dual-lens 180° panoramic splicing",
+    "AI human/vehicle detection",
+    "full color warm LED night vision",
+    "WDR",
+    "intelligent IR",
+    "active deterrence (alarm + LED)",
+    "H.265 compression",
+    "3D noise reduction"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "225.9 x 102.3 x 85.8",
+  "weight_g": 906,
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://dlcdn.geovision.com.tw/Manual/IPCAM/Datasheet/Multi-Sensor_Panoramic/Datasheet_GV-GBLP8900.pdf",
+    "https://www.geovision.com.tw/product/GV-GBLP8900"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:8554/CH001.sdp",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port may vary (8554 or 554)."
+    },
+    "blue_iris": {
+      "profile": "GeoVision",
+      "notes": "Select 'GeoVision' profile. Default RTSP port may be 8554."
+    }
+  },
+  "last_verified": "2026-08-27",
+  "environment": [
+    "outdoor"
+  ]
+}

@@ -30,6 +30,7 @@
 ## Sources
 
 - https://www.wyze.com/products/wyze-cam
+- https://thingino.com/cameras/65
 
 ---
 *Auto-generated from wyze-cam-v2.json — do not edit by hand.*

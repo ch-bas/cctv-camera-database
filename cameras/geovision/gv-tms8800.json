@@ -1,0 +1,111 @@
+{
+  "id": "geovision-gv-tms8800",
+  "brand": "GeoVision",
+  "model": "GV-TMS8800",
+  "type": "dual-lens",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "8MP (2x4MP)"
+  },
+  "sensor": "1/3\" progressive scan (super low lux) CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6"
+  },
+  "field_of_view_deg": "97.7 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.002
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 9.1
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": true
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 25
+      }
+    ]
+  },
+  "features": [
+    "2 x 4MP dual-sensor multi-directional",
+    "AI human/vehicle detection",
+    "WDR Pro",
+    "intelligent IR",
+    "3-axis mechanism (pan/tilt/rotate)",
+    "H.265 compression",
+    "3D noise reduction",
+    "IK10 vandal resistant"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "176 x 104 x 72",
+  "weight_g": 620,
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://dlcdn.geovision.com.tw/Manual/IPCAM/Datasheet/Multi-Sensor_Panoramic/Datasheet_GV-TMS8800.pdf",
+    "https://www.geovision.com.tw/product/GV-TMS8800"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:8554/CH001.sdp",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port may vary (8554 or 554)."
+    },
+    "blue_iris": {
+      "profile": "GeoVision",
+      "notes": "Select 'GeoVision' profile. Default RTSP port may be 8554."
+    }
+  },
+  "last_verified": "2026-08-27",
+  "environment": [
+    "outdoor"
+  ]
+}

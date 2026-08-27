@@ -1,0 +1,113 @@
+{
+  "id": "geovision-gv-tms20811",
+  "brand": "GeoVision",
+  "model": "GV-TMS20811",
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 20,
+    "max_width": 2880,
+    "max_height": 1620,
+    "label": "20MP (4x5MP)"
+  },
+  "sensor": "1/2.7\" progressive scan (super low lux) CMOS",
+  "lens": {
+    "count": 4,
+    "focal_length_mm": "2.7-13.5",
+    "aperture": "F1.2",
+    "varifocal": true
+  },
+  "field_of_view_deg": "360 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux_color": 0.002
+  },
+  "power": {
+    "method": "DC 24V / AC 24V / High PoE (IEEE 802.3bt, 60 W)",
+    "consumption_w": 48.7
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": true
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2880x1620",
+        "fps": 30
+      }
+    ]
+  },
+  "features": [
+    "4 x 5MP quad-sensor multi-directional (360°)",
+    "5x optical zoom motorized varifocal lenses",
+    "AI human/vehicle detection (4 channels concurrently)",
+    "WDR Pro",
+    "intelligent IR",
+    "3-axis mechanism (pan/tilt/rotate)",
+    "H.265 compression",
+    "3D noise reduction",
+    "IK10 vandal resistant"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "318 x 136.6",
+  "weight_g": 4770,
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://dlcdn.geovision.com.tw/Manual/IPCAM/Datasheet/Multi-Sensor_Panoramic/Datasheet_GV-TMS20811.pdf",
+    "https://www.geovision.com.tw/product/GV-TMS20811"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:8554/CH001.sdp",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port may vary (8554 or 554)."
+    },
+    "blue_iris": {
+      "profile": "GeoVision",
+      "notes": "Select 'GeoVision' profile. Default RTSP port may be 8554."
+    }
+  },
+  "last_verified": "2026-08-27",
+  "environment": [
+    "outdoor"
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "id": "geovision-gv-fer12700",
+  "brand": "GeoVision",
+  "model": "GV-FER12700",
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 12,
+    "max_width": 4000,
+    "max_height": 3000,
+    "label": "12MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "resolution": "4000x3000",
+        "fps": 30
+      }
+    ]
+  },
+  "sensor": "1/1.7\" progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.2",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.1
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at) / DC 12V",
+    "consumption_w": 17
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 50",
+  "dimensions_mm": "160.59 diameter x 59.40",
+  "weight_g": 700,
+  "features": [
+    "360° panoramic fisheye",
+    "de-warping",
+    "WDR",
+    "H.265",
+    "vandal-resistant IK10"
+  ],
+  "sources": [
+    "https://s3.amazonaws.com/geovision_downloads/Manual/Fisheye/Datasheet_IPCamH265FER12700.pdf",
+    "https://www.geovision.com.tw/product/GV-FER12700"
+  ],
+  "last_verified": "2026-08-27",
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:8554/CH001.sdp",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port may vary (8554 or 554)."
+    },
+    "blue_iris": {
+      "profile": "GeoVision",
+      "notes": "Select 'GeoVision' profile. Default RTSP port may be 8554."
+    }
+  }
+}

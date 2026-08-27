@@ -1,0 +1,109 @@
+{
+  "id": "geovision-gv-qsd5730-indoor",
+  "brand": "GeoVision",
+  "model": "GV-QSD5730-Indoor",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP"
+  },
+  "sensor": "1/2.8\" progressive scan low lux CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.6-152",
+    "varifocal": true
+  },
+  "field_of_view_deg": "55.4-1.9 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "min_lux_color": 0.02
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "PoE+ (802.3at) / AC 24V / DC 30V"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "fps": 30
+      }
+    ]
+  },
+  "features": [
+    "33x optical zoom",
+    "10x digital zoom",
+    "360° endless pan, tilt -10° to 100°",
+    "pan/tilt speed 400°/300° per sec",
+    "preset/sequence/auto-pan/cruise tours",
+    "PTZ auto tracking",
+    "WDR Pro",
+    "Electronic Image Stabilizer (EIS)"
+  ],
+  "operating_temp_c": "-25 to 50",
+  "dimensions_mm": "Ø 212 x 263.6",
+  "weight_g": 2600,
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://dlcdn.geovision.com.tw/Manual/Speed-Dome/Datasheet/Datasheet_IPCamQSD5730-Indoor.pdf",
+    "https://www.geovision.com.tw/product/GV-QSD5730-Indoor"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:8554/CH001.sdp",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port may vary (8554 or 554)."
+    },
+    "blue_iris": {
+      "profile": "GeoVision",
+      "notes": "Select 'GeoVision' profile. Default RTSP port may be 8554."
+    }
+  },
+  "last_verified": "2026-08-27",
+  "environment": [
+    "indoor"
+  ]
+}

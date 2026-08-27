@@ -1,0 +1,117 @@
+{
+  "id": "geovision-gv-ptz5810-ir",
+  "brand": "GeoVision",
+  "model": "GV-PTZ5810-IR",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2880,
+    "max_height": 1620,
+    "label": "5MP"
+  },
+  "sensor": "1/2.7\" progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5",
+    "varifocal": true
+  },
+  "field_of_view_deg": "106.9-30.6 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.003
+  },
+  "power": {
+    "method": "DC 12V / PoE+ (IEEE 802.3at)",
+    "consumption_w": 15
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2880x1620",
+        "fps": 30
+      }
+    ]
+  },
+  "features": [
+    "5x optical zoom",
+    "motorized varifocal lens (2.7-13.5 mm) for remote focus/zoom",
+    "pan travel 350°, tilt travel 0° to 90°",
+    "manual speed pan 0.1-60°/s, tilt 0.1-50°/s",
+    "preset speed pan 60°/s, tilt 50°/s",
+    "up to 255 presets",
+    "PTZ movement (Preset, Patrol), patrol by schedule",
+    "proportional pan/tilt (speed proportional to zoom ratio)",
+    "AI perimeter protection (human/vehicle): cross line, enter/leave area, intrusion",
+    "face detection",
+    "people flow counting",
+    "crowd density monitoring",
+    "intelligent IR",
+    "WDR Pro (up to 120 dB)",
+    "3D noise reduction",
+    "auto focus"
+  ],
+  "operating_temp_c": "-10 to 50",
+  "dimensions_mm": "Ø 129 x 143.6",
+  "weight_g": 750,
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://s3.amazonaws.com/geovision_downloads/Manual/IPCAM/Datasheet/PTZ/Datasheet_IPCam_GV-PTZ5810-IR.pdf",
+    "https://www.geovision.com.tw/product/GV-PTZ5810-IR"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:8554/CH001.sdp",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port may vary (8554 or 554)."
+    },
+    "blue_iris": {
+      "profile": "GeoVision",
+      "notes": "Select 'GeoVision' profile. Default RTSP port may be 8554."
+    }
+  },
+  "last_verified": "2026-08-27",
+  "environment": [
+    "indoor"
+  ]
+}

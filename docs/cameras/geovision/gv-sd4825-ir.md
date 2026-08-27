@@ -28,6 +28,7 @@
 
 ## Sources
 
+- https://dlcdn.geovision.com.tw/Manual/Speed-Dome/Datasheet/Datasheet_IPCamSD4825-IR.pdf
 - https://www.geovision.com.tw/product/GV-SD4825-IR
 
 ---
