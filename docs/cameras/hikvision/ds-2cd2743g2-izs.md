@@ -20,6 +20,14 @@
 | IK rating | IK10 |
 | Two-way audio | No |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2688x1520 | 30 | H.265 |
+| sub | 1280x720 | 30 | H.265 |
+| third | 1920x1080 | 10 | H.265 |
+
 ## Features
 
 - AcuSense human/vehicle
@@ -31,6 +39,7 @@
 ## Sources
 
 - https://www.hikvision.com/en/products/IP-Products/Network-Cameras/Pro-Series-EasyIP-/ds-2cd2743g2-izs/
+- https://assets.hikvision.com/prd/public/all/doc/sm000058844/DS-2CD2743G2-IZS_Datasheet_V5.5.113_20230303.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2743g2-izs.json — do not edit by hand.*
