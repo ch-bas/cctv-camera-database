@@ -8,6 +8,9 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.7.2] — 2026-08-28
 
+### Fixed
+- **Brand correction — 11 cameras were mislabeled Uniview but are actually HiLook (Hikvision's budget sub-brand).** The records (`IPC-B120HA`, `IPC-B129HAA-LU`, `IPC-B140HA`, `IPC-B429HAA-LU`, `IPC-B469HAD-LUF`, `IPC-B529HAA-LU`, `IPC-D129HA-LU`, `IPC-T229HA-LU`, `IPC-T229HAA-LU`, `IPC-T249HA-LU`, `IPC-T269HAD-LUF`) had fabricated specs that mixed Hikvision `ColorVu` with Uniview `Ultra265` + `/media/video1` RTSP — an impossible combination templated from Uniview boilerplate rather than read from the real datasheet. Removed the Uniview records and rebuilt them under the **HiLook** brand from the actual HiLook datasheets (H.265+ codecs, Hikvision `/Streaming/Channels/101` RTSP, datasheet-verified dimensions/weight/lens/IR/temp/network). **4 of the 11 were cross-brand duplicates** of existing HiLook records (now deduped and enriched with the fuller datasheet specs). Camera count **3,640 → 3,636** (net −4 duplicates removed).
+
 ### Changed
 - **Hikvision datasheet backfill (#166 / #162)** — mined 272 official Hikvision datasheets (cached locally) to fill spec fields on records that were missing them, datasheet-verified only:
   - **`operating_temp_c`** — coverage 69 → **290** (from each datasheet's "Startup and Operating Conditions" row; e.g. `-30 to 60` outdoor, `-10 to 40/45/50` indoor).
