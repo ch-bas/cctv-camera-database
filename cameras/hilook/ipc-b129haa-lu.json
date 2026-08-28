@@ -2,6 +2,12 @@
   "id": "hilook-ipc-b129haa-lu",
   "brand": "HiLook",
   "model": "IPC-B129HAA-LU",
+  "aliases": [
+    "IPC-B129HAA-LUF",
+    "IPC-B129HAA-LUF/SL",
+    "IPC-B129HAA-LUF/SRB",
+    "HiLook 2 MP ColorVu 3.0 Fixed Bullet"
+  ],
   "type": "bullet",
   "connectivity": [
     "ethernet"
@@ -12,53 +18,66 @@
     "max_height": 1080,
     "label": "1080p"
   },
-  "sensor": "1/2.8\" CMOS",
+  "sensor": "1/2.8\" Progressive Scan CMOS",
   "lens": {
     "count": 1,
     "focal_length_mm": "2.8 / 4 (fixed)",
+    "aperture": "F1.0",
     "varifocal": false
   },
-  "field_of_view_deg": "106 (2.8mm) / 88 (4mm)",
+  "field_of_view_deg": "106 horizontal (2.8 mm) / 88 horizontal (4 mm)",
   "night_vision": {
     "type": "hybrid",
     "range_m": 30,
     "min_lux_color": 0.0005
   },
   "power": {
-    "method": "PoE (802.3af) / DC 12V"
+    "method": "PoE (802.3af Class 3) / DC 12V",
+    "consumption_w": 8,
+    "poe_class": 3,
+    "voltage": "12 VDC"
   },
-  "ip_rating": "IP67",
   "storage": {
     "onboard": true,
     "nvr_compatible": true,
+    "cloud": false,
     "max_microsd_gb": 512
   },
   "protocols": [
     "onvif",
     "rtsp"
   ],
+  "ip_rating": "IP67",
   "audio": {
     "microphone": true,
-    "speaker": true,
-    "two_way": true
+    "speaker": false,
+    "two_way": false
   },
-  "features": [
-    "ColorVu 3.0 full-color 24/7 imaging",
-    "Smart Hybrid Light (IR + white LED, 3 modes) to 30m",
-    "HikAI-ISP noise reduction",
-    "Motion Detection 3.0 (human/vehicle)",
-    "built-in mic",
-    "strobe (SL) + red-blue (SRB) active deterrence with two-way audio + speaker",
-    "microSD up to 512GB (-F)",
-    "NOTE: Hikvision datasheet specs this at 2MP/1080p despite the model number"
-  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "69.1 x 66.9 x 172.9",
+  "weight_g": 330,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
   "markets": [
-    "MENA",
     "global"
   ],
-  "release_notes": "The HiLook IPC-B129HAA-LU is a ColorVu 3.0 active-deterrence bullet (2MP/1080p per Hikvision datasheet) with Smart Hybrid Light to 30m, strobe + speaker and two-way audio.",
+  "features": [
+    "2 MP ColorVu 3.0 fixed bullet",
+    "24/7 full-color imaging",
+    "Smart Hybrid Light (IR + white LED)",
+    "Motion Detection 3.0 (person/vehicle)",
+    "HikAI-ISP noise reduction",
+    "120dB WDR",
+    "built-in mic",
+    "H.265+",
+    "ONVIF/RTSP",
+    "IP67",
+    "Hikvision NVR compatible"
+  ],
   "sources": [
-    "https://www.hikvision.com/mena-en/products/HiLook-IP-Products/Network-Cameras/Value-Camera/ipc-b129haa-lu-f---sl---srb-/"
+    "https://www.hikvision.com/en/products/HiLook-IP-Products/"
   ],
   "power_source": [
     "poe",
@@ -73,21 +92,20 @@
       },
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
       "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
-      "verified": false,
-      "notes": "HiLook uses the Hikvision RTSP path (main 101 / sub 102); enable RTSP in the web UI.",
       "onvif_port": 80,
-      "two_way_audio": true
+      "verified": false
     },
     "home_assistant": {
       "integration": "onvif",
-      "notes": "HiLook (Hikvision OEM); ONVIF integration works (default port 80)."
+      "notes": "Uses Hikvision protocol. ONVIF integration works. Default port 80."
     },
     "blue_iris": {
       "profile": "Hikvision",
-      "notes": "HiLook uses the Hikvision protocol — select the 'Hikvision' profile."
+      "notes": "Select 'Hikvision' profile. HiLook uses Hikvision protocol."
     }
   },
-  "last_verified": "2026-07-06",
+  "release_notes": "HiLook 2 MP ColorVu 3.0 fixed bullet with 24/7 full-color imaging, Smart Hybrid Light and Motion Detection 3.0 (person/vehicle). Specs verified against the official HiLook datasheet IPC-B129HAA-LU_Datasheet_20231226.",
+  "last_verified": "2026-08-28",
   "environment": [
     "outdoor"
   ]

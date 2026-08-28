@@ -17,6 +17,7 @@
 | Storage | NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP68 |
+| Operating temp | -30 to 60°C |
 
 ## Streams
 

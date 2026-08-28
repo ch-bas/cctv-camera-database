@@ -1,5 +1,7 @@
 # HiLook IPC-B129HAA-LU
 
+*Also known as: IPC-B129HAA-LUF, IPC-B129HAA-LUF/SL, IPC-B129HAA-LUF/SRB, HiLook 2 MP ColorVu 3.0 Fixed Bullet*
+
 | Field | Spec |
 |-------|------|
 | Brand | HiLook |
@@ -7,30 +9,34 @@
 | Type | bullet |
 | Connectivity | ethernet |
 | Resolution | 1080p (2MP, 1920×1080) |
-| Sensor | 1/2.8" CMOS |
-| Lens | 1× 2.8 / 4 (fixed)mm |
-| Field of view | 106 (2.8mm) / 88 (4mm)° |
+| Sensor | 1/2.8" Progressive Scan CMOS |
+| Lens | 1× 2.8 / 4 (fixed)mm F1.0 |
+| Field of view | 106 horizontal (2.8 mm) / 88 horizontal (4 mm)° |
 | Night vision | hybrid (30m), 0.0005 lux color |
-| Power | PoE (802.3af) / DC 12V |
+| Power | PoE (802.3af Class 3) / DC 12V |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
-| Two-way audio | Yes |
+| Two-way audio | No |
+| Operating temp | -30 to 60°C |
 
 ## Features
 
-- ColorVu 3.0 full-color 24/7 imaging
-- Smart Hybrid Light (IR + white LED, 3 modes) to 30m
+- 2 MP ColorVu 3.0 fixed bullet
+- 24/7 full-color imaging
+- Smart Hybrid Light (IR + white LED)
+- Motion Detection 3.0 (person/vehicle)
 - HikAI-ISP noise reduction
-- Motion Detection 3.0 (human/vehicle)
+- 120dB WDR
 - built-in mic
-- strobe (SL) + red-blue (SRB) active deterrence with two-way audio + speaker
-- microSD up to 512GB (-F)
-- NOTE: Hikvision datasheet specs this at 2MP/1080p despite the model number
+- H.265+
+- ONVIF/RTSP
+- IP67
+- Hikvision NVR compatible
 
 ## Sources
 
-- https://www.hikvision.com/mena-en/products/HiLook-IP-Products/Network-Cameras/Value-Camera/ipc-b129haa-lu-f---sl---srb-/
+- https://www.hikvision.com/en/products/HiLook-IP-Products/
 
 ---
 *Auto-generated from hilook-ipc-b129haa-lu.json — do not edit by hand.*

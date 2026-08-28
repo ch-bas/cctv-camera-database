@@ -1,5 +1,7 @@
 # HiLook IPC-T229HAA-LU
 
+*Also known as: IPC-T229HAA-LUF/SL, IPC-T229HAA-LUF/SRB, IPC-T229HAA-LU(2.8mm), IPC-T229HAA-LU(4mm)*
+
 | Field | Spec |
 |-------|------|
 | Brand | HiLook |
@@ -7,30 +9,33 @@
 | Type | turret |
 | Connectivity | ethernet |
 | Resolution | 1080p (2MP, 1920×1080) |
-| Sensor | 1/2.8" CMOS |
-| Lens | 1× 2.8 / 4 (fixed)mm |
-| Field of view | 106 (2.8mm) / 88 (4mm)° |
+| Sensor | 1/2.8" Progressive Scan CMOS |
+| Lens | 1× 2.8 / 4 (fixed)mm F1.0 |
+| Field of view | 106 horizontal (2.8 mm)° |
 | Night vision | hybrid (30m), 0.0005 lux color |
-| Power | PoE (802.3af) / DC 12V |
+| Power | PoE (802.3af, Class 3) / DC 12V |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
-| Two-way audio | Yes |
+| Two-way audio | No |
+| Operating temp | -30 to 60°C |
 
 ## Features
 
-- ColorVu 3.0 full-color 24/7 imaging
-- Smart Hybrid Light (IR + white LED, 3 modes) to 30m
+- 2 MP ColorVu 3.0 fixed turret
 - HikAI-ISP noise reduction
-- Motion Detection 3.0 (human/vehicle)
-- built-in mic
-- strobe (SL) + red-blue (SRB) active deterrence with two-way audio + speaker
-- microSD up to 512GB (-F)
-- NOTE: Hikvision datasheet specs this at 2MP/1080p despite the model number
+- Smart Hybrid Light (IR + white light)
+- Motion Detection 3.0 (person/vehicle)
+- 120dB WDR
+- built-in microphone
+- H.265+
+- ONVIF/RTSP
+- IP67
+- Hikvision NVR compatible
 
 ## Sources
 
-- https://www.hikvision.com/mena-en/products/HiLook-IP-Products/Network-Cameras/Value-Camera/ipc-t229haa-lu-f---sl---srb-/
+- https://www.hikvision.com/en/products/HiLook-IP-Products/
 
 ---
 *Auto-generated from hilook-ipc-t229haa-lu.json — do not edit by hand.*

@@ -6,6 +6,23 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.7.2] — 2026-08-28
+
+### Fixed
+- **Brand correction — 11 cameras were mislabeled Uniview but are actually HiLook (Hikvision's budget sub-brand).** The records (`IPC-B120HA`, `IPC-B129HAA-LU`, `IPC-B140HA`, `IPC-B429HAA-LU`, `IPC-B469HAD-LUF`, `IPC-B529HAA-LU`, `IPC-D129HA-LU`, `IPC-T229HA-LU`, `IPC-T229HAA-LU`, `IPC-T249HA-LU`, `IPC-T269HAD-LUF`) had fabricated specs that mixed Hikvision `ColorVu` with Uniview `Ultra265` + `/media/video1` RTSP — an impossible combination templated from Uniview boilerplate rather than read from the real datasheet. Removed the Uniview records and rebuilt them under the **HiLook** brand from the actual HiLook datasheets (H.265+ codecs, Hikvision `/Streaming/Channels/101` RTSP, datasheet-verified dimensions/weight/lens/IR/temp/network). **4 of the 11 were cross-brand duplicates** of existing HiLook records (now deduped and enriched with the fuller datasheet specs). Camera count **3,640 → 3,636** (net −4 duplicates removed).
+
+### Changed
+- **Hikvision datasheet backfill (#166 / #162)** — mined 272 official Hikvision datasheets (cached locally) to fill spec fields on records that were missing them, datasheet-verified only:
+  - **`operating_temp_c`** — coverage 69 → **290** (from each datasheet's "Startup and Operating Conditions" row; e.g. `-30 to 60` outdoor, `-10 to 40/45/50` indoor).
+  - **`power.consumption_w`** — coverage 67 → **283** (highest stated `max. N W`, PoE figure preferred over DC).
+  - **`power.poe_class`** — added on 189 records where the datasheet literally prints the PoE class (802.3af/at/bt Class 3/4/6/8); values that were not explicitly stated were left unset (no inference).
+  - **`ik_rating`** — only 1 addable (DS-2CD3047G3E-LIU = IK10); the other candidates are bullet/PTZ models whose datasheets print no IK level, so they were correctly left null.
+- No streams/`release_year` backfill: the records missing `video.streams[]` are the ones we lack datasheets for, and Hikvision datasheets don't state a product release year.
+- **Completed `network.ethernet_ports` on 248 Dahua cameras** — cross-checked against netbox-community/devicetype-library#4504 (265 Dahua device types, which round-trip our own data via the cctv-database.com links); those records carried `ethernet_speed_mbps` but were missing the single-port `ethernet_ports: 1` confirmed by each YAML's lone `eth0` interface.
+- **LaView F1 (`laview-f1`) — verified Frigate config (#327).** Added a working `configs.frigate` block (RTSP `…:8554/Streaming/Channels/101`, go2rtc restream, ONVIF on the non-standard port 8000) confirmed on model LV-PWF1B-K / Frigate 0.17 once ONVIF is enabled in the LaView app. Reported by [@nengineer](https://github.com/nengineer).
+
+No new cameras.
+
 ## [2.7.1] — 2026-08-27
 
 ### Changed
