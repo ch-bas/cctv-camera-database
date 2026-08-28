@@ -9,6 +9,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 ## [2.7.3] — 2026-08-28
 
 ### Added
+- **New brand: TKH Security (Siqura) — 20 cameras** (#268), authored from the official TKH Security datasheets: 7 PTZ (PD5004W/PD5004/PD2024W/PD1024/PD910/PD980/PD900, up to 42× zoom / 400 m IR), 6 fixed domes (FD5006M/FD2024M/FD2026M/FD2024F/FD980/FD950), 2 fisheye (FE5012/FD360V2, 12 MP), 4 bullets (BL5008M/BL5006M/BL2024M/BL2026M), and 1 box (BC5004). Professional ONVIF Profile S/G/T cameras (H.265+, PoE++); each aliased "Siqura &lt;model&gt;" (the former brand name).
 - **New brand: Night Owl — 11 cameras** (#268), authored from the official Night Owl product pages: battery + plug-in Wi-Fi spotlight/deterrence cameras (`CAM-BWNIP2LBU`, `CAM-WNIP2LBU`, `CAM-FWIP2-IN`, `CAM-FWIP4L`, `CAM-BW4-SLR`, `CAM-BWIP4LU-FP`, `CAM-BW4`), an indoor 3 MP pan-tilt (`CAM-FWIP3PT-IN`), a wired video doorbell (`DB-DBW2`), and PoE 12 MP/4K deterrence domes (`CAM-FTN12-DM`, `CAM-FTN12-MT-B`). Night Owl publishes marketing-level specs only, so records carry the verified fields (resolution, connectivity, power, IP, temp, audio, features) with unlisted hardware details omitted.
 - **12 new Hikvision cameras** (3,636 → 3,648), authored from official Hikvision datasheets:
   - **Solar 4G** — `DS-2CFS04/4G` (4 MP bullet) and `DS-2CFSP4/4G` (4 MP pan-tilt, smart tracking) — 24/7 AOV solar cameras (8 W panel + 9000 mAh battery, 4G LTE, Smart Hybrid Light 30 m, two-way audio, no cables).

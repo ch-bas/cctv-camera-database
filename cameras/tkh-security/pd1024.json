@@ -1,0 +1,107 @@
+{
+  "id": "tkh-security-pd1024",
+  "brand": "TKH Security",
+  "model": "PD1024",
+  "type": "ptz",
+  "aliases": [
+    "Siqura PD1024",
+    "4MP IP PTZ dome camera with 25x motor zoom lens, IR, 1/2.8'' CMOS"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/2.8'' CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.8-120mm",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "53.3-2.6 (H)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux": 0.001,
+    "min_lux_color": 0.005
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": false
+  },
+  "power": {
+    "method": "PoE (802.3at) / 12 VDC",
+    "consumption_w": 24,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "169 x 169 x 161",
+  "weight_g": 2500,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://catalog.tkhsecurity.com/product/pd1024/"
+  ],
+  "release_notes": "The PD1024 is a compact 4MP indoor/outdoor PTZ dome camera with a 25x optical-zoom (4.8-120mm) lens, IR to 50m, 120 dB WDR and triple-stream H.265/H.264/MJPEG. Specs verified against the official TKH Security (Siqura) datasheet for the PD1024.",
+  "last_verified": "2026-08-28",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/VideoInput/1/h264/1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/VideoInput/1/h264/2",
+      "onvif_port": 80,
+      "verified": false,
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      }
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF Profile S/G/T; works with any ONVIF VMS."
+    },
+    "blue_iris": {
+      "profile": "ONVIF"
+    }
+  }
+}

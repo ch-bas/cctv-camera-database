@@ -1,0 +1,106 @@
+{
+  "id": "tkh-security-fe5012",
+  "brand": "TKH Security",
+  "model": "FE5012",
+  "type": "fisheye",
+  "aliases": [
+    "Siqura FE5012",
+    "12MP IP Fisheye camera, IR, 1/1.7'' CMOS"
+  ],
+  "resolution": {
+    "megapixels": 12,
+    "max_width": 4000,
+    "max_height": 3000,
+    "label": "12MP"
+  },
+  "sensor": "1/1.7'' CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.65",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180/360 panoramic (fisheye)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux_color": 0.01
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "H.264+",
+      "H.265",
+      "H.265+",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 10.5,
+    "voltage": "12V DC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "131 x 131 x 46",
+  "weight_g": 500,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "single fisheye lens with on-board dewarping",
+    "dewarp modes: 360 surround, dual 180 panoramic, quad view, single view",
+    "dewarped ePTZ via camera web page",
+    "built-in IR illuminator (850nm, up to 20m)",
+    "automatic IR-cut filter (day/night)",
+    "AI-enhanced embedded video analytics",
+    "ONVIF Profile S/G/M",
+    "IP66/IP67, IK10 vandal-resistant",
+    "NDAA compliant"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://catalog.tkhsecurity.com/product/fe5012/"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/VideoInput/1/h264/1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/VideoInput/1/h264/2",
+      "onvif_port": 80,
+      "verified": false,
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      }
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF Profile S/G/T; works with any ONVIF VMS."
+    },
+    "blue_iris": {
+      "profile": "ONVIF"
+    }
+  },
+  "release_notes": "12MP IP fisheye camera with 1.65mm single fisheye lens, on-board dewarping (360 surround / dual 180 panoramic / quad view), built-in 850nm IR to 20m, and AI-enhanced video analytics. Specs verified against the official TKH Security (Siqura) datasheet for the FE5012.",
+  "last_verified": "2026-08-28"
+}

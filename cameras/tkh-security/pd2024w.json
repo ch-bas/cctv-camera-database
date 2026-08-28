@@ -1,0 +1,111 @@
+{
+  "id": "tkh-security-pd2024w",
+  "brand": "TKH Security",
+  "model": "PD2024W",
+  "type": "ptz",
+  "aliases": [
+    "Siqura PD2024W",
+    "4MP IP Pendant PTZ camera with 42x motor zoom, IR, 1/1.8'' CMOS"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8'' CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6-252mm",
+    "aperture": "F1.2",
+    "varifocal": true
+  },
+  "field_of_view_deg": "56.6-1.7 (H)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 400,
+    "min_lux": 0.0005,
+    "min_lux_color": 0.001
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": false
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "PoE (802.3bt) / 24 VAC",
+    "consumption_w": 62,
+    "voltage": "24 VAC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "267 x 267 x 430",
+  "weight_g": 9600,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://catalog.tkhsecurity.com/product/pd2024w/"
+  ],
+  "release_notes": "The PD2024W is a 4MP outdoor pendant PTZ camera with a 42x optical-zoom (6-252mm) lens, integrated IR to 400m, wiper, 140 dB WDR and intelligent VCA with auto tracking. Specs verified against the official TKH Security (Siqura) datasheet for the PD2024W.",
+  "last_verified": "2026-08-28",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/VideoInput/1/h264/1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/VideoInput/1/h264/2",
+      "onvif_port": 80,
+      "verified": false,
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      }
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF Profile S/G/T; works with any ONVIF VMS."
+    },
+    "blue_iris": {
+      "profile": "ONVIF"
+    }
+  },
+  "ik_rating": "IK10"
+}

@@ -1,0 +1,113 @@
+{
+  "id": "tkh-security-pd5004",
+  "brand": "TKH Security",
+  "model": "PD5004",
+  "type": "ptz",
+  "aliases": [
+    "Siqura PD5004",
+    "4MP IP Pendant PTZ camera with 40x motor zoom, IR, 1/1.8'' CMOS"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8'' CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6.3-252mm",
+    "aperture": "F1.69",
+    "varifocal": true
+  },
+  "field_of_view_deg": "63.62-1.77 (H)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 400,
+    "min_lux": 0.0002,
+    "min_lux_color": 0.001
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.265+",
+      "H.264",
+      "H.264+",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": false
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "PoE++ (802.3bt) / 24 VAC / 36 VDC",
+    "consumption_w": 62,
+    "voltage": "24 VAC / 36 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-40 to 74",
+  "dimensions_mm": "220 x 220 x 345",
+  "weight_g": 6800,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://catalog.tkhsecurity.com/product/pd5004/"
+  ],
+  "release_notes": "The PD5004 is a 4MP outdoor pendant PTZ camera with a 40x optical-zoom (6.3-252mm) lens, built-in IR to 400m, 120 dB WDR and onboard AI analytics with auto tracking. Specs verified against the official TKH Security (Siqura) datasheet for the PD5004.",
+  "last_verified": "2026-08-28",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/VideoInput/1/h264/1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/VideoInput/1/h264/2",
+      "onvif_port": 80,
+      "verified": false,
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      }
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF Profile S/G/T; works with any ONVIF VMS."
+    },
+    "blue_iris": {
+      "profile": "ONVIF"
+    }
+  },
+  "ik_rating": "IK10"
+}
