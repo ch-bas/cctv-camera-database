@@ -189,7 +189,7 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | 4K / 8MP+ | 1,003 |
 | 4–7MP | 1,541 |
 | Under 4MP | 1,135 |
-| With integration configs (Frigate / Home Assistant) | 3,095 |
+| With integration configs (Frigate / Home Assistant) | 3,106 |
 | With color-lux rating (`night_vision.min_lux_color`) | 2,379 |
 
 ### All 80 brands
