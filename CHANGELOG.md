@@ -6,6 +6,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.7.3] — 2026-08-28
+
+### Changed
+- **Backfilled `weight_g` on 227 Dahua cameras** (coverage 83 → 310) from the NetBox device-type library (community PR [netbox-community/devicetype-library#4504](https://github.com/netbox-community/devicetype-library/pull/4504), "Backfill weight for 152 Dahua camera device types"). Weights are the manufacturer-datasheet figures curated in those YAMLs.
+
+No new cameras.
+
 ## [2.7.2] — 2026-08-28
 
 ### Fixed
