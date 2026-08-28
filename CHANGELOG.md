@@ -15,7 +15,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
   - **`power.poe_class`** — added on 189 records where the datasheet literally prints the PoE class (802.3af/at/bt Class 3/4/6/8); values that were not explicitly stated were left unset (no inference).
   - **`ik_rating`** — only 1 addable (DS-2CD3047G3E-LIU = IK10); the other candidates are bullet/PTZ models whose datasheets print no IK level, so they were correctly left null.
 - No streams/`release_year` backfill: the records missing `video.streams[]` are the ones we lack datasheets for, and Hikvision datasheets don't state a product release year.
-- **LaView F1 (`laview-f1`) — verified Frigate config (#327).** Added a working `configs.frigate` block (RTSP `…:8554/Streaming/Channels/101`, go2rtc restream, `onvif_port` 80) confirmed on model LV-PWF1B-K / Frigate 0.17 once ONVIF is enabled in the LaView app. Reported by [@nengineer](https://github.com/nengineer).
+- **LaView F1 (`laview-f1`) — verified Frigate config (#327).** Added a working `configs.frigate` block (RTSP `…:8554/Streaming/Channels/101`, go2rtc restream, ONVIF on the non-standard port 8000) confirmed on model LV-PWF1B-K / Frigate 0.17 once ONVIF is enabled in the LaView app. Reported by [@nengineer](https://github.com/nengineer).
 
 No new cameras.
 
