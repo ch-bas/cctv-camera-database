@@ -17,6 +17,7 @@
 | IP rating | IP66 |
 | IK rating | IK10 |
 | Two-way audio | No |
+| Operating temp | -20 to 60°C |
 | Released | 2023 |
 
 ## Streams

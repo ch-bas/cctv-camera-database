@@ -17,6 +17,7 @@
 | IP rating | IP42 |
 | IK rating | IK10 |
 | Two-way audio | No |
+| Operating temp | -10 to 50°C |
 | Released | 2023 |
 
 ## Streams

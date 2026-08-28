@@ -17,6 +17,7 @@
 | Storage | microSD ≤ 1024GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
+| Operating temp | -30 to 60°C |
 
 ## Streams
 

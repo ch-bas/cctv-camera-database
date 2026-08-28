@@ -6,6 +6,18 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.7.2] — 2026-08-28
+
+### Changed
+- **Hikvision datasheet backfill (#166 / #162)** — mined 272 official Hikvision datasheets (cached locally) to fill spec fields on records that were missing them, datasheet-verified only:
+  - **`operating_temp_c`** — coverage 69 → **290** (from each datasheet's "Startup and Operating Conditions" row; e.g. `-30 to 60` outdoor, `-10 to 40/45/50` indoor).
+  - **`power.consumption_w`** — coverage 67 → **283** (highest stated `max. N W`, PoE figure preferred over DC).
+  - **`power.poe_class`** — added on 189 records where the datasheet literally prints the PoE class (802.3af/at/bt Class 3/4/6/8); values that were not explicitly stated were left unset (no inference).
+  - **`ik_rating`** — only 1 addable (DS-2CD3047G3E-LIU = IK10); the other candidates are bullet/PTZ models whose datasheets print no IK level, so they were correctly left null.
+- No streams/`release_year` backfill: the records missing `video.streams[]` are the ones we lack datasheets for, and Hikvision datasheets don't state a product release year.
+
+No new cameras.
+
 ## [2.7.1] — 2026-08-27
 
 ### Changed

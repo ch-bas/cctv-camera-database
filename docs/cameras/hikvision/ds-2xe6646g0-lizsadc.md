@@ -18,6 +18,7 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP68 |
 | IK rating | IK10 |
+| Operating temp | -30 to 60°C |
 
 ## Streams
 

@@ -17,6 +17,7 @@
 | IP rating | IP67 |
 | IK rating | IK08 |
 | Two-way audio | No |
+| Operating temp | -30 to 60°C |
 | Released | 2023 |
 
 ## Streams

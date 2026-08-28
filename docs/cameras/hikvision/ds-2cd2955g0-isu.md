@@ -15,6 +15,7 @@
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
 | Two-way audio | No |
+| Operating temp | -10 to 50°C |
 | Released | 2023 |
 
 ## Streams
