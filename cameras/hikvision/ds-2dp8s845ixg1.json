@@ -1,0 +1,130 @@
+{
+  "id": "hikvision-ds-2dp8s845ixg1",
+  "brand": "Hikvision",
+  "model": "DS-2DP8S845IXG1",
+  "type": "panoramic",
+  "aliases": [
+    "DS-2DP8S845IXG1/LM-L5WF/832(F3)",
+    "DS-2DP8S845IXG1/LM-LWF/832(F3)",
+    "32MP 140° Panoramic & PTZ PanoVu Camera"
+  ],
+  "ptz": {
+    "autotracking": true
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 32,
+    "max_width": 11040,
+    "max_height": 3616,
+    "label": "32MP panoramic (8-sensor) + PTZ"
+  },
+  "sensor": "[Panoramic] 1/1.8\" CMOS x8; [PTZ] 1/1.2\" CMOS",
+  "lens": {
+    "count": 9,
+    "focal_length_mm": "[Panoramic] 8mm; [PTZ] 7.2-320mm",
+    "aperture": "[Panoramic] F1.0 / [PTZ] F1.5",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 500,
+    "min_lux": 0.0001,
+    "min_lux_color": 0.0005
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "11040x3616",
+        "fps": 12,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "3056x656",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "power": {
+    "method": "36 VDC",
+    "consumption_w": 135,
+    "voltage": "36 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "Ø478 x 430 x 518",
+  "weight_g": 17400,
+  "field_of_view_deg": "140 panoramic",
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "PanoVu 8-sensor 140° distortion-free panorama",
+    "integrated 45x optical zoom PTZ channel",
+    "up to 500 m laser supplement light",
+    "manual / auto / panorama smart tracking with automatic multi-target switching",
+    "intrusion, line crossing, region entrance and region exiting detection",
+    "DarkFighter 2.0 low-light imaging",
+    "IP67 / IK10 rated"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.hikvision.com/en/products/IP-Products/PTZ-Cameras/PanoVu-Series/"
+  ],
+  "release_notes": "The Hikvision DS-2DP8S845IXG1 is a 32MP 140° stitched PanoVu camera that captures a distortion-free panorama from eight F1.0 sensors alongside an integrated 45x optical-zoom PTZ channel with up to 500 m laser supplement light and multi-target smart tracking. Specs verified against the official Hikvision datasheet DS-2DP8S845IXG1_LM-L5WF_832F3_Datasheet_20260819.",
+  "last_verified": "2026-08-28",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "verified": false,
+      "onvif_port": 80,
+      "notes": "Multi-channel PanoVu: panoramic channels + PTZ channel each have their own Streaming/Channels path."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision protocol, ONVIF works."
+    },
+    "blue_iris": {
+      "profile": "Hikvision"
+    }
+  }
+}

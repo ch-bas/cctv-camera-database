@@ -8,10 +8,15 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.7.3] — 2026-08-28
 
+### Added
+- **10 new high-end Hikvision cameras** (3,636 → 3,646), authored from official Hikvision datasheets:
+  - **PanoVu multi-sensor + PTZ** — `DS-2DP8S845IXG1` (32 MP 140° stitched 8-sensor panorama + PTZ, 500 m laser IR, 17.4 kg) and `DS-2DP7D425IXG1-LEF` (16 MP 4×4 MP 360° panorama + 4 MP 25× PTZ).
+  - **Omni 6C multi-sensor speed domes** — `DS-2SK6C425MWG1` (4 MP 25×), `DS-2SK6C425MXG1` (8 MP 25×), `DS-2SK6C440MXG1` (4 MP 40×), `DS-2SK6C810MCG1` (8 MP 10×) — DarkFighter, IP67/IK10, auto-tracking.
+  - **TandemVu PTZ** — `DS-2SF8C425MXS-DLW` (4 MP 25×, simultaneous panoramic + PTZ).
+  - **DeepinView moto-varifocal** — `iDS-2CD7A87G2H-XZHSY` (8 MP bullet), `iDS-2CD7A47G2H-XZHSY` (4 MP bullet), `iDS-2CD5146G2/V-XZHSY` (4 MP dome) — DarkFighter, deep-learning analytics (people counting / face / ANPR on `/P`), 140–150 dB WDR, hybrid IR + white light.
+
 ### Changed
 - **Backfilled `weight_g` on 227 Dahua cameras** (coverage 83 → 310) from the NetBox device-type library (community PR [netbox-community/devicetype-library#4504](https://github.com/netbox-community/devicetype-library/pull/4504), "Backfill weight for 152 Dahua camera device types"). Weights are the manufacturer-datasheet figures curated in those YAMLs.
-
-No new cameras.
 
 ## [2.7.2] — 2026-08-28
 
