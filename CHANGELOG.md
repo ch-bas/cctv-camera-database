@@ -9,7 +9,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 ## [2.7.3] — 2026-08-28
 
 ### Added
-- **New brand: Night Owl** (#268) — `CAM-BWNIP2LBU`, a wire-free 1080p battery spotlight camera (18650 Li-Ion, motion-activated spotlight, PIR human detection, two-way audio, add-on for the WNIP2 Wi-Fi NVR). First Night Owl camera in the dataset.
+- **New brand: Night Owl — 11 cameras** (#268), authored from the official Night Owl product pages: battery + plug-in Wi-Fi spotlight/deterrence cameras (`CAM-BWNIP2LBU`, `CAM-WNIP2LBU`, `CAM-FWIP2-IN`, `CAM-FWIP4L`, `CAM-BW4-SLR`, `CAM-BWIP4LU-FP`, `CAM-BW4`), an indoor 3 MP pan-tilt (`CAM-FWIP3PT-IN`), a wired video doorbell (`DB-DBW2`), and PoE 12 MP/4K deterrence domes (`CAM-FTN12-DM`, `CAM-FTN12-MT-B`). Night Owl publishes marketing-level specs only, so records carry the verified fields (resolution, connectivity, power, IP, temp, audio, features) with unlisted hardware details omitted.
 - **12 new Hikvision cameras** (3,636 → 3,648), authored from official Hikvision datasheets:
   - **Solar 4G** — `DS-2CFS04/4G` (4 MP bullet) and `DS-2CFSP4/4G` (4 MP pan-tilt, smart tracking) — 24/7 AOV solar cameras (8 W panel + 9000 mAh battery, 4G LTE, Smart Hybrid Light 30 m, two-way audio, no cables).
   - **PanoVu multi-sensor + PTZ** — `DS-2DP8S845IXG1` (32 MP 140° stitched 8-sensor panorama + PTZ, 500 m laser IR, 17.4 kg) and `DS-2DP7D425IXG1-LEF` (16 MP 4×4 MP 360° panorama + 4 MP 25× PTZ).
