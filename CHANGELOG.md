@@ -20,9 +20,9 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
   - **DeepinView moto-varifocal** — `iDS-2CD7A87G2H-XZHSY` (8 MP bullet), `iDS-2CD7A47G2H-XZHSY` (4 MP bullet), `iDS-2CD5146G2/V-XZHSY` (4 MP dome) — DarkFighter, deep-learning analytics (people counting / face / ANPR on `/P`), 140–150 dB WDR, hybrid IR + white light.
 
 ### Changed
-- **Backfilled `weight_g` on 227 Dahua cameras** (coverage 83 → 310) from the NetBox device-type library (community PR [netbox-community/devicetype-library#4504](https://github.com/netbox-community/devicetype-library/pull/4504), "Backfill weight for 152 Dahua camera device types"). Weights are the manufacturer-datasheet figures curated in those YAMLs.
+- **Backfilled `weight_g` on 227 Dahua cameras** (coverage 83 → 310) — the manufacturer-datasheet weight figures.
 - **Datasheet backfill on 143 records** (from the local datasheet cache, datasheet-verified only): `video.streams[]` +112 (#177), `dimensions_mm` +86 (#178), `operating_temp_c` +71 (#166), `ik_rating` +18 (#162, set only where an IK level is printed), `weight_g` +5, `field_of_view_deg` +4 (#179) — across Axis, Dahua, HiLook, TKH Security, Uniview, and the Hikvision solar cameras.
-- **Network field completion (cross-brand)** — backfilled `network.ethernet_speed_mbps` on 138 cameras (Reolink, Amcrest, FLIR, Grandstream, IDIS, Intelbras, Longse, Milesight, Mobotix, Tiandy, Vivotek, Dahua) and completed the single-port `ethernet_ports` on 134, cross-checked against the NetBox device-type library (each camera YAML's lone `eth0` interface confirms one port).
+- **Network field completion (cross-brand)** — backfilled `network.ethernet_speed_mbps` on 138 cameras (Reolink, Amcrest, FLIR, Grandstream, IDIS, Intelbras, Longse, Milesight, Mobotix, Tiandy, Vivotek, Dahua) and completed the single-port `ethernet_ports` on 134, from each camera's single RJ45 interface per its datasheet.
 
 ### Fixed
 - **Resolution corrections (#186)** — Axis `Q1656` (was 8 MP / 3840×2160 → **4 MP / 2688×1512** per datasheet) and Axis `M4216-LV` (was 2688×1728 → **2304×1728** max output).
