@@ -6,7 +6,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
-## [2.7.3] — 2026-08-28
+## [2.8.0] — 2026-08-29
 
 ### Added
 - **New brands: Hiseeu (23) + Srihome (1) + IMILAB (1)** (#268) — budget Wi-Fi cameras, authored from the official Hiseeu / manufacturer product pages. Hiseeu spans Wi-Fi+Ethernet PT/PTZ (`WHD303`/`WHD305`/`WHD405`/`WHD405B`/`WHC905`/`WHD315`/`WHD205`), 4K bullets (`TZ-HBY08`/`TZ-HB618`/`WHD308B`), 3MP bullets/box (`TZ-HB613`/`TZ-HBF03`), dual-lens (`WS03`/`WP04`/`WTS804`/`WTDS803`), and solar/battery models (`C20`/`C90`/`C90B`/`WTD403`/`WTD504`/`WTD904`/`WTDK05`); Srihome/Sricam `SH057`; IMILAB `C21` (indoor PTZ). Frigate RTSP configs from the #268 RTSP-patterns layer (Hiseeu `/live/main`@80, SriHome `/1/h264major`) on the mains-powered models; solar/battery + indoor-cloud models are app/cloud cameras with no local RTSP.
