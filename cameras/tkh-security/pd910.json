@@ -1,0 +1,126 @@
+{
+  "id": "tkh-security-pd910",
+  "brand": "TKH Security",
+  "model": "PD910",
+  "type": "ptz",
+  "aliases": [
+    "Siqura PD910",
+    "3 MP high-speed PTZ camera with 40x zoom, IR"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2065,
+    "max_height": 1553,
+    "label": "3MP"
+  },
+  "sensor": "1/2.8\" Progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.3-170",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "64 (W) to 1.6 (T) horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 200,
+    "min_lux": 0.002,
+    "min_lux_color": 0.04
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2048x1536",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "power": {
+    "method": "24 Vdc, 24 Vac, or Hi-PoE (802.3bt Type 3)",
+    "consumption_w": 48,
+    "voltage": "24 Vdc / 24 Vac"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-40 to 74",
+  "dimensions_mm": "Ø207.4 x 300.4",
+  "weight_g": 3800,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "features": [
+    "40x optical zoom",
+    "10x digital zoom",
+    "pan 360 continuous, tilt -20 to +90",
+    "256 presets",
+    "120 dB WDR (dual exposure HDR)",
+    "EIS image stabilization",
+    "PT servo feedback",
+    "built-in IR illumination up to 200 m (850 nm)",
+    "NEMA TS-2"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "status": "discontinued",
+  "sources": [
+    "https://catalog.tkhsecurity.com/product/pd910/"
+  ],
+  "release_notes": "The TKH Security (Siqura) PD910 is a 3MP outdoor high-speed PTZ camera with a 40x optical zoom lens, built-in IR up to 200 m, 120 dB HDR, and PT servo feedback. Obsolete as of July 1, 2023 (successor PD950NW). Specs verified against the official TKH Security (Siqura) datasheet for the PD910.",
+  "last_verified": "2026-08-28",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/VideoInput/1/h264/1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/VideoInput/1/h264/2",
+      "onvif_port": 80,
+      "verified": false,
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      }
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF Profile S/G/T; works with any ONVIF VMS."
+    },
+    "blue_iris": {
+      "profile": "ONVIF"
+    }
+  }
+}

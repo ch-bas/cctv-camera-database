@@ -1,0 +1,130 @@
+{
+  "id": "tkh-security-bl2024m",
+  "brand": "TKH Security",
+  "model": "BL2024M",
+  "type": "bullet",
+  "aliases": [
+    "Siqura BL2024M",
+    "4MP IP Bullet camera with 5x motor zoom, IR, 1/2.8'' CMOS"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/2.8'' CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5",
+    "aperture": "F1.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "113-34 horizontal, 58-19 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 60,
+    "min_lux_color": 0.002
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "fourth",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3at) / DC 12V",
+    "consumption_w": 15,
+    "voltage": "12V DC",
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "144 x 144 x 333",
+  "weight_g": 1500,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "IR illumination 850nm, up to 60m",
+    "motorized 5x zoom autofocus lens",
+    "automatic IR-cut filter (day/night)",
+    "120dB WDR",
+    "Electronic Image Stabilization (EIS)",
+    "BLC, HLC, Defog, 3D DNR",
+    "quad stream",
+    "ONVIF Profile S/G/T"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://catalog.tkhsecurity.com/product/bl2024m/"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/VideoInput/1/h264/1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/VideoInput/1/h264/2",
+      "onvif_port": 80,
+      "verified": false,
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      }
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF Profile S/G/T; works with any ONVIF VMS."
+    },
+    "blue_iris": {
+      "profile": "ONVIF"
+    }
+  },
+  "release_notes": "4MP IP bullet camera with 2.7-13.5mm 5x motorized zoom lens, 850nm IR to 60m, 120dB WDR, and quad-stream H.265/H.264/MJPEG. Specs verified against the official TKH Security (Siqura) datasheet for the BL2024M.",
+  "last_verified": "2026-08-28"
+}

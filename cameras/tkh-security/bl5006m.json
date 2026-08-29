@@ -1,0 +1,127 @@
+{
+  "id": "tkh-security-bl5006m",
+  "brand": "TKH Security",
+  "model": "BL5006M",
+  "type": "bullet",
+  "aliases": [
+    "Siqura BL5006M",
+    "6MP IP Bullet camera with 5x motor zoom, IR, 1/2.5'' CMOS"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3296,
+    "max_height": 1856,
+    "label": "6MP"
+  },
+  "sensor": "1/2.5'' CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "108-36 horizontal, 57-20 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux_color": 0.008
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "H.264+",
+      "H.265",
+      "H.265+",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3296x1856",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1280x720",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 11.5,
+    "voltage": "12V DC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "278 x 100 x 89",
+  "weight_g": 1000,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "IR illumination 850nm, up to 50m",
+    "motorized 5x zoom autofocus lens",
+    "automatic IR-cut filter (day/night)",
+    "120dB WDR (Dual Conversion Gain HDR)",
+    "AI-enhanced low-light sensitivity",
+    "Electronic Image Stabilization (EIS)",
+    "BLC, HLC, Defog, 3DNR, 2DNR",
+    "AI-enhanced embedded video analytics",
+    "ONVIF Profile S/G/T/M",
+    "NDAA compliant"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://catalog.tkhsecurity.com/product/bl5006m/"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/VideoInput/1/h264/1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/VideoInput/1/h264/2",
+      "onvif_port": 80,
+      "verified": false,
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      }
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF Profile S/G/T; works with any ONVIF VMS."
+    },
+    "blue_iris": {
+      "profile": "ONVIF"
+    }
+  },
+  "release_notes": "6MP IP bullet camera with 2.7-13.5mm 5x motorized zoom lens, 850nm IR to 50m, 120dB Dual Conversion Gain HDR, and AI-enhanced video analytics. Specs verified against the official TKH Security (Siqura) datasheet for the BL5006M.",
+  "last_verified": "2026-08-28"
+}

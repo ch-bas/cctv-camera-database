@@ -1,0 +1,143 @@
+{
+  "id": "hikvision-ids-2cd5146g2-v-xzhsy",
+  "brand": "Hikvision",
+  "model": "iDS-2CD5146G2/V-XZHSY",
+  "aliases": [
+    "iDS-2CD5146G2/V-XZ(H)S(Y)",
+    "4MP DeepinViewX Moto Varifocal Dome"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12 / 8-32 (motorized varifocal options)",
+    "aperture": "F1.4-F2.1 (2.8-12mm), F1.7 constant (8-32mm)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "114.6 to 41.8 (2.8-12mm), 42.5 to 15.2 (8-32mm) horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 60,
+    "min_lux": 0.0002,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "PoE (802.3at, Type 2, Class 4), max. 16W, or 12 VDC max. 16.4W, or 24 VAC max. 16.1W",
+    "consumption_w": 16.4,
+    "poe_class": 4
+  },
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "dimensions_mm": "Ø143 × 112",
+  "weight_g": 900,
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "codec": "H.265+",
+        "max_fps": 30
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "codec": "H.265",
+        "max_fps": 30
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "codec": "H.265",
+        "max_fps": 30
+      },
+      {
+        "name": "fourth",
+        "resolution": "704x576",
+        "codec": "H.265",
+        "max_fps": 30
+      }
+    ]
+  },
+  "features": [
+    "DeepinViewX 4MP motorized-varifocal (P-iris) vandal dome with dedicated Guanlan large-scale AI model for perimeter protection (~90% fewer false alarms)",
+    "AI Encoding — cuts storage ~50% while preserving human/vehicle image quality",
+    "multi-target-type detection — simultaneous human body, face and vehicle capture with feature extraction",
+    "face capture (up to 60 faces), regional people counting, heat map, on/off duty detection, AcuSeek search (with AcuSeek NVR/servers)",
+    "perimeter protection: line crossing, intrusion, region entrance/exiting",
+    "AI Open Platform — 4 loadable model packages",
+    "hybrid supplement light — IR + white light up to 40m (2.8-12mm) / 60m (8-32mm), smart supplement light, 850nm IR",
+    "140 dB WDR, DarkFighter 2.0 low-light, EIS",
+    "-H startup/operating to -40°C (heater), -S strobe/audible warning, -Y NEMA 4X anti-corrosion"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile."
+    }
+  },
+  "sources": [
+    "https://www.hikvision.com/en/products/IP-Products/Network-Cameras/DeepinView-Series/"
+  ],
+  "last_verified": "2026-08-28",
+  "release_notes": "4MP DeepinViewX motorized-varifocal (P-iris, 2.8-12mm or 8-32mm) vandal dome for perimeter protection (Guanlan model) with face capture, people counting, heat map, AI Encoding, 140 dB WDR. -H heater, -S strobe, -Y NEMA 4X anti-corrosion. Specs verified against the official Hikvision datasheet iDS-2CD5146G2_V-XZHSY_Datasheet_20260807.",
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "operating_temp_c": "-30 to 60"
+}

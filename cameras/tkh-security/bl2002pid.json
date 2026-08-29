@@ -1,0 +1,109 @@
+{
+  "id": "tkh-security-bl2002pid",
+  "model": "BL2002PID",
+  "type": "bullet",
+  "aliases": [
+    "Siqura BL2002PID",
+    "2MP Long-Range PID Bullet Camera"
+  ],
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" ultra-low-light CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.7-71",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 150
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "power": {
+    "method": "PoE / DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "2MP long-range bullet with built-in PID (perimeter intrusion detection)",
+    "motorized 4.7-71 mm (15x) autofocus lens",
+    "built-in IR up to 150 m",
+    "60 fps, H.265/H.264/MJPEG quad-stream",
+    "ONVIF Profile S/G/T + Siqura",
+    "IP67, IK10"
+  ],
+  "sources": [
+    "https://catalog.tkhsecurity.com/product/bl2002pid/"
+  ],
+  "release_notes": "TKH Security BL2002PID: an intelligent long-range 2 MP IP bullet camera with built-in perimeter intrusion detection, a 15x motorized lens, and 150 m IR. Specs verified against the official TKH Security (Siqura) datasheet.",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/VideoInput/1/h264/1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/VideoInput/1/h264/2",
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF Profile S/G/T; works with any ONVIF VMS."
+    },
+    "blue_iris": {
+      "profile": "ONVIF"
+    }
+  },
+  "brand": "TKH Security",
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-08-29"
+}

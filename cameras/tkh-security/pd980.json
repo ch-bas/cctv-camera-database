@@ -1,0 +1,131 @@
+{
+  "id": "tkh-security-pd980",
+  "brand": "TKH Security",
+  "model": "PD980",
+  "type": "ptz",
+  "aliases": [
+    "Siqura PD980",
+    "8 MP high-speed PTZ camera with 31x zoom, IR, Wiper"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6.9-214.6",
+    "aperture": "F1.35",
+    "varifocal": true
+  },
+  "field_of_view_deg": "61.8 to 2.2 horizontal, 35.9 to 1.3 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 200,
+    "min_lux": 0.006,
+    "min_lux_color": 0.009
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080"
+      },
+      {
+        "name": "fourth",
+        "resolution": "320x240"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "power": {
+    "method": "24 Vac (max 78 W) or PoE 802.3bt Type 3 (max 51 W)",
+    "consumption_w": 78,
+    "voltage": "24 Vac"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-40 to 74",
+  "dimensions_mm": "241 x 241 x 349",
+  "weight_g": 6100,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "features": [
+    "31x optical zoom",
+    "10x digital zoom",
+    "pan 360 endless, tilt -20 to +100 (mechanical flip)",
+    "256 presets",
+    "120 dB WDR (dual exposure HDR)",
+    "built-in gyro EIS",
+    "PT servo feedback",
+    "built-in wiper",
+    "built-in IR illumination up to 200 m (850 nm)",
+    "NEMA TS-2"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "status": "available",
+  "sources": [
+    "https://catalog.tkhsecurity.com/product/pd980/"
+  ],
+  "release_notes": "The TKH Security (Siqura) PD980 is an 8MP (4K) outdoor high-speed PTZ camera with a 31x optical zoom lens, built-in IR up to 200 m, built-in wiper, 120 dB HDR, gyro-based EIS, and PT servo feedback. Specs verified against the official TKH Security (Siqura) datasheet for the PD980.",
+  "last_verified": "2026-08-28",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/VideoInput/1/h264/1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/VideoInput/1/h264/2",
+      "onvif_port": 80,
+      "verified": false,
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      }
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF Profile S/G/T; works with any ONVIF VMS."
+    },
+    "blue_iris": {
+      "profile": "ONVIF"
+    }
+  }
+}

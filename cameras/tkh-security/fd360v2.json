@@ -1,0 +1,108 @@
+{
+  "id": "tkh-security-fd360v2",
+  "brand": "TKH Security",
+  "model": "FD360V2",
+  "aliases": [
+    "Siqura FD360V2",
+    "12MP outdoor fisheye camera H.265/H.264, IR, IP66/IK10"
+  ],
+  "type": "fisheye",
+  "resolution": {
+    "megapixels": 12,
+    "max_width": 4000,
+    "max_height": 3000,
+    "label": "12MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4000x3000",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/1.7\" Progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.65 (fixed)",
+    "aperture": "F2.8",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 horizontal / 180 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 5,
+    "min_lux": 0.01,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "12 VDC or PoE (IEEE 802.3af)",
+    "consumption_w": 9.9,
+    "voltage": "12 VDC +/-10%"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "130 (diameter) x 57.8",
+  "weight_g": 565,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://catalog.tkhsecurity.com/product/fd360v2/"
+  ],
+  "release_notes": "12MP outdoor fisheye dome with 1.65 mm fixed lens giving a 180x180 view, on-board dewarping (ePTZ, panorama, quad view), built-in IR to 5 m, 120 dB WDR, quad-stream H.265/H.264/MJPEG, two-way audio, and IP66/IK10 housing. Specs verified against the official TKH Security (Siqura) datasheet for the FD360V2.",
+  "last_verified": "2026-08-28",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/VideoInput/1/h264/1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/VideoInput/1/h264/2",
+      "onvif_port": 80,
+      "verified": false,
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      }
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF Profile S/G/T; works with any ONVIF VMS."
+    },
+    "blue_iris": {
+      "profile": "ONVIF"
+    }
+  }
+}

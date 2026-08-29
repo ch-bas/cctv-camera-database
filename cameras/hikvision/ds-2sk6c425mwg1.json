@@ -1,0 +1,142 @@
+{
+  "id": "hikvision-ds-2sk6c425mwg1",
+  "brand": "Hikvision",
+  "model": "DS-2SK6C425MWG1",
+  "type": "panoramic",
+  "aliases": [
+    "DS-2SK6C425MWG1/LM-L/28(C4C4)",
+    "DS-2SK6C425MWG1/LM-L/28(F1F1)",
+    "DS-2SK6C425MWG1/LM-L/216(C5C5)",
+    "Omni 6C Series 4 MP 25X DarkFighter Speed Dome"
+  ],
+  "ptz": {
+    "autotracking": true
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP 25X PTZ + multi-sensor panoramic"
+  },
+  "sensor": "1/1.8\" (panoramic x2) + 1/2.8\" (PTZ) Progressive Scan CMOS",
+  "lens": {
+    "count": 3,
+    "focal_length_mm": "[Panoramic] 8-32mm; [PTZ] 5.3-110mm",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 200,
+    "min_lux": 0.005
+  },
+  "power": {
+    "method": "36 VDC",
+    "consumption_w": 90,
+    "voltage": "36 VDC ±25%"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 1024
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "Omni multi-sensor: two panoramic bullet channels + 25X optical PTZ",
+    "panoramic pan 0-190 / tilt -5 to 30",
+    "Powered by DarkFighter 2.0 low-light imaging",
+    "auto-tracking / smart tracking",
+    "120 dB WDR",
+    "deep-learning perimeter protection (dedicated large-scale AI model)",
+    "IR up to 200m (PTZ) / 80m (panoramic)",
+    "300 presets",
+    "IP67 / IK10 (excluding glass window)"
+  ],
+  "markets": [
+    "global"
+  ],
+  "release_notes": "The Hikvision DS-2SK6C425MWG1 (Omni 6C Series) is a multi-sensor Powered-by-DarkFighter speed dome pairing two 4 MP panoramic bullet channels with a 25X optical-zoom PTZ channel, IR to 200m, 120 dB WDR, IP67/IK10. Specs verified against the official Hikvision datasheet DS-2SK6C425MWG1_LM-L_28C4C4_Datasheet_20260827.",
+  "sources": [
+    "https://www.hikvision.com/en/products/IP-Products/PTZ-Cameras/"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "verified": false,
+      "notes": "Hikvision native RTSP (main 101 / sub 102). Multi-channel Omni units expose each channel as 201/301 etc. — enable RTSP in the web UI.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "last_verified": "2026-08-28",
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "dimensions_mm": "Ø429 x 300",
+  "weight_g": 7900,
+  "field_of_view_deg": "[Panoramic] 40.3 to 14.5 horizontal; [PTZ] 57.7 to 2.9 horizontal",
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "operating_temp_c": "-40 to 70"
+}

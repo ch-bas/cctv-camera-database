@@ -18,7 +18,14 @@
 | Protocols | onvif, rtsp |
 | IK rating | IK08 |
 | Two-way audio | No |
+| Operating temp | 0 to 50°C |
 | Released | 2019 |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2688x1520 | 30 | H.265 |
 
 ## Features
 

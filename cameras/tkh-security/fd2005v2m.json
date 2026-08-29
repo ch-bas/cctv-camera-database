@@ -1,0 +1,114 @@
+{
+  "id": "tkh-security-fd2005v2m",
+  "model": "FD2005V2M",
+  "type": "dome",
+  "aliases": [
+    "Siqura FD2005v2M",
+    "5MP Motorized Fixed Dome Camera"
+  ],
+  "brand": "TKH Security",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP"
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5",
+    "aperture": "F1.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "32-103 (H)",
+  "night_vision": {
+    "type": "ir",
+    "min_lux_color": 0.003,
+    "range_m": 40
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-30 to 60",
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-08-29",
+  "power": {
+    "method": "PoE (802.3af) / DC 12V",
+    "consumption_w": 12.9,
+    "poe_class": 3,
+    "voltage": "12 VDC / 24 VAC / PoE"
+  },
+  "dimensions_mm": "Ø153.4 x 133.1",
+  "weight_g": 1100,
+  "features": [
+    "5MP fixed dome, motorized 2.7-13.5mm autofocus lens",
+    "40 m built-in IR",
+    "H.265/H.264/MJPEG quad-stream",
+    "ONVIF Profile S/G/T + Siqura API",
+    "PoE 802.3af Class 3",
+    "IP67, IK10",
+    "microSD up to 256 GB"
+  ],
+  "sources": [
+    "https://catalog.tkhsecurity.com/product/fd2005v2m/"
+  ],
+  "release_notes": "TKH Security FD2005V2M (formerly Siqura): a 5 MP IP fixed dome camera with a motorized 2.7-13.5 mm autofocus lens, 40 m IR, and ONVIF Profile S/G/T. Specs verified against the official TKH Security datasheet.",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/VideoInput/1/h264/1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/VideoInput/1/h264/2",
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF Profile S/G/T; works with any ONVIF VMS."
+    },
+    "blue_iris": {
+      "profile": "ONVIF"
+    }
+  }
+}

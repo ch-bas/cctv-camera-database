@@ -1,0 +1,121 @@
+{
+  "id": "tkh-security-bc5004",
+  "brand": "TKH Security",
+  "model": "BC5004",
+  "type": "box",
+  "aliases": [
+    "Siqura BC5004",
+    "4MP IP Box camera, 1/1.8'' CMOS, CS-mount, DC-iris, ABF"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8'' CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "ir",
+    "min_lux_color": 0.0009
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "H.264+",
+      "H.265",
+      "H.265+",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 60,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "640x480",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V / AC 24V",
+    "consumption_w": 7,
+    "voltage": "12V DC / 24V AC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "161 x 79 x 64",
+  "weight_g": 500,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "CS-mount (lens sold separately / selected lens)",
+    "DC-iris",
+    "Auto Back Focus (ABF)",
+    "automatic IR-cut filter (day/night)",
+    "120dB WDR (Dual exposure HDR)",
+    "Electronic Image Stabilization (EIS)",
+    "AI-enhanced embedded video analytics",
+    "secured HTTPS streaming",
+    "ONVIF Profile S/G/T/M",
+    "NDAA compliant"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://catalog.tkhsecurity.com/product/bc5004/"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/VideoInput/1/h264/1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/VideoInput/1/h264/2",
+      "onvif_port": 80,
+      "verified": false,
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      }
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF Profile S/G/T; works with any ONVIF VMS."
+    },
+    "blue_iris": {
+      "profile": "ONVIF"
+    }
+  },
+  "release_notes": "4MP IP box camera with 1/1.8'' CMOS, CS-mount (lens sold separately), DC-iris, Auto Back Focus, 120dB WDR, and AI-enhanced video analytics. Specs verified against the official TKH Security (Siqura) datasheet for the BC5004.",
+  "last_verified": "2026-08-28"
+}
