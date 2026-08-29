@@ -11,12 +11,19 @@
 | Resolution | 4MP (4MP, 2560×1440) |
 | Sensor | 1/3" Progressive Scan CMOS |
 | Lens | 1× 2.8 / 4 (fixed options)mm F1.28 |
+| Field of view | 95.7 (2.8mm)/79.6 (4mm) horizontal° |
 | Night vision | hybrid (30m), 0.005 lux color |
 | Power | 8 W solar panel + 9000 mAh lithium battery |
 | Storage | microSD ≤ 512GB |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 | Operating temp | 0 to 50°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 15 | H.265 |
 
 ## Features
 

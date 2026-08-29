@@ -19,6 +19,12 @@
 | Two-way audio | No |
 | Operating temp | -30 to 50°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 60 | H.265 |
+
 ## Features
 
 - 21x optical zoom (12x digital, 252x total)

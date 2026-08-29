@@ -18,6 +18,15 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
+| Operating temp | -40 to 60°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2592x1944 | 20 | H.265 |
+| sub | 704x576 | 25 | H.265 |
+| third | 1280x720 | 30 | H.265 |
 
 ## Features
 

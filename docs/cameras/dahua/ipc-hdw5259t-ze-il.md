@@ -18,6 +18,15 @@
 | Two-way audio | No |
 | Operating temp | -40 to +60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 60 | H.265 |
+| sub | 704x576 | 25 | H.265 |
+| third | 1920x1080 | 30 | H.265 |
+| fourth | 1280x720 | 30 | H.265 |
+
 ## Features
 
 - WizMind 5 Series

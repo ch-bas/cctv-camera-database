@@ -17,8 +17,16 @@
 | Storage | NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
+| IK rating | IK08 |
 | Two-way audio | No |
+| Operating temp | -30 to 50°C |
 | Released | 2021 |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 60 | H.265 |
 
 ## Features
 
