@@ -27,7 +27,7 @@
 
 ## Sources
 
-- https://www.hiseeu.com/products/8mp-wireless-360-ptz-camera-16channel-system-wk-4hd308b-at
+- https://www.hiseeu.com/en-eu/products/4k-8mp-wireless-camera-whd308b
 
 ---
 *Auto-generated from hiseeu-whd308b.json — do not edit by hand.*

@@ -26,7 +26,7 @@
 
 ## Sources
 
-- https://de.banggood.com/Hiseeu-TZ-HBY08-8MP-Wireless-Security-Camera-p-2039831.html
+- https://www.hiseeu.com/en-eu/products/8mp-wireless-security-camera-tz-hby08
 
 ---
 *Auto-generated from hiseeu-tz-hby08.json — do not edit by hand.*
