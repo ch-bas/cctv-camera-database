@@ -20,6 +20,13 @@
 | Two-way audio | No |
 | Operating temp | -30 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 20 | H.265+ |
+| sub | 1280x720 | 24 | H.265 |
+
 ## Features
 
 - 4 MP fixed bullet

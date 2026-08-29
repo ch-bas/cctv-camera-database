@@ -186,8 +186,8 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | PoE wired | 2,810 |
 | WiFi | 646 |
 | Battery / wire-free | 216 |
-| 4K / 8MP+ | 1,004 |
-| 4–7MP | 1,544 |
+| 4K / 8MP+ | 1,003 |
+| 4–7MP | 1,545 |
 | Under 4MP | 1,135 |
 | With integration configs (Frigate / Home Assistant) | 3,109 |
 | With color-lux rating (`night_vision.min_lux_color`) | 2,380 |

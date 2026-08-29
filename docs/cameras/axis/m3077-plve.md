@@ -19,7 +19,14 @@
 | IP rating | IP66 |
 | IK rating | IK10 |
 | Two-way audio | No |
+| Operating temp | -40 to 50°C |
 | Released | 2022 |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2016x2016 | 60 | H.265 |
 
 ## Features
 

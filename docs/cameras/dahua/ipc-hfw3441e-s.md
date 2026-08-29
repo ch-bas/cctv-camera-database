@@ -15,7 +15,16 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
+| Operating temp | -40 to 60°C |
 | Released | 2022 |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2688x1520 | 30 | H.265 |
+| sub | 704x576 | 25 | H.265 |
+| third | 1920x1080 | 30 | H.265 |
 
 ## Features
 
