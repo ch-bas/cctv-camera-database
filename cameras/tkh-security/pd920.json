@@ -1,0 +1,107 @@
+{
+  "id": "tkh-security-pd920",
+  "model": "PD920",
+  "type": "ptz",
+  "aliases": [
+    "Siqura PD920",
+    "3MP 40x PTZ Camera (EOL)"
+  ],
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2048,
+    "max_height": 1536,
+    "label": "3MP"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "40x optical zoom",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 200
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2048x1536",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "Ultra-PoE / 24 VAC / 24 VDC",
+    "consumption_w": 60,
+    "voltage": "24 VAC / 24 VDC / UPoE"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "3MP high-speed PTZ, 40x optical zoom",
+    "built-in IR up to 200 m",
+    "HDR, 30 fps",
+    "swappable RJ45 (PoE) / SFP fiber interface",
+    "ONVIF Profile S/G/T + Siqura",
+    "auto-tracking"
+  ],
+  "sources": [
+    "https://catalog.tkhsecurity.com/product/pd920/"
+  ],
+  "release_notes": "TKH Security PD920 (Siqura): a 3 MP high-speed PTZ camera with 40x optical zoom, 200 m IR, HDR, and swappable RJ45/SFP interface. (End-of-life.) Specs verified against the official TKH Security (Siqura) datasheet.",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/VideoInput/1/h264/1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/VideoInput/1/h264/2",
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF Profile S/G/T; works with any ONVIF VMS."
+    },
+    "blue_iris": {
+      "profile": "ONVIF"
+    }
+  },
+  "brand": "TKH Security",
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-08-29"
+}
