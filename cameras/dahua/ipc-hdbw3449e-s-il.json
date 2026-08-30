@@ -1,0 +1,139 @@
+{
+  "id": "dahua-ipc-hdbw3449e-s-il",
+  "brand": "Dahua",
+  "model": "IPC-HDBW3449E-S-IL",
+  "aliases": [
+    "DH-IPC-HDBW3449E-S-IL",
+    "WizSense 4MP Smart Dual Light Dome"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/2.9\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8/3.6/6",
+    "aperture": "F1.4",
+    "varifocal": false
+  },
+  "field_of_view_deg": "100",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 40,
+    "min_lux_color": 0.005
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V",
+    "consumption_w": 7.1,
+    "voltage": "12V DC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "89.1 x Φ111.7",
+  "weight_g": 528,
+  "features": [
+    "WizSense AI (human/vehicle classification)",
+    "SMD 4.0",
+    "Smart Dual Light (40m IR + 40m warm light)",
+    "AI SSA",
+    "AcuPick",
+    "Face detection (full image)",
+    "Perimeter protection (tripwire, intrusion, stay, loitering)",
+    "Smart H.265+ / Smart H.264+ / AI H.265 / AI H.264",
+    "WDR (120dB)",
+    "3D NR",
+    "HLC",
+    "BLC"
+  ],
+  "sources": [
+    "https://materialfile.dahuasecurity.com/uploads/cpq/82339/datasheet/IPC-HDBW3449E-S-IL_S0_datasheet_20260303.pdf"
+  ],
+  "last_verified": "2026-08-30",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "two_way_audio": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile. Supports both main and sub streams."
+    }
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ]
+}
