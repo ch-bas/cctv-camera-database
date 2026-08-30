@@ -1,9 +1,9 @@
 # CCTV Camera Database
 
-An open, structured database of 3,885 CCTV / IP camera models and their technical specifications, covering 89 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
+An open, structured database of 3,895 CCTV / IP camera models and their technical specifications, covering 89 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
 
 [![build](https://github.com/ch-bas/cctv-camera-database/actions/workflows/build.yml/badge.svg)](https://github.com/ch-bas/cctv-camera-database/actions/workflows/build.yml)
-[![cameras](https://img.shields.io/badge/cameras-3%2C885-blue)](data/cameras.json)
+[![cameras](https://img.shields.io/badge/cameras-3%2C895-blue)](data/cameras.json)
 [![brands](https://img.shields.io/badge/brands-89-green)](cameras/)
 [![license](https://img.shields.io/badge/license-CC0-lightgrey)](LICENSE)
 
@@ -19,10 +19,10 @@ An open, structured database of 3,885 CCTV / IP camera models and their technica
 
 <p align="center">
   <a href="https://cctv-database.com">
-    <img src="assets/cctv-database-showcase.gif" alt="CCTV Camera Database — search 3,885 cameras, browse full specs, copy ready-to-use Frigate configs, and audit the open dataset with the built-in QA tool" width="640">
+    <img src="assets/cctv-database-showcase.gif" alt="CCTV Camera Database — search 3,895 cameras, browse full specs, copy ready-to-use Frigate configs, and audit the open dataset with the built-in QA tool" width="640">
   </a>
   <br>
-  <sub><b><a href="https://cctv-database.com">cctv-database.com</a></b> — search 3,885 cameras · full spec sheets · copy-paste Frigate configs · open &amp; auditable</sub>
+  <sub><b><a href="https://cctv-database.com">cctv-database.com</a></b> — search 3,895 cameras · full spec sheets · copy-paste Frigate configs · open &amp; auditable</sub>
 </p>
 
 ---
@@ -49,7 +49,7 @@ Prefer to self-host or browse offline? A [standalone demo](docs/demo.html) (just
 - **Sort** — click any column header to sort ascending/descending
 - **Detail drawer** — click a row to slide open the full spec sheet (resolution, connectivity, protocols, storage, audio, source links)
 - **Community notes** — user-reported quirks and behaviors per camera, sourced and attributed, kept separate from datasheet specs
-- **Pagination** — page through all 3,885 cameras, 25 per page
+- **Pagination** — page through all 3,895 cameras, 25 per page
 - **Stats bar** — live counts for total cameras, brands, 4K+, WiFi, and no-subscription models
 
 ---
@@ -75,14 +75,14 @@ a Claude Code skill for AI-powered video production built on [Remotion](https://
 cctv-camera-database/
 ├── cameras/              # source of truth — one JSON file per camera, grouped by brand
 │   ├── hikvision/        # 479 cameras
+│   ├── dahua/            # 362 cameras
 │   ├── i-pro/            # 354 cameras
-│   ├── dahua/            # 352 cameras
 │   ├── acti/             # 251 cameras
 │   ├── bosch/            # 153 cameras
 │   ├── abus/             # 144 cameras
 │   └── …83 more brands
 ├── data/                 # GENERATED — do not edit by hand
-│   ├── cameras.json      # all 3,885 cameras as one array
+│   ├── cameras.json      # all 3,895 cameras as one array
 │   ├── cameras.csv       # flattened, spreadsheet-friendly
 │   └── rtsp-patterns.json  # CC0 brand-level RTSP URL layer (172 brands)
 ├── strix/
@@ -180,17 +180,17 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 
 | Metric | Count |
 |--------|-------|
-| Total cameras | **3,885** |
+| Total cameras | **3,895** |
 | Brands | **89** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
-| PoE wired | 2,887 |
+| PoE wired | 2,897 |
 | WiFi | 750 |
 | Battery / wire-free | 257 |
 | 4K / 8MP+ | 1,042 |
-| 4–7MP | 1,644 |
+| 4–7MP | 1,654 |
 | Under 4MP | 1,199 |
-| With integration configs (Frigate / Home Assistant) | 3,158 |
-| With color-lux rating (`night_vision.min_lux_color`) | 2,413 |
+| With integration configs (Frigate / Home Assistant) | 3,168 |
+| With color-lux rating (`night_vision.min_lux_color`) | 2,423 |
 
 ### All 89 brands
 
@@ -198,8 +198,8 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | Brand | Cameras | Segment |
 |-------|---------|---------|
 | Hikvision | 479 | Enterprise + consumer, global |
+| Dahua | 362 | Enterprise + consumer, global |
 | i-PRO | 354 | Enterprise AI (ex-Panasonic), JP/global |
-| Dahua | 352 | Enterprise + consumer, global |
 | ACTi | 251 | Enterprise IP + analog, NDAA, TW/global |
 | Bosch | 153 | Enterprise + thermal, EU/global |
 | ABUS | 144 | Consumer + professional, GDPR-first, DE/AT/CH |
