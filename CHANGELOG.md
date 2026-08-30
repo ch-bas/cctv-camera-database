@@ -6,6 +6,24 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.9.0] — 2026-08-30
+
+### Added
+- **New brand: ieGeek — 26 cameras**, authored from the official ieGeek product pages (de.iegeek.com). Consumer battery / solar / cellular Wi-Fi cameras spanning:
+  - **Battery + solar Wi-Fi** (pan-tilt & bullet): `ZY-C2`, `ZS-GX4S` (5MP), `ZS-GX1S`, `ZS-GX3S`, `ZY-C1` (5MP), `S5`, `S2`, `S1`, plus `S1 Pro` (3K/5MP) and `S7` (9000 mAh, continuous SD/cloud recording).
+  - **Spotlight** (mains): `ZS-GQ4` (5MP), `ZS-GQ2`.
+  - **4G / LTE cellular** (SIM, battery + solar): `S11`, `ZY-G1`, `ZY-G2`, `ZY-G4`.
+  - **Video doorbells** (battery): `Bell J1`, `Bell J9`, `Bell J9 Plus`, `Bell J10`.
+  - **Indoor pan-tilt**: `SC1 Pro` (ONVIF) and `SC1`.
+  - **Solar wall-light camera**: `S4` (floodlight).
+  - **Baby monitors** (dual-mode Wi-Fi + bundled parent unit): `Baby 1T`, `Baby 5`, `Baby 7`.
+  These are app/cloud cameras with **no local RTSP/ONVIF** (the indoor `SC1 Pro` is the lone exception, which lists ONVIF), so most carry `protocols: []` and no integration config. Only page-stated specs are recorded — unspecified sensor/lens/dimensions/min-lux fields are omitted rather than guessed.
+- **New brand: Boavision — 14 cameras**, authored from the official Boavision product pages (boavision.com). OEM/CamHi outdoor IP cameras: WiFi/4G/PoE PTZ speed domes (`YG-BWF93AR-800` 4K 8 MP, 30× zoom, 100 m IR, Sony IMX415; plus 5 MP 30× and 5× optical models), WiFi/4G **dual-lens** cameras (8 MP and 4 MP, dual fixed lenses e.g. 2.8mm + 8mm), **AOV** always-on **battery + solar** PTZ cameras (2K 3 MP; `AOV-W4G` 4G LTE; `HSD38W` 940 nm invisible IR), a 1080p pan-tilt, and a 2×18650 battery bullet. CamHi/ONVIF models carry `rtsp` + `onvif` (NVR-compatible); the app/cloud-only listings carry `protocols: []`. Boavision is a reseller so most listings lack a clean SKU — those records use the product number as the model; one listing (5G2) was skipped because it stated no resolution. Only page-stated specs are recorded.
+- **2 new ACTi cameras**, from official ACTi datasheets: `K32-P1` (4 MP deep-learning AI fixed bullet, f4.0mm/F2.0, IR 50 m, WDR 130 dB, 0.001 lux, IP68/IK10) and `Z337` (4 MP fixed bullet, f4.0mm/F1.6, Smart Dual Light — IR 50 m + white 30 m, WDR 120 dB, IP68).
+
+### Changed
+- **ACTi `Y32`** — backfilled `weight_g` (135 g) from the datasheet.
+
 ## [2.8.0] — 2026-08-29
 
 ### Added
