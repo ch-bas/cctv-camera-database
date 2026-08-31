@@ -6,6 +6,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.12.0] — Unreleased
+
+### Added
+- **D-Link — 27 cameras** from the 2013 D-Link IP Surveillance product guide (text-extracted), extending the existing brand. 2011–2013-era DCS-series IP cameras: mydlink consumer cubes (`DCS-930L`/`932L`/`942L`, VGA), HD / Full-HD cubes & boxes (`DCS-2130`/`2132L`/`2210`/`2230`/`2310L`/`2332L`, `3010`/`3110`/`3112`/`3430`/`3710`/`3716`), fixed & 360° fisheye domes (`DCS-6010L`, `6112`/`6113`/`6210`/`6511`), and PTZ speed domes (`DCS-5222L`, `6616`/`6815`/`6818` CCD, `7010L`/`7110`/`7513` outdoor bullets). Codecs H.264/MPEG-4/MJPEG (pre-H.265); D-Link RTSP path `/live1.sdp` in the Frigate configs. Fields absent from the 2013 comparison tables (fps, dimensions, weight, min-lux) left empty, not fabricated.
+
 ## [2.11.0] — 2026-08-31
 
 ### Added
