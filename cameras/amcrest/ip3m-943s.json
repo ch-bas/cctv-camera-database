@@ -1,0 +1,112 @@
+{
+  "id": "amcrest-ip3m-943s",
+  "brand": "Amcrest",
+  "model": "IP3M-943S ProHD 3MP WiFi Bullet",
+  "aliases": [
+    "Amcrest IP3M-943S",
+    "Amcrest IP3M-943"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "wifi"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "ip_rating": "IP67",
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "2K (3MP)"
+  },
+  "sensor": "1/3\" progressive scan CMOS",
+  "lens": {
+    "focal_length_mm": "2.8",
+    "aperture": "F2.0"
+  },
+  "field_of_view_deg": "100",
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 20,
+        "codec": "H.264"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux": 0.1
+  },
+  "power": {
+    "method": "DC 12V, 2.0A",
+    "consumption_w": 5.5,
+    "voltage": "12V DC"
+  },
+  "operating_temp_c": "-30 to 50",
+  "dimensions_mm": "70 diameter x 165",
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "features": [
+    "2K UltraHD (3MP)",
+    "outdoor IP67 weatherproof",
+    "WiFi (2.4GHz 802.11b/g)",
+    "98ft (30m) IR night vision",
+    "digital zoom",
+    "silver"
+  ],
+  "sources": [
+    "https://amcrest.com/amcrest-3mp-bullet-wifi-video-security-ip-camera-pt-rep-ip3m-943s-silver-certified-refurbished.html",
+    "https://s3.amazonaws.com/amcrest-files/Documentation/IP3M-943+Technical+Specification.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-08-31",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "two_way_audio": false
+    },
+    "home_assistant": {
+      "integration": "amcrest",
+      "notes": "Native Amcrest integration or ONVIF. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile. Amcrest uses Dahua protocol."
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "id": "amcrest-ip2m-841s",
+  "brand": "Amcrest",
+  "model": "IP2M-841S 1080p WiFi Pan/Tilt",
+  "aliases": [
+    "Amcrest IP2M-841S",
+    "Amcrest IP2M-841"
+  ],
+  "type": "ptz",
+  "ptz": {
+    "autotracking": false,
+    "onvif_ptz": "continuous"
+  },
+  "connectivity": [
+    "wifi"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.7\" progressive scan CMOS",
+  "lens": {
+    "focal_length_mm": "4",
+    "aperture": "F2.2"
+  },
+  "field_of_view_deg": "90",
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.264"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10,
+    "min_lux": 0.1
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "power": {
+    "method": "DC 5V, 2.0A",
+    "consumption_w": 7.5,
+    "voltage": "5V DC"
+  },
+  "operating_temp_c": "-10 to 45",
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "features": [
+    "1080p HD",
+    "WiFi (2.4GHz 802.11b/g)",
+    "WiFi pan/tilt",
+    "two-way audio",
+    "16x digital zoom",
+    "silver"
+  ],
+  "sources": [
+    "https://amcrest.com/amcrest-1080p-wifi-video-monitoring-security-wireless-ip-camera-with-pan-tilt-two-way-audio-plug-play-setup-optional-cloud-recording-full-hd-1080p-1920tvl-at-30fps-super-wide-90-viewing-angle-and-night-vision-ip2m-841s-silver-certified-refurbished.html",
+    "https://support.amcrest.com/hc/en-us/articles/360001642092-Technical-Specifications-IP2M-841"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-08-31",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "amcrest",
+      "notes": "Native Amcrest integration or ONVIF. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile. Amcrest uses Dahua protocol."
+    }
+  }
+}
