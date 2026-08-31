@@ -1,6 +1,6 @@
 # Amcrest IP8M-2899EW-AI-V2
 
-*Also known as: IP8M-2899EW-AI V2, IP8M-2899EW-AIV2*
+*Also known as: Amcrest IP8M-2899EW-AI-V2, IP8M-2899EW-AI V2, IP8M-2899EW-AIV2*
 
 | Field | Spec |
 |-------|------|
@@ -17,7 +17,7 @@
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp, http |
 | IP rating | IP66 |
-| Two-way audio | No |
+| Two-way audio | Yes |
 | Operating temp | -40 to 70°C |
 | Released | 2022 |
 
@@ -26,20 +26,25 @@
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
 | main | 3840x2160 | 25 | H.265 |
-| sub1 | 640x480 | 25 | H.265 |
-| sub2 | 640x480 | 25 | H.265 |
+| sub1 | 704x480 | 25 | H.265 |
+| sub2 | 1920x1080 | 25 | H.265 |
 
 ## Features
 
 - 25x optical zoom
 - 16x digital zoom
+- dual-light fusion (IR + white light)
 - human detection
 - vehicle detection
 - face detection
 - perimeter protection
+- tripwire
+- intrusion detection
+- loitering detection
 - auto-tracking
+- active deterrence (warning light + siren)
 - 120dB WDR
-- electronic image stabilization
+- electronic defog
 
 ## Sources
 

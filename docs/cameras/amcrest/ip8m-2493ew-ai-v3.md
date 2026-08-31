@@ -27,6 +27,7 @@
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
 | main | 3840x2160 | 20 | H.265 |
+| sub | 704x480 | 30 | H.265 |
 
 ## Features
 
@@ -36,7 +37,7 @@
 - intrusion detection
 - 120dB WDR
 - 3D DNR
-- smart IR
+- smart codec
 
 ## Sources
 
