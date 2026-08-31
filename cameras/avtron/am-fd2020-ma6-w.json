@@ -1,0 +1,97 @@
+{
+  "id": "avtron-am-fd2020-ma6-w",
+  "brand": "Avtron",
+  "model": "AM-FD2020-MA6-W",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" ultra-low-lux progressive scan CMOS",
+  "lens": {
+    "focal_length_mm": "4.7-94 (20x optical zoom)",
+    "aperture": "F1.5-F3.0"
+  },
+  "field_of_view_deg": "55.8 (wide) to 3.2 (tele) horizontal",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 120,
+    "min_lux": 0.0001,
+    "min_lux_color": 0.0008
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "power": {
+    "method": "AC 24V",
+    "voltage": "24V (AC)"
+  },
+  "power_source": [
+    "ac-mains"
+  ],
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "435 (L) x 165 (W) x 110 (H)",
+  "features": [
+    "20x optical zoom (plus 16x digital), auto iris",
+    "Starlight ultra-low-light color imaging at 0.0008 lux",
+    "Dual illuminator: ExIR LED to 120m + white LED to 30m, zoom-linked IR power",
+    "140dB WDR, 3D DNR",
+    "10+ Smart IVA analytics (facial detection, people counting, tripwire, defog)",
+    "1-channel audio in/out, 3-in/2-out alarm I/O",
+    "microSD local storage up to 128GB, ANR, ROI encoding",
+    "ONVIF Profile S"
+  ],
+  "sources": [
+    "https://www.avtrontech.com/wp-content/themes/avtron/datasheets/CCTV/AM-FD2020-MA6-W.pdf",
+    "https://avtrontech.com/products_category/ip-cameras/"
+  ],
+  "last_verified": "2026-08-31",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "notes": "Avtron exposes ONVIF/RTSP but does not publish a fixed RTSP path; use ONVIF auto-config or the camera web UI to obtain the stream URL."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Add via the generic ONVIF integration (port 80)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use 'Generic/ONVIF' — find/inspect to auto-fill RTSP."
+    }
+  }
+}
