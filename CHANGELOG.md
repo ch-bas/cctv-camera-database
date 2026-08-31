@@ -6,7 +6,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
-## [2.11.0] — Unreleased
+## [2.11.0] — 2026-08-31
 
 ### Added
 - **New brand: Avtron — 55 cameras**, authored from the Avtron "Quick Model Selection" catalog (image-only PDF, OCR'd) with gaps filled from official avtrontech.com datasheets/product pages. Avtron is an Indian AI-CCTV manufacturer (ADIT Group). Spans:
