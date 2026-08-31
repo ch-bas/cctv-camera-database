@@ -1,0 +1,92 @@
+{
+  "id": "avtron-am-dm2009-fma1",
+  "brand": "Avtron",
+  "model": "AM-DM2009-FMA1",
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.9\" progressive scan CMOS",
+  "lens": {
+    "focal_length_mm": "2.8",
+    "aperture": "F1.2"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux": 0.01,
+    "min_lux_color": 0.05
+  },
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V",
+    "voltage": "12V (DC) / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP66",
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "116 (diameter) x 98 (height)",
+  "features": [
+    "ExIR turret with Smart IR, dual-filter ICR (true day/night)",
+    "100dB Super WDR, 3D DNR",
+    "2 IVA analytics rules",
+    "HLC / BLC",
+    "TVS 4KV surge protection",
+    "ONVIF Profile S"
+  ],
+  "sources": [
+    "https://www.avtrontech.com/wp-content/themes/avtron/datasheets/CCTV/AM-DM2009-FMA1.pdf",
+    "https://avtrontech.com/products_category/ip-cameras/"
+  ],
+  "last_verified": "2026-08-31",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "onvif_port": 80,
+      "two_way_audio": false,
+      "notes": "Avtron exposes ONVIF/RTSP but does not publish a fixed RTSP path; use ONVIF auto-config or the camera web UI to obtain the stream URL."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Add via the generic ONVIF integration (port 80)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use 'Generic/ONVIF' — find/inspect to auto-fill RTSP."
+    }
+  }
+}

@@ -1,10 +1,10 @@
 # CCTV Camera Database
 
-An open, structured database of 4,071 CCTV / IP camera models and their technical specifications, covering 91 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
+An open, structured database of 4,204 CCTV / IP camera models and their technical specifications, covering 93 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
 
 [![build](https://github.com/ch-bas/cctv-camera-database/actions/workflows/build.yml/badge.svg)](https://github.com/ch-bas/cctv-camera-database/actions/workflows/build.yml)
-[![cameras](https://img.shields.io/badge/cameras-4%2C071-blue)](data/cameras.json)
-[![brands](https://img.shields.io/badge/brands-91-green)](cameras/)
+[![cameras](https://img.shields.io/badge/cameras-4%2C204-blue)](data/cameras.json)
+[![brands](https://img.shields.io/badge/brands-93-green)](cameras/)
 [![license](https://img.shields.io/badge/license-CC0-lightgrey)](LICENSE)
 
 ### Field coverage
@@ -19,10 +19,10 @@ An open, structured database of 4,071 CCTV / IP camera models and their technica
 
 <p align="center">
   <a href="https://cctv-database.com">
-    <img src="assets/cctv-database-showcase.gif" alt="CCTV Camera Database — search 4,071 cameras, browse full specs, copy ready-to-use Frigate configs, and audit the open dataset with the built-in QA tool" width="640">
+    <img src="assets/cctv-database-showcase.gif" alt="CCTV Camera Database — search 4,204 cameras, browse full specs, copy ready-to-use Frigate configs, and audit the open dataset with the built-in QA tool" width="640">
   </a>
   <br>
-  <sub><b><a href="https://cctv-database.com">cctv-database.com</a></b> — search 4,071 cameras · full spec sheets · copy-paste Frigate configs · open &amp; auditable</sub>
+  <sub><b><a href="https://cctv-database.com">cctv-database.com</a></b> — search 4,204 cameras · full spec sheets · copy-paste Frigate configs · open &amp; auditable</sub>
 </p>
 
 ---
@@ -32,6 +32,18 @@ An open, structured database of 4,071 CCTV / IP camera models and their technica
 Camera spec sheets are scattered across vendor PDFs, retailer pages, and paywalled databases (IPVM, etc.) in inconsistent formats. This repo normalises them into one machine-readable structure so they can be compared, filtered, and reused.
 
 **The dataset is CC0 and always will be** — free to use, copy, and redistribute with no restrictions. The website is just a convenient viewer; the data here is the source of truth.
+
+---
+
+## Sourcing & trust
+
+Every spec is transcribed from a **manufacturer datasheet or official product page — never guessed, never inferred.** When a field isn't documented it's left empty rather than filled with a plausible value: a missing spec is honest; a fabricated one is a landmine for anyone choosing a camera by it.
+
+- **Datasheet-first** — retailer/reseller listings only corroborate; they're never the sole source for a spec a datasheet would carry.
+- **Omit, don't guess** — sentinel values (e.g. "0 lux with IR"), marketing rounding, and models with no verifiable spec sheet are dropped, not recorded.
+- **Traceable** — every record carries a `sources` array of URLs and a `last_verified` date, so any value can be checked at its origin.
+
+Errors are still possible in any compiled dataset — always confirm against the official datasheet before purchasing or deploying.
 
 ---
 
@@ -49,22 +61,14 @@ Prefer to self-host or browse offline? A [standalone demo](docs/demo.html) (just
 - **Sort** — click any column header to sort ascending/descending
 - **Detail drawer** — click a row to slide open the full spec sheet (resolution, connectivity, protocols, storage, audio, source links)
 - **Community notes** — user-reported quirks and behaviors per camera, sourced and attributed, kept separate from datasheet specs
-- **Pagination** — page through all 4,071 cameras, 25 per page
+- **Pagination** — page through all 4,204 cameras, 25 per page
 - **Stats bar** — live counts for total cameras, brands, 4K+, WiFi, and no-subscription models
 
 ---
 
 ## How this was built
 
-The database was assembled with the help of [Claude Code](https://claude.ai/code).
-
-Specs are sourced from manufacturer datasheets and reputable retailer listings —
-each entry includes a `sources` array with URLs. As with any compiled dataset,
-errors are possible; always verify against the official datasheet before purchasing
-or deploying.
-
-The demo video was produced with [hve-spielberg](https://github.com/nebrass/hve-spielberg),
-a Claude Code skill for AI-powered video production built on [Remotion](https://remotion.dev).
+The dataset and its tooling were assembled with [Claude Code](https://claude.ai/code). The demo video was produced with [hve-spielberg](https://github.com/nebrass/hve-spielberg), a Claude Code skill for AI-powered video production built on [Remotion](https://remotion.dev).
 
 ---
 
@@ -80,9 +84,9 @@ cctv-camera-database/
 │   ├── acti/             # 251 cameras
 │   ├── bosch/            # 153 cameras
 │   ├── abus/             # 144 cameras
-│   └── …85 more brands
+│   └── …87 more brands
 ├── data/                 # GENERATED — do not edit by hand
-│   ├── cameras.json      # all 4,071 cameras as one array
+│   ├── cameras.json      # all 4,204 cameras as one array
 │   ├── cameras.csv       # flattened, spreadsheet-friendly
 │   └── rtsp-patterns.json  # CC0 brand-level RTSP URL layer (172 brands)
 ├── strix/
@@ -180,19 +184,22 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 
 | Metric | Count |
 |--------|-------|
-| Total cameras | **4,071** |
-| Brands | **91** |
+| Total cameras | **4,204** |
+| Brands | **93** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
-| PoE wired | 2,993 |
-| WiFi | 798 |
+| PoE wired | 3,061 |
+| WiFi | 804 |
 | Battery / wire-free | 261 |
-| 4K / 8MP+ | 1,099 |
-| 4–7MP | 1,726 |
-| Under 4MP | 1,246 |
-| With integration configs (Frigate / Home Assistant) | 3,280 |
-| With color-lux rating (`night_vision.min_lux_color`) | 2,559 |
+| 4K / 8MP+ | 1,117 |
+| 4–7MP | 1,772 |
+| Under 4MP | 1,315 |
+| With integration configs (Frigate / Home Assistant) | 3,364 |
+| With color-lux rating (`night_vision.min_lux_color`) | 2,667 |
 
-### All 91 brands
+### All 93 brands
+
+<details>
+<summary><strong>All 93 brands</strong> — camera count &amp; market segment (click to expand)</summary>
 
 <!-- brands-table:start (auto-generated by scripts/build.js — do not edit counts by hand; edit the Segment text and it is preserved) -->
 | Brand | Cameras | Segment |
@@ -209,34 +216,36 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | GeoVision | 93 | Enterprise, TW/Asia/global |
 | EZVIZ (Hikvision) | 87 | Consumer, global |
 | Amcrest | 86 | Prosumer, global |
-| Mapesen | 83 | — |
+| Mapesen | 83 | OEM/budget IP + analog, CN/global |
 | Axis | 81 | Enterprise premium, global |
-| Digital Watchdog | 70 | — |
+| Urmet | 78 | Prosumer/installer, IT/EU |
+| Digital Watchdog | 70 | Enterprise NDAA, US |
 | Kedacom | 63 | Enterprise, CN/global |
 | Speco | 61 | Professional/commercial (NDAA), US |
 | Hi-Focus | 60 | Made-in-India, BIS certified, IN |
-| Jovision | 57 | — |
+| Jovision | 57 | OEM/consumer (CloudSEE), CN/global |
 | IMOU (Dahua) | 56 | Consumer + prosumer, global |
+| Avtron | 55 | Enterprise + analog, IN |
 | Tapo (TP-Link) | 55 | Consumer budget, global |
 | Eufy (Anker) | 46 | Consumer no-subscription, global |
 | Hanwha | 46 | Enterprise AI, Korea/global |
 | Ubiquiti UniFi | 46 | Prosumer/SMB, US/global |
 | Uniarch (Uniview) | 43 | Budget NDAA sub-brand, global |
 | Lorex | 40 | Consumer NVR systems, CA/US |
-| Srihome | 40 | — |
-| JideTech | 38 | — |
+| Srihome | 40 | Budget consumer WiFi, CN/global |
+| JideTech | 38 | Consumer/prosumer PoE, CN/global |
 | Luma | 33 | Custom-install (SnapAV), US |
-| 3xLOGIC | 31 | — |
+| 3xLOGIC | 31 | Enterprise (VIGIL), US |
 | HiLook (Hikvision) | 30 | Budget installer, EU/UK/AU |
-| PIX-LINK | 27 | — |
-| TKH Security | 27 | — |
+| PIX-LINK | 27 | Budget consumer WiFi, CN/global |
+| TKH Security | 27 | Enterprise (Siqura), NL/EU |
 | CP Plus | 26 | India #2 brand, IN |
-| ieGeek | 26 | — |
+| ieGeek | 26 | Consumer WiFi/solar, CN/global |
 | Xiaomi | 26 | Consumer smart home, CN/global |
 | Arlo | 25 | Consumer premium wire-free, global |
 | VIGI (TP-Link) | 25 | Business/SMB PoE, global |
-| ClareVision | 24 | — |
-| Hiseeu | 23 | — |
+| ClareVision | 24 | Custom-install (SnapAV), US |
+| Hiseeu | 23 | Budget consumer kits, CN/global |
 | Ajax | 22 | Professional alarm + wired PoE cameras, EU/UK |
 | Foscam | 22 | Consumer WiFi/PoE, global |
 | Ring (Amazon) | 21 | Consumer ecosystem, global |
@@ -244,8 +253,8 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | Vivotek | 19 | Enterprise AI, global |
 | SV3C | 17 | Budget consumer, CN/US |
 | Avigilon | 16 | Enterprise NDAA, global |
-| EverFocus | 16 | — |
-| Boavision | 14 | — |
+| EverFocus | 16 | Enterprise/transport, TW/global |
+| Boavision | 14 | Consumer WiFi/solar/4G, CN/global |
 | Wyze | 14 | Budget consumer, US |
 | Blink (Amazon) | 12 | Budget battery, US/UK/EU |
 | Google Nest | 12 | Consumer smart home, global |
@@ -253,8 +262,8 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | Milesight | 12 | Prosumer/Enterprise IoT, global |
 | Swann | 12 | Consumer, AU/US/UK |
 | Camius | 11 | Consumer direct, US |
-| Night Owl | 11 | — |
-| Resideo | 11 | — |
+| Night Owl | 11 | Consumer DIY DVR/NVR, US |
+| Resideo | 11 | Smart-home security (Honeywell Home), US |
 | Tiandy | 11 | Enterprise + prosumer, CN/ME/Africa |
 | Costar | 10 | Enterprise (Arecont successor), US |
 | FLIR (Teledyne) | 10 | Thermal imaging, NA/EU |
@@ -264,15 +273,15 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | Pelco | 9 | Enterprise legacy, NA/global |
 | TVT | 9 | Prosumer budget, CN/IN/SE Asia |
 | Yale | 9 | Consumer smart home, UK/EU |
-| AvertX | 8 | — |
-| D-Link | 8 | — |
+| AvertX | 8 | Professional (NDAA), US |
+| D-Link | 8 | Consumer/SMB, TW/global |
 | Intelbras | 8 | #1 Latin America, BR/AR/LATAM |
 | LaView | 8 | Consumer WiFi/solar/4G, US |
 | Mobotix | 8 | Enterprise GDPR-first, EU |
 | LTS | 7 | Prosumer/installer, US |
 | Canon | 4 | Enterprise optical, JP/global |
 | Godrej | 4 | Consumer, IN |
-| Grandstream | 4 | — |
+| Grandstream | 4 | Prosumer/SMB IoT, US/global |
 | Longse | 4 | OEM/budget, CN/global |
 | March Networks | 4 | Enterprise retail/banking, NA |
 | Netatmo | 4 | Privacy-first no-subscription, EU |
@@ -284,11 +293,13 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | Hive | 2 | Smart home, UK |
 | Honeywell | 2 | Enterprise, US/IN |
 | Steinel | 2 | Outdoor smart light/cam, DE/AT/CH |
-| ASECAM | 1 | — |
+| ASECAM | 1 | OEM/budget (AliExpress), CN/global |
 | Bosch Smart Home | 1 | Consumer smart home, DE/AT/CH |
 | IDIS | 1 | Enterprise DirectIP, KR/global |
-| IMILAB | 1 | — |
+| IMILAB | 1 | Consumer smart home (Xiaomi eco), CN/global |
 <!-- brands-table:end -->
+
+</details>
 
 ### Market coverage
 

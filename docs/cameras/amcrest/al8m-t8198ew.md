@@ -38,5 +38,9 @@
 - 3D NR
 - smart codec
 
+## Sources
+
+- https://amcrest.com/amlink-4k-security-ai-ip-poe-turret-camera-al8m-t8198ew.html
+
 ---
 *Auto-generated from amcrest-al8m-t8198ew.json — do not edit by hand.*

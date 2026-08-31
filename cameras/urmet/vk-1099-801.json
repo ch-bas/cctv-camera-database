@@ -1,0 +1,96 @@
+{
+  "id": "urmet-vk-1099-801",
+  "brand": "Urmet",
+  "model": "VK 1099/801",
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 32,
+    "label": "32MP",
+    "max_width": 7680,
+    "max_height": 4320
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 25
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 25
+      }
+    ]
+  },
+  "sensor": "1/1.8\" CMOS (per sensor)",
+  "lens": {
+    "focal_length_mm": "2.8-12",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "min_lux_color": 0.006
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3bt)"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "features": [
+    "multi-sensor (4x 8MP sensors, 32MP combined)",
+    "panoramic view",
+    "WDR 120 dB",
+    "BLC",
+    "3D-DNR",
+    "each sensor outputs 3840x2160 @ 25 fps main"
+  ],
+  "operating_temp_c": "-30 to 55",
+  "dimensions_mm": "500 x 380 x 390",
+  "weight_g": 10060,
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://www.urmet.de/"
+  ],
+  "last_verified": "2026-08-31",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "onvif_port": 80,
+      "two_way_audio": false,
+      "notes": "Urmet exposes ONVIF/RTSP; confirm the exact RTSP path in the camera web UI or via ONVIF."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Add via the generic ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use 'Generic/ONVIF' — find/inspect to auto-fill RTSP."
+    }
+  }
+}

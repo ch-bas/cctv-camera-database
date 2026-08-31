@@ -6,7 +6,20 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
-## [2.10.0] — Unreleased
+## [2.11.0] — 2026-08-31
+
+### Added
+- **New brand: Avtron — 55 cameras**, authored from the Avtron "Quick Model Selection" catalog (image-only PDF, OCR'd) with gaps filled from official avtrontech.com datasheets/product pages. Avtron is an Indian AI-CCTV manufacturer (ADIT Group). Spans:
+  - **IP (`AM-` "Monarch")** — starlight bullets/domes/turrets (SM/UM/DM series, 2/4/5 MP, Smart-IVA, motorized), box (`AM-UM2054-NM`), fisheye (`AM-SF1299-PVR1`, `AM-SF12120-PVR1`, 12 MP), and PTZ speed domes (`AM-XD2500-R4U30` 30×, `AM-FD2500-R1U20`/`R2U33` 20×/33×, `AM-FD6255-R3U44-FSR` 44× laser, `AM-XD6255-R4U30-FSR`, `AM-K7255-R8U44-FSR` 4K dual-sensor panoramic, `AM-FD3355-U4` mini) plus a bispectral thermal PTZ (`AM-TS01121-MM`, 400×300 uncooled microbolometer).
+  - **Analog (`AA-`)** — 21× 4-in-1 (AHD/TVI/CVI/CVBS, Video-over-Coax) bullets/domes/box + analog PTZ (10×/23×/33×), modeled `connectivity: ["coax"]`, empty `protocols`, no `configs`.
+  - `AM-UMS030-MMR3` was intentionally not added — undocumented anywhere, resolution unverifiable (no fabrication). Bodyworn/NVR/door-phone items in the catalog are out of scope.
+- **New brand: Urmet — 78 cameras**, authored from official urmet.de datasheets (image PDFs, OCR'd) plus the 2018 Urmet Video Surveillance catalogue. Italian manufacturer; VK 1099 IP and VK 1096 AHD-analog "VideoKontrol" lines, plus the earlier 1090/1092/1093/1096/1099 article ranges:
+  - **2018 catalogue — 60 cameras** — IP bullets/domes/box/fisheye/PTZ (`1099/200–701`, `1093/139M2`–`1093/187C`, incl. 720P WiFi and 4K), and AHD analog bullets/domes/box/covert-pinhole/PTZ (`1092/*`, `1096/2xx–5xx`). Accessories, NVRs, monitors, switches, mounts and kits were excluded; `1096/303` deduped against the datasheet record.
+  - **IP (`VK 1099/*`)** — 5 MP domes/bullets across ABSCHRECKUNG (active deterrence: white-light + siren + two-way voice), KI PLUS (AI: LPR + audio detection, NDAA 889) and ECO lines; 4K domes/bullets (`VK 1099/710/711/610/611`); 12 MP fisheye (`VK 1099/680`); dual-lens 180° panoramic (`VK 1099/682`); 32 MP multisensor dome (`VK 1099/801`, 4× 8 MP).
+  - **Analog (`VK 1096/*`)** — AHD PLUS-series domes (`/505`, `/506`, `/303` with PIR), `connectivity: ["coax"]`, empty `protocols`, no `configs`.
+  - Urmet IP models expose ONVIF/RTSP but publish no fixed RTSP path → ONVIF-based `configs`, no fabricated stream URL.
+
+## [2.10.0] — 2026-08-31
 
 ### Added
 - **New brand: Mapesen — 83 cameras**, authored from official Mapesen datasheets (mapesen.com). Chinese OEM spanning ONVIF/RTSP IP cameras (hybrid warm-light + IR dual illumination, AI detection, two-way audio) and 4-in-1 analog HD cameras, across 8 / 6 / 5 / 4 / 2 MP:

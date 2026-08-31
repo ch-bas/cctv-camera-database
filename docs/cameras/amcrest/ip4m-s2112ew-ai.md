@@ -12,10 +12,11 @@
 | Sensor | 1/3" 4MP CMOS |
 | Lens | 2.7-13.5mm F1.7-F3.0 |
 | Field of view | 32-107.6° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.05 lux color |
 | Power | poe |
 | Protocols | rtsp, onvif |
 | IP rating | IP66 |
+| Operating temp | -30 to 60°C |
 
 ## Streams
 

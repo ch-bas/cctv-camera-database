@@ -19,6 +19,13 @@
 | Two-way audio | Yes |
 | Operating temp | -10 to 45°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 25 | H.264 |
+| sub | 640x480 | 15 | H.264 |
+
 ## Features
 
 - SmartHome WiFi PTZ dome

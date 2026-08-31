@@ -19,7 +19,6 @@
 ## Features
 
 - AI person detection
-- two-way audio
 - privacy mode
 - night vision
 - Alexa compatible
