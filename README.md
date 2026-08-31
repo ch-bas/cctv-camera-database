@@ -1,9 +1,9 @@
 # CCTV Camera Database
 
-An open, structured database of 4,197 CCTV / IP camera models and their technical specifications, covering 93 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
+An open, structured database of 4,204 CCTV / IP camera models and their technical specifications, covering 93 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
 
 [![build](https://github.com/ch-bas/cctv-camera-database/actions/workflows/build.yml/badge.svg)](https://github.com/ch-bas/cctv-camera-database/actions/workflows/build.yml)
-[![cameras](https://img.shields.io/badge/cameras-4%2C197-blue)](data/cameras.json)
+[![cameras](https://img.shields.io/badge/cameras-4%2C204-blue)](data/cameras.json)
 [![brands](https://img.shields.io/badge/brands-93-green)](cameras/)
 [![license](https://img.shields.io/badge/license-CC0-lightgrey)](LICENSE)
 
@@ -19,10 +19,10 @@ An open, structured database of 4,197 CCTV / IP camera models and their technica
 
 <p align="center">
   <a href="https://cctv-database.com">
-    <img src="assets/cctv-database-showcase.gif" alt="CCTV Camera Database — search 4,197 cameras, browse full specs, copy ready-to-use Frigate configs, and audit the open dataset with the built-in QA tool" width="640">
+    <img src="assets/cctv-database-showcase.gif" alt="CCTV Camera Database — search 4,204 cameras, browse full specs, copy ready-to-use Frigate configs, and audit the open dataset with the built-in QA tool" width="640">
   </a>
   <br>
-  <sub><b><a href="https://cctv-database.com">cctv-database.com</a></b> — search 4,197 cameras · full spec sheets · copy-paste Frigate configs · open &amp; auditable</sub>
+  <sub><b><a href="https://cctv-database.com">cctv-database.com</a></b> — search 4,204 cameras · full spec sheets · copy-paste Frigate configs · open &amp; auditable</sub>
 </p>
 
 ---
@@ -49,7 +49,7 @@ Prefer to self-host or browse offline? A [standalone demo](docs/demo.html) (just
 - **Sort** — click any column header to sort ascending/descending
 - **Detail drawer** — click a row to slide open the full spec sheet (resolution, connectivity, protocols, storage, audio, source links)
 - **Community notes** — user-reported quirks and behaviors per camera, sourced and attributed, kept separate from datasheet specs
-- **Pagination** — page through all 4,197 cameras, 25 per page
+- **Pagination** — page through all 4,204 cameras, 25 per page
 - **Stats bar** — live counts for total cameras, brands, 4K+, WiFi, and no-subscription models
 
 ---
@@ -82,7 +82,7 @@ cctv-camera-database/
 │   ├── abus/             # 144 cameras
 │   └── …87 more brands
 ├── data/                 # GENERATED — do not edit by hand
-│   ├── cameras.json      # all 4,197 cameras as one array
+│   ├── cameras.json      # all 4,204 cameras as one array
 │   ├── cameras.csv       # flattened, spreadsheet-friendly
 │   └── rtsp-patterns.json  # CC0 brand-level RTSP URL layer (172 brands)
 ├── strix/
@@ -180,17 +180,17 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 
 | Metric | Count |
 |--------|-------|
-| Total cameras | **4,197** |
+| Total cameras | **4,204** |
 | Brands | **93** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
-| PoE wired | 3,054 |
+| PoE wired | 3,061 |
 | WiFi | 804 |
 | Battery / wire-free | 261 |
-| 4K / 8MP+ | 1,116 |
-| 4–7MP | 1,766 |
+| 4K / 8MP+ | 1,117 |
+| 4–7MP | 1,772 |
 | Under 4MP | 1,315 |
-| With integration configs (Frigate / Home Assistant) | 3,357 |
-| With color-lux rating (`night_vision.min_lux_color`) | 2,666 |
+| With integration configs (Frigate / Home Assistant) | 3,364 |
+| With color-lux rating (`night_vision.min_lux_color`) | 2,667 |
 
 ### All 93 brands
 
@@ -211,7 +211,7 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | Amcrest | 86 | Prosumer, global |
 | Mapesen | 83 | — |
 | Axis | 81 | Enterprise premium, global |
-| Urmet | 71 | — |
+| Urmet | 78 | — |
 | Digital Watchdog | 70 | — |
 | Kedacom | 63 | Enterprise, CN/global |
 | Speco | 61 | Professional/commercial (NDAA), US |
