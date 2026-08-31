@@ -1,23 +1,23 @@
 {
-  "id": "amcrest-al8m-t8198ew",
+  "id": "amcrest-ip8m-mb182e-ai",
   "brand": "Amcrest",
-  "model": "AL8M-T8198EW",
+  "model": "IP8M-MB182E-AI",
   "aliases": [
-    "Amcrest AL8M-T8198EW",
-    "AmLink AL8M-T8198EW"
+    "Amcrest IP8M-MB182E-AI"
   ],
-  "type": "turret",
+  "type": "panoramic",
   "connectivity": [
     "ethernet"
   ],
   "power_source": [
     "poe",
-    "dc"
+    "dc",
+    "ac-mains"
   ],
   "resolution": {
     "megapixels": 8,
-    "max_width": 3840,
-    "max_height": 2160,
+    "max_width": 4096,
+    "max_height": 1800,
     "label": "4K"
   },
   "video": {
@@ -26,42 +26,44 @@
       "H.264",
       "MJPEG"
     ],
-    "max_fps": 20,
+    "max_fps": 30,
     "streams": [
       {
         "name": "main",
-        "resolution": "3840x2160",
-        "fps": 20
+        "resolution": "4096x1800",
+        "fps": 30,
+        "codec": "H.265"
       },
       {
         "name": "sub",
-        "resolution": "704x480",
-        "fps": 30
+        "resolution": "1024x452",
+        "fps": 30,
+        "codec": "H.264"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x832",
+        "fps": 30,
+        "codec": "H.264"
       }
     ]
   },
-  "sensor": "1/2.7\" CMOS",
+  "sensor": "1/2.8\" CMOS",
   "lens": {
-    "count": 1,
+    "count": 4,
     "focal_length_mm": "2.8",
-    "aperture": "F1.6",
-    "varifocal": false
+    "aperture": "F1.6"
   },
-  "field_of_view_deg": "135.2",
+  "field_of_view_deg": "180",
   "night_vision": {
-    "type": "hybrid",
+    "type": "ir",
     "range_m": 30,
-    "min_lux_color": 0.007
-  },
-  "audio": {
-    "microphone": true,
-    "speaker": true,
-    "two_way": true
+    "min_lux_color": 0.005
   },
   "power": {
-    "method": "PoE (802.3af) / DC 12V",
-    "consumption_w": 8.2,
-    "voltage": "DC 12V"
+    "method": "PoE+ (802.3at) / DC 12V / AC 24V",
+    "consumption_w": 16,
+    "voltage": "DC 12V / AC 24V"
   },
   "storage": {
     "onboard": true,
@@ -75,8 +77,8 @@
   ],
   "ip_rating": "IP67",
   "operating_temp_c": "-40 to 60",
-  "dimensions_mm": "123.0 x 123.0 x 94.9",
-  "weight_g": 517,
+  "dimensions_mm": "298 x 173 x 121",
+  "weight_g": 2863,
   "environment": [
     "outdoor"
   ],
@@ -84,34 +86,34 @@
     "global"
   ],
   "features": [
-    "dual-light (warm white + IR)",
-    "human detection",
-    "vehicle detection",
-    "line crossing",
+    "180-degree panoramic",
+    "multi-sensor (4 lenses)",
+    "people counting",
+    "crowd distribution map",
+    "vehicle density",
+    "tripwire",
     "intrusion detection",
-    "120dB WDR",
-    "3D NR",
-    "smart codec"
+    "IK10 vandal-resistant"
   ],
   "network": {
-    "ethernet_speed_mbps": 100,
+    "ethernet_speed_mbps": 1000,
     "ethernet_ports": 1
   },
   "sources": [
-    "https://amcrest.com/amlink-4k-security-ai-ip-poe-turret-camera-al8m-t8198ew.html"
+    "https://amcrest.com/4k-poe-ai-camera-panoramic-ip8m-mb182e-ai.html"
   ],
   "last_verified": "2026-08-31",
   "configs": {
     "frigate": {
       "detect": {
-        "width": 704,
-        "height": 480,
+        "width": 1024,
+        "height": 452,
         "fps": 5
       },
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
       "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
       "onvif_port": 80,
-      "two_way_audio": true
+      "two_way_audio": false
     },
     "home_assistant": {
       "integration": "amcrest",

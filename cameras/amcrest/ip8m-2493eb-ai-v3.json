@@ -1,12 +1,11 @@
 {
-  "id": "amcrest-al8m-t8198ew",
+  "id": "amcrest-ip8m-2493eb-ai-v3",
   "brand": "Amcrest",
-  "model": "AL8M-T8198EW",
+  "model": "IP8M-2493EB-AI-V3",
   "aliases": [
-    "Amcrest AL8M-T8198EW",
-    "AmLink AL8M-T8198EW"
+    "Amcrest IP8M-2493EB-AI-V3"
   ],
-  "type": "turret",
+  "type": "dome",
   "connectivity": [
     "ethernet"
   ],
@@ -23,44 +22,49 @@
   "video": {
     "codecs": [
       "H.265",
-      "H.264",
-      "MJPEG"
+      "H.264"
     ],
     "max_fps": 20,
     "streams": [
       {
         "name": "main",
         "resolution": "3840x2160",
-        "fps": 20
+        "fps": 20,
+        "codec": "H.265"
       },
       {
         "name": "sub",
         "resolution": "704x480",
-        "fps": 30
+        "fps": 30,
+        "codec": "H.264"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.264"
       }
     ]
   },
-  "sensor": "1/2.7\" CMOS",
+  "sensor": "1/2.5\" CMOS",
   "lens": {
     "count": 1,
     "focal_length_mm": "2.8",
-    "aperture": "F1.6",
-    "varifocal": false
+    "aperture": "F1.6"
   },
-  "field_of_view_deg": "135.2",
+  "field_of_view_deg": "112",
   "night_vision": {
-    "type": "hybrid",
+    "type": "ir",
     "range_m": 30,
-    "min_lux_color": 0.007
+    "min_lux_color": 0.06
   },
   "audio": {
     "microphone": true,
-    "speaker": true,
-    "two_way": true
+    "two_way": false
   },
   "power": {
     "method": "PoE (802.3af) / DC 12V",
-    "consumption_w": 8.2,
+    "consumption_w": 7,
     "voltage": "DC 12V"
   },
   "storage": {
@@ -74,9 +78,9 @@
     "onvif"
   ],
   "ip_rating": "IP67",
-  "operating_temp_c": "-40 to 60",
-  "dimensions_mm": "123.0 x 123.0 x 94.9",
-  "weight_g": 517,
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "81 x 110 x 110",
+  "weight_g": 410,
   "environment": [
     "outdoor"
   ],
@@ -84,21 +88,22 @@
     "global"
   ],
   "features": [
-    "dual-light (warm white + IR)",
     "human detection",
     "vehicle detection",
-    "line crossing",
+    "face detection",
+    "smart motion detection",
+    "tripwire",
     "intrusion detection",
+    "16x digital zoom",
     "120dB WDR",
-    "3D NR",
-    "smart codec"
+    "IK10 vandal-resistant"
   ],
   "network": {
     "ethernet_speed_mbps": 100,
     "ethernet_ports": 1
   },
   "sources": [
-    "https://amcrest.com/amlink-4k-security-ai-ip-poe-turret-camera-al8m-t8198ew.html"
+    "https://amcrest.com/4k-ip-camera-poe-security-camera-dome-ip8m-2493eb-ai-v3.html"
   ],
   "last_verified": "2026-08-31",
   "configs": {
@@ -111,7 +116,7 @@
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
       "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
       "onvif_port": 80,
-      "two_way_audio": true
+      "two_way_audio": false
     },
     "home_assistant": {
       "integration": "amcrest",

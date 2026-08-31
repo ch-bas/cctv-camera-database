@@ -9,12 +9,15 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 ## [2.10.0] — Unreleased
 
 ### Added
-- **20 new Amcrest cameras** across the Helix (HLX), IP, AmLink (AL) and SmartHome (ASH) lines, from official Amcrest datasheets / product pages:
+- **51 new Amcrest cameras** across the Helix (HLX), IP, AmLink (AL), SmartHome (ASH) and ADC lines, from official Amcrest datasheets / product pages:
   - **Helix AI PoE** — `HLX-IP5M-B102EW-AI` (5 MP bullet), `HLX-IP5M-T103EW-AI`, `HLX-IP8M-T303EW-AI` (5 MP / 4K turrets, smart dual illumination).
-  - **IP AI PoE** — UltraHD turrets `IP5M-T1179EW-AI-V3`, `IP8M-T2599EW-AI-V3` (4K); PTZ `IP2M-863EW-AI-V3` (2 MP 25× zoom), `IP4M-S2112EW-AI` (4 MP 5× zoom), `IP4M-1063EW-AI-V2` (4 MP speed dome); panoramic `IP4M-PD183EW-AI` (4 MP dome), `IP8M-FCB2996EW-AI` (4K dual-lens 180°); wedge `IP5M-W1150EW-AI` (5 MP); dome `IP8M-2493EB-V2` (4K).
+  - **IP AI PoE bullets/turrets** — UltraHD turrets `IP5M-T1179EW-AI-V3`, `IP8M-T2599EW-AI-V3`; 4K AI bullets `IP8M-2779EB/EW-AI`, `IP8M-2796EB/EW-AI`, `IP8M-DB3946EW-3AI`, `IP8M-2496EB/EW-V2`, `IP8M-2454EW`; 5 MP AI bullets `IP5M-B1276EW/EB-AI`, `IP5M-B1186EB-AI-V3`; 4 MP AI bullets `IP4M-1062EW-AI` (LPR), `IP4M-1046EW-AI` (NightColor); AmLink turret `AL5M-T5171EW`.
+  - **IP AI PoE PTZ / zoom** — `IP2M-863EW-AI-V3` (25× zoom), `IP4M-1063EW-AI-V2` (speed dome), `IP4M-1098EW-AI`, `IP4M-1093EW-AI` (25× zoom), `IP4M-S2112EW-AI` (5× zoom).
+  - **IP AI PoE domes / panoramic / multisensor** — domes `IP8M-2493EB-V2`, `IP8M-2493EB-AI-V3`, `IP8M-2693EW-AI`, `IP8M-MT2544EW`; wedge `IP5M-W1150EW-AI`; panoramic `IP4M-PD183EW-AI`, `IP4M-PB181EW-AI`, `IP8M-FCB2996EW-AI`, `IP8M-MD180E-AI`, `IP8M-MB182E-AI` (4×2 MP multisensor), `IP8M-DLB2998EW-AI` / `IP8M-DLB2998W-AI` (4K dual-lens 180°, PoE / Wi-Fi); fisheye `IP5M-F1180EW-V2` (360°).
+  - **IP Wi-Fi pan-tilt** — `IP2M-841W-V3` / `IP2M-841B-V3` (2 MP, auto-tracking).
   - **AmLink PoE** — `AL8M-B8199EW` (4K bullet), `AL5M-B5172EW` (5 MP bullet), `AL8M-T8198EW` (4K turret); **AmLink WiFi** — `AL4M-P402W` (2×2 MP dual-lens pan-tilt, auto-tracking), `AL4M-P401W` (4 MP pan-tilt).
-  - **SmartHome WiFi** — `ASH41-W` / `ASH41-B` (4 MP pan-tilt, RTSP, cloud), `ASH26-W` (2 MP floodlight + siren, app/cloud).
-  - IP/AmLink PoE cameras use the Amcrest = Dahua protocol (`/cam/realmonitor` RTSP, ONVIF, Blue Iris "Dahua"); SmartHome (ASH) are consumer Wi-Fi (cloud/app; ASH41 also exposes RTSP).
+  - **SmartHome / ADC Wi-Fi** — `ASH41-W` / `ASH41-B`, `ASH21-W` / `ASH21-B` (pan-tilt, RTSP/ONVIF, cloud), `ASH26-W`, `ASH22-W` (outdoor bullet, cloud/app), `ADC2W` (2 MP deterrent bullet, RTSP/ONVIF, spotlight + siren).
+  - IP/AmLink PoE cameras use the Amcrest = Dahua protocol (`/cam/realmonitor` RTSP, ONVIF, Blue Iris "Dahua"); SmartHome (ASH) are consumer Wi-Fi (cloud/app; ASH21 also exposes RTSP/ONVIF).
 
 ### Changed
 - **Amcrest refreshes** — `IP4M-1041B`, `IP8M-2493EW-AI-V3`, `IP8M-2899EW-AI-V2` refreshed against their current datasheets (fuller streams/features, `last_verified` bumped).
