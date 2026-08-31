@@ -1,0 +1,104 @@
+{
+  "id": "mapesen-be501h2-q506-p",
+  "brand": "Mapesen",
+  "model": "BE501H2-Q506-P",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1904,
+    "label": "5MP"
+  },
+  "sensor": "1/2.7\" low-illumination CMOS",
+  "lens": {
+    "focal_length_mm": "4.7-94.06",
+    "aperture": "F1.6-2.7"
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "field_of_view_deg": "2.9-55.4",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1904",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "720x576",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "ip_rating": "IP68",
+  "operating_temp_c": "-25 to 70",
+  "dimensions_mm": "210 diameter x 300",
+  "features": [
+    "explosion-proof housing (Ex d IIC T6 Gb / Ex tD A21 IP68 T80℃)",
+    "304 stainless steel enclosure",
+    "22× optical zoom",
+    "auto-focus motorized varifocal (4.7-94.06mm)",
+    "pan 0-360° endless, tilt 0-90° auto-flip",
+    "128 presets, patrol/line-scan/auto-scan",
+    "AI humanoid detection and tracking (auto-tracking)",
+    "line-cross detection",
+    "area intrusion detection",
+    "person loitering / absent alarm",
+    "vehicle illegal parking / retrograde detection",
+    "real WDR",
+    "3D noise reduction",
+    "BLC / HLC",
+    "motion detection",
+    "privacy mask (4 areas)",
+    "TVS 3000V lightning / surge protection"
+  ],
+  "sources": [
+    "https://www.mapesen.com/web/userfiles/productfile/gengxin/BE501H2-Q506-Pspecification-mapesenV.I03.pdf"
+  ],
+  "last_verified": "2026-08-31",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 720,
+        "height": 576,
+        "fps": 5
+      },
+      "onvif_port": 80,
+      "two_way_audio": false,
+      "autotracking": true,
+      "notes": "Mapesen exposes ONVIF/RTSP but does not publish a fixed RTSP path; use ONVIF auto-config or the camera web UI to obtain the stream URL."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Add via the generic ONVIF integration (port 80)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use 'Generic/ONVIF' — find/inspect to auto-fill RTSP."
+    }
+  }
+}

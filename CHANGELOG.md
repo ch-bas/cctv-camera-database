@@ -9,10 +9,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 ## [2.10.0] — Unreleased
 
 ### Added
-- **New brand: Mapesen — 22 cameras**, authored from official Mapesen datasheets (mapesen.com). Chinese ONVIF/RTSP OEM ("AcuSense" / "EASY-IP" series) network cameras with hybrid warm-light + IR dual illumination, AI human/vehicle detection and two-way audio, across 8 MP / 5 MP / 4 MP variants:
-  - **PoE bullets** — `L2IQ80XLFA2-P` / `L2IQ504LFA2-P` / `L2IQ401LFA2-P`, `L6KQ80XLFA2-P` / `L6KQ504LFA2-P` / `L6KQ401LFA2-P`, `L2KQ80XLFA2-P` / `L2KQ504LFA2-P` / `L2KQ401LFA2-P`.
-  - **PoE domes / turrets** — `Q3BQ80XLFA2-P` / `Q3BQ504LFA2-P` / `Q3BQ401LFA2-P`, `M1KQ80XLFA2-P` / `M1KQ504LFA2-P` / `M1KQ401LFA2-P`, `M2JQ80XLFA2-P` / `M2JQ504LFA2-P`, `M6JQ80XLFA2-P` / `M6JQ504LFA2-P`.
-  - **Pan-tilt** — `L2KQ80XLFA2-PT`, `M2JQ80XLFA2-PT`, `M6JQ80XLFA2-PT` (8 MP).
+- **New brand: Mapesen — 50 cameras**, authored from official Mapesen datasheets (mapesen.com). Chinese ONVIF/RTSP OEM network cameras with hybrid warm-light + IR dual illumination, AI human/vehicle detection and two-way audio, across 8 MP / 5 MP / 4 MP variants:
+  - **Standard AcuSense / EASY-IP PoE bullets (`…LFA2-P`)** — `L2IQ80X/504/401`, `L6KQ80X/504/401`, `L2KQ80X/504/401`.
+  - **Standard PoE domes / turrets (`…LFA2`)** — `Q3BQ80X/504/401`, `M1KQ80X/504/401`, `M2JQ80X/504`, `M6JQ80X/504`, plus onboard-storage variants `L2KQ80X-PT` (bullet), `M2JQ80X-PT` / `M6JQ80X-PT` (dome). (The `-PT` suffix denotes an onboard-microSD variant of the fixed camera — **not** a pan-tilt mechanism — per the datasheets.)
+  - **Active-deterrence "Lite" series (`…SFA2`, red/blue strobe warning light, "Smart AI Alert") — 20 cameras** — bullets `L2KQ`/`L6KQ`/`80BQ` and domes `50DQ`/`M2JQ`/`M6JQ` in 5 MP (`500`) and 8 MP (`80X`), each in `-P` (no storage) and, where offered, `-PT` (onboard microSD ≤512 GB) variants.
+  - **Face-recognition ("SenTrust HD", `…-FC`) — 5 cameras** — bullets `80BAI40M5A2` / `80BAI40FA` / `80BAI50M1A2` / `80BAI50FA` and dome `50DAI50FA2` (deep-learning face capture & recognition, face database / blocklist, down to 0.0001 lux, motorized or fixed lenses).
+  - **License-plate (ANPR, "Vehicle License Plate", `…-LPR`) — 2 cameras** — `80BAI80SM5A2-PTBA-LPR` (8 MP, 3.3–10.5 mm motorized) and `LPR-H3KP500M4-T` (5 MP, 5–50 mm motorized, dual-lane ≤130 km/h), multi-national plate recognition.
+  - **Explosion-proof PTZ** — `BE501H2-Q506-P` (5 MP, 22× optical zoom, Ex d IIC T6 / IP68, 360° endless pan, camera-side auto-tracking).
   - Mapesen does not publish a fixed RTSP path; records set `protocols: ["rtsp","onvif"]` with an ONVIF-based `configs` block (generic ONVIF for Home Assistant / Blue Iris) rather than a fabricated stream URL.
 - **61 new Amcrest cameras** across the Helix (HLX), IP, AmLink (AL), SmartHome (ASH) and ADC lines, from official Amcrest datasheets / product pages:
   - **Helix AI PoE** — `HLX-IP5M-B102EW-AI` (5 MP bullet), `HLX-IP5M-T103EW-AI`, `HLX-IP8M-T303EW-AI` (5 MP / 4K turrets, smart dual illumination).
