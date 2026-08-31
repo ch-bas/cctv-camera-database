@@ -9,6 +9,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 ## [2.10.0] — Unreleased
 
 ### Added
+- **New brand: Mapesen — 22 cameras**, authored from official Mapesen datasheets (mapesen.com). Chinese ONVIF/RTSP OEM ("AcuSense" / "EASY-IP" series) network cameras with hybrid warm-light + IR dual illumination, AI human/vehicle detection and two-way audio, across 8 MP / 5 MP / 4 MP variants:
+  - **PoE bullets** — `L2IQ80XLFA2-P` / `L2IQ504LFA2-P` / `L2IQ401LFA2-P`, `L6KQ80XLFA2-P` / `L6KQ504LFA2-P` / `L6KQ401LFA2-P`, `L2KQ80XLFA2-P` / `L2KQ504LFA2-P` / `L2KQ401LFA2-P`.
+  - **PoE domes / turrets** — `Q3BQ80XLFA2-P` / `Q3BQ504LFA2-P` / `Q3BQ401LFA2-P`, `M1KQ80XLFA2-P` / `M1KQ504LFA2-P` / `M1KQ401LFA2-P`, `M2JQ80XLFA2-P` / `M2JQ504LFA2-P`, `M6JQ80XLFA2-P` / `M6JQ504LFA2-P`.
+  - **Pan-tilt** — `L2KQ80XLFA2-PT`, `M2JQ80XLFA2-PT`, `M6JQ80XLFA2-PT` (8 MP).
+  - Mapesen does not publish a fixed RTSP path; records set `protocols: ["rtsp","onvif"]` with an ONVIF-based `configs` block (generic ONVIF for Home Assistant / Blue Iris) rather than a fabricated stream URL.
 - **61 new Amcrest cameras** across the Helix (HLX), IP, AmLink (AL), SmartHome (ASH) and ADC lines, from official Amcrest datasheets / product pages:
   - **Helix AI PoE** — `HLX-IP5M-B102EW-AI` (5 MP bullet), `HLX-IP5M-T103EW-AI`, `HLX-IP8M-T303EW-AI` (5 MP / 4K turrets, smart dual illumination).
   - **IP AI PoE bullets/turrets** — UltraHD turrets `IP5M-T1179EW-AI-V3`, `IP8M-T2599EW-AI-V3`; 4K AI bullets `IP8M-2779EB/EW-AI`, `IP8M-2796EB/EW-AI`, `IP8M-DB3946EW-3AI`, `IP8M-2496EB/EW-V2`, `IP8M-2454EW`; 5 MP AI bullets `IP5M-B1276EW/EB-AI`, `IP5M-B1186EB-AI-V3`; 4 MP AI bullets `IP4M-1062EW-AI` (LPR), `IP4M-1046EW-AI` (NightColor); AmLink turret `AL5M-T5171EW`.
@@ -23,6 +28,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ### Changed
 - **Amcrest refreshes** — `IP4M-1041B`, `IP8M-2493EW-AI-V3`, `IP8M-2899EW-AI-V2` refreshed against their current datasheets (fuller streams/features, `last_verified` bumped).
+- **Amcrest data-quality fixes** (from a full re-verification of the pre-existing 25 Amcrest records — all confirmed real products, no fabricated models): `AD410` corrected to hardwired-only power (it is not battery-powered); `IP8M-2493EW` display name corrected from "Bullet" to "Dome"; `ASH42-W` dropped a stray "two-way audio" feature that contradicted its mic-only audio spec.
 
 ## [2.9.0] — 2026-08-30
 

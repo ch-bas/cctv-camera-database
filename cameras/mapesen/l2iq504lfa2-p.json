@@ -1,0 +1,97 @@
+{
+  "id": "mapesen-l2iq504lfa2-p",
+  "brand": "Mapesen",
+  "model": "L2IQ504LFA2-P",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1904,
+    "label": "5MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "focal_length_mm": "3.6",
+    "aperture": "F1.6"
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 35,
+    "min_lux_color": 0.005
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1904",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "720x576",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "ip_rating": "IP66",
+  "operating_temp_c": "-10 to 50",
+  "features": [
+    "AI human detection and tracking",
+    "hybrid dual-light (warm light + IR)",
+    "voice broadcast alarm",
+    "digital WDR",
+    "3D noise reduction",
+    "motion detection",
+    "GB28181 (optional)"
+  ],
+  "sources": [
+    "https://www.mapesen.com/web/userfiles/productfile/gengxin/L2IQ504LFA2-Pspecification-mapesenV.H12.pdf"
+  ],
+  "last_verified": "2026-08-31",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 720,
+        "height": 576,
+        "fps": 5
+      },
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "notes": "Mapesen exposes ONVIF/RTSP but does not publish a fixed RTSP path; use ONVIF auto-config or the camera web UI to obtain the stream URL."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Add via the generic ONVIF integration (port 80)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use 'Generic/ONVIF' — find/inspect to auto-fill RTSP."
+    }
+  }
+}
