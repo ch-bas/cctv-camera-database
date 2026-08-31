@@ -1,0 +1,139 @@
+{
+  "id": "amcrest-ip4m-1063ew-ai-v2",
+  "brand": "Amcrest",
+  "model": "IP4M-1063EW-AI-V2",
+  "aliases": [
+    "Amcrest IP4M-1063EW-AI-V2"
+  ],
+  "type": "ptz",
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "relative"
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.264"
+      },
+      {
+        "name": "sub1",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.264"
+      },
+      {
+        "name": "sub2",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5-125",
+    "aperture": "F1.6-F3.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "63.1-3.7",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 100,
+    "min_lux_color": 0.005
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "power": {
+    "method": "PoE+ (802.3at) / DC 12V",
+    "consumption_w": 13,
+    "voltage": "DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP66",
+  "operating_temp_c": "-40 to 65",
+  "dimensions_mm": "269 x 160 x 160",
+  "weight_g": 2599,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "25x optical zoom",
+    "16x digital zoom",
+    "dual-light fusion (IR + white light)",
+    "auto-tracking",
+    "human detection",
+    "vehicle detection",
+    "face detection",
+    "tripwire",
+    "intrusion detection",
+    "loitering detection",
+    "active deterrence (red/blue warning light + siren)",
+    "120dB WDR",
+    "electronic image stabilization"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "sources": [
+    "https://amcrest.com/4mp-poe-camera-ptz-optical-zoom-ai-ip4m-1063ew-ai-v2.html"
+  ],
+  "last_verified": "2026-08-31",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "amcrest",
+      "notes": "Native Amcrest integration or ONVIF. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile. Amcrest uses Dahua protocol."
+    }
+  }
+}
