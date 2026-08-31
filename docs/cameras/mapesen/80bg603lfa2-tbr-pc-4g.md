@@ -1,0 +1,46 @@
+# Mapesen 80BG603LFA2-TBR-PC-4G
+
+| Field | Spec |
+|-------|------|
+| Brand | Mapesen |
+| Model | 80BG603LFA2-TBR-PC-4G |
+| Type | bullet |
+| Connectivity | ethernet, 4g |
+| Resolution | 6MP (6MP, 3200×1800) |
+| Sensor | 1/3" OS04D10 CMOS |
+| Lens | 6mm F1.6 |
+| Night vision | hybrid (80m) |
+| Protocols | rtsp, onvif |
+| IP rating | IP66 |
+| Two-way audio | Yes |
+| Operating temp | -20 to 60°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3200x1800 | 25 | H.265 |
+| sub | 720x576 | 25 | H.265 |
+
+## Features
+
+- people counting (entry / exit / pass-through statistics)
+- remaining-occupancy counting
+- head-detection based counting (40x40px @1080P, optimal 60x60px)
+- 4G/LTE cellular connectivity with 2 antennas
+- RK1106G AI processor (1 TOPS)
+- hybrid illumination (warm light 60m + IR 80m), full-color / infrared / hybrid modes
+- human motion detection, intrusion, tripwire, defocus & video-occlusion detection
+- GB28181
+- microSD storage up to 512GB
+- RS-485
+- alarm I/O
+- digital WDR (DWDR)
+- 3D noise reduction / defog
+
+## Sources
+
+- https://www.mapesen.com/web/userfiles/productfile/gengxin/PeopleCounting-80BG603LFA2-TBR-PC-4Gspecification-mapesenV.I01.pdf
+
+---
+*Auto-generated from mapesen-80bg603lfa2-tbr-pc-4g.json — do not edit by hand.*

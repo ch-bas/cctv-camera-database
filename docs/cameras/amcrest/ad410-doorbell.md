@@ -12,7 +12,7 @@
 | Lens | 1× Fixedmm F2.0 |
 | Field of view | 163 diagonal (head-to-toe)° |
 | Night vision | ir (5m) |
-| Power | Hardwired (16-24V AC) / battery |
+| Power | Hardwired (16-24V AC) |
 | Storage | microSD ≤ 128GB, NVR |
 | Protocols | onvif, rtsp, http |
 | IP rating | IP65 |

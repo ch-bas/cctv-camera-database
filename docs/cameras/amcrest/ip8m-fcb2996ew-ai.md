@@ -12,11 +12,12 @@
 | Sensor | Dual 1/1.8" 4K CMOS |
 | Lens | 3.6mm F1.0 |
 | Field of view | 180° |
-| Night vision | color (40m) |
+| Night vision | color (40m), 0.0005 lux color |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | rtsp, onvif |
 | IP rating | IP67 |
 | Two-way audio | Yes |
+| Operating temp | -40 to 60°C |
 
 ## Streams
 
