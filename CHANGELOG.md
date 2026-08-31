@@ -6,6 +6,14 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.10.0] — Unreleased
+
+### Added
+- **9 new Amcrest cameras** (Helix HLX / IP / AmLink AL lines), from official Amcrest datasheets: Helix AI PoE cameras `HLX-IP5M-B102EW-AI` (5 MP bullet), `HLX-IP5M-T103EW-AI` + `HLX-IP8M-T303EW-AI` (5 MP / 4K turrets, smart dual illumination); UltraHD AI PoE turrets `IP5M-T1179EW-AI-V3`, `IP8M-T2599EW-AI-V3` (4K); AmLink PoE bullets `AL8M-B8199EW` (4K) + `AL5M-B5172EW` (5 MP); and AmLink WiFi `AL4M-P402W` (2×2 MP dual-lens pan-tilt, auto-tracking) + `AL4M-P401W` (4 MP pan-tilt). Amcrest = Dahua-protocol (`/cam/realmonitor` RTSP, Blue Iris "Dahua").
+
+### Changed
+- **Amcrest `IP4M-1041B`** — refreshed against its current datasheet (`last_verified` bumped).
+
 ## [2.9.0] — 2026-08-30
 
 ### Added
