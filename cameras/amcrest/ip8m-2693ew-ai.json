@@ -1,0 +1,124 @@
+{
+  "id": "amcrest-ip8m-2693ew-ai",
+  "brand": "Amcrest",
+  "model": "IP8M-2693EW-AI",
+  "aliases": [
+    "Amcrest IP8M-2693EW-AI"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.4"
+  },
+  "field_of_view_deg": "108",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.007
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V",
+    "consumption_w": 7,
+    "voltage": "DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "81 x 110 x 110",
+  "weight_g": 363,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "human detection",
+    "vehicle detection",
+    "face detection",
+    "tripwire",
+    "intrusion detection",
+    "120dB WDR",
+    "IK10 vandal-resistant"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "sources": [
+    "https://amcrest.com/ultrahd-4k-8mp-ai-dome-poe-ip-camera-security-3840x2160-98ft-nightvision-2-8mm-lens-ip67-weatherproof-artificial-intelligence-white-ip8m-2693ew-ai.html"
+  ],
+  "last_verified": "2026-08-31",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "two_way_audio": false
+    },
+    "home_assistant": {
+      "integration": "amcrest",
+      "notes": "Native Amcrest integration or ONVIF. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile. Amcrest uses Dahua protocol."
+    }
+  }
+}

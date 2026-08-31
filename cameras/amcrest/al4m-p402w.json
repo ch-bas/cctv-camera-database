@@ -1,0 +1,123 @@
+{
+  "id": "amcrest-al4m-p402w",
+  "brand": "Amcrest",
+  "model": "AL4M-P402W",
+  "aliases": [
+    "Amcrest AL4M-P402W",
+    "AmLink AL4M-P402W"
+  ],
+  "type": "dual-lens",
+  "connectivity": [
+    "wifi"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2x2MP (1920x1080 per lens)"
+  },
+  "sensor": "1/3\" CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "4 (fixed)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "93 horizontal (per lens); 345 pan / 90 tilt",
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 15,
+        "codec": "H.264"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 15,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 9,
+    "min_lux_color": 3
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "power": {
+    "method": "DC 12V 1A",
+    "consumption_w": 6.6,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": false,
+    "cloud": true
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP65",
+  "operating_temp_c": "-20 to 60",
+  "dimensions_mm": "120 x 168 x 185",
+  "weight_g": 397,
+  "features": [
+    "dual-lens (2x2MP, 1920x1080 per channel)",
+    "pan/tilt (345 pan / 90 tilt)",
+    "auto tracking",
+    "human detection and tracking",
+    "two-way audio",
+    "built-in siren (max 84 dB)",
+    "warm white + IR night vision (up to 30ft)",
+    "dual-band Wi-Fi (2.4GHz / 5GHz)"
+  ],
+  "ptz": {
+    "autotracking": true
+  },
+  "sources": [
+    "https://amcrest.com/amlink-2x-2mp-dual-lens-wifi-camera-outdoor-al4m-p402w.html"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-08-31",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "amcrest",
+      "notes": "Native Amcrest integration or ONVIF. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile. Amcrest uses Dahua protocol."
+    }
+  }
+}

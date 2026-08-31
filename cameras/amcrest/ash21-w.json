@@ -1,0 +1,109 @@
+{
+  "id": "amcrest-ash21-w",
+  "brand": "Amcrest",
+  "model": "ASH21-W",
+  "aliases": [
+    "ASH21-W",
+    "Amcrest ASH21-W",
+    "SmartHome ASH21-W"
+  ],
+  "type": "ptz",
+  "ptz": {
+    "autotracking": true
+  },
+  "connectivity": [
+    "wifi"
+  ],
+  "power_source": [
+    "usb",
+    "dc"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6 (fixed)",
+    "varifocal": false
+  },
+  "field_of_view_deg": "93 (H), 48 (V), 115 (D); pan 355, tilt -5 to 80",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "power": {
+    "method": "DC 5V, 1.0A, USB",
+    "consumption_w": 3.5,
+    "voltage": "5V DC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": false,
+    "cloud": true
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "operating_temp_c": "-10 to 45",
+  "dimensions_mm": "106.1 x 77.4 x 77.4",
+  "weight_g": 238,
+  "features": [
+    "SmartHome WiFi pan/tilt (355 pan, -5 to 80 tilt)",
+    "white",
+    "auto-tracking",
+    "person detection",
+    "two-way audio",
+    "siren (110dB)",
+    "baby monitor mode",
+    "privacy mode"
+  ],
+  "sources": [
+    "https://amcrest.com/amcrest-smarthome-ai-human-detection-wifi-camera-indoor-pan-tilt-wireless-ip-camera-baby-monitor-mode-auto-tracking-home-security-camera-with-night-vision-two-way-audio-nanny-cam-ash21-w-white.html"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-08-31",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "amcrest",
+      "notes": "Native Amcrest integration or ONVIF. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile. Amcrest uses Dahua protocol."
+    }
+  }
+}

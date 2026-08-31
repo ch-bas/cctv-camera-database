@@ -1,0 +1,125 @@
+{
+  "id": "amcrest-al5m-b5172ew",
+  "brand": "Amcrest",
+  "model": "AL5M-B5172EW",
+  "aliases": [
+    "Amcrest AL5M-B5172EW",
+    "AmLink AL5M-B5172EW"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2960,
+    "max_height": 1668,
+    "label": "5MP"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "111 horizontal / 58 vertical / 132 diagonal",
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.264"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.007
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3af)",
+    "consumption_w": 8.2,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "186.3 x 73.5 x 69.2",
+  "features": [
+    "5MP resolution",
+    "dual-light: warm white + IR (up to 30m)",
+    "120 dB WDR",
+    "human/vehicle detection",
+    "perimeter protection (line crossing / intrusion)",
+    "two-way audio",
+    "3D noise reduction",
+    "ONVIF Profile S/G/T"
+  ],
+  "sources": [
+    "https://amcrest.com/amlink-5mp-security-ai-ip-poe-camera-al5m-b5172ew.html"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-08-31",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "amcrest",
+      "notes": "Native Amcrest integration or ONVIF. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile. Amcrest uses Dahua protocol."
+    }
+  }
+}

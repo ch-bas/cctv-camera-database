@@ -1,0 +1,117 @@
+{
+  "id": "amcrest-ip8m-mt2544ew",
+  "brand": "Amcrest",
+  "model": "IP8M-MT2544EW",
+  "aliases": [
+    "Amcrest IP8M-MT2544EW"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 15,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/2.5\" STARVIS CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-12",
+    "aperture": "F1.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "110-40",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux_color": 0.05
+  },
+  "audio": {
+    "microphone": true,
+    "two_way": false
+  },
+  "power": {
+    "method": "PoE (802.3af)",
+    "consumption_w": 8.5
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "104 x 104 x 122",
+  "weight_g": 600,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "4x optical zoom",
+    "16x digital zoom",
+    "motorized varifocal",
+    "120dB WDR",
+    "BLC",
+    "HLC",
+    "IK10 vandal-resistant"
+  ],
+  "sources": [
+    "https://amcrest.com/4k-poe-camera-turret-optical-zoom-ip8m-mt2544ew.html"
+  ],
+  "last_verified": "2026-08-31",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "two_way_audio": false
+    },
+    "home_assistant": {
+      "integration": "amcrest",
+      "notes": "Native Amcrest integration or ONVIF. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile. Amcrest uses Dahua protocol."
+    }
+  }
+}

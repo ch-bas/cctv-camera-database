@@ -1,0 +1,110 @@
+{
+  "id": "mapesen-80bai80sm5a2-ptba-lpr",
+  "brand": "Mapesen",
+  "model": "80BAI80SM5A2-PTBA-LPR",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP"
+  },
+  "sensor": "1/2.8\" Sony IMX415 CMOS",
+  "lens": {
+    "focal_length_mm": "3.3-10.5",
+    "aperture": "F1.6-3.1"
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 80
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "512x288",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "ip_rating": "IP66",
+  "operating_temp_c": "-20 to 60",
+  "features": [
+    "ANPR / license plate recognition",
+    "motorized varifocal zoom",
+    "multi-national LPR (CN, EU, US, JP, KR, TW, TR, BR, SG, TH, IN, PH)",
+    "white/black list",
+    "auto-focus and auto-zoom on vehicles",
+    "hybrid dual-light (warm light + IR)",
+    "strobe warning light LEDs",
+    "digital WDR (HDR/DWDR)",
+    "3D noise reduction",
+    "defog",
+    "intrusion detection",
+    "tripwire detection",
+    "GB28181"
+  ],
+  "sources": [
+    "https://www.mapesen.com/web/userfiles/productfile/80BAI80SM5A2-PTBA-LPRspecification-mapesenV.H10.pdf"
+  ],
+  "last_verified": "2026-08-31",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 512,
+        "height": 288,
+        "fps": 5
+      },
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "notes": "Mapesen exposes ONVIF/RTSP but does not publish a fixed RTSP path; use ONVIF auto-config or the camera web UI to obtain the stream URL."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Add via the generic ONVIF integration (port 80)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use 'Generic/ONVIF' — find/inspect to auto-fill RTSP."
+    }
+  },
+  "power": {
+    "consumption_w": 10
+  },
+  "soc": "NT98528",
+  "markets": [
+    "global"
+  ],
+  "dimensions_mm": "254 x 90 x 88"
+}

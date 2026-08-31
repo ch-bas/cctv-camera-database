@@ -6,6 +6,35 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.10.0] — Unreleased
+
+### Added
+- **New brand: Mapesen — 83 cameras**, authored from official Mapesen datasheets (mapesen.com). Chinese OEM spanning ONVIF/RTSP IP cameras (hybrid warm-light + IR dual illumination, AI detection, two-way audio) and 4-in-1 analog HD cameras, across 8 / 6 / 5 / 4 / 2 MP:
+  - **Standard AcuSense / EASY-IP PoE bullets (`…LFA2-P`)** — `L2IQ80X/504/401`, `L6KQ80X/504/401`, `L2KQ80X/504/401`.
+  - **Standard PoE domes / turrets (`…LFA2`)** — `Q3BQ80X/504/401`, `M1KQ80X/504/401`, `M2JQ80X/504`, `M6JQ80X/504`, plus onboard-storage variants `L2KQ80X-PT` (bullet), `M2JQ80X-PT` / `M6JQ80X-PT` (dome). (The `-PT` suffix denotes an onboard-microSD variant of the fixed camera — **not** a pan-tilt mechanism — per the datasheets.)
+  - **Active-deterrence "Lite" series (`…SFA2`, red/blue strobe warning light, "Smart AI Alert") — 20 cameras** — bullets `L2KQ`/`L6KQ`/`80BQ` and domes `50DQ`/`M2JQ`/`M6JQ` in 5 MP (`500`) and 8 MP (`80X`), each in `-P` (no storage) and, where offered, `-PT` (onboard microSD ≤512 GB) variants.
+  - **Face-recognition ("SenTrust HD", `…-FC`) — 5 cameras** — bullets `80BAI40M5A2` / `80BAI40FA` / `80BAI50M1A2` / `80BAI50FA` and dome `50DAI50FA2` (deep-learning face capture & recognition, face database / blocklist, down to 0.0001 lux, motorized or fixed lenses).
+  - **License-plate (ANPR, "Vehicle License Plate", `…-LPR`) — 2 cameras** — `80BAI80SM5A2-PTBA-LPR` (8 MP, 3.3–10.5 mm motorized) and `LPR-H3KP500M4-T` (5 MP, 5–50 mm motorized, dual-lane ≤130 km/h), multi-national plate recognition.
+  - **Explosion-proof PTZ** — `BE501H2-Q506-P` (5 MP, 22× optical zoom, Ex d IIC T6 / IP68, 360° endless pan, camera-side auto-tracking).
+  - **People-counting (6 MP, `…-PC`) — 3 cameras** — bullets `80BG603LFA2-PTBR-PC` (PoE) / `80BG603LFA2-TBR-PC-4G` (4G cellular) and dome `50DG603LFA2-PTBR-PC` (entry/exit/pass-through occupancy analytics, RK1106G NPU).
+  - **4-in-1 analog HD (AHD/TVI/CVI/CVBS, `…H###L[FV]`) — 30 cameras** — full-color metal/plastic bullets `L2IH`/`L2KH`/`L6KH`/`P1AH`/`80BH` and domes `Q2EH`, in 8 / 5 / 2 MP, fixed (`LF`) or varifocal (`LV`, the `80BH…LV`). Modeled as analog: `connectivity: ["coax"]`, empty `protocols`, no `configs` (these need a DVR/capture card, not RTSP/ONVIF).
+  - Mapesen IP models do not publish a fixed RTSP path; they set `protocols: ["rtsp","onvif"]` with an ONVIF-based `configs` block (generic ONVIF for Home Assistant / Blue Iris) rather than a fabricated stream URL. On IP `…-PT`/`-PTBR` SKUs the suffix denotes an onboard-microSD variant (not a pan-tilt mechanism), typed by housing.
+- **61 new Amcrest cameras** across the Helix (HLX), IP, AmLink (AL), SmartHome (ASH) and ADC lines, from official Amcrest datasheets / product pages:
+  - **Helix AI PoE** — `HLX-IP5M-B102EW-AI` (5 MP bullet), `HLX-IP5M-T103EW-AI`, `HLX-IP8M-T303EW-AI` (5 MP / 4K turrets, smart dual illumination).
+  - **IP AI PoE bullets/turrets** — UltraHD turrets `IP5M-T1179EW-AI-V3`, `IP8M-T2599EW-AI-V3`; 4K AI bullets `IP8M-2779EB/EW-AI`, `IP8M-2796EB/EW-AI`, `IP8M-DB3946EW-3AI`, `IP8M-2496EB/EW-V2`, `IP8M-2454EW`; 5 MP AI bullets `IP5M-B1276EW/EB-AI`, `IP5M-B1186EB-AI-V3`; 4 MP AI bullets `IP4M-1062EW-AI` (LPR), `IP4M-1046EW-AI` (NightColor); AmLink turret `AL5M-T5171EW`.
+  - **IP AI PoE PTZ / zoom** — `IP2M-863EW-AI-V3` (25× zoom), `IP4M-1063EW-AI-V2` (speed dome), `IP4M-1098EW-AI`, `IP4M-1093EW-AI` (25× zoom), `IP4M-S2112EW-AI` (5× zoom).
+  - **IP AI PoE domes / panoramic / multisensor** — domes `IP8M-2493EB-V2`, `IP8M-2493EB-AI-V3`, `IP8M-2693EW-AI`, `IP8M-MT2544EW`; wedge `IP5M-W1150EW-AI`; panoramic `IP4M-PD183EW-AI`, `IP4M-PB181EW-AI`, `IP8M-FCB2996EW-AI`, `IP8M-MD180E-AI`, `IP8M-MB182E-AI` (4×2 MP multisensor), `IP8M-DLB2998EW-AI` / `IP8M-DLB2998W-AI` (4K dual-lens 180°, PoE / Wi-Fi); fisheye `IP5M-F1180EW-V2` (360°).
+  - **IP AI PoE dome (white V2)** — `IP8M-2493EW-V2` (4K, IK10, IVS).
+  - **IP Wi-Fi pan-tilt** — `IP2M-841W-V3` / `IP2M-841B-V3` (2 MP, auto-tracking), `IP4M-1051W` / `IP4M-1051B` (4 MP, dual-band); classic RTSP/ONVIF WiFi cams `IP3M-941S` / `IP3M-941B` (3 MP 2K), `IP2M-841S` (original 1080p gen), and bullet `IP3M-943S` (3 MP, IP67).
+  - **AmLink (AL) app/cloud Wi-Fi** — `AL-P402W` (2 MP pan-tilt), `AL-L411W` (4 MP light-bulb pan-tilt), `AL-W301W` (3 MP window-sticker); these are Amcrest-LINK app/cloud only (no RTSP/ONVIF).
+  - **AmLink PoE** — `AL8M-B8199EW` (4K bullet), `AL5M-B5172EW` (5 MP bullet), `AL8M-T8198EW` (4K turret); **AmLink WiFi** — `AL4M-P402W` (2×2 MP dual-lens pan-tilt, auto-tracking), `AL4M-P401W` (4 MP pan-tilt).
+  - **SmartHome / ADC Wi-Fi** — `ASH41-W` / `ASH41-B`, `ASH21-W` / `ASH21-B` (pan-tilt, RTSP/ONVIF, cloud), `ASH26-W`, `ASH22-W` (outdoor bullet, cloud/app), `ADC2W` (2 MP deterrent bullet, RTSP/ONVIF, spotlight + siren).
+  - IP/AmLink PoE cameras use the Amcrest = Dahua protocol (`/cam/realmonitor` RTSP, ONVIF, Blue Iris "Dahua"); SmartHome (ASH) are consumer Wi-Fi (cloud/app; ASH21 also exposes RTSP/ONVIF).
+
+### Changed
+- **Amcrest refreshes** — `IP4M-1041B`, `IP8M-2493EW-AI-V3`, `IP8M-2899EW-AI-V2` refreshed against their current datasheets (fuller streams/features, `last_verified` bumped).
+- **Amcrest data-quality fixes** (from a full re-verification of the pre-existing 25 Amcrest records — all confirmed real products, no fabricated models): `AD410` corrected to hardwired-only power (it is not battery-powered); `IP8M-2493EW` display name corrected from "Bullet" to "Dome"; `ASH42-W` dropped a stray "two-way audio" feature that contradicted its mic-only audio spec.
+
 ## [2.9.0] — 2026-08-30
 
 ### Added

@@ -1,0 +1,103 @@
+{
+  "id": "mapesen-lpr-h3kp500m4-t",
+  "brand": "Mapesen",
+  "model": "LPR-H3KP500M4-T",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 3200,
+    "max_height": 1800,
+    "label": "5MP"
+  },
+  "sensor": "5MP starlight CMOS",
+  "lens": {
+    "focal_length_mm": "5-50"
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 25,
+    "min_lux_color": 0.1
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 25,
+        "codec": "H.264"
+      },
+      {
+        "name": "sub",
+        "resolution": "352x288",
+        "fps": 25,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "power_source": [
+    "dc"
+  ],
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "ip_rating": "IP65",
+  "operating_temp_c": "-35 to 75",
+  "dimensions_mm": "443 x 146 x 105",
+  "features": [
+    "ANPR / license plate recognition",
+    "motorized varifocal zoom",
+    "multi-national LPR (TW, BR, SG, VN, MY, EU, TH, HK, MO, CL, CO, ZA, AE)",
+    "dual-lane recognition (up to 130 km/h)",
+    "unlicensed-vehicle detection",
+    "white/black list with smart calibration",
+    "vehicle structured info (model, color)",
+    "coil + video detection modes",
+    "offline networking and billing",
+    "RS-485 (radar access)",
+    "FTP / HTTP push of capture images",
+    "2D/3D noise reduction",
+    "MQTT"
+  ],
+  "sources": [
+    "https://www.mapesen.com/web/userfiles/productfile/gengxin/LPR-H3KP500M4-Tspecification-mapesenV.H06-1.pdf"
+  ],
+  "last_verified": "2026-08-31",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 352,
+        "height": 288,
+        "fps": 5
+      },
+      "onvif_port": 80,
+      "two_way_audio": false,
+      "notes": "Mapesen exposes ONVIF/RTSP but does not publish a fixed RTSP path; use ONVIF auto-config or the camera web UI to obtain the stream URL."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Add via the generic ONVIF integration (port 80)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use 'Generic/ONVIF' — find/inspect to auto-fill RTSP."
+    }
+  },
+  "power": {
+    "consumption_w": 5
+  },
+  "markets": [
+    "global"
+  ]
+}

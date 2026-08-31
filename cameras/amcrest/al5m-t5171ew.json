@@ -1,0 +1,119 @@
+{
+  "id": "amcrest-al5m-t5171ew",
+  "brand": "Amcrest",
+  "model": "AL5M-T5171EW",
+  "aliases": [
+    "Amcrest AL5M-T5171EW",
+    "AmLink AL5M-T5171EW"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2960,
+    "max_height": 1668,
+    "label": "5MP"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "111 horizontal / 58 vertical / 132 diagonal",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2960x1668",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 20,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "power": {
+    "method": "12 VDC / PoE",
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "features": [
+    "5MP resolution",
+    "dual-light: full-color white LED + IR (up to 30m)",
+    "human/vehicle/face detection",
+    "active deterrent",
+    "two-way audio",
+    "NDAA compliant"
+  ],
+  "sources": [
+    "https://amcrest.com/amlink-5mp-security-ai-ip-poe-turret-camera-al5m-t5171ew.html"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-08-31",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "amcrest",
+      "notes": "Native Amcrest integration or ONVIF. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile. Amcrest uses Dahua protocol."
+    }
+  }
+}
