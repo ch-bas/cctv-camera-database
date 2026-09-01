@@ -1,14 +1,15 @@
 {
-  "id": "bosch-nbn-63023-b",
+  "id": "bosch-nbn-65023-b",
   "brand": "Bosch",
-  "model": "DINION IP starlight 6000 HD (NBN-63023-B)",
+  "model": "NBN-65023-B",
   "type": "box",
   "connectivity": [
     "ethernet"
   ],
   "power_source": [
     "poe",
-    "dc"
+    "dc",
+    "ac-mains"
   ],
   "resolution": {
     "label": "1080p",
@@ -34,7 +35,7 @@
     "min_lux": 0.0008
   },
   "power": {
-    "method": "PoE (IEEE 802.3af / 802.3at Type 1, Class 3) and/or +12 VDC; max 7.2 W",
+    "method": "PoE (IEEE 802.3af / 802.3at Type 1, Class 3), 24 VAC and/or +12 VDC; max 7.2 W",
     "poe_class": 3
   },
   "storage": {
@@ -45,8 +46,7 @@
   },
   "protocols": [
     "onvif",
-    "rtsp",
-    "http"
+    "rtsp"
   ],
   "audio": {
     "microphone": false,
@@ -54,7 +54,7 @@
     "two_way": true
   },
   "features": [
-    "DINION IP starlight 6000 HD",
+    "DINION IP starlight 6000 HD (24 VAC variant)",
     "1080p HD up to 60 fps",
     "starlight low-light performance (color 0.0069 lx, mono 0.0008 lx)",
     "High Dynamic Range mode: 120 dB WDR (10-bit, 3x exposure)",
@@ -69,6 +69,7 @@
     "Multi-stream: multiple H.264 streams + M-JPEG; i-frame third stream for recording",
     "Edge recording to microSD / iSCSI / VRM, cloud JPEG posting",
     "CS-mount (C-mount with adapter ring); lens sold separately",
+    "24 VAC / 12 VDC / PoE power with redundancy",
     "Alarm in/out, RS-232/422/485 data port",
     "Audio line in/out (full-duplex), G.711 / L16 / AAC-LC",
     "ONVIF Profile S / G / T; GB/T 28181"
@@ -81,39 +82,7 @@
   ],
   "release_year": 2016,
   "sources": [
-    "https://www.boschsecurity.com/",
-    "https://www.csd.com.au/ts1714996026/attachments/ProductAttachmentGroup/1/BOS-NBN-630x3-B%20Datasheet.pdf",
-    "https://netcamcenter.de/de/produkte/ip-kameras/nbn-63023-b"
+    "https://www.boschsecurity.com/"
   ],
-  "markets": [
-    "EU",
-    "global"
-  ],
-  "configs": {
-    "frigate": {
-      "detect": {
-        "width": 640,
-        "height": 480,
-        "fps": 5
-      },
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
-      "recommended_stream_type": "go2rtc",
-      "verified": false,
-      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
-      "onvif_port": 80,
-      "two_way_audio": true
-    },
-    "home_assistant": {
-      "integration": "onvif",
-      "connection_type": "local_push",
-      "onvif_events": true,
-      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
-    },
-    "blue_iris": {
-      "profile": "ONVIF",
-      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
-    }
-  },
   "last_verified": "2026-09-01"
 }
