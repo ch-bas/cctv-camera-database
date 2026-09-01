@@ -1,9 +1,9 @@
 # CCTV Camera Database
 
-An open, structured database of 5,135 CCTV / IP camera models and their technical specifications, covering 109 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
+An open, structured database of 5,159 CCTV / IP camera models and their technical specifications, covering 109 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
 
 [![build](https://github.com/ch-bas/cctv-camera-database/actions/workflows/build.yml/badge.svg)](https://github.com/ch-bas/cctv-camera-database/actions/workflows/build.yml)
-[![cameras](https://img.shields.io/badge/cameras-5%2C135-blue)](data/cameras.json)
+[![cameras](https://img.shields.io/badge/cameras-5%2C159-blue)](data/cameras.json)
 [![brands](https://img.shields.io/badge/brands-109-green)](cameras/)
 [![license](https://img.shields.io/badge/license-CC0-lightgrey)](LICENSE)
 
@@ -19,10 +19,10 @@ An open, structured database of 5,135 CCTV / IP camera models and their technica
 
 <p align="center">
   <a href="https://cctv-database.com">
-    <img src="assets/cctv-database-showcase.gif" alt="CCTV Camera Database — search 5,135 cameras, browse full specs, copy ready-to-use Frigate configs, and audit the open dataset with the built-in QA tool" width="640">
+    <img src="assets/cctv-database-showcase.gif" alt="CCTV Camera Database — search 5,159 cameras, browse full specs, copy ready-to-use Frigate configs, and audit the open dataset with the built-in QA tool" width="640">
   </a>
   <br>
-  <sub><b><a href="https://cctv-database.com">cctv-database.com</a></b> — search 5,135 cameras · full spec sheets · copy-paste Frigate configs · open &amp; auditable</sub>
+  <sub><b><a href="https://cctv-database.com">cctv-database.com</a></b> — search 5,159 cameras · full spec sheets · copy-paste Frigate configs · open &amp; auditable</sub>
 </p>
 
 ---
@@ -124,7 +124,7 @@ Prefer to self-host or browse offline? A [standalone demo](docs/demo.html) (just
 - **Sort** — click any column header to sort ascending/descending
 - **Detail drawer** — click a row to slide open the full spec sheet (resolution, connectivity, protocols, storage, audio, source links)
 - **Community notes** — user-reported quirks and behaviors per camera, sourced and attributed, kept separate from datasheet specs
-- **Pagination** — page through all 5,135 cameras, 25 per page
+- **Pagination** — page through all 5,159 cameras, 25 per page
 - **Stats bar** — live counts for total cameras, brands, 4K+, WiFi, and no-subscription models
 
 ---
@@ -245,17 +245,17 @@ A device type is only emitted when the camera has a known RJ45 link speed (`netw
 
 | Metric | Count |
 |--------|-------|
-| Total cameras | **5,135** |
+| Total cameras | **5,159** |
 | Brands | **109** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
-| PoE wired | 3,776 |
+| PoE wired | 3,792 |
 | WiFi | 829 |
 | Battery / wire-free | 262 |
-| 4K / 8MP+ | 1,265 |
-| 4–7MP | 2,025 |
-| Under 4MP | 1,845 |
+| 4K / 8MP+ | 1,274 |
+| 4–7MP | 2,032 |
+| Under 4MP | 1,853 |
 | With integration configs (Frigate / Home Assistant) | 3,497 |
-| With color-lux rating (`night_vision.min_lux_color`) | 3,013 |
+| With color-lux rating (`night_vision.min_lux_color`) | 3,032 |
 
 ### All 109 brands
 
@@ -288,6 +288,7 @@ A device type is only emitted when the camera has a known RJ45 link speed (`netw
 | Kedacom | 63 | Enterprise, CN/global |
 | Speco | 61 | Professional/commercial (NDAA), US |
 | Hi-Focus | 60 | Made-in-India, BIS certified, IN |
+| IC Realtime | 59 | — |
 | Jovision | 57 | OEM/consumer (CloudSEE), CN/global |
 | BCS | 56 | Installer IP + analog, PL/EU |
 | Hanwha | 56 | Enterprise AI, Korea/global |
@@ -303,7 +304,6 @@ A device type is only emitted when the camera has a known RJ45 link speed (`netw
 | JideTech | 38 | Consumer/prosumer PoE, CN/global |
 | Pelco | 37 | Enterprise legacy, NA/global |
 | D-Link | 35 | Consumer/SMB, TW/global |
-| IC Realtime | 35 | — |
 | DITS Vision | 34 | Made-in-India IP + analog, IN |
 | Luma | 33 | Custom-install (SnapAV), US |
 | 3xLOGIC | 31 | Enterprise (VIGIL), US |
@@ -404,7 +404,7 @@ cctv-camera-database/
 │   ├── avycon/           # 153 cameras
 │   └── …103 more brands
 ├── data/                 # GENERATED — do not edit by hand
-│   ├── cameras.json      # all 5,135 cameras as one array
+│   ├── cameras.json      # all 5,159 cameras as one array
 │   ├── cameras.csv       # flattened, spreadsheet-friendly
 │   └── rtsp-patterns.json  # CC0 brand-level RTSP URL layer (172 brands)
 ├── strix/
