@@ -1,9 +1,9 @@
 # CCTV Camera Database
 
-An open, structured database of 4,965 CCTV / IP camera models and their technical specifications, covering 105 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
+An open, structured database of 4,986 CCTV / IP camera models and their technical specifications, covering 105 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
 
 [![build](https://github.com/ch-bas/cctv-camera-database/actions/workflows/build.yml/badge.svg)](https://github.com/ch-bas/cctv-camera-database/actions/workflows/build.yml)
-[![cameras](https://img.shields.io/badge/cameras-4%2C965-blue)](data/cameras.json)
+[![cameras](https://img.shields.io/badge/cameras-4%2C986-blue)](data/cameras.json)
 [![brands](https://img.shields.io/badge/brands-105-green)](cameras/)
 [![license](https://img.shields.io/badge/license-CC0-lightgrey)](LICENSE)
 
@@ -19,10 +19,10 @@ An open, structured database of 4,965 CCTV / IP camera models and their technica
 
 <p align="center">
   <a href="https://cctv-database.com">
-    <img src="assets/cctv-database-showcase.gif" alt="CCTV Camera Database — search 4,965 cameras, browse full specs, copy ready-to-use Frigate configs, and audit the open dataset with the built-in QA tool" width="640">
+    <img src="assets/cctv-database-showcase.gif" alt="CCTV Camera Database — search 4,986 cameras, browse full specs, copy ready-to-use Frigate configs, and audit the open dataset with the built-in QA tool" width="640">
   </a>
   <br>
-  <sub><b><a href="https://cctv-database.com">cctv-database.com</a></b> — search 4,965 cameras · full spec sheets · copy-paste Frigate configs · open &amp; auditable</sub>
+  <sub><b><a href="https://cctv-database.com">cctv-database.com</a></b> — search 4,986 cameras · full spec sheets · copy-paste Frigate configs · open &amp; auditable</sub>
 </p>
 
 ---
@@ -61,7 +61,7 @@ Prefer to self-host or browse offline? A [standalone demo](docs/demo.html) (just
 - **Sort** — click any column header to sort ascending/descending
 - **Detail drawer** — click a row to slide open the full spec sheet (resolution, connectivity, protocols, storage, audio, source links)
 - **Community notes** — user-reported quirks and behaviors per camera, sourced and attributed, kept separate from datasheet specs
-- **Pagination** — page through all 4,965 cameras, 25 per page
+- **Pagination** — page through all 4,986 cameras, 25 per page
 - **Stats bar** — live counts for total cameras, brands, 4K+, WiFi, and no-subscription models
 
 ---
@@ -86,7 +86,7 @@ cctv-camera-database/
 │   ├── avycon/           # 153 cameras
 │   └── …99 more brands
 ├── data/                 # GENERATED — do not edit by hand
-│   ├── cameras.json      # all 4,965 cameras as one array
+│   ├── cameras.json      # all 4,986 cameras as one array
 │   ├── cameras.csv       # flattened, spreadsheet-friendly
 │   └── rtsp-patterns.json  # CC0 brand-level RTSP URL layer (172 brands)
 ├── strix/
@@ -184,17 +184,17 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 
 | Metric | Count |
 |--------|-------|
-| Total cameras | **4,965** |
+| Total cameras | **4,986** |
 | Brands | **105** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
-| PoE wired | 3,625 |
+| PoE wired | 3,646 |
 | WiFi | 826 |
 | Battery / wire-free | 262 |
-| 4K / 8MP+ | 1,236 |
-| 4–7MP | 1,951 |
+| 4K / 8MP+ | 1,243 |
+| 4–7MP | 1,965 |
 | Under 4MP | 1,778 |
 | With integration configs (Frigate / Home Assistant) | 3,497 |
-| With color-lux rating (`night_vision.min_lux_color`) | 2,883 |
+| With color-lux rating (`night_vision.min_lux_color`) | 2,903 |
 
 ### All 105 brands
 
@@ -252,6 +252,7 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | Sony | 26 | — |
 | Xiaomi | 26 | Consumer smart home, CN/global |
 | Arlo | 25 | Consumer premium wire-free, global |
+| Eagle Eye Networks | 25 | — |
 | VIGI (TP-Link) | 25 | Business/SMB PoE, global |
 | ClareVision | 24 | Custom-install (SnapAV), US |
 | Hiseeu | 23 | Budget consumer kits, CN/global |
@@ -291,7 +292,6 @@ Or open `data/cameras.csv` in any spreadsheet for a quick browse.
 | IQinVision | 6 | — |
 | Siemens | 6 | — |
 | Canon | 4 | Enterprise optical, JP/global |
-| Eagle Eye Networks | 4 | — |
 | Godrej | 4 | Consumer, IN |
 | Grandstream | 4 | Prosumer/SMB IoT, US/global |
 | Longse | 4 | OEM/budget, CN/global |
