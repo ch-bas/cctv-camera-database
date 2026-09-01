@@ -1,10 +1,10 @@
 # CCTV Camera Database
 
-An open, structured database of 5,159 CCTV / IP camera models and their technical specifications, covering 109 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
+An open, structured database of 5,198 CCTV / IP camera models and their technical specifications, covering 110 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
 
 [![build](https://github.com/ch-bas/cctv-camera-database/actions/workflows/build.yml/badge.svg)](https://github.com/ch-bas/cctv-camera-database/actions/workflows/build.yml)
-[![cameras](https://img.shields.io/badge/cameras-5%2C159-blue)](data/cameras.json)
-[![brands](https://img.shields.io/badge/brands-109-green)](cameras/)
+[![cameras](https://img.shields.io/badge/cameras-5%2C198-blue)](data/cameras.json)
+[![brands](https://img.shields.io/badge/brands-110-green)](cameras/)
 [![license](https://img.shields.io/badge/license-CC0-lightgrey)](LICENSE)
 
 ### Field coverage
@@ -19,10 +19,10 @@ An open, structured database of 5,159 CCTV / IP camera models and their technica
 
 <p align="center">
   <a href="https://cctv-database.com">
-    <img src="assets/cctv-database-showcase.gif" alt="CCTV Camera Database — search 5,159 cameras, browse full specs, copy ready-to-use Frigate configs, and audit the open dataset with the built-in QA tool" width="640">
+    <img src="assets/cctv-database-showcase.gif" alt="CCTV Camera Database — search 5,198 cameras, browse full specs, copy ready-to-use Frigate configs, and audit the open dataset with the built-in QA tool" width="640">
   </a>
   <br>
-  <sub><b><a href="https://cctv-database.com">cctv-database.com</a></b> — search 5,159 cameras · full spec sheets · copy-paste Frigate configs · open &amp; auditable</sub>
+  <sub><b><a href="https://cctv-database.com">cctv-database.com</a></b> — search 5,198 cameras · full spec sheets · copy-paste Frigate configs · open &amp; auditable</sub>
 </p>
 
 ---
@@ -124,7 +124,7 @@ Prefer to self-host or browse offline? A [standalone demo](docs/demo.html) (just
 - **Sort** — click any column header to sort ascending/descending
 - **Detail drawer** — click a row to slide open the full spec sheet (resolution, connectivity, protocols, storage, audio, source links)
 - **Community notes** — user-reported quirks and behaviors per camera, sourced and attributed, kept separate from datasheet specs
-- **Pagination** — page through all 5,159 cameras, 25 per page
+- **Pagination** — page through all 5,198 cameras, 25 per page
 - **Stats bar** — live counts for total cameras, brands, 4K+, WiFi, and no-subscription models
 
 ---
@@ -245,19 +245,19 @@ A device type is only emitted when the camera has a known RJ45 link speed (`netw
 
 | Metric | Count |
 |--------|-------|
-| Total cameras | **5,159** |
-| Brands | **109** |
+| Total cameras | **5,198** |
+| Brands | **110** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
-| PoE wired | 3,792 |
+| PoE wired | 3,824 |
 | WiFi | 829 |
 | Battery / wire-free | 262 |
-| 4K / 8MP+ | 1,274 |
-| 4–7MP | 2,032 |
-| Under 4MP | 1,853 |
+| 4K / 8MP+ | 1,290 |
+| 4–7MP | 2,051 |
+| Under 4MP | 1,857 |
 | With integration configs (Frigate / Home Assistant) | 3,497 |
-| With color-lux rating (`night_vision.min_lux_color`) | 3,032 |
+| With color-lux rating (`night_vision.min_lux_color`) | 3,064 |
 
-### All 109 brands
+### All 110 brands
 
 <details>
 <summary><strong>All 107 brands</strong> — camera count &amp; market segment (click to expand)</summary>
@@ -301,6 +301,7 @@ A device type is only emitted when the camera has a known RJ45 link speed (`netw
 | Comelit | 41 | Installer IP + door-entry, IT/EU |
 | Lorex | 40 | Consumer NVR systems, CA/US |
 | Srihome | 40 | Budget consumer WiFi, CN/global |
+| InVid Tech | 39 | — |
 | JideTech | 38 | Consumer/prosumer PoE, CN/global |
 | Pelco | 37 | Enterprise legacy, NA/global |
 | D-Link | 35 | Consumer/SMB, TW/global |
@@ -402,9 +403,9 @@ cctv-camera-database/
 │   ├── acti/             # 251 cameras
 │   ├── bosch/            # 231 cameras
 │   ├── avycon/           # 153 cameras
-│   └── …103 more brands
+│   └── …104 more brands
 ├── data/                 # GENERATED — do not edit by hand
-│   ├── cameras.json      # all 5,159 cameras as one array
+│   ├── cameras.json      # all 5,198 cameras as one array
 │   ├── cameras.csv       # flattened, spreadsheet-friendly
 │   └── rtsp-patterns.json  # CC0 brand-level RTSP URL layer (172 brands)
 ├── strix/
