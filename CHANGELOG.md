@@ -9,6 +9,8 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 ## [2.12.0] — Unreleased
 
 ### Added
+- **New brand: Luminys — 41 cameras** (Luminys Corp, US NDAA), the N2–N5 IP range: turrets/domes/bullets (), a wedge box () and a 180° stitched dual-sensor panoramic (), 4–12MP, with LumiLuxSmart (IR+white hybrid), LumiColor (24/7 full-colour white-light), LumiNightKing and LumiDeterrent (active-deterrence) variants. H.265/H.264, ONVIF/RTSP. Datasheets resolved via each product page's datacenter.luminyscorp.com blob.
+- **New brand: Linovision — 8 cameras** (US): 4G/LTE units — a 4K dual-lens 180° panoramic (), 25×/30× IR PTZs, a battery/WiFi/GPS portable rapid-deploy PTZ — plus PoE  ANPR/LPR bullets, an  ColorVu turret and an  thermal/optical bi-spectrum bullet.
 - **New brand: LILIN — 54 cameras** (Merit LILIN, Taiwan), from the 2025 IP catalogue: Z7R/Z6R/S7R/S8R **PTZ speed domes** (2–8MP, 2×–40× optical + laser-IR to 800m, NEMA-4X variants), V1W **bullets** & V1R **domes** (4K/5MP, motorized/fixed, EDGEFENCE AI), and E5R **box** cameras. H.265/H.264, ONVIF/RTSP.
 - **New brand: Oncam — 26 cameras** (Oncam Grandeye), 360°/180° single-sensor **fisheye**: EVO-180 (12MP), EVO-05 (5MP indoor/outdoor/mini/recessed/panel-mount), EVO-05/EVO-12 **ATEX/IECEx explosion-proof** (ExD), and C-08/C-12 (8/12MP indoor/outdoor). 3D dewarping, multi-stream VCam regions, microSD.
 - **New brand: Oncam — 1 camera**: `EVO-180-WID` 12.4MP indoor 180°/360° fisheye-panoramic (single fisheye sensor, 3D dewarping, multi-stream VCam regions, microSD 256GB, PoE/DC).
