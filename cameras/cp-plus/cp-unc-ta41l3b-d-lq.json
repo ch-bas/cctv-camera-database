@@ -1,0 +1,96 @@
+{
+  "id": "cp-plus-cp-unc-ta41l3b-d-lq",
+  "brand": "CP Plus",
+  "model": "CP-UNC-TA41L3B-D-LQ",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" 4MP PS CMOS",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "dual light: IR (30m) + warm light (30m)",
+    "WDR 120dB",
+    "day/night (ICR)",
+    "3D NR",
+    "ROI",
+    "AWB",
+    "AGC",
+    "BLC",
+    "HLC",
+    "digital watermarking",
+    "Dahua-OEM platform (ONVIF Profile S/G/T + RTSP)"
+  ],
+  "markets": [
+    "IN"
+  ],
+  "aliases": [
+    "CP Plus CP-UNC-TA41L3B-D-LQ"
+  ],
+  "sources": [
+    "https://www.cpplusworld.com/"
+  ],
+  "last_verified": "2026-09-01",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Uses Dahua protocol. ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile. CP Plus uses Dahua protocol."
+    }
+  },
+  "environment": [
+    "outdoor"
+  ]
+}
