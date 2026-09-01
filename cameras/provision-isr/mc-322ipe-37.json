@@ -1,0 +1,83 @@
+{
+  "id": "provision-isr-mc-322ipe-37",
+  "brand": "Provision-ISR",
+  "model": "MC-322IPE-37",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "lens": {
+    "focal_length_mm": "3.7",
+    "varifocal": false
+  },
+  "field_of_view_deg": "89",
+  "video": {
+    "codecs": [
+      "H.265"
+    ],
+    "max_fps": 30
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 128
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "features": [
+    "Digital WDR",
+    "3D-DNR",
+    "BLC",
+    "HLC",
+    "ROI",
+    "Privacy mask",
+    "Motion detection",
+    "DDATM analytics",
+    "microSD up to 128GB"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "sources": [
+    "https://www.provision-isr.com/"
+  ],
+  "last_verified": "2026-09-01",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/MediaInput/h264/stream_1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/MediaInput/h264/stream_2",
+      "onvif_port": 80,
+      "two_way_audio": false,
+      "notes": "Provision-ISR RTSP path is /MediaInput/h264/stream_1 (main) and stream_2 (sub); confirm in the camera web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Add via ONVIF (port 80)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "ONVIF or the Provision RTSP URL."
+    }
+  }
+}

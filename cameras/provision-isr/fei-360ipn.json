@@ -1,0 +1,83 @@
+{
+  "id": "provision-isr-fei-360ipn",
+  "brand": "Provision-ISR",
+  "model": "FEI-360IPN",
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3072,
+    "max_height": 2048,
+    "label": "6MP"
+  },
+  "lens": {
+    "focal_length_mm": "1.07",
+    "varifocal": false
+  },
+  "field_of_view_deg": "360 (ceiling) / 180 (wall)",
+  "video": {
+    "codecs": [
+      "H.265"
+    ],
+    "max_fps": 30
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 15
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 128
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "features": [
+    "360° fisheye",
+    "Digital WDR",
+    "two-way audio",
+    "microSD up to 128GB"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "sources": [
+    "https://www.provision-isr.com/"
+  ],
+  "last_verified": "2026-09-01",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/MediaInput/h264/stream_1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/MediaInput/h264/stream_2",
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "notes": "Provision-ISR RTSP path is /MediaInput/h264/stream_1 (main) and stream_2 (sub); confirm in the camera web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Add via ONVIF (port 80)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "ONVIF or the Provision RTSP URL."
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "id": "provision-isr-dv-340srn-28",
+  "brand": "Provision-ISR",
+  "model": "DV-340SRN-28",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "lens": {
+    "focal_length_mm": "2.8",
+    "varifocal": false
+  },
+  "field_of_view_deg": "99",
+  "video": {
+    "codecs": [
+      "H.265"
+    ],
+    "max_fps": 30
+  },
+  "night_vision": {
+    "type": "color",
+    "range_m": 25
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 128
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "True WDR",
+    "3D-DNR",
+    "BLC",
+    "HLC",
+    "ROI",
+    "Privacy mask",
+    "Motion detection",
+    "Color night vision",
+    "DDATM line crossing",
+    "DDATM sterile area",
+    "Camera tampering",
+    "Smart search",
+    "microSD up to 128GB"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "sources": [
+    "https://www.provision-isr.com/"
+  ],
+  "last_verified": "2026-09-01",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/MediaInput/h264/stream_1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/MediaInput/h264/stream_2",
+      "onvif_port": 80,
+      "two_way_audio": false,
+      "notes": "Provision-ISR RTSP path is /MediaInput/h264/stream_1 (main) and stream_2 (sub); confirm in the camera web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Add via ONVIF (port 80)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "ONVIF or the Provision RTSP URL."
+    }
+  }
+}

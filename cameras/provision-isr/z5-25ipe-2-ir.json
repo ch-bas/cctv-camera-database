@@ -1,0 +1,89 @@
+{
+  "id": "provision-isr-z5-25ipe-2-ir",
+  "brand": "Provision-ISR",
+  "model": "Z5-25IPE-2(IR)",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "lens": {
+    "focal_length_mm": "4.8-120",
+    "aperture": "F1.65-F3.8",
+    "varifocal": true
+  },
+  "video": {
+    "codecs": [
+      "H.265"
+    ],
+    "max_fps": 30
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 150
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 256
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "PTZ",
+    "25x optical zoom",
+    "auto-tracking",
+    "300 preset positions",
+    "face detection"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "sources": [
+    "https://www.provision-isr.com/"
+  ],
+  "last_verified": "2026-09-01",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/MediaInput/h264/stream_1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/MediaInput/h264/stream_2",
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "notes": "Provision-ISR RTSP path is /MediaInput/h264/stream_1 (main) and stream_2 (sub); confirm in the camera web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Add via ONVIF (port 80)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "ONVIF or the Provision RTSP URL."
+    }
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  }
+}

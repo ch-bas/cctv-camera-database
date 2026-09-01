@@ -1,0 +1,82 @@
+{
+  "id": "provision-isr-bmh-thermal-7",
+  "brand": "Provision-ISR",
+  "model": "BMH-THERMAL-7",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP"
+  },
+  "lens": {
+    "focal_length_mm": "8",
+    "varifocal": false
+  },
+  "field_of_view_deg": "37",
+  "video": {
+    "codecs": [
+      "H.265"
+    ],
+    "max_fps": 30
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 20
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "5MP optical + 256x192 thermal",
+    "thermal imaging",
+    "white strobe deterrent",
+    "two-way audio",
+    "face detection",
+    "DDA line crossing",
+    "DDA sterile area",
+    "object counting"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "sources": [
+    "https://www.provision-isr.com/"
+  ],
+  "last_verified": "2026-09-01",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/MediaInput/h264/stream_1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/MediaInput/h264/stream_2",
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "notes": "Provision-ISR RTSP path is /MediaInput/h264/stream_1 (main) and stream_2 (sub); confirm in the camera web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Add via ONVIF (port 80)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "ONVIF or the Provision RTSP URL."
+    }
+  }
+}
