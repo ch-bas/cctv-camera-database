@@ -1,0 +1,116 @@
+{
+  "id": "d-link-dcs-4712e",
+  "brand": "D-Link",
+  "model": "DCS-4712E",
+  "aliases": [
+    "Vigilance 2 Megapixel H.265 Outdoor Bullet Camera"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "release_year": 2021,
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" 2-megapixel progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "106.8 horizontal, 58 vertical, 126 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.05
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / DC 12V",
+    "consumption_w": 8,
+    "voltage": "12V DC",
+    "poe_class": 3
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "dimensions_mm": "187.6 x 64 x 64",
+  "operating_temp_c": "-30 to 50",
+  "environment": [
+    "outdoor"
+  ],
+  "status": "available",
+  "features": [
+    "Wide Dynamic Range (WDR)",
+    "2D/3D noise reduction",
+    "18x digital zoom",
+    "Built-in Infrared-Cut Removable (ICR) filter module",
+    "Corridor mode",
+    "Motion detection and configurable privacy mask zones",
+    "Sony low-light night vision technology",
+    "ONVIF Profile S compliant",
+    "D-ViewCam management software support"
+  ],
+  "release_notes": "Specs per D-Link DCS-4712E REVA datasheet and Vigilance Camera Range product guide.",
+  "sources": [
+    "https://www.dlink.com/uk/en/products/dcs-4712e-vigilance-2-megapixel-h265-outdoor-bullet-camera",
+    "https://media.dlink.eu/business_products/dcs/dcs-4712e/datasheet/dcs_4712e_datasheet_eu_en.pdf"
+  ],
+  "last_verified": "2026-09-02",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live1.sdp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/live2.sdp",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Select 'ONVIF' profile. ONVIF Profile S supported."
+    }
+  },
+  "markets": [
+    "global"
+  ]
+}

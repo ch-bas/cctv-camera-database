@@ -1,0 +1,108 @@
+{
+  "id": "imou-ps7f-8mp",
+  "brand": "IMOU",
+  "model": "PS7F 8MP",
+  "aliases": [
+    "IPC-PS7FP-8X0"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 20
+  },
+  "sensor": "1/2.7\" Progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "89 H / 45 V / 105 D; pan 0-355 / tilt 0-90",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "PoE or DC 12V/1A; <12W",
+    "voltage": "DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "onvif"
+  ],
+  "operating_temp_c": "-30 to 50",
+  "dimensions_mm": "159 x 115 x 196",
+  "weight_g": 505,
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "outdoor PoE 4K pan/tilt (0-355 pan / 0-90 tilt)",
+    "Smart Color full-color night vision (30m)",
+    "integrated spotlight + red/blue warning lights",
+    "120dB WDR",
+    "8x digital zoom",
+    "AI human & vehicle detection",
+    "two-way audio"
+  ],
+  "release_notes": "PS7F 8MP (IPC-PS7FP-8X0): PoE 4K outdoor pan/tilt with active deterrence, larger 1/2.7\" sensor vs the 5MP sibling. Specs from Imou's official datasheet. IP rating is not printed on the 8MP datasheet (retailer IP66/67 figures are for the 5MP, not applied here); PoE class, min-lux and IK not stated.",
+  "sources": [
+    "https://www.imou.com/en/support/product-manual"
+  ],
+  "last_verified": "2026-09-02",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "ONVIF is officially listed for this model; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention but is not independently verified on this SKU.",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+    }
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ]
+}

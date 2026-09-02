@@ -10,6 +10,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ### Added
 - **Bosch +6** from the Bosch Building Technologies portfolio: AUTODOME IP starlight 5000i (NDP-5512-Z30 pendant + Z30C in-ceiling, 2MP 30x) & 5100i IR (NDP-5523-Z30L, 4MP 30x, IR 320m), DINION IP thermal 8000 (NHT-8000-F07QF, 320x240 uncooled 60Hz), DINION IP starlight 7000 HD (NBN-73013-BA) & ultra 8000 MP (NBN-80122-F2A, 12MP). Verified from portfolio.boschbuildingtechnologies.com (dedup by CTN vs the existing 231 Bosch records).
+- **New brand: Philips — 1 camera** — WelcomeEye Link (`DES8900VDP`) wireless video doorbell: 1080p, 160° FOV, IR night vision, two-way audio, IP44, rechargeable battery, 32GB microSD, 80dB chime. From documents.philips.com.
+- **New brand: Philips Hue — 5 cameras** — the Secure line: wireless & wired 1080p bullets, a 2K (4MP) wired bullet, a 2K desktop indoor cam and a Secure Floodlight Camera (up to 2250 lm). Zigbee + Wi-Fi, IR, IP65 outdoor, two-way audio; cloud/app-only (no RTSP). From philips-hue.com.
+- **New brand: WiZ — 2 cameras** (Signify) — Home Monitoring indoor (1080p box, IP20) & outdoor (1080p bullet, IP54) cams: 30fps, 120° FOV, IR, USB-powered, 2.4GHz Wi-Fi (WPA2/WPA3), two-way audio. From wizconnected.com.
+- **New brand: Delta Dore — 2 cameras** — Tycam 2100 Outdoor (2MP bullet, H.265, 4mm, IR 30m, IP67, PoE/WiFi) & Tycam 1100 Indoor (2MP, H.265, 2.8mm, PIR, 85dB siren, two-way audio). Tydom ecosystem. From deltadore.de/.co.uk.
+- **Xiaomi +2** — Outdoor Camera CW100 Dual (dual-lens 2K, IP66) & CW700S (dual-lens 2.5K PTZ, 9× hybrid zoom, IP66). From mi.com.
+- **D-Link +4** — Vigilance business IP line: `DCS-4618EK` (4K dome, motorized 3.3–12mm, IP66/IK10), `DCS-4712E` (2MP bullet), `DCS-4633EV` (3MP vandal dome, IP66/IK10), `DCS-4703E` (3MP PoE mini bullet). H.265/H.264, ONVIF. From official D-Link datasheets.
+- **Imou +14** — PS8E 4K PoE turret, Talos 3/5/8MP Wi-Fi 6 pan-tilt, AOV Track/PT Plus & Cell PT 3C battery/solar pan-tilt, Ranger 2 Pro 4G, and the Bullet 3 Pro (S3E) active-deterrence full-colour 3/5/8MP bullets + PS7F 8MP PoE pan-tilt. From official Imou datasheets; RTSP/ONVIF configs where officially supported.
 
 ---
 
