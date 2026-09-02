@@ -23,7 +23,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - **Ajax +1** — BulletCam (5 MP/2.8 mm): 5MP bullet, H.265, F1.6, True WDR 120dB, IR 60m, AI object detection, IP66/IK08, ONVIF Profile S. From ajax.systems.
 - **Dahua +2** — IPC-PDW5849-A180-E2-ASTE (8MP dual-sensor 180° full-colour panoramic, WizMind, IP67) & TPC-DF1241 (bispectral thermal 256×192 VOx + 4MP visible eyeball, fire/smoke detection, IP67). From dahuasecurity.com.
 - **Hikvision +1** — DS-2CD6D44G1H-IZS: 4-way multisensor (4× 4MP, independently positionable, motorized 2.8–12mm), True WDR 120dB, IP67/IK10, PoE 802.3at. From assets.hikvision.com.
-- **Imou enrichment** — Ranger 2 Pro 4G 3MP/5MP (night vision reconciled to hybrid Smart Full-Color), PS3E 8MP & PS70F 10MP (dimensions/weight/temp/power draw) filled from official Imou datasheets.
+- **Imou +5 & enrichment** — new: Ranger 2 Pro 5MP & Ranger 2C Pro 5MP (Wi-Fi 6 USB-C P&T, 5MP QHD), Ranger SE 4MP (Wi-Fi P&T), Cruiser Dual 2 8MP & 6MP (dual-lens Wi-Fi outdoor P&T, warm-light+IR 30m). Enriched from official static-website.imou.com datasheets: Ranger 2 Pro 4G 3MP/5MP (night vision → hybrid Smart Full-Color), PS3E 8MP, PS70F 10MP, PS7F 8MP, A1 Pro 4K/8MP, Cruiser Dual 2 10MP, Rex 3D R1 5MP & Cruiser SC 8MP (dimensions/weight/temp/power draw + sources).
 
 ---
 
