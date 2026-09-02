@@ -6,7 +6,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
-## [2.12.0] — Unreleased
+## [2.12.0] — 2026-09-02
 
 ### Added
 - **Tapo +19, Kasa +4, new brand TP-Link +3** (TP-Link ecosystems): Tapo TC-series & C-series pan/tilt/outdoor cams (TC41/46/47/60/65/70/71/72, C113/C201/C202/C206/C211/C212/C21A/C232/C236/C200C + TC90 solar kit); Kasa KC100/105/110/200 (Spot/Cam); legacy TP-Link NC200/NC260/NC450 cloud cameras. Verified from tp-link.com/tapo.com; multipacks folded into aliases; Tapo RTSP /stream1 + ONVIF:2020 configs where local streaming is supported.
