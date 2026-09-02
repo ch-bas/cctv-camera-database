@@ -1,0 +1,111 @@
+{
+  "id": "provision-isr-i6-220lprn-mvf2",
+  "brand": "Provision-ISR",
+  "model": "I6-220LPRN-MVF2",
+  "type": "bullet",
+  "status": "available",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "lens": {
+    "focal_length_mm": "8-32",
+    "varifocal": true
+  },
+  "field_of_view_deg": "46-16",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.264+",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "sensor": "1/1.8\" CMOS",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 80,
+    "min_lux": 0.001,
+    "min_lux_color": 0.1
+  },
+  "audio": {
+    "microphone": false,
+    "speaker": true,
+    "two_way": true
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 256
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "power": {
+    "consumption_w": 11.5
+  },
+  "weight_g": 1140,
+  "operating_temp_c": "-30 to 60",
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "True WDR",
+    "BLC",
+    "HLC",
+    "ROI",
+    "License plate recognition",
+    "LPR recognition distance 16-48m",
+    "10000 plate database",
+    "Speed detection 0-100km/h",
+    "Wiegand support",
+    "Camera tampering",
+    "microSD up to 256GB"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "sources": [
+    "https://www.provision-isr.com/",
+    "https://www.provision-isr.com/products/i6-220lprn-mvf2/"
+  ],
+  "last_verified": "2026-09-02",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/MediaInput/h264/stream_1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/MediaInput/h264/stream_2",
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "notes": "Provision-ISR LPR RTSP path is /MediaInput/h264/stream_1 (main) and stream_2 (sub); confirm in the camera web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Add via ONVIF (port 80)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "ONVIF or the Provision RTSP URL."
+    }
+  },
+  "markets": [
+    "global"
+  ]
+}
