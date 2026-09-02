@@ -6,7 +6,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
-## [2.13.0] — Unreleased
+## [2.13.0] — 2026-09-02
 
 ### Added
 - **Bosch +6** from the Bosch Building Technologies portfolio: AUTODOME IP starlight 5000i (NDP-5512-Z30 pendant + Z30C in-ceiling, 2MP 30x) & 5100i IR (NDP-5523-Z30L, 4MP 30x, IR 320m), DINION IP thermal 8000 (NHT-8000-F07QF, 320x240 uncooled 60Hz), DINION IP starlight 7000 HD (NBN-73013-BA) & ultra 8000 MP (NBN-80122-F2A, 12MP). Verified from portfolio.boschbuildingtechnologies.com (dedup by CTN vs the existing 231 Bosch records).
@@ -17,7 +17,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - **Xiaomi +2** — Outdoor Camera CW100 Dual (dual-lens 2K, IP66) & CW700S (dual-lens 2.5K PTZ, 9× hybrid zoom, IP66). From mi.com.
 - **D-Link +4** — Vigilance business IP line: `DCS-4618EK` (4K dome, motorized 3.3–12mm, IP66/IK10), `DCS-4712E` (2MP bullet), `DCS-4633EV` (3MP vandal dome, IP66/IK10), `DCS-4703E` (3MP PoE mini bullet). H.265/H.264, ONVIF. From official D-Link datasheets.
 - **Imou +14** — PS8E 4K PoE turret, Talos 3/5/8MP Wi-Fi 6 pan-tilt, AOV Track/PT Plus & Cell PT 3C battery/solar pan-tilt, Ranger 2 Pro 4G, and the Bullet 3 Pro (S3E) active-deterrence full-colour 3/5/8MP bullets + PS7F 8MP PoE pan-tilt. From official Imou datasheets; RTSP/ONVIF configs where officially supported.
-- **New brand: Inner Range — 9 cameras** (Inner Range Pty Ltd, Australia), the **IR Video** edge-camera line: 8MP domes (C8D-110/120Z), 8MP turrets (C8T-200/120Z), 8MP bullets (C8B-100/120Z, C8B-200Z active-deterrence, C8B-130 180° panoramic dual-lens) and the 5MP 30× IR/dual-light PTZ (C5P-10030X, auto-tracking, IR 150m). H.265, ONVIF, PoE, IP66/67. From official Inner Range datasheets. (12MP 360° fisheye C8S-100 deferred — no full spec table published.)
+- **New brand: Inner Range — 12 cameras** (Inner Range Pty Ltd, Australia), the **IR Video** edge-camera line: 8MP domes (C8D-100/110/120Z), 8MP turrets (C8T-100/101/200/120Z), 8MP bullets (C8B-100/120Z, C8B-200Z active-deterrence, C8B-130 180° panoramic dual-lens) and the 5MP 30× IR/dual-light PTZ (C5P-10030X, auto-tracking, IR 150m). H.265, ONVIF (Profile S/T/G/M), PoE, IP66/67, built-in mic. From official Inner Range datasheets. (12MP 360° fisheye C8S-100 deferred — no full spec table published.)
 - **New brand: Kenik — 145 cameras** (Kenik, Poland) — the full camera catalogue from official files.kenik.pl datasheet cards + kenik.pl product pages. **IP line** (~112): 2/4/5/6/8MP domes, bullets, turrets & motorized-zoom variants across the DP/TP/DAS/TAS/DZAS families with Smart Dual Light / active deterrence (`-ILCD`/`-ILD`), GekoVu full-colour (`-G`/`4G`/`8G`), Starlight & IR-only tiers; LPR/ANPR bullets (`-ILPR`), fisheye (KG-6020FAS, KG-12015/12315FAS), 25–38× IR speed-dome PTZs (KG-2125X/5232X/5332X/8238X, auto-tracking, IR to 250m), a dual-lens multisensor (KG-8M30VAS) and indoor IoT pan-tilts. **Analog 4-in-1 line** (33, `coax`): AHD/TVI/CVI/CVBS switchable D/L/T-series 2/5MP domes & bullets. H.265+/H.264 + ONVIF Profile S on the IP models; colour variants (`-B`/`-G`/`-W`) folded into aliases. (NVRs excluded.)
 - **New brand: Fermax — 1 camera** — `9985` Peripheral IP Dome Camera (2MP minidome, 2.8mm, IR, IP65/IK08, PoE) for DUOX PLUS / MEET intercom systems. From the Fermax 2025-2026 general catalogue.
 - **Ajax +1** — BulletCam (5 MP/2.8 mm): 5MP bullet, H.265, F1.6, True WDR 120dB, IR 60m, AI object detection, IP66/IK08, ONVIF Profile S. From ajax.systems.
