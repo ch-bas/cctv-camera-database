@@ -1,0 +1,114 @@
+{
+  "id": "provision-isr-i2-320ipsn-28-g-v2",
+  "brand": "Provision-ISR",
+  "model": "I2-320IPSN-28-G-V2",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "focal_length_mm": "2.8",
+    "varifocal": false,
+    "aperture": "F1.6"
+  },
+  "field_of_view_deg": "107",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux": 0.005,
+    "min_lux_color": 0.1
+  },
+  "power": {
+    "method": "PoE / DC12V",
+    "voltage": "DC 12V",
+    "consumption_w": 5.4
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 256
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "172.2 x 73.4 x 74.5",
+  "weight_g": 390,
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "True WDR",
+    "3D-DNR",
+    "BLC",
+    "HLC",
+    "ROI",
+    "Privacy mask",
+    "Motion detection",
+    "Camera tampering",
+    "Smart search",
+    "DDATM line crossing",
+    "DDATM sterile area",
+    "microSD up to 256GB"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "sources": [
+    "https://www.provision-isr.com/",
+    "https://provision-isr.com/products/i2-320ipsn-28-g-v2/"
+  ],
+  "last_verified": "2026-09-01",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/MediaInput/h264/stream_1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/MediaInput/h264/stream_2",
+      "onvif_port": 80,
+      "two_way_audio": false,
+      "notes": "Provision-ISR RTSP path is /MediaInput/h264/stream_1 (main) and stream_2 (sub); confirm in the camera web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Add via ONVIF (port 80)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "ONVIF or the Provision RTSP URL."
+    }
+  },
+  "markets": [
+    "global"
+  ]
+}

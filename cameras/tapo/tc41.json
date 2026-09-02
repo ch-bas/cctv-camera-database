@@ -1,0 +1,94 @@
+{
+  "id": "tapo-tc41",
+  "brand": "Tapo",
+  "model": "TC41",
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "label": "2K QHD",
+    "max_width": 2304,
+    "max_height": 1296,
+    "megapixels": 3
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "resolution": "2304x1296",
+        "fps": 15,
+        "codec": "H.264",
+        "name": "main"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "focal_length_mm": "3.9",
+    "aperture": "F2.0",
+    "count": 1
+  },
+  "field_of_view_deg": "97.23 diagonal, 82.3 horizontal, 45.31 vertical",
+  "night_vision": {
+    "type": "color",
+    "range_m": 30
+  },
+  "power": {
+    "method": "9V DC power adapter (input 100-240V 50/60Hz, output 9V 0.85A)"
+  },
+  "storage": {
+    "max_microsd_gb": 512,
+    "cloud": true,
+    "onboard": false,
+    "nvr_compatible": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP65",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "123.8 x 123 x 90",
+  "release_year": 2024,
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.tp-link.com/en/home-networking/cloud-camera/tc41/",
+    "https://static.tp-link.com/upload/manual/2024/202402/20240229/1910013592_TC41(EU)1.0_UG_V1.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/stream1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/stream2",
+      "autotracking": false,
+      "notes": "go2rtc alternative: TP-Link's proprietary protocol via go2rtc (tapo://<tapo-account-password>@{ip}) is often more stable than RTSP (fewer timeouts / non-monotonic-timestamp errors). The password form is firmware-dependent: either your Tapo app/cloud account password, or user `admin` + the UPPERCASE SHA-256 of the camera password (`tapo://admin:<UPPERCASE-SHA256>@{ip}`) — see go2rtc's Tapo docs. It is not the camera's plain RTSP/Device password. If non-monotonic-timestamp errors persist, disable audio for that camera in Frigate. Chrome may render the go2rtc live view with a squashed aspect ratio (a browser live-view quirk, not the stream); Firefox is correct. The go2rtc tapo:// source also carries a two-way-audio backchannel, so Frigate's live view gets a talk button (mic+speaker). Pan/tilt: Tapo exposes ONVIF PTZ on port 2020 (not 80) — point Frigate's onvif block at host:<ip> port:2020 with the camera Account credentials for manual pan/tilt. (Frigate autotracking stays off: Tapo only does continuous-move ONVIF, no reliable absolute/FOV positioning.)",
+      "onvif_port": 2020,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "tapo",
+      "notes": "Native TP-Link Tapo integration. Requires Tapo cloud account credentials."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP streams: /stream1 (main), /stream2 (sub). Must enable ONVIF in Tapo app."
+    }
+  },
+  "last_verified": "2026-09-02",
+  "environment": [
+    "outdoor"
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "id": "openeye-oe-c1012d2-s",
+  "brand": "OpenEye",
+  "model": "OE-C1012D2-S",
+  "type": "dome",
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "Progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8"
+  },
+  "field_of_view_deg": "105",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux": 0.01
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "connectivity": [
+    "ethernet"
+  ],
+  "power": {
+    "method": "12 VDC / PoE (802.3af)",
+    "consumption_w": 4.5
+  },
+  "power_source": [
+    "dc",
+    "poe"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "109 x 81",
+  "weight_g": 450,
+  "features": [
+    "True WDR",
+    "Audio I/O (bare wire connection)",
+    "NDAA compliant",
+    "manufactured in China",
+    "analytics-enabled"
+  ],
+  "sources": [
+    "https://www.openeye.net/products/cameras/oe-c1012d2-s",
+    "https://portal.openeye.net/assets/documents/oe-c1012d2-s-ae-spec-sheet",
+    "https://answers.openeye.net/Troubleshooting/Frequently_Asked_Questions/Cameras/List_of_RTSP_URLs"
+  ],
+  "last_verified": "2026-09-01",
+  "markets": [
+    "US"
+  ],
+  "configs": {
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S/T). Set the camera's ONVIF port and credentials."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a Generic/ONVIF camera; Blue Iris auto-discovers the RTSP stream via ONVIF."
+    },
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/media/video1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/media/video2",
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      }
+    }
+  }
+}

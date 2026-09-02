@@ -1,0 +1,106 @@
+{
+  "id": "truen-tcam-4322mbr",
+  "brand": "TRUEN",
+  "model": "TCAM-4322MBR",
+  "aliases": [
+    "TRUEN TCAM-4322MBR",
+    "Truen TCAM-4322MBR"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "dc",
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 2.07,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "focal_length_mm": "2.8 to 12 (4.3x optical zoom, 10x digital)",
+    "aperture": "F1.4 ~ F2.8",
+    "varifocal": true
+  },
+  "field_of_view_deg": "105.6 (wide) ~ 24.3 (tele) horizontal / 62.6 (wide) ~ 13.8 (tele) vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.02
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "method": "DC12V, PoE (IEEE 802.3af)",
+    "consumption_w": 18,
+    "voltage": "DC12V"
+  },
+  "network": {
+    "ethernet_speed_mbps": 1000
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "audio": {
+    "two_way": true
+  },
+  "storage": {
+    "max_microsd_gb": 512
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "features": [
+    "Extreme low-light bullet camera, 4.3x optical / 10x digital motorized zoom",
+    "4 IR LEDs, 30m range",
+    "WDR 120dB, HLC, BLC, Defog, DIS",
+    "AI/analytics: motion, line counting, intrusion, tampering, video face detection",
+    "ONVIF Profile S, Profile G",
+    "Certifications: IP67, IK10, KC, FCC, CE"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "85.7 (diameter) x 297.9 (length)",
+  "weight_g": 1093,
+  "markets": [
+    "global"
+  ],
+  "status": "available",
+  "environment": [
+    "outdoor",
+    "indoor"
+  ],
+  "sources": [
+    "https://www.truen.co.kr/",
+    "https://www.ispyconnect.com/camera/truen"
+  ],
+  "last_verified": "2026-09-02",
+  "configs": {
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S/T). Set the camera's ONVIF port and credentials."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a Generic/ONVIF camera; Blue Iris auto-discovers the RTSP stream via ONVIF."
+    },
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/video1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/video2",
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      }
+    }
+  }
+}

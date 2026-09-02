@@ -1,0 +1,110 @@
+{
+  "id": "provision-isr-dai-380ipe-mvf",
+  "brand": "Provision-ISR",
+  "model": "DAI-380IPE-MVF",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP"
+  },
+  "lens": {
+    "focal_length_mm": "2.8-12",
+    "varifocal": true
+  },
+  "field_of_view_deg": "96-32",
+  "sensor": "1/2.8\" CMOS",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 128
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "weight_g": 890,
+  "power": {
+    "method": "poe",
+    "consumption_w": 7.4,
+    "voltage": "DC12V"
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "True WDR",
+    "3D-DNR",
+    "BLC",
+    "HLC",
+    "ROI",
+    "Privacy mask",
+    "Motion detection",
+    "DDATM line crossing",
+    "DDATM sterile area",
+    "DDATM object counting",
+    "Face detection",
+    "Camera tampering",
+    "Smart search",
+    "microSD up to 128GB"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "sources": [
+    "https://www.provision-isr.com/",
+    "https://provision-isr.com/products/dai-380ipe-mvf/"
+  ],
+  "last_verified": "2026-09-01",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/MediaInput/h264/stream_1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/MediaInput/h264/stream_2",
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "notes": "Provision-ISR RTSP path is /MediaInput/h264/stream_1 (main) and stream_2 (sub); confirm in the camera web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Add via ONVIF (port 80)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "ONVIF or the Provision RTSP URL."
+    }
+  },
+  "markets": [
+    "global"
+  ]
+}

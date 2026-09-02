@@ -1,0 +1,109 @@
+{
+  "id": "tapo-c232",
+  "brand": "Tapo",
+  "model": "Tapo C232",
+  "type": "ptz",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "resolution": {
+    "label": "3K (5MP)",
+    "max_width": 2880,
+    "max_height": 1620,
+    "megapixels": 5
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4",
+    "aperture": "F2.2",
+    "varifocal": false
+  },
+  "field_of_view_deg": "76.2 (horizontal), 41.8 (vertical), 90 (diagonal)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 12
+  },
+  "power": {
+    "method": "9V DC power adapter (100-240VAC input)"
+  },
+  "storage": {
+    "onboard": false,
+    "max_microsd_gb": 512,
+    "cloud": true,
+    "nvr_compatible": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "5MP 3K pan/tilt",
+    "360deg pan / 110deg tilt coverage",
+    "motion tracking",
+    "AI person/pet/vehicle detection",
+    "baby cry detection",
+    "sound and light alarm",
+    "night vision IR",
+    "Ethernet or Wi-Fi",
+    "Alexa / Google"
+  ],
+  "sources": [
+    "https://www.tp-link.com/sg/home-networking/cloud-camera/tapo-c232/"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/stream1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/stream2",
+      "autotracking": false,
+      "notes": "go2rtc alternative: TP-Link's proprietary protocol via go2rtc (tapo://<tapo-account-password>@{ip}) is often more stable than RTSP (fewer timeouts / non-monotonic-timestamp errors). The password form is firmware-dependent: either your Tapo app/cloud account password, or user `admin` + the UPPERCASE SHA-256 of the camera password (`tapo://admin:<UPPERCASE-SHA256>@{ip}`) — see go2rtc's Tapo docs. It is not the camera's plain RTSP/Device password. If non-monotonic-timestamp errors persist, disable audio for that camera in Frigate. Chrome may render the go2rtc live view with a squashed aspect ratio (a browser live-view quirk, not the stream); Firefox is correct. The go2rtc tapo:// source also carries a two-way-audio backchannel, so Frigate's live view gets a talk button (mic+speaker). Pan/tilt: Tapo exposes ONVIF PTZ on port 2020 (not 80) — point Frigate's onvif block at host:<ip> port:2020 with the camera Account credentials for manual pan/tilt. (Frigate autotracking stays off: Tapo only does continuous-move ONVIF, no reliable absolute/FOV positioning.)",
+      "onvif_port": 2020,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "tapo",
+      "notes": "Native TP-Link Tapo integration. Requires Tapo cloud account credentials."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP streams: /stream1 (main), /stream2 (sub). Must enable ONVIF in Tapo app."
+    }
+  },
+  "video": {
+    "max_fps": 30,
+    "codecs": [
+      "H.264"
+    ],
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2880x1620",
+        "fps": 15,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "operating_temp_c": "0 to 40",
+  "dimensions_mm": "82.05 x 82 x 112.6",
+  "environment": [
+    "indoor"
+  ],
+  "last_verified": "2026-09-02",
+  "markets": [
+    "global"
+  ]
+}

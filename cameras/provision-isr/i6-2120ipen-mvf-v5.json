@@ -1,0 +1,114 @@
+{
+  "id": "provision-isr-i6-2120ipen-mvf-v5",
+  "brand": "Provision-ISR",
+  "model": "I6-2120IPEN-MVF-V5",
+  "type": "bullet",
+  "status": "available",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 12,
+    "max_width": 4000,
+    "max_height": 3000,
+    "label": "12MP"
+  },
+  "lens": {
+    "focal_length_mm": "2.8-12",
+    "varifocal": true
+  },
+  "field_of_view_deg": "98-47",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.264+",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "sensor": "1/1.7\" CMOS",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 60,
+    "min_lux": 0.006
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 256
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "power": {
+    "consumption_w": 13
+  },
+  "weight_g": 1060,
+  "operating_temp_c": "-30 to 60",
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "Digital WDR",
+    "BLC",
+    "HLC",
+    "ROI",
+    "Camera tampering",
+    "SMD",
+    "Sterile area",
+    "Line crossing",
+    "Object counting",
+    "Loitering detection",
+    "Illegal parking detection",
+    "Face detection",
+    "Heatmap",
+    "DDA2 advanced object classification",
+    "microSD up to 256GB"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "sources": [
+    "https://www.provision-isr.com/",
+    "https://www.provision-isr.com/products/i6-2120ipen-mvf-v5/"
+  ],
+  "last_verified": "2026-09-02",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/MediaInput/h264/stream_1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/MediaInput/h264/stream_2",
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "notes": "Provision-ISR RTSP path is /MediaInput/h264/stream_1 (main) and stream_2 (sub); confirm in the camera web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Add via ONVIF (port 80)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "ONVIF or the Provision RTSP URL."
+    }
+  },
+  "markets": [
+    "global"
+  ]
+}

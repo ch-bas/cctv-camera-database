@@ -1,0 +1,106 @@
+{
+  "id": "tapo-c113",
+  "brand": "Tapo",
+  "model": "Tapo C113",
+  "type": "box",
+  "connectivity": [
+    "wifi"
+  ],
+  "resolution": {
+    "label": "2K 3MP",
+    "max_width": 2304,
+    "max_height": 1296,
+    "megapixels": 3
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.16",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "114 (Diagonal), 97 (Horizontal), 52 (Vertical)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 12
+  },
+  "power": {
+    "method": "5V/1A USB-C power adapter"
+  },
+  "power_source": [
+    "dc"
+  ],
+  "ip_rating": "IP65",
+  "storage": {
+    "max_microsd_gb": 512,
+    "cloud": true
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/3\" Progressive Scan CMOS",
+  "operating_temp_c": "-20 to 45",
+  "dimensions_mm": "61.1 x 60.5 x 92.1",
+  "weight_g": 90,
+  "features": [
+    "2K 3MP 1296p resolution",
+    "color and IR night vision",
+    "person detection",
+    "baby cry detection",
+    "two-way audio",
+    "activity zones",
+    "Alexa / Google Assistant"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "release_year": 2022,
+  "sources": [
+    "https://www.tp-link.com/us/home-networking/cloud-camera/tapo-c113/"
+  ],
+  "last_verified": "2026-09-02",
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/stream1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/stream2",
+      "notes": "go2rtc alternative: TP-Link's proprietary protocol via go2rtc (tapo://<tapo-account-password>@{ip}) is often more stable than RTSP (fewer timeouts / non-monotonic-timestamp errors). The password form is firmware-dependent: either your Tapo app/cloud account password, or user `admin` + the UPPERCASE SHA-256 of the camera password (`tapo://admin:<UPPERCASE-SHA256>@{ip}`) — see go2rtc's Tapo docs. It is not the camera's plain RTSP/Device password. If non-monotonic-timestamp errors persist, disable audio for that camera in Frigate. Chrome may render the go2rtc live view with a squashed aspect ratio (a browser live-view quirk, not the stream); Firefox is correct. The go2rtc tapo:// source also carries a two-way-audio backchannel, so Frigate's live view gets a talk button (mic+speaker).",
+      "onvif_port": 2020,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "tapo",
+      "notes": "Native TP-Link Tapo integration. Requires Tapo cloud account credentials."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP streams: /stream1 (main), /stream2 (sub). Must enable ONVIF in Tapo app."
+    }
+  }
+}

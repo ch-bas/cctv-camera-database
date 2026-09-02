@@ -1,0 +1,92 @@
+{
+  "id": "d-link-dcs-2210",
+  "brand": "D-Link",
+  "model": "DCS-2210",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "release_year": 2013,
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "Full HD 1080p"
+  },
+  "sensor": "2.7\" megapixel progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.37 (fixed)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "ir"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MPEG-4",
+      "MJPEG"
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "storage": {
+    "onboard": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "status": "discontinued",
+  "features": [
+    "Full HD resolution up to 1920 x 1080",
+    "Built-in IR-cut filter for low-light and night vision support",
+    "Built-in PIR (Passive Infrared) sensor for motion detection",
+    "10x digital zoom",
+    "Wired Ethernet interface with PoE",
+    "MicroSD card slot for local video recording (card not included)",
+    "e-PTZ to zoom in on areas of interest",
+    "Built-in microphone and speaker for 2-way audio",
+    "ONVIF compliant"
+  ],
+  "sources": [
+    "https://www.dlink.com/"
+  ],
+  "last_verified": "2026-08-31",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live1.sdp",
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "notes": "D-Link RTSP path is typically /live1.sdp (some older models use /play1.sdp or a MJPEG CGI) — verify in the camera web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF where supported; else generic camera via the MJPEG/RTSP URL."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use 'Generic/ONVIF' or the D-Link RTSP URL."
+    }
+  },
+  "markets": [
+    "global"
+  ]
+}

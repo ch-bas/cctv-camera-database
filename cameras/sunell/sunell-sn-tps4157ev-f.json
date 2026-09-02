@@ -1,0 +1,72 @@
+{
+  "id": "sunell-sn-tps4157ev-f",
+  "brand": "Sunell",
+  "model": "SN-TPS4157EV-F",
+  "aliases": [
+    "Sunell SN-TPS4157EV-F"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "video": {
+    "max_fps": 30
+  },
+  "ip_rating": "IP66",
+  "storage": {
+    "onboard": true
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "thermal microbolometer: 384×288 @12 μm, NETD ≤ 20 mK",
+    "thermal focal length: 5/7/15 mm manual focus lens (F) / 25 mm motorized (M)",
+    "visible: 4 MP @25/30fps, 40x optical zoom, 6.8 to 251 mm",
+    "temperature measurement range -20 to 150 °C with ±8 °C accuracy",
+    "detection: Human/vehicle, smoking, smoke & flame, fire point detection",
+    "intelligent analysis",
+    "cold/hot spot and human/vehicle tracking",
+    "1/1 audio, 7/2 alarm, SD card slot",
+    "IP66"
+  ],
+  "status": "available",
+  "last_verified": "2026-09-02",
+  "sources": [
+    "https://www.sunellsecurity.com/"
+  ],
+  "configs": {
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S/T). Set the camera's ONVIF port and credentials."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a Generic/ONVIF camera; Blue Iris auto-discovers the RTSP stream via ONVIF."
+    },
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/1"
+    }
+  },
+  "ptz": {
+    "autotracking": true
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "id": "sunell-sn-ipv8190hcbr-b",
+  "brand": "Sunell",
+  "model": "SN-IPV8190HCBR-B",
+  "aliases": [
+    "Sunell SN-IPV8190HCBR-B",
+    "12MP IR Fixed Turret Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "protocols": [
+    "rtsp",
+    "onvif",
+    "http"
+  ],
+  "resolution": {
+    "megapixels": 12,
+    "max_width": 4512,
+    "max_height": 2512,
+    "label": "12MP"
+  },
+  "sensor": "1/2.5\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "102.9 horizontal / 52.1 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.01
+  },
+  "video": {
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4512x2512",
+        "fps": 20
+      },
+      {
+        "name": "sub",
+        "resolution": "720x576"
+      },
+      {
+        "name": "third",
+        "resolution": "640x480"
+      }
+    ]
+  },
+  "ip_rating": "IP67",
+  "power": {
+    "method": "12 VDC / PoE (802.3af)",
+    "consumption_w": 10.8,
+    "voltage": "12 VDC"
+  },
+  "power_source": [
+    "dc",
+    "poe"
+  ],
+  "audio": {
+    "microphone": true
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024
+  },
+  "dimensions_mm": "φ118.2 x 93.9",
+  "weight_g": 500,
+  "operating_temp_c": "-35 to 55",
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "face, human and vehicle detection with snapshot capture",
+    "intelligent analytics: intrusion, smart motion detection, single/double line crossing, loitering, wrong-way detection, illegal parking, area people limit, perimeter detection",
+    "people counting",
+    "True WDR (120 dB), 3D DNR, ROI, HLC, BLC, Defog",
+    "smart IR illumination up to 30 m (850 nm)",
+    "ONVIF Profile S/T/G/M",
+    "AES-256 encrypted microSD storage"
+  ],
+  "status": "available",
+  "last_verified": "2026-09-02",
+  "sources": [
+    "https://www.sunellsecurity.com/",
+    "https://www.sunellsecurity.com:9091/prod-api/preview/root/resources/file/SN-IPV8190HCBR-B_Datasheet_202607.pdf"
+  ],
+  "configs": {
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S/T). Set the camera's ONVIF port and credentials."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a Generic/ONVIF camera; Blue Iris auto-discovers the RTSP stream via ONVIF."
+    },
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/1"
+    }
+  }
+}

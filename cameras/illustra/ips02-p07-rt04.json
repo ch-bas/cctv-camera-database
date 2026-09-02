@@ -1,0 +1,114 @@
+{
+  "id": "illustra-ips02-p07-rt04",
+  "brand": "Illustra",
+  "model": "IPS02-P07-RT04",
+  "aliases": [
+    "Illustra IPS02-P07-RT04"
+  ],
+  "type": "ptz",
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60
+  },
+  "sensor": "Sony 1/2.8\" CMOS",
+  "lens": {
+    "focal_length_mm": "4.5-135",
+    "aperture": "F1.6-F4.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "60-5 H / 37-3 V",
+  "night_vision": {
+    "type": "color",
+    "min_lux": 0.0035,
+    "min_lux_color": 0.013
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "power": {
+    "consumption_w": 30,
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "30x optical zoom",
+    "AI auto-tracking (face/person)",
+    "AI object classification",
+    "AI sound analytics",
+    "True WDR 126dB",
+    "SmartDefog",
+    "smoked bubble",
+    "TrickleStor edge recording",
+    "NDAA compliant"
+  ],
+  "operating_temp_c": "-10 to 60",
+  "dimensions_mm": "204 diameter x 349",
+  "weight_g": 4000,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "environment": [
+    "indoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "status": "available",
+  "last_verified": "2026-09-02",
+  "sources": [
+    "https://illustracameras.com/",
+    "https://illustracameras.com/wp-content/uploads/2022/08/Illustra-pro-Gen4-Indoor-PTZ_ds_r10_hs_en-1.pdf",
+    "https://www.ispyconnect.com/camera/illustra"
+  ],
+  "configs": {
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S/T). Set the camera's ONVIF port and credentials."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a Generic/ONVIF camera; Blue Iris auto-discovers the RTSP stream via ONVIF."
+    },
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/primarystream",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/secondarystream",
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      }
+    }
+  }
+}

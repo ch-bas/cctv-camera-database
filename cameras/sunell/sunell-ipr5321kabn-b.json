@@ -1,0 +1,115 @@
+{
+  "id": "sunell-ipr5321kabn-b",
+  "brand": "Sunell",
+  "model": "SN-IPR5321KABN-B",
+  "aliases": [
+    "Sunell SN-IPR5321KABN-B",
+    "2MP IR Fixed Bullet Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "protocols": [
+    "rtsp",
+    "onvif",
+    "http"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/3\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (4 optional)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "96 horizontal / 53 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "video": {
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30
+      },
+      {
+        "name": "sub",
+        "resolution": "720x576"
+      },
+      {
+        "name": "third",
+        "resolution": "640x480"
+      }
+    ]
+  },
+  "ip_rating": "IP66",
+  "power": {
+    "method": "12 VDC / PoE (802.3af)",
+    "voltage": "12 VDC"
+  },
+  "power_source": [
+    "dc",
+    "poe"
+  ],
+  "audio": {
+    "microphone": true
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024
+  },
+  "dimensions_mm": "179.1 x 68.36 x 68.36",
+  "weight_g": 380,
+  "operating_temp_c": "-25 to 55",
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "face, human and vehicle detection",
+    "intelligent analytics: intrusion, smart motion detection, line crossing, loitering, wrong-way detection, illegal parking, people counting",
+    "DWDR, 3D DNR, ROI, HLC, BLC, Defog",
+    "smart IR illumination up to 30 m (850 nm)",
+    "ONVIF Profile S/T/G/M",
+    "AES-256 encrypted microSD storage"
+  ],
+  "status": "available",
+  "last_verified": "2026-09-02",
+  "sources": [
+    "https://www.sunellsecurity.com/",
+    "https://www.sunellsecurity.com/resources/file/SN-IPR5321KABN-B_Datasheet_202607.pdf"
+  ],
+  "configs": {
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S/T). Set the camera's ONVIF port and credentials."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a Generic/ONVIF camera; Blue Iris auto-discovers the RTSP stream via ONVIF."
+    },
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/1"
+    }
+  }
+}

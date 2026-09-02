@@ -1,0 +1,113 @@
+{
+  "id": "cp-plus-cp-unc-ta41l6c-q",
+  "brand": "CP Plus",
+  "model": "CP-UNC-TA41L6C-Q",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" 4MP PS CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6",
+    "aperture": "F1.4",
+    "varifocal": false
+  },
+  "field_of_view_deg": "49 H / 26 V / 57 D",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 60,
+    "min_lux": 0.0001,
+    "min_lux_color": 0.001
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V",
+    "consumption_w": 6.8,
+    "voltage": "DC 12V"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "197.9 x 80.2 x 76.2",
+  "weight_g": 310,
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "audio": {
+    "microphone": true
+  },
+  "features": [
+    "DWDR",
+    "day/night (ICR)",
+    "3D NR",
+    "ROI",
+    "AWB",
+    "AGC",
+    "BLC",
+    "HLC",
+    "digital watermarking",
+    "Dahua-OEM platform (ONVIF Profile S/G/T + RTSP)"
+  ],
+  "markets": [
+    "IN"
+  ],
+  "aliases": [
+    "CP Plus CP-UNC-TA41L6C-Q"
+  ],
+  "sources": [
+    "https://www.cpplusworld.com/prodassets/datasheet/CP-UNC-TA41L6C-Q.pdf"
+  ],
+  "last_verified": "2026-09-01",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Uses Dahua protocol. ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile. CP Plus uses Dahua protocol."
+    }
+  },
+  "environment": [
+    "outdoor"
+  ]
+}

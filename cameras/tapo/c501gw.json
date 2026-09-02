@@ -1,0 +1,116 @@
+{
+  "id": "tapo-c501gw",
+  "brand": "Tapo",
+  "model": "C501GW",
+  "aliases": [
+    "Tapo C501GW"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "4g",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p Full HD"
+  },
+  "sensor": "1/3\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.16",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "116.7 diagonal / 99.7 horizontal / 53.8 vertical",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "12V DC power adapter or 802.3af/at PoE"
+  },
+  "power_source": [
+    "dc",
+    "poe"
+  ],
+  "storage": {
+    "onboard": false,
+    "max_microsd_gb": 512,
+    "nvr_compatible": false,
+    "cloud": true
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "130.8 x 84.0 x 116.1",
+  "operating_temp_c": "-30 to 60",
+  "status": "available",
+  "features": [
+    "outdoor 1080p pan/tilt camera with dual-mode 4G LTE / PoE",
+    "4G LTE-FDD B1/3/5/7/8/20/28, LTE-TDD B38/40/41 (SIM required)",
+    "340 pan / 85 tilt mechanical range (360 pan / 139 tilt coverage)",
+    "starlight color night vision (30m)",
+    "2 built-in customizable spotlights",
+    "AI person/pet/vehicle detection",
+    "99dB siren",
+    "RTSP/ONVIF (ONVIF only available in Ethernet mode)",
+    "no subscription"
+  ],
+  "sources": [
+    "https://www.tp-link.com/nordic/home-networking/cloud-camera/tapo-c501gw/",
+    "https://www.tapo.com/en/product/smart-camera/tapo-c501gw/"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/stream1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/stream2",
+      "autotracking": false,
+      "onvif_port": 2020,
+      "two_way_audio": true,
+      "notes": "Dual-mode camera. RTSP works over both 4G and Ethernet, but ONVIF (PTZ/discovery) is only available in Ethernet/PoE mode per the spec sheet. Enable ONVIF/RTSP in the Tapo app (Camera Settings > Advanced) and create a Camera Account. Streams: /stream1 (main), /stream2 (sub). go2rtc alternative: TP-Link's proprietary protocol via go2rtc (tapo://<tapo-account-password>@{ip}) is often more stable than RTSP. Tapo exposes ONVIF PTZ on port 2020 (not 80)."
+    },
+    "home_assistant": {
+      "integration": "tapo",
+      "notes": "Native TP-Link Tapo integration. Requires Tapo cloud account credentials. For local-only, use the ONVIF integration as an alternative (Ethernet mode)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile in Ethernet mode. RTSP streams: /stream1 (main), /stream2 (sub). Must enable ONVIF in the Tapo app."
+    }
+  },
+  "last_verified": "2026-09-02",
+  "markets": [
+    "global"
+  ]
+}
