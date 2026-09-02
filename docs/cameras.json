@@ -150714,10 +150714,21 @@
     },
     "night_vision": {
       "type": "ir",
-      "range_m": 60
+      "range_m": 60,
+      "min_lux": 0.0006,
+      "min_lux_color": 0.006
+    },
+    "power": {
+      "method": "PoE (802.3af)",
+      "consumption_w": 11.9,
+      "voltage": "DC 12V"
     },
     "storage": {
-      "onboard": true
+      "onboard": true,
+      "max_microsd_gb": 512
+    },
+    "network": {
+      "ethernet_speed_mbps": 100
     },
     "protocols": [
       "onvif",
@@ -150725,6 +150736,9 @@
     ],
     "ip_rating": "IP67",
     "ik_rating": "IK10",
+    "operating_temp_c": "-30 to 60",
+    "dimensions_mm": "269.5 x 80.55 x 73.8",
+    "weight_g": 1100,
     "audio": {
       "microphone": true
     },
@@ -152091,7 +152105,9 @@
       "coax"
     ],
     "resolution": {
-      "megapixels": 2.4
+      "megapixels": 2.4,
+      "max_width": 1920,
+      "max_height": 1080
     },
     "video": {
       "max_fps": 30
@@ -152104,8 +152120,17 @@
     },
     "night_vision": {
       "type": "ir",
-      "range_m": 30
+      "range_m": 30,
+      "min_lux": 0.002,
+      "min_lux_color": 0.02
     },
+    "power": {
+      "consumption_w": 2.3,
+      "voltage": "DC 12V"
+    },
+    "operating_temp_c": "-40 to 60",
+    "dimensions_mm": "85.0 x 77.1",
+    "weight_g": 110,
     "features": [
       "DWDR",
       "Day/Night (ICR)",
@@ -328573,6 +328598,7 @@
         "notes": "Use Generic/ONVIF profile."
       }
     },
+    "added": "2026-09-02",
     "sensor_size_inch": 0.3571
   },
   {
@@ -328675,6 +328701,7 @@
         "notes": "Use Generic/ONVIF profile."
       }
     },
+    "added": "2026-09-02",
     "sensor_size_inch": 0.3571
   },
   {
@@ -328904,6 +328931,231 @@
     },
     "added": "2026-09-02",
     "sensor_size_inch": 0.3571
+  },
+  {
+    "id": "honeywell-hc60wz8r40ki",
+    "brand": "Honeywell",
+    "model": "HC60WZ8R40KI",
+    "aliases": [
+      "Honeywell HC60WZ8R40KI",
+      "Honeywell 60 Series HC60WZ8R40KI"
+    ],
+    "type": "ptz",
+    "connectivity": [
+      "ethernet"
+    ],
+    "power_source": [
+      "poe",
+      "ac-mains"
+    ],
+    "resolution": {
+      "megapixels": 8,
+      "max_width": 3840,
+      "max_height": 2160,
+      "label": "4K"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264",
+        "MJPEG"
+      ],
+      "max_fps": 30
+    },
+    "sensor": "1/1.8\" CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "6.8-272",
+      "aperture": "F1.63-4.94",
+      "varifocal": true
+    },
+    "field_of_view_deg": "35.9-1.28",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 500,
+      "min_lux_color": 0.01
+    },
+    "ptz": {
+      "autotracking": true
+    },
+    "power": {
+      "method": "AC 24V / PoE++ (802.3bt)",
+      "consumption_w": 47.5,
+      "voltage": "AC 24V"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 1000
+    },
+    "protocols": [
+      "rtsp",
+      "onvif"
+    ],
+    "ip_rating": "IP67",
+    "ik_rating": "IK10",
+    "features": [
+      "40x optical zoom",
+      "P-Iris",
+      "ultra low-light",
+      "auto-tracking",
+      "auto-flip 180",
+      "tilt -10 to 90",
+      "2MP mode up to 60fps",
+      "Smart Codec",
+      "IR up to 500m"
+    ],
+    "operating_temp_c": "-40 to 70",
+    "dimensions_mm": "Ø226.1 x 362.8",
+    "weight_g": 5425,
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "network": {
+      "ethernet_speed_mbps": 100
+    },
+    "status": "available",
+    "sources": [
+      "https://www.honeywell.com/",
+      "https://buildings.honeywell.com/"
+    ],
+    "last_verified": "2026-09-02",
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+        "onvif_port": 80,
+        "autotracking": true
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "Use ONVIF integration."
+      },
+      "blue_iris": {
+        "profile": "Generic/ONVIF",
+        "notes": "Use Generic/ONVIF profile."
+      }
+    },
+    "sensor_size_inch": 0.5556
+  },
+  {
+    "id": "honeywell-hc60wz8r40wi",
+    "brand": "Honeywell",
+    "model": "HC60WZ8R40WI",
+    "aliases": [
+      "Honeywell HC60WZ8R40WI",
+      "Honeywell 60 Series HC60WZ8R40WI"
+    ],
+    "type": "ptz",
+    "connectivity": [
+      "ethernet"
+    ],
+    "power_source": [
+      "poe",
+      "ac-mains"
+    ],
+    "resolution": {
+      "megapixels": 8,
+      "max_width": 3840,
+      "max_height": 2160,
+      "label": "4K"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264",
+        "MJPEG"
+      ],
+      "max_fps": 30
+    },
+    "sensor": "1/1.8\" CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "6.8-272",
+      "aperture": "F1.63-4.94",
+      "varifocal": true
+    },
+    "field_of_view_deg": "35.9-1.28",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 500,
+      "min_lux_color": 0.01
+    },
+    "ptz": {
+      "autotracking": true
+    },
+    "power": {
+      "method": "AC 24V / PoE++ (802.3bt)",
+      "consumption_w": 47.5,
+      "voltage": "AC 24V"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 1000
+    },
+    "protocols": [
+      "rtsp",
+      "onvif"
+    ],
+    "ip_rating": "IP67",
+    "ik_rating": "IK10",
+    "features": [
+      "40x optical zoom",
+      "P-Iris",
+      "ultra low-light",
+      "auto-tracking",
+      "auto-flip 180",
+      "tilt -10 to 90",
+      "2MP mode up to 60fps",
+      "Smart Codec",
+      "IR up to 500m",
+      "wiper"
+    ],
+    "operating_temp_c": "-40 to 70",
+    "dimensions_mm": "Ø226.1 x 362.8",
+    "weight_g": 5505,
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "network": {
+      "ethernet_speed_mbps": 100
+    },
+    "status": "available",
+    "sources": [
+      "https://www.honeywell.com/",
+      "https://buildings.honeywell.com/"
+    ],
+    "last_verified": "2026-09-02",
+    "configs": {
+      "frigate": {
+        "detect": {
+          "width": 1280,
+          "height": 720,
+          "fps": 5
+        },
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+        "onvif_port": 80,
+        "autotracking": true
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "Use ONVIF integration."
+      },
+      "blue_iris": {
+        "profile": "Generic/ONVIF",
+        "notes": "Use Generic/ONVIF profile."
+      }
+    },
+    "sensor_size_inch": 0.5556
   },
   {
     "id": "honeywell-hcc-ip-3mp-dome",
