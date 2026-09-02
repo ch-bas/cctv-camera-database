@@ -1,0 +1,64 @@
+{
+  "id": "sunell-sn-tpc6404vt-z",
+  "brand": "Sunell",
+  "model": "SN-TPC6404VT-Z",
+  "aliases": [
+    "Sunell SN-TPC6404VT-Z"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "resolution": {
+    "megapixels": 0.328,
+    "max_width": 640,
+    "max_height": 512,
+    "label": "640×512 thermal"
+  },
+  "ip_rating": "IP66",
+  "storage": {
+    "onboard": true
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "thermal microbolometer: 640×512 @12 μm, NETD ≤ 20 mK",
+    "thermal focal length: 15-75 / 26-105 / 30-150 mm varifocal lens optional",
+    "temperature measurement range -20 to 150 °C with ±2 °C / ±2% accuracy",
+    "detection: Human/vehicle, smoking, fire point detection",
+    "intelligent analysis",
+    "1/1 alarm, SD card slot",
+    "IP66"
+  ],
+  "status": "available",
+  "last_verified": "2026-09-02",
+  "sources": [
+    "https://www.sunellsecurity.com/"
+  ],
+  "configs": {
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S/T). Set the camera's ONVIF port and credentials."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a Generic/ONVIF camera; Blue Iris auto-discovers the RTSP stream via ONVIF."
+    },
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/1"
+    }
+  }
+}
