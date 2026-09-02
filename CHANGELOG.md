@@ -9,6 +9,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 ## [2.12.0] — Unreleased
 
 ### Added
+- **ZKTeco +7** (2026 New Products): ZKBio  dual-spectrum thermal+optical bullets/turrets (256x192 thermal + 4MP, fire/smoke detection, 3.5/7/10mm) and / 8MP 180° dual-lens stitched panoramas.
 - **New brand: Legrand — 4 cameras** (Legrand / Netatmo smart home): `NA-NOC-S-PRO` & `NA-NOC-PRO` outdoor cameras (4MP, IR 15m, siren/smart-light), `NA-NSC-PRO` indoor camera (facial recognition), `NA-NDB-PRO` video doorbell (1080p, IP44/IK08). WiFi, AC/battery, built-in storage, HomeKit/Google/Alexa; cloud/app-based (no RTSP).
 - **Panasonic +11** — the Panasonic MEA `PM-*` line: dual-light/full-colour bullets (EB/PB/VB, 2–8MP), a PX6NKBN box camera, and VP4/PP8 PTZ. From MEA spec sheets.
 - **Hanwha +61** — legacy Samsung Techwin IP range (Samsung = Hanwha) from the Samsung catalogue: SNB boxes, SND/SNV domes, SNO IR bullets, SNP PTZ, SNZ zoom (1–5MP-era), `status: discontinued`, "Samsung <model>" aliases.
