@@ -9,7 +9,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 ## [2.13.0] — Unreleased
 
 ### Added
--
+- **Bosch +6** from the Bosch Building Technologies portfolio: AUTODOME IP starlight 5000i (NDP-5512-Z30 pendant + Z30C in-ceiling, 2MP 30x) & 5100i IR (NDP-5523-Z30L, 4MP 30x, IR 320m), DINION IP thermal 8000 (NHT-8000-F07QF, 320x240 uncooled 60Hz), DINION IP starlight 7000 HD (NBN-73013-BA) & ultra 8000 MP (NBN-80122-F2A, 12MP). Verified from portfolio.boschbuildingtechnologies.com (dedup by CTN vs the existing 231 Bosch records).
 
 ---
 
