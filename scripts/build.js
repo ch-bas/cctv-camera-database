@@ -388,7 +388,11 @@ function updateReadme(cameras) {
     .replace(/(inspect )[\d,]+( cameras across )\d+( brands)/, `$1${total}$2${brandCount}$3`)
     .replace(/(page through all )[\d,]+( cameras)/, `$1${total}$2`)
     // Showcase GIF alt-text + caption ("search N cameras", appears twice).
-    .replace(/(search )[\d,]+( cameras)/g, `$1${total}$2`);
+    .replace(/(search )[\d,]+( cameras)/g, `$1${total}$2`)
+    // "all N cameras as one array" (Get-the-data table + repo-tree line) and the
+    // <details> summary brand count — both had drifted because nothing synced them.
+    .replace(/(all )[\d,]+( cameras as one array)/g, `$1${total}$2`)
+    .replace(/(<summary><strong>All )\d+( brands<\/strong>)/, `$1${brandCount}$2`);
 
   // RTSP-layer counts (tree line above + the prose sentence) — kept in lockstep
   // with rtsp-patterns.json's _meta.totals so the two never disagree again.
@@ -425,6 +429,20 @@ function updateReadme(cameras) {
     .replace(/(\| Under 4MP \| )[\d,]+( \|)/, `$1${stats.fhd}$2`)
     .replace(/(\| With integration configs \(Frigate \/ Home Assistant\) \| )[\d,]+( \|)/, `$1${stats.cfg}$2`)
     .replace(/(\| With color-lux rating \(`night_vision\.min_lux_color`\) \| )[\d,]+( \|)/, `$1${stats.clux}$2`);
+
+  // Roadmap backlog counts + citation version — dataset/package-derived so the
+  // contributor-recruiting section stays honest (these are hand-written prose that
+  // silently drifted: missing-resolution, Frigate-verified, and the citation tag).
+  // (The reseller-only count comes from the #164/#165 OEM-source lint heuristic, not
+  // the dataset, so it stays a manual edit here.)
+  const missingRes = cameras.filter((x) => x.resolution && x.resolution.megapixels && !(x.resolution.max_width && x.resolution.max_height)).length;
+  const frigTotal = cameras.filter((x) => x.configs && x.configs.frigate).length;
+  const frigVer = cameras.filter((x) => x.configs && x.configs.frigate && x.configs.frigate.verified === true).length;
+  const pkgVersion = JSON.parse(fs.readFileSync(path.join(ROOT, "package.json"), "utf8")).version;
+  readme = readme
+    .replace(/(Backfill pixel resolution\*\* for the ~)[\d,]+( entries that state megapixels)/, `$1${missingRes.toLocaleString("en-US")}$2`)
+    .replace(/(only )[\d,]+( of )[\d,]+( shipped configs are community-verified)/, `$1${frigVer.toLocaleString("en-US")}$2${frigTotal.toLocaleString("en-US")}$3`)
+    .replace(/(CCTV Camera Database \(v)[\d.]+(\))/, `$1${pkgVersion}$2`);
 
   // "All brands" table (between brands-table markers): auto-refresh the Cameras
   // column and re-sort by count, but PRESERVE the hand-written display name and
