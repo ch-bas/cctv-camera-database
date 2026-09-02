@@ -1,0 +1,113 @@
+{
+  "id": "tapo-c52a",
+  "brand": "Tapo",
+  "model": "C52A",
+  "aliases": [
+    "Tapo C52A"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "2K QHD 4MP"
+  },
+  "sensor": "1/3\" Progressive Scan CMOS Starlight Sensor",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.2",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "112 diagonal / 95 horizontal / 53 vertical",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "9V DC power adapter"
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": false,
+    "max_microsd_gb": 512,
+    "nvr_compatible": false,
+    "cloud": true
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "video": {
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "123.8 x 123 x 90",
+  "operating_temp_c": "-30 to 60",
+  "status": "available",
+  "features": [
+    "outdoor 2K QHD pan/tilt camera",
+    "360 pan / 130 tilt coverage with motion tracking",
+    "starlight sensor with color night vision (F1.6)",
+    "12x digital zoom",
+    "2 built-in spotlights",
+    "AI person/pet/vehicle detection, tamper and line-crossing detection",
+    "patrol mode",
+    "93dB siren",
+    "WiFi 6 or Ethernet",
+    "RTSP/ONVIF",
+    "no subscription"
+  ],
+  "sources": [
+    "https://www.tapo.com/en/product/smart-camera/tapo-c52a/",
+    "https://static.tp-link.com/upload/product-overview/2024/202411/20241101/Tapo%20C520WS&Tapo%20C52A%202.0&2.6&2.8_Datasheet.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/stream1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/stream2",
+      "autotracking": false,
+      "onvif_port": 2020,
+      "two_way_audio": true,
+      "notes": "Enable ONVIF/RTSP in the Tapo app (Camera Settings > Advanced) and create a Camera Account. Streams: /stream1 (main), /stream2 (sub). Ethernet mode recommended for stability. go2rtc alternative: TP-Link's proprietary protocol via go2rtc (tapo://<tapo-account-password>@{ip}) is often more stable than RTSP. Pan/tilt: Tapo exposes ONVIF PTZ on port 2020 (not 80); Frigate autotracking stays off (Tapo only does continuous-move ONVIF, no reliable absolute positioning)."
+    },
+    "home_assistant": {
+      "integration": "tapo",
+      "notes": "Native TP-Link Tapo integration. Requires Tapo cloud account credentials. For local-only, use the ONVIF integration as an alternative."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP streams: /stream1 (main), /stream2 (sub). Must enable ONVIF in the Tapo app."
+    }
+  },
+  "last_verified": "2026-09-02",
+  "markets": [
+    "global"
+  ]
+}

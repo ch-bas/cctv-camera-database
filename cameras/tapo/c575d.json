@@ -1,0 +1,117 @@
+{
+  "id": "tapo-c575d",
+  "brand": "Tapo",
+  "model": "C575D",
+  "aliases": [
+    "Tapo C575D"
+  ],
+  "type": "dual-lens",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K (dual-lens, each lens independently 4K)"
+  },
+  "sensor": "1/2.7\" CMOS (both lenses)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "2.53 (fixed wide-angle lens) / 8.0 (pan-tilt lens)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "Fixed lens: 170.0 diagonal / 138.1 horizontal / 74.5 vertical; Pan-tilt lens: 49.6 diagonal / 42.7 horizontal / 22.8 vertical",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "12V/1A DC power adapter or 802.3af/at PoE"
+  },
+  "power_source": [
+    "dc",
+    "poe"
+  ],
+  "storage": {
+    "onboard": false,
+    "max_microsd_gb": 512,
+    "nvr_compatible": false,
+    "cloud": true
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "video": {
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "fixed wide-angle lens",
+        "resolution": "3840x2160",
+        "fps": 15
+      },
+      {
+        "name": "pan-tilt lens",
+        "resolution": "3840x2160",
+        "fps": 15
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "82 x 161 x 132",
+  "operating_temp_c": "-30 to 60",
+  "status": "available",
+  "features": [
+    "4K dual-lens pan/tilt camera",
+    "fixed 170 wide-angle lens + 8mm pan/tilt telephoto lens",
+    "338 pan / 97 tilt mechanical range (360 pan / 120 tilt coverage)",
+    "18x digital zoom",
+    "color night vision with integrated spotlights",
+    "AI person/pet/vehicle detection",
+    "94dB siren",
+    "Wi-Fi 6 dual-band or PoE/Ethernet",
+    "RTSP/ONVIF",
+    "no subscription"
+  ],
+  "sources": [
+    "https://www.tp-link.com/us/home-networking/cloud-camera/tapo-c575d/"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/stream1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/stream2",
+      "autotracking": false,
+      "onvif_port": 2020,
+      "two_way_audio": true,
+      "notes": "Enable ONVIF/RTSP in the Tapo app (Camera Settings > Advanced) and create a Camera Account. Streams: /stream1 (main), /stream2 (sub). Dual-lens: the fixed and pan-tilt lenses expose separate streams. PoE (802.3af/at) supported for single-cable install. go2rtc alternative: TP-Link's proprietary protocol via go2rtc (tapo://<tapo-account-password>@{ip}) is often more stable than RTSP. Tapo exposes ONVIF PTZ on port 2020 (not 80)."
+    },
+    "home_assistant": {
+      "integration": "tapo",
+      "notes": "Native TP-Link Tapo integration. Requires Tapo cloud account credentials. For local-only, use the ONVIF integration as an alternative."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP streams: /stream1 (main), /stream2 (sub). Must enable ONVIF in the Tapo app."
+    }
+  },
+  "last_verified": "2026-09-02",
+  "markets": [
+    "global"
+  ]
+}
