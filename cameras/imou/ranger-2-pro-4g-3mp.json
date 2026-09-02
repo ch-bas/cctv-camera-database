@@ -1,0 +1,95 @@
+{
+  "id": "imou-ranger-2-pro-4g-3mp",
+  "brand": "IMOU",
+  "model": "Ranger 2 Pro 4G 3MP",
+  "type": "ptz",
+  "connectivity": [
+    "4g"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "3MP/2K"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 15
+  },
+  "sensor": "1/3\" Progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "91 H / 47 V / 107 D; pan 355 / tilt -5 to 80",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 15
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "DC 5V/1A; <5W",
+    "voltage": "DC 5V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif"
+  ],
+  "operating_temp_c": "-10 to 45",
+  "dimensions_mm": "77.4 x 77.4 x 106.1",
+  "weight_g": 200,
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "4G LTE pan-tilt (355 pan / -5 to 80 tilt)",
+    "Smart Full-Color night vision (15m)",
+    "8x digital zoom",
+    "smart motion tracking",
+    "one-touch call",
+    "AI human detection",
+    "ONVIF certified",
+    "two-way audio"
+  ],
+  "release_notes": "Ranger 2 Pro 4G 3MP: compact DC-powered 4G LTE pan-tilt camera (LTE FDD B1/3/5/7/8/20/28, TDD B38/40/41). Specs from Imou's official spec-page table (Ranger 2 Pro 4G 3MP/5MP). ONVIF is certified; RTSP path not published on the datasheet. No official IPC code; IP rating and min-lux not stated.",
+  "sources": [
+    "https://www.imou.com/en/product/specs/ranger2-pro4g-3mp-5mp",
+    "https://static-website.imou.com/590c1e75-67c9-4df8-b942-26bd23e8a873.pdf"
+  ],
+  "last_verified": "2026-09-02",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "ONVIF is officially certified for this model; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, but it is not independently verified on this SKU. Note this is a 4G-connected camera — local RTSP access requires being on the same LAN.",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+    }
+  },
+  "environment": [
+    "indoor"
+  ],
+  "markets": [
+    "global"
+  ]
+}
