@@ -6,6 +6,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.13.0] — Unreleased
+
+### Added
+-
+
+---
+
 ## [2.12.0] — 2026-09-02
 
 ### Added
