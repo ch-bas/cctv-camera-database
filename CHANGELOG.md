@@ -17,6 +17,9 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - **Xiaomi +2** — Outdoor Camera CW100 Dual (dual-lens 2K, IP66) & CW700S (dual-lens 2.5K PTZ, 9× hybrid zoom, IP66). From mi.com.
 - **D-Link +4** — Vigilance business IP line: `DCS-4618EK` (4K dome, motorized 3.3–12mm, IP66/IK10), `DCS-4712E` (2MP bullet), `DCS-4633EV` (3MP vandal dome, IP66/IK10), `DCS-4703E` (3MP PoE mini bullet). H.265/H.264, ONVIF. From official D-Link datasheets.
 - **Imou +14** — PS8E 4K PoE turret, Talos 3/5/8MP Wi-Fi 6 pan-tilt, AOV Track/PT Plus & Cell PT 3C battery/solar pan-tilt, Ranger 2 Pro 4G, and the Bullet 3 Pro (S3E) active-deterrence full-colour 3/5/8MP bullets + PS7F 8MP PoE pan-tilt. From official Imou datasheets; RTSP/ONVIF configs where officially supported.
+- **New brand: Inner Range — 9 cameras** (Inner Range Pty Ltd, Australia), the **IR Video** edge-camera line: 8MP domes (C8D-110/120Z), 8MP turrets (C8T-200/120Z), 8MP bullets (C8B-100/120Z, C8B-200Z active-deterrence, C8B-130 180° panoramic dual-lens) and the 5MP 30× IR/dual-light PTZ (C5P-10030X, auto-tracking, IR 150m). H.265, ONVIF, PoE, IP66/67. From official Inner Range datasheets. (12MP 360° fisheye C8S-100 deferred — no full spec table published.)
+- **New brand: Kenik — 18 cameras** (Kenik, Poland), IP camera line from official files.kenik.pl datasheet cards: 8/5/4/2MP domes, bullets & motorized-zoom variants with Smart Dual Light / active deterrence (`-ILCD`), Starlight & IR-only tiers, a dual-lens 180° dome/bullet, and a 4MP indoor pan-tilt. H.265+/H.264, ONVIF Profile S, PoE. (18 of ~192 catalogue models; analog HD-CVI/TVI coax lines and NVRs excluded.)
+- **New brand: Fermax — 1 camera** — `9985` Peripheral IP Dome Camera (2MP minidome, 2.8mm, IR, IP65/IK08, PoE) for DUOX PLUS / MEET intercom systems. From the Fermax 2025-2026 general catalogue.
 
 ---
 
