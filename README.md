@@ -82,6 +82,9 @@ const uk = cameras.filter(c =>
 const noSub = cameras.filter(c =>
   c.features?.some(f => f.toLowerCase().includes('no subscription'))
 );
+
+// Only NDAA (Section 889) compliant cameras — manufacturer-stated
+const ndaa = cameras.filter(c => c.ndaa_compliant === true);
 ```
 
 Or open `data/cameras.csv` in any spreadsheet for a quick browse.
