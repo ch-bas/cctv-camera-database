@@ -6,6 +6,38 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.14.0] — 2026-09-03
+
+Dataset grows to **7,055 cameras / 135 brands** and gains a first-class **NDAA Section 889 compliance** field.
+
+### Added — `ndaa_compliant` field (NDAA Section 889)
+- **New optional schema field `ndaa_compliant`** (boolean) — manufacturer-stated NDAA Section 889 compliance; non-breaking, mirrored in the web `Camera` type and surfaced in the UI (tri-state badge + feature filter). Populated **dataset-wide: 3,928 / 7,055 records decided (56%)** — **2,787 compliant**, **1,141 non-compliant** — every value backed by an official manufacturer source, never inferred (tracking: #348).
+  - **Compliant** via official portfolio declaration or published model list: i-PRO (504), Uniview (314), ACTi (179), Bosch (165), Milesight (159), Axis (136), Reolink (127), LILIN (110), Sunell (107), AVYCON (97), Arecont Vision (89), Digital Watchdog (70), Kenik (66), Honeywell (60), Illustra (60), JideTech (38), InVid (36), 3xLOGIC (31), Dallmeier (30), Uniarch (29), Hanwha (27), OpenEye (27), eneo (26), VIGI (25), Vicon (24), ClareVision (24), Ajax (23), Verkada (20), Vivotek (19), Luma (17), Pelco (17), GeoVision (17), Mobotix (16), Avigilon (16), Panasonic (14), Amcrest (12), Night Owl (11), Speco (10), Comelit (8), EverFocus (7), TKH Security (7), Bolide (6), Synology (4), March Networks (2), IDIS (1).
+  - **Non-compliant** (named in Section 889 + their own sub-brands): Hikvision (480), Dahua (409), Imou (108), EZVIZ (87), HiLook (30), plus Milesight's non-NDAA C-series PTZ variants (12).
+  - Third-party Hik/Dahua OEM rebrands (Annke, LTS, IC Realtime, BCS, LaView), disputed/OEM white-labels (Luminys, Holowits) and brands with no published position (Tapo, Kasa, Ring, Eufy, Wyze, Xiaomi, Arlo, Google, Sony, Lorex, ZKTeco, Tiandy, ABUS, Mapesen, Urmet, …) left **omitted** — never inferred.
+
+### Added — camera catalogues & new brands
+- **i-PRO catalogue** — WV-S4150 5MP 360° fisheye (#345), M-series modular IR bullets, and WV-X/S/U/V-series domes, fisheye & multisensor across 4 waves (i-PRO now 504 records).
+- **Milesight full catalogue (+173)** — the complete IP line over 5 waves: motorized/fixed bullets, domes & turrets (incl. TrueColor `MS-CQ` Smart-Light), fisheye, 180° panoramic mini, TrueColor dual-sensor 180°, 4×5MP multi-directional, speed domes, PTZ domes, and Pro Bullet Plus (incl. 5G/AIoT). From official NDAA G1/E/D/A datasheets.
+- **Uniview (+230)** — full EU catalogue (LB/LE, SB/SS/SE/SA dual-light/MultiView, EA/EB Wise-ISP, OwlView-WP2 ColorHunter) + gap records from global.uniview.com.
+- **Dahua (+55)** — PTZ speed domes, WiFi & wired mini-PT (`GNY`/`GNY-W`), HDCVI analog PT (`HAC`, `-HC` → `coax`, no RTSP), multi-sensor panoramic+PTZ (`PSDW`, lens.count 5–9), multi-sensor panoramic (`IPC-PDBW`), dual-directional, and SD2A/SD3E TiOC full-colour PT. Datasheets located on the Dahua CDN.
+- **Wyze +8** — Cam Pan v4 (4K), Indoor Cam Pan, Solar Cam Pan 2K, Duo Cam Pan, Battery Video Doorbell, Duo Cam Battery Doorbell, Window Cam, Bulb Cam.
+- **Lorex +3** — W282CAD, OC101A, W281AA Wi-Fi cameras.
+- **New brand: ecobee — 2 cameras** — Smart Doorbell Camera (wired) + Smart Camera (voice control); HomeKit/cloud.
+- **New brand: Zmodo — 9 cameras** — the 720p WiFi/PoE line (mini, two-way, bullet, dome, PoE, pan-tilt).
+- **Google Nest +1** — Nest Cam Outdoor (1st Gen, 2015, NC2100ES).
+- **Imou +33, Arlo +7** — new models.
+
+### Changed / Fixed
+- **Physical-spec backfill** — dimensions / weight / operating-temperature / power-consumption across Uniview, Imou, Sunell, Milesight and the new consumer records, from official datasheets (left absent only where the maker publishes an adapter rating rather than a camera wattage).
+- **Milesight** — reconciled 5 flagged records whose lens was wrongly listed as fixed 2.8mm (they are motorized varifocal per their exact-SKU datasheets; per-SKU focal ranges corrected).
+- **Blink** — Outdoor 3rd-Gen `release_year` 2022 → 2020 (SKU B086DKSHQ4 is the 2020 product).
+
+### Removed
+- **Provision-ISR** line (soft-removed).
+
+---
+
 ## [2.13.0] — 2026-09-02
 
 ### Added
