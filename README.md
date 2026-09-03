@@ -1,10 +1,10 @@
 # CCTV Camera Database
 
-An open, structured database of 6,546 CCTV / IP camera models and their technical specifications, covering 134 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
+An open, structured database of 6,399 CCTV / IP camera models and their technical specifications, covering 133 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
 
 [![build](https://github.com/ch-bas/cctv-camera-database/actions/workflows/build.yml/badge.svg)](https://github.com/ch-bas/cctv-camera-database/actions/workflows/build.yml)
-[![cameras](https://img.shields.io/badge/cameras-6%2C546-blue)](data/cameras.json)
-[![brands](https://img.shields.io/badge/brands-134-green)](cameras/)
+[![cameras](https://img.shields.io/badge/cameras-6%2C399-blue)](data/cameras.json)
+[![brands](https://img.shields.io/badge/brands-133-green)](cameras/)
 [![license](https://img.shields.io/badge/license-CC0-lightgrey)](LICENSE)
 
 ### Field coverage
@@ -19,10 +19,10 @@ An open, structured database of 6,546 CCTV / IP camera models and their technica
 
 <p align="center">
   <a href="https://cctv-database.com">
-    <img src="assets/cctv-database-showcase.gif" alt="CCTV Camera Database — search 6,546 cameras, browse full specs, copy ready-to-use Frigate configs, and audit the open dataset with the built-in QA tool" width="640">
+    <img src="assets/cctv-database-showcase.gif" alt="CCTV Camera Database — search 6,399 cameras, browse full specs, copy ready-to-use Frigate configs, and audit the open dataset with the built-in QA tool" width="640">
   </a>
   <br>
-  <sub><b><a href="https://cctv-database.com">cctv-database.com</a></b> — search 6,546 cameras · full spec sheets · copy-paste Frigate configs · open &amp; auditable</sub>
+  <sub><b><a href="https://cctv-database.com">cctv-database.com</a></b> — search 6,399 cameras · full spec sheets · copy-paste Frigate configs · open &amp; auditable</sub>
 </p>
 
 ---
@@ -53,7 +53,7 @@ The whole dataset is committed and ready to use — **no build step, no API key,
 
 | Format | File | Contents |
 |--------|------|----------|
-| JSON | [`data/cameras.json`](data/cameras.json) | all 6,546 cameras as one array |
+| JSON | [`data/cameras.json`](data/cameras.json) | all 6,399 cameras as one array |
 | CSV | [`data/cameras.csv`](data/cameras.csv) | flattened, spreadsheet-friendly |
 | ZIP | [`cameras.zip`](../../releases/latest) | versioned + checksummed, attached to each release |
 
@@ -116,7 +116,7 @@ Prefer to self-host or browse offline? A [standalone demo](docs/demo.html) (just
 - **Sort** — click any column header to sort ascending/descending
 - **Detail drawer** — click a row to slide open the full spec sheet (resolution, connectivity, protocols, storage, audio, source links)
 - **Community notes** — user-reported quirks and behaviors per camera, sourced and attributed, kept separate from datasheet specs
-- **Pagination** — page through all 6,546 cameras, 25 per page
+- **Pagination** — page through all 6,399 cameras, 25 per page
 - **Stats bar** — live counts for total cameras, brands, 4K+, WiFi, and no-subscription models
 
 ---
@@ -194,7 +194,7 @@ Other scripts: `npm run add` (interactive add-a-camera wizard) and `npm run chec
 
 ### RTSP reference layer
 
-`data/rtsp-patterns.json` is a **CC0 brand-level RTSP URL reference** for 172 brands (118 verified / 54 unverified / 349 stream templates). Each path is confirmed against the manufacturer's own documentation — never copied from aggregators. Regenerate after editing `strix/verified/`:
+`data/rtsp-patterns.json` is a **CC0 brand-level RTSP URL reference** for 172 brands (118 verified / 54 unverified / 348 stream templates). Each path is confirmed against the manufacturer's own documentation — never copied from aggregators. Regenerate after editing `strix/verified/`:
 
 ```bash
 RTSP_PATTERNS_DATE=$(date +%Y-%m-%d) node scripts/build-rtsp-patterns.js
@@ -231,22 +231,22 @@ A device type is only emitted when the camera has a known RJ45 link speed (`netw
 
 | Metric | Count |
 |--------|-------|
-| Total cameras | **6,546** |
-| Brands | **134** |
+| Total cameras | **6,399** |
+| Brands | **133** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
-| PoE wired | 4,784 |
-| WiFi | 898 |
-| Battery / wire-free | 280 |
-| 4K / 8MP+ | 1,640 |
-| 4–7MP | 2,598 |
-| Under 4MP | 2,308 |
-| With integration configs (Frigate / Home Assistant) | 4,317 |
-| With color-lux rating (`night_vision.min_lux_color`) | 4,092 |
+| PoE wired | 4,678 |
+| WiFi | 895 |
+| Battery / wire-free | 279 |
+| 4K / 8MP+ | 1,624 |
+| 4–7MP | 2,537 |
+| Under 4MP | 2,238 |
+| With integration configs (Frigate / Home Assistant) | 4,206 |
+| With color-lux rating (`night_vision.min_lux_color`) | 3,992 |
 
-### All 134 brands
+### All 133 brands
 
 <details>
-<summary><strong>All 134 brands</strong> — camera count &amp; market segment (click to expand)</summary>
+<summary><strong>All 133 brands</strong> — camera count &amp; market segment (click to expand)</summary>
 
 <!-- brands-table:start (auto-generated by scripts/build.js — do not edit counts by hand; edit the Segment text and it is preserved) -->
 | Brand | Cameras | Segment |
@@ -259,7 +259,6 @@ A device type is only emitted when the camera has a known RJ45 link speed (`netw
 | NOVUS | 164 | Installer IP + analog (AAT), PL/EU |
 | Sunell | 155 | — |
 | AVYCON | 153 | Prosumer/commercial (NDAA), US |
-| Provision-ISR | 147 | Installer IP + 4-in-1 analog, IL/global |
 | Kenik | 145 | — |
 | ABUS | 144 | Consumer + professional, GDPR-first, DE/AT/CH |
 | Annke | 140 | Prosumer, global |
@@ -411,9 +410,9 @@ cctv-camera-database/
 │   ├── bosch/            # 255 cameras
 │   ├── acti/             # 251 cameras
 │   ├── novus/            # 164 cameras
-│   └── …128 more brands
+│   └── …127 more brands
 ├── data/                 # GENERATED — do not edit by hand
-│   ├── cameras.json      # all 6,546 cameras as one array
+│   ├── cameras.json      # all 6,399 cameras as one array
 │   ├── cameras.csv       # flattened, spreadsheet-friendly
 │   └── rtsp-patterns.json  # CC0 brand-level RTSP URL layer (172 brands)
 ├── strix/
@@ -448,7 +447,7 @@ Open — contributions very welcome:
 
 - [ ] **Re-source ~1,051 reseller-only cameras** to official OEM datasheets (#164 / #165)
 - [ ] **Backfill pixel resolution** for the ~506 entries that state megapixels but no width×height (#169)
-- [ ] **Frigate verification drive** — only 28 of 4,271 shipped configs are community-verified; [confirm one you run](../../issues/new?template=verify-frigate-config.yml)
+- [ ] **Frigate verification drive** — only 28 of 4,160 shipped configs are community-verified; [confirm one you run](../../issues/new?template=verify-frigate-config.yml)
 - [ ] **Grow `community_notes`** — the per-camera quirks/behaviors layer (#297)
 
 ---
