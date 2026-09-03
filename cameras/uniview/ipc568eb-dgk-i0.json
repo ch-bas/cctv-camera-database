@@ -1,0 +1,125 @@
+{
+  "id": "uniview-ipc568eb-dgk-i0",
+  "brand": "Uniview",
+  "model": "IPC568EB-DGK-I0",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "aperture": "DC-iris/P-iris",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "min_lux": 0.0002,
+    "min_lux_color": 0.002
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30
+      },
+      {
+        "name": "third",
+        "resolution": "720x576",
+        "fps": 30
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V / AC 24V",
+    "consumption_w": 8
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "LightHunter technology for low-illumination scenes",
+    "Up to 120 dB optical WDR",
+    "C/CS lens mount, high-precision motorized lens support, ABF (auto back focus)",
+    "Optical and digital defog",
+    "Ultra 265 (U-code) smart encoding, triple streams",
+    "Smart intrusion prevention with human/vehicle classification",
+    "People counting and crowd density detection",
+    "SFP fiber-optic interface"
+  ],
+  "operating_temp_c": "-20 to 60",
+  "weight_g": 400,
+  "dimensions_mm": "152 x 71 x 65",
+  "sources": [
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/8de1c28e-0174-4cfc-b064-5ce5e5799af2/81be72f6-e6fb-4b11-9380-250eb8021cd5.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Main stream c1/s0/live (3840x2160), sub stream c1/s1/live (1280x720). Box camera requires separate C/CS lens and outdoor housing. Default ONVIF port 80."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  },
+  "last_verified": "2026-09-03",
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "ndaa_compliant": true
+}

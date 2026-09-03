@@ -1,0 +1,90 @@
+{
+  "id": "uniview-ipc2324lb-adzk-k",
+  "brand": "Uniview",
+  "model": "IPC2324LB-ADZK-K",
+  "type": "bullet",
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "sensor": "1/3.0\" CMOS",
+  "field_of_view_deg": "95.6 to 30.9 horizontal, 52.0 to 17.6 vertical, 112.2 to 33.7 diagonal",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux_color": 0.003
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 8.1,
+    "voltage": "DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "206 x 73 x 73",
+  "weight_g": 510,
+  "markets": [
+    "global"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/ccfeec1d-3634-4360-87b8-5e2cd354436e/1684f846-eacc-4ef1-833a-989f4be151a1.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Main stream /unicast/c1/s0/live, sub stream /unicast/c1/s1/live. ONVIF on port 80."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  },
+  "ndaa_compliant": true
+}

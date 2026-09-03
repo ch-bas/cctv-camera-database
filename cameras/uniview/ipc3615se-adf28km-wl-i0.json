@@ -1,0 +1,122 @@
+{
+  "id": "uniview-ipc3615se-adf28km-wl-i0",
+  "brand": "Uniview",
+  "model": "IPC3615SE-ADF28(40)KM-WL-I0",
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2880,
+    "max_height": 1620,
+    "label": "5MP"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "field_of_view_deg": "102.0 horizontal, 53.4 vertical, 121.0 diagonal (2.8mm)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "color",
+    "range_m": 30,
+    "min_lux_color": 0.001
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2880x1620",
+        "fps": 30
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 7.5,
+    "voltage": "DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "ColorHunter 24-hour full-color imaging",
+    "Warm light supplemental illumination",
+    "Ultra 265 (U-code) smart encoding",
+    "120 dB true WDR",
+    "Smart intrusion prevention (cross line, intrusion, enter/leave area)",
+    "Human, motor-vehicle and non-motor-vehicle classification",
+    "People flow counting and crowd density monitoring",
+    "HLC / BLC / digital defog",
+    "9:16 corridor mode"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "weight_g": 440,
+  "dimensions_mm": "110.5 diameter x 94.1",
+  "release_year": 2023,
+  "sources": [
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/321cb793-4b47-4198-83b5-6ac1cea8387a/30530950-8047-44e8-8332-66ef8728258e.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Main stream /unicast/c1/s0/live (2880x1620), sub stream /unicast/c1/s1/live (1280x720). ONVIF on port 80."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  },
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": true
+}

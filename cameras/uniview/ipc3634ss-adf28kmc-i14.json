@@ -1,0 +1,94 @@
+{
+  "id": "uniview-ipc3634ss-adf28kmc-i14",
+  "brand": "Uniview",
+  "model": "IPC3634SS-ADF28KMC-I14",
+  "aliases": [
+    "IPC3634SS-ADF40KMC-I14"
+  ],
+  "type": "turret",
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "sensor": "1/2.7\" CMOS",
+  "field_of_view_deg": "102.3 horizontal, 54.7 vertical, 106.8 diagonal (2.8mm)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.001
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 9.5
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 512
+  },
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Ø129 x 118",
+  "weight_g": 700,
+  "markets": [
+    "global"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/8bc057c5-1e80-434d-95db-b22e70f14c5b/8c217cd1-f815-43bb-b431-f84bebd954ca.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Uniview RTSP. Main stream /unicast/c1/s0/live, sub stream /unicast/c1/s1/live. ONVIF on port 80."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  },
+  "ndaa_compliant": true
+}

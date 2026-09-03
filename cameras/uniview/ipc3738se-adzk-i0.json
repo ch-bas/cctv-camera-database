@@ -1,0 +1,127 @@
+{
+  "id": "uniview-ipc3738se-adzk-i0",
+  "brand": "Uniview",
+  "model": "IPC3738SE-ADZK-I0",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "field_of_view_deg": "101.1 to 48.0 horizontal, 57.2 to 23.9 vertical, 124.3 to 59.0 diagonal",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 to 12",
+    "aperture": "F1.2",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40,
+    "min_lux_color": 0.0008
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30
+      },
+      {
+        "name": "third",
+        "resolution": "720x576",
+        "fps": 30
+      }
+    ]
+  },
+  "power": {
+    "method": "DC 12 V (±25%), PoE (IEEE 802.3af)",
+    "consumption_w": 10,
+    "poe_class": 3,
+    "voltage": "DC 12 V"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "LightHunter",
+    "Ultra 265 (U-code) smart encoding",
+    "WDR (120 dB)",
+    "smart intrusion prevention",
+    "people counting",
+    "road traffic license capture",
+    "built-in heater",
+    "HLC / BLC / digital defog / 2D/3D DNR"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "weight_g": 1500,
+  "dimensions_mm": "162 x 162 x 149",
+  "sources": [
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/a7b86c75-026c-4768-ab00-7667bcb0234b/bd49d007-7201-4f96-a239-6b4221d4fa5a.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Main stream 4K H.265/Ultra265 on /unicast/c1/s0/live; use the 720p sub-stream /unicast/c1/s1/live for detection. Enable a sub-stream for Frigate detect."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S/G/T/M supported). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  },
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": true
+}

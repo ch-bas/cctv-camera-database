@@ -1,0 +1,103 @@
+{
+  "id": "uniview-ipc3238sa-adzk-pi-i2a8",
+  "brand": "Uniview",
+  "model": "IPC3238SA-ADZK-PI-I2A",
+  "type": "dome",
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "sensor": "1/1.8\" CMOS",
+  "field_of_view_deg": "107.4 to 49.1 horizontal, 56.4 to 27.9 vertical, 128.8 to 60.4 diagonal",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5",
+    "aperture": "F1.2",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40,
+    "min_lux_color": 0.001
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "fps": 30
+      }
+    ]
+  },
+  "power": {
+    "method": "DC 12V / PoE (IEEE 802.3af)",
+    "consumption_w": 12
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "148 x 148 x 111.4",
+  "weight_g": 950,
+  "markets": [
+    "global"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/ccbd94cc-8762-4065-9e13-5d0c2f818bfe/b37aab40-014b-49a9-a89e-3982c3e67ce1.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Main stream c1/s0 (3840x2160), substream c1/s1 (1920x1080). ONVIF Profile S/G/T/M on port 80."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  }
+}

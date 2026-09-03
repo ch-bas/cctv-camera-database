@@ -1,0 +1,94 @@
+{
+  "id": "uniview-ipc322le-adf28k-dl",
+  "brand": "Uniview",
+  "model": "IPC322LE-ADF28K-DL3",
+  "aliases": [
+    "IPC322LE-ADF40K-DL3"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "field_of_view_deg": "100.3 horizontal, 56.0 vertical, 116.4 diagonal (2.8mm); 86.5 horizontal, 46.6 vertical, 102.5 diagonal (4.0mm)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.001
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "method": "DC 12V / PoE (IEEE 802.3af)",
+    "consumption_w": 4.4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "111.0 diameter x 82.5",
+  "weight_g": 350,
+  "release_year": 2026,
+  "markets": [
+    "global"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/8d089313-2864-4390-a774-b8b933e6946d/938f0de5-423e-4873-8e4f-ac750bf62662.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Vandal dome. Main stream c1/s0/live (1080p), sub stream c1/s1/live. ONVIF Profile S/G/T on port 80."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration; default ONVIF port 80. RTSP main rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  },
+  "ndaa_compliant": true
+}

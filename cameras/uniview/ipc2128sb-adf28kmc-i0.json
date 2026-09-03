@@ -1,0 +1,137 @@
+{
+  "id": "uniview-ipc2128sb-adf28kmc-i0",
+  "brand": "Uniview",
+  "model": "IPC2128SB-ADF28KMC-I0",
+  "aliases": [
+    "IPC2128SB-ADF40KMC-I0"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "field_of_view_deg": "112.4 horizontal, 60.1 vertical, 146.1 diagonal",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.0025
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "720x576",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 10.5
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "dual-light (IR + warm light) supplemental illumination",
+    "8MP (3840x2160) resolution",
+    "light and audible warning (active deterrence)",
+    "Smart Intrusion Prevention (cross-line, intrusion, enter/leave area)",
+    "human / vehicle / non-motor-vehicle classification",
+    "people flow counting and crowd density monitoring",
+    "120 dB true WDR",
+    "9:16 corridor mode",
+    "smart IR up to 30 m / warm light up to 30 m",
+    "Ultra 265 (U-code) smart encoding"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "191 x 75 x 74",
+  "weight_g": 410,
+  "release_year": 2023,
+  "sources": [
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/d671e317-1590-4820-ace6-daa7b55d40b0/d9cf9aff-4303-457d-b7da-c6d82b2232ad.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "notes": "AF28(40): 2.8mm (this record) or 4.0mm (IPC2128SB-ADF40KMC-I0). Main 8MP@20 (lower res 30 fps). Sub /unicast/c1/s1/live. Built-in speaker supports active audible warning. ONVIF on port 80."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  },
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ndaa_compliant": true
+}

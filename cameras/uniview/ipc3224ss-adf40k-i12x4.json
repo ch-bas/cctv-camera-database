@@ -1,0 +1,128 @@
+{
+  "id": "uniview-ipc3224ss-adf40k-i12x4",
+  "brand": "Uniview",
+  "model": "IPC3224SS-ADF40K-I12x4",
+  "type": "dual-lens",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/3.0\" CMOS",
+  "field_of_view_deg": "81.39 horizontal, 43.36 vertical, 86.91 diagonal",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "4.0",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.002
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "DC 12V / PoE (IEEE 802.3af)",
+    "consumption_w": 9.1,
+    "voltage": "DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Dual-channel non-splicing multiview",
+    "Ultra 265 (U-code) smart encoding",
+    "WDR (130 dB)",
+    "smart intrusion prevention",
+    "human/vehicle detection",
+    "people flow counting and crowd density monitoring",
+    "built-in dual-mic",
+    "Smart IR",
+    "HLC / BLC / digital defog"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "weight_g": 620,
+  "dimensions_mm": "176 x 104 x 72",
+  "sources": [
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/04d9484f-5cef-4c66-8a93-ee8202d8da60/82951f23-ed18-4409-a4e0-622b2ffcfe6a.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dual-channel multiview camera: channel 1 and channel 2 are exposed separately (e.g. /unicast/c2/s0/live for the second channel). Adjust the channel index in the path for each lens."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (default ONVIF port 80). This is a dual-channel camera, so two video streams are exposed."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (channel 1 main), /unicast/c1/s1/live (channel 1 sub); use /unicast/c2/s0/live for the second channel."
+    }
+  },
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ndaa_compliant": true
+}

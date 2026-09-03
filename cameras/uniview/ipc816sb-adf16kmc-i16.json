@@ -1,0 +1,92 @@
+{
+  "id": "uniview-ipc816sb-adf16kmc-i16",
+  "brand": "Uniview",
+  "model": "IPC816SB-ADF16KMC-I16",
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 2560,
+    "max_height": 2560,
+    "label": "6MP"
+  },
+  "sensor": "1/2.5\" CMOS",
+  "field_of_view_deg": "180 horizontal, 180 vertical, 180 diagonal",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.6",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 15,
+    "min_lux_color": 0.005
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 8.4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "126 diameter x 52",
+  "weight_g": 440,
+  "markets": [
+    "global"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/eb4d0d45-16fc-44b8-a51a-7d248c0e5bb1/033198cb-2f94-46c7-8459-7aa3cfef2ff7.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Main stream c1/s0/live, sub stream c1/s1/live. ONVIF on port 80. Fisheye 360-degree panoramic; dewarping in NVR/client."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration with default ONVIF port 80. RTSP main: /unicast/c1/s0/live, sub: /unicast/c1/s1/live."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  },
+  "ndaa_compliant": true
+}

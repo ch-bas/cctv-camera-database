@@ -1,0 +1,121 @@
+{
+  "id": "dahua-sd42c212t-hn",
+  "brand": "Dahua",
+  "model": "SD42C212T-HN",
+  "aliases": [
+    "DH-SD42C212T-HN",
+    "SD42C212T-HN-S2",
+    "DH-SD42C212TN-HN",
+    "SD42C212TN-HN"
+  ],
+  "ndaa_compliant": false,
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" STARVIS CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.3-64",
+    "aperture": "F1.6-F4.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "58.2-4.8 horizontal",
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.005
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub2",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ptz": {
+    "autotracking": false
+  },
+  "power": {
+    "method": "PoE+ (802.3at) / DC 24V",
+    "voltage": "24 VDC",
+    "consumption_w": 12
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256
+  },
+  "audio": {
+    "two_way": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ik_rating": "IK10",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Ø198 x 158",
+  "weight_g": 2300,
+  "features": [
+    "12x optical zoom",
+    "Starlight",
+    "face detection",
+    "perimeter protection (IVS)",
+    "WDR 120dB",
+    "pan 360 endless, tilt -2 to +90"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://materialfile.dahuasecurity.com/uploads/cpq/16481/datasheet/SD42C212T-HN(-S2)_datasheet_20210930.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua realmonitor RTSP; ONVIF port 80; PTZ via ONVIF."
+    },
+    "home_assistant": {
+      "integration": "onvif"
+    },
+    "blue_iris": {
+      "profile": "Dahua"
+    }
+  }
+}

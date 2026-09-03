@@ -1,0 +1,137 @@
+{
+  "id": "uniview-ipc3232sb-ahdzk-pi-i0",
+  "brand": "Uniview",
+  "model": "IPC3232SB-AHDZK-PI-I0",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "field_of_view_deg": "96.6-32.4 horizontal, 53.1-18.6 vertical, 112.8-37.2 diagonal",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12",
+    "aperture": "F1.4",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40,
+    "min_lux_color": 0.001
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "720x576",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 8
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "motorized varifocal 2.8-12mm (4x optical zoom, P-iris)",
+    "LightHunter low-light technology",
+    "1080p@60fps main stream",
+    "Smart Intrusion Prevention (cross-line, intrusion, enter/leave area)",
+    "people flow counting and crowd density monitoring",
+    "human / non-motor-vehicle / vehicle classification",
+    "120 dB optical WDR",
+    "9:16 corridor mode",
+    "smart IR up to 40 m",
+    "IK10 vandal-resistant",
+    "Ultra 265 (U-code) smart encoding"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "148 x 148 x 111.4",
+  "weight_g": 930,
+  "release_year": 2023,
+  "sources": [
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/58fa0293-f126-44e5-971f-7e467c7aa0a3/3aa5edc2-fedf-4d3c-ac26-863451cb9319.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "verified": false,
+      "notes": "Triple stream. Main 1080p@60 /unicast/c1/s0/live; sub 1080p@60 /unicast/c1/s1/live; third D1 /unicast/c1/s2/live. ONVIF on port 80."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  },
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ndaa_compliant": true
+}
