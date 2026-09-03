@@ -241,7 +241,7 @@ A device type is only emitted when the camera has a known RJ45 link speed (`netw
 | 4–7MP | 2,764 |
 | Under 4MP | 2,468 |
 | With integration configs (Frigate / Home Assistant) | 4,748 |
-| With color-lux rating (`night_vision.min_lux_color`) | 4,530 |
+| With color-lux rating (`night_vision.min_lux_color`) | 4,532 |
 
 ### All 133 brands
 
