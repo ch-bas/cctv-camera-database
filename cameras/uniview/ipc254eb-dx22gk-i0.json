@@ -1,0 +1,126 @@
+{
+  "id": "uniview-ipc254eb-dx22gk-i0",
+  "brand": "Uniview",
+  "model": "IPC254EB-DX22GK-I0",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "field_of_view_deg": "3.49 to 60.47 horizontal, 1.97 to 36.30 vertical, 4.12 to 74.38 diagonal",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6.5-143",
+    "aperture": "F1.5",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 150,
+    "min_lux_color": 0.001
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "fps": 30
+      },
+      {
+        "name": "third",
+        "resolution": "720x576",
+        "fps": 30
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3at) / AC 24V",
+    "consumption_w": 16
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "LightHunter technology for low-illumination scenes",
+    "22X optical zoom, 16X digital zoom",
+    "Up to 120 dB optical WDR",
+    "Ultra 265 (U-code) smart encoding, triple streams",
+    "Smart intrusion prevention with human/vehicle classification",
+    "People counting and crowd density detection",
+    "Built-in heater",
+    "SFP fiber-optic interface"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "weight_g": 3700,
+  "dimensions_mm": "395 x 137 x 112",
+  "sources": [
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/3d99c273-245b-44cc-94b5-2f5d7459814e/b5bd7165-aad8-4ba1-9c27-c0ff663b2de6.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Main stream c1/s0/live (2688x1520), sub stream c1/s1/live (1920x1080). Default ONVIF port 80."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  },
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  }
+}
