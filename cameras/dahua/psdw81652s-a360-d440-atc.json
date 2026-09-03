@@ -1,0 +1,132 @@
+{
+  "id": "dahua-psdw81652s-a360-d440-atc",
+  "brand": "Dahua",
+  "model": "PSDW81652S-A360-D440-ATC",
+  "aliases": [
+    "DH-PSDW81652S-A360-D440-ATC",
+    "PSDW81652S-A360-D440",
+    "DH-PSDW81652S-A360-D440"
+  ],
+  "ndaa_compliant": false,
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP (PTZ channel)"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 9,
+    "focal_length_mm": "5.2-210 (PTZ)",
+    "aperture": "F1.6-F5.0 (PTZ)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "60.8-2.8 horizontal (PTZ)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 150,
+    "min_lux_color": 0.001
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "panoramic-main",
+        "resolution": "8192x1800",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "ptz-main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "ptz-sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "PoE++ (802.3bt) / DC 36V",
+    "voltage": "36 VDC",
+    "consumption_w": 67.8
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "Ø280 x 368",
+  "weight_g": 8800,
+  "features": [
+    "WizMind",
+    "multi-sensor 360 panorama (8 × 2MP) + 40x optical zoom PTZ (4MP)",
+    "16MP total panoramic resolution",
+    "Xinghan Large-Scale AI Models (crowd map)",
+    "150m IR / 100m warm light (PTZ)",
+    "AR panorama, smart tracking, flexible splicing",
+    "gyroscope image stabilization (PTZ)",
+    "vehicle density, boat detection, video metadata, face detection",
+    "dual mic + dual speaker"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/PSDW81652S-A360-D440_S0_datasheet_20250708.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "release_year": 2025,
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua realmonitor RTSP; ONVIF port 80; PTZ via ONVIF."
+    },
+    "home_assistant": {
+      "integration": "onvif"
+    },
+    "blue_iris": {
+      "profile": "Dahua"
+    }
+  }
+}
