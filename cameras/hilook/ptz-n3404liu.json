@@ -1,0 +1,135 @@
+{
+  "id": "hilook-ptz-n3404liu",
+  "brand": "HiLook",
+  "model": "PTZ-N3404LIU/SL",
+  "aliases": [],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 to 12",
+    "aperture": "Max. F1.5",
+    "varifocal": true
+  },
+  "field_of_view_deg": "96.7 to 31.6 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "PoE (802.3at) / DC 12V",
+    "consumption_w": 14,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 65",
+  "dimensions_mm": "179.3 x 120.5 x 182",
+  "weight_g": 1125,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "MENA",
+    "global"
+  ],
+  "features": [
+    "4 MP intelligent network PTZ",
+    "4x optical zoom and 16x digital zoom (2.8 to 12 mm)",
+    "EXIR IR up to 50 m",
+    "120 dB WDR",
+    "human and vehicle detection with auto-tracking",
+    "red & blue flashing light and strobe alarm",
+    "H.265+ compression",
+    "built-in microphone and speaker (two-way audio) + alarm I/O",
+    "microSD up to 256 GB",
+    "IP66, TVS 6000V lightning protection"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000140881/Datasheet-of-PTZ-N3404LIU-SL-20240801.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "ptz": {
+    "autotracking": true
+  },
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "HiLook (Hikvision OEM); ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "HiLook uses the Hikvision protocol — select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The HiLook PTZ-N3404LIU/SL is a 4 MP intelligent network PTZ camera with a 4x optical (16x digital) zoom 2.8 to 12 mm lens, EXIR IR to 50 m, 120 dB WDR, human/vehicle detection with auto-tracking, a red & blue flashing light and strobe alarm, plus two-way audio and alarm I/O. Specs verified against the official HiLook datasheet Datasheet-of-PTZ-N3404LIU-SL-20240801.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

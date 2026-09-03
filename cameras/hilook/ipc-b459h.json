@@ -1,0 +1,131 @@
+{
+  "id": "hilook-ipc-b459h",
+  "brand": "HiLook",
+  "model": "IPC-B459H",
+  "aliases": [
+    "IPC-B459H-C",
+    "IPC-B459H(4mm)",
+    "IPC-B459H(6mm)",
+    "HiLook 5 MP ColorVu Fixed Bullet"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2560,
+    "max_height": 1920,
+    "label": "5 MP"
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4 / 6 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "76 horizontal (4 mm) / 50 horizontal (6 mm)",
+  "night_vision": {
+    "type": "color",
+    "range_m": 50,
+    "min_lux_color": 0.001
+  },
+  "power": {
+    "method": "PoE (802.3af Class 3) / DC 12V",
+    "consumption_w": 6.5,
+    "poe_class": 3,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "83.7 x 80.7 x 206.6",
+  "weight_g": 395,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "MENA",
+    "global"
+  ],
+  "features": [
+    "5 MP fixed bullet",
+    "ColorVu 24/7 colorful imaging",
+    "F1.0 super-aperture lens",
+    "White-light supplement up to 50 m",
+    "Excellent low-light performance",
+    "H.265+",
+    "120 dB WDR",
+    "ONVIF/RTSP",
+    "IP67",
+    "Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000057175/IPC-B459H-C_Datasheet_20240709.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "HiLook (Hikvision OEM); ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "HiLook uses the Hikvision protocol — select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "HiLook 5 MP ColorVu fixed bullet with 24/7 colorful imaging via an F1.0 super-aperture lens, white-light supplement up to 50 m, 120 dB WDR and H.265+ compression. Verified against the official HiLook datasheet IPC-B459H-C_Datasheet_20240709.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1920",
+        "fps": 20,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

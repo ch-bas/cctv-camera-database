@@ -1,0 +1,130 @@
+{
+  "id": "hilook-ipc-t269had-lu",
+  "brand": "HiLook",
+  "model": "IPC-T269HAD-LU",
+  "aliases": [],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3632,
+    "max_height": 1632,
+    "label": "6 MP"
+  },
+  "sensor": "1/2.5\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.001
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / DC 12V",
+    "consumption_w": 8.5,
+    "poe_class": 3,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Ø 130.1 × 109.1",
+  "weight_g": 580,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "MENA",
+    "global"
+  ],
+  "features": [
+    "6 MP 180-degree panoramic fixed turret",
+    "24/7 color imaging",
+    "Smart Hybrid Light (IR + white light), up to 30 m",
+    "Person and Vehicle Detection",
+    "built-in microphone",
+    "120 dB WDR",
+    "H.265+ compression",
+    "IP67",
+    "Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/sm000084274/IPC-T269HAD-LUF_Datasheet_20241108.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "HiLook (Hikvision OEM); ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "HiLook uses the Hikvision protocol — select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "HiLook 6 MP 180-degree panoramic fixed turret with Smart Hybrid Light, person/vehicle detection and built-in microphone; 120 dB WDR, IP67. The -LU variant has no microSD slot. Specs verified against the official HiLook datasheet IPC-T269HAD-LUF_Datasheet_20241108.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3632x1632",
+        "fps": 20,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1200x536",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

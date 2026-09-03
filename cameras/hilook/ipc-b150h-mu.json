@@ -1,0 +1,134 @@
+{
+  "id": "hilook-ipc-b150h-mu",
+  "brand": "HiLook",
+  "model": "IPC-B150H-MU",
+  "aliases": [
+    "IPC-B150H-MU(2.8mm)(C)(UK)",
+    "IPC-B150H-MU(4mm)(C)(UK)"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2560,
+    "max_height": 1920,
+    "label": "5MP"
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "98 horizontal (2.8 mm) / 75.3 horizontal (4 mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.028
+  },
+  "power": {
+    "method": "PoE (802.3af Class 3) / DC 12V",
+    "consumption_w": 6.5,
+    "poe_class": 3,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Ø181.5 x 71.33",
+  "weight_g": 400,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "GB",
+    "global"
+  ],
+  "features": [
+    "5 MP IR fixed bullet",
+    "EXIR IR up to 30 m",
+    "Built-in microphone",
+    "WDR 120 dB",
+    "3D DNR",
+    "H.265+",
+    "Dual stream",
+    "IP67",
+    "ONVIF/RTSP",
+    "Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000065986/IPC-B150H-MU.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "HiLook (Hikvision OEM); ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "HiLook uses the Hikvision protocol - select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "HiLook 5 MP IR fixed bullet with EXIR IR up to 30 m, built-in microphone, 120 dB WDR and H.265+ compression. Verified against the official HiLook datasheet IPC-B150H-MU.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1920",
+        "fps": 15,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

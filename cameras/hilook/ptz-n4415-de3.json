@@ -1,0 +1,121 @@
+{
+  "id": "hilook-ptz-n4415-de3",
+  "brand": "HiLook",
+  "model": "PTZ-N4415-DE3(J)",
+  "aliases": [
+    "PTZ-N4415-DE3"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/2.5\" progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5-75 (15x optical)",
+    "aperture": "F1.6 to F2.8",
+    "varifocal": true
+  },
+  "field_of_view_deg": "53.8 to 4.0 horizontal (wide to tele)",
+  "power": {
+    "method": "12 VDC / PoE (802.3at)",
+    "consumption_w": 18,
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ik_rating": "IK10",
+  "operating_temp_c": "-10 to 50",
+  "dimensions_mm": "165 diameter x 168",
+  "weight_g": 2000,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "MENA",
+    "global"
+  ],
+  "features": [
+    "4MP (2560x1440) 4-inch Powered-by-DarkFighter network speed dome",
+    "15x optical / 16x digital zoom",
+    "H.265+ compression",
+    "Digital WDR",
+    "EIS image stabilization",
+    "HLC, BLC, 3D DNR, defog",
+    "IK10 vandal resistant, in-ceiling indoor model",
+    "Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000100978/PTZ-N4415-DE3_Datasheet_20251222.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "HiLook uses the Hikvision RTSP path (main 101 / sub 102); enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "HiLook (Hikvision OEM); ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "HiLook uses the Hikvision protocol — select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "HiLook PTZ-N4415-DE3(J) is a 4MP (2560x1440) 4-inch Powered-by-DarkFighter in-ceiling indoor network speed dome with 15x optical zoom, digital WDR, EIS and IK10 vandal resistance. Verified against the official HiLook datasheet PTZ-N4415-DE3_Datasheet_20251222.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "indoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

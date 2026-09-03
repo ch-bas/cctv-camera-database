@@ -1,0 +1,137 @@
+{
+  "id": "hilook-ipc-t680h-mz",
+  "brand": "HiLook",
+  "model": "IPC-T680H-MZ",
+  "aliases": [
+    "IPC-T680H-MZ (2.8 to 12 mm)",
+    "IPC-T680H-MZ#UK"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8 MP"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 to 12 (motorized)",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "108 to 30 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40,
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / DC 12V",
+    "consumption_w": 12.5,
+    "poe_class": 3,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Ø 138.3 × 128",
+  "weight_g": 830,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "GB",
+    "global"
+  ],
+  "features": [
+    "8 MP (4K) motorized varifocal turret",
+    "2.8-12 mm motorized lens",
+    "EXIR up to 40 m IR",
+    "120 dB WDR",
+    "audio and alarm I/O (1 line in / 1 line out, 1 alarm in / 1 out)",
+    "H.265+",
+    "microSD up to 256 GB",
+    "ONVIF/RTSP",
+    "IP67 and IK10 vandal-proof",
+    "Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000063122/IPC-T680H-MZ.pdf",
+    "https://www.hikvision.com/uk/products/HiLook-IP-Products/Network-Cameras/"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "HiLook (Hikvision OEM); ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "HiLook uses the Hikvision protocol — select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "HiLook 8 MP (4K) motorized varifocal (2.8-12 mm) IR VF turret with EXIR up to 40 m, 120 dB WDR, audio and alarm I/O, microSD up to 256 GB, IP67/IK10. Verified against the official HiLook datasheet IPC-T680H-MZ.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 20,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

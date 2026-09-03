@@ -1,0 +1,137 @@
+{
+  "id": "hilook-ipc-t289h-mu",
+  "brand": "HiLook",
+  "model": "IPC-T289H-MU",
+  "aliases": [
+    "IPC-T289H-MU/SL",
+    "IPC-T289H-MU#UK"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8 MP"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "108 (2.8mm) / 88 (4mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "PoE (802.3at, Class 4) / DC 12V",
+    "consumption_w": 18,
+    "poe_class": 4,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Ø 127.3 × 96.3",
+  "weight_g": 590,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "GB",
+    "global"
+  ],
+  "features": [
+    "8 MP (4K) All-in-One fixed turret",
+    "Smart Hybrid Light: IR + white light, 3 supplemental modes, up to 30 m",
+    "deep-learning human and vehicle classification",
+    "arrayed dual-microphone plus built-in speaker (two-way audio)",
+    "active red and blue flashing light and audio alarm",
+    "120 dB true WDR",
+    "H.265+ compression",
+    "triple stream",
+    "microSD up to 512 GB",
+    "IP67",
+    "Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000148768/IPC-T289H-MU-SL_datasheet-20241022.pdf",
+    "https://assets.hikvision.com/prd/normal/all/doc/m000062211/IPC-T289H-MUUK_Datasheet_20260707.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "HiLook (Hikvision OEM); ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "HiLook uses the Hikvision protocol — select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "HiLook 8 MP (4K) All-in-One fixed turret with Smart Hybrid Light (IR + white, 3 modes), deep-learning human/vehicle classification, arrayed dual-microphone with two-way audio and active red/blue strobe plus audio alarm; 120 dB true WDR, IP67, microSD up to 512 GB. Specs verified against the official HiLook datasheet IPC-T289H-MU-SL_datasheet-20241022 (UK-market listing IPC-T289H-MUUK_Datasheet_20260707 published as a ColorVu revision on a 1/1.8-inch F1.0 sensor).",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 20,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

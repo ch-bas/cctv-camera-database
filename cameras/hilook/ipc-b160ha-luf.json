@@ -1,0 +1,135 @@
+{
+  "id": "hilook-ipc-b160ha-luf",
+  "brand": "HiLook",
+  "model": "IPC-B160HA-LUF",
+  "aliases": [
+    "IPC-B160HA-LUF",
+    "IPC-B160HA-LUF(2.8mm)"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3200,
+    "max_height": 1800,
+    "label": "6MP"
+  },
+  "sensor": "1/2.4\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "105 horizontal (2.8 mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "PoE (802.3af Class 3) / DC 12V",
+    "consumption_w": 6.5,
+    "poe_class": 3,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "179 x 67.4 x 69.1",
+  "weight_g": 450,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "EU",
+    "global"
+  ],
+  "features": [
+    "6 MP Smart Hybrid Light fixed bullet",
+    "Person and vehicle detection",
+    "Smart Hybrid Light (IR + white) up to 30 m",
+    "Built-in microphone",
+    "WDR 120 dB",
+    "BLC / HLC / 3D DNR",
+    "On-board storage up to 512 GB (microSD)",
+    "H.265+",
+    "IP67",
+    "Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000153140/IPC-B160HA-LUF_Datasheet_20240601.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "HiLook (Hikvision OEM); ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "HiLook uses the Hikvision protocol - select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "HiLook 6 MP Smart Hybrid Light fixed bullet (2.8 mm) with person/vehicle detection, IR+white supplement up to 30 m, built-in microphone, 120 dB WDR and H.265+ compression. Verified against the official HiLook datasheet IPC-B160HA-LUF_Datasheet_20240601.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3200x1800",
+        "fps": 20,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}
