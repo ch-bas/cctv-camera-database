@@ -1,0 +1,103 @@
+{
+  "id": "uniview-ipc2126sb-adf28km-dl-i16",
+  "brand": "Uniview",
+  "model": "IPC2126SB-ADF28KM-DL-I16",
+  "aliases": [
+    "IPC2126SB-ADF40KM-DL-I16"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3288,
+    "max_height": 1860,
+    "label": "6MP"
+  },
+  "sensor": "1/2.5\" CMOS",
+  "field_of_view_deg": "110.1 horizontal, 59.0 vertical, 128.5 diagonal (2.8mm)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 40,
+    "min_lux_color": 0.002
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 5.1
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 512
+  },
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Smart dual-light (IR + warm light)",
+    "Ultra 265 (U-code) smart encoding",
+    "120 dB true WDR",
+    "smart intrusion prevention (cross line, intrusion, enter/leave area) with human/vehicle/non-motor classification",
+    "ultra motion detection",
+    "people flow counting and crowd density monitoring",
+    "9:16 corridor mode",
+    "HLC / BLC / digital defog / dewarping"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "156.4 x 63.1 x 62.7",
+  "weight_g": 420,
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "markets": [
+    "global"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/5739d96c-dc63-4b7d-82e7-35bc03f60b8c/88cd2652-c93a-435c-80d2-c549c1ff5259.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Uniview RTSP: main stream /unicast/c1/s0/live, sub stream /unicast/c1/s1/live on port 554. ONVIF on port 80."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration. Default ONVIF port 80. RTSP main /unicast/c1/s0/live, sub /unicast/c1/s1/live."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub). ONVIF port 80."
+    }
+  },
+  "last_verified": "2026-09-03"
+}
