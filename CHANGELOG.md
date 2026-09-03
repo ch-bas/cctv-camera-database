@@ -33,9 +33,6 @@ Dataset grows to **7,055 cameras / 135 brands** and gains a first-class **NDAA S
 - **Milesight** — reconciled 5 flagged records whose lens was wrongly listed as fixed 2.8mm (they are motorized varifocal per their exact-SKU datasheets; per-SKU focal ranges corrected).
 - **Blink** — Outdoor 3rd-Gen `release_year` 2022 → 2020 (SKU B086DKSHQ4 is the 2020 product).
 
-### Removed
-- **Provision-ISR** line (soft-removed).
-
 ---
 
 ## [2.13.0] — 2026-09-02
