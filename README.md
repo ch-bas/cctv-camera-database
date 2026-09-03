@@ -1,9 +1,9 @@
 # CCTV Camera Database
 
-An open, structured database of 6,770 CCTV / IP camera models and their technical specifications, covering 133 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
+An open, structured database of 6,790 CCTV / IP camera models and their technical specifications, covering 133 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
 
 [![build](https://github.com/ch-bas/cctv-camera-database/actions/workflows/build.yml/badge.svg)](https://github.com/ch-bas/cctv-camera-database/actions/workflows/build.yml)
-[![cameras](https://img.shields.io/badge/cameras-6%2C770-blue)](data/cameras.json)
+[![cameras](https://img.shields.io/badge/cameras-6%2C790-blue)](data/cameras.json)
 [![brands](https://img.shields.io/badge/brands-133-green)](cameras/)
 [![license](https://img.shields.io/badge/license-CC0-lightgrey)](LICENSE)
 
@@ -19,10 +19,10 @@ An open, structured database of 6,770 CCTV / IP camera models and their technica
 
 <p align="center">
   <a href="https://cctv-database.com">
-    <img src="assets/cctv-database-showcase.gif" alt="CCTV Camera Database — search 6,770 cameras, browse full specs, copy ready-to-use Frigate configs, and audit the open dataset with the built-in QA tool" width="640">
+    <img src="assets/cctv-database-showcase.gif" alt="CCTV Camera Database — search 6,790 cameras, browse full specs, copy ready-to-use Frigate configs, and audit the open dataset with the built-in QA tool" width="640">
   </a>
   <br>
-  <sub><b><a href="https://cctv-database.com">cctv-database.com</a></b> — search 6,770 cameras · full spec sheets · copy-paste Frigate configs · open &amp; auditable</sub>
+  <sub><b><a href="https://cctv-database.com">cctv-database.com</a></b> — search 6,790 cameras · full spec sheets · copy-paste Frigate configs · open &amp; auditable</sub>
 </p>
 
 ---
@@ -53,7 +53,7 @@ The whole dataset is committed and ready to use — **no build step, no API key,
 
 | Format | File | Contents |
 |--------|------|----------|
-| JSON | [`data/cameras.json`](data/cameras.json) | all 6,770 cameras as one array |
+| JSON | [`data/cameras.json`](data/cameras.json) | all 6,790 cameras as one array |
 | CSV | [`data/cameras.csv`](data/cameras.csv) | flattened, spreadsheet-friendly |
 | ZIP | [`cameras.zip`](../../releases/latest) | versioned + checksummed, attached to each release |
 
@@ -116,7 +116,7 @@ Prefer to self-host or browse offline? A [standalone demo](docs/demo.html) (just
 - **Sort** — click any column header to sort ascending/descending
 - **Detail drawer** — click a row to slide open the full spec sheet (resolution, connectivity, protocols, storage, audio, source links)
 - **Community notes** — user-reported quirks and behaviors per camera, sourced and attributed, kept separate from datasheet specs
-- **Pagination** — page through all 6,770 cameras, 25 per page
+- **Pagination** — page through all 6,790 cameras, 25 per page
 - **Stats bar** — live counts for total cameras, brands, 4K+, WiFi, and no-subscription models
 
 ---
@@ -231,17 +231,17 @@ A device type is only emitted when the camera has a known RJ45 link speed (`netw
 
 | Metric | Count |
 |--------|-------|
-| Total cameras | **6,770** |
+| Total cameras | **6,790** |
 | Brands | **133** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
-| PoE wired | 5,010 |
+| PoE wired | 5,030 |
 | WiFi | 933 |
 | Battery / wire-free | 285 |
-| 4K / 8MP+ | 1,682 |
-| 4–7MP | 2,683 |
-| Under 4MP | 2,405 |
-| With integration configs (Frigate / Home Assistant) | 4,541 |
-| With color-lux rating (`night_vision.min_lux_color`) | 4,323 |
+| 4K / 8MP+ | 1,689 |
+| 4–7MP | 2,694 |
+| Under 4MP | 2,407 |
+| With integration configs (Frigate / Home Assistant) | 4,561 |
+| With color-lux rating (`night_vision.min_lux_color`) | 4,343 |
 
 ### All 133 brands
 
@@ -254,7 +254,7 @@ A device type is only emitted when the camera has a known RJ45 link speed (`netw
 | i-PRO | 504 | Enterprise AI (ex-Panasonic), JP/global |
 | Hikvision | 480 | Enterprise + consumer, global |
 | Dahua | 369 | Enterprise + consumer, global |
-| Uniview | 319 | Enterprise NDAA, global |
+| Uniview | 339 | Enterprise NDAA, global |
 | Bosch | 255 | Enterprise + thermal, EU/global |
 | ACTi | 251 | Enterprise IP + analog, NDAA, TW/global |
 | NOVUS | 164 | Installer IP + analog (AAT), PL/EU |
@@ -407,12 +407,12 @@ cctv-camera-database/
 │   ├── i-pro/            # 504 cameras
 │   ├── hikvision/        # 480 cameras
 │   ├── dahua/            # 369 cameras
-│   ├── uniview/          # 319 cameras
+│   ├── uniview/          # 339 cameras
 │   ├── bosch/            # 255 cameras
 │   ├── acti/             # 251 cameras
 │   └── …127 more brands
 ├── data/                 # GENERATED — do not edit by hand
-│   ├── cameras.json      # all 6,770 cameras as one array
+│   ├── cameras.json      # all 6,790 cameras as one array
 │   ├── cameras.csv       # flattened, spreadsheet-friendly
 │   └── rtsp-patterns.json  # CC0 brand-level RTSP URL layer (172 brands)
 ├── strix/
@@ -447,7 +447,7 @@ Open — contributions very welcome:
 
 - [ ] **Re-source ~1,051 reseller-only cameras** to official OEM datasheets (#164 / #165)
 - [ ] **Backfill pixel resolution** for the ~507 entries that state megapixels but no width×height (#169)
-- [ ] **Frigate verification drive** — only 28 of 4,495 shipped configs are community-verified; [confirm one you run](../../issues/new?template=verify-frigate-config.yml)
+- [ ] **Frigate verification drive** — only 28 of 4,515 shipped configs are community-verified; [confirm one you run](../../issues/new?template=verify-frigate-config.yml)
 - [ ] **Grow `community_notes`** — the per-camera quirks/behaviors layer (#297)
 
 ---

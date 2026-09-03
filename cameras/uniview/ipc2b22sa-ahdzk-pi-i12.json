@@ -1,0 +1,102 @@
+{
+  "id": "uniview-ipc2b22sa-ahdzk-pi-i12",
+  "brand": "Uniview",
+  "model": "IPC2B22SA-AHDZK-PI-I12",
+  "type": "bullet",
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "sensor": "1/2.8\" CMOS",
+  "field_of_view_deg": "99.2-32.3 horizontal, 53.6-18 vertical, 117.4-37.2 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 80,
+    "min_lux_color": 0.002
+  },
+  "power": {
+    "method": "DC 12 V, PoE (IEEE 802.3af)",
+    "consumption_w": 10
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "LightHunter low-light imaging",
+    "P-iris motorized varifocal lens (5X optical zoom)",
+    "Ultra 265 (U-code) smart encoding",
+    "130 dB optical WDR",
+    "IR up to 80 m (850 nm)",
+    "Built-in dual-mic",
+    "Smart intrusion prevention with human/vehicle classification",
+    "People flow counting and crowd density detection",
+    "Corridor mode"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "268 x 96 x 86",
+  "weight_g": 1000,
+  "markets": [
+    "global"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/0d4e7827-af0b-4bb1-a5d1-be24a8af03a1/988183c5-4116-43cc-9b44-0163a3d895bd.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Uniview RTSP: main /unicast/c1/s0/live, sub /unicast/c1/s1/live. ONVIF on port 80."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration; default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  }
+}

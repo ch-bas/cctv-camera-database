@@ -1,0 +1,104 @@
+{
+  "id": "uniview-ipc264sa-ahdx4k-i14",
+  "brand": "Uniview",
+  "model": "IPC264SA-AHDX4K-I14",
+  "type": "bullet",
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "8-32",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "sensor": "1/1.8\" CMOS",
+  "field_of_view_deg": "42.6-15.2 horizontal, 23.5-8.9 vertical, 52.4-17.9 diagonal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 120,
+    "min_lux_color": 0.001
+  },
+  "power": {
+    "method": "DC 12 V, PoE+ (IEEE 802.3at)",
+    "consumption_w": 23
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "LightHunter low-light imaging",
+    "Ultra 265 (U-code) smart encoding",
+    "P-iris motorized varifocal lens",
+    "5 mixed-lights: IR up to 120 m, warm light up to 30 m",
+    "130 dB optical WDR",
+    "Built-in heater, low-temperature start-up at -40 C",
+    "Built-in dual-mic and speaker, two-way audio",
+    "Smart intrusion prevention with human/vehicle classification",
+    "People flow counting and crowd density detection",
+    "Road traffic / license plate capture",
+    "Corridor mode"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "406 x 126 x 130",
+  "weight_g": 2140,
+  "markets": [
+    "global"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/08a2f566-4e9c-475f-8c55-8f6078eeddf7/d665a5c4-11ea-400c-bc0c-29b9d5522c8a.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Uniview RTSP: main /unicast/c1/s0/live, sub /unicast/c1/s1/live. ONVIF on port 80."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration; default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  }
+}
