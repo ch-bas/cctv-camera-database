@@ -1,0 +1,97 @@
+{
+  "id": "milesight-ms-c8266-fgpe",
+  "brand": "Milesight",
+  "model": "MS-C8266-FGPE",
+  "aliases": [],
+  "ndaa_compliant": true,
+  "type": "ptz",
+  "connectivity": [
+    "5g",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6 to 10",
+    "aperture": "F1.4",
+    "varifocal": true
+  },
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "field_of_view_deg": "116 to 48 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 65,
+    "min_lux_color": 0.009
+  },
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "power": {
+    "method": "PoE (802.3at) / DC 12V±10%",
+    "voltage": "DC 12V±10%",
+    "consumption_w": 16
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024
+  },
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "motorized varifocal lens",
+    "120dB Super WDR",
+    "AI video analytics",
+    "face detection",
+    "object counting"
+  ],
+  "protocols": [
+    "onvif"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "320 x 134 x 126",
+  "weight_g": 1650,
+  "sources": [
+    "https://resource.milesight.com/milesight/security/document/datasheet/ipc/milesight-5g-ai-motorized-pro-bullet-plus-network-camera-datasheet-en.pdf",
+    "https://resource.milesight.com/milesight/security/document/datasheet/ipc/series-e/milesight-5g-ai-motorized-pro-bullet-plus-network-camera-datasheet-en-ndaa.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/main",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/sub",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Milesight /main + /sub RTSP; ONVIF port 80; PTZ via ONVIF. 5G/cellular model — local RTSP needs same-LAN access."
+    },
+    "home_assistant": {
+      "integration": "onvif"
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF"
+    }
+  }
+}
