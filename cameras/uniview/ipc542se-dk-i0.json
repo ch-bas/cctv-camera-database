@@ -1,0 +1,118 @@
+{
+  "id": "uniview-ipc542se-dk-i0",
+  "brand": "Uniview",
+  "model": "IPC542SE-DK-I0",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "aperture": "F1.2",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.0005,
+    "min_lux": 0.0001
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "DC 12V / AC 24V / PoE (IEEE 802.3af)",
+    "consumption_w": 7,
+    "voltage": "DC 12V / AC 24V"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "features": [
+    "LightHunter",
+    "Ultra 265 (U-code) smart encoding",
+    "WDR (120 dB)",
+    "smart intrusion prevention",
+    "human/vehicle detection",
+    "9:16 corridor mode",
+    "C/CS lens mount (DC-iris / P-iris)",
+    "HLC / BLC / digital defog"
+  ],
+  "operating_temp_c": "-20 to 50",
+  "weight_g": 380,
+  "dimensions_mm": "152 x 71 x 65",
+  "sources": [
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/00320f75-3d57-40ec-9a47-9fec4ecbb8cf/fd60fd9e-a3ae-4edb-891c-b328de1919e3.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Box camera with interchangeable C/CS-mount lens. Main stream /unicast/c1/s0/live, sub stream /unicast/c1/s1/live."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  },
+  "last_verified": "2026-09-03",
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "id": "uniview-ipc2a24se-adzk-i0",
+  "brand": "Uniview",
+  "model": "IPC2A24SE-ADZK-I0",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "field_of_view_deg": "113.7 to 42.6 horizontal, 59.0 to 24.1 vertical, 139.9 to 52.4 diagonal",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 to 12",
+    "aperture": "F1.2",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 80,
+    "min_lux_color": 0.0005
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "fps": 30
+      },
+      {
+        "name": "third",
+        "resolution": "720x576",
+        "fps": 30
+      }
+    ]
+  },
+  "power": {
+    "method": "DC12V(±25%), PoE(IEEE 802.3af)",
+    "consumption_w": 10,
+    "voltage": "DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "LightHunter",
+    "Ultra 265 (U-code) smart encoding",
+    "WDR (120 dB)",
+    "smart intrusion prevention",
+    "people counting",
+    "built-in heater",
+    "HLC / BLC / Smart IR / digital defog"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "130 x 322 (diameter x height)",
+  "weight_g": 1300,
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "sources": [
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/102143ba-7910-4f91-9d28-dc2e1536d13c/b74d6e8d-0481-4fc0-8354-390e20856bce.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Main stream 2688x1520@30fps; sub stream 1920x1080. Use the sub stream for Frigate detection to save CPU."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80. ONVIF Profile S/G/T/M supported."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  }
+}

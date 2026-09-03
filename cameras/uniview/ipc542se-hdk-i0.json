@@ -1,0 +1,127 @@
+{
+  "id": "uniview-ipc542se-hdk-i0",
+  "brand": "Uniview",
+  "model": "IPC542SE-HDK-I0",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "aperture": "F1.2",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.0001,
+    "min_lux_color": 0.0005
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 60
+      },
+      {
+        "name": "third",
+        "resolution": "720x576",
+        "fps": 60
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V / AC 24V",
+    "consumption_w": 7,
+    "voltage": "DC 12V / AC 24V"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "LightHunter low-light imaging",
+    "Ultra 265 (U-code) smart encoding",
+    "120 dB optical WDR",
+    "IR-cut filter with auto switch (ICR)",
+    "Triple streams, 1080P at 60 fps main stream",
+    "Smart intrusion prevention (cross line, intrusion, enter/leave area)",
+    "Human, motor-vehicle and non-motor-vehicle classification",
+    "People flow counting and crowd density monitoring",
+    "Exception detection (object removed, object left behind, scene change)",
+    "HLC / BLC / digital defog",
+    "Alarm I/O 2/1, audio I/O 1/1",
+    "C/CS lens mount"
+  ],
+  "operating_temp_c": "-20 to 50",
+  "weight_g": 380,
+  "dimensions_mm": "152 x 71 x 65 (excluding lens)",
+  "release_year": 2023,
+  "sources": [
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/ce72b295-6ec1-477e-b4c9-c1afbda8bfe4/23f43626-ef2b-4ad9-a5fb-c05582eaa334.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Main stream /unicast/c1/s0/live (1920x1080@60), sub stream /unicast/c1/s1/live (1280x720). ONVIF on port 80. Box camera requires a separate C/CS lens."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  },
+  "last_verified": "2026-09-03",
+  "environment": [
+    "indoor"
+  ]
+}
