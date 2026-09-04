@@ -6,6 +6,21 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.15.0] — 2026-09-04
+
+Dataset grows to **8,588 cameras / 135 brands** — a **+1,533** jump from the complete ingest of the HiLook and Hikvision manufacturer catalogues, sourced entirely from official resource-center datasheets (verified values only; every PDF cached).
+
+### Added — HiLook catalogue (+321, 13 enriched)
+- **HiLook IP Products (+233)** — the full HiLook network line: Value-Series bullets, turrets & domes (`IPC-B/D/T…HA`, ColorVu `-LU`/`-LUF`, Smart-Hybrid `HAA`/`HAE`, motorized `-Z`/`-LZU`), Wi-Fi / 4G / battery / solar cube & bullet cameras (`-D/W`, `-LD`, `IPC-CFW*`, `IPC-CFSP*`), and the PTZ mini-PT / TandemVu speed-dome range (`PTZ-N2C*`, `PTZ-N3*`). Region/colour variants folded into `aliases` with `markets` populated (GB/EU/AU/US/CA/RU/…).
+- **HiLook Turbo HD (+88)** — the analog HD-TVI-over-coax line (`THC-B*` bullets, `THC-T*` turrets, `PTZ-T*`): `connectivity: ["coax"]`, no RTSP/ONVIF, 4-in-1 output where the datasheet states it.
+- **13 existing HiLook records enriched** from current datasheets (video/network/dimensions/IR-range fields; corrected a handful of FOV/fps/type values).
+
+### Added — Hikvision Turbo HD analog (+275)
+- The full Hikvision Turbo HD (HD-TVI over coax) camera line: `DS-2CE10/12/16/56/57/76/78/79…` bullets, turrets & domes (ColorVu `DF`/`KF`, Smart-Hybrid `-L*`, EXIR, varifocal `-VF`) and `DS-2AE`/`PTZ-T` analog speed domes. `connectivity: ["coax"]`, DVR-connected (no IP stack). `(C)` coating variants → `aliases`.
+
+### Added — Hikvision Network (IP) cameras (+937)
+- The complete Hikvision IP catalogue from the resource centre: `DS-2CD` fixed & varifocal bullets/turrets/domes (AcuSense, DarkFighter, ColorVu, Smart Hybrid Light), cube/Wi-Fi (`DS-2CD24/CV`), covert (`DS-2CD64`), fisheye & multi-sensor PanoVu (`DS-2CD63/69/6D`, `DS-2DP`, up to 64 MP); PTZ / positioning / laser / TandemVu speed domes (`DS-2DE`, `DS-2SE`, `DS-2DF`, `DS-2DY`, `DS-2SF`, `DS-2ST` — to 3 km laser range); explosion-proof, underwater, anti-corrosion & gantry-crane (`DS-2XE`, `DS-2XC`, `DS-2XV`); solar/4G (`DS-2XS`, `DS-2CFS`); DeepinView deep-learning (`iDS-2CD7*`), ANPR, furnace-thermal, and the `PCI`/`ECI`/`DS-I` regional value lines. `ndaa_compliant: false` throughout (Section 889 brand). Accessories (mounts, lens-heads, junction/control boxes, cables), and models whose official links serve the wrong datasheet or a generic User Manual, were excluded (never fabricated).
+
 ## [2.14.0] — 2026-09-03
 
 Dataset grows to **7,055 cameras / 135 brands** and gains a first-class **NDAA Section 889 compliance** field.

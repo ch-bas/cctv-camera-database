@@ -1,0 +1,142 @@
+{
+  "id": "hikvision-ds-2cd3786g2t-izs",
+  "brand": "Hikvision",
+  "model": "DS-2CD3786G2T-IZS",
+  "aliases": [
+    "8 MP AcuSense IR Varifocal Dome Network Camera"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8 MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5 (7-35 optional)",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "108 to 46 horizontal (2.7-13.5mm) / 42 to 15 horizontal (7-35mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40,
+    "min_lux_color": 0.003
+  },
+  "power": {
+    "method": "12 VDC / PoE (IEEE 802.3at, Class 4, max. 18 W)",
+    "consumption_w": 18,
+    "poe_class": 4,
+    "voltage": "12V (DC) / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 65",
+  "dimensions_mm": "153.3 (diameter) x 111.6",
+  "weight_g": 870,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "MEA",
+    "global"
+  ],
+  "features": [
+    "8 MP AcuSense motorized varifocal dome with human/vehicle deep-learning classification",
+    "powered-by-DarkFighter low-light technology",
+    "HEOP 2.0 open platform, 1.5 TOPS computing power",
+    "motorized varifocal lens 2.7-13.5 mm (7-35 mm optional)",
+    "EXIR IR up to 40 m with smart supplement light",
+    "140 dB true WDR",
+    "H.265+ compression, 3D DNR",
+    "microSD on-board storage up to 512 GB",
+    "audio and alarm interface, 2 alarm in / 2 out",
+    "weatherproof IP67 and vandal-resistant IK10",
+    "Hikvision NVR compatible, ONVIF/RTSP"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000128066/DS-2CD3786G2T-IZS_Datasheet_20240629.pdf"
+  ],
+  "release_notes": "The Hikvision DS-2CD3786G2T-IZS is an 8 MP AcuSense motorized varifocal dome with powered-by-DarkFighter low-light imaging, 140 dB WDR, HEOP 2.0 open platform, EXIR up to 40 m, and microSD up to 512 GB. Verified against the official Hikvision datasheet (DS-2CD3786G2T-IZS_Datasheet_20240629.pdf).",
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 24,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 24,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 10,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

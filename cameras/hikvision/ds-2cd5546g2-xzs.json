@@ -1,0 +1,140 @@
+{
+  "id": "hikvision-ds-2cd5546g2-xzs",
+  "brand": "Hikvision",
+  "model": "DS-2CD5546G2-XZS",
+  "aliases": [
+    "iDS-2CD5546G2-XZ(H)S(Y)",
+    "iDS-2CD5546G2-XZHSY"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 to 12 / 8 to 32 (motorized options)",
+    "aperture": "F1.47 to F2.53 (2.8-12mm)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "114.6 to 41.8 horizontal (2.8-12mm) / 42.5 to 15.2 horizontal (8-32mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 40,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / DC 12V",
+    "consumption_w": 13.2,
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "162 (diameter) x 141.8",
+  "weight_g": 1500,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "4MP DarkFighter 2.0 motorized varifocal dome",
+    "up to 4MP at 60fps (monitoring mode)",
+    "140 dB Auto-WDR",
+    "Hybrid supplement light (IR + white)",
+    "deep-learning face capture, perimeter protection, people counting & heat map",
+    "2 built-in microphones",
+    "onboard microSD up to 1TB",
+    "TPM 2.0 cyber security",
+    "IP67 / IK10, 4 streams"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000086626/iDS-2CD5546G2-XZHSY_Datasheet_20260608.pdf"
+  ],
+  "release_notes": "Specs verified against the official Hikvision datasheet iDS-2CD5546G2-XZ(H)S(Y) (Datasheet 20260608). 4MP DarkFighter 2.0 moto-varifocal dome with 140 dB WDR, deep-learning analytics, 2 mics, microSD up to 1TB and TPM 2.0.",
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 10,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": false
+}

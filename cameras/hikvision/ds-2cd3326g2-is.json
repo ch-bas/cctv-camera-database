@@ -1,0 +1,136 @@
+{
+  "id": "hikvision-ds-2cd3326g2-is",
+  "brand": "Hikvision",
+  "model": "DS-2CD3326G2-IS",
+  "aliases": [
+    "DS-2CD3326G2-IS(U)",
+    "DS-2CD3326G2-ISU"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8, 4, 6 (fixed)",
+    "aperture": "F1.4",
+    "varifocal": false
+  },
+  "field_of_view_deg": "107 (2.8mm) / 86 (4mm) / 55 (6mm) horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40,
+    "min_lux_color": 0.002
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3af)",
+    "consumption_w": 8.2,
+    "poe_class": 3,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "138.3 diameter x 126.3",
+  "weight_g": 780,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "2 MP AcuSense fixed turret network camera",
+    "Powered-by-DarkFighter low-light technology",
+    "Human and vehicle target classification (false alarm reduction)",
+    "120 dB true WDR",
+    "H.265+ compression",
+    "Up to 40 m IR range (850 nm)",
+    "Face capture",
+    "Perimeter protection: line crossing, intrusion, region entrance/exiting",
+    "Built-in microphone",
+    "microSD/SDHC/SDXC up to 512 GB",
+    "IP67 weatherproof",
+    "Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000035378/DS-2CD3326G2-ISU-C_Datasheet_V5.5.112_20230208.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "2 MP AcuSense fixed turret network camera with powered-by-DarkFighter low-light, 120 dB WDR and human/vehicle classification; verified against the official Hikvision datasheet DS-2CD3326G2-ISU-C_Datasheet_V5.5.112_20230208.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

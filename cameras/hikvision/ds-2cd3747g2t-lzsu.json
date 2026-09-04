@@ -1,0 +1,134 @@
+{
+  "id": "hikvision-ds-2cd3747g2t-lzsu",
+  "brand": "Hikvision",
+  "model": "DS-2CD3747G2T-LZSU",
+  "aliases": [
+    "DS-2CD3747G2T-LZSU(2.8-12mm)",
+    "4 MP ColorVu Motorized Varifocal Dome Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 to 12 (motorized)",
+    "aperture": "F1.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "105.4 to 56.4 horizontal",
+  "night_vision": {
+    "type": "color",
+    "range_m": 40,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / 12 VDC",
+    "consumption_w": 12.9,
+    "poe_class": 3,
+    "voltage": "12 VDC / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "155 diameter x 152",
+  "weight_g": 1600,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "4MP ColorVu 24/7 full-color imaging with F1.0 super-aperture lens",
+    "2.8-12mm motorized varifocal lens, DC iris",
+    "white-light supplement illuminator up to 40m with anti-illuminator-reflection",
+    "130 dB true WDR, 3D DNR",
+    "deep-learning human and vehicle target classification",
+    "built-in microphone, audio line in/out, 1 alarm input / 1 alarm output",
+    "microSD storage up to 512GB",
+    "IP67 and IK10 vandal-resistant"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000062177/DS-2CD3747G2T-LZSU_Datasheet_20231219.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2CD3747G2T-LZSU is a 4MP ColorVu motorized varifocal dome delivering 24/7 full-color imaging with an F1.0 lens, 130 dB WDR and deep-learning target classification. Verified against the official DS-2CD3747G2T-LZSU datasheet (DS-2CD3747G2T-LZSU_Datasheet_20231219.pdf).",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

@@ -1,0 +1,118 @@
+{
+  "id": "hikvision-ds-2cd6425g0",
+  "brand": "Hikvision",
+  "model": "DS-2CD6425G0/F-C2",
+  "aliases": [
+    "DS-2CD6425G0",
+    "2.0 MP Covert Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "covert",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2 / 2.8 / 3.7 / 4 (fixed, L10/L20/L30 modules)",
+    "aperture": "F1.6 to F2.5",
+    "varifocal": false
+  },
+  "field_of_view_deg": "132.8 horizontal (2mm) / 110.5 horizontal (2.8mm) / 86 horizontal (4mm) / 75 horizontal (3.7mm)",
+  "power": {
+    "method": "PoE (802.3at, Class 4) / 12 VDC / 8-36 VDC",
+    "consumption_w": 15,
+    "poe_class": 4,
+    "voltage": "12 VDC / 8-36 VDC / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "135 x 107.8 x 30.4 (main body)",
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "2MP covert camera with detachable lens/sensor modules (L10/L20/L30)",
+    "1080p at 30fps",
+    "120 dB WDR, 3D DNR",
+    "deep-learning face capture and detection",
+    "6 behavior analyses + 3 exception detections",
+    "H.265+ compression",
+    "microSD up to 128GB, NAS/ANR, audio-in and alarm I/O",
+    "gigabit-free 10/100 Ethernet, ONVIF (Profile S/G)"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000007848/DS-2CD6425G0_F-C2_Datasheet_V5.5.42_20221129.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2CD6425G0/F-C2 is a 2MP modular covert camera with detachable L10/L20/L30 lens-sensor modules, 120 dB WDR, deep-learning face capture and H.265+ compression. Verified against the official DS-2CD6425G0/F-C2 datasheet.",
+  "ndaa_compliant": false
+}

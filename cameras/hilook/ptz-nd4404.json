@@ -1,0 +1,130 @@
+{
+  "id": "hilook-ptz-nd4404",
+  "brand": "HiLook",
+  "model": "PTZ-ND4404",
+  "aliases": [
+    "PTZ-ND4404/SL"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP per channel"
+  },
+  "sensor": "1/2.8\" progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (bullet) / 2.8-12 (PT, 4x optical)",
+    "aperture": "F1.6 (bullet) / F1.5-F2.9 (PT)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "114.9 (bullet) / 98 to 34.2 (PT)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 40,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "12 VDC / PoE+",
+    "consumption_w": 13.5
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 50",
+  "dimensions_mm": "311.5 x 223.5 x 156",
+  "weight_g": 1370,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "AU",
+    "global"
+  ],
+  "features": [
+    "Dual-lens: fixed 2.8mm 4MP bullet overview + 4x optical PT channel",
+    "4MP (2560x1440) on both channels",
+    "4x optical / 16x digital zoom on PT channel",
+    "Smart Hybrid Light on bullet (IR + white to 30m), PT IR to 40m",
+    "Powered-by-DarkFighter low-light imaging",
+    "Human and Vehicle Detection",
+    "Active red & blue strobe light and audio alarm deterrence",
+    "Built-in microphone and speaker",
+    "300 presets with power-off memory"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000172375/PTZ-ND4404_SLAUS_Datasheet_20260402.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "HiLook uses the Hikvision RTSP path (main 101 / sub 102); enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "HiLook (Hikvision OEM); ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "HiLook uses the Hikvision protocol — select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "HiLook PTZ-ND4404 is a dual-lens 4MP+4MP PT camera pairing a fixed 2.8mm 4MP bullet overview with a 4x optical-zoom 4MP PT channel, Smart Hybrid Light, Human/Vehicle detection, active red/blue strobe and audio deterrence and built-in mic and speaker. Verified against the official HiLook datasheet PTZ-ND4404_SLAUS_Datasheet_20260402.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 15,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 15,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

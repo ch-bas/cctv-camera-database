@@ -1,0 +1,138 @@
+{
+  "id": "hikvision-ds-2cd2523g0-iws",
+  "brand": "Hikvision",
+  "model": "DS-2CD2523G0-IWS",
+  "aliases": [
+    "DS-2CD2523G0-IWS (D)",
+    "DS-2CD2523G0-I(W)(S)",
+    "2 MP IR Fixed Mini Dome Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet",
+    "wifi"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 / 6 (fixed options)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "114 horizontal (2.8mm) / 86 horizontal (4mm) / 54 horizontal (6mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10,
+    "min_lux_color": 0.028
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / 12 VDC",
+    "consumption_w": 10,
+    "poe_class": 3,
+    "voltage": "12 VDC / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK08",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "120 x 67.4 (dome diameter x height)",
+  "weight_g": 400,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "2MP mini dome with fixed 2.8 / 4 / 6mm lens",
+    "IR up to 10m (850nm)",
+    "120dB true WDR",
+    "H.265+ / H.265 / H.264+ / H.264 compression",
+    "Wi-Fi (-W): IEEE 802.11b/g/n",
+    "built-in microphone plus audio and alarm interface (-S)",
+    "built-in microSD/SDHC/SDXC slot up to 128 GB",
+    "IP66 water/dust resistant and IK08 vandal proof",
+    "mini size for limited space",
+    "Hikvision NVR / ONVIF compatible"
+  ],
+  "release_notes": "The Hikvision DS-2CD2523G0-IWS is a 2MP outdoor mini dome with Wi-Fi (-W), built-in microphone (-S) and 120dB WDR. Verified against the official DS-2CD2523G0-IWS-D_Datasheet_V5.6.5 datasheet.",
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/sm000058584/DS-2CD2523G0-IWS-D_Datasheet_V5.6.5_20220602.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": false
+}

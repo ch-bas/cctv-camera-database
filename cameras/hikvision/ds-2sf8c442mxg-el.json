@@ -1,0 +1,131 @@
+{
+  "id": "hikvision-ds-2sf8c442mxg-el",
+  "brand": "Hikvision",
+  "model": "DS-2SF8C442MXG-EL",
+  "aliases": [
+    "DS-2SF8C442MXG-EL/26(B)",
+    "DS-2SF8C442MXG-EL-26B"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS (panoramic and PTZ channels)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "PTZ 6 to 252; panoramic 2.8",
+    "aperture": "PTZ F1.3 / panoramic F1.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "PTZ 59 to 2 horizontal / panoramic 190 horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 300,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "Hi-PoE"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": true,
+    "two_way": false
+  },
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "290 diameter x 453.2",
+  "weight_g": 10500,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "TandemVu dual-channel: fixed panoramic overview + 42x optical zoom PTZ",
+    "4 MP PTZ channel, panoramic channel up to 3632 x 1632",
+    "24/7 colorful imaging and DarkFighter low-light",
+    "White light up to 30 m (panoramic) + IR up to 300 m (PTZ)",
+    "42x optical zoom (16x digital), 6 to 252 mm PTZ lens",
+    "120 dB WDR on both channels",
+    "Deep-learning smart functions, perimeter protection",
+    "RS-485, Hi-PoE powered",
+    "microSD card slot up to 256 GB",
+    "IP67 and IK10 rated, TVS 6 kV lightning protection"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/sm000086515/DS-2SF8C442MXG-EL-26B_Datasheet_20240815.pdf"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "4 MP 42x TandemVu PTZ camera pairing a fixed panoramic overview channel with a DarkFighter zoom PTZ channel, white light to 30 m and IR to 300 m, 120 dB WDR and deep-learning analytics. Hi-PoE, IP67/IK10 rated. Verified against the official Hikvision datasheet DS-2SF8C442MXG-EL-26B_Datasheet_20240815.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

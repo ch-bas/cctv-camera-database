@@ -1,0 +1,135 @@
+{
+  "id": "hikvision-ds-2cd37c7g3t-lizsu",
+  "brand": "Hikvision",
+  "model": "DS-2CD37C7G3T-LIZSU",
+  "aliases": [
+    "DS-2CD37C7G3T-LIZSU(Y)",
+    "DS-2CD37C7G3T-LIZSUY",
+    "DS-2CD37C7G3T-LIZSU/SL(PTRZ)(Y)"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 12,
+    "max_width": 4608,
+    "max_height": 2592,
+    "label": "12MP (4608x2592)"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5 (motorized)",
+    "aperture": "F1.2",
+    "varifocal": true
+  },
+  "field_of_view_deg": "102 to 44 horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 40,
+    "min_lux_color": 0.0008
+  },
+  "power": {
+    "method": "PoE (802.3at, Class 4) / DC 12V",
+    "consumption_w": 18,
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "141 diameter x 112",
+  "weight_g": 850,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "12MP resolution",
+    "Dual Illumination (IR + white light) up to 40 m",
+    "motorized varifocal 2.7-13.5 mm lens",
+    "HIK AI-ISP low-noise imaging",
+    "AcuSense human/vehicle detection",
+    "130dB WDR",
+    "arrayed dual microphone",
+    "microSD up to 512 GB",
+    "IP67 / IK10 / NEMA 4X",
+    "-SL(PTRZ) variant adds strobe light, audible warning, two-way audio and PTRZ auto-focus"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000107285/DS-2CD37C7G3T-LIZSUY_Datasheet_20260630.pdf",
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000116084/DS-2CD37C7G3T-LIZSU_SLPTRZY_Datasheet_20260630.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4608x2592",
+        "fps": 20,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "release_notes": "12MP Dual Illumination motorized-varifocal dome on a 1/1.8-inch sensor with HIK AI-ISP, IR/white supplement up to 40 m, 130dB WDR, AcuSense human/vehicle detection and an arrayed dual mic; the -SL(PTRZ) variant adds an active strobe, audible warning, two-way audio and PTRZ auto-focus. Verified against the official Hikvision datasheets DS-2CD37C7G3T-LIZSUY and DS-2CD37C7G3T-LIZSU_SLPTRZY (2026-06-30).",
+  "last_verified": "2026-09-03",
+  "ndaa_compliant": false
+}

@@ -1,0 +1,140 @@
+{
+  "id": "hikvision-pci-t15f4s",
+  "brand": "Hikvision",
+  "model": "PCI-T15F4S",
+  "aliases": [
+    "PCI-T15F4S (G5)",
+    "AcuSense 5 MP IR Fixed Turret Network Camera"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5 MP"
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4 (fixed)",
+    "aperture": "F1.4",
+    "varifocal": false
+  },
+  "field_of_view_deg": "80 horizontal (4mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40,
+    "min_lux_color": 0.003
+  },
+  "power": {
+    "method": "12 VDC / PoE (IEEE 802.3af, Class 3, max. 6.8 W)",
+    "consumption_w": 6.8,
+    "poe_class": 3,
+    "voltage": "12V (DC) / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "138.3 (diameter) x 126.3",
+  "weight_g": 770,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "5 MP AcuSense fixed turret with human/vehicle deep-learning classification",
+    "powered-by-DarkFighter low-light technology",
+    "fixed 4 mm lens",
+    "EXIR IR up to 40 m with smart supplement light",
+    "120 dB true WDR",
+    "built-in microphone",
+    "H.265+ compression",
+    "microSD on-board storage up to 256 GB",
+    "weatherproof IP67",
+    "Hikvision NVR compatible, ONVIF/RTSP"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000061277/PCI-T15FxS-Data-Sheet-G5.pdf"
+  ],
+  "release_notes": "The Hikvision PCI-T15F4S is a 5 MP AcuSense fixed turret with a 4 mm lens, powered-by-DarkFighter low-light imaging, 120 dB WDR, EXIR up to 40 m, a built-in microphone, and microSD up to 256 GB. Verified against the official Hikvision datasheet (PCI-T15FxS-Data-Sheet-G5.pdf).",
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 24,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "fps": 24,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 10,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

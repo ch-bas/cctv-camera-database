@@ -1,0 +1,132 @@
+{
+  "id": "hikvision-pci-d18f4s",
+  "brand": "Hikvision",
+  "model": "PCI-D18F4S",
+  "aliases": [],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8/4/6",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "110 horizontal (2.8mm), 88 horizontal (4mm), 60 horizontal (6mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40,
+    "min_lux_color": 0.003
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 24,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 24,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / DC 12V",
+    "consumption_w": 8.5,
+    "poe_class": 3,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "121.4 x 92.2 (dia x H)",
+  "weight_g": 550,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "8MP (3840x2160) AcuSense fixed dome",
+    "AcuSense human/vehicle target classification (deep learning)",
+    "powered-by-DarkFighter low-light technology",
+    "EXIR infrared up to 40m",
+    "efficient H.265+ compression",
+    "120dB true WDR",
+    "audio line in/out and alarm I/O",
+    "microSD storage up to 256GB",
+    "IP67 and IK10 vandal resistant",
+    "Hikvision NVR compatible"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000051208/PCI-D18F4S.pdf"
+  ],
+  "release_notes": "The Hikvision PCI-D18F4S is an 8MP AcuSense fixed dome with a 1/1.8\" sensor, powered-by-DarkFighter low-light imaging, EXIR infrared up to 40m, human/vehicle classification and 120dB WDR. Verified against the official datasheet PCI-D18F4S.pdf.",
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

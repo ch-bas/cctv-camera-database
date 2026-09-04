@@ -1,0 +1,135 @@
+{
+  "id": "hikvision-ds-2cd3a46g2t-izhs",
+  "brand": "Hikvision",
+  "model": "DS-2CD3A46G2T-IZHS",
+  "aliases": [
+    "DS-2CD3A46G2T-IZHS(6-60mm)",
+    "4 MP AcuSense Varifocal Bullet Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6 to 60 (motorized, 10x optical zoom)",
+    "aperture": "F1.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "59.5 to 7.3 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 120,
+    "min_lux_color": 0.002
+  },
+  "power": {
+    "method": "PoE (802.3at, Class 4) / 12 VDC / 24 VAC",
+    "consumption_w": 18,
+    "poe_class": 4,
+    "voltage": "12 VDC / 24 VAC / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "144 x 140 x 349.2",
+  "weight_g": 2280,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "4MP AcuSense deep-learning human/vehicle target classification",
+    "10x optical motorized zoom (6-60mm), DC iris",
+    "powered-by-DarkFighter low-light technology, IR up to 120m",
+    "120 dB WDR, 3D DNR, Defog",
+    "perimeter protection: line crossing, intrusion, region entrance/exiting; face capture",
+    "audio line in/out and 3 alarm inputs / 3 alarm outputs",
+    "microSD storage up to 1TB",
+    "IP67 and IK10 vandal-resistant"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000132234/DS-2CD3A46G2T-IZHS_Datasheet_20240716.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2CD3A46G2T-IZHS is a 4MP AcuSense varifocal bullet with 10x motorized optical zoom, DarkFighter low-light performance and IR up to 120m. Verified against the official DS-2CD3A46G2T-IZHS datasheet (DS-2CD3A46G2T-IZHS_Datasheet_20240716.pdf).",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

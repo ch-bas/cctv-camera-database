@@ -1,0 +1,129 @@
+{
+  "id": "hilook-ipc-d120hae-c",
+  "brand": "HiLook",
+  "model": "IPC-D120HAE-C",
+  "aliases": [
+    "IPC-D120HAE-C(2.8mm)",
+    "IPC-D120HAE-C(4mm)"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/3\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed)",
+    "aperture": "F2.2",
+    "varifocal": false
+  },
+  "field_of_view_deg": "97 (2.8mm) / 76 (4mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "PoE (802.3af)",
+    "consumption_w": 6.5,
+    "poe_class": 0
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-10 to 40",
+  "dimensions_mm": "Diameter 110.8 x 85.2",
+  "weight_g": 600,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "MENA",
+    "global"
+  ],
+  "features": [
+    "2 MP fixed dome",
+    "Person detection",
+    "EXIR IR up to 20 m",
+    "Fixed 2.8/4 mm lens F2.2",
+    "H.265+ compression",
+    "Digital WDR",
+    "PoE (802.3af)",
+    "Indoor use",
+    "Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000081511/IPC-D120HAE-C_Datasheet_20260603.pdf"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "HiLook (Hikvision OEM); ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "HiLook uses the Hikvision protocol - select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "HiLook IPC-D120HAE-C is a 2 MP indoor fixed dome network camera with a 2.8/4 mm F2.2 lens, EXIR IR up to 20 m, person detection, digital WDR and H.265+ compression, powered by PoE. Verified against the official HiLook datasheet (IPC-D120HAE-C_Datasheet_20260603.pdf).",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "indoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

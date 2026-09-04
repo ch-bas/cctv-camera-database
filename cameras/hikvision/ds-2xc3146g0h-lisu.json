@@ -1,0 +1,134 @@
+{
+  "id": "hikvision-ds-2xc3146g0h-lisu",
+  "brand": "Hikvision",
+  "model": "DS-2XC3146G0H-LISU",
+  "aliases": [
+    "DS-2XC3146G0H-LISU/SL (PA)",
+    "DS-2XC3146G0H-LISU/SL"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/2.9\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 and 4 (fixed, optional)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "100.2 (2.8mm) / 81.1 (4mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 40,
+    "min_lux_color": 0.001
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3at)",
+    "consumption_w": 18,
+    "poe_class": 4,
+    "voltage": "12 VDC +/-25%"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP68",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Ø154.9 x 128.53",
+  "weight_g": 1280,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "4 MP anti-corrosion PTR dome (polymer body)",
+    "Motorized pan, tilt and rotate for remote install adjustment",
+    "AcuSense human/vehicle deep-learning classification",
+    "Smart Hybrid Light (IR + white) up to 40 m",
+    "Clear two-way audio with dual-array microphones and built-in speaker",
+    "Active strobe light and audio alarm (-SL)",
+    "H.265+ compression",
+    "IP68 and IK10 rated",
+    "NEMA 4X / anti-corrosion protection",
+    "Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000134284/DS-2XC3146G0H-LISU_SL-PA_Datasheet_20260417.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "4 MP Hikvision AcuSense anti-corrosion PTR dome with a polymer body, motorized pan/tilt/rotate for remote installation, Smart Hybrid Light, dual-array two-way audio and IP68 / IK10 protection. Verified against the official Hikvision datasheet DS-2XC3146G0H-LISU_SL-PA_Datasheet_20260417.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

@@ -1,0 +1,135 @@
+{
+  "id": "hikvision-ids-2cd7a86g0",
+  "brand": "Hikvision",
+  "model": "iDS-2CD7A86G0",
+  "aliases": [
+    "iDS-2CD7A86G0/H-IZHS(Y)",
+    "8MP DeepinView HEOP Moto Varifocal Bullet Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 to 12 (F1.2) or 8 to 32 (F1.6), motorized",
+    "aperture": "F1.2 (2.8-12mm) / F1.6 (8-32mm)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "112.3 to 41.2 horizontal (2.8-12mm) / 41.8 to 15.0 horizontal (8-32mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100,
+    "min_lux_color": 0.002
+  },
+  "power": {
+    "method": "PoE (802.3at, Type 2, Class 4) / 12 VDC",
+    "consumption_w": 20,
+    "poe_class": 4,
+    "voltage": "12 VDC / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "140 diameter x 351",
+  "weight_g": 1955,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "8MP DeepinView moto varifocal bullet with 3840x2160 imaging",
+    "Hikvision Embedded Open Platform (HEOP) 2.0 for third-party apps",
+    "2 Tops compute, 150MB memory, 1024MB smart RAM, 2GB eMMC",
+    "DarkFighter low-light technology with 850nm IR up to 100m",
+    "120 dB true WDR against strong backlight",
+    "5 simultaneous streams, H.265+ compression",
+    "line-in/line-out audio, 2 alarm inputs and 2 outputs",
+    "microSD storage up to 256GB, gigabit Ethernet",
+    "IP67 and IK10 vandal-proof, P-iris motorized lens",
+    "ONVIF support"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000067804/iDS-2CD7A86G0_H-IZHSY_Datasheet_20251205.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hikvision native RTSP (main 101 / sub 102). Enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision iDS-2CD7A86G0 is an 8MP DeepinView moto varifocal bullet running the HEOP 2.0 open platform, with DarkFighter low-light imaging, 120 dB WDR and 100m IR, verified against the official datasheet iDS-2CD7A86G0_H-IZHSY_Datasheet_20251205.pdf.",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

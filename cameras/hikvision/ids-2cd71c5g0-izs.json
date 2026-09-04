@@ -1,0 +1,130 @@
+{
+  "id": "hikvision-ids-2cd71c5g0-izs",
+  "brand": "Hikvision",
+  "model": "iDS-2CD71C5G0-IZS",
+  "aliases": [
+    "iDS-2CD71C5G0-IZS"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 12,
+    "max_width": 4000,
+    "max_height": 3000,
+    "label": "12MP"
+  },
+  "sensor": "1/1.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 to 12 (also 8 to 32 optional)",
+    "aperture": "F1.2 to F2.5",
+    "varifocal": true
+  },
+  "field_of_view_deg": "96 to 46.2 horizontal (2.8-12mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "power": {
+    "method": "24 VAC / PoE (802.3af)",
+    "consumption_w": 12,
+    "voltage": "24 VAC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "140.5 diameter x 122.6",
+  "weight_g": 950,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "12 MP (4000 x 3000) IR varifocal dome",
+    "1/1.7\" progressive scan CMOS with digital WDR",
+    "Deep-learning analytics: face counting, hard-hat detection, queue management, metadata",
+    "5 streams plus up to 5 custom streams",
+    "2.8-12 mm (or 8-32 mm) motorized varifocal lens (F1.2-F2.5)",
+    "IR supplement light up to 30 m (50 m with 8-32 mm), smart supplement light",
+    "Gigabit Ethernet, audio line in/out",
+    "microSD card slot up to 256 GB",
+    "IK10 vandal-proof",
+    "ONVIF Profile S/G/T, Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000019599/iDS-2CD71C5G0-IZS_Datasheet_20231127.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "12 MP (4000 x 3000) DeepinView IR varifocal dome with 2.8-12 mm motorized lens, 30 m IR, digital WDR, deep-learning analytics and Gigabit Ethernet. IK10 vandal-proof. Verified against the official Hikvision datasheet iDS-2CD71C5G0-IZS_Datasheet_20231127.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "indoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4000x3000",
+        "fps": 20,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

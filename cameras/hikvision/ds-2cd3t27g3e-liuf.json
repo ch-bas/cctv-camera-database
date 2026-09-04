@@ -1,0 +1,133 @@
+{
+  "id": "hikvision-ds-2cd3t27g3e-liuf",
+  "brand": "Hikvision",
+  "model": "DS-2CD3T27G3E-LIUF",
+  "aliases": [
+    "DS-2CD3T27G3E-LIUF/SL",
+    "2 MP ColorVu Fixed Bullet Network Camera"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed options)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "106 horizontal (2.8mm) / 88 horizontal (4mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 50,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / 12 VDC",
+    "consumption_w": 9.9,
+    "poe_class": 3,
+    "voltage": "12V (DC) / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "211 x 83.7 x 80.7",
+  "weight_g": 680,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "2MP ColorVu fixed bullet, 24/7 full-color imaging",
+    "F1.0 super-aperture, white light + IR supplement up to 50m",
+    "human and vehicle detection with perimeter protection (deep learning)",
+    "built-in speaker and microphone with two-way audio and audible warning/strobe",
+    "120 dB WDR, 3D DNR, BLC/HLC, H.265+",
+    "microSD up to 256 GB, IP67, IK10",
+    "ONVIF (Profile S/T/G), ISAPI, SDK"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000174701/DS-2CD3T27G3E-LIUF_SL_Datasheet_20260410.pdf"
+  ],
+  "release_notes": "The Hikvision DS-2CD3T27G3E-LIUF is a 2MP ColorVu fixed bullet with an F1.0 lens, white-light + IR supplement up to 50m, deep-learning perimeter protection and two-way audio with strobe/audible warning. Verified against the official Hikvision datasheet (DS-2CD3T27G3E-LIUF_SL_Datasheet_20260410.pdf).",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

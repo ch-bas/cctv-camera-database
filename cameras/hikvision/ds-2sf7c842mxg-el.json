@@ -1,0 +1,143 @@
+{
+  "id": "hikvision-ds-2sf7c842mxg-el",
+  "brand": "Hikvision",
+  "model": "DS-2SF7C842MXG-EL",
+  "aliases": [
+    "DS-2SF7C842MXG-EL/2C",
+    "DS-2SF7C842MXG-EL/2C(F0)",
+    "4 MP 42x TandemVu PTZ Camera"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4 MP (PTZ channel) + 12 MP bullet channel"
+  },
+  "sensor": "1/1.8\" progressive scan CMOS (both channels)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "PTZ 5.9 to 247.8 (42x optical); bullet 2.8 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "PTZ 61.0 to 2.1 horizontal (wide-tele); bullet 190 horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 250,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "36 VDC, max. 60 W",
+    "consumption_w": 60,
+    "voltage": "36 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": true,
+    "two_way": false
+  },
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "290 diameter x 453.2",
+  "weight_g": 7500,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "ptz": {
+    "autotracking": true
+  },
+  "features": [
+    "TandemVu dual-channel PTZ: 12 MP fixed bullet plus 4 MP 42x optical zoom PTZ",
+    "24/7 colour imaging on the bullet channel with DarkFighter",
+    "White light up to 30 m (both channels) and IR up to 250 m (PTZ)",
+    "Deep-learning multi-target detection (human, face, vehicle)",
+    "PTZ auto-tracking and 3D positioning smart linkage",
+    "120 dB WDR on PTZ channel, optical defog, EIS",
+    "Gigabit Ethernet, microSD up to 256 GB",
+    "36 VDC power, max 60 W",
+    "IP67 water and dust resistant",
+    "ONVIF Profile S/G/T, ISAPI, SDK"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/sm000090944/DS-2SF7C842MXG-EL_2C_Datasheet_20240607.pdf"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2SF7C842MXG-EL is a TandemVu PTZ camera pairing a 12 MP fixed bullet channel with a 4 MP 42x optical-zoom PTZ channel, offering 24/7 colour imaging, white light to 30 m and IR to 250 m, deep-learning multi-target detection and auto-tracking, rated IP67. Verified against the official Hikvision datasheet DS-2SF7C842MXG-EL_2C_Datasheet_20240607.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

@@ -1,0 +1,131 @@
+{
+  "id": "hikvision-ds-2cd6d44g1-izs",
+  "brand": "Hikvision",
+  "model": "DS-2CD6D44G1-IZS",
+  "aliases": [
+    "DS-2CD6D44G1-IZS(2.8-8mm)"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP per lens"
+  },
+  "sensor": "1/3\" progressive scan CMOS",
+  "lens": {
+    "count": 4,
+    "focal_length_mm": "2.8 to 8 (motorized)",
+    "aperture": "F1.9",
+    "varifocal": true
+  },
+  "field_of_view_deg": "102.5 to 51.4 horizontal per lens (wide-tele)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "12 VDC / 24 VAC / PoE (802.3at)",
+    "consumption_w": 14,
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "250 (diameter) x 114.9",
+  "weight_g": 2200,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "4-directional multisensor covering up to 360 view",
+    "Four adjustable lenses, each up to 4 MP (2.8-8 mm motorized)",
+    "Per-lens tilt/rotate angle adjustment, no blind area",
+    "EXIR IR up to 30 m (850 nm)",
+    "120 dB true WDR, 3D DNR, HLC, defog",
+    "IP67 water and dust resistant, IK10 vandal proof",
+    "Line-in/line-out audio, 2 alarm inputs / 2 outputs",
+    "Gigabit Ethernet, microSD up to 1 TB",
+    "12 VDC / 24 VAC / PoE (802.3at) power"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000089962/DS-2CD6D44G1-IZS_Datasheet_20230824.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2CD6D44G1-IZS is a 4-directional multisensor network camera with four adjustable 4 MP lenses (2.8-8 mm motorized) covering up to 360 degrees, EXIR IR to 30 m, 120 dB true WDR and gigabit Ethernet in an IP67/IK10 housing. Verified against the official Hikvision datasheet DS-2CD6D44G1-IZS_Datasheet_20230824.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 25,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

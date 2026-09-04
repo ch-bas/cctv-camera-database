@@ -1,0 +1,129 @@
+{
+  "id": "hikvision-ds-2cd6d54g1-zs",
+  "brand": "Hikvision",
+  "model": "DS-2CD6D54G1-ZS",
+  "aliases": [
+    "DS-2CD6D54G1-ZS/RC"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2560,
+    "max_height": 1920,
+    "label": "5 MP per lens (quad-directional)"
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS (4 sensors)",
+  "lens": {
+    "count": 4,
+    "focal_length_mm": "2.8 to 8",
+    "aperture": "F1.9",
+    "varifocal": true
+  },
+  "field_of_view_deg": "100 to 49 horizontal (per lens)",
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.0125
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 0) / DC 12V / 24 VAC",
+    "consumption_w": 14,
+    "poe_class": 0,
+    "voltage": "12 VDC / 24 VAC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "255 (dia.) x 95.9",
+  "weight_g": 2100,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "Quad-directional varifocal PanoVu camera",
+    "Four adjustable lenses covering up to 360 degrees",
+    "Each lens up to 5 MP (2560 x 1920)",
+    "Motorized varifocal 2.8 to 8 mm lenses",
+    "120 dB true WDR",
+    "3D DNR and EIS image stabilization",
+    "In-ceiling mount design",
+    "H.265+ compression",
+    "IP67 and IK10 vandal-resistant housing",
+    "Audio and alarm interface"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000041653/DS-2CD6D54G1-ZS_RC_Datasheet_V5.5.32_20221129.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80); multi-channel PanoVu."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "Quad-directional varifocal PanoVu camera with four adjustable 2.8 to 8 mm motorized lenses (each up to 5 MP) covering up to 360 degrees, 120 dB true WDR, 3D DNR, EIS and IK10/IP67 in-ceiling housing. Verified against the official Hikvision datasheet (DS-2CD6D54G1-ZS_RC_Datasheet_V5.5.32_20221129.pdf).",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 24,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1920",
+        "fps": 24,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 24,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

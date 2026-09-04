@@ -1,0 +1,136 @@
+{
+  "id": "hikvision-ds-2dp8a845ixg1-lwf",
+  "brand": "Hikvision",
+  "model": "DS-2DP8A845IXG1-LWF",
+  "aliases": [
+    "DS-2DP8A845IXG1-LWF/5G/864(F0)"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet",
+    "4g"
+  ],
+  "resolution": {
+    "megapixels": 64,
+    "max_width": 8584,
+    "max_height": 3728,
+    "label": "64MP"
+  },
+  "sensor": "8x 1/1.8\" (panoramic) + 1/1.2\" (PTZ) Progressive Scan CMOS",
+  "lens": {
+    "count": 9,
+    "focal_length_mm": "2 (panoramic) / 7.2 to 320 (PTZ, 45x optical)",
+    "aperture": "F1.0 (panoramic) / F1.5 (PTZ)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "360 horizontal / 110 vertical (panoramic); PTZ 7.2 to 320mm optical zoom",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 500,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "PoE (802.3bt) / 36 VDC, max. 150 W",
+    "consumption_w": 150
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "427.6 (diameter) x 425.9",
+  "weight_g": 14600,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "ptz": {
+    "autotracking": true
+  },
+  "features": [
+    "64MP 360-degree stitched PanoVu panoramic camera with PTZ (8-sensor panorama)",
+    "45x optical / 16x digital zoom PTZ channel",
+    "laser illumination up to 500m",
+    "5G/4G/3G wireless network transmission (nano-SIM)",
+    "smart tracking, one-click panoramic-to-PTZ",
+    "wipers for panoramic and PTZ lenses, optical defog",
+    "120 dB WDR (PTZ)",
+    "H.265+ compression",
+    "gigabit Ethernet, microSD up to 1024GB",
+    "IP67 and IK10"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000173478/DS-2DP8A845IXG1-LWF_5G_864F0_Datasheet_20251204.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "Specs verified against the official Hikvision datasheet DS-2DP8A845IXG1-LWF/5G/864(F0) (Datasheet_20251204). 64MP 360-degree 5G PanoVu panoramic and PTZ camera with wiper and laser illumination.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "8584x3728",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

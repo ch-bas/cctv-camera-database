@@ -1,0 +1,133 @@
+{
+  "id": "hikvision-ds-2cd3161g2e-liu",
+  "brand": "Hikvision",
+  "model": "DS-2CD3161G2E-LIU",
+  "aliases": [
+    "6 MP Smart Hybrid Light Motion 2.0 Fixed Mini Dome Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3200,
+    "max_height": 1800,
+    "label": "6MP"
+  },
+  "sensor": "1/2.4\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed options)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "105 horizontal (2.8mm) / 78 horizontal (4mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / 12 VDC",
+    "consumption_w": 7.5,
+    "poe_class": 3,
+    "voltage": "12V (DC) / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK08",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "6MP fixed mini dome with AcuSense human and vehicle classification (Motion Detection 2.0)",
+    "Smart Hybrid Light (IR + white light) up to 30m with smart supplement light",
+    "120 dB WDR for clear imaging against strong back light",
+    "3D DNR, BLC, HLC image enhancement",
+    "built-in microphone for real-time audio security",
+    "H.265+ compression, three streams",
+    "line crossing and intrusion detection",
+    "IP67 water/dust resistant and IK08 vandal resistant",
+    "Power over Ethernet (802.3af) installation, Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000111826/DS-2CD3161G2E-LIU_Datasheet_20250627.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hikvision native RTSP (main 101 / sub 102). Enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "dimensions_mm": "121.5 diameter x 97.6",
+  "weight_g": 490,
+  "operating_temp_c": "-30 to 60",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3200x1800",
+        "fps": 20,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "release_notes": "The Hikvision DS-2CD3161G2E-LIU is a 6MP fixed mini dome with AcuSense human/vehicle classification, Smart Hybrid Light (IR + white) up to 30m, 120 dB WDR and a built-in microphone in an IP67/IK08 housing. Verified against the official Hikvision datasheet (DS-2CD3161G2E-LIU_Datasheet_20250627.pdf).",
+  "ndaa_compliant": false
+}

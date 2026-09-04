@@ -1,0 +1,125 @@
+{
+  "id": "hikvision-ids-2cd70c5g0",
+  "brand": "Hikvision",
+  "model": "iDS-2CD70C5G0",
+  "aliases": [
+    "iDS-2CD70C5G0(-AP)",
+    "12 MP Box Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 12,
+    "max_width": 4000,
+    "max_height": 3000,
+    "label": "12 MP"
+  },
+  "sensor": "1/1.7\" Progressive Scan CMOS",
+  "power": {
+    "method": "PoE (802.3af, Class 3) / 12 VDC / 24 VAC",
+    "consumption_w": 12,
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "142.5 x 69.8 x 68",
+  "weight_g": 730,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "12MP box network camera (CS-mount, lens sold separately)",
+    "DeepinView deep-learning: face counting, hard hat detection, queue management",
+    "Multi-target-type detection and metadata output",
+    "5 streams plus up to 5 custom streams",
+    "Digital WDR",
+    "Smooth streaming with data self-correcting",
+    "Built-in microphone",
+    "Gigabit Ethernet, microSD up to 256GB"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000067800/iDS-2CD70C5G0_H-AP_Datasheet_20231123.pdf",
+    "https://assets.hikvision.com/prd/public/all/doc/m000019603/iDS-2CD70C5G0-AP_Datasheet_20231123.pdf"
+  ],
+  "release_notes": "The Hikvision iDS-2CD70C5G0 is a 12MP DeepinView CS-mount box network camera with face counting, hard-hat and queue-management analytics, digital WDR, up to 10 streams, a built-in microphone and Gigabit Ethernet. Verified against the official Hikvision datasheet (iDS-2CD70C5G0_H-AP_Datasheet_20231123.pdf).",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "indoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4000x3000",
+        "fps": 20,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

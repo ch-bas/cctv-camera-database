@@ -1,0 +1,136 @@
+{
+  "id": "hikvision-ds-2dp8a440ixg-lf",
+  "brand": "Hikvision",
+  "model": "DS-2DP8A440IXG-LF",
+  "aliases": [
+    "DS-2DP8A440IXG-LF/832(F0)(B)",
+    "32MP 360 Panoramic & PTZ Camera",
+    "PanoVu"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 32,
+    "max_width": 5520,
+    "max_height": 2400,
+    "label": "32MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS (8-sensor panoramic + PTZ channel)",
+  "lens": {
+    "count": 9,
+    "focal_length_mm": "2.8 (panoramic) / 6.0 to 240 (PTZ, 40x optical)",
+    "aperture": "F1.0 (panoramic) / F1.2 (PTZ)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "360 horizontal panoramic / 56.6 to 1.8 horizontal (PTZ, wide-tele)",
+  "ptz": {
+    "autotracking": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 250,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "36 VDC",
+    "consumption_w": 135,
+    "voltage": "36 VDC"
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "433.5 diameter x 430.4",
+  "weight_g": 18000,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "32MP 360-degree stitched panoramic PanoVu camera with integrated PTZ",
+    "8 sensors for panorama, up to 2x 5520x2400 at 25fps",
+    "40x optical zoom PTZ channel for detail capture",
+    "DarkFighter low-light performance, IR illuminator up to 250m",
+    "one-click panorama-to-PTZ detail linkage",
+    "auto-tracking and panorama tracking of multiple targets",
+    "intrusion, line-crossing, region entrance/exit detection",
+    "7 alarm inputs, 2 outputs, 1 audio in and 1 audio out",
+    "microSD up to 256GB, gigabit Ethernet, IP67 and IK10",
+    "ONVIF support"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000122367/DS-2DP8A440IXG-LF_832F0B_Datasheet_20251204.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hikvision native RTSP (main 101 / sub 102). Multi-channel PanoVu; enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2DP8A440IXG-LF is a 32MP PanoVu camera combining an 8-sensor 360-degree panoramic view with a 40x optical zoom PTZ channel and a 250m IR illuminator, verified against the official datasheet DS-2DP8A440IXG-LF_832F0B_Datasheet_20251204.pdf.",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "5520x2400",
+        "fps": 25,
+        "codec": "H.265+"
+      },
+      {
+        "name": "ptz",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

@@ -1,0 +1,133 @@
+{
+  "id": "hikvision-ds-2cd1743g0-i",
+  "brand": "Hikvision",
+  "model": "DS-2CD1743G0-I",
+  "aliases": [
+    "DS-2CD1743G0-IZ",
+    "DS-2CD1743G0-I(Z)",
+    "4 MP Varifocal Dome Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/3\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 to 12 (motorized varifocal, -Z variant)",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "102 to 31 horizontal (2.8 to 12mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / 12 VDC",
+    "consumption_w": 11.5,
+    "poe_class": 3,
+    "voltage": "12V (DC) / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "141 (diameter) x 99.9",
+  "weight_g": 820,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "4MP varifocal dome with EXIR 2.0 up to 30m (850nm)",
+    "2.8 to 12mm motorized varifocal lens (-Z variant)",
+    "120dB WDR and 3D DNR",
+    "H.265+ compression to save bandwidth and storage",
+    "microSD card slot up to 256GB",
+    "IP67 water and dust resistant and IK10 vandal proof"
+  ],
+  "release_notes": "The Hikvision DS-2CD1743G0-I(Z) is a 4MP varifocal dome network camera with 30m EXIR, 120dB WDR, IK10 vandal resistance and a 2.8-12mm motorized lens on the -Z variant. Verified against the official Hikvision datasheet DS-2CD1743G0-IZ-C_Datasheet_V5.5.122_20220517.pdf.",
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000000073/DS-2CD1743G0-IZ-C_Datasheet_V5.5.122_20220517.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 20,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

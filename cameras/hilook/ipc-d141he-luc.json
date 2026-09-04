@@ -1,0 +1,130 @@
+{
+  "id": "hilook-ipc-d141he-luc",
+  "brand": "HiLook",
+  "model": "IPC-D141HE-LUC",
+  "aliases": [
+    "IPC-D141HE-LUC(2.8mm)",
+    "IPC-D141HE-LUC(4mm)"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed)",
+    "aperture": "F2.2",
+    "varifocal": false
+  },
+  "field_of_view_deg": "112 (2.8mm) / 89 (4mm)",
+  "night_vision": {
+    "type": "color",
+    "range_m": 15,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "PoE (802.3af Class 0)",
+    "consumption_w": 7,
+    "poe_class": 0
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-10 to 40",
+  "dimensions_mm": "Diameter 121.5 x 97.6",
+  "weight_g": 240,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "MENA",
+    "global"
+  ],
+  "features": [
+    "4 MP fixed dome",
+    "White-light supplement up to 15 m",
+    "Person detection",
+    "H.265+",
+    "Digital WDR",
+    "3D DNR",
+    "Built-in microphone",
+    "PoE (802.3af)",
+    "Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000081470/IPC-D141HE-LUC_Datasheet_20260603.pdf",
+    "https://www.hikvision.com/en/products/IP-Products/Network-Cameras/HiLook/"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "HiLook (Hikvision OEM); ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "HiLook uses the Hikvision protocol - select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "HiLook 4 MP fixed dome with white-light supplement up to 15 m, person detection, H.265+ compression and a built-in microphone. Verified against the official HiLook datasheet IPC-D141HE-LUC_Datasheet_20260603.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "indoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 20,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 24,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

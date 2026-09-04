@@ -1,0 +1,135 @@
+{
+  "id": "hilook-ptz-n2204i-de3",
+  "brand": "HiLook",
+  "model": "PTZ-N2204I-DE3",
+  "aliases": [
+    "PTZ-N2204I-DE3(G)"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 to 12 (4x optical zoom)",
+    "aperture": "F1.8",
+    "varifocal": true
+  },
+  "field_of_view_deg": "99.4 to 30.6 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V",
+    "consumption_w": 9.2,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-20 to 60",
+  "dimensions_mm": "Ø 130.7 × 101.7",
+  "weight_g": 560,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "MENA",
+    "global"
+  ],
+  "features": [
+    "2 MP IR mini network speed dome",
+    "4x optical zoom (2.8-12 mm), 16x digital",
+    "Powered-by-DarkFighter low-light",
+    "EXIR up to 20 m",
+    "pan 0-355 / tilt 0-90, 300 presets",
+    "built-in microphone + audio line in/out",
+    "120 dB WDR",
+    "microSD up to 512 GB",
+    "ONVIF/RTSP",
+    "IP66 and IK10 vandal-proof"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000001225/PTZ-N2204I-DE3G_Datasheet_20250623.pdf",
+    "https://www.hikvision.com/en/products/HiLook-IP-Products/PTZ/"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "HiLook (Hikvision OEM); ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "HiLook uses the Hikvision protocol — select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "HiLook 2 MP IR mini network speed dome with 4x optical zoom (2.8-12 mm), Powered-by-DarkFighter low-light, EXIR to 20 m, pan 0-355/tilt 0-90 with 300 presets and IP66/IK10 housing. Verified against the official HiLook datasheet PTZ-N2204I-DE3G_Datasheet_20250623.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

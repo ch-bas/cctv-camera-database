@@ -1,0 +1,130 @@
+{
+  "id": "hilook-ipc-d121he-luc",
+  "brand": "HiLook",
+  "model": "IPC-D121HE-LUC",
+  "aliases": [
+    "IPC-D121HE-LUC(2.8mm)",
+    "IPC-D121HE-LUC(4mm)"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/3\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed)",
+    "aperture": "F2.2",
+    "varifocal": false
+  },
+  "field_of_view_deg": "97 (2.8mm) / 76 (4mm)",
+  "night_vision": {
+    "type": "color",
+    "range_m": 15,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "PoE (802.3af)",
+    "consumption_w": 6.5,
+    "poe_class": 0
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-10 to 40",
+  "dimensions_mm": "Diameter 121.5 x 97.6",
+  "weight_g": 240,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "MENA",
+    "global"
+  ],
+  "features": [
+    "2 MP fixed dome",
+    "Person detection",
+    "White-light supplement up to 15 m",
+    "Fixed 2.8/4 mm lens F2.2",
+    "Built-in microphone",
+    "H.265+ compression",
+    "Digital WDR",
+    "PoE (802.3af)",
+    "Indoor use",
+    "Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000081463/IPC-D121HE-LUC_Datasheet_20260603.pdf"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "HiLook (Hikvision OEM); ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "HiLook uses the Hikvision protocol - select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "HiLook IPC-D121HE-LUC is a 2 MP indoor fixed dome network camera with a 2.8/4 mm F2.2 lens, white-light supplement up to 15 m, person detection, a built-in microphone, digital WDR and H.265+ compression, powered by PoE. Verified against the official HiLook datasheet (IPC-D121HE-LUC_Datasheet_20260603.pdf).",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "indoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

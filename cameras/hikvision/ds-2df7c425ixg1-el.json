@@ -1,0 +1,140 @@
+{
+  "id": "hikvision-ds-2df7c425ixg1-el",
+  "brand": "Hikvision",
+  "model": "DS-2DF7C425IXG1-EL",
+  "aliases": [
+    "DF7C Series 4MP 25X DarkFighter IR Network Speed Dome"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "ptz",
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.9 to 147.5 (25x optical zoom)",
+    "aperture": "F1.5",
+    "varifocal": true
+  },
+  "field_of_view_deg": "59.8 to 3.3 horizontal (wide-tele)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 400,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "PoE (802.3bt, Type 3, Class 6) / 36 VDC",
+    "consumption_w": 60,
+    "poe_class": 6,
+    "voltage": "36V (DC) / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "4MP 25x optical / 16x digital zoom network speed dome",
+    "DarkFighter 2.0 excellent low-light performance",
+    "150 dB WDR against strong back light",
+    "EXIR supplement light up to 400m with smart supplement light",
+    "face capture with grading and comparison, up to 150,000 face library",
+    "License Plate Recognition and vehicle attribute detection (124+ regions)",
+    "auto-tracking 3.0 with smart pan-tilt correction and built-in gyroscope EIS",
+    "360 endless pan, -20 to 90 tilt, 300 presets",
+    "line-in / line-out audio, 7 alarm inputs / 2 outputs, BNC video output",
+    "built-in heater, microSD slot up to 1 TB, IP67 / IK10 rated"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000086757/DS-2DF7C425IXG1-EL_Datasheet_20260330.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hikvision native RTSP (main 101 / sub 102). PTZ control via ONVIF Profile S/T."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80); PTZ supported via ONVIF."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "dimensions_mm": "260 diameter x 336.4",
+  "weight_g": 6700,
+  "operating_temp_c": "-40 to 70",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 60,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "release_notes": "The Hikvision DS-2DF7C425IXG1-EL is a 4MP 25x DarkFighter 2.0 IR network speed dome with up to 400m IR, 150 dB WDR, face capture, License Plate Recognition and auto-tracking 3.0, rated IP67/IK10. Verified against the official Hikvision datasheet (DS-2DF7C425IXG1-EL_Datasheet_20260330.pdf).",
+  "ndaa_compliant": false
+}

@@ -2,6 +2,12 @@
   "id": "hikvision-ds-2cd6944g0-ihs",
   "brand": "Hikvision",
   "model": "DS-2CD6944G0-IHS",
+  "aliases": [
+    "DS-2CD6944G0-IHS/NFC",
+    "DS-2CD6944G0-IHS(2.8mm)",
+    "DS-2CD6944G0-IHS(6mm)",
+    "DS-2CD6944G0-IHS(D)"
+  ],
   "type": "panoramic",
   "connectivity": [
     "ethernet"
@@ -9,16 +15,28 @@
   "release_year": 2021,
   "resolution": {
     "megapixels": 16,
-    "label": "16MP (4×4MP multisensor)"
+    "max_width": 4800,
+    "max_height": 2688,
+    "label": "16MP (4x4MP multisensor 180 panorama)"
   },
-  "field_of_view_deg": "180h",
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 4,
+    "focal_length_mm": "2.8 or 6 (fixed, four lenses)",
+    "aperture": "F1.4",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 horizontal (2.8mm and 6mm)",
   "night_vision": {
-    "type": "none",
-    "range_m": 0,
+    "type": "ir",
+    "range_m": 20,
     "min_lux_color": 0.009
   },
   "power": {
-    "method": "PoE (802.3af) / DC 12V"
+    "method": "PoE (802.3at) / DC 12V",
+    "consumption_w": 24,
+    "poe_class": 4,
+    "voltage": "12 VDC"
   },
   "storage": {
     "onboard": true,
@@ -30,27 +48,59 @@
     "onvif",
     "rtsp"
   ],
-  "ip_rating": "IP66",
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
   "audio": {
-    "microphone": false,
-    "speaker": false,
-    "two_way": false
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
   },
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "189.5 x 207.63 x 206.62",
+  "weight_g": 3000,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
   "features": [
-    "4×4MP multi-sensor 180° panoramic",
-    "IVS analytics",
-    "people counting",
-    "HEOP open platform",
-    "H.265",
-    "IP66"
+    "16 MP (4x4MP) 180 degree PanoVu multi-sensor camera",
+    "seamless 180 degree stitched panorama",
+    "EXIR infrared up to 20 m",
+    "multiple display modes: panorama, original, panorama + ePTZ, divided panorama",
+    "built-in heater, ultra-low -40 C startup",
+    "built-in microphone and speaker",
+    "H.265+ compression technology",
+    "20 km single-mode fiber interface",
+    "microSD storage up to 256 GB, NAS/ANR",
+    "IP67, IK10, ONVIF Profile S/G and ISAPI"
   ],
-  "sources": [
-    "https://www.hikvision.com/en/products/"
-  ],
-  "power_source": [
-    "poe",
-    "dc"
-  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4800x2688",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
   "configs": {
     "frigate": {
       "detect": {
@@ -60,27 +110,30 @@
       },
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
       "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
-      "notes": "PanoVu 4-sensor panoramic — each sensor is a separate channel: Streaming/Channels/101, 201, 301, 401. Configure each as its own Frigate camera, or use the stitched stream if firmware provides it.",
-      "onvif_port": 80
+      "notes": "PanoVu 4-sensor panoramic: use the stitched panorama channel, or configure each sensor channel separately depending on display mode.",
+      "onvif_port": 80,
+      "verified": false
     },
     "home_assistant": {
       "integration": "onvif",
-      "notes": "Use ONVIF integration. Default ONVIF port 80. Enable in Configuration > Network > Integration Protocol."
+      "notes": "Hikvision ONVIF (default port 80)."
     },
     "blue_iris": {
       "profile": "Hikvision",
-      "notes": "Select 'Hikvision' profile. Use main stream for recording, sub stream for live view."
+      "notes": "Select the 'Hikvision' profile."
     }
   },
-  "last_verified": "2026-08-10",
+  "release_notes": "16 MP (4x4MP) 180 degree PanoVu multi-sensor camera producing a seamless stitched panorama with EXIR to 20 m, built-in heater/mic/speaker, 20 km fiber and H.265+. Verified against the official Hikvision datasheet (DS-2CD6944G0-IHS_NFC_Datasheet_20240124).",
+  "last_verified": "2026-09-03",
   "environment": [
     "outdoor"
   ],
-  "network": {
-    "ethernet_speed_mbps": 1000
-  },
-  "markets": [
-    "global"
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000007927/DS-2CD6944G0-IHS_NFC_Datasheet_20240124.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
   ],
   "ndaa_compliant": false
 }

@@ -1,0 +1,118 @@
+{
+  "id": "hilook-ipc-cfwq6-d",
+  "brand": "HiLook",
+  "model": "IPC-CFWQ6-D",
+  "aliases": [
+    "IPC-CFWQ6-D(2.8+4mm)"
+  ],
+  "type": "dual-lens",
+  "connectivity": [
+    "wifi"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "6MP (2K+2K dual-lens)"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "2.8 / 4 (fixed)",
+    "aperture": "F2.2",
+    "varifocal": false
+  },
+  "field_of_view_deg": "106.4 horizontal (2.8 mm) / 84 horizontal (4 mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 10,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "DC 5V (USB Type-C)",
+    "voltage": "5 VDC"
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-10 to 40",
+  "dimensions_mm": "Ø 124.17 x 129",
+  "weight_g": 330,
+  "markets": [
+    "MENA",
+    "global"
+  ],
+  "features": [
+    "6 MP dual-lens (2K+2K) indoor pan-tilt Wi-Fi camera",
+    "Wi-Fi 6 (802.11ax)",
+    "Smart Tracking",
+    "Smart Hybrid Light: IR and white light up to 10 m",
+    "Human and vehicle detection",
+    "Built-in two-way audio (mic and speaker)",
+    "One-tap physical privacy mode",
+    "H.265 compression",
+    "Digital WDR",
+    "USB Type-C powered"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000162417/IPC-CFWQ6-D_Datasheet_20250618.pdf"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "HiLook (Hikvision OEM); ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "HiLook uses the Hikvision protocol - select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "HiLook 6 MP dual-lens (2K+2K) indoor pan-tilt Wi-Fi 6 camera with Smart Tracking, Smart Hybrid Light, human/vehicle detection, two-way audio and USB Type-C power. Verified against the official HiLook datasheet IPC-CFWQ6-D_Datasheet_20250618.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "indoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "768x432",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false,
+  "ptz": {
+    "autotracking": true
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "id": "hikvision-ds-2df8c825ixg2",
+  "brand": "Hikvision",
+  "model": "DS-2DF8C825IXG2",
+  "aliases": [
+    "DS-2DF8C825IXG2/LM-ELWY"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP"
+  },
+  "sensor": "1/1.2\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "7.5 to 187.5",
+    "aperture": "Max. F1.6",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 400,
+    "min_lux_color": 0.0005
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "PoE (802.3bt) / DC 36V",
+    "consumption_w": 60,
+    "poe_class": 6,
+    "voltage": "36 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "267.4 diameter x 431.1",
+  "weight_g": 9600,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "8 MP (3840 x 2160) DeepinViewX DarkFighter IR speed dome",
+    "25x optical zoom (7.5 to 187.5 mm), 16x digital",
+    "EXIR IR distance up to 400 m",
+    "Auto-tracking 3.0 with dedicated AI perimeter protection",
+    "Ultra low-light color 0.0005 lux at F1.6",
+    "H.265+ compression, MJPEG sub-stream",
+    "IP67 and IK10 rated, NEMA 4X anti-corrosion",
+    "microSD up to 1 TB, PoE 802.3bt (60 W)"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000101302/DS-2DF8C825IXG2_LM-ELWY_Datasheet_20251205.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "8 MP DeepinViewX DarkFighter IR network speed dome (PTZ) with 25x optical zoom, 400 m IR, auto-tracking 3.0 and IK10 vandal resistance. Verified against the official Hikvision datasheet DS-2DF8C825IXG2_LM-ELWY_Datasheet_20251205.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

@@ -1,0 +1,137 @@
+{
+  "id": "hilook-ipc-b569haa-lu",
+  "brand": "HiLook",
+  "model": "IPC-B569HAA-LU",
+  "aliases": [
+    "IPC-B569HAA-LUF",
+    "IPC-B569HAA-LU/SL",
+    "IPC-B569HAA-LU/SRB",
+    "HiLook 6 MP ColorVu 3.0 Fixed Bullet"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3200,
+    "max_height": 1800,
+    "label": "6MP"
+  },
+  "sensor": "1/2.4\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "109.5 horizontal (2.8 mm) / 89.4 horizontal (4 mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 50,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V",
+    "consumption_w": 8.8,
+    "poe_class": 3,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "285.8 x 88.1 x 83.4",
+  "weight_g": 705,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "MENA",
+    "global"
+  ],
+  "features": [
+    "6 MP ColorVu 3.0 (24/7 full-color imaging)",
+    "HikAI-ISP noise reduction",
+    "Motion Detection 3.0 (human/vehicle)",
+    "Smart Hybrid Light (IR + white light) up to 50 m",
+    "built-in microphone and speaker (two-way audio)",
+    "120 dB WDR",
+    "H.265+ compression",
+    "microSD up to 512 GB",
+    "ONVIF/RTSP",
+    "IP67 weatherproof"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000118731/IPC-B569HAA-LUF_SLRB_Datasheet_20250925.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "HiLook (Hikvision OEM); ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "HiLook uses the Hikvision protocol - select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "HiLook 6 MP ColorVu 3.0 fixed bullet with HikAI-ISP, Smart Hybrid Light up to 50 m, Motion Detection 3.0, two-way audio and microSD storage up to 512 GB. Verified against the official HiLook datasheet IPC-B569HAA-LUF_SLRB_Datasheet_20250925.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3200x1800",
+        "fps": 20,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

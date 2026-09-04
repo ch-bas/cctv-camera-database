@@ -1,0 +1,131 @@
+{
+  "id": "hikvision-ds-2cd3366g2-isu-h",
+  "brand": "Hikvision",
+  "model": "DS-2CD3366G2-ISU-H",
+  "aliases": [
+    "DS-2CD3366G2-ISU"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3200,
+    "max_height": 1800,
+    "label": "6MP"
+  },
+  "sensor": "1/2.4\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8/4/6",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "104 (2.8mm)/78 (4mm)/50 (6mm) horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40,
+    "min_lux_color": 0.003
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3)",
+    "consumption_w": 9,
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "127.3 diameter x 96.3",
+  "weight_g": 630,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "US",
+    "global"
+  ],
+  "features": [
+    "6 MP (3200 x 1800) AcuSense fixed turret",
+    "Human and vehicle target classification (deep learning)",
+    "140 dB true WDR",
+    "EXIR IR up to 40 m",
+    "Built-in microphone (-U)",
+    "H.265+ compression, MJPEG sub-stream",
+    "IP67 rated",
+    "microSD up to 512 GB, Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000161159/DS-2CD3366G2-ISU-H_Datasheet_20231117.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "6 MP AcuSense fixed turret (USA -H variant) with human/vehicle classification, 140 dB WDR, EXIR IR to 40 m and a built-in mic. Verified against the official Hikvision datasheet DS-2CD3366G2-ISU-H_Datasheet_20231117.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3200x1800",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

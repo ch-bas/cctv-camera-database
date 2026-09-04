@@ -1,0 +1,131 @@
+{
+  "id": "hikvision-ds-2cd7a26g0-izs",
+  "brand": "Hikvision",
+  "model": "DS-2CD7A26G0-IZS",
+  "aliases": [
+    "DS-2CD7A26G0-IZ(H)S",
+    "DS-2CD7A26G0-IZHS"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12 / 8-32 (motorized)",
+    "aperture": "F1.2-2.5 (2.8-12mm) / F1.6 (8-32mm)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "103.3 to 38.6 (2.8-12mm) / 42.5 to 13.4 (8-32mm) horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100,
+    "min_lux_color": 0.002
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3at, Class 4)",
+    "consumption_w": 14,
+    "poe_class": 4,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-30 to 65",
+  "dimensions_mm": "144 diameter x 347",
+  "weight_g": 2450,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "2 MP DeepinView IR varifocal bullet camera",
+    "1/1.8\" sensor, 1920x1080 at 60 fps",
+    "Motorized 2.8-12 mm or 8-32 mm lens (optional)",
+    "IR up to 50 m (2.8-12 mm) or 100 m (8-32 mm)",
+    "140 dB WDR",
+    "Deep-learning perimeter protection, face capture and queue management",
+    "5 streams plus up to 5 custom streams",
+    "H.265+ compression",
+    "IP67 and IK10 rated",
+    "Alarm 2 in / 2 out",
+    "Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000010372/DS-2CD7A26G0-IZHS_datasheet_V5.6.0_20221128.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "2 MP DeepinView IR varifocal bullet camera with a 1/1.8\" sensor, motorized 2.8-12 mm or 8-32 mm lens, IR up to 100 m, 140 dB WDR and deep-learning face capture and perimeter protection. Verified against the official Hikvision datasheet (DS-2CD7A26G0-IZHS_datasheet_V5.6.0_20221128.pdf).",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

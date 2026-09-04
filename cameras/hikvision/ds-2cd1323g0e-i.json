@@ -1,0 +1,127 @@
+{
+  "id": "hikvision-ds-2cd1323g0e-i",
+  "brand": "Hikvision",
+  "model": "DS-2CD1323G0E-I",
+  "aliases": [
+    "DS-2CD1323G0E-I(2.8mm)(C)",
+    "DS-2CD1323G0E-I(4mm)(C)",
+    "2 MP Fixed Turret Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 and 4 (fixed, optional)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "105 (2.8mm) / 81 (4mm) horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / 12 VDC",
+    "consumption_w": 6.5,
+    "poe_class": 3,
+    "voltage": "12 VDC / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "110 (diameter) x 85.3",
+  "weight_g": 320,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "2MP fixed turret (2.8/4mm)",
+    "EXIR 2.0 infrared up to 30m (850nm)",
+    "Digital WDR, 3D DNR, BLC",
+    "H.265+ compression to save bandwidth and storage",
+    "motion detection and video tampering alarm",
+    "IP67 water/dust resistant",
+    "compact M12-mount turret housing",
+    "Hikvision NVR compatible (ONVIF/RTSP)"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000007721/DS-2CD1323G0E-I-C_Datasheet_20240828.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2CD1323G0E-I is a 2MP fixed turret (2.8/4mm) with EXIR 2.0 IR to 30m, digital WDR and IP67 protection. Verified against the official DS-2CD1323G0E-I-C_Datasheet_20240828.pdf.",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

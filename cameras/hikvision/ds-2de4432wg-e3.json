@@ -1,0 +1,125 @@
+{
+  "id": "hikvision-ds-2de4432wg-e3",
+  "brand": "Hikvision",
+  "model": "DS-2DE4432WG-E3",
+  "aliases": [],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6.5 to 208",
+    "aperture": "Max. F1.6",
+    "varifocal": true
+  },
+  "ptz": {
+    "autotracking": false
+  },
+  "power": {
+    "method": "PoE (802.3at) / DC 12V",
+    "consumption_w": 18,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP54",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-10 to 50",
+  "dimensions_mm": "165 diameter x 179.5",
+  "weight_g": 2000,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "4 MP (2560 x 1440) network speed dome",
+    "32x optical zoom (6.5 to 208 mm), 16x digital",
+    "Pan 360 degrees continuous, tilt 0 to 90 degrees",
+    "Low-light color 0.005 lux at F1.6",
+    "H.265+ compression, MJPEG sub-stream",
+    "Audio and alarm I/O",
+    "IP54 rated, microSD up to 512 GB",
+    "Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000148773/DS-2DE4432WG-E3_Datasheet_20251209.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "4 MP 32x optical zoom network speed dome (PTZ) with continuous 360-degree pan and low-light color imaging. Verified against the official Hikvision datasheet DS-2DE4432WG-E3_Datasheet_20251209.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

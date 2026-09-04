@@ -1,0 +1,128 @@
+{
+  "id": "hikvision-ds-2de5425iw-ae",
+  "brand": "Hikvision",
+  "model": "DS-2DE5425IW-AE",
+  "aliases": [
+    "DS-2DE5425IW-AE(S6)"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.8 to 120 (25x optical)",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "55 to 2.4 horizontal (wide-tele)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 150,
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "24 VAC / PoE (802.3at)",
+    "consumption_w": 24
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 65",
+  "dimensions_mm": "210 (diameter) x 344.7",
+  "weight_g": 3000,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "4 MP 25x network IR speed dome",
+    "Powered-by-DarkFighter low-light technology",
+    "25x optical zoom + 16x digital zoom (4.8-120 mm, F1.6)",
+    "EXIR IR up to 150 m",
+    "120 dB WDR, HLC, BLC, 3D DNR, defog",
+    "360 endless pan, -15 to 90 tilt (auto flip), 3D positioning",
+    "300 presets, 8 patrols, face and behavior smart detection",
+    "Line-in/line-out audio, 2 alarm inputs / 1 output",
+    "24 VAC and PoE (802.3at), IP66, microSD up to 256 GB"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000048400/Datasheet-of-DS-2DE5425IW-AES6_V5.6.11_20220714.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2DE5425IW-AE(S6) is a 4 MP 25x network IR speed dome with a 1/2.8\" CMOS, powered-by-DarkFighter low-light, 4.8-120 mm F1.6 zoom lens, EXIR IR up to 150 m, 120 dB WDR and 300 presets in an IP66 housing. Verified against the official Hikvision datasheet Datasheet-of-DS-2DE5425IW-AES6_V5.6.11_20220714.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

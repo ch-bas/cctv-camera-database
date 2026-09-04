@@ -1,0 +1,129 @@
+{
+  "id": "hikvision-ds-2cd63c5g0-is",
+  "brand": "Hikvision",
+  "model": "DS-2CD63C5G0-IS",
+  "aliases": [
+    "DS-2CD63C5G0-IS(B)"
+  ],
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 12,
+    "max_width": 4000,
+    "max_height": 3000,
+    "label": "12 MP"
+  },
+  "sensor": "1/1.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.29 (fixed)",
+    "aperture": "F2.2",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 15,
+    "min_lux_color": 0.05
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 0) / DC 12V",
+    "consumption_w": 12.95,
+    "poe_class": 0,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "167.4 x 152.8 x 46.8",
+  "weight_g": 720,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "12 MP IR network fisheye camera",
+    "360-degree panoramic imaging (4000 x 3000)",
+    "Up to 18 dewarping/display modes for 3 mount types",
+    "Deep-learning people counting and heat map",
+    "Built-in two-way audio (dual mic and speaker)",
+    "3 independently controlled IR LEDs up to 15 m",
+    "H.265+ compression",
+    "Built-in microSD slot up to 256 GB",
+    "Intersection traffic analysis",
+    "Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000054679/DS-2CD63C5G0-ISB_Datasheet_V5.7.190_20211216.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "12 MP IR network fisheye camera delivering a 360-degree panoramic image up to 4000 x 3000, with up to 18 dewarping display modes, deep-learning people counting and heat map, built-in two-way audio and three independently controlled IR LEDs to 15 m. Verified against the official Hikvision datasheet (DS-2CD63C5G0-ISB_Datasheet_V5.7.190_20211216.pdf).",
+  "last_verified": "2026-09-03",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4000x3000",
+        "fps": 20,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "720x720",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

@@ -1,0 +1,124 @@
+{
+  "id": "hikvision-ds-2cd1331g0-i",
+  "brand": "Hikvision",
+  "model": "DS-2CD1331G0-I",
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "3MP (2304x1296)"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8/4",
+    "aperture": "F2.2",
+    "varifocal": false
+  },
+  "field_of_view_deg": "99 (2.8mm)/84 (4mm) horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / DC 12V",
+    "consumption_w": 6.5,
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "109.9 diameter x 103.6",
+  "weight_g": 300,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "3MP resolution",
+    "EXIR IR up to 20 m",
+    "H.265+ compression",
+    "digital WDR",
+    "3D DNR",
+    "BLC/HLC",
+    "IP67 weatherproof",
+    "PoE powered"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000077365/DS-2CD1331G0-I_Datasheet_20260701.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 24,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 24,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 24,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "release_notes": "Entry 1-series 3MP fixed turret with EXIR IR up to 20 m, H.265+ compression, digital WDR and 3D DNR. Verified against the official Hikvision datasheet DS-2CD1331G0-I_Datasheet_20260701.pdf.",
+  "last_verified": "2026-09-03",
+  "ndaa_compliant": false
+}

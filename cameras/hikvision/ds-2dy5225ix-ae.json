@@ -1,0 +1,129 @@
+{
+  "id": "hikvision-ds-2dy5225ix-ae",
+  "brand": "Hikvision",
+  "model": "DS-2DY5225IX-AE",
+  "aliases": [
+    "DS-2DY5225IX-AE(T5)"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/1.8\" progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.9 to 147.5 (25x optical)",
+    "aperture": "F1.5",
+    "varifocal": true
+  },
+  "field_of_view_deg": "55.4 to 2.1 horizontal (wide-tele)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 250,
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "Hi-PoE / 36 VDC",
+    "voltage": "36 VDC"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "332 x 182 x 222 (diameter x width x height)",
+  "weight_g": 7700,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "2MP (1920x1080) 25x optical zoom IR positioning system",
+    "1/1.8\" progressive scan CMOS, ultra-low illumination",
+    "IR supplement light up to 250 m with Smart IR",
+    "color min illumination 0.005 lux, B/W 0.001 lux",
+    "25x optical and 16x digital zoom, 5.9-147.5mm motorized lens",
+    "120 dB WDR, 3D DNR, defog, EIS",
+    "3D positioning, 300 presets, power-off memory",
+    "IP66 weatherproof, RS-485, 7-ch alarm in / 2-ch alarm out",
+    "H.265+ compression, triple stream, microSD up to 256 GB",
+    "ONVIF (Profile S/G/T), ISAPI, Hikvision SDK, line-in/line-out audio"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000051464/Datasheet-of-DS-2DY5225IX-AET5_V5.7.1_20220704.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2DY5225IX-AE is a 2MP 25x optical zoom ultra-low illumination IR positioning system with up to 250 m IR range, 120 dB WDR, 3D positioning and Hi-PoE power. Verified against the official Hikvision datasheet Datasheet-of-DS-2DY5225IX-AET5_V5.7.1_20220704.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

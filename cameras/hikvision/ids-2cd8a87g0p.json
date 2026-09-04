@@ -1,0 +1,121 @@
+{
+  "id": "hikvision-ids-2cd8a87g0p",
+  "brand": "Hikvision",
+  "model": "iDS-2CD8A87G0P",
+  "aliases": [
+    "iDS-2CD8A87G0P/PW",
+    "8MP DeepinView High-Rise Littering Detection Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "dual-lens",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 2560,
+    "max_height": 2880,
+    "label": "8 MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "6 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "51 horizontal",
+  "power": {
+    "method": "PoE (802.3af, Class 3) / 12 VDC",
+    "consumption_w": 12.5,
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "142.7 x 111.9 x 199.8",
+  "weight_g": 1810,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "8MP DeepinView camera with dual-lens stitching design",
+    "Dedicated high-rise littering detection deep-learning algorithm",
+    "120dB WDR for strong back light",
+    "Built-in heater for clear image in rain or snow",
+    "H.265+ efficient compression",
+    "microSD on-board storage up to 512GB",
+    "IP67 water and dust resistant"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000167301/iDS-2CD8A87G0P_PW_Datasheet_20250612.pdf"
+  ],
+  "release_notes": "The Hikvision iDS-2CD8A87G0P is an 8MP DeepinView camera with a dual-lens stitching design and a dedicated high-rise littering detection algorithm, 120dB WDR, a built-in heater and microSD storage up to 512GB. Verified against the official Hikvision datasheet (iDS-2CD8A87G0P_PW_Datasheet_20250612.pdf).",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 24,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x2880",
+        "fps": 24,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x720",
+        "fps": 24,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

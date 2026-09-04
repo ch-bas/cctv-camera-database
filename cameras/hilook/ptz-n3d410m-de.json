@@ -1,0 +1,131 @@
+{
+  "id": "hilook-ptz-n3d410m-de",
+  "brand": "HiLook",
+  "model": "PTZ-N3D410M-DE",
+  "aliases": [
+    "PTZ-N3D410M-DE/14"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP per channel"
+  },
+  "sensor": "1/2.8\" progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (bullet) / 5.76-57.6 (PT, 10x optical)",
+    "aperture": "F1.6 (bullet) / F1.86-F2.65 (PT)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "104.9 (bullet) / 50 to 7.5 (PT)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 80,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "12 VDC / PoE+",
+    "consumption_w": 13.5
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 50",
+  "dimensions_mm": "311.5 x 238.6 x 156",
+  "weight_g": 1370,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "MENA",
+    "global"
+  ],
+  "features": [
+    "TandemVu dual-lens: fixed 2.8mm 4MP bullet overview + 10x optical PT channel",
+    "4MP (2560x1440) on both channels",
+    "10x optical zoom on PT channel",
+    "Smart Hybrid Light (IR + white light), PT IR to 80m",
+    "Powered-by-DarkFighter low-light imaging",
+    "Human and Vehicle Detection",
+    "120 dB-class WDR, HLC, BLC, 3D DNR, defog",
+    "Built-in microphone and speaker",
+    "300 presets with power-off memory",
+    "Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000119126/PTZ-N3D410M-DE_14_Datasheet_20260702.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "HiLook uses the Hikvision RTSP path (main 101 / sub 102); enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "HiLook (Hikvision OEM); ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "HiLook uses the Hikvision protocol — select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "HiLook PTZ-N3D410M-DE is a TandemVu dual-lens 4MP+4MP PT camera pairing a fixed 2.8mm 4MP bullet overview with a 10x optical-zoom 4MP PT channel, Smart Hybrid Light (IR to 80m), Human/Vehicle detection, built-in mic and speaker and 300 presets. Verified against the official HiLook datasheet PTZ-N3D410M-DE_14_Datasheet_20260702.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

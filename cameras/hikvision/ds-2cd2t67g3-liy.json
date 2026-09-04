@@ -1,0 +1,132 @@
+{
+  "id": "hikvision-ds-2cd2t67g3-liy",
+  "brand": "Hikvision",
+  "model": "DS-2CD2T67G3-LIY",
+  "aliases": [
+    "DS-2CD2T67G3-LIY(Black)"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3200,
+    "max_height": 1800,
+    "label": "6MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "108.8 horizontal (2.8mm) / 93.3 horizontal (4mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 60,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3, max. 12.5 W) / DC 12V",
+    "consumption_w": 10,
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "286.7 x 93.3 x 91.2",
+  "weight_g": 1200,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "6MP ColorVu fixed bullet, 24/7 color imaging via F1.0 super-aperture",
+    "Smart Hybrid Light: integrated IR + white light, up to 60m",
+    "HikAI-ISP noise reduction",
+    "person/vehicle deep-learning classification",
+    "scene-adaptive 130 dB WDR",
+    "H.265+ compression",
+    "NEMA 4X anti-corrosion design",
+    "microSD up to 512GB",
+    "IP67, ONVIF / Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000107049/DS-2CD2T67G3-LIY_Datasheet_20250411.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "Specs verified against the official Hikvision datasheet DS-2CD2T67G3-LIY (Datasheet_20250411). 6MP ColorVu Smart Hybrid Light fixed bullet with NEMA 4X anti-corrosion.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3200x1800",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

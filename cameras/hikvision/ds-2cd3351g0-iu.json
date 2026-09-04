@@ -1,0 +1,134 @@
+{
+  "id": "hikvision-ds-2cd3351g0-iu",
+  "brand": "Hikvision",
+  "model": "DS-2CD3351G0-IU",
+  "aliases": [
+    "DS-2CD3351G0-IU(F)",
+    "DS-2CD3351G0-IUF(2.8mm)(C)",
+    "DS-2CD3351G0-IUF(4mm)(C)"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2560,
+    "max_height": 1920,
+    "label": "5MP"
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8/4",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "99 horizontal (2.8mm), 78 horizontal (4mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40,
+    "min_lux_color": 0.005
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1920",
+        "fps": 20,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / DC 12V",
+    "consumption_w": 6.5,
+    "poe_class": 3,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "110 x 92 (dia x H)",
+  "weight_g": 360,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "5MP (2560x1920) fixed turret",
+    "EXIR infrared up to 40m",
+    "built-in microphone for real-time audio",
+    "efficient H.265+ compression",
+    "120dB WDR",
+    "2.8mm / 4mm fixed lens options",
+    "microSD storage up to 256GB",
+    "IP67 water and dust resistant",
+    "Hikvision NVR compatible"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000051712/DS-2CD3351G0-IUF-C_Datasheet_20240822.pdf"
+  ],
+  "release_notes": "The Hikvision DS-2CD3351G0-IU is a 5MP fixed turret with a 1/2.7\" sensor, EXIR infrared up to 40m, a built-in microphone and 120dB WDR. Verified against the official datasheet DS-2CD3351G0-IUF-C_Datasheet_20240822.pdf.",
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

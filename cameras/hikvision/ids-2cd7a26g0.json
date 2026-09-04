@@ -1,0 +1,137 @@
+{
+  "model": "iDS-2CD7A26G0/P-IZHSY",
+  "aliases": [
+    "iDS-2CD7A26G0/P-IZHSY(C)",
+    "iDS-2CD7A26G0/P-IZHSY"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12 / 8-32 (motorized)",
+    "aperture": "F1.2 to F2.5 (2.8-12mm) / F1.7 to F1.73 (8-32mm)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "114.5 to 41.8 horizontal (2.8-12mm) / 42.5 to 15.1 horizontal (8-32mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "12 VDC / PoE (IEEE 802.3at, Type 2, Class 4)",
+    "consumption_w": 16.8,
+    "poe_class": 4,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "Diameter 140 x 351",
+  "weight_g": 1950,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "GB",
+    "global"
+  ],
+  "features": [
+    "2 MP ANPR / license plate recognition bullet camera",
+    "DarkFighter low-light technology",
+    "dual motorized lenses (2.8-12 mm and 8-32 mm)",
+    "IR up to 100 m",
+    "140 dB WDR",
+    "5 configurable streams",
+    "onboard deep-learning plate capture with blocklist/allowlist",
+    "Wiegand and RS-485 interfaces",
+    "built-in heater",
+    "IP67 and IK10 rated",
+    "microSD storage up to 1 TB"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "release_notes": "2 MP DarkFighter ANPR bullet with onboard license plate recognition, dual motorized lenses (2.8-12 / 8-32 mm), 100 m IR, 140 dB WDR, and a built-in heater. Verified against the official Hikvision datasheet (iDS-2CD7A26G0_P-IZHSY-C_UK_Datasheet_V5.7.80_2025).",
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000069961/iDS-2CD7A26G0_P-IZHSY-C_UK_Datasheet_V5.7.80_2025.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "last_verified": "2026-09-03",
+  "ndaa_compliant": false,
+  "brand": "Hikvision",
+  "id": "hikvision-ids-2cd7a26g0"
+}

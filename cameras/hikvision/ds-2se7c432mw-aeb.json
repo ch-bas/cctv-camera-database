@@ -1,0 +1,128 @@
+{
+  "id": "hikvision-ds-2se7c432mw-aeb",
+  "brand": "Hikvision",
+  "model": "DS-2SE7C432MW-AEB",
+  "aliases": [
+    "DS-2SE7C432MW-AEB(14F1)(P3)"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.9 to 188.8 (PTZ channel)",
+    "aperture": "F1.5",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 200,
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "24 VAC / Hi-PoE",
+    "consumption_w": 42,
+    "voltage": "24 VAC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-30 to 65",
+  "dimensions_mm": "220 diameter x 382.1",
+  "weight_g": 6000,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "ptz": {
+    "autotracking": true
+  },
+  "features": [
+    "TandemVu 4+4MP dual-channel speed dome",
+    "32x optical zoom (16x digital)",
+    "ColorVu bullet + IR PTZ channel",
+    "IR up to 200 m, white light up to 30 m",
+    "AcuSense human/vehicle classification",
+    "Auto-tracking",
+    "Active strobe light and audio alarm deterrence",
+    "120 dB WDR",
+    "IP66 and IK10 rated",
+    "Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000056249/DS-2SE7C432MW-AEB14F1P3_Datasheet_20250522.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "TandemVu 4+4MP 32x ColorVu and IR AcuSense network speed dome with a ColorVu bullet channel and an IR PTZ channel (IR up to 200 m), auto-tracking, active deterrence and 120 dB WDR. Verified against the official Hikvision datasheet DS-2SE7C432MW-AEB14F1P3_Datasheet_20250522.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

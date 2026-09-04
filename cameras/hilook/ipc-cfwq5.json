@@ -1,0 +1,117 @@
+{
+  "id": "hilook-ipc-cfwq5",
+  "brand": "HiLook",
+  "model": "IPC-CFWQ5",
+  "aliases": [
+    "IPC-CFWQ5(2.8mm)",
+    "IPC-CFWQ5(4mm)"
+  ],
+  "type": "box",
+  "connectivity": [
+    "wifi"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2960,
+    "max_height": 1664,
+    "label": "3K"
+  },
+  "sensor": "1/2.6\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed)",
+    "aperture": "F2.2",
+    "varifocal": false
+  },
+  "field_of_view_deg": "112.6 horizontal (2.8 mm) / 89.2 horizontal (4 mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 10,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "DC 5V (USB Type-C)",
+    "voltage": "5 VDC"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-10 to 40",
+  "dimensions_mm": "Ø 124.2 x 113",
+  "weight_g": 280,
+  "markets": [
+    "MENA",
+    "global"
+  ],
+  "features": [
+    "3K indoor pan-tilt Wi-Fi camera",
+    "Wi-Fi 6 (802.11ax)",
+    "Smart Hybrid Light: IR and white light up to 10 m",
+    "Human and vehicle detection",
+    "Built-in two-way audio (mic and speaker)",
+    "One-tap physical privacy mode",
+    "H.265 compression",
+    "Digital WDR",
+    "USB Type-C powered",
+    "ONVIF / RTSP"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000162416/IPC-CFWQ5_Datasheet_20250515.pdf"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "HiLook (Hikvision OEM); ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "HiLook uses the Hikvision protocol - select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "HiLook 3K indoor pan-tilt Wi-Fi 6 camera with Smart Hybrid Light, human/vehicle detection, two-way audio, one-tap physical privacy mode and USB Type-C power. Verified against the official HiLook datasheet IPC-CFWQ5_Datasheet_20250515.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "indoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2960x1664",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "768x432",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

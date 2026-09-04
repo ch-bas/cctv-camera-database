@@ -1,0 +1,133 @@
+{
+  "id": "hikvision-ds-egd0288-h",
+  "brand": "Hikvision",
+  "model": "DS-EGD0288-H",
+  "aliases": [
+    "DS-EGD0288-H/FR",
+    "iDS-EGD0288-H/FR(C4F0)"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS (panoramic and PTZ channels)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "2.8 (panoramic) / 8 to 32 (PTZ)",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "103 (panoramic) / 41.9 to 15.1 (PTZ) horizontal",
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "12 VDC / PoE+ (802.3at)",
+    "consumption_w": 22.5,
+    "poe_class": 4,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-10 to 40",
+  "dimensions_mm": "272 x 201.2 x 124.5",
+  "weight_g": 2000,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "8 MP dual-channel (panoramic + PTZ) network speed dome",
+    "4x optical zoom PTZ channel (8-32 mm)",
+    "Face recognition and attendance check (up to 150000 faces)",
+    "120 dB WDR, HLC, 3D DNR, BLC",
+    "H.265+ compression",
+    "Quick face capture within 20 m",
+    "Gigabit Ethernet",
+    "1 audio input and 1 audio output",
+    "microSD/microSDHC/microSDXC up to 256 GB",
+    "12 VDC and PoE+ powered",
+    "Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000059016/Datasheet-of-DS-EGD0288-H_FR_V5.7.0_20220411.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "8 MP dual-channel (panoramic + PTZ) network speed dome with face recognition and attendance check, 4x optical zoom and 120 dB WDR; verified against the official Hikvision datasheet Datasheet-of-DS-EGD0288-H_FR_V5.7.0_20220411.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "indoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 24,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 24,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 24,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

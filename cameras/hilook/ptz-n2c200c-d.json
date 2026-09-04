@@ -1,0 +1,134 @@
+{
+  "id": "hilook-ptz-n2c200c-d",
+  "brand": "HiLook",
+  "model": "PTZ-N2C200C-D",
+  "aliases": [
+    "PTZ-N2C200C-D/4G",
+    "DS-2DE2C200MWG-4G"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet",
+    "4g"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "101 (2.8mm) / 78 (4mm)",
+  "night_vision": {
+    "type": "color",
+    "range_m": 30,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "DC 12V",
+    "consumption_w": 9,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 40",
+  "dimensions_mm": "131.9 × 164 × 312.6",
+  "weight_g": 600,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "MENA",
+    "global"
+  ],
+  "features": [
+    "2 MP Smart Hybrid Light mini PT camera",
+    "4G LTE data transmission (nano SIM)",
+    "fixed 2.8/4 mm F1.0 lens",
+    "White supplement light up to 30 m (24/7 colour)",
+    "pan 0-345 / tilt 0-80",
+    "built-in microphone and speaker (two-way audio)",
+    "Digital WDR",
+    "microSD up to 512 GB",
+    "ONVIF (Profile S/G/T)/RTSP",
+    "IP66"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000157997/PTZ-N2C200C-D_4G_Datasheet_20241219.pdf",
+    "https://www.hikvision.com/en/products/HiLook-IP-Products/PTZ/"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "HiLook (Hikvision OEM); ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "HiLook uses the Hikvision protocol — select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "HiLook 2 MP mini PT network camera with 4G LTE, fixed 2.8/4 mm F1.0 lens and white supplement light to 30 m for 24/7 colour, pan 0-345/tilt 0-80, two-way audio and microSD up to 512 GB. Verified against the official HiLook datasheet PTZ-N2C200C-D_4G_Datasheet_20241219.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 25,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

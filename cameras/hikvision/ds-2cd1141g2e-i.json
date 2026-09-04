@@ -1,0 +1,123 @@
+{
+  "id": "hikvision-ds-2cd1141g2e-i",
+  "brand": "Hikvision",
+  "model": "DS-2CD1141G2E-I",
+  "aliases": [
+    "4 MP Fixed Dome Network Camera (Value series)"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed options)",
+    "aperture": "F2.2",
+    "varifocal": false
+  },
+  "field_of_view_deg": "112 horizontal (2.8mm) / 89 horizontal (4mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 0), max. 6.5 W",
+    "consumption_w": 6.5,
+    "poe_class": 0
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "value-series 4MP fixed dome, 1/2.7\" CMOS at 2560x1440",
+    "EXIR supplement light up to 20m with smart supplement light",
+    "person detection (motion alarm by human target type)",
+    "digital WDR, 3D DNR, BLC/HLC",
+    "H.265+ compression, dual stream",
+    "ONVIF (Profile S/T), ISAPI, SDK; Hikvision NVR compatible"
+  ],
+  "release_notes": "The Hikvision DS-2CD1141G2E-I is a value-series 4MP fixed indoor dome with a 1/2.7\" sensor, 20m EXIR, person detection and digital WDR. Verified against the official datasheet DS-2CD1141G2E-I_Datasheet_20260603.pdf.",
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000081503/DS-2CD1141G2E-I_Datasheet_20260603.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "dimensions_mm": "110.8 diameter x 85.2",
+  "weight_g": 210,
+  "operating_temp_c": "-10 to 40",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 20,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 24,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ndaa_compliant": false
+}

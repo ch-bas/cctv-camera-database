@@ -1,0 +1,133 @@
+{
+  "id": "hikvision-ds-2sf8c442mxs-dlw",
+  "brand": "Hikvision",
+  "model": "DS-2SF8C442MXS-DLW",
+  "aliases": [
+    "DS-2SF8C442MXS-DLW(14F1)(P3)",
+    "DS-2SF8C442MXS-DLW(24F0)(P3)"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP (per channel)"
+  },
+  "sensor": "Dual 1/1.8\" Progressive Scan CMOS (bullet + PTZ)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "4 (bullet, fixed) / 6 to 252 (PTZ, 42x optical)",
+    "aperture": "F1.0 (bullet) / F1.2 (PTZ)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "89 (bullet) / 59 to 2 horizontal (PTZ wide-tele)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 300,
+    "min_lux_color": 0.0005
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "36 VDC (max. 70 W)",
+    "consumption_w": 70,
+    "voltage": "36 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "290 (diameter) x 453.2",
+  "weight_g": 11500,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "4 MP 42x TandemVu PTZ: fixed bullet channel + PTZ channel",
+    "Both channels 4 MP (2560 x 1440), 1/1.8\" CMOS",
+    "24/7 colorful imaging with DarkFighter low-light technology",
+    "42x optical + 16x digital zoom (PTZ channel, 6-252 mm)",
+    "Bullet channel white light up to 30 m; PTZ channel IR up to 300 m",
+    "120 dB WDR on both channels, EIS with built-in gyroscope",
+    "PTZ auto-tracking, 300 presets, deep-learning human/face/vehicle detection",
+    "Two-way audio (line in / line out), 7 alarm inputs / 2 outputs, RS-485",
+    "IP67 and IK10, wiper, 36 VDC (max. 70 W), microSD up to 256 GB"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000054471/Datasheet-of-DS-2SF8C442MXS-DLW14F1P3_V5.7.10_20220518.pdf"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2SF8C442MXS-DLW is a 4 MP 42x TandemVu PTZ camera pairing a fixed 4 mm bullet channel (89-degree FOV, white light to 30 m) with a 42x-optical PTZ channel (6-252 mm, IR to 300 m), both 4 MP on 1/1.8\" DarkFighter sensors, with 120 dB WDR, PTZ auto-tracking, deep-learning detection and IP67/IK10 protection. Verified against the official Hikvision datasheet Datasheet-of-DS-2SF8C442MXS-DLW14F1P3_V5.7.10_20220518.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

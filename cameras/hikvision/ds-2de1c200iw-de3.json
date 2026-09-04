@@ -1,0 +1,131 @@
+{
+  "id": "hikvision-ds-2de1c200iw-de3",
+  "brand": "Hikvision",
+  "model": "DS-2DE1C200IW-DE3",
+  "aliases": [
+    "DS-2DE1C200IW-DE3(F1)(S7)",
+    "2 MP IR Mini PT Dome Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4 (fixed)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "90 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 15,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "PoE (802.3af) / 5 VDC (Micro USB)",
+    "consumption_w": 5.5,
+    "voltage": "5V (DC, Micro USB) / PoE"
+  },
+  "power_source": [
+    "poe",
+    "usb"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP54",
+  "operating_temp_c": "-10 to 40",
+  "dimensions_mm": "127 x 93.5 x 143",
+  "weight_g": 275,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "2MP indoor mini pan-tilt dome (pan 0-350, tilt -15 to 100)",
+    "two-way audio with built-in microphone and speaker",
+    "IR night vision up to 15m (850nm)",
+    "Digital WDR, HLC, BLC, 3D DNR",
+    "H.265 compression",
+    "microSD storage up to 256GB",
+    "Hik-Connect cloud service and app",
+    "ONVIF Profile S/G/T support"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000053316/DS-2DE1C200IW-DE3F1S7_Datasheet_20260520.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hikvision native RTSP (main 101 / sub 102). Enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2DE1C200IW-DE3 is a 2MP indoor mini pan-tilt dome with two-way audio (built-in mic and speaker), 15m IR, Digital WDR and microSD storage up to 256GB, rated IP54. Verified against the official DS-2DE1C200IW-DE3F1S7_Datasheet_20260520.pdf.",
+  "environment": [
+    "indoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

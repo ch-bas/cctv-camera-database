@@ -1,0 +1,137 @@
+{
+  "id": "hikvision-ds-2sf8c425mxg-el",
+  "brand": "Hikvision",
+  "model": "DS-2SF8C425MXG-EL",
+  "aliases": [
+    "DS-2SF8C425MXG-EL/26(B)",
+    "DS-2SF8C425MXG-EL/26"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3632,
+    "max_height": 1632,
+    "label": "6MP panoramic + 4MP PTZ (TandemVu)"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS (dual channel)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "PTZ 6-150 / panoramic 2.8",
+    "aperture": "PTZ F1.6 / panoramic F1.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "panoramic 190 / PTZ 58.5 to 3.1 horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 300,
+    "min_lux_color": 0.0005
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "36 VDC / Hi-PoE, max. 60 W",
+    "consumption_w": 60,
+    "voltage": "36 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "290 diameter x 453.2",
+  "weight_g": 10500,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "TandemVu: 190-degree panoramic channel plus 25x PTZ channel",
+    "6 MP panoramic channel and 4 MP PTZ channel",
+    "24/7 colorful imaging with DarkFighter low-light technology",
+    "25x optical / 16x digital zoom on the PTZ channel",
+    "IR up to 300 m (PTZ) and white light up to 30 m (panoramic)",
+    "Smart tracking on the PTZ channel",
+    "Deep-learning human and face detection and capture",
+    "120 dB WDR",
+    "microSD storage up to 256 GB",
+    "IP67 and IK10 rated",
+    "Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/sm000086517/DS-2SF8C425MXG-EL-26B_Datasheet_20240815.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "TandemVu PTZ camera combining a 6 MP 190-degree panoramic channel with a 4 MP 25x optical-zoom PTZ channel, DarkFighter low-light imaging, smart tracking and Smart Hybrid Light (IR to 300 m). Verified against the official Hikvision datasheet DS-2SF8C425MXG-EL-26B_Datasheet_20240815.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "panoramic",
+        "resolution": "3632x1632",
+        "fps": 30,
+        "codec": "H.265+"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

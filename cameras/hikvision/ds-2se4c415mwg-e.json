@@ -1,0 +1,132 @@
+{
+  "id": "hikvision-ds-2se4c415mwg-e",
+  "brand": "Hikvision",
+  "model": "DS-2SE4C415MWG-E",
+  "aliases": [
+    "DS-2SE4C415MWG-E/14",
+    "DS-2SE4C415MWG-E(14F0)",
+    "TandemVu 4+4MP 15X ColorVu & IR AcuSense Network Speed Dome"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4 MP"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "5-75 (15x optical, PTZ channel) / 2.8 (bullet channel)",
+    "aperture": "F1.6 (PTZ) / F1.0 (bullet)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "96.1 horizontal (bullet) / 55 to 4 horizontal (PTZ 15x)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 100,
+    "min_lux_color": 0.005
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "PoE (802.3at) / 12 VDC"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 65",
+  "dimensions_mm": "Diameter 166 x 294.8",
+  "weight_g": 3000,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "TandemVu speed dome: 4MP bullet channel + 4MP 15x-zoom PTZ channel",
+    "24/7 ColorVu color plus DarkFighter low-light and EXIR IR up to 100m",
+    "White light up to 30m on the bullet channel",
+    "AcuSense human and vehicle target classification",
+    "15x optical / 16x digital zoom, 3D positioning, 300 presets",
+    "Built-in speaker and dual microphones for two-way audio",
+    "Active strobe light and audio alarm to warn intruders",
+    "IP67, microSD up to 512GB"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000159413/DS-2SE4C415MWG-E_14_Datasheet_20250615.pdf"
+  ],
+  "release_notes": "The Hikvision DS-2SE4C415MWG-E is a TandemVu network speed dome pairing a 4MP fixed bullet channel with a 4MP 15x-optical-zoom PTZ channel, ColorVu 24/7 color, EXIR IR up to 100m, AcuSense classification and two-way audio. Verified against the official Hikvision datasheet (DS-2SE4C415MWG-E_14_Datasheet_20250615.pdf).",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

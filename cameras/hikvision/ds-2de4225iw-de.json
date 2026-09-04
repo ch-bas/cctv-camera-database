@@ -1,0 +1,132 @@
+{
+  "id": "hikvision-ds-2de4225iw-de",
+  "brand": "Hikvision",
+  "model": "DS-2DE4225IW-DE",
+  "aliases": [
+    "DS-2DE4225IW-DE(S6)"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.8 to 120",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "57.6 to 2.5 horizontal (wide-tele)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100,
+    "min_lux_color": 0.005
+  },
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3at), max. 18 W",
+    "consumption_w": 18,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 65",
+  "dimensions_mm": "164.5 (diameter) x 290",
+  "weight_g": 2000,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "2 MP 1/2.8\" progressive scan CMOS IR speed dome",
+    "25x optical zoom + 16x digital zoom",
+    "Powered-by-DarkFighter low-light imaging",
+    "EXIR/IR supplement light up to 100 m",
+    "120 dB WDR, HLC, BLC, 3D DNR, defog",
+    "Two-way audio (line in / line out)",
+    "Water/dust resistant (IP66)",
+    "12 VDC / PoE (802.3at) power"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000044251/Datasheet-of-DS-2DE4225IW-DES6_V5.7.1_20220714.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "2 MP 25x network IR speed dome with 4.8-120 mm motorized zoom lens, 100 m IR distance, 120 dB WDR and powered-by-DarkFighter low-light imaging. IP66 rated. Verified against the official Hikvision datasheet Datasheet-of-DS-2DE4225IW-DES6_V5.7.1_20220714.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

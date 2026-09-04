@@ -1,0 +1,133 @@
+{
+  "id": "hikvision-ds-2cd3741g2-izs",
+  "brand": "Hikvision",
+  "model": "DS-2CD3741G2-IZS",
+  "aliases": [
+    "4 MP Varifocal Dome Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/2.9\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7 to 13.5 (motorized)",
+    "aperture": "Max. F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "96.7 to 29.7 horizontal (wide-tele)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40,
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / 12 VDC",
+    "consumption_w": 12,
+    "poe_class": 3,
+    "voltage": "12 VDC / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "121.5 (diameter) x 97.6",
+  "weight_g": 885,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "4MP motorized varifocal dome (2.7-13.5mm)",
+    "EXIR IR up to 40m (850nm) with Smart Supplement Light",
+    "120 dB WDR, 3D DNR, BLC, HLC",
+    "H.265+ compression to save bandwidth and storage",
+    "line crossing and intrusion detection with human/vehicle classification",
+    "microSD on-board storage up to 512 GB",
+    "audio line in/out and alarm I/O terminal blocks",
+    "IP67 water/dust resistant and IK10 vandal proof",
+    "Hikvision NVR compatible (ONVIF Profile S/T/G)"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000067656/DS-2CD3741G2-IZS_Datasheet_20231025.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2CD3741G2-IZS is a 4MP motorized varifocal dome (2.7-13.5mm) with 40m EXIR IR, 120 dB WDR and IP67/IK10 protection. Verified against the official DS-2CD3741G2-IZS_Datasheet_20231025.pdf.",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 20,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

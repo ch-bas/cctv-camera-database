@@ -1,0 +1,125 @@
+{
+  "id": "hikvision-ds-2cd6445g2-c1",
+  "brand": "Hikvision",
+  "model": "DS-2CD6445G2-C1",
+  "aliases": [
+    "DS-2CD6445G2-C1/HDMI",
+    "4MP Separated Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "covert",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2 / 2.8 / 4 (L30 lens module options)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "128 horizontal (2mm) / 104.8 horizontal (2.8mm) / 79.6 horizontal (4mm)",
+  "power": {
+    "method": "PoE (802.3af, Class 3)",
+    "consumption_w": 7.4,
+    "poe_class": 3,
+    "voltage": "PoE"
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "4MP separated (covert) network camera with detachable lens head",
+    "standard HDMI video output",
+    "HEOP open platform, 4 TOPS computing power, 375 MB smart RAM, 2 GB eMMC",
+    "120 dB true WDR and 3D DNR",
+    "line-in / line-out audio interface, 2 alarm inputs / 1 output",
+    "H.265+ compression, three streams, microSD slot up to 256 GB",
+    "AcuSense human/vehicle smart events",
+    "Power over Ethernet (802.3af), Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000067816/DS-2CD6445G2-C1_HDMI_Datasheet_20260327.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hikvision native RTSP (main 101 / sub 102). Enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "dimensions_mm": "105 x 78 x 26",
+  "weight_g": 175,
+  "operating_temp_c": "-30 to 55",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "release_notes": "The Hikvision DS-2CD6445G2-C1/HDMI is a 4MP separated (covert) network camera with a detachable lens head, standard HDMI output, HEOP open platform (4 TOPS) and 120 dB WDR. Verified against the official Hikvision datasheet (DS-2CD6445G2-C1_HDMI_Datasheet_20260327.pdf).",
+  "ndaa_compliant": false
+}

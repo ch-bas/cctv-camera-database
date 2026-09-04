@@ -1,0 +1,136 @@
+{
+  "id": "hikvision-ds-2dyh2a0lxg-lw",
+  "brand": "Hikvision",
+  "model": "DS-2DYH2A0LXG-LW",
+  "aliases": [
+    "DS-2DYH2A0LXG-LW/12",
+    "DS-2DYH2A0LXG-LW/12(F1)"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS (dual-lens: panoramic + PTZ)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "PTZ: 10-1000 (100X optical) / Panoramic: 4",
+    "aperture": "F1.0 (panoramic) / F3.0 (PTZ)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "PTZ 29.8 to 0.6 / Panoramic 44.7 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 3000,
+    "min_lux_color": 0.005
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "48 VDC",
+    "consumption_w": 250,
+    "voltage": "48 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "584.5 x 406 x 615",
+  "weight_g": 50000,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "2 MP 100X DarkFighter laser network positioning system",
+    "dual-lens: panoramic (F1.0, 4 mm) + PTZ (1/1.8\", up to 1000 mm)",
+    "100X optical zoom, 16X digital zoom",
+    "laser illuminator up to 3000 m",
+    "GPS / Beidou satellite positioning and compass",
+    "optical image stabilization (OIS) plus EIS",
+    "magnetic correction with closed-loop motor control",
+    "auto-tracking and face capture",
+    "picture-in-picture dual-channel output",
+    "wiper and microSD up to 512 GB",
+    "IP66 rated"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000115081/DS-2DYH2A0LXG-LW_12_Datasheet_20250429.pdf"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "2 MP dual-lens 100X DarkFighter laser network positioning system with a panoramic F1.0 channel and a long-range PTZ channel, 3 km laser range, GPS/Beidou positioning, and OIS. Verified against the official Hikvision datasheet (DS-2DYH2A0LXG-LW_12_Datasheet_20250429).",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

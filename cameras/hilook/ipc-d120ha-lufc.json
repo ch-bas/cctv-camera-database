@@ -1,0 +1,134 @@
+{
+  "id": "hilook-ipc-d120ha-lufc",
+  "brand": "HiLook",
+  "model": "IPC-D120HA-LUFC",
+  "aliases": [
+    "IPC-D120HA-LUFC(2.8mm)",
+    "IPC-D120HA-LUFC(4mm)"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.9\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed)",
+    "aperture": "F2.2",
+    "varifocal": false
+  },
+  "field_of_view_deg": "101 horizontal (2.8 mm) / 80 horizontal (4 mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 20,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3af Class 3)",
+    "consumption_w": 7,
+    "poe_class": 3,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-10 to 40",
+  "dimensions_mm": "Ø 121.5 x 97.6",
+  "weight_g": 600,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "MENA",
+    "global"
+  ],
+  "features": [
+    "2 MP Smart Hybrid Light fixed dome camera",
+    "Smart Hybrid Light: IR up to 20 m and white light up to 15 m",
+    "Human detection (target-type motion triggering)",
+    "Built-in microphone for real-time audio",
+    "H.265+ compression",
+    "microSD storage up to 512 GB (-F model)",
+    "Digital WDR, 3D DNR, BLC, HLC",
+    "PoE (802.3af) or 12 VDC power",
+    "ONVIF (Profile S/T/G) / RTSP",
+    "Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000069656/IPC-D120HA-LUFC_Datasheet_20260603.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "HiLook (Hikvision OEM); ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "HiLook uses the Hikvision protocol - select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "HiLook 2 MP Smart Hybrid Light fixed dome camera with IR up to 20 m plus white light, human detection, built-in microphone, microSD storage up to 512 GB and H.265+ compression. Verified against the official HiLook datasheet IPC-D120HA-LUFC_Datasheet_20260603.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "indoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

@@ -1,0 +1,133 @@
+{
+  "id": "hikvision-ds-2cd3t87g2p-lsu",
+  "brand": "Hikvision",
+  "model": "DS-2CD3T87G2P-LSU",
+  "aliases": [
+    "DS-2CD3T87G2P-LSU/SL",
+    "8 MP Panoramic Fixed Bullet Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 5120,
+    "max_height": 1440,
+    "label": "8MP panoramic"
+  },
+  "sensor": "2 x 1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "4 (fixed, dual lens)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 horizontal (+/- 10)",
+  "night_vision": {
+    "type": "color",
+    "range_m": 40,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / 12 VDC",
+    "consumption_w": 12.5,
+    "poe_class": 3,
+    "voltage": "12V (DC) / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "118.6 x 105.1 x 341.4",
+  "weight_g": 1420,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "8MP dual-lens panoramic bullet stitching a single 180-degree image",
+    "ColorVu 24/7 color imaging with F1.0 lenses",
+    "white-light supplement up to 40m with Smart Supplement Light",
+    "130dB WDR",
+    "AcuSense human and vehicle classification via deep learning",
+    "active strobe light and audio alarm to warn intruders off",
+    "built-in microphone and speaker with two-way audio",
+    "microSD slot up to 512GB, IP67 rated"
+  ],
+  "release_notes": "The Hikvision DS-2CD3T87G2P-LSU/SL is an 8MP dual-lens ColorVu panoramic bullet delivering a stitched 180-degree color image, with 130dB WDR, AcuSense analytics and an active strobe/audio deterrent. Verified against the official Hikvision datasheet DS-2CD3T87G2P-LSU_SL-C_Datasheet_20240716.pdf.",
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000057837/DS-2CD3T87G2P-LSU_SL-C_Datasheet_20240716.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "5120x1440",
+        "fps": 20,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x536",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

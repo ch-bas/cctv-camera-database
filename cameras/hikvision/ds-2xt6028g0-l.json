@@ -1,0 +1,112 @@
+{
+  "id": "hikvision-ds-2xt6028g0-l",
+  "brand": "Hikvision",
+  "model": "DS-2XT6028G0-L",
+  "aliases": [
+    "DS-2XT6028G0-L/C200(K)",
+    "Furnace camera kit with temperature measurement"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.9,
+    "max_width": 1280,
+    "max_height": 720,
+    "label": "720p (thermal)"
+  },
+  "sensor": "Thermal (12 um pixel pitch, 8 to 14 um spectral range, NETD < 35 mK)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4 (fixed)",
+    "aperture": "F2.5",
+    "varifocal": false
+  },
+  "field_of_view_deg": "100 horizontal",
+  "power": {
+    "method": "100-240 VAC",
+    "consumption_w": 30,
+    "voltage": "100-240 VAC"
+  },
+  "power_source": [
+    "ac-mains"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP68",
+  "operating_temp_c": "furnace application up to 2000 C (cooling protection required)",
+  "dimensions_mm": "1100 x 330 x 260 (pneumatic device)",
+  "weight_g": 32775,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "industrial furnace / kiln thermal camera kit with temperature measurement",
+    "dual measurement ranges 0-800 C / 300-2000 C with point/line/frame analysis",
+    "built-in flameout detection and active-burner counting algorithm (>99% accuracy)",
+    "dual-layer forced vortex air cooling for furnaces up to 2000 C",
+    "over-temperature and under-pressure interlock self-protection",
+    "thermal detector: 12 um pixel pitch, NETD < 35 mK, 8-14 um",
+    "gigabit Ethernet, microSD storage up to 512 GB",
+    "ONVIF / RTSP network output"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000176619/DS-2XT6028G0-L_C200K_Datasheet_20260414.pdf"
+  ],
+  "release_notes": "The Hikvision DS-2XT6028G0-L is an industrial furnace/kiln thermal camera kit with in-furnace temperature measurement (0-800 C / 300-2000 C), flameout detection and a forced vortex air-cooling system for operation in furnaces up to 2000 C. Verified against the official Hikvision datasheet DS-2XT6028G0-L_C200K_Datasheet_20260414.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1280x720",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

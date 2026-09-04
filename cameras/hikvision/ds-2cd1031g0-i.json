@@ -1,0 +1,115 @@
+{
+  "id": "hikvision-ds-2cd1031g0-i",
+  "brand": "Hikvision",
+  "model": "DS-2CD1031G0-I",
+  "aliases": [
+    "3 MP Fixed Bullet Network Camera"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "3MP"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed options)",
+    "aperture": "F2.2",
+    "varifocal": false
+  },
+  "field_of_view_deg": "99 horizontal (2.8mm) / 84 horizontal (4mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / 12 VDC",
+    "consumption_w": 6.5,
+    "poe_class": 3,
+    "voltage": "12V (DC) / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "138.8 x 60.9 x 57.9",
+  "weight_g": 175,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "3MP entry-level fixed bullet with EXIR up to 20m",
+    "digital WDR, 3D DNR, BLC/HLC",
+    "H.265+ compression",
+    "motion detection, IP67",
+    "PoE powered; ISAPI/SDK (no ONVIF), native RTSP"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000077363/DS-2CD1031G0-I_Datasheet_20260409.pdf"
+  ],
+  "release_notes": "The Hikvision DS-2CD1031G0-I is a 3MP entry-level fixed bullet with EXIR up to 20m, digital WDR and H.265+ compression. It exposes ISAPI/SDK and native RTSP (no ONVIF). Verified against the official Hikvision datasheet (DS-2CD1031G0-I_Datasheet_20260409.pdf).",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "verified": false,
+      "notes": "Hikvision native RTSP (main 101 / sub 102). This model has no ONVIF; use RTSP."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 24,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 24,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 24,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

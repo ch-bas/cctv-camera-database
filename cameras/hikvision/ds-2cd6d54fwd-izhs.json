@@ -1,0 +1,133 @@
+{
+  "id": "hikvision-ds-2cd6d54fwd-izhs",
+  "brand": "Hikvision",
+  "model": "DS-2CD6D54FWD-IZHS",
+  "aliases": [
+    "DS-2CD6D54FWD-IZHS(B)",
+    "DS-2CD6D54FWD-(I)Z(H)(S)(/NFC)",
+    "Quad-Directional Varifocal PanoVu Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2560,
+    "max_height": 1920,
+    "label": "5MP per lens (4 lenses)"
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 4,
+    "focal_length_mm": "2.8 to 12 (motorized varifocal, per lens)",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "30 to 101 horizontal (per lens)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "Hi-PoE / 12 VDC",
+    "consumption_w": 28,
+    "voltage": "12 VDC / Hi-PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "290 diameter x 145.5",
+  "weight_g": 4700,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "4-directional multisensor, 4 adjustable lenses cover up to 360 degrees",
+    "5MP per lens with independent motorized varifocal 2.8-12mm",
+    "120 dB WDR",
+    "EXIR IR up to 30m",
+    "built-in heater, start-up to -40C",
+    "gigabit Ethernet + FC fiber-optic interface",
+    "IP67 + IK10 vandal-proof",
+    "microSD up to 128GB, ONVIF (Profile S/G)"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000000414/DS-2CD6D54FWD-IZSNFC_Datasheet_20241105.pdf",
+    "https://assets.hikvision.com/prd/normal/all/doc/m000093182/DS-2CD6D54FWD-IZHSB_Datasheet_20230905.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 24,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1920",
+        "fps": 24,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 24,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2CD6D54FWD-IZHS is a 4-directional multisensor camera with four independently adjustable 5MP motorized-varifocal lenses covering up to 360 degrees, 120 dB WDR, EXIR to 30m, a built-in heater and gigabit/fiber connectivity. Verified against the official DS-2CD6D54FWD-IZHSB datasheet.",
+  "ndaa_compliant": false
+}

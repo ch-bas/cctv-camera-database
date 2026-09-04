@@ -1,0 +1,131 @@
+{
+  "id": "hikvision-ds-2xe6845g0-izhs",
+  "brand": "Hikvision",
+  "model": "DS-2XE6845G0-IZHS",
+  "aliases": [
+    "DS-2XE6845G0-IZHS(B)"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 to 12 / 8 to 32 (varifocal, optional)",
+    "aperture": "F1.7 (8 to 32mm)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "115 to 42 horizontal (2.8 to 12mm) / 43 to 15 horizontal (8 to 32mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100,
+    "min_lux_color": 0.009
+  },
+  "power": {
+    "method": "PoE (802.3at, max. 18 W) / 100-240 VAC",
+    "consumption_w": 18
+  },
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP68",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "352 x 200 x 214",
+  "weight_g": 14000,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "4MP 316L stainless-steel explosion-proof varifocal bullet with built-in junction box",
+    "ATEX and IECEx certified for gas and dust hazardous areas",
+    "dual varifocal lens options: 2.8-12mm or 8-32mm",
+    "EXIR IR up to 60m (2.8-12mm) / 100m (8-32mm)",
+    "120 dB WDR",
+    "H.265+ compression",
+    "100-240 VAC wide-range power or PoE",
+    "IP68 and NEMA 4X top-level anti-corrosion",
+    "microSD up to 256GB"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000055169/DS-2XE6845G0-IZHSB_Datasheet_20251211.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "Specs verified against the official Hikvision datasheet DS-2XE6845G0-IZHS(B) (Datasheet_20251211). 316L 4MP ATEX/IECEx explosion-proof varifocal bullet with built-in junction box.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

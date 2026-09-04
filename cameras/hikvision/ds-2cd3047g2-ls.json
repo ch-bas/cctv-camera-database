@@ -1,0 +1,133 @@
+{
+  "id": "hikvision-ds-2cd3047g2-ls",
+  "brand": "Hikvision",
+  "model": "DS-2CD3047G2-LS",
+  "aliases": [
+    "4 MP ColorVu Fixed Mini Bullet Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 / 6 (fixed options)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "112 horizontal (2.8mm) / 95 horizontal (4mm) / 58 horizontal (6mm)",
+  "night_vision": {
+    "type": "color",
+    "range_m": 40,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / 12 VDC",
+    "consumption_w": 8.5,
+    "poe_class": 3,
+    "voltage": "12V (DC) / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "78.8 x 78.6 x 235.9",
+  "weight_g": 860,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "4MP ColorVu fixed mini bullet, 24/7 full-color imaging",
+    "F1.0 super-aperture lens for bright low-light images",
+    "White-light supplement up to 40 m with Smart Supplement Light",
+    "130 dB true WDR against strong backlight",
+    "Efficient H.265+ compression",
+    "Motion detection with human and vehicle target classification (deep learning)",
+    "Audio line in/out and alarm I/O interfaces",
+    "microSD slot up to 512 GB, Hikvision NVR compatible",
+    "Water and dust resistant (IP67)"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000038697/DS-2CD3047G2-LS_Datasheet_20260806.pdf"
+  ],
+  "release_notes": "The Hikvision DS-2CD3047G2-LS is a 4MP ColorVu fixed mini bullet with an F1.0 lens delivering 24/7 full-color imaging, 40 m white-light supplement, 130 dB true WDR and human/vehicle target classification. Verified against the official DS-2CD3047G2-LS_Datasheet_20260806.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

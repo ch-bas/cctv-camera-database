@@ -1,0 +1,133 @@
+{
+  "id": "hilook-ipc-d120ha-d",
+  "brand": "HiLook",
+  "model": "IPC-D120HA-D/W",
+  "aliases": [
+    "IPC-D120HA-D",
+    "IPC-D120HA-D/W(W)",
+    "IPC-D120HA-D/W(2.8mm)(W)",
+    "IPC-D120HA-D/W(4mm)(W)"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "92 horizontal (2.8 mm) / 75 horizontal (4 mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "12 VDC",
+    "consumption_w": 10,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "120 x 120 x 95",
+  "weight_g": 593,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "MENA",
+    "global"
+  ],
+  "features": [
+    "2 MP EXIR Wi-Fi fixed dome camera",
+    "Dual-band 2.4 GHz Wi-Fi (802.11b/g/n) plus RJ45",
+    "Built-in two-way audio (mic and speaker)",
+    "EXIR 2.0 IR up to 30 m",
+    "Human and vehicle detection (Deep Learning perimeter protection)",
+    "Line crossing, intrusion, region entrance/exiting",
+    "microSD storage up to 512 GB",
+    "IP66 water and dust resistant",
+    "ONVIF / RTSP",
+    "Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000147481/IPC-D120HA-D_WW_Datasheet_20240625.pdf"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "HiLook (Hikvision OEM); ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "HiLook uses the Hikvision protocol - select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "HiLook 2 MP EXIR Wi-Fi fixed dome camera with built-in two-way audio, EXIR 2.0 IR up to 30 m, human/vehicle detection, microSD storage and IP66 rating. Verified against the official HiLook datasheet IPC-D120HA-D_WW_Datasheet_20240625 (the D/W Wi-Fi variant).",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "768x432",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

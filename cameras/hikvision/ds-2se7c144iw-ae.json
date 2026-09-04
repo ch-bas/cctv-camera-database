@@ -1,0 +1,134 @@
+{
+  "id": "hikvision-ds-2se7c144iw-ae",
+  "brand": "Hikvision",
+  "model": "DS-2SE7C144IW-AE",
+  "aliases": [
+    "DS-2SE7C144IW-AE(32x/4)(S5)",
+    "4 MP 32x IR Network Speed Dome"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP (dual-channel panoramic + PTZ)"
+  },
+  "sensor": "Panoramic channel: 1/2.8\" Progressive Scan CMOS; PTZ channel: 1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "Panoramic 4 (fixed) / PTZ 5.9 to 188.8 (32x optical)",
+    "aperture": "Panoramic F1.6 / PTZ F1.5",
+    "varifocal": true
+  },
+  "field_of_view_deg": "Panoramic 79 / PTZ 60.2 to 2.3 horizontal (wide-tele)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 200,
+    "min_lux_color": 0.005
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "24 VAC / Hi-PoE",
+    "consumption_w": 42,
+    "voltage": "24 VAC"
+  },
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": true,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 65",
+  "dimensions_mm": "220 (diameter) x 382.1",
+  "weight_g": 6000,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "4MP dual-channel speed dome: fixed panoramic channel + 32x PTZ channel",
+    "powered-by-DarkFighter low-light performance",
+    "32x optical / 16x digital zoom with rapid focus",
+    "EXIR IR up to 200m for expansive night view",
+    "AcuSense human/vehicle classification with auto-tracking",
+    "audio-visual alarm with selectable audible warning and white light",
+    "120 dB WDR, HLC, BLC, 3D DNR, defog, EIS",
+    "audio line in/out, microSD on-board storage up to 256 GB",
+    "IP66 / IK10 with Hi-PoE or 24 VAC power"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000043720/Datasheet-of-DS-2SE7C144IW-AE32x_4S5_V5.5.43_20220704.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2SE7C144IW-AE(32x/4)(S5) is a 4MP dual-channel network speed dome pairing a fixed panoramic channel with a 32x PTZ channel, powered-by-DarkFighter low-light, 200m IR, AcuSense auto-tracking and IP66/IK10 protection. Verified against the official DS-2SE7C144IW-AE(32x/4)(S5) datasheet (V5.5.43, 20220704).",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

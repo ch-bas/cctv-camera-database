@@ -1,0 +1,129 @@
+{
+  "id": "hikvision-ds-2de1c200iw-d3",
+  "brand": "Hikvision",
+  "model": "DS-2DE1C200IW-D3",
+  "aliases": [
+    "DS-2DE1C200IW-D3/W(F1)(S7)"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet",
+    "wifi"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4 (fixed)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "90 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 15,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "5 VDC (Micro USB)",
+    "consumption_w": 5.5,
+    "voltage": "5 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP54",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-10 to 40",
+  "dimensions_mm": "127 x 93.5 x 143",
+  "weight_g": 270,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "2 MP IR pan-tilt (PT) network camera",
+    "Wi-Fi (802.11b/g/n, 2.4 GHz) with 2 built-in antennas",
+    "Up to 15 m IR range (850 nm)",
+    "Two-way audio with built-in microphone and speaker",
+    "Digital WDR, HLC, BLC, 3D DNR",
+    "Pan 0 to 350, tilt -15 to 100",
+    "microSD/microSDHC/microSDXC up to 256 GB",
+    "IP54 indoor rated",
+    "Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000053315/Datasheet-of-DS-2DE1C200IW-D3_WF1S7_20230222.pdf"
+  ],
+  "power_source": [
+    "usb"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "2 MP indoor IR pan-tilt Wi-Fi network camera with two-way audio and up to 15 m IR; verified against the official Hikvision datasheet Datasheet-of-DS-2DE1C200IW-D3_WF1S7_20230222.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "indoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

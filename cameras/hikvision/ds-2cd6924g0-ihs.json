@@ -1,0 +1,132 @@
+{
+  "id": "hikvision-ds-2cd6924g0-ihs",
+  "brand": "Hikvision",
+  "model": "DS-2CD6924G0-IHS",
+  "aliases": [
+    "DS-2CD6924G0-IHS(Y)(C)",
+    "DS-2CD6924G0-IHSYC"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 4,
+    "focal_length_mm": "2.8 (fixed, four lenses)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux_color": 0.009
+  },
+  "power": {
+    "method": "PoE (802.3at)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "190 x 208 x 207",
+  "weight_g": 3350,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "180-degree stitched 8 MP PanoVu multi-sensor camera",
+    "Four 2.8 mm lenses stitched into a seamless panorama",
+    "Smart human density counting and abnormal event detection",
+    "EXIR IR (four LEDs) up to 20 m",
+    "Digital WDR",
+    "H.265+ compression",
+    "Gigabit Ethernet",
+    "Built-in heater, ultra-low-temperature start to -40 C",
+    "microSD slot up to 256 GB",
+    "IP67 and IK10 rated",
+    "Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000055224/DS-2CD6924G0-IHSYC_Datasheet_20230802.pdf"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2CD6924G0-IHS(Y)(C) is a 180-degree stitched 8 MP PanoVu multi-sensor camera with four 2.8 mm lenses, smart human density counting, EXIR IR up to 20 m, Gigabit Ethernet, a built-in heater for -40 C start-up and an IP67/IK10 housing. Verified against the official Hikvision datasheet (DS-2CD6924G0-IHSYC_Datasheet_20230802).",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

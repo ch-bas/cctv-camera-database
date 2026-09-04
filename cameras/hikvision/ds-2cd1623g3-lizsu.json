@@ -1,0 +1,133 @@
+{
+  "id": "hikvision-ds-2cd1623g3-lizsu",
+  "brand": "Hikvision",
+  "model": "DS-2CD1623G3-LIZSU",
+  "aliases": [
+    "2 MP Smart Hybrid Light 3.0 Vari-Focal Bullet Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.9\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 to 12 (motorized varifocal)",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "99 to 30 horizontal (2.8-12mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 50,
+    "min_lux_color": 0.003
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / 12 VDC",
+    "consumption_w": 12.9,
+    "poe_class": 3,
+    "voltage": "12V (DC) / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "251 x 86.7 x 83.3",
+  "weight_g": 710,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "2MP varifocal bullet with motorized 2.8-12mm lens",
+    "Smart Hybrid Light 3.0 (IR + white light, 3 modes) up to 50m",
+    "HikAI-ISP for noise reduction and color correction",
+    "Motion Detection 3.0 human/vehicle classification",
+    "H.265+ compression technology",
+    "built-in microphone, 1 alarm input / 1 alarm output",
+    "microSD storage up to 512GB",
+    "dust and water resistant IP67"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000109210/DS-2CD1623G3-LIZSU_Datasheet_20260514.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hikvision native RTSP (main 101 / sub 102). Enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2CD1623G3-LIZSU is a 2MP motorized varifocal (2.8-12mm) bullet with Smart Hybrid Light 3.0 up to 50m, HikAI-ISP, Motion Detection 3.0 human/vehicle classification, a built-in microphone, alarm I/O and microSD storage up to 512GB, rated IP67. Verified against the official DS-2CD1623G3-LIZSU_Datasheet_20260514.pdf.",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 24,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

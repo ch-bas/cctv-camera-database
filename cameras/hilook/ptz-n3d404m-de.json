@@ -1,0 +1,130 @@
+{
+  "id": "hilook-ptz-n3d404m-de",
+  "brand": "HiLook",
+  "model": "PTZ-N3D404M-DE/14",
+  "aliases": [],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP+4MP TandemVu"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "2.8 (bullet, fixed) / 2.8 to 12 (PTZ, 4x optical)",
+    "aperture": "F1.65 to F3.0 (PTZ), F1.6 (bullet)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "98 to 34.2 (PTZ) / 114.9 (bullet)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 40,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "PoE+ (802.3at) / DC 12V",
+    "consumption_w": 13.5,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 50",
+  "dimensions_mm": "311.5 x 238.6 x 156",
+  "weight_g": 1370,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "MENA",
+    "global"
+  ],
+  "features": [
+    "TandemVu 4MP + 4MP dual-channel network PTZ",
+    "fixed bullet channel plus 4x optical zoom PTZ channel (2.8 to 12 mm)",
+    "powered-by-DarkFighter low-light performance",
+    "Smart Supplement Light (IR up to 40 m / white light 30 m)",
+    "human and vehicle detection",
+    "WDR / HLC / BLC / 3D DNR / defog",
+    "built-in microphone and speaker (two-way audio)",
+    "microSD up to 512 GB",
+    "ONVIF (Profile S/G/T) / RTSP",
+    "IP66"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000119120/PTZ-N3D404M-DE_14_Datasheet_20260702.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "HiLook (Hikvision OEM); ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "HiLook uses the Hikvision protocol — select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The HiLook PTZ-N3D404M-DE/14 is a TandemVu 4 MP + 4 MP dual-channel network PTZ camera pairing a fixed 2.8 mm bullet channel with a 4x optical zoom (2.8 to 12 mm) PTZ channel, powered-by-DarkFighter low-light imaging, IR to 40 m plus white light to 30 m, human/vehicle detection and two-way audio. Specs verified against the official HiLook datasheet PTZ-N3D404M-DE_14_Datasheet_20260702.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 20,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

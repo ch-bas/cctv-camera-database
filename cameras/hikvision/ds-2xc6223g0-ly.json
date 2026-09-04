@@ -1,0 +1,125 @@
+{
+  "id": "hikvision-ds-2xc6223g0-ly",
+  "brand": "Hikvision",
+  "model": "DS-2XC6223G0-LY",
+  "aliases": [
+    "DS-2XC6223G0-L(R)(D/Y)",
+    "2 MP Bullet Underwater Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 and 4 (fixed, optional)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "109.1 (2.8mm) / 84.9 (4mm) horizontal",
+  "night_vision": {
+    "type": "color",
+    "min_lux_color": 0.03
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / 12 VDC",
+    "consumption_w": 12.95,
+    "poe_class": 3,
+    "voltage": "12 VDC / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP68",
+  "operating_temp_c": "-10 to 50",
+  "dimensions_mm": "192 x 169.1 x 172",
+  "weight_g": 1760,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "2MP underwater bullet camera, submersible to 10m depth (IP68)",
+    "anti-corrosion polymer enclosure for corrosive environments",
+    "white-light supplement for full-color imaging",
+    "-Y variant with dissolved-oxygen sensor for water-quality measurement",
+    "120 dB WDR, 3D DNR, BLC, HLC",
+    "H.265+ compression to save bandwidth and storage",
+    "built-in 64 GB eMMC on-board storage",
+    "Hikvision NVR compatible (ONVIF Profile S/G)"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/sm000074790/DS-2XC6223G0-LRD_Y_Datasheet_20250425.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2XC6223G0-LY is a 2MP anti-corrosion underwater bullet camera (IP68, submersible to 10m) with white-light full-color imaging and a dissolved-oxygen sensor for water-quality measurement. Verified against the official DS-2XC6223G0-LRD/Y datasheet (20250425).",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

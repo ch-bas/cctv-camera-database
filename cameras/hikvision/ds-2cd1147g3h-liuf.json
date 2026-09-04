@@ -1,0 +1,139 @@
+{
+  "id": "hikvision-ds-2cd1147g3h-liuf",
+  "brand": "Hikvision",
+  "model": "DS-2CD1147G3H-LIUF",
+  "aliases": [
+    "DS-2CD1147G3H-LIUF 2.8mm PL#PL",
+    "DS-2CD1147G3H-LIUF 4mm PL#PL",
+    "4 MP ColorVu 3.0 Fixed Dome Network Camera"
+  ],
+  "markets": [
+    "PL",
+    "global"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed options)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "104 horizontal (2.8mm) / 89.3 horizontal (4mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.0001
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / 12 VDC",
+    "consumption_w": 9,
+    "poe_class": 3,
+    "voltage": "12 VDC / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK08",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "121.5 diameter x 97.6",
+  "weight_g": 490,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "4MP ColorVu 3.0 fixed dome with 24/7 full-color imaging",
+    "HikAI-ISP for advanced noise reduction",
+    "Smart Hybrid Light (IR + white) with 3 supplemental lighting modes up to 30m",
+    "Motion Detection 3.0 with person and vehicle classification",
+    "120 dB WDR against strong backlight",
+    "built-in microphone, H.265+ compression",
+    "-F variant adds on-board microSD storage up to 512GB",
+    "IP67 water and dust resistant, IK08 vandal-proof",
+    "ONVIF support with fixed 2.8mm or 4mm lens"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000176191/DS-2CD1147G3H-LIUF-2.8mm-PLPL_Datasheet_20251128.pdf",
+    "https://assets.hikvision.com/prd/normal/all/doc/m000176192/DS-2CD1147G3H-LIUF-4mm-PLPL_Datasheet_20251128.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hikvision native RTSP (main 101 / sub 102). Enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2CD1147G3H-LIUF is a 4MP ColorVu 3.0 fixed dome with 24/7 full-color imaging, HikAI-ISP noise reduction, Smart Hybrid Light and IK08 vandal resistance, verified against the official datasheets DS-2CD1147G3H-LIUF 2.8mm/4mm PL#PL (2025-11-28).",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 24,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 24,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "768x432",
+        "fps": 24,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

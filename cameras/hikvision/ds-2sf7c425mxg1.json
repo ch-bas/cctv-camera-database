@@ -1,0 +1,134 @@
+{
+  "id": "hikvision-ds-2sf7c425mxg1",
+  "brand": "Hikvision",
+  "model": "DS-2SF7C425MXG1",
+  "aliases": [
+    "DS-2SF7C425MXG1/LM-EL(W)(Y)/26"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/2.5\" (bullet channel) / 1/1.8\" (PTZ channel) Progressive Scan CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "2.8 (bullet) / 5.9 to 147.5 (PTZ, 25x optical)",
+    "aperture": "F1.0 (bullet) / F1.5 (PTZ)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "bullet 2.8mm fixed; PTZ 5.9 to 147.5mm optical zoom",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 300,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "36 VDC, max. 60 W",
+    "consumption_w": 60
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": true,
+    "two_way": false
+  },
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "260 (diameter) x 382.9",
+  "weight_g": 7300,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "ptz": {
+    "autotracking": true
+  },
+  "features": [
+    "TandemVu dual-channel: fixed 4MP panoramic bullet + 25x DarkFighter PTZ speed dome",
+    "25x optical / 16x digital zoom on PTZ channel",
+    "white light up to 30m (bullet) and IR up to 300m (PTZ)",
+    "DarkFighter low-light imaging, 120 dB WDR (PTZ)",
+    "smart tracking on PTZ channel",
+    "dedicated large-scale AI model for perimeter protection",
+    "H.265+ compression",
+    "microSD up to 256GB",
+    "IP67 and IK10"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000096481/DS-2SF7C425MXG1_LM-ELWY_26_Datasheet_20251203.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "Specs verified against the official Hikvision datasheet DS-2SF7C425MXG1/LM-EL(W)(Y)/26 (Datasheet_20251203). DeepinViewX TandemVu 7C panoramic 4MP 25x DarkFighter network speed dome (dual-channel bullet + PTZ).",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

@@ -1,0 +1,128 @@
+{
+  "id": "hikvision-ds-2de4430iw-de",
+  "brand": "Hikvision",
+  "model": "DS-2DE4430IW-DE",
+  "aliases": [
+    "DS-2DE4430IW-DE#ASIA",
+    "DS-2DE4430IW-DE(HIK INDONE)",
+    "DS-2DE4430IW-DE(T5)"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.8 to 140 (30x optical zoom)",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "55 to 2.2 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100,
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "PoE (802.3at)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "operating_temp_c": "-30 to 65",
+  "dimensions_mm": "164.5 diameter x 290",
+  "weight_g": 2000,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "ptz": {
+    "autotracking": false
+  },
+  "features": [
+    "4 MP 30x powered-by-DarkFighter IR AcuSense speed dome",
+    "30x optical and 16x digital zoom",
+    "Human/vehicle target classification",
+    "Face capture, up to 5 faces at once",
+    "IR distance up to 100 m",
+    "300 presets, 8 patrols, 3D positioning",
+    "120 dB WDR",
+    "H.265+ compression",
+    "IP66 with 6000V surge protection"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000172377/DS-2DE4430IW-DEASIA_Datasheet_20250821.pdf"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "4 MP powered-by-DarkFighter IR AcuSense speed dome with 30x optical zoom, up to 100 m IR, face capture and human/vehicle classification; verified against the official Hikvision datasheet DS-2DE4430IW-DEASIA_Datasheet_20250821.pdf.",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "last_verified": "2026-09-03",
+  "ndaa_compliant": false
+}

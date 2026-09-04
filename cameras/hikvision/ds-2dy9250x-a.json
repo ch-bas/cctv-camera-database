@@ -1,0 +1,125 @@
+{
+  "id": "hikvision-ds-2dy9250x-a",
+  "brand": "Hikvision",
+  "model": "DS-2DY9250X-A",
+  "aliases": [
+    "DS-2DY9250X-A(T5)"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/1.8\" progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6.0 to 300 (50x optical)",
+    "aperture": "F1.2",
+    "varifocal": true
+  },
+  "field_of_view_deg": "56.6 to 1.4 horizontal (wide-tele)",
+  "night_vision": {
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "24 VAC",
+    "consumption_w": 100
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "180 x 390 x 491",
+  "weight_g": 13000,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "2 MP 50x network positioning system",
+    "50x optical + 16x digital zoom (6.0-300 mm, F1.2)",
+    "140 dB WDR, HLC, BLC, 3D DNR",
+    "EIS with built-in gyroscope",
+    "Rain-sensing automatic wiper",
+    "360 pan, +40 to -90 tilt, 3D positioning, 300 presets",
+    "Face capture (up to 30 faces), event tracking",
+    "Line-in/line-out audio, 7 alarm inputs / 2 outputs",
+    "24 VAC power, IP66, microSD up to 256 GB"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000045317/Datasheet-of-DS-2DY9250X-AT5_V5.7.0_20220729.pdf"
+  ],
+  "power_source": [
+    "ac-mains"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2DY9250X-A(T5) is a 2 MP 50x network positioning system with a 1/1.8\" CMOS, a 6.0-300 mm F1.2 zoom lens, 140 dB WDR, a rain-sensing auto wiper and 300 presets in an IP66 housing. Verified against the official Hikvision datasheet Datasheet-of-DS-2DY9250X-AT5_V5.7.0_20220729.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

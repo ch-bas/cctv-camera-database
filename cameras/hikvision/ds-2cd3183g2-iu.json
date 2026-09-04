@@ -1,0 +1,141 @@
+{
+  "id": "hikvision-ds-2cd3183g2-iu",
+  "brand": "Hikvision",
+  "model": "DS-2CD3183G2-IU",
+  "aliases": [
+    "DS-2CD3183G2-IU(KSA Made)",
+    "8 MP AcuSense Fixed Turret Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed options)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "107 horizontal (2.8mm) / 87 horizontal (4mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / 12 VDC",
+    "consumption_w": 7.5,
+    "poe_class": 3,
+    "voltage": "12V (DC) / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Ø 121.4 x 92.2",
+  "weight_g": 550,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "8MP (4K) AcuSense turret with deep-learning human/vehicle classification",
+    "EXIR IR up to 30m (850nm), Smart Supplement Light",
+    "120 dB true WDR technology",
+    "H.265+ compression technology",
+    "built-in microphone with environment noise filtering",
+    "microSD storage up to 512GB",
+    "ONVIF Profile S/T/G support",
+    "water/dust resistant IP67, vandal resistant IK10"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000130989/DS-2CD3183G2-IUKSA-Made_Datasheet_20260525.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hikvision native RTSP (main 101 / sub 102). Enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2CD3183G2-IU is an 8MP AcuSense fixed turret with deep-learning human/vehicle classification, 120 dB true WDR, IR up to 30m, a built-in microphone and microSD storage up to 512GB, rated IP67/IK10. Verified against the official DS-2CD3183G2-IUKSA-Made_Datasheet_20260525.pdf (KSA-Made variant of DS-2CD3183G2-IU).",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 20,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 10,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

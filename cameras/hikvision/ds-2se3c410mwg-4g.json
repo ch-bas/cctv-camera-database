@@ -1,0 +1,132 @@
+{
+  "id": "hikvision-ds-2se3c410mwg-4g",
+  "brand": "Hikvision",
+  "model": "DS-2SE3C410MWG-4G",
+  "aliases": [
+    "DS-2SE3C410MWG-4G/14",
+    "TandemVu 4MP+4MP 10X 4G PTZ"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet",
+    "4g"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS (bullet + PTZ channels)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "PTZ 5.76 to 57.6 (10x optical); bullet 2.8 (fixed)",
+    "aperture": "PTZ F1.86 to F2.65; bullet F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "bullet 114.9 horizontal; PTZ 50 to 7.5 horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 80,
+    "min_lux_color": 0.01
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "12 VDC"
+  },
+  "power_source": [
+    "dc"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "dimensions_mm": "311.5 x 223.5 x 156",
+  "weight_g": 1370,
+  "operating_temp_c": "-30 to 50",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "TandemVu dual-channel: fixed bullet + 10x optical PTZ, both 4MP",
+    "captures wide overview and zoomed detail simultaneously",
+    "powered-by-DarkFighter low-light imaging",
+    "10x optical + 16x digital zoom",
+    "bullet Smart Hybrid Light (IR + white light) up to 30m; PTZ IR up to 80m",
+    "human and vehicle detection",
+    "120 dB WDR, HLC, BLC, 3D DNR, defog",
+    "built-in microphone and speaker (two-way audio)",
+    "4G/LTE plus RJ45 Ethernet connectivity",
+    "IP66 with surge protection",
+    "Hikvision NVR compatible (ONVIF Profile S/G/T)"
+  ],
+  "release_notes": "Specs verified against the official Hikvision datasheet DS-2SE3C410MWG-4G/14 (DS-2SE3C410MWG-4G_14_Datasheet_20260713). TandemVu 4MP+4MP dual-channel 4G PTZ with 10x optical zoom; main stream 30 fps at 60 Hz. Powered by 12 VDC.",
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000115913/DS-2SE3C410MWG-4G_14_Datasheet_20260713.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ndaa_compliant": false
+}
