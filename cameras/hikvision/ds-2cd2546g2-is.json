@@ -1,0 +1,135 @@
+{
+  "id": "hikvision-ds-2cd2546g2-is",
+  "brand": "Hikvision",
+  "model": "DS-2CD2546G2-IS",
+  "aliases": [
+    "DS-2CD2546G2-IS (Black)",
+    "DS-2CD2546G2-IS (C)"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/3\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed)",
+    "aperture": "F1.4",
+    "varifocal": false
+  },
+  "field_of_view_deg": "102.7 (2.8mm) / 82.8 (4mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.003
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3af)",
+    "consumption_w": 6.5,
+    "poe_class": 3,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK08",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "110 (diameter) x 57.4",
+  "weight_g": 380,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "4 MP (2688 x 1520) mini dome network camera",
+    "AcuSense human/vehicle target classification (deep learning)",
+    "Fixed 2.8/4 mm lens options",
+    "120 dB WDR",
+    "EXIR IR up to 30 m",
+    "H.265+ compression",
+    "Built-in microphone plus audio and alarm interface (-S)",
+    "microSD up to 512 GB",
+    "IP67 and IK08 rated",
+    "Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/sm000059011/DS-2CD2546G2-IWS-C_Datasheet_V5.5.115_20230217.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "4 MP AcuSense EXIR fixed mini dome camera with 120 dB WDR, EXIR up to 30 m, built-in microphone with audio/alarm interface and IP67/IK08 housing (the -IWS sibling adds Wi-Fi). Verified against the official Hikvision datasheet (DS-2CD2546G2-IWS-C_Datasheet_V5.5.115_20230217.pdf).",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

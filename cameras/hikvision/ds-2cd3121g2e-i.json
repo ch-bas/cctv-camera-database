@@ -1,0 +1,126 @@
+{
+  "id": "hikvision-ds-2cd3121g2e-i",
+  "brand": "Hikvision",
+  "model": "DS-2CD3121G2E-I",
+  "aliases": [
+    "2MP Fixed Dome Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.9\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed options)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "104.9 horizontal (2.8mm) / 81.3 horizontal (4mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / 12 VDC",
+    "consumption_w": 6.5,
+    "poe_class": 3,
+    "voltage": "12V (DC) / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK08",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Ø 110.8 x 84.7",
+  "weight_g": 520,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "2MP fixed dome with human and vehicle detection",
+    "EXIR 2.0 IR up to 40m (850nm), Smart Supplement Light",
+    "Digital WDR for strong back-light scenes",
+    "H.265+ compression technology",
+    "IR-cut filter day/night switching",
+    "ONVIF Profile S/T support",
+    "water/dust resistant IP67, vandal resistant IK08",
+    "fixed 2.8mm or 4mm lens option, M12 mount"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000067651/DS-2CD3121G2E-I_Datasheet_20260522.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hikvision native RTSP (main 101 / sub 102). Enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2CD3121G2E-I is a 2MP fixed dome with human and vehicle detection, EXIR 2.0 IR up to 40m, Digital WDR and H.265+ compression, rated IP67/IK08. Verified against the official DS-2CD3121G2E-I_Datasheet_20260522.pdf.",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

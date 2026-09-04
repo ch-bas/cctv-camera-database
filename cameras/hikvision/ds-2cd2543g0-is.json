@@ -1,0 +1,136 @@
+{
+  "id": "hikvision-ds-2cd2543g0-is",
+  "brand": "Hikvision",
+  "model": "DS-2CD2543G0-IS",
+  "aliases": [
+    "DS-2CD2543G0-IS (Black)",
+    "DS-2CD2543G0-I(W)(S)",
+    "4 MP IR Fixed Mini Dome Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/3\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 / 6 (fixed options)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "98 horizontal (2.8mm) / 78 horizontal (4mm) / 48 horizontal (6mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10,
+    "min_lux_color": 0.018
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / 12 VDC",
+    "consumption_w": 10,
+    "poe_class": 3,
+    "voltage": "12 VDC / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK08",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "120 x 67.4 (dome diameter x height)",
+  "weight_g": 400,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "4MP mini dome with fixed 2.8 / 4 / 6mm lens",
+    "IR up to 10m (850nm)",
+    "120dB true WDR",
+    "H.265+ / H.265 / H.264+ / H.264 compression",
+    "built-in microphone plus audio and alarm interface (-S)",
+    "built-in microSD/SDHC/SDXC slot up to 128 GB",
+    "IP66 water/dust resistant and IK08 vandal proof",
+    "mini size for limited space",
+    "Hikvision NVR / ONVIF compatible"
+  ],
+  "release_notes": "The Hikvision DS-2CD2543G0-IS is a 4MP outdoor mini dome with built-in microphone (-S) and 120dB WDR. Verified against the official DS-2CD2543G0-IWS-D_Datasheet_V5.6.5 datasheet (covers the DS-2CD2543G0-I(W)(S) family).",
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/sm000058555/DS-2CD2543G0-IWS-D_Datasheet_V5.6.5_20220602.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": false
+}

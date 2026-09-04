@@ -1,0 +1,139 @@
+{
+  "id": "hikvision-ds-2cd2148g2-lik",
+  "brand": "Hikvision",
+  "model": "DS-2CD2148G2-LIK",
+  "aliases": [
+    "4 MP Dual Illumination AcuSense Fixed Dome Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/3\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed options)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "100.2 horizontal (2.8mm) / 81.1 horizontal (4mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 40,
+    "min_lux_color": 0.001
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3), max. 8.5 W / 12 VDC",
+    "consumption_w": 8.5,
+    "poe_class": 3,
+    "voltage": "12 VDC / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "4MP AcuSense fixed dome with Smart Dual-Light (IR + white) up to 40m",
+    "human and vehicle classification (deep learning), face capture",
+    "line crossing / intrusion / region entrance & exit detection",
+    "120 dB WDR, 3D DNR, BLC/HLC",
+    "-U: built-in microphone",
+    "onboard microSD up to 512 GB, ANR and NAS storage",
+    "H.265+ compression, MJPEG on sub-stream",
+    "IP67 and IK10 vandal resistant, metal housing",
+    "ONVIF (Profile S/G/T), ISAPI, SDK, ISUP"
+  ],
+  "release_notes": "The Hikvision DS-2CD2148G2-LIK is a 4MP AcuSense fixed dome with Smart Dual-Light (40m IR + white), 120 dB WDR, deep-learning human/vehicle classification and IP67/IK10 metal housing. Verified against the official datasheet DS-2CD2148G2-LIK_Datasheet_20260603.pdf.",
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000058442/DS-2CD2148G2-LIK_Datasheet_20260603.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "dimensions_mm": "121.4 diameter x 97.7",
+  "weight_g": 550,
+  "operating_temp_c": "-30 to 60",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 10,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ndaa_compliant": false
+}

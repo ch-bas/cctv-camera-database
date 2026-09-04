@@ -1,0 +1,131 @@
+{
+  "id": "hikvision-ds-2cd2426g2-i",
+  "brand": "Hikvision",
+  "model": "DS-2CD2426G2-I",
+  "aliases": [
+    "DS-2CD2426G2-I (C)",
+    "2 MP AcuSense Fixed Cube Network Camera"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed)",
+    "aperture": "F1.4",
+    "varifocal": false
+  },
+  "field_of_view_deg": "107.1 (2.8mm) / 86.2 (4mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10,
+    "min_lux_color": 0.002
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3af, Class 3)",
+    "consumption_w": 7,
+    "poe_class": 3,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-10 to 40",
+  "dimensions_mm": "102.9 x 65.2 x 32.6",
+  "weight_g": 120,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "2 MP AcuSense human/vehicle classification",
+    "Fixed cube form factor",
+    "IR supplement up to 10 m",
+    "120 dB true WDR",
+    "Built-in two-way audio",
+    "H.265+ compression",
+    "microSD storage up to 512 GB",
+    "Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/sm000059174/DS-2CD2426G2-I-C_Datasheet_20231116.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "2 MP Hikvision AcuSense fixed cube network camera for indoor use, with human/vehicle classification, IR up to 10 m, 120 dB WDR and built-in two-way audio. Verified against the official DS-2CD2426G2-I datasheet (DS-2CD2426G2-I-C_Datasheet_20231116.pdf).",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "indoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

@@ -1,0 +1,129 @@
+{
+  "id": "hikvision-ids-2sk8144ixs-d",
+  "brand": "Hikvision",
+  "model": "iDS-2SK8144IXS-D",
+  "aliases": [
+    "iDS-2SK8144IXS-D/J",
+    "iDS-2SK8144IXS-D/J(40X/2812)(T2)"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" progressive scan CMOS (panoramic) + 1/1.8\" progressive scan CMOS (PTZ)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "2.8 to 12 (panoramic) / 6.0 to 240 (PTZ, 40x optical)",
+    "aperture": "F1.4 (panoramic) / F1.2 (PTZ)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "90 to 34.5 horizontal (panoramic) / 56.6 to 1.8 horizontal (PTZ)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 500,
+    "min_lux_color": 0.002
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "36 VDC",
+    "consumption_w": 90,
+    "voltage": "36 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "485 (diameter) x 487",
+  "weight_g": 17000,
+  "network": {
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "Smart-linkage dual-channel PTZ camera (panoramic + 40x PTZ)",
+    "Deep-learning person arming and vehicle arming with license plate recognition",
+    "Face and human body detection and picture upload on both channels",
+    "Event tracking and tracking takeover between panoramic and PTZ channels",
+    "140 dB WDR, built-in gyroscope EIS",
+    "EXIR IR up to 500 m (PTZ) / 50 m (panoramic) plus white light up to 100 m",
+    "Built-in speaker, audio and 7-in/2-out alarm interface",
+    "300 presets, 3D positioning, dual high-performance GPUs",
+    "36 VDC power, operating -40 to 70"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000029707/Datasheet-of-iDS-2SK8144IXS-D_J_V5.5.40_20221124.pdf"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision iDS-2SK8144IXS-D is a 4 MP smart-linkage dual-channel PTZ camera pairing a panoramic channel with a 40x PTZ channel, deep-learning person/vehicle arming and license plate recognition, event tracking with takeover, 140 dB WDR, EXIR IR up to 500 m plus white light, and a built-in speaker. Verified against the official Hikvision datasheet Datasheet-of-iDS-2SK8144IXS-D_J_V5.5.40_20221124.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

@@ -1,0 +1,137 @@
+{
+  "id": "hikvision-ds-2cd2t47g3p-lis2uy",
+  "brand": "Hikvision",
+  "model": "DS-2CD2T47G3P-LIS2UY",
+  "aliases": [
+    "DS-2CD2T47G3P-LIS2UY/SRB(Black)",
+    "4MP Panoramic ColorVu Fixed Bullet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 3040,
+    "max_height": 1368,
+    "label": "4MP"
+  },
+  "sensor": "1/2.5\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "186.4 horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 40,
+    "min_lux_color": 0.0005
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 24,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3040x1368",
+        "fps": 24,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1200x536",
+        "fps": 24,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3at, Class 4, max 24 W) / DC 12V (max 20 W)",
+    "consumption_w": 24,
+    "voltage": "12 VDC ± 25%",
+    "poe_class": 4
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "dimensions_mm": "118.6 x 78 x 306.5",
+  "weight_g": 1440,
+  "operating_temp_c": "-30 to 60",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "4MP 180-degree panoramic single-lens bullet (186.4 horizontal FOV)",
+    "24/7 full-color imaging via ColorVu (F1.0 super-aperture)",
+    "color min illumination 0.0005 lux @ F1.0, 0 lux with light",
+    "Smart Hybrid Light: white light + IR supplemental modes, up to 40m",
+    "HikAI-ISP noise reduction",
+    "human and vehicle classification (deep learning)",
+    "130 dB WDR",
+    "built-in speaker + arrayed dual-microphone (two-way audio, -2U)",
+    "active strobe light and audio alarm to warn intruders",
+    "anti-corrosion design (NEMA 4X), IP67",
+    "Hikvision NVR compatible (ONVIF Profile S/G/T)"
+  ],
+  "release_notes": "Specs verified against the official Hikvision datasheet DS-2CD2T47G3P-LIS2UY/SRB(Black) (DS-2CD2T47G3P-LIS2UY_SRBBlack_Datasheet_20260711). Single-lens 180-degree panoramic ColorVu bullet; main stream 24 fps at 60 Hz. /SRB variant adds red/blue warning strobe.",
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000107070/DS-2CD2T47G3P-LIS2UY_SRBBlack_Datasheet_20260711.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ndaa_compliant": false
+}

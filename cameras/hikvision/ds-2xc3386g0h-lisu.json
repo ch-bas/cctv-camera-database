@@ -1,0 +1,134 @@
+{
+  "id": "hikvision-ds-2xc3386g0h-lisu",
+  "brand": "Hikvision",
+  "model": "DS-2XC3386G0H-LISU",
+  "aliases": [
+    "DS-2XC3386G0H-LISU/SL (PA)",
+    "DS-2XC3386G0H-LISU/SL"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 and 4 (fixed, optional)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "108.8 (2.8mm) / 93.3 (4mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.002
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3af)",
+    "consumption_w": 9.5,
+    "poe_class": 3,
+    "voltage": "12 VDC +/-25%"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP68",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "138.63 x 138.63 x 132.74",
+  "weight_g": 670,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "8 MP anti-corrosion fixed turret (polymer body)",
+    "AcuSense human/vehicle deep-learning classification",
+    "Smart Hybrid Light (IR + white) up to 30 m",
+    "120 dB WDR",
+    "H.265+ compression",
+    "Built-in two-way audio with active strobe and audio alarm",
+    "People counting, queue management and heat map analytics",
+    "IP68 and IK10 rated",
+    "NEMA 4X / C5 top-level anti-corrosion protection",
+    "Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000162687/DS-2XC3386G0H-LISU_SL-PA_Datasheet_20260331.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "8 MP Hikvision AcuSense anti-corrosion fixed turret with a polymer body, Smart Hybrid Light, built-in two-way audio and NEMA 4X / C5 top-level corrosion protection (IP68, IK10). Verified against the official Hikvision datasheet DS-2XC3386G0H-LISU_SL-PA_Datasheet_20260331.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 24,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 24,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 24,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

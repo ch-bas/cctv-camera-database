@@ -1,0 +1,130 @@
+{
+  "id": "hikvision-pci-t18f6s",
+  "brand": "Hikvision",
+  "model": "PCI-T18F6S",
+  "aliases": [],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8/4/6",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "111 (2.8mm)/87 (4mm)/51 (6mm) horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40,
+    "min_lux_color": 0.003
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / DC 12V",
+    "consumption_w": 6.8,
+    "poe_class": 3,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "138.3 diameter x 126.3",
+  "weight_g": 790,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "US",
+    "global"
+  ],
+  "features": [
+    "8 MP (3840 x 2160) AcuSense fixed turret",
+    "Human and vehicle target classification (deep learning)",
+    "Powered-by-DarkFighter low-light technology",
+    "120 dB true WDR",
+    "EXIR IR up to 40 m",
+    "H.265+ compression, MJPEG sub-stream",
+    "Audio and alarm I/O",
+    "IP67 rated, microSD up to 256 GB"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000061273/PCI-T18F6S.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "8 MP AcuSense fixed turret (Hikvision USA PCI channel brand) with powered-by-DarkFighter low light, 120 dB WDR and EXIR IR to 40 m. Verified against the official Hikvision datasheet PCI-T18F6S.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 24,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 24,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

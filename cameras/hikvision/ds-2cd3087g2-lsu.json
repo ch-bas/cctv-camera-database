@@ -1,0 +1,133 @@
+{
+  "id": "hikvision-ds-2cd3087g2-lsu",
+  "brand": "Hikvision",
+  "model": "DS-2CD3087G2-LSU",
+  "aliases": [
+    "4K ColorVu Fixed Bullet Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "sensor": "1/1.2\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 / 6 (fixed options)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "102 horizontal (2.8mm) / 88 horizontal (4mm) / 54 horizontal (6mm)",
+  "night_vision": {
+    "type": "color",
+    "range_m": 40,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3, Class 3) / 12 VDC",
+    "consumption_w": 8.5,
+    "poe_class": 3,
+    "voltage": "12V (DC) / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "78.8 x 78.6 x 215.2",
+  "weight_g": 850,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "8MP (4K) ColorVu fixed bullet, 24/7 full-color imaging",
+    "F1.0 super-aperture lens for bright low-light images",
+    "White-light supplement up to 40 m with Smart Supplement Light",
+    "130 dB WDR against strong backlight",
+    "Built-in microphone for real-time audio",
+    "Human and vehicle target classification based on deep learning",
+    "Efficient H.265+ compression",
+    "microSD slot up to 512 GB, Hikvision NVR compatible",
+    "Water and dust resistant (IP67)"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 24,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 24,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000059315/DS-2CD3087G2-LSU_Datasheet_20260806.pdf"
+  ],
+  "release_notes": "The Hikvision DS-2CD3087G2-LSU is an 8MP (4K) ColorVu fixed bullet with an F1.0 lens for 24/7 full-color imaging, 40 m white-light supplement, 130 dB WDR, a built-in microphone and deep-learning human/vehicle classification. Verified against the official DS-2CD3087G2-LSU_Datasheet_20260806.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

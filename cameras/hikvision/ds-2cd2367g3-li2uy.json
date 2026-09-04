@@ -1,0 +1,141 @@
+{
+  "id": "hikvision-ds-2cd2367g3-li2uy",
+  "brand": "Hikvision",
+  "model": "DS-2CD2367G3-LI2UY",
+  "aliases": [
+    "DS-2CD2367G3-LI2UY(Black)",
+    "6MP Smart Hybrid Light with ColorVu Fixed Turret"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3200,
+    "max_height": 1800,
+    "label": "6MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "108.8 horizontal (2.8mm) / 93.3 horizontal (4mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.0005
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3200x1800",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 10,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3, max 11 W) / DC 12V (max 8.5 W)",
+    "consumption_w": 11,
+    "voltage": "12 VDC ± 25%",
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "dimensions_mm": "Ø138.3 x 115.4",
+  "weight_g": 750,
+  "operating_temp_c": "-30 to 60",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "6MP ColorVu fixed turret (F1.0 super-aperture, 2.8mm or 4mm)",
+    "24/7 full-color imaging via ColorVu",
+    "color min illumination 0.0005 lux @ F1.0, 0 lux with light",
+    "Smart Hybrid Light: IR + white light, 3 supplemental lighting modes, up to 30m",
+    "HikAI-ISP noise reduction",
+    "scene-adaptive WDR (130 dB)",
+    "human and vehicle classification (deep learning)",
+    "built-in arrayed dual-microphone",
+    "anti-corrosion design (NEMA 4X), IP67",
+    "Hikvision NVR compatible (ONVIF Profile S/G/T)"
+  ],
+  "release_notes": "Specs verified against the official Hikvision datasheet DS-2CD2367G3-LI2UY(Black) (DS-2CD2367G3-LI2UYBlack_Datasheet_20260713). 6MP ColorVu Smart Hybrid Light turret with 2.8mm or 4mm optional lens; main stream 30 fps at 60 Hz.",
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000107007/DS-2CD2367G3-LI2UYBlack_Datasheet_20260713.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ndaa_compliant": false
+}

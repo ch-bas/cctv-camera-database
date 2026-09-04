@@ -1,0 +1,135 @@
+{
+  "id": "hikvision-ds-2xe6746g0-lizhs",
+  "brand": "Hikvision",
+  "model": "DS-2XE6746G0-LIZHS",
+  "aliases": [
+    "DS-2XE6746G0-LIZHS/AM(316L)",
+    "DS-2XE6746G0-LIZHS(304)"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 to 12 / 8 to 32",
+    "aperture": "F1.47 to F2.5 (2.8-12mm) / F1.71 to F1.74 (8-32mm)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "107.4 to 39.8 (2.8-12mm) / 40.3 to 14.5 (8-32mm) horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 40,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "PoE (802.3at)",
+    "consumption_w": 18.5,
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP68",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "196 diameter x 134.4",
+  "weight_g": 4900,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "4 MP explosion-proof varifocal dome",
+    "ATEX & IECEx certified (Zone 1, 2, 21, 22 gas and dust)",
+    "Stainless steel housing (316L or SUS304 variants)",
+    "Motorized pan/tilt/rotate/zoom for installation",
+    "Smart Hybrid Light (IR + white light up to 40 m)",
+    "Human and vehicle detection, AI open platform",
+    "120 dB WDR",
+    "H.265+ compression",
+    "Line-in/line-out audio, 2 alarm in / 1 alarm out",
+    "microSD up to 512 GB",
+    "IP68, IK10, ONVIF (Profile S/G/T)"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000176824/DS-2XE6746G0-LIZHS_AM316L_Datasheet_20260708.pdf",
+    "https://assets.hikvision.com/prd/normal/all/doc/m000176826/DS-2XE6746G0-LIZHS304_Datasheet_20260708.pdf"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "4 MP ATEX/IECEx explosion-proof varifocal dome in electro-polished 316L (or SUS304) stainless steel, with Smart Hybrid Light to 40 m, 120 dB WDR and motorized pan/tilt/rotate/zoom. Verified against the official Hikvision datasheet DS-2XE6746G0-LIZHS_AM316L_Datasheet_20260708.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 60,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

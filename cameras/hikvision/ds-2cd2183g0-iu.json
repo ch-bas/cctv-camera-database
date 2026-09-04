@@ -1,0 +1,135 @@
+{
+  "id": "hikvision-ds-2cd2183g0-iu",
+  "brand": "Hikvision",
+  "model": "DS-2CD2183G0-IU",
+  "aliases": [
+    "8 MP IR Fixed Dome Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "sensor": "1/2.5\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 / 6 / 8 (fixed options)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "102 horizontal (2.8mm) / 79 horizontal (4mm) / 50 horizontal (6mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.028
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / 12 VDC",
+    "consumption_w": 8.5,
+    "poe_class": 3,
+    "voltage": "12 VDC / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "121 x 92 (dome diameter x height)",
+  "weight_g": 560,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "8MP (4K) fixed dome with 2.8 / 4 / 6 / 8mm lens options",
+    "EXIR IR up to 30m (850nm)",
+    "120dB WDR",
+    "H.265+ / H.265 / H.264+ / H.264, three streams",
+    "built-in microphone (-U)",
+    "built-in microSD/SDHC/SDXC slot up to 128 GB",
+    "BLC / 3D DNR / ROI / HLC",
+    "IP66 and IK10 rated, 3-axis adjustment",
+    "4K main stream at 15 fps (60Hz)",
+    "Hikvision NVR / ONVIF compatible"
+  ],
+  "release_notes": "The Hikvision DS-2CD2183G0-IU is an 8MP (4K) outdoor fixed dome with built-in microphone, 30m EXIR and 120dB WDR. Verified against the official DS-2CD2183G0-IU_Datasheet_V5.6.0 datasheet.",
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/sm000058576/DS-2CD2183G0-IU_Datasheet_V5.6.0_20220602.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 15,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": false
+}

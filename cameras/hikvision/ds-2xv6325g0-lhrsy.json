@@ -1,0 +1,121 @@
+{
+  "id": "hikvision-ds-2xv6325g0-lhrsy",
+  "brand": "Hikvision",
+  "model": "DS-2XV6325G0-LHRSY",
+  "aliases": [
+    "DS-2XV6325G0-LHRSY(316L)",
+    "DS-2XV6325G0-LHRSY(316L)(1.8mm)"
+  ],
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.8\" progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.8 (fixed)",
+    "aperture": "F1.2",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 horizontal",
+  "night_vision": {
+    "range_m": 15,
+    "min_lux_color": 0.003
+  },
+  "power": {
+    "method": "9 to 36 VDC / PoE (802.3af), max. 11.8 W",
+    "consumption_w": 11.8,
+    "poe_class": 3,
+    "voltage": "9 to 36 VDC"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP68",
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "122.4 x 141 x 172",
+  "weight_g": 3120,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "2 MP 1/2.8\" progressive scan CMOS vibration-resistant fisheye",
+    "1.8 mm lens, 180 horizontal field of view",
+    "High shock resistance (up to 50,000 times of 50 g shock)",
+    "Low latency, minimum delay time of 80 ms",
+    "Supplement light up to 15 m",
+    "120 dB WDR, BLC, HLC, 3D DNR, defog",
+    "316L stainless steel enclosure with heater and wiper",
+    "Water/dust resistant (IP68), NEMA 4X / C5 anti-corrosion",
+    "PoE (802.3af) / 12 VDC power"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000163402/DS-2XV6325G0-LHRSY316L_Datasheet_20250615.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "2 MP vibration-resistant fisheye camera with a 1.8 mm 180 degree lens, high shock resistance, 80 ms low-latency imaging and a 316L stainless steel IP68 anti-corrosion enclosure with heater and wiper. Verified against the official Hikvision datasheet DS-2XV6325G0-LHRSY316L_Datasheet_20250615.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

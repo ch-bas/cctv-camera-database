@@ -1,0 +1,121 @@
+{
+  "id": "hikvision-ds-2cd2d25g1",
+  "brand": "Hikvision",
+  "model": "DS-2CD2D25G1/M-D/NF",
+  "aliases": [
+    "DS-2CD2D25G1/M-D/NF(2.8mm)",
+    "DS-2CD2D25G1/M-D/NF(4mm)",
+    "2 MP Mini Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed options)",
+    "varifocal": false
+  },
+  "field_of_view_deg": "107.8 horizontal (2.8mm) / 82.8 horizontal (4mm)",
+  "power": {
+    "method": "12 VDC",
+    "consumption_w": 1.5,
+    "voltage": "12 VDC"
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "31.5 x 31.5 x 49.6",
+  "weight_g": 93,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "2MP compact mini/covert network camera in a zinc-alloy body",
+    "up to 60 fps main stream at 1080p",
+    "120 dB true WDR, 3D DNR, BLC/HLC, defog",
+    "H.265+ compression to save bandwidth and storage",
+    "smart events: intrusion, line crossing, region entrance/exiting, object removal",
+    "fixed 2.8mm or 4mm lens option, audio line-in",
+    "12 VDC powered (no PoE)"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000054354/DS-2CD2D25G1_M-D_NF_Datasheet_20241207.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2CD2D25G1/M-D/NF is a 2MP compact mini network camera that supports up to 60 fps at 1080p with 120 dB true WDR, designed for discreet indoor installation. Verified against the official DS-2CD2D25G1 datasheet (DS-2CD2D25G1_M-D_NF_Datasheet_20241207.pdf).",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "indoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

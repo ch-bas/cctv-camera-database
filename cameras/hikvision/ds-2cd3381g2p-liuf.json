@@ -1,0 +1,133 @@
+{
+  "id": "hikvision-ds-2cd3381g2p-liuf",
+  "brand": "Hikvision",
+  "model": "DS-2CD3381G2P-LIUF",
+  "aliases": [
+    "DS-2CD3381G2P-LIUF/SL",
+    "8 MP Smart Hybrid Light Fixed Turret Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 4256,
+    "max_height": 1888,
+    "label": "8MP (180 panoramic)"
+  },
+  "sensor": "1/2.4\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2 (fixed)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / 12 VDC",
+    "consumption_w": 11.5,
+    "poe_class": 3,
+    "voltage": "12 VDC / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "130.1 (diameter) x 109.1",
+  "weight_g": 580,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "8MP 180-degree panoramic turret (single 2mm lens)",
+    "Smart Hybrid Light: IR + white light supplement up to 30m",
+    "person and vehicle detection",
+    "120 dB WDR, 3D DNR, BLC, HLC",
+    "H.265+ compression to save bandwidth and storage",
+    "built-in microphone and speaker for two-way audio",
+    "microSD on-board storage up to 512 GB",
+    "IP67 water/dust resistant",
+    "Hikvision NVR compatible (ONVIF Profile S/T/G)"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000156741/DS-2CD3381G2P-LIUF_SL_Datasheet_20241108.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2CD3381G2P-LIUF is an 8MP 180-degree panoramic turret with Smart Hybrid Light (IR + white light) to 30m, person/vehicle detection, built-in two-way audio and IP67 protection. Verified against the official DS-2CD3381G2P-LIUF_SL_Datasheet_20241108.pdf.",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4256x1888",
+        "fps": 20,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1200x536",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

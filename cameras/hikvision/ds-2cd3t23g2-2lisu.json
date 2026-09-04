@@ -1,0 +1,134 @@
+{
+  "id": "hikvision-ds-2cd3t23g2-2lisu",
+  "brand": "Hikvision",
+  "model": "DS-2CD3T23G2-2LISU",
+  "aliases": [
+    "DS-2CD3T23G2-4LISU",
+    "DS-2CD3T23G2-2LISU/4LISU"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2 MP"
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 / 6 (fixed)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "112 (2.8mm) / 91 (4mm) / 56 (6mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 60,
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / DC 12V",
+    "consumption_w": 8.5,
+    "poe_class": 3,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "89 x 93.1 x 325.7",
+  "weight_g": 1215,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "2 MP AcuSense fixed bullet",
+    "Smart Hybrid Light (IR + white); 60 m (-2LISU) / 90 m (-4LISU)",
+    "AcuSense human/vehicle classification",
+    "Built-in arrayed dual-microphone",
+    "120 dB true WDR",
+    "H.265+",
+    "Audio and alarm I/O",
+    "IP67 / IK10",
+    "Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000135504/DS-2CD3T23G2-2LISU_4LISU_Datasheet_20260114.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "2 MP AcuSense Smart Hybrid Light fixed bullet (IR + white supplement light, 60 m on -2LISU and 90 m on -4LISU) with 120 dB true WDR and a built-in arrayed dual-microphone. Verified against the official Hikvision datasheet DS-2CD3T23G2-2LISU_4LISU_Datasheet_20260114.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

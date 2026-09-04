@@ -1,0 +1,130 @@
+{
+  "id": "hikvision-ds-2xe6422fwd-izhrs",
+  "brand": "Hikvision",
+  "model": "DS-2XE6422FWD-IZHRS",
+  "aliases": [
+    "DS-2XE6422FWD-IZHRS(B)",
+    "DS-2XE6422FWD-IZHRS(2.8-12mm)(B)",
+    "DS-2XE6422FWD-IZHRS(8-32mm)(B)"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 to 12 / 8 to 32 (motorized optional)",
+    "aperture": "F1.4 (2.8-12mm) / F1.7 (8-32mm)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "94 to 38 horizontal (2.8-12mm) / 42.5 to 15.1 horizontal (8-32mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 150,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "100 to 240 VAC / PoE (802.3at, Class 4)",
+    "consumption_w": 22.6,
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP68",
+  "audio": {
+    "two_way": true
+  },
+  "dimensions_mm": "513.2 x 169 x 308",
+  "weight_g": 17800,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "2 MP explosion-proof network bullet (ATEX & IECEx certified)",
+    "316L stainless steel enclosure with anti-corrosion coating",
+    "IP68 water resistant for hazardous gas and dust zones",
+    "Motorized varifocal lens 2.8-12 mm or 8-32 mm optional",
+    "EXIR IR up to 80 m (2.8-12mm) / 150 m (8-32mm)",
+    "120 dB WDR, EIS image stabilization",
+    "Built-in heater and wiper",
+    "Wide-range 100-240 VAC and PoE (802.3at) power",
+    "Line-in/out audio, 2 alarm inputs / 2 outputs, microSD up to 256 GB"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000039566/DS-2XE6422FWD-IZHRSB_Datasheet_20240327.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2XE6422FWD-IZHRS(B) is a 2 MP explosion-proof (ATEX & IECEx) network bullet with a 316L stainless steel IP68 enclosure, motorized varifocal 2.8-12 mm or 8-32 mm lens, EXIR IR up to 150 m, 120 dB WDR, EIS, heater and wiper, powered by wide-range AC or PoE. Verified against the official Hikvision datasheet DS-2XE6422FWD-IZHRSB_Datasheet_20240327.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

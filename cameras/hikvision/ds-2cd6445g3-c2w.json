@@ -1,0 +1,127 @@
+{
+  "id": "hikvision-ds-2cd6445g3-c2w",
+  "brand": "Hikvision",
+  "model": "DS-2CD6445G3-C2W",
+  "aliases": [
+    "DS-2CD6445G3-C2(W)",
+    "DS-2CD6445G3-C2",
+    "4MP DeepinView Separated Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "covert",
+  "connectivity": [
+    "ethernet",
+    "wifi"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2 / 2.8 / 4 (fixed options)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "128 horizontal (2mm) / 104 horizontal (2.8mm) / 78 horizontal (4mm)",
+  "night_vision": {
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3) / 12 VDC",
+    "consumption_w": 12.9,
+    "poe_class": 3,
+    "voltage": "12V (DC) / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "135 x 108 x 30.4",
+  "weight_g": 460,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "4MP DeepinView separated (split) network camera",
+    "Hikvision Embedded Open Platform (HEOP) for third-party apps",
+    "4 Tops computing power, deep-learning analytics",
+    "Multi-dimension people counting with face-based deduplication",
+    "PPE detection (hard hat and reflective clothing)",
+    "Wi-Fi 802.11 a/b/g/n/ac/ax on -W variant",
+    "Efficient H.265+ compression",
+    "microSD slot up to 1024 GB, RS-485 control"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000114203/DS-2CD6445G3-C2W_Datasheet_20260730.pdf"
+  ],
+  "release_notes": "The Hikvision DS-2CD6445G3-C2W is a 4MP DeepinView separated (split-body) network camera with HEOP open-platform support, 4 Tops of computing power, people counting, PPE detection and optional Wi-Fi 802.11ax. Verified against the official DS-2CD6445G3-C2W_Datasheet_20260730.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "indoor"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

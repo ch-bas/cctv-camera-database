@@ -1,0 +1,119 @@
+{
+  "id": "hikvision-ds-2cd2935fwd",
+  "brand": "Hikvision",
+  "model": "DS-2CD2935FWD",
+  "aliases": [
+    "DS-2CD2935FWD-I",
+    "DS-2CD2935FWD-IS"
+  ],
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2048,
+    "max_height": 1536,
+    "label": "3MP (2048x1536)"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.16 (fixed)",
+    "aperture": "F2.2",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 8,
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V",
+    "consumption_w": 6.5
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "operating_temp_c": "-10 to 50",
+  "dimensions_mm": "Diameter 119.9 x 41.2",
+  "weight_g": 600,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "3MP panoramic fisheye",
+    "180-degree horizontal & vertical field of view",
+    "1.16mm fixed fisheye lens",
+    "IR up to 8m",
+    "120dB WDR",
+    "H.265+ compression",
+    "de-warping panoramic views",
+    "microSD up to 128GB",
+    "Hikvision NVR compatible"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2048x1536",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/sm000058622/DS-2CD2935FWD-IS_Datasheet_V5.5.52_20220609.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile. Main stream for recording, sub stream for live view."
+    }
+  },
+  "release_notes": "3MP 180-degree panoramic fisheye camera with a 1.16mm lens, 120dB WDR and 8m IR at 30fps. Verified against the official Hikvision datasheet (DS-2CD2935FWD-IS_Datasheet_V5.5.52).",
+  "last_verified": "2026-09-03",
+  "ndaa_compliant": false
+}

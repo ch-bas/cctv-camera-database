@@ -1,0 +1,126 @@
+{
+  "id": "hikvision-ds-2cd6085g0",
+  "brand": "Hikvision",
+  "model": "DS-2CD6085G0",
+  "aliases": [
+    "DS-2CD6085G0/SC-IZRS"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 to 12 or 8 to 32 (motorized varifocal, optional)",
+    "aperture": "F1.4 (2.8-12mm) / F1.7 (8-32mm)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "104 to 41.2 (2.8-12mm) / 41.8 to 15 (8-32mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux_color": 0.002
+  },
+  "power": {
+    "method": "36 VDC",
+    "consumption_w": 65,
+    "voltage": "36 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP68",
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "173 x 145 x 281",
+  "weight_g": 2823,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "8 MP self-cleaning network camera with positive-pressure air curtain",
+    "Motorized varifocal lens (2.8 to 12 mm or 8 to 32 mm)",
+    "Built-in wiper and anti-fogging",
+    "IR supplement light up to 50 m (850 nm)",
+    "HEOP 2.0 open platform, 8 TOPS computing power",
+    "Deep-learning human and vehicle classification",
+    "120 dB WDR",
+    "Gigabit Ethernet, microSD up to 1 TB",
+    "Water and dust resistant (IP68)",
+    "H.265+ efficient compression"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000150561/DS-2CD6085G0_SC-IZRS_Datasheet_20241219.pdf"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "8 MP self-cleaning bullet network camera with positive-pressure air curtain, wiper, motorized varifocal lens, HEOP open platform (8 TOPS) and up to 50 m IR; verified against the official Hikvision datasheet DS-2CD6085G0_SC-IZRS_Datasheet_20241219.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 60,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

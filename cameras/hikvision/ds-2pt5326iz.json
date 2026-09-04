@@ -1,0 +1,127 @@
+{
+  "id": "hikvision-ds-2pt5326iz",
+  "brand": "Hikvision",
+  "model": "DS-2PT5326IZ-DE",
+  "aliases": [
+    "DS-2PT5326IZ",
+    "DS-2PT5326IZ-DE (5-50 mm)(4 mm)"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "Four 1/2.8\" Progressive Scan CMOS (3 panoramic + 1 PTZ)",
+  "lens": {
+    "count": 4,
+    "focal_length_mm": "4 (panoramic, fixed) / 4.7 to 47 (PTZ, 10x optical)",
+    "aperture": "F1.6 (panoramic) / F1.6 to F3.0 (PTZ)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "80.7 x3 (panoramic) / 58.6 to 6.4 horizontal (PTZ wide-tele)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "12 VDC / Hi-PoE",
+    "consumption_w": 27
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 65 (with heater on)",
+  "dimensions_mm": "271.3 (diameter) x 243.1",
+  "weight_g": 3200,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "Triple-directional PanoVu panoramic camera with PTZ",
+    "3-ch 1920x1080 panoramic + 1-ch 1920x1080 close-up PTZ",
+    "Three flexible cameras adjustable along a circular track (0 to 270 slide range)",
+    "PTZ: 10x optical + 8x digital zoom, 3D positioning, 300 presets",
+    "EXIR IR up to 30 m (panoramic) / 50 m (PTZ)",
+    "Digital WDR, HLC, BLC, 3D DNR, defog",
+    "Dual-VCA, intrusion and line-crossing detection, PTZ linkage",
+    "1-ch audio in / 1-ch audio out, 1 alarm in / 1 alarm out",
+    "12 VDC and Hi-PoE, IP66, microSD up to 256 GB"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000001093/Datasheet-of-DS-2PT5326IZ-DE5-50mm4mm_202120526.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2PT5326IZ-DE is a triple-directional PanoVu camera with PTZ, combining three 1/2.8\" 1080p panoramic sensors on an adjustable circular track (240-degree coverage) with a 1080p 10x-optical PTZ camera offering 3D positioning and 300 presets, EXIR IR to 50 m, digital WDR and IP66 protection. Verified against the official Hikvision datasheet Datasheet-of-DS-2PT5326IZ-DE5-50mm4mm_202120526.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

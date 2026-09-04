@@ -1,0 +1,134 @@
+{
+  "id": "hikvision-ptz-n2204i-d3",
+  "brand": "Hikvision",
+  "model": "PTZ-N2204I-D3",
+  "aliases": [
+    "PTZ-N2204I-D3/W(B)"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 to 12",
+    "aperture": "F1.8",
+    "varifocal": true
+  },
+  "field_of_view_deg": "96 to 46 horizontal (wide-tele)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.05
+  },
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3at)",
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-10 to 50",
+  "dimensions_mm": "125 (diameter) x 136.7",
+  "weight_g": 650,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "RU",
+    "global"
+  ],
+  "features": [
+    "2 MP 1/2.8\" progressive scan CMOS mini PTZ",
+    "4x optical zoom + 16x digital zoom",
+    "Wi-Fi (802.11 b/g/n) plus wired Ethernet",
+    "EXIR/IR supplement light up to 30 m",
+    "120 dB WDR",
+    "Built-in microphone and speaker (two-way audio)",
+    "Built-in microSD/SDHC/SDXC slot up to 256 GB",
+    "H.265+ / H.264+ compression",
+    "12 VDC / PoE (802.3at) power"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000057761/RU_Datasheet-of-PTZ-N2204I-D3WB_V5.7.3_20211220_220203.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "2 MP mini Wi-Fi PTZ camera with 2.8-12 mm 4x motorized zoom lens, 30 m IR range, 120 dB WDR, built-in microphone and speaker. Verified against the official Hikvision datasheet RU_Datasheet-of-PTZ-N2204I-D3WB_V5.7.3_20211220_220203.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "indoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

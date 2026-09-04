@@ -1,0 +1,127 @@
+{
+  "id": "hikvision-ds-2df6a836xg1-el",
+  "brand": "Hikvision",
+  "model": "DS-2DF6A836XG1-EL",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP"
+  },
+  "sensor": "1/1.8\" progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6.0 to 216 (36x optical)",
+    "aperture": "Max. F1.2",
+    "varifocal": true
+  },
+  "field_of_view_deg": "56.6 to 1.7 horizontal (wide-tele)",
+  "night_vision": {
+    "type": "ir",
+    "min_lux_color": 0.0005
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "Hi-PoE / 36 VDC",
+    "consumption_w": 50,
+    "voltage": "36 VDC"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "231.1 x 355.6 (diameter x height)",
+  "weight_g": 6000,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "8MP (3840x2160) 36x optical zoom network IR speed dome",
+    "1/1.8\" progressive scan CMOS with DarkFighter 2.0 low-light technology",
+    "color min illumination 0.0005 lux, B/W 0.0001 lux",
+    "36x optical and 16x digital zoom, 6-216mm motorized lens",
+    "140 dB AWDR, 3D DNR, HLC, BLC, optical defog",
+    "auto-tracking 3.0 and 3D positioning",
+    "face capture and road traffic / license plate recognition (124+ countries)",
+    "IP67 water and dust resistant, IK10 vandal resistant, built-in gyroscope EIS",
+    "H.265+ compression, triple stream, microSD up to 1 TB",
+    "ONVIF (Profile S/G/T/M), ISAPI, Hikvision SDK network output"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000159631/DS-2DF6A836XG1-EL_Datasheet_20241112.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2DF6A836XG1-EL is an 8MP 36x optical zoom network IR speed dome on a 1/1.8\" CMOS with DarkFighter 2.0, 140 dB WDR, auto-tracking 3.0 and deep-learning face/road-traffic analytics. Verified against the official Hikvision datasheet DS-2DF6A836XG1-EL_Datasheet_20241112.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 60,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

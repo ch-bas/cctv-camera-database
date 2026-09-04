@@ -1,0 +1,132 @@
+{
+  "id": "hikvision-pci-d14z8hs",
+  "brand": "Hikvision",
+  "model": "PCI-D14Z8HS",
+  "aliases": [],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 to 12 (motorized varifocal; 8 to 32 optional)",
+    "aperture": "F1.2",
+    "varifocal": true
+  },
+  "field_of_view_deg": "115 to 12 horizontal (2.8-12mm) / 42 to 15 horizontal (8-32mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40,
+    "min_lux_color": 0.0014
+  },
+  "power": {
+    "method": "PoE (802.3af) / 24 VAC",
+    "consumption_w": 12.9,
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "Ø162 x 141.8",
+  "weight_g": 1420,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "4 MP DarkFighter motorized varifocal dome network camera",
+    "AcuSense human/vehicle target classification",
+    "Motorized 2.8-12 mm varifocal lens",
+    "Anti-IR reflection",
+    "EXIR IR up to 40 m",
+    "140 dB WDR",
+    "H.265+ compression",
+    "Audio and alarm I/O",
+    "microSD slot up to 256 GB",
+    "IP67, IK10 and NEMA 4X anti-corrosion",
+    "Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000061689/PCI-D14Z8HS.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision PCI-D14Z8HS is a 4 MP DarkFighter motorized-varifocal dome network camera with AcuSense human/vehicle classification, anti-IR-reflection optics, EXIR IR up to 40 m, 140 dB WDR and an IP67/IK10/NEMA 4X housing. Verified against the official Hikvision datasheet (PCI-D14Z8HS).",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

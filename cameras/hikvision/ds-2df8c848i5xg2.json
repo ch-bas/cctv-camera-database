@@ -1,0 +1,137 @@
+{
+  "id": "hikvision-ds-2df8c848i5xg2",
+  "brand": "Hikvision",
+  "model": "DS-2DF8C848I5XG2",
+  "aliases": [
+    "DS-2DF8C848I5XG2/LM-ELW",
+    "DeepinViewX DF8C Series 8MP 48X DarkFighter Laser Network Speed Dome"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "sensor": "1/1.2\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6.0 to 288 (48x optical)",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "61.1 to 2.1 horizontal (wide-tele)",
+  "ptz": {
+    "autotracking": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 500,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "PoE (802.3bt, Type 3, Class 6) / 36 VDC",
+    "consumption_w": 60,
+    "poe_class": 6,
+    "voltage": "36 VDC / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "267.4 diameter x 431.1",
+  "weight_g": 9600,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "8MP 48x optical zoom DarkFighter 2.0 laser speed dome (DeepinViewX)",
+    "laser supplement light up to 500m",
+    "140 dB AWDR against strong backlight",
+    "Smart Pan-Tilt Correction with 3D positioning",
+    "auto-tracking 3.0 and dedicated large-scale AI perimeter protection",
+    "license plate and vehicle attribute recognition, face comparison",
+    "optical image stabilization (OIS) and optical defog",
+    "heater, wiper (rain-sensing) and demist for harsh weather",
+    "IP67 and IK10 vandal-proof (excluding glass window)",
+    "microSD storage up to 1TB, ONVIF Profile S/G/T/M"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000101298/DS-2DF8C848I5XG2_LM-ELW_Datasheet_20251205.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hikvision native RTSP (main 101 / sub 102). Enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2DF8C848I5XG2 is an 8MP DeepinViewX DF8C-series speed dome with 48x optical zoom, DarkFighter 2.0 low-light imaging and a 500m laser illuminator, verified against the official datasheet DS-2DF8C848I5XG2_LM-ELW_Datasheet_20251205.pdf.",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 60,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

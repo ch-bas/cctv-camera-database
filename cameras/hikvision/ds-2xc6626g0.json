@@ -1,0 +1,133 @@
+{
+  "id": "hikvision-ds-2xc6626g0",
+  "brand": "Hikvision",
+  "model": "DS-2XC6626G0",
+  "aliases": [
+    "DS-2XC6626G0(P-IZHRS)",
+    "316L 2MP Anti-Corrosion Vari-focal Bullet Network Camera"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12 or 8-32 (motorized)",
+    "aperture": "F1.38 to F2.5 (2.8-12mm)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "100.8 to 40.2 horizontal (2.8-12mm) / 40.7 to 14.6 horizontal (8-32mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 60,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "PoE (802.3at, Type 2, Class 4) / 12 VDC",
+    "consumption_w": 22,
+    "poe_class": 4,
+    "voltage": "12V (DC) / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "224 x 145 x 143.5 (without -R)",
+  "weight_g": 3560,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "316L stainless-steel anti-corrosion 2MP varifocal bullet",
+    "1/1.8\" sensor with ultra-low-light color (0.0005 lux)",
+    "motorized 2.8-12mm or 8-32mm lens options",
+    "EXIR supplement light up to 60m (100m on 8-32mm)",
+    "gigabit Ethernet, microSD up to 256 GB",
+    "alarm I/O, H.265+ compression",
+    "IP67, IK10 and NEMA 4X anti-corrosion rated"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000061884/DS-2XC6626G0_P-IZHRS_Datasheet_20260304.pdf"
+  ],
+  "release_notes": "The Hikvision DS-2XC6626G0 is a 316L stainless-steel anti-corrosion 2MP motorized varifocal bullet with a 1/1.8\" ultra-low-light sensor, gigabit Ethernet and IP67/IK10/NEMA 4X ratings for harsh environments. Verified against the official Hikvision datasheet DS-2XC6626G0_P-IZHRS_Datasheet_20260304.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

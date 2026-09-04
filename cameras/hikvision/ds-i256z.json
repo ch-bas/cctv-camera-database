@@ -1,0 +1,130 @@
+{
+  "id": "hikvision-ds-i256z",
+  "brand": "Hikvision",
+  "model": "DS-I256Z",
+  "aliases": [
+    "DS-I256Z#CATC"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 to 12",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "96 to 36 horizontal (2.8-12mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux_color": 0.005
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / DC 12V",
+    "consumption_w": 12.9,
+    "poe_class": 3,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false
+  },
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "105 x 244.4 (dia x H)",
+  "weight_g": 1035,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "RU",
+    "global"
+  ],
+  "features": [
+    "2MP (1920x1080) motorized varifocal bullet",
+    "2.8-12mm motorized varifocal lens for easy install",
+    "EXIR 2.0 infrared up to 50m",
+    "efficient H.265+ compression",
+    "digital WDR",
+    "microSD storage up to 256GB",
+    "IP67 water and dust resistant",
+    "Hikvision NVR compatible"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000049323/RU_DS-I256Z_datasheet_V5.5.122_20210531_211105.pdf"
+  ],
+  "release_notes": "The Hikvision DS-I256Z is a 2MP motorized varifocal bullet with a 1/2.7\" sensor, 2.8-12mm lens, EXIR 2.0 infrared up to 50m and digital WDR. Verified against the official datasheet RU_DS-I256Z_datasheet_V5.5.122_20210531.pdf.",
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

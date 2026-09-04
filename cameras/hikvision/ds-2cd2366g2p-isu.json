@@ -1,0 +1,134 @@
+{
+  "id": "hikvision-ds-2cd2366g2p-isu",
+  "brand": "Hikvision",
+  "model": "DS-2CD2366G2P-ISU",
+  "aliases": [
+    "DS-2CD2366G2P-ISU/SL",
+    "DS-2CD2366G2P-ISU/SL(2.8mm)(C)"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3632,
+    "max_height": 1632,
+    "label": "6MP"
+  },
+  "sensor": "2 x 1/2.5\" Progressive Scan CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.003
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3632x1632",
+        "fps": 20,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1200x536",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / DC 12V",
+    "consumption_w": 12.5,
+    "poe_class": 3,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Ø140 x 145.6 (dia x H)",
+  "weight_g": 940,
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "AcuSense human/vehicle classification (deep learning)",
+    "dual-lens 180 panoramic single-image view",
+    "6MP (3632x1632) resolution",
+    "powered-by-DarkFighter low-light",
+    "120dB true WDR",
+    "active strobe light and audible alarm (/SL)",
+    "built-in two-way audio",
+    "EXIR IR up to 30 m",
+    "IP67 weatherproof",
+    "Hikvision NVR compatible"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/sm000059131/DS-2CD2366G2P-ISU_SL-C_Datasheet_20240731.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ndaa_compliant": false
+}

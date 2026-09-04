@@ -1,0 +1,122 @@
+{
+  "id": "hikvision-ids-2zmn2312s",
+  "brand": "Hikvision",
+  "model": "iDS-2ZMN2312S",
+  "aliases": [
+    "iDS-2ZMN2312S(E)",
+    "iDS-2ZMN2312SE",
+    "23x Network Zoom Camera Module"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "sensor": "1/1.8\" progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.9 to 135.7 (23x optical)",
+    "aperture": "F1.5 to F3.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "60.2 to 3.4 horizontal (wide to tele)",
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "DC 12V",
+    "consumption_w": 10,
+    "voltage": "12V (DC)"
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "operating_temp_c": "-10 to 60",
+  "dimensions_mm": "57 x 67 x 119",
+  "weight_g": 420,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "8MP (up to 3840x2160) network zoom camera module for PTZ and positioning systems",
+    "23x optical zoom, 5.9-135.7mm motorized lens",
+    "1/1.8\" progressive scan CMOS, color min illumination 0.005 lux",
+    "120 dB WDR, EIS, 3D DNR, HLC/BLC",
+    "smart events: intrusion, line crossing, region entrance/exiting, object removal, unattended baggage",
+    "face capture and road traffic / license plate capture support",
+    "H.265+ compression, triple stream (main/sub/third)",
+    "microSD up to 512GB, RS-485/RS-232 (VISCA/Pelco-D/P), audio and alarm I/O",
+    "ONVIF, PSIA, CGI, Hikvision SDK network output"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000186128/iDS-2ZMN2312SE_Datasheet_20260519.pdf"
+  ],
+  "release_notes": "The Hikvision iDS-2ZMN2312S(E) is a 23x optical zoom network camera module (block camera) built on a 1/1.8\" CMOS with up to 3840x2160 resolution, intended for integration into PTZ cameras and positioning systems. Verified against the official Hikvision datasheet iDS-2ZMN2312SE_Datasheet_20260519.pdf.",
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

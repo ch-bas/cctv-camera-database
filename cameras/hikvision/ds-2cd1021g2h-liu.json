@@ -1,0 +1,128 @@
+{
+  "id": "hikvision-ds-2cd1021g2h-liu",
+  "brand": "Hikvision",
+  "model": "DS-2CD1021G2H-LIU",
+  "aliases": [
+    "DS-2CD1021G2H-LIU#Asia",
+    "2 MP Smart Hybrid Light Fixed Bullet Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.9\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed options)",
+    "aperture": "F2.2",
+    "varifocal": false
+  },
+  "field_of_view_deg": "101 horizontal (2.8mm) / 80 horizontal (4mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 20,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3, max. 6.5 W) / 12 VDC",
+    "consumption_w": 5,
+    "poe_class": 3,
+    "voltage": "12V (DC) / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "138.8 x 60.9 x 57.9",
+  "weight_g": 175,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "value-series 2MP fixed bullet with human detection",
+    "Smart Hybrid Light: IR up to 20m + white light up to 15m",
+    "built-in microphone with environment noise filtering",
+    "Digital WDR, 3D DNR, BLC/HLC",
+    "H.265+ compression",
+    "weatherproof IP67, PoE powered",
+    "Hikvision NVR compatible, ONVIF/RTSP"
+  ],
+  "release_notes": "The Hikvision DS-2CD1021G2H-LIU is a value-series 2MP fixed bullet with Smart Hybrid Light (20m IR + 15m white) and a built-in microphone. Verified against the official Hikvision datasheet (DS-2CD1021G2H-LIUAsia_Datasheet_20260730.pdf).",
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000192113/DS-2CD1021G2H-LIUAsia_Datasheet_20260730.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

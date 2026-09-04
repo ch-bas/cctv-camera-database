@@ -1,0 +1,129 @@
+{
+  "id": "hikvision-ds-2cd2083g0-i",
+  "brand": "Hikvision",
+  "model": "DS-2CD2083G0-I",
+  "aliases": [
+    "8 MP IR Fixed Bullet Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "sensor": "1/2.5\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 / 6 / 8 (fixed options)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "102 horizontal (2.8mm) / 79 horizontal (4mm) / 50 horizontal (6mm) / 40 horizontal (8mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / 12 VDC",
+    "consumption_w": 7.5,
+    "poe_class": 3,
+    "voltage": "12 VDC / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "70 x 155 (diameter x length)",
+  "weight_g": 410,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "8MP (4K) fixed bullet with 2.8 / 4 / 6 / 8mm lens options",
+    "EXIR IR up to 30m (850nm)",
+    "120dB WDR",
+    "H.265+ / H.265 / H.264+ / H.264",
+    "2 behavior analyses",
+    "BLC / 3D DNR / ROI / HLC",
+    "built-in microSD/SDHC/SDXC slot up to 128 GB",
+    "IP67 rated, 3-axis adjustment",
+    "4K main stream at 15 fps (60Hz)",
+    "Hikvision NVR / ONVIF compatible"
+  ],
+  "release_notes": "The Hikvision DS-2CD2083G0-I is an 8MP (4K) outdoor fixed bullet with 30m EXIR and 120dB WDR. Verified against the official DS-2CD2083G0-I_Datsheet_V5.6.0 datasheet.",
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/sm000058540/DS-2CD2083G0-I_Datsheet_V5.6.0_20220602.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 15,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": false
+}

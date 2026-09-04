@@ -1,0 +1,125 @@
+{
+  "id": "hikvision-ids-2cd7026g0",
+  "brand": "Hikvision",
+  "model": "iDS-2CD7026G0",
+  "aliases": [
+    "iDS-2CD7026G0/P-AP",
+    "iDS-2CD7026G0-AP",
+    "iDS-2CD7026G0(-AP)"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "12 VDC / 24 VAC / PoE (802.3af, Class 3)",
+    "consumption_w": 11.6,
+    "poe_class": 3,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "142.5 x 69.8 x 68",
+  "weight_g": 730,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "2 MP ANPR / license-plate recognition box network camera",
+    "DarkFighter low-light performance",
+    "140 dB WDR",
+    "Deep-learning perimeter protection and vehicle detection",
+    "Parking management with space status detection",
+    "Up to 5 simultaneous streams",
+    "CS-mount (lens sold separately)",
+    "Built-in microphone with line in/out audio",
+    "Gigabit Ethernet, microSD up to 1 TB",
+    "H.265+ efficient compression"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000031893/iDS-2CD7026G0_P-AP-C_Datasheet_20231122.pdf",
+    "https://assets.hikvision.com/prd/public/all/doc/sm000034930/iDS-2CD7026G0-AP-C_Datasheet_20231121.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "2 MP ANPR box network camera with DarkFighter low-light, 140 dB WDR, deep-learning vehicle detection and license-plate recognition, and up to 5 streams; verified against the official Hikvision datasheet iDS-2CD7026G0_P-AP-C_Datasheet_20231122.",
+  "last_verified": "2026-09-03",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

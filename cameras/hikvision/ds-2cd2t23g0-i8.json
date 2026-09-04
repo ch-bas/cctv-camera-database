@@ -1,0 +1,129 @@
+{
+  "id": "hikvision-ds-2cd2t23g0-i8",
+  "brand": "Hikvision",
+  "model": "DS-2CD2T23G0-I8",
+  "aliases": [
+    "DS-2CD2T23G0-I5/I8",
+    "2 MP IR Fixed Bullet Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 / 6 / 8 (fixed options)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "114 horizontal (2.8mm) / 86 horizontal (4mm) / 54 horizontal (6mm) / 43 horizontal (8mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 80,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / 12 VDC",
+    "consumption_w": 12.5,
+    "poe_class": 3,
+    "voltage": "12 VDC / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "105 x 299.7 (diameter x length)",
+  "weight_g": 1180,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "2MP fixed bullet with 2.8 / 4 / 6 / 8mm lens options",
+    "EXIR IR up to 80m (-I8; -I5 up to 50m), 850nm",
+    "120dB WDR",
+    "H.265+ / H.265 / H.264+ / H.264, three streams",
+    "2 behavior analyses and face detection",
+    "BLC / 3D DNR / ROI / HLC",
+    "built-in microSD/SDHC/SDXC slot up to 128 GB",
+    "IP67 rated, 3-axis adjustment",
+    "Hikvision NVR / ONVIF compatible"
+  ],
+  "release_notes": "The Hikvision DS-2CD2T23G0-I8 is a 2MP outdoor fixed bullet with long-range 80m EXIR and 120dB WDR (the -I8 long-range variant of the DS-2CD2T23G0-I5/I8 series). Verified against the official DS-2CD2T23G0-I5-I8_Datasheet_V5.6.0 datasheet.",
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/sm000058557/DS-2CD2T23G0-I5-I8_Datasheet_V5.6.0_20220602.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": false
+}

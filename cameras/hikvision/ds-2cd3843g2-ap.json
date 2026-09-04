@@ -1,0 +1,120 @@
+{
+  "id": "hikvision-ds-2cd3843g2-ap",
+  "brand": "Hikvision",
+  "model": "DS-2CD3843G2-AP",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/3\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "aperture": "Auto-iris"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / DC 12V / AC 24V",
+    "consumption_w": 8,
+    "poe_class": 3,
+    "voltage": "12 VDC / 24 VAC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "68 x 56.3 x 143.1",
+  "weight_g": 600,
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "AcuSense human/vehicle classification (deep learning)",
+    "4MP (2688x1520) resolution",
+    "indoor box camera with C/CS-mount interchangeable lens",
+    "auto-iris support",
+    "120dB true WDR",
+    "H.265+ compression",
+    "built-in microphone",
+    "RS-485 and alarm I/O",
+    "up to four video streams"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000162405/DS-2CD3843G2-AP_Datasheet_20250213.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ndaa_compliant": false
+}

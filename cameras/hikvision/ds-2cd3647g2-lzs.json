@@ -1,0 +1,136 @@
+{
+  "id": "hikvision-ds-2cd3647g2-lzs",
+  "brand": "Hikvision",
+  "model": "DS-2CD3647G2-LZS",
+  "aliases": [
+    "DS-2CD3647G2-LZS(3.6-9mm)",
+    "DS-2CD3647G2-LZS-C",
+    "4 MP ColorVu Motorized Varifocal Bullet Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6 to 9 (motorized)",
+    "aperture": "F1.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "92.3 to 48 horizontal",
+  "night_vision": {
+    "type": "color",
+    "range_m": 60,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "PoE (802.3at, Class 4) / 12 VDC",
+    "consumption_w": 18,
+    "poe_class": 4,
+    "voltage": "12 VDC / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "327.9 x 97.9 x 90.9",
+  "weight_g": 1520,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "4MP ColorVu 24/7 full-color imaging with F1.0 super-aperture lens",
+    "3.6-9mm motorized varifocal lens",
+    "white-light supplement illuminator up to 60m with Smart Supplement Light",
+    "130 dB true WDR, 3D DNR, BLC/HLC",
+    "deep-learning human and vehicle target classification",
+    "H.265+ compression to save bandwidth and storage",
+    "audio line in/out and 1 alarm input / 1 alarm output",
+    "microSD storage up to 512GB",
+    "IP67 and IK10 vandal-resistant"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000043243/DS-2CD3647G2-LZS-C_Datasheet_20230831.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2CD3647G2-LZS is a 4MP ColorVu motorized varifocal bullet delivering 24/7 full-color imaging with an F1.0 lens, white-light up to 60m, 130 dB WDR and deep-learning target classification. Verified against the official DS-2CD3647G2-LZS datasheet (DS-2CD3647G2-LZS-C_Datasheet_20230831.pdf).",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

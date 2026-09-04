@@ -1,0 +1,146 @@
+{
+  "id": "hikvision-ids-2cd5186g2",
+  "brand": "Hikvision",
+  "model": "iDS-2CD5186G2",
+  "aliases": [
+    "iDS-2CD5186G2/V-XZHSY",
+    "iDS-2CD5186G2/V-XZ(H)S(Y)",
+    "8MP DeepinViewX Moto Varifocal Dome"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 to 12 / 8 to 32 (motorized varifocal, optional)",
+    "aperture": "F1.4 to F2.1 (2.8-12mm) / F1.7 (8-32mm)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "112.0 to 47.5 horizontal (2.8-12mm) / 41.8 to 15.0 horizontal (8-32mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 60,
+    "min_lux_color": 0.001
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3at, Type 2, Class 4, max 16 W) / DC 12V (max 16.4 W) / 24 VAC (max 16.1 W)",
+    "consumption_w": 16.4,
+    "voltage": "12 VDC ± 20% / 24 VAC ± 20%",
+    "poe_class": 4
+  },
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "dimensions_mm": "Ø143 x 112",
+  "weight_g": 900,
+  "operating_temp_c": "-30 to 60",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "8MP DeepinViewX motorized vari-focal vandal dome",
+    "Darkfighter 2.0 low-light technology",
+    "IR + white light smart supplement light, up to 60m",
+    "P-iris lens (2.8-12mm or 8-32mm optional)",
+    "deep-learning perimeter protection and face capture",
+    "AI Encoding (Guanlan large-scale model) cuts storage up to 50%",
+    "TPM 2.0 hardware cyber security",
+    "130 dB WDR",
+    "built-in 2 microphones + speaker (two-way audio)",
+    "IP67 and IK10 vandal proof",
+    "Hikvision NVR compatible (ONVIF)"
+  ],
+  "release_notes": "Specs verified against the official Hikvision datasheet iDS-2CD5186G2/V-XZ(H)S(Y) (iDS-2CD5186G2_V-XZHSY_Datasheet_20260630). 8MP DeepinViewX Darkfighter 2.0 vari-focal dome; main stream 30 fps at 60 Hz; supports microSD up to 1 TB. -H variant extends operating range to -40 C.",
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000104642/iDS-2CD5186G2_V-XZHSY_Datasheet_20260630.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ndaa_compliant": false
+}

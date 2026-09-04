@@ -1,0 +1,131 @@
+{
+  "id": "hikvision-ds-2dy5225ix-d",
+  "brand": "Hikvision",
+  "model": "DS-2DY5225IX-D",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/1.8\" progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.9 to 147.5",
+    "aperture": "F1.5",
+    "varifocal": true
+  },
+  "field_of_view_deg": "55.4 to 2.1 horizontal (wide-tele)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 250,
+    "min_lux_color": 0.005
+  },
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "12 VDC (basic 16 W, max. 60 W)",
+    "consumption_w": 60,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "332 x 182 x 222",
+  "weight_g": 7700,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "GB",
+    "global"
+  ],
+  "features": [
+    "2 MP 1/1.8\" progressive scan CMOS ultra-low-illumination positioning system",
+    "25x optical zoom + 16x digital zoom",
+    "EXIR/IR supplement light up to 250 m",
+    "Smart IR",
+    "120 dB WDR, defog",
+    "Two-way audio (line in / line out)",
+    "3D positioning and proportional zoom",
+    "Water/dust resistant (IP66)",
+    "12 VDC power"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000058304/Datasheet-of-DS-2DY5225IX-DUK-20220427.pdf"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "2 MP 25x ultra-low-illumination IR positioning system (Lite) with 5.9-147.5 mm motorized zoom lens, 250 m IR distance, 120 dB WDR and Smart IR. IP66 rated. Verified against the official Hikvision datasheet Datasheet-of-DS-2DY5225IX-DUK-20220427.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

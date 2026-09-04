@@ -1,0 +1,141 @@
+{
+  "id": "hikvision-ds-2cd3t66g2-4is",
+  "brand": "Hikvision",
+  "model": "DS-2CD3T66G2-4IS",
+  "aliases": [
+    "4 MP AcuSense IR Fixed Bullet Network Camera"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4 MP"
+  },
+  "sensor": "1/3\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 / 6 (fixed options)",
+    "aperture": "F1.4",
+    "varifocal": false
+  },
+  "field_of_view_deg": "101 horizontal (2.8mm) / 84 horizontal (4mm) / 53 horizontal (6mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 90,
+    "min_lux_color": 0.003
+  },
+  "power": {
+    "method": "12 VDC / PoE (IEEE 802.3at, Class 4, max. 14.5 W)",
+    "consumption_w": 14.5,
+    "poe_class": 4,
+    "voltage": "12V (DC) / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 65",
+  "dimensions_mm": "325.7 x 93.3 x 91.2",
+  "weight_g": 1100,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "MEA",
+    "global"
+  ],
+  "features": [
+    "4 MP AcuSense fixed bullet with human/vehicle deep-learning classification",
+    "powered-by-DarkFighter low-light technology",
+    "HEOP 2.0 open platform, 1.5 TOPS computing power",
+    "fixed lens 2.8 / 4 / 6 mm options",
+    "EXIR IR up to 90 m with smart supplement light",
+    "140 dB true WDR",
+    "H.265+ compression, 3D DNR",
+    "microSD on-board storage up to 512 GB",
+    "audio and alarm interface",
+    "weatherproof IP67",
+    "Hikvision NVR compatible, ONVIF/RTSP"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000128072/DS-2CD3T66G2-4IS_Datasheet_20240629.pdf"
+  ],
+  "release_notes": "The Hikvision DS-2CD3T66G2-4IS is a 4 MP AcuSense fixed bullet with powered-by-DarkFighter low-light imaging, 140 dB WDR, HEOP 2.0 open platform, EXIR up to 90 m, and microSD up to 512 GB. Verified against the official Hikvision datasheet (DS-2CD3T66G2-4IS_Datasheet_20240629.pdf).",
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 10,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

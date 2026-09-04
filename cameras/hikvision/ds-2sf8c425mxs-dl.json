@@ -1,0 +1,134 @@
+{
+  "id": "hikvision-ds-2sf8c425mxs-dl",
+  "brand": "Hikvision",
+  "model": "DS-2SF8C425MXS-DL",
+  "aliases": [
+    "DS-2SF8C425MXS-DL(24F0)(P3)"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP (PTZ channel)"
+  },
+  "sensor": "1/1.8\" progressive scan CMOS (dual-channel)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "2.8 (panoramic) / 5.9 to 147.5 (PTZ)",
+    "aperture": "F1.0 (panoramic) / F1.5 (PTZ)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "190 (panoramic) / 58.5 to 3.1 (PTZ)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 300,
+    "min_lux_color": 0.0005
+  },
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "36 VDC (max. 70 W)",
+    "consumption_w": 70,
+    "voltage": "36 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "290 (diameter) x 453.2",
+  "weight_g": 11500,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "Dual-channel panoramic bullet + 4 MP PTZ combo",
+    "Panoramic bullet channel 3840 x 1080, 190 horizontal FOV",
+    "25x optical zoom + 16x digital zoom (PTZ channel)",
+    "Panoramic channel white light up to 30 m",
+    "PTZ channel EXIR/IR up to 300 m",
+    "120 dB WDR (PTZ channel)",
+    "Two-way audio (line in / line out)",
+    "Water/dust resistant (IP67) and vandal resistant (IK10)",
+    "36 VDC power (max. 70 W)"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000056314/Datasheet-of-DS-2SF8C425MXS-DL24F0P3_V5.7.10_20220518.pdf"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "Dual-channel PanoVu-style combo pairing a 190-degree panoramic bullet (3840 x 1080, 2.8 mm, white light up to 30 m) with a 4 MP 25x PTZ channel (5.9-147.5 mm, IR up to 300 m, 120 dB WDR). IP67 and IK10 rated. Verified against the official Hikvision datasheet Datasheet-of-DS-2SF8C425MXS-DL24F0P3_V5.7.10_20220518.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

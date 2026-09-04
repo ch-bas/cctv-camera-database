@@ -1,0 +1,134 @@
+{
+  "id": "hikvision-ds-2cd2423g0-iw",
+  "brand": "Hikvision",
+  "model": "DS-2CD2423G0-IW",
+  "aliases": [
+    "DS-2CD2423G0-IW-W",
+    "2 MP IR Fixed Cube Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet",
+    "wifi"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed options)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "114 horizontal (2.8mm) / 86 horizontal (4mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / 12 VDC",
+    "consumption_w": 6,
+    "poe_class": 3,
+    "voltage": "12 VDC / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-10 to 40",
+  "dimensions_mm": "102.8 x 65.2 x 32.6",
+  "weight_g": 128,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "2MP indoor fixed cube camera with Wi-Fi (-W)",
+    "fixed 2.8mm or 4mm lens",
+    "IR up to 10m (850nm)",
+    "PIR human detection (horizontal 90 / vertical 80, range 10m)",
+    "120dB true WDR",
+    "H.265+ compression",
+    "built-in microphone and speaker, two-way audio",
+    "built-in microSD/SDHC/SDXC slot up to 128 GB",
+    "IEEE 802.11b/g/n Wi-Fi (2.4 GHz)",
+    "Hikvision NVR / ONVIF compatible"
+  ],
+  "release_notes": "The Hikvision DS-2CD2423G0-IW is a 2MP indoor Wi-Fi cube camera with two-way audio, PIR detection and 120dB WDR. Verified against the official DS-2CD2423G0-IW-W_Datasheet_V5.5.83 datasheet.",
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/sm000058589/DS-2CD2423G0-IW-W_Datasheet_V5.5.83_20220627.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor"
+  ],
+  "ndaa_compliant": false
+}

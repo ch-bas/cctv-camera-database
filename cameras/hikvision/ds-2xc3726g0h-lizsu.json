@@ -1,0 +1,134 @@
+{
+  "id": "hikvision-ds-2xc3726g0h-lizsu",
+  "brand": "Hikvision",
+  "model": "DS-2XC3726G0H-LIZSU",
+  "aliases": [
+    "DS-2XC3726G0H-LIZ(S)(U)(PA)",
+    "Polymer 2MP Anti-Corrosion PTRZ Dome"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2 MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5 / 7-35 (motorized varifocal options)",
+    "aperture": "F1.2 (2.7-13.5mm) / F1.7 (7-35mm)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "114.6 to 41.8 horizontal (2.7-13.5mm) / 42.5 to 15.2 horizontal (7-35mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 40,
+    "min_lux_color": 0.001
+  },
+  "ptz": {
+    "autotracking": false
+  },
+  "power": {
+    "method": "PoE (802.3at, Class 4) / 12 VDC",
+    "consumption_w": 21,
+    "poe_class": 4
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP68",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Diameter 154.9 x 128.5",
+  "weight_g": 1280,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "2MP anti-corrosion polymer PTRZ dome with motorized pan/tilt/rotate/zoom for installation",
+    "24/7 color imaging via ColorVu technology",
+    "Smart Hybrid Light (IR + white) up to 40m",
+    "Motorized varifocal 2.7-13.5mm or 7-35mm optical zoom",
+    "130dB WDR",
+    "HEOP 2.0 open platform, 1.5 TOPS computing power",
+    "-U: two-way audio with dual-array microphone",
+    "IP68 and IK10, top-level anti-corrosion protection"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000134289/DS-2XC3726G0H-LIZSU_PA_Datasheet_20250626.pdf"
+  ],
+  "release_notes": "The Hikvision DS-2XC3726G0H-LIZSU is a 2MP anti-corrosion polymer PTRZ dome with ColorVu 24/7 color, Smart Hybrid Light up to 40m, motorized varifocal zoom, 130dB WDR and IP68/IK10 protection. Verified against the official Hikvision datasheet (DS-2XC3726G0H-LIZSU_PA_Datasheet_20250626.pdf).",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

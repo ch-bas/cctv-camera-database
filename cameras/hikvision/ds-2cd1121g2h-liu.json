@@ -1,0 +1,131 @@
+{
+  "id": "hikvision-ds-2cd1121g2h-liu",
+  "brand": "Hikvision",
+  "model": "DS-2CD1121G2H-LIU",
+  "aliases": [
+    "DS-2CD1121G2H-LIU#Asia",
+    "2 MP Smart Hybrid Light Fixed Dome Network Camera"
+  ],
+  "markets": [
+    "Asia",
+    "global"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.9\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed options)",
+    "aperture": "F2.2",
+    "varifocal": false
+  },
+  "field_of_view_deg": "101 horizontal (2.8mm) / 80 horizontal (4mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 20,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3) / 12 VDC",
+    "consumption_w": 7,
+    "poe_class": 3,
+    "voltage": "12V (DC) / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-10 to 40",
+  "dimensions_mm": "121.5 (diameter) x 97.6",
+  "weight_g": 600,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "value-series 2MP fixed dome",
+    "Smart Hybrid Light: IR up to 20 m + white light up to 15 m",
+    "built-in microphone for real-time audio",
+    "motion detection with human target classification",
+    "Digital WDR, H.265+ compression",
+    "fixed 2.8mm or 4mm lens option",
+    "on-board microSD storage up to 512 GB on -F variant",
+    "Hikvision NVR compatible"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000192114/DS-2CD1121G2H-LIUAsia_Datasheet_20260730.pdf"
+  ],
+  "release_notes": "The Hikvision DS-2CD1121G2H-LIU is a value-series 2MP fixed dome with Smart Hybrid Light (20 m IR + 15 m white), a built-in microphone and human detection. Asia-market variant. Verified against the official DS-2CD1121G2H-LIUAsia_Datasheet_20260730.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "indoor"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

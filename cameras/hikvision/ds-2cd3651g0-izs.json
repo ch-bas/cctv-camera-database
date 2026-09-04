@@ -1,0 +1,132 @@
+{
+  "id": "hikvision-ds-2cd3651g0-izs",
+  "brand": "Hikvision",
+  "model": "DS-2CD3651G0-IZS",
+  "aliases": [
+    "DS-2CD3651G0-IZS(2.7-13.5mm)"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2560,
+    "max_height": 1920,
+    "label": "5MP"
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7 to 13.5",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "97 to 30 horizontal (2.7-13.5mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 60,
+    "min_lux_color": 0.005
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1920",
+        "fps": 20,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / DC 12V",
+    "consumption_w": 12.9,
+    "poe_class": 3,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "105 x 294.5 (dia x H)",
+  "weight_g": 1050,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "5MP (2560x1920) motorized varifocal bullet",
+    "2.7-13.5mm motorized varifocal lens",
+    "EXIR infrared up to 60m",
+    "efficient H.265+ compression",
+    "120dB WDR",
+    "audio line in/out and alarm I/O",
+    "microSD storage up to 256GB",
+    "IP67 water and dust resistant",
+    "Hikvision NVR compatible"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000051713/DS-2CD3651G0-IZS-C_Datasheet_20230825.pdf"
+  ],
+  "release_notes": "The Hikvision DS-2CD3651G0-IZS is a 5MP motorized varifocal bullet with a 1/2.7\" sensor, 2.7-13.5mm lens, EXIR infrared up to 60m and 120dB WDR. Verified against the official datasheet DS-2CD3651G0-IZS-C_Datasheet_20230825.pdf.",
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

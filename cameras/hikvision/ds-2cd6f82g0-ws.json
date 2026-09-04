@@ -1,0 +1,123 @@
+{
+  "id": "hikvision-ds-2cd6f82g0-ws",
+  "brand": "Hikvision",
+  "model": "DS-2CD6F82G0-WS",
+  "aliases": [
+    "Operations Recording Dual-Lens Camera",
+    "DS-2CD6F82G0-WS(4mm/8mm)",
+    "DS-2CD6F82G0-WS(2.8mm/6mm)"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "dual-lens",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP (8MP + 2MP dual-lens)"
+  },
+  "sensor": "Channel 1: 1/2.7\" Progressive Scan CMOS; Channel 2: 1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "Ch1 4mm / Ch2 8mm (or Ch1 2.8mm / Ch2 6mm)",
+    "aperture": "Channel 1: F6.0; Channel 2: F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "Ch1 83.6 / Ch2 37.7 horizontal (4/8mm) or Ch1 106.1 / Ch2 50.8 (2.8/6mm)",
+  "power": {
+    "method": "12 VDC",
+    "consumption_w": 5.5,
+    "voltage": "12 VDC"
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 50",
+  "dimensions_mm": "457.8 x 72.9 x 72",
+  "weight_g": 555,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "8MP + 2MP dual-lens operations recording camera",
+    "8MP long-range channel and 2MP wide channel",
+    "Wi-Fi (2.4/5 GHz, 802.11ac) with coverage up to 80 m in open areas",
+    "120 dB true WDR on Channel 1",
+    "built-in microphone for real-time audio",
+    "H.265/H.264 compression",
+    "microSD on-board storage up to 512 GB",
+    "Hikvision NVR / ONVIF compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000163653/DS-2CD6F82G0-WS_Datasheet_20250224.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2CD6F82G0-WS is a dual-lens operations recording camera pairing an 8MP long-range channel with a 2MP wide channel, Wi-Fi connectivity, 120 dB WDR and a built-in microphone. Verified against the official DS-2CD6F82G0-WS_Datasheet_20250224.pdf.",
+  "environment": [
+    "indoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 24,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 24,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

@@ -1,0 +1,133 @@
+{
+  "id": "hikvision-ds-2sf7c420mxg-el",
+  "brand": "Hikvision",
+  "model": "DS-2SF7C420MXG-EL",
+  "aliases": [
+    "DS-2SF7C420MXG-EL/2C"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 12,
+    "max_width": 5344,
+    "max_height": 2256,
+    "label": "12MP bullet channel / 4MP PTZ channel"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS (bullet and PTZ channels)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "2.8 (bullet) / 12 to 240 (PTZ)",
+    "aperture": "F1.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "190 horizontal (bullet), 30.7 to 2.8 horizontal (PTZ)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 300,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "36 VDC",
+    "consumption_w": 60,
+    "voltage": "36 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": true,
+    "two_way": false
+  },
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "290 diameter x 453.2",
+  "weight_g": 7500,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "ptz": {
+    "autotracking": false
+  },
+  "features": [
+    "TandemVu dual-channel PTZ (panoramic bullet + zoom dome)",
+    "12MP panoramic bullet channel",
+    "4MP PTZ channel with 20x optical / 16x digital zoom",
+    "DarkFighter 24/7 color imaging",
+    "White light up to 30 m (bullet) and IR up to 300 m (PTZ)",
+    "Smart supplement light",
+    "Deep-learning smart functions",
+    "H.265+ compression",
+    "IP67 rated"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/sm000090911/DS-2SF7C420MXG-EL_2C_Datasheet_20240607.pdf"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "TandemVu dual-channel PTZ camera pairing a 12 MP panoramic bullet with a 4 MP 20x optical-zoom PTZ dome, DarkFighter color imaging, white light and 300 m IR supplement light. Verified against the official Hikvision datasheet DS-2SF7C420MXG-EL_2C_Datasheet_20240607.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

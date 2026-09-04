@@ -1,0 +1,138 @@
+{
+  "id": "hikvision-ds-2cd6d54g1-iz",
+  "brand": "Hikvision",
+  "model": "DS-2CD6D54G1-IZ",
+  "aliases": [
+    "DS-2CD6D54G1-IZ(S)",
+    "DS-2CD6D54G1-IZS",
+    "Quad-Directional Varifocal PanoVu Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2560,
+    "max_height": 1920,
+    "label": "5MP per lens (4 lenses)"
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 4,
+    "focal_length_mm": "2.8 to 8 (varifocal, per lens)",
+    "aperture": "F1.9",
+    "varifocal": true
+  },
+  "field_of_view_deg": "49 to 100 horizontal (per lens)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.0125
+  },
+  "power": {
+    "method": "PoE (802.3at, class 4) / 12 VDC / 24 VAC",
+    "consumption_w": 22,
+    "poe_class": 4,
+    "voltage": "12 VDC / 24 VAC / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "250 diameter x 114.9",
+  "weight_g": 2200,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "Quad-directional PanoVu, 4 adjustable lenses cover up to 360 degrees with no blind area",
+    "5MP per lens (2560x1920), independent varifocal 2.8-8mm",
+    "120 dB true WDR",
+    "EXIR IR up to 30m (850 nm)",
+    "3D DNR, BLC, HLC, Defog, EIS",
+    "AcuSense-style smart events: line crossing, intrusion, region entrance/exiting, object removal",
+    "IP67 + IK10 vandal-proof",
+    "microSD up to 128GB, ONVIF (Profile S/G/T), gigabit Ethernet",
+    "-S variant adds audio and alarm I/O plus RS-485"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000007926/DS-2CD6D54G1-IZS_Datasheet_V5.5.32_20221129.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 24,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1920",
+        "fps": 24,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 24,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 8,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2CD6D54G1-IZ is a quad-directional varifocal PanoVu camera with four independently adjustable 5MP lenses (2.8-8mm) covering up to 360 degrees with no blind area, 120 dB true WDR, EXIR IR to 30m, 3D DNR and IP67/IK10 protection; the -S variant adds audio and alarm interfaces. Verified against the official DS-2CD6D54G1-IZS datasheet (V5.5.32).",
+  "ndaa_compliant": false
+}

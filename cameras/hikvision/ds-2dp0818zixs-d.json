@@ -1,0 +1,136 @@
+{
+  "id": "hikvision-ds-2dp0818zixs-d",
+  "brand": "Hikvision",
+  "model": "DS-2DP0818ZIXS-D",
+  "aliases": [
+    "DS-2DP0818ZIXS-D/440(F0)(P5)"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 4096,
+    "max_height": 1800,
+    "label": "8MP (180 stitched panorama + PTZ)"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS (panoramic and PTZ channels)",
+  "lens": {
+    "count": 5,
+    "focal_length_mm": "panoramic 2.8; PTZ 6.0 to 240",
+    "aperture": "F1.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "panoramic 180 horizontal; PTZ 56.6 to 1.8 horizontal (wide-tele)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 250,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "36 VDC",
+    "consumption_w": 135,
+    "voltage": "36 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "Diameter 433.5 x 430.4",
+  "weight_g": 18000,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "180 degree stitched 8 MP PanoVu camera with PTZ",
+    "4-sensor 180 degree panorama plus 40X optical zoom PTZ channel",
+    "powered-by-DarkFighter low-light technology",
+    "IR up to 250 m",
+    "one-click panorama-to-PTZ detail capture",
+    "multi-target auto-tracking",
+    "built-in 20 km single-mode fiber module",
+    "H.265+ compression technology",
+    "microSD storage up to 256 GB, NAS/ANR",
+    "IP67, IK10, ultra-low -40 C startup, ONVIF and ISAPI"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4096x1800",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x320",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "notes": "PanoVu positioning system: panorama and PTZ are separate channels (Streaming/Channels/101, 201, ...). Configure each as its own Frigate camera.",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "180 degree stitched 8 MP PanoVu positioning camera pairing a 4-sensor panorama with a 40X powered-by-DarkFighter PTZ channel, IR up to 250 m, multi-target auto-tracking and H.265+. Verified against the official Hikvision datasheet (Datasheet-of-DS-2DP0818ZIXS-D_440F0P5_V5.7.30).",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000056974/Datasheet-of-DS-2DP0818ZIXS-D_440F0P5_V5.7.30_20220920.pdf"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "ndaa_compliant": false
+}

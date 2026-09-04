@@ -1,0 +1,121 @@
+{
+  "id": "hikvision-ds-2cd2t45fwd-i8",
+  "brand": "Hikvision",
+  "model": "DS-2CD2T45FWD-I8",
+  "aliases": [
+    "DS-2CD2T45FWD-I8 (Black)"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP (2688x1520)"
+  },
+  "sensor": "1/2.5\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8/4/6/8/12 (fixed)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "109 (2.8mm) / 88 (4mm) / 53 (6mm) / 41 (8mm) / 25 (12mm) horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 80,
+    "min_lux_color": 0.008
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V",
+    "poe_class": 3,
+    "consumption_w": 12.9
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Diameter 104.8 x 299.7",
+  "weight_g": 1200,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "4MP (2688x1520) fixed bullet",
+    "Darkfighter low-light imaging",
+    "long-range EXIR IR up to 80m (I8)",
+    "fixed lens options 2.8/4/6/8/12mm",
+    "120dB WDR",
+    "H.265+ compression",
+    "4 behavior analyses",
+    "IP67 rated",
+    "microSD up to 128GB",
+    "Hikvision NVR compatible"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/sm000058639/DS-2CD2T45FWD-I5-I8_Datasheet_V5.6.0_20220609.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile. Main stream for recording, sub stream for live view."
+    }
+  },
+  "release_notes": "4MP Darkfighter fixed-lens EXIR bullet with long-range 80m IR (I8 variant), 120dB WDR and 30fps. Verified against the official Hikvision datasheet (DS-2CD2T45FWD-I5-I8_Datasheet_V5.6.0).",
+  "last_verified": "2026-09-03",
+  "ndaa_compliant": false
+}

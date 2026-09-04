@@ -1,0 +1,133 @@
+{
+  "id": "hikvision-ds-2cd3047g3e-liuf",
+  "brand": "Hikvision",
+  "model": "DS-2CD3047G3E-LIUF",
+  "aliases": [
+    "DS-2CD3047G3E-LIUF/SL",
+    "4 MP Strobe Light and Audible Warning Fixed Mini Bullet Network Camera"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed options)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "101.5 horizontal (2.8mm) / 84.1 horizontal (4mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / 12 VDC",
+    "consumption_w": 10.5,
+    "poe_class": 3,
+    "voltage": "12V (DC) / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "179 x 69.1 x 67.4",
+  "weight_g": 450,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "4MP mini bullet with F1.0 lens, IR + white light supplement up to 30m",
+    "strobe light and audible warning (active deterrence)",
+    "human and vehicle detection with deep-learning perimeter protection",
+    "built-in speaker and microphone with two-way audio",
+    "120 dB WDR, 3D DNR, H.265+",
+    "microSD up to 512 GB, IP67, IK10",
+    "ONVIF (Profile S/T/G), ISAPI, SDK"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000174693/DS-2CD3047G3E-LIUF_SL_Datasheet_20260409.pdf"
+  ],
+  "release_notes": "The Hikvision DS-2CD3047G3E-LIUF is a 4MP active-deterrence mini bullet with an F1.0 lens, IR + white light supplement up to 30m, strobe light, audible warning and two-way audio, plus deep-learning perimeter protection. Verified against the official Hikvision datasheet (DS-2CD3047G3E-LIUF_SL_Datasheet_20260409.pdf).",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 24,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 24,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 24,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

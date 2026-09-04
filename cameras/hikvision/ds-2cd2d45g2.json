@@ -1,0 +1,126 @@
+{
+  "id": "hikvision-ds-2cd2d45g2",
+  "brand": "Hikvision",
+  "model": "DS-2CD2D45G2",
+  "aliases": [
+    "DS-2CD2D45G2/S-UW",
+    "DS-2CD2D45G2/S-UW(2.8mm)",
+    "4 MP Mini Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet",
+    "wifi"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/3\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed options)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "90.5 horizontal (2.8mm) / 74 horizontal (4mm)",
+  "power": {
+    "method": "12 VDC",
+    "consumption_w": 3.6,
+    "voltage": "12V (DC)"
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "4MP covert mini network camera with detachable sensor head",
+    "built-in Wi-Fi (IEEE 802.11 b/g/n, 2.4 GHz) plus RJ45 ethernet",
+    "120 dB true WDR and 3D DNR",
+    "AcuSense perimeter protection (human/vehicle) and face capture",
+    "built-in microphone with environment noise filtering",
+    "H.265+ compression, three streams, EIS",
+    "HEOP open platform (4 TOPS, 2 GB eMMC) for third-party apps",
+    "compact aluminum-alloy body, Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000119408/DS-2CD2D45G2_S-UW_Datasheet_20260330.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hikvision native RTSP (main 101 / sub 102). Enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "dimensions_mm": "50.96 x 55.0 x 35.9",
+  "weight_g": 60,
+  "operating_temp_c": "-10 to 40",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "release_notes": "The Hikvision DS-2CD2D45G2 (S-UW) is a 4MP covert mini network camera with built-in Wi-Fi, 120 dB WDR, a built-in microphone, AcuSense perimeter protection and face capture, powered by 12 VDC. Verified against the official Hikvision datasheet (DS-2CD2D45G2_S-UW_Datasheet_20260330.pdf).",
+  "ndaa_compliant": false
+}

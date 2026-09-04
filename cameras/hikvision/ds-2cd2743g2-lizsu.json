@@ -1,0 +1,138 @@
+{
+  "id": "hikvision-ds-2cd2743g2-lizsu",
+  "brand": "Hikvision",
+  "model": "DS-2CD2743G2-LIZSU",
+  "aliases": [
+    "DS-2CD2743G2-LIZSU#Italy",
+    "DS-2CD2743G2-LIZSU(2.8-12mm)",
+    "4 MP Acusense Smart Hybrid Light Motorized Varifocal Dome Network Camera"
+  ],
+  "markets": [
+    "IT",
+    "global"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/3\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 to 12 (motorized)",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "102.4 to 31.2 horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 40,
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / 12 VDC",
+    "consumption_w": 12.5,
+    "poe_class": 3,
+    "voltage": "12V (DC) / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "4MP AcuSense motorized varifocal dome with human/vehicle classification",
+    "Smart Hybrid Light (IR + white) up to 40m, 3 supplemental lighting modes",
+    "motorized 2.8-12mm varifocal lens with remote focus/zoom",
+    "120 dB true WDR and 3D DNR",
+    "built-in arrayed dual-microphone for high-quality audio",
+    "H.265+ compression, three streams, microSD slot up to 512 GB",
+    "line crossing and intrusion perimeter protection",
+    "IP67 water/dust resistant and IK10 vandal resistant",
+    "Power over Ethernet (802.3af), Hikvision NVR compatible"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000181633/DS-2CD2743G2-LIZSU_Datasheet.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hikvision native RTSP (main 101 / sub 102). Enable RTSP in the web UI."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "dimensions_mm": "121.5 diameter x 97.6",
+  "weight_g": 620,
+  "operating_temp_c": "-30 to 60",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "release_notes": "The Hikvision DS-2CD2743G2-LIZSU is a 4MP AcuSense motorized-varifocal (2.8-12mm) dome with Smart Hybrid Light (IR + white) up to 40m, 120 dB WDR and an arrayed dual-microphone, rated IP67/IK10. Verified against the official Hikvision datasheet (DS-2CD2743G2-LIZSU_Datasheet.pdf).",
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ndaa_compliant": false
+}

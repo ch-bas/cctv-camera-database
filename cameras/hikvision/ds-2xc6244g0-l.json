@@ -1,0 +1,124 @@
+{
+  "id": "hikvision-ds-2xc6244g0-l",
+  "brand": "Hikvision",
+  "model": "DS-2XC6244G0-L",
+  "aliases": [
+    "DS-2XC6244G0-L(3-9mm)"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP (2688x1520)"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3 to 9 (motorized)",
+    "aperture": "F1.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "87 to 45.8 horizontal (3-9mm)",
+  "night_vision": {
+    "type": "color",
+    "range_m": 10,
+    "min_lux_color": 0.001
+  },
+  "power": {
+    "method": "PoE (802.3at, Class 3)",
+    "consumption_w": 17,
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP68",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "210 x 210 x 205",
+  "weight_g": 8300,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "4MP underwater network camera",
+    "316L stainless steel anti-corrosion enclosure",
+    "IP68 rated for use up to 15 m underwater",
+    "DarkFighter low-light color imaging",
+    "White-light supplement up to 10 m",
+    "120 dB WDR",
+    "H.265+ compression",
+    "microSD storage up to 128 GB"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/sm000060779/DS-2XC6244G0-L_Datasheet_20230811.pdf"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "4 MP underwater network camera in a 316L stainless-steel enclosure rated IP68 to 15 m depth, with DarkFighter low-light color imaging, white-light supplement up to 10 m and 120 dB WDR. Verified against the official Hikvision datasheet DS-2XC6244G0-L_Datasheet_20230811.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

@@ -1,0 +1,119 @@
+{
+  "id": "hikvision-ids-2zmn3207n",
+  "brand": "Hikvision",
+  "model": "iDS-2ZMN3207N",
+  "aliases": [
+    "iDS-2ZMN3207N(E)",
+    "2 MP 32X Network Zoom Camera Module"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.6 to 179.2 (32x optical)",
+    "aperture": "F1.6 to F4.9",
+    "varifocal": true
+  },
+  "night_vision": {
+    "min_lux": 0.01,
+    "min_lux_color": 0.05
+  },
+  "power": {
+    "method": "DC 12V +/-10%",
+    "consumption_w": 10,
+    "voltage": "12V (DC)"
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "operating_temp_c": "-10 to 60",
+  "dimensions_mm": "53.6 x 67 x 104.2",
+  "weight_g": 365,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "2MP 32x optical + 16x digital zoom network camera module (5.6-179.2mm)",
+    "for integration into PTZ cameras and positioning systems",
+    "EIS, 120 dB WDR, 3D DNR",
+    "smart events: intrusion, line crossing, region entrance/exit, unattended baggage, object removal",
+    "face capture, road monitoring and license plate capture",
+    "H.265+ compression, network video output",
+    "microSD/microSDHC/microSDXC on-board storage up to 512 GB",
+    "RS-232/RS-485 control (VISCA, Pelco-D, Pelco-P, Hikvision), ONVIF"
+  ],
+  "release_notes": "The Hikvision iDS-2ZMN3207N is a 2MP 32x optical-zoom network camera module (5.6-179.2mm) designed for integration into PTZ cameras and positioning systems, with 120 dB WDR, EIS and ONVIF network output. Verified against the official Hikvision datasheet (iDS-2ZMN3207NE_Datasheet_20260805.pdf).",
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000186123/iDS-2ZMN3207NE_Datasheet_20260805.pdf"
+  ],
+  "last_verified": "2026-09-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

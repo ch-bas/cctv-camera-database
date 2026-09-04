@@ -1,0 +1,136 @@
+{
+  "id": "hikvision-ds-2cd3626g2t-izs",
+  "brand": "Hikvision",
+  "model": "DS-2CD3626G2T-IZS",
+  "aliases": [
+    "DS-2CD3626G2T-IZS(2.7-13.5mm)",
+    "DS-2CD3626G2T-IZS(7-35mm)",
+    "DS-2CD3626G2T-IZS-C",
+    "AcuSense 2 MP Varifocal Bullet Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7 to 13.5 / 7 to 35 (motorized options)",
+    "aperture": "F1.4 (2.7-13.5mm) / F1.6 (7-35mm)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "113 to 34 horizontal (2.7-13.5mm) / 30 to 11 horizontal (7-35mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 60,
+    "min_lux_color": 0.002
+  },
+  "power": {
+    "method": "PoE (802.3at, Class 4) / 12 VDC",
+    "consumption_w": 15,
+    "poe_class": 4,
+    "voltage": "12 VDC / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "105 diameter x 340.8",
+  "weight_g": 1335,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "2MP AcuSense deep-learning human/vehicle target classification",
+    "motorized varifocal lens (2.7-13.5mm or 7-35mm optional), auto-iris",
+    "powered-by-DarkFighter low-light technology, EXIR IR up to 60m (80m on 7-35mm)",
+    "120 dB true WDR, 3D DNR, BLC/HLC",
+    "H.265+ compression to save bandwidth and storage",
+    "audio line in/out and 2 alarm inputs / 2 alarm outputs",
+    "microSD storage up to 512GB",
+    "IP67 and IK10 vandal-resistant"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000035356/DS-2CD3626G2T-IZS-C_Datasheet_V5.5.112_20230208.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "The Hikvision DS-2CD3626G2T-IZS is a 2MP AcuSense motorized varifocal bullet with DarkFighter low-light performance, EXIR IR up to 60m, 120 dB WDR and deep-learning human/vehicle classification. Verified against the official DS-2CD3626G2T-IZS datasheet (DS-2CD3626G2T-IZS-C_Datasheet_V5.5.112_20230208.pdf).",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}

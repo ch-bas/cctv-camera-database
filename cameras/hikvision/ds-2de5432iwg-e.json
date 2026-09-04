@@ -1,0 +1,141 @@
+{
+  "id": "hikvision-ds-2de5432iwg-e",
+  "brand": "Hikvision",
+  "model": "DS-2DE5432IWG-E",
+  "aliases": [
+    "DS-2DE5432IWG-E(4MP)(32X)",
+    "DS-2DE5432IWG-E(8MP)(25X)",
+    "DS-2DE5432IWG-E (C)",
+    "DS-2DE5432IWG-E(C)"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/2.8\" progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.9 to 188.8",
+    "aperture": "Max. F1.5",
+    "varifocal": true
+  },
+  "field_of_view_deg": "60.2 to 2.0 horizontal (wide-tele)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 150,
+    "min_lux_color": 0.005
+  },
+  "ptz": {
+    "onvif_ptz": "continuous",
+    "autotracking": true
+  },
+  "power": {
+    "method": "24 VAC / PoE (802.3at), max. 24 W",
+    "consumption_w": 24,
+    "voltage": "24 VAC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 65",
+  "dimensions_mm": "210 (diameter) x 344.7",
+  "weight_g": 3000,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "US",
+    "global"
+  ],
+  "features": [
+    "4 MP 1/2.8\" progressive scan CMOS",
+    "32x optical zoom + 16x digital zoom",
+    "Powered-by-DarkFighter low-light imaging",
+    "Deep-learning human and vehicle target classification",
+    "EXIR/IR supplement light up to 150 m",
+    "120 dB WDR, HLC, BLC, 3D DNR, defog",
+    "Smart tracking",
+    "Two-way audio (line in / line out)",
+    "Water/dust resistant (IP66)",
+    "24 VAC / PoE (802.3at) power"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000158301/Datasheet-of-DS-2DE5432IWG-E_V5.7.4_20240314.pdf",
+    "https://assets.hikvision.com/prd/normal/all/doc/m000150240/DS-2DE5432IWG-E-C_Datasheet_20250225.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "4 MP 32x network IR speed dome with 5.9-188.8 mm motorized zoom lens, 150 m IR distance, 120 dB WDR, powered-by-DarkFighter low-light imaging, deep-learning human/vehicle classification and smart tracking. IP66 rated. Verified against the official Hikvision datasheet Datasheet-of-DS-2DE5432IWG-E_V5.7.4_20240314.pdf.",
+  "last_verified": "2026-09-03",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ndaa_compliant": false
+}
