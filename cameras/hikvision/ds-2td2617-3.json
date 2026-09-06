@@ -1,0 +1,127 @@
+{
+  "id": "hikvision-ds-2td2617-3",
+  "brand": "Hikvision",
+  "model": "DS-2TD2617-3",
+  "aliases": [
+    "DS-2TD2617-3/QA"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.02,
+    "max_width": 160,
+    "max_height": 120,
+    "label": "160x120 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 160x120, 17 um pixel pitch, 8-14 um, NETD < 40 mK; optical: 1/2.7\" CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "3.1 (fixed, thermal)",
+    "aperture": "F1.1",
+    "varifocal": false
+  },
+  "field_of_view_deg": "50 horizontal (thermal)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "optical",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "thermal",
+        "resolution": "160x120",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "power": {
+    "method": "12 VDC / PoE (802.3af Class 3)",
+    "consumption_w": 6.5,
+    "voltage": "12 VDC / PoE",
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "operating_temp_c": "-40 to 65 C",
+  "dimensions_mm": "358.3 x 113.5 x 115.2",
+  "weight_g": 1760,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "thermal + optical bi-spectrum camera with image fusion / picture-in-picture",
+    "optical channel: 4 MP (2688x1520)",
+    "thermal detector: uncooled VOx 160x120, 17 um pixel pitch, < 40 mK, 8-14 um",
+    "thermal lens 3.1 mm F1.1; optical lens 4 mm F1.6",
+    "temperature measurement / thermography -20 to 150 C, accuracy +/- 8 C",
+    "temperature exception alarm and dynamic fire detection",
+    "smoke / smoking detection algorithm",
+    "VCA perimeter protection: line crossing, intrusion, region entrance and exit",
+    "digital zoom x2, x4",
+    "optical IR up to 40 m and white-light supplement up to 40 m, with audible/visual (voice + strobe) alarm",
+    "audio in/out interface (3.5 mm mic/line in, line-level out), RS-485, 2 alarm in / 2 alarm out"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Thermal and optical exposed as separate channels (optical Channel 1 / thermal Channel 2)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000044942/DS-2TD2617-3_QA_Datasheet_en-US_20231018.pdf"
+  ],
+  "release_notes": "The Hikvision DS-2TD2617-3 is a thermal & optical bi-spectrum network bullet camera pairing a 160x120 uncooled VOx thermal detector (3.1 mm lens) with a 4 MP (2688x1520) optical channel, aimed at perimeter protection and early fire prevention. It offers temperature measurement (-20 to 150 C), dynamic fire detection and VCA analytics. Verified against the official Hikvision datasheet DS-2TD2617-3_QA_Datasheet_en-US_20231018.pdf.",
+  "last_verified": "2026-09-06",
+  "ndaa_compliant": false
+}

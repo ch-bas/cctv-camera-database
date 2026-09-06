@@ -3,7 +3,8 @@
   "brand": "Dahua",
   "model": "IPC-PDW5849-A180-E2-ASTE",
   "aliases": [
-    "Dahua IPC-PDW5849-A180-E2-ASTE"
+    "Dahua IPC-PDW5849-A180-E2-ASTE",
+    "DH-IPC-PDW5849-A180-E2-ASTE"
   ],
   "type": "panoramic",
   "connectivity": [
@@ -26,7 +27,27 @@
       "H.264",
       "MJPEG"
     ],
-    "max_fps": 25
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4096x1800",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1024x452",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x832",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
   },
   "lens": {
     "count": 2,
@@ -78,17 +99,36 @@
     "ONVIF Profile S/G/T"
   ],
   "sources": [
-    "https://www.dahuasecurity.com/products/network-products/network-cameras/WizMind-Series/5-Series/Full-color/IPC-PDW5849-A180-E2-ASTE"
+    "https://www.dahuasecurity.com/products/network-products/network-cameras/WizMind-Series/5-Series/Full-color/IPC-PDW5849-A180-E2-ASTE",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/IPC-PDW5849-A180-E2-ASTE_S0_datasheet_20240117.pdf"
   ],
-  "last_verified": "2026-09-02",
+  "last_verified": "2026-09-06",
   "configs": {
     "frigate": {
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
       "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
       "onvif_port": 80,
       "verified": false,
-      "notes": "Dahua RTSP path convention; not verified against a live unit."
+      "notes": "Dahua RTSP path convention; not verified against a live unit.",
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      }
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
     }
   },
-  "ndaa_compliant": false
+  "ndaa_compliant": false,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "release_year": 2024
 }

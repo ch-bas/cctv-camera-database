@@ -1,0 +1,121 @@
+{
+  "id": "hikvision-ds-2td2137-10",
+  "brand": "Hikvision",
+  "model": "DS-2TD2137-10",
+  "aliases": [
+    "DS-2TD2137-10/PY"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.11,
+    "max_width": 384,
+    "max_height": 288,
+    "label": "384x288 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 384x288, 17 um pixel pitch, 8-14 um, NETD <= 35 mK (25 C, F1.0)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "9.7 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "37.5 horizontal",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1280x720",
+        "fps": 25,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3af, Class 3)",
+    "consumption_w": 5,
+    "voltage": "12 VDC, PoE (802.3af)",
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-40 to 65 C",
+  "dimensions_mm": "351.3 x 113.5 x 115.2",
+  "weight_g": 1770,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "thermal-only network bullet camera (no optical/visible channel)",
+    "perimeter protection VCA: line crossing, intrusion, region entrance and exit",
+    "dynamic fire detection (up to 10 fire points) and temperature exception alarm",
+    "digital zoom x2 / x4 / x8",
+    "audio I/O: 1 mic/line-in, 1 line-out; 2 alarm inputs, 2 alarm outputs; RS-485",
+    "temperature measurement -20 to 150 C, accuracy +/-8 C (10 points, 10 areas, 1 line)",
+    "thermal FOV 37.5 horizontal, 9.7 mm fixed athermal lens",
+    "anti-corrosion coating for corrosive environments"
+  ],
+  "release_notes": "The Hikvision DS-2TD2137-10/PY is an anti-corrosion thermal (384x288 VOx) network bullet camera with a 9.7 mm fixed lens for perimeter protection and fire prevention. It supports on-board temperature measurement (-20 to 150 C), dynamic fire detection and line-crossing/intrusion VCA, and is verified against the official Hikvision datasheet.",
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000034223/DS-2TD2137-10_PY_V5.5.30_20221115.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "ndaa_compliant": false,
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  }
+}

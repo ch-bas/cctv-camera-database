@@ -1,0 +1,110 @@
+{
+  "id": "dahua-tpc-sda8441",
+  "brand": "Dahua",
+  "model": "TPC-SDA8441",
+  "aliases": [
+    "Dahua TPC-SDA8441",
+    "DHI-TPC-SDA8441"
+  ],
+  "type": "ptz",
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 0.12,
+    "max_width": 400,
+    "max_height": 300,
+    "label": "400x300 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 400x300, 17 um pixel pitch, 8-14 um, NETD <35 mK; optical: 1/1.8in 4MP starlight CMOS",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25
+  },
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "25 / 50 (thermal); 5.5-248 (visible)",
+    "aperture": "F1.4-F4.5 (visible)",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 250
+  },
+  "field_of_view_deg": "7.8 to 15.5 (thermal)",
+  "power": {
+    "method": "36 VDC/5A +/-25%",
+    "voltage": "DC 36V",
+    "consumption_w": 58
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512
+  },
+  "ip_rating": "IP66",
+  "operating_temp_c": "-40 to 65",
+  "dimensions_mm": "484.8 x 267 x 476.5",
+  "weight_g": 15900,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "bi-spectrum thermal + visible smart-linkage camera with independent thermal and visible PTZ",
+    "uncooled VOx thermal detector (400x300, 17 um); fixed-focal 25 mm / 50 mm thermal lens",
+    "thermal sensitivity NETD <35 mK",
+    "visible 45x optical zoom; IR illumination distance >=250 m",
+    "thermal and visible channel linkage tracking; single-scene / multi-scene / panoramic tracking",
+    "AI: tripwire, intrusion, human/vehicle classification, boat detection",
+    "two-way audio; sound and light alarm",
+    "thermal PTZ pan 0 to 190, tilt -5 to 180; visible PTZ pan 0 to 360, tilt -30 to 90"
+  ],
+  "release_notes": "Ultra-series smart-linkage thermal + 4MP visible camera with two independently steerable channels that track a target together for medium-distance perimeter protection.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/thermal-products/thermal-cameras/ultra-series/tpc-sda8441",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/47287/datasheet/DHI-TPC-SDA8441_datasheet_20260730.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=2&subtype=0",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua RTSP convention; channel 1 = visible/fusion, channel 2 = thermal. Not verified against a live unit."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80). Thermal and visible exposed as separate channels (visible = channel 1, thermal = channel 2)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

@@ -1,0 +1,127 @@
+{
+  "id": "hikmicro-hm-td816a-360zk4f",
+  "brand": "HikMicro",
+  "model": "HM-TD816A-360ZK4F",
+  "aliases": [
+    "HM-TD816A-360ZK4F/G0/T2"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 0.33,
+    "max_width": 640,
+    "max_height": 512,
+    "label": "640x512 (thermal)"
+  },
+  "sensor": "Thermal: MCT cooled focal-plane array, 640x512, 15 um pixel pitch, 3.7-4.8 um (MWIR), NETD <= 25 mK; optical: 1/1.8in progressive-scan CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "15 to 360 (thermal); optical PTZ 10-1100 mm plus fixed 4 mm wide-angle overlay",
+    "aperture": "F4.0 (thermal)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "36.1 (wide) to 1.5 (tele) horizontal (thermal)",
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 50,
+    "streams": [
+      {
+        "name": "optical main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "thermal main",
+        "resolution": "1920x1080",
+        "fps": 50,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "48 VDC terminal block",
+    "consumption_w": 270,
+    "voltage": "48 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true
+  },
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "674 x 543 x 665",
+  "weight_g": 60000,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "status": "available",
+  "features": [
+    "thermal & optical bi-spectrum cooled (MCT) thermal stable PTZ for long-range day/night monitoring",
+    "optical channel: 4 MP (2688x1520), PTZ lens 10-1100 mm plus a fixed 4 mm wide-angle overlay lens",
+    "cooled MCT focal-plane array, 640x512, 15 um pixel pitch, 3.7-4.8 um MWIR, NETD <= 25 mK",
+    "thermal lens 15-360 mm motorized zoom, FOV 36.1 (wide) to 1.5 (tele) horizontal",
+    "20000-hour Stirling cryocooler for haze/fog penetration and long-range detection",
+    "perimeter protection algorithm: line crossing, intrusion, region entrance and exit",
+    "ship detection and ship VCA in thermal channel",
+    "optical image stabilization (OIS) on optical channel, EIS on thermal channel",
+    "built-in TPM 2.0 cybersecurity module; external GPS module supported via RS-485",
+    "NEMA-4X, C5-medium anti-corrosion coating, IP67; smart wiper, heating and de-icing"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000161951/HM-TD816A-360ZK4F_G0_T2_Datasheet_en-US_20260817.pdf"
+  ],
+  "release_notes": "The HikMicro HM-TD816A-360ZK4F is a bi-spectrum cooled-thermal (MCT MWIR) stable PTZ with a 640x512 cooled detector, 4 MP optical PTZ channel and a fixed wide-angle overlay lens, built for extreme-range perimeter and coastal surveillance in haze and fog. Verified against the official HikMicro datasheet HM-TD816A-360ZK4F_G0_T2_Datasheet_en-US_20260817.pdf.",
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Optical is Channel 1 (101), thermal is Channel 2 (201) - add both channels."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

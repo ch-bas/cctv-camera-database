@@ -1,0 +1,124 @@
+{
+  "id": "hikmicro-hm-td3028t-2",
+  "brand": "HikMicro",
+  "model": "HM-TD3028T-2",
+  "aliases": [
+    "HM-TD3028T-2/Q(B)"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.05,
+    "max_width": 256,
+    "max_height": 192,
+    "label": "256x192 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 256x192, 12 um pixel pitch, 8-14 um, NETD <= 40 mK; optical: 1/5in CMOS 2688x1520",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "2.1 (thermal, fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "color"
+  },
+  "field_of_view_deg": "90 horizontal (thermal)",
+  "power": {
+    "method": "12 VDC / PoE (802.3af Class 2)",
+    "consumption_w": 5,
+    "voltage": "12 VDC",
+    "poe_class": 2
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "NAS (NFS, SMB/CIFS) with ANR; no onboard microSD"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "thermal",
+        "resolution": "640x512",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ip_rating": "IP67",
+  "operating_temp_c": "-40 to 70 C (accurate temperature measurement -20 to 60 C)",
+  "dimensions_mm": "56 x 38.9 x 111.2",
+  "weight_g": 335,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "features": [
+    "thermal + optical bi-spectrum thermography cube camera",
+    "optical channel: 4 MP (2688x1520), 1/5in progressive scan CMOS",
+    "thermal detector: uncooled VOx FPA, 256x192, 12 um pixel pitch, 8-14 um, NETD <= 40 mK (2.1 mm F1.0, FOV 90 horizontal)",
+    "temperature measurement -20 to 550 C, accuracy Max (+/-2 C, +/-2%) with point/area/line rules",
+    "temperature exception alarm for fire prevention with built-in buzzer",
+    "white light supplement up to 3.5 m and white-light visual alarm",
+    "Modbus TCP support for third-party integration",
+    "bi-spectrum image fusion and picture-in-picture display, 17 color palettes"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Optical channel 1 (101) and thermal channel 2 (201) are exposed separately."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000136580/HM-TD3028T-2_QB_Datasheet_20251217.pdf"
+  ],
+  "release_notes": "The HikMicro HM-TD3028T-2 is a bi-spectrum thermography cube camera combining a 256x192 uncooled VOx thermal module (2.1 mm lens) with a 4 MP optical channel, measuring object temperature from -20 to 550 C at Max (+/-2 C, +/-2%) accuracy for fire prevention in electrical and industrial applications. Verified against the official HIKMICRO datasheet.",
+  "last_verified": "2026-09-06",
+  "ndaa_compliant": false
+}

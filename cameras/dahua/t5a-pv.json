@@ -1,0 +1,131 @@
+{
+  "id": "dahua-t5a-pv",
+  "brand": "Dahua",
+  "model": "T5A-PV",
+  "aliases": [
+    "DH-T5A-PV",
+    "IPC-T5A-PV",
+    "T5A-PV (2.8mm)",
+    "T5A-PV (3.6mm)",
+    "5MP Fixed-focal Wi-Fi Turret Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2880,
+    "max_height": 1620,
+    "label": "5MP"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 3.6",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "108 horizontal (2.8mm); 89 horizontal (3.6mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.007
+  },
+  "power": {
+    "method": "12 VDC",
+    "voltage": "12 VDC",
+    "consumption_w": 7.1
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": false,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "Wi-Fi 6 (IEEE 802.11b/g/n/ax) 2.4 GHz + Bluetooth pairing",
+    "RJ-45 Ethernet (10/100)",
+    "AI human and vehicle detection",
+    "active deterrence: sound and light alarm",
+    "Smart Dual Light (IR + warm light), up to 30 m each",
+    "ONVIF Profile S/G/T, two-way talk",
+    "IP67 weatherproof"
+  ],
+  "release_year": 2025,
+  "release_notes": "The Dahua T5A-PV is a 5MP fixed-focal Wi-Fi 6 turret camera with Smart Dual Light (IR + warm light) to 30 m, AI human/vehicle detection, active sound-and-light deterrence, two-way audio, and IP67 rating. Verified against the official Dahua product page and datasheet.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/wireless-products/indoor-cameras/turret-series/t5a-pv",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/T5A-PV_S0_datasheet_20250214.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 360,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua native RTSP (main subtype=0 / sub subtype=1). ONVIF Profile S/G/T supported.",
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "ip_rating": "IP67",
+  "dimensions_mm": "102.2 x 109.9",
+  "weight_g": 320,
+  "operating_temp_c": "-40 to 60",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2880x1620",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x360",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "ndaa_compliant": false
+}

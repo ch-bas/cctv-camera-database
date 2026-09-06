@@ -1,0 +1,126 @@
+{
+  "id": "dahua-ipc-k1230k-stw",
+  "brand": "Dahua",
+  "model": "IPC-K1230K-STW",
+  "aliases": [
+    "DH-IPC-K1230K-STW",
+    "IPC-K1230K-STW (2.8mm)",
+    "IPC-K1230K-STW (3.6mm)",
+    "2MP Indoor Fixed-focal Wi-Fi Cube Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "box",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 3.6",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "101 horizontal (2.8mm); 82 horizontal (3.6mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3af)",
+    "voltage": "12 VDC",
+    "consumption_w": 5.14
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": false,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "Wi-Fi 6 (IEEE 802.11b/g/n/ax) 2.4 GHz + Bluetooth pairing",
+    "RJ-45 Ethernet with PoE (802.3af)",
+    "AI human and vehicle detection",
+    "WDR, day/night auto (ICR)",
+    "two-way talk (built-in mic + speaker)",
+    "30 m IR night vision, fixed-focal lens (2.8mm or 3.6mm)"
+  ],
+  "release_year": 2024,
+  "release_notes": "The Dahua IPC-K1230K-STW is a 2MP indoor fixed-focal Wi-Fi 6 cube camera with PoE/Ethernet, AI human and vehicle detection, 30 m IR, and two-way audio. Verified against the official Dahua product page and datasheet.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/wireless-products/indoor-cameras/cube-series/ipc-k1230k-stw",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/IPC-K1230K-STW_S0_datasheet_20240929.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 360,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP (main subtype=0 / sub subtype=1); enable RTSP in the DMSS app. ONVIF not stated on the datasheet.",
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "generic",
+      "notes": "Consumer cube; add via the Generic Camera (RTSP) integration. ONVIF not confirmed on the datasheet."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile; use the RTSP URL above."
+    }
+  },
+  "dimensions_mm": "64 x 100 x 34",
+  "weight_g": 110,
+  "operating_temp_c": "-10 to 45",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x360",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor"
+  ],
+  "ndaa_compliant": false
+}

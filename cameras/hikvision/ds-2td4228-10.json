@@ -1,0 +1,125 @@
+{
+  "id": "hikvision-ds-2td4228-10",
+  "brand": "Hikvision",
+  "model": "DS-2TD4228-10",
+  "aliases": [
+    "DS-2TD4228-10/W"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.05,
+    "max_width": 256,
+    "max_height": 192,
+    "label": "256x192 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 256x192, 12 um pixel pitch, 8-14 um, NETD <= 35 mK; optical: Progressive Scan CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "10 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "18 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "24 VAC / 36 VDC / 48 VDC / Hi-PoE",
+    "consumption_w": 30,
+    "voltage": "24 VAC / 36 VDC / 48 VDC"
+  },
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "operating_temp_c": "-40 to 65",
+  "dimensions_mm": "305 x 185 x 163",
+  "weight_g": 3900,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "thermal",
+        "resolution": "256x192",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "features": [
+    "thermal and optical bi-spectrum network speed dome with image fusion",
+    "optical channel: 4 MP (2688x1520) with 32x optical zoom",
+    "thermal detector: 256x192 VOx uncooled FPA, 12 um pixel pitch, NETD <= 35 mK",
+    "smart tracking (panorama, event and multi-scene patrol) with thermal/optical linkage",
+    "temperature measurement -20 to 150 C, +/-8 C",
+    "perimeter protection: line crossing, intrusion, region entrance/exit",
+    "360 continuous pan, tilt -5 to +90"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000052951/DS-2TD4228-10_W_Datasheet_V5.5.59_en-US_20230505.pdf"
+  ],
+  "release_notes": "The Hikvision DS-2TD4228-10 is a compact thermal and optical bi-spectrum network speed dome with a 256x192 VOx thermal module (10 mm lens), a 4 MP 32x optical channel, smart tracking and temperature measurement. Verified against the official Hikvision datasheet.",
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Optical is Channel 1, thermal is Channel 2."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

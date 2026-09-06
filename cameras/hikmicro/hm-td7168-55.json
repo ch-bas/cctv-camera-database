@@ -1,0 +1,118 @@
+{
+  "id": "hikmicro-hm-td7168-55",
+  "brand": "HikMicro",
+  "model": "HM-TD7168-55",
+  "aliases": [
+    "SUB-TD7168-55/W(ZJ)",
+    "SUB-TD7168-55/W(CPZJ)",
+    "HM-TD7168-55/W"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.33,
+    "max_width": 640,
+    "max_height": 512,
+    "label": "640x512 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 640x512, 12 um pixel pitch, 8-14 um, NETD <= 25 mK",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "55 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "360 x 8.8 (thermal, panoramic H x V)",
+  "power": {
+    "method": "30-60 VDC",
+    "consumption_w": 150,
+    "voltage": "30-60 VDC"
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "operating_temp_c": "-40 to 60 C",
+  "dimensions_mm": "408 x 310 x 407",
+  "weight_g": 25000,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4096x2160",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "512x640",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "features": [
+    "360 panoramic thermal scanner: continuously spinning VOx thermal module for full 360 perimeter detection",
+    "thermal detector: 640x512, 12 um pixel pitch, VOx UFPA, NETD <= 25 mK, 8-14 um",
+    "panoramic stitched output; main stream 4096x2160 at 25 fps",
+    "dynamic fire detection up to 200 fire points",
+    "VCA perimeter detection: intrusion, region entrance and exit, up to 200 rules",
+    "alarm linkage to slave PT cameras to track moving targets on alarm",
+    "pan 360 continuous rotate (360 in 3.29 s), tilt -25 to +45; gigabit Ethernet; RS-485"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000112402/HM-TD7168-55-W_Datasheet_20260113.pdf"
+  ],
+  "release_notes": "The HIKMICRO HM-TD7168-55 is a thermal panoramic scanner with a continuously spinning 640x512 12 um VOx thermal module giving full 360 perimeter detection, dynamic fire detection (up to 200 points) and alarm linkage to slave PT cameras for target tracking. Used in coastal security and critical infrastructure such as oilfields and airports. Verified against the official HIKMICRO datasheet.",
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Thermal panoramic scanner; single thermal channel."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

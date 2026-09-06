@@ -1,0 +1,119 @@
+{
+  "id": "hikvision-ds-2td2137t-4",
+  "brand": "Hikvision",
+  "model": "DS-2TD2137T-4",
+  "aliases": [
+    "DS-2TD2137T-4/QY"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.11,
+    "max_width": 384,
+    "max_height": 288,
+    "label": "384x288 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 384x288, 17 um pixel pitch, 8-14 um, NETD < 35 mK (25 C, F1.0)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.4 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "90 horizontal",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1280x720",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "power": {
+    "method": "24 VAC / 12 VDC / PoE (802.3af, Class 3)",
+    "consumption_w": 5.5,
+    "voltage": "24 VAC, 12 VDC, PoE (802.3af)",
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-40 to 65 C",
+  "dimensions_mm": "351.3 x 113.5 x 115.2",
+  "weight_g": 1770,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "thermal-only network thermography bullet camera (no optical/visible channel)",
+    "digital zoom x2 / x4 / x8",
+    "audio I/O: 1 mic/line-in, 1 line-out; 2 alarm inputs, 2 alarm outputs; RS-485",
+    "temperature measurement -20 to 550 C, accuracy max (+/-2 C, +/-2%)",
+    "thermal FOV 90 horizontal, 4.4 mm fixed athermal lens",
+    "anti-corrosion coating; IK10 impact rating; 10-year detector warranty"
+  ],
+  "release_notes": "The Hikvision DS-2TD2137T-4/QY is an anti-corrosion thermal (384x288 VOx) network thermography bullet camera with a 4.4 mm fixed lens, measuring temperatures from -20 to 550 C with max (+/-2 C, +/-2%) accuracy. Verified against the official Hikvision datasheet.",
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000058242/DS-2TD2137T-4_QY_Datasheet_V5.5.64_en-US_20230531.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "ndaa_compliant": false,
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ik_rating": "IK10"
+}

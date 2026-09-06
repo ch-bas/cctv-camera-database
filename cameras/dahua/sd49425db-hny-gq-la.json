@@ -1,0 +1,147 @@
+{
+  "id": "dahua-sd49425db-hny-gq-la",
+  "brand": "Dahua",
+  "model": "SD49425DB-HNY-GQ-LA",
+  "aliases": [
+    "DH-SD49425DB-HNY-GQ-LA"
+  ],
+  "ndaa_compliant": false,
+  "type": "ptz",
+  "connectivity": [
+    "ethernet",
+    "4g"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": true,
+    "focal_length_mm": "5-125",
+    "aperture": "F1.6-F3.6"
+  },
+  "field_of_view_deg": "H: 51.9-3.0; V: 39.7-2.2",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100,
+    "min_lux_color": 0.005
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub2",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "DC 12V",
+    "voltage": "12 VDC",
+    "consumption_w": 15.49
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-40 to 65",
+  "dimensions_mm": "270.4 x Dia 160",
+  "weight_g": 2600,
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "4G LTE cellular connectivity (TDD 38/40; FDD 1/2/3/4/5/7/8/28/12/17/66; WCDMA; GSM)",
+    "25x optical zoom",
+    "100m IR (3 IR illuminators)",
+    "Starlight low-light imaging",
+    "auto-tracking / auto patrol",
+    "SMD 3.0 (human/vehicle)",
+    "IVS perimeter protection (tripwire, intrusion, loitering)",
+    "face detection",
+    "120dB WDR",
+    "low-power sleep modes for 4G/battery deployments",
+    "TVS 6000V lightning/surge protection",
+    "audio in/out (1 in / 1 out)"
+  ],
+  "markets": [
+    "LA"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/ptz-cameras/wireless-series/4g-camera/sd49425db-hny-gq-la",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/70127/datasheet/DH-SD49425DB-HNY-GQ-LA_S0_datasheet_20260612.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "release_notes": "The Dahua SD49425DB-HNY-GQ-LA is a 4MP 25x Starlight IR 4G PTZ camera (Latin America region variant) with 100m IR, auto-tracking/auto-patrol, SMD 3.0 and IVS perimeter protection. Powered by 12 VDC with low-power sleep modes for cellular deployments; audio is line in/out only.",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 576,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "autotracking": true,
+      "notes": "Dahua native RTSP; PTZ driven over ONVIF (port 80)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "id": "hikmicro-hm-td95c8-190zk4fl",
+  "brand": "HikMicro",
+  "model": "HM-TD95C8-190ZK4FL",
+  "aliases": [
+    "HM-TD95C8-190ZK4FL/W",
+    "HM-TD95C8-190ZK4FL/W(B)"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 1.31,
+    "max_width": 1280,
+    "max_height": 1024,
+    "label": "1280x1024 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 1280x1024, 12 um pixel pitch, 8-14 um, NETD <= 25 mK; optical: 1/1.8in progressive-scan CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "38 to 190 (thermal); optical 10 to 1000 mm (100x)",
+    "aperture": "F0.88 to F1.2 (thermal)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "24.4 to 4.6 horizontal (thermal)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 3000
+  },
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "optical main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "thermal main",
+        "resolution": "1280x1024",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "48 VDC, 4-pin aviation connector",
+    "consumption_w": 460,
+    "voltage": "48 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true
+  },
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "578.3 x 571 x 955.7",
+  "weight_g": 100000,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "status": "available",
+  "features": [
+    "thermal & optical bi-spectrum sphere positioning system for perimeter protection with human/vehicle classification",
+    "optical channel: 4 MP (2688x1520), 10 to 1000 mm (100x) zoom lens with laser illuminator up to 3000 m",
+    "thermal detector: uncooled VOx, 1280x1024, 12 um pixel pitch, 8-14 um, NETD <= 25 mK",
+    "thermal lens 38 to 190 mm motorized zoom, FOV 24.4 to 4.6 horizontal",
+    "dynamic fire-point detection (up to 10 fire points) and smoke detection (up to 12 km for 5x5 m smoke)",
+    "perimeter protection algorithm: line crossing, intrusion, region entrance and exit (up to 50 scenes)",
+    "15 thermal color palettes; picture-in-picture thermal/optical fusion",
+    "built-in gyroscope EIS on thermal channel, OIS on optical channel",
+    "NEMA-4X anti-corrosion coating, IP67; smart wiper, heating and de-icing"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000117861/HM-TD95C8-190ZK4FL_W_Datasheet_20250923.pdf"
+  ],
+  "release_notes": "The HikMicro HM-TD95C8-190ZK4FL is a thermal & optical bi-spectrum sphere positioning system pairing a 1280x1024 uncooled thermal module with a 4 MP optical zoom channel and 3000 m laser illuminator, providing intelligent perimeter protection plus fire and smoke detection. Verified against the official HikMicro datasheet HM-TD95C8-190ZK4FL_W_Datasheet_20250923.pdf.",
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Optical is Channel 1 (101), thermal is Channel 2 (201) - add both channels."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

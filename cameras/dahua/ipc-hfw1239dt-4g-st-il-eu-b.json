@@ -1,0 +1,121 @@
+{
+  "id": "dahua-ipc-hfw1239dt-4g-st-il-eu-b",
+  "brand": "Dahua",
+  "model": "IPC-HFW1239DT-4G-ST-IL-EU-B",
+  "aliases": [
+    "DH-IPC-HFW1239DT-4G-ST-IL-EU-B",
+    "IPC-HFW1239DT-4G-ST-IL-EU-B (3.6mm)",
+    "2MP Entry Dual Illumination Fixed-focal 4G Bullet Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "4g",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "108 horizontal (58 vertical, 127 diagonal) at 2.8mm; 82 horizontal at 3.6mm",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "12 VDC",
+    "voltage": "12 VDC",
+    "consumption_w": 7
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "ip_rating": "IP67",
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "192.3 x 88 x 87.3",
+  "weight_g": 580,
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x360",
+        "codec": "H.265"
+      }
+    ]
+  },
+  "features": [
+    "Smart Dual Light: IR (30 m) + warm light (30 m), 2 IR + 2 warm LEDs",
+    "WizColor full-color night monitoring, brightens on motion",
+    "AI human and vehicle detection",
+    "4G LTE (FDD/TDD) plus 10/100 RJ-45 Ethernet",
+    "ONVIF Profile S/G/T and RTSP",
+    "WDR, privacy masking, two-way talk"
+  ],
+  "release_year": 2024,
+  "release_notes": "The Dahua IPC-HFW1239DT-4G-ST-IL-EU-B is a 2MP fixed-focal 4G bullet camera with Smart Dual Light (IR + warm) illumination, WizColor full-color night vision, AI human/vehicle detection and both 4G and Ethernet connectivity. Verified against the official Dahua datasheet.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/wireless-products/4g-cameras/wired-cameras/ipc-hfw1239dt-4g-st-il-eu-b",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/IPC-HFW1239DT-4G-ST-IL-EU-B_S0_datasheet_20240725.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

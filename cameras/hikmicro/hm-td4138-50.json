@@ -1,0 +1,109 @@
+{
+  "id": "hikmicro-hm-td4138-50",
+  "brand": "HikMicro",
+  "model": "HM-TD4138-50",
+  "aliases": [
+    "HM-TD4138-50/G0/T2Y"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 0.11,
+    "max_width": 384,
+    "max_height": 288,
+    "label": "384x288 (thermal)"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25
+  },
+  "sensor": "Thermal: uncooled VOx, 384x288, 12 um pixel pitch, 8-14 um, NETD < 25 mK (25 C, F1.0); optical: 1/1.8in CMOS, 4 MP",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "50 mm (thermal, fixed)",
+    "aperture": "F1.2",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 150,
+    "min_lux_color": 0.005
+  },
+  "field_of_view_deg": "5.3h x 4v",
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP66",
+  "operating_temp_c": "-40 to 70 C",
+  "dimensions_mm": "266.6 x 266.6 x 433.3",
+  "weight_g": 9300,
+  "power": {
+    "method": "24 VAC / 36 VDC / 48 VDC / Hi-PoE",
+    "consumption_w": 70
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": false,
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "thermal + optical bi-spectrum network positioning system (speed dome)",
+    "optical channel: 4 MP (2688x1520), 1/1.8in CMOS, 40x optical zoom (6-240 mm)",
+    "additional fixed wide-angle lens overlaid on optical PTZ channel (4 mm, 89.5h x 47.9v)",
+    "thermal FOV 5.3h x 4v",
+    "laser illuminator up to 150 m on the optical channel",
+    "temperature measurement -20 to 150 C, accuracy +/-8 C",
+    "perimeter protection (line crossing, intrusion, region entrance/exit) via built-in GPU",
+    "fire and smoke detection algorithm",
+    "built-in TPM 2.0 encryption module for cybersecurity",
+    "line audio in/out interface",
+    "NEMA 4X anti-corrosion coating"
+  ],
+  "release_notes": "The HikMicro HM-TD4138-50/G0/T2Y is a thermal/optical bi-spectrum PTZ positioning system with a 384x288 12 um thermal module (50 mm lens, NETD < 25 mK), a 4 MP 40x optical channel plus a fixed wide-angle lens and a 150 m laser illuminator, with TPM 2.0 security.",
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000178558/HM-TD4138-50-G0-T2Y_Datasheet_en-US_20260716.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Thermal and optical exposed as separate channels (optical Channel 1, thermal Channel 2)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  }
+}

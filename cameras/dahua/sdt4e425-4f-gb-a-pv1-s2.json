@@ -1,0 +1,149 @@
+{
+  "id": "dahua-sdt4e425-4f-gb-a-pv1-s2",
+  "brand": "Dahua",
+  "model": "SDT4E425-4F-GB-A-PV1-S2",
+  "aliases": [
+    "DH-SDT4E425-4F-GB-A-PV1-S2",
+    "SDT4E425-4F-GB-A-PV1"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP+4MP"
+  },
+  "sensor": "1/2.8\" CMOS (overview) + 1/2.8\" STARVIS CMOS (detail)",
+  "lens": {
+    "count": 2,
+    "varifocal": true,
+    "focal_length_mm": "2.8 (overview) / 5-125 (detail)"
+  },
+  "field_of_view_deg": "Detail H: 51.9-3.0, V: 39.7-2.2",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 100,
+    "min_lux_color": 0.001
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub2",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3at)",
+    "voltage": "12 VDC",
+    "consumption_w": 25
+  },
+  "power_source": [
+    "dc",
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "dual-channel (overview + PTZ detail)",
+    "25x optical zoom",
+    "Auto Tracking 3.0 / smart tracking",
+    "SMD 4.0",
+    "IVS perimeter protection",
+    "active deterrence (Smart Dual Illumination + siren)",
+    "100m IR (detail)",
+    "50m warm light (detail)",
+    "30m IR + 30m warm light (overview)",
+    "TiOC (three-in-one)",
+    "300 presets",
+    "dual built-in mic + speaker"
+  ],
+  "operating_temp_c": "-40 to 65",
+  "dimensions_mm": "160 x 184.4 x 304.6",
+  "weight_g": 3410,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/All-Products/PTZ-Cameras/X-Spans-Series/SDT4E425-4F-GB-A-PV1",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/SDT4E425-4F-GB-A-PV1_S2_datasheet_20250626.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "ndaa_compliant": false,
+  "environment": [
+    "outdoor"
+  ],
+  "release_notes": "X-Spans SDT4E425 4MP+4MP dual-channel TiOC PTZ camera with 25x optical zoom, Auto Tracking 3.0 and active deterrence.",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI (default admin).",
+      "autotracking": true,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

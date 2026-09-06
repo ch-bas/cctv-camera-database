@@ -1,0 +1,127 @@
+{
+  "id": "hikvision-ds-2td2667-35",
+  "brand": "Hikvision",
+  "model": "DS-2TD2667-35",
+  "aliases": [
+    "DS-2TD2667-35/PI"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 0.33,
+    "max_width": 640,
+    "max_height": 512,
+    "label": "640x512 (thermal)"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1280x720",
+        "fps": 50,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 50,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "Thermal: uncooled VOx, 640x512, 17 um pixel pitch, 8-14 um, NETD <= 35 mK; optical: 1/2.7in CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "35 (thermal, fixed)",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40
+  },
+  "field_of_view_deg": "17.67h (thermal)",
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / 12 VDC / 24 VDC / 24 VAC",
+    "consumption_w": 9.5,
+    "poe_class": 3
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "operating_temp_c": "-40 to 65",
+  "dimensions_mm": "376.1 x 119.1 x 118.1",
+  "weight_g": 1820,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Thermal (channel 2) and optical (channel 1) exposed as separate channels."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "last_verified": "2026-09-06",
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000016388/DS-2TD2667-35_PI_Datasheet_V5.5.64_en-US_20230707.pdf"
+  ],
+  "features": [
+    "thermal + optical bi-spectrum bullet",
+    "optical channel: 4 MP (2688x1520)",
+    "optical lens: 8 mm, FOV 39.42h",
+    "temperature measurement: -20 to 150 C, +/-8 C",
+    "bi-spectrum image fusion (optical detail overlaid on thermal)",
+    "VOx uncooled focal-plane detector",
+    "VCA perimeter protection: line crossing, intrusion, region entrance/exit",
+    "fire detection and smoking detection algorithm",
+    "thermal main stream up to 50 fps"
+  ],
+  "release_notes": "The Hikvision DS-2TD2667-35 is a thermal & optical bi-spectrum network bullet camera pairing a 640x512 VOx thermal module (35 mm lens) with a 4 MP optical channel for perimeter protection, temperature-anomaly and fire detection."
+}

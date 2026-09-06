@@ -1,0 +1,126 @@
+{
+  "id": "dahua-ipc-hum8531m-v-led",
+  "brand": "Dahua",
+  "model": "IPC-HUM8531M-V-LED",
+  "aliases": [
+    "DH-IPC-HUM8531M-V-LED"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2560,
+    "max_height": 1920,
+    "label": "5MP"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "79.6",
+  "night_vision": {
+    "type": "color"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1920",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3af)",
+    "consumption_w": 2.5
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-40 to 60",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Macro-reading camera (recommended install 5-50 cm from target)",
+    "Built-in warm light (0.5m) for color rendition",
+    "WDR (120dB)",
+    "Smart H.265+/H.264+",
+    "3D DNR, HLC, BLC",
+    "Built-in mic"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/network-cameras/special-series/macro-reading/ipc-hum8531m-v-led",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/IPC-HUM8531M-V-LED_S0_datasheet_20230331.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 576,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI (default admin).",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "weight_g": 166,
+  "ndaa_compliant": false
+}

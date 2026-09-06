@@ -1,0 +1,126 @@
+{
+  "id": "dahua-t3a-il",
+  "brand": "Dahua",
+  "model": "T3A-IL",
+  "aliases": [
+    "DH-T3A-IL",
+    "IPC-T3A-IL",
+    "T3A-IL (2.8mm)",
+    "T3A-IL (3.6mm)",
+    "3MP Fixed-focal Wi-Fi Turret Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "3MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 3.6",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "103 horizontal (2.8mm); 85 horizontal (3.6mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "12 VDC",
+    "voltage": "12 VDC",
+    "consumption_w": 4.9
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": false,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true
+  },
+  "features": [
+    "Wi-Fi 6 (IEEE 802.11b/g/n/ax) 2.4 GHz + Bluetooth pairing",
+    "RJ-45 Ethernet (10/100)",
+    "AI human and vehicle detection",
+    "Smart Dual Light (IR + warm light), up to 30 m",
+    "ONVIF Profile S/G/T",
+    "IP67 weatherproof"
+  ],
+  "release_year": 2025,
+  "release_notes": "The Dahua T3A-IL is a 3MP fixed-focal Wi-Fi 6 turret camera with Smart Dual Light (IR + warm light) to 30 m, AI human/vehicle detection, ONVIF support, and IP67 rating. Verified against the official Dahua product page and datasheet.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/wireless-products/indoor-cameras/turret-series/t3a-il",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/T3A-IL_S0_datasheet_20250214.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 360,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua native RTSP (main subtype=0 / sub subtype=1). ONVIF Profile S/G/T supported."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "ip_rating": "IP67",
+  "dimensions_mm": "102.2 x 109.9",
+  "weight_g": 320,
+  "operating_temp_c": "-40 to 60",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x360",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "ndaa_compliant": false
+}

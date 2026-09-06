@@ -1,0 +1,99 @@
+{
+  "id": "hikmicro-hm-td1018-1",
+  "brand": "HikMicro",
+  "model": "HM-TD1018-1",
+  "aliases": [
+    "HM-TD1018-1/QR"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.02,
+    "max_width": 160,
+    "max_height": 120,
+    "label": "160x120 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 160x120, 12 um pixel pitch, 8-14 um, NETD < 50 mK",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.3 (fixed)"
+  },
+  "field_of_view_deg": "90.0h",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "power": {
+    "method": "12 VDC or PoE (802.3af)",
+    "consumption_w": 6
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "ip_rating": "IP40",
+  "environment": [
+    "indoor"
+  ],
+  "operating_temp_c": "-20 to 50",
+  "dimensions_mm": "130 x 102 x 75",
+  "weight_g": 380,
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "Thermal radar presence detector (privacy-preserving, no optical/visible imaging) for nursing-home bedrooms, corner mount",
+    "thermal module: 160x120 VOx uncooled, 12 um pitch, 8-14 um, NETD < 50 mK, thermal FOV 90.0 x 65.2",
+    "built-in radar for fall detection",
+    "out-of-room, out-of-bed, exit-without-return and people-overstay detection",
+    "audio exception alarm (detects screams); built-in mic and speaker",
+    "relay/alarm output, RS-485"
+  ],
+  "release_notes": "The HikMicro HM-TD1018-1 is an indoor thermal radar presence detector for nursing-home bedrooms, combining a 160x120 thermal module with built-in radar for fall detection while preserving privacy. It adds out-of-bed, out-of-room and overstay detection plus an audio exception alarm to protect elderly and patients.",
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000066885/HM-TD1018-1_QR_Datasheet_V5.5.60_en-US_20230614.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "ndaa_compliant": false,
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80, Profile S/G). Thermal-only stream."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  }
+}

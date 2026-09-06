@@ -1,0 +1,119 @@
+{
+  "id": "hikvision-ds-2td2136t-10",
+  "brand": "Hikvision",
+  "model": "DS-2TD2136T-10",
+  "aliases": [],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.11,
+    "max_width": 384,
+    "max_height": 288,
+    "label": "384x288 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 384x288, 17 um pixel pitch, 8-14 um, NETD < 40 mK (25 C, F1.0)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "10 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "37.2 horizontal",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 50,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1280x720",
+        "fps": 50,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "384x288",
+        "fps": 50,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "power": {
+    "method": "24 VAC / 12 VDC / PoE (802.3at, Class 4)",
+    "consumption_w": 8,
+    "voltage": "24 VAC, 12 VDC, PoE (802.3at)",
+    "poe_class": 4
+  },
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "ip_rating": "IP66",
+  "operating_temp_c": "-40 to 65 C",
+  "dimensions_mm": "352.4 x 113.5 x 113",
+  "weight_g": 2000,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "thermal-only thermometric network bullet camera (no optical/visible channel)",
+    "temperature measurement -20 to 550 C, accuracy max (+/-2 C, +/-2%); manufacturing process supervision",
+    "50 fps thermal main stream",
+    "de-icing heater (up to 20 W with heater on)",
+    "digital zoom x2 / x4 / x8",
+    "thermal FOV 37.2 horizontal, 10 mm fixed athermal lens",
+    "audio I/O: 1 mic/line-in; 2 alarm inputs, 2 alarm outputs"
+  ],
+  "release_notes": "The Hikvision DS-2TD2136T-10 is a thermometric thermal (384x288 VOx) network bullet camera with a 10 mm fixed lens and a 50 fps thermal stream, measuring temperatures from -20 to 550 C with max (+/-2 C, +/-2%) accuracy for manufacturing process supervision. Verified against the official Hikvision datasheet.",
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000002495/DS-2TD2136T-10_V5.5.0_20221115.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "ndaa_compliant": false,
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  }
+}

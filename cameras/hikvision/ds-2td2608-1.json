@@ -1,0 +1,125 @@
+{
+  "id": "hikvision-ds-2td2608-1",
+  "brand": "Hikvision",
+  "model": "DS-2TD2608-1",
+  "aliases": [
+    "DS-2TD2608-1/QA/FP"
+  ],
+  "type": "bullet",
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.01,
+    "max_width": 96,
+    "max_height": 72,
+    "label": "96x72 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 96x72, 12 um pixel pitch, NETD < 55 mK; optical: 1/1.8in CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "1.35 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "50.0 horizontal (thermal)",
+  "night_vision": {
+    "type": "color",
+    "range_m": 30,
+    "min_lux_color": 0.0003
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "thermal-main",
+        "resolution": "1280x720",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "optical-main",
+        "resolution": "2688x1520",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "speaker": true
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "ip_rating": "IP67",
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "211.5 x 105 x 105",
+  "weight_g": 869,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "power": {
+    "method": "12 VDC / PoE (802.3af, class 3)",
+    "voltage": "12 VDC",
+    "consumption_w": 8.5
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "Thermal and optical bi-spectrum network bullet camera with fire prevention and active deterrence",
+    "Thermal: uncooled VOx 96x72 detector, 12 um pixel pitch, NETD < 55 mK, 1.35 mm F1.0 lens, 50 x 37.5 field of view",
+    "Optical channel: 4 MP (2688x1520), 1/1.8in CMOS ColorVu, 4 mm F1.0 lens, 94 x 50 field of view, 120 dB WDR",
+    "ColorVu low-light color imaging (0.0003 lux; 0 lux with light), warm-light supplement up to 30 m",
+    "Built-in white-light strobe (visual alarm) and audio warning (1 preset voice alert)",
+    "Temperature measurement -20 to 300 C",
+    "12 VDC / PoE (802.3af) power"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000109040/DS-2TD2608-1_QA_FP_Datasheet_en-US_20231007.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Optical (Channel 1) and thermal (Channel 2) exposed as separate channels."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "Compact thermal and optical bi-spectrum network bullet camera pairing a 96x72 uncooled VOx detector (12 um, NETD < 55 mK, 1.35 mm lens) with a 4 MP ColorVu optical channel, temperature-exception fire prevention, a white-light strobe and audio warning. Verified against the official Hikvision datasheet.",
+  "last_verified": "2026-09-06"
+}

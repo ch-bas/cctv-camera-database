@@ -1,0 +1,139 @@
+{
+  "id": "dahua-sd3c405db-gny-aw-pv",
+  "brand": "Dahua",
+  "model": "SD3C405DB-GNY-AW-PV",
+  "aliases": [
+    "DH-SD3C405DB-GNY-AW-PV"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet",
+    "wifi"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5",
+    "aperture": "F1.6-F3.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "94.9-30.1 horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 50,
+    "min_lux_color": 0.005
+  },
+  "ptz": {
+    "autotracking": false,
+    "onvif_ptz": "continuous"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub2",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "12 VDC",
+    "consumption_w": 11
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "features": [
+    "mini pan-tilt dome, 5x optical zoom (motorized varifocal)",
+    "Wi-Fi 802.11b/g/n (2.4 GHz)",
+    "Smart Dual Light: 50m IR + 30m warm light",
+    "WizSense deep-learning human/vehicle classification, SMD 3.0",
+    "IVS perimeter protection (tripwire, intrusion, loitering)",
+    "active deterrence (light and sound)",
+    "300 presets with power-off memory; pan 0-355, tilt -15 to 90",
+    "Smart H.265+/H.264+",
+    "two-way talk"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/pt-cameras/ip-pt-3-series/sd3/sd3c405db-gny-aw-pv",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/SD3C405DB-GNY-AW-PV_S0_datasheet_20250115.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI. PTZ driven over ONVIF."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "dimensions_mm": "142.6 x 140.0 x 236.2",
+  "weight_g": 1100,
+  "environment": [
+    "outdoor"
+  ],
+  "last_verified": "2026-09-06",
+  "ndaa_compliant": false
+}

@@ -1,0 +1,93 @@
+{
+  "id": "hikmicro-hm-td1017-1",
+  "brand": "HikMicro",
+  "model": "HM-TD1017-1",
+  "aliases": [
+    "HM-TD1017-1/QW-HS111"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet",
+    "wifi"
+  ],
+  "resolution": {
+    "megapixels": 0.02,
+    "max_width": 160,
+    "max_height": 120,
+    "label": "160x120 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 160x120, 17 um pixel pitch, 8-14 um, NETD < 50 mK",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.31 (fixed)"
+  },
+  "field_of_view_deg": "110h",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "power": {
+    "method": "PoE (type-C to PoE convertor) or 5-16 VDC",
+    "consumption_w": 3.5
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "operating_temp_c": "-10 to 50",
+  "dimensions_mm": "70 (dia) x 25",
+  "weight_g": 100,
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "Thermal-only presence detector (privacy-preserving, no optical/visible imaging), indoor ceiling mount",
+    "thermal module: 160x120 VOx uncooled, 17 um pitch, 8-14 um, NETD < 50 mK, thermal FOV 110 x 82",
+    "people-number exception and presence detection; healthy tracking (out-of-bed abnormal behavior)",
+    "temperature exception alarm for fire prevention, measurement -10 to 200 C, accuracy +/-8 C",
+    "relay output for light / air-conditioning control (energy saving)",
+    "2.4 GHz Wi-Fi (802.11b/g/n) for easy setup"
+  ],
+  "release_notes": "The HikMicro HM-TD1017-1 is an indoor thermal presence detector using a 160x120 thermal module to count people and detect presence without capturing identifiable video, protecting privacy in offices, classrooms and nursing rooms. It also performs fire-prevention temperature alarms and can drive a relay for lighting or HVAC control.",
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000050256/HM-TD1017-1_QW-HS111_Datasheet_en-US_20240425.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "ndaa_compliant": false,
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80, Profile S/G). Thermal-only stream."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  }
+}

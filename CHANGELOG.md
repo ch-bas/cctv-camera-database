@@ -6,6 +6,31 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.16.0] — 2026-09-06
+
+Dataset grows to **9,209 cameras / 136 brands** — the complete **Hikvision Thermal** catalogue (+247) with a new thermal brand **HikMicro**, and a full sweep of the **Dahua camera catalogue** (+374 across Network, PTZ, PT, HDCVI, Thermal, and Wireless). Every record is from an official manufacturer datasheet; thermal-specific modeling matches the existing convention (`resolution` = thermal module, NETD in `sensor`, bi-spectrum → two lenses).
+
+### Added — new brand: HikMicro (+86)
+- **HikMicro (`HM-*`)** — Hikvision's dedicated thermal sub-brand (datasheets are HIKMICRO-branded). The full security-thermal line: bi-spectrum bullets & turrets (thermal + optical, IR / smart-hybrid supplement), thermal-only presence detectors, cube (`box`) units, `TX` TandemVu (thermal bullet + integrated optical speed dome), and the high-end positioning range — anti-corrosion `TD6`, uncooled `TD95C8` (1280×1024, 3 km laser illuminator), and **cooled MWIR** `TD816A`/`TD966A` spheres with 1535/1570 nm laser rangefinders to 10–20 km. `ndaa_compliant: false` (Hikvision sub-brand, Section 889).
+
+### Added — Dahua WizMind 5 (+42)
+- The full **WizMind 5** network-camera series across every sub-category: Pro WizColor (fixed & motorized-varifocal bullets/turrets/domes), Smart Dual Light, Anti-Corrosion (ATC), 180° panoramic dual-lens, triple-lens perimeter, HDMI-output, 5G/SIM, and elevator cameras. 4/5/8 MP, IR + warm dual-light (`hybrid`). `ndaa_compliant: false`.
+
+### Added — Dahua camera catalogue sweep (+277 beyond WizMind 5)
+- **Network cameras (+~96)** — WizMind 7 (Smart-Dual-Light, IR, Dual-Sight multi-lens, Anti-Corrosion), WizMind 8 (dual-lens 3D people-counter, corner, classroom, high-temperature, self-cleaning), WizSense 3 & 2 (TiOC PRO-WizColor, Smart-Dual-Light, IR, 4G), Special (separated/covert pinhole, macro-reading), and WizMind Panoramic (multi-sensor 180°, multi-directional 360°, fisheye).
+- **PTZ (+17)** — the new speed-dome / positioning models not already in the set: X-Spans multi-sensor+PTZ (`PSDW`), WizMind/WizSense `SD` speed domes, Special positioning systems (`PTZ*`, laser), and Wireless 4G/5G — top-level `ptz` with `onvif_ptz: "continuous"`.
+- **PT — pan-tilt (+13)** — IP-PT multivision (`IPC-PTS`) + single-lens (`IPC-PT`, `SD*NB`) 1/2/3-series.
+- **HDCVI — analog (+116)** — the full 4-in-1 (CVI/AHD/TVI/CVBS) line over coax: Pro/Lite/Cooper bullets, turrets & domes across 4K/5MP/1080p, Active-Deterrence WizColor (`ME`, red/blue + siren), Full-color warm-light (`-LED`), PoC, panorama, micro-size, and pinhole/covert (`HAC-HUM`). `connectivity: ["coax"]`, no IP stack.
+- **Thermal — Dahua (+38)** — the `TPC-*` bi-spectrum & thermography line: Eureka/Ultra/Pro/Lite bullets, turrets, `SD` speed domes, `PT`/`PTD` positioning systems (incl. tri-sensor `PTD8A4C`), explosion-proof (`AE*`, ATEX), and anti-corrosion; `-T` thermography variants measure temperature (-20 to 550 C).
+- **Wireless — Wi-Fi / battery / 4G (+55)** — the consumer wireless line: Hero indoor pan-tilt & dual-lens, Picoo outdoor PT, Apollo battery wire-free bullets & PT (solar-powered), the C/T/F Wi-Fi series, `IPC-WL` floodlight (active deterrence), and 4G wired/wire-free cameras. Wi-Fi/battery/solar/4G power & connectivity; app-only cameras use a generic Home Assistant config (no fabricated RTSP).
+- All Dahua `ndaa_compliant: false` (Section 889). Two models (TPC-PT8641G, HM-TD2618-8) omitted — no obtainable datasheet.
+
+### Added — community request
+- **Dahua C5A** — 5MP indoor fixed-focal Wi-Fi 6 cube with magnetic base, AI human/pet detection, two-way audio, and 10 m IR (#352).
+
+### Added — Hikvision Thermal (+161)
+- The complete Hikvision `DS-2TD*` / `DS-2TX*` thermal catalogue: fixed thermal & bi-spectrum bullets/turrets (`DS-2TD12/13/16/21/23/26`), thermography temperature-measurement variants (`…T`, -20 to 550/650 C), ColorVu thermal (`DS-2TD2608`), speed domes & mobile/portable PTZ (`DS-2TD42/45`, battery/4G/GPS), large positioning systems (`DS-2TD62/66/95C8`, uncooled to 1280×1024), cooled MWIR spheres (`DS-2TD966A`), explosion-proof ATEX/IECEx (`DS-2TD65`), solar/4G kits (`DS-2TXS2628`), and smart-linkage tracking (`DS-2TX3742`). `ndaa_compliant: false`. One model (HM-TD2618-8) omitted — its datasheet is access-restricted.
+
 ## [2.15.0] — 2026-09-04
 
 Dataset grows to **8,588 cameras / 135 brands** — a **+1,533** jump from the complete ingest of the HiLook and Hikvision manufacturer catalogues, sourced entirely from official resource-center datasheets (verified values only; every PDF cached).

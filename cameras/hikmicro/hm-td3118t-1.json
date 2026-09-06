@@ -1,0 +1,111 @@
+{
+  "id": "hikmicro-hm-td3118t-1",
+  "brand": "HikMicro",
+  "model": "HM-TD3118T-1",
+  "aliases": [
+    "HM-TD3118T-1/Q"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.02,
+    "max_width": 160,
+    "max_height": 120,
+    "label": "160x120 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 160x120 (output image 320x240), 12 um pixel pitch, 8-14 um, NETD < 40 mK",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.0 (thermal, fixed)",
+    "aperture": "F1.1",
+    "varifocal": false
+  },
+  "field_of_view_deg": "110 horizontal (thermal)",
+  "power": {
+    "method": "9-15 VDC",
+    "consumption_w": 2,
+    "voltage": "9-15 VDC"
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "NAS storage; no onboard microSD"
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "thermal",
+        "resolution": "320x240",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ip_rating": "IP67",
+  "operating_temp_c": "-10 to 60 C",
+  "dimensions_mm": "102 x 51.2 x 27.5",
+  "weight_g": 180,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "features": [
+    "thermal-only thermography cube camera",
+    "thermal detector: uncooled VOx FPA, 160x120 native (output image 320x240), 12 um pixel pitch, 8-14 um, NETD < 40 mK",
+    "thermal lens 1.0 mm F1.1, FOV 110 x 81.3 (H x V)",
+    "temperature measurement -20 to 150 C and 0 to 550 C, accuracy Max (+/-2 C, +/-2%) with point/line/area rules",
+    "temperature exception alarm; displays max/min temperature in live view",
+    "RS-485 with Modbus support",
+    "TVS 6000 V lightning protection",
+    "15 thermal color palettes"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 320,
+        "height": 240,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "generic",
+      "notes": "Thermal-only camera; use the generic RTSP camera (ONVIF not listed on the datasheet)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile (RTSP /Streaming/Channels/101)."
+    }
+  },
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000148580/HM-TD3118T-1_Q_Datasheet_20240527.pdf"
+  ],
+  "release_notes": "The HikMicro HM-TD3118T-1 is a compact thermal-only thermography cube camera with a 160x120 uncooled VOx detector (output image upscaled to 320x240) and a wide 110-degree lens, providing continuous temperature monitoring and exception alarming from -20 to 550 C for electrical cabinets and industrial equipment. Verified against the official HIKMICRO datasheet.",
+  "last_verified": "2026-09-06",
+  "ndaa_compliant": false
+}

@@ -1,0 +1,140 @@
+{
+  "id": "dahua-ipc-hdbw3849r-zs-il",
+  "brand": "Dahua",
+  "model": "IPC-HDBW3849R-ZS-IL",
+  "aliases": [
+    "DH-IPC-HDBW3849R-ZS-IL"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP"
+  },
+  "video": {
+    "max_fps": 30,
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub2",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5",
+    "aperture": "F1.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "114-32",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 50,
+    "min_lux_color": 0.007
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3af)",
+    "consumption_w": 9
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "WizSense",
+    "Smart Dual Light",
+    "motorized varifocal",
+    "50m IR",
+    "50m warm light",
+    "SMD 4.0",
+    "perimeter protection (intrusion/tripwire, human/vehicle)",
+    "face detection",
+    "AcuPick",
+    "120dB WDR",
+    "Xinghan Vision AI models"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "122.0 (dia.) x 94.0",
+  "weight_g": 560,
+  "release_year": 2025,
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": false,
+  "markets": [
+    "global"
+  ],
+  "release_notes": "8MP WizSense 3 Smart Dual Light motorized varifocal vandal dome with dual IR/warm illuminators (50m each), SMD 4.0 and AcuPick smart search.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/network-cameras/wizsense-3-series/smart-dual-light/ipc-hdbw3849r-zs-il",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/DH-IPC-HDBW3849R-ZS-IL_S0_datasheet_20251112.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI (default admin).",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

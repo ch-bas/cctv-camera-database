@@ -1,0 +1,122 @@
+{
+  "id": "hikvision-ds-2td2138-7",
+  "brand": "Hikvision",
+  "model": "DS-2TD2138-7",
+  "aliases": [
+    "DS-2TD2138-7/QY"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 0.11,
+    "max_width": 384,
+    "max_height": 288,
+    "label": "384x288 (thermal)"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1280x720",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1280x720",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "Thermal: uncooled VOx, 384x288, 12 um pixel pitch, 8-14 um, NETD < 35 mK (25 C, F1.0)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6.5 mm (fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "42.0h x 32.0v",
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP67",
+  "operating_temp_c": "-40 to 65 C",
+  "dimensions_mm": "351.3 x 113.5 x 115.2",
+  "weight_g": 1770,
+  "power": {
+    "method": "24 VAC / 12 VDC / PoE (802.3af, class 3)",
+    "consumption_w": 5.5
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": false,
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "thermal-only network camera (VOx uncooled microbolometer, 384x288 thermal, 12 um pixel pitch, 8-14 um)",
+    "thermal FOV 42.0h x 32.0v",
+    "temperature measurement -20 to 150 C, accuracy +/-8 C",
+    "perimeter protection: line crossing, intrusion, region entrance/exit",
+    "image processing: AGC, DDE, 3D DNR",
+    "audio in/out interface (3.5mm mic/line in)",
+    "anti-corrosion coating housing",
+    "fire-prevention temperature-exception alarm",
+    "digital zoom 2x/4x/8x",
+    "32 language web client"
+  ],
+  "release_notes": "The Hikvision DS-2TD2138-7/QY is an anti-corrosion 384x288 thermal network bullet camera with a 6.5 mm lens for perimeter protection and fire prevention; it measures temperature from -20 to 150 C for fire-exception alarms.",
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000053095/DS-2TD2138-7_QY_Datasheet_V5.5.64_en-US_20230531.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ik_rating": "IK10"
+}

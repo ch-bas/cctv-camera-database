@@ -1,0 +1,118 @@
+{
+  "id": "hikmicro-hm-td2628-3",
+  "brand": "HikMicro",
+  "model": "HM-TD2628-3",
+  "aliases": [
+    "HM-TD2628-3/EA"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "dc",
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 0.05,
+    "max_width": 256,
+    "max_height": 192,
+    "label": "256x192 (thermal)"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25
+  },
+  "sensor": "Thermal: uncooled VOx, 256x192, 12 um pixel pitch, 8-14 um, NETD < 25 mK; optical: 1/2.7in CMOS 2MP 1920x1080",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "3.6 (fixed)",
+    "aperture": "F1.0"
+  },
+  "field_of_view_deg": "50h",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "12 VDC or PoE (802.3at, class 4)",
+    "consumption_w": 12.8,
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "thermal + optical bi-spectrum",
+    "optical channel: 2 MP (1920x1080)",
+    "optical lens: 4.3 mm",
+    "bi-spectrum image fusion + picture-in-picture",
+    "thermal detector: uncooled VOx 256x192, 12 um pitch, NETD < 25 mK",
+    "thermal field of view: 50h",
+    "thermal IFOV: 3.33 mrad",
+    "temperature measurement -20 to 150 C, accuracy +/-8 C",
+    "AcuSense 3.0 vehicle/human detection",
+    "smart hybrid light: white light + IR + smart mode",
+    "IR up to 30m; white light up to 30m",
+    "audible + visual (white light) alarm",
+    "RS-485; 2 alarm in / 2 alarm out",
+    "17 thermal color palettes"
+  ],
+  "operating_temp_c": "-40 to 65",
+  "dimensions_mm": "349.1 x 113 x 105",
+  "weight_g": 1710,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": false,
+  "markets": [
+    "global"
+  ],
+  "release_notes": "The HikMicro HM-TD2628-3 is a thermal & optical bi-spectrum network bullet camera with a wide 50-degree 256x192 uncooled VOx thermal module (NETD < 25 mK) and a 2 MP optical channel, AcuSense 3.0 analytics, hybrid IR/white-light to 30m and -20 to 150 C temperature alarms.",
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000185900/HM-TD2628-3_EA_Datasheet.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Thermal + optical exposed as separate channels."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  }
+}

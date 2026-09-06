@@ -1,0 +1,139 @@
+{
+  "id": "dahua-ipc-hum8441e-e1",
+  "brand": "Dahua",
+  "model": "IPC-HUM8441E-E1",
+  "aliases": [
+    "DH-IPC-HUM8441E-E1",
+    "IPC-HUM8441E-E1-L1",
+    "IPC-HUM8441E-E1-L3",
+    "IPC-HUM8441E-E1-L4",
+    "IPC-HUM8441E-E1-L5",
+    "IPC-HUM8441-E1"
+  ],
+  "type": "covert",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/2.7\" CMOS (Starlight)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F2.0 (L3: F1.6)",
+    "varifocal": false
+  },
+  "field_of_view_deg": "101-105h (L1/L4: 101; L3: 102; L5: 105)",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3af)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67 (L3 lens unit)",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "main box 110 x 83 x 24; L3 lens dia 30.5 x 55.4",
+  "weight_g": 554,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "WizMind separated-pinhole camera (main box + fixed-focal 2.8 mm lens unit)",
+    "lens unit options: L1 (F2.0, 101h), L3 (F1.6, 102h, IP67), L4 (F2.0, 101h), L5 (F2.0, 105h)",
+    "4MP 1/2.7\" Starlight CMOS, up to 25/30 fps",
+    "min illumination 0.005 lux F1.6 color / 0.0005 lux B/W",
+    "120 dB WDR",
+    "IVS perimeter protection (tripwire, intrusion, fast moving)",
+    "face detection with attributes",
+    "Smart H.265+/H.264+ coding",
+    "1 audio in / 1 audio out (3.5 mm jack), RS-232",
+    "2 alarm in / 2 alarm out",
+    "max 256 GB microSD",
+    "12 VDC / PoE (802.3af)"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/network-cameras/special-series/separated-pinhole-series/ipc-hum8441e-e1",
+    "https://material.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/IPC-HUM8441-E1_S0_datasheet_20240407.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "ndaa_compliant": false
+}
