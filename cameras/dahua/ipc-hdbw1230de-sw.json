@@ -1,0 +1,124 @@
+{
+  "id": "dahua-ipc-hdbw1230de-sw",
+  "brand": "Dahua",
+  "model": "IPC-HDBW1230DE-SW",
+  "aliases": [
+    "DH-IPC-HDBW1230DE-SW",
+    "2MP IR Fixed-focal Wi-Fi Dome Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 3.6",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "100 horizontal (2.8mm); 86 horizontal (3.6mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "power": {
+    "method": "12 VDC",
+    "voltage": "12 VDC",
+    "consumption_w": 4.9
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": false,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "features": [
+    "Wi-Fi IEEE 802.11b/g/n 2.4 GHz",
+    "IP67 weatherproof, IK10 vandal-resistant",
+    "3 IR LEDs, 30 m IR night vision",
+    "Smart Illumination",
+    "DWDR, 3D NR, BLC",
+    "dual fixed-focal options (2.8 mm / 3.6 mm)",
+    "motion detection (4 areas), ROI",
+    "Smart H.265+ / Smart H.264+ codec",
+    "microSD up to 256 GB"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "release_year": 2023,
+  "release_notes": "The Dahua IPC-HDBW1230DE-SW is a 2MP fixed-focal Wi-Fi vandal dome with 30 m IR, ONVIF/RTSP support, and IP67/IK10 protection. Verified against the official Dahua datasheet.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/wireless-products/indoor-cameras/dome-series/ipc-hdbw1230de-sw",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/IPC-HDBW1230DE-SW_datasheet_20231121.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua native RTSP (main subtype=0 / sub subtype=1); ONVIF Profile S/G exposed per datasheet. Enable RTSP in the app. Wi-Fi 2.4 GHz only."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile; use the RTSP URL above."
+    }
+  },
+  "dimensions_mm": "110.7 diameter x 88.7",
+  "weight_g": 414,
+  "operating_temp_c": "-40 to 60",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "ndaa_compliant": false
+}

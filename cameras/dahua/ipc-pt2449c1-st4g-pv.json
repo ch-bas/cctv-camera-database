@@ -1,0 +1,141 @@
+{
+  "id": "dahua-ipc-pt2449c1-st4g-pv",
+  "brand": "Dahua",
+  "model": "IPC-PT2449C1-ST4G-PV",
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "last_verified": "2026-09-06",
+  "environment": [
+    "outdoor"
+  ],
+  "aliases": [
+    "DH-IPC-PT2449C1-ST4G-PV",
+    "IPC-PT2449C1-ST4G-PV-EAU",
+    "P4F-PV-4G",
+    "4MP Full-color 4G Pan-Tilt Network Camera"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "4g",
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "97 horizontal (52 vertical, 114 diagonal)",
+  "night_vision": {
+    "type": "color",
+    "range_m": 30
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "12 VDC",
+    "voltage": "12 VDC",
+    "consumption_w": 7.5
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": false,
+    "cloud": false,
+    "notes": "microSD up to 256 GB; FTP"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "4G LTE (EUR/LA/EAU bands) + RJ-45 10/100 Ethernet",
+    "WizColor full-color warm-light night vision (30 m, F1.0 lens)",
+    "motorized pan 0-345 / tilt 0-90 with smart auto-tracking",
+    "sound-and-light active deterrence (siren + spotlight)",
+    "AI human and vehicle detection",
+    "two-way talk",
+    "Smart H.265+"
+  ],
+  "operating_temp_c": "-30 to 55",
+  "dimensions_mm": "153.5 x 129.3 (L x diameter)",
+  "weight_g": 660,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.265+",
+      "H.264",
+      "H.264+",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "release_year": 2025,
+  "release_notes": "The Dahua IPC-PT2449C1-ST4G-PV is a 4MP full-color 4G pan-tilt camera with WizColor F1.0 optics (30 m warm-light night vision), smart auto-tracking, sound-and-light active deterrence and AI human/vehicle detection. Marketed globally as the P4F-PV-4G. Verified against the official Dahua datasheet.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/wireless-products/4g-cameras/wired-cameras/ipc-pt2449c1-st4g-pv",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/IPC-PT2449C1-ST4G-PV-EAU_S0_datasheet_20250303.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "two_way_audio": true,
+      "notes": "Dahua native RTSP (main subtype=0 / sub subtype=1); ONVIF on port 80. Enable RTSP/ONVIF in the camera or DMSS app.",
+      "autotracking": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile; use the RTSP URL above."
+    }
+  }
+}
