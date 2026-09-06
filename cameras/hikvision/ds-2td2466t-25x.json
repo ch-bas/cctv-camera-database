@@ -1,0 +1,104 @@
+{
+  "id": "hikvision-ds-2td2466t-25x",
+  "brand": "Hikvision",
+  "model": "DS-2TD2466T-25X",
+  "aliases": [
+    "DS-2TD2466T-25X"
+  ],
+  "type": "bullet",
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.33,
+    "max_width": 640,
+    "max_height": 512,
+    "label": "640x512 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 640x512, 17 um pixel pitch, 8-14 um, NETD < 40 mK",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "25 (fixed)",
+    "aperture": "F1.0"
+  },
+  "field_of_view_deg": "24.55 horizontal",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 64,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "ip_rating": "IP68",
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "409.6 x 179.2 x 183.3",
+  "weight_g": 19110,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "power": {
+    "method": "100-240 VAC / PoE (802.3at)",
+    "consumption_w": 15
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "Explosion-proof (316L stainless steel, ATEX/IECEx) thermal-only network bullet camera (uncooled VOx 640x512 detector, 17 um pixel pitch)",
+    "NETD < 40 mK (25 C, F1.0)",
+    "25 mm thermal lens, F1.0, 24.55 x 19.75 field of view",
+    "Temperature measurement -20 to 150 C and 0 to 550 C, accuracy Max (+/-2 C, +/-2 %); 21 rules (10 points, 10 areas, 1 line)",
+    "Dynamic fire detection, up to 10 fire points",
+    "Perimeter protection: line crossing, intrusion, region entrance and exit",
+    "15 adjustable palettes, adaptive AGC, DDE, 3D DNR",
+    "Audio in/out, 2 alarm in / 2 alarm out, analog BNC video output",
+    "100-240 VAC / PoE (802.3at) power"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000002575/DS-2TD2466T-25X_V5.5.0_20221115.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Single thermal channel."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "Explosion-proof (316L stainless steel, ATEX/IECEx) thermal-only network bullet camera with a 640x512 uncooled VOx detector (17 um, NETD < 40 mK), 25 mm F1.0 lens and dual-band temperature measurement (-20 to 150 C and 0 to 550 C) for hazardous industrial sites. Verified against the official Hikvision datasheet.",
+  "last_verified": "2026-09-06"
+}

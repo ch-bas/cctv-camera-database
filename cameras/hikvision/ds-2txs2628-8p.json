@@ -1,0 +1,112 @@
+{
+  "id": "hikvision-ds-2txs2628-8p",
+  "brand": "Hikvision",
+  "model": "DS-2TXS2628-8P",
+  "aliases": [
+    "DS-2TXS2628-8P/QA/GLT/CH36S80BR"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet",
+    "4g"
+  ],
+  "resolution": {
+    "megapixels": 0.05,
+    "max_width": 256,
+    "max_height": 192,
+    "label": "256x192 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 256x192, 12 um pixel pitch, 8-14 um, NETD <= 40 mK; optical: 1/2.7in CMOS 4 MP (2688x1520)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "8 (fixed)",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.0089
+  },
+  "field_of_view_deg": "23.7h",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "audio": {
+    "microphone": false,
+    "speaker": true,
+    "two_way": false
+  },
+  "power": {
+    "method": "12 VDC or PoE (802.3af class 3); 80 W solar panel + 36 Ah (360 Wh) lithium battery kit"
+  },
+  "power_source": [
+    "poe",
+    "dc",
+    "solar",
+    "battery"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-40 to 65",
+  "dimensions_mm": "208.9 x 106 x 105.2",
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "Solar-powered bi-spectrum thermal camera kit with 80 W photovoltaic panel and 36 Ah (360 Wh) lithium battery bank",
+    "thermal module: 256x192 VOx uncooled, 12 um pitch, 8-14 um, NETD <= 40 mK, thermal FOV 23.7 x 17.8, digital zoom x2/x4",
+    "optical channel: 4 MP (2688x1520), 8 mm lens, FOV 39.4 x 22.1, 120 dB WDR",
+    "bi-spectrum image fusion (optical detail overlaid on thermal), target coloration (white/black hot)",
+    "temperature exception alarm for fire prevention, measurement -20 to 150 C, accuracy +/-8 C, 21 rules (10 points, 10 areas, 1 line)",
+    "VCA: line crossing, intrusion, region entrance/exit (up to 8 rules), vehicle/human classification",
+    "4G LTE-FDD/LTE-TDD/WCDMA wireless with MicroSIM",
+    "IR supplement up to 30 m and white-light up to 30 m",
+    "embedded audible alert (voice/strobe white-light alarm)",
+    "32 GB microSD preinstalled",
+    "IK10 housing, TVS 4000V lightning protection"
+  ],
+  "release_notes": "The Hikvision DS-2TXS2628-8P is a solar-powered, 4G-connected bi-spectrum thermal camera kit with an enlarged 36 Ah battery bank for off-grid fire prevention and perimeter monitoring. Its 256x192 thermal module (8 mm lens) measures temperature (-20 to 150 C) and triggers audible and strobe alarms on VCA or temperature events.",
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000126160/DS-2TXS2628-8P_QA_GLT_CH36S80BR_Datasheet_en-US_20240131.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "ndaa_compliant": false,
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80, Profile S/G). Thermal + optical exposed as separate channels."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  }
+}

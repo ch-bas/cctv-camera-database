@@ -1,0 +1,105 @@
+{
+  "id": "hikvision-ds-2td2466-25y",
+  "brand": "Hikvision",
+  "model": "DS-2TD2466-25Y",
+  "aliases": [
+    "DS-2TD2466-25Y"
+  ],
+  "type": "bullet",
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.33,
+    "max_width": 640,
+    "max_height": 512,
+    "label": "640x512 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 640x512, 17 um pixel pitch, 8-14 um, NETD < 40 mK",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "25 (fixed)",
+    "aperture": "F1.0"
+  },
+  "field_of_view_deg": "24.55 horizontal",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 64,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "ip_rating": "IP66",
+  "operating_temp_c": "-40 to 65",
+  "weight_g": 16860,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "power": {
+    "method": "24 VAC / 12 VDC / PoE (802.3at, class 4)",
+    "consumption_w": 10
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "Anti-corrosion (316L stainless steel) thermal-only network bullet camera (uncooled VOx 640x512 detector, 17 um pixel pitch)",
+    "NETD < 40 mK (25 C, F1.0)",
+    "25 mm thermal lens, F1.0, 24.55 x 19.75 field of view",
+    "Temperature measurement -20 to 150 C, accuracy +/-8 C; 21 rules (10 points, 10 regions, 1 line)",
+    "Dynamic fire detection, up to 10 fire points",
+    "Perimeter protection: line crossing, intrusion, region entrance and exit",
+    "15 adjustable palettes, adaptive AGC, DDE, 3D DNR",
+    "Built-in de-icing heater (max 22 W with heater on)",
+    "Audio in/out, 2 alarm in / 2 alarm out, analog BNC video output",
+    "24 VAC / 12 VDC / PoE (802.3at) power"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000002510/DS-2TD2466-25Y_V5.5.0_20221115.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Single thermal channel."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "Anti-corrosion (316L stainless steel) thermal-only network bullet camera with a 640x512 uncooled VOx detector (17 um, NETD < 40 mK), 25 mm F1.0 lens, temperature measurement -20 to 150 C and a built-in de-icing heater. Verified against the official Hikvision datasheet.",
+  "last_verified": "2026-09-06"
+}

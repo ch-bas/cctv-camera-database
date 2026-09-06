@@ -1,0 +1,127 @@
+{
+  "id": "hikmicro-hm-tx3840-10",
+  "brand": "HikMicro",
+  "model": "HM-TX3840-10",
+  "aliases": [
+    "HM-TX3840-10/G0/T1"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 0.11,
+    "max_width": 384,
+    "max_height": 288,
+    "label": "384x288 (thermal)"
+  },
+  "sensor": "Thermal: vanadium oxide uncooled focal plane array, 384x288, 12 um pixel pitch, 8-14 um, NETD < 25 mK; optical: 1/1.8in CMOS, 4 MP",
+  "lens": {
+    "count": 3,
+    "focal_length_mm": "9.7 (thermal, fixed)",
+    "aperture": "F1.0 (thermal)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "28.1 horizontal (thermal)",
+  "night_vision": {
+    "type": "color",
+    "range_m": 250,
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "DC 36V / AC 24V / PoE++",
+    "consumption_w": 90,
+    "voltage": "DC 36V; AC 24V; PoE++"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "microSD/SDHC/SDXC up to 256 GB; NAS (NFS, SMB/CIFS); ANR"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "speaker": true
+  },
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "458.7 x 266.6 x 290",
+  "weight_g": 13500,
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "features": [
+    "Thermal TandemVu: bi-spectrum bullet (thermal + optical) plus integrated optical PTZ speed dome",
+    "Thermal detector: uncooled VOx, 384x288, 12 um pixel pitch, NETD < 25 mK",
+    "Thermal lens 9.7 mm fixed, F1.0, FOV 28.1 by 21.5",
+    "Optical bullet channel: 4 MP (2688x1520), 6.4 mm lens",
+    "Integrated optical PTZ speed dome: 4 MP, 6-240 mm 40x optical zoom, smart auto-tracking of moving targets",
+    "White light supplement up to 250 m",
+    "Perimeter protection: line crossing, intrusion, region entrance and exit (up to 8 VCA rules)",
+    "One-touch click linkage / auto-calibration between bullet and PTZ",
+    "Built-in speaker for audible alarm, whitelight LED supplement",
+    "Thermal DORI (humans 1.8 x 0.5 m): detection 417 m, recognition 104 m, identification 52 m",
+    "VCA range: 300 m for vehicles, 100 m for humans",
+    "IP67, TVS 6000V lightning/surge protection"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main-optical",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "main-thermal",
+        "resolution": "384x288",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Optical bullet, thermal, and optical PTZ dome are exposed as separate channels."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "HikMicro TandemVu unit combining a 384x288 thermal + 4 MP optical bi-spectrum bullet for perimeter protection with a 4 MP 40x optical PTZ dome that smart-tracks moving targets. The -10 carries a 9.7 mm wide thermal lens.",
+  "last_verified": "2026-09-06",
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000127221/HM-TX3840-10_G0_T1_Datasheet_en-US_20241012.pdf"
+  ]
+}

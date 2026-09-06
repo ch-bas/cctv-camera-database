@@ -1,0 +1,125 @@
+{
+  "id": "hikvision-ds-2td2617-10",
+  "brand": "Hikvision",
+  "model": "DS-2TD2617-10",
+  "aliases": [
+    "DS-2TD2617-10/QA"
+  ],
+  "type": "bullet",
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.02,
+    "max_width": 160,
+    "max_height": 120,
+    "label": "160x120 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 160x120, 17 um pixel pitch, NETD < 40 mK; optical: 1/2.7in CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "9.7 (fixed)",
+    "aperture": "F1.1"
+  },
+  "field_of_view_deg": "15.96 horizontal (thermal)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 40,
+    "min_lux_color": 0.0089
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "thermal-main",
+        "resolution": "1280x720",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "optical-main",
+        "resolution": "2688x1520",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "speaker": true
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "ip_rating": "IP67",
+  "operating_temp_c": "-40 to 65",
+  "dimensions_mm": "358.3 x 113.5 x 115.2",
+  "weight_g": 1760,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "power": {
+    "method": "12 VDC / PoE (802.3af, class 3)",
+    "voltage": "12 VDC",
+    "consumption_w": 6
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "Thermal and optical bi-spectrum network bullet camera with deep-learning perimeter protection and fire prevention",
+    "Thermal: uncooled VOx 160x120 detector, 17 um pixel pitch, NETD < 40 mK, 9.7 mm F1.1 lens, 15.96 x 12 field of view",
+    "Optical channel: 4 MP (2688x1520), 1/2.7in CMOS, 8 mm F1.6 lens, 39.42 x 22.14 field of view, 120 dB WDR",
+    "IR supplement up to 40 m plus white-light supplement up to 40 m on the optical channel (0.0089 lux; 0 lux with IR)",
+    "Built-in white-light strobe (visual alarm) and audio warning (2 preset voice alerts)",
+    "Temperature measurement -20 to 150 C, accuracy +/-8 C",
+    "ONVIF Profile S/G/T, audio in/out, RS-485, analog BNC output",
+    "12 VDC / PoE (802.3af) power"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000044944/DS-2TD2617-10_QA_Datasheet_en-US_20231018.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Optical (Channel 1) and thermal (Channel 2) exposed as separate channels."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "Thermal and optical bi-spectrum network bullet camera pairing a 160x120 uncooled VOx detector (17 um, NETD < 40 mK, 9.7 mm lens) with a 4 MP optical channel, deep-learning perimeter protection, temperature-exception fire prevention, 40 m IR and white light, plus a white-light strobe and audio warning. Verified against the official Hikvision datasheet.",
+  "last_verified": "2026-09-06"
+}

@@ -1,0 +1,103 @@
+{
+  "id": "hikmicro-hm-td5537t-15",
+  "brand": "HikMicro",
+  "model": "HM-TD5537T-15",
+  "aliases": [
+    "HM-TD5537T-15/W"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 0.11,
+    "max_width": 384,
+    "max_height": 288,
+    "label": "384x288 (thermal)"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 50
+  },
+  "sensor": "Thermal: uncooled VOx, 384x288, 17 um pixel pitch, 8-14 um, NETD <= 35 mK (25 C, F1.0); optical: 1/2.8in CMOS, 4 MP",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "15 mm (thermal, fixed)",
+    "aperture": "F1.0",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.05
+  },
+  "field_of_view_deg": "24.55h x 18.54v",
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP67",
+  "operating_temp_c": "-40 to 70 C",
+  "dimensions_mm": "321 x 194 x 153",
+  "weight_g": 4800,
+  "power": {
+    "method": "24 VDC",
+    "consumption_w": 20
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": false,
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "thermal + optical bi-spectrum network mini positioning system (thermographic)",
+    "optical channel: 4 MP (2688x1520), 1/2.8in CMOS, 32x optical zoom (4.8-153 mm)",
+    "thermal FOV 24.55h x 18.54v",
+    "IR illuminator up to 30 m on the optical channel",
+    "temperature measurement -20 to 550 C, accuracy Max (+/-2 C, +/-2%)",
+    "behavior analysis (line crossing, intrusion, region entrance/exit) via built-in GPU / deep learning",
+    "fire detection and temperature exception alarm",
+    "1-ch audio in / 1-ch audio out"
+  ],
+  "release_notes": "The HikMicro HM-TD5537T-15/W is a compact thermal/optical bi-spectrum mini positioning system with a 384x288 thermal module (15 mm lens) and a 4 MP 32x optical channel, providing behavior analysis, fire detection and thermography up to 550 C.",
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000065244/HM-TD5537T-15_W_Datasheet_en-US_20221026.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Thermal and optical exposed as separate channels (optical Channel 1, thermal Channel 2)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "id": "hikvision-ds-2td2167-25",
+  "brand": "Hikvision",
+  "model": "DS-2TD2167-25",
+  "aliases": [
+    "DS-2TD2167-25/PI"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 0.33,
+    "max_width": 640,
+    "max_height": 512,
+    "label": "640x512 (thermal)"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25
+  },
+  "sensor": "Thermal: uncooled VOx, 640x512, 17 um pixel pitch, 8-14 um, NETD <= 35 mK (25 C, F1.0)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "25 mm (fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "24.55h x 19.75v",
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP66",
+  "operating_temp_c": "-40 to 65 C",
+  "dimensions_mm": "354 x 144.1 x 156.7",
+  "weight_g": 2610,
+  "power": {
+    "method": "12 VDC / PoE (802.3af, class 3)",
+    "consumption_w": 5
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": false,
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "thermal-only network camera (VOx uncooled microbolometer, 640x512 thermal, 17 um pixel pitch, 8-14 um)",
+    "thermal FOV 24.55h x 19.75v",
+    "temperature measurement -20 to 150 C, accuracy +/-8 C",
+    "perimeter protection: line crossing, intrusion, region entrance/exit",
+    "image processing: AGC, DDE, 3D DNR",
+    "audio in/out interface (3.5mm mic/line in)",
+    "built-in GPU for perimeter analytics"
+  ],
+  "release_notes": "The Hikvision DS-2TD2167-25/PI is a 640x512 thermal network bullet camera with a 25 mm lens and built-in GPU perimeter analytics; it measures temperature from -20 to 150 C.",
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000039894/DS-2TD2167-25_PI_V5.5.30_20201214.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  }
+}

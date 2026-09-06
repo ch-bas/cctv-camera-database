@@ -1,0 +1,139 @@
+{
+  "id": "hikvision-ds-2td4238-10",
+  "brand": "Hikvision",
+  "model": "DS-2TD4238-10",
+  "aliases": [
+    "DS-2TD4238-10/S2"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 0.11,
+    "max_width": 384,
+    "max_height": 288,
+    "label": "384x288 (thermal)"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "optical main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "thermal main",
+        "resolution": "1280x720",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "Thermal: uncooled VOx, 384x288, 12 um pixel pitch, 8-14 um, NETD < 35 mK; optical: 1/2.8in CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "10 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "26.46 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "24 VAC / 36 VDC / 48 VDC / Hi-PoE",
+    "consumption_w": 30,
+    "voltage": "24 VAC, 36 VDC, 48 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "features": [
+    "thermal & optical bi-spectrum network speed dome (PTZ)",
+    "optical channel: 4 MP 2688x1520, 1/2.8in CMOS, 32x optical zoom (4.8-153 mm), F1.2-F4.4",
+    "thermal detector: VOx uncooled FPA, 384x288, 12 um pixel pitch, NETD < 35 mK, 8-14 um",
+    "temperature measurement -20 to 150 C, accuracy +/-8 C",
+    "dynamic fire detection (up to 10 fire points) and smoke detection",
+    "perimeter protection VCA: line crossing, intrusion, region entrance and exit",
+    "smart tracking: panorama / event / multi-scene patrol tracking with thermal-optical linkage",
+    "picture-in-picture thermal-on-optical fusion display",
+    "optical channel IR illuminator up to 100 m",
+    "PTZ: 360 continuous pan, tilt -5 to +90, 300 presets",
+    "microSD storage up to 256 GB, ONVIF (Profile S/G/T) / RTSP"
+  ],
+  "operating_temp_c": "-40 to 70 C",
+  "dimensions_mm": "305 x 185 x 163",
+  "weight_g": 3900,
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": false,
+  "markets": [
+    "global"
+  ],
+  "release_notes": "The Hikvision DS-2TD4238-10 is a thermal and optical bi-spectrum network speed dome (PTZ) with a 384x288 VOx thermal detector (10 mm lens) and a 4 MP 32x optical zoom channel. It provides temperature measurement (-20 to 150 C), fire and smoke detection, perimeter-protection analytics and smart thermal-optical tracking. Verified against the official Hikvision datasheet.",
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000068954/DS-2TD4238-10_S2_Datasheet_en-US_20241012.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "autotracking": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Optical is Channel 1 (Streaming/Channels/101), thermal is Channel 2 (Streaming/Channels/201)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

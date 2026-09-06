@@ -1,0 +1,119 @@
+{
+  "id": "hikvision-ds-2td8167-150ze2f",
+  "brand": "Hikvision",
+  "model": "DS-2TD8167-150ZE2F",
+  "aliases": [
+    "DS-2TD8167-150ZE2F/W"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 0.33,
+    "max_width": 640,
+    "max_height": 512,
+    "label": "640x512 (thermal)"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 50,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "640x512",
+        "fps": 50,
+        "codec": "H.265"
+      },
+      {
+        "name": "optical",
+        "resolution": "1920x1080",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "Thermal: uncooled VOx, 640x512, 17 um pixel pitch, 8-14 um, NETD <= 35 mK; optical: 1/1.8in CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "30 to 150",
+    "aperture": "F1.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "horizontal 20.56 to 4.15 (thermal, wide-tele)",
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "48 VDC",
+    "consumption_w": 220,
+    "voltage": "48 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "operating_temp_c": "-40 to 65",
+  "dimensions_mm": "649.2 x 438 x 668.3",
+  "weight_g": 60000,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "Bi-spectrum: thermal + optical channels",
+    "Optical channel: 2 MP (1920x1080), 62x optical zoom (12.5 to 775 mm)",
+    "Smart tracking: panorama, event and multi-scene patrol tracking (thermal/optical linkage)",
+    "Temperature measurement -20 to 150 C, accuracy +/-8 C",
+    "Dynamic fire detection (up to 10 fire points)",
+    "Perimeter protection VCA: line crossing, intrusion, region entrance and exit",
+    "Uncooled VOx thermal detector, 17 um pixel pitch, NETD <= 35 mK",
+    "Built-in GPU, wiper"
+  ],
+  "ndaa_compliant": false,
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000017690/DS-2TD8167-150ZE2F_W_V5.5.45_20221115.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "release_notes": "Hikvision thermal and optical bi-spectrum stable PTZ with a 640x512 VOx thermal module (30 to 150 mm zoom) and a 2 MP 62x optical camera, built-in GPU and smart tracking for long-range perimeter protection. Temperature measurement -20 to 150 C.",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Optical is Channel 1, thermal is Channel 2."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  }
+}

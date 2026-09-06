@@ -1,0 +1,127 @@
+{
+  "id": "hikvision-ds-2td4167-25",
+  "brand": "Hikvision",
+  "model": "DS-2TD4167-25",
+  "aliases": [
+    "DS-2TD4167-25/WY"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.33,
+    "max_width": 640,
+    "max_height": 512,
+    "label": "640x512 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 640x512, 17 um pixel pitch, 8-14 um, NETD < 40 mK; optical: 1/1.8in Progressive Scan CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "25 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "24.5 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 150
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "24 VAC / 36 VDC / 48 VDC / Hi-PoE",
+    "consumption_w": 65,
+    "voltage": "24 VAC / 36 VDC / 48 VDC"
+  },
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "operating_temp_c": "-40 to 65",
+  "dimensions_mm": "220 x 410 x 198.6",
+  "weight_g": 9000,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 50,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "thermal",
+        "resolution": "640x512",
+        "fps": 50,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "features": [
+    "thermal and optical bi-spectrum network speed dome with image fusion",
+    "optical channel: 4 MP (2688x1520) with 40x optical zoom",
+    "thermal detector: 640x512 VOx uncooled FPA, 17 um pixel pitch, NETD < 40 mK",
+    "smart tracking (panorama, event and multi-scene patrol)",
+    "temperature measurement -20 to 150 C, +/-8 C",
+    "dynamic fire detection, up to 10 fire points",
+    "perimeter protection: line crossing, intrusion, region entrance/exit",
+    "360 continuous pan, tilt -20 to +90, built-in GPU, wiper"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000034219/DS-2TD4167-25_WY_Datasheet_en-US_20240903.pdf"
+  ],
+  "release_notes": "The Hikvision DS-2TD4167-25 is a thermal and optical bi-spectrum network speed dome with a 640x512 VOx thermal module (25 mm lens), a 4 MP 40x optical channel, smart tracking, temperature measurement and fire detection. Verified against the official Hikvision datasheet.",
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Optical is Channel 1, thermal is Channel 2."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false
+}
