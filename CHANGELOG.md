@@ -8,10 +8,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.16.0] — 2026-09-06
 
-Dataset grows to **8,835 cameras / 136 brands** with the complete **Hikvision Thermal** catalogue (+247) and a new thermal brand, **HikMicro**. Every record is from an official resource-center datasheet; thermal-specific modeling matches the existing thermal convention (`resolution` = thermal module, NETD in `sensor`, bi-spectrum → two lenses).
+Dataset grows to **8,836 cameras / 136 brands** with the complete **Hikvision Thermal** catalogue (+247), a new thermal brand **HikMicro**, and a community-requested Dahua cube. Every record is from an official resource-center datasheet; thermal-specific modeling matches the existing thermal convention (`resolution` = thermal module, NETD in `sensor`, bi-spectrum → two lenses).
 
 ### Added — new brand: HikMicro (+86)
 - **HikMicro (`HM-*`)** — Hikvision's dedicated thermal sub-brand (datasheets are HIKMICRO-branded). The full security-thermal line: bi-spectrum bullets & turrets (thermal + optical, IR / smart-hybrid supplement), thermal-only presence detectors, cube (`box`) units, `TX` TandemVu (thermal bullet + integrated optical speed dome), and the high-end positioning range — anti-corrosion `TD6`, uncooled `TD95C8` (1280×1024, 3 km laser illuminator), and **cooled MWIR** `TD816A`/`TD966A` spheres with 1535/1570 nm laser rangefinders to 10–20 km. `ndaa_compliant: false` (Hikvision sub-brand, Section 889).
+
+### Added — community request
+- **Dahua C5A** — 5MP indoor fixed-focal Wi-Fi 6 cube with magnetic base, AI human/pet detection, two-way audio, and 10 m IR (#352).
 
 ### Added — Hikvision Thermal (+161)
 - The complete Hikvision `DS-2TD*` / `DS-2TX*` thermal catalogue: fixed thermal & bi-spectrum bullets/turrets (`DS-2TD12/13/16/21/23/26`), thermography temperature-measurement variants (`…T`, -20 to 550/650 C), ColorVu thermal (`DS-2TD2608`), speed domes & mobile/portable PTZ (`DS-2TD42/45`, battery/4G/GPS), large positioning systems (`DS-2TD62/66/95C8`, uncooled to 1280×1024), cooled MWIR spheres (`DS-2TD966A`), explosion-proof ATEX/IECEx (`DS-2TD65`), solar/4G kits (`DS-2TXS2628`), and smart-linkage tracking (`DS-2TX3742`). `ndaa_compliant: false`. One model (HM-TD2618-8) omitted — its datasheet is access-restricted.
