@@ -13,6 +13,9 @@ Dataset grows to **8,836 cameras / 136 brands** with the complete **Hikvision Th
 ### Added — new brand: HikMicro (+86)
 - **HikMicro (`HM-*`)** — Hikvision's dedicated thermal sub-brand (datasheets are HIKMICRO-branded). The full security-thermal line: bi-spectrum bullets & turrets (thermal + optical, IR / smart-hybrid supplement), thermal-only presence detectors, cube (`box`) units, `TX` TandemVu (thermal bullet + integrated optical speed dome), and the high-end positioning range — anti-corrosion `TD6`, uncooled `TD95C8` (1280×1024, 3 km laser illuminator), and **cooled MWIR** `TD816A`/`TD966A` spheres with 1535/1570 nm laser rangefinders to 10–20 km. `ndaa_compliant: false` (Hikvision sub-brand, Section 889).
 
+### Added — Dahua WizMind 5 (+42)
+- The full **WizMind 5** network-camera series across every sub-category: Pro WizColor (fixed & motorized-varifocal bullets/turrets/domes), Smart Dual Light, Anti-Corrosion (ATC), 180° panoramic dual-lens, triple-lens perimeter, HDMI-output, 5G/SIM, and elevator cameras. 4/5/8 MP, IR + warm dual-light (`hybrid`). `ndaa_compliant: false`.
+
 ### Added — community request
 - **Dahua C5A** — 5MP indoor fixed-focal Wi-Fi 6 cube with magnetic base, AI human/pet detection, two-way audio, and 10 m IR (#352).
 
