@@ -8,7 +8,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.16.0] — 2026-09-06
 
-Dataset grows to **9,154 cameras / 136 brands** — the complete **Hikvision Thermal** catalogue (+247) with a new thermal brand **HikMicro**, and a full sweep of the **Dahua camera catalogue** (+319 across Network, PTZ, PT, HDCVI, and Thermal). Every record is from an official manufacturer datasheet; thermal-specific modeling matches the existing convention (`resolution` = thermal module, NETD in `sensor`, bi-spectrum → two lenses).
+Dataset grows to **9,209 cameras / 136 brands** — the complete **Hikvision Thermal** catalogue (+247) with a new thermal brand **HikMicro**, and a full sweep of the **Dahua camera catalogue** (+374 across Network, PTZ, PT, HDCVI, Thermal, and Wireless). Every record is from an official manufacturer datasheet; thermal-specific modeling matches the existing convention (`resolution` = thermal module, NETD in `sensor`, bi-spectrum → two lenses).
 
 ### Added — new brand: HikMicro (+86)
 - **HikMicro (`HM-*`)** — Hikvision's dedicated thermal sub-brand (datasheets are HIKMICRO-branded). The full security-thermal line: bi-spectrum bullets & turrets (thermal + optical, IR / smart-hybrid supplement), thermal-only presence detectors, cube (`box`) units, `TX` TandemVu (thermal bullet + integrated optical speed dome), and the high-end positioning range — anti-corrosion `TD6`, uncooled `TD95C8` (1280×1024, 3 km laser illuminator), and **cooled MWIR** `TD816A`/`TD966A` spheres with 1535/1570 nm laser rangefinders to 10–20 km. `ndaa_compliant: false` (Hikvision sub-brand, Section 889).
@@ -22,6 +22,7 @@ Dataset grows to **9,154 cameras / 136 brands** — the complete **Hikvision The
 - **PT — pan-tilt (+13)** — IP-PT multivision (`IPC-PTS`) + single-lens (`IPC-PT`, `SD*NB`) 1/2/3-series.
 - **HDCVI — analog (+116)** — the full 4-in-1 (CVI/AHD/TVI/CVBS) line over coax: Pro/Lite/Cooper bullets, turrets & domes across 4K/5MP/1080p, Active-Deterrence WizColor (`ME`, red/blue + siren), Full-color warm-light (`-LED`), PoC, panorama, micro-size, and pinhole/covert (`HAC-HUM`). `connectivity: ["coax"]`, no IP stack.
 - **Thermal — Dahua (+38)** — the `TPC-*` bi-spectrum & thermography line: Eureka/Ultra/Pro/Lite bullets, turrets, `SD` speed domes, `PT`/`PTD` positioning systems (incl. tri-sensor `PTD8A4C`), explosion-proof (`AE*`, ATEX), and anti-corrosion; `-T` thermography variants measure temperature (-20 to 550 C).
+- **Wireless — Wi-Fi / battery / 4G (+55)** — the consumer wireless line: Hero indoor pan-tilt & dual-lens, Picoo outdoor PT, Apollo battery wire-free bullets & PT (solar-powered), the C/T/F Wi-Fi series, `IPC-WL` floodlight (active deterrence), and 4G wired/wire-free cameras. Wi-Fi/battery/solar/4G power & connectivity; app-only cameras use a generic Home Assistant config (no fabricated RTSP).
 - All Dahua `ndaa_compliant: false` (Section 889). Two models (TPC-PT8641G, HM-TD2618-8) omitted — no obtainable datasheet.
 
 ### Added — community request
