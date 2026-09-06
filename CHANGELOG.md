@@ -8,13 +8,21 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.16.0] — 2026-09-06
 
-Dataset grows to **8,836 cameras / 136 brands** with the complete **Hikvision Thermal** catalogue (+247), a new thermal brand **HikMicro**, and a community-requested Dahua cube. Every record is from an official resource-center datasheet; thermal-specific modeling matches the existing thermal convention (`resolution` = thermal module, NETD in `sensor`, bi-spectrum → two lenses).
+Dataset grows to **9,154 cameras / 136 brands** — the complete **Hikvision Thermal** catalogue (+247) with a new thermal brand **HikMicro**, and a full sweep of the **Dahua camera catalogue** (+319 across Network, PTZ, PT, HDCVI, and Thermal). Every record is from an official manufacturer datasheet; thermal-specific modeling matches the existing convention (`resolution` = thermal module, NETD in `sensor`, bi-spectrum → two lenses).
 
 ### Added — new brand: HikMicro (+86)
 - **HikMicro (`HM-*`)** — Hikvision's dedicated thermal sub-brand (datasheets are HIKMICRO-branded). The full security-thermal line: bi-spectrum bullets & turrets (thermal + optical, IR / smart-hybrid supplement), thermal-only presence detectors, cube (`box`) units, `TX` TandemVu (thermal bullet + integrated optical speed dome), and the high-end positioning range — anti-corrosion `TD6`, uncooled `TD95C8` (1280×1024, 3 km laser illuminator), and **cooled MWIR** `TD816A`/`TD966A` spheres with 1535/1570 nm laser rangefinders to 10–20 km. `ndaa_compliant: false` (Hikvision sub-brand, Section 889).
 
 ### Added — Dahua WizMind 5 (+42)
 - The full **WizMind 5** network-camera series across every sub-category: Pro WizColor (fixed & motorized-varifocal bullets/turrets/domes), Smart Dual Light, Anti-Corrosion (ATC), 180° panoramic dual-lens, triple-lens perimeter, HDMI-output, 5G/SIM, and elevator cameras. 4/5/8 MP, IR + warm dual-light (`hybrid`). `ndaa_compliant: false`.
+
+### Added — Dahua camera catalogue sweep (+277 beyond WizMind 5)
+- **Network cameras (+~96)** — WizMind 7 (Smart-Dual-Light, IR, Dual-Sight multi-lens, Anti-Corrosion), WizMind 8 (dual-lens 3D people-counter, corner, classroom, high-temperature, self-cleaning), WizSense 3 & 2 (TiOC PRO-WizColor, Smart-Dual-Light, IR, 4G), Special (separated/covert pinhole, macro-reading), and WizMind Panoramic (multi-sensor 180°, multi-directional 360°, fisheye).
+- **PTZ (+17)** — the new speed-dome / positioning models not already in the set: X-Spans multi-sensor+PTZ (`PSDW`), WizMind/WizSense `SD` speed domes, Special positioning systems (`PTZ*`, laser), and Wireless 4G/5G — top-level `ptz` with `onvif_ptz: "continuous"`.
+- **PT — pan-tilt (+13)** — IP-PT multivision (`IPC-PTS`) + single-lens (`IPC-PT`, `SD*NB`) 1/2/3-series.
+- **HDCVI — analog (+116)** — the full 4-in-1 (CVI/AHD/TVI/CVBS) line over coax: Pro/Lite/Cooper bullets, turrets & domes across 4K/5MP/1080p, Active-Deterrence WizColor (`ME`, red/blue + siren), Full-color warm-light (`-LED`), PoC, panorama, micro-size, and pinhole/covert (`HAC-HUM`). `connectivity: ["coax"]`, no IP stack.
+- **Thermal — Dahua (+38)** — the `TPC-*` bi-spectrum & thermography line: Eureka/Ultra/Pro/Lite bullets, turrets, `SD` speed domes, `PT`/`PTD` positioning systems (incl. tri-sensor `PTD8A4C`), explosion-proof (`AE*`, ATEX), and anti-corrosion; `-T` thermography variants measure temperature (-20 to 550 C).
+- All Dahua `ndaa_compliant: false` (Section 889). Two models (TPC-PT8641G, HM-TD2618-8) omitted — no obtainable datasheet.
 
 ### Added — community request
 - **Dahua C5A** — 5MP indoor fixed-focal Wi-Fi 6 cube with magnetic base, AI human/pet detection, two-way audio, and 10 m IR (#352).
