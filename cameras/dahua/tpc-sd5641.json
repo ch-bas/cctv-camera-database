@@ -1,0 +1,106 @@
+{
+  "id": "dahua-tpc-sd5641",
+  "brand": "Dahua",
+  "model": "TPC-SD5641",
+  "aliases": [
+    "Dahua TPC-SD5641",
+    "DHI-TPC-SD5641-T"
+  ],
+  "type": "ptz",
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 0.33,
+    "max_width": 640,
+    "max_height": 512,
+    "label": "640x512 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 640x512, 12 um pixel pitch, 8-14 um, NETD <=35 mK; optical: 1/2.8in 4MP CMOS",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30
+  },
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "3.95-177.75 (visible, 45x)",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100
+  },
+  "power": {
+    "method": "36 VDC +/-50% / Hi-PoE",
+    "voltage": "DC 36V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512
+  },
+  "ip_rating": "IP66",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Diameter 240 x 382",
+  "weight_g": 8000,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "bi-spectrum thermal + 4MP visible hybrid speed dome with radiometric temperature measurement",
+    "uncooled VOx thermal detector (640x512, 12 um)",
+    "thermal sensitivity NETD <=35 mK",
+    "visible 45x optical zoom (3.95-177.75 mm); built-in IR LED, IR distance >=100 m",
+    "temperature measurement -20 to 550 C via the thermal channel",
+    "AI: heat detection, smoke detection, tripwire, intrusion, human/vehicle classification",
+    "endless 360 pan, tilt -10 to +90; 300 presets"
+  ],
+  "release_notes": "Pro-series thermal + 4MP visible hybrid speed dome that measures temperature through the thermal channel (-20 to 550 C) and slews a 45x visible zoom for perimeter protection and heat detection.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/thermal-products/thermal-cameras/pro-series/tpc-sd5641",
+    "https://www.tssgroup.sk/buxus/docs/datasheety/Dahua%20TPC-SD5641-TB35Z45%20en%20datasheet.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=2&subtype=0",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua RTSP convention; channel 1 = visible/fusion, channel 2 = thermal. Not verified against a live unit."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80). Thermal and visible exposed as separate channels (visible = channel 1, thermal = channel 2)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

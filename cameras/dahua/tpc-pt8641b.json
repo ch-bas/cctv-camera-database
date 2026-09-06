@@ -1,0 +1,103 @@
+{
+  "id": "dahua-tpc-pt8641b",
+  "brand": "Dahua",
+  "model": "TPC-PT8641B",
+  "aliases": [
+    "Dahua TPC-PT8641B",
+    "DHI-TPC-PT8641B"
+  ],
+  "type": "ptz",
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 0.33,
+    "max_width": 640,
+    "max_height": 512,
+    "label": "640x512 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 640x512, 17 um pixel pitch, 8-14 um, NETD <=35 mK; optical: 1/1.8in 4MP CMOS",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30
+  },
+  "lens": {
+    "count": 2,
+    "varifocal": true
+  },
+  "field_of_view_deg": "6.2 to 31.6 (thermal, lens dependent)",
+  "power": {
+    "method": "100-300 VAC (adapter included)",
+    "voltage": "AC 100-300V",
+    "consumption_w": 210
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512
+  },
+  "ip_rating": "IP66",
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "640 x 400 x 615.2",
+  "weight_g": 50000,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "bi-spectrum thermal + visible (4MP hybrid PTZ)",
+    "uncooled VOx thermal detector (640x512, 17 um)",
+    "thermal sensitivity NETD <=35 mK",
+    "vari-focus thermal lens; optical zoom up to 56x-86x",
+    "AI: heat detection, smoke detection, tripwire, intrusion, human/vehicle classification, boat detection",
+    "auto rain-sensing wiper; optical defog; optical image stabilization",
+    "18 thermal color palettes; image fusion (visible + thermal)",
+    "endless 360 pan, tilt -45 to +60"
+  ],
+  "release_notes": "Ultra-series thermal + 4MP visible hybrid PTZ with a vari-focus thermal lens for long-distance perimeter protection and heat detection.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/thermal-products/thermal-cameras/ultra-series/tpc-pt8641b",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/TPC-PT8641B_datasheet_20250421.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=2&subtype=0",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua RTSP convention; channel 1 = visible/fusion, channel 2 = thermal. Not verified against a live unit."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80). Thermal and visible exposed as separate channels (visible = channel 1, thermal = channel 2)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "ndaa_compliant": false
+}
