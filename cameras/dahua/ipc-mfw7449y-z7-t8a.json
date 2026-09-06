@@ -1,0 +1,132 @@
+{
+  "id": "dahua-ipc-mfw7449y-z7-t8a",
+  "brand": "Dahua",
+  "model": "IPC-MFW7449Y-Z7-T8A",
+  "aliases": [
+    "DH-IPC-MFW7449Y-Z7-T8A",
+    "4+8MP Dual-Sight Polarlight Bullet WizMind Camera"
+  ],
+  "type": "dual-lens",
+  "generation": "WizMind 7",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 12,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4+8MP Dual-Sight"
+  },
+  "sensor": "Channel 1: 1/1.8\" CMOS; Channel 2: dual 1/1.8\" CMOS",
+  "lens": {
+    "count": 3,
+    "focal_length_mm": "8-56",
+    "aperture": "F1.2",
+    "varifocal": true
+  },
+  "field_of_view_deg": "41-9",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 150
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "12 VDC",
+    "consumption_w": 12.5
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "dual-sight polarlight bullet with built-in GPU and dual micro-PTZ",
+    "channel 1 (detail): 4MP 1/1.8\" CMOS, motorized vari-focal 8-56 mm F1.2",
+    "channel 2 (panoramic): 8MP via dual 1/1.8\" CMOS sensors, two 3.6 mm F1.0 lenses, H 180 deg (4976x1452)",
+    "channel 1 dual light fusion: IR up to 150 m, warm light up to 80 m; channel 2 warm light up to 30 m",
+    "140 dB WDR",
+    "panoramic splicing",
+    "channel 1 AI: IVS perimeter protection, face recognition, face detection, video metadata",
+    "channel 2 AI: IVS, crowd distribution map, people counting",
+    "channel 1 and channel 2 AI can run simultaneously",
+    "audio in/out (RCA)"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "483.4 x 197.7 x 195.4 mm",
+  "weight_g": 5800,
+  "release_year": 2024,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "ndaa_compliant": false,
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/network-cameras/wizmind-7-series/dual-sight/ipc-mfw7449y-z7-t8a",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/IPC-MFW7449Y-Z7-T8A_S0_datasheet_20240514.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80). Dual-sight: second lens on channel 2."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile. Second lens on channel 2."
+    }
+  }
+}

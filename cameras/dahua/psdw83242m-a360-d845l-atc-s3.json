@@ -1,0 +1,146 @@
+{
+  "id": "dahua-psdw83242m-a360-d845l-atc-s3",
+  "brand": "Dahua",
+  "model": "PSDW83242M-A360-D845L-ATC-S3",
+  "aliases": [
+    "DH-PSDW83242M-A360-D845L-ATC-S3",
+    "PSDW83242M-A360-D845L-S3"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 32,
+    "max_width": 11520,
+    "max_height": 2700,
+    "label": "32MP"
+  },
+  "sensor": "1/1.8\" CMOS x8 (panoramic) + 1/1.8\" CMOS (PTZ)",
+  "lens": {
+    "count": 9,
+    "varifocal": true,
+    "focal_length_mm": "2.8 (panoramic) / 5.5-248 (PTZ)"
+  },
+  "field_of_view_deg": "Panoramic H: 360, V: 105; PTZ H: 64.4-2.02, V: 38.37-1.14",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 500,
+    "min_lux_color": 0.001
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "11520x2700",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "2048x680",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub2",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "36 VDC",
+    "voltage": "36 VDC",
+    "consumption_w": 71.9
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "anti-corrosion protection (ATC)",
+    "multi-sensor 360 panoramic + PTZ (dual channel)",
+    "45x optical zoom",
+    "500m laser + IR illumination (7 laser + 2 IR LEDs)",
+    "smart tracking (auto-tracking)",
+    "WizMind AI (perimeter protection, crowd map, vehicle density, video metadata, face recognition)",
+    "AR panorama",
+    "panoramic splicing",
+    "300 presets",
+    "2ch audio in/out (terminal)"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "383 (diameter) x 462",
+  "weight_g": 14700,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/ptz-cameras/x-spans-series/hubble-series/psdw83242m-a360-d845l-s3=s3",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/DH-PSDW83242M-A360-D845L-S3_S3_datasheet_20250926.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "ndaa_compliant": false,
+  "environment": [
+    "outdoor"
+  ],
+  "release_notes": "32MP multi-sensor 360-degree panoramic PTZ Hubble WizMind positioning camera (anti-corrosion ATC), combining eight 4MP panoramic sensors with a 45x optical-zoom 8MP PTZ channel and 500m laser illumination.",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI (default admin).",
+      "autotracking": true,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

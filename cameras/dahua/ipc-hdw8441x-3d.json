@@ -1,0 +1,130 @@
+{
+  "id": "dahua-ipc-hdw8441x-3d",
+  "brand": "Dahua",
+  "model": "IPC-HDW8441X-3D",
+  "aliases": [
+    "DH-IPC-HDW8441X-3D"
+  ],
+  "type": "dual-lens",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "2.0 + 2.8 (dual fixed lens)",
+    "aperture": "F2.0 (2.0mm) / F1.6 (2.8mm)",
+    "varifocal": false
+  },
+  "field_of_view_deg": "122 (2.0mm) / 95 (2.8mm) horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20
+  },
+  "power": {
+    "method": "PoE (802.3af) / 12 VDC",
+    "consumption_w": 11.3
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "204.0 x 78.0 x 61.6",
+  "weight_g": 820,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "features": [
+    "WizMind dual-lens people counting camera",
+    "dual fixed lens (2.0mm + 2.8mm)",
+    "3D stereo vision people counting",
+    "queue/crowd management",
+    "leave-post detection",
+    "20m IR",
+    "face detection with attributes",
+    "H.265",
+    "IP67",
+    "IK10"
+  ],
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "notes": "Dual-lens camera - the second lens may expose a separate channel (channel=2).",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/network-cameras/wizmind-8-series/dual-lens-series/ipc-hdw8441x-3d",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/IPC-HDW8441X-3D_S0_datasheet_20230619.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "ndaa_compliant": false
+}

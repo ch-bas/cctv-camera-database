@@ -1,0 +1,131 @@
+{
+  "id": "dahua-sdt2a200-2f-nb-a-pv",
+  "brand": "Dahua",
+  "model": "SDT2A200-2F-NB-A-PV",
+  "aliases": [
+    "DH-SDT2A200-2F-NB-A-PV"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "4",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "85.7 horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.05
+  },
+  "ptz": {
+    "autotracking": false,
+    "onvif_ptz": "continuous"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x360",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3af)",
+    "consumption_w": 12
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-20 to 50",
+  "features": [
+    "WizSense X-Spans dual-lens PT camera (2MP fixed + 2MP PT channel)",
+    "Smart Dual Light (IR + warm light), three night view modes",
+    "30m IR + 30m warm light",
+    "SMD 3.0 human/vehicle detection",
+    "siren and light active deterrence",
+    "Smart H.265+/H.264+",
+    "two-way talk",
+    "PT lens: pan 0-350, tilt 0-90; 50 presets with power-off memory"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/pt-cameras/ip-pt-1-series/multivision/sdt2a200-2f-nb-a-pv",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/82607/datasheet/SDT2A200-2F-NB-A-PV_S0_datasheet_20250904.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI. PTZ driven over ONVIF."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "dimensions_mm": "159.4 x 110.0 x 210.1",
+  "weight_g": 1000,
+  "environment": [
+    "outdoor"
+  ],
+  "last_verified": "2026-09-06",
+  "ndaa_compliant": false
+}

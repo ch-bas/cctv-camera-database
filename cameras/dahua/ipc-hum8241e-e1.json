@@ -1,0 +1,127 @@
+{
+  "id": "dahua-ipc-hum8241e-e1",
+  "brand": "Dahua",
+  "model": "IPC-HUM8241E-E1",
+  "aliases": [
+    "DH-IPC-HUM8241E-E1"
+  ],
+  "type": "covert",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "field_of_view_deg": "depends on separate lens unit",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3af)",
+    "consumption_w": 6.7
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "110 x 83 x 24 (main box)",
+  "weight_g": 210,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "WizMind separated-pinhole Main Box (single-channel; requires a separate lens unit)",
+    "2MP 1/2.7\" CMOS, up to 50/60 fps",
+    "120 dB WDR",
+    "IVS perimeter protection (tripwire, intrusion, fast moving with human/vehicle classification, loitering, gathering, parking)",
+    "face detection with attributes and expressions",
+    "people counting (tripwire and in-area)",
+    "AI H.265/H.264 smart coding",
+    "1 audio in / 1 audio out (3.5 mm jack)",
+    "2 alarm in / 2 alarm out",
+    "max 512 GB microSD",
+    "dual power backup",
+    "12 VDC / PoE (802.3af)"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/network-cameras/special-series/separated-pinhole-series/ipc-hum8241e-e1",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/IPC-HUM8241E-E1_S3_datasheet_20250410.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "environment": [
+    "indoor"
+  ],
+  "ndaa_compliant": false
+}

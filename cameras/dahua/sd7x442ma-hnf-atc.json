@@ -1,0 +1,147 @@
+{
+  "id": "dahua-sd7x442ma-hnf-atc",
+  "brand": "Dahua",
+  "model": "SD7X442MA-HNF-ATC",
+  "aliases": [
+    "DH-SD7X442MA-HNF-ATC"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": true,
+    "focal_length_mm": "6.0-252"
+  },
+  "field_of_view_deg": "H: 63.9-2.1, V: 37.3-1.2",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 400,
+    "min_lux": 0.0001
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub2",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "36 VDC / PoE++ (802.3bt)",
+    "voltage": "36 VDC",
+    "consumption_w": 35
+  },
+  "power_source": [
+    "dc",
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "anti-corrosion (ATC 316L material, NEMA 4X)",
+    "42x optical zoom",
+    "WizTracking smart tracking",
+    "WizMind AI (IVS perimeter protection, face recognition)",
+    "400m IR + laser illumination",
+    "100m warm light",
+    "wiper",
+    "gyroscope EIS",
+    "heater",
+    "300 presets",
+    "audio in/out (line)"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "378.5 x 241.7 (diameter)",
+  "weight_g": 5920,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/ptz-cameras/special-series/anti-corrosion-cameras/sd7x442ma-hnf-atc",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/87879/datasheet/DH-SD7X442MA-HNF-ATC_S0_datasheet_20260604.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "ndaa_compliant": false,
+  "environment": [
+    "outdoor"
+  ],
+  "release_notes": "Anti-corrosion 4MP 42x network PTZ camera (ATC 316L / NEMA 4X) with WizTracking, 400m IR+laser illumination, wiper and heater.",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI (default admin).",
+      "autotracking": true,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

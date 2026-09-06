@@ -1,0 +1,144 @@
+{
+  "id": "dahua-sd60432db-hny-sl",
+  "brand": "Dahua",
+  "model": "SD60432DB-HNY-SL",
+  "aliases": [
+    "DH-SD60432DB-HNY-SL"
+  ],
+  "ndaa_compliant": false,
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": true,
+    "focal_length_mm": "4.8-154",
+    "aperture": "F1.6-F4.0"
+  },
+  "field_of_view_deg": "H: 55.8-2.3; V: 31.9-1.3",
+  "night_vision": {
+    "type": "color",
+    "min_lux_color": 0.005
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub2",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "PoE+ (802.3at) / DC 24V",
+    "voltage": "24 VDC",
+    "consumption_w": 18,
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "292 x Dia 222",
+  "weight_g": 7200,
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "WizSense",
+    "32x optical zoom",
+    "Starlight ultra-low-light (0.005 lux color)",
+    "120dB WDR",
+    "SMD 3.0 (human/vehicle)",
+    "perimeter protection IVS (tripwire, intrusion, loitering)",
+    "face detection",
+    "SL anti-corrosion SUS316L stainless-steel housing",
+    "line in/out audio (no built-in mic or speaker)"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/ptz-cameras/special-series/anti-corrosion-cameras/sd60432db-hny-sl",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/SD60432DB-HNY-SL_S0_datasheet_20250402.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "release_year": 2025,
+  "release_notes": "The Dahua SD60432DB-HNY-SL is a 4MP 32x Starlight WizSense anti-corrosion PTZ speed dome in a SUS316L stainless-steel body, with 120dB WDR, SMD 3.0 human/vehicle classification, perimeter protection and face detection. The datasheet lists no IR/warm illuminator distance (Starlight low-light imaging) and audio is line in/out only (no built-in mic or speaker).",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 576,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua native RTSP; PTZ driven over ONVIF (port 80)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

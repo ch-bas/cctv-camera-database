@@ -1,0 +1,121 @@
+{
+  "id": "dahua-ipc-hum8441e-e2",
+  "brand": "Dahua",
+  "model": "IPC-HUM8441E-E2",
+  "aliases": [
+    "DH-IPC-HUM8441E-E2"
+  ],
+  "type": "covert",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP per channel (dual-channel)"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "field_of_view_deg": "depends on separate lens units",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3af)",
+    "consumption_w": 9.32
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "110 x 83 x 24 (main box)",
+  "weight_g": 210,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "WizMind separated-pinhole Main Box (dual-channel; connects two lens units)",
+    "outputs max 2-channel 4MP @25/30 fps",
+    "4MP 1/2.7\" CMOS",
+    "120 dB WDR",
+    "IVS perimeter protection (tripwire, intrusion, fast moving with human/vehicle classification, loitering, gathering, parking)",
+    "face detection with attributes and expressions",
+    "AI H.265/H.264 smart coding",
+    "1 audio in / 1 audio out (3.5 mm jack)",
+    "2 alarm in / 2 alarm out",
+    "max 512 GB microSD",
+    "dual power backup",
+    "12 VDC / PoE (802.3af)"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/network-cameras/special-series/separated-pinhole-series/ipc-hum8441e-e2",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/IPC-HUM8441E-E2_S3_datasheet_20250410.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "environment": [
+    "indoor"
+  ],
+  "ndaa_compliant": false
+}

@@ -1,0 +1,142 @@
+{
+  "id": "dahua-ipc-pdw3859-a180-as-pv",
+  "brand": "Dahua",
+  "model": "IPC-PDW3859-A180-AS-PV",
+  "aliases": [
+    "DH-IPC-PDW3859-A180-AS-PV"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 4320,
+    "max_height": 1944,
+    "label": "8MP (2 x 4MP)"
+  },
+  "video": {
+    "max_fps": 20,
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4320x1944",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1200x536",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub2",
+        "resolution": "1920x860",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.4",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.003
+  },
+  "power": {
+    "method": "12 VDC / PoE+ (802.3at)",
+    "consumption_w": 12.2
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "WizSense",
+    "TiOC (active deterrence)",
+    "dual-sensor 180 panoramic splicing",
+    "Smart Dual Light",
+    "30m IR",
+    "30m warm light",
+    "red & blue warning light",
+    "built-in siren",
+    "two-way audio",
+    "SMD 4.0",
+    "perimeter protection (intrusion/tripwire, human/vehicle)",
+    "face detection",
+    "AcuPick",
+    "120dB WDR"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "122.0 (dia.) x 135.2",
+  "weight_g": 990,
+  "release_year": 2026,
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": false,
+  "markets": [
+    "global"
+  ],
+  "release_notes": "2x4MP (8MP) WizSense 3 TiOC duo-splicing 180-degree panoramic eyeball with Smart Dual Light, red/blue active deterrence, siren and two-way audio.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/network-cameras/wizsense-3-series/tioc/ipc-pdw3859-a180-as-pv",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/86450/datasheet/DH-IPC-PDW3859-A180-AS-PV_S0_datasheet_20260205.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI (default admin).",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "id": "dahua-ipc-mfw7459k2-z7-t40",
+  "brand": "Dahua",
+  "model": "IPC-MFW7459K2-Z7-T40",
+  "aliases": [
+    "DH-IPC-MFW7459K2-Z7-T40",
+    "4+4MP Dual-Sight Bullet WizMind Camera"
+  ],
+  "type": "dual-lens",
+  "generation": "WizMind 7",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4+4MP Dual-Sight"
+  },
+  "sensor": "Dual 1/1.8\" CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "8-56",
+    "aperture": "F1.2",
+    "varifocal": true
+  },
+  "field_of_view_deg": "43.56-10.84",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 130
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "12 VDC / PoE+ (802.3at)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "dual-sight bullet: detail channel + panoramic channel",
+    "channel 1 (detail): 4MP 1/1.8\" CMOS, motorized vari-focal 8-56 mm F1.2",
+    "channel 2 (panoramic): 4MP 1/1.8\" CMOS, fixed 3.6 mm F1.0, H 93 deg",
+    "mixed IR + warm light illuminators: IR up to 130 m, warm light up to 80 m",
+    "140 dB WDR",
+    "channel 1 AI: perimeter protection, face recognition, face detection, ANPR, people counting, video metadata, heat map",
+    "channel 2 AI: perimeter protection",
+    "built-in dual microphone and speaker",
+    "Smart H.265+ / Smart H.264+"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "243.1 x 107.7 x 145.5 mm",
+  "weight_g": 1700,
+  "release_year": 2026,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "ndaa_compliant": false,
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/network-cameras/wizmind-7-series/dual-sight/ipc-mfw7459k2-z7-t40",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/87593/datasheet/DH-IPC-MFW7459K2-Z7-T40_S0_datasheet_20260521.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80). Dual-sight: second lens on channel 2."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile. Second lens on channel 2."
+    }
+  }
+}

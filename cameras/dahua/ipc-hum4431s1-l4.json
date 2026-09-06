@@ -1,0 +1,125 @@
+{
+  "id": "dahua-ipc-hum4431s1-l4",
+  "brand": "Dahua",
+  "model": "IPC-HUM4431S1-L4",
+  "aliases": [
+    "DH-IPC-HUM4431S1-L4"
+  ],
+  "type": "covert",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "100h",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3af)",
+    "consumption_w": 3.5
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "67.5 x 53.4 x 48.2",
+  "weight_g": 155,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "4MP fixed-focal covert pinhole camera (one-piece)",
+    "1/2.7\" CMOS, main stream 2688x1520 @20 fps / 2560x1440 @25/30 fps",
+    "fixed 2.8 mm F2.0 lens, FOV H 100 / V 57 / D 114",
+    "min illumination 0.01 lux F2.0 color / 0.001 lux B/W",
+    "120 dB WDR",
+    "built-in microphone",
+    "Smart H.265+/H.264+ coding",
+    "1 audio in / 1 audio out (RCA), 2 alarm in / 1 alarm out",
+    "max 256 GB microSD, ANR",
+    "12 VDC / PoE (802.3af)"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/network-cameras/special-series/covert-pinhole-series/4-mp/ipc-hum4431s1-l4",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/IPC-HUM4431S1-L4_S0_datasheet_20241125.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "environment": [
+    "indoor"
+  ],
+  "ndaa_compliant": false
+}

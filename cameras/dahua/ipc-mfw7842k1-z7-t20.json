@@ -1,0 +1,140 @@
+{
+  "id": "dahua-ipc-mfw7842k1-z7-t20",
+  "brand": "Dahua",
+  "model": "IPC-MFW7842K1-Z7-T20",
+  "type": "dual-lens",
+  "aliases": [
+    "DH-IPC-MFW7842K1-Z7-T20"
+  ],
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP"
+  },
+  "sensor": "1/1.7\" CMOS (8MP, channel 1) + 1/2.7\" CMOS (2MP, channel 2)",
+  "lens": {
+    "count": 2,
+    "varifocal": true,
+    "focal_length_mm": "8-56 (channel 1) / 3.6 (channel 2)",
+    "aperture": "F1.2 (channel 1) / F1.0 (channel 2)"
+  },
+  "field_of_view_deg": "40-9 (channel 1, 8-56mm) / 81 (channel 2, 3.6mm) horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 120
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "12 VDC / PoE",
+    "consumption_w": 6.4
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-30 to 60",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "WizMind",
+    "dual-sight bi-directional dual-lens (8MP 8-56mm motorized telephoto channel + 2MP 3.6mm panoramic channel)",
+    "IR + warm dual illumination (IR up to 120m, warm light up to 80m on channel 1; warm light 20m on channel 2)",
+    "face detection and recognition",
+    "IVS perimeter protection (tripwire/intrusion)",
+    "people counting",
+    "video metadata",
+    "Smart H.265+ / H.264+",
+    "120 dB WDR",
+    "built-in dual microphone and Hi-Fi speaker",
+    "2 audio in / 1 audio out (RCA)",
+    "3 alarm in / 2 alarm out",
+    "RS-485"
+  ],
+  "markets": [
+    "global"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "dimensions_mm": "283.1 x 123.2 x 109.5",
+  "weight_g": 1905,
+  "release_year": 2024,
+  "release_notes": "8MP+2MP dual-sight WizMind bullet pairing an 8-56mm motorized telephoto channel with a fixed 3.6mm panoramic channel; IR up to 120m plus warm-light supplement and full AI (face, perimeter, people counting, metadata).",
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/network-cameras/wizmind-7-series/dual-sight/ipc-mfw7842k1-z7-t20",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/IPC-MFW7842K1-Z7-T20_S0_datasheet_20240423.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI (default admin)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "ndaa_compliant": false,
+  "last_verified": "2026-09-06"
+}
