@@ -1,0 +1,147 @@
+{
+  "id": "dahua-sd5a225xa-hnr",
+  "brand": "Dahua",
+  "model": "SD5A225XA-HNR",
+  "aliases": [
+    "DH-SD5A225XA-HNR"
+  ],
+  "ndaa_compliant": false,
+  "type": "ptz",
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" STARVIS CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.4-135",
+    "aperture": "F1.6-F3.5",
+    "varifocal": true
+  },
+  "field_of_view_deg": "H: 58.7-3.1",
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 150,
+    "min_lux": 0.0005,
+    "min_lux_color": 0.005
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.265+",
+      "H.264",
+      "H.264+",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub2",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "power": {
+    "method": "DC 24V / PoE+ (802.3at)",
+    "voltage": "DC 24V",
+    "consumption_w": 20
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "332 x 190",
+  "weight_g": 4700,
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "25x optical zoom",
+    "16x digital zoom",
+    "WizSense AI (CNN deep learning)",
+    "auto-tracking",
+    "perimeter protection (tripwire, intrusion)",
+    "150 m IR (4 IR illuminators, SmartIR)",
+    "endless 360 pan / -15 to +90 tilt, 300 presets, 8 tours",
+    "Starlight ultra-low-light",
+    "Smart H.265+",
+    "120 dB true WDR",
+    "two-way audio (line in/out)",
+    "PoE+",
+    "IP67, IK10, TVS 6000V lightning protection"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/SD5A225XA-HNR_datasheet_20210529.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI. PTZ driven over ONVIF (port 80)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80); ONVIF PTZ supported."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

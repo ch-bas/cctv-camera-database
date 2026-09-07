@@ -1,0 +1,146 @@
+{
+  "id": "dahua-ptz1a225-hnr-xa",
+  "brand": "Dahua",
+  "model": "PTZ1A225-HNR-XA",
+  "aliases": [
+    "DH-PTZ1A225-HNR-XA"
+  ],
+  "ndaa_compliant": false,
+  "type": "ptz",
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.8-120",
+    "aperture": "F1.6-F3.5",
+    "varifocal": true
+  },
+  "field_of_view_deg": "H: 61-2.8",
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 150,
+    "min_lux": 0.0005,
+    "min_lux_color": 0.005
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.265+",
+      "H.264",
+      "H.264+",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub2",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "power": {
+    "method": "PoE+ (802.3at) / DC 12V",
+    "consumption_w": 23
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "161 x 135.3 x 291.5",
+  "weight_g": 3600,
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "25x optical zoom",
+    "16x digital zoom",
+    "WizSense positioning system (neural-network processor)",
+    "auto-tracking",
+    "face detection",
+    "perimeter protection",
+    "human / motor-vehicle / non-motor-vehicle metadata",
+    "150 m IR (4 IR illuminators)",
+    "endless 360 pan, 300 presets, 8 tours",
+    "Starlight ultra-low-light",
+    "Smart H.265+/H.264+",
+    "120 dB true WDR",
+    "two-way audio (line in/out)",
+    "TVS 8000V lightning protection"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://materialfile.dahuasecurity.com/uploads/soft/20201211/DH-PTZ1A225-HNR-XA_datasheet_20201207.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI. PTZ driven over ONVIF (port 80)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80); ONVIF PTZ supported."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

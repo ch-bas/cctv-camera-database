@@ -1,0 +1,136 @@
+{
+  "id": "dahua-sd2a200hb-gn-a-pv-s2",
+  "brand": "Dahua",
+  "model": "SD2A200HB-GN-A-PV-S2",
+  "aliases": [
+    "DH-SD2A200HB-GN-A-PV-S2"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "86.8 horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.05
+  },
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3af)",
+    "voltage": "12 VDC",
+    "consumption_w": 12.95,
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "mini pan/tilt camera (pan 0-345 degrees, tilt 0-80 degrees)",
+    "full-color imaging",
+    "Smart Dual Light (IR 30m + white light 30m)",
+    "human detection",
+    "IVS (tripwire, intrusion)",
+    "siren and light active deterrence (sound and light alarm)",
+    "two-way talk (built-in mic and speaker)",
+    "DWDR",
+    "300 presets",
+    "Smart H.265+/H.264+"
+  ],
+  "operating_temp_c": "-30 to 55",
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "111 (diameter) x 140.5",
+  "weight_g": 500,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "release_notes": "2MP full-color network PT camera (Active Defense Lite series) with Smart Dual Light, human detection, sound-and-light active deterrence and two-way talk; 12 VDC / PoE, IP66.",
+  "sources": [
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/SD2A200HB-GN-A-PV-S2_S0_datasheet_20230627.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 576,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI. ONVIF PT control on port 80.",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "ndaa_compliant": false
+}
