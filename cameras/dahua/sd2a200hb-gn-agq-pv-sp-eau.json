@@ -1,0 +1,136 @@
+{
+  "id": "dahua-sd2a200hb-gn-agq-pv-sp-eau",
+  "brand": "Dahua",
+  "model": "SD2A200HB-GN-AGQ-PV-SP-EAU",
+  "aliases": [
+    "DH-SD2A200HB-GN-AGQ-PV-SP-EAU"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "4g"
+  ],
+  "power_source": [
+    "battery",
+    "solar"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "84 horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.05
+  },
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "Solar panel (5.5 W, 5.4 VDC/3 A) + built-in 10 Ah lithium-ion battery",
+    "voltage": "5.4 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "2MP 4G solar-powered mini pan/tilt camera (pan 0-345 degrees, tilt 0-80 degrees)",
+    "4G LTE cellular (LTE-FDD B1/3/5/7/8/20/28, LTE-TDD B38/40/41, WCDMA, GSM)",
+    "5.5 W monocrystalline solar panel + 10 Ah lithium-ion battery (7-day sleep-mode endurance)",
+    "built-in PIR sensor (up to 10 m at 2.2 m height)",
+    "Starlight low-light imaging",
+    "Smart Dual Light (IR 30 m + white light 30 m)",
+    "sound and light active deterrence",
+    "two-way talk (built-in mic and speaker)",
+    "300 presets",
+    "solar package (-SP), EAU regional 4G bands"
+  ],
+  "operating_temp_c": "0 to 50",
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "336 x 247 x 223",
+  "weight_g": 1400,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "EU",
+    "AU"
+  ],
+  "release_notes": "2MP 4G solar-powered network PT camera (Lite series) with 5.5 W solar panel, 10 Ah battery, PIR-triggered detection, Smart Dual Light and two-way talk; EAU regional 4G bands, IP66.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/ptz-cameras/sd2a200hb-gn-agq-pv-sp-eau",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/SD2A200HB-GN-AGQ-PV-SP-EAU_S0_datasheet_20230710.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 576,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Battery/solar 4G camera; wakes on event, not a persistent 24/7 RTSP source. Dahua native RTSP path; ONVIF PT control on port 80.",
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

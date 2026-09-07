@@ -1,12 +1,11 @@
 {
-  "id": "dahua-ipc-hfw5849t1-ase-led",
+  "id": "dahua-sd5a825ga-hnr",
   "brand": "Dahua",
-  "model": "IPC-HFW5849T1-ASE-LED",
+  "model": "SD5A825GA-HNR",
   "aliases": [
-    "DH-IPC-HFW5849T1-ASE-LED",
-    "WizMind 8MP Full-color Bullet"
+    "DH-SD5A825GA-HNR"
   ],
-  "type": "bullet",
+  "type": "ptz",
   "connectivity": [
     "ethernet"
   ],
@@ -14,13 +13,13 @@
     "poe",
     "dc"
   ],
-  "release_year": 2023,
   "resolution": {
     "megapixels": 8,
     "max_width": 3840,
     "max_height": 2160,
-    "label": "4K UHD"
+    "label": "8MP (4K)"
   },
+  "sensor": "1/1.8\" CMOS",
   "video": {
     "codecs": [
       "H.265",
@@ -49,28 +48,30 @@
       }
     ]
   },
-  "sensor": "1/1.2\" CMOS",
   "lens": {
     "count": 1,
-    "focal_length_mm": "2.8 / 3.6 (fixed)",
-    "aperture": "F1.0",
-    "varifocal": false
+    "focal_length_mm": "5.4-135 (25x optical zoom)",
+    "aperture": "F1.6-F4.0",
+    "varifocal": true
   },
-  "field_of_view_deg": "113 (2.8mm)",
+  "field_of_view_deg": "61.6-3.6 (wide-tele)",
   "night_vision": {
-    "type": "color",
-    "range_m": 40,
-    "min_lux_color": 0.0005
+    "type": "ir",
+    "range_m": 150,
+    "min_lux_color": 0.005
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
   },
   "power": {
-    "method": "12VDC/PoE/ePoE",
-    "voltage": "12VDC"
+    "method": "24 VDC / PoE+ (802.3at)",
+    "voltage": "24 VDC",
+    "consumption_w": 21
   },
   "storage": {
     "onboard": true,
-    "max_microsd_gb": 256,
-    "nvr_compatible": true,
-    "cloud": false
+    "max_microsd_gb": 512
   },
   "protocols": [
     "onvif",
@@ -80,33 +81,35 @@
   "ip_rating": "IP67",
   "ik_rating": "IK10",
   "audio": {
-    "microphone": true,
-    "speaker": true,
-    "two_way": true
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
   },
   "features": [
-    "WizMind 4K full-color F1.0 bullet",
-    "1/1.2\" large sensor",
-    "warm light up to 40m",
-    "IK10 vandal resistance",
-    "face detection & video metadata",
-    "people counting / IVS",
-    "built-in mic & speaker",
-    "H.265+"
+    "25x optical zoom",
+    "4K 8MP resolution",
+    "WizSense AI",
+    "auto tracking",
+    "face detection",
+    "parking detection / people gathering / vehicle & human classification",
+    "300 presets",
+    "150m IR",
+    "H.265"
   ],
-  "operating_temp_c": "-40 to +60",
-  "dimensions_mm": "288 x 94 x 85",
-  "weight_g": 1380,
+  "dimensions_mm": "332 x 190 (H x diameter)",
+  "weight_g": 4700,
   "environment": [
     "outdoor"
   ],
+  "operating_temp_c": "-40 to 70",
   "markets": [
     "global"
   ],
   "sources": [
-    "https://www.sourcesecurity.com/dahua-technology-ipc-hfw5849t1-ase-led-ip-camera-technical-details.html"
+    "https://www.dahuasecurity.com/products/discontinued-products/ptz-cameras/sd5a825ga-hnr",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/SD5A825GA-HNR_S0_datasheet_20250111.pdf"
   ],
-  "last_verified": "2026-07-04",
+  "last_verified": "2026-09-06",
   "configs": {
     "frigate": {
       "detect": {
@@ -117,15 +120,17 @@
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
       "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
       "onvif_port": 80,
-      "two_way_audio": true
+      "autotracking": true,
+      "verified": false,
+      "notes": "Dahua realmonitor RTSP; ONVIF on port 80; PTZ via ONVIF."
     },
     "home_assistant": {
       "integration": "onvif",
-      "notes": "Use ONVIF integration. Default ONVIF port 80."
+      "notes": "Dahua ONVIF (default port 80)."
     },
     "blue_iris": {
       "profile": "Dahua",
-      "notes": "Select 'Dahua' profile. Supports both main and sub streams."
+      "notes": "Select the 'Dahua' profile."
     }
   },
   "network": {

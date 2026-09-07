@@ -1,10 +1,9 @@
 {
-  "id": "dahua-sd6c3432gb-hnr-a-pv1",
+  "id": "dahua-sd5a425xa-hnr",
   "brand": "Dahua",
-  "model": "SD6C3432GB-HNR-A-PV1",
+  "model": "SD5A425XA-HNR",
   "aliases": [
-    "DH-SD6C3432GB-HNR-A-PV1",
-    "WizSense 4MP 32x TiOC Starlight PTZ"
+    "DH-SD5A425XA-HNR"
   ],
   "type": "ptz",
   "connectivity": [
@@ -12,14 +11,15 @@
   ],
   "power_source": [
     "poe",
-    "ac-mains"
+    "dc"
   ],
   "resolution": {
     "megapixels": 4,
-    "max_width": 2688,
-    "max_height": 1520,
+    "max_width": 2560,
+    "max_height": 1440,
     "label": "4MP"
   },
+  "sensor": "1/1.8\" CMOS",
   "video": {
     "codecs": [
       "H.265",
@@ -48,71 +48,66 @@
       }
     ]
   },
-  "sensor": "1/2.8\" STARVIS CMOS",
   "lens": {
     "count": 1,
-    "focal_length_mm": "4.8-154 (32x optical zoom)",
+    "focal_length_mm": "5.4-135 (25x optical zoom)",
     "aperture": "F1.6-F4.0",
     "varifocal": true
   },
-  "field_of_view_deg": "55.8-2.3 (wide-tele)",
+  "field_of_view_deg": "61.6-3.6 (wide-tele)",
   "night_vision": {
-    "type": "hybrid",
+    "type": "ir",
     "range_m": 150,
-    "min_lux_color": 0.005
+    "min_lux": 0.0001,
+    "min_lux_color": 0.001
   },
   "ptz": {
     "autotracking": true,
-    "onvif_ptz": "relative"
+    "onvif_ptz": "continuous"
   },
   "power": {
-    "method": "24VAC / PoE+ (802.3at)",
-    "consumption_w": 23,
-    "voltage": "24VAC",
-    "poe_class": 4
+    "method": "24 VDC / PoE+ (802.3at)",
+    "voltage": "24 VDC",
+    "consumption_w": 20
   },
   "storage": {
     "onboard": true,
-    "max_microsd_gb": 256,
-    "nvr_compatible": true,
-    "cloud": false
+    "max_microsd_gb": 256
   },
   "protocols": [
     "onvif",
     "rtsp",
     "http"
   ],
-  "ip_rating": "IP66",
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
   "audio": {
     "microphone": false,
-    "speaker": true,
-    "two_way": true
+    "speaker": false,
+    "two_way": false
   },
   "features": [
-    "32x optical zoom",
-    "TiOC active deterrence",
-    "WizSense AI",
-    "Auto-tracking 3.0",
-    "SMD 4.0",
+    "25x optical zoom",
+    "Starlight+ low-light",
+    "SMD PLUS",
+    "deep-learning perimeter protection",
+    "auto-tracking",
     "face detection",
-    "perimeter protection",
-    "dual illumination (IR 150m + warm/white light 50m)",
-    "full-color Starlight",
-    "red & blue warning lights",
-    "audio in/out (two-way)",
-    "TVS 6000V surge protection",
+    "150m IR",
     "H.265"
   ],
-  "dimensions_mm": "202 x 202 x 325.3",
-  "weight_g": 4600,
+  "dimensions_mm": "332 x 190 (H x diameter)",
+  "weight_g": 4700,
   "environment": [
     "outdoor"
   ],
+  "operating_temp_c": "-40 to 70",
   "markets": [
     "global"
   ],
   "sources": [
-    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/SD6C3432GB-HNR-A-PV1_S0_datasheet_20250123.pdf"
+    "https://www.dahuasecurity.com/products/discontinued-products/ptz-cameras/sd5a425xa-hnr",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/SD5A425XA-HNR_S0_datasheet_20230314.pdf"
   ],
   "last_verified": "2026-09-06",
   "configs": {
@@ -124,24 +119,23 @@
       },
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
       "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
-      "notes": "ONVIF PTZ control supported (port 80). Standard Dahua realmonitor URLs.",
-      "autotracking": true,
       "onvif_port": 80,
-      "two_way_audio": true
+      "autotracking": true,
+      "verified": false,
+      "notes": "Dahua realmonitor RTSP; ONVIF on port 80; PTZ via ONVIF."
     },
     "home_assistant": {
       "integration": "onvif",
-      "notes": "Use ONVIF integration. Default ONVIF port 80."
+      "notes": "Dahua ONVIF (default port 80)."
     },
     "blue_iris": {
       "profile": "Dahua",
-      "notes": "Select 'Dahua' profile. Supports both main and sub streams."
+      "notes": "Select the 'Dahua' profile."
     }
   },
   "network": {
     "ethernet_speed_mbps": 100,
     "ethernet_ports": 1
   },
-  "operating_temp_c": "-40 to +70",
   "ndaa_compliant": false
 }

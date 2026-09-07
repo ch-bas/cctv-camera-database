@@ -1,10 +1,9 @@
 {
-  "id": "dahua-sd6c3432gb-hnr-a-pv1",
+  "id": "dahua-sd6c3232gb-hnr-a-pv1",
   "brand": "Dahua",
-  "model": "SD6C3432GB-HNR-A-PV1",
+  "model": "SD6C3232GB-HNR-A-PV1",
   "aliases": [
-    "DH-SD6C3432GB-HNR-A-PV1",
-    "WizSense 4MP 32x TiOC Starlight PTZ"
+    "DH-SD6C3232GB-HNR-A-PV1"
   ],
   "type": "ptz",
   "connectivity": [
@@ -12,26 +11,27 @@
   ],
   "power_source": [
     "poe",
-    "ac-mains"
+    "dc"
   ],
   "resolution": {
-    "megapixels": 4,
-    "max_width": 2688,
-    "max_height": 1520,
-    "label": "4MP"
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
   },
+  "sensor": "1/2.8\" STARVIS CMOS",
   "video": {
     "codecs": [
       "H.265",
       "H.264",
       "MJPEG"
     ],
-    "max_fps": 30,
+    "max_fps": 60,
     "streams": [
       {
         "name": "main",
-        "resolution": "2560x1440",
-        "fps": 30,
+        "resolution": "1920x1080",
+        "fps": 60,
         "codec": "H.265"
       },
       {
@@ -48,34 +48,31 @@
       }
     ]
   },
-  "sensor": "1/2.8\" STARVIS CMOS",
   "lens": {
     "count": 1,
     "focal_length_mm": "4.8-154 (32x optical zoom)",
     "aperture": "F1.6-F4.0",
     "varifocal": true
   },
-  "field_of_view_deg": "55.8-2.3 (wide-tele)",
+  "field_of_view_deg": "60.2-2.7 (wide-tele)",
   "night_vision": {
     "type": "hybrid",
     "range_m": 150,
+    "min_lux": 0.0005,
     "min_lux_color": 0.005
   },
   "ptz": {
     "autotracking": true,
-    "onvif_ptz": "relative"
+    "onvif_ptz": "continuous"
   },
   "power": {
-    "method": "24VAC / PoE+ (802.3at)",
-    "consumption_w": 23,
-    "voltage": "24VAC",
-    "poe_class": 4
+    "method": "24 VDC / PoE+ (802.3at)",
+    "voltage": "24 VDC",
+    "consumption_w": 23
   },
   "storage": {
     "onboard": true,
-    "max_microsd_gb": 256,
-    "nvr_compatible": true,
-    "cloud": false
+    "max_microsd_gb": 512
   },
   "protocols": [
     "onvif",
@@ -90,29 +87,27 @@
   },
   "features": [
     "32x optical zoom",
-    "TiOC active deterrence",
+    "TiOC active deterrence (red & blue warning lights + alarm)",
     "WizSense AI",
-    "Auto-tracking 3.0",
-    "SMD 4.0",
-    "face detection",
-    "perimeter protection",
-    "dual illumination (IR 150m + warm/white light 50m)",
+    "Auto Tracking 3.0",
+    "deep-learning human & vehicle classification",
+    "dual illumination (IR 150m + white light 50m)",
     "full-color Starlight",
-    "red & blue warning lights",
-    "audio in/out (two-way)",
     "TVS 6000V surge protection",
     "H.265"
   ],
-  "dimensions_mm": "202 x 202 x 325.3",
+  "dimensions_mm": "325.3 x 202 (H x diameter)",
   "weight_g": 4600,
   "environment": [
     "outdoor"
   ],
+  "operating_temp_c": "-40 to 70",
   "markets": [
     "global"
   ],
   "sources": [
-    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/SD6C3432GB-HNR-A-PV1_S0_datasheet_20250123.pdf"
+    "https://www.dahuasecurity.com/products/discontinued-products/ptz-cameras/sd6c3232gb-hnr-a-pv1",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/SD6C3232GB-HNR-A-PV1_S0_datasheet_20250111.pdf"
   ],
   "last_verified": "2026-09-06",
   "configs": {
@@ -124,24 +119,23 @@
       },
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
       "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
-      "notes": "ONVIF PTZ control supported (port 80). Standard Dahua realmonitor URLs.",
-      "autotracking": true,
       "onvif_port": 80,
-      "two_way_audio": true
+      "autotracking": true,
+      "verified": false,
+      "notes": "Dahua realmonitor RTSP; ONVIF on port 80; PTZ via ONVIF."
     },
     "home_assistant": {
       "integration": "onvif",
-      "notes": "Use ONVIF integration. Default ONVIF port 80."
+      "notes": "Dahua ONVIF (default port 80)."
     },
     "blue_iris": {
       "profile": "Dahua",
-      "notes": "Select 'Dahua' profile. Supports both main and sub streams."
+      "notes": "Select the 'Dahua' profile."
     }
   },
   "network": {
     "ethernet_speed_mbps": 100,
     "ethernet_ports": 1
   },
-  "operating_temp_c": "-40 to +70",
   "ndaa_compliant": false
 }

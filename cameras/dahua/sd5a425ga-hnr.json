@@ -1,0 +1,132 @@
+{
+  "id": "dahua-sd5a425ga-hnr",
+  "brand": "Dahua",
+  "model": "SD5A425GA-HNR",
+  "aliases": [
+    "DH-SD5A425GA-HNR"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.4-135",
+    "aperture": "F1.6-F4.0",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 150,
+    "min_lux_color": 0.001
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "24 VDC/2.5 A or PoE+",
+    "voltage": "24 VDC",
+    "consumption_w": 21
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "4MP IR PTZ speed dome, 25x optical zoom (5.4-135 mm), 1/1.8\" sensor",
+    "IR range 150 m",
+    "pan 0-360 degrees endless, tilt -15 to +90 degrees",
+    "300 presets",
+    "AcuPick fast/precise human and vehicle search",
+    "Auto Tracking 3.0",
+    "face detection with attribute extraction, IVS perimeter protection",
+    "audio I/O (1 in / 1 out), IK10 vandal resistance"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "332 x 190 (diameter)",
+  "weight_g": 4700,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "release_notes": "4MP IR PTZ speed dome (1/1.8\" sensor) with 25x optical zoom, 150 m IR, AcuPick search, Auto Tracking 3.0 and face detection; 24 VDC or PoE+, IP67/IK10.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/ptz-cameras/sd5a425ga-hnr",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/DH-SD5A425GA-HNR_S0_datasheet_20250910.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80); PTZ control over ONVIF."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

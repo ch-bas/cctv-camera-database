@@ -1,0 +1,132 @@
+{
+  "id": "dahua-sd8c845fg-hnf",
+  "brand": "Dahua",
+  "model": "SD8C845FG-HNF",
+  "aliases": [
+    "DH-SD8C845FG-HNF"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP (4K)"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/1.2\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "8-360",
+    "aperture": "F1.5-F5.7",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 250,
+    "min_lux_color": 0.0005
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "36 VDC/2.23 A or PoE (802.3bt)",
+    "voltage": "36 VDC",
+    "consumption_w": 33
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "8MP 4K IR PTZ speed dome, 45x optical zoom (8-360 mm)",
+    "IR range 250 m + white light 80 m (dual-light fusion)",
+    "pan 0-360 degrees endless, tilt -20 to +90 degrees auto-flip",
+    "300 presets, 8 tours, 5 patterns, 5 scans",
+    "Auto Tracking 3.0, WizMind face recognition and video metadata",
+    "IVS perimeter protection (tripwire, intrusion, fence climbing, loitering, etc.)",
+    "optical defog, electronic image stabilization (EIS), wiper",
+    "audio I/O (1 in / 1 out), 7 alarm inputs / 2 outputs, RS-485",
+    "TVS 8000 V surge protection"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "442 x 262 (diameter)",
+  "weight_g": 9600,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "release_notes": "8MP 4K IR WizMind PTZ speed dome with 45x optical zoom, 250 m IR plus 80 m white light, Auto Tracking 3.0, face recognition, video metadata, optical defog and EIS; 36 VDC or 802.3bt PoE, IP67.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/ptz-cameras/sd8c845fg-hnf",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/SD8C845FG-HNF_S0_datasheet_20250109.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80); PTZ control over ONVIF."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "ndaa_compliant": false
+}
