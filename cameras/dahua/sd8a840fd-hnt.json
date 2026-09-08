@@ -1,0 +1,145 @@
+{
+  "id": "dahua-sd8a840fd-hnt",
+  "brand": "Dahua",
+  "model": "SD8A840FD-HNT",
+  "aliases": [
+    "SD8A840FD-HNT(for project)",
+    "DH-SD8A840FD-HNT"
+  ],
+  "ndaa_compliant": false,
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP"
+  },
+  "sensor": "1/1.8\" STARVIS CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.6-223",
+    "aperture": "F1.4-F4.5",
+    "varifocal": true
+  },
+  "field_of_view_deg": "61.8-2.2 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 500,
+    "min_lux_color": 0.005
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ptz": {
+    "autotracking": false,
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "36 VDC (Hi-PoE)",
+    "voltage": "36 VDC",
+    "consumption_w": 33
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "415.9 x Ø262",
+  "weight_g": 8500,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "40x optical zoom",
+    "8MP Starlight WizMind PTZ for traffic",
+    "illegal parking detection, wrong-way driving detection, e-police, checkpoint capture",
+    "ANPR",
+    "face detection",
+    "video metadata (human and vehicle)",
+    "500 m IR",
+    "pan 0 to 360 endless, tilt -30 to +90, 300 presets, 8 tours",
+    "Hi-PoE / 36 VDC power",
+    "RS-485, audio 1 in/1 out, alarm 7 in/2 out, 6000V surge",
+    "Project-exclusive SKU"
+  ],
+  "markets": [
+    "global"
+  ],
+  "release_year": 2026,
+  "sources": [
+    "https://www.dahuasecurity.com/products/dedicated-products/project-exclusive/ptz-cameras/sd8a840fd-hnt(for-project)",
+    "https://materialfile.dahuasecurity.com/uploads/soft/20260320/DH-SD8A840FD-HNT.pdf"
+  ],
+  "last_verified": "2026-09-07",
+  "release_notes": "Project-exclusive 8MP 40x-zoom Starlight WizMind PTZ camera for traffic enforcement with illegal-parking and wrong-way detection, ANPR, e-police checkpoint capture and human/vehicle metadata; 500 m IR, Hi-PoE, IP67/IK10.",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua realmonitor RTSP; ONVIF port 80; PTZ via ONVIF."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

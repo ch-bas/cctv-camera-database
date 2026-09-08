@@ -1,0 +1,132 @@
+{
+  "id": "dahua-sdbce4-45-xa",
+  "brand": "Dahua",
+  "model": "SDBCE4-45-XA",
+  "aliases": [
+    "SDBCE4-45-XA(Only for Turkey)",
+    "DH-SDBCE4-45-XA"
+  ],
+  "ndaa_compliant": false,
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/2.8\" STARVIS CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.95-177.75",
+    "aperture": "F1.6-F4.95",
+    "varifocal": true
+  },
+  "field_of_view_deg": "70.3-1.8 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 250,
+    "min_lux_color": 0.005
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "24 VDC / PoE+ (802.3at)",
+    "voltage": "24 VDC",
+    "consumption_w": 26
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "337.4 x Ø209",
+  "weight_g": 5900,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "45x optical zoom",
+    "4MP Starlight speed dome",
+    "deep-learning auto-tracking",
+    "perimeter protection (tripwire, intrusion)",
+    "face detection, SMD Plus",
+    "video structuralization (human, vehicle, non-motor vehicle)",
+    "250 m IR (6 illuminators)",
+    "pan 0 to 360 endless, tilt -20 to +90, auto flip 180, 300 presets",
+    "built-in heater",
+    "Project-exclusive SKU (Turkey)"
+  ],
+  "markets": [
+    "Turkey"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/dedicated-products/project-exclusive/ptz-cameras/sdbce4-45-xa(only-for-turkey)"
+  ],
+  "last_verified": "2026-09-07",
+  "release_notes": "Turkey-only project-exclusive 4MP 45x-zoom Starlight speed dome with deep-learning auto-tracking, SMD Plus, perimeter protection, face detection and video structuralization; 250 m IR, IP67/IK10.",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua realmonitor RTSP; ONVIF port 80; PTZ via ONVIF."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}
