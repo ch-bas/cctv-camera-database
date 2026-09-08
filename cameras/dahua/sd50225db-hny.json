@@ -1,0 +1,140 @@
+{
+  "id": "dahua-sd50225db-hny",
+  "brand": "Dahua",
+  "model": "SD50225DB-HNY",
+  "aliases": [
+    "DH-SD50225DB-HNY"
+  ],
+  "type": "ptz",
+  "ndaa_compliant": false,
+  "markets": [
+    "global"
+  ],
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.8-120",
+    "aperture": "F1.6-F3.5",
+    "varifocal": true
+  },
+  "field_of_view_deg": "58.5-2.8 horizontal",
+  "night_vision": {
+    "type": "color",
+    "min_lux": 0.0005,
+    "min_lux_color": 0.005
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "24 VDC / PoE+ (802.3at)",
+    "voltage": "24 VDC",
+    "consumption_w": 15.8
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 60",
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "253.0 x Ø186.2",
+  "weight_g": 2500,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "25x optical zoom",
+    "16x digital zoom",
+    "Pan 0-360 endless, Tilt 0 to +90 with auto flip 180",
+    "Pan speed 0.1-350/s (preset 500/s), Tilt speed 0.1-250/s (preset 500/s)",
+    "300 presets, patrol/tour, power-off memory",
+    "WizSense with deep-learning human and vehicle classification",
+    "face detection",
+    "IVS (tripwire, intrusion, fence, loitering, abandoned/missing object, fast moving, parking, gathering)",
+    "SMD",
+    "Starlight low-light technology",
+    "120 dB true WDR",
+    "Smart H.265+ / Smart H.264+",
+    "IP67, IK10, TVS 6000 V lightning proof, surge protection",
+    "RS-485 (Pelco-P/D auto recognition)"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/ptz-cameras/wizsense-series/sd5/sd50225db-hny",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/SD50225DB-HNY_S0_datasheet_20250115.pdf"
+  ],
+  "last_verified": "2026-09-07",
+  "release_notes": "2MP 25x WizSense IP PTZ camera with Starlight low-light, 120 dB WDR, deep-learning human/vehicle classification and IVS; PoE+ / 24 VDC, IP67, IK10.",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 576,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI. ONVIF PT control on port 80.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

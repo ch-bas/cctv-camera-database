@@ -1,0 +1,140 @@
+{
+  "id": "dahua-sdzw2030u-sl",
+  "brand": "Dahua",
+  "model": "SDZW2030U-SL",
+  "aliases": [
+    "DH-SDZW2030U-SL"
+  ],
+  "type": "ptz",
+  "ndaa_compliant": false,
+  "markets": [
+    "global"
+  ],
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" STARVIS CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.5-135",
+    "aperture": "F1.6-F4.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "67.8-2.4 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100,
+    "min_lux": 0.0005,
+    "min_lux_color": 0.005
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "24 VAC / 12 VDC / PoE+ (802.3at)",
+    "voltage": "24 VAC / 12 VDC",
+    "consumption_w": 25
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP68",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-40 to 70",
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "Ø180 x 193 x 201.5",
+  "weight_g": 6000,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "30x optical zoom",
+    "16x digital zoom",
+    "anti-corrosion 316L stainless steel construction (marine grade)",
+    "built-in heater",
+    "IR illumination up to 100 m (5 IR LEDs)",
+    "Starlight low-light technology",
+    "electronic image stabilization (EIS)",
+    "auto flip 180",
+    "up to 24 privacy masking areas",
+    "face detection, heat map, tripwire, intrusion, abandoned/missing object",
+    "120 dB WDR, BLC, HLC, 3D DNR",
+    "Smart H.265+",
+    "1 audio in / 1 audio out",
+    "IP68 ingress protection"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/explosion-proof-&-anti-corrosion/sdzw2030u-sl",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/16667/datasheet/SDZW2030U-SL_datasheet_20250305.pdf"
+  ],
+  "last_verified": "2026-09-07",
+  "release_notes": "2MP 30x anti-corrosion (316L marine-grade) IP PTZ camera with 100 m IR, Starlight low-light, built-in heater and EIS; 24 VAC / 12 VDC / PoE+, IP68. Discontinued.",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 576,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI. ONVIF PT control on port 80.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}
