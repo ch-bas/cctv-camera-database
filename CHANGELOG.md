@@ -8,7 +8,22 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.16.0] — 2026-09-08
 
-Dataset grows to **10,774 cameras / 136 brands** — the largest single release yet (~+2,190). Highlights: the complete **Hikvision Thermal** catalogue (+247) with a new thermal brand **HikMicro**; a **full sweep of the entire Dahua camera catalogue** (~+990 across Network, PTZ, PT, HDCVI, Thermal, Wireless, and project-exclusive) built by reverse-engineering Dahua's download-centre catalogue API; a **near-complete ACTi refresh** (+280) pulled from ACTi's spec API; and a **Mobotix expansion** (+89, ONE / 7 / MOVE / legacy lines). Every record is from an official manufacturer datasheet or spec API; thermal-specific modeling matches the existing convention (`resolution` = thermal module, NETD in `sensor`, bi-spectrum → two lenses).
+Dataset grows to **11,405 cameras / 138 brands** — the largest single release yet (~+2,821). Highlights: the complete **Hikvision Thermal** catalogue (+247) with a new thermal brand **HikMicro**; a **full sweep of the entire Dahua camera catalogue** (~+990 across Network, PTZ, PT, HDCVI, Thermal, Wireless, and project-exclusive) built by reverse-engineering Dahua's download-centre catalogue API; a **bulk Hanwha Vision (Wisenet) ingest** (+545) from official datasheets; a **near-complete ACTi refresh** (+280) pulled from ACTi's spec API; a **Mobotix expansion** (+89, ONE / 7 / MOVE / legacy lines); and two new **India** brands — **Matrix Comsec (SATATYA)** (+62) and **Prama** (+17). Every record is from an official manufacturer datasheet or spec API; thermal-specific modeling matches the existing convention (`resolution` = thermal module, NETD in `sensor`, bi-spectrum → two lenses).
+
+### Added — Hanwha Vision / Wisenet (+545)
+- Bulk ingest of the Hanwha Vision (Wisenet) network-camera catalogue from official product pages + datasheets: the X / Q / P / T / L series and legacy Samsung-Techwin SN lines — box, dome, bullet, turret, PTZ, fisheye, multi-directional/panoramic, thermal (TNO/TNU) and bi-spectral (TNM) models. `ndaa_compliant: true` throughout (South Korean, not a Section 889 covered entity); ONVIF + Hanwha RTSP (`/profile1/media.smp`) configs.
+
+### Added — new brand: Matrix Comsec / SATATYA (+62)
+- **Matrix** (Matrix Comsec, Vadodara, India) — the **SATATYA** IP-camera line: Project (`CIDR`/`CIBR`), Professional (`MIDR`/`MIBR`/`MITR` IR-turret / `MITC` all-colour turret), Ruggedized (`RIDR`, EN50155/EN45545 railway, IP68) and PTZ (38× optical, 300 m IR) series; 2/5/8 MP, Sony STARVIS, True WDR 120 dB, ONVIF S/G/T. Ingested from official datasheets. `ndaa_compliant` read per-datasheet certifications line — `true` for all except `CIBR50FL40CWP` (its sheet omits NDAA); compliant models carry `markets: ["global","india","US"]`.
+
+### Added — new brand: Prama (+17)
+- **Prama** (Prama India) — the NC-series IP cameras (Value / Pro): turret, dome, bullet and PTZ, 2/4/6/8 MP with IR / Smart-Dual-Light. Hikvision-OEM platform → Hikvision-style RTSP/ONVIF configs. `ndaa_compliant: false`, `markets: ["india"]`.
+
+### Added — Axis (+7)
+- Additional Axis models from official datasheets — the M30 / M32 series, M3945-R, and Q3626/Q3628-VE. `ndaa_compliant: true` (Swedish).
+
+### Changed — Bosch source hygiene
+- Re-sourced Bosch records to their **official Bosch datasheet PDFs** (dropping reseller/mirror links), one clean official link per record.
 
 ### Added — ACTi refresh (+280)
 - Near-complete sweep of ACTi's current + legacy camera catalogue, pulled from ACTi's spec API (`newPopupSpecifications*.ashx`): the A/B/D/E/I/K/Q/Z bullet/dome/turret/box/fisheye lines, zoom bullets & domes, hemispherics, PTZ (incl. laser-IR ALPR), bispectral thermal (K371/K372/A37x/A57x), covert pinhole (Q112), body-worn (PCAM), and parking domes. Non-cameras (encoders, NVRs, access-control readers, accessories) filtered out.
