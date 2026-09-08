@@ -1,0 +1,95 @@
+{
+  "id": "hanwha-snb-9000",
+  "brand": "Hanwha",
+  "model": "SNB-9000",
+  "ndaa_compliant": true,
+  "aliases": [
+    "WiseNet III 12MP Box Camera"
+  ],
+  "generation": "WiseNet III",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 12,
+    "max_width": 4000,
+    "max_height": 3000,
+    "label": "12MP"
+  },
+  "night_vision": {
+    "type": "none"
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4000x3000",
+        "fps": 20,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "true day/night (ICR)",
+    "simple focus",
+    "intelligent video analytics",
+    "bi-directional audio",
+    "C/CS-mount (lens not included)"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "release_notes": "Built from the official Hanwha Vision product page for SNB-9000 (no standalone datasheet published): 12MP (4000x3000) / 8MP box camera, 20fps@12MP / 30fps@8MP, true day/night (ICR) with no IR illuminator, simple focus, microSD storage, bi-directional audio, H.264. Lens not included (C/CS mount). Sensor, WDR, power and dimensions not published on the product page and left unset rather than inferred.",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/SNB-9000"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Hanwha' or 'Samsung' profile depending on Blue Iris version."
+    }
+  },
+  "last_verified": "2026-09-08",
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  }
+}

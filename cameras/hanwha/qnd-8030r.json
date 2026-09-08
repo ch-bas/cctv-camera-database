@@ -1,0 +1,110 @@
+{
+  "id": "hanwha-qnd-8030r",
+  "brand": "Hanwha",
+  "model": "QND-8030R",
+  "aliases": [
+    "Wisenet Q series 5MP IR Indoor Dome Camera"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6.0 (fixed)",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux_color": 0.15
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "ndaa_compliant": true,
+  "features": [
+    "fixed 6mm lens",
+    "WDR 120dB",
+    "Day & Night (ICR)",
+    "IR 20m",
+    "WiseStream II",
+    "hallway view (90/270)",
+    "motion/tampering/defocus detection",
+    "H.265/H.264/MJPEG",
+    "Wisenet Q series"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "release_notes": "Specs per official Hanwha Vision product page (QND-8030R). Datasheet PDF not published on the product page; sensor, aperture, temperature, dimensions and weight not listed and omitted rather than fabricated. Indoor IR dome.",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/QND-8030R"
+  ],
+  "last_verified": "2026-09-08",
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "network": {
+    "ethernet_ports": 1
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "id": "hanwha-pnm-c16013rvq",
+  "brand": "Hanwha",
+  "model": "PNM-C16013RVQ",
+  "aliases": [
+    "Wisenet P 4MP x 4ch AI Multi-directional Camera"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 16,
+    "max_width": 2592,
+    "max_height": 1520,
+    "label": "16MP total (4x 4MP channels)"
+  },
+  "sensor": "4x 1/2.8\" CMOS",
+  "lens": {
+    "count": 4,
+    "focal_length_mm": "3.19 fixed per channel",
+    "aperture": "F1.2",
+    "varifocal": false
+  },
+  "field_of_view_deg": "97 horizontal / 54 vertical (per channel)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux_color": 0.05
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "per channel",
+        "resolution": "2592x1520",
+        "fps": 15,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at, Class 4)",
+    "consumption_w": 23.5,
+    "poe_class": 4
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": true,
+    "notes": "2 microSD/SDHC/SDXC slots (512GB each, 1TB total; up to 1TB each / 2TB total for OnCloud edge recording)"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK09",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "ndaa_compliant": true,
+  "features": [
+    "4x 4MP AI multi-directional camera (360 coverage)",
+    "per-channel PTRZ positioning (pan 360 / 100 per ch, tilt 75, rotate 90)",
+    "WiseIR 20m 850nm",
+    "AI object detection (person/vehicle)",
+    "120 dB WDR, WiseNR II, WiseStream III, per-channel hallway view",
+    "audio in/out via optional I/O box",
+    "ONVIF Profile S/T/M",
+    "IP66, IK09, NEMA 4X"
+  ],
+  "operating_temp_c": "-40 to 55",
+  "dimensions_mm": "Ø200 x 80",
+  "weight_g": 1380,
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "release_notes": "Specs from official Hanwha Vision datasheet DataSheet_PNM-C16013RVQ (2026-08-06).",
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/PNM-C16013RVQ/DataSheet_PNM-C16013RVQ_20260806_EN_181958.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/PNM-C16013RVQ"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80. Each channel streams separately."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile. Add each channel as a separate camera."
+    }
+  },
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  }
+}

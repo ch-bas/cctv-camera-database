@@ -1,0 +1,116 @@
+{
+  "id": "hanwha-xnb-a8004b",
+  "brand": "Hanwha",
+  "model": "XNB-A8004B",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet AI 1-Channel Remote-head Camera"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2560,
+    "max_height": 1920,
+    "label": "5MP"
+  },
+  "sensor": "Modular (interchangeable sensor/lens heads, SLA-T series, sold separately)",
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3) / 12VDC",
+    "poe_class": 3,
+    "voltage": "12VDC",
+    "consumption_w": 10.6
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": true,
+    "notes": "1 microSD/SDHC/SDXC slot (max 1TB); OnCloud edge recording supported."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "AI 1-Channel Remote-head Camera (Wisenet)",
+    "120 dB WDR, WiseNR II, WiseStream",
+    "AI object/attribute detection (person, face, vehicle, license plate)",
+    "1-channel remote-head camera; lens/sensor modules (SLA-T1080FA/T2480A/T4680A etc.) sold separately",
+    "electronic Day & Night",
+    "audio in (mic/line) + line out",
+    "Day & Night",
+    "ONVIF Profile S/G/T/M, SUNAPI",
+    "NDAA compliant"
+  ],
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/XNB-A8004B/DataSheet_XNB-A8004B_20260727_EN_115303.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/XNB-A8004B"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/G/T/M). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1920",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor"
+  ],
+  "night_vision": {
+    "type": "none"
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "operating_temp_c": "-10 to 50",
+  "dimensions_mm": "131.1 x 33.5 x 86",
+  "weight_g": 467
+}

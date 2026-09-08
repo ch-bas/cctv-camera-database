@@ -1,0 +1,111 @@
+{
+  "id": "hanwha-snb-6011",
+  "brand": "Hanwha",
+  "model": "SNB-6011",
+  "ndaa_compliant": true,
+  "generation": "Wisenet III",
+  "type": "covert",
+  "aliases": [
+    "2M Full HD Remote Head Camera"
+  ],
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "end_of_sale_year": 2018,
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.8\" 2.38M CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.4 (fixed)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.3
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "power": {
+    "method": "12V DC / PoE (IEEE802.3af)",
+    "consumption_w": 7.5
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "SD/SDHC/SDXC memory slot"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "features": [
+    "Wisenet III 2MP discreet remote-head (modular) camera",
+    "120 dB WDR",
+    "Defog",
+    "Multi-crop streaming",
+    "Day & Night (electrical)",
+    "Motion / tampering detection",
+    "Video analytics (virtual line, enter/exit, appear/disappear)",
+    "Alarm I/O",
+    "ONVIF"
+  ],
+  "operating_temp_c": "-10 to 55",
+  "dimensions_mm": "Camera header 121.1 long (see datasheet)",
+  "environment": [
+    "indoor"
+  ],
+  "release_notes": "Ingest 2026-09-08 from official datasheet (SNB-6011_150810). Discreet modular 'remote head' camera (separate camera header + main unit body). Verified: 2MP (1920x1080) 1/2.8\" 2.38M CMOS, 2.4mm fixed lens, min illumination 0.3 lux color (F2.0), H.264/MJPEG dual codec (no H.265), max 30fps, WDR 120dB + Defog, 12V DC + PoE 802.3af (max 7.5W PoE / 6.5W 12VDC), -10 to 55C, SD/SDHC/SDXC slot (max capacity not stated), header 315g + main unit 290g. No IR illuminator (type none). Discontinued.",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/SNB-6011",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/SNB-6011/10/SNB-6011_150810.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Hanwha' (or 'Samsung' on older Blue Iris versions)."
+    }
+  },
+  "last_verified": "2026-09-08",
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

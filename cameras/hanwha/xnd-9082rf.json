@@ -1,0 +1,128 @@
+{
+  "id": "hanwha-xnd-9082rf",
+  "brand": "Hanwha",
+  "model": "XND-9082RF",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet X 4K IR Indoor Dome Camera"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "focal_length_mm": "2.8-8.4",
+    "aperture": "F1.2",
+    "varifocal": true
+  },
+  "field_of_view_deg": "114-40",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40,
+    "min_lux_color": 0.05
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3) / DC 12V",
+    "poe_class": 3,
+    "voltage": "12VDC",
+    "consumption_w": 12.95
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": true,
+    "notes": "2 microSD/SDHC/SDXC slots (512GB each, 1TB total; up to 2TB with OnCloud edge recording)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Wisenet X 4K IR indoor dome",
+    "2.8-8.4mm (3x) motorized varifocal lens",
+    "WiseIR 40m IR (850nm)",
+    "120 dB WDR, SSNR V",
+    "Day & Night (ICR)",
+    "OnCloud edge recording support",
+    "ONVIF Profile S/G/T",
+    "IP52, IK10",
+    "NDAA compliant"
+  ],
+  "release_year": 2023,
+  "release_notes": "Specs verified against the official Hanwha Vision XND-9082RF datasheet. 4K indoor dome (sibling of the 6MP XND-8082RF).",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/XND-9082RF",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/XND-9082RF/DataSheet_XND-9082RF_20260806_EN_171939.pdf"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/G/T). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP52",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-25 to 60",
+  "dimensions_mm": "205 x 205 x 163",
+  "weight_g": 1950
+}

@@ -1,0 +1,120 @@
+{
+  "id": "hanwha-pnm-c19183rvtp",
+  "brand": "Hanwha",
+  "model": "PNM-C19183RVTP",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "5MP 3CH multi-sensor + 4MP 18x PTZ AI Camera"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP x3 multi-sensor + 4MP 18x PTZ"
+  },
+  "sensor": "3x 5MP fixed sensors + 1x 4MP PTZ sensor",
+  "lens": {
+    "count": 4,
+    "focal_length_mm": "2.4 fixed (x3 multi-sensor channels) + 5.42-98.29 (18x optical PTZ channel)",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 15
+  },
+  "power": {
+    "method": "PoE++ (IEEE 802.3bt Type 3, Class 6)",
+    "consumption_w": 42,
+    "poe_class": 6
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "2 microSD/SDHC/SDXC slots (max 1TB each, 2TB total)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "multi-sensor + PTZ combo: 3x 5MP fixed channels + 1x 4MP 18x optical (32x digital) PTZ channel",
+    "AI object detection and analytics",
+    "WiseIR 15m (850nm)",
+    "120 dB WDR (fixed channels)",
+    "WiseNR II, WiseStream",
+    "ONVIF Profile S/G/T/M, SUNAPI",
+    "PoE++ (802.3bt) powered",
+    "NDAA compliant"
+  ],
+  "release_year": 2024,
+  "release_notes": "Specs sourced from the official Hanwha Vision PNM-C19183RVTP product page (datasheet PDF blob URL not resolvable at ingest time).",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/PNM-C19183RVTP"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/G/T/M). Default ONVIF port 80. Multi-channel device."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile; add each channel separately."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "dimensions_mm": "Ø251.4 x 212",
+  "weight_g": 4800,
+  "operating_temp_c": "-40 to 55"
+}

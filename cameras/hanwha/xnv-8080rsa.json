@@ -1,0 +1,130 @@
+{
+  "id": "hanwha-xnv-8080rsa",
+  "brand": "Hanwha",
+  "model": "XNV-8080RSA",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet X 5MP Stainless-Steel IR Vandal Dome Camera"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2560,
+    "max_height": 1920,
+    "label": "5MP"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "focal_length_mm": "3.9-9.4",
+    "aperture": "F1.3",
+    "varifocal": true
+  },
+  "field_of_view_deg": "93-38",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux_color": 0.07
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3) / DC 12V / AC 24V",
+    "poe_class": 3,
+    "voltage": "12VDC / 24VAC",
+    "consumption_w": 12.95
+  },
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "2 microSD/SDHC/SDXC slots (256GB each, 512GB total)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Wisenet X 5MP IR vandal dome in 316L stainless-steel housing (food/marine/corrosive environments)",
+    "3.9-9.4mm (2.4x) motorized varifocal lens",
+    "IR viewable length 50m (850nm)",
+    "120 dB WDR, SSNR V, defog",
+    "loitering / directional / tampering / audio detection, digital auto-tracking",
+    "Day & Night (ICR)",
+    "audio in (mic/line) + line out",
+    "ONVIF Profile S/G/T",
+    "IP66/IP6K9K, IK10+, NEMA 4X, NSF/ANSI 169",
+    "NDAA compliant"
+  ],
+  "release_year": 2021,
+  "release_notes": "Specs verified against the official Hanwha Vision XNV-8080RSA datasheet. Stainless-steel (SA) variant.",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/XNV-8080RSA",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/XNV-8080RSA/DataSheet_XNV-8080RSA_20260806_EN_165340.pdf"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/G/T). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1920",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP66/IP6K9K",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-40 to 55",
+  "dimensions_mm": "162 x 162 x 120.5",
+  "weight_g": 2800
+}

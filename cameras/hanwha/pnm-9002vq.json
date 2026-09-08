@@ -1,0 +1,123 @@
+{
+  "id": "hanwha-pnm-9002vq",
+  "brand": "Hanwha",
+  "model": "PNM-9002VQ",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet P 2MP/5MP x 4CH Multi-directional Camera"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 20,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "8MP-20MP (4x 2MP or 5MP modules)"
+  },
+  "sensor": "4x exchangeable CMOS lens modules (2MP or 5MP SLA series)",
+  "lens": {
+    "count": 4,
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "none"
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at, Class 4)",
+    "poe_class": 4,
+    "consumption_w": 25.5
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "4 microSD/SDHC/SDXC slots (256GB each, 1TB total)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Wisenet P 4-channel multi-directional camera with exchangeable 2MP/5MP lens modules",
+    "8MP to 20MP total depending on module combination",
+    "optional SLA modules: 2M (2.4/2.8/3.6/6mm) and 5M (3.7/4.6/7mm) fixed lenses, sold separately",
+    "WDR 150 dB (2MP) / 120 dB (5MP), SSNR V",
+    "AI-style analytics: face/loitering/intrusion/crossing, fog & defocus detection",
+    "up to 60fps @ 2MP",
+    "Day & Night (electrical), hallway view",
+    "ONVIF Profile S/T",
+    "IP66, IK10",
+    "NDAA compliant"
+  ],
+  "release_year": 2022,
+  "release_notes": "Specs verified against the official Hanwha Vision PNM-9002VQ datasheet (Ver. 202410). Lens/sensor modules (SLA series) are sold separately; total resolution and focal length depend on the chosen modules.",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/PNM-9002VQ",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/PNM-9002VQ/DataSheet_PNM-9002VQ_20260806_EN_130110.pdf"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/T). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-40 to 55",
+  "dimensions_mm": "253 x 253 x 130",
+  "weight_g": 3000
+}

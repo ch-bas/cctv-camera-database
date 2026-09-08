@@ -1,0 +1,106 @@
+{
+  "id": "hanwha-tnu-6320",
+  "brand": "Hanwha",
+  "model": "TNU-6320",
+  "ndaa_compliant": true,
+  "generation": "Wisenet III",
+  "type": "ptz",
+  "aliases": [
+    "2M 32x Network Positioning Camera"
+  ],
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "end_of_sale_year": 2020,
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.44-142.6 (32x optical zoom)",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.3
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "Heater-equipped positioning camera (100W heater on / 25W heater off)",
+    "consumption_w": 100
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "SD/SDHC/SDXC slot"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "features": [
+    "2MP 32x optical-zoom outdoor network positioning (PTZ) camera",
+    "360 endless pan, tilt -90 to +40",
+    "120 dB WDR",
+    "Day & Night (mechanical ICR)",
+    "Defog",
+    "Auto/manual/one-push focus, preset & schedule tour",
+    "Built-in heater",
+    "Audio input (G.711/G.726)",
+    "ONVIF Profile S/G, SUNAPI, Wisenet open platform"
+  ],
+  "operating_temp_c": "-40 to 55",
+  "dimensions_mm": "219.0 x 460.0 x 528.0",
+  "environment": [
+    "outdoor"
+  ],
+  "release_notes": "Ingest 2026-09-08 from official datasheet (DataSheet_TNU-6320_180410, first edition 04-2018; Russian-language edition parsed). NOTE: despite the 'TNU' prefix this is NOT a thermal camera - it is a visible-light 2MP 32x positioning (PTZ) camera. Verified: 2MP (1920x1080), 4.44-142.6mm 32x optical zoom F1.6, min illumination 0.3 lux color / 0.03 lux B/W, H.264/MJPEG (no H.265), max 60fps@2M, WDR 120dB + Defog, 360 endless pan / tilt -90 to +40, mechanical ICR, built-in heater (100W on / 25W off), IP66, operating -40 to 55C, 219x460x528mm. No IR illuminator (night_vision type none). Connector/voltage and weight were not machine-readable and are omitted (not fabricated).",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/TNU-6320",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/CDB/TNU-6320/DataSheet_TNU-6320_180410_RU.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Hanwha' (or 'Samsung' on older Blue Iris versions)."
+    }
+  },
+  "last_verified": "2026-09-08"
+}

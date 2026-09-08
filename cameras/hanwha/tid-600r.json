@@ -1,0 +1,125 @@
+{
+  "id": "hanwha-tid-600r",
+  "brand": "Hanwha",
+  "model": "TID-600R",
+  "aliases": [
+    "Wisenet 2MP IR Video Intercom / Doorbell"
+  ],
+  "type": "doorbell",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP (1080p)"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.6 (fixed, fisheye)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 horizontal / 114 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 5,
+    "min_lux_color": 0.018
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3), 12V DC",
+    "consumption_w": 12.95,
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "notes": "microSD/SDHC/SDXC, 1 slot up to 256GB"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP65",
+  "ik_rating": "IK08",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "Two-way audio (built-in mic + speaker, 85 dB at 0.5m)",
+    "180 degree fisheye view",
+    "150 dB WDR",
+    "IR 850nm 5m",
+    "Audio clip playback, handover",
+    "IP65, NEMA 4X, IK08"
+  ],
+  "operating_temp_c": "-30 to 55",
+  "dimensions_mm": "49 x 165 x 48",
+  "weight_g": 490,
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": true,
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/TID-600R/DataSheet_TID-600R_20260806_EN_180239.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/TID-600R"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "doorbell_button": true,
+      "two_way_audio": true,
+      "notes": "Use ONVIF integration (Profile S/G/T). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "last_verified": "2026-09-08",
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

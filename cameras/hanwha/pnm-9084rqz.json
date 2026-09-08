@@ -1,0 +1,103 @@
+{
+  "id": "hanwha-pnm-9084rqz",
+  "brand": "Hanwha",
+  "model": "PNM-9084RQZ",
+  "ndaa_compliant": true,
+  "generation": "Wisenet",
+  "type": "panoramic",
+  "aliases": [
+    "2MP x 4CH Multi-directional IR PTRZ Camera"
+  ],
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "end_of_sale_year": 2023,
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "8MP (4x 1920x1080)"
+  },
+  "lens": {
+    "count": 4,
+    "focal_length_mm": "3.2-10 (3.1x motorized varifocal, per channel)",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "features": [
+    "4-channel multi-directional IR PTRZ camera (4 independently aimed 2MP sensors)",
+    "H.265",
+    "IR LED per channel",
+    "Motorized PTRZ (pan/tilt/rotate/zoom) per channel for install-time aiming",
+    "Motorized varifocal (3.1x)",
+    "NEMA 4X",
+    "Day & Night",
+    "Video analytics",
+    "WiseStream II",
+    "ONVIF Profile S/G/T"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "release_notes": "Ingest 2026-09-08 (multi-directional gap fill; discontinued). No official DataSheet PDF reachable in Hanwha's PIM and the product page's full spec table is JS-rendered; record built from the official product-details overview. Verified: 4-channel multi-directional IR PTRZ, 2MP per channel (8MP combined), 3.2-10mm 3.1x motorized varifocal per channel, IR 30m, H.265/H.264/MJPEG 60fps@2M, IP66/IK10/NEMA4X. WDR dB, minimum illumination, microSD capacity, power, operating temperature, dimensions and weight were not machine-readable and are omitted (not fabricated). PTRZ is install-time motorized aiming (not runtime autotracking); no ptz block recorded.",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/PNM-9084RQZ"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Hanwha' (or 'Samsung' on older Blue Iris versions)."
+    }
+  },
+  "last_verified": "2026-09-08"
+}

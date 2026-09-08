@@ -1,0 +1,127 @@
+{
+  "id": "hanwha-xnd-6081fz",
+  "brand": "Hanwha",
+  "model": "XND-6081FZ",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet X 2M H.265 Indoor Flush-Mount Dome"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p Full HD"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12 (4.3x motorized varifocal)",
+    "aperture": "F1.4-3.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "119.5-27.9 horizontal / 62.8-15.7 vertical",
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.015
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3) / 12VDC",
+    "consumption_w": 10,
+    "voltage": "12VDC"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "2 microSD/SDHC/SDXC slots (256GB each, 512GB total)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP52",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "2MP H.265 indoor flush-mount dome (Wisenet X series, motorized zoom, non-IR)",
+    "150 dB WDR",
+    "plenum rated (UL2820)",
+    "IK10",
+    "audio in (selectable mic/line in) + line out",
+    "WiseStream II",
+    "hallway view",
+    "video & audio analytics, sound classification",
+    "P-iris motorized varifocal",
+    "ONVIF Profile S/G/T",
+    "NDAA compliant"
+  ],
+  "release_notes": "Datasheet is internally inconsistent on ingress rating: the key-features headline states IP52/Plenum (UL2820), while the environment table row lists IP66/IP67/IK10/NEMA 4X. Recorded IP52 to match the model headline and its indoor flush-mount plenum sibling XND-8081FZ.",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/XND-6081FZ",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/XND-6081FZ/DataSheet_XND-6081FZ_20260806_EN_153326.pdf"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "dimensions_mm": "Ø205 x 163",
+  "weight_g": 1850,
+  "operating_temp_c": "-25 to 60",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

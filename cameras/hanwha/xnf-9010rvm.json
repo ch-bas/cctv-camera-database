@@ -1,0 +1,130 @@
+{
+  "id": "hanwha-xnf-9010rvm",
+  "brand": "Hanwha",
+  "model": "XNF-9010RVM",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet X 12MP IR Fisheye Camera (mobile)"
+  ],
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 12,
+    "max_width": 3584,
+    "max_height": 2688,
+    "label": "12MP fisheye"
+  },
+  "sensor": "1/2.3\" CMOS",
+  "lens": {
+    "focal_length_mm": "1.08",
+    "aperture": "F2.2",
+    "varifocal": false
+  },
+  "field_of_view_deg": "187",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10,
+    "min_lux_color": 0.39
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3) / DC 12V",
+    "poe_class": 3,
+    "voltage": "12VDC",
+    "consumption_w": 12.95
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "2 microSD/SDHC/SDXC slots (256GB each, 512GB total)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "Wisenet X 12MP IR fisheye for mobile/transit use (EN 50155 railway rated)",
+    "187 hemispheric field of view; fisheye / single & double panorama / quad view dewarping",
+    "WiseIR 10m IR (850nm)",
+    "120 dB WDR, SSNR V, BLC/HLC/SSDR",
+    "Day & Night (ICR)",
+    "built-in microphone + audio in/out",
+    "M12 shielded ethernet connector",
+    "ONVIF Profile S/G/T",
+    "IP66, IK10, NEMA 4X",
+    "NDAA compliant"
+  ],
+  "release_year": 2021,
+  "release_notes": "Specs verified against the official Hanwha Vision XNF-9010RVM datasheet. Mobile/transit variant with M12 connector and EN 50155 rating.",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/XNF-9010RVM",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/XNF-9010RVM/DataSheet_XNF-9010RVM_20260806_EN_140055.pdf"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1080,
+        "height": 1080,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/G/T). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3584x2688",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "160 x 160 x 72",
+  "weight_g": 1100
+}

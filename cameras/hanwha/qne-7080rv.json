@@ -1,0 +1,112 @@
+{
+  "id": "hanwha-qne-7080rv",
+  "brand": "Hanwha",
+  "model": "QNE-7080RV",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet Q 4M H.265 IR Flateye Camera"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2592,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.2-10 (3.1x motorized varifocal)",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.2
+  },
+  "power": {
+    "method": "PoE / 12VDC",
+    "voltage": "12VDC"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "microSD/SDHC/SDXC slot (128GB)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "4MP H.265 IR flateye camera (Wisenet Q series, low-profile flat vandal design)",
+    "WiseIR 30m",
+    "120 dB WDR",
+    "3.2-10mm motorized varifocal",
+    "hallway view, LDC, WiseStream",
+    "20fps at 4MP / 30fps at 2MP",
+    "ONVIF",
+    "NDAA compliant"
+  ],
+  "release_notes": "Built from the product detail page; no datasheet PDF was published on the page at time of ingest, so sensor, IP/IK rating, audio, dimensions, weight, operating temperature and environment were left unset rather than fabricated.",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/QNE-7080RV"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1520",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "network": {
+    "ethernet_ports": 1
+  }
+}

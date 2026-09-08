@@ -1,0 +1,124 @@
+{
+  "id": "hanwha-xnv-9083r",
+  "brand": "Hanwha",
+  "model": "XNV-9083R",
+  "aliases": [
+    "Wisenet X 4K AI IR Vandal Dome"
+  ],
+  "generation": "Wisenet X AI",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.4-9.3 (2.1x motorized varifocal)",
+    "aperture": "F1.3",
+    "varifocal": true
+  },
+  "field_of_view_deg": "113-47 horizontal / 58-26 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux_color": 0.04
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE+ (802.3at, Class 4), 12V DC",
+    "consumption_w": 22.5,
+    "poe_class": 4
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": true,
+    "notes": "2x microSD slots, up to 512GB each (1TB total); OnCloud edge recording up to 2TB with Hanwha Vision branded cards"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "AI object detection (person, face, vehicle: car/bus/truck/motorcycle/bicycle, license plate)",
+    "WiseIR adaptive IR 850nm 50m",
+    "extremeWDR 120 dB",
+    "Day & Night (ICR)",
+    "P-iris (IR corrected) lens",
+    "IP66/IP67/IP6K9K, NEMA 4X, IK10+"
+  ],
+  "operating_temp_c": "-50 to 60",
+  "dimensions_mm": "O180 x 125",
+  "weight_g": 1900,
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": true,
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/XNV-9083R/DataSheet_XNV-9083R_20260806_EN_174013.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/XNV-9083R"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profile S/G/T). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "last_verified": "2026-09-08",
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  }
+}

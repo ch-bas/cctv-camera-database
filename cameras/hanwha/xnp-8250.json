@@ -1,0 +1,128 @@
+{
+  "id": "hanwha-xnp-8250",
+  "brand": "Hanwha",
+  "model": "XNP-8250",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet X 6MP 25x PTZ Camera"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3328,
+    "max_height": 1872,
+    "label": "6MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "focal_length_mm": "5-125",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "57.42-2.71",
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.1
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at, Class 4)",
+    "poe_class": 4,
+    "consumption_w": 25
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "2 microSD/SDHC/SDXC slots (512GB each, 1TB total)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Wisenet X 6MP PTZ, 25x optical zoom (32x digital)",
+    "360 endless pan, 90 to -20 tilt, 300 presets, swing/group/trace/tour",
+    "preset accuracy +/-0.1 with pan/tilt correction, max 700/sec pan speed",
+    "120 dB WDR, SSNR V, BLC/HLC/SSDR",
+    "Day & Night (ICR)",
+    "audio in/out via optional I/O box",
+    "ONVIF Profile S/G/T",
+    "IP66, IK10",
+    "NDAA compliant"
+  ],
+  "release_year": 2023,
+  "release_notes": "Specs verified against the official Hanwha Vision XNP-8250 datasheet. Non-IR variant (IR version is XNP-8250R).",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/XNP-8250",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/XNP-8250/DataSheet_XNP-8250_20260806_EN_141045.pdf"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/G/T). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3328x1872",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-40 to 55",
+  "dimensions_mm": "158 x 158 x 293.3",
+  "weight_g": 3200
+}

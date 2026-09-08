@@ -1,0 +1,126 @@
+{
+  "id": "hanwha-pnm-c32083rvq",
+  "brand": "Hanwha",
+  "model": "PNM-C32083RVQ",
+  "aliases": [
+    "Wisenet P 4K x 4ch AI IR PTRZ Multi-directional Camera"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 32,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "32MP total (4x 4K/8MP channels)"
+  },
+  "sensor": "4x 1/2.8\" CMOS",
+  "lens": {
+    "count": 4,
+    "focal_length_mm": "3.3-5.7 (1.7x) per channel",
+    "aperture": "F1.5-1.9",
+    "varifocal": true
+  },
+  "field_of_view_deg": "109-56 horizontal / 55-31 vertical (per channel)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux_color": 0.1
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "per channel",
+        "resolution": "3840x2160",
+        "fps": 15,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at, Class 4) / PoE++ (IEEE 802.3bt Type 3, Class 6)",
+    "consumption_w": 30,
+    "poe_class": 6
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": true,
+    "notes": "2 microSD/SDHC/SDXC slots (512GB each, 1TB total; up to 1TB each / 2TB total for OnCloud edge recording)"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "ndaa_compliant": true,
+  "features": [
+    "4x 4K (8MP) AI multi-directional PTRZ camera (360 coverage)",
+    "per-channel motorized PTRZ positioning (pan 360, tilt 65, rotate 90, 1.7x zoom)",
+    "WiseIR 15m (PoE+) / 20m (PoE++) 850nm",
+    "AI object detection (person/vehicle)",
+    "120 dB WDR, WiseNR II, WiseStream III, per-channel hallway view",
+    "audio line/mic in + line out",
+    "ONVIF Profile S/G/T/M",
+    "IP66, IK10, NEMA 4X"
+  ],
+  "operating_temp_c": "-40 to 55",
+  "dimensions_mm": "Ø250 x 114.2",
+  "weight_g": 2820,
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "release_notes": "Specs from official Hanwha Vision datasheet DataSheet_PNM-C32083RVQ (2026-08-06).",
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/PNM-C32083RVQ/DataSheet_PNM-C32083RVQ_20260806_EN_180603.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/PNM-C32083RVQ"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80. Each channel streams separately."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile. Add each channel as a separate camera."
+    }
+  },
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  }
+}

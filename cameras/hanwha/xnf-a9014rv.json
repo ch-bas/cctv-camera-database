@@ -1,0 +1,128 @@
+{
+  "id": "hanwha-xnf-a9014rv",
+  "brand": "Hanwha",
+  "model": "XNF-A9014RV",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet 12MP AI IR Fisheye Camera"
+  ],
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 12,
+    "max_width": 3536,
+    "max_height": 3536,
+    "label": "12MP fisheye"
+  },
+  "sensor": "1/1.6\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.76",
+    "aperture": "F1.8",
+    "varifocal": false
+  },
+  "field_of_view_deg": "185",
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3) / PoE+ (IEEE 802.3at, Class 4) / 12VDC",
+    "poe_class": 4,
+    "voltage": "12VDC",
+    "consumption_w": 19.8
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": true,
+    "notes": "1 microSD/SDHC/SDXC slot (max 1TB); OnCloud edge recording supported."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "12MP AI IR Fisheye Camera (Wisenet)",
+    "WiseIR viewable length 20m (850nm)",
+    "120 dB WDR, WiseNR II, WiseStream",
+    "AI object/attribute detection (person, face, vehicle, license plate)",
+    "185-degree fisheye lens with client/edge dewarping",
+    "built-in 3 microphones",
+    "Day & Night",
+    "ONVIF Profile S/G/T/M, SUNAPI",
+    "IP66, IK10",
+    "NDAA compliant"
+  ],
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/XNF-A9014RV/DataSheet_XNF-A9014RV_20260818_EN_094436.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/XNF-A9014RV"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/G/T/M). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3536x3536",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux_color": 0.02
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-40 to 55",
+  "dimensions_mm": "160 (diameter) x 75",
+  "weight_g": 1020
+}

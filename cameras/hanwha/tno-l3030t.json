@@ -1,0 +1,123 @@
+{
+  "id": "hanwha-tno-l3030t",
+  "brand": "Hanwha",
+  "model": "TNO-L3030T",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet QVGA Thermal Camera"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.08,
+    "max_width": 320,
+    "max_height": 240,
+    "label": "QVGA thermal (320x240)"
+  },
+  "sensor": "Uncooled microbolometer 320x240, 12um pixel, NETD <=60mK, spectral 8-14um",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "13.7",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "16 horizontal / 12 vertical",
+  "night_vision": {
+    "type": "none"
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af Class 3) / 12VDC / 24VAC",
+    "consumption_w": 8.7,
+    "voltage": "12VDC / 24VAC"
+  },
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "1 microSD/SDHC/SDXC slot (256GB)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "QVGA (320x240) uncooled thermal bullet camera",
+    "spectral range 8-14um, NETD <=60mK, 12um pixel",
+    "H.265 up to 8fps",
+    "thermal analytics: tampering, virtual line, audio detection, temperature change detection",
+    "IP66, IK10, NEMA4X",
+    "ONVIF Profile S/G/T",
+    "NDAA compliant"
+  ],
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/TNO-L3030T",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/TNO-L3030T/DataSheet_TNO-L3030T_20260806_EN_134243.pdf"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 320,
+        "height": 240,
+        "fps": 8
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "dimensions_mm": "Ø147.51 x 375.3",
+  "weight_g": 2512,
+  "operating_temp_c": "-40 to 60",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 8,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "320x240",
+        "fps": 8,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

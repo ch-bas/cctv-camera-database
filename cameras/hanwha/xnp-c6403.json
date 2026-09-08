@@ -1,0 +1,125 @@
+{
+  "id": "hanwha-xnp-c6403",
+  "brand": "Hanwha",
+  "model": "XNP-C6403",
+  "aliases": [
+    "Wisenet X AI 40x PTZ PLUS Camera"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.25-170 (40x optical motorized zoom)",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "65.66-1.88 horizontal / 39.4-1.09 vertical",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at, Class 4)",
+    "consumption_w": 25.5,
+    "poe_class": 4
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "notes": "2 microSD/SDHC/SDXC slots (512GB each, 1TB total)"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "ndaa_compliant": true,
+  "features": [
+    "2MP AI PTZ PLUS, 40x optical zoom (4.25-170mm)",
+    "Pan 360 endless / tilt 90 to -20, 300 presets",
+    "AI object detection and auto tracking",
+    "120 dB WDR, WiseNR II, WiseStream III",
+    "audio in/out via optional I/O box",
+    "ONVIF Profile S/G/T/M",
+    "IP66, IK10, NEMA 4X, NEMA TS 2"
+  ],
+  "operating_temp_c": "-40 to 50",
+  "dimensions_mm": "Ø158 x 293.3",
+  "weight_g": 3200,
+  "environment": [
+    "outdoor"
+  ],
+  "release_notes": "Specs from official Hanwha Vision datasheet DataSheet_XNP-C6403 (2026-08-06).",
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/XNP-C6403/DataSheet_XNP-C6403_20260806_EN_141929.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/XNP-C6403"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80. Supports PTZ."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.05
+  }
+}

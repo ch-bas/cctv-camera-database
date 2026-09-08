@@ -1,0 +1,127 @@
+{
+  "id": "hanwha-pnm-a13022rv",
+  "brand": "Hanwha",
+  "model": "PNM-A13022RV",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet 13MP AI IR Panoramic Camera"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 13,
+    "max_width": 5120,
+    "max_height": 2592,
+    "label": "13MP panoramic"
+  },
+  "sensor": "4 x 1/2.8\" CMOS (multi-sensor panoramic stitching)",
+  "lens": {
+    "count": 4,
+    "focal_length_mm": "3.06",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "194",
+  "power": {
+    "method": "PoE+ (IEEE 802.3at, Class 4) / 12VDC",
+    "poe_class": 4,
+    "voltage": "12VDC",
+    "consumption_w": 22.3
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "2 microSD/SDHC/SDXC slots (max 1TB each, 2TB total)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "13MP multi-sensor AI IR panoramic camera (194 x 93 degree field of view, 4-channel stitching)",
+    "IR viewable length 20m (850nm), 4 individual IR zones with auto/manual level",
+    "AI object/attribute detection (person, face, vehicle, license plate)",
+    "120 dB WDR, WiseNR II, WiseStream",
+    "Day & Night (ICR)",
+    "audio in (mic/line) + line out",
+    "ONVIF Profile S/G/T/M, SUNAPI",
+    "IP66, IK10, NEMA 4X",
+    "NDAA compliant"
+  ],
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/PNM-A13022RV/DataSheet_PNM-A13022RV_20260219_EN_104613.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/PNM-A13022RV"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/G/T/M). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "5120x2592",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux_color": 0.1
+  },
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-40 to 55",
+  "dimensions_mm": "253 (diameter) x 170",
+  "weight_g": 2800
+}

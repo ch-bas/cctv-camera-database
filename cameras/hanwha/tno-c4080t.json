@@ -1,0 +1,125 @@
+{
+  "id": "hanwha-tno-c4080t",
+  "brand": "Hanwha",
+  "model": "TNO-C4080T",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet VGA AI Tele Lens Thermal Camera"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.3,
+    "max_width": 640,
+    "max_height": 480,
+    "label": "VGA thermal (upscaled to 1280x960)"
+  },
+  "sensor": "Uncooled microbolometer 640x480, 17um pixel, spectral range 8-14um, NETD <=16mK",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "60",
+    "aperture": "F1.15",
+    "varifocal": false
+  },
+  "field_of_view_deg": "10.3",
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3) / 12VDC",
+    "poe_class": 3,
+    "voltage": "12VDC",
+    "consumption_w": 8.1
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": true,
+    "notes": "1 microSD/SDHC/SDXC slot (max 1TB); OnCloud edge recording supported."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "VGA (640x480) uncooled thermal camera with 60mm lens",
+    "NETD <=16mK @ 25C, F1.0; spectral range 8-14um",
+    "AI object detection: person, vehicle, vessel",
+    "resolution upscaling up to 1280x960",
+    "color palettes: whitehot, blackhot, rainbow, sepia, red, iron, custom",
+    "audio in (mic/line) + line out",
+    "ONVIF Profile S/G/T/M, SUNAPI",
+    "IP66/IP67, IK10, NEMA 4X, NEMA TS 2",
+    "NDAA compliant"
+  ],
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/TNO-C4080T/DataSheet_TNO-C4080T_20260814_EN_081506.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/TNO-C4080T"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/G/T/M). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1280x960",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "night_vision": {
+    "type": "none"
+  },
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "107.3 (diameter) x 275",
+  "weight_g": 2100
+}

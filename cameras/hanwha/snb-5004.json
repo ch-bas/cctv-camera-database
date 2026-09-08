@@ -1,0 +1,116 @@
+{
+  "id": "hanwha-snb-5004",
+  "brand": "Hanwha",
+  "model": "SNB-5004",
+  "ndaa_compliant": true,
+  "aliases": [
+    "WiseNet 1.3MP Box Camera"
+  ],
+  "generation": "WiseNet III",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 1.3,
+    "max_width": 1280,
+    "max_height": 1024,
+    "label": "1.3MP"
+  },
+  "sensor": "1/3\" 1.3M CMOS",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.008
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1280x1024",
+        "fps": 60,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / DC 12V / AC 24V",
+    "consumption_w": 9.5,
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "130 dB WDR",
+    "true day/night (ICR)",
+    "simple focus",
+    "multi-crop streaming",
+    "face detection",
+    "audio detection",
+    "tampering detection",
+    "bi-directional audio",
+    "C/CS-mount (lens not included)"
+  ],
+  "operating_temp_c": "-10 to 55",
+  "dimensions_mm": "73.1 x 66.6 x 147.8",
+  "weight_g": 395,
+  "environment": [
+    "indoor"
+  ],
+  "release_notes": "Built from official Hanwha Techwin datasheet SNB-5004/5003 (dated 2015-10-20): SNB-5004 is a 1.3MP box camera, 1/3\" 1.3M CMOS, lens not included (C/CS mount), true day/night (ICR) but no IR illuminator, WDR 130dB, H.264/MJPEG 60fps, bi-directional audio. ONVIF Profile S, SUNAPI 2.0.",
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/SNB-5004/09/SNB-5004_5003_151020-1.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/SNB-5004"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profile S). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Hanwha' or 'Samsung' profile depending on Blue Iris version."
+    }
+  },
+  "last_verified": "2026-09-08",
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

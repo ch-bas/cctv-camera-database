@@ -1,0 +1,123 @@
+{
+  "id": "hanwha-xnb-a8004",
+  "brand": "Hanwha",
+  "model": "XNB-A8004",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet 5MP AI Box"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2560,
+    "max_height": 1920,
+    "label": "5MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "color",
+    "min_lux_color": 0.04
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3) / DC 12V",
+    "consumption_w": 8.9,
+    "poe_class": 3,
+    "voltage": "12VDC"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048,
+    "nvr_compatible": true,
+    "cloud": true,
+    "notes": "2 microSD/SDHC/SDXC slots (max 1TB each, 2TB total); OnCloud edge recording supported."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "AI object detection: person / face / vehicle / license plate + BestShot",
+    "loitering/intrusion, social distancing, slip & fall detection",
+    "people/vehicle/crowd counting, queue management, heatmap",
+    "120 dB WDR",
+    "WiseNR II (AI engine), WiseStream (AI-based smart codec)",
+    "I-CS / P-iris / DC auto-iris lens support (lens sold separately)",
+    "built-in mic + audio in (mic/line) + line out",
+    "ONVIF Profile S/G/T/M, SUNAPI",
+    "secure boot, signed & encrypted firmware",
+    "NDAA compliant"
+  ],
+  "release_year": 2023,
+  "release_notes": "Specs verified against the official Hanwha Vision XNB-A8004 datasheet (Ver. 2026). Box camera; lens sold separately.",
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/XNB-A8004/DataSheet_XNB-A8004_20260806_EN_184055.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/XNB-A8004"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/G/T/M). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1920",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "dimensions_mm": "81 x 67 x 165",
+  "weight_g": 851,
+  "operating_temp_c": "-10 to 55"
+}

@@ -1,0 +1,120 @@
+{
+  "id": "hanwha-pnm-9020v",
+  "brand": "Hanwha",
+  "model": "PNM-9020V",
+  "ndaa_compliant": true,
+  "aliases": [
+    "Wisenet P 7.3MP 180 Panoramic Camera"
+  ],
+  "generation": "Wisenet P",
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "release_year": 2019,
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 7.3,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "7.3MP 180 panorama (4x 2MP)"
+  },
+  "sensor": "2MP CMOS x 4 channels (7.3MP total)",
+  "lens": {
+    "count": 4,
+    "focal_length_mm": "3.6 (fixed, per channel)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 horizontal / 84 vertical",
+  "night_vision": {
+    "type": "color",
+    "min_lux_color": 0.3
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE+ (802.3at) or 12V DC",
+    "consumption_w": 25.5
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "4-channel 180-degree panoramic",
+    "WiseStream",
+    "Defog",
+    "Heatmap",
+    "Intelligent video analytics",
+    "Audio detection",
+    "SSNR III digital noise reduction",
+    "Line in / line out audio",
+    "ONVIF Profile S/G, SUNAPI"
+  ],
+  "operating_temp_c": "-40 to 55",
+  "dimensions_mm": "Ø199.0 x 143.5",
+  "weight_g": 2030,
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/PNM-9020V",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/PNM-9085RQZ/09/Brochures_Wisenet-P-series_200129_EN_multi-sensor-cameras.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80. Multi-channel; each sensor exposes its own stream."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version. Add each of the 4 channels separately."
+    }
+  },
+  "last_verified": "2026-09-08"
+}

@@ -1,0 +1,112 @@
+{
+  "id": "hanwha-xnv-6120rs",
+  "brand": "Hanwha",
+  "model": "XNV-6120RS",
+  "ndaa_compliant": true,
+  "generation": "Wisenet X",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "end_of_sale_year": 2023,
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.2-62.4 (12x motorized varifocal)",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 70
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "2 microSD/SDHC/SDXC slots"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Wisenet X 2MP stainless-steel vandal IR dome (12x zoom)",
+    "H.265",
+    "150 dB WDR",
+    "Day & Night (ICR)",
+    "IR LED",
+    "Motorized varifocal (12x optical zoom)",
+    "NEMA 4X",
+    "IK10+ rated",
+    "Stainless steel housing",
+    "Digital auto-tracking, handover",
+    "Loitering / directional / audio detection, sound classification, defog",
+    "Bi-directional audio (line in/out)",
+    "WiseStream II",
+    "Lens Distortion Correction (LDC)",
+    "ONVIF Profile S/G/T"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "release_notes": "Ingest 2026-09-08 (Wisenet X 'RS' stainless-steel line gap fill; discontinued). No official DataSheet PDF was reachable in Hanwha's PIM and the product page's full spec table is JS-rendered; record built from the official product-details overview. Verified: 2MP (1920x1080), 5.2-62.4mm 12x optical-zoom motorized varifocal, IR 70m, 60fps@all-res, H.265/H.264/MJPEG, WDR 150dB, dual microSD up to 512GB, PoE, IP66/NEMA4X/IK10+ (recorded as IK10 since the schema enum tops at IK11; IK10+ noted here), stainless steel housing, digital auto-tracking, bi-directional audio (line in/out, no built-in mic/speaker). Minimum illumination, sensor size, angle of view, operating temperature, dimensions and weight were not machine-readable and are omitted (not fabricated).",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/XNV-6120RS"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Hanwha' (or 'Samsung' on older Blue Iris versions)."
+    }
+  },
+  "last_verified": "2026-09-08"
+}

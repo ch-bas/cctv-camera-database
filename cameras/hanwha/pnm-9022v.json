@@ -1,0 +1,127 @@
+{
+  "id": "hanwha-pnm-9022v",
+  "brand": "Hanwha",
+  "model": "PNM-9022V",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet P 8MP Multi-directional Panoramic Camera"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 4608,
+    "max_height": 1800,
+    "label": "8MP panoramic (4x 2MP)"
+  },
+  "sensor": "4x 1/2.8\" CMOS",
+  "lens": {
+    "count": 4,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "209",
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.1
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at, Class 4) / DC 12V",
+    "poe_class": 4,
+    "voltage": "12VDC",
+    "consumption_w": 18
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "2 microSD/SDHC/SDXC slots (512GB each, 1TB total)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Wisenet P 8MP multi-directional panoramic (4x 2MP channels, 4x 2.8mm fixed lens)",
+    "209 horizontal panoramic field of view",
+    "120 dB WDR, SSNR V, BLC/HLC/SSDR",
+    "Day & Night (ICR)",
+    "audio in (mic/line) + line out",
+    "ONVIF Profile S/G/T",
+    "IP66, IK10, NEMA 4X",
+    "NDAA compliant"
+  ],
+  "release_year": 2021,
+  "release_notes": "Specs verified against the official Hanwha Vision PNM-9022V datasheet. Multi-directional (4-channel) panoramic camera with fixed 2.8mm lenses.",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/PNM-9022V",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/PNM-9022V/DataSheet_PNM-9022V_20260806_EN_130221.pdf"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/G/T). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4608x1800",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-40 to 55",
+  "dimensions_mm": "253 x 253 x 165",
+  "weight_g": 3200
+}

@@ -1,0 +1,130 @@
+{
+  "id": "hanwha-xnd-8081rv",
+  "brand": "Hanwha",
+  "model": "XND-8081RV",
+  "aliases": [
+    "Wisenet X series 5MP IR Vandal Dome Camera"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2560,
+    "max_height": 1920,
+    "label": "5MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1920",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.9-9.4 (2.4x motorized varifocal)",
+    "aperture": "F1.3 (wide)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "92.1 (wide) - 38.7 (tele) horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux_color": 0.07
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3) / 12VDC",
+    "consumption_w": 12.95,
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP52",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "ndaa_compliant": true,
+  "features": [
+    "motorized varifocal (2.4x, P-iris IR-corrected)",
+    "WDR 150dB / 120dB",
+    "Day & Night (ICR)",
+    "IR 50m (850nm)",
+    "DIS (built-in gyro sensor)",
+    "vandal-resistant IK10",
+    "audio in (mic-in/line-in selectable)",
+    "WiseStream II",
+    "hallway view (90/270)",
+    "2x microSD slots (up to 512GB total)",
+    "H.265/H.264/MJPEG",
+    "IP52",
+    "Wisenet X series"
+  ],
+  "operating_temp_c": "-25 to 60",
+  "dimensions_mm": "Ø160 x 125",
+  "weight_g": 1450,
+  "environment": [
+    "indoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "release_notes": "Specs per official Hanwha Vision datasheet (XND-8081RV, rev 2026-08-06). Vandal dome, IP52 / IK10 (indoor). Power: PoE (Class 3) or 12VDC. Audio input (mic/line-in) only; no built-in mic or speaker.",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/XND-8081RV",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/XND-8081RV/DataSheet_XND-8081RV_20260806_EN_165844.pdf"
+  ],
+  "last_verified": "2026-09-08",
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

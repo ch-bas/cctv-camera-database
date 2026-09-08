@@ -1,0 +1,124 @@
+{
+  "id": "hanwha-qnd-6010r",
+  "brand": "Hanwha",
+  "model": "QND-6010R",
+  "ndaa_compliant": true,
+  "aliases": [
+    "Wisenet Q 2MP IR Dome 2.8mm"
+  ],
+  "generation": "Wisenet Q",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.9\" 2.19M CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F1.8",
+    "varifocal": false
+  },
+  "field_of_view_deg": "110.0 horizontal / 61.0 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux_color": 0.15
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / DC 12V",
+    "consumption_w": 7,
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "WiseStream",
+    "120 dB WDR",
+    "Hallway view",
+    "lens distortion correction",
+    "defocus detection",
+    "tampering detection",
+    "built-in microphone"
+  ],
+  "operating_temp_c": "-10 to 55",
+  "dimensions_mm": "Ø110.0 x 86.0",
+  "weight_g": 290,
+  "ik_rating": "IK08",
+  "environment": [
+    "indoor"
+  ],
+  "release_notes": "Built from official Hanwha Techwin Wisenet Q series brochure (rev 10-2016): 2MP indoor IR dome, 2.8mm fixed F1.8, IR 20m, WDR 120dB, IK08, built-in mic. ONVIF Profile S/G, SUNAPI.",
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/QNP-6230H/10/Brochures_Wisenet-Q-series_180202_EN.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/QND-6010R"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profile S/G). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Hanwha' or 'Samsung' profile depending on Blue Iris version."
+    }
+  },
+  "last_verified": "2026-09-08",
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "id": "hanwha-snb-6011b",
+  "brand": "Hanwha",
+  "model": "SNB-6011B",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Samsung SNB-6011B",
+    "Wisenet 2MP Full HD Remote Head (covert) Camera"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" 2.38M CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.4 (pinhole, fixed)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "134.3 horizontal / 70.9 vertical",
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.3
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / 12V DC",
+    "consumption_w": 7.5
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "remote head / covert design (RJ-12 pinhole camera head + main unit)",
+    "2.4mm pinhole lens",
+    "120 dB WDR",
+    "Day & Night",
+    "H.264 / MJPEG",
+    "bi-directional audio (G.711 / G.726)",
+    "PoE / 12V DC",
+    "ONVIF"
+  ],
+  "release_year": 2016,
+  "release_notes": "2MP Full HD remote-head (covert) camera with pinhole lens head connected to a main unit. Specs verified against the official Hanwha/Samsung datasheet SNB-6011B (2016-03-22). Discontinued legacy model. Weight is the main unit (camera head 80g).",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/SNB-6011B",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/SNB-6011B/11/SNB-6011B_160322.pdf"
+  ],
+  "last_verified": "2026-09-08",
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "weight_g": 255,
+  "operating_temp_c": "-10 to 55",
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

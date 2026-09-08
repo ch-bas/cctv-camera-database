@@ -1,0 +1,98 @@
+{
+  "id": "hanwha-snd-6011r",
+  "brand": "Hanwha",
+  "model": "SND-6011R",
+  "ndaa_compliant": true,
+  "aliases": [
+    "WiseNet III 2MP IR Dome"
+  ],
+  "generation": "WiseNet III",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.8 (fixed)",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "features": [
+    "120 dB WDR",
+    "true day/night (ICR)",
+    "IR LEDs"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "release_notes": "Built from the official Hanwha Vision product page for SND-6011R (no standalone datasheet published): 2MP indoor IR dome, 3.8mm fixed lens, IR 10m, WDR 120dB, H.264/MJPEG 30fps. Sensor, power detail and dimensions not published on the product page and left unset rather than inferred.",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/SND-6011R"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Hanwha' or 'Samsung' profile depending on Blue Iris version."
+    }
+  },
+  "last_verified": "2026-09-08",
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

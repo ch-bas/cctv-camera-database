@@ -1,0 +1,130 @@
+{
+  "id": "hanwha-xnd-a9084rv",
+  "brand": "Hanwha",
+  "model": "XND-A9084RV",
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet X 8MP AI IR Dome Camera"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "ndaa_compliant": true,
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP (3840x2160)"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "focal_length_mm": "4.4-9.3 (2.1x optical zoom)",
+    "aperture": "F1.3-2.15",
+    "varifocal": true
+  },
+  "field_of_view_deg": "113-47 horizontal / 58-26 vertical / 138-54 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux_color": 0.04
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3)",
+    "consumption_w": 11.2,
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": true,
+    "notes": "1 microSD/SDHC/SDXC slot (max 1TB); OnCloud edge recording supported."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP52",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "8MP AI IR dome camera",
+    "WiseIR 50m (850nm)",
+    "120 dB multi-frame WDR, WiseNR II (AI-based), SSNR V",
+    "AI object classification: person / face / vehicle / license plate + BestShot",
+    "person clothes-color/gender/bag, vehicle type/color, face age/gender/mask/glasses attributes",
+    "AI analytics: loitering, line-crossing, intrusion, slip & fall, social distancing",
+    "business intelligence: people/vehicle/crowd counting, queue management, heatmap",
+    "WiseStream (AI), WisePower power monitoring / ECO mode",
+    "digital image stabilization, defog, LDC, hallway view",
+    "dynamic privacy masking (person/vehicle/license plate)",
+    "Wisenet 9 SoC with dual NPU",
+    "audio mic/line in + line out (no built-in mic)",
+    "FIPS 140-3 level 3 secure element, IEC 62443-4-1, ETSI EN 303 645",
+    "Direct Cloud Connection"
+  ],
+  "release_notes": "Specs verified against the official Hanwha Vision datasheet DataSheet_XND-A9084RV (Ver 202507).",
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/XND-A9084RV/DataSheet_XND-A9084RV_20260806_EN_193759.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/XND-A9084RV"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profile S/G/T/M). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "dimensions_mm": "Ø160 x 118",
+  "weight_g": 1020,
+  "operating_temp_c": "-10 to 50",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

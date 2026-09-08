@@ -1,0 +1,131 @@
+{
+  "id": "hanwha-xnp-6400r",
+  "brand": "Hanwha",
+  "model": "XNP-6400R",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet X 2MP 40x IR PTZ Camera"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p Full HD"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "focal_length_mm": "4.25-170",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "65.66-1.88",
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 200,
+    "min_lux_color": 0.05
+  },
+  "power": {
+    "method": "PoE++ (IEEE 802.3bt, Type 3, Class 6)",
+    "poe_class": 6,
+    "consumption_w": 40
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "2 microSD/SDHC/SDXC slots (512GB each, 1TB total)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Wisenet X 2MP PTZ, 40x optical zoom (32x digital)",
+    "360 endless pan, 90 to -20 tilt, 300 presets, swing/group/trace/tour",
+    "preset accuracy +/-0.1 with pan/tilt correction, max 700/sec pan speed",
+    "WiseIR 200m IR (850nm)",
+    "150 dB WDR, SSNR V, BLC/HLC/SSDR",
+    "Day & Night (ICR), up to 60fps",
+    "water removal (spin dry, lens heater)",
+    "audio in/out via optional I/O box",
+    "ONVIF Profile S/G/T",
+    "IP66, IK10",
+    "NDAA compliant"
+  ],
+  "release_year": 2021,
+  "release_notes": "Specs verified against the official Hanwha Vision XNP-6400R datasheet; IP/IK ratings confirmed from the product page certification documents.",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/XNP-6400R",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/XNP-6400R/DataSheet_XNP-6400R_20260806_EN_140827.pdf"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/G/T). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-40 to 50",
+  "dimensions_mm": "158 x 158 x 293.3",
+  "weight_g": 3200
+}

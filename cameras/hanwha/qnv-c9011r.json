@@ -1,0 +1,123 @@
+{
+  "id": "hanwha-qnv-c9011r",
+  "brand": "Hanwha",
+  "model": "QNV-C9011R",
+  "aliases": [
+    "Wisenet Q AI 8MP IR Micro Vandal Dome"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.0",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "108 horizontal / 59 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux_color": 0.03
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3)",
+    "consumption_w": 8.5,
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": true,
+    "notes": "1 microSD/SDHC/SDXC slot (256GB; up to 1TB Hanwha-branded for OnCloud edge recording)"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "ndaa_compliant": true,
+  "features": [
+    "8MP AI micro vandal dome",
+    "WiseIR 20m 850nm",
+    "AI object detection (person/vehicle)",
+    "120 dB WDR, WiseNR II",
+    "ONVIF Profile S/G/T/M",
+    "IP66, IK10, NEMA 4X"
+  ],
+  "operating_temp_c": "-40 to 55",
+  "dimensions_mm": "Ø110 x 77",
+  "weight_g": 522,
+  "environment": [
+    "outdoor"
+  ],
+  "release_notes": "Specs from official Hanwha Vision datasheet DataSheet_QNV-C9011R (2026-08-06).",
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/QNV-C9011R/DataSheet_QNV-C9011R_20260806_EN_193334.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/QNV-C9011R"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

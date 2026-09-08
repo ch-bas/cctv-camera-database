@@ -1,0 +1,108 @@
+{
+  "id": "hanwha-tnm-3620tdy",
+  "brand": "Hanwha",
+  "model": "TNM-3620TDY",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet T Bi-spectral Body Temperature Detection Thermal Camera"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.08,
+    "max_width": 320,
+    "max_height": 240,
+    "label": "QVGA thermal (320x240) + 2MP visible"
+  },
+  "sensor": "Bi-spectral: QVGA (320x240) uncooled thermal detector + 1/2.8\" 2MP visible CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "4.7 (thermal) / 4.0 (visible)",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "none"
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at) / DC 12V",
+    "voltage": "12VDC"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "1 microSD/SDHC/SDXC slot (256GB)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "Wisenet T bi-spectral thermal camera with estimated body-temperature detection",
+    "estimated body temperature: 30-45C (+/-0.5C); normal radiometric: -20 to 130C",
+    "QVGA (320x240) thermal channel + 2MP visible channel",
+    "thermal 4.7mm fixed lens + visible 4.0mm fixed lens",
+    "full-duplex audio: mic/line-in + line-out (G.711/G.726)",
+    "ONVIF support",
+    "NDAA compliant"
+  ],
+  "release_year": 2020,
+  "release_notes": "Official datasheet blob unavailable (older/screening product); specs built from the Hanwha Vision product page and product manual. Thermal NETD, spectral range, field of view, framerate, dimensions, weight and IP/IK ratings were not stated in the available documents and are intentionally omitted.",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/TNM-3620TDY",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/CDB/TNM-3620TDY/Manuals_TNM-3620TDY_230421_EN.pdf"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 320,
+        "height": 240,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ]
+  },
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

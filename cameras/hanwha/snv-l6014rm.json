@@ -1,0 +1,110 @@
+{
+  "id": "hanwha-snv-l6014rm",
+  "brand": "Hanwha",
+  "model": "SNV-L6014RM",
+  "ndaa_compliant": true,
+  "aliases": [
+    "WiseNet Lite 2MP IR Vandal Dome (M12)"
+  ],
+  "generation": "WiseNet Lite",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6 (fixed)",
+    "aperture": "F1.8",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 15,
+    "min_lux_color": 0.15
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "Hallway view",
+    "lens distortion correction",
+    "M12 connector (transport/mobile rugged)",
+    "built-in microphone",
+    "audio in/out",
+    "IR LEDs"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "release_notes": "Built from the official Hanwha Vision product page for SNV-L6014RM (WiseNet Lite; no standalone datasheet published): 2MP outdoor vandal IR dome with M12 connector, 3.6mm fixed F1.8 lens, IR 15m, color min illumination 0.15 lux@F1.8, H.264/MJPEG 30fps, IP66/IK10, hallway view, LDC, built-in mic + audio in/out, microSD. PoE. WDR, power detail and dimensions not published and left unset rather than inferred.",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/SNV-L6014RM"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Hanwha' or 'Samsung' profile depending on Blue Iris version."
+    }
+  },
+  "last_verified": "2026-09-08",
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

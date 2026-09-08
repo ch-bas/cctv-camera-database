@@ -1,0 +1,114 @@
+{
+  "id": "hanwha-qnd-6032r1",
+  "brand": "Hanwha",
+  "model": "QND-6032R1",
+  "aliases": [
+    "Wisenet Q 2MP IR Dome"
+  ],
+  "generation": "Wisenet Q",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP (1080p)"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6.0 (fixed)",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux_color": 0.03
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3), 12V DC",
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "notes": "microSD/SDHC/SDXC, 1 slot up to 128GB"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "120 dB WDR",
+    "Day & Night (ICR)",
+    "IR 850nm",
+    "Hallway view (90/270)",
+    "LDC support"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "ndaa_compliant": true,
+  "release_notes": "Built from the Hanwha Vision product page visible specifications (resolution, 6mm fixed lens, IR distance, min illumination, codecs, 128GB microSD, IP/IK, power); Hanwha did not publish a downloadable datasheet PDF for this model. Fields not stated on the page (field of view, dimensions, weight, operating temperature) were left unset rather than inferred.",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/QND-6032R1"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profile S/G/T). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "last_verified": "2026-09-08",
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

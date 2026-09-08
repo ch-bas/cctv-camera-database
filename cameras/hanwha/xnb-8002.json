@@ -1,0 +1,123 @@
+{
+  "id": "hanwha-xnb-8002",
+  "brand": "Hanwha",
+  "model": "XNB-8002",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet X 6MP Box Camera"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3328,
+    "max_height": 1872,
+    "label": "6MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.05
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3) / DC 12V / AC 24V",
+    "consumption_w": 12.95,
+    "poe_class": 3,
+    "voltage": "12VDC / 24VAC"
+  },
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "2 microSD/SDHC/SDXC slots (Max. 512GB x2, Total 1TB)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "6MP box camera (Wisenet X series)",
+    "C/CS-mount interchangeable lens (i-CS supported), lens not included",
+    "day/night auto ICR (no built-in IR illuminator)",
+    "120 dB WDR",
+    "people counting, queue management, heatmap",
+    "built-in mic + line out",
+    "WiseStream II smart codec",
+    "ONVIF Profile S/G/T",
+    "secure boot, signed & encrypted firmware",
+    "NDAA compliant"
+  ],
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/XNB-8002/DataSheet_XNB-8002_20260806_EN_172203.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/XNB-8002"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/G/T). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3328x1872",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "dimensions_mm": "81 x 67 x 165",
+  "weight_g": 880,
+  "operating_temp_c": "-10 to 55"
+}

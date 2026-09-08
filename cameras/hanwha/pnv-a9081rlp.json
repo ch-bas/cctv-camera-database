@@ -1,0 +1,129 @@
+{
+  "id": "hanwha-pnv-a9081rlp",
+  "brand": "Hanwha",
+  "model": "PNV-A9081RLP",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet P 4K LPR/ANPR/MMCR IR Vandal Dome Camera"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "focal_length_mm": "4.5-10",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "101.4-45.5",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.05
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at, Class 4) / DC 12V",
+    "poe_class": 4,
+    "voltage": "12VDC",
+    "consumption_w": 20
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "1 microSD/SDHC/SDXC slot (32GB card preinstalled)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Wisenet P 4K LPR/ANPR/MMCR (make/model/color recognition) IR vandal dome",
+    "Wisenet Road AI CNN-based license plate recognition, up to 3 lanes / 4K plate capture",
+    "2.2x optical zoom motorized varifocal lens",
+    "120 dB WDR, SSNR V, WiseStream II",
+    "IR viewable length 30m (850nm)",
+    "Day & Night (ICR)",
+    "audio in (mic/line) + line out",
+    "ONVIF Profile S/G/T",
+    "IP66/IP67, IK10+",
+    "NDAA compliant"
+  ],
+  "release_year": 2021,
+  "release_notes": "Specs verified against the official Hanwha Vision PNV-A9081RLP datasheet; IP/IK ratings confirmed from the product page certification documents.",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/PNV-A9081RLP",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/PNV-A9081RLP/DataSheet_PNV-A9081RLP_20260907_EN_172437.pdf"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/G/T). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP66/IP67",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-40 to 55",
+  "dimensions_mm": "180 x 180 x 125",
+  "weight_g": 1900
+}

@@ -1,0 +1,127 @@
+{
+  "id": "hanwha-pnb-a9082",
+  "brand": "Hanwha",
+  "model": "PNB-A9082",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet 9 8MP AI Box"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/1.2\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.9-13.3 (2.25x motorized varifocal)",
+    "aperture": "F1.5-2.9",
+    "varifocal": true
+  },
+  "field_of_view_deg": "109-49 horizontal / 59-27 vertical / 128-56 diagonal",
+  "night_vision": {
+    "type": "color",
+    "min_lux_color": 0.015
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at, Class 4) / DC 12V",
+    "consumption_w": 13.6,
+    "poe_class": 4,
+    "voltage": "12VDC"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048,
+    "nvr_compatible": true,
+    "cloud": true,
+    "notes": "2 microSD/SDHC/SDXC slots (max 1TB each, 2TB total); OnCloud edge recording supported."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Wisenet 9 SoC with dual NPU for AI analytics",
+    "integrated lens box (5.9-13.3mm motorized varifocal)",
+    "AI object detection: person / face / vehicle / license plate + BestShot",
+    "loitering/intrusion, social distancing, slip & fall detection",
+    "people/vehicle/crowd counting, queue management, heatmap",
+    "120 dB WDR",
+    "WiseNR II (AI engine), WiseStream (AI-based smart codec)",
+    "built-in mic + audio in (mic/line) + line out",
+    "ONVIF Profile S/G/T/M, SUNAPI",
+    "secure boot, signed & encrypted firmware",
+    "NDAA compliant"
+  ],
+  "release_year": 2024,
+  "release_notes": "Specs verified against the official Hanwha Vision PNB-A9082 datasheet (Ver. 2026).",
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/PNB-A9082/DataSheet_PNB-A9082_20260806_EN_185722.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/PNB-A9082"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/G/T/M). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "dimensions_mm": "82 x 76 x 190",
+  "weight_g": 900,
+  "operating_temp_c": "-10 to 55"
+}
