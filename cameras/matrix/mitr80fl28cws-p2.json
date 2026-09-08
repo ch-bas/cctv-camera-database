@@ -1,0 +1,138 @@
+{
+  "id": "matrix-mitr80fl28cws-p2",
+  "brand": "Matrix",
+  "model": "SATATYA MITR80FL28CWS P2",
+  "aliases": [
+    "8MP IR Turret Camera with 2.8mm Lens"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "stream2",
+        "resolution": "720x576",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "stream3",
+        "resolution": "2048x1536",
+        "fps": 10,
+        "codec": "MJPEG"
+      },
+      {
+        "name": "stream4",
+        "resolution": "1920x1080",
+        "fps": 15,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" Sony STARVIS CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "106.9",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "802.3af (PoE)",
+    "consumption_w": 8
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "notes": "Edge recording via NAS only; no microSD slot"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ndaa_compliant": true,
+  "features": [
+    "Sony STARVIS back-illuminated CMOS sensor",
+    "True WDR 120dB",
+    "IR range up to 30m (850nm), auto/manual IR switching",
+    "3D & 2D DNR",
+    "video analytics: motion detection, tamper detection, tripwire (trip/no-trip), object/zone intrusion",
+    "DORI (IEC 62676-4): D 82m / O 32m / R 17m / I 9m",
+    "adaptive streaming / smart streaming",
+    "ONVIF Profile S, G & T",
+    "cyber security per ISO/IEC 27402: secure boot, signed firmware, AES-256 + RSA-2048 encryption, anti-rollback",
+    "802.1x network authentication, HTTPS/TLS 1.2 streaming, IP address filtering",
+    "H.265/H.264/MJPEG compression",
+    "Make in India"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Ø138.58 x 118.97 (Diameter x Height)",
+  "weight_g": 720,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global",
+    "india",
+    "US"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "release_notes": "Specs per official Matrix SATATYA datasheet (SATATYA MITR80FL28CWS P2). Privacy masks: 8. Certifications: BIS, CE, IP67, FCC Part-15 Subpart-B, ONVIF S/G/T, NDAA Compliant, ER by STQC.",
+  "sources": [
+    "https://www.matrixcomsec.com"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/1/1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/1/2",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profile S/G/T). Default ONVIF port 80; RTSP on 554 (/1/1 main, /1/2 sub)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use the generic ONVIF profile; main stream rtsp://{user}:{pass}@{ip}:554/1/1."
+    }
+  }
+}
