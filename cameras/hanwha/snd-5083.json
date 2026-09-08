@@ -1,0 +1,120 @@
+{
+  "id": "hanwha-snd-5083",
+  "brand": "Hanwha",
+  "model": "SND-5083",
+  "ndaa_compliant": true,
+  "aliases": [
+    "WiseNet III 1.3MP Varifocal Dome"
+  ],
+  "generation": "WiseNet III",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 1.3,
+    "max_width": 1280,
+    "max_height": 1024,
+    "label": "1.3MP"
+  },
+  "sensor": "1/3\" 1.3M CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-10 (3.6x varifocal)",
+    "aperture": "F1.2",
+    "varifocal": true
+  },
+  "field_of_view_deg": "94.6-28.8 horizontal",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.008
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1280x1024",
+        "fps": 60,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / DC 12V",
+    "consumption_w": 9,
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "130 dB WDR",
+    "true day/night (ICR)",
+    "defog",
+    "face detection",
+    "audio detection",
+    "tampering detection",
+    "bi-directional audio"
+  ],
+  "operating_temp_c": "-10 to 55",
+  "dimensions_mm": "Ø132.1 x 107.6",
+  "weight_g": 500,
+  "environment": [
+    "indoor"
+  ],
+  "release_notes": "Built from official Hanwha Techwin datasheet SND-5084/5083 (dated 2015-07-21): SND-5083 is a 1.3MP indoor dome, 1/3\" 1.3M CMOS, 2.8-10mm (3.6x) manual varifocal F1.2, true day/night (ICR) no IR illuminator, WDR 130dB, H.264/MJPEG 60fps, bi-directional audio. ONVIF Profile S, SUNAPI 2.0.",
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/SND-5084/09/SND-5084_5083_150721.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/SND-5083"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profile S). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Hanwha' or 'Samsung' profile depending on Blue Iris version."
+    }
+  },
+  "last_verified": "2026-09-08",
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

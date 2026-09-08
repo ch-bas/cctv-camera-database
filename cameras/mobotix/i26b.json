@@ -1,0 +1,115 @@
+{
+  "id": "mobotix-i26b",
+  "brand": "Mobotix",
+  "model": "i26B",
+  "ndaa_compliant": true,
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "label": "6MP (3072x2048)"
+  },
+  "sensor": "1/1.8\" CMOS, 6MP",
+  "lens": {
+    "count": 1,
+    "aperture": "f/2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180h",
+  "night_vision": {
+    "type": "none"
+  },
+  "power": {
+    "method": "PoE 802.3af Class 3"
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP30",
+  "ik_rating": "IK06",
+  "operating_temp_c": "0 to 40",
+  "dimensions_mm": "96 x 138 x 50",
+  "weight_g": 201,
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 12,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3072x2048",
+        "fps": 12,
+        "codec": "MJPEG"
+      },
+      {
+        "name": "sub",
+        "resolution": "2048x1536",
+        "fps": 20,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "features": [
+    "MOBOTIX i26B Indoor 180 hemispheric wall camera",
+    "MOBOTIX Mx6 2nd generation platform (MxBus)",
+    "interchangeable lenses (fisheye 180 to tele 15)",
+    "MxPEG codec",
+    "MxAnalytics video analytics",
+    "ONVIF Profile S",
+    "edge microSD storage",
+    "audio package variant (microphone and speaker)",
+    "indoor wall mount"
+  ],
+  "sources": [
+    "https://www.mobotix.com/en/support/download-center/documentation/technical-data-sheets",
+    "https://www.mobotix.com/sites/default/files/2023-08/Mx_TS_i26B_V1.09_EN.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/cam0/stream",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF or motionEye/generic MJPEG integration. RTSP path not confirmed in datasheet; MxPEG default."
+    },
+    "blue_iris": {
+      "profile": "Mobotix",
+      "notes": "Select 'Mobotix' profile. Uses MxPEG codec by default; switch to H.264 in camera settings for Blue Iris."
+    }
+  },
+  "last_verified": "2026-09-08",
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ]
+}

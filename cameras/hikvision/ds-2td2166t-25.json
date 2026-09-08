@@ -1,0 +1,122 @@
+{
+  "id": "hikvision-ds-2td2166t-25",
+  "brand": "Hikvision",
+  "model": "DS-2TD2166T-25",
+  "aliases": [
+    "DS-2TD2166T-25"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 0.33,
+    "max_width": 640,
+    "max_height": 512,
+    "label": "640x512 (thermal)"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.265+",
+      "H.264",
+      "H.264+",
+      "MJPEG"
+    ],
+    "max_fps": 50,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "640x512",
+        "fps": 50,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x512",
+        "fps": 50,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "640x512",
+        "fps": 50,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "Thermal: uncooled VOx, 640x512, 17 um pixel pitch, 8-14 um, NETD < 40 mK (25 C, F1.0)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "25 mm (fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "24.55h x 19.75v",
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP66",
+  "operating_temp_c": "-40 to 65 C",
+  "dimensions_mm": "352.4 x 113.5 x 113",
+  "weight_g": 2000,
+  "power": {
+    "method": "24 VAC / 12 VDC / PoE (802.3at, class 4)",
+    "consumption_w": 8
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": false,
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "thermal-only network camera (VOx uncooled microbolometer, 640x512 thermal, 17 um pixel pitch, 8-14 um)",
+    "thermal FOV 24.55h x 19.75v",
+    "temperature measurement -20 to 550 C, accuracy Max (+/-2 C, +/-2%)",
+    "perimeter protection: line crossing, intrusion, region entrance/exit",
+    "image processing: AGC, DDE, 3D DNR",
+    "audio in/out interface (3.5mm mic/line in)",
+    "built-in de-icing heater",
+    "built-in GPU for perimeter analytics",
+    "H.265+/H.264+ encoding"
+  ],
+  "release_notes": "The Hikvision DS-2TD2166T-25 is a 640x512 thermographic network bullet camera with a 25 mm lens and an extended -20 to 550 C measurement range for industrial temperature monitoring.",
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000002503/DS-2TD2166T-25_V5.5.0_20221115.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  }
+}

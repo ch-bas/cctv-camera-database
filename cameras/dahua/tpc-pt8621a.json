@@ -1,0 +1,107 @@
+{
+  "id": "dahua-tpc-pt8621a",
+  "brand": "Dahua",
+  "model": "TPC-PT8621A",
+  "aliases": [
+    "Dahua TPC-PT8621A",
+    "DH-TPC-PT8621A",
+    "DHI-TPC-PT8621A"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 0.33,
+    "max_width": 640,
+    "max_height": 512,
+    "label": "640x512 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 640x512, 17 um pixel pitch, 8-14 um, NETD <=40 mK; optical: 1/2.8in CMOS 2MP",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "35 / 50 / 75 / 100 (thermal); optical 6.6-330 (50x zoom)",
+    "aperture": "F1.0 (thermal 35-50mm), F1.1 (75mm), F1.2-1.4 (100mm)",
+    "varifocal": true
+  },
+  "power": {
+    "method": "24 VAC",
+    "consumption_w": 65,
+    "voltage": "AC 24V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256
+  },
+  "ip_rating": "IP66",
+  "operating_temp_c": "-40 to 70",
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "features": [
+    "bi-spectrum thermal + visible positioning system (surveillance, no temperature measurement)",
+    "uncooled VOx thermal detector (640x512)",
+    "thermal sensitivity NETD <=40 mK",
+    "optical channel: 2 MP (1920x1080), 50x optical zoom, 16x digital",
+    "long-range fire detection & alarm",
+    "auto-tracking of hottest spot",
+    "pan 0-360 endless, tilt -45 to +90, 300 presets",
+    "6 kV lightning protection",
+    "18 thermal color palettes"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/thermal-cameras/tpc-pt8621a",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/DH-TPC-PT8621A_Datasheet_20201106.pdf"
+  ],
+  "last_verified": "2026-09-07",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=2&subtype=0",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua RTSP convention; channel 1 = visible/fusion, channel 2 = thermal. Not verified against a live unit."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80). Thermal and visible exposed as separate channels (channel 1 visible, channel 2 thermal)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "ndaa_compliant": false,
+  "audio": {
+    "microphone": true,
+    "speaker": true
+  },
+  "dimensions_mm": "502.8 x 248.4 x 344.6",
+  "weight_g": 15000,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  }
+}

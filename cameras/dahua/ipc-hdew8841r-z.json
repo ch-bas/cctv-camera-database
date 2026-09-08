@@ -1,0 +1,134 @@
+{
+  "id": "dahua-ipc-hdew8841r-z",
+  "brand": "Dahua",
+  "model": "IPC-HDEW8841R-Z",
+  "aliases": [
+    "DH-IPC-HDEW8841R-Z"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5",
+    "aperture": "F1.5",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40,
+    "min_lux_color": 0.007
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3af)",
+    "consumption_w": 7.3,
+    "voltage": "12VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false,
+    "max_microsd_gb": 256
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "rtmp",
+    "http",
+    "p2p"
+  ],
+  "ip_rating": "IP68",
+  "ik_rating": "IK10",
+  "features": [
+    "WizMind AI",
+    "Explosion-proof (ATEX / IECEx)",
+    "IR 40m",
+    "Motorized varifocal 2.7-13.5mm",
+    "SUS316L stainless casing",
+    "Face detection",
+    "People counting",
+    "Perimeter protection (tripwire, intrusion)",
+    "SMD 3.0",
+    "WDR 120dB",
+    "IK10 vandal-proof",
+    "Audio in/out",
+    "microSD up to 256GB"
+  ],
+  "operating_temp_c": "-40 to +60",
+  "dimensions_mm": "219.5 x Ø165 x 118.2",
+  "weight_g": 4500,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ndaa_compliant": false,
+  "markets": [
+    "global"
+  ],
+  "release_notes": "8MP explosion-proof IR dome WizMind camera (ATEX/IECEx) with motorized 2.7-13.5mm lens, 40 m IR, SUS316L stainless casing, IK10 and WizMind AI. IP68.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/explosion-proof/optical-series/ipc-hdew8841r-z",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/IPC-HDEW8841R-Z_S2_datasheet_20250303.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "last_verified": "2026-09-07"
+}

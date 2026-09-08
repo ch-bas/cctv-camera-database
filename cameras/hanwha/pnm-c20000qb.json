@@ -1,0 +1,123 @@
+{
+  "id": "hanwha-pnm-c20000qb",
+  "brand": "Hanwha",
+  "model": "PNM-C20000QB",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "5MP / 2MP x 4CH AI Remote-head Camera"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP/2MP x4 channel remote-head multi-sensor"
+  },
+  "sensor": "4x 1/2.8\" CMOS remote sensor heads (5MP / 2MP)",
+  "lens": {
+    "count": 4,
+    "focal_length_mm": "remote-head dependent (1.6 / 2.4 / 2.45 / 4.6 / 4.72mm head options across 4 channels)",
+    "varifocal": false
+  },
+  "field_of_view_deg": "187-70 horizontal / 113.9-39 vertical (per remote head option)",
+  "night_vision": {
+    "type": "color",
+    "min_lux_color": 0.03
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at, Class 4) / DC 12V",
+    "consumption_w": 25.5,
+    "poe_class": 4,
+    "voltage": "12VDC"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "2 microSD/SDHC/SDXC slots (max 1TB each, 2TB total) in the base unit."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "4-channel AI remote-head system: one base unit + up to 4 remote sensor heads",
+    "interchangeable remote heads (5MP / 2MP, multiple lens options)",
+    "AI object detection and analytics per channel",
+    "120 dB WDR",
+    "per-channel hallway view / flip / mirror",
+    "WiseNR II, WiseStream",
+    "ONVIF Profile S/G/T/M, SUNAPI",
+    "NDAA compliant"
+  ],
+  "release_year": 2024,
+  "release_notes": "Specs verified against the official Hanwha Vision PNM-C20000QB datasheet (Ver. 2026). Base unit specs; remote heads sold/configured separately.",
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/PNM-C20000QB/DataSheet_PNM-C20000QB_20260612_EN_170800.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/PNM-C20000QB"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/G/T/M). Default ONVIF port 80. 4-channel device."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile; add each channel separately."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "dimensions_mm": "200 x 37 x 146 (base unit)",
+  "weight_g": 1015,
+  "operating_temp_c": "-10 to 45"
+}

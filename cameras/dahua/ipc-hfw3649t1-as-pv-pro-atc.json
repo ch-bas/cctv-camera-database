@@ -1,0 +1,138 @@
+{
+  "id": "dahua-ipc-hfw3649t1-as-pv-pro-atc",
+  "brand": "Dahua",
+  "model": "IPC-HFW3649T1-AS-PV-PRO-ATC",
+  "aliases": [
+    "DH-IPC-HFW3649T1-AS-PV-PRO-ATC"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3288,
+    "max_height": 1850,
+    "label": "6MP"
+  },
+  "video": {
+    "max_fps": 30,
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3288x1850",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "109",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 60,
+    "min_lux_color": 0.0002
+  },
+  "power": {
+    "method": "12 VDC / PoE+ (802.3at)",
+    "consumption_w": 11.8
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "WizSense",
+    "WizColor TiOC PRO",
+    "anti-corrosion (C5-H / NEMA 4X aluminum alloy)",
+    "Smart Dual Light",
+    "60m IR",
+    "50m warm light",
+    "red & blue active deterrence",
+    "built-in siren",
+    "two-way audio",
+    "SMD 4.0",
+    "perimeter protection (intrusion/tripwire, human/vehicle)",
+    "face detection",
+    "AcuPick",
+    "120dB WDR",
+    "Xinghan Vision AI models",
+    "2.8mm / 3.6mm fixed lens options"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "288.4 x 94.4 x 84.7",
+  "weight_g": 1000,
+  "release_year": 2026,
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": false,
+  "markets": [
+    "global"
+  ],
+  "release_notes": "6MP WizColor TiOC PRO fixed-focal anti-corrosion (C5-H/NEMA 4X) bullet with Smart Dual Light (60m IR / 50m warm), active deterrence, two-way audio and AcuPick.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/network-cameras/wizsense-3-series/anti-corrosion/ipc-hfw3649t1-as-pv-pro-atc",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/86221/datasheet/DH-IPC-HFW3649T1-AS-PV-PRO-ATC_S0_datasheet_20260129.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI (default admin).",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

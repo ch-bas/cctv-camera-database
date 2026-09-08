@@ -1,0 +1,120 @@
+{
+  "id": "hanwha-snb-6010b",
+  "brand": "Hanwha",
+  "model": "SNB-6010B",
+  "ndaa_compliant": true,
+  "aliases": [
+    "Wisenet III 2MP Covert Pinhole Camera"
+  ],
+  "generation": "Wisenet III",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "release_year": 2016,
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.8\" 2.38MP CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.6 (pinhole, fixed)",
+    "aperture": "F2.5",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "color",
+    "min_lux_color": 0.3
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3af) or 12V DC",
+    "consumption_w": 7.5
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "Covert pinhole modular design (separate camera and main unit)",
+    "True WDR 120 dB",
+    "Defog",
+    "Multi-crop streaming",
+    "Motion detection",
+    "Audio detection",
+    "Face detection with metadata",
+    "Tampering detection",
+    "Bi-directional audio",
+    "ONVIF Profile S, SUNAPI"
+  ],
+  "operating_temp_c": "-10 to 55",
+  "weight_g": 335,
+  "environment": [
+    "indoor"
+  ],
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/SNB-6010B",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/SNB-6010B/11/SNB-6010B_160309.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "last_verified": "2026-09-08",
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

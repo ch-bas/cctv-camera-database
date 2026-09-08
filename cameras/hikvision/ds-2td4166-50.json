@@ -1,0 +1,122 @@
+{
+  "id": "hikvision-ds-2td4166-50",
+  "brand": "Hikvision",
+  "model": "DS-2TD4166-50",
+  "aliases": [
+    "DS-2TD4166-50/V2"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.33,
+    "max_width": 640,
+    "max_height": 512,
+    "label": "640x512 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 640x512, NETD < 40 mK; optical: 1/1.9in Progressive Scan CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "50 (fixed)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "12.42 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 200
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "24 VAC",
+    "consumption_w": 60,
+    "voltage": "24 VAC"
+  },
+  "power_source": [
+    "ac-mains"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 64
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "operating_temp_c": "-40 to 60",
+  "weight_g": 8000,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 50,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "thermal",
+        "resolution": "640x512",
+        "fps": 50,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "features": [
+    "thermal and optical bi-spectrum network speed dome with image fusion",
+    "optical channel: 1080p (1920x1080) with 36x optical zoom",
+    "thermal detector: 640x512 VOx uncooled FPA, NETD < 40 mK",
+    "smart tracking (panorama, event and multi-scene patrol) with thermal/optical linkage",
+    "temperature exception alarm -20 to 150 C",
+    "perimeter protection: line crossing, intrusion, region entrance/exit",
+    "360 continuous pan, tilt -20 to +90, built-in GPU, wiper, optical defog"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000002581/DS-2TD4166-50_V2_20221115.pdf"
+  ],
+  "release_notes": "The Hikvision DS-2TD4166-50 is a thermal and optical bi-spectrum network speed dome with a 640x512 VOx thermal module (50 mm lens), a 1080p 36x optical channel, smart tracking and temperature exception alarms. Verified against the official Hikvision datasheet.",
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Optical is Channel 1, thermal is Channel 2."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

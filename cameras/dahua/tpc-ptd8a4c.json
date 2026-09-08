@@ -1,0 +1,114 @@
+{
+  "id": "dahua-tpc-ptd8a4c",
+  "brand": "Dahua",
+  "model": "TPC-PTD8A4C",
+  "aliases": [
+    "Dahua TPC-PTD8A4C",
+    "DHI-TPC-PTD8A4C"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 1.31,
+    "max_width": 1280,
+    "max_height": 1024,
+    "label": "1280x1024 (thermal)"
+  },
+  "sensor": "Thermal: vanadium oxide uncooled focal plane detector, 1280x1024, 12 um pixel pitch, 8-14 um, NETD < 25 mK; optical: dual 1/1.8in CMOS (channel 1 4MP 2688x1520, channel 2 8MP 3840x2160)",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30
+  },
+  "lens": {
+    "count": 3,
+    "focal_length_mm": "23-230 or 30-300 (thermal, zoom); visible ch1 10-1200",
+    "varifocal": true
+  },
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 3000
+  },
+  "power": {
+    "method": "Wide input voltage 36-57 VDC",
+    "voltage": "36-57 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512
+  },
+  "ip_rating": "IP66",
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "570 (dia) x 977.1",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "tri-sensor multi-spectral surveillance system (1280x1024 thermal + dual visible 4MP/8MP)",
+    "vanadium oxide uncooled thermal detector, NETD < 25 mK",
+    "zoom thermal lens (23-230 mm / 30-300 mm) and zoom visible lens (86x / 120x)",
+    "pan 0 to 360 endless, tilt -45 to +85, 300 presets",
+    "near-IR laser illumination up to 3000 m (optional)",
+    "laser range finder up to 6000 m, +/-1 m (optional)",
+    "target tracking (manual and alarm-triggered), tripwire, intrusion, heat detection",
+    "Electronic and Optical Image Stabilization, electronic/optical defog",
+    "Ethernet and optical-fiber (100 Mbps) communication",
+    "large positioning-system enclosure, net weight approx. 113 kg, dome IP67 / PTZ IP66",
+    "7/2 alarm in/out, RS-485"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/thermal-products/thermal-cameras/ultra-series/tpc-ptd8a4c",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/87748/datasheet/DHI-TPC-PTD8A4C_datasheet_20260520.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "release_notes": "Ultra-series long-range multi-spectral positioning system with a 1280x1024 uncooled VOx thermal channel and dual visible channels (4MP and 8MP), optional near-IR laser illuminator to 3000 m and laser range finder to 6000 m.",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=2&subtype=0",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua RTSP convention; channel 1 = visible, channel 2 = thermal (additional visible channel available). Not verified against a live unit."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80). Thermal and visible exposed as separate channels; PTZ via ONVIF."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

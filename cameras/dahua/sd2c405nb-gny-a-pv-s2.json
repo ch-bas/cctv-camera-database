@@ -1,0 +1,131 @@
+{
+  "id": "dahua-sd2c405nb-gny-a-pv-s2",
+  "brand": "Dahua",
+  "model": "SD2C405NB-GNY-A-PV-S2",
+  "aliases": [
+    "DH-SD2C405NB-GNY-A-PV-S2"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5",
+    "aperture": "F1.6-F3.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "96.73-24.76 horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.05
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3af)",
+    "consumption_w": 12.95
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 55",
+  "features": [
+    "mini pan-tilt dome, 5x optical zoom (motorized varifocal)",
+    "Smart Dual Light (IR + warm light), 30m each",
+    "Auto Tracking Lite",
+    "deep-learning human/vehicle classification, SMD 3.0",
+    "300 presets with power-off memory; pan 0-345, tilt 0-90",
+    "Smart H.265+/H.264+",
+    "two-way talk"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/pt-cameras/ip-pt-2-series/single-lens/sd2c405nb-gny-a-pv-s2",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/82833/datasheet/SD2C405NB-GNY-A-PV-S2_S0_datasheet_20250904.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI. PTZ driven over ONVIF."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "dimensions_mm": "155.5 x 129.6 (H x diameter)",
+  "weight_g": 650,
+  "environment": [
+    "outdoor"
+  ],
+  "last_verified": "2026-09-06",
+  "ndaa_compliant": false
+}

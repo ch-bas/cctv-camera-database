@@ -1,0 +1,127 @@
+{
+  "id": "dahua-hy-ft121ld",
+  "brand": "Dahua",
+  "model": "HY-FT121LD",
+  "aliases": [
+    "DHI-HY-FT121LD"
+  ],
+  "type": "dual-lens",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.7\" CMOS (visible) + VOx uncooled 120x90 thermal detector",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "4",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 15
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE / DC 12V",
+    "consumption_w": 10.1
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "flame detection network camera (thermal + visible)",
+    "VOx uncooled thermal detector 120x90, 17um pitch, thermal lens 1.2mm F1.1",
+    "flame detection with adjustable sensitivity",
+    "3D noise reduction",
+    "strobe / audio alarm",
+    "DWDR",
+    "built-in heater",
+    "1 alarm in / 1 alarm out",
+    "two-way audio"
+  ],
+  "operating_temp_c": "-20 to 60",
+  "dimensions_mm": "diameter 110 x 88.6",
+  "weight_g": 850,
+  "release_year": 2022,
+  "sources": [
+    "https://www.dahuasecurity.com/products/fire-alarm/fire-safety-cameras/flame-detection-camera/hy-ft121ld",
+    "https://materialfile.dahuasecurity.com/uploads/soft/20221124/DHI-HY-FT121LD_datasheet_20221122.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-09-07",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ndaa_compliant": false
+}

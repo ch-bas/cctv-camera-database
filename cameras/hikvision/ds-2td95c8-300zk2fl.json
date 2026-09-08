@@ -1,0 +1,131 @@
+{
+  "id": "hikvision-ds-2td95c8-300zk2fl",
+  "brand": "Hikvision",
+  "model": "DS-2TD95C8-300ZK2FL",
+  "aliases": [
+    "DS-2TD95C8-300ZK2FL/W"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 1.31,
+    "max_width": 1280,
+    "max_height": 1024,
+    "label": "1280x1024 (thermal)"
+  },
+  "sensor": "Thermal: VOx uncooled focal plane array, 1280x1024, 12 um pixel pitch, 8-14 um, NETD < 35 mK; optical: 1/1.8in progressive scan CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "30 to 300 (thermal)",
+    "aperture": "F0.85 to F1.35 (thermal)",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 3000
+  },
+  "field_of_view_deg": "28.7 to 2.9 horizontal (thermal)",
+  "power": {
+    "method": "48 VDC (4-pin aviation connector)",
+    "consumption_w": 180,
+    "voltage": "48 VDC"
+  },
+  "power_source": [
+    "dc"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "thermal",
+        "resolution": "1920x1080",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "optical",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true
+  },
+  "operating_temp_c": "-40 to 70 C",
+  "dimensions_mm": "578.3 x 571 x 955.7",
+  "weight_g": 100000,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "thermal & optical bi-spectrum network sphere positioning system (PTZ)",
+    "thermal detector: VOx uncooled 1280x1024, 12 um pixel pitch, NETD < 35 mK, 8-14 um",
+    "optical channel: 2 MP (1920x1080), 1/1.8in CMOS, 10 to 1000 mm 100x continuous optical zoom",
+    "temperature measurement -20 to 150 C, +/-8 C (3 rule types: 10 points, 10 areas, 1 line)",
+    "temperature-exception and dynamic fire-point detection (up to 10 fire points)",
+    "perimeter protection VCA: line crossing, intrusion, region entrance and exit",
+    "laser IR illuminator up to 3000 m",
+    "picture-in-picture thermal/optical fusion display, white-hot/black-hot target coloration",
+    "built-in GPU, smart wiper, 360 continuous pan",
+    "microSD storage up to 256 GB, gigabit Ethernet, ONVIF / RTSP"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000056566/DS-2TD95C8-300ZK2FL_W_V5.5.49_20221123.pdf"
+  ],
+  "release_notes": "The Hikvision DS-2TD95C8-300ZK2FL is a thermal & optical bi-spectrum network sphere positioning system (PTZ) pairing a 1280x1024 uncooled VOx thermal module (30 to 300 mm) with a 2 MP 100x optical zoom camera, adding temperature measurement, fire detection, perimeter VCA and a 3000 m laser IR illuminator for long-range airport, port and perimeter surveillance. Verified against the official Hikvision datasheet.",
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "autotracking": false,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Thermal and optical exposed as separate channels; thermal is usually Channel 2, optical Channel 1."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

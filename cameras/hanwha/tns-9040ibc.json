@@ -1,0 +1,122 @@
+{
+  "id": "hanwha-tns-9040ibc",
+  "brand": "Hanwha",
+  "model": "TNS-9040IBC",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet 4K Dual Sensor BCR (Barcode Recognition) Camera"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8.8,
+    "max_width": 4096,
+    "max_height": 2160,
+    "label": "4K (4096x2160), dual sensor color + mono"
+  },
+  "sensor": "Dual 1\" CMOS (color + mono)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "16",
+    "aperture": "F8.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "47.5 horizontal / 26.9 vertical / 53.2 diagonal",
+  "night_vision": {
+    "type": "none"
+  },
+  "power": {
+    "method": "24VDC (M12 12-pin connector)",
+    "voltage": "24VDC",
+    "consumption_w": 28.6
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "notes": "No onboard SD; industrial BCR camera."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66/IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "4K dual-sensor (color + mono) barcode recognition (BCR) camera for logistics",
+    "AI-powered location search, reads 1D and 2D codes at multiple orientations on moving conveyors",
+    "16mm ultra-wide FoV lens (F8.0)",
+    "white LED illuminator (M12 5-pin connector)",
+    "M12 gigabit Ethernet connector",
+    "ONVIF Profile M, SUNAPI",
+    "IP66/IP67, IK10, NEMA TS-2",
+    "NDAA compliant"
+  ],
+  "release_notes": "Specs verified against the official Hanwha Vision datasheet DataSheet_TNS-9040IBC.",
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/TNS-9040IBC/DataSheet_TNS-9040IBC_20260831_EN_134948.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/TNS-9040IBC"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profile M). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "dimensions_mm": "218 x 104.1 x 127.1 (camera)",
+  "weight_g": 3438,
+  "operating_temp_c": "-40 to 55",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4096x2160",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "id": "hikmicro-hm-td6368-75c4l",
+  "brand": "HikMicro",
+  "model": "HM-TD6368-75C4L",
+  "aliases": [
+    "HM-TD6368-75C4L/G0/T2Y"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.33,
+    "max_width": 640,
+    "max_height": 512,
+    "label": "640x512 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 640x512, 12 um pixel pitch, 8-14 um, NETD <= 20 mK; optical: 1/1.8in progressive scan CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "75 (fixed); optical 6-360 mm (60x)",
+    "aperture": "F1.0 (thermal)",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 2000
+  },
+  "power": {
+    "method": "36-48 VDC",
+    "consumption_w": 150,
+    "voltage": "36 VDC / 48 VDC (+/-20%)"
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 70 C",
+  "dimensions_mm": "543.8 x 399.7 x 390.3",
+  "weight_g": 27500,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "optical main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "thermal main",
+        "resolution": "640x512",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "features": [
+    "anti-corrosion (NEMA 4X) thermal and optical bi-spectrum network positioning system (PTZ), pan 360 continuous / tilt -85 to +85",
+    "optical channel: 4 MP (2688x1520), 60x optical zoom (6-360 mm)",
+    "temperature measurement -20 to 150 C, accuracy +/-8 C",
+    "fire detection (up to 10 fire points) and smoke detection (up to 6 km with 5x5 m smoke)",
+    "VCA perimeter protection: line crossing, intrusion, region entrance and exit",
+    "thermal detector: 640x512, 12 um pixel pitch, VOx UFPA, NETD <= 20 mK, 8-14 um",
+    "laser IR illuminator up to 2000 m",
+    "built-in TPM 2.0 encryption, self-cleaning module, wiper, BNC analog thermal video output, RS-485"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000120185/HM-TD6368-75C4L_G0_T2Y_Datasheet_20250924.pdf"
+  ],
+  "release_notes": "The HIKMICRO HM-TD6368-75C4L is an anti-corrosion (NEMA 4X) thermal and optical bi-spectrum network positioning system with a 640x512 12 um VOx thermal detector, a 4 MP long-range optical zoom channel, a 2000 m laser illuminator, temperature measurement (-20 to 150 C) and fire/smoke detection for perimeter protection at ports, docks and coastal sites. Verified against the official HIKMICRO datasheet.",
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Thermal (Channel 2) and optical (Channel 1) exposed as separate channels."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false,
+  "field_of_view_deg": "5.9 horizontal (thermal)"
+}

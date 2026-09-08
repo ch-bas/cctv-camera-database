@@ -1,0 +1,126 @@
+{
+  "id": "hanwha-qnp-6250",
+  "brand": "Hanwha",
+  "model": "QNP-6250",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet Q 2MP 25x Indoor PTZ"
+  ],
+  "generation": "Wisenet Q",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP (1080p)"
+  },
+  "sensor": "1/2.8\" 2MP CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.44-111 (25x optical motorized)",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "64.66-2.99 horizontal / 38.08-1.68 vertical",
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.05
+  },
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at, Class 4)",
+    "consumption_w": 14.5
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "25x optical zoom",
+    "360 endless pan (max 700 deg/sec), 300 presets",
+    "120 dB WDR",
+    "Day & Night (ICR)",
+    "DIS (built-in gyro image stabilization)",
+    "WiseStream II",
+    "Loitering / intrusion / crossing analytics",
+    "Selectable mic-in / line-in and line-out audio",
+    "ONVIF Profile S/G/T",
+    "NDAA compliant"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "release_notes": "Ingested 2026-09-08 from official Hanwha Vision datasheet (DataSheet_QNP-6250_20260806_EN). Indoor PTZ without IR; QNP-6250H is the outdoor housing variant.",
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/QNP-6250/DataSheet_QNP-6250_20260806_EN_132335.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/QNP-6250"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "dimensions_mm": "Ø152 x 218",
+  "weight_g": 1700,
+  "operating_temp_c": "-10 to 55",
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

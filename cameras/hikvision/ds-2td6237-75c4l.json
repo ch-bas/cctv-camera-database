@@ -1,0 +1,132 @@
+{
+  "id": "hikvision-ds-2td6237-75c4l",
+  "brand": "Hikvision",
+  "model": "DS-2TD6237-75C4L",
+  "aliases": [
+    "DS-2TD6237-75C4L/W"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.11,
+    "max_width": 384,
+    "max_height": 288,
+    "label": "384x288 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx focal plane array, 384x288, 17 um pixel pitch, 8-14 um, NETD < 35 mK; optical: 1/1.8in progressive scan CMOS, 4 MP",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "75 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "4.98 horizontal",
+  "power": {
+    "method": "36/48 VDC",
+    "consumption_w": 120,
+    "voltage": "36 VDC / 48 VDC"
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "operating_temp_c": "-40 to 65",
+  "dimensions_mm": "486.1 x 337.6 x 450.3",
+  "weight_g": 20000,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "audio": {
+    "microphone": true
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "optical main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "thermal",
+        "resolution": "384x288",
+        "fps": 50,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "features": [
+    "thermal + optical bi-spectrum network positioning system (PTZ)",
+    "thermal module: 384x288 VOx uncooled, 17 um pixel pitch, NETD <= 35 mK, 8-14 um",
+    "thermal lens 75 mm F1.0 (min. focusing distance 8 m)",
+    "optical channel: 4 MP (2688x1520), 6-336 mm motorized zoom lens",
+    "temperature measurement -20 to 150 C, accuracy +/- 8 C (fire-prevention exception alarm)",
+    "dynamic fire detection, up to 10 fire points",
+    "laser IR illuminator up to 800 m",
+    "built-in GPU intelligent perimeter protection VCA: line crossing, intrusion, region entrance/exit",
+    "wiper, alarm I/O, BNC analog video output (thermal channel)",
+    "PTZ: pan 360 continuous, tilt -90 to +40, 300 presets"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000044334/DS-2TD6237-75C4L_W_V5.5.25_20221115.pdf"
+  ],
+  "release_notes": "The Hikvision DS-2TD6237-75C4L is a thermal (384x288) and 4 MP optical bi-spectrum network positioning system with a built-in GPU for perimeter-protection VCA, temperature measurement (-20 to 150 C) and fire detection, aimed at large-area perimeter protection such as airports, railways and parking lots. Verified against the official Hikvision datasheet.",
+  "last_verified": "2026-09-06",
+  "environment": [
+    "outdoor"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Optical is Channel 1 and thermal is Channel 2, exposed as separate streams. PTZ via ONVIF."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false,
+  "night_vision": {
+    "type": "ir",
+    "range_m": 800
+  },
+  "ptz": {
+    "onvif_ptz": "continuous"
+  }
+}

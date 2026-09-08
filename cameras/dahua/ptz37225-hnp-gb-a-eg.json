@@ -1,0 +1,147 @@
+{
+  "id": "dahua-ptz37225-hnp-gb-a-eg",
+  "brand": "Dahua",
+  "model": "PTZ37225-HNP-GB-A-EG",
+  "aliases": [
+    "DH-PTZ37225-HNP-GB-A-EG"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.8\" STARVIS CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": true,
+    "focal_length_mm": "4.8-120"
+  },
+  "field_of_view_deg": "H: 58.5-2.8, V: 33.2-1.5",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 150,
+    "min_lux": 0.0005
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub2",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "36 VDC",
+    "voltage": "36 VDC",
+    "consumption_w": 25
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "positioning system",
+    "25x optical zoom",
+    "360 endless pan",
+    "tilt -90 to +90",
+    "auto-tracking",
+    "WizMind AI (IVS perimeter protection, face detection)",
+    "150m IR",
+    "50m white light",
+    "wiper",
+    "electronic image stabilization (EIS)",
+    "300 presets",
+    "6000V lightning protection"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "310 x 166 x 180",
+  "weight_g": 5900,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/ptz-cameras/special-series/positioning-systems/ptz37225-hnp-gb-a-eg",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/82446/datasheet/DH-PTZ37225-HNP-GB-A-EG_S0_datasheet_20250529.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "ndaa_compliant": false,
+  "environment": [
+    "outdoor"
+  ],
+  "release_notes": "2MP 25x positioning-system PTZ camera with 360-degree endless pan, WizMind AI, 150m IR plus 50m white light, and wiper.",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI (default admin).",
+      "autotracking": true,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

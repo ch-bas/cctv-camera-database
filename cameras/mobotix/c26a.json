@@ -1,0 +1,141 @@
+{
+  "id": "mobotix-c26a",
+  "brand": "Mobotix",
+  "model": "c26A",
+  "ndaa_compliant": true,
+  "aliases": [
+    "Mx-c26A",
+    "MOBOTIX c26A Indoor 360",
+    "Mx-c26A-6D016",
+    "Mx-c26A-6N016",
+    "Mx-c26A-AU-6D016",
+    "Mx-c26A-AU-6N016"
+  ],
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3072,
+    "max_height": 2048,
+    "label": "6MP"
+  },
+  "sensor": "1/1.8\" 6MP CMOS (day/color or night/B&W variant), progressive scan",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "fixed hemispheric (MX-B016); ultra-wide MX-B036 optional",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180x180 hemispheric (360 indoor)",
+  "night_vision": {
+    "min_lux": 0.02,
+    "min_lux_color": 0.1
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 2/3)",
+    "consumption_w": 5,
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "Internal MxFFS DVR on microSD (4 GB shipped); also USB device and NAS."
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 12,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 25,
+        "codec": "H.264"
+      },
+      {
+        "name": "qxga",
+        "resolution": "2048x1536",
+        "fps": 20,
+        "codec": "H.264"
+      },
+      {
+        "name": "full",
+        "resolution": "3072x2048",
+        "fps": 4,
+        "codec": "MJPEG"
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP20",
+  "ik_rating": "IK06",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "0 to 40",
+  "dimensions_mm": "120 dia x 51 H",
+  "weight_g": 212,
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "MOBOTIX c26A Indoor 360 ceiling camera (smallest/lightest MOBOTIX hemispheric)",
+    "MOBOTIX Mx6 platform (1st generation)",
+    "6MP hemispheric 180x180 fisheye (MX-B016); ultra-wide MX-B036 optional",
+    "day (color) or night (B&W low-light) variants",
+    "audio (mic + speaker, two-way, 16-bit/16 kHz Opus) on -AU package variants only",
+    "MxPEG codec (recorded as MJPEG)",
+    "ONVIF Profile S / H.264",
+    "MxAnalytics (heatmaps, counting corridors, behavioral detection)",
+    "internal MxFFS microSD DVR",
+    "vibration and temperature sensor",
+    "indoor use only (IP20, IK06)",
+    "5-year manufacturer warranty"
+  ],
+  "sources": [
+    "https://www.mobotix.com/en/support/download-center/documentation/technical-data-sheets",
+    "https://www.mobotix.com/sites/default/files/2023-08/Mx_TS_C26A_V1.09_EN.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/cam0/stream",
+      "onvif_port": 80,
+      "verified": false,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF Profile S; generic camera/MJPEG (MxPEG) stream also supported."
+    },
+    "blue_iris": {
+      "profile": "Mobotix",
+      "notes": "Select 'Mobotix' profile. Supports MxPEG; switch to H.264 (up to QXGA) for Blue Iris."
+    }
+  },
+  "last_verified": "2026-09-08",
+  "markets": [
+    "global"
+  ]
+}

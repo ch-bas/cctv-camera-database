@@ -1,0 +1,139 @@
+{
+  "id": "mobotix-q26b",
+  "brand": "Mobotix",
+  "model": "Q26B",
+  "ndaa_compliant": true,
+  "aliases": [
+    "Mx-Q26B",
+    "MOBOTIX Q26B Hemispheric",
+    "Mx-Q26B-6D016",
+    "Mx-Q26B-6N016"
+  ],
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3072,
+    "max_height": 2048,
+    "label": "6MP"
+  },
+  "sensor": "1/1.8\" 6MP CMOS (day/color or night/B&W variant), progressive scan",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "fixed hemispheric (MX-B016)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180x180 hemispheric (360 allround)",
+  "night_vision": {
+    "min_lux": 0.02,
+    "min_lux_color": 0.1
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 2/3)",
+    "consumption_w": 5,
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "Internal MxFFS DVR on microSD (4 GB shipped); also USB device and NAS."
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 12,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 25,
+        "codec": "H.264"
+      },
+      {
+        "name": "qxga",
+        "resolution": "2048x1536",
+        "fps": 20,
+        "codec": "H.264"
+      },
+      {
+        "name": "full",
+        "resolution": "3072x2048",
+        "fps": 4,
+        "codec": "MJPEG"
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK06",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 50",
+  "dimensions_mm": "160 dia x 48 H",
+  "weight_g": 350,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "MOBOTIX Q26B Hemispheric ultra-compact fixed dome",
+    "MOBOTIX Mx6 platform (2nd generation, with MxBus)",
+    "6MP hemispheric 180x180 fisheye (MX-B016), 360 allround view",
+    "day (color) or night (B&W low-light) variants",
+    "built-in microphone and speaker (two-way audio, 16-bit/16 kHz Opus)",
+    "MxPEG codec (recorded as MJPEG)",
+    "ONVIF Profile S / H.264",
+    "MxAnalytics (heatmaps, counting corridors, behavioral detection)",
+    "internal MxFFS microSD DVR",
+    "shock/tamper detector",
+    "weatherproof IP66; IK06 base, IK10 with Vandalism Set",
+    "5-year manufacturer warranty"
+  ],
+  "sources": [
+    "https://www.mobotix.com/en/support/download-center/documentation/technical-data-sheets",
+    "https://www.mobotix.com/sites/default/files/2023-08/Mx_TS_Q26B_V1.09_EN.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/cam0/stream",
+      "onvif_port": 80,
+      "verified": false,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF Profile S; generic camera/MJPEG (MxPEG) stream also supported."
+    },
+    "blue_iris": {
+      "profile": "Mobotix",
+      "notes": "Select 'Mobotix' profile. Supports MxPEG; switch to H.264 (up to QXGA) for Blue Iris."
+    }
+  },
+  "last_verified": "2026-09-08",
+  "markets": [
+    "global"
+  ]
+}

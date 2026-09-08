@@ -1,0 +1,130 @@
+{
+  "id": "hanwha-xnv-9082r",
+  "brand": "Hanwha",
+  "model": "XNV-9082R",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet X 4K IR Vandal Dome"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-8.4 (3x optical motorized varifocal)",
+    "aperture": "F1.2 (wide) - F2.8 (tele)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "114-40 horizontal / 62-22 vertical / 133-46 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40,
+    "min_lux_color": 0.05
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3) / DC 12V / AC 24V",
+    "consumption_w": 12.95,
+    "poe_class": 3,
+    "voltage": "12VDC / 24VAC"
+  },
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "2 microSD/SDHC/SDXC slots (Max. 512GB x2, Total 1TB)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66/IP67/IP6K9K",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "4K IR vandal dome (Wisenet X series)",
+    "WiseIR 40m (850nm)",
+    "120 dB WDR",
+    "SSNR V digital noise reduction",
+    "P-iris / DC auto-iris (IR corrected) motorized varifocal",
+    "people counting, queue management, heatmap",
+    "audio line/mic in + line out (no built-in mic)",
+    "WiseStream II smart codec",
+    "ONVIF Profile S/G/T",
+    "secure boot, signed & encrypted firmware, HTPM",
+    "NDAA compliant"
+  ],
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/XNV-9082R/DataSheet_XNV-9082R_20260806_EN_171831.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/XNV-9082R"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/G/T). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "dimensions_mm": "Ø180 x 125",
+  "weight_g": 1900,
+  "operating_temp_c": "-50 to 60"
+}

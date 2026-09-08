@@ -1,0 +1,131 @@
+{
+  "id": "dahua-sd2a500hb-gn-a-pv-s2",
+  "brand": "Dahua",
+  "model": "SD2A500HB-GN-A-PV-S2",
+  "aliases": [
+    "DH-SD2A500HB-GN-A-PV-S2"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2560,
+    "max_height": 1920,
+    "label": "5MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1920",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "80.4 horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.005
+  },
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "12 VDC/1.5 A or PoE (802.3af)",
+    "voltage": "12 VDC",
+    "consumption_w": 12.95
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "5MP mini pan/tilt camera (pan 0-345 degrees, tilt 0-80 degrees)",
+    "Smart Dual Light (IR 30 m + white light 30 m); warm light on human detection",
+    "active deterrence: white-light warning + customizable siren",
+    "two-way talk (built-in mic and speaker)",
+    "Smart IVS: tripwire and intrusion detection, human detection",
+    "300 presets, 180-degree image rotation"
+  ],
+  "operating_temp_c": "-30 to 55",
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "140.5 x 111 (diameter)",
+  "weight_g": 500,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "release_notes": "5MP network mini PT camera with Smart Dual Light, active deterrence, two-way talk and Smart IVS; 12 VDC or PoE (802.3af), IP66.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/ptz-cameras/sd2a500hb-gn-a-pv-s2",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/SD2A500HB-GN-A-PV-S2_S0_datasheet_20230627.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80); PTZ control over ONVIF."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

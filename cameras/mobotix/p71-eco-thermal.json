@@ -1,0 +1,112 @@
+{
+  "id": "mobotix-p71-eco-thermal",
+  "brand": "Mobotix",
+  "model": "MOBOTIX p71 ECO Thermal",
+  "ndaa_compliant": true,
+  "aliases": [
+    "Mx-p71-320T080",
+    "Mx-p71-320T040",
+    "p71 ECO Thermal"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.08,
+    "label": "CIF thermal 320x240 (upscaling up to 4K UHD)",
+    "max_width": 320,
+    "max_height": 240
+  },
+  "sensor": "Uncooled microbolometer, CIF 320x240 px, 17 um class, NETD < 65 mK, spectral 7.8-14 um",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "fixed thermal lens (up to 105 x 75 FoV)",
+    "varifocal": false
+  },
+  "field_of_view_deg": "up to 105 x 75",
+  "power": {
+    "method": "PoE Plus (802.3at) Class 4 / 24 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "operating_temp_c": "-10 to 50",
+  "dimensions_mm": "164 dia x 96 (dia x height)",
+  "weight_g": 1175,
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 9,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "320x240",
+        "fps": 9,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "features": [
+    "MOBOTIX 7 platform with app support",
+    "single-lens indoor thermal imaging",
+    "uncooled microbolometer CIF 320x240 (upscale to 4K UHD)",
+    "thermal NETD < 65 mK",
+    "detectable temperature range -40 to 330 C",
+    "9 fps thermal, WDR up to 120 dB",
+    "MxPEG+ edge recording (microSD)",
+    "MxActivitySensor / MxAnalytics AI",
+    "integrated microphone and speaker",
+    "H.265 / MxPEG",
+    "indoor"
+  ],
+  "sources": [
+    "https://www.mobotix.com/en/support/download-center/documentation/technical-data-sheets",
+    "https://www.mobotix.com/sites/default/files/2026-07/Mx_TS_p71ECOThermal_V1.20_EN_20260715.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 320,
+        "height": 240,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/cam0/stream",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Add via ONVIF integration (Profile S/T). Mobotix default RTSP path may vary; confirm the stream path in the camera web UI."
+    }
+  },
+  "last_verified": "2026-09-08",
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ]
+}

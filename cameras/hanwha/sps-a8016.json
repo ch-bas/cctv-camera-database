@@ -1,0 +1,128 @@
+{
+  "id": "hanwha-sps-a8016",
+  "brand": "Hanwha",
+  "model": "SPS-A8016",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet All-In-One Camera"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2560,
+    "max_height": 1920,
+    "label": "5MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.0",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "100",
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3) / PoE+ (IEEE 802.3at, Class 4)",
+    "poe_class": 4,
+    "consumption_w": 20
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": true,
+    "notes": "1 microSD/SDHC/SDXC slot (max 1TB); OnCloud edge recording supported."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "All-in-one AI camera with 3 built-in MEMS microphones and built-in speaker (peak SPL 97.5 dB PoE+)",
+    "full-duplex two-way audio with echo cancellation and noise reduction",
+    "AI object/attribute detection: person, face, vehicle, license plate + BestShot",
+    "AI-based sound classification (scream, glass break, aggression, vehicle horn, tire screech)",
+    "business intelligence: people/vehicle/crowd counting, queue management, heatmap",
+    "120 dB WDR, WiseNR II, WiseStream, SSDR, defog",
+    "digital image stabilization",
+    "dynamic privacy masking, built-in LED ring status indicator",
+    "Day & Night (ICR)",
+    "ONVIF Profile S/G/T/M, SUNAPI",
+    "secure boot, encrypted/signed firmware, FIPS 140-3 secure element",
+    "IK08 impact resistance",
+    "NDAA compliant"
+  ],
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/SPS-A8016/DataSheet_SPS-A8016_20260901_EN_094828.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/SPS-A8016"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/G/T/M). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1920",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor"
+  ],
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.06
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ik_rating": "IK08",
+  "operating_temp_c": "-20 to 55",
+  "dimensions_mm": "215.1 x 135.1 x 52.8",
+  "weight_g": 1219
+}

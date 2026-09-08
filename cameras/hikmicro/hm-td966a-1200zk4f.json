@@ -1,0 +1,128 @@
+{
+  "id": "hikmicro-hm-td966a-1200zk4f",
+  "brand": "HikMicro",
+  "model": "HM-TD966A-1200ZK4F",
+  "aliases": [
+    "HM-TD966A-1200ZK4F/T2"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "ac-mains",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 0.33,
+    "max_width": 640,
+    "max_height": 512,
+    "label": "640x512 (thermal)"
+  },
+  "sensor": "Thermal: MCT cooled focal-plane array, 640x512, 15 um pixel pitch, 3.7-4.8 um (MWIR), NETD <= 25 mK; optical: 1/1.8in progressive-scan CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "40 to 1200 (thermal); optical PTZ 10-1100 mm plus fixed 4 mm wide-angle overlay",
+    "aperture": "F4.0 (thermal)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "13.9 (wide) to 0.45 (tele) horizontal (thermal)",
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 50,
+    "streams": [
+      {
+        "name": "optical main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "thermal main",
+        "resolution": "1920x1080",
+        "fps": 50,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "Wide-input AC 110-305V 50/60Hz or 48 VDC",
+    "consumption_w": 460,
+    "voltage": "AC 110-305V / 48 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true
+  },
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "578.3 x 571 x 955.7",
+  "weight_g": 100000,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "status": "available",
+  "features": [
+    "thermal & optical bi-spectrum cooled (MCT) thermal sphere PTZ for extreme-range day/night monitoring",
+    "optical channel: 4 MP (2688x1520), PTZ lens 10-1100 mm plus a fixed 4 mm wide-angle overlay lens",
+    "cooled MCT focal-plane array, 640x512, 15 um pixel pitch, 3.7-4.8 um MWIR, NETD <= 25 mK",
+    "thermal lens 40-1200 mm motorized zoom, FOV 13.9 (wide) to 0.45 (tele) horizontal",
+    "20000-hour Stirling cryocooler for haze/fog penetration and very-long-range detection",
+    "perimeter protection algorithm: line crossing, intrusion, region entrance and exit",
+    "ship detection and ship VCA in thermal channel (nominal ship detection ~30 km)",
+    "optical image stabilization (OIS) on optical channel, EIS on thermal channel",
+    "built-in TPM 2.0 cybersecurity module; external GPS module supported via RS-485",
+    "NEMA-4X, C5-medium anti-corrosion coating, IP67; smart wiper, heating and de-icing"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000183730/HM-TD966A-1200ZK4F_T2_Datasheet_en-US_20260817.pdf"
+  ],
+  "release_notes": "The HikMicro HM-TD966A-1200ZK4F is a bi-spectrum cooled-thermal (MCT MWIR) sphere PTZ with a 640x512 cooled detector and 40-1200 mm thermal zoom, delivering multi-kilometre human/vehicle/ship detection for coastal and critical-infrastructure surveillance. Verified against the official HikMicro datasheet HM-TD966A-1200ZK4F_T2_Datasheet_en-US_20260817.pdf.",
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Optical is Channel 1 (101), thermal is Channel 2 (201) - add both channels."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

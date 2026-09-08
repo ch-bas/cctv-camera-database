@@ -1,0 +1,131 @@
+{
+  "id": "hikvision-ds-2td5537t-15",
+  "brand": "Hikvision",
+  "model": "DS-2TD5537T-15",
+  "aliases": [
+    "DS-2TD5537T-15/W"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.11,
+    "max_width": 384,
+    "max_height": 288,
+    "label": "384x288 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx focal plane array, 384x288, 17 um pixel pitch, 8-14 um, NETD < 35 mK; optical: 1/2.8in progressive scan CMOS, 4 MP",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "15 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "24.55 horizontal",
+  "power": {
+    "method": "24 VDC",
+    "consumption_w": 18,
+    "voltage": "24 VDC"
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "321 x 194 x 153",
+  "weight_g": 4800,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "audio": {
+    "microphone": true
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "optical main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "thermal",
+        "resolution": "384x288",
+        "fps": 50,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "features": [
+    "bi-spectrum thermal + optical mini positioning system (PTZ)",
+    "thermal module: 384x288 VOx uncooled, 17 um pixel pitch, NETD <= 35 mK, 8-14 um",
+    "thermal lens 15 mm F1.0 (min. focusing distance 0.5 m)",
+    "optical channel: 4 MP (2688x1520), 4.8-153 mm 32x motorized zoom lens",
+    "thermographic temperature measurement -20 to 550 C, accuracy max(+/- 2 C, +/- 2%)",
+    "dynamic fire and smoke detection (up to 10 fire + 10 smoke points)",
+    "deep-learning VCA: line crossing, intrusion, region entrance/exit",
+    "built-in GPU, wiper, alarm I/O (2-in / 2-out)",
+    "PTZ: pan 360 continuous, tilt -90 to +90, 300 presets"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000053890/DS-2TD5537T-15_W_V5.5.49_220926.pdf"
+  ],
+  "release_notes": "The Hikvision DS-2TD5537T-15 is a bi-spectrum thermal (384x288) and 4 MP optical mini positioning system with a built-in GPU for deep-learning VCA, thermographic temperature measurement (-20 to 550 C) and fire/smoke detection, aimed at fire prevention in substations, gas stations and factories. Verified against the official Hikvision datasheet.",
+  "last_verified": "2026-09-06",
+  "environment": [
+    "outdoor"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Optical is Channel 1 and thermal is Channel 2, exposed as separate streams. PTZ via ONVIF."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false,
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "ptz": {
+    "onvif_ptz": "continuous"
+  }
+}

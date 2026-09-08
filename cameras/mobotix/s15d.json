@@ -1,0 +1,104 @@
+{
+  "id": "mobotix-s15d",
+  "brand": "Mobotix",
+  "model": "S15D",
+  "aliases": [
+    "S15D FlexMount",
+    "S15D-Sec"
+  ],
+  "ndaa_compliant": true,
+  "type": "dual-lens",
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP per sensor (2592x1944)"
+  },
+  "sensor": "CMOS, 5MP (2592x1944) per sensor module (color or B/W)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "Interchangeable FlexMount/BlockFlexMount sensor modules (L12 hemispheric to L320 tele); thermal modules available",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "color"
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "protocols": [
+    "rtsp",
+    "http",
+    "mxpeg"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "power": {
+    "method": "PoE (IEEE 802.3af)",
+    "consumption_w": 5,
+    "poe_class": 3
+  },
+  "video": {
+    "codecs": [
+      "MJPEG",
+      "H.264"
+    ],
+    "max_fps": 10
+  },
+  "storage": {
+    "onboard": true,
+    "notes": "Internal MicroSD DVR"
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "ip_rating": "IP65",
+  "operating_temp_c": "-30 to 60",
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "features": [
+    "MOBOTIX S15D FlexMount dual camera (legacy platform)",
+    "two remote interchangeable sensor modules on cables",
+    "hemispheric (L12 180-degree) lens option",
+    "thermal sensor modules supported (dual-thermal capable)",
+    "MxPEG codec (recorded as MJPEG); H.264 for SIP video",
+    "MxActivitySensor motion detection",
+    "temperature sensor",
+    "bidirectional audio / VoIP-SIP (speaker via accessory)",
+    "internal DVR (microSD)",
+    "no ONVIF (proprietary MxPEG)",
+    "concealed-install FlexMount body, PoE Class 3"
+  ],
+  "sources": [
+    "https://www.mobotix.com/en/support/download-center/documentation/technical-data-sheets",
+    "https://www.mobotix.com/sites/default/files/2017-10/Mx_TS_S15D_en_141114.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/cam0/stream",
+      "notes": "Legacy MOBOTIX uses MxPEG by default (recorded as MJPEG). No ONVIF; use MxPEG/MJPEG over RTSP.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "motionEye",
+      "notes": "No ONVIF on legacy S15; use motionEye or generic MJPEG camera integration."
+    },
+    "blue_iris": {
+      "profile": "Mobotix",
+      "notes": "Select the 'Mobotix' profile; MxPEG/MJPEG codec."
+    }
+  },
+  "last_verified": "2026-09-08",
+  "markets": [
+    "global"
+  ]
+}

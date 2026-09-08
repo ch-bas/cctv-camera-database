@@ -1,0 +1,108 @@
+{
+  "id": "dahua-tpc-pt8441d-ac",
+  "brand": "Dahua",
+  "model": "TPC-PT8441D-AC",
+  "aliases": [
+    "Dahua TPC-PT8441D-AC",
+    "DHI-TPC-PT8441D-AC"
+  ],
+  "type": "ptz",
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 0.12,
+    "max_width": 400,
+    "max_height": 300,
+    "label": "400x300 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 400x300, 17 um pixel pitch, 8-14 um, NETD <=35 mK; optical: 4MP CMOS",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30
+  },
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "50, 75 or 100 (thermal); visible 6-336 (56x)",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 150
+  },
+  "power": {
+    "method": "24-57 VDC",
+    "voltage": "24-57 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256
+  },
+  "ip_rating": "IP66",
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "520 x 266 x 427",
+  "weight_g": 22000,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "anti-corrosion bi-spectrum thermal + 4MP visible positioning PTZ",
+    "uncooled VOx thermal detector (400x300, 17 um), NETD <=35 mK",
+    "thermal lens 50 / 75 / 100 mm; visible 56x optical zoom (6-336 mm)",
+    "visible IR illumination 150 m; optional near-IR laser to 800 m or 2000 m",
+    "pan 0-360 endless, tilt -45 to +90, positioning accuracy +/-0.1, 300 presets",
+    "7 alarm in / 2 out; NEMA 4X anti-corrosion for harsh environments"
+  ],
+  "release_notes": "Anti-corrosion multi-spectral positioning PTZ (NEMA 4X) combining a 400x300 thermal channel with a 4MP 56x visible channel, 150 m IR and an optional laser illuminator to 2 km.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/thermal-cameras/tpc-pt8441d-ac",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/115757/datasheet/TPC-PT8441D-AC_datasheet_20230223.pdf"
+  ],
+  "last_verified": "2026-09-07",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=2&subtype=0",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua RTSP convention; channel 1 = visible/fusion, channel 2 = thermal. Not verified against a live unit."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80). Thermal and visible exposed as separate channels (visible = channel 1, thermal = channel 2). PTZ via ONVIF."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

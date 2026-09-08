@@ -1,0 +1,124 @@
+{
+  "id": "hanwha-tnm-c4960td",
+  "brand": "Hanwha",
+  "model": "TNM-C4960TD",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet Bi-spectrum AI Thermal Camera (VGA thermal + 8MP visible)"
+  ],
+  "type": "dual-lens",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP visible + VGA (640x480) thermal"
+  },
+  "sensor": "Visible: 1/1.8\" CMOS 8MP; Thermal: uncooled microbolometer 640x480, 12um pixel, NETD <=60mK, spectral 8-14um",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "thermal 25 fixed (F1.0); visible 10.9-29 motorized varifocal (F1.7)",
+    "aperture": "F1.0 (thermal) / F1.7 (visible)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "visible 42-15 horizontal / 23-8 vertical; thermal 17 horizontal / 13 vertical",
+  "night_vision": {
+    "type": "color",
+    "min_lux_color": 0.06
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at Class 4) / 12VDC",
+    "consumption_w": 23.5,
+    "voltage": "12VDC"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "2 microSD/SDHC/SDXC slots (256GB x2, 512GB total)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66/IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Bi-spectrum AI thermal camera: VGA (640x480) thermal + 8MP visible, one IP",
+    "thermal spectral 8-14um, NETD <=60mK, 12um pixel",
+    "25mm fixed thermal lens + 10.9-29mm motorized-varifocal visible lens",
+    "WiseNR II noise reduction (visible), WiseStream III (visible) / WiseStream II (thermal)",
+    "thermal analytics: motion detection, temperature change",
+    "IP66/IP67, IK10, NEMA4X, NEMA TS 2 (2.2.7/2.2.8/2.2.9)",
+    "ONVIF Profile S/G/T/M",
+    "NDAA compliant"
+  ],
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/TNM-C4960TD",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/TNM-C4960TD/DataSheet_TNM-C4960TD_20260806_EN_190735.pdf"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80. Thermal and visible exposed as separate channels."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "dimensions_mm": "353.4 x 287.5 x 191.2",
+  "weight_g": 4530,
+  "operating_temp_c": "-40 to 60",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  }
+}

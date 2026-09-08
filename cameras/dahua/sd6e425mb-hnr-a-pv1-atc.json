@@ -1,0 +1,151 @@
+{
+  "id": "dahua-sd6e425mb-hnr-a-pv1-atc",
+  "brand": "Dahua",
+  "model": "SD6E425MB-HNR-A-PV1-ATC",
+  "aliases": [
+    "DH-SD6E425MB-HNR-A-PV1-ATC"
+  ],
+  "ndaa_compliant": false,
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": true,
+    "focal_length_mm": "5-125",
+    "aperture": "F1.6-F3.6"
+  },
+  "field_of_view_deg": "H: 51.9-3.0; V: 39.7-2.2",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 250,
+    "min_lux_color": 0.005
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub2",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "PoE+ (802.3at) / DC 24V",
+    "voltage": "24 VDC",
+    "consumption_w": 24
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "208 x 202 x 300",
+  "weight_g": 5060,
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "WizSense",
+    "25x optical zoom",
+    "TiOC auto-tracking",
+    "AcuPick",
+    "SMD 4.0",
+    "IVS perimeter protection (tripwire, intrusion)",
+    "face detection",
+    "PPE / helmet-color detection",
+    "active deterrence (red/blue warning lights + alarm sounds)",
+    "Smart Dual Light (250m IR + 100m warm light)",
+    "120dB WDR",
+    "window heater",
+    "anti-corrosion: NEMA 4X, C5-H (ISO 12944-6:2018) aluminium alloy",
+    "dual built-in mic + speaker (two-way talk)"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/ptz-cameras/special-series/anti-corrosion-cameras/sd6e425mb-hnr-a-pv1-atc",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/87962/datasheet/DH-SD6E425MB-HNR-A-PV1-ATC_S0_datasheet_20260727_English.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "release_year": 2026,
+  "release_notes": "The Dahua SD6E425MB-HNR-A-PV1-ATC is a 4MP 25x anti-corrosion WizSense PTZ camera with Smart Dual Light (250m IR / 100m warm light), TiOC auto-tracking, AcuPick, SMD 4.0, active deterrence and PPE detection. NEMA 4X / C5-H aluminium-alloy anti-corrosion body for chemical plants, ports and coastal sites.",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 576,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "autotracking": true,
+      "notes": "Dahua native RTSP; PTZ driven over ONVIF (port 80)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

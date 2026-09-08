@@ -1,0 +1,134 @@
+{
+  "id": "hikmicro-hm-td2668-15",
+  "brand": "HikMicro",
+  "model": "HM-TD2668-15",
+  "aliases": [
+    "HM-TD2668-15/G1/T3Y"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.33,
+    "max_width": 640,
+    "max_height": 512,
+    "label": "640x512 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 640x512, 12 um pixel pitch, 8-14 um, NETD <= 20 mK; optical: 1/2.7in CMOS 2688x1520",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "15 (thermal, fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50
+  },
+  "field_of_view_deg": "29.3 horizontal (thermal)",
+  "power": {
+    "method": "24 VAC / 12 VDC / PoE (802.3af Class 3)",
+    "consumption_w": 12.6,
+    "voltage": "24 VAC / 12 VDC",
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "thermal",
+        "resolution": "640x512",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-40 to 70 C",
+  "dimensions_mm": "376.1 x 119.1 x 118.1",
+  "weight_g": 1820,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "thermal + optical bi-spectrum bullet camera",
+    "optical channel: 4 MP (2688x1520), 1/2.7in progressive scan CMOS",
+    "thermal detector: uncooled VOx FPA, 640x512, 12 um pixel pitch, 8-14 um, NETD <= 20 mK",
+    "thermal lens 15 mm F1.0 (FOV 29.3 horizontal); optical lens 6.4 mm",
+    "bi-spectrum image fusion and picture-in-picture display, 17 color palettes",
+    "temperature exception alarm -20 to 150 C, accuracy +/-8 C",
+    "dynamic fire detection and smoking detection algorithms",
+    "video analysis based on GUANLAN large-scale AI model",
+    "VCA 3.0 vehicle/human detection and classification",
+    "TPM 2.0 hardware encryption module",
+    "NEMA 4X anti-corrosion housing"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Optical channel 1 (101) and thermal channel 2 (201) are exposed separately."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000172637/HM-TD2668-15-G1-T3Y_Datasheet_20250701.pdf"
+  ],
+  "release_notes": "The HikMicro HM-TD2668-15 is a thermal & optical bi-spectrum network bullet camera pairing a 640x512 uncooled VOx thermal module (15 mm lens, NETD <= 20 mK) with a 4 MP optical channel for perimeter protection and fire prevention. Verified against the official HIKMICRO datasheet.",
+  "last_verified": "2026-09-06",
+  "ndaa_compliant": false
+}

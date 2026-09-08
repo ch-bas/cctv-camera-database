@@ -1,0 +1,130 @@
+{
+  "id": "dahua-ptz37225-hnp-xb-a-eg",
+  "brand": "Dahua",
+  "model": "PTZ37225-HNP-XB-A-EG",
+  "aliases": [
+    "DH-PTZ37225-HNP-XB-A-EG"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.8-120",
+    "aperture": "F1.6-F3.5",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 150,
+    "min_lux_color": 0.005
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "36 VDC/2.23 A",
+    "voltage": "36 VDC",
+    "consumption_w": 24
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "2MP WizMind PTZ positioning camera, 25x optical zoom (4.8-120 mm)",
+    "IR range 150 m + white light 50 m",
+    "pan 0-360 degrees endless, tilt -90 to +90 degrees",
+    "300 presets, 8 tours (up to 32 presets each)",
+    "Auto Tracking 3.0, WizMind human/vehicle classification",
+    "IVS perimeter protection; job-site / construction monitoring",
+    "wiper",
+    "audio I/O (1 in / 1 out), 2 alarm inputs / 1 output, RS-485"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "310 x 166 x 180",
+  "weight_g": 5900,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "release_notes": "2MP WizMind PTZ positioning camera with 25x optical zoom, 150 m IR plus 50 m white light, Auto Tracking 3.0, human/vehicle classification and wiper, aimed at job-site monitoring; 36 VDC, IP67.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/ptz-cameras/ptz37225-hnp-xb-a-eg",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/PTZ37225-HNP-XB-A-EG_datasheet_20220802.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80); PTZ control over ONVIF."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

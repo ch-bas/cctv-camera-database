@@ -1,0 +1,121 @@
+{
+  "id": "hanwha-xnb-9002",
+  "brand": "Hanwha",
+  "model": "XNB-9002",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet X 4K Box Camera"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.05
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3) / DC 12V / AC 24V",
+    "poe_class": 3,
+    "voltage": "12VDC / 24VAC",
+    "consumption_w": 12.95
+  },
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": true,
+    "notes": "2 microSD/SDHC/SDXC slots (512GB each, 1TB total; up to 2TB with OnCloud edge recording)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "Wisenet X 4K box camera — lens not included (C/CS mount)",
+    "lens types: DC auto iris, P-iris (IR corrected), manual, I-CS; simple focus",
+    "AI-style analytics: face/upper-body, loitering, sound classification, shock/fog/defocus detection",
+    "120 dB WDR, SSNR V, BLC/HLC/SSDR",
+    "Day & Night (ICR)",
+    "built-in microphone + audio in/out",
+    "OnCloud edge recording support",
+    "ONVIF Profile S/G/T",
+    "NDAA compliant"
+  ],
+  "release_year": 2023,
+  "release_notes": "Specs verified against the official Hanwha Vision XNB-9002 datasheet. Box camera ships without a lens (C/CS mount), so lens and field-of-view fields are intentionally absent.",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/XNB-9002",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/XNB-9002/DataSheet_XNB-9002_20260806_EN_172302.pdf"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/G/T). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "operating_temp_c": "-10 to 55",
+  "dimensions_mm": "81 x 67 x 165",
+  "weight_g": 880
+}

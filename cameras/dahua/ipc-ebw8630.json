@@ -1,0 +1,125 @@
+{
+  "id": "dahua-ipc-ebw8630",
+  "brand": "Dahua",
+  "model": "IPC-EBW8630",
+  "aliases": [
+    "DH-IPC-EBW8630",
+    "6MP WDR IR Fisheye Network Camera"
+  ],
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3072,
+    "max_height": 2048,
+    "label": "6MP"
+  },
+  "sensor": "1/1.8\" 6MP CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.7",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10,
+    "min_lux_color": 0.002
+  },
+  "power": {
+    "method": "DC12V / PoE (802.3af)",
+    "consumption_w": 12
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true
+  },
+  "features": [
+    "6MP 360-degree panoramic fisheye",
+    "1/1.8\" sensor",
+    "built-in microphone",
+    "de-warp / multiple view modes",
+    "IR up to 10 m (3 LEDs)",
+    "2 alarm in / 2 alarm out",
+    "Gigabit Ethernet"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "149.8 x 149.8 x 50.7",
+  "weight_g": 580,
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3072x2048",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "last_verified": "2026-09-07",
+  "release_notes": "6MP 360-degree panoramic fisheye with a 1/1.8\" sensor, 1.7 mm F2.0 lens, built-in mic, 10 m IR, H.265 encoding and Gigabit Ethernet, rated IP67/IK10.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/network-cameras/ipc-ebw8630",
+    "https://materialfile.dahuasecurity.com/download/dh-ipc-ebw8630_datasheet_20170616.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

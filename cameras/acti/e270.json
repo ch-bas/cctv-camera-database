@@ -1,0 +1,104 @@
+{
+  "id": "acti-e270",
+  "brand": "ACTi",
+  "model": "E270",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 10,
+    "max_width": 3648,
+    "max_height": 2736,
+    "label": "10MP"
+  },
+  "sensor": "1/2.3\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6 (fixed)",
+    "aperture": "F1.8",
+    "varifocal": false
+  },
+  "field_of_view_deg": "101.4 horizontal / 73.7 vertical",
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.1,
+    "min_lux": 0.05
+  },
+  "power": {
+    "method": "PoE Class 2 (IEEE802.3af); 4.32 W (PoE)",
+    "consumption_w": 4.32
+  },
+  "power_source": [
+    "poe"
+  ],
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "dimensions_mm": "142 x 66 x 66",
+  "weight_g": 430,
+  "operating_temp_c": "-10 to 50",
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 7,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3648x2736",
+        "fps": 7,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "features": [
+    "Basic WDR (70 dB)",
+    "day/night (mechanical IR cut filter, no built-in IR LED)",
+    "CS-mount interchangeable fixed lens, fixed iris",
+    "audio: 2-way, Line-in, Line-out (no built-in mic/speaker)",
+    "digital I/O: 1 in / 1 out",
+    "server-based analytics: People Counting, Face Detection, Object Line Crossing, Tamper, Heat Map",
+    "ONVIF Compliant: Profile S, Profile G, Profile Q",
+    "requires optional housing (IP66) for outdoor use"
+  ],
+  "sources": [
+    "https://www.acti.com/product/E270?tab=specifications"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  },
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false
+}

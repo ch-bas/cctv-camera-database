@@ -1,0 +1,151 @@
+{
+  "id": "dahua-sd6c3432gb-hnr-agq-pv1-eau",
+  "brand": "Dahua",
+  "model": "SD6C3432GB-HNR-AGQ-PV1-EAU",
+  "aliases": [
+    "DH-SD6C3432GB-HNR-AGQ-PV1-EAU"
+  ],
+  "ndaa_compliant": false,
+  "type": "ptz",
+  "connectivity": [
+    "ethernet",
+    "4g"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": true,
+    "focal_length_mm": "4.8-154",
+    "aperture": "F1.6-F4.0"
+  },
+  "field_of_view_deg": "H: 55.8-2.3; V: 31.9-1.3",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 150,
+    "min_lux_color": 0.005
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub2",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "DC 12V",
+    "voltage": "12 VDC",
+    "consumption_w": 18
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "325 x Dia 211",
+  "weight_g": 4200,
+  "audio": {
+    "microphone": false,
+    "speaker": true,
+    "two_way": true
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "4G LTE cellular connectivity (FDD B1/3/5/7/8/20/28; TDD 38/40/41)",
+    "32x optical zoom",
+    "Auto Tracking 3.0",
+    "SMD 4.0",
+    "TiOC active deterrence (red & blue warning lights + alarm)",
+    "WizSense AI",
+    "face detection",
+    "vehicle/human classification",
+    "IVS perimeter protection",
+    "dual illumination (150m IR + 50m white light)",
+    "120dB WDR",
+    "TVS 6000V lightning/surge protection",
+    "audio in/out with built-in speaker (two-way)"
+  ],
+  "markets": [
+    "EU",
+    "AU"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/ptz-cameras/wireless-series/4g-camera/sd6c3432gb-hnr-agq-pv1-eau",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/81091/datasheet/DH-SD6C3432GB-HNR-AGQ-PV1-EAU_S0_datasheet_20260612.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "release_year": 2024,
+  "release_notes": "The Dahua SD6C3432GB-HNR-AGQ-PV1-EAU is a 4MP 32x WizSense 4G PTZ camera (EU/AU region variant) with Auto Tracking 3.0, TiOC active deterrence, dual illumination (150m IR + 50m white light) and SMD 4.0. Powered by 12 VDC; audio in/out with a built-in speaker for two-way talk.",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 576,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "autotracking": true,
+      "two_way_audio": true,
+      "notes": "Dahua native RTSP; PTZ driven over ONVIF (port 80)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

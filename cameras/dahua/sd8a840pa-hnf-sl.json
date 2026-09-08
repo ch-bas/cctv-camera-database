@@ -1,0 +1,148 @@
+{
+  "id": "dahua-sd8a840pa-hnf-sl",
+  "brand": "Dahua",
+  "model": "SD8A840PA-HNF-SL",
+  "aliases": [
+    "DH-SD8A840PA-HNF-SL"
+  ],
+  "ndaa_compliant": false,
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP (4K)"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": true,
+    "focal_length_mm": "5.6-223",
+    "aperture": "F1.4-F4.5"
+  },
+  "field_of_view_deg": "H: 63.9-2.0; V: 37.3-1.1",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 500,
+    "min_lux_color": 0.005
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub2",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "Hi-PoE / DC 36V",
+    "voltage": "36 VDC",
+    "consumption_w": 48
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "439 x Dia 262",
+  "weight_g": 10000,
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "WizMind",
+    "40x optical zoom",
+    "500m IR (10 IR illuminators)",
+    "Auto Tracking 3.0",
+    "perimeter protection (tripwire, intrusion, fence crossing, loitering)",
+    "face recognition (6 attributes, 8 expressions)",
+    "vehicle attribute analysis (plate, colour, type, logo, model)",
+    "video metadata",
+    "120dB WDR",
+    "SL anti-corrosion housing (NEMA 4X)",
+    "line in/out audio (no built-in mic or speaker)"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/ptz-cameras/special-series/anti-corrosion-cameras/sd8a840pa-hnf-sl",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/DH-SD8A840PA-HNF-SL_S0_datasheet_20250903.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "release_year": 2022,
+  "release_notes": "The Dahua SD8A840PA-HNF-SL is an 8MP (4K) 40x anti-corrosion WizMind PTZ camera with 500m IR (10 illuminators), Auto Tracking 3.0, face recognition, vehicle-attribute analysis and video metadata. NEMA 4X anti-corrosion housing; Hi-PoE / 36 VDC power. Audio is line in/out only (no built-in mic or speaker).",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "autotracking": true,
+      "notes": "Dahua native RTSP; PTZ driven over ONVIF (port 80)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

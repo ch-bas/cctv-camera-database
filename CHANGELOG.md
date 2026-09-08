@@ -6,6 +6,60 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.16.0] — 2026-09-08
+
+Dataset grows to **11,405 cameras / 138 brands** — the largest single release yet (~+2,821). Highlights: the complete **Hikvision Thermal** catalogue (+247) with a new thermal brand **HikMicro**; a **full sweep of the entire Dahua camera catalogue** (~+990 across Network, PTZ, PT, HDCVI, Thermal, Wireless, and project-exclusive) built by reverse-engineering Dahua's download-centre catalogue API; a **bulk Hanwha Vision (Wisenet) ingest** (+545) from official datasheets; a **near-complete ACTi refresh** (+280) pulled from ACTi's spec API; a **Mobotix expansion** (+89, ONE / 7 / MOVE / legacy lines); and two new **India** brands — **Matrix Comsec (SATATYA)** (+62) and **Prama** (+17). Every record is from an official manufacturer datasheet or spec API; thermal-specific modeling matches the existing convention (`resolution` = thermal module, NETD in `sensor`, bi-spectrum → two lenses).
+
+### Added — Hanwha Vision / Wisenet (+545)
+- Bulk ingest of the Hanwha Vision (Wisenet) network-camera catalogue from official product pages + datasheets: the X / Q / P / T / L series and legacy Samsung-Techwin SN lines — box, dome, bullet, turret, PTZ, fisheye, multi-directional/panoramic, thermal (TNO/TNU) and bi-spectral (TNM) models. `ndaa_compliant: true` throughout (South Korean, not a Section 889 covered entity); ONVIF + Hanwha RTSP (`/profile1/media.smp`) configs.
+
+### Added — new brand: Matrix Comsec / SATATYA (+62)
+- **Matrix** (Matrix Comsec, Vadodara, India) — the **SATATYA** IP-camera line: Project (`CIDR`/`CIBR`), Professional (`MIDR`/`MIBR`/`MITR` IR-turret / `MITC` all-colour turret), Ruggedized (`RIDR`, EN50155/EN45545 railway, IP68) and PTZ (38× optical, 300 m IR) series; 2/5/8 MP, Sony STARVIS, True WDR 120 dB, ONVIF S/G/T. Ingested from official datasheets. `ndaa_compliant` read per-datasheet certifications line — `true` for all except `CIBR50FL40CWP` (its sheet omits NDAA); compliant models carry `markets: ["global","india","US"]`.
+
+### Added — new brand: Prama (+17)
+- **Prama** (Prama India) — the NC-series IP cameras (Value / Pro): turret, dome, bullet and PTZ, 2/4/6/8 MP with IR / Smart-Dual-Light. Hikvision-OEM platform → Hikvision-style RTSP/ONVIF configs. `ndaa_compliant: false`, `markets: ["india"]`.
+
+### Added — Axis (+7)
+- Additional Axis models from official datasheets — the M30 / M32 series, M3945-R, and Q3626/Q3628-VE. `ndaa_compliant: true` (Swedish).
+
+### Changed — Bosch source hygiene
+- Re-sourced Bosch records to their **official Bosch datasheet PDFs** (dropping reseller/mirror links), one clean official link per record.
+
+### Added — ACTi refresh (+280)
+- Near-complete sweep of ACTi's current + legacy camera catalogue, pulled from ACTi's spec API (`newPopupSpecifications*.ashx`): the A/B/D/E/I/K/Q/Z bullet/dome/turret/box/fisheye lines, zoom bullets & domes, hemispherics, PTZ (incl. laser-IR ALPR), bispectral thermal (K371/K372/A37x/A57x), covert pinhole (Q112), body-worn (PCAM), and parking domes. Non-cameras (encoders, NVRs, access-control readers, accessories) filtered out.
+- **`ndaa_compliant` is per-model**, sourced from ACTi's official NDAA list (acti.com/products/ndaa): the enumerated models are `true` (and carry `markets: ["global","US"]`); all others `false`. ACTi builds with trusted Taiwan/Japan/US components + a proprietary A1 SoC.
+- Every record independently **re-verified** (double-fetch + spec self-consistency) after a race condition in ACTi's spec endpoint was found to cross-contaminate concurrent requests — ~34 records were corrected or dropped as a result.
+
+### Added — Mobotix expansion (+89)
+- The MOBOTIX **ONE** (c1A-S/M1A-S/S1A-D + NurseAssist), **7** thermal/EN54-fire variants (p71 ECO Thermal, M73/S74 EN54), **16/26/25/15** legacy MxPEG dual-sensor lines (hemispheric, dual-lens, vandal, door stations), and the **MOVE** OEM line (VB bullets, VD/MD domes, VT turrets, SD speed-dome PTZ, VM/VMSD/VH multisensor). German-made (Konica Minolta group) → `ndaa_compliant: true`. MxPEG recorded as a feature, never a codec value.
+
+### Added — Dahua full-catalogue sweep (~+990 total)
+- Beyond the WizMind-5 and initial catalogue additions below, a complete sweep of the current **and discontinued** Dahua camera catalogue via the download-centre API: hundreds more Network IP (WizMind 5/7/8, WizSense 2/3, EZ-IP, anti-corrosion, box, fisheye, panoramic, ANPR, people-counting, NightHawk full-colour), HDCVI analog (Lite/Pro/full-colour/4K/PoC/active-deterrence), thermal (TPC), consumer wire-free (Apollo/Hero/Picoo), and **project-exclusive new-hardware** models (WizMind-9 `IPC-H*W9442H/9842H-MN`, the D-A1 line, thermal/positioning), region-locked SKUs tagged to their market (Mongolia/Turkey/Peru/Georgia).
+
+### Changed — data quality
+- Backfilled minimum-illumination (`night_vision.min_lux` / `min_lux_color`) on 256 Dahua records from their datasheet spec rows (skipping the `0 lux (IR on)` sentinel; no values fabricated).
+
+### Added — new brand: HikMicro (+86)
+- **HikMicro (`HM-*`)** — Hikvision's dedicated thermal sub-brand (datasheets are HIKMICRO-branded). The full security-thermal line: bi-spectrum bullets & turrets (thermal + optical, IR / smart-hybrid supplement), thermal-only presence detectors, cube (`box`) units, `TX` TandemVu (thermal bullet + integrated optical speed dome), and the high-end positioning range — anti-corrosion `TD6`, uncooled `TD95C8` (1280×1024, 3 km laser illuminator), and **cooled MWIR** `TD816A`/`TD966A` spheres with 1535/1570 nm laser rangefinders to 10–20 km. `ndaa_compliant: false` (Hikvision sub-brand, Section 889).
+
+### Added — Dahua WizMind 5 (+42)
+- The full **WizMind 5** network-camera series across every sub-category: Pro WizColor (fixed & motorized-varifocal bullets/turrets/domes), Smart Dual Light, Anti-Corrosion (ATC), 180° panoramic dual-lens, triple-lens perimeter, HDMI-output, 5G/SIM, and elevator cameras. 4/5/8 MP, IR + warm dual-light (`hybrid`). `ndaa_compliant: false`.
+
+### Added — Dahua camera catalogue sweep (+277 beyond WizMind 5)
+- **Network cameras (+~96)** — WizMind 7 (Smart-Dual-Light, IR, Dual-Sight multi-lens, Anti-Corrosion), WizMind 8 (dual-lens 3D people-counter, corner, classroom, high-temperature, self-cleaning), WizSense 3 & 2 (TiOC PRO-WizColor, Smart-Dual-Light, IR, 4G), Special (separated/covert pinhole, macro-reading), and WizMind Panoramic (multi-sensor 180°, multi-directional 360°, fisheye).
+- **PTZ (+17)** — the new speed-dome / positioning models not already in the set: X-Spans multi-sensor+PTZ (`PSDW`), WizMind/WizSense `SD` speed domes, Special positioning systems (`PTZ*`, laser), and Wireless 4G/5G — top-level `ptz` with `onvif_ptz: "continuous"`.
+- **PT — pan-tilt (+13)** — IP-PT multivision (`IPC-PTS`) + single-lens (`IPC-PT`, `SD*NB`) 1/2/3-series.
+- **HDCVI — analog (+116)** — the full 4-in-1 (CVI/AHD/TVI/CVBS) line over coax: Pro/Lite/Cooper bullets, turrets & domes across 4K/5MP/1080p, Active-Deterrence WizColor (`ME`, red/blue + siren), Full-color warm-light (`-LED`), PoC, panorama, micro-size, and pinhole/covert (`HAC-HUM`). `connectivity: ["coax"]`, no IP stack.
+- **Thermal — Dahua (+38)** — the `TPC-*` bi-spectrum & thermography line: Eureka/Ultra/Pro/Lite bullets, turrets, `SD` speed domes, `PT`/`PTD` positioning systems (incl. tri-sensor `PTD8A4C`), explosion-proof (`AE*`, ATEX), and anti-corrosion; `-T` thermography variants measure temperature (-20 to 550 C).
+- **Wireless — Wi-Fi / battery / 4G (+55)** — the consumer wireless line: Hero indoor pan-tilt & dual-lens, Picoo outdoor PT, Apollo battery wire-free bullets & PT (solar-powered), the C/T/F Wi-Fi series, `IPC-WL` floodlight (active deterrence), and 4G wired/wire-free cameras. Wi-Fi/battery/solar/4G power & connectivity; app-only cameras use a generic Home Assistant config (no fabricated RTSP).
+- All Dahua `ndaa_compliant: false` (Section 889). Two models (TPC-PT8641G, HM-TD2618-8) omitted — no obtainable datasheet.
+
+### Added — community request
+- **Dahua C5A** — 5MP indoor fixed-focal Wi-Fi 6 cube with magnetic base, AI human/pet detection, two-way audio, and 10 m IR (#352).
+
+### Added — Hikvision Thermal (+161)
+- The complete Hikvision `DS-2TD*` / `DS-2TX*` thermal catalogue: fixed thermal & bi-spectrum bullets/turrets (`DS-2TD12/13/16/21/23/26`), thermography temperature-measurement variants (`…T`, -20 to 550/650 C), ColorVu thermal (`DS-2TD2608`), speed domes & mobile/portable PTZ (`DS-2TD42/45`, battery/4G/GPS), large positioning systems (`DS-2TD62/66/95C8`, uncooled to 1280×1024), cooled MWIR spheres (`DS-2TD966A`), explosion-proof ATEX/IECEx (`DS-2TD65`), solar/4G kits (`DS-2TXS2628`), and smart-linkage tracking (`DS-2TX3742`). `ndaa_compliant: false`. One model (HM-TD2618-8) omitted — its datasheet is access-restricted.
+
 ## [2.15.0] — 2026-09-04
 
 Dataset grows to **8,588 cameras / 135 brands** — a **+1,533** jump from the complete ingest of the HiLook and Hikvision manufacturer catalogues, sourced entirely from official resource-center datasheets (verified values only; every PDF cached).

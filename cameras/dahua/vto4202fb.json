@@ -1,0 +1,125 @@
+{
+  "id": "dahua-vto4202fb",
+  "brand": "Dahua",
+  "model": "VTO4202FB",
+  "aliases": [
+    "DHI-VTO4202FB-P1",
+    "VTO4202FB-P1",
+    "VTO4202FB-P-S3",
+    "VTO4202FB-MB1",
+    "VTO4202FB-MB2",
+    "VTO4202FB-MB5",
+    "VTO4202FB-MDB2",
+    "VTO4202FB-MDB4",
+    "VTO4202FB-MDB10",
+    "VTO4202FB-MF",
+    "VTO4202FB-MI",
+    "VTO4202FB-MK",
+    "VTO4202FB-ML",
+    "VTO4202FB-MN",
+    "VTO4202FB-MR",
+    "VTO4202FB-MR1",
+    "VTO4202FB-MS",
+    "VTO4202FB-MV"
+  ],
+  "type": "doorbell",
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "last_verified": "2026-09-06",
+  "environment": [
+    "outdoor"
+  ],
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.9\" CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "field_of_view_deg": "168.6 horizontal (87.1 vertical, 176.7 diagonal)",
+  "night_vision": {
+    "type": "ir"
+  },
+  "power": {
+    "method": "2-wire / PoE (802.3at) / 12 VDC; provides 12 V/600 mA output",
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP65",
+  "ik_rating": "IK07",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25
+  },
+  "features": [
+    "2-wire IP modular apartment door station (DHI-VTO4202FB-P1 camera module)",
+    "2MP 1/2.9-inch CMOS HD color 168.6-degree camera",
+    "120 dB WDR, 3D NR",
+    "auto IR fill light, ICR day/night",
+    "two-way audio intercom (G.711)",
+    "ONVIF / RTSP / SIP over digital 2-wire",
+    "access control: card capacity 3000, fingerprint capacity 3000, exit button, lock control, tamper alarm",
+    "microSD up to 256 GB",
+    "expandable module stack: button (MB1/MB2/MB5/MDB2/MDB4/MDB10), keypad (MK), fingerprint (MF), card reader (MR/MR1), display (MS), nameplate (MN), indicator (MI), Vigik (MV)",
+    "black anodized aluminum front panel",
+    "2-wire / PoE (802.3at) / 12 VDC power",
+    "DMSS app"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "100 x 100 x 49.4 (camera module)",
+  "weight_g": 430,
+  "release_notes": "The Dahua VTO4202FB (DHI-VTO4202FB-P1) is a 2-wire IP modular apartment door station with a 2MP 1/2.9-inch 168.6-degree camera, 120 dB WDR, auto-IR night vision, ONVIF/RTSP/SIP intercom, and card/fingerprint access control. It is the black-panel FB variant of the VTO4202F family and accepts a stack of expansion modules captured here as aliases. Verified against the official Dahua datasheet.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/video-intercoms/ip-series/vto4202fb",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/VTO4202FB-P1_datasheet_20240524.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua VTO door station exposing ONVIF/RTSP (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "id": "dahua-ipc-hf3241f",
+  "brand": "Dahua",
+  "model": "IPC-HF3241F",
+  "aliases": [
+    "DH-IPC-HF3241F",
+    "2MP Starlight Box AI Network Camera"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "power": {
+    "method": "DC 12V, AC 24V, PoE (802.3at) (Class 4)",
+    "consumption_w": 15.3
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "two_way": true
+  },
+  "features": [
+    "AI series (Deep IVS)",
+    "C/CS-mount box camera (lens sold separately)",
+    "tripwire and intrusion with human/vehicle classification",
+    "starlight low-light imaging",
+    "Smart Codec (H.265+/H.264+)",
+    "3D DNR",
+    "120 dB WDR"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "161.6 x 85.5 x 74.0",
+  "weight_g": 780,
+  "environment": [
+    "indoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "last_verified": "2026-09-07",
+  "release_year": 2018,
+  "release_notes": "2MP starlight C/CS-mount box AI camera with a 1/2.8-inch sensor, Deep IVS tripwire/intrusion with human/vehicle classification, Smart Codec and 120 dB WDR (lens ordered separately).",
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/network-cameras/ipc-hf3241f",
+    "https://materialfile.dahuasecurity.com/uploads/soft/20181108/1.DH-IPC-HF3241F_Datasheet_201810221.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "night_vision": {
+    "min_lux_color": 0.05,
+    "min_lux": 0.0005
+  }
+}

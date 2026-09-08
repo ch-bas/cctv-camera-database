@@ -1,0 +1,113 @@
+{
+  "id": "hikmicro-hm-td4137-25",
+  "brand": "HikMicro",
+  "model": "HM-TD4137-25",
+  "aliases": [
+    "HM-TD4137-25/WY"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 0.11,
+    "max_width": 384,
+    "max_height": 288,
+    "label": "384x288 (thermal)"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 50
+  },
+  "sensor": "Thermal: uncooled VOx, 384x288, 17 um pixel pitch, 8-14 um, NETD < 40 mK (25 C, F1.0); optical: 1/1.8in CMOS, 4 MP",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "25 mm (thermal, fixed)",
+    "aperture": "F1.0",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 150,
+    "min_lux_color": 0.005
+  },
+  "field_of_view_deg": "14.9h x 11.2v",
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ptz": {
+    "autotracking": true
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP66",
+  "operating_temp_c": "-40 to 65 C",
+  "dimensions_mm": "220 x 410 x 198.6",
+  "weight_g": 9000,
+  "power": {
+    "method": "24 VAC / 36 VDC / 48 VDC / Hi-PoE",
+    "consumption_w": 65
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": false,
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "thermal + optical bi-spectrum network positioning system (speed dome)",
+    "optical channel: 4 MP (2688x1520), 1/1.8in CMOS",
+    "optical lens 6-240 mm, 40x optical zoom",
+    "thermal FOV 14.9h x 11.2v",
+    "IR illuminator up to 150 m on the optical channel",
+    "temperature measurement -20 to 150 C, accuracy +/-8 C",
+    "perimeter protection (line crossing, intrusion, region entrance/exit) via built-in GPU",
+    "smart tracking: panorama, event and multi-scene patrol tracking",
+    "fire and smoke detection algorithm",
+    "picture-in-picture thermal/optical fusion display",
+    "line audio in/out interface",
+    "anti-corrosion coating (NEMA 4X)"
+  ],
+  "release_notes": "The HikMicro HM-TD4137-25/WY is a thermal/optical bi-spectrum PTZ positioning system with a 384x288 thermal module (25 mm lens) and a 4 MP 40x optical channel, offering perimeter protection, smart auto-tracking and temperature measurement up to 150 C.",
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000117658/HM-TD4137-25_WY_Datasheet_en-US_20240905.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Thermal and optical exposed as separate channels (optical Channel 1, thermal Channel 2)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  }
+}

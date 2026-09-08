@@ -1,0 +1,122 @@
+{
+  "id": "dahua-h2c",
+  "brand": "Dahua",
+  "model": "H2C",
+  "aliases": [
+    "H2C",
+    "HERO H2C",
+    "2MP Indoor Fixed-focal Wi-Fi Pan & Tilt Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "85.9 horizontal (44.9 vertical, 103.3 diagonal)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 15
+  },
+  "power": {
+    "method": "5 VDC, 1 A (USB Type-C)",
+    "voltage": "5 VDC"
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": false,
+    "cloud": false
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "features": [
+    "Wi-Fi (IEEE 802.11b/g/n 2.4 GHz)",
+    "pan 0-325, tilt -20 to 100",
+    "15 m IR night vision",
+    "AI human detection",
+    "two-way talk, FTP upload",
+    "RJ-45 Ethernet (10/100), Smart PSS / DSS / DMSS management"
+  ],
+  "operating_temp_c": "-10 to 40",
+  "dimensions_mm": "130.4 x 95.5 diameter",
+  "weight_g": 250,
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "release_notes": "The Dahua H2C is a 2MP indoor Wi-Fi pan & tilt camera with a full H.264/H.265 codec stack, 15 m IR night vision, AI human detection and two-way talk, managed via Smart PSS / DSS / DMSS. Verified against the official Dahua datasheet.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/wireless-products/indoor-cameras/hero-series/h2c",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/H2C_datasheet_20240628.pdf"
+  ],
+  "last_verified": "2026-09-07",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 576,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Standard Dahua RTSP path (Smart PSS / DSS-managed IP camera); datasheet does not explicitly list RTSP/ONVIF. Enable RTSP in the app if required.",
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "generic",
+      "notes": "Dahua Wi-Fi PT camera; try ONVIF (default port 80) or the Generic Camera (RTSP) integration with the URL above."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile; use the RTSP URL above."
+    }
+  },
+  "environment": [
+    "indoor"
+  ],
+  "ndaa_compliant": false
+}

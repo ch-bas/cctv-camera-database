@@ -1,0 +1,121 @@
+{
+  "id": "hikvision-ds-2td2366-50",
+  "brand": "Hikvision",
+  "model": "DS-2TD2366-50",
+  "aliases": [
+    "DS-2TD2366-50"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "dc",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 0.33,
+    "max_width": 640,
+    "max_height": 512,
+    "label": "640x512 (thermal)"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.265+",
+      "H.264",
+      "H.264+",
+      "MJPEG"
+    ],
+    "max_fps": 50,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "640x512",
+        "fps": 50,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x512",
+        "fps": 50,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "640x512",
+        "fps": 50,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "Thermal: uncooled VOx, 640x512, 17 um pixel pitch, 8-14 um, NETD < 40 mK (25 C, F1.0)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "50 mm (fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "12.42h x 9.95v",
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 64,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP66",
+  "operating_temp_c": "-40 to 65 C",
+  "dimensions_mm": "535 x 400 x 171",
+  "weight_g": 6400,
+  "power": {
+    "method": "24 VAC / 12 VDC",
+    "consumption_w": 8
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": false,
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "thermal-only network camera (VOx uncooled microbolometer, 640x512 thermal, 17 um pixel pitch, 8-14 um)",
+    "thermal FOV 12.42h x 9.95v",
+    "temperature measurement -20 to 150 C, accuracy +/-8 C",
+    "perimeter protection: line crossing, intrusion, region entrance/exit",
+    "image processing: AGC, DDE, 3D DNR",
+    "audio in/out interface (3.5mm mic/line in)",
+    "built-in de-icing heater",
+    "long-range thermal imaging",
+    "built-in GPU for perimeter analytics"
+  ],
+  "release_notes": "The Hikvision DS-2TD2366-50 is a long-range 640x512 thermal network bullet camera with a 50 mm lens for perimeter protection over large distances; it measures temperature from -20 to 150 C.",
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000002507/DS-2TD2366-50_V5.5.0_20221115.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  }
+}

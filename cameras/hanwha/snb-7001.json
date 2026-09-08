@@ -1,0 +1,112 @@
+{
+  "id": "hanwha-snb-7001",
+  "brand": "Hanwha",
+  "model": "SNB-7001",
+  "ndaa_compliant": true,
+  "aliases": [
+    "SNB-7001N",
+    "SNB-7001P",
+    "WiseNet 3MP Box Camera"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2048,
+    "max_height": 1536,
+    "label": "3MP"
+  },
+  "sensor": "1/2.8\" 3M PS CMOS",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.4
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2048x1536",
+        "fps": 10,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V",
+    "consumption_w": 4.3
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "electrical day/night",
+    "Sens-up (frame integration)",
+    "smart compression (ROI encoding)",
+    "tampering detection",
+    "C/CS-mount (lens not included)",
+    "10fps at full 3MP resolution"
+  ],
+  "operating_temp_c": "-10 to 55",
+  "dimensions_mm": "74.3 x 54.5 x 114.4",
+  "weight_g": 170,
+  "environment": [
+    "indoor"
+  ],
+  "release_notes": "Built from official Samsung Techwin/Hanwha datasheet SNB-7001 (dated 2014-04-02): 3MP box camera, 1/2.8\" 3M PS CMOS, lens not included (C/CS mount), no IR (electrical day/night), H.264/MJPEG (10fps at full 3MP). ONVIF Profile S.",
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/SNB-7001/10/SNB-7001-ENG-1p-Datasheet-20140402.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/SNB-7001"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profile S). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Hanwha' or 'Samsung' profile depending on Blue Iris version."
+    }
+  },
+  "last_verified": "2026-09-08",
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

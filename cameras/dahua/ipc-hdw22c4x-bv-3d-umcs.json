@@ -1,0 +1,138 @@
+{
+  "id": "dahua-ipc-hdw22c4x-bv-3d-umcs",
+  "brand": "Dahua",
+  "model": "IPC-HDW22C4X-BV-3D-UMCS",
+  "aliases": [
+    "DH-IPC-HDW22C4X-BV-3D-UMCS"
+  ],
+  "ndaa_compliant": false,
+  "type": "dual-lens",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/2.8\" 4MP progressive CMOS (dual)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "2.0 and 2.8",
+    "aperture": "F2.0 (2.0 mm) / F1.6 (2.8 mm)",
+    "varifocal": false
+  },
+  "field_of_view_deg": "122 (2.0 mm) / 95 (2.8 mm) horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux_color": 0.005
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3af)",
+    "consumption_w": 12.9
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "204 x 78 x 61.6",
+  "weight_g": 820,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "dual-lens stereo-analysis people-counting camera (2.0 mm + 2.8 mm, both 4MP)",
+    "people counting: entry/exit/pass counting, area counting, queue management with daily/monthly/yearly reports",
+    "height self-adaptation and height filtering",
+    "face detection with 6 attributes",
+    "perimeter protection (IVS)",
+    "crowd/loitering detection, leave-post detection",
+    "20 m IR",
+    "Alarm 2 in/2 out, audio 2 in/1 out, RS-485, BNC",
+    "Project-exclusive SKU"
+  ],
+  "markets": [
+    "global"
+  ],
+  "release_year": 2026,
+  "sources": [
+    "https://www.dahuasecurity.com/products/dedicated-products/project-exclusive/network-cameras/ipc-hdw22c4x-bv-3d-umcs",
+    "https://materialfile.dahuasecurity.com/uploads/soft/20260625/1_DH-IPC-HDW22C4X-BV-3D-UMCS_datasheet_202603121.pdf"
+  ],
+  "last_verified": "2026-09-07",
+  "release_notes": "Project-exclusive 4MP WizMind dual-lens stereo-analysis people-counting camera (2.0 mm + 2.8 mm) with entry/exit/area counting, queue management, height filtering, face detection and perimeter protection; 20 m IR, IP67/IK10.",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

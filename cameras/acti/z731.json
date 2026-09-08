@@ -1,0 +1,117 @@
+{
+  "id": "acti-z731",
+  "brand": "ACTi",
+  "model": "Z731",
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 2564,
+    "max_height": 2564,
+    "label": "6MP"
+  },
+  "sensor": "1/2.5\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.6 (fixed)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 horizontal / 180 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux_color": 0.003
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x2560",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "power": {
+    "method": "DC 12V, PoE (IEEE802.3af)",
+    "consumption_w": 8.4
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "126 x 52 (dia x H)",
+  "weight_g": 440,
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "Hemispheric fisheye 180-degree panoramic view",
+    "dewarped and ePTZ view modes",
+    "Extreme WDR (135 dB)",
+    "day/night with mechanical IR cut filter",
+    "adaptive IR LED (850 nm)",
+    "deep-learning AI analytics: smart motion detection (people/vehicle), line crossing, intrusion, tampering, people flow and density counting",
+    "2D + 3D DNR",
+    "ONVIF Profile S/G/T/M",
+    "PoE (IEEE802.3af)",
+    "vandal-resistant (IK10)"
+  ],
+  "ndaa_compliant": true,
+  "markets": [
+    "global",
+    "US"
+  ],
+  "sources": [
+    "https://www.acti.com/product/Z731",
+    "https://www.acti.com/product/Z731?tab=specifications"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  }
+}

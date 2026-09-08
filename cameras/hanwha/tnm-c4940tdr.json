@@ -1,0 +1,131 @@
+{
+  "id": "hanwha-tnm-c4940tdr",
+  "brand": "Hanwha",
+  "model": "TNM-C4940TDR",
+  "aliases": [
+    "Wisenet Bi-spectrum AI IR Thermal Camera"
+  ],
+  "type": "dual-lens",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 0.3,
+    "max_width": 640,
+    "max_height": 480,
+    "label": "640x480 VGA thermal + 8MP (3840x2160) visible (bi-spectrum)"
+  },
+  "sensor": "Thermal VOx microbolometer (12um pixel, NETD <=60mK) + 1/1.8\" CMOS visible",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "9.1 thermal fixed / 4.4-9.3 visible",
+    "aperture": "F1.0 thermal / F1.3-2.1 visible",
+    "varifocal": true
+  },
+  "field_of_view_deg": "50.0 horizontal / 37.0 vertical (thermal); 112.1-47.5 horizontal / 58.0-26.6 vertical (visible)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.06
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "visible main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "thermal",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at, Class 4) / 12VDC",
+    "consumption_w": 25.5,
+    "poe_class": 4
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "notes": "2 microSD/SDHC/SDXC slots (256GB each, 512GB total)"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66/IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "ndaa_compliant": true,
+  "features": [
+    "Bi-spectrum: VGA thermal (640x480, 12um, NETD <=60mK) + 8MP visible",
+    "Temperature detection -20 to 130C, accuracy +/-5C (<=100C), 10 detection areas, spot reading",
+    "AI on both visible and thermal (object detection, abnormal temperature detection)",
+    "Color palettes: Whitehot, Blackhot, Rainbow, Rainbow2",
+    "120 dB WDR, WiseNR II, SSDR, WiseStream III (visible) / WiseStream II (thermal)",
+    "Digital image stabilization (built-in gyro)",
+    "IR LED 30m 850nm",
+    "IK10, NEMA 4X, NEMA TS 2-2013"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "353.4 x 287.5 x 191.2",
+  "weight_g": 4530,
+  "environment": [
+    "outdoor"
+  ],
+  "release_notes": "Specs from official Hanwha Vision datasheet DataSheet_TNM-C4940TDR (2026-08-06).",
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/TNM-C4940TDR/DataSheet_TNM-C4940TDR_20260806_EN_191000.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/TNM-C4940TDR"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80. Thermal and visible stream separately."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  }
+}

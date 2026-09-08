@@ -1,0 +1,128 @@
+{
+  "id": "hikvision-ds-2td1228-3",
+  "brand": "Hikvision",
+  "model": "DS-2TD1228-3",
+  "aliases": [
+    "DS-2TD1228-3/QA"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.05,
+    "max_width": 256,
+    "max_height": 192,
+    "label": "256x192 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 256x192, 12 um pixel pitch, 8-14 um, NETD < 40 mK; optical: 1/2.7in CMOS 4 MP",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "3.6 (thermal, fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "50.0 horizontal (thermal)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 15
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3af, Class 3)",
+    "consumption_w": 6.5,
+    "voltage": "12 VDC / PoE",
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "thermal",
+        "resolution": "1280x720",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "optical",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-40 to 65 C",
+  "dimensions_mm": "138.3 x 138.3 x 123.1",
+  "weight_g": 940,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "thermal and optical bi-spectrum turret camera with fused/PIP display",
+    "optical channel: 4 MP (2688x1520), lens 4.3 mm, FOV 84.0 horizontal",
+    "thermal detector: uncooled VOx, 256x192, 12 um pixel pitch, NETD < 40 mK, 8-14 um",
+    "temperature exception alarm -20 to 150 C, accuracy +/-8 C",
+    "perimeter protection VCA (line crossing, intrusion, region entrance/exit) and fire/smoking detection",
+    "image processing: linear, histogram, adaptive AGC, DDE, 3D DNR; white-hot/black-hot target coloration",
+    "IR supplement up to 15 m and white-light alarm up to 30 m on the optical channel"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000044934/DS-2TD1228-3_QA_Datasheet_en-US_20231019.pdf"
+  ],
+  "release_notes": "The Hikvision DS-2TD1228-3 is a thermal and optical bi-spectrum network turret camera pairing a 256x192 uncooled VOx thermal module (NETD < 40 mK) with a 4 MP optical channel for perimeter protection, fire prevention and temperature-exception alarm. Verified against the official Hikvision datasheet DS-2TD1228-3_QA_Datasheet_en-US_20231019.pdf.",
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Thermal and optical exposed as separate channels."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

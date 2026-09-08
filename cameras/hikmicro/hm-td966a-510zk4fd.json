@@ -1,0 +1,121 @@
+{
+  "id": "hikmicro-hm-td966a-510zk4fd",
+  "brand": "HikMicro",
+  "model": "HM-TD966A-510ZK4FD",
+  "aliases": [
+    "HM-TD966A-510ZK4FD/T2"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "ac-mains",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 0.33,
+    "max_width": 640,
+    "max_height": 512,
+    "label": "640x512 (thermal)"
+  },
+  "sensor": "Thermal: MCT cooled focal plane array, 640x512, 15 um pixel pitch, 3.7-4.8 um, NETD <= 25 mK; optical: 1/1.8in Progressive Scan CMOS, 4 MP",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "21 to 510 (thermal, motorized zoom)",
+    "aperture": "F4.0 (thermal)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "25.1 (wide) to 1.08 (tele) horizontal (thermal)",
+  "power": {
+    "method": "AC 110-305V 50/60Hz or DC 48V",
+    "consumption_w": 180,
+    "voltage": "AC 110-305V; DC 48V +/-20%"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "microSD/SDHC/SDXC up to 1 TB; NAS (NFS, SMB/CIFS); ANR"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "578.3 x 571 x 955.7",
+  "weight_g": 100000,
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "features": [
+    "Bi-spectrum cooled thermal sphere PTZ (positioning system)",
+    "MCT cooled focal plane array detector, 640x512, 15 um pixel pitch, NETD <= 25 mK",
+    "Thermal spectral range 3.7 to 4.8 um for long-range detection through haze/fog",
+    "Thermal lens 21 to 510 mm motorized zoom, F4.0, auto focus",
+    "Optical channel: 4 MP (2688x1520), fixed lens 4 mm plus PTZ lens 10-1100 mm",
+    "Built-in laser range finder: 1535 nm eye-safe, 100 m to 10 km, +/-5 m accuracy",
+    "Pan 360 continuous rotation, tilt -45 to 45",
+    "Optical Image Stabilization (OIS) on optical channel, EIS on thermal channel",
+    "Perimeter protection: line crossing, intrusion, region entrance and exit",
+    "Ship detection and ship VCA in thermal channel",
+    "Heating and de-icing for low-temperature environment",
+    "External GPS module via RS-485 for coordinates",
+    "Built-in TPM 2.0 encryption module",
+    "20000-hour stirling cryocooler lifespan",
+    "NEMA 4X standard, anti-corrosion coating (C5-Medium)",
+    "Thermal DORI: human detection 13.3 km, recognition 3.9 km, identification 2.7 km",
+    "Audio in/out (3.5 mm mic/line in, line out), 2 alarm inputs, 2 relay outputs"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 50,
+    "streams": [
+      {
+        "name": "main-optical",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "main-thermal",
+        "resolution": "640x512",
+        "fps": 50,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Optical channel is Channel 1 (101/102), thermal channel is Channel 2 (201). Positioning/PTZ movement over ONVIF."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "HikMicro bi-spectrum cooled thermal sphere PTZ for long-range perimeter and coastal/critical-infrastructure surveillance. The 'D' variant adds an eye-safe 1535 nm laser range finder (100 m to 10 km) alongside the 21-510 mm motorized thermal zoom and 4 MP optical PTZ channel.",
+  "last_verified": "2026-09-06",
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000183725/HM-TD966A-510ZK4FD_T2_Datasheet_en-US_20260817.pdf"
+  ]
+}

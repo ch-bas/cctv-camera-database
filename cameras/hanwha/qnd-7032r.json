@@ -1,0 +1,125 @@
+{
+  "id": "hanwha-qnd-7032r",
+  "brand": "Hanwha",
+  "model": "QND-7032R",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet Q 4MP IR Indoor Dome 6mm"
+  ],
+  "generation": "Wisenet Q",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/3\" 4MP CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6.0 (fixed)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "49 horizontal / 28 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux_color": 0.15
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3) / 12VDC",
+    "consumption_w": 7.9,
+    "voltage": "12VDC"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "120 dB WDR",
+    "WiseStream II",
+    "IR viewable length 20m (850nm)",
+    "Built-in microphone",
+    "Motion / tampering / defocus detection, intrusion / crossing analytics",
+    "Hallway view",
+    "SD card AES-256 partition encryption",
+    "ONVIF Profile S/G/T",
+    "NDAA compliant"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "release_notes": "Ingested 2026-09-08 from official Hanwha Vision datasheet (DataSheet_QND-7032R_20260806_EN).",
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/QND-7032R/DataSheet_QND-7032R_20260806_EN_154929.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/QND-7032R"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "dimensions_mm": "Ø110.0 x 86.0",
+  "weight_g": 255,
+  "operating_temp_c": "-10 to 55",
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

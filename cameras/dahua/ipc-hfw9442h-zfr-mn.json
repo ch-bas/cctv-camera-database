@@ -1,0 +1,135 @@
+{
+  "id": "dahua-ipc-hfw9442h-zfr-mn",
+  "brand": "Dahua",
+  "model": "IPC-HFW9442H-ZFR-MN",
+  "aliases": [
+    "DH-IPC-HFW9442H-ZFR-MN"
+  ],
+  "ndaa_compliant": false,
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" 4MP progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-12",
+    "aperture": "F1.2",
+    "varifocal": true
+  },
+  "field_of_view_deg": "114-47",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 60,
+    "min_lux_color": 0.001
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "12 VDC / 24 VAC / PoE+ (802.3at) / ePoE",
+    "consumption_w": 16.7
+  },
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "audio": {
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "340.1 x 108.5 x 92.9",
+  "weight_g": 1600,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "WizMind-9 AI vari-focal bullet",
+    "face detection (6 attributes, 8 expressions), track, priority, snapshot",
+    "people counting (tripwire, area)",
+    "perimeter protection (tripwire, intrusion, fast moving)",
+    "vehicle detection and ANPR",
+    "60 m IR (4 IR LEDs), ePoE",
+    "Special model for Mongolian market",
+    "Project-exclusive SKU (Mongolia)"
+  ],
+  "markets": [
+    "Mongolia"
+  ],
+  "release_year": 2021,
+  "sources": [
+    "https://www.dahuasecurity.com/products/dedicated-products/project-exclusive/network-cameras/ipc-hfw9442h-zfr-mn",
+    "https://material.dahuasecurity.com/uploads/soft/20210602/DH-IPC-HFW9442H-ZFR-MN_datasheet_202105141.pdf"
+  ],
+  "last_verified": "2026-09-07",
+  "release_notes": "Mongolia-market WizMind-9 4MP vari-focal bullet with face detection, people counting, perimeter protection and ANPR; 60 m IR, ePoE, IP67/IK10.",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

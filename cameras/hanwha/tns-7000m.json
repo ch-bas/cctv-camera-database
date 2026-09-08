@@ -1,0 +1,120 @@
+{
+  "id": "hanwha-tns-7000m",
+  "brand": "Hanwha",
+  "model": "TNS-7000M",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "3MP Mono BCR (barcode recognition) Camera"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2048,
+    "max_height": 1536,
+    "label": "3MP"
+  },
+  "sensor": "1/3\" CMOS (monochrome, 2.25um pixel)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6 / 8 / 12 / 16 / 25 (optional interchangeable lens, sold separately)",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "none"
+  },
+  "power": {
+    "method": "24VDC",
+    "consumption_w": 12.9,
+    "voltage": "24VDC"
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "1 microSD/SDHC/SDXC slot (max 256GB)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "monochrome barcode recognition (BCR) camera for logistics / package tracking",
+    "50fps max framerate",
+    "interchangeable optional lens (6/8/12/16/25mm), LED modules and front cover sold separately",
+    "RJ-45 and M12 gigabit Ethernet",
+    "IP66/IP67, IK10 rated ruggedized housing",
+    "ONVIF, SUNAPI",
+    "NDAA compliant"
+  ],
+  "release_year": 2024,
+  "release_notes": "Specs verified against the official Hanwha Vision TNS-7000M datasheet (Ver. 2026). Lenses, LED modules, front cover, cables and brackets sold separately.",
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/TNS-7000M/DataSheet_TNS-7000M_20260806_EN_184943.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/TNS-7000M"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 2048,
+        "height": 1536,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 50,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2048x1536",
+        "fps": 50,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP66/IP67",
+  "ik_rating": "IK10",
+  "dimensions_mm": "74.4 x 77.4 x 59.4",
+  "weight_g": 420,
+  "operating_temp_c": "-40 to 55"
+}

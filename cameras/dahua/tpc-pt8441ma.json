@@ -1,0 +1,111 @@
+{
+  "id": "dahua-tpc-pt8441ma",
+  "brand": "Dahua",
+  "model": "TPC-PT8441MA",
+  "aliases": [
+    "Dahua TPC-PT8441MA",
+    "DHI-TPC-PT8441MA",
+    "DHI-TPC-PT8441MA-S2"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 0.12,
+    "max_width": 400,
+    "max_height": 300,
+    "label": "400x300 (thermal)"
+  },
+  "sensor": "Thermal: vanadium oxide uncooled focal plane detector, 400x300, 17 um pixel pitch, 8-14 um, NETD <= 35 mK; optical: 1/1.8in 4MP progressive-scan CMOS",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30
+  },
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "13, 25, 35 or 50 (thermal); visible 5.5-248 (zoom)",
+    "varifocal": true
+  },
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100
+  },
+  "power": {
+    "method": "Wide input voltage 10-36 VDC",
+    "voltage": "10-36 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512
+  },
+  "ip_rating": "IP66",
+  "operating_temp_c": "-40 to 70",
+  "weight_g": 9000,
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "thermal network mini hybrid pan and tilt (400x300 thermal + 4MP visible)",
+    "vanadium oxide uncooled thermal detector, NETD <= 35 mK",
+    "thermal lens 13/25/35/50 mm; visible 45x optical zoom (5.5-248 mm)",
+    "pan 0 to 360 endless, tilt -90 to +90",
+    "visible IR illumination 100 m",
+    "tripwire, intrusion, human/vehicle classification",
+    "2 alarm in"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/thermal-products/thermal-cameras/ultra-series/tpc-pt8441ma",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/TPC-PT8441MA_S2_datasheet_20250421.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "release_notes": "TPC8-series mini hybrid PT camera pairing a 400x300 uncooled VOx thermal channel with a 4MP 45x-zoom visible channel on a compact 10-36 VDC pan/tilt platform (no temperature measurement).",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=2&subtype=0",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua RTSP convention; channel 1 = visible, channel 2 = thermal. Not verified against a live unit."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80). Thermal and visible exposed as separate channels; PTZ via ONVIF."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

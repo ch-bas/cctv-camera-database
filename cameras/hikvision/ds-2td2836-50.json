@@ -1,0 +1,123 @@
+{
+  "id": "hikvision-ds-2td2836-50",
+  "brand": "Hikvision",
+  "model": "DS-2TD2836-50",
+  "aliases": [
+    "DS-2TD2836-50/V1"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.11,
+    "max_width": 384,
+    "max_height": 288,
+    "label": "384x288 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 384x288, 17 um pixel pitch, 8-14 um, NETD < 40 mK; optical: 1/2.8in Progressive Scan CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "50 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "7.47 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100
+  },
+  "power": {
+    "method": "24 VAC / 12 VDC / PoE (802.3at, Class 4)",
+    "consumption_w": 15,
+    "voltage": "24 VAC / 12 VDC"
+  },
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "535 x 171 x 400",
+  "weight_g": 6000,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 50,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "thermal",
+        "resolution": "640x512",
+        "fps": 50,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "features": [
+    "thermal and optical bi-spectrum bullet camera with image fusion",
+    "optical channel: 1080p (1920x1080)",
+    "thermal detector: 384x288 VOx uncooled FPA, 17 um pixel pitch, NETD < 40 mK",
+    "temperature measurement -20 to 150 C, +/-8 C",
+    "dynamic fire detection, up to 10 fire points",
+    "picture-in-picture display and behavior analysis (line crossing, intrusion, region entrance/exit)",
+    "de-icing heater"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000008269/DS-2TD2836-50_V1_Datasheet_en-US_20230518.pdf"
+  ],
+  "release_notes": "The Hikvision DS-2TD2836-50 is a thermal and optical bi-spectrum network bullet camera with a 384x288 VOx thermal detector (50 mm lens), a 1080p optical channel, temperature measurement and dynamic fire detection. Verified against the official Hikvision datasheet.",
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Thermal and optical exposed as separate channels."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

@@ -1,0 +1,131 @@
+{
+  "id": "hanwha-xnv-a6084r",
+  "brand": "Hanwha",
+  "model": "XNV-A6084R",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet 9 2MP AI IR Vandal Dome"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p Full HD"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12 (4.3x motorized varifocal)",
+    "aperture": "F1.4-3.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "120-27 horizontal / 63-15 vertical / 143-32 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux_color": 0.02
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3)",
+    "consumption_w": 10.2,
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": true,
+    "notes": "1 microSD/SDHC/SDXC slot (max 1TB); OnCloud edge recording supported."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66/IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Wisenet 9 SoC with dual NPU for AI-based image enhancement and analytics",
+    "AI object detection: person / face / vehicle / license plate with attributes + BestShot",
+    "face mask, social distancing, slip & fall, loitering/intrusion detection",
+    "people/vehicle/crowd counting, queue management, heatmap",
+    "WiseIR 50m (850nm)",
+    "150 dB WDR",
+    "WiseNR II (AI engine), SSNR V",
+    "WiseStream (AI-based smart codec)",
+    "digital image stabilization, defog, LDC",
+    "P-iris motorized varifocal (IR corrected)",
+    "audio in (mic/line selectable) + line out",
+    "ONVIF Profile S/G/T/M, SUNAPI",
+    "secure boot, signed & encrypted firmware, FIPS 140-3 secure element",
+    "NDAA compliant"
+  ],
+  "release_year": 2024,
+  "release_notes": "Specs verified against the official Hanwha Vision XNV-A6084R datasheet (Ver. 2026).",
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/XNV-A6084R/DataSheet_XNV-A6084R_20260908_EN_230801.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/XNV-A6084R"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/G/T/M). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "dimensions_mm": "Ø160 x 118",
+  "weight_g": 1243,
+  "operating_temp_c": "-40 to 55"
+}

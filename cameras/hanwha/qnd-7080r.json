@@ -1,0 +1,124 @@
+{
+  "id": "hanwha-qnd-7080r",
+  "brand": "Hanwha",
+  "model": "QND-7080R",
+  "ndaa_compliant": true,
+  "aliases": [
+    "Wisenet Q 4MP IR Dome"
+  ],
+  "generation": "Wisenet Q",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/3\" 4M CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12 (4.3x motorized varifocal)",
+    "aperture": "F1.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "109.7-26.0 horizontal / 60.8-15.2 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux_color": 0.15
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1520",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / DC 12V",
+    "consumption_w": 7.2,
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "WiseStream",
+    "120 dB WDR",
+    "Hallway view",
+    "lens distortion correction",
+    "defocus detection",
+    "tampering detection",
+    "built-in microphone",
+    "simple focus"
+  ],
+  "operating_temp_c": "-10 to 55",
+  "dimensions_mm": "Ø119.8 x 98.8",
+  "weight_g": 355,
+  "environment": [
+    "indoor"
+  ],
+  "release_notes": "Built from official Hanwha Techwin Wisenet Q series brochure (rev 10-2016): 4MP indoor IR dome, 2.8-12mm motorized varifocal F1.4, IR 20m, WDR 120dB, built-in mic, no IP/IK rating (indoor). ONVIF Profile S/G, SUNAPI.",
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/QNP-6230H/10/Brochures_Wisenet-Q-series_180202_EN.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/QND-7080R"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profile S/G). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Hanwha' or 'Samsung' profile depending on Blue Iris version."
+    }
+  },
+  "last_verified": "2026-09-08",
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

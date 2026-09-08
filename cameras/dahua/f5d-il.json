@@ -1,0 +1,131 @@
+{
+  "id": "dahua-f5d-il",
+  "brand": "Dahua",
+  "model": "F5D-IL",
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "last_verified": "2026-09-06",
+  "environment": [
+    "outdoor"
+  ],
+  "aliases": [
+    "DH-F5D-IL",
+    "F5D-IL(2.8mm)",
+    "F5D-IL(3.6mm)",
+    "5MP Fixed-focal Wi-Fi Bullet Network Camera"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2880,
+    "max_height": 1620,
+    "label": "5MP"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 3.6",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "104 horizontal (2.8mm) / 89 horizontal (3.6mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "12 VDC",
+    "voltage": "12 VDC",
+    "consumption_w": 4.02
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": false,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Wi-Fi 6 (IEEE 802.11a/b/g/n/ac/ax) 2.4 GHz + Bluetooth pairing",
+    "RJ-45 10/100 Ethernet",
+    "smart dual light: 30 m IR + 30 m warm-light night vision",
+    "AI human and vehicle detection",
+    "fixed-focal 2.8mm/3.6mm lens options",
+    "microSD up to 256 GB, DMSS app"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "158.3 x 76.8 (L x diameter)",
+  "weight_g": 331,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2880x1620",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x360",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "release_year": 2025,
+  "release_notes": "The Dahua F5D-IL is a 5MP outdoor Wi-Fi 6 bullet camera with smart dual-light (30 m IR + warm light) night vision, AI human/vehicle detection and an RJ-45 port. Verified against the official Dahua datasheet.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/wireless-products/outdoor-cameras/bullet-series/f5d-il",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/F5D-IL_S0_datasheet_20250520.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 360,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "two_way_audio": true,
+      "notes": "Dahua native RTSP (main subtype=0 / sub subtype=1); ONVIF on port 80. Enable RTSP/ONVIF in the camera or DMSS app."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile; use the RTSP URL above."
+    }
+  }
+}

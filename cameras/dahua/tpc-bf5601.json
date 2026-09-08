@@ -1,0 +1,95 @@
+{
+  "id": "dahua-tpc-bf5601",
+  "brand": "Dahua",
+  "model": "TPC-BF5601",
+  "aliases": [
+    "Dahua TPC-BF5601",
+    "DH-TPC-BF5601-T",
+    "DH-TPC-BF5601N-B"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 0.33,
+    "max_width": 640,
+    "max_height": 512,
+    "label": "640x512 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx microbolometer, 640x512, 17 um pixel pitch, 8-14 um, NETD <40 mK",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ]
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "7.5 / 13 / 25 (optional)",
+    "varifocal": false
+  },
+  "power": {
+    "method": "12 VDC / PoE / ePoE",
+    "voltage": "DC 12V",
+    "consumption_w": 13
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256
+  },
+  "ip_rating": "IP67",
+  "weight_g": 1500,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "features": [
+    "thermal-only network bullet camera (no visible channel)",
+    "uncooled VOx thermal detector (640x512, 17 um)",
+    "thermal sensitivity NETD <40 mK",
+    "athermalized focus-free thermal lens (7.5 / 13 / 25 mm optional)",
+    "fire detection and alarm; tripwire and intrusion detection",
+    "18 thermal color palettes",
+    "PoE and ePoE; ONVIF Profile S & G"
+  ],
+  "release_notes": "Pro-series thermal-only bullet built around a 640x512 VOx detector with an athermalized lens, aimed at long-range detection and fire monitoring in total darkness.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/thermal-products/thermal-cameras/pro-series/tpc-bf5601",
+    "https://www.a1securitycameras.com/content/product_documents/52204/Dahua-DH-TPC-BF5601N-B13-Datasheet-A1.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua RTSP convention; single thermal channel. Not verified against a live unit."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

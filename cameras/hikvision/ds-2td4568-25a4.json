@@ -1,0 +1,132 @@
+{
+  "id": "hikvision-ds-2td4568-25a4",
+  "brand": "Hikvision",
+  "model": "DS-2TD4568-25A4",
+  "aliases": [
+    "DS-2TD4568-25A4/W"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet",
+    "wifi",
+    "4g"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 0.33,
+    "max_width": 640,
+    "max_height": 512,
+    "label": "640x512 (thermal)"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "optical main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "thermal main",
+        "resolution": "1280x720",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "Thermal: uncooled VOx, 640x512, 12 um pixel pitch, 8-14 um, NETD < 35 mK; optical: 1/2.8in CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "25 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "17.4 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100
+  },
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "8-36 VDC",
+    "consumption_w": 25,
+    "voltage": "8-36 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "features": [
+    "bi-spectrum mobile thermal PTZ camera (vehicle-mount)",
+    "optical channel: 4 MP 2560x1440, 1/2.8in CMOS, 25x optical zoom (4.8-120 mm), F1.0-F1.6",
+    "thermal detector: VOx uncooled FPA, 640x512, 12 um pixel pitch, NETD < 35 mK, 8-14 um",
+    "temperature measurement -20 to 150 C, accuracy +/-8 C",
+    "dynamic fire detection, up to 10 fire points",
+    "perimeter protection VCA: line crossing, intrusion, region entrance and exit",
+    "GPS positioning; 2.4 GHz Wi-Fi and 4G (LTE-FDD/LTE-TDD/WCDMA) with MicroSIM",
+    "picture-in-picture thermal-on-optical fusion display",
+    "optical channel IR illuminator up to 100 m",
+    "E-mark and EN45545 on-board certification",
+    "PTZ: 360 continuous pan, tilt -20 to +90, 300 presets",
+    "microSD storage up to 256 GB, ONVIF (Profile S/G/T) / RTSP"
+  ],
+  "operating_temp_c": "-40 to 70 C",
+  "dimensions_mm": "180 (dia) x 300",
+  "weight_g": 4500,
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": false,
+  "markets": [
+    "global"
+  ],
+  "release_notes": "The Hikvision DS-2TD4568-25A4/W is a vehicle-mount bi-spectrum mobile thermal PTZ camera with a 640x512 VOx thermal detector (25 mm lens) and a 4 MP 25x optical zoom channel. It adds GPS, 2.4 GHz Wi-Fi and 4G transmission, temperature measurement (-20 to 150 C), fire detection and perimeter analytics, and carries E-mark / EN45545 on-board certification. Verified against the official Hikvision datasheet.",
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000072196/DS-2TD4568-25A4_W_Datasheet_en-US_20231118.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Optical is Channel 1 (Streaming/Channels/101), thermal is Channel 2 (Streaming/Channels/201)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

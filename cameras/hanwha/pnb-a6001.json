@@ -1,0 +1,122 @@
+{
+  "id": "hanwha-pnb-a6001",
+  "brand": "Hanwha",
+  "model": "PNB-A6001",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet P 2MP AI Box Camera"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p Full HD"
+  },
+  "sensor": "1/2\" CMOS",
+  "power": {
+    "method": "PoE+ (IEEE 802.3at, Class 4) / DC 12V",
+    "poe_class": 4,
+    "voltage": "12VDC",
+    "consumption_w": 17.5
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "2 microSD/SDHC/SDXC slots (512GB each, 1TB total)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "Wisenet P AI series, 2MP AI box camera — lens not included (C/CS mount)",
+    "lens types: DC auto iris, P-iris (IR corrected), manual, I-CS; simple focus",
+    "AI video analytics: person / face / vehicle / license plate + BestShot",
+    "120 dB WDR, WiseNR II, WiseStream II / III (AI engine)",
+    "digital image stabilization (built-in gyro sensor)",
+    "Day & Night (ICR), hallway view",
+    "built-in microphone + audio in/out (G.711/G.726)",
+    "RS-485 serial, CVBS video-out for installation",
+    "ONVIF Profile S/G/T/M",
+    "encrypted credentials, secure boot",
+    "NDAA compliant"
+  ],
+  "release_year": 2024,
+  "release_notes": "Specs verified against the official Hanwha Vision PNB-A6001 datasheet. Box camera ships without a lens (C/CS mount), so lens and field-of-view fields are intentionally absent.",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/PNB-A6001",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/PNB-A6001/DataSheet_PNB-A6001_20260907_EN_173220.pdf"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/G/T/M). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 120,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 120,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor"
+  ],
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.006
+  },
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "operating_temp_c": "-10 to 55",
+  "dimensions_mm": "81 x 67 x 165",
+  "weight_g": 880
+}

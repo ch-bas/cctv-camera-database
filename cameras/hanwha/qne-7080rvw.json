@@ -1,0 +1,103 @@
+{
+  "id": "hanwha-qne-7080rvw",
+  "brand": "Hanwha",
+  "model": "QNE-7080RVW",
+  "ndaa_compliant": true,
+  "generation": "Wisenet Q",
+  "type": "turret",
+  "aliases": [
+    "4M IR Flateye Camera"
+  ],
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "end_of_sale_year": 2023,
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2592,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.2-10 (3.1x motorized varifocal)",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.2
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1520",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3af) / 12V DC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "features": [
+    "Wisenet Q 4MP IR flateye (open-platform) camera",
+    "H.265",
+    "120 dB WDR",
+    "Day & Night (ICR)",
+    "IR LED 30m",
+    "Motorized varifocal (3.1x)",
+    "Hallway view",
+    "Lens Distortion Correction (LDC)",
+    "Motion / tampering / defocus detection",
+    "WiseStream",
+    "ONVIF Profile S/G/T"
+  ],
+  "release_notes": "Ingest 2026-09-08 (Wisenet Q gap fill; discontinued). No official DataSheet PDF reachable in Hanwha's PIM and the product page's full spec table is JS-rendered; record built from the official product-details overview. Verified: 4MP (2592x1520), 3.2-10mm 3.1x motorized varifocal F1.6, IR 30m, min illumination 0.2 lux color, H.265/H.264/MJPEG, 20fps@4MP / 30fps@2MP, WDR 120dB, microSD up to 128GB, PoE 802.3af / 12V DC. Compact 'flateye' open-platform form factor (recorded as turret). IP/IK rating, sensor size, angle of view, operating temperature, dimensions, weight and indoor/outdoor rating were not machine-readable and are omitted (not fabricated).",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/QNE-7080RVW"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Hanwha' (or 'Samsung' on older Blue Iris versions)."
+    }
+  },
+  "last_verified": "2026-09-08"
+}

@@ -1,0 +1,118 @@
+{
+  "id": "hanwha-snb-6005",
+  "brand": "Hanwha",
+  "model": "SNB-6005",
+  "ndaa_compliant": true,
+  "aliases": [
+    "WiseNet III 2MP Box Camera"
+  ],
+  "generation": "WiseNet III",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/1.9\" 2.42M CMOS",
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.015
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / DC 12V / AC 24V",
+    "consumption_w": 11.1,
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "120 dB WDR",
+    "true day/night (ICR)",
+    "simple focus",
+    "P-Iris",
+    "defog",
+    "multi-crop streaming",
+    "face detection",
+    "audio detection",
+    "tampering detection",
+    "bi-directional audio",
+    "C/CS-mount (lens not included)"
+  ],
+  "operating_temp_c": "-30 to 55",
+  "dimensions_mm": "73.1 x 66.6 x 147.8",
+  "weight_g": 430,
+  "environment": [
+    "indoor"
+  ],
+  "release_notes": "Built from official Hanwha Techwin datasheet SNB-6005 (dated 2015-08-11): 2MP box camera, 1/1.9\" 2.42M CMOS (~2.12M effective), lens not included (C/CS mount), true day/night (ICR) no IR illuminator, WDR 120dB, P-Iris, H.264/MJPEG 60fps, bi-directional audio. ONVIF Profile S, SUNAPI.",
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/SNB-6005/10/SNB-6005_150811.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/SNB-6005"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profile S). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Hanwha' or 'Samsung' profile depending on Blue Iris version."
+    }
+  },
+  "last_verified": "2026-09-08",
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

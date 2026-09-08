@@ -1,0 +1,123 @@
+{
+  "id": "hanwha-tnu-4051t",
+  "brand": "Hanwha",
+  "model": "TNU-4051T",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet T VGA Thermal Positioning Camera"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.3,
+    "max_width": 640,
+    "max_height": 480,
+    "label": "VGA thermal (640x480)"
+  },
+  "sensor": "Uncooled microbolometer, 17um pixel pitch, NETD <=50mK",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "35 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "17.2 horizontal / 13 vertical",
+  "night_vision": {
+    "type": "none"
+  },
+  "power": {
+    "method": "24VAC (with heater)",
+    "consumption_w": 84,
+    "voltage": "24VAC"
+  },
+  "power_source": [
+    "ac-mains"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "1 microSD/SDHC/SDXC slot (256GB)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "VGA (640x480) thermal positioning camera with pan/tilt mount (Wisenet T series)",
+    "uncooled microbolometer, 17um pixel, NETD <=50mK",
+    "built-in 35mm fixed thermal lens (long-range)",
+    "temperature change detection",
+    "built-in heater",
+    "30fps at all resolutions",
+    "IP66, NEMA 4X",
+    "video & audio analytics, sound classification, shock detection",
+    "audio in (selectable mic/line in)",
+    "ONVIF Profile S/G/T",
+    "NDAA compliant"
+  ],
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/TNU-4051T",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/TNU-4051T/DataSheet_TNU-4051T_20260806_EN_135025.pdf"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "dimensions_mm": "219 x 528 x 335",
+  "weight_g": 11700,
+  "operating_temp_c": "-40 to 55",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

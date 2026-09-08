@@ -1,0 +1,104 @@
+{
+  "id": "dahua-tpc-bf5441-ac",
+  "brand": "Dahua",
+  "model": "TPC-BF5441-AC",
+  "aliases": [
+    "Dahua TPC-BF5441-AC",
+    "DHI-TPC-BF5441-AC"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 0.12,
+    "max_width": 400,
+    "max_height": 300,
+    "label": "400x300 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 400x300, 17 um pixel pitch, 8-14 um, NETD <=35 mK; optical: 1/1.8in 4MP CMOS",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30
+  },
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "12 (visible)",
+    "aperture": "F1.7 (visible 12 mm)",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "color",
+    "range_m": 80
+  },
+  "power": {
+    "method": "12 VDC +/-20% / PoE (802.3af) / ePoE",
+    "voltage": "DC 12V",
+    "consumption_w": 15
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512
+  },
+  "ip_rating": "IP67",
+  "operating_temp_c": "-30 to 70",
+  "weight_g": 2350,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "anti-corrosion bi-spectrum thermal + 4MP visible hybrid bullet",
+    "anti-corrosion coating for marine / corrosive environments",
+    "uncooled VOx thermal detector (400x300, 17 um)",
+    "thermal sensitivity NETD <=35 mK",
+    "white-light illuminator, illumination distance up to 80 m; smart linkage of white light and audio",
+    "AI: heat detection, tripwire, intrusion, human/vehicle classification, smoke detection, target tracking",
+    "two-way audio; hot-swap microSD up to 512 GB"
+  ],
+  "release_notes": "Anti-corrosion variant of the fixed thermal + 4MP visible hybrid bullet, coated for corrosive sites with a white-light illuminator (80 m) and smart light/audio linkage.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/thermal-products/thermal-cameras/anti-corrosion-series/tpc-bf5441-ac",
+    "https://material.dahuasecurity.com/uploads/soft/20221226/DHI-TPC-BF5441-AC_datasheet_20221026.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=2&subtype=0",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua RTSP convention; channel 1 = visible/fusion, channel 2 = thermal. Not verified against a live unit."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80). Thermal and visible exposed as separate channels (visible = channel 1, thermal = channel 2)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

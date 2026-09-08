@@ -1,0 +1,101 @@
+{
+  "id": "dahua-tpc-bf5401",
+  "brand": "Dahua",
+  "model": "TPC-BF5401",
+  "aliases": [
+    "Dahua TPC-BF5401",
+    "DH-TPC-BF5401-T"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 0.12,
+    "max_width": 400,
+    "max_height": 300,
+    "label": "400x300 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 400x300, 17 um pixel pitch, 8-14 um, NETD <=40 mK",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "7.5 / 13 / 25 (optional)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "power": {
+    "method": "12 VDC +/-20% / PoE (802.3af) / ePoE",
+    "voltage": "DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256
+  },
+  "ip_rating": "IP67",
+  "operating_temp_c": "-40 to 70",
+  "weight_g": 1400,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true
+  },
+  "features": [
+    "thermal-only network bullet camera with radiometric temperature measurement",
+    "uncooled VOx thermal detector (400x300, 17 um)",
+    "thermal sensitivity NETD <=40 mK",
+    "athermalized focus-free thermal lens (7.5 / 13 / 25 mm optional)",
+    "temperature measurement -20 to 550 C (low mode -20 to 150 C, high mode 0 to 550 C), accuracy +/-2 C or +/-2%",
+    "fire / heat detection and alarm; tripwire and intrusion detection",
+    "PoE and ePoE; ONVIF"
+  ],
+  "release_notes": "Pro-series radiometric thermal bullet: a 400x300 VOx detector measures temperature across -20 to 550 C for fire prevention and industrial monitoring.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/thermal-products/thermal-cameras/pro-series/tpc-bf5401",
+    "https://material.dahuasecurity.com/uploads/cpq/DH-TPC-BF5401-T_datasheet_20200908.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua RTSP convention; single thermal channel. Not verified against a live unit."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

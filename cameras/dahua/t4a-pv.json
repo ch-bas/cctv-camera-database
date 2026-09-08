@@ -1,0 +1,128 @@
+{
+  "id": "dahua-t4a-pv",
+  "brand": "Dahua",
+  "model": "T4A-PV",
+  "aliases": [
+    "DH-T4A-PV",
+    "IPC-T4A-PV",
+    "T4A-PV (2.8mm)",
+    "T4A-PV (3.6mm)",
+    "4MP Fixed-focal Wi-Fi Turret Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/3\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 3.6",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "98 horizontal (2.8mm); 78 horizontal (3.6mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "12 VDC",
+    "voltage": "12 VDC",
+    "consumption_w": 7.1
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": false,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "Wi-Fi (IEEE 802.11b/g/n) 2.4 GHz",
+    "RJ-45 Ethernet (10/100)",
+    "AI human detection",
+    "active deterrence: sound and light alarm",
+    "dual light (IR + warm light), up to 30 m each",
+    "two-way talk (built-in mic + speaker)",
+    "IP67 weatherproof"
+  ],
+  "release_year": 2024,
+  "release_notes": "The Dahua T4A-PV is a 4MP fixed-focal Wi-Fi turret camera with dual light (IR + warm light) to 30 m, AI human detection, active sound-and-light deterrence, two-way audio, and IP67 rating. Verified against the official Dahua product page and datasheet.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/wireless-products/indoor-cameras/turret-series/t4a-pv",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/T4A-PV_S0_datasheet_20240429.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP (main subtype=0 / sub subtype=1); enable RTSP in the DMSS app. ONVIF not stated on the datasheet.",
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "generic",
+      "notes": "Consumer turret; add via the Generic Camera (RTSP) integration. ONVIF not confirmed on the datasheet."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile; use the RTSP URL above."
+    }
+  },
+  "ip_rating": "IP67",
+  "dimensions_mm": "109.9 x 102.2",
+  "weight_g": 353,
+  "operating_temp_c": "-40 to 60",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "ndaa_compliant": false
+}

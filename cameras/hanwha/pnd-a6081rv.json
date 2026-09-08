@@ -1,0 +1,131 @@
+{
+  "id": "hanwha-pnd-a6081rv",
+  "brand": "Hanwha",
+  "model": "PND-A6081RV",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet P 2MP AI IR Indoor Vandal Dome"
+  ],
+  "generation": "Wisenet P AI",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP (1080p)"
+  },
+  "sensor": "1/2\" 2MP CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.38-9.33 (2.13x motorized varifocal)",
+    "aperture": "F1.3",
+    "varifocal": true
+  },
+  "field_of_view_deg": "103.1-44.5 horizontal / 54.2-24.9 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40,
+    "min_lux_color": 0.007
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 120,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 120,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at, Class 4) / 12VDC",
+    "consumption_w": 19.5,
+    "voltage": "12VDC"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "2 microSD/SDHC/SDXC slots, 512GB each (1TB total)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP52",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "AI object detection (person / face / vehicle / license plate) + BestShot",
+    "extreme WDR 120 dB",
+    "WiseNR II (AI-based noise reduction)",
+    "Up to 120fps",
+    "2.13x motorized varifocal lens",
+    "IR viewable length 40m",
+    "Hard-coated dome bubble / IP52 / IK10",
+    "Built-in microphone",
+    "Day & Night (ICR)",
+    "WiseStream III",
+    "ONVIF Profile S/G/T",
+    "NDAA compliant"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "release_notes": "Ingested 2026-09-08 from official Hanwha Vision datasheet (DataSheet_PND-A6081RV_20260908_EN).",
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/PND-A6081RV/DataSheet_PND-A6081RV_20260908_EN_075436.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/PND-A6081RV"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "dimensions_mm": "Ø160 x 125",
+  "weight_g": 1600,
+  "operating_temp_c": "-25 to 50",
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  }
+}

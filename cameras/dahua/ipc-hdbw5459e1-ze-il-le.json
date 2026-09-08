@@ -1,0 +1,142 @@
+{
+  "id": "dahua-ipc-hdbw5459e1-ze-il-le",
+  "brand": "Dahua",
+  "model": "IPC-HDBW5459E1-ZE-IL-LE",
+  "aliases": [
+    "DH-IPC-HDBW5459E1-ZE-IL-LE"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": true,
+    "focal_length_mm": "2.7-12",
+    "aperture": "F1.8"
+  },
+  "field_of_view_deg": "115-47 horizontal (2.7-12mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 60,
+    "min_lux": 0.0004,
+    "min_lux_color": 0.0007
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "12 VDC / PoE+ (802.3at) / ePoE",
+    "voltage": "12 VDC (±30%)",
+    "consumption_w": 16.1,
+    "poe_class": 4
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-40 to 60",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "WizMind AI",
+    "Smart Dual Light (IR up to 60m + warm light up to 50m)",
+    "SMD 4.0",
+    "AcuPick",
+    "face detection with attribute extraction",
+    "perimeter protection (intrusion, tripwire, fast moving, loitering, people gathering, parking)",
+    "people counting",
+    "WDR 140 dB",
+    "ePoE",
+    "built-in microphone",
+    "2 alarm in / 1 alarm out"
+  ],
+  "dimensions_mm": "118.0 x 159.0 (H x diameter)",
+  "weight_g": 1160,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "release_year": 2026,
+  "release_notes": "WizMind 5 Series 4MP Smart Dual Light varifocal vandal-proof dome; motorized 2.7-12mm lens with dual-core IR (60m) plus warm light (50m) illumination.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/network-cameras/wizmind-5-series/smart-dual-light/4mp/ipc-hdbw5459e1-ze-il-le",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/88004/datasheet/DH-IPC-HDBW5459E1-ZE-IL-LE_S0_datasheet_20260729_English.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "last_verified": "2026-09-06",
+  "ndaa_compliant": false
+}

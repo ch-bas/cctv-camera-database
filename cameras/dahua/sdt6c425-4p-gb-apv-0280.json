@@ -1,0 +1,141 @@
+{
+  "id": "dahua-sdt6c425-4p-gb-apv-0280",
+  "brand": "Dahua",
+  "model": "SDT6C425-4P-GB-APV-0280",
+  "aliases": [
+    "DH-SDT6C425-4P-GB-APV-0280"
+  ],
+  "ndaa_compliant": false,
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/2.8\" CMOS (dual channel: panorama + detail)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "panorama 2.8 fixed; detail 5-125 (25x)",
+    "aperture": "panorama F1.0; detail F1.6-F3.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "panorama H: 180; detail H: 53.4-3.4",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 200,
+    "min_lux_color": 0.005
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "panorama",
+        "resolution": "3840x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "36 VDC (2.23 A, +/-25%)",
+    "voltage": "36 VDC",
+    "consumption_w": 32
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 65",
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "247 x 202 x 359.8",
+  "weight_g": 5300,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "X-Spans dual-channel: 4MP panoramic channel (3840x1080, 2.8mm, 180-degree view) + 4MP PTZ detail channel with 25x optical zoom",
+    "detail-channel IR up to 200m",
+    "panorama-channel white light up to 30m",
+    "auto-tracking",
+    "endless 360 pan, tilt -20 to +90",
+    "300 presets, 8 tours",
+    "face detection (6 attributes, 8 expressions)",
+    "IVS: tripwire, intrusion, loitering, abandoned/missing object, people gathering, vehicle/human classification",
+    "siren and light active deterrence",
+    "TVS 6000V lightning/surge protection"
+  ],
+  "release_notes": "Discontinued Dahua X-Spans dual-channel PTZ combining a 4MP 180-degree panoramic channel with a 4MP 25x optical-zoom detail PTZ channel, IR to 200m, auto-tracking, WizSense AI and active deterrence; IP66.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/ptz-cameras/sdt6c425-4p-gb-apv-0280",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/DH-SDT6C425-4P-GB-APV-0280_S0_datasheet_20251121.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 576,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua realmonitor RTSP; ONVIF on port 80; PTZ via ONVIF. Panorama and detail are separate channels."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "id": "hikmicro-hm-td8167-150ze2f",
+  "brand": "HikMicro",
+  "model": "HM-TD8167-150ZE2F",
+  "aliases": [
+    "HM-TD8167-150ZE2F/WY(B)"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 0.33,
+    "max_width": 640,
+    "max_height": 512,
+    "label": "640x512 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 640x512, 17 um pixel pitch, 8-14 um, NETD < 35 mK; optical: 1/1.8in progressive-scan CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "30 to 150 (thermal); optical 10 to 780 mm (78x)",
+    "aperture": "F0.8 to F1.2 (thermal)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "20.56 to 4.15 horizontal (thermal)",
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 50,
+    "streams": [
+      {
+        "name": "optical main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "thermal main",
+        "resolution": "1920x1080",
+        "fps": 50,
+        "codec": "H.265+"
+      }
+    ]
+  },
+  "power": {
+    "method": "48 VDC terminal block",
+    "consumption_w": 270,
+    "voltage": "48 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true
+  },
+  "operating_temp_c": "-40 to 65",
+  "dimensions_mm": "649 x 444 x 668",
+  "weight_g": 60000,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "status": "available",
+  "features": [
+    "thermal + optical bi-spectrum stable PTZ for perimeter protection",
+    "optical channel: 2 MP (1920x1080), 10 to 780 mm (78x) zoom lens",
+    "thermal detector: uncooled VOx, 640x512, 17 um pixel pitch, 8-14 um, NETD < 35 mK",
+    "temperature measurement -20 to 150 C, accuracy +/-8 C (3 rule types: 10 points, 10 areas, 1 line)",
+    "dynamic fire-point detection (up to 10 fire points) and smoke detection",
+    "smart tracking: panorama tracking, event tracking and multi-scene patrol tracking with thermal/optical linkage",
+    "perimeter protection algorithm: line crossing, intrusion, region entrance and exit",
+    "vessel detection (dredger, fishing boat, ship-flow)",
+    "picture-in-picture thermal/optical fusion, white-hot/black-hot coloration",
+    "EIS on thermal and optical channels",
+    "NEMA-4X, wiper and heater; TVS 6000V lightning/surge protection"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000117865/HM-TD8167-150ZE2F_WYB_Datasheet_en-US_20231122.pdf"
+  ],
+  "release_notes": "The HikMicro HM-TD8167-150ZE2F is a thermal & optical bi-spectrum stable PTZ combining a 640x512 uncooled thermal module with a 2 MP optical zoom channel, temperature measurement (-20 to 150 C), fire/smoke detection and intelligent perimeter protection for long-range security. Verified against the official HikMicro datasheet HM-TD8167-150ZE2F_WYB_Datasheet_en-US_20231122.pdf.",
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "autotracking": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Optical is Channel 1 (101), thermal is Channel 2 (201) - add both channels."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

@@ -1,0 +1,107 @@
+{
+  "id": "dahua-scp3024b-cbz",
+  "brand": "Dahua",
+  "model": "SCP3024B-CBZ",
+  "aliases": [
+    "DHI-SCP3024B-CBZ"
+  ],
+  "type": "doorbell",
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "last_verified": "2026-09-06",
+  "environment": [
+    "indoor"
+  ],
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "field_of_view_deg": "75 horizontal (47 vertical, 83 diagonal)",
+  "protocols": [
+    "rtsp"
+  ],
+  "power": {
+    "method": "Standard PoE / optional 12 V adapter / analog 4-wire",
+    "consumption_w": 14
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.264"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "features": [
+    "Android 14 smart control panel (4-wire hybrid) with built-in 2MP camera",
+    "7-inch IPS capacitive touchscreen, 1024x600, 80-degree viewing angle",
+    "4 GB RAM + 16 GB ROM, installable APK apps",
+    "built-in 2MP camera, 75-degree FOV, H.264, main/sub 1080p streams, RTSP",
+    "two-way audio intercom (G.711), SIP",
+    "video intercom, video monitoring and wireless alarm hub",
+    "Wi-Fi 802.11b/g/n 2.4 GHz, Bluetooth BR/EDR/BLE, Zigbee (802.15.4), sub-GHz 868 MHz",
+    "microSD storage up to 512 GB",
+    "10/100 Ethernet with Standard PoE",
+    "light / temperature / humidity sensors, proximity auto-wake",
+    "elevator control, information release",
+    "DMSS app"
+  ],
+  "operating_temp_c": "-10 to 55",
+  "dimensions_mm": "210.2 x 103.1 x 32.2",
+  "weight_g": 1250,
+  "release_notes": "The Dahua SCP3024B-CBZ is a 4-wire hybrid Android 14 smart control panel with a 7-inch touchscreen and a built-in 2MP camera (75-degree FOV, H.264, RTSP). It combines video intercom, video monitoring and a wireless alarm hub (Wi-Fi/Bluetooth/Zigbee/sub-GHz). The camera-less SCP3024A-B panel is a separate SKU. Verified against the official Dahua datasheet.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/video-intercoms/android-series/ultra-series/scp3024b-cbz",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/84228/datasheet/DHI-SCP3024B-CBZ_S0_datasheet_20260529.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "generic",
+      "notes": "Android smart control panel with built-in camera; add the RTSP stream via Generic Camera."
+    }
+  }
+}

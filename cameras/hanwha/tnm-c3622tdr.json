@@ -1,0 +1,128 @@
+{
+  "id": "hanwha-tnm-c3622tdr",
+  "brand": "Hanwha",
+  "model": "TNM-C3622TDR",
+  "aliases": [
+    "Wisenet Bi-spectrum AI Thermal Camera"
+  ],
+  "type": "dual-lens",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 0.08,
+    "max_width": 320,
+    "max_height": 240,
+    "label": "QVGA (320x240) thermal + 2MP (1920x1080) visible (bi-spectrum)"
+  },
+  "sensor": "Uncooled microbolometer 320x240 (12um, 8-14um, NETD <=50mK) + 1/2.8\" CMOS visible",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "4.7 thermal fixed / 4 visible fixed",
+    "aperture": "F1.0 thermal / F1.6 visible",
+    "varifocal": false
+  },
+  "field_of_view_deg": "50 horizontal / 37 vertical (thermal); 87.6 horizontal / 46.4 vertical (visible)",
+  "night_vision": {
+    "type": "color",
+    "min_lux_color": 0.05
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "visible main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "thermal",
+        "resolution": "320x240",
+        "fps": 8,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at, Class 4) / 12VDC",
+    "consumption_w": 17,
+    "poe_class": 4
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "notes": "1 microSD/SDHC/SDXC slot (256GB)"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "ndaa_compliant": true,
+  "features": [
+    "Bi-spectrum: QVGA thermal (320x240, 12um, NETD <=50mK) + 2MP visible",
+    "Temperature detection -20 to 130C, 6 detection areas, abnormal temperature detection",
+    "AI on both visible and thermal",
+    "150 dB WDR, WiseNR II, WiseStream II",
+    "ONVIF Profile S/T/M, MQTT",
+    "TPM 2.0 with FIPS 140-2 Level 2",
+    "IK10, NEMA 4X, NEMA TS 2"
+  ],
+  "operating_temp_c": "-10 to 55",
+  "dimensions_mm": "135 x 75 x 188.5",
+  "weight_g": 1700,
+  "environment": [
+    "outdoor"
+  ],
+  "release_notes": "Specs from official Hanwha Vision datasheet DataSheet_TNM-C3622TDR (2026-08-06).",
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/TNM-C3622TDR/DataSheet_TNM-C3622TDR_20260806_EN_133022.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/TNM-C3622TDR"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80. Thermal and visible stream separately."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

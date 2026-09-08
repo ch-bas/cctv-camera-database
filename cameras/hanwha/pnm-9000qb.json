@@ -1,0 +1,118 @@
+{
+  "id": "hanwha-pnm-9000qb",
+  "brand": "Hanwha",
+  "model": "PNM-9000QB",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet P 2MP x 4CH Remote Head Camera Body"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP x 4 channels (1080p per channel)"
+  },
+  "sensor": "4x 1/2.8\" CMOS (via separately-sold SLA remote sensor heads)",
+  "night_vision": {
+    "type": "none"
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at, Class 4) / DC 12V",
+    "poe_class": 4,
+    "voltage": "12VDC",
+    "consumption_w": 22
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "2 microSD/SDHC/SDXC slots (512GB each, 1TB total)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Wisenet P remote-head camera body: up to 4x 2MP channels via separate SLA sensor-head modules on cable",
+    "modular multi-directional / covert deployment (compact remote heads placed independently)",
+    "sensor-head modules sold separately (e.g. SLA-2M2400Q, SLA-2M2800Q)",
+    "120 dB WDR, SSNR V, BLC/HLC/SSDR",
+    "Day & Night (electrical)",
+    "audio in (mic/line) + line out",
+    "ONVIF Profile S/T",
+    "indoor body (-10 to +45C)",
+    "NDAA compliant"
+  ],
+  "release_year": 2021,
+  "release_notes": "Specs verified against the official Hanwha Vision PNM-9000QB datasheet. This is the remote-head camera body (processing/hub unit); lens+sensor modules (SLA series) are sold separately, so lens and per-channel min-illumination fields depend on the chosen module and are omitted here.",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/PNM-9000QB",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/PNM-9000QB/DataSheet_PNM-9000QB_20260619_EN_160631.pdf"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/T). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "operating_temp_c": "-10 to 45",
+  "dimensions_mm": "200 x 37 x 146",
+  "weight_g": 715
+}

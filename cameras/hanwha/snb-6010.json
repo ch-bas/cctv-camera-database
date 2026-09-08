@@ -1,0 +1,118 @@
+{
+  "id": "hanwha-snb-6010",
+  "brand": "Hanwha",
+  "model": "SNB-6010",
+  "ndaa_compliant": true,
+  "aliases": [
+    "WiseNet III 2MP Remote Head Camera"
+  ],
+  "generation": "WiseNet III",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" 2.38M CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.6 (pinhole, fixed)",
+    "aperture": "F2.5",
+    "varifocal": false
+  },
+  "field_of_view_deg": "71 horizontal / 38 vertical",
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.5
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V",
+    "consumption_w": 7.5
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "120 dB WDR",
+    "defog",
+    "digital image stabilization",
+    "multi-crop streaming",
+    "tampering detection",
+    "remote head modular design"
+  ],
+  "operating_temp_c": "-10 to 55",
+  "dimensions_mm": "76.0 x 121.1 x 28.0 (main unit); camera head Ø25.0 x 44.0",
+  "weight_g": 305,
+  "environment": [
+    "indoor"
+  ],
+  "release_notes": "Built from official Hanwha Techwin datasheet SNB-6010 (dated 13-10-2015): 2MP WiseNet III remote-head modular camera, 1/2.8\" 2.38M CMOS, 4.6mm pinhole F2.5, no IR (electrical day/night), WDR 120dB, H.264/MJPEG. ONVIF Profile S, SUNAPI 2.0.",
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/SNB-6010/09/SNB-6010_160429.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/SNB-6010"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profile S). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Hanwha' or 'Samsung' profile depending on Blue Iris version."
+    }
+  },
+  "last_verified": "2026-09-08",
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

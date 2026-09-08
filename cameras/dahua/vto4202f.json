@@ -1,0 +1,116 @@
+{
+  "id": "dahua-vto4202f",
+  "brand": "Dahua",
+  "model": "VTO4202F",
+  "aliases": [
+    "DHI-VTO4202F-P",
+    "VTO4202F-P",
+    "VTO4202F-MA",
+    "VTO4202F-MB1",
+    "VTO4202F-MB2",
+    "VTO4202F-MB5",
+    "VTO4202F-MS",
+    "VTO4202F-MF",
+    "VTO4202F-MK",
+    "VTO4202F-ML",
+    "VTO4202F-MI",
+    "VTO4202F-MN",
+    "VTO4202F-MR",
+    "VTO4202F-MR1",
+    "VTO4202F-MDB2",
+    "VTO4202F-MDB4",
+    "VTO4202F-MDB10",
+    "VTO4202F-MV"
+  ],
+  "type": "doorbell",
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "last_verified": "2026-09-06",
+  "environment": [
+    "outdoor"
+  ],
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "label": "2MP"
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.95",
+    "varifocal": false
+  },
+  "field_of_view_deg": "160 horizontal",
+  "night_vision": {
+    "type": "ir"
+  },
+  "power": {
+    "method": "12 VDC / 2-wire IP interface / PoE",
+    "consumption_w": 12
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IP65",
+  "ik_rating": "IK07",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 25
+  },
+  "features": [
+    "IP modular outdoor door station (DHI-VTO4202F-P camera module)",
+    "2MP HD color 160-degree fisheye camera",
+    "IR light compensation with auto day/night switch",
+    "WDR",
+    "two-way audio intercom (G.711)",
+    "SIP video intercom",
+    "access control: controls two locks, exit button, door status detection, tamper alarm",
+    "expandable module stack: button (MB1/MB2/MB5/MDB2/MDB4/MDB10), keypad (MK), fingerprint (MF), IC/ID card reader (MR/MR1), display (MS), nameplate (MN), indicator (MI), Vigik (MV)",
+    "12 VDC / 2-wire IP interface / PoE power",
+    "surface and flush mount",
+    "DMSS app"
+  ],
+  "operating_temp_c": "-20 to 60",
+  "dimensions_mm": "100 x 100 x 49.3 (camera module)",
+  "weight_g": 350,
+  "release_notes": "The Dahua VTO4202F (DHI-VTO4202F-P) is an IP modular outdoor door station with a 2MP 160-degree HD color fisheye camera, IR fill light, two-way SIP intercom and two-lock access control. It accepts a stack of expansion modules (buttons, keypad, fingerprint, IC/ID card reader, display, nameplate) captured here as aliases. Verified against the official Dahua datasheet.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/video-intercoms/ip-series/vto4202f",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/82167/datasheet/VTO4202F-MB1.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "generic",
+      "notes": "Dahua VTO door station. Add the RTSP stream via Generic Camera; DMSS app for intercom/unlock."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

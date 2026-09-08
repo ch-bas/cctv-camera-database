@@ -1,0 +1,151 @@
+{
+  "id": "dahua-sd6c3825ga-hnr-a-pv1",
+  "brand": "Dahua",
+  "model": "SD6C3825GA-HNR-A-PV1",
+  "aliases": [
+    "DH-SD6C3825GA-HNR-A-PV1",
+    "8MP 25x TiOC WizSense Network PTZ Camera"
+  ],
+  "ndaa_compliant": false,
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub2",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/1.8\" STARVIS CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.4-135 (25x optical zoom)",
+    "aperture": "F1.6-F4.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "61.6-3.6 (wide-tele)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 150,
+    "min_lux_color": 0.001
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "24 VDC / PoE+ (802.3at)",
+    "voltage": "24 VDC",
+    "consumption_w": 23,
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "25x optical zoom",
+    "TiOC active deterrence",
+    "WizSense AI",
+    "Auto-tracking 3.0",
+    "SMD 4.0",
+    "face detection",
+    "perimeter protection",
+    "dual illumination (IR 150m + white light 50m)",
+    "full-color Starlight",
+    "red & blue warning lights",
+    "120dB WDR",
+    "TVS 6000V surge protection",
+    "H.265"
+  ],
+  "dimensions_mm": "202 x 202 x 325.3",
+  "weight_g": 4600,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "operating_temp_c": "-40 to +70",
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "release_notes": "The Dahua SD6C3825GA-HNR-A-PV1 is an 8MP (4K) 25x optical-zoom TiOC WizSense network PTZ camera with a 1/1.8\" STARVIS CMOS, 150m IR plus 50m white-light dual illumination, full-color Starlight low-light imaging, red/blue warning lights, Auto-tracking 3.0, SMD 4.0, face detection and perimeter protection.",
+  "sources": [
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/SD6C3825GA-HNR-A-PV1_S0_datasheet_20250111.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 576,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "autotracking": true,
+      "two_way_audio": true,
+      "notes": "Dahua native RTSP; PTZ driven over ONVIF (port 80)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

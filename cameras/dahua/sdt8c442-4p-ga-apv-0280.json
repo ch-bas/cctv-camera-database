@@ -1,0 +1,145 @@
+{
+  "id": "dahua-sdt8c442-4p-ga-apv-0280",
+  "brand": "Dahua",
+  "model": "SDT8C442-4P-GA-APV-0280",
+  "aliases": [
+    "DH-SDT8C442-4P-GA-APV-0280"
+  ],
+  "ndaa_compliant": false,
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" CMOS (dual channel: panorama + detail)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "panorama 2.8 fixed; detail 5.5-231 (42x)",
+    "aperture": "panorama F1.0; detail F1.6-F5.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "panorama H: 200; detail H: 61.8-2.2",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 300,
+    "min_lux_color": 0.001
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "panorama",
+        "resolution": "3840x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "36 VDC (2.25 A, +/-25%) or PoE++ (802.3bt)",
+    "voltage": "36 VDC",
+    "consumption_w": 58
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 70",
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "318.2 x 262 x 415",
+  "weight_g": 8800,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "X-Spans dual-channel: 4MP panoramic channel (3840x1080, 2.8mm, 200-degree view) + 4MP PTZ detail channel with 42x optical zoom",
+    "detail-channel IR up to 300m",
+    "panorama-channel white light up to 30m",
+    "auto-tracking",
+    "endless 360 pan (240 deg/s), tilt -30 to +90 (100 deg/s)",
+    "300 presets, 8 tours",
+    "WizMind AI: motor-vehicle, non-motor-vehicle, face and human-body detection",
+    "face detection (6 attributes, 8 expressions)",
+    "IVS: tripwire, intrusion, loitering, object detection",
+    "siren and light active deterrence",
+    "PoE++ (802.3bt) powered",
+    "GB/T28181 and GA/T1400 support",
+    "TVS 8000V lightning/surge protection"
+  ],
+  "release_notes": "Discontinued Dahua X-Spans dual-channel PTZ with a 4MP 200-degree panoramic channel and a 4MP 42x optical-zoom detail PTZ channel on 1/1.8-inch sensors, IR to 300m, auto-tracking, WizMind AI and active deterrence; PoE++/36 VDC, IP67.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/ptz-cameras/sdt8c442-4p-ga-apv-0280",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/SDT8C442-4P-GA-APV-0280_S0_datasheet_20250107.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 576,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua realmonitor RTSP; ONVIF on port 80; PTZ via ONVIF. Panorama and detail are separate channels."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

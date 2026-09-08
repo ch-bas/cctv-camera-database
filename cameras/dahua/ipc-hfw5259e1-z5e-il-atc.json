@@ -1,0 +1,142 @@
+{
+  "id": "dahua-ipc-hfw5259e1-z5e-il-atc",
+  "brand": "Dahua",
+  "model": "IPC-HFW5259E1-Z5E-IL-ATC",
+  "aliases": [
+    "DH-IPC-HFW5259E1-Z5E-IL-ATC"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "7-35",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "30-12 horizontal (7-35mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 120,
+    "min_lux": 0.0004
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "12 VDC / PoE+ (802.3at) / ePoE",
+    "voltage": "12 VDC (±30%)",
+    "consumption_w": 16.1
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-40 to 60",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "WizMind AI (Xinghan Large-Scale AI Models-Vision)",
+    "AcuPick",
+    "SMD (human/vehicle detection)",
+    "face detection with attribute extraction",
+    "perimeter protection (IVS: tripwire, intrusion)",
+    "video metadata",
+    "people counting",
+    "heat map",
+    "WDR 120 dB",
+    "Smart Dual Light (IR up to 120m + warm light up to 80m)",
+    "ePoE",
+    "anti-corrosion (Enhanced Anti-Corrosion Aluminum Alloy, C5-H ISO 12944-6:2018, NEMA 4X)",
+    "built-in microphone"
+  ],
+  "dimensions_mm": "279.8 x 96.7 x 94.9",
+  "weight_g": 1090,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "release_year": 2026,
+  "release_notes": "2MP WizMind 5 Series anti-corrosion (C5-H / NEMA 4X) Smart Dual Light motorized varifocal bullet with a 7-35mm F1.6 lens and Smart Dual Light illumination (IR to 120m, warm light to 80m).",
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/network-cameras/wizmind-5-series/anti-corrosion/ipc-hfw5259e1-z5e-il-atc",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/86533/datasheet/DH-IPC-HFW5259E1-Z5E-IL-ATC_S0_datasheet_20260810_English.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "last_verified": "2026-09-07",
+  "ndaa_compliant": false
+}

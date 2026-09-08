@@ -1,0 +1,112 @@
+{
+  "id": "hanwha-sno-6085r",
+  "brand": "Hanwha",
+  "model": "SNO-6085R",
+  "ndaa_compliant": true,
+  "aliases": [
+    "Wisenet III 2MP IR Bullet"
+  ],
+  "generation": "Wisenet III",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "release_year": 2015,
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3 to 10.5 (3.1x motorized varifocal)",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3af)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "Motorized varifocal with Simple Focus",
+    "P-Iris",
+    "20 IR LEDs",
+    "Enhanced WDR 120 dB",
+    "Defog",
+    "Digital image stabilization",
+    "UPnP",
+    "Bi-directional audio",
+    "ONVIF"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "release_notes": "Ingest 2026-09-08 from official Hanwha product page. Detailed spec fields (sensor size, aperture, angular FoV, operating temperature, dimensions, weight) were not machine-readable — the official datasheet PDF is an image-only scan.",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/SNO-6085R",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/SNO-6085R/10/SNO-6085R-Data-Sheet.pdf"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "last_verified": "2026-09-08"
+}

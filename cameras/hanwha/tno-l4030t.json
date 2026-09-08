@@ -1,0 +1,120 @@
+{
+  "id": "hanwha-tno-l4030t",
+  "brand": "Hanwha",
+  "model": "TNO-L4030T",
+  "aliases": [
+    "Wisenet VGA H.265 Thermal Camera"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 0.3,
+    "max_width": 640,
+    "max_height": 480,
+    "label": "VGA thermal (640x480)"
+  },
+  "sensor": "Uncooled micro bolometer (640x480), 17um pixel, 8-14um spectral range, NETD <=50mK",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "13 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "48.6 horizontal / 36.4 vertical",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 8,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "640x480",
+        "fps": 8,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3), 12V DC, 24V AC",
+    "consumption_w": 10,
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Uncooled thermal imaging, NETD <=50mK",
+    "Temperature detection",
+    "WiseStream II",
+    "Digital image stabilization (built-in gyro)",
+    "Hallway view",
+    "Motion/tampering/loitering/intrusion/directional detection, audio detection, sound classification",
+    "Color palettes (whitehot, blackhot, rainbow, sepia, red, iron)",
+    "NEMA 4X, IK10",
+    "MQTT publication"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "O101.97 x 401.8",
+  "weight_g": 3124,
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": true,
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/TNO-L4030T/DataSheet_TNO-L4030T_20260806_EN_134344.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/TNO-L4030T"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profile S/G/T). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "last_verified": "2026-09-08",
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

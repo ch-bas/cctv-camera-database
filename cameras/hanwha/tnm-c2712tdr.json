@@ -1,0 +1,124 @@
+{
+  "id": "hanwha-tnm-c2712tdr",
+  "brand": "Hanwha",
+  "model": "TNM-C2712TDR",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Early Fire Detection Bi-spectrum Thermal Camera"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2048,
+    "max_height": 1536,
+    "label": "3MP visible + 320x240 thermal (bi-spectrum)"
+  },
+  "sensor": "1/2.8\" CMOS (visible) + uncooled microbolometer 320x240, 12um pixel (thermal, 8-14um, NETD <=50mK)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "3.06 visible (F1.6) + 1.2 thermal (F1.1)",
+    "varifocal": false
+  },
+  "field_of_view_deg": "100 horizontal / 73 vertical / 129 diagonal (visible); 95 / 69 / 119 (thermal)",
+  "night_vision": {
+    "type": "none"
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3)",
+    "consumption_w": 10.8,
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "1 microSD/SDHC/SDXC slot (max 512GB)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66/IP67",
+  "ik_rating": "IK09",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "bi-spectrum: 3MP visible sensor + uncooled thermal (320x240) sensor",
+    "early fire detection (AI engine), temperature difference detection",
+    "thermal NETD <=50mK, spectral range 8-14um",
+    "visible 30fps / thermal 8fps",
+    "120 dB WDR (visible)",
+    "temperature / early fire detection range 7m",
+    "audio in (mic/line selectable)",
+    "IP66/IP67, IK09 rated",
+    "ONVIF Profile S/G/T/M, SUNAPI",
+    "NDAA compliant"
+  ],
+  "release_year": 2024,
+  "release_notes": "Specs verified against the official Hanwha Vision TNM-C2712TDR datasheet (Ver. 202509).",
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/TNM-C2712TDR/DataSheet_TNM-C2712TDR_20250919_EN_141531.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/TNM-C2712TDR"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 2048,
+        "height": 1536,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/G/T/M). Default ONVIF port 80. Bi-spectrum multi-channel device."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile; visible and thermal are separate channels."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2048x1536",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "dimensions_mm": "Ø110 x 97",
+  "weight_g": 650,
+  "operating_temp_c": "-30 to 55"
+}

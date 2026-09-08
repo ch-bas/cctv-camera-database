@@ -1,0 +1,123 @@
+{
+  "id": "hikvision-ds-2td2568t-5",
+  "brand": "Hikvision",
+  "model": "DS-2TD2568T-5",
+  "aliases": [
+    "DS-2TD2568T-5/G0/T1Y"
+  ],
+  "type": "bullet",
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.33,
+    "max_width": 640,
+    "max_height": 512,
+    "label": "640x512 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 640x512, 12 um pixel pitch, NETD < 20 mK; optical: 1/2.7in CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "5 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "90.0 horizontal (thermal)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.05
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "thermal-main",
+        "resolution": "1280x720",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "optical-main",
+        "resolution": "2688x1520",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "ip_rating": "IP68",
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "290.7 x 177.5 x 152.0",
+  "weight_g": 6500,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "power": {
+    "method": "100-240 VAC / PoE (802.3af)",
+    "consumption_w": 8
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "Explosion-proof thermographic thermal and optical bi-spectrum bullet camera",
+    "Thermal: uncooled VOx 640x512 detector, 12 um pixel pitch, NETD < 20 mK, 5 mm F1.0 lens, 90 x 67.2 field of view",
+    "Optical channel: 4 MP (2688x1520), 1/2.7in CMOS, 2.3 mm lens, 114.6 x 63.8 field of view, 120 dB WDR",
+    "Bi-spectrum image fusion (optical detail overlaid on the thermal channel)",
+    "Temperature measurement -20 to 650 C, accuracy Max (+/-2 C, +/-2 %)",
+    "IR supplement up to 30 m on the optical channel",
+    "Perimeter protection and fire detection",
+    "ONVIF Profile S/G/T/M, ISUP, OTAP",
+    "100-240 VAC / PoE (802.3af) power"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000110492/DS-2TD2568T-5_G0_T1Y_Datasheet_20251216.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Optical (Channel 1) and thermal (Channel 2) exposed as separate channels."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "release_notes": "Explosion-proof thermographic thermal and optical bi-spectrum bullet camera pairing a high-sensitivity 640x512 uncooled VOx detector (12 um, NETD < 20 mK, 5 mm lens) with a 4 MP optical channel, bi-spectrum image fusion, temperature measurement -20 to 650 C and 30 m IR. Verified against the official Hikvision datasheet.",
+  "last_verified": "2026-09-06"
+}

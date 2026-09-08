@@ -3,6 +3,10 @@
   "brand": "Mobotix",
   "model": "Q24M",
   "ndaa_compliant": true,
+  "aliases": [
+    "Q24M Hemispheric",
+    "Q24 Hemispheric"
+  ],
   "type": "fisheye",
   "resolution": {
     "megapixels": 3,
@@ -10,6 +14,14 @@
     "max_height": 1536,
     "label": "3MP (QXGA)"
   },
+  "sensor": "1/2\" CMOS, progressive scan, color 2048x1536",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "11 (L11 hemispheric); optional 22 (L22, 90x67)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "360 (ceiling) / 180 (wall) hemispheric",
   "connectivity": [
     "ethernet"
   ],
@@ -20,29 +32,80 @@
   "power_source": [
     "poe"
   ],
+  "power": {
+    "method": "PoE (IEEE 802.3af), class 1/2/3; typ. 4.5 W"
+  },
   "audio": {
     "microphone": true,
-    "speaker": true
+    "speaker": true,
+    "two_way": true
   },
   "night_vision": {
-    "type": "ir"
+    "type": "color",
+    "min_lux": 0.05
   },
+  "video": {
+    "codecs": [
+      "MJPEG"
+    ],
+    "max_fps": 4,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2048x1536",
+        "fps": 4,
+        "codec": "MJPEG"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x960",
+        "fps": 8,
+        "codec": "MJPEG"
+      }
+    ]
+  },
+  "ip_rating": "IP65",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Diameter 160 x 50 (H)",
+  "weight_g": 450,
   "environment": [
     "indoor",
     "outdoor"
   ],
   "features": [
+    "MOBOTIX legacy series",
     "hemispheric",
     "360-degree all-round view",
-    "digital pan/tilt/zoom",
-    "quad-display",
-    "no moving parts"
+    "digital pan/tilt/zoom (virtual PTZ)",
+    "quad-display / panorama / surround dewarping",
+    "no moving parts",
+    "MxPEG codec (optimized network video/audio)",
+    "in-camera recording to microSD (up to 32 GB)",
+    "integrated microphone + speaker (two-way audio)",
+    "SIP/VoIP telephony",
+    "weatherproof housing (fiber-reinforced PBT)"
   ],
   "sources": [
-    "https://www.mobotix.com/"
+    "https://www.mobotix.com/en/support/download-center/documentation/technical-data-sheets",
+    "https://www.mobotix.com/sites/default/files/2017-10/Mx_TS_q24sec_en_090615.pdf"
   ],
   "release_year": 2013,
-  "last_verified": "2026-09-01",
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 960,
+        "fps": 5
+      },
+      "onvif_port": 80,
+      "two_way_audio": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Legacy MOBOTIX hemispheric; MxPEG/M-JPEG stream. Use motionEye or generic MJPEG camera if ONVIF is unavailable on old firmware."
+    }
+  },
   "markets": [
     "global"
   ]

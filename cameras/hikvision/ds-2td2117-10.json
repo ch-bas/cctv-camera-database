@@ -1,0 +1,118 @@
+{
+  "id": "hikvision-ds-2td2117-10",
+  "brand": "Hikvision",
+  "model": "DS-2TD2117-10",
+  "aliases": [
+    "DS-2TD2117-10/PAI"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.02,
+    "max_width": 160,
+    "max_height": 120,
+    "label": "160x120 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 160x120 (320x240 output), 17 um pixel pitch, NETD <= 40 mK",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "9.7 (thermal, fixed)",
+    "aperture": "F1.1",
+    "varifocal": false
+  },
+  "field_of_view_deg": "15.96 horizontal (thermal)",
+  "power": {
+    "method": "12 VDC / PoE (802.3af, Class 3)",
+    "consumption_w": 5,
+    "voltage": "12 VDC / PoE",
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1280x720",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "operating_temp_c": "-40 to 65 C",
+  "dimensions_mm": "354 x 144.1 x 156.7",
+  "weight_g": 1710,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "thermal-only network bullet camera for perimeter protection and fire prevention",
+    "thermal detector: uncooled VOx, 160x120 (320x240 output image), 17 um pixel pitch, NETD <= 40 mK",
+    "temperature exception alarm -20 to 150 C, accuracy +/-8 C",
+    "perimeter protection VCA (line crossing, intrusion, region entrance/exit)",
+    "dynamic fire detection, up to 10 fire points",
+    "image processing: linear, histogram, adaptive AGC, DDE, 3D DNR",
+    "white-light visual alarm up to 40 m"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000016440/DS-2TD2117-10_PAI_V5.5.30_20221115.pdf"
+  ],
+  "release_notes": "The Hikvision DS-2TD2117-10 is a thermal-only network bullet camera built on a 160x120 uncooled VOx thermal module (320x240 output, NETD <= 40 mK) for perimeter protection, fire detection and temperature-exception alarm. Verified against the official Hikvision datasheet DS-2TD2117-10_PAI_V5.5.30_20221115.pdf.",
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

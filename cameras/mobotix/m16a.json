@@ -1,0 +1,135 @@
+{
+  "id": "mobotix-m16a",
+  "brand": "Mobotix",
+  "model": "M16A AllroundDual",
+  "ndaa_compliant": true,
+  "aliases": [
+    "Mx-M16A",
+    "M16A",
+    "MOBOTIX M16A AllroundDual"
+  ],
+  "type": "dual-lens",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 12,
+    "label": "2x6MP dual (6144x2048)",
+    "max_width": 6144,
+    "max_height": 2048
+  },
+  "sensor": "2x 1/1.8\" CMOS 6MP (3072x2048) Progressive Scan",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "Interchangeable sensor modules (B016 fisheye to B500 super-tele)",
+    "varifocal": false
+  },
+  "field_of_view_deg": "8 to 180 (interchangeable sensor modules)",
+  "night_vision": {
+    "type": "color",
+    "min_lux": 0.02,
+    "min_lux_color": 0.1
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3)",
+    "consumption_w": 7.5,
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "4 GB microSD included (internal DVR / MxFFS); also USB and NAS"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2048x1536",
+        "fps": 20,
+        "codec": "H.264"
+      },
+      {
+        "name": "full-hd",
+        "resolution": "1920x1080",
+        "fps": 25,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http",
+    "mxpeg"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK07",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "MOBOTIX Mx6 platform",
+    "AllroundDual dual-camera (two interchangeable sensor modules)",
+    "hemispheric fisheye module option (180x180)",
+    "MxPEG codec",
+    "MxActivitySensor video analytics",
+    "integrated PIR sensor",
+    "shock detector / tamper detection",
+    "integrated microphone & speaker",
+    "ONVIF Profile S",
+    "edge microSD storage (MxFFS)",
+    "optional PoE+ IR illuminator accessory",
+    "IK07",
+    "5-year warranty"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "244 x 158 x 239",
+  "weight_g": 1160,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "sources": [
+    "https://www.mobotix.com/en/support/download-center/documentation/technical-data-sheets",
+    "https://www.mobotix.com/sites/default/files/2023-08/Mx_TS_M16A_V1.09_EN.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/mobotix.pro/mxpeg",
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF Profile S (enable ONVIF in camera admin). motionEye or generic MJPEG also works with MxPEG."
+    },
+    "blue_iris": {
+      "profile": "Mobotix",
+      "notes": "Select 'Mobotix' profile. MxPEG by default; switch to H.264 for Blue Iris."
+    }
+  },
+  "last_verified": "2026-09-08",
+  "markets": [
+    "global"
+  ]
+}

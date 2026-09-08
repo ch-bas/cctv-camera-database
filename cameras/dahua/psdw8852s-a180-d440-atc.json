@@ -1,0 +1,150 @@
+{
+  "id": "dahua-psdw8852s-a180-d440-atc",
+  "brand": "Dahua",
+  "model": "PSDW8852S-A180-D440-ATC",
+  "aliases": [
+    "DH-PSDW8852S-A180-D440-ATC"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 4096,
+    "max_height": 1800,
+    "label": "8MP"
+  },
+  "sensor": "1/1.8\" CMOS x4 (panoramic) + 1/1.8\" CMOS (PTZ)",
+  "lens": {
+    "count": 5,
+    "varifocal": true,
+    "focal_length_mm": "2.8 (panoramic) / 5.2-210 (PTZ)"
+  },
+  "field_of_view_deg": "Panoramic H: 180, V: 103; PTZ H: 60.8-2.8, V: 35.9-1.7",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 150,
+    "min_lux_color": 0.001
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4096x1800",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1024x452",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub2",
+        "resolution": "1920x832",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "36 VDC / PoE++ (802.3bt)",
+    "voltage": "36 VDC",
+    "consumption_w": 67.8
+  },
+  "power_source": [
+    "dc",
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "anti-corrosion protective coating (ATC)",
+    "multi-sensor 180 panoramic + PTZ (dual channel)",
+    "40x optical zoom",
+    "smart tracking (auto-tracking)",
+    "WizMind AI (perimeter protection, video metadata, face detection)",
+    "Crowd Map crowd density (Large-Scale AI Models)",
+    "AR panorama",
+    "150m IR",
+    "100m warm light",
+    "gyroscope image stabilization (PTZ)",
+    "optical defog",
+    "300 presets",
+    "dual built-in mic + speaker"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "280 (diameter) x 368",
+  "weight_g": 8800,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/ceen/products/All-Products/PTZ-Cameras/X-Spans-Series/Hubble-Series/PSDW8852S-A180-D440-ATC",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/PSDW8852S-A180-D440-ATC_S0_datasheet_20250708.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "ndaa_compliant": false,
+  "environment": [
+    "outdoor"
+  ],
+  "release_notes": "Anti-corrosion (ATC) variant of the PSDW8852S-A180-D440 8MP multi-sensor 180-degree panoramic PTZ Mini Hubble WizMind camera, with protective coating for corrosive environments.",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI (default admin).",
+      "autotracking": true,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "id": "hikmicro-hm-td71c8-75",
+  "brand": "HikMicro",
+  "model": "HM-TD71C8-75",
+  "aliases": [
+    "HM-TD71C8-75/W(B)"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 1.31,
+    "max_width": 1280,
+    "max_height": 1024,
+    "label": "1280x1024 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx focal plane array, 1280x1024, 12 um pixel pitch, NETD <= 25 mK",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "75 (thermal, fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "360 horizontal (panoramic thermal)",
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4096x2160",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1024x1280",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "30-60 VDC terminal block",
+    "consumption_w": 150,
+    "voltage": "30-60 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "408 x 310 x 407",
+  "weight_g": 25000,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "status": "available",
+  "features": [
+    "360 panoramic thermal scanner - continuously spinning 1280x1024 thermal module for full-perimeter coverage",
+    "thermal FOV 360 x 11.7 (H x V), 75 mm fixed lens",
+    "thermal detector: uncooled VOx, 12 um pixel pitch, NETD <= 25 mK",
+    "intelligent perimeter detection: intrusion, region entrance and exit (up to 200 VCA rules)",
+    "dynamic fire detection",
+    "alarm linkage to link other PT cameras to track moving targets",
+    "long-range detection (nominal human detection ~3.1 km, vessel up to tens of km)",
+    "white-hot / black-hot target coloration",
+    "TVS 6000V lightning / surge protection",
+    "coastal security and critical-infrastructure application (oilfield, airport, port)"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000112401/HM-TD71C8-75_WB_Datasheet_20260202.pdf"
+  ],
+  "release_notes": "The HikMicro HM-TD71C8-75 is a thermal panoramic scanner with a continuously rotating 1280x1024 uncooled thermal module giving 360-degree perimeter coverage, intelligent intrusion/region VCA and dynamic fire detection for coastal and critical-infrastructure security. Verified against the official HikMicro datasheet HM-TD71C8-75_WB_Datasheet_20260202.pdf.",
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

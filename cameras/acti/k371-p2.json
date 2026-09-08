@@ -1,0 +1,116 @@
+{
+  "id": "acti-k371-p2",
+  "brand": "ACTi",
+  "model": "K371-P2",
+  "type": "dual-lens",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS + Thermal sensor (400x300)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "12.0 (visual, fixed) / 35 (thermal, fixed)",
+    "aperture": "F1.6 (visual) / F1.0 (thermal)",
+    "varifocal": false
+  },
+  "field_of_view_deg": "25.25 horizontal (visual) / 7.6 horizontal (thermal)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100,
+    "min_lux_color": 0.005
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "power": {
+    "method": "DC 12V, PoE (IEEE802.3at)",
+    "consumption_w": 25.5,
+    "poe_class": 4
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP68",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "406 x 130 x 130",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "bispectral: thermal (400x300, 12 um, NETD <30mK) + visual (4MP) sensors",
+    "temperature measurement -20 to 150 C and 100 to 550 C",
+    "fire detection and overheating detection",
+    "17 thermal color palettes",
+    "adaptive IR LED (750 nm), IR working distance 100 m",
+    "deep-learning AI analytics: smart intrusion protection, people/vehicle line crossing and intrusion, tampering",
+    "Superior WDR (120 dB)",
+    "2D + 3D DNR",
+    "ONVIF Profile S/G/M",
+    "PoE (IEEE802.3at)",
+    "weatherproof (IP68), vandal-resistant (IK10)"
+  ],
+  "ndaa_compliant": true,
+  "markets": [
+    "global",
+    "US"
+  ],
+  "sources": [
+    "https://www.acti.com/product/K371-P2",
+    "https://www.acti.com/product/K371-P2?tab=specifications"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  }
+}

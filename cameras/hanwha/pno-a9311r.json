@@ -1,0 +1,123 @@
+{
+  "id": "hanwha-pno-a9311r",
+  "brand": "Hanwha",
+  "model": "PNO-A9311R",
+  "aliases": [
+    "Wisenet P AI 4K 31x Zoom IR Bullet Camera"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6.91-214.7 (31x optical motorized zoom)",
+    "aperture": "F1.36",
+    "varifocal": true
+  },
+  "field_of_view_deg": "60.92-2.2 horizontal / 35.26-1.24 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 70,
+    "min_lux_color": 0.075
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at, Class 4) / 12VDC",
+    "consumption_w": 25.5,
+    "poe_class": 4
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "notes": "2 microSD/SDHC/SDXC slots (256GB each, 512GB total)"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66/IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "ndaa_compliant": true,
+  "features": [
+    "4K AI bullet, 31x optical zoom (6.91-214.7mm)",
+    "WiseIR 70m 850nm",
+    "AI object detection (person/vehicle) and BestShot",
+    "120 dB WDR, WiseNR II, WiseStream III",
+    "ONVIF Profile S/G/T/M, SUNAPI",
+    "IP66/IP67, IK10, NEMA 4X"
+  ],
+  "operating_temp_c": "-40 to 55",
+  "dimensions_mm": "Ø136.2 x 358.7 (without sunshield)",
+  "weight_g": 3200,
+  "environment": [
+    "outdoor"
+  ],
+  "release_notes": "Specs from official Hanwha Vision datasheet DataSheet_PNO-A9311R (2026-08-06).",
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/PNO-A9311R/DataSheet_PNO-A9311R_20260806_EN_151735.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/PNO-A9311R"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  }
+}

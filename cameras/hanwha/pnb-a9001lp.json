@@ -1,0 +1,119 @@
+{
+  "id": "hanwha-pnb-a9001lp",
+  "brand": "Hanwha",
+  "model": "PNB-A9001LP",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet P 4K LPR/ANPR/MMCR Box Camera"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.03
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at, Class 4) / DC 12V",
+    "poe_class": 4,
+    "voltage": "12VDC",
+    "consumption_w": 16.5
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "1 microSD/SDHC/SDXC slot (32GB card preinstalled)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "Wisenet P 4K LPR/ANPR/MMCR (make/model/color recognition) box camera — lens not included (C/CS mount)",
+    "Wisenet Road AI CNN-based license plate recognition, up to 4K plate capture",
+    "lens types: DC auto iris, P-iris (IR corrected), manual, I-CS; simple focus",
+    "built-in microphone + audio in/out",
+    "sound classification, shock/tampering/defocus detection",
+    "Day & Night (ICR)",
+    "ONVIF Profile S/G/T",
+    "NDAA compliant"
+  ],
+  "release_year": 2021,
+  "release_notes": "Specs verified against the official Hanwha Vision PNB-A9001LP datasheet. Box camera ships without a lens (C/CS mount), so lens and field-of-view fields are intentionally absent.",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/PNB-A9001LP",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/PNB-A9001LP/DataSheet_PNB-A9001LP_20260907_EN_173317.pdf"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/G/T). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "operating_temp_c": "-10 to 55",
+  "dimensions_mm": "81 x 67 x 165",
+  "weight_g": 880
+}

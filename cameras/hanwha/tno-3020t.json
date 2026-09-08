@@ -1,0 +1,124 @@
+{
+  "id": "hanwha-tno-3020t",
+  "brand": "Hanwha",
+  "model": "TNO-3020T",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet T QVGA Thermal Bullet Camera"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.08,
+    "max_width": 320,
+    "max_height": 240,
+    "label": "QVGA thermal (320x240)"
+  },
+  "sensor": "Uncooled microbolometer (VOx), 12um pixel, 8-14um spectral range, NETD <=60mK",
+  "lens": {
+    "focal_length_mm": "4.7",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "50",
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3) / DC 12V / AC 24V",
+    "poe_class": 3,
+    "voltage": "12VDC / 24VAC",
+    "consumption_w": 8.7
+  },
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "1 microSD/SDHC/SDXC slot (256GB)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Wisenet T QVGA (320x240) uncooled thermal bullet, 4.7mm F1.0 lens",
+    "8-14um spectral range, NETD <=60mK, 12um pixel",
+    "50 horizontal FOV",
+    "H.265/H.264/MJPEG up to 30fps",
+    "motion detection, handover, tampering, loitering analytics",
+    "audio in (mic/line) + line out, CVBS video-out for installation",
+    "ONVIF Profile S/G/T",
+    "IP66, IK10, NEMA 4X",
+    "NDAA compliant"
+  ],
+  "release_year": 2022,
+  "release_notes": "Specs verified against the official Hanwha Vision TNO-3020T datasheet. Thermal-only camera (no optical/visible imager); resolution reflects the thermal detector.",
+  "sources": [
+    "https://www.hanwhavision.com/global/products/product-details/TNO-3020T",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/TNO-3020T/DataSheet_TNO-3020T_20260806_EN_133130.pdf"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 320,
+        "height": 240,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/G/T). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "320x240",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "147.51 x 147.51 x 375.3",
+  "weight_g": 2512
+}

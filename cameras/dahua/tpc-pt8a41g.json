@@ -1,0 +1,117 @@
+{
+  "id": "dahua-tpc-pt8a41g",
+  "brand": "Dahua",
+  "model": "TPC-PT8A41G",
+  "aliases": [
+    "TPC-PT8A41G(For Project)",
+    "DH-TPC-PT8A41G",
+    "DHI-TPC-PT8A41G"
+  ],
+  "ndaa_compliant": false,
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 1.31,
+    "max_width": 1280,
+    "max_height": 1024,
+    "label": "1280x1024 (thermal)"
+  },
+  "sensor": "Thermal: vanadium oxide (VOx) uncooled focal plane detector, 1280x1024, 12 um pixel pitch, 8-14 um, NETD <=20 mK; optical: 1/1.8\" 4MP CMOS (2688x1520)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "100 (thermal); visible 6-336 (56x zoom)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "8.78 horizontal (thermal); visible 60.3-1.4",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 2000,
+    "min_lux_color": 0.005,
+    "min_lux": 0.0005
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "24-57 VDC",
+    "voltage": "24-57 VDC",
+    "consumption_w": 112
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "585.9 x 299.7 x 483.4",
+  "weight_g": 26000,
+  "features": [
+    "bi-spectrum thermal + visible positioning system (1280x1024 thermal + 4MP 56x visible)",
+    "uncooled VOx microbolometer, NETD <=20 mK",
+    "long-range 100 mm athermalized thermal lens; visible 56x optical zoom (6-336 mm)",
+    "laser illumination and laser range finder up to 2000 m",
+    "heat detection up to 8000 m (100 mm lens)",
+    "heat detection, smoke detection, boat detection, tripwire, intrusion",
+    "3D positioning, cold/hot spot trace, target tracking, human/vehicle classification",
+    "auto rain-sensing wiper, optical and electronic defog, optical image stabilization",
+    "pan 0 to 360 endless, tilt -45 to +90",
+    "Project-exclusive SKU"
+  ],
+  "markets": [
+    "global"
+  ],
+  "release_year": 2026,
+  "sources": [
+    "https://www.dahuasecurity.com/products/dedicated-products/project-exclusive/thermal-cameras/tpc-pt8a41g(for-project)",
+    "https://materialfile.dahuasecurity.com/uploads/soft/20260624/DHI-TPC-PT8A41G_datasheet_20260608-ukr.pdf"
+  ],
+  "last_verified": "2026-09-07",
+  "release_notes": "Project-exclusive long-range thermal multi-spectral positioning system pairing a 1280x1024 uncooled VOx thermal channel (100 mm lens, heat detection to 8 km) with a 4MP 56x-zoom visible channel; laser illuminator and range finder to 2000 m, smoke/boat detection on a 24-57 VDC platform.",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=2&subtype=0",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua RTSP convention; channel 1 = visible, channel 2 = thermal. Not verified against a live unit."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80). Thermal and visible exposed as separate channels; PTZ via ONVIF."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

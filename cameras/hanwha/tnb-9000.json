@@ -1,0 +1,121 @@
+{
+  "id": "hanwha-tnb-9000",
+  "brand": "Hanwha",
+  "model": "TNB-9000",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet 8K Full-Frame AI Box Camera"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 33,
+    "max_width": 7680,
+    "max_height": 4320,
+    "label": "8K"
+  },
+  "sensor": "43.3mm full-frame CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.015
+  },
+  "power": {
+    "method": "PoE++ (IEEE 802.3bt, Class 5) / DC 12V",
+    "consumption_w": 30,
+    "poe_class": 5,
+    "voltage": "12VDC"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "1 microSD/SDHC/SDXC slot (Max. 256GB)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "8K (33MP) full-frame box camera with Canon EF mount (lens not included)",
+    "AI object detection & classification: person / face / vehicle / license plate",
+    "15fps@8K / 20fps@24MP / 30fps@15MP / 60fps@4K",
+    "day/night auto ICR (no built-in IR illuminator)",
+    "WiseStream smart codec",
+    "audio line/mic in + line out",
+    "ONVIF Profile S/G/T",
+    "secure boot, signed & encrypted firmware",
+    "NDAA compliant"
+  ],
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/TNB-9000/DataSheet_TNB-9000_20260806_EN_145127.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/TNB-9000"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/G/T). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "7680x4320",
+        "fps": 15,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "dimensions_mm": "120 x 118.1 x 179",
+  "weight_g": 2100,
+  "operating_temp_c": "0 to 45"
+}

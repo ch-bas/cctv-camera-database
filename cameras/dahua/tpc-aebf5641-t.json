@@ -1,0 +1,109 @@
+{
+  "id": "dahua-tpc-aebf5641-t",
+  "brand": "Dahua",
+  "model": "TPC-AEBF5641-T",
+  "aliases": [
+    "Dahua TPC-AEBF5641-T",
+    "DH-TPC-AEBF5641-T",
+    "DHI-TPC-AEBF5641-T"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 0.33,
+    "max_width": 640,
+    "max_height": 512,
+    "label": "640x512 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 640x512, 12 um pixel pitch, 8-14 um, NETD <=40 mK; optical: 1/2.7in CMOS 4MP",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30
+  },
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "9 / 19 (thermal); optical 4 / 8",
+    "varifocal": false
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3af) / ePoE",
+    "voltage": "DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512
+  },
+  "ip_rating": "IP68",
+  "operating_temp_c": "-40 to 60",
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "features": [
+    "bi-spectrum thermal + visible",
+    "explosion-proof (ATEX/IECEx II 2G Ex db IIC T6 Gb / II 2D Ex tb IIIC T80 C Db)",
+    "uncooled VOx thermal detector (640x512)",
+    "thermal sensitivity NETD <=40 mK",
+    "optical channel: 4 MP (2688x1520)",
+    "temperature measurement -20 to 550 C, accuracy Max (+/-2 C, +/-2%)",
+    "spot/line/area temperature measurement",
+    "white-light illuminator 30 m",
+    "white-light + audio alarm",
+    "perimeter protection, human/vehicle classification",
+    "cold/hot spot trace",
+    "ePoE"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/thermal-products/thermal-cameras/explosion-proof-series/tpc-aebf5641-t",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/TPC-AEBF5641-T_datasheet_20250421.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=2&subtype=0",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua RTSP convention; channel 1 = visible/fusion, channel 2 = thermal. Not verified against a live unit."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80). Thermal and visible exposed as separate channels (channel 1 visible, channel 2 thermal)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "ndaa_compliant": false,
+  "night_vision": {
+    "type": "color",
+    "range_m": 30
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "dimensions_mm": "248 x 149 x 155.7",
+  "weight_g": 5800,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

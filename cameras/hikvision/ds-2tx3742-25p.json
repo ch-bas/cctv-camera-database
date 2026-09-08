@@ -1,0 +1,128 @@
+{
+  "id": "hikvision-ds-2tx3742-25p",
+  "brand": "Hikvision",
+  "model": "DS-2TX3742-25P",
+  "aliases": [
+    "DS-2TX3742-25P/Q"
+  ],
+  "type": "ptz",
+  "ptz": {
+    "autotracking": true
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.11,
+    "max_width": 384,
+    "max_height": 288,
+    "label": "384x288 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 384x288, 17 um pixel pitch, 8-14 um, NETD <= 35 mK; optical bullet: 1/2.7in CMOS 4 MP; optical PTZ dome: 1/1.8in CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "25 (fixed)",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 400,
+    "min_lux_color": 0.002
+  },
+  "field_of_view_deg": "14.9h",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "thermal",
+        "resolution": "1280x720",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "optical-bullet",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "optical-ptz",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "power": {
+    "method": "24 VAC, one supply for whole system",
+    "consumption_w": 70
+  },
+  "power_source": [
+    "ac-mains"
+  ],
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-40 to 65",
+  "dimensions_mm": "401 x 266.4 x 912.2",
+  "weight_g": 12900,
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "Thermal smart linkage tracking system: bi-spectrum panoramic bullet camera plus optical PTZ speed dome with auto-tracking",
+    "thermal module: 384x288 VOx uncooled, 17 um pitch, 8-14 um, NETD <= 35 mK, thermal FOV 14.9 x 11.2, digital zoom x2/x4/x8",
+    "optical bullet channel: 4 MP (2688x1520), 12 mm lens, 120 dB WDR",
+    "optical PTZ dome: 1/1.8in 2688x1520, 6-252 mm 42x optical zoom, 16x digital zoom, 140 dB WDR, IR up to 400 m",
+    "temperature measurement -20 to 150 C, accuracy +/-8 C, 3 rule types (21 rules: 10 points, 10 areas, 1 line)",
+    "dynamic fire detection, up to 10 fire points",
+    "multi-target tracking up to 30 targets, intrusion and line-crossing detection",
+    "pan/tilt speed dome: pan 360, tilt -20 to 90, auto flip; universal joint module pan 90, tilt -45 to 45",
+    "line-level audio in/out, 2/7-ch alarm in, 2-ch alarm out, RS-485",
+    "TVS 6000V lightning/surge protection"
+  ],
+  "release_notes": "The Hikvision DS-2TX3742-25P is a thermal smart linkage tracking system pairing a 384x288 bi-spectrum bullet camera (25 mm thermal, 4 MP optical) with a 42x optical PTZ speed dome that auto-tracks moving targets. It measures temperature (-20 to 150 C) and performs fire and perimeter detection for airports, prisons and city perimeter protection.",
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000059381/DS-2TX3742-25P_Q_Datasheet_en-US_20231118.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "ndaa_compliant": false,
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Thermal + optical exposed as separate channels; optical PTZ dome is separately addressable."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  }
+}

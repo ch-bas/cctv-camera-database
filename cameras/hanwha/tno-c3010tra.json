@@ -1,0 +1,121 @@
+{
+  "id": "hanwha-tno-c3010tra",
+  "brand": "Hanwha",
+  "model": "TNO-C3010TRA",
+  "aliases": [
+    "Wisenet QVGA Radiometric AI Thermal Camera"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 0.44,
+    "max_width": 768,
+    "max_height": 576,
+    "label": "QVGA thermal (384x288 detector, 768x576 output)"
+  },
+  "sensor": "Uncooled microbolometer 384x288 (17um pixel, 8-14um, NETD <=30mK)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.4",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "90 horizontal / 65.3 vertical",
+  "night_vision": {
+    "type": "none"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "768x576",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3) / 12VDC",
+    "consumption_w": 10.8,
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "notes": "1 microSD/SDHC/SDXC slot (up to 1TB)"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66/IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "ndaa_compliant": true,
+  "features": [
+    "Radiometric thermal bullet, QVGA 384x288 detector, NETD <=30mK, 17um pixel",
+    "Temperature detection -40 to 550C, 10 detection areas, spot reading",
+    "AI object classification: person, vehicle",
+    "WiseStream II/III",
+    "ONVIF Profile S/G/T/M",
+    "IP66/IP67, IK10, NEMA 4X"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "Ø93.8 x 233.5",
+  "weight_g": 1700,
+  "environment": [
+    "outdoor"
+  ],
+  "release_notes": "Specs from official Hanwha Vision datasheet DataSheet_TNO-C3010TRA (2026-08-06).",
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/TNO-C3010TRA/DataSheet_TNO-C3010TRA_20260806_EN_194213.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/TNO-C3010TRA"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 768,
+        "height": 576,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  }
+}

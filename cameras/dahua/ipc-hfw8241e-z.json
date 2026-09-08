@@ -1,0 +1,138 @@
+{
+  "id": "dahua-ipc-hfw8241e-z",
+  "brand": "Dahua",
+  "model": "IPC-HFW8241E-Z",
+  "aliases": [
+    "DH-IPC-HFW8241E-Z",
+    "2MP Starlight IR Vari-focal Bullet AI Network Camera"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "107-31",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux_color": 0.006
+  },
+  "power": {
+    "method": "DC 12V, PoE+ (802.3at) (Class 4)",
+    "consumption_w": 14.7
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "AI series (deep learning)",
+    "face recognition",
+    "ANPR",
+    "video metadata",
+    "people counting (line crossing/region/loitering)",
+    "perimeter protection (tripwire/intrusion)",
+    "5x motorized optical zoom",
+    "starlight low-light imaging",
+    "Smart Codec (H.265+/H.264+)",
+    "140 dB WDR"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "273.2 x 95.0 x 96.4",
+  "weight_g": 960,
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 29,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "last_verified": "2026-09-07",
+  "release_year": 2018,
+  "release_notes": "2MP starlight IR vari-focal bullet AI camera with a 2.7-13.5 mm F1.6 motorized 5x lens, 50 m IR, deep-learning analytics (face recognition, ANPR, metadata) and 140 dB WDR, rated IP67/IK10.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/network-cameras/ipc-hfw8241e-z",
+    "https://materialfile.dahuasecurity.com/uploads/soft/20181019/1.DH-IPC-HFW8241E-Z_Datasheet_201810191.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

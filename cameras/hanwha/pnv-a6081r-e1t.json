@@ -1,0 +1,125 @@
+{
+  "id": "hanwha-pnv-a6081r-e1t",
+  "brand": "Hanwha",
+  "model": "PNV-A6081R-E1T",
+  "aliases": [
+    "Wisenet P AI 2MP IR Vandal Dome with built-in 1TB Rugged SSD"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP (1080p, up to 120fps)"
+  },
+  "sensor": "1/2\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.38-9.33 (2.13x motorized varifocal)",
+    "aperture": "F1.3",
+    "varifocal": true
+  },
+  "field_of_view_deg": "104-44 horizontal / 55-24 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40,
+    "min_lux_color": 0.007
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at, Class 4) / 12VDC",
+    "consumption_w": 19.2,
+    "poe_class": 4
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "notes": "Built-in 1TB rugged SSD (WAVE Wisenet NVR pre-installed; host + up to 5 cameras). SD card AES-256 partition encryption, TPM."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66/IP67/IP6K9K",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "ndaa_compliant": true,
+  "features": [
+    "2MP AI IR vandal dome with built-in 1TB rugged SSD (edge NVR, WAVE pre-installed)",
+    "Up to 120fps at 1080p",
+    "Extreme low-light 0.007 lux color, 2.13x motorized varifocal",
+    "WiseIR 40m 850nm",
+    "AI object detection (person/vehicle)",
+    "120 dB WDR, WiseNR II, WiseStream III",
+    "TPM, AES-256 SD encryption",
+    "ONVIF Profile S/T/M",
+    "IP66/IP67/IP6K9K, IK10, NEMA 4X"
+  ],
+  "operating_temp_c": "-30 to 55",
+  "dimensions_mm": "Ø180 x 130",
+  "weight_g": 1900,
+  "environment": [
+    "outdoor"
+  ],
+  "release_notes": "Specs from official Hanwha Vision datasheet DataSheet_PNV-A6081R-E1T (2026-08-06).",
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/PNV-A6081R-E1T/DataSheet_PNV-A6081R-E1T_20260806_EN_130814.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/PNV-A6081R-E1T"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  }
+}

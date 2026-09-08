@@ -1,0 +1,125 @@
+{
+  "id": "hanwha-tnu-6324e",
+  "brand": "Hanwha",
+  "model": "TNU-6324E",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet 2MP Explosion-proof PTZ Camera"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP (1920x1080)"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.44-142.6 (32x optical zoom)",
+    "aperture": "F1.6-4.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "61.8-2.19 horizontal / 36.2-1.24 vertical",
+  "night_vision": {
+    "type": "color",
+    "min_lux_color": 0.05
+  },
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "110VAC / 220VAC",
+    "voltage": "110-220VAC",
+    "consumption_w": 87
+  },
+  "power_source": [
+    "ac-mains"
+  ],
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "notes": "No onboard SD; NAS recording at event triggers."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "2MP explosion-proof PTZ camera with 32x optical zoom",
+    "360 degree endless pan, -90 to +90 tilt, 300 presets",
+    "explosion-proof: IECEx, ATEX (II 2 G Ex db IIC T6 Gb), KCs, KC, CE/UKCA",
+    "316L stainless steel housing",
+    "120 dB WDR",
+    "ONVIF Profile S/G/T, SUNAPI",
+    "IP67, IK10",
+    "NDAA compliant"
+  ],
+  "release_notes": "Specs verified against the official Hanwha Vision datasheet DataSheet_TNU-6324E (Ver 202410).",
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/TNU-6324E/DataSheet_TNU-6324E_20260119_EN_143006.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/TNU-6324E"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profile S/G/T). Default ONVIF port 80. PTZ control via ONVIF."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "dimensions_mm": "611 x 438 x 235",
+  "weight_g": 36000,
+  "operating_temp_c": "-40 to 60",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

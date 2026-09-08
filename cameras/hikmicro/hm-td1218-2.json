@@ -1,0 +1,103 @@
+{
+  "id": "hikmicro-hm-td1218-2",
+  "brand": "HikMicro",
+  "model": "HM-TD1218-2",
+  "aliases": [
+    "HM-TD1218-2/G0/T1A"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.02,
+    "max_width": 160,
+    "max_height": 120,
+    "label": "160x120 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 160x120, 12 um pixel pitch, 8-14 um, NETD <= 25 mK; optical: 1/2.7in CMOS 5 MP (2688x1944)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "1.8 (fixed)",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.0176
+  },
+  "field_of_view_deg": "90.0h",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "power": {
+    "method": "12 VDC or PoE (802.3af class 3)",
+    "consumption_w": 6.5
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-40 to 65",
+  "dimensions_mm": "138.3 x 138.3 x 123.1",
+  "weight_g": 940,
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "Thermal and optical bi-spectrum turret for perimeter protection and early fire prevention",
+    "thermal module: 160x120 VOx uncooled, 12 um pitch, 8-14 um, NETD <= 25 mK, thermal FOV 90.0 x 66.4, digital zoom x2/x4",
+    "optical channel: 5 MP (2688x1944), 2 mm lens, FOV 119.3 x 93.3, 120 dB WDR",
+    "bi-spectrum image fusion (optical detail overlaid on thermal)",
+    "smart hybrid light: IR up to 30 m, white light up to 30 m, smart mode; white-light visual alarm",
+    "VCA 3.0: high-accuracy vehicle/human detection and classification",
+    "temperature exception alarm, measurement -20 to 150 C, accuracy +/-8 C",
+    "fire-point detection and smoking detection algorithms",
+    "line-level audio in/out"
+  ],
+  "release_notes": "The HikMicro HM-TD1218-2 is a bi-spectrum turret camera fusing a 160x120 thermal module with a 5 MP optical channel for perimeter protection and early fire prevention. It offers VCA 3.0 human/vehicle classification, fire-point and smoking detection, and temperature exception alarms (-20 to 150 C).",
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000159290/HM-TD1218-2_G0_T1A_Datasheet_20250630.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "ndaa_compliant": false,
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80, Profile S/G). Thermal + optical exposed as separate channels."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  }
+}

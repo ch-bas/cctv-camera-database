@@ -1,0 +1,103 @@
+{
+  "id": "acti-d61a",
+  "brand": "ACTi",
+  "model": "D61A",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 1.3,
+    "max_width": 1280,
+    "max_height": 960,
+    "label": "1.3MP"
+  },
+  "sensor": "1/3\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12 (varifocal)",
+    "aperture": "F1.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "83 - 31.1 horizontal",
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.1
+  },
+  "power": {
+    "method": "PoE Class 2 (IEEE802.3af); 4.37 W (PoE)",
+    "consumption_w": 4.37
+  },
+  "power_source": [
+    "poe"
+  ],
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "environment": [
+    "indoor"
+  ],
+  "dimensions_mm": "146 diameter x 114",
+  "weight_g": 514,
+  "operating_temp_c": "-10 to 50",
+  "ik_rating": "IK09",
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1280x960",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "features": [
+    "color-only (no day/night, no IR)",
+    "varifocal lens, fixed iris",
+    "3-axis viewing angle adjustment (pan 0-350, tilt 17-163, rotation 0-350)",
+    "vandal resistant (IK09)",
+    "audio: 2-way, Line-in, Line-out (no built-in mic/speaker)",
+    "digital I/O: 1 in / 1 out",
+    "server-based analytics: People Counting, Face Detection, Object Line Crossing, Tamper, Heat Map",
+    "ONVIF Compliant: Profile S, Profile G, Profile Q"
+  ],
+  "sources": [
+    "https://www.acti.com/product/D61A?tab=specifications"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  },
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false
+}

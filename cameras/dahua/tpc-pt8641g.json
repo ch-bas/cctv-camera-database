@@ -1,0 +1,106 @@
+{
+  "id": "dahua-tpc-pt8641g",
+  "brand": "Dahua",
+  "model": "TPC-PT8641G",
+  "aliases": [
+    "Dahua TPC-PT8641G",
+    "DHI-TPC-PT8641G",
+    "TPC-PT8641G-V2",
+    "DHI-TPC-PT8641G"
+  ],
+  "type": "ptz",
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 0.33,
+    "max_width": 640,
+    "max_height": 512,
+    "label": "640x512 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 640x512, 12 um pixel pitch, 8-14 um, NETD <=20 mK; optical: 1/1.8in 4MP CMOS",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "75, 100 or 13-130 (thermal); 6-336 (visible, 56x)",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 2000
+  },
+  "power": {
+    "method": "24-57 VDC",
+    "voltage": "24-57 VDC"
+  },
+  "storage": {
+    "onboard": true
+  },
+  "ip_rating": "IP66",
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "585.9 x 299.7 x 483.4",
+  "weight_g": 26000,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "ultra-long-range bi-spectrum thermal + 4MP visible positioning PTZ",
+    "uncooled VOx thermal detector (640x512, 12 um), NETD <=20 mK",
+    "thermal lens 75 / 100 mm or 13-130 mm zoom; visible 56x optical zoom (6-336 mm)",
+    "IR illumination up to 2000 m; laser range finder to 2000 m (+/-0.4%)",
+    "heat detection to ~10,400 m; Optical Image Stabilization; boat and fire/smoke detection",
+    "pan 0-360 endless, tilt -45 to +90, 300 presets; 7 alarm in / 2 out"
+  ],
+  "release_notes": "Ultra-series ultra-long-range positioning system fusing a low-NETD 640x512 thermal channel with a 4MP 56x visible channel, 2000 m IR and a laser range finder for coastline and border surveillance.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/thermal-products/thermal-cameras/ultra-series/tpc-pt8641g",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/85797/datasheet/TPC-PT8641G_V2_datasheet_20260122.pdf"
+  ],
+  "last_verified": "2026-09-07",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=2&subtype=0",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua RTSP convention; channel 1 = visible/fusion, channel 2 = thermal. Not verified against a live unit."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80). Thermal and visible exposed as separate channels (visible = channel 1, thermal = channel 2). PTZ via ONVIF."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

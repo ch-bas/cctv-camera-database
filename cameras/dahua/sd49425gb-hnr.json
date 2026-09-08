@@ -1,0 +1,132 @@
+{
+  "id": "dahua-sd49425gb-hnr",
+  "brand": "Dahua",
+  "model": "SD49425GB-HNR",
+  "aliases": [
+    "DH-SD49425GB-HNR"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5-125",
+    "aperture": "F1.6-F3.6",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100,
+    "min_lux_color": 0.005
+  },
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "12 VDC/3 A or PoE+ (802.3at)",
+    "voltage": "12 VDC",
+    "consumption_w": 20
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "4MP IR PTZ speed dome, 25x optical zoom (5-125 mm)",
+    "IR range 100 m",
+    "pan 0-360 degrees endless, tilt -15 to +90 degrees with 180-degree auto-flip",
+    "300 presets, 8 tours (up to 32 presets each)",
+    "AcuPick fast/precise human and vehicle search",
+    "face detection (up to 32 faces) with attribute extraction",
+    "SMD 4.0, IVS perimeter protection (intrusion, tripwire)",
+    "deep-learning human/vehicle classification",
+    "audio I/O (1 in / 1 out, line level)",
+    "TVS 6000 V surge protection"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "270.4 x 160 (diameter)",
+  "weight_g": 2400,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "release_notes": "4MP IR network PTZ speed dome with 25x optical zoom, 100 m IR, AcuPick search, face detection and WizSense IVS perimeter protection; 12 VDC or PoE+, IP66.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/ptz-cameras/sd49425gb-hnr",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/SD49425GB-HNR_S0_datasheet_20250115.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80); PTZ control over ONVIF."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

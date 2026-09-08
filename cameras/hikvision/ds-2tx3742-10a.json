@@ -1,0 +1,138 @@
+{
+  "id": "hikvision-ds-2tx3742-10a",
+  "brand": "Hikvision",
+  "model": "DS-2TX3742-10A",
+  "aliases": [
+    "DS-2TX3742-10A/Q"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.11,
+    "max_width": 384,
+    "max_height": 288,
+    "label": "384x288 (thermal)"
+  },
+  "sensor": "Thermal: VOx uncooled focal plane array, 384x288, 17 um pixel pitch, 8-14 um, NETD < 35 mK; optical: bullet 1/2.7in CMOS (4 MP) + speed dome 1/1.8in CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "9.7 (thermal, fixed)",
+    "aperture": "F1.0 (thermal)",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 400
+  },
+  "field_of_view_deg": "37.5 horizontal (thermal)",
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "24 VAC",
+    "consumption_w": 70,
+    "voltage": "24 VAC"
+  },
+  "power_source": [
+    "ac-mains"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "thermal",
+        "resolution": "1280x720",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "optical-bullet",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "optical-ptz",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true
+  },
+  "operating_temp_c": "-40 to 65 C",
+  "dimensions_mm": "266.4 x 721 x 576.6",
+  "weight_g": 11800,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "thermal smart linkage tracking system: bi-spectrum bullet plus optical PTZ speed dome",
+    "thermal detector: VOx uncooled 384x288, 17 um pixel pitch, NETD < 35 mK, 8-14 um; 9.7 mm lens (37.5 x 28.5 FOV)",
+    "bullet optical channel: 4 MP (2688x1520), 1/2.7in CMOS, 4 mm lens (84 x 44.8 FOV)",
+    "optical PTZ speed dome: 2688x1520, 1/1.8in CMOS, 6 to 252 mm 42x optical zoom, IR up to 400 m",
+    "smart auto/manual linkage tracking of up to 30 targets, one-touch bullet-to-PTZ alignment",
+    "temperature measurement -20 to 150 C, +/-8 C (3 rule types: 10 points, 10 areas, 1 line)",
+    "dynamic fire detection (up to 10 fire points), intrusion and line-crossing event tracking",
+    "microSD storage up to 256 GB, ONVIF / RTSP, one 24 VAC supply for whole system"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000059376/DS-2TX3742-10A_Q_Datasheet_en-US_20231118.pdf"
+  ],
+  "release_notes": "The Hikvision DS-2TX3742-10A is a thermal smart linkage tracking system combining a bi-spectrum bullet camera (384x288 uncooled thermal plus 4 MP optical, 9.7 mm thermal lens) with a 42x optical PTZ speed dome (400 m IR) that auto-tracks up to 30 moving targets, adding temperature measurement and fire detection for airport, prison and perimeter security. Verified against the official Hikvision datasheet.",
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "autotracking": false,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Bi-spectrum bullet (thermal + optical) and optical PTZ speed dome are exposed as separate channels."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

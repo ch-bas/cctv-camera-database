@@ -1,0 +1,119 @@
+{
+  "id": "acti-i24",
+  "brand": "ACTi",
+  "model": "I24",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 1,
+    "max_width": 1280,
+    "max_height": 720,
+    "label": "1MP"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.3-129 (zoom, 30x optical)",
+    "aperture": "F1.6-F5.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "65.6-2.07 horizontal",
+  "night_vision": {
+    "type": "color",
+    "min_lux": 0.05,
+    "min_lux_color": 0.1
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.264"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "power": {
+    "method": "DC 12V, PoE (IEEE802.3af)",
+    "consumption_w": 7.2,
+    "poe_class": 3
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "operating_temp_c": "-10 to 50",
+  "dimensions_mm": "81 x 71 x 176 (W x H x D)",
+  "weight_g": 720,
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "features": [
+    "30x motorized optical zoom (plus 16x digital) with auto focus and DC iris",
+    "Extreme WDR (145 dB)",
+    "day/night with mechanical IR cut filter",
+    "2D + 3D DNR, digital image stabilizer (DIS/EIS), defogging",
+    "server-based analytics: people/object counting, line crossing, face detection, heat map",
+    "RS-485/RS-422 for external PTZ control (Visca, Pelco-D/P)",
+    "ONVIF Profile S/G/Q",
+    "DC 12V or PoE Class 3 (IEEE802.3af)",
+    "optional outdoor housing (IP66)"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.acti.com/product/I24",
+    "https://www.acti.com/product/I24?tab=specifications"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1",
+      "onvif_port": 80,
+      "verified": false,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  },
+  "ndaa_compliant": false
+}

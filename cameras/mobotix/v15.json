@@ -1,0 +1,107 @@
+{
+  "id": "mobotix-v15",
+  "brand": "Mobotix",
+  "model": "V15 6MP",
+  "aliases": [
+    "V15 Vandalism",
+    "MX-V15D-Sec"
+  ],
+  "ndaa_compliant": true,
+  "type": "dome",
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3072,
+    "max_height": 2048,
+    "label": "6MP per sensor (dual 2x 6MP / 3072x2048)"
+  },
+  "sensor": "1/1.8\" CMOS, 6MP (3072x2048), progressive scan (6MP Moonlight)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "Interchangeable sensor modules (B041 super-wide / B079 standard)",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "color",
+    "min_lux_color": 0.005
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "protocols": [
+    "rtsp",
+    "http",
+    "mxpeg"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "power": {
+    "method": "PoE (IEEE 802.3af)",
+    "consumption_w": 7,
+    "poe_class": 3
+  },
+  "video": {
+    "codecs": [
+      "MJPEG"
+    ],
+    "max_fps": 8
+  },
+  "storage": {
+    "onboard": true,
+    "notes": "Internal MicroSD DVR (4 GB ex works)"
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "196 x 260 x 180",
+  "weight_g": 4680,
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "features": [
+    "MOBOTIX V15 Vandalism (legacy platform)",
+    "armored high-security dual-lens housing",
+    "dual sensor modules (Day/Night, interchangeable)",
+    "6MP Moonlight low-light sensor",
+    "MxPEG codec (recorded as MJPEG)",
+    "MxActivitySensor 3D motion detection",
+    "temperature sensor",
+    "HD wideband two-way audio (Opus)",
+    "internal DVR (microSD)",
+    "no ONVIF (proprietary MxPEG)",
+    "IP66, IK10+ impact-resistant, PoE Class 3"
+  ],
+  "sources": [
+    "https://www.mobotix.com/en/support/download-center/documentation/technical-data-sheets",
+    "https://www.mobotix.com/sites/default/files/2017-10/Mx_TS_V15_en_20170324.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/cam0/stream",
+      "notes": "Legacy MOBOTIX uses MxPEG by default (recorded as MJPEG). No ONVIF; use MxPEG/MJPEG over RTSP.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "motionEye",
+      "notes": "No ONVIF on legacy 15-series; use motionEye or generic MJPEG camera integration."
+    },
+    "blue_iris": {
+      "profile": "Mobotix",
+      "notes": "Select the 'Mobotix' profile; MxPEG/MJPEG codec."
+    }
+  },
+  "last_verified": "2026-09-08",
+  "markets": [
+    "global"
+  ]
+}

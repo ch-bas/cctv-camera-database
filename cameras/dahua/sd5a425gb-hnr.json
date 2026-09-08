@@ -1,0 +1,151 @@
+{
+  "id": "dahua-sd5a425gb-hnr",
+  "brand": "Dahua",
+  "model": "SD5A425GB-HNR",
+  "aliases": [
+    "DH-SD5A425GB-HNR"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub2",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5-125 (25x optical zoom)",
+    "aperture": "F1.6-F3.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "51.9-3.0 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 150,
+    "min_lux_color": 0.005
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "PoE+ (802.3at) / 24 VDC",
+    "voltage": "24 VDC",
+    "consumption_w": 21,
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "25x optical zoom PTZ positioning camera",
+    "Starlight low-light technology",
+    "Auto-tracking 3.0",
+    "WizSense AI",
+    "SMD 4.0",
+    "IVS perimeter protection (tripwire, intrusion, crossing fence, loitering)",
+    "face detection with attribute extraction",
+    "video metadata (vehicle/human)",
+    "people counting",
+    "150m IR illumination",
+    "120 dB True WDR",
+    "360 degrees endless pan, auto flip 180 degrees",
+    "300 presets",
+    "16x digital zoom",
+    "EIS image stabilization",
+    "IK10 vandal resistance, TVS 6000 V lightning proof",
+    "Smart H.265+/H.264+"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "190 (diameter) x 332",
+  "weight_g": 4700,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "release_notes": "4MP 25x Starlight IR WizSense network PTZ camera with Auto-tracking 3.0, deep-learning perimeter protection and 150m IR; PoE+ / 24 VDC, IP67/IK10.",
+  "sources": [
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/SD5A425GB-HNR_S0_datasheet_20250111.pdf"
+  ],
+  "last_verified": "2026-09-06",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 576,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP path; enable RTSP in the web UI. ONVIF PTZ control on port 80.",
+      "autotracking": true,
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

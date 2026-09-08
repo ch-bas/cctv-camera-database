@@ -1,0 +1,130 @@
+{
+  "id": "hanwha-tnp-a7430rw",
+  "brand": "Hanwha",
+  "model": "TNP-A7430RW",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "Wisenet 4MP AI Ruggedized PTZ"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2592,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6.1-262.4 (43x optical zoom)",
+    "aperture": "F1.69",
+    "varifocal": true
+  },
+  "field_of_view_deg": "62.5-1.72 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 500,
+    "min_lux_color": 0.04
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "PoE++ (IEEE 802.3bt Type 4, Class 8)",
+    "consumption_w": 71,
+    "poe_class": 8
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": true,
+    "notes": "1 microSD/SDHC/SDXC slot (max 1TB); OnCloud edge recording supported."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66/IP68",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "43x optical zoom (6.1-262.4mm), ruggedized PTZ",
+    "AI object detection and auto-tracking",
+    "WiseIR 500m (850nm)",
+    "120 dB WDR",
+    "60fps, 360 endless pan",
+    "ice removal, NEMA 4X / NEMA TS-2 rated",
+    "WiseNR II, WiseStream",
+    "ONVIF Profile S/G/T/M, SUNAPI",
+    "PoE++ (802.3bt Type 4) powered",
+    "NDAA compliant"
+  ],
+  "release_year": 2024,
+  "release_notes": "Specs verified against the official Hanwha Vision TNP-A7430RW datasheet (Ver. 2026).",
+  "sources": [
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/TNP-A7430RW/DataSheet_TNP-A7430RW_20260824_EN_165227.pdf",
+    "https://www.hanwhavision.com/global/products/product-details/TNP-A7430RW"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/G/T/M). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1520",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "dimensions_mm": "293.4 x 205.6 x 399.9",
+  "weight_g": 10500,
+  "operating_temp_c": "-50 to 60"
+}

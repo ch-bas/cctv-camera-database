@@ -1,0 +1,128 @@
+{
+  "id": "dahua-ipc-t2b40-zs",
+  "brand": "Dahua",
+  "model": "IPC-T2B40-ZS",
+  "aliases": [
+    "DH-IPC-T2B40-ZS"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/3\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12",
+    "aperture": "F1.8",
+    "varifocal": true
+  },
+  "field_of_view_deg": "97-31h",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40,
+    "min_lux_color": 0.05
+  },
+  "power": {
+    "method": "DC12V, PoE (802.3af)(Class 0)",
+    "voltage": "12VDC",
+    "consumption_w": 6.3
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "operating_temp_c": "-30 to +60",
+  "dimensions_mm": "122 x 122 x 100",
+  "weight_g": 397,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "features": [
+    "4MP",
+    "H.265+",
+    "Motorized varifocal 2.8-12mm",
+    "Smart IR 40m",
+    "DWDR",
+    "3D DNR",
+    "IP67",
+    "microSD 128GB"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/ez-ip/ipc-t2b40-zs",
+    "https://materialfile.dahuasecurity.com/uploads/soft/20201030/IPC-T2B40-ZS_Datasheet_20201028.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "last_verified": "2026-09-07"
+}
