@@ -1,0 +1,129 @@
+{
+  "id": "axis-m3945-r",
+  "brand": "Axis",
+  "model": "M3945-R",
+  "aliases": [
+    "AXIS M3945-R M12 2.8 mm",
+    "AXIS M3945-R M12 3.6 mm",
+    "AXIS M3945-R RJ45 2.8 mm",
+    "AXIS M3945-R RJ45 3.6 mm"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "release_year": 2025,
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" Progressive Scan RGB CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "99",
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.16
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE IEEE 802.3af Type 1 Class 2",
+    "consumption_w": 4.42,
+    "poe_class": 2
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "microSD/microSDHC/microSDXC with AES-XTS-Plain64 256-bit encryption; recording to NAS."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66/67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Lightfinder 2.0",
+    "Forensic WDR",
+    "Zipstream H.265",
+    "Axis Edge Vault",
+    "signed video",
+    "secure boot",
+    "deep learning processing unit (DLPU)",
+    "digital PTZ",
+    "built-in microphone",
+    "scene profiles",
+    "IK10 impact-resistant",
+    "rugged onboard/transit (UNECE R10, UNECE R118, IEC 60721-3-5 5M3)"
+  ],
+  "operating_temp_c": "-30 to 55",
+  "weight_g": 250,
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": true,
+  "sources": [
+    "https://www.axis.com/dam/public/permalink/272798/datasheet-axis-m3945-r-dome-camera-en-US_272798.pdf",
+    "https://www.axis.com/products/axis-m3945-r"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 360,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=640x360",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF Profile S/T/G/M supported; auto-discovery via Zeroconf."
+    },
+    "blue_iris": {
+      "profile": "Axis",
+      "notes": "Select 'Axis' profile. Auto-discovery via ONVIF usually works."
+    }
+  }
+}
