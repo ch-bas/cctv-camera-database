@@ -1,0 +1,133 @@
+{
+  "id": "dahua-ipc-hfw5241t-as-led",
+  "brand": "Dahua",
+  "model": "IPC-HFW5241T-AS-LED",
+  "aliases": [
+    "DH-IPC-HFW5241T-AS-LED",
+    "2MP Full-color Fixed-focal Bullet WizMind Network Camera"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.8\" STARVIS CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "106",
+  "night_vision": {
+    "type": "color",
+    "range_m": 25
+  },
+  "power": {
+    "method": "DC 12V (±30%), PoE (802.3af)",
+    "consumption_w": 7
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "WizMind AI (full-color starlight)",
+    "warm LED white light up to 25 m",
+    "face detection",
+    "perimeter protection (tripwire/intrusion/fast moving)",
+    "people counting",
+    "heat map",
+    "120 dB WDR",
+    "available with 2.8/3.6/6/8 mm lenses"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "244.1 x 79.0 x 75.9",
+  "weight_g": 815,
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 6,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "last_verified": "2026-09-07",
+  "release_year": 2020,
+  "release_notes": "2MP full-color fixed-focal bullet WizMind camera with a 1/2.8-inch STARVIS sensor, F1.6 lens and warm-LED white light up to 25 m for 24/7 color imaging, rated IP67/IK10 with 120 dB WDR.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/network-cameras/ipc-hfw5241t-as-led",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/IPC-HFW5241T-AS-LED_Datasheet_20200615.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

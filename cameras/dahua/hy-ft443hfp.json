@@ -1,0 +1,134 @@
+{
+  "id": "dahua-hy-ft443hfp",
+  "brand": "Dahua",
+  "model": "HY-FT443HFP",
+  "aliases": [
+    "DHI-HY-FT443HFP"
+  ],
+  "type": "dual-lens",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "4",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "12-24 VDC / PoE (802.3af)",
+    "consumption_w": 13.1,
+    "voltage": "12-24VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false,
+    "max_microsd_gb": 256
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "Flame detection camera Pro",
+    "Bi-spectrum thermal + visible",
+    "Thermal 256x192 (VOx uncooled, 12um, NETD <=50mK)",
+    "Triple-IR flame sensor (3.8/4.5/5.0um, EN54 certified)",
+    "Visible 5MP",
+    "Temperature measurement -10 to +500C",
+    "Thermal detection 35m",
+    "IR 50m",
+    "Smoke & flame shape detection",
+    "Sound & light alarm",
+    "Built-in mic and speaker"
+  ],
+  "operating_temp_c": "-40 to +60",
+  "dimensions_mm": "271.0 x 123.2 x 109.5",
+  "weight_g": 1710,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "ndaa_compliant": false,
+  "markets": [
+    "global"
+  ],
+  "release_notes": "Flame-detection Pro camera combining a triple-IR flame sensor (EN54, 3.8/4.5/5.0 um), a 256x192 uncooled thermal sensor (NETD <=50 mK, -10 to +500 C) and a 5MP visible camera; smoke and flame-shape AI with sound-and-light alarm.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/fire-alarm/fire-safety-cameras/flame-detection-camera/hy-ft443hfp",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/85145/datasheet/DHI-HY-FT443HFP_datasheet_20260903.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "last_verified": "2026-09-07"
+}

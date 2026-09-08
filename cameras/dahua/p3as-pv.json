@@ -1,0 +1,128 @@
+{
+  "id": "dahua-p3as-pv",
+  "brand": "Dahua",
+  "model": "P3AS-PV",
+  "aliases": [
+    "DH-P3AS-PV",
+    "Picoo P3AS-PV",
+    "3MP Outdoor Wi-Fi Pan & Tilt Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "3MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.0",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "83 horizontal (45 vertical, 98 diagonal)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "12 VDC",
+    "voltage": "12 VDC",
+    "consumption_w": 13.8
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "ip_rating": "IP66",
+  "features": [
+    "smart dual light: 30 m IR + 30 m warm light color night vision",
+    "outdoor motorized pan & tilt (Pan 0-345, Tilt 0-90)",
+    "sound and light (red & blue) active deterrence",
+    "AI human and vehicle detection, abnormal sound alarm",
+    "two-way talk, ONVIF (Profile S/G/T), microSD up to 256 GB, DMSS app"
+  ],
+  "release_year": 2025,
+  "release_notes": "The Dahua P3AS-PV is a 3MP outdoor Wi-Fi pan & tilt camera with motorized PT, AI human/vehicle detection, sound-and-light active deterrence and ONVIF support. Verified against the official Dahua datasheet.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/wireless-products/outdoor-cameras/picoo-series/p3as-pv",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/DH-P3AS-PV_S0_datasheet_20250228.pdf"
+  ],
+  "last_verified": "2026-09-07",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80); enable ONVIF/RTSP in the DMSS app."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile; use the RTSP URL above."
+    }
+  },
+  "dimensions_mm": "125.4 x 110 x 140.3",
+  "weight_g": 400,
+  "operating_temp_c": "-30 to 55",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x360",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": false
+}

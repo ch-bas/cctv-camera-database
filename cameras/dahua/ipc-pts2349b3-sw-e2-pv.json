@@ -1,0 +1,132 @@
+{
+  "id": "dahua-ipc-pts2349b3-sw-e2-pv",
+  "brand": "Dahua",
+  "model": "IPC-PTS2349B3-SW-E2-PV",
+  "aliases": [
+    "DH-IPC-PTS2349B3-SW-E2-PV",
+    "P3D-3F-PV-P",
+    "DH-P3D-3F-PV-P",
+    "Picoo P3D-3F-PV-P",
+    "3MP+3MP Dual-lens WizColor Wi-Fi Pan & Tilt Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "dual-lens",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "3MP + 3MP dual-lens"
+  },
+  "sensor": "1/2.9\" CMOS (dual)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "2.8 / 6",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "89 horizontal fixed lens; 52 horizontal PT lens",
+  "night_vision": {
+    "type": "color",
+    "range_m": 40
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3af)",
+    "voltage": "12 VDC",
+    "consumption_w": 11.1
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "ip_rating": "IP66",
+  "features": [
+    "dual-lens: 2.8 mm panoramic fixed lens + 6 mm motorized PT tracking lens",
+    "WizColor full-color night vision: 40 m warm light",
+    "auto-tracking with the PT lens, sound and light active deterrence",
+    "AI human and vehicle detection, 4-area motion detection, abnormal sound alarm",
+    "Wi-Fi (IEEE 802.11b/g/n 2.4 GHz) + RJ-45 ethernet (PoE 802.3af) + Bluetooth pairing",
+    "two-way talk, ONVIF (Profile S/G/T), microSD up to 256 GB, DMSS / DoLynk Cloud"
+  ],
+  "release_year": 2025,
+  "release_notes": "The Dahua IPC-PTS2349B3-SW-E2-PV (P3D-3F-PV-P) is a 3MP+3MP dual-lens outdoor Wi-Fi/PoE pan & tilt camera pairing a fixed panoramic lens with an auto-tracking PT lens, WizColor full-color night vision and active deterrence. Verified against the official Dahua datasheet.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/wireless-products/outdoor-cameras/picoo-series/ipc-pts2349b3-sw-e2-pv",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/IPC-PTS2349B3-SW-E2-PV_S0_datasheet_20250430.pdf"
+  ],
+  "last_verified": "2026-09-07",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80); enable ONVIF/RTSP in the DMSS app."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile; use the RTSP URL above."
+    }
+  },
+  "dimensions_mm": "159.4 x 119.1 x 210",
+  "weight_g": 585,
+  "operating_temp_c": "-30 to 50",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x360",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": false
+}

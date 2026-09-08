@@ -1,0 +1,93 @@
+{
+  "id": "dahua-ipc-hfw2549t-zas-il",
+  "brand": "Dahua",
+  "model": "IPC-HFW2549T-ZAS-IL",
+  "aliases": ["DH-IPC-HFW2549T-ZAS-IL"],
+  "type": "bullet",
+  "connectivity": ["ethernet"],
+  "power_source": ["poe", "dc"],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2960,
+    "max_height": 1668,
+    "label": "5MP"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5",
+    "aperture": "F1.5",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 60
+  },
+  "video": {
+    "codecs": ["H.265", "H.264", "MJPEG"],
+    "max_fps": 20,
+    "streams": [
+      { "name": "main", "resolution": "2960x1668", "fps": 20, "codec": "H.265" },
+      { "name": "sub", "resolution": "704x576", "fps": 25, "codec": "H.264" }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V",
+    "consumption_w": 12.7
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": ["onvif", "rtsp"],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "WizSense AI",
+    "Smart Dual Light (IR + warm light, up to 60m)",
+    "deep-learning human/vehicle classification",
+    "SMD",
+    "motorized varifocal",
+    "120dB WDR",
+    "1 audio in / 1 audio out"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "238.5 x 90.7 x 90.7",
+  "weight_g": 760,
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/network-cameras/ipc-hfw2549t-zas-il",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/82279/datasheet/IPC-HFW2549T-ZAS-IL_S0_datasheet_20250326.pdf"
+  ],
+  "markets": ["global"],
+  "last_verified": "2026-09-07",
+  "configs": {
+    "frigate": {
+      "detect": { "width": 640, "height": 480, "fps": 5 },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "environment": ["outdoor"],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ndaa_compliant": false
+}

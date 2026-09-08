@@ -1,0 +1,136 @@
+{
+  "id": "dahua-ipc-hdbw8241e-z5",
+  "brand": "Dahua",
+  "model": "IPC-HDBW8241E-Z5",
+  "aliases": [
+    "DH-IPC-HDBW8241E-Z5",
+    "2MP Starlight IR Vari-focal Dome AI Network Camera"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "7-35",
+    "aperture": "F1.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "34.45-10.68",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100
+  },
+  "power": {
+    "method": "DC 12V, AC 24V, PoE+ (802.3at) (Class 4)",
+    "consumption_w": 15.7
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "AI series (deep learning)",
+    "people counting (line crossing/region/loitering)",
+    "perimeter protection (tripwire/intrusion with human/vehicle classification)",
+    "5x motorized optical zoom (7-35 mm)",
+    "starlight low-light imaging",
+    "electronic image stabilization",
+    "Smart Codec (H.265+/H.264+)",
+    "140 dB WDR"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "159.1 x 117.9",
+  "weight_g": 1060,
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 29,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "last_verified": "2026-09-07",
+  "release_year": 2018,
+  "release_notes": "2MP starlight IR vari-focal vandal dome AI camera with a 7-35 mm F1.4 motorized 5x lens, 100 m IR, deep-learning people counting and perimeter protection and 140 dB WDR, rated IP67/IK10.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/network-cameras/ipc-hdbw8241e-z5",
+    "https://materialfile.dahuasecurity.com/uploads/soft/20181019/1.DH-IPC-HDBW8241E-Z5_Datasheet_201810191.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "id": "dahua-tpc-bf5600",
+  "brand": "Dahua",
+  "model": "TPC-BF5600",
+  "aliases": [
+    "Dahua TPC-BF5600",
+    "DH-TPC-BF5600"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 0.33,
+    "max_width": 640,
+    "max_height": 512,
+    "label": "640x512 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx microbolometer, 640x512, 17 um pixel pitch, 7-14 um, NETD <40 mK",
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "9 / 13 / 19 / 25 / 35 (thermal)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "power": {
+    "method": "AC 24V / DC 12V / PoE",
+    "consumption_w": 7,
+    "voltage": "DC 12V / AC 24V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128
+  },
+  "ip_rating": "IP67",
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "291 x 103 x 97",
+  "weight_g": 1370,
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "thermal-only bullet",
+    "uncooled VOx microbolometer (640x512), NETD <40 mK",
+    "athermalized focus-free thermal lens 9/13/19/25/35 mm",
+    "fire detection and alarm",
+    "tripwire, intrusion, object abandoned/missing (IVS)",
+    "2/1 alarm in/out"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/thermal-cameras/tpc-bf5600",
+    "https://materialfile.dahuasecurity.com/download/dh-tpc-bf5600_datasheet_20170707.pdf"
+  ],
+  "last_verified": "2026-09-07",
+  "release_notes": "Pro-series thermal-only bullet with a 640x512 uncooled VOx detector and interchangeable athermalized lenses; a non-thermography variant for perimeter and fire detection, powered over PoE, 12 VDC, or 24 VAC.",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua RTSP convention; thermal-only single channel. Not verified against a live unit."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80). Thermal-only single channel."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

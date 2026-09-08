@@ -1,0 +1,134 @@
+{
+  "id": "dahua-ipc-hdbw5659z-z4he-pv-pro",
+  "brand": "Dahua",
+  "model": "IPC-HDBW5659Z-Z4HE-PV-PRO",
+  "aliases": [
+    "DH-IPC-HDBW5659Z-Z4HE-PV-PRO"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3072,
+    "max_height": 2048,
+    "label": "6MP"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "8-32",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "41-15",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 80,
+    "min_lux_color": 0.0006
+  },
+  "power": {
+    "method": "12 VDC / PoE+ (802.3at) / ePoE"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "WizMind AI (Xinghan large-model vision)",
+    "motorized telephoto varifocal",
+    "80 m IR / 60 m warm light",
+    "130 dB WDR",
+    "window heating / defog",
+    "WizColor full-color low-light",
+    "Smart Dual Light (IR + warm)",
+    "red & blue active deterrence (siren + light)",
+    "SMD 4.0 human/vehicle detection",
+    "perimeter protection (IVS)",
+    "face detection",
+    "people counting",
+    "AcuPick",
+    "two-way audio"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "150 x 159 (diameter)",
+  "weight_g": 1400,
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3072x2048",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "last_verified": "2026-09-07",
+  "release_notes": "6MP WizColor vari-focal vandal dome in Dahua's WizMind 5 Pro line, with a motorized 8-32 mm F1.6 telephoto lens, Smart Dual Light (80 m IR plus 60 m warm light), red & blue active deterrence, 130 dB WDR, window heating and Xinghan large-model AI analytics.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/network-cameras/wizmind-5-series/pro/6mp/ipc-hdbw5659z-z4he-pv-pro",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/85575/datasheet/DH-IPC-HDBW5659Z-Z4HE-PV-PRO_S0_datasheet_20260725_English.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

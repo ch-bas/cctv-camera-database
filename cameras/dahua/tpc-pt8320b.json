@@ -1,0 +1,108 @@
+{
+  "id": "dahua-tpc-pt8320b",
+  "brand": "Dahua",
+  "model": "TPC-PT8320B",
+  "aliases": [
+    "Dahua TPC-PT8320B",
+    "DH-TPC-PT8320B"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 0.09,
+    "max_width": 336,
+    "max_height": 256,
+    "label": "336x256 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx microbolometer, 336x256, 17 um pixel pitch, 7-14 um, NETD <40 mK; optical: 1/1.9in Sony CMOS 2MP (1944x1092)",
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "100, 20-100 or 30-150 (thermal); visible zoom 24x / 30x / 40x / 62x (per lens option)",
+    "varifocal": true
+  },
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "100-300 VAC",
+    "consumption_w": 100,
+    "voltage": "100-300 VAC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128
+  },
+  "ip_rating": "IP66",
+  "operating_temp_c": "-35 to 65",
+  "dimensions_mm": "640 x 400 x 612",
+  "weight_g": 50000,
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "bi-spectrum thermal + visible long-range positioning system (336x256 thermal + 2MP visible)",
+    "uncooled VOx microbolometer, NETD <40 mK",
+    "long-range thermal lens options: 100 mm fixed, 20-100 mm or 30-150 mm motorized zoom; visible up to 62x zoom",
+    "pan 0 to 360 endless, tilt -45 to +60, 300 presets",
+    "fire detection and alarm",
+    "heavy-duty positioning platform (50 kg)",
+    "2/2 alarm in/out, RS-485"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/thermal-cameras/tpc-pt8320b",
+    "https://materialfile.dahuasecurity.com/download/DH-TPC-PT8320B_Datasheet_20170707.pdf"
+  ],
+  "last_verified": "2026-09-07",
+  "release_notes": "Ultra-series long-range thermal positioning system pairing a 336x256 uncooled VOx thermal channel (up to 150 mm motorized lens) with a high-zoom visible channel; a heavy-duty AC-mains platform for wide-area perimeter and fire detection.",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=2&subtype=0",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua RTSP convention; channel 1 = visible, channel 2 = thermal. Not verified against a live unit."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80). Thermal and visible exposed as separate channels; PTZ via ONVIF."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

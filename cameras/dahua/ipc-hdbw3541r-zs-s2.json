@@ -1,0 +1,134 @@
+{
+  "id": "dahua-ipc-hdbw3541r-zs-s2",
+  "brand": "Dahua",
+  "model": "IPC-HDBW3541R-ZS-S2",
+  "aliases": [
+    "DH-IPC-HDBW3541R-ZS-S2"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2960,
+    "max_height": 1668,
+    "label": "5MP"
+  },
+  "video": {
+    "max_fps": 20,
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2960x1668",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5",
+    "aperture": "F1.5",
+    "varifocal": true
+  },
+  "field_of_view_deg": "114-32",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40,
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3af)",
+    "consumption_w": 10.5
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "WizSense 3",
+    "motorized varifocal 2.7-13.5mm (5x optical)",
+    "40m IR",
+    "120dB WDR",
+    "starlight",
+    "SMD 4.0",
+    "perimeter protection (tripwire/intrusion, human/vehicle)",
+    "AI Coding (Smart H.265+)",
+    "built-in mic",
+    "electronic image stabilization (EIS)",
+    "AcuPick"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "94 x Diameter 122",
+  "weight_g": 713,
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": false,
+  "markets": [
+    "global"
+  ],
+  "release_notes": "5MP WizSense 3 motorized varifocal (2.7-13.5mm) IR vandal dome (IP67/IK10) with 40m IR, 120dB WDR, starlight sensor, SMD 4.0 and perimeter protection.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/network-cameras/ipc-hdbw3541r-zs-s2",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/IPC-HDBW3541R-ZS-S2_S2_datasheet_20240120.pdf"
+  ],
+  "last_verified": "2026-09-07",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

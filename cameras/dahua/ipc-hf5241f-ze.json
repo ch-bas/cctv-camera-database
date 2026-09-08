@@ -1,0 +1,89 @@
+{
+  "id": "dahua-ipc-hf5241f-ze",
+  "brand": "Dahua",
+  "model": "IPC-HF5241F-ZE",
+  "aliases": ["DH-IPC-HF5241F-ZE"],
+  "type": "box",
+  "connectivity": ["ethernet"],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "power": {
+    "method": "24 VAC / 12 VDC / PoE (802.3af) / ePoE",
+    "consumption_w": 8.8
+  },
+  "power_source": ["poe", "dc", "ac-mains"],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024
+  },
+  "protocols": ["onvif", "rtsp"],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "161.6 x 86.8 x 74.0",
+  "weight_g": 760,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "video": {
+    "codecs": ["H.265+", "H.265", "H.264+", "H.264", "MJPEG"],
+    "max_fps": 30,
+    "streams": [
+      { "name": "main", "resolution": "1920x1080", "fps": 30, "codec": "H.265" },
+      { "name": "sub", "resolution": "704x576", "fps": 30, "codec": "H.265" },
+      { "name": "third", "resolution": "1920x1080", "fps": 30, "codec": "H.265" },
+      { "name": "fourth", "resolution": "1280x720", "fps": 30, "codec": "H.265" }
+    ]
+  },
+  "features": [
+    "WizMind box camera, C/CS mount (lens sold separately)",
+    "2MP 1/2.8\" starlight sensor",
+    "Deeplight night vision",
+    "AI-ISP",
+    "SMD 3.0",
+    "Perimeter protection, video metadata, people counting, face detection",
+    "P-iris support",
+    "4 streams",
+    "ePoE",
+    "Alarm 2 in / 2 out, audio 2 in / 1 out, RS-485, BNC output",
+    "24 VAC / 12 VDC / PoE power, wide voltage"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/network-cameras/ipc-hf5241f-ze",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/IPC-HF5241F-ZE_S3_datasheet_20250311.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": { "width": 704, "height": 576, "fps": 5 },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "markets": ["global"],
+  "environment": ["indoor"],
+  "ndaa_compliant": false,
+  "last_verified": "2026-09-07"
+}

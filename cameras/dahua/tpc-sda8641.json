@@ -1,0 +1,105 @@
+{
+  "id": "dahua-tpc-sda8641",
+  "brand": "Dahua",
+  "model": "TPC-SDA8641",
+  "aliases": [
+    "Dahua TPC-SDA8641",
+    "DHI-TPC-SDA8641",
+    "DHI-TPC-SDA8641"
+  ],
+  "type": "ptz",
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 0.33,
+    "max_width": 640,
+    "max_height": 512,
+    "label": "640x512 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 640x512, 17 um pixel pitch, 8-14 um, NETD <35 mK; optical: 1/1.8in 4MP CMOS",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25
+  },
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "25 or 50 (thermal); 5.5-248 (visible, 45x)",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 250
+  },
+  "power": {
+    "method": "36 VDC/5A +/-25%",
+    "voltage": "DC 36V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512
+  },
+  "ip_rating": "IP66",
+  "operating_temp_c": "-40 to 65",
+  "dimensions_mm": "484.8 x 267 x 476.5",
+  "weight_g": 15900,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "dual-PTZ bi-spectrum positioning system with independently rotatable 640x512 thermal and 4MP visible channels",
+    "uncooled VOx thermal detector (640x512, 17 um), NETD <35 mK",
+    "thermal lens 25 / 50 mm; visible 45x optical zoom (5.5-248 mm)",
+    "IR illumination 250 m (optional 600 m); sound and white-light alarm to 200 m",
+    "thermal head pan 0 to +190 / tilt -5 to +180; visible head pan 0-360 / tilt -30 to +90; 300 presets",
+    "7 alarm in / 2 out"
+  ],
+  "release_notes": "Ultra-series dual-PTZ positioning system with independently steerable 640x512 thermal and 4MP 45x visible channels, 250 m IR and sound/white-light deterrence for long-range perimeter defence.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/thermal-products/thermal-cameras/ultra-series/tpc-sda8641",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/47277/datasheet/DHI-TPC-SDA8641_datasheet_20260730.pdf"
+  ],
+  "last_verified": "2026-09-07",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=2&subtype=0",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua RTSP convention; channel 1 = visible/fusion, channel 2 = thermal. Not verified against a live unit."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80). Thermal and visible exposed as separate channels (visible = channel 1, thermal = channel 2). PTZ via ONVIF."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

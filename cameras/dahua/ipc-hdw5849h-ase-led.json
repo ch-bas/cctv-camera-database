@@ -1,0 +1,95 @@
+{
+  "id": "dahua-ipc-hdw5849h-ase-led",
+  "brand": "Dahua",
+  "model": "IPC-HDW5849H-ASE-LED",
+  "aliases": ["DH-IPC-HDW5849H-ASE-LED"],
+  "type": "turret",
+  "connectivity": ["ethernet"],
+  "power_source": ["poe", "dc"],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP"
+  },
+  "sensor": "1/1.2\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "color",
+    "range_m": 50
+  },
+  "video": {
+    "codecs": ["H.265", "H.264", "MJPEG"],
+    "max_fps": 30,
+    "streams": [
+      { "name": "main", "resolution": "3840x2160", "fps": 30, "codec": "H.265" },
+      { "name": "sub", "resolution": "704x576", "fps": 25, "codec": "H.264" },
+      { "name": "third", "resolution": "1920x1080", "fps": 30, "codec": "H.265" }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V / ePoE",
+    "consumption_w": 7.9
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": ["onvif", "rtsp"],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "WizMind AI",
+    "full-color 24/7 (warm LED, up to 50m)",
+    "1/1.2\" large sensor",
+    "AcuPick",
+    "SMD 3.0",
+    "face detection",
+    "perimeter protection IVS",
+    "ePoE",
+    "140dB WDR"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "diameter 122 x 119.7",
+  "weight_g": 740,
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/network-cameras/ipc-hdw5849h-ase-led",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/IPC-HDW5849H-ASE-LED_S2_datasheet_20231212.pdf"
+  ],
+  "markets": ["global"],
+  "last_verified": "2026-09-07",
+  "configs": {
+    "frigate": {
+      "detect": { "width": 640, "height": 480, "fps": 5 },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "environment": ["outdoor"],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ndaa_compliant": false
+}

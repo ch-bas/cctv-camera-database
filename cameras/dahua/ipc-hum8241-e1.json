@@ -1,0 +1,130 @@
+{
+  "id": "dahua-ipc-hum8241-e1",
+  "brand": "Dahua",
+  "model": "IPC-HUM8241-E1",
+  "aliases": [
+    "DH-IPC-HUM8241-E1"
+  ],
+  "type": "covert",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "105h",
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.002
+  },
+  "power": {
+    "method": "12 VDC / PoE",
+    "consumption_w": 4.5,
+    "voltage": "12VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false,
+    "max_microsd_gb": 256
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "rtmp",
+    "http",
+    "p2p"
+  ],
+  "ip_rating": "IP67",
+  "features": [
+    "WizMind AI",
+    "Starlight sensor",
+    "Face detection",
+    "Perimeter protection (tripwire, intrusion)",
+    "SMD",
+    "WDR 120dB",
+    "Separated covert pinhole (main box)",
+    "Audio in/out",
+    "Alarm 2 in / 2 out",
+    "microSD up to 256GB"
+  ],
+  "operating_temp_c": "-40 to +60",
+  "dimensions_mm": "110 x 83 x 24",
+  "weight_g": 554,
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ndaa_compliant": false,
+  "markets": [
+    "global"
+  ],
+  "release_notes": "2MP covert separated-pinhole WizMind camera (main box); pairs with an optional IPC-HUM8241 lens unit (L1/L3/L4/L5, IP67 with L3). Starlight sensor, WDR 120 dB, WizMind AI. No built-in illuminator.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/network-cameras/ipc-hum8241-e1",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/IPC-HUM8241-E1_S0_datasheet_20240407.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "last_verified": "2026-09-07"
+}

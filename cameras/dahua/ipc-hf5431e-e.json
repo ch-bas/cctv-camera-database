@@ -1,0 +1,122 @@
+{
+  "id": "dahua-ipc-hf5431e-e",
+  "brand": "Dahua",
+  "model": "IPC-HF5431E-E",
+  "aliases": [
+    "DH-IPC-HF5431E-E",
+    "4MP WDR Box Network Camera"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/3\" 4MP CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "power": {
+    "method": "DC12V / AC24V / PoE (802.3af)",
+    "consumption_w": 8
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "two_way": true
+  },
+  "features": [
+    "4MP box camera with C/CS lens mount",
+    "built-in microphone",
+    "triple-stream H.265+ encoding",
+    "120 dB true WDR",
+    "day/night ICR, 3D DNR",
+    "IVS (tripwire, intrusion, object)",
+    "face detection",
+    "2 alarm in / 1 alarm out",
+    "BNC video output"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "135.4 x 74.4 x 65.5",
+  "weight_g": 660,
+  "environment": [
+    "indoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "last_verified": "2026-09-07",
+  "release_notes": "4MP Eco-savvy 3.0 box camera with a 1/3\" sensor and C/CS interchangeable lens mount, built-in mic, 120 dB WDR, triple-stream H.265+ encoding and PoE, for indoor use.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/network-cameras/ipc-hf5431e-e",
+    "https://materialfile.dahuasecurity.com/download/DH-IPC-HF5431E-_Datasheet_20170630.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

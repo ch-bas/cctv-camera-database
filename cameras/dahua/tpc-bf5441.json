@@ -1,0 +1,103 @@
+{
+  "id": "dahua-tpc-bf5441",
+  "brand": "Dahua",
+  "model": "TPC-BF5441",
+  "aliases": [
+    "Dahua TPC-BF5441",
+    "DHI-TPC-BF5441",
+    "DHI-TPC-BF5441"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 0.12,
+    "max_width": 400,
+    "max_height": 300,
+    "label": "400x300 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 400x300, 17 um pixel pitch, 8-14 um, NETD <=35 mK; optical: 4MP CMOS",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30
+  },
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "7.5, 13, 19, 25 or 35 (thermal); 4 / 6 / 12 or 10-30 (visible)",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "color",
+    "range_m": 80
+  },
+  "power": {
+    "method": "12 VDC +/-20% / PoE (802.3af) / PoE+ / ePoE",
+    "voltage": "DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512
+  },
+  "ip_rating": "IP67",
+  "operating_temp_c": "-30 to 70",
+  "dimensions_mm": "300.9 x 130.2 x 120.1",
+  "weight_g": 2350,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "bi-spectrum thermal 400x300 + 4MP visible hybrid bullet",
+    "uncooled VOx thermal detector (400x300, 17 um), NETD <=35 mK",
+    "thermal lenses 7.5 / 13 / 19 / 25 / 35 mm; detection to ~3157 m (35 mm)",
+    "white-light supplement up to 80 m",
+    "AI: heat detection, tripwire, intrusion, human/vehicle classification",
+    "PoE / PoE+ / ePoE; optical channel 4 MP (2688x1520)"
+  ],
+  "release_notes": "Hybrid thermal bullet pairing a 400x300 thermal channel with a 4MP visible channel and 80 m white-light supplement for mid-range perimeter protection.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/thermal-cameras/tpc-bf5441",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/DHI-TPC-BF5441_datasheet_20250421.pdf"
+  ],
+  "last_verified": "2026-09-07",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=2&subtype=0",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua RTSP convention; channel 1 = visible/fusion, channel 2 = thermal. Not verified against a live unit."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80). Thermal and visible exposed as separate channels (visible = channel 1, thermal = channel 2)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "ndaa_compliant": false
+}

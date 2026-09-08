@@ -1,0 +1,131 @@
+{
+  "id": "dahua-hy-ft431ldp-mb",
+  "brand": "Dahua",
+  "model": "HY-FT431LDP-MB",
+  "aliases": [
+    "DHI-HY-FT431LDP-MB"
+  ],
+  "type": "dual-lens",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "4",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "85h",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 15
+  },
+  "power": {
+    "method": "12 VDC / PoE",
+    "consumption_w": 3.0,
+    "voltage": "12VDC"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "Flame detection camera",
+    "Bi-spectrum thermal + visible",
+    "Thermal 120x90 (VOx uncooled, NETD <60mK)",
+    "Visible 4MP",
+    "Temperature measurement -10 to +200C",
+    "Flame detection distance 10m",
+    "IR 15m",
+    "Cold/hot spot alarm",
+    "Built-in mic and speaker"
+  ],
+  "operating_temp_c": "-10 to +55",
+  "dimensions_mm": "Ø109.9 x 90.1",
+  "weight_g": 350,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ndaa_compliant": false,
+  "markets": [
+    "global"
+  ],
+  "release_notes": "Flame-detection bi-spectrum eyeball camera pairing a 120x90 uncooled thermal sensor (NETD <60 mK) with a 4MP visible camera; flame detection to 10 m plus temperature and hot-spot alarms.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/fire-alarm/fire-safety-cameras/flame-detection-camera/hy-ft431ldp-mb",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/85147/datasheet/1417566076938.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "last_verified": "2026-09-07"
+}

@@ -1,0 +1,148 @@
+{
+  "id": "dahua-ipc-hfe8849f-z-pv-ac",
+  "brand": "Dahua",
+  "model": "IPC-HFE8849F-Z-PV-AC",
+  "aliases": [
+    "DH-IPC-HFE8849F-Z-PV-AC"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.264"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-12",
+    "aperture": "F1.2",
+    "varifocal": true
+  },
+  "field_of_view_deg": "96h",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 50,
+    "min_lux_color": 0.003
+  },
+  "power": {
+    "method": "100-240 VAC / PoE (802.3at)",
+    "consumption_w": 16.1,
+    "voltage": "100-240VAC"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "rtmp",
+    "http",
+    "p2p"
+  ],
+  "ip_rating": "IP68",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "WizMind AI",
+    "Explosion-proof (ATEX / IECEx, Ex db IIC T6)",
+    "NEMA 4X anti-corrosion",
+    "AC-mains powered (100-240 VAC)",
+    "Active deterrence (dual IR + warm light 50m)",
+    "WizColor hybrid",
+    "Sound & light alarm",
+    "Face detection",
+    "ANPR",
+    "PPE detection",
+    "People counting",
+    "Heat map",
+    "SMD 4.0",
+    "WDR 120dB",
+    "Two-way audio",
+    "microSD up to 512GB"
+  ],
+  "operating_temp_c": "-30 to +60",
+  "dimensions_mm": "276.5 x 154.5 x 173",
+  "weight_g": 4190,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ndaa_compliant": false,
+  "markets": [
+    "global"
+  ],
+  "release_notes": "8MP explosion-proof active-deterrence bullet WizMind camera, AC-mains (100-240 VAC) or PoE powered. Motorized 2.7-12mm F1.2 lens, dual IR + warm-light to 50 m, WizColor, full WizMind AI. IP68, ATEX/IECEx.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/network-products/explosion-proof/optical-series/ipc-hfe8849f-z-pv-ac",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/83379/datasheet/IPC-HFE8849F-Z-PV-AC_S0_datasheet_20250827.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "last_verified": "2026-09-07"
+}

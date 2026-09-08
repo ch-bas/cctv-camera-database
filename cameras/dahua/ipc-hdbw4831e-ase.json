@@ -1,0 +1,135 @@
+{
+  "id": "dahua-ipc-hdbw4831e-ase",
+  "brand": "Dahua",
+  "model": "IPC-HDBW4831E-ASE",
+  "aliases": [
+    "DH-IPC-HDBW4831E-ASE",
+    "8MP WDR IR Mini Dome Network Camera"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP"
+  },
+  "sensor": "1/2.5\" 8MP STARVIS CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F2.5",
+    "varifocal": false
+  },
+  "field_of_view_deg": "112",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "power": {
+    "method": "DC12V / PoE (802.3af)",
+    "consumption_w": 5.2
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "8MP STARVIS sensor",
+    "fixed 2.8 mm (4 mm optional) lens",
+    "triple-stream H.265+ encoding",
+    "120 dB true WDR",
+    "Smart IR (up to 30 m)",
+    "IVS (tripwire, intrusion, object)",
+    "face detection",
+    "ePoE",
+    "1 alarm in / 1 alarm out",
+    "audio in/out"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "109.9 x 109.9 x 81",
+  "weight_g": 410,
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 15,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "last_verified": "2026-09-07",
+  "release_notes": "8MP Eco-savvy 3.0 mini vandal dome with a 1/2.5\" STARVIS sensor, fixed 2.8 mm (4 mm optional) lens, 30 m Smart IR, 120 dB WDR and triple-stream H.265+ encoding, rated IP67/IK10 and -40 C rated.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/network-cameras/ipc-hdbw4831e-ase",
+    "https://materialfile.dahuasecurity.com/uploads/soft/20181108/DH-IPC-HDBW4831E-ASE_datasheet_201707041.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

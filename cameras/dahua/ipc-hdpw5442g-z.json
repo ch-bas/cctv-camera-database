@@ -1,0 +1,129 @@
+{
+  "id": "dahua-ipc-hdpw5442g-z",
+  "brand": "Dahua",
+  "model": "IPC-HDPW5442G-Z",
+  "aliases": [
+    "DH-IPC-HDPW5442G-Z",
+    "4MP WDR IR Corner Network Camera"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-12",
+    "aperture": "F1.8",
+    "varifocal": true
+  },
+  "field_of_view_deg": "114-47",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40
+  },
+  "power": {
+    "method": "DC 12V (±30%), PoE (802.3af) (Class 0)",
+    "consumption_w": 11
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "features": [
+    "WizMind AI",
+    "face detection with attributes",
+    "perimeter protection (tripwire/intrusion)",
+    "people counting (line crossing/region/queueing)",
+    "heat map",
+    "object abandoned/missing detection",
+    "140 dB WDR",
+    "corner/elevator mount",
+    "3D DNR"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "180.5 x 131.4",
+  "weight_g": 510,
+  "environment": [
+    "indoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 16,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "last_verified": "2026-09-07",
+  "release_year": 2019,
+  "release_notes": "4MP WDR IR corner/elevator WizMind network camera with a 2.7-12 mm F1.8 motorized varifocal lens, 40 m IR, 140 dB WDR and AI including face detection and people counting.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/network-cameras/ipc-hdpw5442g-z",
+    "https://materialfile.dahuasecurity.com/uploads/soft/20191108/DH-IPC-HDPW5442G-Z_datasheet_20191015.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}

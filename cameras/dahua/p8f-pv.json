@@ -1,0 +1,128 @@
+{
+  "id": "dahua-p8f-pv",
+  "brand": "Dahua",
+  "model": "P8F-PV",
+  "aliases": [
+    "DH-P8F-PV",
+    "Picoo P8F-PV",
+    "8MP Outdoor WizColor Wi-Fi Pan & Tilt Network Camera"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "82.9 horizontal",
+  "night_vision": {
+    "type": "color",
+    "range_m": 30
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "12 VDC",
+    "voltage": "12 VDC",
+    "consumption_w": 9
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "ip_rating": "IP66",
+  "features": [
+    "WizColor full-color night vision: 30 m warm light",
+    "outdoor motorized pan & tilt (Pan 0-345, Tilt 0-90)",
+    "sound and light (red & blue) active deterrence",
+    "AI human and vehicle detection, abnormal sound alarm",
+    "two-way talk, ONVIF (Profile S/G/T), microSD up to 512 GB, DMSS app"
+  ],
+  "release_year": 2025,
+  "release_notes": "The Dahua P8F-PV is a 8MP outdoor Wi-Fi pan & tilt camera with motorized PT, AI human/vehicle detection, sound-and-light active deterrence and ONVIF support. Verified against the official Dahua datasheet.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/wireless-products/outdoor-cameras/picoo-series/p8f-pv",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/P8F-PV_S0_datasheet_20250429.pdf"
+  ],
+  "last_verified": "2026-09-07",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80); enable ONVIF/RTSP in the DMSS app."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile; use the RTSP URL above."
+    }
+  },
+  "dimensions_mm": "153.5 x 129.3",
+  "weight_g": 600,
+  "operating_temp_c": "-30 to 55",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 15,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x360",
+        "fps": 15,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": false
+}

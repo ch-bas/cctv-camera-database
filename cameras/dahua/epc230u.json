@@ -1,0 +1,135 @@
+{
+  "id": "dahua-epc230u",
+  "brand": "Dahua",
+  "model": "EPC230U",
+  "aliases": [
+    "DH-EPC230U"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "ac-mains",
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.8\" STARVIS CMOS",
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub2",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.5-135 (30x optical zoom)",
+    "aperture": "F1.6-F4.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "67.8-2.4 (wide-tele)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100,
+    "min_lux": 0.0005,
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "AC 100-240V / Hi-PoE",
+    "voltage": "AC 220V",
+    "consumption_w": 25
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP68",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "explosion-proof (ATEX II 2 G Ex db IIC T6 Gb, II 2 D Ex tb IIIC T80 Db; IECEx Ex db IIC T6 Gb, Ex tb IIIC T80 Db)",
+    "304 stainless-steel anti-corrosion housing",
+    "30x optical zoom",
+    "16x digital zoom",
+    "fixed explosion-proof zoom bullet (no pan/tilt)",
+    "100m IR",
+    "Starlight low-light",
+    "PFA auto-focus",
+    "H.265+"
+  ],
+  "dimensions_mm": "396.1 x 149.5 x 143",
+  "weight_g": 8700,
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/explosion-proof-&-anti-corrosion/epc230u",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/10671/datasheet/EPC230U.pdf"
+  ],
+  "last_verified": "2026-09-07",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 576,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua realmonitor RTSP; ONVIF on port 80."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ndaa_compliant": false
+}

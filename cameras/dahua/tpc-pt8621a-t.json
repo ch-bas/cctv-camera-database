@@ -1,0 +1,113 @@
+{
+  "id": "dahua-tpc-pt8621a-t",
+  "brand": "Dahua",
+  "model": "TPC-PT8621A-T",
+  "aliases": [
+    "Dahua TPC-PT8621A-T",
+    "DH-TPC-PT8621A-T",
+    "DHI-TPC-PT8621A-T"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 0.33,
+    "max_width": 640,
+    "max_height": 512,
+    "label": "640x512 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 640x512, 17 um pixel pitch, 8-14 um, NETD <=40 mK; optical: 1/2.8in CMOS 2MP",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "25 / 35 / 50 / 100 (thermal); optical 6.6-330 (50x zoom)",
+    "aperture": "F1.0 (thermal 25-50mm), F1.4 (100mm)",
+    "varifocal": true
+  },
+  "power": {
+    "method": "30-48 VDC",
+    "consumption_w": 65,
+    "voltage": "DC 30-48V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256
+  },
+  "ip_rating": "IP66",
+  "operating_temp_c": "-40 to 70",
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100
+  },
+  "features": [
+    "bi-spectrum thermal + visible positioning system",
+    "uncooled VOx thermal detector (640x512)",
+    "thermal sensitivity NETD <=40 mK",
+    "optical channel: 2 MP (1920x1080), 50x optical zoom, 16x digital",
+    "temperature measurement -20 to 150 C (low) / 0 to 550 C (high), accuracy Max (+/-2 C, +/-2%)",
+    "spot/line/area temperature measurement (12 rules)",
+    "pan 0-360 endless, tilt -45 to +90, 300 presets, 8 tour / 5 pattern / 5 scan",
+    "auto-tracking",
+    "electronic image stabilization",
+    "fire detection & alarm, cold/hot spot trace",
+    "IR illumination 100 m"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/thermal-cameras/tpc-pt8621a-t",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/DH-TPC-PT8621A-T_datasheet_20200901.pdf"
+  ],
+  "last_verified": "2026-09-07",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=2&subtype=0",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua RTSP convention; channel 1 = visible/fusion, channel 2 = thermal. Not verified against a live unit."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80). Thermal and visible exposed as separate channels (channel 1 visible, channel 2 thermal)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "ndaa_compliant": false,
+  "audio": {
+    "microphone": true,
+    "speaker": true
+  },
+  "dimensions_mm": "502.8 x 248.4 x 344.6",
+  "weight_g": 15000,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  }
+}

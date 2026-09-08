@@ -1,0 +1,125 @@
+{
+  "id": "dahua-ipc-hf8242f-fd",
+  "brand": "Dahua",
+  "model": "IPC-HF8242F-FD",
+  "aliases": [
+    "DH-IPC-HF8242F-FD"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "power": {
+    "method": "DC12V, AC24V, PoE (802.3af)(Class 0)",
+    "voltage": "12VDC",
+    "consumption_w": 10
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to +60",
+  "dimensions_mm": "161.6 x 85.5 x 74.0",
+  "weight_g": 780,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "environment": [
+    "indoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 60,
+        "codec": "H.264"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "features": [
+    "2MP Starlight",
+    "C/CS mount (lens not included)",
+    "Built-in mic",
+    "WDR 140dB",
+    "Starlight 0.001 lux",
+    "Alarm I/O",
+    "microSD 128GB"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/network-cameras/ipc-hf8242f-fd",
+    "https://materialfile.dahuasecurity.com/uploads/soft/20190219/DH-IPC-HF8242F-FD_Datasheet-20190218.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "last_verified": "2026-09-07"
+}

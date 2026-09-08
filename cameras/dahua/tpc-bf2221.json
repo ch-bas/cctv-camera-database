@@ -1,0 +1,108 @@
+{
+  "id": "dahua-tpc-bf2221",
+  "brand": "Dahua",
+  "model": "TPC-BF2221",
+  "aliases": [
+    "Dahua TPC-BF2221",
+    "DH-TPC-BF2221",
+    "DHI-TPC-BF2221"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 0.05,
+    "max_width": 256,
+    "max_height": 192,
+    "label": "256x192 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 256x192, 12 um pixel pitch, 8-14 um, NETD <=50 mK; optical: 1/2.8in CMOS 2MP",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "3.5 / 7 (thermal); optical 4 / 8",
+    "aperture": "F1.0 (thermal)",
+    "varifocal": false
+  },
+  "power": {
+    "method": "12 VDC / PoE / ePoE",
+    "consumption_w": 12,
+    "voltage": "DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256
+  },
+  "ip_rating": "IP67",
+  "operating_temp_c": "-30 to 60",
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "field_of_view_deg": "50.6",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50
+  },
+  "features": [
+    "bi-spectrum thermal + visible bullet (surveillance, no temperature measurement)",
+    "uncooled VOx thermal detector (256x192)",
+    "thermal sensitivity NETD <=50 mK",
+    "optical channel: 2 MP (1920x1080)",
+    "IR illumination 35 m (4mm) / 50 m (8mm)",
+    "athermalized focus-free thermal lens",
+    "fire detection & alarm, cold/hot spot trace",
+    "IVS tripwire / intrusion"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/thermal-cameras/tpc-bf2221",
+    "https://materialfile.dahuasecurity.com/uploads/soft/20190415/DH-TPC-BF2221_Datasheet.pdf"
+  ],
+  "last_verified": "2026-09-07",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=2&subtype=0",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua RTSP convention; channel 1 = visible/fusion, channel 2 = thermal. Not verified against a live unit."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80). Thermal and visible exposed as separate channels (channel 1 visible, channel 2 thermal)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "ndaa_compliant": false,
+  "audio": {
+    "microphone": true,
+    "speaker": true
+  },
+  "dimensions_mm": "279.9 x 103.8 x 95.8",
+  "weight_g": 1400,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
+}

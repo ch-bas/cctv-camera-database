@@ -1,0 +1,96 @@
+{
+  "id": "dahua-ipc-hfw3549t1-zas-pv",
+  "brand": "Dahua",
+  "model": "IPC-HFW3549T1-ZAS-PV",
+  "aliases": ["DH-IPC-HFW3549T1-ZAS-PV"],
+  "type": "bullet",
+  "connectivity": ["ethernet"],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2960,
+    "max_height": 1668,
+    "label": "5MP"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5",
+    "aperture": "F1.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "113-36h",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 50
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3af)",
+    "consumption_w": 9.2
+  },
+  "power_source": ["poe", "dc"],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512
+  },
+  "protocols": ["onvif", "rtsp"],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "288.4 x 94.4 x 84.7",
+  "weight_g": 1050,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "video": {
+    "codecs": ["H.265+", "H.265", "H.264+", "H.264", "MJPEG"],
+    "max_fps": 20,
+    "streams": [
+      { "name": "main", "resolution": "2960x1668", "fps": 20, "codec": "H.265" },
+      { "name": "sub", "resolution": "704x576", "fps": 25, "codec": "H.265" },
+      { "name": "third", "resolution": "1920x1080", "fps": 30, "codec": "H.265" }
+    ]
+  },
+  "features": [
+    "WizSense 3 Series 5MP motorized varifocal bullet",
+    "Smart Dual Light: IR up to 50m + warm light up to 40m",
+    "WizColor / full-color",
+    "SMD 4.0",
+    "AcuPick",
+    "Perimeter protection with human/vehicle classification",
+    "Siren and light active deterrence (red/blue)",
+    "Built-in dual mic + speaker, two-way talk",
+    "Alarm 1 in / 1 out",
+    "AI H.265 / H.264, Smart H.265+ / H.264+",
+    "IP67"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/network-cameras/ipc-hfw3549t1-zas-pv",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/DH-IPC-HFW3549T1-ZAS-PV_S5_datasheet_20250729.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": { "width": 704, "height": 576, "fps": 5 },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "markets": ["global"],
+  "environment": ["outdoor"],
+  "ndaa_compliant": false,
+  "last_verified": "2026-09-07"
+}

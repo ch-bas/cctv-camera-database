@@ -1,0 +1,132 @@
+{
+  "id": "dahua-ipc-hdw5241tm-as",
+  "brand": "Dahua",
+  "model": "IPC-HDW5241TM-AS",
+  "aliases": [
+    "DH-IPC-HDW5241TM-AS",
+    "2MP WDR IR Eyeball AI Network Camera"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.8\" STARVIS CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "106",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50
+  },
+  "power": {
+    "method": "DC 12V (±30%), PoE (802.3af) (Class 0)",
+    "consumption_w": 6.8
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true
+  },
+  "features": [
+    "WizMind AI (starlight)",
+    "face detection",
+    "perimeter protection (tripwire/intrusion/loitering/parking)",
+    "people counting",
+    "heat map",
+    "120 dB WDR",
+    "built-in microphone",
+    "available with 2.8/3.6/6 mm lenses"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "106 x 93.6",
+  "weight_g": 550,
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 6,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "last_verified": "2026-09-07",
+  "release_year": 2019,
+  "release_notes": "2MP STARVIS WDR IR eyeball WizMind AI camera with an F1.6 fixed lens, 50 m IR, built-in microphone and 120 dB WDR, rated IP67.",
+  "sources": [
+    "https://www.dahuasecurity.com/products/discontinued-products/network-cameras/ipc-hdw5241tm-as",
+    "https://materialfile.dahuasecurity.com/uploads/soft/20191108/DH-IPC-HDW5241TM-AS_Datasheet_20191031.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  }
+}
