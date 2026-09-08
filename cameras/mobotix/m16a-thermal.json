@@ -1,0 +1,114 @@
+{
+  "id": "mobotix-m16a-thermal",
+  "brand": "Mobotix",
+  "model": "M16A Thermal",
+  "ndaa_compliant": true,
+  "aliases": [
+    "Mx-M16A-TR",
+    "Mx-M16TA-R",
+    "MOBOTIX M16A Thermal",
+    "M16A Thermal TR"
+  ],
+  "type": "dual-lens",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.08,
+    "label": "336x252 thermal",
+    "max_width": 336,
+    "max_height": 252
+  },
+  "sensor": "Uncooled microbolometer 336x252, 17 um pixel pitch, IR 7.5-13.5 um, NETD typ. 50 mK; optional second 1/1.8\" 6MP CMOS optical module (3072x2048)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "Germanium thermal lens (45/25/17 deg options) + optional interchangeable 6MP optical module",
+    "varifocal": false
+  },
+  "field_of_view_deg": "thermal 45/32, 25/19 or 17/13",
+  "power": {
+    "method": "PoE (IEEE 802.3af) Class 3",
+    "consumption_w": 9,
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "Internal microSD, 4 GB as standard"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http",
+    "mxpeg"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK06",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "MOBOTIX Mx6 platform",
+    "bispectral thermal + optional 6MP optical dual system",
+    "uncooled microbolometer 336x252",
+    "NETD 50 mK",
+    "Thermal Radiometry (TR): temperature measurement -40 to 550 C",
+    "thermal overlay / hotspot localization",
+    "MxActivitySensor works in total darkness",
+    "MxPEG codec",
+    "microphone + speaker",
+    "edge microSD recording",
+    "weatherproof IP66"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "244 x 158 x 239",
+  "weight_g": 1320,
+  "sources": [
+    "https://www.mobotix.com/en/support/download-center/documentation/technical-data-sheets",
+    "https://www.mobotix.com/sites/default/files/2023-08/Mx_TS_M16ATR_V1.09_EN.pdf"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "verified": false,
+      "notes": "MOBOTIX Mx6 supports ONVIF S + RTSP; add via ONVIF. Legacy MxPEG codec by default, switch to H.264 for Frigate."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Add via ONVIF integration; enable H.264 stream in the camera."
+    },
+    "blue_iris": {
+      "profile": "Mobotix",
+      "notes": "Select 'Mobotix' profile. Uses MxPEG by default; switch to H.264 in camera settings."
+    }
+  },
+  "last_verified": "2026-09-08",
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ]
+}

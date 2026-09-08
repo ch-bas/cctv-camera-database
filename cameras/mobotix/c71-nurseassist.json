@@ -1,0 +1,106 @@
+{
+  "id": "mobotix-c71-nurseassist",
+  "brand": "Mobotix",
+  "model": "c71 NurseAssist",
+  "aliases": [
+    "Mx-c71B-NurseAssist",
+    "MOBOTIX c71 NurseAssist",
+    "MOBOTIX c71 NurseAssist powered by Kepler Vision Technologies"
+  ],
+  "ndaa_compliant": true,
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 4.6,
+    "max_width": 2144,
+    "max_height": 2144,
+    "label": "4K (1:1)"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "H.265",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2144x2144",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "4K hemispheric (1:1)",
+  "field_of_view_deg": "180h",
+  "night_vision": {
+    "type": "ir"
+  },
+  "power": {
+    "method": "PoE+ 802.3at",
+    "consumption_w": 25,
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "MOBOTIX 7 platform",
+    "Kepler NurseAssist AI fall / bed-leaving detection",
+    "privacy-preserving GDPR-compliant analytics",
+    "4K hemispheric 360 degree optical sensor",
+    "integrated IR (850nm)",
+    "MxPEG+ support",
+    "Certified Apps",
+    "WDR up to 120 dB",
+    "1TB microSD edge storage"
+  ],
+  "operating_temp_c": "-10 to 50",
+  "dimensions_mm": "164 x 47.5 (dia x H)",
+  "weight_g": 765,
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "sources": [
+    "https://www.mobotix.com/en/support/download-center/documentation/technical-data-sheets",
+    "https://www.mobotix.com/sites/default/files/2026-06/Mx_TS_c71_NurseAssist_V2.19_EN.pdf"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/mobotix.pro/mxpeg",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "MOBOTIX 7 platform; supports ONVIF Profile G/S/T and RTSP. Edge recording is MxPEG+ only; for Frigate switch stream to H.264/H.265 or use ONVIF. NurseAssist analytics require the Kepler app license."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration. Two-way audio supported (integrated mic + speaker)."
+    }
+  },
+  "markets": [
+    "global"
+  ]
+}

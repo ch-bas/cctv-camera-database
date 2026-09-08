@@ -6,9 +6,23 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
-## [2.16.0] — 2026-09-06
+## [2.16.0] — 2026-09-08
 
-Dataset grows to **9,209 cameras / 136 brands** — the complete **Hikvision Thermal** catalogue (+247) with a new thermal brand **HikMicro**, and a full sweep of the **Dahua camera catalogue** (+374 across Network, PTZ, PT, HDCVI, Thermal, and Wireless). Every record is from an official manufacturer datasheet; thermal-specific modeling matches the existing convention (`resolution` = thermal module, NETD in `sensor`, bi-spectrum → two lenses).
+Dataset grows to **10,774 cameras / 136 brands** — the largest single release yet (~+2,190). Highlights: the complete **Hikvision Thermal** catalogue (+247) with a new thermal brand **HikMicro**; a **full sweep of the entire Dahua camera catalogue** (~+990 across Network, PTZ, PT, HDCVI, Thermal, Wireless, and project-exclusive) built by reverse-engineering Dahua's download-centre catalogue API; a **near-complete ACTi refresh** (+280) pulled from ACTi's spec API; and a **Mobotix expansion** (+89, ONE / 7 / MOVE / legacy lines). Every record is from an official manufacturer datasheet or spec API; thermal-specific modeling matches the existing convention (`resolution` = thermal module, NETD in `sensor`, bi-spectrum → two lenses).
+
+### Added — ACTi refresh (+280)
+- Near-complete sweep of ACTi's current + legacy camera catalogue, pulled from ACTi's spec API (`newPopupSpecifications*.ashx`): the A/B/D/E/I/K/Q/Z bullet/dome/turret/box/fisheye lines, zoom bullets & domes, hemispherics, PTZ (incl. laser-IR ALPR), bispectral thermal (K371/K372/A37x/A57x), covert pinhole (Q112), body-worn (PCAM), and parking domes. Non-cameras (encoders, NVRs, access-control readers, accessories) filtered out.
+- **`ndaa_compliant` is per-model**, sourced from ACTi's official NDAA list (acti.com/products/ndaa): the enumerated models are `true` (and carry `markets: ["global","US"]`); all others `false`. ACTi builds with trusted Taiwan/Japan/US components + a proprietary A1 SoC.
+- Every record independently **re-verified** (double-fetch + spec self-consistency) after a race condition in ACTi's spec endpoint was found to cross-contaminate concurrent requests — ~34 records were corrected or dropped as a result.
+
+### Added — Mobotix expansion (+89)
+- The MOBOTIX **ONE** (c1A-S/M1A-S/S1A-D + NurseAssist), **7** thermal/EN54-fire variants (p71 ECO Thermal, M73/S74 EN54), **16/26/25/15** legacy MxPEG dual-sensor lines (hemispheric, dual-lens, vandal, door stations), and the **MOVE** OEM line (VB bullets, VD/MD domes, VT turrets, SD speed-dome PTZ, VM/VMSD/VH multisensor). German-made (Konica Minolta group) → `ndaa_compliant: true`. MxPEG recorded as a feature, never a codec value.
+
+### Added — Dahua full-catalogue sweep (~+990 total)
+- Beyond the WizMind-5 and initial catalogue additions below, a complete sweep of the current **and discontinued** Dahua camera catalogue via the download-centre API: hundreds more Network IP (WizMind 5/7/8, WizSense 2/3, EZ-IP, anti-corrosion, box, fisheye, panoramic, ANPR, people-counting, NightHawk full-colour), HDCVI analog (Lite/Pro/full-colour/4K/PoC/active-deterrence), thermal (TPC), consumer wire-free (Apollo/Hero/Picoo), and **project-exclusive new-hardware** models (WizMind-9 `IPC-H*W9442H/9842H-MN`, the D-A1 line, thermal/positioning), region-locked SKUs tagged to their market (Mongolia/Turkey/Peru/Georgia).
+
+### Changed — data quality
+- Backfilled minimum-illumination (`night_vision.min_lux` / `min_lux_color`) on 256 Dahua records from their datasheet spec rows (skipping the `0 lux (IR on)` sentinel; no values fabricated).
 
 ### Added — new brand: HikMicro (+86)
 - **HikMicro (`HM-*`)** — Hikvision's dedicated thermal sub-brand (datasheets are HIKMICRO-branded). The full security-thermal line: bi-spectrum bullets & turrets (thermal + optical, IR / smart-hybrid supplement), thermal-only presence detectors, cube (`box`) units, `TX` TandemVu (thermal bullet + integrated optical speed dome), and the high-end positioning range — anti-corrosion `TD6`, uncooled `TD95C8` (1280×1024, 3 km laser illuminator), and **cooled MWIR** `TD816A`/`TD966A` spheres with 1535/1570 nm laser rangefinders to 10–20 km. `ndaa_compliant: false` (Hikvision sub-brand, Section 889).

@@ -1,0 +1,94 @@
+{
+  "id": "acti-d91",
+  "brand": "ACTi",
+  "model": "D91",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 1,
+    "max_width": 1280,
+    "max_height": 800,
+    "label": "1MP"
+  },
+  "sensor": "1/4\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.93 (fixed)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "72 horizontal / 38.2 vertical",
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.1
+  },
+  "power": {
+    "method": "PoE Class 2 (IEEE802.3af); 6 W (PoE)",
+    "consumption_w": 6
+  },
+  "power_source": [
+    "poe"
+  ],
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "dimensions_mm": "110 diameter x 58",
+  "weight_g": 200,
+  "operating_temp_c": "-10 to 50",
+  "ik_rating": "IK08",
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "features": [
+    "color-only (no day/night, no IR)",
+    "3-axis viewing angle adjustment (pan +/-90, tilt 0-90)",
+    "vandal resistant (IK08)",
+    "server-based analytics: People Counting, Face Detection, Object Line Crossing, Tamper, Heat Map",
+    "ONVIF Compliant: Profile S, Profile G, Profile Q"
+  ],
+  "sources": [
+    "https://www.acti.com/product/D91?tab=specifications"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  },
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false
+}

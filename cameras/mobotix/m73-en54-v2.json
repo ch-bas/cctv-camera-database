@@ -1,0 +1,126 @@
+{
+  "id": "mobotix-m73-en54-v2",
+  "brand": "Mobotix",
+  "model": "MOBOTIX M73 EN54 Bundle-V2",
+  "ndaa_compliant": true,
+  "aliases": [
+    "Mx-M73TA-EN54-V2",
+    "Mx-M73TA-BxxxRxxx-EN54",
+    "M73 EN54 Bundle-V2"
+  ],
+  "type": "dual-lens",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "label": "4K UHD optical + thermal 336x256/640x480",
+    "max_width": 3840,
+    "max_height": 2160
+  },
+  "sensor": "Optical up to 4K UHD 3840x2160 1/1.8\"; thermal uncooled microbolometer 336x256 / VGA 640x480, NETD typ. 50 mK, 17 um pixel pitch, spectral 7.5-13.5 um",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "Interchangeable thermal + optical sensor modules",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "PoE Plus (802.3at) Class 4 / 24 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-40 to 65",
+  "dimensions_mm": "228 x 153 x 232 (h x w x d)",
+  "weight_g": 2700,
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "thermal",
+        "resolution": "640x480",
+        "codec": "H.265"
+      }
+    ]
+  },
+  "features": [
+    "MOBOTIX 7 platform with app support",
+    "EN 54-10 certified early fire detection",
+    "FM 3260 approved thermal",
+    "bispectral thermal + optional optical sensor",
+    "thermal 336x256 / VGA 640x480 uncooled microbolometer",
+    "thermal NETD typ. 50 mK, 17 um pixel pitch",
+    "temperature measurement -40 to 550 C (adjustable)",
+    "up to 20 simultaneous measuring windows",
+    "MxThermalValidation / MxAdvancedRadiometry apps",
+    "WDR up to 120 dB",
+    "MxPEG / H.265, MxFFS edge storage up to 2 TB",
+    "integrated microphone and speaker (Multisense)",
+    "IP66 / IK10, weatherproof"
+  ],
+  "sources": [
+    "https://www.mobotix.com/en/support/download-center/documentation/technical-data-sheets",
+    "https://www.mobotix.com/sites/default/files/2026-06/Mx_TS_Mx-M73TA-EN54-V2_V2.05_EN_20260623.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/cam0/stream",
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Add via ONVIF integration (Profile G/S/T). Mobotix default RTSP path may vary; confirm the stream path in the camera web UI."
+    }
+  },
+  "last_verified": "2026-09-08",
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ]
+}

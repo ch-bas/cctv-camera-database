@@ -1,0 +1,107 @@
+{
+  "id": "acti-z34",
+  "brand": "ACTi",
+  "model": "Z34",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/3\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "99.8 horizontal / 56 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40,
+    "min_lux_color": 0.03
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1520",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "power": {
+    "method": "DC 12V, PoE Class 3 (IEEE802.3af)",
+    "consumption_w": 6.4,
+    "poe_class": 3
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP68",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "62.67 x 62.48 x 160.65",
+  "weight_g": 450,
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "Superior WDR (120 dB)",
+    "day/night with mechanical IR cut filter",
+    "adaptive IR LED (850 nm), IR working distance 40 m",
+    "2D + 3D DNR",
+    "analytics: tampering detection, intrusion (forbidden area) detection",
+    "ONVIF Profile S/T",
+    "PoE (IEEE802.3af)",
+    "weatherproof (IP68, NEMA 4X), vandal-resistant metal casing (IK10)"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.acti.com/product/Z34",
+    "https://www.acti.com/product/Z34?tab=specifications"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  },
+  "ndaa_compliant": false
+}

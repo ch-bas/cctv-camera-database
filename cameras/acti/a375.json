@@ -1,0 +1,109 @@
+{
+  "id": "acti-a375",
+  "brand": "ACTi",
+  "model": "A375",
+  "type": "dual-lens",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "4.0 (visual, fixed) / 6.5 (thermal, fixed)",
+    "aperture": "F1.6 (visual) / F1.0 (thermal)",
+    "varifocal": false
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS + Thermal sensor",
+  "field_of_view_deg": "84.4 horizontal / 51.1 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40,
+    "min_lux_color": 0.0089
+  },
+  "power": {
+    "method": "DC 12V, AC 24V, PoE Class 3 (IEEE802.3af); 9.5 W (DC), 9.5 W (AC), 10 W (PoE)",
+    "consumption_w": 10
+  },
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "features": [
+    "ACTi A-Series bispectral thermal bullet",
+    "bispectral: optical 2688x1520 + thermal 384x288",
+    "thermal sensor: NETD <35mK at F1.0, 8-14 um, 17 um pixel pitch",
+    "temperature measurement: -20 to 550 C (accuracy +/-2 C, +/-2%)",
+    "Superior WDR (120 dB)",
+    "day/night (mechanical IR-cut filter)",
+    "3D DNR",
+    "deep-learning AI 1.0: intrusion, fire, smoke, temperature detection",
+    "adaptive IR LED (40 m)",
+    "ONVIF Profile G",
+    "weatherproof (IP68), vandal-resistant (IK10)"
+  ],
+  "ip_rating": "IP68",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-40 to 65",
+  "sources": [
+    "https://www.acti.com/product/A375?tab=specifications"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  },
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false
+}

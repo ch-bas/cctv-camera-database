@@ -1,0 +1,96 @@
+{
+  "id": "acti-d31",
+  "brand": "ACTi",
+  "model": "D31",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 1,
+    "max_width": 1280,
+    "max_height": 800,
+    "label": "1MP"
+  },
+  "sensor": "1/4\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.2 (fixed)",
+    "aperture": "F1.8",
+    "varifocal": false
+  },
+  "field_of_view_deg": "55.9 horizontal / 31.7 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux_color": 0.1
+  },
+  "power": {
+    "method": "PoE Class 2 (IEEE802.3af); 3.77 W (PoE, IR on)",
+    "consumption_w": 3.77
+  },
+  "power_source": [
+    "poe"
+  ],
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "77 diameter x 176",
+  "weight_g": 578,
+  "operating_temp_c": "-40 to 50",
+  "ip_rating": "IP66",
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "features": [
+    "adaptive IR LED x1 (850 nm), 20 m range",
+    "fixed lens, fixed iris",
+    "weatherproof (IP66)",
+    "Standard IoT Security (anti-hacking, anti-malware)",
+    "server-based analytics: People Counting, Face Detection, Object Line Crossing, ALPR, Tamper, Heat Map",
+    "ONVIF Compliant: Profile S, Profile Q"
+  ],
+  "sources": [
+    "https://www.acti.com/product/D31?tab=specifications"
+  ],
+  "last_verified": "2026-09-08",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  },
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false
+}
