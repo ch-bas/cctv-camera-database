@@ -1,0 +1,104 @@
+{
+  "id": "sparsh-sc-it6420-hb",
+  "brand": "Sparsh",
+  "model": "SC-IT6420-HB",
+  "aliases": [
+    "SC-IT6420-HB V2",
+    "Dual Sensor IP Thermal Camera"
+  ],
+  "type": "dual-lens",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p (visible)"
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "Visible: 1/2.8\" CMOS; Thermal: vanadium-oxide uncooled focal-plane microbolometer",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "4 (visible) / 13 (thermal, optional 19/35/60)",
+    "varifocal": false
+  },
+  "power": {
+    "method": "12VDC / PoE",
+    "consumption_w": 5
+  },
+  "storage": {
+    "onboard": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "features": [
+    "dual-sensor thermal + visible-light fusion",
+    "uncooled microbolometer, spectral response 8-14 micron",
+    "thermal resolution options 256x192 / 384x288 / 640x512",
+    "NETD less than 0.04C at F1.0",
+    "body-surface temperature measurement / fever screening",
+    "temperature measurement range -20 to 650C, accuracy +/-2C",
+    "high/low temperature alarm with buzzer and light linkage",
+    "thermal detection range up to 550m (60mm lens)",
+    "visible-light supplement range 30m",
+    "picture-in-picture (PIP)",
+    "14 pseudo-colour palettes (White Hot, Black Hot, Iron Red, Rainbow, etc.)",
+    "16x digital zoom",
+    "RS485 serial port",
+    "alarm I/O (1 in / 1 out)",
+    "MIL-STD-810H rugged aluminium housing",
+    "802.1x, HTTPS(SSL), IP filtering",
+    "BIS registered"
+  ],
+  "operating_temp_c": "-20 to 55",
+  "dimensions_mm": "278 x 100 x 83",
+  "weight_g": 1000,
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": false,
+  "markets": [
+    "india"
+  ],
+  "release_notes": "Specs per official Sparsh datasheet (SC-IT6420-HB V2, Rev 1.5). Dual-sensor thermal + visible camera; the datasheet covers three thermal sensor variants (256/384/640). Visible-light stream is 1080p (2MP); thermal video compression is H.264. No NDAA claim on this datasheet. Thermal lens/FOV vary by variant, so field_of_view_deg is omitted.",
+  "sources": [
+    "https://www.sparshsecuritech.com/"
+  ],
+  "last_verified": "2026-09-09",
+  "configs": {
+    "frigate": {
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Sparsh does not publish the RTSP path; discover via ONVIF. Default ONVIF/HTTP port 80, RTSP port 554. Thermal and visible streams are separate ONVIF profiles."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration; default ONVIF port 80. Camera exposes ONVIF Profile S."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Add as a generic ONVIF camera."
+    }
+  }
+}

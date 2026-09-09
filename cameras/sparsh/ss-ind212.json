@@ -1,0 +1,149 @@
+{
+  "id": "sparsh-ss-ind212",
+  "brand": "Sparsh",
+  "model": "SS-IND212-(I)(L)(W)",
+  "aliases": [
+    "SS-IND212",
+    "2MP PTZ Camera"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "640x480",
+        "fps": 15,
+        "codec": "H.265"
+      },
+      {
+        "name": "fourth",
+        "resolution": "640x480",
+        "fps": 15,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" 2MP low-illumination progressive-scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "7-300",
+    "aperture": "F1.2-F4.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "63-3",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 500,
+    "min_lux_color": 0.001
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "24VDC / PoE+ (IEEE 802.3at)",
+    "consumption_w": 30,
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "42x optical zoom (7-300mm), 16x digital zoom",
+    "auto-tracking",
+    "IR laser illuminator up to 500m (850nm), Smart IR",
+    "WDR up to 120dB (TWDR)",
+    "defog",
+    "3D DNR",
+    "Day & Night (ICR)",
+    "quad streaming",
+    "300 presets, 8 cruise groups, 4 patterns, 3D positioning",
+    "smart motion detection (human target classification)",
+    "people counting",
+    "line crossing / intrusion / loitering / retrograde / absent detection",
+    "face detection",
+    "bi-directional talk (full duplex, mic/line in)",
+    "alarm I/O (2 in / 1 out)",
+    "wiper",
+    "fan and heater",
+    "microSD up to 2TB",
+    "8-area privacy masking, 4-zone ROI",
+    "TVS 6000V surge / lightning protection",
+    "AES-256, SHA256/RSA2048, OTP, signed firmware, anti-rollback, TEE, secure boot",
+    "NDAA compliant"
+  ],
+  "operating_temp_c": "-50 to 70",
+  "dimensions_mm": "216 (dia) x 327 (H)",
+  "weight_g": 4500,
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": true,
+  "markets": [
+    "global",
+    "india",
+    "US"
+  ],
+  "release_notes": "Specs per official Sparsh datasheet (SS-IND212-(I)(L)(W)). Model-code suffixes: (I)=IR/IR-laser, (L)=lens/laser option, (W)=wiper. 42x optical-zoom PTZ with 500m IR laser. Camera-side auto-tracking supported; ONVIF PTZ movement model not stated on the datasheet so ptz.onvif_ptz is omitted. Powered by 24VDC or PoE+ (802.3at). Full-duplex two-way talk via mic/line in (no built-in mic explicitly stated).",
+  "sources": [
+    "https://www.sparshsecuritech.com/"
+  ],
+  "last_verified": "2026-09-09",
+  "configs": {
+    "frigate": {
+      "onvif_port": 80,
+      "verified": false,
+      "autotracking": false,
+      "notes": "Sparsh does not publish the RTSP path; discover via ONVIF. Default ONVIF/HTTP port 80, RTSP port 554. Frigate PTZ autotracking needs ONVIF relative movement, which the datasheet does not confirm."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration; default ONVIF port 80. Camera exposes ONVIF Profile S/G/T with PTZ."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Add as a generic ONVIF PTZ camera."
+    }
+  }
+}
