@@ -155,6 +155,8 @@ function validate(cameras) {
     "instar.com", "instar.de", "cpplusworld.com", "specotech.com",
     "mi.com", "xiaomi.com", "tvt.net.cn", "arecontvision.com", "geovision.com",
     "hilook.com", "milesight.com", "sunell.com",
+    // Official domains the brand-token heuristic misses (hyphen/abbreviation breaks the match).
+    "i-pro.com", "een.com", "pix-link.com", "iqeye.com", "espuk.com", "ltsecurityinc.com",
   ];
   const hostMatches = (host, dom) => host === dom || host.endsWith("." + dom);
   const isOfficialSource = (cam, url) => {
