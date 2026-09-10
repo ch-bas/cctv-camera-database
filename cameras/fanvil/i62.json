@@ -1,0 +1,112 @@
+{
+  "id": "fanvil-i62",
+  "brand": "Fanvil",
+  "model": "i62",
+  "aliases": [
+    "Fanvil i62 SIP Video Door Phone"
+  ],
+  "type": "doorbell",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.9\" color CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "field_of_view_deg": "120 horizontal, 60 vertical, 141 diagonal",
+  "night_vision": {
+    "type": "ir"
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK07",
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "177.4 x 88 x 36.15",
+  "power": {
+    "method": "PoE (802.3af Class 3) or 12V DC"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "features": [
+    "SIP video door phone",
+    "IR night vision",
+    "RFID/NFC access control",
+    "tamper switch",
+    "Wiegand and RS485 ports",
+    "relay door control",
+    "single speed-dial button"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "sources": [
+    "https://www.fanvil.com/products/p5/i6%20series%20high-end%20video%20door%20phone/20220402/7320.html",
+    "https://www.provu.co.uk/products/fanvil/i62/i62.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264/stream.live0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264/stream.live1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "ONVIF supported."
+    }
+  },
+  "last_verified": "2026-09-10"
+}
