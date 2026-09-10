@@ -1,0 +1,44 @@
+{
+  "brand": "Sercomm",
+  "brand_id": "sercomm",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/img/media.sav",
+      "codec": "H.264/MPEG-4 (video) + audio, per camera configuration",
+      "verified": true,
+      "source": "Sercomm RC8120 Compact Wireless Network Camera User Manual (manualslib.com/manual/2397199, Appendix B 'Network Camera HTTP CGI', p.87): RTSP media streaming URL 'rtsp://<ip>/img/media.sav' returns video and audio. Default RTSP port is 554 (same manual, p.46: 'Enter 554 for RTSP port number in the Network screen'). Same img/*.sav RTSP scheme appears across Sercomm's RC-series camera manuals (RC8111/RC8221) which share the same OEM firmware.",
+      "strix_lead": "strixcamdb:sercomm"
+    },
+    {
+      "stream": "video-only",
+      "path": "/img/video.sav",
+      "codec": "H.264/MPEG-4 (video only), per camera configuration",
+      "verified": true,
+      "source": "Sercomm RC8120 User Manual (manualslib.com/manual/2397199, Appendix B 'Network Camera HTTP CGI', p.87): 'rtsp://<ip>/img/video.sav' returns video only (audio-only companion is 'rtsp://<ip>/img/audio.sav'). Note: the HTTP M-JPEG stream on these cameras is a separate path (http://<ip>/img/mjpeg.htm and http://<ip>/img/video.mjpeg, p.83-84), NOT the RTSP video.sav path.",
+      "strix_lead": "strixcamdb:sercomm"
+    }
+  ],
+  "unverified_leads": [
+    {
+      "path": "img/media.sav",
+      "note": "Same as /img/media.sav (missing leading slash in scan lead). Confirmed official — see main template."
+    },
+    {
+      "path": "/live",
+      "note": "Generic path; not documented in any Sercomm RC-series manual. Sercomm uses the img/*.sav RTSP scheme."
+    },
+    {
+      "path": "/stream_1",
+      "note": "Generic path; not in Sercomm documentation."
+    },
+    {
+      "path": "/stream_2",
+      "note": "Generic path; not in Sercomm documentation."
+    }
+  ],
+  "notes": "Sercomm is a Taiwanese ODM/OEM (sercomm.com) that builds network cameras for service providers and SMB brands. Its RC-series camera firmware documents a fixed RTSP scheme in the 'Network Camera HTTP CGI' appendix: rtsp://<ip>/img/media.sav (video+audio), rtsp://<ip>/img/video.sav (video only), rtsp://<ip>/img/audio.sav (audio only), with an accompanying HTTP SDP at http://<ip>/img/media.sdp. Default RTSP port 554. The candidate 'img/video.sav' from the scan DB is the documented video-only RTSP path; '/live', '/stream_1', '/stream_2' are generic and not documented by Sercomm.",
+  "verified_on": "2026-09-10"
+}

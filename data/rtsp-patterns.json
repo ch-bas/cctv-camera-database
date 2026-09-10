@@ -4,12 +4,12 @@
     "license": "CC0-1.0",
     "description": "Brand-level RTSP URL templates for IP cameras, each verified against the manufacturer's own documentation.",
     "methodology": "StrixCamDB is used ONLY as a lead source; every path here is independently re-verified against the manufacturer's official docs (manual / API / KB), so each record is independently sourced and CC0-clean, with Strix credited as the discovery source (strix_lead). Leads that could not be confirmed officially are recorded under unverified_leads and never published as fact.",
-    "generated": "2026-09-03",
+    "generated": "2026-09-10",
     "totals": {
-      "brands": 172,
-      "verified": 118,
-      "unverified": 54,
-      "templates": 348
+      "brands": 183,
+      "verified": 120,
+      "unverified": 63,
+      "templates": 351
     }
   },
   "brands": [
@@ -1490,6 +1490,37 @@
       "verified_on": "2026-08-14"
     },
     {
+      "brand": "Aztech",
+      "brand_id": "aztech",
+      "status": "unverified",
+      "default_port": 554,
+      "templates": [],
+      "unverified_leads": [
+        {
+          "path": "/live/h264/ch1",
+          "note": "Generic multi-channel H.264 path from aggregators; not in any official Aztech manual or API guide.",
+          "strix_lead": "strixcamdb:aztech"
+        },
+        {
+          "path": "/cgi-bin/rtspStream/1",
+          "note": "Generic CGI RTSP-stream path; not documented by Aztech in any reachable official source.",
+          "strix_lead": "strixcamdb:aztech"
+        },
+        {
+          "path": "/live1.sdp",
+          "note": "Generic SDP path (seen under multiple budget OEMs); not officially documented by Aztech.",
+          "strix_lead": "strixcamdb:aztech"
+        },
+        {
+          "path": "/cam3/mpeg4",
+          "note": "Generic MPEG4 aggregator path; cross-brand contamination, not in Aztech docs.",
+          "strix_lead": "strixcamdb:aztech"
+        }
+      ],
+      "notes": "Aztech (aztech.com, Aztech Technologies, Singapore) markets 'intelligent IP cameras, NVRs' with built-in AI, but the official homepage (checked 2026-09-10) exposes no support/downloads/FAQ portal and publishes no user manual, datasheet, or CGI/API guide that specifies a fixed RTSP URL path, stream naming, or port. Cameras are marketed as app-managed (Aztech smart-home app) / ONVIF devices. No candidate path could be confirmed against any Aztech-authored document; all originate from third-party aggregators. Per the no-guessing rule, no template is published.",
+      "verified_on": "2026-09-10"
+    },
+    {
       "brand": "BESDER",
       "brand_id": "besder",
       "status": "unverified",
@@ -2516,6 +2547,33 @@
       "verified_on": "2026-08-17"
     },
     {
+      "brand": "Digitus",
+      "brand_id": "digitus",
+      "status": "unverified",
+      "default_port": 554,
+      "templates": [],
+      "unverified_leads": [
+        {
+          "path": "ch0_0.h264",
+          "note": "Scan-DB candidate. DIGITUS network cameras are discontinued; the standalone R-Opti* models' manuals (formerly on ftp.assmann.com) are dead and were not archived by Wayback, so no official source could confirm this path."
+        },
+        {
+          "path": "ipcam_h264.sdp",
+          "note": "Scan-DB candidate (distinctive OEM .sdp pattern). Not confirmable against any surviving official DIGITUS/Assmann document."
+        },
+        {
+          "path": "/live/h264",
+          "note": "Scan-DB candidate. Not published in any retrievable official DIGITUS source."
+        },
+        {
+          "path": "/live/video/profile1",
+          "note": "Scan-DB candidate. Not confirmed by any official DIGITUS/Assmann manual or KB."
+        }
+      ],
+      "notes": "DIGITUS is the ASSMANN Electronic GmbH (Germany) brand (digitus.com / products.digitus.com). Its IP-camera lines are discontinued and no longer sold: the PlugView line (DN-160xx) was a cloud/app-based P2P system (Cervis platform) with no documented direct RTSP URL, and the standalone ONVIF R-Opti* cameras (R-OptiMax DN-16037, R-OptiView DN-16028, R-OptiVision DN-16027, R-OptiArc DN-16036, DN-16026) had user manuals hosted on ftp.assmann.com (e.g. ftp.assmann.com/pub/DN-/DN-16037___4016032324379/DN-16037_manual_manual english_20130531.pdf) that are now 404 and were not captured by the Wayback Machine (only the product pages/datasheets were). The current DIGITUS/Assmann shop no longer lists cameras and digitus.com/en/support/downloads and the digitus-data/handbuecher paths return 404. With no manufacturer manual retrievable to confirm the path, status is unverified. Default RTSP port assumed 554 but not officially documented.",
+      "verified_on": "2026-09-10"
+    },
+    {
       "brand": "Digoo",
       "brand_id": "digoo",
       "status": "unverified",
@@ -2569,6 +2627,33 @@
       ],
       "notes": "Digoo is a Banggood house brand of budget WiFi cameras, predominantly OEM (Xiongmai and similar) and app-centric. No functioning official Digoo manufacturer support/KB or documentation site could be found (mydigoo.com is defunct/parked). The official user manuals that are reachable (e.g. DG-ZXC24 and DG-M1Q) describe access only via mobile apps (YCC365 Plus / ucloudcam.com) and do NOT document any RTSP URL, path, or port. All RTSP paths circulating for Digoo (notably /onvif1 and /cam1/mpeg4) originate solely from third-party community aggregators that explicitly label their data as crowd-sourced and possibly inaccurate; none is confirmed by Digoo's own documentation. Some firmware may respond to ONVIF or Xiongmai-style RTSP, but with no fixed, officially-documented URL this cannot be published as verified. Port 554 recorded as the conventional RTSP default only, not from an official Digoo source.",
       "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "DynaColor",
+      "brand_id": "dynacolor",
+      "status": "unverified",
+      "default_port": 554,
+      "templates": [],
+      "unverified_leads": [
+        {
+          "path": "h264",
+          "note": "Common OEM main-stream path and widely associated with DynaColor firmware, but NOT documented in any DynaColor manual reviewed. Their public user manuals (XB Series, W Series, D7723 Series, 720P Full-HD fixed dome) are web-UI/ActiveX centric and do not publish an RTSP URL path. No official DynaColor source confirms /h264."
+        },
+        {
+          "path": "h264_2",
+          "note": "Presumed second/sub-stream companion to 'h264' in the DynaColor OEM scheme, but not documented in any reviewed DynaColor manual. Unconfirmed by an official source."
+        },
+        {
+          "path": "/cam0/h264",
+          "note": "Channel-prefixed variant; not found in any DynaColor documentation. Unconfirmed."
+        },
+        {
+          "path": "/h264",
+          "note": "Leading-slash form of the 'h264' lead. Same status: plausible OEM path, not confirmed by any official DynaColor manual or KB."
+        }
+      ],
+      "notes": "DynaColor Inc. (dynacolor.com.tw, Taiwanese OEM/ODM; also makes FA/machine-vision cameras, PTZ and NVRs) does not publish an RTSP URL path in its public documentation. Reviewed official DynaColor manuals hosted on ManualsLib — XB Series (manual/1227494), W Series (manual/955841), D7723 Series (manual/892577) and the 1080p15/720p30 Full-HD fixed dome quick guide (manual/2444603) — cover installation, DeviceSearch.exe discovery, browser/ActiveX access (default IP 192.168.0.250, Admin/1234) and web-UI Streaming > Video Format, but none state an rtsp:// URL format or a stream path name. Cameras are ONVIF-conformant, so ONVIF discovery is the practical route to the stream URI. The scan-DB candidates h264 / h264_2 match the classic DynaColor OEM scheme but could not be confirmed against any first-party DynaColor source, so status is left unverified rather than citing a non-manufacturer aggregator.",
+      "verified_on": "2026-09-10"
     },
     {
       "brand": "EasyN",
@@ -3077,6 +3162,38 @@
       ],
       "notes": "EZVIZ is Hikvision's consumer brand (launched 2013). Most AC-powered EZVIZ cameras with wired/Wi-Fi LAN support local RTSP via port 554; RTSP is disabled by default and must be enabled in the EZVIZ mobile app (Settings > Local Network > Third-party access or equivalent). Authentication uses username 'admin' and the device's 6-character uppercase verification code printed on the label (NOT the EZVIZ cloud account password). Battery-powered models (BC series) and most video doorbells (DB series) do NOT support local RTSP and stream exclusively via EZVIZ cloud. The Hikvision ISAPI paths /Streaming/Channels/101 (main) and /Streaming/Channels/102 (sub) reportedly work on many EZVIZ models due to shared firmware but are not published in EZVIZ's own support documentation. The officially documented paths are the /ch1/main and /ch1/sub family.",
       "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Fanvil",
+      "brand_id": "fanvil",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/h264/stream.live0",
+          "codec": "H.264",
+          "verified": true,
+          "source": "Fanvil Knowledge Base article 'How to integrate with Fanvil IP phones' (kb.fanvil.com, Door Phone & Indoor Station > How To Guide & Video > Integration; dated 2025-11-12), section 4 'Video Monitor': 'Note: Monitoring address: rtsp://admin:admin@172.18.28.30/h264/stream.live0'. This is the RTSP URL of the Fanvil door phone camera feed (example uses the i68 door phone monitored from a V67 SIP phone). Default RTSP port 554 (implicit — no port in the documented URL).",
+          "strix_lead": "strixcamdb:fanvil"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "/stream.live0",
+          "note": "Truncated form of the documented path — the full official path is /h264/stream.live0 (see main template). On its own, without the /h264 prefix, this is not the documented URL."
+        },
+        {
+          "path": "/stream.live1",
+          "note": "Plausible second-stream variant (/h264/stream.live1) by analogy to stream.live0, but Fanvil's KB documents only stream.live0 for the door phone camera. No official Fanvil source confirms a stream.live1 path."
+        },
+        {
+          "path": "/user=...&channel=1&stream=0.sdp",
+          "note": "Generic Dahua/OEM-style query-string RTSP path; not used by Fanvil. Cross-brand contamination in the scan DB."
+        }
+      ],
+      "notes": "Fanvil (fanvil.com, Chinese SIP-endpoint maker) is primarily a VoIP/intercom vendor; the cameras in scope are the video door phones / video intercoms (i-series e.g. i68, i33V, i16V). Fanvil's official Knowledge Base documents the door phone camera RTSP feed as rtsp://<user>:<pass>@<ip>/h264/stream.live0 (H.264). Default RTSP port 554. Only a single stream path (stream.live0) is documented; sub-stream paths are not published.",
+      "verified_on": "2026-09-10"
     },
     {
       "brand": "FLIR Systems",
@@ -5971,6 +6088,42 @@
       "last_verified": "2026-08-14"
     },
     {
+      "brand": "Neo Coolcam",
+      "brand_id": "neo-coolcam",
+      "status": "unverified",
+      "default_port": 554,
+      "templates": [],
+      "unverified_leads": [
+        {
+          "path": "LowResolutionVideo",
+          "note": "Generic sub-stream label from third-party aggregators; not in any official Neo Coolcam manual or CGI/API guide. No leading slash, not a documented RTSP resource.",
+          "strix_lead": "strixcamdb:neo-coolcam"
+        },
+        {
+          "path": "/0/av1",
+          "note": "Generic aggregator path; not documented by Neo Coolcam. No official source confirms it.",
+          "strix_lead": "strixcamdb:neo-coolcam"
+        },
+        {
+          "path": "/ch0_0.h264",
+          "note": "Generic cross-brand H.264 path; not in official Neo Coolcam documentation.",
+          "strix_lead": "strixcamdb:neo-coolcam"
+        },
+        {
+          "path": "/cam/realmonitor?channel=1&subtype=1",
+          "note": "Dahua proprietary CGI path; cross-brand contamination, not Neo Coolcam.",
+          "strix_lead": "strixcamdb:neo-coolcam"
+        },
+        {
+          "path": "/ipcam.sdp",
+          "note": "Generic SDP path from aggregators; cross-brand contamination, not in Neo Coolcam docs.",
+          "strix_lead": "strixcamdb:neo-coolcam"
+        }
+      ],
+      "notes": "Neo Coolcam is the consumer camera brand of Shenzhen NEO Electronic Co., Ltd (the same maker behind the szneo brand_id). The official domains (neo-coolcam.com, neocoolcam.com) no longer resolve / are parked GoDaddy for-sale pages (checked 2026-09-10), and no support/download/FAQ/KB page publishes a user manual, datasheet, or CGI/API guide specifying a fixed RTSP URL path or port. The cameras are ONVIF-marketed consumer devices configured via the vendor mobile app (NEO@Home / iCSee-family) or ONVIF auto-discovery rather than a documented static RTSP URL. Every candidate path originates only from third-party aggregators and is heavily cross-brand contaminated (Dahua /cam/realmonitor, generic ipcam.sdp / ch0_0.h264). Per the no-guessing rule, no template is published. To integrate, use ONVIF discovery or the vendor app.",
+      "verified_on": "2026-09-10"
+    },
+    {
       "brand_id": "netatmo",
       "status": "unverified",
       "templates": [],
@@ -6044,6 +6197,32 @@
       "verified_on": "2026-08-14"
     },
     {
+      "brand": "Nexxt Solutions",
+      "brand_id": "nexxt-solution",
+      "status": "unverified",
+      "default_port": 554,
+      "templates": [],
+      "unverified_leads": [
+        {
+          "path": "/Streaming/channels/101",
+          "note": "Hikvision ISAPI-style path. The scan-DB flags a possible Hikvision-OEM lineage, but no Nexxt Solutions official document confirms this path or an OEM relationship — Nexxt's published cameras are Tuya-based smart-home devices (Nexxt Home app), not a documented Hikvision rebrand. Cannot confirm OEM lineage officially, so not published as a template.",
+          "strix_lead": "strixcamdb:nexxt-solution"
+        },
+        {
+          "path": "/live/ch00_0",
+          "note": "Generic cross-brand live path (Dahua/others); not in any official Nexxt Solutions documentation.",
+          "strix_lead": "strixcamdb:nexxt-solution"
+        },
+        {
+          "path": "/ch0_0.h264",
+          "note": "Generic cross-brand H.264 path; not in official Nexxt Solutions documentation.",
+          "strix_lead": "strixcamdb:nexxt-solution"
+        }
+      ],
+      "notes": "Nexxt Solutions (nexxtsolutions.com, Latin-American connectivity/IoT brand) sells smart-home Wi-Fi cameras as part of a cloud/app ecosystem (Nexxt Home app, Tuya-based). The official site (checked 2026-09-10) organizes products under Connectivity and Infrastructure and, while it has a Support / Downloads section, exposes no camera user manual, datasheet, or API guide specifying a fixed RTSP URL path or port; the camera products page (/products/cameras/) returns 404. The scan-DB Hikvision-OEM hypothesis (/Streaming/channels/101) could NOT be confirmed against any Nexxt-authored document, and Nexxt's published cameras are app/cloud-managed consumer devices rather than a documented Hikvision rebrand. Per the no-guessing rule and the OEM-only-if-confirmed rule, no template is published. To integrate, use ONVIF discovery or the vendor app.",
+      "verified_on": "2026-09-10"
+    },
+    {
       "brand": "Night Owl",
       "brand_id": "night-owl",
       "status": "verified",
@@ -6110,6 +6289,33 @@
       ],
       "notes": "Confirmed against the official Night Owl H5 NVR Series User Manual RTSP section. Format is rtsp://{ip}:{port}/ch{NN}/{S} where {NN} is a leading-zero-padded 2-digit channel (ch01..ch32) and {S} is 0=Mainstream, 1=Substream. Default RTSP port 554 (manual example shows 00554). Codec selectable H.264/H.265. RTSP must be enabled in the NVR (Enable/Disable toggle, optional password 'Verify'). Note the NVR distinguishes 'Private' protocol for Night Owl cameras vs 'ONVIF' for third-party cameras; ONVIF 2.4 Profile S is supported. This verified path applies to the H5 NVR recorder line; Night Owl uses multiple OEMs across its DVR/WiFi/app-only product lines, so other model families may differ. None of the Strix candidate leads (Hikvision /Streaming/Channels, generic /chN_N.264, Dahua query-string) match the documented Night Owl format and are excluded.",
       "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Novus",
+      "brand_id": "novus",
+      "status": "unverified",
+      "default_port": 554,
+      "templates": [],
+      "unverified_leads": [
+        {
+          "path": "/profile1",
+          "note": "Candidate main-stream path (TVT / generic-ONVIF style). NOVUS (AAT SYSTEMY BEZPIECZENSTWA) publishes camera user manuals (NVIP-6000_series_FULL_EN_PL_v1.0 and NVIP-8000_series_cameras_FULL_EN_PL_v2.0 on novuscctv.com) that describe only an 'RTSP' configuration tab — enable/disable, set port, allow-anonymous-login, multicast — and never state a fixed RTSP URL path. The 6000-series web UI (Config File Common/Day/Night profiles, 'Save Target Cutout' / 'Save Face Information') strongly resembles a TVT/Provision-style OEM platform whose documented main path is /profile1, but no official NOVUS/AAT document confirms this OEM lineage or path, so it cannot be marked verified."
+        },
+        {
+          "path": "/profile2",
+          "note": "Candidate sub-stream counterpart to /profile1 (TVT / generic-ONVIF style). Same reason as /profile1: not published in any NOVUS/AAT manual; only the RTSP enable/port tab is documented."
+        },
+        {
+          "path": "/cam0/h264",
+          "note": "Different OEM firmware pattern (Hisilicon/Longse-style) that contradicts the /profile1,/profile2 pattern — evidence NOVUS is a multi-OEM rebrand. Not present in any official NOVUS manual reviewed."
+        },
+        {
+          "path": "/H264?ch=1&subtype=0",
+          "note": "Query-string pattern resembling Dahua-derivative firmware. Not published in any NOVUS/AAT document; unconfirmable as an official NOVUS path."
+        }
+      ],
+      "notes": "Novus is the professional CCTV brand of AAT SYSTEMY BEZPIECZENSTWA sp. z o.o. (formerly AAT Holding), Poland (novuscctv.com). Its cameras are multi-OEM rebrands. Two current full user manuals were retrieved and searched (NVIP-6000 series FULL v1.0 and NVIP-8000 series FULL v2.0, hosted at novuscctv.com/sites/default/files/aat/globalfiles/globalfiles/): both document an RTSP tab (enable/disable protocol, set port, allow anonymous login, multicast) and ONVIF/Media2, but neither states a fixed RTSP URL path or an rtsp:// example. The novuscctv.com FAQ/technical-support pages and the old.novuscctv.com manuals archive (404/dead) yielded no RTSP URL scheme. Because no manufacturer source publishes the path and the scan-DB candidates point at conflicting OEM platforms, status is unverified. Default RTSP port per the manuals is 554.",
+      "verified_on": "2026-09-10"
     },
     {
       "brand_id": "nuvico",
@@ -6272,6 +6478,33 @@
       ],
       "notes": "Two distinct RTSP path families in the Pelco line: (1) Sarix Pro/Enhanced/IXE single-channel cameras use /stream1 and /stream2 at port 554; multicast variants are /stream1m and /stream2m. (2) NET5500 Series multi-channel encoders use /channel<N>/stream1 and /channel<N>/stream2 where N is 1-16; port must be 554. (3) Sarix Value series cameras use ONVIF-style /media/stream.sdp?profile=Profile100/101/102. RTSP authentication is enabled by default on all models. The leads /1/stream1 and /stream1 are both confirmed: /stream1 for single-channel cameras and /channel1/stream1 (equivalent to /1/stream1) for the encoder channel 1. PDN (pdn.pelco.com) is offline as of 2026; the support portal (support.pelco.com) loads but requires JS — KB article text was confirmed via Google search snippet extraction.",
       "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "PiXORD",
+      "brand_id": "pixord",
+      "status": "unverified",
+      "default_port": 554,
+      "templates": [],
+      "unverified_leads": [
+        {
+          "path": "video.h264",
+          "note": "Scan-DB candidate. No official PiXORD source publishes any RTSP URL path. pixord.com product specs list 'RTSP/RTP/RTCP' only as a supported network protocol, never a stream path."
+        },
+        {
+          "path": "v01",
+          "note": "Scan-DB candidate. Not found in any official PiXORD documentation; the site's Download Center and FAQ contain no manuals ('No Information Available')."
+        },
+        {
+          "path": "/ch0_0.264",
+          "note": "Scan-DB candidate (generic Chinese-OEM pattern). Not confirmed by any official PiXORD manual or KB."
+        },
+        {
+          "path": "/live/av0",
+          "note": "Scan-DB candidate. Not published in any official PiXORD source."
+        }
+      ],
+      "notes": "PiXORD Corporation (pixord.com), Hsinchu, Taiwan — legacy IP-video-server / network-camera maker (founded 2000). The current website is a stale brochure (Copyright 2014): its Download Center and FAQ pages return no downloadable manuals ('No Information Available'), and product pages (e.g. products_show.php) list RTSP only in the specifications as a supported protocol (Protocol: ... RTSP/RTP/RTCP ...), with no RTSP URL/path documented. No official manufacturer document could be found stating the RTSP path, so status is unverified. Default RTSP port assumed 554 (standard) but not officially documented.",
+      "verified_on": "2026-09-10"
     },
     {
       "brand": "PLANET Technology",
@@ -6939,6 +7172,50 @@
       ],
       "notes": "SANNCE is a budget CCTV-kit brand, sister to ANNKE, both on Hikvision OEM lineage. Its own support site (support.sannce.com) publishes TWO official RTSP URL families, both on port 554: (1) the Hikvision-style /[codec]/ch<N>/[subtype]/av_stream form — e.g. /H264/ch1/main/av_stream (main) and /H264/ch1/sub/av_stream (sub), used by its DVR/NVR kits (models DN81BL/DN41CK/DT61BB etc.); and (2) a simpler /<channel>/<stream> form for the N98PBM standalone camera where stream 1=main, 2=sub, 3=triple (e.g. /1/1, /1/2). {codec} is H264 on most models (some capable of H265/MPEG-4 — record per model profile); <N> is the 1-based channel index (ch1, 1, ...). Credentials are prepended as user:pass@ip (DVR channels use the DVR/NVR login; camera default admin/admin). None of the StrixCamDB leads match either official path — they are all generic Xiongmai/cheap-OEM .sdp/av0_0 forms or a Hikvision ISAPI /Streaming/Unicast path (cross-brand contamination), so all leads are excluded. Verified only against SANNCE's own KB (Zendesk portal blocks bots; content confirmed via indexed article text quoting the exact templates and example URLs).",
       "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Sercomm",
+      "brand_id": "sercomm",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/img/media.sav",
+          "codec": "H.264/MPEG-4 (video) + audio, per camera configuration",
+          "verified": true,
+          "source": "Sercomm RC8120 Compact Wireless Network Camera User Manual (manualslib.com/manual/2397199, Appendix B 'Network Camera HTTP CGI', p.87): RTSP media streaming URL 'rtsp://<ip>/img/media.sav' returns video and audio. Default RTSP port is 554 (same manual, p.46: 'Enter 554 for RTSP port number in the Network screen'). Same img/*.sav RTSP scheme appears across Sercomm's RC-series camera manuals (RC8111/RC8221) which share the same OEM firmware.",
+          "strix_lead": "strixcamdb:sercomm"
+        },
+        {
+          "stream": "video-only",
+          "path": "/img/video.sav",
+          "codec": "H.264/MPEG-4 (video only), per camera configuration",
+          "verified": true,
+          "source": "Sercomm RC8120 User Manual (manualslib.com/manual/2397199, Appendix B 'Network Camera HTTP CGI', p.87): 'rtsp://<ip>/img/video.sav' returns video only (audio-only companion is 'rtsp://<ip>/img/audio.sav'). Note: the HTTP M-JPEG stream on these cameras is a separate path (http://<ip>/img/mjpeg.htm and http://<ip>/img/video.mjpeg, p.83-84), NOT the RTSP video.sav path.",
+          "strix_lead": "strixcamdb:sercomm"
+        }
+      ],
+      "unverified_leads": [
+        {
+          "path": "img/media.sav",
+          "note": "Same as /img/media.sav (missing leading slash in scan lead). Confirmed official — see main template."
+        },
+        {
+          "path": "/live",
+          "note": "Generic path; not documented in any Sercomm RC-series manual. Sercomm uses the img/*.sav RTSP scheme."
+        },
+        {
+          "path": "/stream_1",
+          "note": "Generic path; not in Sercomm documentation."
+        },
+        {
+          "path": "/stream_2",
+          "note": "Generic path; not in Sercomm documentation."
+        }
+      ],
+      "notes": "Sercomm is a Taiwanese ODM/OEM (sercomm.com) that builds network cameras for service providers and SMB brands. Its RC-series camera firmware documents a fixed RTSP scheme in the 'Network Camera HTTP CGI' appendix: rtsp://<ip>/img/media.sav (video+audio), rtsp://<ip>/img/video.sav (video only), rtsp://<ip>/img/audio.sav (audio only), with an accompanying HTTP SDP at http://<ip>/img/media.sdp. Default RTSP port 554. The candidate 'img/video.sav' from the scan DB is the documented video-only RTSP path; '/live', '/stream_1', '/stream_2' are generic and not documented by Sercomm.",
+      "verified_on": "2026-09-10"
     },
     {
       "brand": "Siemens",
@@ -8337,6 +8614,33 @@
       ],
       "notes": "Default RTSP port 554 (confirmed in official manual: set_rtsp?rtsp_port=554). Modern TRENDnet PoE camera line (TV-IP310PI and siblings) uses the fully-documented path /Src/MediaInput/stream_N where N=1..4 (stream_1=main, stream_2=sub, plus stream_3/stream_4), each selectable H.264 or H.265. For multi-sensor / quad-stream fisheye models, append /ch_N (e.g. /Src/MediaInput/stream_1/ch_1). None of the Strix leads matched this real documented path — the lead list is heavily contaminated with Hikvision (/Streaming/Channels), Axis (axis-media/media.amp) and Dahua (/cam/realmonitor) paths. Older MPEG4-era TRENDnet models (pre-PoE, e.g. TV-IP262P/TV-IP422W) predate this URL scheme and their exact main-stream RTSP path was not confirmable from an official quotable doc (the TV-IP262P manual only documents a /3gp mobile endpoint); those older leads are left unverified. Scope of verification: modern H.264/H.265 PoE network camera line.",
       "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "TriVision",
+      "brand_id": "trivision",
+      "status": "unverified",
+      "default_port": 554,
+      "templates": [],
+      "unverified_leads": [
+        {
+          "path": "live_mpeg4.sdp",
+          "note": "Scan-DB candidate. The original TriVision IP-security-camera brand (NC-series WiFi cameras) is defunct; no official manufacturer document publishing this RTSP path could be found."
+        },
+        {
+          "path": "/live/0/onvif.sdp",
+          "note": "Scan-DB candidate (ONVIF-style .sdp). Not confirmed in any surviving official TriVision document."
+        },
+        {
+          "path": "/live0.264",
+          "note": "Scan-DB candidate (generic Hi35xx-OEM pattern). Not published in any retrievable official TriVision source."
+        },
+        {
+          "path": "/ch1/stream0",
+          "note": "Scan-DB candidate. Not confirmed by any official TriVision manual or KB."
+        }
+      ],
+      "notes": "TriVision made consumer/prosumer NC-series WiFi IP cameras. The brand is effectively defunct as an IP-camera maker: trivision.ca is dead and trivision.com is an unrelated billboard/signage company. The successor domain trivisiontech.com now redirects to trivisionsecurity.com, which sells sewer/pipe inspection and 'planetary' cameras — not the old NC IP cameras. The only surviving TriVision camera document located (trivisiontech.com Quick-Guide-for-IOS-Android-201701.pdf, via Wayback) is an app/cloud setup guide and contains no RTSP URL. No official manufacturer source publishes the RTSP path, so status is unverified. Default RTSP port assumed 554 but not officially documented.",
+      "verified_on": "2026-09-10"
     },
     {
       "brand": "TruVision",
@@ -9771,6 +10075,42 @@
       ],
       "notes": "Older Zmodo / Funlux Wi-Fi IP cameras (ZH-series) use the non-standard RTSP port 10554 (NOT 554) with paths /tcp/av0_0 (main, 720p) and /tcp/av0_1 (sub, VGA), per Zmodo's own Knowledge Base. UDP variants (/udp/av0_0, /udp/av0_1) select UDP transport for the same streams. IMPORTANT SCOPE: this pattern applies only to the older RTSP-capable models; many newer Zmodo cameras (Beam, Greet doorbell, sight/pivot, and other 'smart' lines) run the proprietary Zink cloud protocol and are app/cloud-only with NO RTSP exposed — those cannot be addressed by any fixed URL. Verify per model that RTSP is supported before applying this template.",
       "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Zoneway",
+      "brand_id": "zoneway",
+      "status": "unverified",
+      "default_port": 554,
+      "templates": [],
+      "unverified_leads": [
+        {
+          "path": "/live/ch0",
+          "note": "Generic multi-channel live path from aggregators; not in any official Zoneway manual or API guide.",
+          "strix_lead": "strixcamdb:zoneway"
+        },
+        {
+          "path": "/live0.264",
+          "note": "Generic H.264 live path (also seen under other budget OEMs); not officially documented by Zoneway.",
+          "strix_lead": "strixcamdb:zoneway"
+        },
+        {
+          "path": "/ch0_0.h264",
+          "note": "Generic cross-brand H.264 path; not in official Zoneway documentation.",
+          "strix_lead": "strixcamdb:zoneway"
+        },
+        {
+          "path": "/cam1/onvif-h264",
+          "note": "Generic ONVIF-profile path from aggregators; not officially documented by Zoneway.",
+          "strix_lead": "strixcamdb:zoneway"
+        },
+        {
+          "path": "/cam/realmonitor?channel=1&subtype=1",
+          "note": "Dahua proprietary CGI path; cross-brand contamination, not Zoneway.",
+          "strix_lead": "strixcamdb:zoneway"
+        }
+      ],
+      "notes": "Zoneway = Shenzhen Zoneway Technology, a budget IP-camera / NVR OEM. Every candidate official domain checked on 2026-09-10 failed to resolve (zoneway.net, zoneway.com, www.szzoneway.com, www.zoneway.com.cn) — no reachable official website, support portal, or downloadable manual/API guide could be found to confirm an RTSP URL path or port. The cameras are ONVIF-marketed and configured via ONVIF discovery / vendor app rather than a documented static RTSP URL. All candidate paths originate only from third-party aggregators and include obvious cross-brand contamination (Dahua /cam/realmonitor). Per the no-guessing rule, no template is published.",
+      "verified_on": "2026-09-10"
     },
     {
       "brand": "ZOSI",
