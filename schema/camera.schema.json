@@ -337,6 +337,11 @@
       "type": "boolean",
       "description": "True if the camera is NDAA-compliant (Section 889 — no Hikvision/Dahua/HiSilicon etc. components), as stated by the manufacturer. Omit when unknown; never infer."
     },
+    "cloud_dependency": {
+      "type": "string",
+      "enum": ["local", "cloud-optional", "cloud-required"],
+      "description": "Whether the camera needs a vendor cloud/app to function: 'local' = operates fully locally (ONVIF/RTSP or NVR) with no vendor cloud needed; 'cloud-optional' = works locally but the vendor also offers an app/cloud; 'cloud-required' = mandates a vendor cloud/app (no usable local stream). Distinct from storage.cloud (which only means cloud storage is supported). Omit when unverifiable; never guess."
+    },
     "markets": {
       "type": "array",
       "items": {

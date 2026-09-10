@@ -6,6 +6,33 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.17.0] — 2026-09-10
+
+Dataset grows to **11,613 cameras / 140 brands** (+208). Two new brands — **Infinova** (+50) and **Sparsh CCTV** (+17) — plus a full **TVT Digital** catalogue sweep (9 → 147). Adds a first-class **`cloud_dependency`** field (#339) and a round of source / data-quality fixes. Every record is from an official manufacturer datasheet or product page.
+
+### Added — new brand: Infinova (+50)
+- The Infinova **VH / VS / VT / VHA** network-camera lines from official `infinova.com` datasheets + product pages: PTZ speed domes (Starlight, 30–44× optical zoom, deep-learning tracking), fixed box/bullet, minidome, integrated laser-PTZ, bi-spectrum thermal (`dual-lens`), and fisheye. `ndaa_compliant` omitted (not a Section 889 entity, no NDAA statement); `markets: ["global"]`.
+
+### Added — new brand: Sparsh CCTV (+17)
+- **Sparsh Securitech** (India, "Make in India", STQC-certified): X-series dome/bullet/turret, 5 MP box, thermal+visible dual-lens, IR-laser PTZ — from official datasheets. `ndaa_compliant` read per-datasheet (7 of 17 state NDAA); `markets: ["india"]`.
+
+### Added — TVT Digital catalogue sweep (9 → 147)
+- The full `en.tvt.net.cn` IP-camera catalogue (A / C / E-Pro / S-Lite / M-Ultra + Special / Panoramic / Thermal / PTZ / Dedicated, across all resolution tiers): box/bullet/dome/turret/fisheye/panoramic, IR / dual-light (`hybrid`) / full-colour, optical-zoom PTZ speed domes, and bi-spectrum thermal (`dual-lens`). `ndaa_compliant` omitted (Chinese ODM, not 889-named, no claim).
+
+### Added — `cloud_dependency` field (#339)
+- New optional enum **`cloud_dependency`** (`local` / `cloud-optional` / `cloud-required`) — whether a camera needs a vendor cloud/app to function, distinct from `storage.cloud` (which only means cloud storage is *supported*). Backfilled the clear cases (8,748 local · 495 cloud-optional · 423 cloud-required); powers a Compare "Cloud dependency" row + a "Local (No Cloud)" site filter. **Prama** also expanded (+4).
+
+### Changed — data quality & sourcing
+- **Hikvision (#186):** re-sourced `DS-2CD2047G2-L` and `DS-2CD2087G2-LU` to their official datasheets; removed a bogus `DS-2CD2087G2-SU` (invalid model ID duplicating `DS-2CD2087G2H-LIU/SL`).
+- **Source-provenance heuristic (#165/#164):** recognize official brand domains the matcher was missing (`i-pro.com`, `een.com`, `pix-link.com`, `iqeye.com`, `espuk.com`, `ltsecurityinc.com`) — the reseller-only flag count drops 1,298 → 718.
+- **Bosch:** ASCII-normalized model names and filled missing `power_source`; corrected records that listed both `ac-mains` and `dc`.
+- **Reolink Video Doorbell PoE:** Frigate config re-confirmed on 0.17 (#356).
+
+### CI
+- **check-sources** weekly source-availability sweep timeout raised 60 → 150 min (source URLs ~doubled to ~14k).
+
+---
+
 ## [2.16.0] — 2026-09-08
 
 Dataset grows to **11,405 cameras / 138 brands** — the largest single release yet (~+2,821). Highlights: the complete **Hikvision Thermal** catalogue (+247) with a new thermal brand **HikMicro**; a **full sweep of the entire Dahua camera catalogue** (~+990 across Network, PTZ, PT, HDCVI, Thermal, Wireless, and project-exclusive) built by reverse-engineering Dahua's download-centre catalogue API; a **bulk Hanwha Vision (Wisenet) ingest** (+545) from official datasheets; a **near-complete ACTi refresh** (+280) pulled from ACTi's spec API; a **Mobotix expansion** (+89, ONE / 7 / MOVE / legacy lines); and two new **India** brands — **Matrix Comsec (SATATYA)** (+62) and **Prama** (+17). Every record is from an official manufacturer datasheet or spec API; thermal-specific modeling matches the existing convention (`resolution` = thermal module, NETD in `sensor`, bi-spectrum → two lenses).

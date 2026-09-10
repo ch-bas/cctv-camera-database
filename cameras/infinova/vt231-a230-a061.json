@@ -1,0 +1,150 @@
+{
+  "id": "infinova-vt231-a230-a061",
+  "brand": "Infinova",
+  "model": "VT231-A230-A061",
+  "aliases": [
+    "VT231-A2 Series HD 2MP Smart Starlight WDR IR IP PTZ Dome Camera"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 5,
+        "codec": "MJPEG"
+      }
+    ]
+  },
+  "sensor": "1/1.9\" progressive scanning CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6~180 (30x optical zoom)",
+    "aperture": "F1.6-F4.8",
+    "varifocal": true
+  },
+  "field_of_view_deg": "2-59",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 200,
+    "min_lux_color": 0.001
+  },
+  "power": {
+    "method": "PoE+ (IEEE802.3at type2 Class4) / 24VAC / 24VDC",
+    "consumption_w": 55
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "ptz": {
+    "onvif_ptz": "continuous",
+    "autotracking": true
+  },
+  "features": [
+    "30x optical zoom (12x digital)",
+    "Starlight ultra-low illumination (0.001 lux color)",
+    "WDR up to 120dB",
+    "IR 200m (850nm, Smart-IR)",
+    "intelligent tracking (rule-triggered and manual)",
+    "smart analytics (wire cross, area intrusion, border protection)",
+    "motion detection (4 areas)",
+    "ROI (8 regions)",
+    "defog",
+    "EIS",
+    "3D noise reduction",
+    "1024 presets, pattern, autopan, autoscan, tours",
+    "heater and air circulation (anti-icing)",
+    "dual SD card slots (up to 512GB)",
+    "two-way audio (G.711/G.726/AAC)",
+    "2 alarm inputs, 1 alarm output",
+    "RS485 and analog BNC video output",
+    "IP67, IK10"
+  ],
+  "operating_temp_c": "-45 to 70",
+  "dimensions_mm": "Ø229.6 x 370",
+  "weight_g": 5800,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "release_notes": "Specs per official Infinova VT231-A2 series datasheet (VT231-A230-A061, en-202208-R1). 2MP 30x starlight IR PTZ dome, 1920x1080@60fps. Power: PoE+ / 24VAC / 24VDC. Outdoor IP67/IK10 with heater.",
+  "sources": [
+    "https://www.infinova.com/DownloadPdf/VT231-A2-Series-Datasheet-en-202208-R1.pdf"
+  ],
+  "last_verified": "2026-09-09",
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/",
+      "best_substream": "",
+      "verified": false,
+      "notes": "RTSP path not published by Infinova — use ONVIF auto-discovery (ONVIF Profile S/G/T) for the stream URL.",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use the Generic/ONVIF/RTSP profile."
+    }
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "cloud_dependency": "local"
+}
