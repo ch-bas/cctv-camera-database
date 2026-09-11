@@ -6,6 +6,27 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.18.0] — 2026-09-11
+
+Dataset grows to **12,007 cameras / 157 brands** (+394 cameras, +17 brands). Two full manufacturer-catalogue sweeps — **Intelbras** (9 → 170) and **Kedacom** (63 → 169) — a new **Alibi** brand (56), and 16 brands seeded from the RTSP-pattern backlog (#268). Every record is from an official manufacturer datasheet or product page.
+
+### Added — Intelbras catalogue sweep (9 → 170, +161)
+- The complete Intelbras camera catalogue from official `intelbras.com` (pt-br) datasheets — **HDCVI** (analog/coax), **IP**, and **Special** lines: bullet/dome/turret, pan-tilt & speed-dome PTZ, panoramic multi-sensor, fisheye, covert, and bi-spectrum **thermal** (`dual-lens`). IP cameras use the Dahua-OEM RTSP scheme (`/cam/realmonitor`) and are `cloud-optional`; HDCVI models are `local` (no RTSP/ONVIF). Includes the community-reported **iM7 S Full Color** (#358). Non-cameras in the Special catalogue (RAID/NVR servers, a PTZ control keyboard, pinhole processor-only units) were excluded. `ndaa_compliant` omitted (Brazilian brand, not a Section 889 entity, no compliance claim); `markets: ["BR","LATAM"]`.
+
+### Added — Kedacom catalogue sweep (63 → 169, +106)
+- Every current Kedacom English-site camera model across all 8 categories (Box, IR Bullet, Semi Dome, Fisheye/Pinhole, Speed Dome, Explosion Proof, PTZ, TU Series) from official `kedacom.com` product pages: box/bullet/dome/turret/fisheye/covert/ptz, plus long-range laser and bi-spectrum thermal PTZ (`dual-lens`). Kedacom RTSP scheme (`/id=0` main, `/id=1` sub), ONVIF/RTSP, `cloud-optional`. `ndaa_compliant` omitted (Chinese but not a Section 889 named entity, no claim).
+
+### Added — new brand: Alibi (+56)
+- **Alibi Security** (Nelly's Security; Uniview-OEM) from official `alibisecurity.com` datasheets: bullet/turret/dome, 180° panoramic, PTZ, ANPR, and thermal (`dual-lens`); Uniview-style RTSP (`/Streaming/Channels/101|102`). `ndaa_compliant: true` where the datasheet states NDAA compliance.
+
+### Added — 16 brands seeded from the RTSP-pattern backlog (#268, +70)
+- Representative current-model sets (from each maker's official datasheets) for brands that had verified RTSP patterns but no camera records yet: **Messoa, PLANET, Siqura, BEWARD, Nuvico, Vitek, American Dynamics, Brickcom, Neutron, Genie, RVi, ALLNET, TRENDnet, SANNCE** plus intercom makers **2N** and **Fanvil**. `ndaa_compliant` omitted for all (none are Section 889 named entities; OEM rebrands left unmarked, never `false`).
+
+### Changed — StrixCamDB ingest hardening (#259)
+- Tightened the strix pre-filter (generic/non-brand label rejection, typo/OEM-lineage brand aliases) and verified 12 candidate leads against official docs — adding **Sercomm** and **Fanvil** RTSP patterns to the verified layer.
+
+---
+
 ## [2.17.0] — 2026-09-10
 
 Dataset grows to **11,613 cameras / 140 brands** (+208). Two new brands — **Infinova** (+50) and **Sparsh CCTV** (+17) — plus a full **TVT Digital** catalogue sweep (9 → 147). Adds a first-class **`cloud_dependency`** field (#339) and a round of source / data-quality fixes. Every record is from an official manufacturer datasheet or product page.
