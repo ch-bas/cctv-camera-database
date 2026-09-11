@@ -1,9 +1,9 @@
 # CCTV Camera Database
 
-An open, structured database of 11,901 CCTV / IP camera models and their technical specifications, covering 157 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
+An open, structured database of 12,007 CCTV / IP camera models and their technical specifications, covering 157 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
 
 [![build](https://github.com/ch-bas/cctv-camera-database/actions/workflows/build.yml/badge.svg)](https://github.com/ch-bas/cctv-camera-database/actions/workflows/build.yml)
-[![cameras](https://img.shields.io/badge/cameras-11%2C901-blue)](data/cameras.json)
+[![cameras](https://img.shields.io/badge/cameras-12%2C007-blue)](data/cameras.json)
 [![brands](https://img.shields.io/badge/brands-157-green)](cameras/)
 [![license](https://img.shields.io/badge/license-CC0-lightgrey)](LICENSE)
 
@@ -19,10 +19,10 @@ An open, structured database of 11,901 CCTV / IP camera models and their technic
 
 <p align="center">
   <a href="https://cctv-database.com">
-    <img src="assets/cctv-database-showcase.gif" alt="CCTV Camera Database — search 11,901 cameras, browse full specs, copy ready-to-use Frigate configs, and audit the open dataset with the built-in QA tool" width="640">
+    <img src="assets/cctv-database-showcase.gif" alt="CCTV Camera Database — search 12,007 cameras, browse full specs, copy ready-to-use Frigate configs, and audit the open dataset with the built-in QA tool" width="640">
   </a>
   <br>
-  <sub><b><a href="https://cctv-database.com">cctv-database.com</a></b> — search 11,901 cameras · full spec sheets · copy-paste Frigate configs · open &amp; auditable</sub>
+  <sub><b><a href="https://cctv-database.com">cctv-database.com</a></b> — search 12,007 cameras · full spec sheets · copy-paste Frigate configs · open &amp; auditable</sub>
 </p>
 
 ---
@@ -53,7 +53,7 @@ The whole dataset is committed and ready to use — **no build step, no API key,
 
 | Format | File | Contents |
 |--------|------|----------|
-| JSON | [`data/cameras.json`](data/cameras.json) | all 11,901 cameras as one array |
+| JSON | [`data/cameras.json`](data/cameras.json) | all 12,007 cameras as one array |
 | CSV | [`data/cameras.csv`](data/cameras.csv) | flattened, spreadsheet-friendly |
 | ZIP | [`cameras.zip`](../../releases/latest) | versioned + checksummed, attached to each release |
 
@@ -119,7 +119,7 @@ Prefer to self-host or browse offline? A [standalone demo](docs/demo.html) (just
 - **Sort** — click any column header to sort ascending/descending
 - **Detail drawer** — click a row to slide open the full spec sheet (resolution, connectivity, protocols, storage, audio, source links)
 - **Community notes** — user-reported quirks and behaviors per camera, sourced and attributed, kept separate from datasheet specs
-- **Pagination** — page through all 11,901 cameras, 25 per page
+- **Pagination** — page through all 12,007 cameras, 25 per page
 - **Stats bar** — live counts for total cameras, brands, 4K+, WiFi, and no-subscription models
 
 ---
@@ -234,17 +234,17 @@ A device type is only emitted when the camera has a known RJ45 link speed (`netw
 
 | Metric | Count |
 |--------|-------|
-| Total cameras | **11,901** |
+| Total cameras | **12,007** |
 | Brands | **157** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
-| PoE wired | 8,582 |
+| PoE wired | 8,656 |
 | WiFi | 1,121 |
 | Battery / wire-free | 340 |
-| 4K / 8MP+ | 2,542 |
-| 4–7MP | 4,715 |
-| Under 4MP | 4,644 |
-| With integration configs (Frigate / Home Assistant) | 8,617 |
-| With color-lux rating (`night_vision.min_lux_color`) | 8,432 |
+| 4K / 8MP+ | 2,557 |
+| 4–7MP | 4,737 |
+| Under 4MP | 4,713 |
+| With integration configs (Frigate / Home Assistant) | 8,723 |
+| With color-lux rating (`night_vision.min_lux_color`) | 8,538 |
 
 ### All 157 brands
 
@@ -264,6 +264,7 @@ A device type is only emitted when the camera has a known RJ45 link speed (`netw
 | Bosch | 255 | Enterprise + thermal, EU/global |
 | Milesight | 185 | Prosumer/Enterprise IoT, global |
 | Intelbras | 170 | #1 Latin America, BR/AR/LATAM |
+| Kedacom | 169 | Enterprise, CN/global |
 | NOVUS | 164 | Installer IP + analog (AAT), PL/EU |
 | Sunell | 155 | — |
 | AVYCON | 153 | Prosumer/commercial (NDAA), US |
@@ -288,7 +289,6 @@ A device type is only emitted when the camera has a known RJ45 link speed (`netw
 | Ganz | 72 | Enterprise (CBC Group), JP/US/global |
 | Digital Watchdog | 70 | Enterprise NDAA, US |
 | CP Plus | 67 | India #2 brand, IN |
-| Kedacom | 63 | Enterprise, CN/global |
 | Honeywell | 62 | Enterprise, US/IN |
 | Infiniti Optics | 62 | — |
 | Matrix | 62 | — |
@@ -439,7 +439,7 @@ cctv-camera-database/
 │   ├── uniview/          # 353 cameras
 │   └── …151 more brands
 ├── data/                 # GENERATED — do not edit by hand
-│   ├── cameras.json      # all 11,901 cameras as one array
+│   ├── cameras.json      # all 12,007 cameras as one array
 │   ├── cameras.csv       # flattened, spreadsheet-friendly
 │   └── rtsp-patterns.json  # CC0 brand-level RTSP URL layer (183 brands)
 ├── strix/
@@ -474,7 +474,7 @@ Open — contributions very welcome:
 
 - [ ] **Re-source ~1,051 reseller-only cameras** to official OEM datasheets (#164 / #165)
 - [ ] **Backfill pixel resolution** for the ~541 entries that state megapixels but no width×height (#169)
-- [ ] **Frigate verification drive** — only 29 of 8,508 shipped configs are community-verified; [confirm one you run](../../issues/new?template=verify-frigate-config.yml)
+- [ ] **Frigate verification drive** — only 29 of 8,614 shipped configs are community-verified; [confirm one you run](../../issues/new?template=verify-frigate-config.yml)
 - [ ] **Grow `community_notes`** — the per-camera quirks/behaviors layer (#297)
 
 ---
