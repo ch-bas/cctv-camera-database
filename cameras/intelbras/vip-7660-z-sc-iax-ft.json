@@ -1,0 +1,104 @@
+{
+  "id": "intelbras-vip-7660-z-sc-iax-ft",
+  "brand": "Intelbras",
+  "model": "VIP 7660 Z SC IAX FT",
+  "type": "bullet",
+  "markets": [
+    "BR",
+    "LATAM"
+  ],
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3072,
+    "max_height": 2048,
+    "label": "6MP"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7 a 12",
+    "aperture": "F1.2",
+    "varifocal": true
+  },
+  "field_of_view_deg": "98 horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 60,
+    "min_lux_color": 0.0006
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG",
+      "H.265+",
+      "H.264+"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "resolution": "3072x2048",
+        "fps": 30
+      },
+      {
+        "resolution": "704x480",
+        "fps": 30
+      },
+      {
+        "resolution": "1920x1080",
+        "fps": 30
+      },
+      {
+        "resolution": "1280x720",
+        "fps": 30
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "dimensions_mm": "111 x 99 x 303 mm",
+  "weight_g": 1650,
+  "operating_temp_c": "-40 to 60",
+  "power": {
+    "method": "PoE+ (802.3at) / ePoE / 12 Vdc"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "features": [
+    "6MP Super Color bullet with 4x optical zoom",
+    "IR 60m + white light 60m (hybrid)",
+    "IAX AI: face capture, people counting, perimeter analytics",
+    "video metadata + heat map",
+    "P-Iris varifocal 2.7-12mm",
+    "micro SD up to 1TB",
+    "IP67 + IK10"
+  ],
+  "sources": [
+    "https://backend.intelbras.com/sites/default/files/2026-05/Datasheet%20VIP%207660%20BD%20Z%20IAX%20FT%20-%20V5.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif"
+    },
+    "blue_iris": {
+      "profile": "ONVIF/Dahua"
+    }
+  },
+  "last_verified": "2026-09-11"
+}

@@ -1,0 +1,85 @@
+{
+  "id": "intelbras-vip-9320-3d-ia-ft",
+  "brand": "Intelbras",
+  "model": "VIP 9320 3D IA FT",
+  "type": "panoramic",
+  "markets": [
+    "BR",
+    "LATAM"
+  ],
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2048,
+    "max_height": 1536,
+    "label": "3MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "96 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux_color": 0.005
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG",
+      "H.265+",
+      "H.264+"
+    ],
+    "max_fps": 30
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "dimensions_mm": "204 x 62 x 78 mm",
+  "weight_g": 810,
+  "operating_temp_c": "-40 to 60",
+  "power": {
+    "method": "PoE (802.3af) / ePoE / 12 Vdc"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "features": [
+    "3MP multisensor people-counting camera",
+    "queue management + entrance/exit counting (up to 4 areas)",
+    "AI face capture with metadata",
+    "perimeter analytics (line/fence, loitering, crowd)",
+    "Smart IR 20m",
+    "IP67 + IK10"
+  ],
+  "sources": [
+    "https://backend.intelbras.com/sites/default/files/2022-08/Novo%20Datasheet%20-%20VIP%209320%203D%20IA%20FT.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif"
+    },
+    "blue_iris": {
+      "profile": "ONVIF/Dahua"
+    }
+  },
+  "last_verified": "2026-09-11"
+}
