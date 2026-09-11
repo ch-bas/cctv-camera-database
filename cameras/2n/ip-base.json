@@ -1,0 +1,100 @@
+{
+  "id": "2n-ip-base",
+  "brand": "2N",
+  "model": "2N IP Base",
+  "aliases": [
+    "2N IP Base door intercom"
+  ],
+  "type": "doorbell",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.3,
+    "max_width": 640,
+    "max_height": 480,
+    "label": "480p"
+  },
+  "sensor": "1/3\" colour CMOS",
+  "field_of_view_deg": "135 horizontal, 109 vertical, 141 diagonal",
+  "night_vision": {
+    "type": "none"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "640x480",
+        "fps": 30
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP65",
+  "ik_rating": "IK07",
+  "operating_temp_c": "-40 to 55",
+  "dimensions_mm": "229 x 109 x 31",
+  "weight_g": 1000,
+  "power": {
+    "method": "PoE (802.3af) or 12V DC"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "features": [
+    "SIP door intercom",
+    "ONVIF Profile S",
+    "up to 1280x960 JPEG snapshots",
+    "0.1 lux low-light (no IR)",
+    "Axis-owned brand"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "sources": [
+    "https://wiki.2n.com/hipba/inst/latest/en/4-technicke-parametry"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264_stream",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profile S)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "ONVIF Profile S supported."
+    }
+  },
+  "last_verified": "2026-09-10"
+}

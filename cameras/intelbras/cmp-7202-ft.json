@@ -1,0 +1,86 @@
+{
+  "id": "intelbras-cmp-7202-ft",
+  "brand": "Intelbras",
+  "model": "CMP 7202 FT",
+  "type": "covert",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "night_vision": {
+    "type": "none"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "dimensions_mm": "83 x 110 x 24",
+  "weight_g": 210,
+  "operating_temp_c": "-40 to 60",
+  "power": {
+    "method": "12 Vdc / PoE (802.3af)"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "features": [
+    "Processing unit for up to two pinhole cameras",
+    "2MP Full HD",
+    "Face detection",
+    "Perimeter analytics (tripwire/intrusion)",
+    "Abandoned/removed object detection",
+    "Alarm I/O and RS-232",
+    "microSD up to 256GB"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif"
+    },
+    "blue_iris": {
+      "profile": "ONVIF/Dahua"
+    }
+  },
+  "markets": [
+    "BR",
+    "LATAM"
+  ],
+  "last_verified": "2026-09-11",
+  "sources": [
+    "https://backend.intelbras.com/sites/default/files/2023-03/datasheet-cmp-7202-ft-pt.pdf"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "brand": "Novus",
+  "brand_id": "novus",
+  "status": "unverified",
+  "default_port": 554,
+  "templates": [],
+  "unverified_leads": [
+    {
+      "path": "/profile1",
+      "note": "Candidate main-stream path (TVT / generic-ONVIF style). NOVUS (AAT SYSTEMY BEZPIECZENSTWA) publishes camera user manuals (NVIP-6000_series_FULL_EN_PL_v1.0 and NVIP-8000_series_cameras_FULL_EN_PL_v2.0 on novuscctv.com) that describe only an 'RTSP' configuration tab — enable/disable, set port, allow-anonymous-login, multicast — and never state a fixed RTSP URL path. The 6000-series web UI (Config File Common/Day/Night profiles, 'Save Target Cutout' / 'Save Face Information') strongly resembles a TVT/Provision-style OEM platform whose documented main path is /profile1, but no official NOVUS/AAT document confirms this OEM lineage or path, so it cannot be marked verified."
+    },
+    {
+      "path": "/profile2",
+      "note": "Candidate sub-stream counterpart to /profile1 (TVT / generic-ONVIF style). Same reason as /profile1: not published in any NOVUS/AAT manual; only the RTSP enable/port tab is documented."
+    },
+    {
+      "path": "/cam0/h264",
+      "note": "Different OEM firmware pattern (Hisilicon/Longse-style) that contradicts the /profile1,/profile2 pattern — evidence NOVUS is a multi-OEM rebrand. Not present in any official NOVUS manual reviewed."
+    },
+    {
+      "path": "/H264?ch=1&subtype=0",
+      "note": "Query-string pattern resembling Dahua-derivative firmware. Not published in any NOVUS/AAT document; unconfirmable as an official NOVUS path."
+    }
+  ],
+  "notes": "Novus is the professional CCTV brand of AAT SYSTEMY BEZPIECZENSTWA sp. z o.o. (formerly AAT Holding), Poland (novuscctv.com). Its cameras are multi-OEM rebrands. Two current full user manuals were retrieved and searched (NVIP-6000 series FULL v1.0 and NVIP-8000 series FULL v2.0, hosted at novuscctv.com/sites/default/files/aat/globalfiles/globalfiles/): both document an RTSP tab (enable/disable protocol, set port, allow anonymous login, multicast) and ONVIF/Media2, but neither states a fixed RTSP URL path or an rtsp:// example. The novuscctv.com FAQ/technical-support pages and the old.novuscctv.com manuals archive (404/dead) yielded no RTSP URL scheme. Because no manufacturer source publishes the path and the scan-DB candidates point at conflicting OEM platforms, status is unverified. Default RTSP port per the manuals is 554.",
+  "verified_on": "2026-09-10"
+}

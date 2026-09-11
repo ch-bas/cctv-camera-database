@@ -1,0 +1,116 @@
+{
+  "id": "neutron-neu-ipsd42-x25",
+  "brand": "Neutron",
+  "model": "NEU-IPSD42-X25",
+  "aliases": [
+    "NEU-IPSD42-X25"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/2.8\" progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.8-120 (motorized, 25x optical)",
+    "aperture": "F1.5-F3.8",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100,
+    "min_lux_color": 0.003
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "720x576",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "power": {
+    "method": "PoE+ (IEEE 802.3at) / DC 12V 3A",
+    "consumption_w": 21,
+    "poe_class": 4
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "dimensions_mm": "166 (diameter) x 295",
+  "operating_temp_c": "-40 to 70",
+  "features": [
+    "LightHunter",
+    "25x optical zoom",
+    "16x digital zoom",
+    "Smart IR"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://www.neutron.com.tr/en/product/4-mp-lighthunter-ptz-dome-ip-camera"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/media/video1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/media/video2",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif"
+    },
+    "blue_iris": {
+      "profile": "ONVIF"
+    }
+  },
+  "last_verified": "2026-09-10",
+  "markets": [
+    "global",
+    "EU"
+  ]
+}

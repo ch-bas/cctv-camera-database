@@ -44,6 +44,32 @@ const REALMONITOR_MISFILE = new Set([
   'foscam', 'wyze',
 ]);
 
+// Generic device/scan-DB labels that are NOT identifiable to a manufacturer, so
+// they can never be verified against "the brand's official docs". StrixCamDB
+// records these in its brand column when the scanner couldn't attribute a real
+// make (chip/firmware/category strings, marketplace tags). Reject at the brand
+// gate — a lead you can't attribute to a maker is not a coverage candidate.
+const GENERIC_BRAND = new Set([
+  'other', 'general', 'generic', 'unknown', 'test', 'default', 'admin', 'demo',
+  'china', 'shenzhen', 'sichuan', 'oem', 'onvif', 'cctv', 'camera', 'ipcam',
+  'ipc', 'nvr', 'dvr', 'webcam', 'netcam', 'ip-cam', 'ip-camera', 'hd-camera',
+  'hd-ipc', 'hd-ipcam', 'mega-pixel', 'megapixel', 'network', 'network-camera',
+  'embedded', 'embedded-net-dvr', 'hisilicon', 'linux', 'goahead', 'boa',
+  'server', 'cloud', 'cloud-ip-camera', 'cloudcam', 'nvsip', 'ipnc', 'ipc-bo',
+  '255-ip-cam', '3g-ipcam', 'aicam', 'ali-express', 'aliexpress', 'going',
+  'netsurveillance-dvr-h-264-network-video-recorder',
+]);
+// Obvious device-string patterns (chip/codec/category, not a maker).
+const GENERIC_BRAND_RE = /^(h-?26[45]|mpeg-?4|hi3\d{3}|3g)(-|$)|(-|^)(network-)?(dvr|nvr|network-video-recorder)$/i;
+// Typo / OEM-lineage aliases → the real, already-covered brand slug, so these
+// leads cluster as template-cross-checks instead of phantom "new coverage".
+const BRAND_ALIAS = {
+  unview: 'uniview', 'air-live': 'airlive', unv: 'uniview', 'uni-view': 'uniview',
+  alhua: 'dahua', dh: 'dahua', 'da-hua': 'dahua',
+  hik: 'hikvision', 'hik-vision': 'hikvision', hiki: 'hikvision',
+  'tp-link-tapo': 'tapo', 'hik-connect': 'hikvision',
+};
+
 main();
 
 function main() {
@@ -68,7 +94,7 @@ function main() {
   // stage 3: cluster by brand + triage
   const byBrand = new Map();
   for (const lead of kept) {
-    const slug = slugify(lead.brand_id);
+    const slug = brandSlug(lead);
     if (!byBrand.has(slug)) byBrand.set(slug, []);
     byBrand.get(slug).push(lead);
   }
@@ -112,9 +138,15 @@ function main() {
  * scheme lives in the `protocol` column. We normalize to a path before matching.
  */
 function junkReason(lead) {
-  const slug = slugify(lead.brand_id);
+  const slug = brandSlug(lead);
   const proto = String(lead.protocol || '').toLowerCase();
   const p = normalizePath(lead.url);
+
+  // Brand gate: an unattributable/generic label can never be verified against a
+  // manufacturer's docs, so it's not a coverage candidate.
+  if (GENERIC_BRAND.has(slug) || GENERIC_BRAND_RE.test(slug)) {
+    return `generic/non-brand label (${slug}) — not attributable to a manufacturer`;
+  }
 
   if (!p || p === '/') return 'no path component';
 
@@ -162,4 +194,7 @@ function normalizePath(url) {
 }
 // Keep consistent with the dataset's slugify (scripts/add-camera.js).
 function slugify(s) { return String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
+// Canonical brand slug for a lead: slugify, then map known typo/OEM aliases to
+// the real covered brand so they don't masquerade as new coverage.
+function brandSlug(lead) { const s = slugify(lead.brand_id); return BRAND_ALIAS[s] || s; }
 function stamp() { return process.env.STRIX_DATE || new Date().toISOString().slice(0, 10); }

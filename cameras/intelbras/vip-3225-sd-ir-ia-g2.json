@@ -1,0 +1,102 @@
+{
+  "id": "intelbras-vip-3225-sd-ir-ia-g2",
+  "brand": "Intelbras",
+  "model": "VIP 3225 SD IR IA G2",
+  "type": "ptz",
+  "markets": [
+    "BR",
+    "LATAM"
+  ],
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" STARVIS CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.8 a 120",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "58.5 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100,
+    "min_lux_color": 0.005
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG",
+      "H.265+",
+      "H.264+"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "resolution": "1920x1080",
+        "fps": 30
+      },
+      {
+        "resolution": "704x576",
+        "fps": 30
+      },
+      {
+        "resolution": "1920x1080",
+        "fps": 30
+      }
+    ]
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "dimensions_mm": "160 x 270 x 160 mm",
+  "weight_g": 2400,
+  "operating_temp_c": "-40 to 60",
+  "power": {
+    "method": "PoE+ (802.3at) / 12 Vdc"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "features": [
+    "2MP STARVIS speed dome with 25x optical zoom",
+    "Smart IR up to 100m",
+    "AutoTracking Lite",
+    "AI face detection + perimeter protection",
+    "300 presets",
+    "PoE+ (802.3at)",
+    "IP66"
+  ],
+  "sources": [
+    "https://backend.intelbras.com/sites/default/files/2026-06/Datasheet_VIP%203225%20SD%20IR%20IA%20G2_0.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif"
+    },
+    "blue_iris": {
+      "profile": "ONVIF/Dahua"
+    }
+  },
+  "last_verified": "2026-09-11"
+}
