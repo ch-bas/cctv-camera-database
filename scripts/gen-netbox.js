@@ -12,7 +12,7 @@
  *   - poe_type is derived from power.method text (802.3af/at/bt). Unparseable → poe_type omitted.
  *   - weight only emitted when weight_g is present (library asks for it, does not require it).
  *   - DC power port only emitted when power.method names a DC voltage.
- *   - comments link to the first entry in `sources` (the datasheet) + cctv-database.com page.
+ *   - comments link to the best entry in `sources` (preferring URLs with a path over bare domains) + cctv-database.com page.
  *
  * --report lists PoE cameras that are blocked only by a missing ethernet speed,
  * with their datasheet URL so the field can be filled from the source.
@@ -129,7 +129,16 @@ function toYaml(c) {
     L.push(`    position: microSD`);
     L.push(`    description: up to ${c.storage.max_microsd_gb} GB`);
   }
-  const ds = c.sources && c.sources[0];
+  const ds = (() => {
+    let fallback = null;
+    for (const s of (c.sources || [])) {
+      const clean = s.split('?')[0].replace(/\/$/, '');
+      const m = clean.match(/^https?:\/\/[^/]+(\/\S+)/);
+      if (m) return clean;
+      if (!fallback) fallback = clean;
+    }
+    return fallback;
+  })();
   const page = `https://cctv-database.com/camera/${c.id}`;
   L.push(`comments: >`);
   L.push(`  [${c.brand} ${c.model} datasheet](${ds}) | [Specs on cctv-database.com](${page})`);
