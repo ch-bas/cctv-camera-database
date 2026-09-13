@@ -237,7 +237,7 @@ A device type is only emitted when the camera has a known RJ45 link speed (`netw
 | Total cameras | **12,171** |
 | Brands | **157** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
-| PoE wired | 8,810 |
+| PoE wired | 8,806 |
 | WiFi | 1,121 |
 | Battery / wire-free | 340 |
 | 4K / 8MP+ | 2,588 |
