@@ -6,6 +6,26 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.19.0] — 2026-09-13
+
+Dataset reaches **12,171 cameras / 157 brands** (+164). A full **Vivotek** catalogue sweep, a dataset-wide **`network.ethernet_speed_mbps`** backfill from official datasheets, and a round of sourcing/config fixes.
+
+### Added — Vivotek catalogue sweep (19 → 183, +164)
+- The current per-model Vivotek camera catalogue from the official `vivotek.com` download-center **Specification** datasheets: box/bullet/dome/turret/fisheye/multi-sensor panoramic/PTZ speed-dome/covert plus bi-spectrum and uncooled **thermal**. Vivotek RTSP scheme (`/live.sdp`, `/live2.sdp`), ONVIF/RTSP, `cloud_dependency: local`, `ndaa_compliant: true` (Taiwanese maker, states NDAA/TAA compliance). Non-cameras (VS-series encoders) excluded.
+
+### Changed — `network.ethernet_speed_mbps` backfill (data quality)
+- Read the RJ45 / Network Interface row from official datasheets and populated `network.ethernet_speed_mbps` across the dataset — now **5,884 records** carry it. This cycle filled ~670 records: Vivotek, Matrix, Dahua (+122), Milesight (+149), Mapesen, ACTi, Hikvision, HikMicro, Alibi, Urmet, Avigilon, Bosch, GeoVision, ABUS, Amcrest, Axis. Analog/coax (HDCVI/HD-TVI), Wi-Fi-only, and cellular models — which have no RJ45 — were correctly left unset; nothing was inferred where the datasheet is silent.
+- **Amcrest:** re-sourced `IP4M-1051EW` from a third-party Amazon listing to the official Amcrest datasheet.
+- **LiLin:** removed an incorrect `poe` from `power_source` on AC/DC-only PTZ cameras.
+
+### Verified — community config reports
+- **Intelbras iM7 S Full Color (#360):** Frigate config confirmed working on 0.17.2 (marcosmerlo12) — marked `verified`, added a usage note (URL-encode special characters in the RTSP password; H.264 `preset-vaapi` on Intel iGPU).
+
+### Tooling
+- `gen-netbox` (NetBox device-type export): prefer specific product-page URLs over bare domain roots; derive `poe_type` from voltage/PoE-class/consumption fallbacks.
+
+---
+
 ## [2.18.0] — 2026-09-11
 
 Dataset grows to **12,007 cameras / 157 brands** (+394 cameras, +17 brands). Two full manufacturer-catalogue sweeps — **Intelbras** (9 → 170) and **Kedacom** (63 → 169) — a new **Alibi** brand (56), and 16 brands seeded from the RTSP-pattern backlog (#268). Every record is from an official manufacturer datasheet or product page.
