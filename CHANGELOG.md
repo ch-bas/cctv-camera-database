@@ -8,7 +8,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.19.0] — 2026-09-13
 
-Dataset reaches **12,171 cameras / 157 brands** (+164). A full **Vivotek** catalogue sweep, a dataset-wide **`network.ethernet_speed_mbps`** backfill from official datasheets, and a round of sourcing/config fixes.
+Dataset reaches **12,267 cameras / 157 brands** (+260). Full **Vivotek** and **Amcrest** catalogue sweeps, a dataset-wide **`network.ethernet_speed_mbps`** backfill from official datasheets, and a round of sourcing/config fixes.
+
+### Added — Amcrest catalogue sweep (90 → 181, +91) + Dahua DH-DB6I
+- 91 new Amcrest models from the official `support.amcrest.com` datasheets (IP2M/IP3M/IP4M/IP5M/IP8M/IP12M bullet/dome/turret/ptz/fisheye, bi-spectrum `dual-lens`, `covert`, `floodlight`, plus ASH SmartHome), and 4 more (IP2M-842E/848E/850E/866EW). Dahua-OEM RTSP, `ndaa_compliant` omitted, `ethernet_speed_mbps` from each RJ-45 row; existing Amcrest records re-sourced to their official Technical-Specifications article URLs.
+- **Dahua DH-DB6I** (LincX2PRO 5MP Wi-Fi video doorbell, #362) added from the official datasheet.
 
 ### Added — Vivotek catalogue sweep (19 → 183, +164)
 - The current per-model Vivotek camera catalogue from the official `vivotek.com` download-center **Specification** datasheets: box/bullet/dome/turret/fisheye/multi-sensor panoramic/PTZ speed-dome/covert plus bi-spectrum and uncooled **thermal**. Vivotek RTSP scheme (`/live.sdp`, `/live2.sdp`), ONVIF/RTSP, `cloud_dependency: local`, `ndaa_compliant: true` (Taiwanese maker, states NDAA/TAA compliance). Non-cameras (VS-series encoders) excluded.
