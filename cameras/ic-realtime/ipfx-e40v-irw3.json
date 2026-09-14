@@ -1,0 +1,103 @@
+{
+  "id": "ic-realtime-ipfx-e40v-irw3",
+  "brand": "IC Realtime",
+  "model": "IPFX-E40V-IRW3",
+  "type": "turret",
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "2K"
+  },
+  "sensor": "1/2.9\" 4 Megapixel CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5",
+    "aperture": "F1.5",
+    "varifocal": true
+  },
+  "field_of_view_deg": "104-29",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40,
+    "min_lux_color": 0.005
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V",
+    "consumption_w": 5.2
+  },
+  "weight_g": 915,
+  "dimensions_mm": "122 (diameter) x 108.3",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true
+  },
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "varifocal",
+    "IR night vision",
+    "2K/4MP resolution",
+    "built-in microphone",
+    "microSD up to 256GB"
+  ],
+  "sources": [
+    "https://store.icrealtime.com/IPFX-E40V-IRW3"
+  ],
+  "last_verified": "2026-09-14",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua-OEM; use ONVIF or the Dahua/Amcrest integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile — IC Realtime uses Dahua protocol."
+    }
+  }
+}
