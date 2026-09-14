@@ -243,7 +243,7 @@ A device type is only emitted when the camera has a known RJ45 link speed (`netw
 | 4K / 8MP+ | 2,647 |
 | 4–7MP | 4,926 |
 | Under 4MP | 4,813 |
-| With integration configs (Frigate / Home Assistant) | 9,101 |
+| With integration configs (Frigate / Home Assistant) | 9,148 |
 | With color-lux rating (`night_vision.min_lux_color`) | 8,897 |
 
 ### All 158 brands
@@ -475,7 +475,7 @@ Open — contributions very welcome:
 
 - [ ] **Re-source ~1,051 reseller-only cameras** to official OEM datasheets (#164 / #165)
 - [ ] **Backfill pixel resolution** for the ~541 entries that state megapixels but no width×height (#169)
-- [ ] **Frigate verification drive** — only 30 of 8,992 shipped configs are community-verified; [confirm one you run](../../issues/new?template=verify-frigate-config.yml)
+- [ ] **Frigate verification drive** — only 30 of 9,039 shipped configs are community-verified; [confirm one you run](../../issues/new?template=verify-frigate-config.yml)
 - [ ] **Grow `community_notes`** — the per-camera quirks/behaviors layer (#297)
 
 ---
