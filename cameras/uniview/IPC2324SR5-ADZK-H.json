@@ -1,0 +1,120 @@
+{
+  "id": "uniview-ipc2324sr5-adzk-h",
+  "brand": "Uniview",
+  "model": "IPC2324SR5-ADZK-H",
+  "ndaa_compliant": true,
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/3\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "86.3-35.2 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux_color": 0.003
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 9.6
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 25
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30
+      }
+    ]
+  },
+  "features": [
+    "120 dB true WDR",
+    "motorized varifocal lens",
+    "4.3x optical zoom",
+    "smart IR",
+    "9:16 corridor mode",
+    "3-axis adjustment"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "206 x 73 x 73",
+  "weight_g": 510,
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://global.uniview.com/us/res/202309/26/20230926_1889521_IPC2324SR5-ADZK-H%204MP%20HD%20IR%20VF%20Bullet%20Network%20Camera%20datasheet%20V1.2-EN_971724_612240_0.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1920,
+        "height": 1080,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Select 'Uniview' or generic ONVIF profile."
+    }
+  },
+  "last_verified": "2026-09-14",
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "cloud_dependency": "local"
+}
