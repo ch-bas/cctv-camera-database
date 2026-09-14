@@ -8,7 +8,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.19.0] — 2026-09-13
 
-Dataset reaches **12,267 cameras / 157 brands** (+260). Full **Vivotek** and **Amcrest** catalogue sweeps, a dataset-wide **`network.ethernet_speed_mbps`** backfill from official datasheets, and a round of sourcing/config fixes.
+Dataset reaches **12,277 cameras / 157 brands** (+270). Full **Vivotek** and **Amcrest** catalogue sweeps, a dataset-wide **`network.ethernet_speed_mbps`** backfill from official datasheets, missing **Uniview** and **GeoVision** bullet/dome models, and a round of sourcing/config fixes.
 
 ### Added — Amcrest catalogue sweep (90 → 181, +91) + Dahua DH-DB6I
 - 91 new Amcrest models from the official `support.amcrest.com` datasheets (IP2M/IP3M/IP4M/IP5M/IP8M/IP12M bullet/dome/turret/ptz/fisheye, bi-spectrum `dual-lens`, `covert`, `floodlight`, plus ASH SmartHome), and 4 more (IP2M-842E/848E/850E/866EW). Dahua-OEM RTSP, `ndaa_compliant` omitted, `ethernet_speed_mbps` from each RJ-45 row; existing Amcrest records re-sourced to their official Technical-Specifications article URLs.
@@ -16,6 +16,10 @@ Dataset reaches **12,267 cameras / 157 brands** (+260). Full **Vivotek** and **A
 
 ### Added — Vivotek catalogue sweep (19 → 183, +164)
 - The current per-model Vivotek camera catalogue from the official `vivotek.com` download-center **Specification** datasheets: box/bullet/dome/turret/fisheye/multi-sensor panoramic/PTZ speed-dome/covert plus bi-spectrum and uncooled **thermal**. Vivotek RTSP scheme (`/live.sdp`, `/live2.sdp`), ONVIF/RTSP, `cloud_dependency: local`, `ndaa_compliant: true` (Taiwanese maker, states NDAA/TAA compliance). Non-cameras (VS-series encoders) excluded.
+
+### Added — Uniview + GeoVision bullet/dome models (+9)
+- **Uniview (+5):** the SR-series bullets/domes surfaced by an esentia.com coverage check — `IPC2124SR-ADF28KM-H`, `IPC2125SR-ADF28KM-H`, `IPC2324SR5-ADZK-H` (motorized VF), `IPC324SR-ADF28KM-H`, `IPC325SR-ADF28KM-H` — from the official `uniview.com` datasheets. Ultra265/H.265/H.264/MJPEG, Uniview RTSP scheme (`/unicast/c1/s0/live`), `ndaa_compliant: true`.
+- **GeoVision (+4):** `GV-GBLN4800-2F` / `-3F` (AI-ISP full-color warm-LED), `GV-GBLF4802-2F` (full-color + IR), and `UA-B580F3` (USAVision 5MP) from the official `geovision.com.tw` datasheets. GeoVision RTSP scheme (`8554/CH001.sdp`), ONVIF/RTSP.
 
 ### Changed — `network.ethernet_speed_mbps` backfill (data quality)
 - Read the RJ45 / Network Interface row from official datasheets and populated `network.ethernet_speed_mbps` across the dataset — now **5,884 records** carry it. This cycle filled ~670 records: Vivotek, Matrix, Dahua (+122), Milesight (+149), Mapesen, ACTi, Hikvision, HikMicro, Alibi, Urmet, Avigilon, Bosch, GeoVision, ABUS, Amcrest, Axis. Analog/coax (HDCVI/HD-TVI), Wi-Fi-only, and cellular models — which have no RJ45 — were correctly left unset; nothing was inferred where the datasheet is silent.
