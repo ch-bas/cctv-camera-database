@@ -9,10 +9,11 @@
  *   - Only cameras with power_source "poe" AND a known Ethernet link speed are emitted.
  *     Link speed must come from `network.ethernet_speed_mbps` (10/100/1000/2500/10000).
  *     devicetype-library requires an interface `type`; we never guess 100base-tx.
- *   - poe_type is derived from power.method text (802.3af/at/bt). Unparseable → poe_type omitted.
+ *   - poe_type is derived from power.method → power.voltage → poe_class → consumption_w (poe-only fallback).
+ *     All sources unparseable → poe_type omitted (interface left as plain port).
  *   - weight only emitted when weight_g is present (library asks for it, does not require it).
  *   - DC power port only emitted when power.method names a DC voltage.
- *   - comments link to the first entry in `sources` (the datasheet) + cctv-database.com page.
+ *   - comments link to the best entry in `sources` (preferring URLs with a path over bare domains) + cctv-database.com page.
  *
  * --report lists PoE cameras that are blocked only by a missing ethernet speed,
  * with their datasheet URL so the field can be filled from the source.
@@ -58,14 +59,38 @@ function slugifyModel(s) {
   return x.endsWith('-') ? x.slice(0, -1) : x;
 }
 
-function poeType(method) {
-  if (!method) return null;
-  const m = method.toLowerCase();
+function poeTypeFromText(text) {
+  if (!text) return null;
+  const m = text.toLowerCase();
   // Wattage is word-anchored so a battery spec like "360 Wh" can't match "60 W".
   if (/802\.3 ?bt|poe\+\+|hi-?poe|\b(?:60|90) ?w\b/.test(m)) return 'type3-ieee802.3bt';
   if (/802\.3 ?at|poe\+/.test(m)) return 'type2-ieee802.3at';
   if (/802\.3 ?af/.test(m)) return 'type1-ieee802.3af';
-  return null; // plain "PoE" — don't guess the standard
+  return null;
+}
+
+function poeTypeFromClass(cls) {
+  if (cls == null) return null;
+  cls = parseInt(cls, 10);
+  if (cls <= 3) return 'type1-ieee802.3af';
+  if (cls === 4) return 'type2-ieee802.3at';
+  if (cls <= 6) return 'type3-ieee802.3bt';
+  return 'type4-ieee802.3bt';
+}
+
+function poeTypeFromWatts(w) {
+  if (w == null) return null;
+  if (w > 60) return 'type4-ieee802.3bt';
+  if (w > 30) return 'type3-ieee802.3bt';
+  if (w > 15.4) return 'type2-ieee802.3at';
+  return 'type1-ieee802.3af';
+}
+
+function poeType(power) {
+  return poeTypeFromText(power && power.method)
+      || poeTypeFromText(power && power.voltage)
+      || poeTypeFromClass(power && power.poe_class)
+      || null; // plain "PoE" with no wattage data — don't guess yet
 }
 
 function dcVoltage(method) {
@@ -85,11 +110,15 @@ function toYaml(c) {
   const ifType = SPEED_TYPE[speed];
   if (!ifType) return null;
   const method = c.power && c.power.method;
-  const pt = poeType(method);
+  const hasDc = (c.power_source || []).includes('dc');
+  const poeOnly = (c.power_source || []).includes('poe') && !hasDc;
+  // Derive PoE type: method text → voltage text → poe_class → consumption_w (poe-only fallback)
+  const pt = poeType(c.power)
+          || (poeOnly ? poeTypeFromWatts(c.power && c.power.consumption_w) : null);
   // Only emit a DC power port when the camera actually takes DC input. Otherwise
   // a PoE nominal voltage in the method string ("PoE 802.3af, 48 VDC nominal")
   // would fabricate a nonexistent DC-terminal port on a PoE-only device.
-  const dcV = (c.power_source || []).includes('dc') ? dcVoltage(method) : null;
+  const dcV = hasDc ? dcVoltage(method) : null;
   const draw = c.power && c.power.consumption_w;
   const mfr = brandInfo(c.brand).name;
   const slug = `${slugifyManufacturer(mfr)}-${slugifyModel(c.model)}`;
@@ -106,9 +135,9 @@ function toYaml(c) {
   L.push(`interfaces:`);
   L.push(`  - name: eth0`);
   L.push(`    type: ${ifType}`);
-  // devicetype-library rejects poe_mode without a matching poe_type, so only annotate
-  // PoE when the datasheet gave us the standard (802.3af/at/bt); otherwise leave the
-  // interface as a plain port rather than guess the PoE type.
+  // devicetype-library rejects poe_mode without a matching poe_type. Derive the type from
+  // method text → voltage text → poe_class → consumption_w (poe-only fallback). If still
+  // unknown, leave the interface as a plain port rather than guess.
   if (pt) { L.push(`    poe_mode: pd`); L.push(`    poe_type: ${pt}`); }
   if (draw || (c.power && c.power.poe_class != null)) {
     const d = [];
@@ -129,7 +158,16 @@ function toYaml(c) {
     L.push(`    position: microSD`);
     L.push(`    description: up to ${c.storage.max_microsd_gb} GB`);
   }
-  const ds = c.sources && c.sources[0];
+  const ds = (() => {
+    let fallback = null;
+    for (const s of (c.sources || [])) {
+      const clean = s.split('?')[0].replace(/\/$/, '');
+      const m = clean.match(/^https?:\/\/[^/]+(\/\S+)/);
+      if (m) return clean;
+      if (!fallback) fallback = clean;
+    }
+    return fallback;
+  })();
   const page = `https://cctv-database.com/camera/${c.id}`;
   L.push(`comments: >`);
   L.push(`  [${c.brand} ${c.model} datasheet](${ds}) | [Specs on cctv-database.com](${page})`);

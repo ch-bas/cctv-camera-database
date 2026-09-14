@@ -6,6 +6,40 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.19.0] — 2026-09-13
+
+Dataset reaches **12,386 cameras / 158 brands** (+379). Full **Vivotek** and **Amcrest** catalogue sweeps, a dataset-wide **`network.ethernet_speed_mbps`** backfill from official datasheets, missing **Uniview** and **GeoVision** bullet/dome models, and a round of sourcing/config fixes.
+
+### Added — Amcrest catalogue sweep (90 → 181, +91) + Dahua DH-DB6I
+- 91 new Amcrest models from the official `support.amcrest.com` datasheets (IP2M/IP3M/IP4M/IP5M/IP8M/IP12M bullet/dome/turret/ptz/fisheye, bi-spectrum `dual-lens`, `covert`, `floodlight`, plus ASH SmartHome), and 4 more (IP2M-842E/848E/850E/866EW). Dahua-OEM RTSP, `ndaa_compliant` omitted, `ethernet_speed_mbps` from each RJ-45 row; existing Amcrest records re-sourced to their official Technical-Specifications article URLs.
+- **Dahua DH-DB6I** (LincX2PRO 5MP Wi-Fi video doorbell, #362) added from the official datasheet.
+
+### Added — Vivotek catalogue sweep (19 → 183, +164)
+- The current per-model Vivotek camera catalogue from the official `vivotek.com` download-center **Specification** datasheets: box/bullet/dome/turret/fisheye/multi-sensor panoramic/PTZ speed-dome/covert plus bi-spectrum and uncooled **thermal**. Vivotek RTSP scheme (`/live.sdp`, `/live2.sdp`), ONVIF/RTSP, `cloud_dependency: local`, `ndaa_compliant: true` (Taiwanese maker, states NDAA/TAA compliance). Non-cameras (VS-series encoders) excluded.
+
+### Added — IC Realtime current catalogue (+42 → 101)
+- IC Realtime already carried 59 records (2021 catalogue edition); this adds the **current `store.icrealtime.com` IP-camera lineup** missing from that set (+42 → 101 total), built from the server-rendered product pages (full spec tables). Covers the IPND/IPMX/IPEG/IPFX/IPEL/ICIP lines: bullets, vandal domes, eyeball turrets, a 360° fisheye, multi-sensor/panoramic (dual- and quad-imager) and dual-lens units, and full-size/mini **PTZ** (25x/32x/40x optical, auto-tracking). Dahua-OEM RTSP scheme (`/cam/realmonitor`), ONVIF/RTSP, `cloud_dependency: local`. `ndaa_compliant: true` on the 9 **IPND** models — IC Realtime's "IC Secure" NDAA series, whose product pages explicitly state NDAA/TAA-compliant; a brand-wide re-check confirmed every other line (IPEG/IPFX/IPMX/IPEL + legacy AVS/ICR/ICIP/HDEL/THIP) carries no NDAA claim, so those stay omitted (never false). Includes the two community-referenced models `IPEL-B40V-LPR1` (ANPR) and `IPEL-B80F-IRW3`.
+
+### Added — Homaxi (new brand, +65 — full catalogue)
+- New brand **Homaxi** (Chinese ONVIF-OEM), the full current camera catalogue from official `homaxi.com` product datasheets/detail pages (enumerated via the site product API): X/I/S-series **ColorView** 24/7 full-color, **iQSense** starlight, and **Active-Deterrence** (red/blue strobe + two-way audio) bullet/turret/dome across 4/5/6/8MP; the **Smart Dual Illumination** DL line; the 32x auto-tracking **PTZ** (`IPT651R5-Z32-AD-TPMSCR`); an 8MP **dual-lens** 180° panoramic (`IPC8MST2R8-AD-TPMSC`); a 6MP **fisheye** (`IPC8FE1R6-I2-TPMS`); and an **ANPR/LPR** bullet (`IPC8BV6R4-LPR`). ONVIF/RTSP; Homaxi publishes no fixed RTSP path so configs use ONVIF auto-config; `ethernet_speed_mbps: 100`; `ndaa_compliant: true` on the 49 models whose datasheet states NDAA compliance, omitted on the other 15 (mostly Active-Deterrence and some starlight lines). One model (`IPC8TF4R8-AD2`) whose detail page is unpublished server-side and has no reachable datasheet, plus three non-camera SKUs (`IDS8752TW`/`ODS843GR`/`ODS803N-SR`, IP-speaker/decoder line), were left out.
+
+### Added — Uniview + GeoVision bullet/dome models (+11)
+- **Uniview (+7):** the SR/Eco-series bullets/domes surfaced by an esentia.com coverage check — `IPC2124SR-ADF28KM-H`, `IPC2125SR-ADF28KM-H`, `IPC2324SR5-ADZK-H` (motorized VF), `IPC324SR-ADF28KM-H`, `IPC325SR-ADF28KM-H`, `IPC2314SR-ADF28KM-WP` (ColorHunter full-color), `EC-B4F28M-V3` (Eco IR) — from the official `uniview.com` datasheets. Ultra265/H.265/H.264/MJPEG, Uniview RTSP scheme (`/unicast/c1/s0/live`), `ndaa_compliant: true`.
+- **GeoVision (+4):** `GV-GBLN4800-2F` / `-3F` (AI-ISP full-color warm-LED), `GV-GBLF4802-2F` (full-color + IR), and `UA-B580F3` (USAVision 5MP) from the official `geovision.com.tw` datasheets. GeoVision RTSP scheme (`8554/CH001.sdp`), ONVIF/RTSP.
+
+### Changed — `network.ethernet_speed_mbps` backfill (data quality)
+- Read the RJ45 / Network Interface row from official datasheets and populated `network.ethernet_speed_mbps` across the dataset — now **5,884 records** carry it. This cycle filled ~670 records: Vivotek, Matrix, Dahua (+122), Milesight (+149), Mapesen, ACTi, Hikvision, HikMicro, Alibi, Urmet, Avigilon, Bosch, GeoVision, ABUS, Amcrest, Axis. Analog/coax (HDCVI/HD-TVI), Wi-Fi-only, and cellular models — which have no RJ45 — were correctly left unset; nothing was inferred where the datasheet is silent.
+- **Amcrest:** re-sourced `IP4M-1051EW` from a third-party Amazon listing to the official Amcrest datasheet.
+- **LiLin:** removed an incorrect `poe` from `power_source` on AC/DC-only PTZ cameras.
+
+### Verified — community config reports
+- **Intelbras iM7 S Full Color (#360):** Frigate config confirmed working on 0.17.2 (marcosmerlo12) — marked `verified`, added a usage note (URL-encode special characters in the RTSP password; H.264 `preset-vaapi` on Intel iGPU).
+
+### Tooling
+- `gen-netbox` (NetBox device-type export): prefer specific product-page URLs over bare domain roots; derive `poe_type` from voltage/PoE-class/consumption fallbacks.
+
+---
+
 ## [2.18.0] — 2026-09-11
 
 Dataset grows to **12,007 cameras / 157 brands** (+394 cameras, +17 brands). Two full manufacturer-catalogue sweeps — **Intelbras** (9 → 170) and **Kedacom** (63 → 169) — a new **Alibi** brand (56), and 16 brands seeded from the RTSP-pattern backlog (#268). Every record is from an official manufacturer datasheet or product page.
