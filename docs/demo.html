@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CCTV Camera Database</title>
-  <meta name="description" content="Open database of 1,330 CCTV camera specifications across 66 brands. Search, filter, compare, and find Frigate/HA/Blue Iris configs." />
+  <meta name="description" content="Open database of IP / CCTV camera specifications. Search, filter, compare, and find Frigate / Home Assistant / Blue Iris configs." />
   <style>
     /* ── Reset & base ─────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -212,22 +212,6 @@
     .ms-option .ms-opt-count { color: var(--text-dim); font-size: 11px; flex-shrink: 0; }
     .ms-option.hidden { display: none; }
 
-    /* ── Price range slider ───────────────────────────────────── */
-    .price-range-wrap {
-      display: flex; align-items: center; gap: 8px;
-      padding: 0 4px;
-    }
-    .price-range-wrap label { font-size: 11px; color: var(--text-dim); white-space: nowrap; }
-    .price-range-wrap input[type="range"] {
-      -webkit-appearance: none; appearance: none;
-      width: 100px; height: 4px; background: var(--border);
-      border-radius: 2px; outline: none; cursor: pointer;
-    }
-    .price-range-wrap input[type="range"]::-webkit-slider-thumb {
-      -webkit-appearance: none; width: 14px; height: 14px;
-      background: var(--accent); border-radius: 50%; cursor: pointer;
-    }
-    .price-val { font-size: 11px; color: var(--text-muted); font-variant-numeric: tabular-nums; min-width: 35px; }
     .btn-reset {
       padding: 4px 10px; font-size: 11px;
       background: var(--red-soft); border-color: transparent; color: var(--red);
@@ -521,14 +505,15 @@
     <select id="filter-market"><option value="">All markets</option></select>
   </div>
 
-  <!-- Controls row 2: price slider + reset -->
-  <div style="display:flex; align-items:center; gap:12px; margin-bottom:8px; flex-wrap:wrap;">
-    <div class="price-range-wrap">
-      <label>Max price:</label>
-      <input type="range" id="price-slider" min="0" max="1000" value="1000" step="10" />
-      <span class="price-val" id="price-val">any</span>
-    </div>
-    <button class="btn btn-sm btn-reset" id="reset-filters">Reset all</button>
+  <!-- Controls row 2: spec facets + reset -->
+  <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px; flex-wrap:wrap;">
+    <div class="ms-wrap" id="ms-sensor" data-placeholder="Sensor size"></div>
+    <div class="ms-wrap" id="ms-sensorfmt" data-placeholder="Sensor format"></div>
+    <div class="ms-wrap" id="ms-env" data-placeholder="Environment"></div>
+    <div class="ms-wrap" id="ms-ip" data-placeholder="IP rating"></div>
+    <div class="ms-wrap" id="ms-integration" data-placeholder="Integrations"></div>
+    <div class="ms-wrap" id="ms-feature" data-placeholder="Features"></div>
+    <button class="btn btn-sm btn-reset" id="reset-filters" style="margin-left:auto;">Reset all</button>
   </div>
 
   <!-- Active filter chips -->
@@ -616,7 +601,8 @@ function flat(cam) {
     nv_lux:     cam.night_vision?.min_lux ?? null,
     nv_lux_color:     cam.night_vision?.min_lux_color ?? null,
     two_way:    cam.audio?.two_way ?? false,
-    msrp:       cam.msrp_usd ?? cam.msrp_eur ?? cam.msrp_gbp ?? cam.msrp_aud ?? cam.msrp_inr ?? null,
+    sensor_tier:   sensorSizeTier(cam.sensor),
+    sensor_format: sensorFormat(cam.sensor),
   };
 }
 
@@ -627,13 +613,13 @@ const COLS = [
   { key: 'model',        label: 'Model',      width: '170px', mono: true },
   { key: 'type',         label: 'Type',       width: '100px', badge: 'type' },
   { key: 'megapixels',   label: 'MP',         width: '70px',  numeric: true, resColor: true },
+  { key: 'sensor',       label: 'Sensor',     width: '92px' },
   { key: 'connectivity', label: 'Connect',    width: '110px', badges: 'conn' },
   { key: 'power_source', label: 'Power',      width: '110px', badges: 'power' },
   { key: 'night_vision', label: 'Night',      width: '85px',  badge: 'nv' },
   { key: 'ip_rating',    label: 'IP',         width: '70px',  badge: 'ip' },
   { key: 'ik_rating',    label: 'IK',         width: '70px',  badge: 'ik' },
   { key: 'two_way',      label: '2-Way',      width: '65px',  bool: true },
-  { key: 'msrp',         label: 'Price',      width: '80px',  numeric: true },
 ];
 
 function fmt(cam, key) {
@@ -642,18 +628,13 @@ function fmt(cam, key) {
     case 'model':       return cam.model ?? '—';
     case 'type':        return cam.type ?? '—';
     case 'megapixels':  return cam.megapixels ? cam.megapixels + ' MP' : '—';
+    case 'sensor':      return cam.sensor ?? '—';
     case 'connectivity':return cam.connectivity ?? [];
     case 'power_source':return cam.power_source ?? [];
     case 'night_vision':return cam.nv_type;
     case 'ip_rating':   return cam.ip_rating ?? '—';
     case 'ik_rating':   return cam.ik_rating ?? '—';
     case 'two_way':     return cam.two_way;
-    case 'msrp':
-      if (!cam.msrp) return '—';
-      if (cam.msrp_usd) return '$' + cam.msrp_usd;
-      if (cam.msrp_eur) return '€' + cam.msrp_eur;
-      if (cam.msrp_gbp) return '£' + cam.msrp_gbp;
-      return '—';
     default: return '—';
   }
 }
@@ -666,6 +647,88 @@ function connLabel(c) { return { wifi:'WiFi', ethernet:'Ethernet', '4g':'4G', co
 function powerBadgeClass(p) { return { poe:'badge-poe', dc:'badge-dc', usb:'badge-usb', battery:'badge-battery', solar:'badge-solar', 'ac-mains':'badge-mains' }[p] ?? 'badge-ip-other'; }
 function powerLabel(p) { return { poe:'PoE', dc:'DC', usb:'USB', battery:'Battery', solar:'Solar', 'ac-mains':'AC' }[p] ?? p; }
 function mpClass(mp) { if (mp >= 8) return 'mp-4k'; if (mp >= 3) return 'mp-mid'; return 'mp-low'; }
+
+// ── Spec-facet helpers (ported 1:1 from the website: src/lib/utils.ts + facets.ts) ──
+const SENSOR_TIERS = ['1/1.8" or larger', '1/2"–1/2.7"', '1/2.8"–1/3"', 'Smaller than 1/3"'];
+function sensorSizeTier(sensor) {
+  if (!sensor) return null;
+  const frac = sensor.match(/\b1\s*\/\s*(\d+(?:\.\d+)?)\s*["″”]?/);
+  if (frac) {
+    const d = parseFloat(frac[1]);
+    if (!isFinite(d)) return null;
+    if (d <= 1.8) return SENSOR_TIERS[0];
+    if (d <= 2.7) return SENSOR_TIERS[1];
+    if (d <= 3.2) return SENSOR_TIERS[2];
+    return SENSOR_TIERS[3];
+  }
+  if (/\b(1|4\s*\/\s*3|2\s*\/\s*3)\s*["″”]/.test(sensor)) return SENSOR_TIERS[0];
+  return null;
+}
+function sensorFormat(sensor) {
+  if (!sensor) return null;
+  const frac = sensor.match(/\b1\s*\/\s*(\d+(?:\.\d+)?)\s*["″”]?/);
+  if (frac) { const d = parseFloat(frac[1]); if (!isFinite(d)) return null; return '1/' + d + '"'; }
+  const big = sensor.match(/\b(1|4\s*\/\s*3|2\s*\/\s*3)\s*(?:["″”]|[-\s]*in(?:ch(?:es)?)?\b\.?)/i);
+  if (big) return big[1].replace(/\s+/g, '') + '"';
+  return null;
+}
+function sensorFormatSize(label) {
+  if (!label) return 0;
+  const frac = label.match(/^(\d+(?:\.\d+)?)\s*\/\s*(\d+(?:\.\d+)?)/);
+  if (frac) return parseFloat(frac[1]) / parseFloat(frac[2]);
+  const whole = label.match(/^(\d+(?:\.\d+)?)/);
+  return whole ? parseFloat(whole[1]) : 0;
+}
+const IP_BUCKETS = ['IP68+', 'IP67', 'IP66', 'IP65', 'IP64', 'IP55'];
+function ipBucket(r) {
+  if (!r) return null;
+  if (/IP6[89]/.test(r)) return 'IP68+';
+  if (r.includes('IP67')) return 'IP67';
+  if (r.includes('IP66')) return 'IP66';
+  if (r.includes('IP65')) return 'IP65';
+  if (r.includes('IP64')) return 'IP64';
+  if (/IP5[5-9]/.test(r)) return 'IP55';
+  return null;
+}
+const FEATURE_LABELS = ['PoE', 'WiFi', 'ONVIF', 'RTSP', 'Two Way Audio', 'SD Card Slot',
+  'Vandal-rated', 'H.265', 'Color Night Vision', 'No Subscription', 'Battery', 'Solar',
+  'Has Substream', 'NDAA Compliant', 'Local (No Cloud)'];
+function hasFeature(cam, f) {
+  switch (f) {
+    case 'PoE': return (cam.power_source || []).includes('poe');
+    case 'WiFi': return (cam.connectivity || []).includes('wifi');
+    case 'ONVIF': return (cam.protocols || []).includes('onvif');
+    case 'RTSP': return (cam.protocols || []).includes('rtsp');
+    case 'Two Way Audio': return !!(cam.audio && cam.audio.two_way);
+    case 'SD Card Slot': return !!(cam.storage && cam.storage.onboard);
+    case 'Vandal-rated': return /^IK(0[89]|1[01])$/.test(cam.ik_rating || '');
+    case 'H.265': return ((cam.video && cam.video.codecs) || []).some(c => c.includes('H.265') || c.toUpperCase().includes('H265'));
+    case 'Color Night Vision': return !!(cam.night_vision && (cam.night_vision.type === 'color' || cam.night_vision.type === 'hybrid'));
+    case 'No Subscription': return (cam.features || []).some(x => x.toLowerCase().includes('no subscription'));
+    case 'Battery': return (cam.power_source || []).includes('battery');
+    case 'Solar': return (cam.power_source || []).includes('solar');
+    case 'Has Substream': return (cam.substream_count || 0) > 0;
+    case 'NDAA Compliant': return cam.ndaa_compliant === true;
+    case 'Local (No Cloud)': return cam.cloud_dependency === 'local';
+    default: return false;
+  }
+}
+const INTEGRATION_LABELS = ['Frigate', 'Home Assistant', 'Blue Iris', 'Frigate Verified', 'Autotracking'];
+function hasIntegration(cam, f) {
+  const c = cam.configs;
+  switch (f) {
+    case 'Frigate': return !!(c && c.frigate);
+    case 'Home Assistant': return !!(c && c.home_assistant);
+    case 'Blue Iris': return !!(c && c.blue_iris);
+    case 'Frigate Verified': return !!(c && c.frigate && c.frigate.verified);
+    case 'Autotracking': return !!(c && c.frigate && c.frigate.autotracking === true);
+    default: return false;
+  }
+}
+function envLabel(e) { return e === 'indoor' ? 'Indoor' : e === 'outdoor' ? 'Outdoor' : e; }
+// HTML-escape for attribute values — sensor-format labels contain " and /.
+function escAttr(s) { return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;'); }
+function escHtml(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
 
 function renderCell(cam, col) {
   const val = fmt(cam, col.key);
@@ -705,7 +768,7 @@ function renderCell(cam, col) {
 function sortVal(cam, key) {
   switch (key) {
     case 'megapixels': return cam.megapixels ?? 0;
-    case 'msrp':       return cam.msrp ?? 999999;
+    case 'sensor':     return sensorFormatSize(cam.sensor_format) || 0;
     case 'two_way':    return cam.two_way ? 1 : 0;
     case 'night_vision': return cam.nv_type ?? '';
     default: return (cam[key] ?? '').toString().toLowerCase();
@@ -733,9 +796,9 @@ function createMultiSelect(id, options, labelFn) {
     <div class="ms-dropdown">
       <input type="text" class="ms-search" placeholder="Search..." />
       <div class="ms-options">${options.map(([val, count]) =>
-        `<label class="ms-option" data-val="${val}">
-          <input type="checkbox" value="${val}" />
-          <span class="ms-label">${labelFn ? labelFn(val) : val}</span>
+        `<label class="ms-option" data-val="${escAttr(val)}">
+          <input type="checkbox" value="${escAttr(val)}" />
+          <span class="ms-label">${escHtml(labelFn ? labelFn(val) : val)}</span>
           <span class="ms-opt-count">${count}</span>
         </label>`
       ).join('')}</div>
@@ -816,8 +879,6 @@ function pushState() {
     if (v) p.set(id.replace('filter-',''), v);
   });
   if ($('filter-frigate').checked) p.set('frigate', '1');
-  const maxPrice = +$('price-slider').value;
-  if (maxPrice < 1000) p.set('maxprice', maxPrice);
   if (page > 0) p.set('page', page);
   const hash = p.toString();
   history.replaceState(null, '', hash ? '#' + hash : location.pathname);
@@ -825,31 +886,19 @@ function pushState() {
 function restoreState() {
   const p = new URLSearchParams(location.hash.slice(1));
   if (p.get('q')) $('search').value = p.get('q');
-  // Multi-selects
-  ['brand','type','power'].forEach(k => {
-    const v = p.get(k);
-    if (v && multiSelects['ms-' + k]) {
-      v.split(',').forEach(val => {
-        multiSelects['ms-' + k].add(val);
-        const cb = document.querySelector(`#ms-${k} .ms-option input[value="${val}"]`);
-        if (cb) cb.checked = true;
-      });
-      const wrap = $('ms-' + k);
-      updateMsTrigger(wrap, multiSelects['ms-' + k], wrap.dataset.placeholder);
-    }
+  // Multi-selects (generic over every ms-* dropdown)
+  Object.keys(multiSelects).forEach(id => {
+    const v = p.get(id.replace('ms-', ''));
+    if (!v) return;
+    v.split(',').forEach(val => multiSelects[id].add(val));
+    $(id).querySelectorAll('.ms-option input').forEach(cb => { if (multiSelects[id].has(cb.value)) cb.checked = true; });
+    const wrap = $(id);
+    updateMsTrigger(wrap, multiSelects[id], wrap.dataset.placeholder);
   });
   ['nv','res','market'].forEach(k => { if (p.get(k)) $('filter-' + k).value = p.get(k); });
   if (p.get('frigate') === '1') $('filter-frigate').checked = true;
-  if (p.get('maxprice')) { $('price-slider').value = p.get('maxprice'); updatePriceLabel(); }
   if (p.get('page')) page = +p.get('page');
 }
-
-// ── Price slider ─────────────────────────────────────────────────
-function updatePriceLabel() {
-  const v = +$('price-slider').value;
-  $('price-val').textContent = v >= 1000 ? 'any' : '$' + v;
-}
-$('price-slider').addEventListener('input', () => { updatePriceLabel(); applyFilters(); });
 
 // ── Reset all ────────────────────────────────────────────────────
 $('reset-filters').addEventListener('click', () => {
@@ -857,8 +906,6 @@ $('reset-filters').addEventListener('click', () => {
   ['filter-nv','filter-res','filter-market'].forEach(id => $(id).value = '');
   Object.keys(multiSelects).forEach(id => clearMultiSelect(id));
   $('filter-frigate').checked = false;
-  $('price-slider').value = 1000;
-  updatePriceLabel();
   applyFilters();
 });
 
@@ -872,7 +919,12 @@ function applyFilters() {
   const powers   = multiSelects['ms-power'] ?? new Set();
   const market   = $('filter-market').value;
   const frigate  = $('filter-frigate').checked;
-  const maxPrice = +$('price-slider').value;
+  const sensors      = multiSelects['ms-sensor'] ?? new Set();
+  const sensorFmts   = multiSelects['ms-sensorfmt'] ?? new Set();
+  const envs         = multiSelects['ms-env'] ?? new Set();
+  const ips          = multiSelects['ms-ip'] ?? new Set();
+  const integrations = multiSelects['ms-integration'] ?? new Set();
+  const features     = multiSelects['ms-feature'] ?? new Set();
 
   filtered = allCameras.filter(cam => {
     if (brands.size && !brands.has(cam.brand)) return false;
@@ -881,8 +933,12 @@ function applyFilters() {
     if (powers.size && !(cam.power_source ?? []).some(p => powers.has(p))) return false;
     if (market && !(cam.markets ?? []).includes(market)) return false;
     if (frigate && !cam.configs?.frigate) return false;
-    if (maxPrice < 1000 && cam.msrp != null && cam.msrp > maxPrice) return false;
-    if (maxPrice < 1000 && cam.msrp == null) return false;
+    if (sensors.size && !sensors.has(cam.sensor_tier ?? '')) return false;
+    if (sensorFmts.size && !sensorFmts.has(cam.sensor_format ?? '')) return false;
+    if (envs.size && !(cam.environment ?? []).some(e => envs.has(e))) return false;
+    if (ips.size && !ips.has(ipBucket(cam.ip_rating) ?? '')) return false;
+    if (integrations.size && ![...integrations].every(l => hasIntegration(cam, l))) return false;
+    if (features.size && ![...features].every(l => hasFeature(cam, l))) return false;
     if (res) {
       const mp = cam.megapixels;
       if (res === '12+' && mp < 12) return false;
@@ -907,20 +963,22 @@ function applyFilters() {
 // ── Filter chips ─────────────────────────────────────────────────
 function renderChips() {
   const chips = [];
-  // Multi-select chips
-  for (const val of (multiSelects['ms-brand'] ?? [])) chips.push({ id: 'ms-brand', label: 'Brand', val, multi: true });
-  for (const val of (multiSelects['ms-type'] ?? [])) chips.push({ id: 'ms-type', label: 'Type', val, multi: true });
-  for (const val of (multiSelects['ms-power'] ?? [])) chips.push({ id: 'ms-power', label: 'Power', val: powerLabel(val), rawVal: val, multi: true });
+  const MS_LABELS = { 'ms-brand':'Brand', 'ms-type':'Type', 'ms-power':'Power', 'ms-sensor':'Sensor', 'ms-sensorfmt':'Format', 'ms-env':'Env', 'ms-ip':'IP', 'ms-integration':'Integration', 'ms-feature':'Feature' };
+  // Multi-select chips — generic over every ms-* dropdown
+  for (const [id, state] of Object.entries(multiSelects)) {
+    for (const val of state) {
+      const disp = id === 'ms-power' ? powerLabel(val) : id === 'ms-env' ? envLabel(val) : val;
+      chips.push({ id, label: MS_LABELS[id] || id, val: disp, rawVal: val, multi: true });
+    }
+  }
   // Single-select chips
   if ($('filter-nv').value) chips.push({ id: 'filter-nv', label: 'Night', val: $('filter-nv').value });
   if ($('filter-res').value) chips.push({ id: 'filter-res', label: 'Res', val: $('filter-res').value });
   if ($('filter-market').value) chips.push({ id: 'filter-market', label: 'Market', val: $('filter-market').value });
   if ($('filter-frigate').checked) chips.push({ id: 'filter-frigate', label: 'Frigate', val: 'compatible' });
-  const maxPrice = +$('price-slider').value;
-  if (maxPrice < 1000) chips.push({ id: 'price-slider', label: 'Max price', val: '$' + maxPrice });
 
   $('filter-chips').innerHTML = chips.map((c, i) =>
-    `<span class="chip">${c.label}: ${c.val} <span class="chip-close" data-idx="${i}">✕</span></span>`
+    `<span class="chip">${escHtml(c.label)}: ${escHtml(c.val)} <span class="chip-close" data-idx="${i}">✕</span></span>`
   ).join('');
 
   $('filter-chips').querySelectorAll('.chip-close').forEach(el => {
@@ -930,15 +988,11 @@ function renderChips() {
       if (c.multi) {
         const raw = c.rawVal ?? c.val;
         multiSelects[c.id].delete(raw);
-        const cb = document.querySelector(`#${c.id} .ms-option input[value="${raw}"]`);
-        if (cb) cb.checked = false;
+        $(c.id).querySelectorAll('.ms-option input').forEach(cb => { if (cb.value === raw) cb.checked = false; });
         const wrap = $(c.id);
         updateMsTrigger(wrap, multiSelects[c.id], wrap.dataset.placeholder);
       } else if (c.id === 'filter-frigate') {
         $('filter-frigate').checked = false;
-      } else if (c.id === 'price-slider') {
-        $('price-slider').value = 1000;
-        updatePriceLabel();
       } else {
         $(c.id).value = '';
       }
@@ -1105,6 +1159,42 @@ function populateFilters(cameras) {
   createMultiSelect('ms-type', types);
   createMultiSelect('ms-power', powers, powerLabel);
 
+  // Sensor size (coarse tiers, largest → smallest)
+  const sensorTiers = SENSOR_TIERS
+    .map(t => [t, cameras.filter(c => c.sensor_tier === t).length])
+    .filter(([, n]) => n > 0);
+  createMultiSelect('ms-sensor', sensorTiers);
+
+  // Sensor format (exact optical format, largest → smallest)
+  const fmtMap = {};
+  cameras.forEach(c => { if (c.sensor_format) fmtMap[c.sensor_format] = (fmtMap[c.sensor_format] || 0) + 1; });
+  const sensorFmts = Object.entries(fmtMap).sort((a, b) => sensorFormatSize(b[0]) - sensorFormatSize(a[0]));
+  createMultiSelect('ms-sensorfmt', sensorFmts);
+
+  // Environment
+  const envs = ['indoor', 'outdoor']
+    .map(e => [e, cameras.filter(c => (c.environment || []).includes(e)).length])
+    .filter(([, n]) => n > 0);
+  createMultiSelect('ms-env', envs, envLabel);
+
+  // IP rating (buckets, strongest → weakest)
+  const ips = IP_BUCKETS
+    .map(b => [b, cameras.filter(c => ipBucket(c.ip_rating) === b).length])
+    .filter(([, n]) => n > 0);
+  createMultiSelect('ms-ip', ips);
+
+  // Integrations (NVR/config platforms + verified/autotracking signals)
+  const integrations = INTEGRATION_LABELS
+    .map(l => [l, cameras.filter(c => hasIntegration(c, l)).length])
+    .filter(([, n]) => n > 0);
+  createMultiSelect('ms-integration', integrations);
+
+  // Features (curated capability list)
+  const features = FEATURE_LABELS
+    .map(l => [l, cameras.filter(c => hasFeature(c, l)).length])
+    .filter(([, n]) => n > 0);
+  createMultiSelect('ms-feature', features);
+
   // Regular selects (with counts)
   const populateSelect = (id, vals, labelFn) => {
     const sel = $(id);
@@ -1139,7 +1229,6 @@ function openCompare() {
     ['Two-way audio',c => c.two_way ? 'Yes' : 'No'],
     ['Protocols',    c => (c.protocols ?? []).join(', ') || '—'],
     ['Storage',      c => c.storage?.onboard ? 'microSD' + (c.storage.max_microsd_gb ? ' ≤' + c.storage.max_microsd_gb + 'GB' : '') : '—'],
-    ['Price',        c => c.msrp_usd ? '$' + c.msrp_usd : '—'],
     ['Frigate',      c => c.configs?.frigate ? 'Yes' : 'No'],
   ];
 
@@ -1163,18 +1252,17 @@ $('compare-overlay').addEventListener('click', e => { if (e.target === $('compar
 
 // ── Export ───────────────────────────────────────────────────────
 function exportCSV() {
-  const headers = ['brand','model','type','megapixels','connectivity','power_source','night_vision','ip_rating','two_way_audio','price_usd'];
+  const headers = ['brand','model','type','megapixels','sensor','connectivity','power_source','night_vision','ip_rating','ik_rating','two_way_audio'];
   const rows = filtered.map(c => [
-    c.brand, c.model, c.type, c.megapixels,
+    c.brand, c.model, c.type, c.megapixels, c.sensor ?? '',
     (c.connectivity??[]).join(';'), (c.power_source??[]).join(';'),
-    c.nv_type, c.ip_rating ?? '', c.ik_rating ?? '', c.two_way ? 'yes' : 'no',
-    c.msrp_usd ?? ''
+    c.nv_type, c.ip_rating ?? '', c.ik_rating ?? '', c.two_way ? 'yes' : 'no'
   ]);
   const csv = [headers.join(','), ...rows.map(r => r.map(v => '"' + String(v).replace(/"/g, '""') + '"').join(','))].join('\n');
   download(csv, 'cameras-export.csv', 'text/csv');
 }
 function exportJSON() {
-  const data = filtered.map(({ megapixels, nv_type, nv_range, two_way, msrp, ...rest }) => rest);
+  const data = filtered.map(({ megapixels, nv_type, nv_range, nv_lux, nv_lux_color, two_way, sensor_tier, sensor_format, ...rest }) => rest);
   download(JSON.stringify(data, null, 2), 'cameras-export.json', 'application/json');
 }
 function download(content, filename, mime) {
@@ -1240,15 +1328,6 @@ function renderConfigs(cam) {
 }
 
 function openDrawer(cam) {
-  const msrpStr = (() => {
-    const p = [];
-    if (cam.msrp_usd) p.push('$' + cam.msrp_usd);
-    if (cam.msrp_eur) p.push('€' + cam.msrp_eur);
-    if (cam.msrp_gbp) p.push('£' + cam.msrp_gbp);
-    if (cam.msrp_aud) p.push('A$' + cam.msrp_aud);
-    if (cam.msrp_inr) p.push('₹' + cam.msrp_inr);
-    return p.join(' / ') || '—';
-  })();
   const row = (k, v) => v && v !== '—' ? `<div class="drawer-row"><span class="key">${k}</span><span class="val">${v}</span></div>` : '';
   const rowMono = (k, v) => v ? `<div class="drawer-row"><span class="key">${k}</span><span class="val mono">${v}</span></div>` : '';
 
@@ -1280,7 +1359,7 @@ function openDrawer(cam) {
       ${row('Codecs', (cam.video?.codecs ?? []).join(', '))}
       ${row('Max FPS', cam.video?.max_fps ? cam.video.max_fps + ' fps' : null)}
       ${cam.video?.streams?.length ? cam.video.streams.map(s =>
-        row(s.name + ' stream', s.resolution + ' @ ' + s.fps + 'fps (' + s.codec + ')')
+        row(s.name + ' stream', s.resolution + ' @ ' + s.fps + 'fps' + (s.codec ? ' (' + s.codec + ')' : ''))
       ).join('') : ''}
     </div>
     <div class="drawer-section">
@@ -1293,10 +1372,9 @@ function openDrawer(cam) {
       ${row('Cloud', cam.storage?.cloud != null ? (cam.storage.cloud ? 'Yes' : 'No') : null)}
     </div>
     <div class="drawer-section">
-      <div class="drawer-section-title">Audio & Price</div>
+      <div class="drawer-section-title">Audio & Markets</div>
       ${row('Microphone', cam.audio?.microphone != null ? (cam.audio.microphone ? 'Yes' : 'No') : null)}
       ${row('Two-way audio', cam.audio?.two_way != null ? (cam.audio.two_way ? 'Yes' : 'No') : null)}
-      ${row('Price', msrpStr)}
       ${row('Markets', (cam.markets ?? []).join(', '))}
     </div>
     ${cam.features?.length ? `<div class="drawer-section"><div class="drawer-section-title">Features</div>
