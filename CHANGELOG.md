@@ -25,6 +25,10 @@ Dataset reaches **12,398 cameras / 159 brands** (+12). New **Cohu** brand (analo
 ### Changed — video.streams[] + ik_rating (#177)
 - Backfilled `video.streams[]` and verified `ik_rating` across **133 records** — **68 IC Realtime** and **65 Homaxi** — from their official datasheets.
 
+### Verified — community config reports
+- **Uniview IPC2224SE-DF40K-WL-I0 (#368):** Frigate config confirmed working on 0.17.2 (main stream) — marked `verified`.
+- **Tapo C210 (#367):** Frigate config confirmed working on 0.18 (main stream) — marked `verified`.
+
 ### Fixed
 - **`bosch-ndp-5502-30` (AUTODOME IP 5000i):** removed a fabricated `night_vision` (ir / 180 m) — this camera has **no IR illuminator**; 180 m was the DORI person-identification distance at 30x. Re-sourced with the real FOV (60.9-2.4°), lens, sensor, and sensitivity, and completed the record.
 - Added the `VG5-836` alias to `bosch-vg5-836-ecev`.
