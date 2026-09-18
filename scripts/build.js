@@ -157,6 +157,10 @@ function validate(cameras) {
     "hilook.com", "milesight.com", "sunell.com",
     // Official domains the brand-token heuristic misses (hyphen/abbreviation breaks the match).
     "i-pro.com", "een.com", "pix-link.com", "iqeye.com", "espuk.com", "ltsecurityinc.com",
+    // Parent-company / short-brand official hosts the token matcher can't reach:
+    // Siqura's datasheets live on its TKH Security parent catalog; RVi's brand
+    // token ("rvi") is under 4 chars so it never matches rvigroup.ru (#164).
+    "tkhsecurity.com", "rvigroup.ru",
   ];
   const hostMatches = (host, dom) => host === dom || host.endsWith("." + dom);
   const isOfficialSource = (cam, url) => {

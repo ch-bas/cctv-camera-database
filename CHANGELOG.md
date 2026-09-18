@@ -14,6 +14,9 @@ Dataset stays at **12,398 cameras / 159 brands** — a data-enrichment pass acro
 - **`ik_rating` on 38 cameras (dataset-wide → 5,055 / 40.8%):** extracted the explicit IK rating (all IK10) already stated in each camera's `features[]` into the structured field — Amcrest (8), Avycon (6), Hikvision (12) vandal domes, Dallmeier (3), GeoVision (3), Jidetech (3), Panasonic (2), Bosch MIC-612. Pure extraction of stated values, not datasheet re-reads.
 - **Held (never-misrepresent):** 17 cameras whose IK10 is *conditional* — "IK10 with optional housing" (Hanwha SNP ×6), "IK10 (optional)" (Dahua ×5, Kedacom ×4, ACTi railway), or an IK10 *junction box* (Speco) — the base camera isn't inherently IK10, so left blank.
 
+### Changed — provenance heuristic (#164 / #165)
+- Taught the `#165` official-source check two hosts its brand-token matcher can't reach: **`tkhsecurity.com`** (Siqura's TKH Security parent catalog) and **`rvigroup.ru`** (RVi — brand token "rvi" is under 4 chars). Reseller-only flag count 735 → 726; both were already excluded from the real re-sourcing backlog, so this just makes the tool agree.
+
 ### Added — SoC / chipset (#284, #122)
 - **`soc` on 15 cameras (dataset-wide 46 → 61):** Tapo C110 / C200 / C200C / C210 and ieGeek SC1 (Ingenic T23N); IMOU Ranger 2 (T31N); LaView L2 (T31L); Xiaomi Mi Camera 2K magnetic-mount (T31); Eufy Indoor Cam 2K Pan&Tilt and Outdoor Cam E220 (T31X); Uniarch IPC-D122-PF28 (SigmaStar SSC335); Wyze Cam v3 Pro (T40XP), Cam v4 (T41NQ), Cam Pan v4 (T32NQ), Floodlight Cam v2 (T41NQ).
 - **Specific image sensor on 4 Wyze models** that already carried an SoC family: Cam v3 / Cam Pan v2 / Cam Pan v3 → GalaxyCore GC2053; Cam v2 → SOI JXF22.
