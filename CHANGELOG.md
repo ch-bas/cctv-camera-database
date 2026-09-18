@@ -6,6 +6,18 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.21.0] — 2026-09-18
+
+Dataset stays at **12,398 cameras / 159 brands** — a data-enrichment pass adding **System-on-Chip (SoC) data** to 15 cameras and specific **image-sensor part numbers** to 4 more. First structured progress on the chipset lane (#284, #122), where the data lives in community teardown/firmware build targets rather than manufacturer datasheets.
+
+### Added — SoC / chipset (#284, #122)
+- **`soc` on 15 cameras (dataset-wide 46 → 61):** Tapo C110 / C200 / C200C / C210 and ieGeek SC1 (Ingenic T23N); IMOU Ranger 2 (T31N); LaView L2 (T31L); Xiaomi Mi Camera 2K magnetic-mount (T31); Eufy Indoor Cam 2K Pan&Tilt and Outdoor Cam E220 (T31X); Uniarch IPC-D122-PF28 (SigmaStar SSC335); Wyze Cam v3 Pro (T40XP), Cam v4 (T41NQ), Cam Pan v4 (T32NQ), Floodlight Cam v2 (T41NQ).
+- **Specific image sensor on 4 Wyze models** that already carried an SoC family: Cam v3 / Cam Pan v2 / Cam Pan v3 → GalaxyCore GC2053; Cam v2 → SOI JXF22.
+- **Provenance:** [thingino](https://thingino.com) `configs/cameras/` build targets (filenames encode the exact flashed SoC + sensor) and the [OpenIPC](https://openipc.org) supported-devices list — verified firmware targets, not datasheet inferences. Where we already had a Wyze SoC family, thingino independently agreed.
+- **Held (never-guess):** Tapo C100 / C500 ship as *either* Ingenic T23N or T31L across production batches (cross-family ambiguity) — left empty rather than pick one.
+
+---
+
 ## [2.20.0] — 2026-09-26
 
 Dataset reaches **12,398 cameras / 159 brands** (+12). New **Cohu** brand (analog traffic PTZ positioners), a set of **Bosch AutoDome** and **Axis** PTZ / multi-sensor models sourced from official datasheets, a new **CC0 model-enrichment extract** for external map/3D viewers, and **Frigate-config / video-stream / IK-rating** backfills for IC Realtime and Homaxi.
