@@ -1,0 +1,111 @@
+{
+  "id": "hikvision-ds-2cd2747g2h-liptrzs",
+  "brand": "Hikvision",
+  "model": "DS-2CD2747G2H-LIPTRZS",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP (2688x1520)"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 40,
+    "min_lux_color": 0.0028
+  },
+  "power": {
+    "method": "PoE (802.3at) / DC 12V",
+    "consumption_w": 15,
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "features": [
+    "ColorVu Smart Hybrid Light (IR + white light)",
+    "motorized PTRZ (remote pan/tilt/rotate/zoom for installation)",
+    "AcuSense human/vehicle classification",
+    "130dB WDR",
+    "IK10 vandal-resistant",
+    "audio & alarm I/O (line in/out)"
+  ],
+  "ik_rating": "IK10",
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/sm000068439/DS-2CD2747G2H-LIPTRZS_Datasheet_20240925.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile. Use main stream for recording, sub stream for live view."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "last_verified": "2026-09-18",
+  "ip_rating": "IP66",
+  "dimensions_mm": "Ø155 x 140.4",
+  "weight_g": 820,
+  "field_of_view_deg": "114.6-41.8 horizontal (2.8-12mm)",
+  "release_notes": "4MP ColorVu Smart Hybrid Light motorized-PTRZ varifocal dome (2.8-12mm), IK10, 130dB WDR, audio/alarm I/O. Base of the -LIPTRZS2U/SLRB (which adds dual mics + red/blue strobe).",
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "operating_temp_c": "-30 to 60",
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "cloud_dependency": "local"
+}
