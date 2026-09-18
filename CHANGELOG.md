@@ -6,6 +6,30 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.21.0] — 2026-09-18
+
+Dataset grows to **12,405 cameras / 159 brands** (+7 Hikvision models added while re-sourcing). A data-enrichment + provenance pass across four lanes: **System-on-Chip (SoC)** from community firmware projects, **IK impact rating** extracted from cameras' own feature text, specific **image-sensor part numbers**, and a large **Hikvision OEM re-sourcing** effort (#164).
+
+### Added — IK / impact rating (#162)
+- **`ik_rating` on 38 cameras (dataset-wide → 5,055 / 40.8%):** extracted the explicit IK rating (all IK10) already stated in each camera's `features[]` into the structured field — Amcrest (8), Avycon (6), Hikvision (12) vandal domes, Dallmeier (3), GeoVision (3), Jidetech (3), Panasonic (2), Bosch MIC-612. Pure extraction of stated values, not datasheet re-reads.
+- **Held (never-misrepresent):** 17 cameras whose IK10 is *conditional* — "IK10 with optional housing" (Hanwha SNP ×6), "IK10 (optional)" (Dahua ×5, Kedacom ×4, ACTi railway), or an IK10 *junction box* (Speco) — the base camera isn't inherently IK10, so left blank.
+
+### Changed — OEM re-sourcing: Hikvision (#164)
+- **Re-sourced 166 Hikvision records** from reseller mirrors (`download.axilogi.com`, `manuals.plus`, `scribd`, hikvision-peru, …) to their **official `assets.hikvision.com` / `hikvision.com` datasheet PDFs** — each URL verified (curl 200 where the CDN allows; the `content/dam` PDFs sit behind an Akamai JS challenge and were confirmed from the official product listing). **Hikvision reseller-only 192 → 26**; dataset-wide #165 flag 726 → 563.
+- **Added 7 new Hikvision models** surfaced during re-sourcing, all from official datasheets: **DS-2CD2386G2H-I** (8MP DarkFighter turret, no-audio `-I`), **DS-2CD2086G2H-I2U/SL** (8MP white-strobe + audible-deterrence bullet), the **DS-2CV2×xxG2-IDW Wi-Fi family** — DS-2CV2021G2-IDW (2MP bullet), DS-2CV2141G2-IDW (4MP dome), DS-2CV2121G2-IDW (2MP dome, H.264) — and the **ColorVu motorized-PTRZ varifocal domes** DS-2CD2747G2H-LIPTRZS (4MP, IK10) and DS-2CD2787G2H-LIPTRZS (8MP, IK10).
+- **~26 records remain** on reseller mirrors (exact-SKU official docID not yet located) — tracked for a follow-up pass. The `DS-2CD2043G2-L` record is a probable truncated duplicate of `DS-2CD2043G2-LI` (left for review, not re-sourced).
+
+### Changed — provenance heuristic (#164 / #165)
+- Taught the `#165` official-source check two hosts its brand-token matcher can't reach: **`tkhsecurity.com`** (Siqura's TKH Security parent catalog) and **`rvigroup.ru`** (RVi — brand token "rvi" is under 4 chars). Reseller-only flag count 735 → 726; both were already excluded from the real re-sourcing backlog, so this just makes the tool agree.
+
+### Added — SoC / chipset (#284, #122)
+- **`soc` on 15 cameras (dataset-wide 46 → 61):** Tapo C110 / C200 / C200C / C210 and ieGeek SC1 (Ingenic T23N); IMOU Ranger 2 (T31N); LaView L2 (T31L); Xiaomi Mi Camera 2K magnetic-mount (T31); Eufy Indoor Cam 2K Pan&Tilt and Outdoor Cam E220 (T31X); Uniarch IPC-D122-PF28 (SigmaStar SSC335); Wyze Cam v3 Pro (T40XP), Cam v4 (T41NQ), Cam Pan v4 (T32NQ), Floodlight Cam v2 (T41NQ).
+- **Specific image sensor on 4 Wyze models** that already carried an SoC family: Cam v3 / Cam Pan v2 / Cam Pan v3 → GalaxyCore GC2053; Cam v2 → SOI JXF22.
+- **Provenance:** [thingino](https://thingino.com) `configs/cameras/` build targets (filenames encode the exact flashed SoC + sensor) and the [OpenIPC](https://openipc.org) supported-devices list — verified firmware targets, not datasheet inferences. Where we already had a Wyze SoC family, thingino independently agreed.
+- **Held (never-guess):** Tapo C100 / C500 ship as *either* Ingenic T23N or T31L across production batches (cross-family ambiguity) — left empty rather than pick one.
+
+---
+
 ## [2.20.0] — 2026-09-26
 
 Dataset reaches **12,398 cameras / 159 brands** (+12). New **Cohu** brand (analog traffic PTZ positioners), a set of **Bosch AutoDome** and **Axis** PTZ / multi-sensor models sourced from official datasheets, a new **CC0 model-enrichment extract** for external map/3D viewers, and **Frigate-config / video-stream / IK-rating** backfills for IC Realtime and Homaxi.
