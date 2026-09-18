@@ -8,7 +8,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.21.0] — 2026-09-18
 
-Dataset stays at **12,398 cameras / 159 brands** — a data-enrichment pass adding **System-on-Chip (SoC) data** to 15 cameras and specific **image-sensor part numbers** to 4 more. First structured progress on the chipset lane (#284, #122), where the data lives in community teardown/firmware build targets rather than manufacturer datasheets.
+Dataset stays at **12,398 cameras / 159 brands** — a data-enrichment pass across three empirical lanes: **System-on-Chip (SoC)** from community firmware projects, **IK impact rating** extracted from cameras' own feature text, and specific **image-sensor part numbers**.
+
+### Added — IK / impact rating (#162)
+- **`ik_rating` on 38 cameras (dataset-wide → 5,055 / 40.8%):** extracted the explicit IK rating (all IK10) already stated in each camera's `features[]` into the structured field — Amcrest (8), Avycon (6), Hikvision (12) vandal domes, Dallmeier (3), GeoVision (3), Jidetech (3), Panasonic (2), Bosch MIC-612. Pure extraction of stated values, not datasheet re-reads.
+- **Held (never-misrepresent):** 17 cameras whose IK10 is *conditional* — "IK10 with optional housing" (Hanwha SNP ×6), "IK10 (optional)" (Dahua ×5, Kedacom ×4, ACTi railway), or an IK10 *junction box* (Speco) — the base camera isn't inherently IK10, so left blank.
 
 ### Added — SoC / chipset (#284, #122)
 - **`soc` on 15 cameras (dataset-wide 46 → 61):** Tapo C110 / C200 / C200C / C210 and ieGeek SC1 (Ingenic T23N); IMOU Ranger 2 (T31N); LaView L2 (T31L); Xiaomi Mi Camera 2K magnetic-mount (T31); Eufy Indoor Cam 2K Pan&Tilt and Outdoor Cam E220 (T31X); Uniarch IPC-D122-PF28 (SigmaStar SSC335); Wyze Cam v3 Pro (T40XP), Cam v4 (T41NQ), Cam Pan v4 (T32NQ), Floodlight Cam v2 (T41NQ).
