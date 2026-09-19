@@ -8,9 +8,20 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.22.0] — 2026-09-19
 
-Dataset reaches **12,414 cameras / 159 brands** (+9). **HOLOWITS** brand expanded 1 → 10 — a full spread of the AI camera line from official datasheets: fixed bullets/domes/turrets, PTZ, dual-lens, dual-spectrum thermal, and a 16MP 360° AR panorama.
+Dataset reaches **12,652 cameras / 160 brands** (+247). A large multi-brand ingestion from **official sources only**: **HOLOWITS** expanded 1 → 174 (the full current catalogue, extracted from official `resources.holowits.com` datasheet PDFs), and a new **EmpireTech** brand added (+74, Dahua-OEM rebadge) from the official `empiretech01.com` catalogue. Every record is datasheet/spec-sheet-faithful — fields absent on the source are left absent (no fabrication), and non-official mirror URLs are never used as `sources`.
 
-### Added — HOLOWITS (+9)
+### Added — HOLOWITS (+164 more, brand now 174)
+- **Full catalogue sweep** of the HOLOWITS AI camera line from official datasheet PDFs: bullets, turrets, domes, PTZ, dual-lens, dual-spectrum thermal, and a 180° panorama — across the **A / E / P / U / HWT-M/C/D/X** families and lens/variant SKUs (2.8 / 3.6 / 2.7-12 / 8-32 mm, etc.).
+- **AI / analytics** recorded where stated (TOPS compute, behavior analysis, crowd-flow, target attributes), plus SoC, DORI, IR/white-light illumination, IK/IP ratings, and dimensions/weight per datasheet.
+- **Not cameras — correctly rejected:** N700-1200(34)A and N700-1200(36)A are 4U rack storage/video-management servers (Kunpeng 920), not cameras — excluded.
+- Datasheet inconsistencies (e.g. WDR value differing between the feature page and the spec table) recorded in `release_notes` rather than guessed.
+
+### Added — EmpireTech (+74, new brand — brand #160)
+- New brand **EmpireTech** (Dahua ODM/rebadge, kept separate per dataset convention — same as HiLook / Uniarch), the current `empiretech01.com` catalogue across the hot-selling, PTZ, and network-camera collections: turrets, bullets, domes, PTZ, panoramic multi-sensor, thermal hybrids, LPR, and analog (HDCVI) models.
+- Full specs read from each product's rendered spec table (image sensor, resolution, DORI, IVS/AI, video/power/dimensions), sourced to the official product page.
+- **Modeling notes:** PTZ6C2M-45X-AI's spec table is copy-pasted from the 4MP variant — recorded the model's actual 2MP and omitted the conflicting resolution rather than propagate it. HAC-Color5M-TL is analog (`coax` / `hdcvi`). IPC-MINI4MP mapped to `covert` (pinhole). IPC-T2347G3-SLRB is a Hikvision OEM (its DS- model kept as an alias).
+
+### Added — HOLOWITS (+9, initial)
 - **PTZ:** HWT-M6641-10-Z32-Wp-S (4MP, 32x zoom, auto-tracking, HiSilicon Hi3516A V300 SoC, IR 200m); P5-4RV(4x)A (mini PTZ, IK08, IP54).
 - **Thermal (dual-spectrum):** S9-4(48x)A-Th AI Pro (4MP visible + VOx thermal 384x288, fire detection to 5 km); U6-4R(40x)A-Th (industrial temperature measurement -20 to +550 C).
 - **Bullets / domes:** P1-2R(2.8-12)A AI (2MP, IK10); P4-5R(2.8-12)A AI (5MP dome, IK10); U1-0LRV(2.8-12)A AI Pro (2MP base, license-upgradable to 4/6/8MP, two-way intercom).
