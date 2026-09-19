@@ -6,6 +6,20 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.22.0] — 2026-09-19
+
+Dataset reaches **12,414 cameras / 159 brands** (+9). **HOLOWITS** brand expanded 1 → 10 — a full spread of the AI camera line from official datasheets: fixed bullets/domes/turrets, PTZ, dual-lens, dual-spectrum thermal, and a 16MP 360° AR panorama.
+
+### Added — HOLOWITS (+9)
+- **PTZ:** HWT-M6641-10-Z32-Wp-S (4MP, 32x zoom, auto-tracking, HiSilicon Hi3516A V300 SoC, IR 200m); P5-4RV(4x)A (mini PTZ, IK08, IP54).
+- **Thermal (dual-spectrum):** S9-4(48x)A-Th AI Pro (4MP visible + VOx thermal 384x288, fire detection to 5 km); U6-4R(40x)A-Th (industrial temperature measurement -20 to +550 C).
+- **Bullets / domes:** P1-2R(2.8-12)A AI (2MP, IK10); P4-5R(2.8-12)A AI (5MP dome, IK10); U1-0LRV(2.8-12)A AI Pro (2MP base, license-upgradable to 4/6/8MP, two-way intercom).
+- **Dual-lens:** U1-8LRV(4)(8-32)A AI (dual 8MP — 4mm prime + 8-32mm zoom).
+- **Panorama:** U9-9(40x)A-P360 AI (16MP 360 8-sensor panorama + 4MP PTZ dome, dual-GPU) — extracted from the official datasheet; `sources[]` left empty because only a reseller-CDN copy of the PDF was available (official-source-only rule).
+- SoC recorded where the datasheet names the chip. Weights left absent where not published; datasheet inconsistencies (e.g. P5-4RV resolution) flagged in `release_notes`.
+
+---
+
 ## [2.21.0] — 2026-09-18
 
 Dataset grows to **12,405 cameras / 159 brands** (+7 Hikvision models added while re-sourcing). A data-enrichment + provenance pass across four lanes: **System-on-Chip (SoC)** from community firmware projects, **IK impact rating** extracted from cameras' own feature text, specific **image-sensor part numbers**, and a large **Hikvision OEM re-sourcing** effort (#164).
