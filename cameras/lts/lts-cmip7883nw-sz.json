@@ -1,0 +1,91 @@
+{
+  "brand": "LTS",
+  "model": "CMIP7883NW-SZ",
+  "aliases": [
+    "CMIP7883NW-SZ"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8.3,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K / 8MP"
+  },
+  "sensor": "1/2.5\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12",
+    "aperture": "F1.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "105 to 34.5",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.018
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "method": "12VDC ±25%, PoE (802.3af, class 3)",
+    "consumption_w": 12,
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "153.4 x 133.1",
+  "weight_g": 1287,
+  "features": [
+    "120dB wide dynamic range",
+    "Motorized varifocal lens 2.8-12mm",
+    "3D DNR",
+    "IK10 impact-resistant metal housing",
+    "IP67 weatherproof rating",
+    "355° pan / 75° tilt / 355° rotation"
+  ],
+  "sources": [
+    "https://ltsecurityinc.com/default/network-ip-dome-camera-cmip7883nw-sz.html"
+  ],
+  "last_verified": "2026-09-20",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "id": "lts-cmip7883nw-sz",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "LTS Platinum/LX line = Hikvision-OEM. The Hikvision /Streaming/Channels/101 (main) & 102 (sub) RTSP convention typically applies; ONVIF must be manually enabled (off by default on Hikvision firmware v5.5.0+). Not independently confirmed for this exact model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local",
+      "notes": "Hikvision-OEM; enable ONVIF first, then add via the ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Hikvision (generic)",
+      "notes": "Hikvision-OEM RTSP/ONVIF; not independently confirmed for this specific model."
+    }
+  }
+}
