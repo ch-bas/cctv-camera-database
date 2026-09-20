@@ -8,7 +8,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.22.0] — 2026-09-19
 
-Dataset reaches **14,235 cameras / 168 brands** (+1,830). A large multi-brand ingestion from **official sources only**:
+Dataset reaches **14,240 cameras / 168 brands** (+1,835). A large multi-brand ingestion from **official sources only**:
+
+### Added — Homaxi (+5)
+- **Homaxi +5** (brand 65 → 70) from a full sweep of the six network-camera categories (i/s/x-series, dual-lens, fisheye, Quvii): IPC4BF2R8-I1-TMCR (8MP dual-light bullet), IPC8MSD2R8-I2 (dual-directional PanoVu), QUV-IPC7Q458B48R-I (4MP Quvii bullet), plus IPC8TF4R8-AD2 and IPC8MSB2R8-AD-TPMSC (recovered from Homaxi's official product API where the product pages return empty — partial records, unknown fields omitted). All 68 distinct catalogue models now covered.
 
 ### Added — Arecont Vision (+43) & Matrix backfill
 - **Arecont Vision (AV Costar) +43** (brand 89 → 132): a gap analysis against the live AV Costar catalogue added the current ConteraIP lines (Indoor/Outdoor Dome, Bullet, Micro Bullet, MicroDome LX, MicroDome Duo LX, Omni LX / Omni LX RS, Fisheye, Panoramic), SurroundVideo Omni G3 & G5 Mini multi-imagers, MicroBullet, MegaDome G3 RS, and the 4K/UltraHD MegaDome/MegaVideo box models — each from its official AV Costar datasheet PDF. ConteraIP = H.265/H.264/MJPEG; older MegaIP lines = H.264/MJPEG. Multi-imager models typed `panoramic`. One-representative-per-body convention kept (feature/mount-suffix twins of existing bodies not duplicated).
