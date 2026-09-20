@@ -8,7 +8,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.22.0] — 2026-09-19
 
-Dataset reaches **13,897 cameras / 163 brands** (+1,492). A large multi-brand ingestion from **official sources only**:
+Dataset reaches **13,946 cameras / 164 brands** (+1,541). A large multi-brand ingestion from **official sources only**:
+
+### Added — new brand Turing (+49) + weight/dimensions backfill
+- **Turing** (Turing Vision, new brand #164) full Smart Series line from official `turing-marketing-assets` datasheet PDFs: Edge+ direct-to-cloud EVC (5MP) / EVL (4MP dual-light) / EVD (LPR) domes/turrets/bullets, and the on-prem SMART TP-M line — TwilightVision, VibrantView+ full-color, Active Deterrence, panoramic/multisensor, bi-spectrum thermal, and PTZ. Cloud VMS (Turing Vision) with ONVIF Profile S/G/T; typed per datasheet (TP-MVD are VF turrets). 2 models omitted (no datasheet published).
+- **Weight & dimensions backfill:** re-read 137 Pelco/Avigilon datasheets to fill `weight_g` (+ `dimensions_mm` where absent) that the initial spec-extraction missed — form-factor-aware matching (bullet vs dome), component weights (back-box/dome-drive/bezel/bracket) excluded, no fabrication. Pelco weight 0→383/567, Avigilon 3→418/507.
 
 ### Added — new brand Cisco Meraki (+17)
 - **Cisco Meraki** (new brand #163, cloud-managed MV smart cameras): MV13/MV23/MV33/MV44X/MV53X/MV63/MV73/MV84X/MV93 current generation (+M/X variants), from the official Cisco MV datasheet + Meraki spec docs. Cloud-required with 256GB-4TB on-camera SSD; local RTSP (rtsp://{ip}:9000/live, firmware 4.2+) where documented (omitted on MV44X). MV44X quad-imager typed panoramic, MV33/MV93 fisheye, MV44X dual-lens. Older MV2/12/22/32/52/72 not in this datasheet (not added).
