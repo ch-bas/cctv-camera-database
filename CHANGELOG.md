@@ -8,7 +8,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.22.0] — 2026-09-19
 
-Dataset reaches **14,240 cameras / 168 brands** (+1,835). A large multi-brand ingestion from **official sources only**:
+Dataset reaches **14,260 cameras / 168 brands** (+1,855). A large multi-brand ingestion from **official sources only**:
+
+### Added — ESP (+20)
+- **ESP (espuk.com) +20** (brand 12 → 32) from official cloudfront datasheet PDFs. **IP PoE (15):** HDview IP HC828 (8MP dual-light bullet/turret, black/white), HC428 (4MP), HC528FBW (5MP), the H512V motorised-varifocal 5MP bullets/domes (DGA/DWA carry IK10), and RC228TB (completing the RC228 IP set). **Analogue HD / coax (5):** Rekor RCTB/RCTW/RCBB/RCBW (2MP white-light full-colour) and the FHDVC18PTZ (2MP AHD PTZ, 18× optical zoom). IP models carry ONVIF Profile S/G/T (configs point to ONVIF discovery — ESP publishes no fixed RTSP path); analogue models carry DVR-ingest configs. Codecs omitted (ESP datasheets don't state them). Camera KITS and NVRs excluded.
 
 ### Added — Homaxi (+5)
 - **Homaxi +5** (brand 65 → 70) from a full sweep of the six network-camera categories (i/s/x-series, dual-lens, fisheye, Quvii): IPC4BF2R8-I1-TMCR (8MP dual-light bullet), IPC8MSD2R8-I2 (dual-directional PanoVu), QUV-IPC7Q458B48R-I (4MP Quvii bullet), plus IPC8TF4R8-AD2 and IPC8MSB2R8-AD-TPMSC (recovered from Homaxi's official product API where the product pages return empty — partial records, unknown fields omitted). All 68 distinct catalogue models now covered.
