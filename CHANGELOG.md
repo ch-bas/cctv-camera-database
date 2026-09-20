@@ -8,7 +8,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.22.0] — 2026-09-19
 
-Dataset reaches **13,870 cameras / 161 brands** (+1,465). A large multi-brand ingestion from **official sources only**:
+Dataset reaches **13,880 cameras / 162 brands** (+1,475). A large multi-brand ingestion from **official sources only**:
+
+### Added — new brand Rhombus (+10)
+- **Rhombus Systems** (new brand #162, US cloud-managed enterprise cameras, `rhombus.com`): R120/R150/R200/R230/R360S/R410/R520/R540/R545/R600 (dome/bullet/fisheye/panoramic), specs from the official `/files/specs/<model>.pdf` sheets. Cloud-only (`cloud-required`, no local RTSP/ONVIF) with large on-camera SSD/microSD storage; configs marked cloud-managed. The exhibitor pricing sheet confirmed the model families (legacy R360/R400/R500 are superseded by the R360S/R410/R520 already captured).
 
 ### Added — new brand KBVision (+27) and +31 more
 - **KBVision** (new brand #161, Vietnamese Dahua-OEM, `kbvisiongroup.com`): 20 IP + 7 HDCVI/analog cameras across turret/dome/bullet/PTZ/box/fisheye and the Y-series/DAi/EAi/FAi lines, sourced to official product pages.
