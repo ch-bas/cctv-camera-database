@@ -4,36 +4,57 @@
   "model": "D4Z",
   "type": "ptz",
   "connectivity": [
-    "wifi"
+    "wifi",
+    "ethernet"
   ],
   "power_source": [
     "dc"
   ],
   "resolution": {
     "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
     "label": "2K/4MP QHD"
   },
   "sensor": "High Definition Color CMOS",
   "lens": {
     "count": 1,
+    "focal_length_mm": "2.8-12",
+    "aperture": "F1.4-2.8",
     "varifocal": true
   },
-  "field_of_view_deg": "Pan 350 / Tilt 90",
+  "field_of_view_deg": "Diagonal 42.6-90.5, Horizontal 37.5-77.7, Vertical 21.2-43.4",
   "night_vision": {
     "type": "ir",
     "range_m": 20
   },
-  "power": {
-    "method": "DC"
+  "video": {
+    "codecs": [
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 20
   },
-  "storage": {
-    "onboard": false,
-    "cloud": true,
-    "notes": "Storage capacity not confirmed for this model."
+  "power": {
+    "method": "DC 12V/2.0A",
+    "voltage": "12V/2.0A",
+    "consumption_w": 20
   },
   "protocols": [
-    "rtsp"
+    "rtsp",
+    "http",
+    "p2p"
   ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "cloud": true
+  },
+  "ip_rating": "IP66",
   "ik_rating": "IK10",
   "audio": {
     "microphone": true,
@@ -41,33 +62,37 @@
     "two_way": true
   },
   "features": [
-    "4x optical zoom",
-    "IK10 vandal-resistant dome housing",
-    "motorized pan/tilt covering 360 without dead zones",
-    "human detection (AI)",
-    "dual-band WiFi (2.4GHz/5GHz)",
-    "Google Home"
+    "4x optical zoom (2.8-12mm motorized lens)",
+    "motorized pan 350 / tilt 60 (360 coverage without dead zones)",
+    "AI human detection",
+    "dual-band Wi-Fi (2.4/5GHz, IEEE802.11b/g/n/ac)",
+    "IK10 vandal-proof / IP66 weatherproof dome",
+    "WDR",
+    "motion and sound detection",
+    "Google Assistant / Alexa",
+    "night vision up to 20m (2 IR LEDs)",
+    "DORI: detect 64.8m / identify 6.5m",
+    "power consumption <20W"
   ],
   "environment": [
-    "indoor",
     "outdoor"
   ],
+  "weight_g": 518,
   "sources": [
-    "https://foscam.uk.com/foscam-d4z",
-    "https://www.foscam.co.za/outdoor-cameras/D4Z"
+    "https://www.foscam.eu/d4z.html"
   ],
-  "last_verified": "2026-07-04",
+  "last_verified": "2026-09-20",
   "status": "available",
   "configs": {
     "frigate": {
-      "notes": "Sourced from retailer pages rather than us.foscam.com/D4Z.html directly — resolution pixel dimensions, IP rating, and RTSP path not confirmed. Verify before publishing.",
+      "notes": "Spec fields verified against official foscam.eu datasheet (d4z.html). RTSP path not listed on the datasheet; ONVIF not listed for this model.",
       "verified": false,
       "autotracking": false,
       "two_way_audio": true
     },
     "home_assistant": {
       "integration": "onvif",
-      "notes": "ONVIF support not confirmed for this model.",
+      "notes": "ONVIF not listed on the official foscam.eu datasheet; verify before relying on ONVIF.",
       "connection_type": "local"
     },
     "blue_iris": {

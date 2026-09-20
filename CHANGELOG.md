@@ -8,7 +8,16 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.22.0] — 2026-09-19
 
-Dataset reaches **12,652 cameras / 160 brands** (+247). A large multi-brand ingestion from **official sources only**: **HOLOWITS** expanded 1 → 174 (the full current catalogue, extracted from official `resources.holowits.com` datasheet PDFs), and a new **EmpireTech** brand added (+74, Dahua-OEM rebadge) from the official `empiretech01.com` catalogue. Every record is datasheet/spec-sheet-faithful — fields absent on the source are left absent (no fabrication), and non-official mirror URLs are never used as `sources`.
+Dataset reaches **12,776 cameras / 160 brands** (+371, ongoing). A large multi-brand ingestion from **official sources only**: **HOLOWITS** 1 → 174 (official `resources.holowits.com` datasheet PDFs), new **EmpireTech** brand +76 (`empiretech01.com`, incl. refurbished-collection exclusives), **Foscam** +33 (`foscam.eu` `-WB/-W` Wi-Fi/battery/PoE line + FI99xx) with a **D4Z** re-source/backfill, **Tiandy** +17 (`en.tiandy.com` solar/wireless PT line), and OEM datasheet sweeps of **Pelco** (+34 so far, `pelco.com` spec-sheets) and **Avigilon** (+38 so far, `avigilon.com`/`docs.avigilon.com` datasheets, multi-SKU) — both continuing. Every record is datasheet/spec-sheet-faithful — fields absent on the source are left absent (no fabrication), and non-official mirror URLs are never used as `sources`.
+
+### Added — Foscam (+33) + D4Z backfill
+- `foscam.eu` current line: C/R/X/D/G/V/T/W/SD/PD/B/BP/FI families — `-WB`/`-W` dual-band Wi-Fi, wire-free battery+solar, PoE (`EP`/`P`) and older FI99xx pan-tilt models; a doorbell (VD1). Types read from each page (e.g. PD8-W/PD5-W are single-lens pan-tilt → `ptz`; X4-W → `box`). E1 skipped (kit; its camera is the B1). **D4Z** enriched from the official page (corrected pan/tilt, added the 4× zoom lens, gigabit, storage, weight; re-sourced).
+
+### Added — Tiandy (+17)
+- `en.tiandy.com` solar-battery + wireless PT lines (TC/TD SKUs): 8MP dual-lens, 4MP/6MP solar and 4G models, indoor cube cams, wire-free battery bullets. Specs read from the official per-page spec-sheet images; marketing-vs-printed conflicts resolved to the printed value.
+
+### Added — Pelco (+34, ongoing) and Avigilon (+38, ongoing)
+- Official spec-sheet / datasheet PDFs, **multi-SKU** (one record per orderable model): Pelco Spectra Pro, Esprit, ExSite, Sarix Value, Silent Sentinel Jaegar (thermal), Sarix Fisheye, Spectra IV SE; Avigilon Alta/Unity H6A, H5A IR PTZ, H4 Multisensor, H3 PTZ, H6XP, H4 Fisheye, H5M, Ava Quad. Thermal detector resolutions recorded as pixel dims; `ndaa_compliant` set only where the sheet states it. Full-catalogue sweep continuing.
 
 ### Added — HOLOWITS (+164 more, brand now 174)
 - **Full catalogue sweep** of the HOLOWITS AI camera line from official datasheet PDFs: bullets, turrets, domes, PTZ, dual-lens, dual-spectrum thermal, and a 180° panorama — across the **A / E / P / U / HWT-M/C/D/X** families and lens/variant SKUs (2.8 / 3.6 / 2.7-12 / 8-32 mm, etc.).
