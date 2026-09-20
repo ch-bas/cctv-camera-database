@@ -8,7 +8,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.22.0] — 2026-09-19
 
-Dataset reaches **13,960 cameras / 164 brands** (+1,555). A large multi-brand ingestion from **official sources only**:
+Dataset reaches **13,966 cameras / 164 brands** (+1,561). A large multi-brand ingestion from **official sources only**:
+
+### Added — LTS (+4) & Tapo (+2)
+- **LTS +4** from official `pic.ltsmall.com` datasheets: CMHT3C5PW-28L (5MP dual-lens 180° panoramic HD-TVI turret, Hikvision-OEM analog), CMHT1722-28LS (2MP HD-TVI turret, hybrid IR/white + two-way + siren), VSPTZIP3122WSL-X4IR (2×2MP dual-lens IP PTZ, Uniview-OEM/Ultra265, fixed panorama + 4× zoom detail channel with PTZ auto-tracking, ONVIF S/G, PoE+), and LV-PWFL6 (2MP Wi-Fi floodlight camera — dual 13 W lamps, PIR, two-way, 110 dB siren, RTSP + microSD/cloud).
+- **Tapo +2**: C103 and C104 (1080p indoor Wi-Fi bullets, local RTSP + ONVIF), from official TP-Link spec pages.
 
 ### Added — Verkada (+9) & Vivotek (+5)
 - **Verkada** 20 → 29: CB53/CB63 bullets (+TE) and CH/CY multisensors (four-cam -> panoramic, two-cam -> dual-lens), from official Verkada spec pages/datasheets (RTSP + onboard/cloud storage).
