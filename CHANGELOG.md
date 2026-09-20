@@ -8,7 +8,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.22.0] — 2026-09-19
 
-Dataset reaches **14,192 cameras / 168 brands** (+1,787). A large multi-brand ingestion from **official sources only**:
+Dataset reaches **14,235 cameras / 168 brands** (+1,830). A large multi-brand ingestion from **official sources only**:
+
+### Added — Arecont Vision (+43) & Matrix backfill
+- **Arecont Vision (AV Costar) +43** (brand 89 → 132): a gap analysis against the live AV Costar catalogue added the current ConteraIP lines (Indoor/Outdoor Dome, Bullet, Micro Bullet, MicroDome LX, MicroDome Duo LX, Omni LX / Omni LX RS, Fisheye, Panoramic), SurroundVideo Omni G3 & G5 Mini multi-imagers, MicroBullet, MegaDome G3 RS, and the 4K/UltraHD MegaDome/MegaVideo box models — each from its official AV Costar datasheet PDF. ConteraIP = H.265/H.264/MJPEG; older MegaIP lines = H.264/MJPEG. Multi-imager models typed `panoramic`. One-representative-per-body convention kept (feature/mount-suffix twins of existing bodies not duplicated).
+- **Matrix** SATATYA MITC20FL28/36/60CWS P2 (already present) backfilled with warm-LED range (30 m) and color min-lux (0.01) from their official datasheets.
 
 ### Added — 4 new consumer brands (+42) & Reolink (+7)
 - **Vstarcam** (new brand #165, +22), **Wansview** (new brand #166, +13), **Sonoff** (ITEAD, new brand #167, +6), **Shelly** (Allterco, new brand #168, +1) — consumer/prosumer Wi-Fi cameras sourced from each vendor's official site (vstarcam.com / wansview.com / sonoff.tech / shelly.com + kb.shelly.cloud). Ingestion target list came from the thingino firmware supported-device catalogue; where thingino documents the exact model, its Ingenic SoC + image sensor were attached as supplementary `soc`/`sensor` (thingino.com cited alongside the official page). RTSP/ONVIF templates applied only where the vendor officially documents local streaming — battery/4G/app-cloud-only models (per each vendor's own FAQ) are marked cloud/app-only with no invented stream URL. Records with no officially-stated resolution were dropped rather than fabricated.

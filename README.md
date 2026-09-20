@@ -1,9 +1,9 @@
 # CCTV Camera Database
 
-An open, structured database of 14,192 CCTV / IP camera models and their technical specifications, covering 168 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
+An open, structured database of 14,235 CCTV / IP camera models and their technical specifications, covering 168 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
 
 [![build](https://github.com/ch-bas/cctv-camera-database/actions/workflows/build.yml/badge.svg)](https://github.com/ch-bas/cctv-camera-database/actions/workflows/build.yml)
-[![cameras](https://img.shields.io/badge/cameras-14%2C192-blue)](data/cameras.json)
+[![cameras](https://img.shields.io/badge/cameras-14%2C235-blue)](data/cameras.json)
 [![brands](https://img.shields.io/badge/brands-168-green)](cameras/)
 [![license](https://img.shields.io/badge/license-CC0-lightgrey)](LICENSE)
 
@@ -19,10 +19,10 @@ An open, structured database of 14,192 CCTV / IP camera models and their technic
 
 <p align="center">
   <a href="https://cctv-database.com">
-    <img src="assets/cctv-database-showcase.gif" alt="CCTV Camera Database — search 14,192 cameras, browse full specs, copy ready-to-use Frigate configs, and audit the open dataset with the built-in QA tool" width="640">
+    <img src="assets/cctv-database-showcase.gif" alt="CCTV Camera Database — search 14,235 cameras, browse full specs, copy ready-to-use Frigate configs, and audit the open dataset with the built-in QA tool" width="640">
   </a>
   <br>
-  <sub><b><a href="https://cctv-database.com">cctv-database.com</a></b> — search 14,192 cameras · full spec sheets · copy-paste Frigate configs · open &amp; auditable</sub>
+  <sub><b><a href="https://cctv-database.com">cctv-database.com</a></b> — search 14,235 cameras · full spec sheets · copy-paste Frigate configs · open &amp; auditable</sub>
 </p>
 
 ---
@@ -53,7 +53,7 @@ The whole dataset is committed and ready to use — **no build step, no API key,
 
 | Format | File | Contents |
 |--------|------|----------|
-| JSON | [`data/cameras.json`](data/cameras.json) | all 14,192 cameras as one array |
+| JSON | [`data/cameras.json`](data/cameras.json) | all 14,235 cameras as one array |
 | CSV | [`data/cameras.csv`](data/cameras.csv) | flattened, spreadsheet-friendly |
 | ZIP | [`cameras.zip`](../../releases/latest) | versioned + checksummed, attached to each release |
 
@@ -119,7 +119,7 @@ Prefer to self-host or browse offline? A [standalone demo](docs/demo.html) (just
 - **Sort** — click any column header to sort ascending/descending
 - **Detail drawer** — click a row to slide open the full spec sheet (resolution, connectivity, protocols, storage, audio, source links)
 - **Community notes** — user-reported quirks and behaviors per camera, sourced and attributed, kept separate from datasheet specs
-- **Pagination** — page through all 14,192 cameras, 25 per page
+- **Pagination** — page through all 14,235 cameras, 25 per page
 - **Stats bar** — live counts for total cameras, brands, 4K+, WiFi, and no-subscription models
 
 ---
@@ -234,17 +234,17 @@ A device type is only emitted when the camera has a known RJ45 link speed (`netw
 
 | Metric | Count |
 |--------|-------|
-| Total cameras | **14,192** |
+| Total cameras | **14,235** |
 | Brands | **168** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
-| PoE wired | 10,381 |
+| PoE wired | 10,424 |
 | WiFi | 1,246 |
 | Battery / wire-free | 371 |
-| 4K / 8MP+ | 3,057 |
-| 4–7MP | 5,461 |
-| Under 4MP | 5,674 |
-| With integration configs (Frigate / Home Assistant) | 10,962 |
-| With color-lux rating (`night_vision.min_lux_color`) | 10,172 |
+| 4K / 8MP+ | 3,080 |
+| 4–7MP | 5,468 |
+| Under 4MP | 5,687 |
+| With integration configs (Frigate / Home Assistant) | 11,005 |
+| With color-lux rating (`night_vision.min_lux_color`) | 10,217 |
 
 ### All 168 brands
 
@@ -280,13 +280,13 @@ A device type is only emitted when the camera has a known RJ45 link speed (`netw
 | ABUS | 144 | Consumer + professional, GDPR-first, DE/AT/CH |
 | Annke | 140 | Prosumer, global |
 | Reolink | 134 | Prosumer, no-subscription, global |
+| Arecont Vision | 132 | Enterprise megapixel/multi-sensor (legacy), US |
 | FLIR (Teledyne) | 128 | Thermal imaging, NA/EU |
 | GeoVision | 110 | Enterprise, TW/Asia/global |
 | LILIN | 110 | — |
 | IMOU (Dahua) | 108 | Consumer + prosumer, global |
 | Mobotix | 104 | Enterprise GDPR-first, EU |
 | IC Realtime | 101 | — |
-| Arecont Vision | 89 | Enterprise megapixel/multi-sensor (legacy), US |
 | Tapo (TP-Link) | 89 | Consumer budget, global |
 | EZVIZ (Hikvision) | 87 | Consumer, global |
 | HikMicro | 86 | — |
@@ -450,7 +450,7 @@ cctv-camera-database/
 │   ├── avigilon/         # 507 cameras
 │   └── …162 more brands
 ├── data/                 # GENERATED — do not edit by hand
-│   ├── cameras.json      # all 14,192 cameras as one array
+│   ├── cameras.json      # all 14,235 cameras as one array
 │   ├── cameras.csv       # flattened, spreadsheet-friendly
 │   └── rtsp-patterns.json  # CC0 brand-level RTSP URL layer (183 brands)
 ├── strix/
@@ -485,7 +485,7 @@ Open — contributions very welcome:
 
 - [ ] **Re-source ~1,051 reseller-only cameras** to official OEM datasheets (#164 / #165)
 - [ ] **Backfill pixel resolution** for the ~613 entries that state megapixels but no width×height (#169)
-- [ ] **Frigate verification drive** — only 1,298 of 10,851 shipped configs are community-verified; [confirm one you run](../../issues/new?template=verify-frigate-config.yml)
+- [ ] **Frigate verification drive** — only 1,298 of 10,894 shipped configs are community-verified; [confirm one you run](../../issues/new?template=verify-frigate-config.yml)
 - [ ] **Grow `community_notes`** — the per-camera quirks/behaviors layer (#297)
 
 ---
