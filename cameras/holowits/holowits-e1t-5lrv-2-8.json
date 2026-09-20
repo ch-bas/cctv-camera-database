@@ -79,5 +79,20 @@
     "global"
   ],
   "cloud_dependency": "local",
-  "release_notes": "Datasheet lists 'Support Audio Input, Audio and Video Synchronization' under Features but the spec table states 'External Audio Input: Not Support'; recorded audio.microphone true based on the explicit 'Build-in MIC' feature line. Frame rate varies by resolution: 5MP(2880x1624)@20fps main stream, 4MP(2560x1440)@25fps; max_fps recorded at the native 5MP resolution. Power consumption stated as Day <=3W / Night <=7W; recorded the higher (night) value."
+  "release_notes": "Datasheet lists 'Support Audio Input, Audio and Video Synchronization' under Features but the spec table states 'External Audio Input: Not Support'; recorded audio.microphone true based on the explicit 'Build-in MIC' feature line. Frame rate varies by resolution: 5MP(2880x1624)@20fps main stream, 4MP(2560x1440)@25fps; max_fps recorded at the native 5MP resolution. Power consumption stated as Day <=3W / Night <=7W; recorded the higher (night) value.",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/LiveMedia/ch1/Media1",
+      "onvif_port": 80,
+      "verified": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "ONVIF Profile S supported."
+    }
+  }
 }
