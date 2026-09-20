@@ -1,0 +1,80 @@
+{
+  "id": "cisco-meraki-mv53x",
+  "brand": "Cisco Meraki",
+  "model": "MV53X",
+  "aliases": [
+    "MV53X"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 8.4,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "lens": {
+    "varifocal": true
+  },
+  "field_of_view_deg": "12 to 37",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50
+  },
+  "power": {
+    "method": "PoE"
+  },
+  "storage": {
+    "onboard": true,
+    "cloud": true,
+    "notes": "1 TB onboard solid-state storage; optional MV Cloud Archive"
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "object detection (people and vehicles)",
+    "motion search",
+    "smart retention",
+    "motion-based retention",
+    "cloud management via Meraki dashboard",
+    "telephoto lens",
+    "license plate recognition",
+    "attribute search (clothing color, vehicle color/type)"
+  ],
+  "status": "available",
+  "cloud_dependency": "cloud-required",
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.cisco.com/c/en/us/products/collateral/security/physical-security/meraki-cameras/mv-cloud-managed-smart-cameras-ds.pdf",
+    "https://documentation.meraki.com/MV/MV_Overview_and_Specifications"
+  ],
+  "last_verified": "2026-09-20",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{ip}:9000/live",
+      "verified": false,
+      "notes": "Meraki local RTSP (enable per-camera in the Meraki Dashboard; firmware 4.2+). No ONVIF."
+    },
+    "home_assistant": {
+      "integration": "generic",
+      "notes": "Add via Generic Camera with the Dashboard-provided RTSP URL (rtsp://{ip}:9000/live)."
+    },
+    "blue_iris": {
+      "profile": "Generic",
+      "notes": "Generic/RTSP: rtsp://{ip}:9000/live (enable local RTSP in Dashboard)."
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "id": "cisco-meraki-mv13m",
+  "brand": "Cisco Meraki",
+  "model": "MV13M",
+  "aliases": [
+    "MV13M",
+    "MV13M-HW"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 8.4,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "lens": {
+    "varifocal": false
+  },
+  "field_of_view_deg": "101.3",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 15
+  },
+  "power": {
+    "method": "PoE"
+  },
+  "storage": {
+    "onboard": true,
+    "cloud": true,
+    "notes": "512 GB onboard solid-state storage; optional MV Cloud Archive"
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "features": [
+    "object detection (people and vehicles)",
+    "motion search",
+    "smart retention",
+    "motion-based retention",
+    "cloud management via Meraki dashboard",
+    "attribute search (clothing color, vehicle color/type)"
+  ],
+  "status": "available",
+  "cloud_dependency": "cloud-required",
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.cisco.com/c/en/us/products/collateral/security/physical-security/meraki-cameras/mv-cloud-managed-smart-cameras-ds.pdf",
+    "https://documentation.meraki.com/MV/MV_Overview_and_Specifications"
+  ],
+  "last_verified": "2026-09-20",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{ip}:9000/live",
+      "verified": false,
+      "notes": "Meraki local RTSP (enable per-camera in the Meraki Dashboard; firmware 4.2+). No ONVIF."
+    },
+    "home_assistant": {
+      "integration": "generic",
+      "notes": "Add via Generic Camera with the Dashboard-provided RTSP URL (rtsp://{ip}:9000/live)."
+    },
+    "blue_iris": {
+      "profile": "Generic",
+      "notes": "Generic/RTSP: rtsp://{ip}:9000/live (enable local RTSP in Dashboard)."
+    }
+  }
+}

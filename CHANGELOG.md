@@ -8,7 +8,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.22.0] — 2026-09-19
 
-Dataset reaches **13,880 cameras / 162 brands** (+1,475). A large multi-brand ingestion from **official sources only**:
+Dataset reaches **13,897 cameras / 163 brands** (+1,492). A large multi-brand ingestion from **official sources only**:
+
+### Added — new brand Cisco Meraki (+17)
+- **Cisco Meraki** (new brand #163, cloud-managed MV smart cameras): MV13/MV23/MV33/MV44X/MV53X/MV63/MV73/MV84X/MV93 current generation (+M/X variants), from the official Cisco MV datasheet + Meraki spec docs. Cloud-required with 256GB-4TB on-camera SSD; local RTSP (rtsp://{ip}:9000/live, firmware 4.2+) where documented (omitted on MV44X). MV44X quad-imager typed panoramic, MV33/MV93 fisheye, MV44X dual-lens. Older MV2/12/22/32/52/72 not in this datasheet (not added).
 
 ### Added — new brand Rhombus (+10)
 - **Rhombus Systems** (new brand #162, US cloud-managed enterprise cameras, `rhombus.com`): R120/R150/R200/R230/R360S/R410/R520/R540/R545/R600 (dome/bullet/fisheye/panoramic), specs from the official `/files/specs/<model>.pdf` sheets. Cloud-only (`cloud-required`, no local RTSP/ONVIF) with large on-camera SSD/microSD storage; configs marked cloud-managed. The exhibitor pricing sheet confirmed the model families (legacy R360/R400/R500 are superseded by the R360S/R410/R520 already captured).
