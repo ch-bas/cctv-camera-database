@@ -1,0 +1,83 @@
+{
+  "id": "lts-ltcmip7923wlpr-32r",
+  "brand": "LTS",
+  "model": "LTCMIP7923WLPR-32R",
+  "aliases": [
+    "LTCMIP7923WLPR-32R"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/1.8\" progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "8-32",
+    "aperture": "F1.2",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100,
+    "min_lux_color": 0.002
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.265+",
+      "H.264",
+      "H.264+"
+    ],
+    "max_fps": 60
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "License Plate Recognition (LPR) with blacklist/whitelist alarms",
+    "140dB WDR, 3D DNR",
+    "8-32mm varifocal lens, IR range up to 328ft (100m)",
+    "1 RS-485 interface, alarm I/O",
+    "6 behavior analyses, 2 exception detections",
+    "Junction box included"
+  ],
+  "sources": [
+    "https://ltsecurityinc.com/default/2mp-vf-bullet-lpr-network-camera-cmip7923wlpr-32r.html"
+  ],
+  "last_verified": "2026-09-20",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "LTS Platinum/LX line = Hikvision-OEM. The Hikvision /Streaming/Channels/101 (main) & 102 (sub) RTSP convention typically applies; ONVIF must be manually enabled (off by default on Hikvision firmware v5.5.0+). Not independently confirmed for this exact model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local",
+      "notes": "Hikvision-OEM; enable ONVIF first, then add via the ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Hikvision (generic)",
+      "notes": "Hikvision-OEM RTSP/ONVIF; not independently confirmed for this specific model."
+    }
+  }
+}

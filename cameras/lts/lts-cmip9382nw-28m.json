@@ -1,0 +1,98 @@
+{
+  "id": "lts-cmip9382nw-28m",
+  "brand": "LTS",
+  "model": "CMIP9382NW-28M",
+  "aliases": [
+    "CMIP9382NW-28M"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP"
+  },
+  "sensor": "1/2.5\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "H: 102; V: 53; D: 124",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux_color": 0.028
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.265+",
+      "H.264",
+      "H.264+"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "method": "DC12V, PoE (802.3af)",
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "105 x 299.7 (dia x L)",
+  "weight_g": 1200,
+  "features": [
+    "Matrix IR 2.0, IR range up to 100 ft (50 m)",
+    "True WDR 120dB",
+    "H.265+ efficient compression",
+    "3D DNR noise reduction",
+    "MicroSD slot up to 128GB, NAS support (NFS/SMB/CIFS) with ANR",
+    "ONVIF (Profile S, Profile G) compliant"
+  ],
+  "sources": [
+    "https://ltsecurityinc.com/ip-camera/4k/ip-network-bullet-camera-cmip9382nw-28m.html"
+  ],
+  "last_verified": "2026-09-20",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "LTS Platinum/LX line = Hikvision-OEM. The Hikvision /Streaming/Channels/101 (main) & 102 (sub) RTSP convention typically applies; ONVIF must be manually enabled (off by default on Hikvision firmware v5.5.0+). Not independently confirmed for this exact model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local",
+      "notes": "Hikvision-OEM; enable ONVIF first, then add via the ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Hikvision (generic)",
+      "notes": "Hikvision-OEM RTSP/ONVIF; not independently confirmed for this specific model."
+    }
+  }
+}

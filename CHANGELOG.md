@@ -8,7 +8,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.22.0] — 2026-09-19
 
-Dataset reaches **13,966 cameras / 164 brands** (+1,561). A large multi-brand ingestion from **official sources only**:
+Dataset reaches **14,026 cameras / 164 brands** (+1,621). A large multi-brand ingestion from **official sources only**:
+
+### Added — LTS IP catalogue (+60)
+- **LTS +60** IP cameras across the Platinum (`CMIP`/`LTCMIP`), LX AI (`LXIP`) and Vantage (`VSIP`) lines — turret/dome/bullet/panoramic/dual-lens — sourced to their official `ltsecurityinc.com` product pages. Specs transcribed from the manufacturer spec tables (no fabrication; sparse pages kept only the fields actually stated). Configs assigned by OEM lineage: Platinum/LX = Hikvision-OEM (`/Streaming/Channels/101`), Vantage = Uniview-OEM (Ultra265, `/unicast/c1/s0/live`). One extracted record dropped for a mismatched source page.
 
 ### Added — LTS (+4) & Tapo (+2)
 - **LTS +4** from official `pic.ltsmall.com` datasheets: CMHT3C5PW-28L (5MP dual-lens 180° panoramic HD-TVI turret, Hikvision-OEM analog), CMHT1722-28LS (2MP HD-TVI turret, hybrid IR/white + two-way + siren), VSPTZIP3122WSL-X4IR (2×2MP dual-lens IP PTZ, Uniview-OEM/Ultra265, fixed panorama + 4× zoom detail channel with PTZ auto-tracking, ONVIF S/G, PoE+), and LV-PWFL6 (2MP Wi-Fi floodlight camera — dual 13 W lamps, PIR, two-way, 110 dB siren, RTSP + microSD/cloud).

@@ -1,0 +1,85 @@
+{
+  "id": "lts-lxip7783we-sdz",
+  "brand": "LTS",
+  "model": "LXIP7783WE-SDZ",
+  "aliases": [
+    "LXIP7783WE-SDZ"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5",
+    "aperture": "F1.5",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 61
+  },
+  "video": {
+    "max_fps": 20
+  },
+  "power": {
+    "method": "12V DC / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "audio": {
+    "microphone": true
+  },
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "8MP dual light: built-in warm white + IR lights, color hybrid, up to 200 ft",
+    "2.7-13.5mm vari-focal lens, F1.5",
+    "AI VCA: line crossing and intrusion detection",
+    "MD 2.0 human and vehicle detection",
+    "Built-in microphone",
+    "microSD up to 256 GB"
+  ],
+  "sources": [
+    "https://ltsecurityinc.com/default/lxip7783we-sdz-8mp-dual-light-vari-focal-dome-network-camera.html"
+  ],
+  "last_verified": "2026-09-20",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "LTS Platinum/LX line = Hikvision-OEM. The Hikvision /Streaming/Channels/101 (main) & 102 (sub) RTSP convention typically applies; ONVIF must be manually enabled (off by default on Hikvision firmware v5.5.0+). Not independently confirmed for this exact model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local",
+      "notes": "Hikvision-OEM; enable ONVIF first, then add via the ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Hikvision (generic)",
+      "notes": "Hikvision-OEM RTSP/ONVIF; not independently confirmed for this specific model."
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "lts-cmip9cd42wi-28aisp",
+  "brand": "LTS",
+  "model": "CMIP9CD42WI-28AISP",
+  "aliases": [
+    "CMIP9CD42WI-28AISP"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "label": "4MP"
+  },
+  "lens": {
+    "count": 1,
+    "aperture": "F1.0"
+  },
+  "night_vision": {
+    "type": "hybrid"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "NEW AI Image Signal Processor for excellent noise reduction",
+    "24/7 colorful imaging via F1.0 super-aperture lens",
+    "Scene-adaptive AI WDR",
+    "AI-based analytics for person and vehicle classification",
+    "NEMA4X anti-corrosion design",
+    "Smart Hybrid Light: IR + white LEDs, 3 supplemental lighting modes"
+  ],
+  "sources": [
+    "https://ltsecurityinc.com/default/cmip9cd42wi-28aisp-4mp-ai-color-24-7-bullet-camera.html"
+  ],
+  "last_verified": "2026-09-20",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "LTS Platinum/LX line = Hikvision-OEM. The Hikvision /Streaming/Channels/101 (main) & 102 (sub) RTSP convention typically applies; ONVIF must be manually enabled (off by default on Hikvision firmware v5.5.0+). Not independently confirmed for this exact model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local",
+      "notes": "Hikvision-OEM; enable ONVIF first, then add via the ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Hikvision (generic)",
+      "notes": "Hikvision-OEM RTSP/ONVIF; not independently confirmed for this specific model."
+    }
+  }
+}
