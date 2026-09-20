@@ -8,7 +8,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.22.0] — 2026-09-19
 
-Dataset reaches **13,946 cameras / 164 brands** (+1,541). A large multi-brand ingestion from **official sources only**:
+Dataset reaches **13,960 cameras / 164 brands** (+1,555). A large multi-brand ingestion from **official sources only**:
+
+### Added — Verkada (+9) & Vivotek (+5)
+- **Verkada** 20 → 29: CB53/CB63 bullets (+TE) and CH/CY multisensors (four-cam -> panoramic, two-cam -> dual-lens), from official Verkada spec pages/datasheets (RTSP + onboard/cloud storage).
+- **Vivotek** +5: SD9387-EHL 30x PTZ, FD9391-EHTV-V2 / FD9387-FR-V2 domes, MA232-EHTV / MA131-EHTV VORTEX multisensors — the only live-catalogue models not already covered (legacy EOL pages are 404).
 
 ### Added — new brand Turing (+49) + weight/dimensions backfill
 - **Turing** (Turing Vision, new brand #164) full Smart Series line from official `turing-marketing-assets` datasheet PDFs: Edge+ direct-to-cloud EVC (5MP) / EVL (4MP dual-light) / EVD (LPR) domes/turrets/bullets, and the on-prem SMART TP-M line — TwilightVision, VibrantView+ full-color, Active Deterrence, panoramic/multisensor, bi-spectrum thermal, and PTZ. Cloud VMS (Turing Vision) with ONVIF Profile S/G/T; typed per datasheet (TP-MVD are VF turrets). 2 models omitted (no datasheet published).
