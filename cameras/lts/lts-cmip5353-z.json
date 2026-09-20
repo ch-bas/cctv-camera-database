@@ -1,0 +1,94 @@
+{
+  "id": "lts-cmip5353-z",
+  "brand": "LTS",
+  "model": "CMIP5353-Z",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2560,
+    "max_height": 1920,
+    "label": "5MP"
+  },
+  "sensor": "1/2.5\" sensor",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.5-9",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "36-92",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.6
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "method": "12V DC +/-10% / PoE (802.3af)",
+    "consumption_w": 14,
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif"
+  ],
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-10 to 60",
+  "dimensions_mm": "98.0 x 88.6 x 328.8",
+  "weight_g": 1700,
+  "features": [
+    "Motorized varifocal lens with DC drive auto iris",
+    "IR cut filter with auto day/night switch",
+    "Dual stream support",
+    "IP66 weatherproof rating",
+    "RS-485 interface for PTZ/accessory control"
+  ],
+  "sources": [
+    "https://ltsecurityinc.com/ip-camera/ip-bullet/cmip5353-z.html"
+  ],
+  "last_verified": "2026-09-20",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "aliases": [
+    "CMIP5353-Z"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "LTS Platinum/LX line = Hikvision-OEM. The Hikvision /Streaming/Channels/101 (main) & 102 (sub) RTSP convention typically applies; ONVIF must be manually enabled (off by default on Hikvision firmware v5.5.0+). Not independently confirmed for this exact model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local",
+      "notes": "Hikvision-OEM; enable ONVIF first, then add via the ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Hikvision (generic)",
+      "notes": "Hikvision-OEM RTSP/ONVIF; not independently confirmed for this specific model."
+    }
+  }
+}

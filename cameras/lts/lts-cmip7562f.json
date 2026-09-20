@@ -1,0 +1,93 @@
+{
+  "id": "lts-cmip7562f",
+  "brand": "LTS",
+  "model": "CMIP7562F",
+  "aliases": [
+    "CMIP7562F"
+  ],
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3072,
+    "max_height": 2048,
+    "label": "6MP"
+  },
+  "sensor": "1/1.8\" sensor",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.27",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "360",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10,
+    "min_lux_color": 0.05
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 25
+  },
+  "power": {
+    "method": "DC12V / PoE",
+    "consumption_w": 11
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 64,
+    "nvr_compatible": true
+  },
+  "environment": [
+    "indoor"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "167.4 x 43.8",
+  "weight_g": 800,
+  "features": [
+    "360-degree panoramic fisheye view",
+    "Multiple viewing modes: fisheye, panoramic, split 180-degree, 4x ePTZ",
+    "Multiple ePTZ streams with preset and patrol",
+    "Digital WDR, 3D DNR",
+    "1 RJ45 + 1 RS-485 interface, high light compensation"
+  ],
+  "sources": [
+    "https://ltsecurityinc.com/ip-camera/ip-fisheye/ip-network-fisheye-camera-cmip7562f.html"
+  ],
+  "last_verified": "2026-09-20",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "LTS Platinum/LX line = Hikvision-OEM. The Hikvision /Streaming/Channels/101 (main) & 102 (sub) RTSP convention typically applies; ONVIF must be manually enabled (off by default on Hikvision firmware v5.5.0+). Not independently confirmed for this exact model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local",
+      "notes": "Hikvision-OEM; enable ONVIF first, then add via the ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Hikvision (generic)",
+      "notes": "Hikvision-OEM RTSP/ONVIF; not independently confirmed for this specific model."
+    }
+  }
+}

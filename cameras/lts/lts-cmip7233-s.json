@@ -1,0 +1,92 @@
+{
+  "id": "lts-cmip7233-s",
+  "brand": "LTS",
+  "model": "CMIP7233-S",
+  "aliases": [
+    "CMIP7233-S"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 3.2,
+    "max_width": 2048,
+    "max_height": 1536,
+    "label": "3.2MP"
+  },
+  "sensor": "1/3\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "method": "12V DC / PoE (802.3af)",
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 64,
+    "nvr_compatible": true
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true
+  },
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "140.0 x 99.9",
+  "weight_g": 800,
+  "features": [
+    "3D DNR, DWDR, BLC",
+    "Motorized 2.8-12mm VF lens",
+    "24x IR LEDs, up to 30m range",
+    "Built-in microSD slot up to 64GB",
+    "IP66 weatherproof vandal dome"
+  ],
+  "sources": [
+    "https://ltsecurityinc.com/ip-camera/ip-dome/ip-network-dome-camera-cmip7233-s.html"
+  ],
+  "last_verified": "2026-09-20",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "LTS Platinum/LX line = Hikvision-OEM. The Hikvision /Streaming/Channels/101 (main) & 102 (sub) RTSP convention typically applies; ONVIF must be manually enabled (off by default on Hikvision firmware v5.5.0+). Not independently confirmed for this exact model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local",
+      "notes": "Hikvision-OEM; enable ONVIF first, then add via the ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Hikvision (generic)",
+      "notes": "Hikvision-OEM RTSP/ONVIF; not independently confirmed for this specific model."
+    }
+  }
+}

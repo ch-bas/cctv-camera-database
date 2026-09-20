@@ -8,14 +8,14 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.22.0] — 2026-09-19
 
-Dataset reaches **14,122 cameras / 168 brands** (+1,717). A large multi-brand ingestion from **official sources only**:
+Dataset reaches **14,186 cameras / 168 brands** (+1,781). A large multi-brand ingestion from **official sources only**:
 
 ### Added — 4 new consumer brands (+42) & Reolink (+1)
 - **Vstarcam** (new brand #165, +22), **Wansview** (new brand #166, +13), **Sonoff** (ITEAD, new brand #167, +6), **Shelly** (Allterco, new brand #168, +1) — consumer/prosumer Wi-Fi cameras sourced from each vendor's official site (vstarcam.com / wansview.com / sonoff.tech / shelly.com + kb.shelly.cloud). Ingestion target list came from the thingino firmware supported-device catalogue; where thingino documents the exact model, its Ingenic SoC + image sensor were attached as supplementary `soc`/`sensor` (thingino.com cited alongside the official page). RTSP/ONVIF templates applied only where the vendor officially documents local streaming — battery/4G/app-cloud-only models (per each vendor's own FAQ) are marked cloud/app-only with no invented stream URL. Records with no officially-stated resolution were dropped rather than fabricated.
 - **Reolink +1**: C1 Pro (4MP indoor pan/tilt, from the official spec sheet). RLC-423 (already present) backfilled with `poe_class` from its 802.3at rating.
 
-### Added — LTS IP catalogue (+113)
-- **LTS +113** IP cameras across the Platinum (`CMIP`/`LTCMIP`), LX AI (`LXIP`) and Vantage (`VSIP`) lines — turret/dome/bullet/box/panoramic/dual-lens — sourced to their official `ltsecurityinc.com` product pages. Specs transcribed from the manufacturer spec tables (no fabrication; sparse pages kept only the fields actually stated). Configs assigned by OEM lineage: Platinum/LX = Hikvision-OEM (`/Streaming/Channels/101`), Vantage = Uniview-OEM (Ultra265, `/unicast/c1/s0/live`). One extracted record dropped for a mismatched source page. LTS brand total now 124.
+### Added — LTS IP catalogue (+177)
+- **LTS +177** IP cameras across the Platinum (`CMIP`/`LTCMIP`), LX AI (`LXIP`) and Vantage (`VSIP`) lines — turret/dome/bullet/box/fisheye/panoramic/dual-lens (incl. LPR bullets) — sourced to their official `ltsecurityinc.com` product pages. Specs transcribed from the manufacturer spec tables (no fabrication; sparse pages kept only the fields actually stated). Configs assigned by OEM lineage: Platinum/LX = Hikvision-OEM (`/Streaming/Channels/101`), Vantage = Uniview-OEM (Ultra265, `/unicast/c1/s0/live`). Records with mismatched/conflicting source pages were dropped rather than guessed. **LTS brand total now 188** (the largest single-brand catalogue in the dataset after the majors).
 
 ### Added — LTS (+4) & Tapo (+2)
 - **LTS +4** from official `pic.ltsmall.com` datasheets: CMHT3C5PW-28L (5MP dual-lens 180° panoramic HD-TVI turret, Hikvision-OEM analog), CMHT1722-28LS (2MP HD-TVI turret, hybrid IR/white + two-way + siren), VSPTZIP3122WSL-X4IR (2×2MP dual-lens IP PTZ, Uniview-OEM/Ultra265, fixed panorama + 4× zoom detail channel with PTZ auto-tracking, ONVIF S/G, PoE+), and LV-PWFL6 (2MP Wi-Fi floodlight camera — dual 13 W lamps, PIR, two-way, 110 dB siren, RTSP + microSD/cloud).
