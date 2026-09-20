@@ -1,0 +1,93 @@
+{
+  "id": "vstarcam-cs66q-x18p",
+  "brand": "Vstarcam",
+  "model": "CS66Q-X18P",
+  "aliases": [
+    "CS66Q-X18P"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP (1520p)"
+  },
+  "sensor": "1/2.9\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.9-94.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "62 (1x) to 4 (18x); pan 360 / tilt 100",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 100
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25
+  },
+  "power": {
+    "method": "DC12V; 11.1W (IR on), 16.6W max",
+    "consumption_w": 11.1
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "cloud": true,
+    "nvr_compatible": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-10 to 55",
+  "features": [
+    "18x optical zoom (5.9-94.4mm) with 360 pan / 100 tilt PTZ",
+    "Up to 16 presets (5 via app)",
+    "AI human detection with auto-tracking",
+    "IR night vision (6x 850nm, 50-100m) plus smart color mode",
+    "WiFi 6 (2.4GHz) plus 10/100 Ethernet; H.264+ encoding"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:10554/tcp/av0_0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:10554/tcp/av0_1",
+      "verified": false,
+      "notes": "Vstarcam's standard RTSP path (port 10554, /tcp/av0_0 main, /tcp/av0_1 sub); NOT restated on this product page. Enable RTSP/ONVIF in the VStarcam/Eye4 app and verify on device."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Classic always-on Vstarcam IP camera; ONVIF/RTSP capable line. If ONVIF auto-discovery fails, add as generic RTSP with the port-10554 path above."
+    },
+    "blue_iris": {
+      "profile": "Generic ONVIF/RTSP",
+      "notes": "Use the documented port-10554 RTSP path; select Generic/ONVIF."
+    }
+  },
+  "sources": [
+    "https://vstarcam.com/products/cs66q-x18p-18x-optical-zoom-ptz-camera"
+  ],
+  "last_verified": "2026-09-20",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "ptz": {
+    "autotracking": true
+  }
+}

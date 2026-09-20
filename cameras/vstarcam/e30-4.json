@@ -1,0 +1,95 @@
+{
+  "id": "vstarcam-e30-4",
+  "brand": "Vstarcam",
+  "model": "E30-4",
+  "aliases": [
+    "E30-4"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "4MP (1296p main)"
+  },
+  "sensor": "1/3.27\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "pan 330 / tilt 90",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 10
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 15
+  },
+  "power": {
+    "method": "Built-in 8000mAh battery (6000mAh optional) + continuous solar; camera DC5V/1A USB; NVR DC12V/2A"
+  },
+  "power_source": [
+    "battery",
+    "solar"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "cloud": true,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-10 to 55",
+  "dimensions_mm": "164 x 144 x 115 (camera)",
+  "features": [
+    "Four-camera wire-free solar PTZ system with bundled NVR",
+    "AI human detection to cut false alarms",
+    "IR (10m) plus smart color night vision",
+    "NVR supports 1x SATA to 18TB and microSD to 512GB; encrypted cloud",
+    "IP66 weatherproof; pan 330 / tilt 90"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:10554/tcp/av0_0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:10554/tcp/av0_1",
+      "verified": false,
+      "notes": "Vstarcam's standard RTSP path (port 10554, /tcp/av0_0 main, /tcp/av0_1 sub); NOT restated on this product page. Enable RTSP/ONVIF in the VStarcam/Eye4 app and verify on device."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Classic always-on Vstarcam IP camera; ONVIF/RTSP capable line. If ONVIF auto-discovery fails, add as generic RTSP with the port-10554 path above."
+    },
+    "blue_iris": {
+      "profile": "Generic ONVIF/RTSP",
+      "notes": "Use the documented port-10554 RTSP path; select Generic/ONVIF."
+    }
+  },
+  "sources": [
+    "https://vstarcam.com/products/4mp-solar-ptz-camera-e30-4"
+  ],
+  "last_verified": "2026-09-20",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local"
+}

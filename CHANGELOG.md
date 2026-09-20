@@ -8,7 +8,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.22.0] — 2026-09-19
 
-Dataset reaches **14,026 cameras / 164 brands** (+1,621). A large multi-brand ingestion from **official sources only**:
+Dataset reaches **14,069 cameras / 168 brands** (+1,664). A large multi-brand ingestion from **official sources only**:
+
+### Added — 4 new consumer brands (+42) & Reolink (+1)
+- **Vstarcam** (new brand #165, +22), **Wansview** (new brand #166, +13), **Sonoff** (ITEAD, new brand #167, +6), **Shelly** (Allterco, new brand #168, +1) — consumer/prosumer Wi-Fi cameras sourced from each vendor's official site (vstarcam.com / wansview.com / sonoff.tech / shelly.com + kb.shelly.cloud). Ingestion target list came from the thingino firmware supported-device catalogue; where thingino documents the exact model, its Ingenic SoC + image sensor were attached as supplementary `soc`/`sensor` (thingino.com cited alongside the official page). RTSP/ONVIF templates applied only where the vendor officially documents local streaming — battery/4G/app-cloud-only models (per each vendor's own FAQ) are marked cloud/app-only with no invented stream URL. Records with no officially-stated resolution were dropped rather than fabricated.
+- **Reolink +1**: C1 Pro (4MP indoor pan/tilt, from the official spec sheet). RLC-423 (already present) backfilled with `poe_class` from its 802.3at rating.
 
 ### Added — LTS IP catalogue (+60)
 - **LTS +60** IP cameras across the Platinum (`CMIP`/`LTCMIP`), LX AI (`LXIP`) and Vantage (`VSIP`) lines — turret/dome/bullet/panoramic/dual-lens — sourced to their official `ltsecurityinc.com` product pages. Specs transcribed from the manufacturer spec tables (no fabrication; sparse pages kept only the fields actually stated). Configs assigned by OEM lineage: Platinum/LX = Hikvision-OEM (`/Streaming/Channels/101`), Vantage = Uniview-OEM (Ultra265, `/unicast/c1/s0/live`). One extracted record dropped for a mismatched source page.
