@@ -8,7 +8,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.22.0] — 2026-09-19
 
-Dataset reaches **14,260 cameras / 168 brands** (+1,855). A large multi-brand ingestion from **official sources only**:
+Dataset reaches **14,262 cameras / 169 brands** (+1,857). A large multi-brand ingestion from **official sources only**:
+
+### Added — new brand Vikylin (+2)
+- **Vikylin** (new brand #169, `vikylin.com`): DT386G2 (8MP 4K AcuSense DarkFighter fixed turret — Hikvision-OEM, 1/1.8" sensor, 2.8/4/6 mm, IR 30 m, microSD 512GB, IP67) and PG2046IRCS-P (4MP dual-lens panoramic, 2×GC2063, 170° dual white-light+IR illumination, two-way audio). Specs from the official Vikylin datasheets; sourced to vikylin.com.
 
 ### Added — ESP (+20)
 - **ESP (espuk.com) +20** (brand 12 → 32) from official cloudfront datasheet PDFs. **IP PoE (15):** HDview IP HC828 (8MP dual-light bullet/turret, black/white), HC428 (4MP), HC528FBW (5MP), the H512V motorised-varifocal 5MP bullets/domes (DGA/DWA carry IK10), and RC228TB (completing the RC228 IP set). **Analogue HD / coax (5):** Rekor RCTB/RCTW/RCBB/RCBW (2MP white-light full-colour) and the FHDVC18PTZ (2MP AHD PTZ, 18× optical zoom). IP models carry ONVIF Profile S/G/T (configs point to ONVIF discovery — ESP publishes no fixed RTSP path); analogue models carry DVR-ingest configs. Codecs omitted (ESP datasheets don't state them). Camera KITS and NVRs excluded.
