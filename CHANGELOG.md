@@ -8,7 +8,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.22.0] — 2026-09-19
 
-Dataset reaches **15,733 cameras / 184 brands** (+3,328). A large multi-brand ingestion from **official sources only**:
+Dataset reaches **15,762 cameras / 185 brands** (+3,357). A large multi-brand ingestion from **official sources only**:
 
 ### Added — existing-brand catalogue gap-fills (+655)
 - Deep gap-fills of nine already-covered brands, each from the manufacturer's official product pages/datasheets (no fabrication; full Frigate/Home Assistant/Blue Iris configs; OEM-accurate RTSP paths): **Axis +309** (M/P/Q network + thermal, from official datasheets), **ACTi +181** (A/B/D/E/I/K/Q/Z series, NDAA authoritatively flagged), **Tiandy +96** (AK/Spark/Pro/PTZ/Wireless/Sunflower), **Milesight +38** (AI Motorized/Speed-Dome/full-color/LPR/radar-5G variants), **Panasonic +27** (PM-* Dahua-OEM line — distinct from the separate i-PRO brand), **Ubiquiti +1** (UniFi Protect AI Theta), **Sony +73** (near-complete SNC catalogue: EB/EM/VB/VM/DH/EP/ER/WR/RS/RX/ZM/ZP/EMX/XM/HM/CX from official datasheets) + **TP-Link TL-IPC584EP-W4** (issue #379). Discontinued/unsourceable models were skipped rather than guessed.
