@@ -1,0 +1,99 @@
+{
+  "id": "acti-a32",
+  "brand": "ACTi",
+  "model": "A32",
+  "ndaa_compliant": false,
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2065,
+    "max_height": 1553,
+    "label": "3MP"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6 (fixed)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "78 horizontal / 57.5 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.1
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2048x1536",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "power": {
+    "method": "PoE Class 3 (IEEE802.3af)",
+    "consumption_w": 7,
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe"
+  ],
+  "network": {
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "Advanced WDR (120 dB)",
+    "built-in analytics: Tampering Detection",
+    "ONVIF Compliant: Yes, Profile T, Profile Q"
+  ],
+  "operating_temp_c": "-20 to 50",
+  "dimensions_mm": "67.5 (diameter) x 175.4",
+  "weight_g": 410,
+  "sources": [
+    "https://www.acti.com/product/A32?tab=specifications"
+  ],
+  "last_verified": "2026-09-21",
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  },
+  "cloud_dependency": "local"
+}

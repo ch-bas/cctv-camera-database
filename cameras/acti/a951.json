@@ -1,0 +1,99 @@
+{
+  "id": "acti-a951",
+  "brand": "ACTi",
+  "model": "A951",
+  "ndaa_compliant": false,
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3864,
+    "max_height": 2180,
+    "label": "8MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6.5-202 (zoom)",
+    "aperture": "F1.55",
+    "varifocal": true
+  },
+  "field_of_view_deg": "63.4 horizontal / 37.8 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100,
+    "min_lux_color": 0.04
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "power": {
+    "method": "AC 24V, High PoE 60W"
+  },
+  "power_source": [
+    "poe"
+  ],
+  "network": {
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "Extreme WDR (120 dB)",
+    "built-in analytics: Object Based Motion Detection, Tampering Detection",
+    "ONVIF Compliant: Yes, Profile G, Profile T",
+    "Heater: Yes",
+    "real-time clock: Yes"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "284 (diameter) x 431",
+  "weight_g": 8900,
+  "sources": [
+    "https://www.acti.com/product/A951?tab=specifications"
+  ],
+  "last_verified": "2026-09-21",
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  },
+  "cloud_dependency": "local"
+}

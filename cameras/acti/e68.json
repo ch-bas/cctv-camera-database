@@ -1,0 +1,106 @@
+{
+  "id": "acti-e68",
+  "brand": "ACTi",
+  "model": "E68",
+  "ndaa_compliant": false,
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 1.3,
+    "max_width": 1280,
+    "max_height": 960,
+    "label": "1.3MP"
+  },
+  "sensor": "1/3\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12 (varifocal)",
+    "aperture": "F1.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "83.0 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.1
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1280x960",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "power": {
+    "method": "PoE Class 2 (IEEE802.3af)",
+    "consumption_w": 6.05,
+    "poe_class": 2
+  },
+  "power_source": [
+    "poe"
+  ],
+  "network": {
+    "ethernet_ports": 1
+  },
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "environment": [
+    "indoor"
+  ],
+  "features": [
+    "Basic WDR (88 dB)",
+    "ONVIF Compliant: Yes, Profile S, Profile G, Profile Q",
+    "GB28181 Compliant: Yes",
+    "real-time clock: Yes"
+  ],
+  "operating_temp_c": "-10 to 50",
+  "dimensions_mm": "146 (diameter) x 114",
+  "weight_g": 538,
+  "ik_rating": "IK09",
+  "sources": [
+    "https://www.acti.com/product/E68?tab=specifications",
+    "https://download.acti.com/?id=26977"
+  ],
+  "last_verified": "2026-09-21",
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  },
+  "cloud_dependency": "local"
+}

@@ -1,0 +1,104 @@
+{
+  "id": "acti-b55",
+  "brand": "ACTi",
+  "model": "B55",
+  "ndaa_compliant": false,
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 10,
+    "max_width": 3856,
+    "max_height": 2764,
+    "label": "10MP"
+  },
+  "sensor": "1/2.3\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.37 (fixed)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "187.7 horizontal / 187.69 vertical",
+  "night_vision": {
+    "type": "color",
+    "min_lux_color": 0.1
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 7,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3648x2736",
+        "fps": 7,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "power": {
+    "method": "DC 12V, PoE Class 2 (IEEE802.3af)",
+    "consumption_w": 4,
+    "poe_class": 2
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "network": {
+    "ethernet_ports": 1
+  },
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "environment": [
+    "indoor"
+  ],
+  "features": [
+    "Basic WDR (70 dB)",
+    "ONVIF Compliant: Profile S, Profile G, Profile T, Profile Q",
+    "GB28181 Compliant: Yes",
+    "real-time clock: Yes"
+  ],
+  "operating_temp_c": "-10 to 50",
+  "dimensions_mm": "150 (diameter) x 48",
+  "weight_g": 342,
+  "sources": [
+    "https://www.acti.com/product/B55?tab=specifications"
+  ],
+  "last_verified": "2026-09-21",
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  },
+  "cloud_dependency": "local"
+}

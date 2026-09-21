@@ -1,0 +1,106 @@
+{
+  "id": "acti-z86-1",
+  "brand": "ACTi",
+  "model": "Z86-1",
+  "ndaa_compliant": true,
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/3\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12 (zoom)",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "94.7 horizontal / 53.5 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.003
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "power": {
+    "method": "DC 12V, PoE Class 3 (IEEE802.3af)",
+    "consumption_w": 8.16,
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "network": {
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "Superior WDR (120 dB)",
+    "built-in analytics: People Detection, Tampering Detection, Intrusion Detection (Forbidden Area Detection)*",
+    "ONVIF Compliant: Yes, Profile S, Profile G, Profile T"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "129 (diameter) x 110",
+  "weight_g": 670,
+  "ik_rating": "IK10",
+  "sources": [
+    "https://www.acti.com/product/Z86-1?tab=specifications"
+  ],
+  "last_verified": "2026-09-21",
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  },
+  "cloud_dependency": "local"
+}
