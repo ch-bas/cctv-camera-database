@@ -8,7 +8,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.22.0] — 2026-09-19
 
-Dataset reaches **14,905 cameras / 184 brands** (+2,500). A large multi-brand ingestion from **official sources only**:
+Dataset reaches **15,005 cameras / 184 brands** (+2,600). A large multi-brand ingestion from **official sources only**:
+
+### Added — IDIS full IP catalogue (+100)
+- **IDIS +100** (1 -> 101): the full DC-* DirectIP camera range (dome/bullet/turret/PTZ/fisheye/box + explosion-proof + Edge-AI + 20MP multi-directional), enumerated from the sitemap (242 product ids) and parsed from each page's embedded PRODUCT_DATA spec table. Analog DirectCX (TC-*), intercoms, and AI appliances excluded; NDAA flagged per page.
 
 ### Added — 15 new brands (+643): consumer/prosumer & regional catalogues
 Full-catalogue sweeps of fifteen previously-uncovered brands, each sourced from the manufacturer's own site/datasheets (no fabrication; fields absent from a source are omitted, and every record carries a Frigate/Home Assistant/Blue Iris `configs` block assigned by detected OEM lineage):
