@@ -1,0 +1,81 @@
+{
+  "id": "switchbot-video-doorbell",
+  "brand": "SwitchBot",
+  "model": "Smart Video Doorbell",
+  "aliases": [
+    "810150543933"
+  ],
+  "type": "doorbell",
+  "connectivity": [
+    "wifi"
+  ],
+  "field_of_view_deg": "165",
+  "night_vision": {
+    "type": "color"
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "power": {
+    "method": "5000mAh rechargeable battery (ECoPower); optional solar panel; includes indoor monitor with WiFi relay"
+  },
+  "power_source": [
+    "battery",
+    "solar"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "cloud": true
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "2K video with 165 degree ultra-wide, 16:9 head-to-toe view",
+    "color night vision, clear even in complete darkness",
+    "two-way talk with preset quick replies",
+    "5000mAh long-life battery, optional solar panel",
+    "free 4GB SD card included, supports up to 512GB local storage, no monthly fee",
+    "Home Assistant via RTSP (event-triggered), Matter link to SwitchBot Lock, Alexa"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/",
+      "verified": false,
+      "notes": "SwitchBot Video Doorbell supports RTSP (event-triggered) surfaced through Home Assistant; the RTSP endpoint runs via the included monitor/hub. No ONVIF profile advertised.",
+      "two_way_audio": false
+    },
+    "home_assistant": {
+      "integration": "generic",
+      "notes": "Manufacturer states Home Assistant support via RTSP with event-triggered viewing; add as a Generic Camera with the RTSP URL. Also links via Matter."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use a Generic/RTSP source with the doorbell's RTSP URL; no ONVIF."
+    }
+  },
+  "sources": [
+    "https://eu.switch-bot.com/products/switchbot-video-doorbell"
+  ],
+  "last_verified": "2026-09-21",
+  "markets": [
+    "eu",
+    "global"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "resolution": {
+    "megapixels": 3,
+    "label": "2K"
+  }
+}

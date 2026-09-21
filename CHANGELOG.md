@@ -8,7 +8,17 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.22.0] — 2026-09-19
 
-Dataset reaches **14,262 cameras / 169 brands** (+1,857). A large multi-brand ingestion from **official sources only**:
+Dataset reaches **14,905 cameras / 184 brands** (+2,500). A large multi-brand ingestion from **official sources only**:
+
+### Added — 15 new brands (+643): consumer/prosumer & regional catalogues
+Full-catalogue sweeps of fifteen previously-uncovered brands, each sourced from the manufacturer's own site/datasheets (no fabrication; fields absent from a source are omitted, and every record carries a Frigate/Home Assistant/Blue Iris `configs` block assigned by detected OEM lineage):
+- **Safire +194** (#170) — SF-* IP + HDTVI catalogue from official cloudfront datasheets; **current IP range detected as TVT-OEM** (`/profile1`), not Hikvision, with the older WH series correctly flagged Hikvision-OEM and analog set to HD-over-coax.
+- **Anpviz +105** (#171) — H-Series + U-Series (NDAA) via the site sitemap + JSON-LD spec blocks; Dahua-OEM (`/ch01/0`).
+- **Trassir +98** (#172) — DSSL TR-* IP + analog, full text spec tables from product pages.
+- **Vikylin +93** (169→95) — full catalogue via the WordPress media API (114 datasheet PDFs); Hikvision- vs Dahua-format configs per datasheet.
+- **Tenda +36** (#173) — reverse-engineered the Nuxt product API + download-centre for discontinued models.
+- **Ernitec +28** (#174) — NDAA Pluto/Wolf/Deimos (incl. bi-spectral thermal)/Jupitor/Orion/Saturn/Mercury from Icecat-style attribute tables.
+- **Jooan +18** (#175), **Jennov +16** (#176), **YI +10** (#177), **Galayou +9** (Wansview-OEM, #178), **Kami +8** (#179), **Wuuk +8** (#180), **Blurams +7** (#181), **Cinnado +6** (Wansview-OEM, #182), **SwitchBot +4** (#183), **Akuvox +2** (VC50B/T, #184) — consumer Wi-Fi / battery / solar / 4G / doorbell / thermal lines; hardware specs read from spec-table images where listings bake them into infographics, with marketed-vs-real resolution corrected (real W×H recorded, inflated MP kept only in the label). Kits/NVRs/accessories and non-camera products excluded; app/cloud-only models marked as such with no invented RTSP paths.
 
 ### Added — new brand Vikylin (+2)
 - **Vikylin** (new brand #169, `vikylin.com`): DT386G2 (8MP 4K AcuSense DarkFighter fixed turret — Hikvision-OEM, 1/1.8" sensor, 2.8/4/6 mm, IR 30 m, microSD 512GB, IP67) and PG2046IRCS-P (4MP dual-lens panoramic, 2×GC2063, 170° dual white-light+IR illumination, two-way audio). Specs from the official Vikylin datasheets; sourced to vikylin.com.

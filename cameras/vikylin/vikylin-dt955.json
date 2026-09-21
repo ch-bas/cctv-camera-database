@@ -1,0 +1,95 @@
+{
+  "id": "vikylin-dt955",
+  "brand": "Vikylin",
+  "model": "DT955",
+  "aliases": [
+    "DT955"
+  ],
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2560,
+    "max_height": 1920,
+    "label": "5MP"
+  },
+  "sensor": "1/2.5\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.05",
+    "aperture": "F2.2",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 (horizontal), 180 (vertical)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 8,
+    "min_lux_color": 0.01
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3af)",
+    "consumption_w": 7.5,
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true
+  },
+  "operating_temp_c": "-10 to 50",
+  "dimensions_mm": "119.9 x 41.2 (dia x H)",
+  "weight_g": 600,
+  "features": [
+    "5MP network fisheye camera, 2560x1920 @ 30fps",
+    "H.265/H.265+/H.264+/H.264 compression, dual video streams",
+    "support for 14 display modes (fisheye, panorama, multi-PTZ dewarp views)",
+    "IR range up to 8 m, 120 dB WDR, 3D DNR",
+    "microSD up to 128 GB, audio/alarm I/O on -S model, mobile monitoring via Hik-Connect"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hikvision-OEM fisheye camera. Standard Hikvision /Streaming/Channels/101 (main) & 102 (sub) paths apply; ONVIF must be enabled."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local",
+      "notes": "Hikvision-OEM; enable ONVIF first."
+    },
+    "blue_iris": {
+      "profile": "Hikvision (generic)",
+      "notes": "Hikvision-OEM RTSP/ONVIF."
+    }
+  },
+  "sources": [
+    "https://vikylin.com/wp-content/uploads/2023/11/DT955-Specification.pdf"
+  ],
+  "last_verified": "2026-09-21",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local"
+}
