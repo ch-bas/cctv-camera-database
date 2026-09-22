@@ -8,7 +8,12 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.22.0] — 2026-09-19
 
-Dataset reaches **15,762 cameras / 185 brands** (+3,357). A large multi-brand ingestion from **official sources only**:
+Dataset reaches **15,821 cameras / 185 brands** (+3,416). A large multi-brand ingestion from **official sources only**:
+
+### Added — Dahua expansion (+59): China-market catalogue + WizMind 4 datasheets
+- **Dahua +59**, all from official Dahua sources (dahuatech.com product pages and dahuasecurity.com datasheets), real specs only with per-camera Frigate/Home Assistant/Blue Iris (Dahua RTSP/ONVIF) configs:
+  - **China-market (+17, `markets: [cn]`):** DH-S2-4M Wi-Fi PTZ; entry/starlight IPC lines (HDBW6243R-ZAS, HDW1330DC-A, HDBW4243R-AS, HDW2233C-A, HDW2233DC-A, HDW62W8X-A, HFW62W8Z-I2, X13-A-I2, X13-I1); warm-light full-color (HFW2233DM-LED, HDW2233DT-A-LED, HDW2433T-A-LED); Wi-Fi bullets (P20A3-W, P20A3-WT); and the 行业夜视王 / "Industry Night Vision King" full-color models (HFW5459DM3-JM, HFW5459M1-YL-SA-PV-LED, plus alias added to HFW5859M3-PV-AS-JM).
+  - **Global WizMind 4 datasheets (+42):** Smart Dual-Light "S-IL" domes/turrets/bullets (HDBW…E-S-IL, HDW…T-S-IL, HFW…TC1-S-IL, 2/4/6/8MP); WizColor 24/7 full-color "PRO" turrets/bullets incl. siren-and-light active-deterrence (…-AS-PRO, …-AS-PV-B-PRO); and the AI IR range — fixed E-AS/EM-S and multi-focal T-AS plus motorized-varifocal R-ZAS domes, T-ZS turrets and T-ZAS bullets (2/4/5/8MP, F1.4/F1.5).
 
 ### Added — existing-brand catalogue gap-fills (+655)
 - Deep gap-fills of nine already-covered brands, each from the manufacturer's official product pages/datasheets (no fabrication; full Frigate/Home Assistant/Blue Iris configs; OEM-accurate RTSP paths): **Axis +309** (M/P/Q network + thermal, from official datasheets), **ACTi +181** (A/B/D/E/I/K/Q/Z series, NDAA authoritatively flagged), **Tiandy +96** (AK/Spark/Pro/PTZ/Wireless/Sunflower), **Milesight +38** (AI Motorized/Speed-Dome/full-color/LPR/radar-5G variants), **Panasonic +27** (PM-* Dahua-OEM line — distinct from the separate i-PRO brand), **Ubiquiti +1** (UniFi Protect AI Theta), **Sony +73** (near-complete SNC catalogue: EB/EM/VB/VM/DH/EP/ER/WR/RS/RX/ZM/ZP/EMX/XM/HM/CX from official datasheets) + **TP-Link TL-IPC584EP-W4** (issue #379). Discontinued/unsourceable models were skipped rather than guessed.
