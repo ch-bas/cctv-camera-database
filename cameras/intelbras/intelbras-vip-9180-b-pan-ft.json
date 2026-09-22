@@ -1,0 +1,79 @@
+{
+  "id": "intelbras-vip-9180-b-pan-ft",
+  "brand": "Intelbras",
+  "model": "VIP 9180 B Pan FT",
+  "type": "panoramic",
+  "sensor": "4x 1/2.8\" 2MP CMOS",
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 4096,
+    "max_height": 1800,
+    "label": "4x2MP panoramic"
+  },
+  "lens": {
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false,
+    "count": 4
+  },
+  "field_of_view_deg": "180 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.002
+  },
+  "video": {
+    "codecs": ["H.265", "H.264", "MJPEG", "H.265+", "H.264+"],
+    "max_fps": 30,
+    "streams": [
+      { "resolution": "4096x1800", "fps": 30 }
+    ]
+  },
+  "network": {
+    "ethernet_speed_mbps": 1000
+  },
+  "protocols": ["onvif", "rtsp", "http"],
+  "connectivity": ["ethernet"],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": ["outdoor"],
+  "dimensions_mm": "169 x 120 x 297",
+  "weight_g": 2860,
+  "operating_temp_c": "-40 to 60",
+  "power": {
+    "method": "12 Vdc / 24 Vac / PoE+ (802.3at)",
+    "consumption_w": 16.2
+  },
+  "power_source": ["poe", "dc", "ac-mains"],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256
+  },
+  "audio": {
+    "two_way": true
+  },
+  "cloud_dependency": "cloud-optional",
+  "features": [
+    "180-degree panoramic view (4 sensors)",
+    "Vehicle density and congestion detection",
+    "Crowd analysis and people counting",
+    "Tripwire and virtual fence",
+    "Object abandon/removal detection",
+    "IK10 anti-vandalism"
+  ],
+  "markets": ["BR", "LATAM"],
+  "last_verified": "2026-09-22",
+  "sources": [
+    "https://backend.intelbras.com/sites/default/files/2021-08/Ficha_Tecnica_VIP_9180_B_Pan_FT_08_21.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": { "integration": "onvif" },
+    "blue_iris": { "profile": "ONVIF/Dahua" }
+  }
+}

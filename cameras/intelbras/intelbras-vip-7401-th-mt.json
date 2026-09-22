@@ -1,0 +1,73 @@
+{
+  "id": "intelbras-vip-7401-th-mt",
+  "brand": "Intelbras",
+  "model": "VIP 7401 TH MT",
+  "type": "bullet",
+  "sensor": "1/2.8\" 2MP CMOS",
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "lens": {
+    "focal_length_mm": "8",
+    "aperture": "F1.9",
+    "varifocal": false,
+    "count": 2
+  },
+  "field_of_view_deg": "40 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 35,
+    "min_lux_color": 0.002
+  },
+  "video": {
+    "codecs": ["H.265", "H.264", "MJPEG"]
+  },
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "protocols": ["onvif", "rtsp", "http"],
+  "connectivity": ["ethernet"],
+  "ip_rating": "IP67",
+  "environment": ["outdoor"],
+  "weight_g": 1400,
+  "operating_temp_c": "10 to 30",
+  "power": {
+    "method": "12 Vdc / PoE (802.3af) / ePoE",
+    "consumption_w": 12
+  },
+  "power_source": ["poe", "dc"],
+  "storage": {
+    "onboard": false
+  },
+  "audio": {
+    "two_way": true
+  },
+  "cloud_dependency": "cloud-optional",
+  "features": [
+    "Thermal imaging (uncooled VOx 400x300 detector, 8-14 µm)",
+    "Body temperature measurement (+30 to +45 C, up to ±0.3 C with MTC 9000)",
+    "Hottest/coldest point indication",
+    "18 thermal color palettes",
+    "Thermal focal length 13 mm (F1.0)",
+    "Point/line/area temperature measurement (up to 12 rules)",
+    "Hybrid thermal + visible dual sensor"
+  ],
+  "markets": ["BR", "LATAM"],
+  "last_verified": "2026-09-22",
+  "sources": [
+    "https://backend.intelbras.com/sites/default/files/2020-07/Datasheet-vip-7401-th-mt.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": { "integration": "onvif" },
+    "blue_iris": { "profile": "ONVIF/Dahua" }
+  }
+}

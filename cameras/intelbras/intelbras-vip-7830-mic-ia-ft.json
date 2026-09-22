@@ -1,0 +1,80 @@
+{
+  "id": "intelbras-vip-7830-mic-ia-ft",
+  "brand": "Intelbras",
+  "model": "VIP 7830 MIC IA FT",
+  "type": "bullet",
+  "sensor": "1/2.8\" 8MP CMOS",
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "lens": {
+    "focal_length_mm": "2.8",
+    "aperture": "F1.4",
+    "varifocal": false,
+    "count": 1
+  },
+  "field_of_view_deg": "108 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.007
+  },
+  "video": {
+    "codecs": ["H.265", "H.264", "MJPEG", "H.265+", "H.264+"],
+    "max_fps": 30,
+    "streams": [
+      { "resolution": "3840x2160", "fps": 30 }
+    ]
+  },
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "protocols": ["onvif", "rtsp", "http"],
+  "connectivity": ["ethernet"],
+  "ip_rating": "IP67",
+  "environment": ["outdoor"],
+  "dimensions_mm": "70.5 x 66.4 x 192.7",
+  "weight_g": 590,
+  "operating_temp_c": "-40 to 60",
+  "power": {
+    "method": "12 Vdc / PoE (802.3af)",
+    "consumption_w": 6.3
+  },
+  "power_source": ["poe", "dc"],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256
+  },
+  "audio": {
+    "microphone": true,
+    "two_way": true
+  },
+  "cloud_dependency": "cloud-optional",
+  "features": [
+    "8MP / 4K resolution",
+    "Built-in microphone",
+    "Starlight",
+    "Smart IR",
+    "Tripwire",
+    "Virtual fence",
+    "Smart search"
+  ],
+  "markets": ["BR", "LATAM"],
+  "last_verified": "2026-09-22",
+  "sources": [
+    "https://backend.intelbras.com/sites/default/files/2021-07/datasheet-vip-7830-mic-ia-ft-pt.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": { "integration": "onvif" },
+    "blue_iris": { "profile": "ONVIF/Dahua" }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "id": "intelbras-vip-7215-sd-e",
+  "brand": "Intelbras",
+  "model": "VIP 7215 SD E",
+  "type": "ptz",
+  "sensor": "1/2.8\" CMOS",
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.3-64",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "58.2 to 4.8 horizontal",
+  "night_vision": {
+    "min_lux_color": 0.005
+  },
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "video": {
+    "codecs": ["H.265+", "H.265", "H.264+", "H.264"],
+    "max_fps": 30,
+    "streams": [
+      { "name": "main", "resolution": "1920x1080", "fps": 30 }
+    ]
+  },
+  "protocols": ["onvif", "rtsp", "http"],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "connectivity": ["ethernet"],
+  "ik_rating": "IK10",
+  "environment": ["indoor"],
+  "power": {
+    "method": "PoE+ (802.3at) / 24 Vac",
+    "consumption_w": 12
+  },
+  "power_source": ["poe", "ac-mains"],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256
+  },
+  "dimensions_mm": "Ø198 x 158",
+  "weight_g": 2300,
+  "operating_temp_c": "-30 to 60",
+  "features": [
+    "15x optical zoom",
+    "Starlight",
+    "Virtual line/fence detection",
+    "Abandoned/removed object detection",
+    "Face detection",
+    "Region of interest"
+  ],
+  "markets": ["BR", "LATAM"],
+  "cloud_dependency": "cloud-optional",
+  "last_verified": "2026-09-22",
+  "sources": [
+    "https://backend.intelbras.com/sites/default/files/2022-08/Novo%20Datasheet%20-%20VIP%207215%20SD%20E.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": { "integration": "onvif" },
+    "blue_iris": { "profile": "ONVIF/Dahua" }
+  }
+}

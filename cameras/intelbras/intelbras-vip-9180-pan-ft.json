@@ -1,0 +1,81 @@
+{
+  "id": "intelbras-vip-9180-pan-ft",
+  "brand": "Intelbras",
+  "model": "VIP 9180 Pan+ FT",
+  "type": "panoramic",
+  "sensor": "4x 1/1.8\" 4MP CMOS",
+  "resolution": {
+    "megapixels": 16,
+    "max_width": 5520,
+    "max_height": 2700,
+    "label": "4x4MP panoramic"
+  },
+  "lens": {
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false,
+    "count": 4
+  },
+  "field_of_view_deg": "180 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.001
+  },
+  "video": {
+    "codecs": ["H.265", "H.264", "MJPEG", "H.265+", "H.264+"],
+    "max_fps": 30,
+    "streams": [
+      { "resolution": "5520x2700", "fps": 30 }
+    ]
+  },
+  "network": {
+    "ethernet_speed_mbps": 1000
+  },
+  "protocols": ["onvif", "rtsp", "http"],
+  "connectivity": ["ethernet"],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": ["outdoor"],
+  "dimensions_mm": "172.5 x 120.5 x 298.3",
+  "weight_g": 3050,
+  "operating_temp_c": "-40 to 60",
+  "power": {
+    "method": "12 Vdc / 24 Vac / PoE+ (802.3at)",
+    "consumption_w": 24.2
+  },
+  "power_source": ["poe", "dc", "ac-mains"],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256
+  },
+  "audio": {
+    "two_way": true
+  },
+  "cloud_dependency": "cloud-optional",
+  "features": [
+    "180-degree panoramic view (4 sensors)",
+    "ePTZ",
+    "Motion detection with human/vehicle filter",
+    "Tripwire and virtual fence with human/vehicle filter",
+    "Object abandon/removal detection",
+    "Digital image stabilization (EIS)",
+    "Autofocus",
+    "IK10 anti-vandalism"
+  ],
+  "markets": ["BR", "LATAM"],
+  "last_verified": "2026-09-22",
+  "sources": [
+    "https://backend.intelbras.com/sites/default/files/2025-10/Novo%20Datasheet%20-%20VIP%209180%20Pan%2B%20FT%20V3_ePTZ_0.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": { "integration": "onvif" },
+    "blue_iris": { "profile": "ONVIF/Dahua" }
+  }
+}
