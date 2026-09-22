@@ -1,0 +1,108 @@
+{
+  "id": "avtech-dgm3103sct",
+  "brand": "AVTech",
+  "model": "DGM3103SCT",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "3MP (2304x1296)"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "112 (D)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux": 0.01
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "720x480",
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true
+  },
+  "power": {
+    "method": "PoE (802.3af)",
+    "consumption_w": 8,
+    "voltage": "DC 12V"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "storage": {
+    "nvr_compatible": true
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "weight_g": 355,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "AI-based human detection to reduce false alarms",
+    "Available with fixed f2.8mm (112 diagonal) or f3.6mm (99 diagonal) F1.6 lens",
+    "IR range up to 30m for night surveillance (18 IR LEDs)",
+    "DWDR, HLC, 2D/3D DNR for improved recognizability in harsh lighting",
+    "Built-in microphone (G.711) for audio recording",
+    "ONVIF 17.06 compatible, PoE (802.3af), IP67-rated housing"
+  ],
+  "status": "available",
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live/ch01_0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/live/ch01_1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "AVTech IP camera — ONVIF Profile S. If the RTSP path differs, use go2rtc ONVIF autodiscovery (onvif://{user}:{pass}@{ip})."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (AVTech)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "AVTech ONVIF/RTSP."
+    }
+  },
+  "sources": [
+    "http://www.surveillance-download.com/user/datasheets/IPCAM/DGM/DGM3103SCT_Spec.pdf"
+  ]
+}

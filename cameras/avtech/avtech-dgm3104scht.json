@@ -1,0 +1,105 @@
+{
+  "id": "avtech-dgm3104scht",
+  "brand": "AVTech",
+  "model": "DGM3104SCHT",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "3MP (2304x1296)"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "96 D",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux": 0.01
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 25
+      },
+      {
+        "name": "sub",
+        "resolution": "D1"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true
+  },
+  "power": {
+    "method": "PoE (802.3af)",
+    "consumption_w": 8
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "storage": {
+    "nvr_compatible": true
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "features": [
+    "AI-based 3MP H.265 IR bullet camera, 1/2.8\" CMOS",
+    "Fixed f3.6 mm F1.6 lens, 96 diagonal viewing angle",
+    "AI human detection to reduce false alarms",
+    "IR effective range up to 30 m (4 IR LEDs)",
+    "Built-in microphone for audio recording (G.711)",
+    "DWDR / HLC / 2D & 3D DNR image enhancement",
+    "PoE (802.3af) or DC12V, ONVIF 17.06, IP67 rated"
+  ],
+  "status": "available",
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local",
+  "sources": [
+    "http://www.surveillance-download.com/user/datasheets/IPCAM/DGM/dgm3104scht_Spec.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live/ch01_0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/live/ch01_1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "AVTech IP camera — ONVIF Profile S. If the RTSP path differs, use go2rtc ONVIF autodiscovery (onvif://{user}:{pass}@{ip})."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (AVTech)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "AVTech ONVIF/RTSP."
+    }
+  }
+}
