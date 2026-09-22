@@ -1,0 +1,96 @@
+{
+  "id": "uniview-ipc6434lr-x16-vg1",
+  "brand": "Uniview",
+  "model": "IPC6434LR-X16-VG1",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "max_width": 2688,
+    "max_height": 1520,
+    "megapixels": 4,
+    "label": "4MP"
+  },
+  "sensor": "1/2.9\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.5 to 88",
+    "varifocal": true,
+    "aperture": "F1.78"
+  },
+  "field_of_view_deg": "50.85 to 3.47 horizontal, 29.94 to 1.95 vertical, 62.55 to 4.09 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100,
+    "min_lux_color": 0.005
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "consumption_w": 23.0
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "two_way": true
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "dimensions_mm": "Ø167 mm × 181 mm",
+  "weight_g": 2300,
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "High quality image with 4 MP, 1/2.9\" CMOS sensor",
+    "2688 × 1520@30 fps in the main stream",
+    "Ultra 265, H.265, H.264, MJPEG",
+    "Dual streams",
+    "16X optical zoom",
+    "LightHunter technology ensures ultra-high image quality in low illumination environment"
+  ],
+  "sources": [
+    "https://www.uniview.com/Products/PTZ_Cameras/Easy_Series/Easy_Series/IPC6434LR-X16-VG1/"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-09-22",
+  "ndaa_compliant": true,
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Uniview IPC — ONVIF + Uniview /unicast RTSP path. Use the sub stream (s1) for Frigate detection."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  }
+}

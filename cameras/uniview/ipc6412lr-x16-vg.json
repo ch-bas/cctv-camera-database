@@ -1,0 +1,93 @@
+{
+  "id": "uniview-ipc6412lr-x16-vg",
+  "brand": "Uniview",
+  "model": "IPC6412LR-X16-VG",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "max_width": 1920,
+    "max_height": 1080,
+    "megapixels": 2,
+    "label": "2MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5 to 80",
+    "varifocal": true,
+    "aperture": "F1.7"
+  },
+  "field_of_view_deg": "51.70 to 4.89 horizontal, 30.49 to 2.75 vertical, 63.59 to 5.77 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100,
+    "min_lux_color": 0.003
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "consumption_w": 20.0
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "ptz": {
+    "autotracking": true
+  },
+  "operating_temp_c": "-40 to 65",
+  "dimensions_mm": "Ø162 mm × 293 mm",
+  "weight_g": 1790,
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "High quality image with 1080P, 1/2.8\" CMOS sensor",
+    "1920 × 1080@30 fps in the main stream",
+    "Ultra 265, H.265, H.264, MJPEG",
+    "16X optical zoom allows for closer viewing of subjects",
+    "Smart intrusion prevention, supports false alarm filtering, including cross line, intrusion, enter area, leave area detection",
+    "automatic selection of best snapshots"
+  ],
+  "sources": [
+    "https://www.uniview.com/Products/PTZ_Cameras/Easy_Series/Easy_Series/IPC6412LR-X16-VG/"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-09-22",
+  "ndaa_compliant": true,
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Uniview IPC — ONVIF + Uniview /unicast RTSP path. Use the sub stream (s1) for Frigate detection."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  }
+}

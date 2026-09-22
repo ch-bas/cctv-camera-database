@@ -1,0 +1,91 @@
+{
+  "id": "uniview-ipc96342efw-x25-e8-w-vh3",
+  "brand": "Uniview",
+  "model": "IPC96342EFW-X25-E8-W-VH3",
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "max_width": 8192,
+    "max_height": 1800,
+    "megapixels": 16,
+    "label": "16MP"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "aperture": "F1.0"
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 200,
+    "min_lux_color": 0.0003
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60
+  },
+  "power": {
+    "consumption_w": 135.0
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 70",
+  "weight_g": 12500,
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "Supports 8-sensor stitching, enabling full 360° panoramic viewing",
+    "Features a 1/1.8\" high-sensitivity CMOS sensor, meeting ultra-low-light (starlight-level) surveillance requirements with high clarity in night-time imaging",
+    "Supports flexible multi-lens stitching for 180°, 270°, or 360° panoramic coverage",
+    "Supports up to 8192 × 1800 @ 30fps high-resolution panoramic output, with detail channel resolution up to 2688 × 1520 @ 60fps",
+    "Supports single-IP dual-stream output, enabling simultaneous preview of panoramic and detailed live views",
+    "Panoramic vertical field of view reaches 110°, ensuring no blind spots even at a 6-meter mounting height"
+  ],
+  "sources": [
+    "https://www.uniview.com/Products/PTZ_Cameras/Pro_Series/Pro_Series/IPC96342EFW-X25-E8-W-VH3/"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-09-22",
+  "ndaa_compliant": true,
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Uniview IPC — ONVIF + Uniview /unicast RTSP path. Use the sub stream (s1) for Frigate detection."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  }
+}

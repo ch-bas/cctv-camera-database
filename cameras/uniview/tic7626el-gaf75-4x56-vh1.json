@@ -1,0 +1,88 @@
+{
+  "id": "uniview-tic7626el-gaf75-4x56-vh1",
+  "brand": "Uniview",
+  "model": "TIC7626EL-GAF75-4X56-VH1",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "max_width": 2688,
+    "max_height": 1520,
+    "megapixels": 4,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "aperture": "F1.2"
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60
+  },
+  "power": {
+    "consumption_w": 135.0
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "two_way": true
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "366 x 283 x 509 mm",
+  "weight_g": 17980,
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "Thermal & Optical dual-spectrum image, dual video with single IP address, adaptable to various scenes",
+    "Thermal channel supports fire detection, and the optical channel can link to the fire position and zoom in for more accurate fire situation judgment",
+    "Optical channel supports 4 MP@60 fps, providing smoother motion images",
+    "Optical channel supports gyroscope stabilization for stable pictures",
+    "Optical channel supports heat wave reduction, which can reduce heat wave phenomena and improve image quality",
+    "Vari-focal laser: 800 m (2624.7 ft) distance, proportional to optical zoom of camera module"
+  ],
+  "sources": [
+    "https://www.uniview.com/Products/Thermal_Cameras/Positioning_System/Positioning_System/TIC7626EL-GAF75-4X56-VH1/"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-09-22",
+  "ndaa_compliant": true,
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Uniview IPC — ONVIF + Uniview /unicast RTSP path. Use the sub stream (s1) for Frigate detection."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "id": "uniview-ipc6234lr-ax5c-vg3",
+  "brand": "Uniview",
+  "model": "IPC6234LR-AX5C-VG3",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "max_width": 2560,
+    "max_height": 1440,
+    "megapixels": 4,
+    "label": "4MP"
+  },
+  "sensor": "1/2.9\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7 to 13.5",
+    "varifocal": true,
+    "aperture": "F1.68"
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux_color": 0.003
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ]
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Ø129 mm × 91 mm",
+  "weight_g": 670,
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "Compact, one-handed operation, and high concealability",
+    "Supports power backfeeding (12 V, 60 mA), offering benefits such as simplified cabling and reduced maintenance costs.",
+    "Wise-ISP image processing engine, intelligent noise reduction, stunning visual effects in low-light conditions",
+    "People counting: supports people flow counting and crowd density monitoring, applicable to various scenarios",
+    "automatic selection of best snapshots, supports face detection masked area",
+    "Ultra 265, H.265, H.264, MJPEG"
+  ],
+  "sources": [
+    "https://www.uniview.com/Products/PTZ_Cameras/Easy_Series/Easy_Series/IPC6234LR-AX5C-VG3/"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-09-22",
+  "ndaa_compliant": true,
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Uniview IPC — ONVIF + Uniview /unicast RTSP path. Use the sub stream (s1) for Frigate detection."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  }
+}

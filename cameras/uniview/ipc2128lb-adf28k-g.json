@@ -1,0 +1,92 @@
+{
+  "id": "uniview-ipc2128lb-adf28k-g",
+  "brand": "Uniview",
+  "model": "IPC2128LB-ADF28K-G",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "max_width": 3840,
+    "max_height": 2160,
+    "megapixels": 8,
+    "label": "8MP"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.01
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "consumption_w": 5.0
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "161 mm × 62 mm × 63 mm",
+  "weight_g": 330,
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "High quality image with 8 MP, 1/2.7\" CMOS sensor",
+    "8 MP (3840 × 2160)@15 fps; 5 MP (2880 × 1620)@25/20 fps; 4 MP (2560 × 1440)@25/20 fps; 3 MP (2304 × 1296)@30/25 fps; 1080P (1920 × 1080)@30/25 fps",
+    "Ultra 265, H.265, H.264, MJPEG",
+    "Built-in mic",
+    "Smart IR, up to 30 m (98.4 ft) IR distance",
+    "MicroSD, up to 512 GB"
+  ],
+  "sources": [
+    "https://www.uniview.com/Products/Network_Cameras/Easy_Series/EasyBasic_Series/IPC2128LB-ADF28K-G/"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-09-22",
+  "ndaa_compliant": true,
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Uniview IPC — ONVIF + Uniview /unicast RTSP path. Use the sub stream (s1) for Frigate detection."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  }
+}

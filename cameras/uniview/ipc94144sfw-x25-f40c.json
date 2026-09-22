@@ -1,0 +1,91 @@
+{
+  "id": "uniview-ipc94144sfw-x25-f40c",
+  "brand": "Uniview",
+  "model": "IPC94144SFW-X25-F40C",
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "max_width": 2688,
+    "max_height": 1520,
+    "megapixels": 4,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "aperture": "F1.0"
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 100,
+    "min_lux_color": 0.0005
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "consumption_w": 24.0
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 65",
+  "dimensions_mm": "304 mm × 195 mm × 163 mm",
+  "weight_g": 2270,
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "Fixed camera and PTZ camera integration, dual-channel with one IP, provides overall view and detailed view at the same time",
+    "Ultra 265, H.265, H.264, MJPEG",
+    "25X optical zoom of PTZ channel allows for closer viewing of subjects",
+    "Smart intrusion prevention, supports false alarm filtering, including cross line, intrusion, enter area, leave area detection",
+    "automatic selection of best snapshots, supports face detection masked area",
+    "People counting, supports people flow counting and crowd density monitoring, suitable for different statistical scenarios"
+  ],
+  "sources": [
+    "https://www.uniview.com/Products/PTZ_Cameras/Prime_Series/Prime_Series/IPC94144SFW-X25-F40C/"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-09-22",
+  "ndaa_compliant": true,
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Uniview IPC — ONVIF + Uniview /unicast RTSP path. Use the sub stream (s1) for Frigate detection."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  }
+}
