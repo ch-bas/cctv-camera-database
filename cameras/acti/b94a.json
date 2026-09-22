@@ -1,0 +1,110 @@
+{
+  "id": "acti-b94a",
+  "brand": "ACTi",
+  "model": "B94A",
+  "ndaa_compliant": false,
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 1.3,
+    "max_width": 1280,
+    "max_height": 960,
+    "label": "1.3MP"
+  },
+  "sensor": "1/3\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.9-49 (zoom)",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "52.1 horizontal / 38.7 vertical",
+  "night_vision": {
+    "type": "color",
+    "min_lux_color": 0.1
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1280x960",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "power": {
+    "method": "DC 12V, PoE Class 3 (IEEE802.3af)",
+    "consumption_w": 11.2,
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "network": {
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "Basic WDR (88 dB)",
+    "ONVIF Compliant: Yes, Profile G, Profile T* (To be available through future firmware upgrade), Profile Q",
+    "GB28181 Compliant: Yes",
+    "Heater: Yes",
+    "real-time clock: Yes"
+  ],
+  "operating_temp_c": "-40 to 50",
+  "dimensions_mm": "153 (diameter) x 116",
+  "weight_g": 1306,
+  "ik_rating": "IK10",
+  "ptz": {
+    "onvif_ptz": "absolute"
+  },
+  "sources": [
+    "https://www.acti.com/product/B94A?tab=specifications"
+  ],
+  "last_verified": "2026-09-21",
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  },
+  "cloud_dependency": "local"
+}

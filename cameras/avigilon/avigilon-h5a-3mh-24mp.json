@@ -1,0 +1,118 @@
+{
+  "id": "avigilon-h5a-3mh-24mp",
+  "brand": "Avigilon",
+  "model": "H5A 24MP Multisensor (24C-H5A-3MH)",
+  "aliases": [
+    "24C-H5A-3MH",
+    "24C-H5A-3MH-DP1-B",
+    "24C-H5A-3MH-DO1-B",
+    "24C-H5A-3MH-DC1-B"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 24,
+    "max_width": 11520,
+    "max_height": 2160,
+    "label": "24MP combined (3x 8MP / 4K sensors, 270 degree max FOV)"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 3,
+    "focal_length_mm": "3.3-5.7",
+    "varifocal": true,
+    "aperture": "F1.5-F1.9"
+  },
+  "field_of_view_deg": "58-106 horizontal, 32-55 vertical (per sensor, 16:9)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux": 0.016,
+    "min_lux_color": 0.02
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "H.265",
+      "MJPEG"
+    ],
+    "max_fps": 24
+  },
+  "power": {
+    "method": "PoE+ (802.3at Type 2) / 24 VDC / 24 VAC",
+    "consumption_w": 25.5
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "notes": "Dual microSD/microSDHC/microSDXC slot (Class V10+ recommended); dual cards act as one contiguous storage region"
+  },
+  "ip_rating": "IP66/IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000
+  },
+  "features": [
+    "LightCatcher low-light technology",
+    "120 dB true WDR (dual exposure)",
+    "3D Noise Reduction Filter",
+    "AI-powered video analytics with classified object types (person, vehicle sub-types car/truck/bicycle/motorcycle/bus outdoors; person indoors)",
+    "Analytics events: objects in/enter/leave area, loitering, line crossing (objects crossing beam), object too close, direction violated, tamper detection",
+    "Teach By Example with Avigilon Control Center",
+    "Compatible with Avigilon Control Center (ACC) Enterprise Edition 7.2+",
+    "ONVIF Profile S, T, M, G compliant",
+    "FIPS 140-3 Level 3 via onboard TPM, Secure Boot (CAM-FIPS license available)",
+    "Up to 64 privacy zones, 8 per sensor, removable",
+    "Individually adjustable sensors: Tilt +7 to 96 deg, Pan +/-120 deg, Azimuth +/-180 deg",
+    "Redundant power: seamless failover between PoE and Aux",
+    "3V manganese lithium RTC backup battery",
+    "Alarm I/O (In/Out); line-level audio input/output",
+    "High Framerate Mode (analytics disabled): up to 24/25 fps (3-sensor, 4K/8.0MP)",
+    "Modular design: camera module works with Pendant, Surface, or In-Ceiling mount adapters (sold separately)",
+    "Optional IR illuminator ring (850nm, 30m range) available for Surface/Pendant mounts",
+    "Certifications: UL, cUL, CE, ROHS, RCM, BIS, UKCA, NOM, KC"
+  ],
+  "ndaa_compliant": true,
+  "sources": [
+    "https://docs.avigilon.com/bundle/h5a-multi-camera-datasheet/resource/h5a-multi-camera-datasheet.pdf"
+  ],
+  "last_verified": "2026-09-20",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/defaultPrimary?streamType=u",
+      "onvif_port": 80,
+      "verified": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "ONVIF Profile S supported."
+    }
+  }
+}

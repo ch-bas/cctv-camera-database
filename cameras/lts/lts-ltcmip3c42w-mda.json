@@ -1,0 +1,103 @@
+{
+  "id": "lts-ltcmip3c42w-mda",
+  "brand": "LTS",
+  "model": "LTCMIP3C42W-MDA",
+  "aliases": [
+    "LTCMIP3C42W-MDA"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4",
+    "aperture": "f1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "112",
+  "night_vision": {
+    "type": "color",
+    "range_m": 30,
+    "min_lux_color": 0.0005
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "H.264+",
+      "H.265",
+      "H.265+",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "method": "12V DC / PoE (802.3af)",
+    "consumption_w": 7.6,
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "audio": {
+    "microphone": true
+  },
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "138.3 x 125.2",
+  "weight_g": 750,
+  "features": [
+    "24/7 full-color imaging via f1.0 super-aperture lens",
+    "H.265+ efficient compression",
+    "130 dB true WDR",
+    "Deep-learning human and vehicle target classification",
+    "Built-in microphone for real-time audio security",
+    "IP67 water and dust resistant"
+  ],
+  "sources": [
+    "https://ltsecurityinc.com/default/cmip3c42w-mda-4-mp-full-color-fixed-turret-network-camera.html"
+  ],
+  "last_verified": "2026-09-20",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "LTS Platinum/LX line = Hikvision-OEM. The Hikvision /Streaming/Channels/101 (main) & 102 (sub) RTSP convention typically applies; ONVIF must be manually enabled (off by default on Hikvision firmware v5.5.0+). Not independently confirmed for this exact model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local",
+      "notes": "Hikvision-OEM; enable ONVIF first, then add via the ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Hikvision (generic)",
+      "notes": "Hikvision-OEM RTSP/ONVIF; not independently confirmed for this specific model."
+    }
+  }
+}

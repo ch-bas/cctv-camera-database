@@ -1,0 +1,90 @@
+{
+  "id": "lts-vsip3182w-mda",
+  "brand": "LTS",
+  "model": "VSIP3182W-MDA",
+  "aliases": [
+    "VSIP3182W-MDA"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "method": "DC12V / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "audio": {
+    "microphone": true
+  },
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "8 MP, 1/2.7\" CMOS sensor high quality imaging",
+    "120 dB true WDR technology for strong light scenes",
+    "Supports 9:16 Corridor Mode",
+    "Smart IR up to 98 ft (30 m)",
+    "3-Axis positioning",
+    "MD 2.0 with human and vehicle detection"
+  ],
+  "sources": [
+    "https://ltsecurityinc.com/default/vsip3182w-mda-4k-hd-ir-fixed-turret-network-camera.html"
+  ],
+  "last_verified": "2026-09-20",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "LTS Vantage line = Uniview-OEM (Ultra265). ONVIF Profile S + the Uniview /unicast/c1/s0/live RTSP convention typically apply; not independently confirmed for this exact model — verify via the camera web UI / ONVIF discovery."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local",
+      "notes": "Uniview-OEM; ONVIF Profile S/G. Enable ONVIF and add a dedicated ONVIF user."
+    },
+    "blue_iris": {
+      "profile": "Generic ONVIF/RTSP",
+      "notes": "Uniview-OEM (Ultra265); connect via ONVIF/RTSP."
+    }
+  }
+}

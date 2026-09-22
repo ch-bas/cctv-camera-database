@@ -1,0 +1,100 @@
+{
+  "id": "empiretech-ipc-tpc124x-ai-t-s3",
+  "brand": "EmpireTech",
+  "model": "IPC-TPC124X-AI-T-S3",
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" CMOS (visible) + 256x192 VOx uncooled thermal detector",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.65",
+    "varifocal": false
+  },
+  "field_of_view_deg": "Visible 2.8mm: H: 112.2; V: 57.8; Thermal 2.6mm: H: 66.8; V: 50.0",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.05
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "method": "12-24 VDC / PoE (802.3af)",
+    "consumption_w": 11.5,
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256
+  },
+  "audio": {
+    "microphone": false,
+    "speaker": true
+  },
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-40 to 65",
+  "dimensions_mm": "122 x 122 x 117.4 (L x W x H)",
+  "weight_g": 900,
+  "features": [
+    "Thermal + visible + temperature-measurement 3-in-1 turret",
+    "VOx uncooled thermal detector 256x192, 12um, <=25mK NETD",
+    "4MP 1/1.8\" visible channel",
+    "temperature measurement -20 to 650°C, ±2°C accuracy, 21 rules",
+    "heat/fire detection & alarm, cold/hot spot trace, smoke detection",
+    "tripwire, intrusion with human/vehicle classification",
+    "smoking and call detection",
+    "dual image fusion, 18 color palettes",
+    "built-in white light + red/blue light + audio alarm",
+    "IR up to 30m, 2/2 alarm I/O, RS-485"
+  ],
+  "sources": [
+    "https://empiretech01.com/products/empiretech-ipc-tpc124x-ai-t-s3-1-8-cmos-4mp-thermal-network-mini-temperature-measurement-turret-camera"
+  ],
+  "last_verified": "2026-09-19",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua-OEM RTSP path; independently unverified for the EmpireTech brand."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "ONVIF Profile S supported."
+    }
+  }
+}

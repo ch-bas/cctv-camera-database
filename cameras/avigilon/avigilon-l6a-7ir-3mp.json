@@ -1,0 +1,107 @@
+{
+  "id": "avigilon-l6a-7ir-3mp",
+  "brand": "Avigilon",
+  "model": "L6A Enterprise LPR 3MP 730nm (VSF-L6A-7IR)",
+  "aliases": [
+    "VSF-L6A-7IR"
+  ],
+  "type": "dual-lens",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 1440,
+    "max_height": 1080,
+    "label": "3MP"
+  },
+  "sensor": "1/2.9\" color global shutter CMOS (context) + 1/2.9\" monochrome global shutter CMOS (LPR)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "5-125",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "52-3 horizontal x 40-2 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at Class 4) or 24 VDC",
+    "consumption_w": 25,
+    "voltage": "24 VDC",
+    "poe_class": 4
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "onboard": true,
+    "notes": "microSD/microSDHC/microSDXC slot - video speed class card required, Class V10 or better recommended"
+  },
+  "ip_rating": "IP66/IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "361 x 197 x 111 (camera with junction box)",
+  "weight_g": 3150,
+  "network": {
+    "ethernet_speed_mbps": 1000
+  },
+  "features": [
+    "Dual-lens LPR camera (dedicated LPR + context color sensors)",
+    "License Plate Recognition with VehicleManager Enterprise",
+    "Vehicle make, model, color, speed and direction analytics",
+    "Captures plates on vehicles up to 100 mph, up to 100 m (330 ft) away",
+    "Remote zoom and focus, autofocus",
+    "Onboard FIPS 140-2 Level 3 compliant TPM and Secure Boot",
+    "Watchlist notifications",
+    "3D Noise Reduction Filter",
+    "ONVIF Profile S and Profile M"
+  ],
+  "ndaa_compliant": true,
+  "sources": [
+    "https://docs.avigilon.com/bundle/l6a-datasheet/resource/l6a-datasheet.pdf"
+  ],
+  "last_verified": "2026-09-20",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/defaultPrimary?streamType=u",
+      "onvif_port": 80,
+      "verified": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "ONVIF Profile S supported."
+    }
+  }
+}

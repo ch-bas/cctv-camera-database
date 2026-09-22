@@ -1,0 +1,95 @@
+{
+  "id": "vstarcam-cv332",
+  "brand": "Vstarcam",
+  "model": "CV332",
+  "aliases": [
+    "CV332"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "resolution": {
+    "megapixels": 1,
+    "max_width": 1280,
+    "max_height": 720,
+    "label": "720p (1080p interpolated)"
+  },
+  "sensor": "1/4.5\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "pan 355 / tilt 55",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 10
+  },
+  "video": {
+    "max_fps": 15
+  },
+  "power": {
+    "method": "DC5V; 2.04W typical, 4.25W max",
+    "consumption_w": 2.04
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "cloud": true,
+    "nvr_compatible": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "environment": [
+    "indoor"
+  ],
+  "operating_temp_c": "-10 to 55",
+  "dimensions_mm": "87 x 87 x 173",
+  "weight_g": 244,
+  "features": [
+    "2.8\" screen with one-touch video calling",
+    "Smart tracking with AI human detection",
+    "Intelligent full-color night vision (5-10m)",
+    "355 pan / 55 tilt",
+    "Dual local + cloud storage"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:10554/tcp/av0_0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:10554/tcp/av0_1",
+      "verified": false,
+      "notes": "Vstarcam's standard RTSP path (port 10554, /tcp/av0_0 main, /tcp/av0_1 sub); NOT restated on this product page. Enable RTSP/ONVIF in the VStarcam/Eye4 app and verify on device."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Classic always-on Vstarcam IP camera; ONVIF/RTSP capable line. If ONVIF auto-discovery fails, add as generic RTSP with the port-10554 path above."
+    },
+    "blue_iris": {
+      "profile": "Generic ONVIF/RTSP",
+      "notes": "Use the documented port-10554 RTSP path; select Generic/ONVIF."
+    }
+  },
+  "sources": [
+    "https://vstarcam.com/products/cv332-one-touch-video-call-camera"
+  ],
+  "last_verified": "2026-09-20",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "ptz": {
+    "autotracking": true
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "id": "panasonic-pm-phvulfr-w",
+  "brand": "Panasonic",
+  "model": "PM-PHVULFR-W",
+  "aliases": [
+    "Panasonic PM-PHVULFR-W"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP optical / 640x512 thermal"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "sensor": "1/2.7\" CMOS (optical) + 12um 640x512 uncooled focal-plane detector (thermal)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "25 (thermal) / 12 (optical)",
+    "aperture": "F1.0 (thermal) / F2.0 (optical)",
+    "varifocal": false
+  },
+  "field_of_view_deg": "26.6",
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.03
+  },
+  "power": {
+    "method": "DC 12V / PoE",
+    "consumption_w": 9
+  },
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "bi-spectrum thermal + 5MP optical channels",
+    "dynamic fire detection (up to 10 fire points)",
+    "radiometric temperature measurement (-20 to 150 C, +/-8 C)",
+    "long-range DRI (human detection up to 1042 m)",
+    "NETD <=35mK uncooled detector",
+    "AI analytics on thermal and optical channels simultaneously"
+  ],
+  "dimensions_mm": "274.3 x 97.8 x 89",
+  "weight_g": 1180,
+  "operating_temp_c": "-30 to 60",
+  "storage": {
+    "nvr_compatible": true
+  },
+  "markets": [
+    "mea",
+    "global"
+  ],
+  "status": "available",
+  "sources": [
+    "https://www.panasonic.com/mea/en/business/surveillance-solutions/thermal-cameras/pm-phvulfr-w.html",
+    "https://www.panasonic.com/content/dam/common/mea/pdf-download/Business/Surveillance-Solutions/surveillance-solutions-1031/data-sheet/PM-PHVULFR-W.pdf"
+  ],
+  "last_verified": "2026-09-21",
+  "configs": {
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S/G/T). Set the camera's ONVIF port and credentials."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a Generic/ONVIF camera; Blue Iris auto-discovers the RTSP stream via ONVIF."
+    },
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      }
+    }
+  },
+  "cloud_dependency": "local"
+}

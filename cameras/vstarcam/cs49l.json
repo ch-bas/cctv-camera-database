@@ -1,0 +1,63 @@
+{
+  "id": "vstarcam-cs49l",
+  "brand": "Vstarcam",
+  "model": "CS49L",
+  "aliases": [
+    "CS49L"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "label": "3MP"
+  },
+  "night_vision": {
+    "type": "hybrid"
+  },
+  "power": {
+    "method": "AC adapter (plug-in; EU/US/UK/AU options)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "features": [
+    "350 rotation indoor pan/tilt",
+    "AI detection",
+    "Full-color night vision with dual light source"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:10554/tcp/av0_0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:10554/tcp/av0_1",
+      "verified": false,
+      "notes": "Vstarcam's standard RTSP path (port 10554, /tcp/av0_0 main, /tcp/av0_1 sub); NOT restated on this product page. Enable RTSP/ONVIF in the VStarcam/Eye4 app and verify on device."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Classic always-on Vstarcam IP camera; ONVIF/RTSP capable line. If ONVIF auto-discovery fails, add as generic RTSP with the port-10554 path above."
+    },
+    "blue_iris": {
+      "profile": "Generic ONVIF/RTSP",
+      "notes": "Use the documented port-10554 RTSP path; select Generic/ONVIF."
+    }
+  },
+  "sources": [
+    "https://vstarcam.com/products/vstarcam-cs49l-indoor-ptz-camera-ai-detection"
+  ],
+  "last_verified": "2026-09-20",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "cloud-optional"
+}

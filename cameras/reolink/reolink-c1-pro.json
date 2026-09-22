@@ -1,0 +1,97 @@
+{
+  "id": "reolink-c1-pro",
+  "brand": "Reolink",
+  "model": "C1 Pro",
+  "aliases": [
+    "C1 Pro",
+    "C1-Pro"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP (2560x1440)"
+  },
+  "sensor": "1/3\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.0",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "80 H / 42 V",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 12
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "method": "5V/2A DC (<6W)",
+    "consumption_w": 6
+  },
+  "power_source": [
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "environment": [
+    "indoor"
+  ],
+  "operating_temp_c": "-10 to 55",
+  "dimensions_mm": "103 x 95 x 117",
+  "weight_g": 300,
+  "features": [
+    "indoor pan/tilt (355 horizontal / 105 vertical) 4MP Wi-Fi camera",
+    "dual-band Wi-Fi (2.4/5 GHz, 802.11a/b/g/n) + 10/100 RJ45",
+    "0 lux with IR illuminator, IR to ~12 m, IR-cut day/night",
+    "two-way audio (built-in mic + speaker), microSD slot",
+    "RTSP + ONVIF, motion/schedule recording"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_sub",
+      "onvif_port": 8000,
+      "verified": false,
+      "two_way_audio": true,
+      "notes": "Legacy Reolink C1 Pro (2017) — the documented /h264Preview_01_main (main) & /h264Preview_01_sub (sub) RTSP paths apply for this H.264-only model; ONVIF on port 8000."
+    },
+    "home_assistant": {
+      "integration": "reolink",
+      "connection_type": "local",
+      "notes": "Native Reolink integration (local); ONVIF also available."
+    },
+    "blue_iris": {
+      "profile": "Reolink (RTSP/ONVIF)",
+      "notes": "Use the /h264Preview_01_main RTSP path or ONVIF (port 8000)."
+    }
+  },
+  "sources": [
+    "https://reolink.com/files/docs/specs/C1-Pro-IP-Camera-Specifications.pdf"
+  ],
+  "last_verified": "2026-09-20",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local"
+}

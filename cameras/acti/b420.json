@@ -1,0 +1,110 @@
+{
+  "id": "acti-b420",
+  "brand": "ACTi",
+  "model": "B420",
+  "ndaa_compliant": false,
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 3092,
+    "max_height": 2202,
+    "label": "5MP"
+  },
+  "sensor": "1/2.9\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.6-165.6 (zoom)",
+    "aperture": "F1.55",
+    "varifocal": true
+  },
+  "field_of_view_deg": "51.14 horizontal / 39.62 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 150,
+    "min_lux_color": 0.1
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "power": {
+    "method": "DC 12V, High PoE (IEEE802.3at)",
+    "consumption_w": 25.5
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "network": {
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP68",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "Extreme WDR (120 dB)",
+    "built-in analytics: Object Based Motion Detection, Tampering Detection, Shock Detection",
+    "ONVIF Compliant: Profile S, Profile G, Profile T, Profile Q",
+    "GB28181 Compliant: Yes",
+    "1 x RS-485/RS-422",
+    "Heater: Yes",
+    "real-time clock: Yes"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "170.92 x 256.77 x 426.7",
+  "weight_g": 3434,
+  "ik_rating": "IK10",
+  "sources": [
+    "https://www.acti.com/product/B420?tab=specifications"
+  ],
+  "last_verified": "2026-09-21",
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  },
+  "cloud_dependency": "local"
+}

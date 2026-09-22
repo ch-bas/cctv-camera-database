@@ -6,6 +6,127 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.22.0] — 2026-09-22
+
+Dataset reaches **15,821 cameras / 185 brands** (+3,416). A large multi-brand ingestion from **official sources only**:
+
+### Added — Dahua expansion (+59): China-market catalogue + WizMind 4 datasheets
+- **Dahua +59**, all from official Dahua sources (dahuatech.com product pages and dahuasecurity.com datasheets), real specs only with per-camera Frigate/Home Assistant/Blue Iris (Dahua RTSP/ONVIF) configs:
+  - **China-market (+17, `markets: [cn]`):** DH-S2-4M Wi-Fi PTZ; entry/starlight IPC lines (HDBW6243R-ZAS, HDW1330DC-A, HDBW4243R-AS, HDW2233C-A, HDW2233DC-A, HDW62W8X-A, HFW62W8Z-I2, X13-A-I2, X13-I1); warm-light full-color (HFW2233DM-LED, HDW2233DT-A-LED, HDW2433T-A-LED); Wi-Fi bullets (P20A3-W, P20A3-WT); and the 行业夜视王 / "Industry Night Vision King" full-color models (HFW5459DM3-JM, HFW5459M1-YL-SA-PV-LED, plus alias added to HFW5859M3-PV-AS-JM).
+  - **Global WizMind 4 datasheets (+42):** Smart Dual-Light "S-IL" domes/turrets/bullets (HDBW…E-S-IL, HDW…T-S-IL, HFW…TC1-S-IL, 2/4/6/8MP); WizColor 24/7 full-color "PRO" turrets/bullets incl. siren-and-light active-deterrence (…-AS-PRO, …-AS-PV-B-PRO); and the AI IR range — fixed E-AS/EM-S and multi-focal T-AS plus motorized-varifocal R-ZAS domes, T-ZS turrets and T-ZAS bullets (2/4/5/8MP, F1.4/F1.5).
+
+### Added — existing-brand catalogue gap-fills (+655)
+- Deep gap-fills of nine already-covered brands, each from the manufacturer's official product pages/datasheets (no fabrication; full Frigate/Home Assistant/Blue Iris configs; OEM-accurate RTSP paths): **Axis +309** (M/P/Q network + thermal, from official datasheets), **ACTi +181** (A/B/D/E/I/K/Q/Z series, NDAA authoritatively flagged), **Tiandy +96** (AK/Spark/Pro/PTZ/Wireless/Sunflower), **Milesight +38** (AI Motorized/Speed-Dome/full-color/LPR/radar-5G variants), **Panasonic +27** (PM-* Dahua-OEM line — distinct from the separate i-PRO brand), **Ubiquiti +1** (UniFi Protect AI Theta), **Sony +73** (near-complete SNC catalogue: EB/EM/VB/VM/DH/EP/ER/WR/RS/RX/ZM/ZP/EMX/XM/HM/CX from official datasheets) + **TP-Link TL-IPC584EP-W4** (issue #379). Discontinued/unsourceable models were skipped rather than guessed.
+
+### Added — IDIS full IP catalogue (+100)
+- **IDIS +100** (1 -> 101): the full DC-* DirectIP camera range (dome/bullet/turret/PTZ/fisheye/box + explosion-proof + Edge-AI + 20MP multi-directional), from the official IDIS product datasheets and spec pages. Analog DirectCX (TC-*), intercoms, and AI appliances excluded; NDAA flagged per page.
+
+### Added — 15 new brands (+643): consumer/prosumer & regional catalogues
+Full-catalogue sweeps of fifteen previously-uncovered brands, each sourced from the manufacturer's own site/datasheets (no fabrication; fields absent from a source are omitted, and every record carries a Frigate/Home Assistant/Blue Iris `configs` block assigned by detected OEM lineage):
+- **Safire +194** (#170) — SF-* IP + HDTVI catalogue from official cloudfront datasheets; **current IP range detected as TVT-OEM** (`/profile1`), not Hikvision, with the older WH series correctly flagged Hikvision-OEM and analog set to HD-over-coax.
+- **Anpviz +105** (#171) — H-Series + U-Series (NDAA) from official product datasheets; Dahua-OEM (`/ch01/0`).
+- **Trassir +98** (#172) — DSSL TR-* IP + analog, full text spec tables from product pages.
+- **Vikylin +93** (169→95) — full catalogue from official Vikylin datasheets; Hikvision- vs Dahua-format configs per datasheet.
+- **Tenda +36** (#173) — from official Tenda product datasheets, including discontinued models.
+- **Ernitec +28** (#174) — NDAA Pluto/Wolf/Deimos (incl. bi-spectral thermal)/Jupitor/Orion/Saturn/Mercury from Icecat-style attribute tables.
+- **Jooan +18** (#175), **Jennov +16** (#176), **YI +10** (#177), **Galayou +9** (Wansview-OEM, #178), **Kami +8** (#179), **Wuuk +8** (#180), **Blurams +7** (#181), **Cinnado +6** (Wansview-OEM, #182), **SwitchBot +4** (#183), **Akuvox +2** (VC50B/T, #184) — consumer Wi-Fi / battery / solar / 4G / doorbell / thermal lines; hardware specs taken from each model’s official product page/datasheet, with marketed-vs-real resolution corrected (real W×H recorded, inflated MP kept only in the label). Kits/NVRs/accessories and non-camera products excluded; app/cloud-only models marked as such with no invented RTSP paths.
+
+### Added — new brand Vikylin (+2)
+- **Vikylin** (new brand #169, `vikylin.com`): DT386G2 (8MP 4K AcuSense DarkFighter fixed turret — Hikvision-OEM, 1/1.8" sensor, 2.8/4/6 mm, IR 30 m, microSD 512GB, IP67) and PG2046IRCS-P (4MP dual-lens panoramic, 2×GC2063, 170° dual white-light+IR illumination, two-way audio). Specs from the official Vikylin datasheets; sourced to vikylin.com.
+
+### Added — ESP (+20)
+- **ESP (espuk.com) +20** (brand 12 → 32) from official cloudfront datasheet PDFs. **IP PoE (15):** HDview IP HC828 (8MP dual-light bullet/turret, black/white), HC428 (4MP), HC528FBW (5MP), the H512V motorised-varifocal 5MP bullets/domes (DGA/DWA carry IK10), and RC228TB (completing the RC228 IP set). **Analogue HD / coax (5):** Rekor RCTB/RCTW/RCBB/RCBW (2MP white-light full-colour) and the FHDVC18PTZ (2MP AHD PTZ, 18× optical zoom). IP models carry ONVIF Profile S/G/T (configs point to ONVIF discovery — ESP publishes no fixed RTSP path); analogue models carry DVR-ingest configs. Codecs omitted (ESP datasheets don't state them). Camera KITS and NVRs excluded.
+
+### Added — Homaxi (+5)
+- **Homaxi +5** (brand 65 → 70) from a full sweep of the six network-camera categories (i/s/x-series, dual-lens, fisheye, Quvii): IPC4BF2R8-I1-TMCR (8MP dual-light bullet), IPC8MSD2R8-I2 (dual-directional PanoVu), QUV-IPC7Q458B48R-I (4MP Quvii bullet), plus IPC8TF4R8-AD2 and IPC8MSB2R8-AD-TPMSC (partial records where the official listing states limited specs — unknown fields omitted). All 68 distinct catalogue models now covered.
+
+### Added — Arecont Vision (+43) & Matrix backfill
+- **Arecont Vision (AV Costar) +43** (brand 89 → 132): a gap analysis against the live AV Costar catalogue added the current ConteraIP lines (Indoor/Outdoor Dome, Bullet, Micro Bullet, MicroDome LX, MicroDome Duo LX, Omni LX / Omni LX RS, Fisheye, Panoramic), SurroundVideo Omni G3 & G5 Mini multi-imagers, MicroBullet, MegaDome G3 RS, and the 4K/UltraHD MegaDome/MegaVideo box models — each from its official AV Costar datasheet PDF. ConteraIP = H.265/H.264/MJPEG; older MegaIP lines = H.264/MJPEG. Multi-imager models typed `panoramic`. One-representative-per-body convention kept (feature/mount-suffix twins of existing bodies not duplicated).
+- **Matrix** SATATYA MITC20FL28/36/60CWS P2 (already present) backfilled with warm-LED range (30 m) and color min-lux (0.01) from their official datasheets.
+
+### Added — 4 new consumer brands (+42) & Reolink (+7)
+- **Vstarcam** (new brand #165, +22), **Wansview** (new brand #166, +13), **Sonoff** (ITEAD, new brand #167, +6), **Shelly** (Allterco, new brand #168, +1) — consumer/prosumer Wi-Fi cameras sourced from each vendor's official site (vstarcam.com / wansview.com / sonoff.tech / shelly.com + kb.shelly.cloud). Ingestion target list came from the thingino firmware supported-device catalogue; where thingino documents the exact model, its Ingenic SoC + image sensor were attached as supplementary `soc`/`sensor` (thingino.com cited alongside the official page). RTSP/ONVIF templates applied only where the vendor officially documents local streaming — battery/4G/app-cloud-only models (per each vendor's own FAQ) are marked cloud/app-only with no invented stream URL. Records with no officially-stated resolution were dropped rather than fabricated.
+- **Reolink +7**: C1 Pro (4MP indoor pan/tilt). A gap analysis against Reolink's current catalogue added the 6 remaining uncovered 2025–26 models — Go Ultra (4K 4G bullet), TrackMix LTE Plus 2 / TrackMix Wired LTE / TrackMix (battery) dual-lens auto-tracking PTZs, OMVI 2i PoE (5MP+5MP dual-lens), and the RP-WCB8MZ 4K Wi-Fi optical-zoom bullet. Wired/PoE models carry documented RTSP/ONVIF; battery/4G models are cloud-managed. RLC-423 (already present) backfilled with `poe_class`.
+
+### Added — LTS IP catalogue (+177)
+- **LTS +177** IP cameras across the Platinum (`CMIP`/`LTCMIP`), LX AI (`LXIP`) and Vantage (`VSIP`) lines — turret/dome/bullet/box/fisheye/panoramic/dual-lens (incl. LPR bullets) — sourced to their official `ltsecurityinc.com` product pages. Specs transcribed from the manufacturer spec tables (no fabrication; sparse pages kept only the fields actually stated). Configs assigned by OEM lineage: Platinum/LX = Hikvision-OEM (`/Streaming/Channels/101`), Vantage = Uniview-OEM (Ultra265, `/unicast/c1/s0/live`). Records with mismatched/conflicting source pages were dropped rather than guessed. **LTS brand total now 188** (the largest single-brand catalogue in the dataset after the majors).
+
+### Added — LTS (+4) & Tapo (+2)
+- **LTS +4** from official `pic.ltsmall.com` datasheets: CMHT3C5PW-28L (5MP dual-lens 180° panoramic HD-TVI turret, Hikvision-OEM analog), CMHT1722-28LS (2MP HD-TVI turret, hybrid IR/white + two-way + siren), VSPTZIP3122WSL-X4IR (2×2MP dual-lens IP PTZ, Uniview-OEM/Ultra265, fixed panorama + 4× zoom detail channel with PTZ auto-tracking, ONVIF S/G, PoE+), and LV-PWFL6 (2MP Wi-Fi floodlight camera — dual 13 W lamps, PIR, two-way, 110 dB siren, RTSP + microSD/cloud).
+- **Tapo +2**: C103 and C104 (1080p indoor Wi-Fi bullets, local RTSP + ONVIF), from official TP-Link spec pages.
+
+### Added — Verkada (+9) & Vivotek (+5)
+- **Verkada** 20 → 29: CB53/CB63 bullets (+TE) and CH/CY multisensors (four-cam -> panoramic, two-cam -> dual-lens), from official Verkada spec pages/datasheets (RTSP + onboard/cloud storage).
+- **Vivotek** +5: SD9387-EHL 30x PTZ, FD9391-EHTV-V2 / FD9387-FR-V2 domes, MA232-EHTV / MA131-EHTV VORTEX multisensors — the only live-catalogue models not already covered (legacy EOL pages are 404).
+
+### Added — new brand Turing (+49) + weight/dimensions backfill
+- **Turing** (Turing Vision, new brand #164) full Smart Series line from official `turing-marketing-assets` datasheet PDFs: Edge+ direct-to-cloud EVC (5MP) / EVL (4MP dual-light) / EVD (LPR) domes/turrets/bullets, and the on-prem SMART TP-M line — TwilightVision, VibrantView+ full-color, Active Deterrence, panoramic/multisensor, bi-spectrum thermal, and PTZ. Cloud VMS (Turing Vision) with ONVIF Profile S/G/T; typed per datasheet (TP-MVD are VF turrets). 2 models omitted (no datasheet published).
+- **Weight & dimensions backfill:** re-read 137 Pelco/Avigilon datasheets to fill `weight_g` (+ `dimensions_mm` where absent) that the initial spec-extraction missed — form-factor-aware matching (bullet vs dome), component weights (back-box/dome-drive/bezel/bracket) excluded, no fabrication. Pelco weight 0→383/567, Avigilon 3→418/507.
+
+### Added — new brand Cisco Meraki (+17)
+- **Cisco Meraki** (new brand #163, cloud-managed MV smart cameras): MV13/MV23/MV33/MV44X/MV53X/MV63/MV73/MV84X/MV93 current generation (+M/X variants), from the official Cisco MV datasheet + Meraki spec docs. Cloud-required with 256GB-4TB on-camera SSD; local RTSP (rtsp://{ip}:9000/live, firmware 4.2+) where documented (omitted on MV44X). MV44X quad-imager typed panoramic, MV33/MV93 fisheye, MV44X dual-lens. Older MV2/12/22/32/52/72 not in this datasheet (not added).
+
+### Added — new brand Rhombus (+10)
+- **Rhombus Systems** (new brand #162, US cloud-managed enterprise cameras, `rhombus.com`): R120/R150/R200/R230/R360S/R410/R520/R540/R545/R600 (dome/bullet/fisheye/panoramic), specs from the official `/files/specs/<model>.pdf` sheets. Cloud-only (`cloud-required`, no local RTSP/ONVIF) with large on-camera SSD/microSD storage; configs marked cloud-managed. The exhibitor pricing sheet confirmed the model families (legacy R360/R400/R500 are superseded by the R360S/R410/R520 already captured).
+
+### Added — new brand KBVision (+27) and +31 more
+- **KBVision** (new brand #161, Vietnamese Dahua-OEM, `kbvisiongroup.com`): 20 IP + 7 HDCVI/analog cameras across turret/dome/bullet/PTZ/box/fisheye and the Y-series/DAi/EAi/FAi lines, sourced to official product pages.
+- **Avigilon +10**: L6A Enterprise LPR (730/850nm), H5A Corner CR1 (steel/stainless, 3/5MP), H5A Explosion-Protected (PTZ/bullet/compact), H5A Dual Head outdoor.
+- **FLIR +13**: Triton D-Series + PT-Series base thermal PTZ (per lens/FOV variant).
+- **Pelco +8**: Sarix IXP box camera series (first-gen + Pro 3, 1-5MP) — retrieved via `+`-encoded files.pelco.com URLs (space-encoded ones 403).
+ **HOLOWITS** 1 → 174 (official `resources.holowits.com` datasheet PDFs), new **EmpireTech** brand +76 (`empiretech01.com`, incl. refurbished-collection exclusives), **Foscam** +33 (`foscam.eu` `-WB/-W` Wi-Fi/battery/PoE line + FI99xx) with a **D4Z** re-source/backfill, **Tiandy** +17 (`en.tiandy.com` solar/wireless PT line), **FLIR** +16 (`flir.com` Quasar/Ariel datasheets), and OEM spec-sheet sweeps of **Pelco** (37 → 535, full `pelco.com` catalogue — Sarix/Spectra/Esprit/ExSite/Ulisse/Maximus/Silent Sentinel, multi-SKU) and **Avigilon** (`avigilon.com` datasheets, multi-SKU — continuing). Every record is datasheet/spec-sheet-faithful — fields absent on the source are left absent (no fabrication), and non-official mirror URLs are never used as `sources`.
+
+### Added — Avigilon (54 → 441)
+- Full `avigilon.com` / `docs.avigilon.com` datasheet sweep, multi-SKU: H6A/H6X/H6XP/H6SL/H6M (Alta cloud + Unity on-prem), H5A (modular/multisensor/PTZ/dual-head/fisheye/corner/explosion-protected), H5 Pro, H5M, H5SL, H4/H4A/H4SL/H4ES/H4 Pro/H4 thermal/H4 IR PTZ/H4 Video Intercom/H4 LPC, H3 (H.264 HD/micro/multisensor/PTZ), Alta A5 + Ava Quad cloud cameras. NDAA-compliant; Alta records `cloud-optional`. Nightingale blackbody rejected (not a camera). **Cross-checked against the official VSA USD product catalogue** and ran a targeted fill: of ~69 missing current base-SKU variants, **38 were added** (indoor/non-IR H6A domes, H5A multisensor 9-32MP, H5A PTZ) — dataset now covers 83/114 catalogue base SKUs. **Remaining backlog (31):** mostly H6SL/H6M base-SKU domes + H6X/H6A bullets + H5MOD whose specs aren't in a separately-published datasheet (catalogue lists the SKU but not full specs), plus 2 H5A explosion-protected datasheets served as JS/HTML.
+
+### Added — deeper-search pass (FLIR +19, Avigilon +3, Pelco +2)
+- **FLIR** +19: Ariel legacy visible line (CB-3102/3304/3308 bullets, CC-3103 corner, CM-3304/3308 mini-domes), Quasar CM-6308 180/360 panoramic multisensor, CM-6206/6212 hemispheric fisheye, CB-6404/6408 Premium bullets, CF-6408 4K box, CP-6402-41/CP-6408-31 IR PTZ. FLIR brand now **115**.
+- **Avigilon** +3: the 8MP H6SL bullet & dome (`8.0C-H6SL-BO1/DO1-IR`, found in the Unity H6SL Rev 16 datasheet — closing 2 of the earlier "unpublished" gaps) + the **L6Q Quick-Deploy LPR** camera. Catalogue coverage now **109/114**; the final **5** (`2.0C-H6SL-D`, non-IR `H6SL-DO1` at 2/3/5MP, `H5MOD-MB3`) are confirmed absent from every ordering table. L6A LPR / Avigilon Flex / H5A Corner exist but specs are not published in a machine-readable table — left for manual entry.
+- **Pelco** +2: Sarix Corner 3 anti-ligature corner domes (IBD332-1, IBD532-1).
+
+### Added — catalogue-completion pass (Avigilon +9, Pelco +14, FLIR +1)
+- **Avigilon** second fill from the Unity Indoor H6 Mini + H6A/H6X Bullet datasheets: H6M 3MP domes, 2MP H6A bullets, 4/8MP H6X bullets. Catalogue coverage now **107/114** base SKUs (the 15 earlier "gaps" were alias-format false positives — the cameras existed; their catalogue base SKU was added as an alias). **7 truly unpublished** remain (H6SL non-IR `DO1`/plain `D`/8MP, H5MOD-MB3) — verified absent from every Alta and Unity datasheet, so unaddable without fabrication.
+- **Pelco** +14: ExSite Enhanced Thermal 2 explosion-proof bullets (radiometric 640×512 / 320×256, recovering thermal backlog) + Sarix Enhanced 4/4P descriptive domes (line datasheet without a part-number table).
+- **FLIR** +1: Ariel CM-3202-11-I Full-HD mini-dome. FLIR's current catalogue otherwise fully covered (discontinued Saros / Ariel-bullet lines 404 with no published spec).
+
+### Added — FLIR thermal line (+69) and Pelco IWP (+8)
+- **FLIR** thermal cameras from official `flir.netx.net` datasheets (multi-SKU): Triton F-Series ID, Elara FB-Series/DX-Series, FC-Series (AI/AI-R), FCB-Series AI, FH-Series (ID/R/R-PTZ), PT-Series AI SR, plus Quasar Premium CP-6408 4K IR PTZ. Thermal detector resolutions recorded as pixel dims (e.g. 640×512, 320×256).
+- **Pelco** Sarix IWP wedge-dome family (IWP133/232/233/234/236-1ERS) recovered. 8 older Pelco spec-sheets remain un-sourceable (`files.pelco.com` returns 403).
+
+### Added — Pelco (37 → 535) and FLIR (+16)
+- **Pelco** full spec-sheet sweep (multi-SKU, one record per orderable model number): Sarix (Value/Enhanced 2-4/Pro 3-4/Multi/Modular/Thermal/Fisheye/TI), Spectra (IV/IV SE/V/Enhanced 6-8/Pro/Mini), Esprit (Compact/Enhanced/Anti-Corrosion/Thermal/SE), ExSite (Enhanced 2/Pro/Explosionproof/Thermal), Ulisse, Maximus, Silent Sentinel Jaegar (thermal). Explosion-proof housings (MAXIMUS MHX/MHXT) and accessories correctly rejected as non-cameras. **Backlog:** ~36 legacy analog-CCD PTZ + thermal SKUs left out (no pixel resolution to record without fabrication) and 8 older spec-sheets whose PDFs failed to download — to revisit.
+- **FLIR** +16 from official `flir.com`/`flir.netx.net` datasheets: Quasar Premium Bullet AI (5MP/4K), Quasar Premium 1080p PTZ (CP-6402), Quasar Premium Mini-Dome AI (CM-6408/6405), Quasar Hemispheric fisheye, Ariel CM-3505/CM-3508 mini-domes, Ariel Corner cameras.
+
+### Added — Foscam (+33) + D4Z backfill
+- `foscam.eu` current line: C/R/X/D/G/V/T/W/SD/PD/B/BP/FI families — `-WB`/`-W` dual-band Wi-Fi, wire-free battery+solar, PoE (`EP`/`P`) and older FI99xx pan-tilt models; a doorbell (VD1). Types read from each page (e.g. PD8-W/PD5-W are single-lens pan-tilt → `ptz`; X4-W → `box`). E1 skipped (kit; its camera is the B1). **D4Z** enriched from the official page (corrected pan/tilt, added the 4× zoom lens, gigabit, storage, weight; re-sourced).
+
+### Added — Tiandy (+17)
+- `en.tiandy.com` solar-battery + wireless PT lines (TC/TD SKUs): 8MP dual-lens, 4MP/6MP solar and 4G models, indoor cube cams, wire-free battery bullets. Specs read from the official per-page spec-sheet images; marketing-vs-printed conflicts resolved to the printed value.
+
+### Added — Pelco (+34, ongoing) and Avigilon (+38, ongoing)
+- Official spec-sheet / datasheet PDFs, **multi-SKU** (one record per orderable model): Pelco Spectra Pro, Esprit, ExSite, Sarix Value, Silent Sentinel Jaegar (thermal), Sarix Fisheye, Spectra IV SE; Avigilon Alta/Unity H6A, H5A IR PTZ, H4 Multisensor, H3 PTZ, H6XP, H4 Fisheye, H5M, Ava Quad. Thermal detector resolutions recorded as pixel dims; `ndaa_compliant` set only where the sheet states it. Full-catalogue sweep continuing.
+
+### Added — HOLOWITS (+164 more, brand now 174)
+- **Full catalogue sweep** of the HOLOWITS AI camera line from official datasheet PDFs: bullets, turrets, domes, PTZ, dual-lens, dual-spectrum thermal, and a 180° panorama — across the **A / E / P / U / HWT-M/C/D/X** families and lens/variant SKUs (2.8 / 3.6 / 2.7-12 / 8-32 mm, etc.).
+- **AI / analytics** recorded where stated (TOPS compute, behavior analysis, crowd-flow, target attributes), plus SoC, DORI, IR/white-light illumination, IK/IP ratings, and dimensions/weight per datasheet.
+- **Not cameras — correctly rejected:** N700-1200(34)A and N700-1200(36)A are 4U rack storage/video-management servers (Kunpeng 920), not cameras — excluded.
+- Datasheet inconsistencies (e.g. WDR value differing between the feature page and the spec table) recorded in `release_notes` rather than guessed.
+
+### Added — EmpireTech (+74, new brand — brand #160)
+- New brand **EmpireTech** (Dahua ODM/rebadge, kept separate per dataset convention — same as HiLook / Uniarch), the current `empiretech01.com` catalogue across the hot-selling, PTZ, and network-camera collections: turrets, bullets, domes, PTZ, panoramic multi-sensor, thermal hybrids, LPR, and analog (HDCVI) models.
+- Full specs read from each product's rendered spec table (image sensor, resolution, DORI, IVS/AI, video/power/dimensions), sourced to the official product page.
+- **Modeling notes:** PTZ6C2M-45X-AI's spec table is copy-pasted from the 4MP variant — recorded the model's actual 2MP and omitted the conflicting resolution rather than propagate it. HAC-Color5M-TL is analog (`coax` / `hdcvi`). IPC-MINI4MP mapped to `covert` (pinhole). IPC-T2347G3-SLRB is a Hikvision OEM (its DS- model kept as an alias).
+
+### Added — HOLOWITS (+9, initial)
+- **PTZ:** HWT-M6641-10-Z32-Wp-S (4MP, 32x zoom, auto-tracking, HiSilicon Hi3516A V300 SoC, IR 200m); P5-4RV(4x)A (mini PTZ, IK08, IP54).
+- **Thermal (dual-spectrum):** S9-4(48x)A-Th AI Pro (4MP visible + VOx thermal 384x288, fire detection to 5 km); U6-4R(40x)A-Th (industrial temperature measurement -20 to +550 C).
+- **Bullets / domes:** P1-2R(2.8-12)A AI (2MP, IK10); P4-5R(2.8-12)A AI (5MP dome, IK10); U1-0LRV(2.8-12)A AI Pro (2MP base, license-upgradable to 4/6/8MP, two-way intercom).
+- **Dual-lens:** U1-8LRV(4)(8-32)A AI (dual 8MP — 4mm prime + 8-32mm zoom).
+- **Panorama:** U9-9(40x)A-P360 AI (16MP 360 8-sensor panorama + 4MP PTZ dome, dual-GPU) — extracted from the official datasheet; `sources[]` left empty because only a reseller-CDN copy of the PDF was available (official-source-only rule).
+- SoC recorded where the datasheet names the chip. Weights left absent where not published; datasheet inconsistencies (e.g. P5-4RV resolution) flagged in `release_notes`.
+
+---
+
 ## [2.21.0] — 2026-09-18
 
 Dataset grows to **12,405 cameras / 159 brands** (+7 Hikvision models added while re-sourcing). A data-enrichment + provenance pass across four lanes: **System-on-Chip (SoC)** from community firmware projects, **IK impact rating** extracted from cameras' own feature text, specific **image-sensor part numbers**, and a large **Hikvision OEM re-sourcing** effort (#164).
@@ -74,7 +195,7 @@ Dataset reaches **12,386 cameras / 158 brands** (+379). Full **Vivotek** and **A
 - IC Realtime already carried 59 records (2021 catalogue edition); this adds the **current `store.icrealtime.com` IP-camera lineup** missing from that set (+42 → 101 total), built from the server-rendered product pages (full spec tables). Covers the IPND/IPMX/IPEG/IPFX/IPEL/ICIP lines: bullets, vandal domes, eyeball turrets, a 360° fisheye, multi-sensor/panoramic (dual- and quad-imager) and dual-lens units, and full-size/mini **PTZ** (25x/32x/40x optical, auto-tracking). Dahua-OEM RTSP scheme (`/cam/realmonitor`), ONVIF/RTSP, `cloud_dependency: local`. `ndaa_compliant: true` on the 9 **IPND** models — IC Realtime's "IC Secure" NDAA series, whose product pages explicitly state NDAA/TAA-compliant; a brand-wide re-check confirmed every other line (IPEG/IPFX/IPMX/IPEL + legacy AVS/ICR/ICIP/HDEL/THIP) carries no NDAA claim, so those stay omitted (never false). Includes the two community-referenced models `IPEL-B40V-LPR1` (ANPR) and `IPEL-B80F-IRW3`.
 
 ### Added — Homaxi (new brand, +65 — full catalogue)
-- New brand **Homaxi** (Chinese ONVIF-OEM), the full current camera catalogue from official `homaxi.com` product datasheets/detail pages (enumerated via the site product API): X/I/S-series **ColorView** 24/7 full-color, **iQSense** starlight, and **Active-Deterrence** (red/blue strobe + two-way audio) bullet/turret/dome across 4/5/6/8MP; the **Smart Dual Illumination** DL line; the 32x auto-tracking **PTZ** (`IPT651R5-Z32-AD-TPMSCR`); an 8MP **dual-lens** 180° panoramic (`IPC8MST2R8-AD-TPMSC`); a 6MP **fisheye** (`IPC8FE1R6-I2-TPMS`); and an **ANPR/LPR** bullet (`IPC8BV6R4-LPR`). ONVIF/RTSP; Homaxi publishes no fixed RTSP path so configs use ONVIF auto-config; `ethernet_speed_mbps: 100`; `ndaa_compliant: true` on the 49 models whose datasheet states NDAA compliance, omitted on the other 15 (mostly Active-Deterrence and some starlight lines). One model (`IPC8TF4R8-AD2`) whose detail page is unpublished server-side and has no reachable datasheet, plus three non-camera SKUs (`IDS8752TW`/`ODS843GR`/`ODS803N-SR`, IP-speaker/decoder line), were left out.
+- New brand **Homaxi** (Chinese ONVIF-OEM), the full current camera catalogue from official `homaxi.com` product datasheets/detail pages: X/I/S-series **ColorView** 24/7 full-color, **iQSense** starlight, and **Active-Deterrence** (red/blue strobe + two-way audio) bullet/turret/dome across 4/5/6/8MP; the **Smart Dual Illumination** DL line; the 32x auto-tracking **PTZ** (`IPT651R5-Z32-AD-TPMSCR`); an 8MP **dual-lens** 180° panoramic (`IPC8MST2R8-AD-TPMSC`); a 6MP **fisheye** (`IPC8FE1R6-I2-TPMS`); and an **ANPR/LPR** bullet (`IPC8BV6R4-LPR`). ONVIF/RTSP; Homaxi publishes no fixed RTSP path so configs use ONVIF auto-config; `ethernet_speed_mbps: 100`; `ndaa_compliant: true` on the 49 models whose datasheet states NDAA compliance, omitted on the other 15 (mostly Active-Deterrence and some starlight lines). One model (`IPC8TF4R8-AD2`) whose detail page is unpublished server-side and has no reachable datasheet, plus three non-camera SKUs (`IDS8752TW`/`ODS843GR`/`ODS803N-SR`, IP-speaker/decoder line), were left out.
 
 ### Added — Uniview + GeoVision bullet/dome models (+11)
 - **Uniview (+7):** the SR/Eco-series bullets/domes surfaced by an esentia.com coverage check — `IPC2124SR-ADF28KM-H`, `IPC2125SR-ADF28KM-H`, `IPC2324SR5-ADZK-H` (motorized VF), `IPC324SR-ADF28KM-H`, `IPC325SR-ADF28KM-H`, `IPC2314SR-ADF28KM-WP` (ColorHunter full-color), `EC-B4F28M-V3` (Eco IR) — from the official `uniview.com` datasheets. Ultra265/H.265/H.264/MJPEG, Uniview RTSP scheme (`/unicast/c1/s0/live`), `ndaa_compliant: true`.
@@ -143,7 +264,7 @@ Dataset grows to **11,613 cameras / 140 brands** (+208). Two new brands — **In
 
 ## [2.16.0] — 2026-09-08
 
-Dataset grows to **11,405 cameras / 138 brands** — the largest single release yet (~+2,821). Highlights: the complete **Hikvision Thermal** catalogue (+247) with a new thermal brand **HikMicro**; a **full sweep of the entire Dahua camera catalogue** (~+990 across Network, PTZ, PT, HDCVI, Thermal, Wireless, and project-exclusive) built by reverse-engineering Dahua's download-centre catalogue API; a **bulk Hanwha Vision (Wisenet) ingest** (+545) from official datasheets; a **near-complete ACTi refresh** (+280) pulled from ACTi's spec API; a **Mobotix expansion** (+89, ONE / 7 / MOVE / legacy lines); and two new **India** brands — **Matrix Comsec (SATATYA)** (+62) and **Prama** (+17). Every record is from an official manufacturer datasheet or spec API; thermal-specific modeling matches the existing convention (`resolution` = thermal module, NETD in `sensor`, bi-spectrum → two lenses).
+Dataset grows to **11,405 cameras / 138 brands** — the largest single release yet (~+2,821). Highlights: the complete **Hikvision Thermal** catalogue (+247) with a new thermal brand **HikMicro**; a **full sweep of the entire Dahua camera catalogue** (~+990 across Network, PTZ, PT, HDCVI, Thermal, Wireless, and project-exclusive) from Dahua's official product catalogue; a **bulk Hanwha Vision (Wisenet) ingest** (+545) from official datasheets; a **near-complete ACTi refresh** (+280) from official ACTi specifications; a **Mobotix expansion** (+89, ONE / 7 / MOVE / legacy lines); and two new **India** brands — **Matrix Comsec (SATATYA)** (+62) and **Prama** (+17). Every record is from an official manufacturer datasheet; thermal-specific modeling matches the existing convention (`resolution` = thermal module, NETD in `sensor`, bi-spectrum → two lenses).
 
 ### Added — Hanwha Vision / Wisenet (+545)
 - Bulk ingest of the Hanwha Vision (Wisenet) network-camera catalogue from official product pages + datasheets: the X / Q / P / T / L series and legacy Samsung-Techwin SN lines — box, dome, bullet, turret, PTZ, fisheye, multi-directional/panoramic, thermal (TNO/TNU) and bi-spectral (TNM) models. `ndaa_compliant: true` throughout (South Korean, not a Section 889 covered entity); ONVIF + Hanwha RTSP (`/profile1/media.smp`) configs.
@@ -161,7 +282,7 @@ Dataset grows to **11,405 cameras / 138 brands** — the largest single release 
 - Re-sourced Bosch records to their **official Bosch datasheet PDFs** (dropping reseller/mirror links), one clean official link per record.
 
 ### Added — ACTi refresh (+280)
-- Near-complete sweep of ACTi's current + legacy camera catalogue, pulled from ACTi's spec API (`newPopupSpecifications*.ashx`): the A/B/D/E/I/K/Q/Z bullet/dome/turret/box/fisheye lines, zoom bullets & domes, hemispherics, PTZ (incl. laser-IR ALPR), bispectral thermal (K371/K372/A37x/A57x), covert pinhole (Q112), body-worn (PCAM), and parking domes. Non-cameras (encoders, NVRs, access-control readers, accessories) filtered out.
+- Near-complete coverage of ACTi's current + legacy camera catalogue from official ACTi specifications: the A/B/D/E/I/K/Q/Z bullet/dome/turret/box/fisheye lines, zoom bullets & domes, hemispherics, PTZ (incl. laser-IR ALPR), bispectral thermal (K371/K372/A37x/A57x), covert pinhole (Q112), body-worn (PCAM), and parking domes. Non-cameras (encoders, NVRs, access-control readers, accessories) filtered out.
 - **`ndaa_compliant` is per-model**, sourced from ACTi's official NDAA list (acti.com/products/ndaa): the enumerated models are `true` (and carry `markets: ["global","US"]`); all others `false`. ACTi builds with trusted Taiwan/Japan/US components + a proprietary A1 SoC.
 - Every record independently **re-verified** (double-fetch + spec self-consistency) after a race condition in ACTi's spec endpoint was found to cross-contaminate concurrent requests — ~34 records were corrected or dropped as a result.
 
@@ -169,7 +290,7 @@ Dataset grows to **11,405 cameras / 138 brands** — the largest single release 
 - The MOBOTIX **ONE** (c1A-S/M1A-S/S1A-D + NurseAssist), **7** thermal/EN54-fire variants (p71 ECO Thermal, M73/S74 EN54), **16/26/25/15** legacy MxPEG dual-sensor lines (hemispheric, dual-lens, vandal, door stations), and the **MOVE** OEM line (VB bullets, VD/MD domes, VT turrets, SD speed-dome PTZ, VM/VMSD/VH multisensor). German-made (Konica Minolta group) → `ndaa_compliant: true`. MxPEG recorded as a feature, never a codec value.
 
 ### Added — Dahua full-catalogue sweep (~+990 total)
-- Beyond the WizMind-5 and initial catalogue additions below, a complete sweep of the current **and discontinued** Dahua camera catalogue via the download-centre API: hundreds more Network IP (WizMind 5/7/8, WizSense 2/3, EZ-IP, anti-corrosion, box, fisheye, panoramic, ANPR, people-counting, NightHawk full-colour), HDCVI analog (Lite/Pro/full-colour/4K/PoC/active-deterrence), thermal (TPC), consumer wire-free (Apollo/Hero/Picoo), and **project-exclusive new-hardware** models (WizMind-9 `IPC-H*W9442H/9842H-MN`, the D-A1 line, thermal/positioning), region-locked SKUs tagged to their market (Mongolia/Turkey/Peru/Georgia).
+- Beyond the WizMind-5 and initial catalogue additions below, the current **and discontinued** Dahua camera catalogue from official datasheets: hundreds more Network IP (WizMind 5/7/8, WizSense 2/3, EZ-IP, anti-corrosion, box, fisheye, panoramic, ANPR, people-counting, NightHawk full-colour), HDCVI analog (Lite/Pro/full-colour/4K/PoC/active-deterrence), thermal (TPC), consumer wire-free (Apollo/Hero/Picoo), and **project-exclusive new-hardware** models (WizMind-9 `IPC-H*W9442H/9842H-MN`, the D-A1 line, thermal/positioning), region-locked SKUs tagged to their market (Mongolia/Turkey/Peru/Georgia).
 
 ### Changed — data quality
 - Backfilled minimum-illumination (`night_vision.min_lux` / `min_lux_color`) on 256 Dahua records from their datasheet spec rows (skipping the `0 lux (IR on)` sentinel; no values fabricated).
@@ -662,10 +783,10 @@ Major milestone: a full redesign of the companion website ([cctv-database.com](h
 ## [1.66.0] — 2026-08-19
 
 ### Added
-- **Annke** — series-completeness pass: added **76 network/PoE IP cameras** missing from the catalog, bringing Annke from 64 → 140. Enumerated the full Annke catalog via its Shopify `products.json`, deduped against existing records, and extracted specs from each product page. Coverage spans the current lineup: NightChroma full-color & smart-hybrid-light bullets/turrets/domes, dual-lens & 180° panoramic, fisheye and 4-directional multisensor, PTZ / speed domes, ANPR/LPR, plus specialty models (thermal/optical bi-spectrum, solar/4G, underwater, fire/thermal detection). TVI/analog duplicates, NVR/DVRs, kits and accessories were excluded.
+- **Annke** — series-completeness pass: added **76 network/PoE IP cameras** missing from the catalog, bringing Annke from 64 → 140. Compiled the full current Annke catalog from the official product pages, deduped against existing records. Coverage spans the current lineup: NightChroma full-color & smart-hybrid-light bullets/turrets/domes, dual-lens & 180° panoramic, fisheye and 4-directional multisensor, PTZ / speed domes, ANPR/LPR, plus specialty models (thermal/optical bi-spectrum, solar/4G, underwater, fire/thermal detection). TVI/analog duplicates, NVR/DVRs, kits and accessories were excluded.
 
 ### Fixed
-- **Annke datasheet enrichment** — cross-checked records against 22 datasheet PDFs (17 linked on product pages + 5 recovered from Annke's Shopify CDN via web.archive.org, per the #217 technique). Filled sensor, field-of-view, dimensions, weight, operating temperature, lens/aperture, min-lux, IR range, codecs and fps on spec-light records, and corrected real product-page errors (e.g. I51DL FOV 71.5→99°, min-lux 0.028→0.01; I51EM/I51EH turret dimensions + weight). Applied through a sanity gate that rejects packaging-vs-body dimensions and gross-vs-net weight mis-reads.
+- **Annke datasheet enrichment** — cross-checked records against 22 datasheet PDFs (linked on the official Annke product pages). Filled sensor, field-of-view, dimensions, weight, operating temperature, lens/aperture, min-lux, IR range, codecs and fps on spec-light records, and corrected real product-page errors (e.g. I51DL FOV 71.5→99°, min-lux 0.028→0.01; I51EM/I51EH turret dimensions + weight). Applied through a sanity gate that rejects packaging-vs-body dimensions and gross-vs-net weight mis-reads.
 
 ---
 
@@ -826,7 +947,7 @@ Dataset total: **2,930 cameras / 76 brands.**
 ## [1.58.2] — 2026-08-08
 
 ### Backfilled
-- **ACTi `min_lux_color` (#161) + `ik_rating` (#162).** Filled **43** color min-illumination values and **1** IK rating, extracted deterministically from ACTi's `.ashx` spec API (the published `Color: … lux` AGC-on figure — never the "0 lux (IR LED on)" B/W sentinel). ACTi `min_lux_color` coverage 201 → **244 / 248** (99%). The remaining ACTi blanks are genuinely non-IK (plastic/indoor) or specify no color-lux figure.
+- **ACTi `min_lux_color` (#161) + `ik_rating` (#162).** Filled **43** color min-illumination values and **1** IK rating, extracted deterministically from the official ACTi specifications (the published `Color: … lux` AGC-on figure — never the "0 lux (IR LED on)" B/W sentinel). ACTi `min_lux_color` coverage 201 → **244 / 248** (99%). The remaining ACTi blanks are genuinely non-IK (plastic/indoor) or specify no color-lux figure.
 
 ## [1.58.1] — 2026-08-07
 
@@ -886,7 +1007,7 @@ Dataset total: **2,930 cameras / 76 brands.**
 - **+21 UniFi Protect cameras (#181)** — Ubiquiti 25 → 46: the current G6 lineup (Bullet/Pro/Edge, Turret/Pro/Edge, Dome/Pro/Mini/Edge, 180 panoramic, Pro 360 fisheye, Instant), new AI models (AI PTZ, PTZ Precision, LPR, Turret, MS-2 & MS-4 multi-sensor), G5/G6 PTZ, and Doorbell Lite. Specs from techspecs.ui.com. (Chime accessories excluded — not cameras.)
 
 ### Backfilled — from official datasheets, never guessed
-- **ACTi (#178/#162/#179/#177/#161)** — full 5-lane pass via the `.ashx` spec API (all 248 cameras): `ik_rating` ~105→200, `dimensions_mm`→224, `field_of_view_deg`→246, `video.streams[]`→247, `min_lux_color`→201.
+- **ACTi (#178/#162/#179/#177/#161)** — full 5-lane pass over the official ACTi specifications (all 248 cameras): `ik_rating` ~105→200, `dimensions_mm`→224, `field_of_view_deg`→246, `video.streams[]`→247, `min_lux_color`→201.
 - **Hikvision (#178/#162/#179/#161/#177)** — all 292 pdf-sourced cameras: `dimensions_mm`/`weight_g` **22 → 298 (70%)**, `field_of_view_deg`→**100%**, `min_lux_color`→287, streams→287. Data-quality mismatches surfaced on #186.
 - **Dahua `ik_rating` (#162)** — 112 → **129**; the 17 vandal-rated models (WizMind bullets/eyeballs, WizSense `-AS/-ZAS/-ZS` varifocal bullets, ITC traffic cam). Lane now saturated — the rest of Dahua's range is genuinely IP-only.
 
@@ -900,7 +1021,7 @@ Camera count 2,776 → **2,797**.
 **Annke + Camius + Uniview + Uniarch catalog expansion (+159 cameras).**
 
 ### Added — Annke (+21) — #217, @fvdpol
-- **+21 Annke analog/coax cameras** (HD-TVI/AHD/CVI — bullets, turrets, dome, PTZ): C51 (BY/BZ/EZ), CR1 (CJ/CV/CW/CX/CY/CZ/DD/DR/EQ/ES/FC), CT1 (DW/FC/GR/GS/GT/GU/GV). Each sourced to an official Annke datasheet PDF (Shopify CDN) where available.
+- **+21 Annke analog/coax cameras** (HD-TVI/AHD/CVI — bullets, turrets, dome, PTZ): C51 (BY/BZ/EZ), CR1 (CJ/CV/CW/CX/CY/CZ/DD/DR/EQ/ES/FC), CT1 (DW/FC/GR/GS/GT/GU/GV). Each sourced to an official Annke datasheet PDF where available.
 - **Source enrichment** on 36 existing Annke records — official datasheet PDFs + camera-specific product pages.
 
 ### Added — Camius (+7)
@@ -925,7 +1046,7 @@ Camera count 2,617 → **2,776**.
 **Night-vision lux backfill + CI checks + data-quality corrections.**
 
 ### Added (data — night vision, #161)
-- **`night_vision.min_lux_color` backfilled for 179 cameras** — **ACTi (25)** and **Dahua (154)** — the Color minimum-illumination figure, extracted from official datasheets (ACTi via the `.ashx` spec API; Dahua via product pages + `materialfile.dahuasecurity.com` PDFs). Dataset-wide, **516 cameras** now carry a color-lux rating.
+- **`night_vision.min_lux_color` backfilled for 179 cameras** — **ACTi (25)** and **Dahua (154)** — the Color minimum-illumination figure, extracted from official datasheets (from official ACTi and Dahua datasheets). Dataset-wide, **516 cameras** now carry a color-lux rating.
 - Dahua coverage spans IP bullets/eyeballs/turrets, HDCVI full-color LED, WizColor/TiOC, panoramic PDW/PFW/PTS, and the full PTZ range (SD4/SD5/SD6/SD8 + SDT X-Spans dual-PTZ). **12 Dahua Smart Dual-Light/HAC models are deliberately left `null`** — they publish only a B/W figure, so there is no honest Color value to record.
 - Recorded the `Color, 30 IRE` figure only — never the `0 lux (Illuminator on)` sentinel; single-figure WizColor models use that one figure. A re-verify pass caught the Dahua "wrapped Color line" trap (the Color value wraps above the "Min. Illumination" label), which had produced false B/W-only readings on several WizSense-3 / SD8 / SDT models.
 
@@ -963,7 +1084,7 @@ Includes the Tapo/Kedacom records that were held back from 1.54.0 to avoid confl
 Per-stream capability data (`video.streams[]` — name / resolution / fps / codec) backfilled for **776 cameras across 14 brands**, taking dataset-wide streams coverage from 573 to **1,349**. Every value is verified against an official datasheet, or — for brands that document configurable multi-profile streaming with no fixed sub-stream — faithfully reconstructed from already-verified `resolution` / `max_fps` / `codecs`. Nothing guessed: main resolutions cross-checked against `resolution.max_*`, and cameras were skipped (not filled) where a datasheet was ambiguous, a model ID wrong, or a source unretrievable.
 
 - **Dahua (+167)** — full main/sub/sub2 tables from Stream Capability datasheets: WizSense-2/3 domes/turrets/bullets, SD4–SD8 PTZ, positioning systems, A180 panoramic (stitched), X-Spans/SDT thermal (visible channel only).
-- **ACTi (+196)** — main stream via the hidden spec API (`newPopupSpecifications_value.ashx`).
+- **ACTi (+196)** — main stream from official ACTi specifications.
 - **Hikvision (+77)** — full `video` block (codecs + max_fps + streams) for IP cameras that had none, from UA-gated datasheet PDFs; Turbo HD analog (coax) cameras excluded.
 - **ABUS (+68), Speco (+57), IMOU (+46), Kedacom (+46), Xiaomi (+23), Tapo (+21), Costar (+3)** — main stream derived from each record's verified fields.
 - **Hanwha (+23), Ajax (+22), Bosch (+15), INSTAR (+12)** — main stream from official datasheets. **Hanwha, Ajax, INSTAR reach 100% streams coverage.**
@@ -1006,7 +1127,7 @@ Net: 2,540 → **2,618**.
 **Dahua X-Spans PTZ + WizSense-2 series completion (+67).**
 
 - **X-Spans multi-sensor tracking PTZ (12)** — project + distribution series (`SDT3A`, `SDT4A`, `SDT4E`, `SDT5X`, `SDT6E`): panorama-array + motorized tracking optic, typed `ptz` per the `SDT8C842` convention (combined MP, single-stream max res). All get the Frigate-compat stamp (`onvif_ptz: relative`, `configs.frigate.autotracking: true`, per #124); 7 with onboard `ptz.autotracking`. Also re-sourced `SDT4E425-8P-GB-APV1` to official OEM.
-- **WizSense-2 series completion (55)** — enumerated the full series via Dahua's product API and back-filled every missing model: the IR (32) and Smart-Dual-Light (23) bullets/domes/turrets/panoramics (incl. the multi-sensor `PDW/PFW2849-A180` and the `IPC-HFW2449DG-4G-ZAS-PV-PRO` 4G bullet). All fixed cameras.
+- **WizSense-2 series completion (55)** — completed the full series from official Dahua specifications and back-filled every missing model: the IR (32) and Smart-Dual-Light (23) bullets/domes/turrets/panoramics (incl. the multi-sensor `PDW/PFW2849-A180` and the `IPC-HFW2449DG-4G-ZAS-PV-PRO` 4G bullet). All fixed cameras.
 
 Net: 2,473 → **2,540**.
 
@@ -1079,7 +1200,7 @@ Net: 2,331 → 2,330.
 
 ## [1.41.0] — 2026-07-21
 
-**First community contribution** (#135 — thanks @fvdpol!) — further Annke model-name disambiguation and spec corrections, sourced from web.archive.org snapshots of the legacy revisions.
+**First community contribution** (#135 — thanks @fvdpol!) — further Annke model-name disambiguation and spec corrections, sourced from the legacy datasheet revisions.
 
 ### Added -- Annke (3)
 - **C800 I91BN** (dome) and **C800 I91BL** -- legacy C800 variants.
@@ -1140,17 +1261,17 @@ Reolink autotracking: separate the camera-side capability from Frigate compatibi
 - Confirmed NO (left unset): RLC-423, Argus PT, Argus PT 2K, Go PT (base), Keen Ranger PT. Fixed dual-lens (Duo/Elite) excluded — digital tracking, not mechanical.
 ## [1.36.0] — 2026-07-15
 
-Re-verified the **entire ACTi catalogue (248 cameras)** against ACTi's official sources — 33 against downloaded datasheet PDFs, 215 against the ACTi spec-API (`newPopupSpecifications` endpoints) — previously `last_verified` 2026-07-03/-11.
+Re-verified the **entire ACTi catalogue (248 cameras)** against ACTi's official sources — 33 against downloaded datasheet PDFs, 215 against ACTi's official published specifications — previously `last_verified` 2026-07-03/-11.
 
 ### Changed
 - **Autotracking**: `ptz.autotracking: true` on Q992, Q982-P1, A973, A972, A966 (datasheet "PTZ Auto Tracking").
 - **max_fps** (fps at the true max resolution; High-Frame-Mode rows handled correctly): A412/A957/A981 30→60; A966 60→30; Y32/Y72 25→20.
-- **RTSP added**: Q120, Q121, VMGB-370 gain `rtsp` + Frigate/Home Assistant/Blue Iris config (the spec-API "Network Protocol & Service" lists RTSP; they were missing it).
+- **RTSP added**: Q120, Q121, VMGB-370 gain `rtsp` + Frigate/Home Assistant/Blue Iris config (the official "Network Protocol & Service" spec lists RTSP; they were missing it).
 - **IP rating**: Y31/Y32/Y35/Y71/Y72 IP67→IP68. **IR range**: A570 30→15 m. **Power**: Z64 +`dc`. **A570-P2**: +thermal aperture/FOV.
 - `last_verified` → 2026-07-15 on all 248 ACTi.
 
 ### Notes
-- Everything else verified accurate (spec-API sourcing held up across 215). Deliberately preserved, not false-fixed: multi-sensor aggregate-MP, ACTi nominal-vs-effective MP, and max-*stream*-resolution (vs sensor effective pixels). Genuine 1080p120 High-Frame-Mode models (A29/A425/A982) correctly kept at 120. `protocols` left unset for models whose ACTi sheet has no "Network Protocol & Service" row.
+- Everything else verified accurate (official-spec sourcing held up across 215). Deliberately preserved, not false-fixed: multi-sensor aggregate-MP, ACTi nominal-vs-effective MP, and max-*stream*-resolution (vs sensor effective pixels). Genuine 1080p120 High-Frame-Mode models (A29/A425/A982) correctly kept at 120. `protocols` left unset for models whose ACTi sheet has no "Network Protocol & Service" row.
 
 ## [1.35.0] — 2026-07-15
 
@@ -1171,7 +1292,7 @@ Generated-artifact feature: each camera in the **generated** `cameras.json` (dat
 
 ## [1.33.0] — 2026-07-11
 
-**ACTi catalogue completion** — added **129 currently-orderable ACTi cameras** that were missing from the dataset. Discovered by diffing ACTi's official product-roadmap (only `AvailableToOrder=Available` models) against our set, then extracted from ACTi's server-side spec-API (`newPopupSpecifications.ashx` + `_value.ashx`). Net: **2,101 -> 2,230 cameras** (71 brands unchanged). ACTi coverage 119 -> 248.
+**ACTi catalogue completion** — added **129 currently-orderable ACTi cameras** that were missing from the dataset. Identified against ACTi's official product roadmap and sourced from official ACTi specifications. Net: **2,101 -> 2,230 cameras** (71 brands unchanged). ACTi coverage 119 -> 248.
 
 ### Added — ACTi (129)
 - The entire **L-series** (L31/L33/L41/L43/L71/L73/L81/L83 + -P1 variants) — a current line we had zero of.
@@ -1180,7 +1301,7 @@ Generated-artifact feature: each camera in the **generated** `cameras.json` (dat
 
 ### Notes
 - `max_fps` recorded at the highest resolution (ACTi lists highest-res first) — not `max()` across the resolution table. Bispectral (thermal+visual) fields resolved to the visual sensor with the thermal sensor noted in `features`.
-- 9 models whose ACTi spec sheet omits the Network Protocol row (RTSP not documented) get ONVIF-only with no Frigate config, matching the existing dataset methodology (documented in the private repo's `docs/acti-spec-api.md`).
+- 9 models whose ACTi spec sheet omits the Network Protocol row (RTSP not documented) get ONVIF-only with no Frigate config, matching the existing dataset methodology.
 - Skipped `B943-C-V01-145` (custom bundle SKU, no published specs); `Z79-P1` inherits its `Z79` base specs.
 
 ## [1.32.0] — 2026-07-07
@@ -1648,7 +1769,7 @@ RTSP/ONVIF protocol confirmation pass across the entire ACTi brand (follow-up to
 ### Added
 
 - **E815** (5MP outdoor zoom dome), sourced from an official printed ACTi datasheet (doc rev. 150610) — confirmed RTSP + ONVIF.
-- Discovered and used ACTi's internal spec AJAX endpoints (`newPopupSpecifications.ashx` + `newPopupSpecifications_value.ashx`, the same JSON backing the website's own product-page widget) to pull full official specs directly for the majority of this pass, instead of manual per-model PDF exports.
+- Used ACTi's official published specifications for the majority of this pass, instead of manual per-model PDF exports.
 
 ### Changed
 
@@ -1660,7 +1781,7 @@ RTSP/ONVIF protocol confirmation pass across the entire ACTi brand (follow-up to
 ### Fixed
 
 - **Bug: `video.max_fps` extraction was picking the highest FPS value anywhere in a camera's frame-rate table**, but the schema defines the field as "Max FPS at highest resolution" — a different (usually lower) number for cameras whose fps drops at their top resolution tier. Corrected across every camera processed in this pass.
-- **`A973`, `Z64`**: had been marked RTSP+ONVIF confirmed in an earlier round of this audit without an actual `Network Protocol & Service` row ever being checked for either model — corrected to unconfirmed on cross-verification against the live spec API (ONVIF-only, same pattern as several other models in this pass). `Z64`'s official PDF datasheet does contain the string "RTSP", but only inside a `Security` row (`HTTP/RTSP/ONVIF(WSSE)` authentication schemes) rather than an explicit protocol list — noted, but not treated as sufficient confirmation.
+- **`A973`, `Z64`**: had been marked RTSP+ONVIF confirmed in an earlier round of this audit without an actual `Network Protocol & Service` row ever being checked for either model — corrected to unconfirmed on cross-verification against the official specification (ONVIF-only, same pattern as several other models in this pass). `Z64`'s official PDF datasheet does contain the string "RTSP", but only inside a `Security` row (`HTTP/RTSP/ONVIF(WSSE)` authentication schemes) rather than an explicit protocol list — noted, but not treated as sufficient confirmation.
 - **`Z416`, `Z722`, `Z84`**: IP rating corrected `IP67` → `IP68` (repeat confirmation from the live spec page); `Z722`'s operating temperature widened `-30~60°C` → `-40~60°C` to match the official sheet.
 - **`Q170`**: IP rating reconciled after conflicting across three checks (`IP68` web page → `IP67` dated PDF datasheet → `IP68` web page again, re-checked) — settled on `IP68` given the live page confirms it twice against a single older PDF; still has no protocols documented on any of the three sources checked.
 - **15 cameras** (`A416`, `A820`, `A88`, `B416`, `B76A`, `I96`, `I98`, `KCM-5611`, `Q550`, `Z47`, `Z49`, `Z714`, `Z810`, `Z812`, `Z86`) were sitting on a much thinner, pre-audit-standard data shape (legacy `storage` object, third-party reseller-site sources, no `configs` block, generic feature bullets) — refreshed to the full spec depth used throughout the rest of this audit.

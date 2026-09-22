@@ -1,0 +1,104 @@
+{
+  "id": "lts-ltcmip9243-sz",
+  "brand": "LTS",
+  "model": "LTCMIP9243-SZ",
+  "aliases": [
+    "LTCMIP9243-SZ"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/2.5\" progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.7-94",
+    "aperture": "F1.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "2.9-58.2",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 150
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3at, Class 4)",
+    "consumption_w": 12,
+    "poe_class": 4
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": false
+  },
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "348.38 x 114.18 x 111.73",
+  "weight_g": 1740,
+  "features": [
+    "20x optical zoom auto-focus varifocal lens (4.7-94mm)",
+    "105dB WDR, 3D DNR, BLC",
+    "IR range up to 150m",
+    "VCA: line crossing, intrusion, region entrance/exit, unattended baggage, object removal detection",
+    "Face detection and people counting",
+    "TVS 4000V lightning/surge protection"
+  ],
+  "sources": [
+    "https://ltsecurityinc.com/default/ltcmip9243-sz-4-mp-24-7-94mm-20x-zoom-auto-focus-vari-focal-lens-long-range-bullet-ip-camera-h-265-h-265-105db-wdr-ip67.html"
+  ],
+  "last_verified": "2026-09-20",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "LTS Platinum/LX line = Hikvision-OEM. The Hikvision /Streaming/Channels/101 (main) & 102 (sub) RTSP convention typically applies; ONVIF must be manually enabled (off by default on Hikvision firmware v5.5.0+). Not independently confirmed for this exact model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local",
+      "notes": "Hikvision-OEM; enable ONVIF first, then add via the ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Hikvision (generic)",
+      "notes": "Hikvision-OEM RTSP/ONVIF; not independently confirmed for this specific model."
+    }
+  }
+}

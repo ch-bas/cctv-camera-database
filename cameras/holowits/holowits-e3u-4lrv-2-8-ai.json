@@ -1,0 +1,92 @@
+{
+  "id": "holowits-e3u-4lrv-2-8-ai",
+  "brand": "HOLOWITS",
+  "model": "E3U-4LRV(2.8) AI",
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/3\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "H:100.5, V:55.9, D:116.9",
+  "night_vision": {
+    "type": "hybrid",
+    "min_lux": 0.01
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "H.265",
+      "H.265+"
+    ]
+  },
+  "power": {
+    "method": "DC12V 2A & PoE 48V, 0.2A (IEEE 802.3af)"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http",
+    "p2p"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false
+  },
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "features": [
+    "1T (1 TOPS) AI computing power for human and vehicle detection",
+    "Smart dual light (white light & IR) day/night switching",
+    "DWDR, 3D noise reduction, backlight compensation, automatic white balance",
+    "Defog support",
+    "SNR >45dB",
+    "Intrusion detection, tripwire detection, off-duty detection, passenger flow statistics",
+    "Privacy mask, OSD, mirror image",
+    "Metal housing",
+    "Remote monitoring via mobile app",
+    "Available as E3U-4LRV(2.8) AI-P (PoE only) or AI-PD (PoE & DC) variants"
+  ],
+  "sources": [
+    "https://resources.holowits.com/material/%5BDatasheet%5D%20E3U-4LRV%282.8%29%20AI.pdf"
+  ],
+  "last_verified": "2026-09-19",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "release_notes": "The datasheet's Dimension diagram (page 4) depicts a bullet-camera housing with a sunshade and separate mounting arm (179mm length, 67.2mm width), which is inconsistent with the turret/eyeball form factor shown in the product photo and named in the title ('4MP Dual Light Turret Camera'). This appears to be a copy-paste error from a different product's datasheet, so dimensions_mm and weight_g were omitted rather than guessed.",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/LiveMedia/ch1/Media1",
+      "onvif_port": 80,
+      "verified": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "ONVIF Profile S supported."
+    }
+  }
+}

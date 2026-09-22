@@ -1,0 +1,97 @@
+{
+  "id": "holowits-p5-4rv-4x-a",
+  "brand": "HOLOWITS",
+  "model": "P5-4RV(4x)A",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12",
+    "aperture": "F1.6 (W) to F3.0 (T)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "W: 99.1 horizontal x 53.4 vertical; T: 31.9 horizontal x 18.0 vertical",
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.005
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V",
+    "consumption_w": 18,
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "storage": {
+    "onboard": true
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "ip_rating": "IP54",
+  "ik_rating": "IK08",
+  "environment": [
+    "indoor"
+  ],
+  "operating_temp_c": "-10 to 50",
+  "dimensions_mm": "Ø122 x 89 (dia x H)",
+  "weight_g": 500,
+  "features": [
+    "mini PTZ dome, 4x optical zoom (2.8-12mm)",
+    "pan 0-355, tilt 0-90 (no blind zone), 300 presets, 8 tour paths",
+    "automatic tracking (5 paths), scheduled/idle actions (preset/patrol/cruise)",
+    "SMD3.0, Smart H.265 / Smart H.264 ultra-low bit-rate encoding",
+    "electronic anti-jitter, electronic defogging",
+    "IK08 vandal-resistant",
+    "real-time snapshot + quality-priority snapshot policies",
+    "no optical supplement light (no IR/white-light illuminator)"
+  ],
+  "release_notes": "Datasheet is internally inconsistent: product brief and 'Maximum Resolution' state 2MP/1920x1080 while sensor pixel count reads 4,000,000 and the bit-rate table lists a 4M (2560x1440) option; recorded the explicitly-stated 1080p output max. No optical supplement (no IR).",
+  "sources": [
+    "https://resources.holowits.com.sg/material/%5BDatasheet%5D%20HOLOWITS%20P5-4RV(4x)A%20Datasheet%20v2.0.pdf"
+  ],
+  "last_verified": "2026-09-19",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/LiveMedia/ch1/Media1",
+      "onvif_port": 80,
+      "verified": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "ONVIF Profile S supported."
+    }
+  }
+}
