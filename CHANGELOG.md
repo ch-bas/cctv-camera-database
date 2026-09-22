@@ -6,7 +6,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
-## [2.22.0] — 2026-09-19
+## [2.22.0] — 2026-09-22
 
 Dataset reaches **15,821 cameras / 185 brands** (+3,416). A large multi-brand ingestion from **official sources only**:
 
