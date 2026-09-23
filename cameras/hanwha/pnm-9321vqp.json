@@ -1,0 +1,96 @@
+{
+  "id": "hanwha-pnm-9321vqp",
+  "brand": "Hanwha",
+  "model": "PNM-9321VQP",
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "8MP-20MP modular (4-channel multi-directional, per-channel 1080p)"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" 2MP CMOS (per channel; 5MP 1/1.8\" lens modules optional)",
+  "power": {
+    "method": "HPoE (IEEE802.3bt Type 4, injector included)",
+    "consumption_w": 65,
+    "poe_class": 8
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "4-channel multi-directional camera with interchangeable SLA lens modules",
+    "8MP-20MP total (2MP 60fps or 5MP 30fps per channel)",
+    "WDR 150dB (2MP modules) / 120dB (5MP), Day & Night (ICR)",
+    "bi-directional audio, WiseStream"
+  ],
+  "operating_temp_c": "-35 to +55",
+  "dimensions_mm": "367.8 x 381.5 (dia. x H)",
+  "weight_g": 7050,
+  "environment": [
+    "outdoor"
+  ],
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true
+  },
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "generation": "Wisenet P",
+  "sources": [
+    "https://www.hanwhavision.com/us/products/product-details/PNM-9321VQP",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/PNM-9321VQP/Specifications_PNM-9321VQP_260101_EN.pdf"
+  ],
+  "last_verified": "2026-09-23",
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hanwha Wisenet camera — ONVIF Profile S + /profile<n>/media.smp RTSP path; create a dedicated ONVIF user."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (Hanwha Wisenet)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF/Hanwha",
+      "notes": "Hanwha Wisenet RTSP/ONVIF."
+    }
+  }
+}
