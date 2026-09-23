@@ -1,0 +1,108 @@
+{
+  "id": "cisco-meraki-mv72x",
+  "brand": "Cisco Meraki",
+  "model": "MV72X",
+  "aliases": [
+    "MV72X",
+    "MV72X-HW"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet",
+    "wifi"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 4.0,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/3\" 4MP progressive CMOS",
+  "lens": {
+    "focal_length_mm": "3-9",
+    "aperture": "f/1.2-2.3",
+    "varifocal": true
+  },
+  "field_of_view_deg": "36-102",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 15,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE+ (802.3at)",
+    "consumption_w": 23.4
+  },
+  "storage": {
+    "onboard": true,
+    "cloud": true,
+    "notes": "512GB high-endurance solid-state storage; optional MV Cloud Archive"
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "dimensions_mm": "165 x 103 mm",
+  "weight_g": 1350,
+  "operating_temp_c": "-40°C to 50°C",
+  "environment": [
+    "outdoor"
+  ],
+  "audio": {
+    "microphone": true
+  },
+  "features": [
+    "object detection (people and vehicles)",
+    "person detection",
+    "motion search",
+    "onboard machine-learning analytics",
+    "cloud management via Meraki dashboard",
+    "wireless deployment",
+    "3x optical zoom",
+    "varifocal lens",
+    "weatherproof",
+    "internal heater"
+  ],
+  "ndaa_compliant": true,
+  "cloud_dependency": "cloud-optional",
+  "markets": [
+    "global"
+  ],
+  "protocols": [
+    "rtsp"
+  ],
+  "sources": [
+    "https://documentation.meraki.com/IoT/MV_-_Smart_Cameras/Product_Information/MV_Overviews_and_Datasheets/Second_Generation_MV_Cameras%3A_Datasheet",
+    "https://www.cisco.com/c/en/us/products/collateral/security/physical-security/meraki-cameras/mv-cloud-managed-smart-cameras-ds.pdf"
+  ],
+  "last_verified": "2026-09-22",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{ip}:9000/live",
+      "verified": false,
+      "notes": "Meraki local/external RTSP (enable per-camera in the Meraki Dashboard). No ONVIF."
+    },
+    "home_assistant": {
+      "integration": "generic",
+      "notes": "Add via Generic Camera with the Dashboard-provided RTSP URL (rtsp://{ip}:9000/live)."
+    },
+    "blue_iris": {
+      "profile": "Generic",
+      "notes": "Generic/RTSP: rtsp://{ip}:9000/live (enable external RTSP in Dashboard)."
+    }
+  }
+}
