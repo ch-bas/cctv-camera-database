@@ -1,0 +1,124 @@
+{
+  "id": "annke-c500p-i51fv",
+  "brand": "Annke",
+  "model": "C500P I51FV",
+  "aliases": [
+    "C500P",
+    "I51FV",
+    "AN-I51FV0102",
+    "3K Dual-Light PoE Active Deterrence"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 3072,
+    "max_height": 1728,
+    "label": "3K (3072x1728)"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3072x1728",
+        "fps": 20,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8"
+  },
+  "field_of_view_deg": "104 H / 57 V / 123 D",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "DC 12V / PoE (802.3af)",
+    "consumption_w": 9
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "3K outdoor PoE turret with active deterrence",
+    "Smart dual-light (IR + white) to 30 m",
+    "White light flashing + audio alarm",
+    "Motion Detection 2.0 (human & vehicle)",
+    "Also sold in bullet form factor"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "110 (dia) x 89.2",
+  "weight_g": 350,
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 3072,
+        "height": 1728,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "ANNKE PoE camera (Hikvision-OEM, ISAPI). Enable ONVIF and use a dedicated user; Hikvision /Streaming/Channels RTSP path."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Uses Hikvision protocol. ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile. Most ANNKE PoE cameras use Hikvision protocol."
+    }
+  },
+  "sources": [
+    "https://www.annke.com/products/c500p",
+    "https://cdn.shopify.com/s/files/1/0110/6385/3156/files/c500p2026.pdf"
+  ],
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "cloud-optional",
+  "markets": [
+    "global"
+  ]
+}

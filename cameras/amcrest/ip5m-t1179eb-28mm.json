@@ -1,0 +1,89 @@
+{
+  "id": "amcrest-ip5m-t1179eb-28mm",
+  "brand": "Amcrest",
+  "model": "IP5M-T1179EB-28MM",
+  "type": "turret",
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP"
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "103",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "codec": "H.265"
+      }
+    ]
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP67",
+  "weight_g": 472,
+  "dimensions_mm": "94 x 94 x 81 mm",
+  "ndaa_compliant": false,
+  "features": [
+    "5MP turret PoE camera (black); 2.8 mm fixed lens (F1.6), 103° FOV",
+    "IR night vision up to 98 ft (30 m); up to 120 dB WDR",
+    "H.265/H.264/MJPEG; microSD up to 256 GB",
+    "Metal IP67 weatherproof housing"
+  ],
+  "sources": [
+    "https://amcrest.com/5mp-poe-camera-turret-ip5m-t1179eb-28mm.html"
+  ],
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http",
+    "p2p"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Amcrest (Dahua OEM) IP camera — ONVIF + Dahua /cam/realmonitor RTSP path; enable ONVIF and set a dedicated user."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (Amcrest/Dahua)."
+    },
+    "blue_iris": {
+      "profile": "Amcrest/Dahua",
+      "notes": "Dahua RTSP/ONVIF."
+    }
+  },
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local"
+}

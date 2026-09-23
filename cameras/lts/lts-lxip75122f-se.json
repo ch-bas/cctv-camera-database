@@ -1,0 +1,110 @@
+{
+  "id": "lts-lxip75122f-se",
+  "brand": "LTS",
+  "model": "LXIP75122F-SE",
+  "type": "fisheye",
+  "resolution": {
+    "megapixels": 12,
+    "max_width": 4000,
+    "max_height": 3000
+  },
+  "sensor": "1/1.7” 12Megapixel progressive CMOS",
+  "lens": {
+    "focal_length_mm": "1.85",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "185 H / 180 V",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10,
+    "min_lux_color": 0.01
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4000x3000",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "DC 12V / PoE",
+    "consumption_w": 13.9
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "connectivity": [
+    "ethernet"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "rtmp",
+    "p2p",
+    "http"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-40°C to 60°C",
+  "dimensions_mm": "(mm[inch])",
+  "weight_g": 790,
+  "features": [
+    "Outputs max. 12MP (4000×3000) @25fps, support 8MP (3280×2480) @ 30 fps",
+    "1/1.7” CMOS image sensor",
+    "Min. Illumination 0.01 Lux @ F2.0 (Color, 30 IRE), 0 Lux with IR light on",
+    "Built-in IR LED, Matrix IR LED up to 33ft",
+    "Smart encoding H.265/H.264",
+    "MD 2.0: VCA, people counting and heat map",
+    "Built-in dual MICs and speaker, support two-way talk",
+    "Support Alarm and Audio interface",
+    "Built-in Micro SD card slot, up to 256 GB",
+    "12V DC/PoE+ power supply",
+    "IP67 and IK10 protection"
+  ],
+  "cloud_dependency": "local",
+  "sources": [
+    "https://www.ltsmall.com/ipc-others/3164.html",
+    "https://pic.ltsmall.com/software/6d8bf75c028060e5721cee59ba2c9510/LXIP75122F-SE.pdf"
+  ],
+  "last_verified": "2026-09-22",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "LTS IP camera (Uniview-OEM firmware) — enable ONVIF/RTSP and set a dedicated user."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (LTS)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF/RTSP",
+      "notes": "LTS RTSP/ONVIF."
+    }
+  }
+}

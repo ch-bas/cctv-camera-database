@@ -1,0 +1,103 @@
+{
+  "id": "uniview-ipc6624sr-x33-vd2",
+  "brand": "Uniview",
+  "model": "IPC6624SR-X33-VD2",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "max_width": 2688,
+    "max_height": 1520,
+    "megapixels": 4,
+    "label": "4MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.5 to 148.5",
+    "varifocal": true,
+    "aperture": "F1.5"
+  },
+  "field_of_view_deg": "53.61 to 2.68 horizontal, 31.73 to 1.50 vertical, 63.26 to 3.30 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 200,
+    "min_lux_color": 0.003
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "consumption_w": 20.9
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "two_way": true
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "Ø227 mm × 390 mm",
+  "weight_g": 5210,
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "Wise-ISP image processing engine, intelligent noise reduction, stunning visual effects in low-light conditions",
+    "People counting: supports people flow counting and crowd density monitoring, applicable to various scenarios",
+    "automatic selection of best snapshots, supports face detection masked area",
+    "120 dB true WDR meets the image requirements in high-contrast scene",
+    "Heatwave reduction effectively mitigates heatwave effect in high-temperature outdoor environment and ensures clear images",
+    "Adaptive defog automatically adjusts the defog level according to fog and haze intensity"
+  ],
+  "sources": [
+    "https://www.uniview.com/Products/PTZ_Cameras/Prime_Series/Prime_Series/IPC6624SR-X33-VD2/"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-09-22",
+  "ndaa_compliant": true,
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Uniview IPC — ONVIF + Uniview /unicast RTSP path. Use the sub stream (s1) for Frigate detection."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  }
+}

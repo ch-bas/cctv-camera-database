@@ -1,0 +1,118 @@
+{
+  "id": "bosch-ndp-7604-z12l",
+  "brand": "Bosch",
+  "model": "NDP-7604-Z12L",
+  "aliases": [
+    "AUTODOME 7100i 8MP",
+    "AUTODOME 7100i IR"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1 inch Exmor R CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "9.3-111.6",
+    "aperture": "F2.8-4.5",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 200
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "PoE IEEE 802.3bt Type 4 (90 W midspan) / 24 VAC / 36 VDC",
+    "poe_class": 8,
+    "voltage": "24 VAC / 36 VDC"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "microSD slot present; Bosch does not recommend microSD for this camera."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "features": [
+    "AUTODOME 7100i moving camera platform",
+    "8MP 4K UHD, 1-inch Exmor R sensor",
+    "12x optical zoom",
+    "Integrated IR illuminator, 200 m detection distance",
+    "IVA Pro deep-learning detection and tracking",
+    "High Dynamic Range",
+    "360° continuous pan",
+    "Camera Trainer",
+    "IP66, IK10"
+  ],
+  "operating_temp_c": "-40 to 50",
+  "dimensions_mm": "210.65 (dia) x 324 (H)",
+  "weight_g": 5790,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.iqsight.com/en/products/cameras/moving-cameras/autodome-7100i/ndp-7604-z12l",
+    "https://resources.keenfinity.tech/public/documents/NDP_7604_Z12L_Data_sheet_enUS_103590854411.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (set a password on first login). ONVIF Profile S/G/M. Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G/M compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local"
+}

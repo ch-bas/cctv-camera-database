@@ -1,0 +1,80 @@
+{
+  "id": "eufy-eufycam-c37",
+  "brand": "Eufy",
+  "model": "eufyCam C37",
+  "aliases": [
+    "E814X121"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "power_source": [
+    "battery",
+    "solar"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "2K"
+  },
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "field_of_view_deg": "127",
+  "ptz": {
+    "autotracking": true
+  },
+  "night_vision": {
+    "type": "hybrid"
+  },
+  "storage": {
+    "onboard": false,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "notes": "No built-in storage. Records to microSD (up to 256GB, not included) or to HomeBase 3 / HomeBase Mini. Not compatible with HomeBase 2 or HomeKit."
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IP65",
+  "features": [
+    "360 AI tracking with pan and tilt",
+    "2K color night vision with spotlight, plus infrared mode",
+    "AI person, vehicle and pet detection",
+    "detachable 3W solar panels",
+    "up to 45 days battery per charge (75 motion events/day)",
+    "no monthly fees, local storage",
+    "Alexa, Google Assistant"
+  ],
+  "power": {
+    "method": "6,700mAh rechargeable battery + 3W detachable solar panel"
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "sources": [
+    "https://us.eufy.com/products/e814x121"
+  ],
+  "last_verified": "2026-09-22",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{homebase_ip}:554/live0",
+      "best_substream": "rtsp://{user}:{pass}@{homebase_ip}:554/live1",
+      "notes": "RTSP served via HomeBase 3, not the camera. Enable in eufy Security app.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "eufy_security",
+      "notes": "No native ONVIF; use the HomeBase RTSP stream as a Generic Camera, or the eufy-security HACS integration (P2P)."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use the HomeBase RTSP URL as a Generic/RTSP source (no ONVIF)."
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "id": "uniview-ipc3535lb-adzk-h",
+  "brand": "Uniview",
+  "model": "IPC3535LB-ADZK-H",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "max_width": 2880,
+    "max_height": 1620,
+    "megapixels": 5,
+    "label": "5MP"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 to 12",
+    "varifocal": true
+  },
+  "field_of_view_deg": "96.4 to 32.7 horizontal, 51.3 to 18.6 vertical, 101.2 to 37.2 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40,
+    "min_lux_color": 0.001
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2880x1620",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "consumption_w": 8
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Ø128 mm × 100 mm",
+  "weight_g": 660,
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "High quality image with 5 MP, 1/2.7\" CMOS sensor",
+    "5 MP (2880 × 1620)@25/20 fps; 4 MP (2560 × 1440)@25/20 fps; 3 MP (2304 × 1296)@30/25 fps; 1080P (1920 × 1080)@30/25 fps",
+    "Ultra 265, H.265, H.264, MJPEG",
+    "120 dB true WDR technology enables clear image in strong light scene",
+    "Supports 9:16 corridor mode",
+    "Smart IR, up to 40 m (131.2 ft) IR distance"
+  ],
+  "sources": [
+    "https://www.uniview.com/Products/Network_Cameras/Easy_Series/EasyBasic_Series/IPC3535LB-ADZK-H/"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-09-22",
+  "ndaa_compliant": true,
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Uniview IPC — ONVIF + Uniview /unicast RTSP path. Use the sub stream (s1) for Frigate detection."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  }
+}

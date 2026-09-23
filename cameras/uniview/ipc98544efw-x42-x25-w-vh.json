@@ -1,0 +1,100 @@
+{
+  "id": "uniview-ipc98544efw-x42-x25-w-vh",
+  "brand": "Uniview",
+  "model": "IPC98544EFW-X42-X25-W-VH",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "max_width": 2688,
+    "max_height": 1520,
+    "megapixels": 4,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6 to 150",
+    "varifocal": true,
+    "aperture": "F1.5"
+  },
+  "field_of_view_deg": "60.62-3.29 horizontal, 36.4-1.85 vertical (6-150 mm); 59.47-2.2 horizontal, 35.62-1.23 vertical (6-252 mm)",
+  "night_vision": {
+    "type": "ir",
+    "min_lux_color": 0.0005,
+    "min_lux": 0.0001
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "consumption_w": 88
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ptz": {
+    "autotracking": true
+  },
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "523 mm × 270 mm × 630 mm",
+  "weight_g": 14410,
+  "features": [
+    "Supports triple-channel wiper, ensuring image clarity at all times",
+    "Supports gyroscope optical image stabilization, effectively reduces screen shake, ensuring stable and clear images",
+    "Optical fog penetration, the camera can automatically adjust fog penetration levels based on the severity of fog or haze",
+    "The device supports GPS, enabling automatic collection of longitude and latitude information and eliminating the need for manual camera position calibration"
+  ],
+  "sources": [
+    "https://www.uniview.com/Products/PTZ_Cameras/Pro_Series/Pro_Series/IPC98544EFW-X42-X25-W-VH/"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-09-22",
+  "ndaa_compliant": true,
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Uniview IPC — ONVIF + Uniview /unicast RTSP path. Use the sub stream (s1) for Frigate detection."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  }
+}

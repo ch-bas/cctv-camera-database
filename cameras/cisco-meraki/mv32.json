@@ -1,0 +1,103 @@
+{
+  "id": "cisco-meraki-mv32",
+  "brand": "Cisco Meraki",
+  "model": "MV32",
+  "aliases": [
+    "MV32",
+    "MV32-HW"
+  ],
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet",
+    "wifi"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 4.2,
+    "max_width": 2058,
+    "max_height": 2058,
+    "label": "4.2MP"
+  },
+  "sensor": "1/2.5\" 8.4MP progressive CMOS",
+  "lens": {
+    "focal_length_mm": "1.19",
+    "aperture": "f/2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180",
+  "night_vision": {
+    "type": "none"
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2058x2058",
+        "fps": 15,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3af)",
+    "consumption_w": 12.95
+  },
+  "storage": {
+    "onboard": true,
+    "cloud": true,
+    "notes": "256GB high-endurance solid-state storage; optional MV Cloud Archive"
+  },
+  "dimensions_mm": "106 x 45.86 mm (diameter x height)",
+  "weight_g": 215,
+  "operating_temp_c": "0°C to 40°C",
+  "environment": [
+    "indoor"
+  ],
+  "audio": {
+    "microphone": true
+  },
+  "features": [
+    "object detection (people and vehicles)",
+    "person detection",
+    "motion search",
+    "onboard machine-learning analytics",
+    "cloud management via Meraki dashboard",
+    "wireless deployment",
+    "360° panoramic view",
+    "dewarping"
+  ],
+  "ndaa_compliant": true,
+  "cloud_dependency": "cloud-optional",
+  "markets": [
+    "global"
+  ],
+  "protocols": [
+    "rtsp"
+  ],
+  "sources": [
+    "https://documentation.meraki.com/IoT/MV_-_Smart_Cameras/Product_Information/MV_Overviews_and_Datasheets/Second_Generation_MV_Cameras%3A_Datasheet",
+    "https://www.cisco.com/c/en/us/products/collateral/security/physical-security/meraki-cameras/mv-cloud-managed-smart-cameras-ds.pdf"
+  ],
+  "last_verified": "2026-09-22",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{ip}:9000/live",
+      "verified": false,
+      "notes": "Meraki local/external RTSP (enable per-camera in the Meraki Dashboard). No ONVIF."
+    },
+    "home_assistant": {
+      "integration": "generic",
+      "notes": "Add via Generic Camera with the Dashboard-provided RTSP URL (rtsp://{ip}:9000/live)."
+    },
+    "blue_iris": {
+      "profile": "Generic",
+      "notes": "Generic/RTSP: rtsp://{ip}:9000/live (enable external RTSP in Dashboard)."
+    }
+  }
+}

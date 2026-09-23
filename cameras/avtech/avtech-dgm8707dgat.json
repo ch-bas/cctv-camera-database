@@ -1,0 +1,106 @@
+{
+  "id": "avtech-dgm8707dgat",
+  "brand": "AVTech",
+  "model": "DGM8707DGAT",
+  "type": "dual-lens",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 4096,
+    "max_height": 1944,
+    "label": "8MP (4096x1944)"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4096x1944",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1024x480"
+      }
+    ]
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux": 0.001
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true
+  },
+  "power": {
+    "method": "PoE (802.3af)",
+    "consumption_w": 8
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-30 ~ 60",
+  "weight_g": 708,
+  "features": [
+    "Dual 1/2.7\" sensors for 180-degree panoramic ultra-wide coverage",
+    "AI-based human / vehicle detection to reduce false alarms",
+    "Dual lights (3 IR + 2 warm LED) auto-switching B/W to full color on motion",
+    "Siren and warm lights triggered on intruder detection for active deterrence",
+    "Built-in microphone and speaker for audio transmission (G.711)",
+    "DWDR for backlit/overexposed scenes, IR/warm effective range up to 30 meters",
+    "PoE (IEEE 802.3af) powered, ONVIF 17.06 compatible"
+  ],
+  "status": "available",
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local",
+  "sources": [
+    "http://www.surveillance-download.com/user/datasheets/IPCAM/DGM/DGM8707DGAT_Spec.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live/ch01_0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/live/ch01_1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "AVTech IP camera — ONVIF Profile S. If the RTSP path differs, use go2rtc ONVIF autodiscovery (onvif://{user}:{pass}@{ip})."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (AVTech)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "AVTech ONVIF/RTSP."
+    }
+  }
+}

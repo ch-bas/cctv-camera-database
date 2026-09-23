@@ -1,0 +1,113 @@
+{
+  "id": "tapo-tc34",
+  "brand": "Tapo",
+  "model": "TC34",
+  "type": "dual-lens",
+  "connectivity": [
+    "wifi"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "label": "2K 3MP",
+    "max_width": 2304,
+    "max_height": 1296
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS (Starlight)",
+  "lens": {
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "count": 1,
+    "varifocal": false
+  },
+  "field_of_view_deg": "125.5 (Diagonal), 107.8 (Horizontal), 57.8 (Vertical)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 12
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 15,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "storage": {
+    "max_microsd_gb": 512,
+    "cloud": true,
+    "onboard": true,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "rtsp",
+    "onvif",
+    "p2p"
+  ],
+  "ip_rating": "IP65",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "5V DC Power Adapter"
+  },
+  "features": [
+    "2K 3MP indoor/outdoor dual-lens pan/tilt Wi-Fi camera",
+    "fixed wide lens + pan/tilt 6 mm telephoto lens",
+    "360 pan with motion tracking, 10.8x digital zoom",
+    "starlight color night vision + IR to 12 m",
+    "person / vehicle / pet / line-crossing / baby-cry / glass-break / bark / meow detection",
+    "two-way audio, 99 dB siren",
+    "RTSP/ONVIF, SmartThings, microSD up to 512 GB"
+  ],
+  "weight_g": 277,
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/stream1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/stream2",
+      "notes": "go2rtc alternative: TP-Link's proprietary protocol via go2rtc (tapo://<tapo-account-password>@{ip}) is often more stable than RTSP (fewer timeouts / non-monotonic-timestamp errors). The password form is firmware-dependent: either your Tapo app/cloud account password, or user `admin` + the UPPERCASE SHA-256 of the camera password (`tapo://admin:<UPPERCASE-SHA256>@{ip}`) — see go2rtc's Tapo docs. It is not the camera's plain RTSP/Device password. If non-monotonic-timestamp errors persist, disable audio for that camera in Frigate. Chrome may render the go2rtc live view with a squashed aspect ratio (a browser live-view quirk, not the stream); Firefox is correct. The go2rtc tapo:// source also carries a two-way-audio backchannel, so Frigate's live view gets a talk button (mic+speaker). Pan/tilt: Tapo exposes ONVIF PTZ on port 2020 (not 80) — point Frigate's onvif block at host:<ip> port:2020 with the camera Account credentials for manual pan/tilt. (Frigate autotracking stays off: Tapo only does continuous-move ONVIF, no reliable absolute/FOV positioning.)",
+      "onvif_port": 2020,
+      "two_way_audio": true,
+      "autotracking": false
+    },
+    "home_assistant": {
+      "integration": "tapo",
+      "notes": "Native TP-Link Tapo integration. Requires Tapo cloud account credentials."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP streams: /stream1 (main), /stream2 (sub). Must enable ONVIF in Tapo app."
+    }
+  },
+  "sources": [
+    "https://www.tapo.com/en/product/smart-camera/tc34/"
+  ],
+  "last_verified": "2026-09-22"
+}

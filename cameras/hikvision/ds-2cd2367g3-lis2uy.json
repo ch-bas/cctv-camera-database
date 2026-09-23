@@ -1,0 +1,115 @@
+{
+  "id": "hikvision-ds-2cd2367g3-lis2uy",
+  "brand": "Hikvision",
+  "model": "DS-2CD2367G3-LIS2UY",
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 3200,
+    "max_height": 1800,
+    "label": "6 MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "aperture": "F1.0",
+    "count": 1,
+    "varifocal": false
+  },
+  "field_of_view_deg": "108.8 H / 56.4 V / 134.3 D",
+  "night_vision": {
+    "type": "hybrid",
+    "min_lux_color": 0.0005
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3200x1800",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "codec": "H.265+"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3at) / DC 12V",
+    "consumption_w": 17
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true
+  },
+  "operating_temp_c": "-30°C to 60°C",
+  "dimensions_mm": "170 mm × 170 mm × 160 mm",
+  "weight_g": 820,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "features": [
+    "6 MP turret network camera",
+    "Smart Hybrid Light (IR + white light)",
+    "Codecs: H.265+, H.265, H.264+, H.264, MJPEG",
+    "IP67 rated",
+    "Built-in two-way audio",
+    "Power: PoE (802.3at) / DC 12V"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hikvision IP camera — ONVIF + Streaming/Channels RTSP path; enable ONVIF and create a dedicated user."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile; main stream for recording, sub stream for live view."
+    }
+  },
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000077869/fr-fr/DS-2CD2367G3-LIS2UY_SLRB_Datasheet_20250414.pdf"
+  ],
+  "last_verified": "2026-09-22",
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "cloud_dependency": "local"
+}

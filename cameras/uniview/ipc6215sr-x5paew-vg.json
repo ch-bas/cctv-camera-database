@@ -1,0 +1,103 @@
+{
+  "id": "uniview-ipc6215sr-x5paew-vg",
+  "brand": "Uniview",
+  "model": "IPC6215SR-X5PAEW-VG",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet",
+    "wifi"
+  ],
+  "resolution": {
+    "max_width": 2880,
+    "max_height": 1620,
+    "megapixels": 5,
+    "label": "5MP"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7 to 13.5",
+    "varifocal": true,
+    "aperture": "F1.2"
+  },
+  "field_of_view_deg": "104.9 to 30.6 horizontal, 55.4 to 17.7 vertical, 129.0 to 39.8 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.003
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2880x1620",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "consumption_w": 18
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "operating_temp_c": "-10 to 50",
+  "dimensions_mm": "Ø129 mm × 143.6 mm",
+  "weight_g": 780,
+  "features": [
+    "High quality image with 5 MP, 1/2.7\" CMOS sensor",
+    "2880 × 1620@30 fps in the main stream, 16:9 aspect ratio",
+    "Ultra 265, H.265, H.264, MJPEG",
+    "5X optical zoom allows for closer viewing of subjects",
+    "Smart intrusion prevention, supports false alarm filtering, including cross line, intrusion, enter area, leave area detection",
+    "automatic selection of best snapshots"
+  ],
+  "sources": [
+    "https://www.uniview.com/Products/PTZ_Cameras/Easy_Series/Easy_Series/IPC6215SR-X5PAEW-VG/"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-09-22",
+  "ndaa_compliant": true,
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Uniview IPC — ONVIF + Uniview /unicast RTSP path. Use the sub stream (s1) for Frigate detection."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  }
+}

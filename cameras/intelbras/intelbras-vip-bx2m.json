@@ -1,0 +1,93 @@
+{
+  "id": "intelbras-vip-bx2m",
+  "brand": "Intelbras",
+  "model": "VIP BX2M",
+  "type": "box",
+  "markets": [
+    "BR",
+    "LATAM"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "CMOS",
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "two_way": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "power": {
+    "method": "PoE (802.3af) / 12 Vdc",
+    "consumption_w": 4
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 16
+  },
+  "environment": [
+    "indoor"
+  ],
+  "operating_temp_c": "-10 to 40",
+  "dimensions_mm": "143.9 x 71 x 65",
+  "cloud_dependency": "cloud-optional",
+  "features": [
+    "C/CS mount (lens sold separately)",
+    "two-way audio",
+    "built-in microphone",
+    "motion detection (3 regions)",
+    "alarm input/output",
+    "analog BNC video output",
+    "microSD recording"
+  ],
+  "sources": [
+    "https://backend.intelbras.com/sites/default/files/integration/manual_-_vip_bx2m.pdf"
+  ],
+  "last_verified": "2026-09-22",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif"
+    },
+    "blue_iris": {
+      "profile": "ONVIF/Dahua"
+    }
+  }
+}

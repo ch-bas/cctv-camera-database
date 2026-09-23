@@ -1,0 +1,94 @@
+{
+  "id": "intelbras-vip-7325-lpr",
+  "brand": "Intelbras",
+  "model": "VIP 7325 LPR",
+  "type": "bullet",
+  "sensor": "1/1.8\" 3MP Global Shutter CMOS",
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2048,
+    "max_height": 1536,
+    "label": "3MP"
+  },
+  "lens": {
+    "varifocal": true,
+    "count": 1
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2048x1536",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "network": {
+    "ethernet_speed_mbps": 1000
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "connectivity": [
+    "ethernet"
+  ],
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "195.5 x 171.5 x 544",
+  "weight_g": 6500,
+  "operating_temp_c": "-40 to 80",
+  "power": {
+    "method": "100-240 Vac",
+    "consumption_w": 30
+  },
+  "power_source": [
+    "ac-mains"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128
+  },
+  "cloud_dependency": "cloud-optional",
+  "features": [
+    "Automatic license plate recognition (up to 2 lanes)",
+    "Reads plates up to 200 km/h",
+    "Global shutter sensor",
+    "Mercosur plate standard support",
+    "Vehicle color, brand and model recognition",
+    "Motorcycle plate capture",
+    "Plate allow/deny list (10,000 plates)"
+  ],
+  "markets": [
+    "BR",
+    "LATAM"
+  ],
+  "last_verified": "2026-09-22",
+  "sources": [
+    "https://backend.intelbras.com/sites/default/files/2019-09/Datasheet_VIP%207325_LPR_01-19.PDF"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif"
+    },
+    "blue_iris": {
+      "profile": "ONVIF/Dahua"
+    }
+  }
+}

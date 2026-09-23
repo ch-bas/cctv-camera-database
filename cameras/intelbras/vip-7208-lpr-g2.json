@@ -1,0 +1,108 @@
+{
+  "id": "intelbras-vip-7208-lpr-g2",
+  "model": "VIP 7208 LPR G2",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "Full HD 1080p"
+  },
+  "sensor": "1/2.8\" 2MP CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5",
+    "varifocal": true
+  },
+  "field_of_view_deg": "119 to 32 H",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 8
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "12 Vdc / PoE+ 802.3at",
+    "consumption_w": 13
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 64,
+    "nvr_compatible": true
+  },
+  "audio": {
+    "microphone": false
+  },
+  "ip_rating": "IP67",
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "dimensions_mm": "124.4 x 195.7 x 481.8",
+  "weight_g": 3300,
+  "operating_temp_c": "-30 to 65",
+  "features": [
+    "2MP LPR/ALPR IP bullet, on-board plate recognition",
+    "2.7-13.5 mm motorized lens, 5x optical zoom",
+    "active IR 3-8 m",
+    "90% plate capture (Mercosul 70%)",
+    "10,000 plate allow/deny list on camera",
+    "1 audio in / 1 out",
+    "ONVIF S/T, CGI",
+    "PoE+ (802.3at), IP67"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Intelbras IP camera (Dahua OEM protocol); ONVIF + Dahua /cam/realmonitor RTSP path."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Intelbras uses Dahua protocol; ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile (Intelbras = Dahua OEM)."
+    }
+  },
+  "sources": [
+    "https://www.intelbras.com/pt-br/camera-ip-vip-7208-lpr-g2"
+  ],
+  "brand": "Intelbras",
+  "markets": [
+    "BR",
+    "LATAM"
+  ],
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local",
+  "status": "available"
+}

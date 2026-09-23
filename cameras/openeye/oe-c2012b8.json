@@ -1,0 +1,114 @@
+{
+  "id": "openeye-oe-c2012b8",
+  "brand": "OpenEye",
+  "model": "OE-C2012B8",
+  "type": "bullet",
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP"
+  },
+  "ndaa_compliant": true,
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12",
+    "varifocal": true
+  },
+  "field_of_view_deg": "105-31",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "two_way": true
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "power": {
+    "method": "PoE (802.3af) / 12VDC",
+    "consumption_w": 9.5
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "connectivity": [
+    "ethernet"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "dimensions_mm": "240 x 86 x 76",
+  "weight_g": 1000,
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512
+  },
+  "features": [
+    "True WDR",
+    "Adaptive IR",
+    "motorized varifocal (4x optical zoom)",
+    "autofocus",
+    "two-way audio",
+    "alarm I/O",
+    "edge storage",
+    "NDAA compliant",
+    "manufactured in China"
+  ],
+  "status": "available",
+  "markets": [
+    "US"
+  ],
+  "cloud_dependency": "local",
+  "sources": [
+    "https://www.openeye.net/products/camera/oe-c2012b8/",
+    "https://portal.openeye.net/assets/documents/oe-c2012b8-spec-sheet",
+    "https://answers.openeye.net/Troubleshooting/Frequently_Asked_Questions/Cameras/List_of_RTSP_URLs"
+  ],
+  "last_verified": "2026-09-22",
+  "configs": {
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S/T). Set the camera's ONVIF port and credentials."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a Generic/ONVIF camera; Blue Iris auto-discovers the RTSP stream via ONVIF."
+    },
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/media/video1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/media/video2",
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      }
+    }
+  }
+}

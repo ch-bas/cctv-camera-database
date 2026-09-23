@@ -1,0 +1,110 @@
+{
+  "id": "intelbras-vip-7225-ptz",
+  "brand": "Intelbras",
+  "model": "VIP 7225 PTZ",
+  "type": "ptz",
+  "sensor": "1/2.8\" CMOS",
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.8-120",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "62.8 to 2.8 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 150,
+    "min_lux_color": 0.005
+  },
+  "ptz": {
+    "onvif_ptz": "continuous",
+    "autotracking": true
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "rtmp",
+    "http"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "power": {
+    "method": "PoE+ (802.3at) / 12 Vdc",
+    "consumption_w": 23
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256
+  },
+  "dimensions_mm": "Ø291.5 x 161 x 135.4",
+  "weight_g": 3600,
+  "operating_temp_c": "-40 to 70",
+  "features": [
+    "25x optical zoom",
+    "Autotracking",
+    "Face detection",
+    "AI human/vehicle detection",
+    "Virtual line/fence detection",
+    "Abandoned/removed object detection",
+    "Electronic image stabilization",
+    "Defog"
+  ],
+  "markets": [
+    "BR",
+    "LATAM"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "last_verified": "2026-09-22",
+  "sources": [
+    "https://backend.intelbras.com/sites/default/files/2021-03/Datasheet-VIP-7225-PTZ-01.21.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif"
+    },
+    "blue_iris": {
+      "profile": "ONVIF/Dahua"
+    }
+  }
+}

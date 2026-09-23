@@ -1,0 +1,105 @@
+{
+  "id": "uniview-ipc6325lfw-ax5c-vg",
+  "brand": "Uniview",
+  "model": "IPC6325LFW-AX5C-VG",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "max_width": 2880,
+    "max_height": 1620,
+    "megapixels": 5,
+    "label": "5MP"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7 to 13.5",
+    "varifocal": true,
+    "aperture": "F1.2"
+  },
+  "field_of_view_deg": "106.9 to 30.6 horizontal, 56 to 17.7 vertical, 131.5 to 36.1 diagonal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 50,
+    "min_lux_color": 0.005
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2880x1620",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "consumption_w": 19.3
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "dimensions_mm": "185 mm × 133 mm × 286 mm",
+  "weight_g": 1320,
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "High quality image with 5 MP, 1/2.7\" CMOS sensor",
+    "Ultra 265, H.265, H.264, MJPEG",
+    "Smart intrusion prevention, supports false alarm filtering, including cross line, intrusion, enter area, leave area detection",
+    "LightHunter technology ensures ultra-high image quality in low illumination environment",
+    "Up to 120 dB WDR (wide dynamic range)",
+    "Built-in mic and speaker"
+  ],
+  "sources": [
+    "https://www.uniview.com/Products/PTZ_Cameras/Easy_Series/Easy_Series/IPC6325LFW-AX5C-VG/"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-09-22",
+  "ndaa_compliant": true,
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Uniview IPC — ONVIF + Uniview /unicast RTSP path. Use the sub stream (s1) for Frigate detection."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "id": "avtech-dgm5907svsgat",
+  "brand": "AVTech",
+  "model": "DGM5907SVSGAT",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2560,
+    "max_height": 1944,
+    "label": "5MP (2560x1944)"
+  },
+  "sensor": "1/2.8\" SONY CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "117 D",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 50,
+    "min_lux": 0.001
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "720x480"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true
+  },
+  "power": {
+    "method": "PoE+ (802.3at)",
+    "consumption_w": 8
+  },
+  "ptz": {},
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-30°C ~ 60°C",
+  "features": [
+    "5MP 5X optical zoom PTZ camera, f2.7-13.5mm F1.6 lens (Tele 40 to Wide 117 diagonal)",
+    "Starlight visibility for clear color images at night, 1/2.8\" SONY CMOS",
+    "AI-based human / vehicle detection to reduce false alarms",
+    "Dual lights (IR / warm-light LED) auto-switch B/W to color on motion",
+    "Siren auto-triggered on intruder detection for active deterrence",
+    "IR effective range up to 50 meters, WDR 120dB, microphone & speaker built-in",
+    "PoE (IEEE 802.3at), ONVIF 17.06 compatible, MicroSD up to 256GB"
+  ],
+  "status": "available",
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live/ch01_0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/live/ch01_1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "AVTech IP camera — ONVIF Profile S. If the RTSP path differs, use go2rtc ONVIF autodiscovery (onvif://{user}:{pass}@{ip})."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (AVTech)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "AVTech ONVIF/RTSP."
+    }
+  },
+  "sources": [
+    "http://www.surveillance-download.com/user/datasheets/IPCAM/DGM/DGM5907SVSGAT_Spec.pdf"
+  ]
+}

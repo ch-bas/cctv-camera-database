@@ -1,0 +1,110 @@
+{
+  "id": "intelbras-vip-9360-pan-ia",
+  "brand": "Intelbras",
+  "model": "VIP 9360 PAN IA",
+  "type": "panoramic",
+  "markets": [
+    "BR",
+    "LATAM"
+  ],
+  "resolution": {
+    "megapixels": 14.7,
+    "max_width": 8192,
+    "max_height": 1800,
+    "label": "360 panoramic"
+  },
+  "sensor": "8x 1/1.8\" 2MP CMOS (panoramic) + 1/1.8\" 4MP CMOS (PTZ)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "5 (panoramic); 5.6-223 (PTZ)",
+    "aperture": "F2.0 / F1.3",
+    "varifocal": true
+  },
+  "field_of_view_deg": "360 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 400,
+    "min_lux_color": 0.01
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "8192x1800",
+        "fps": 30,
+        "codec": "H.265+"
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "power": {
+    "method": "36 Vdc",
+    "consumption_w": 84.4,
+    "voltage": "36 Vdc"
+  },
+  "power_source": [
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "Φ383 x 389.8",
+  "weight_g": 14700,
+  "cloud_dependency": "cloud-optional",
+  "features": [
+    "360-degree panoramic view (8x 2MP sensors)",
+    "integrated 40x optical zoom PTZ (4MP)",
+    "AI crowd analysis and people analysis",
+    "smart tracking and auto-track after line crossing",
+    "tripwire and virtual fence",
+    "300 presets",
+    "IP66"
+  ],
+  "sources": [
+    "https://backend.intelbras.com/sites/default/files/2023-06/Novo%20Datasheet%20-%20VIP%209360%20PAN%20IA.pdf"
+  ],
+  "last_verified": "2026-09-22",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif"
+    },
+    "blue_iris": {
+      "profile": "ONVIF/Dahua"
+    }
+  }
+}

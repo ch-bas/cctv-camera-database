@@ -1,0 +1,86 @@
+{
+  "id": "uniview-tic2a32sa-f10-4f8ac-i1",
+  "brand": "Uniview",
+  "model": "TIC2A32SA-F10-4F8AC-I1",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "label": "4MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "aperture": "F1.6"
+  },
+  "field_of_view_deg": "37.8 horizontal, 21.8 vertical, 46.5 diagonal (8 mm); 17.5 horizontal, 10.4 vertical, 21.5 diagonal (10 mm)",
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "consumption_w": 12
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "269.1 x 95.7 x 85.4 mm",
+  "weight_g": 950,
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "Thermal & optical dual-spectrum image, dual video with single IP address, adaptable to more various scenes",
+    "1/2.8\" target surface, high sensitivity sensor, satisfies the need of starlight monitoring",
+    "Thermal module supports reliable fire detection and fire shield area",
+    "Thermal module supports temperature detection and cold&hot spot tracking, which highlights abnormal temperatures and links to alarm",
+    "Thermal & optical dual-spectrum smart intrusion prevention can be enabled simultaneously : cross line, enter area, leave area, intrusion",
+    "Optical module supports smog recognition, which can help with fire alarm reconfirmation"
+  ],
+  "sources": [
+    "https://www.uniview.com/Products/Thermal_Cameras/Bullet_Series/Bullet_Series/TIC2A32SA-F10-4F8AC-I1/"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-09-22",
+  "ndaa_compliant": true,
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Uniview IPC — ONVIF + Uniview /unicast RTSP path. Use the sub stream (s1) for Frigate detection."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  }
+}

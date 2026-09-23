@@ -1,0 +1,116 @@
+{
+  "id": "lorex-lnz45p25",
+  "brand": "Lorex",
+  "model": "LNZ45P25",
+  "aliases": [
+    "LNZ45P25",
+    "2K 4MP Wired PTZ"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/2.8\" 4MP CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5-125",
+    "aperture": "F1.6-F3.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "51.9 to 3.0 horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 100
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "PoE+ (802.3at) / 12V DC 3A",
+    "consumption_w": 20,
+    "poe_class": 4
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "weight_g": 3000,
+  "operating_temp_c": "-40 to 70",
+  "features": [
+    "25x optical zoom (5-125mm)",
+    "endless 360 pan, -15 to 90 tilt",
+    "Ultra WDR",
+    "color night vision, 100m IR",
+    "AI person and vehicle detection",
+    "auto scan / auto pan / tour (up to 300 presets)",
+    "privacy masking",
+    "line audio in/out, 2 alarm in / 1 out"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Lorex PoE camera (Dahua-OEM). Enable RTSP/ONVIF in the camera web UI; Dahua /cam/realmonitor path. If it fails, use ONVIF auto-discovery."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (Dahua protocol)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile; enable RTSP/ONVIF first."
+    }
+  },
+  "cloud_dependency": "cloud-optional",
+  "markets": [
+    "US"
+  ],
+  "sources": [
+    "https://www.lorex.com/products/lnz45p25-2k-4mp-wired-ptz-ip-camera"
+  ],
+  "last_verified": "2026-09-22"
+}

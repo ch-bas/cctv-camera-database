@@ -1,0 +1,114 @@
+{
+  "id": "bosch-nde-8504-r",
+  "brand": "Bosch",
+  "model": "NDE-8504-R",
+  "aliases": [
+    "FLEXIDOME IP starlight 8000i 8MP",
+    "FLEXIDOME 8000i 3.9-10mm"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/1.8 inch CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.9-10",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "color",
+    "min_lux": 0.0098
+  },
+  "power": {
+    "method": "PoE IEEE 802.3af / 802.3at Type 1, Class 3; or 24 VAC",
+    "poe_class": 3,
+    "consumption_w": 12.95,
+    "voltage": "24 VAC"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "Dual SD-card slots (mirror / failover redundancy)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "features": [
+    "FLEXIDOME IP starlight 8000i",
+    "4K ultra HD resolution",
+    "High Dynamic Range 120 dB",
+    "Motorized Pan/Tilt/Roll/Zoom (PTRZ) full remote commissioning",
+    "Starlight low-light technology",
+    "IVA Pro Intelligent Video Analytics on the edge",
+    "Camera Trainer",
+    "IK10, IP66"
+  ],
+  "operating_temp_c": "-50 to 60 (up to 74 per NEMA TS)",
+  "dimensions_mm": "175 (dia) x 148 (H)",
+  "weight_g": 2300,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.iqsight.com/en/products/cameras/dome-cameras/flexidome-ip-starlight-8000i-8mp/nde-8504-r",
+    "https://resources.keenfinity.tech/public/documents/NDE_8504_R_Fixed_dom_Data_sheet_enUS_94290269195.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (set a password on first login). ONVIF Profile S/G/T/M. Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G/T/M compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local"
+}

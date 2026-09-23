@@ -1,0 +1,103 @@
+{
+  "id": "uniview-ipc7622er-x45-vh1",
+  "brand": "Uniview",
+  "model": "IPC7622ER-X45-VH1",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "max_width": 1920,
+    "max_height": 1080,
+    "megapixels": 2,
+    "label": "2MP"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.7 to 256.5",
+    "varifocal": true,
+    "aperture": "F1.2"
+  },
+  "field_of_view_deg": "59.47 (W) to 2.21 (T) horizontal, 35.62 (W) to 1.21 (T) vertical, 77.3 (W) to 2.6 (T) diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 400,
+    "min_lux_color": 0.0005
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "consumption_w": 103
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "two_way": true
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "dimensions_mm": "366 mm × 283 mm × 509 mm",
+  "weight_g": 14760,
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "1920 × 1080@60 fps in the main stream",
+    "45X optical zoom",
+    "Smart intrusion prevention, supports false alarm filtering: cross line detection, intrusion detection, enter area detection",
+    "Leave area detection",
+    "automatic selection of best snapshots, supports face detection masked area",
+    "People counting, supports people flow counting and crowd density monitoring"
+  ],
+  "sources": [
+    "https://www.uniview.com/Products/PTZ_Cameras/Positioning_System/Positioning_System/IPC7622ER-X45-VH1/"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-09-22",
+  "ndaa_compliant": true,
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Uniview IPC — ONVIF + Uniview /unicast RTSP path. Use the sub stream (s1) for Frigate detection."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  }
+}

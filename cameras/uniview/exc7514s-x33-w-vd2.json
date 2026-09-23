@@ -1,0 +1,101 @@
+{
+  "id": "uniview-exc7514s-x33-w-vd2",
+  "brand": "Uniview",
+  "model": "EXC7514S-X33-W-VD2",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "field_of_view_deg": "56.7~ 2.60 horizontal, 33.8~ 1.46 vertical, 66.9~ 3.20 diagonal",
+  "lens": {
+    "focal_length_mm": "6.5-214.5",
+    "aperture": "F1.5-F5.19",
+    "varifocal": true,
+    "count": 1
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 200
+  },
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ]
+  },
+  "power": {
+    "method": "AC220V(100~240V)",
+    "consumption_w": 84
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP68",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "LightHunter low-light",
+    "WDR 120 dB",
+    "person detection",
+    "vehicle detection",
+    "cross line detection",
+    "intrusion detection",
+    "33X optical zoom",
+    "explosion-proof housing"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "428.6 x 362.8 x 303.11",
+  "weight_g": 23070,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "sources": [
+    "https://www.uniview.com/Products/Explosion_Proof_Cameras/PTZ_Series/PTZ_Series/EXC7514S-X33-W-VD2/",
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/8dc91fce-ba6a-4a04-acc9-09733fe6f599/3755159f-0ce4-41fa-8f60-452dac5bb1c5.pdf"
+  ],
+  "last_verified": "2026-09-22",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Main stream: /unicast/c1/s0/live, sub stream: /unicast/c1/s1/live. ONVIF on port 80.",
+      "two_way_audio": true,
+      "autotracking": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration with default ONVIF port 80. RTSP: rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live"
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  },
+  "ndaa_compliant": true,
+  "cloud_dependency": "local"
+}

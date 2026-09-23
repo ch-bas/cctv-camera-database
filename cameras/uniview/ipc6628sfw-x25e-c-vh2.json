@@ -1,0 +1,103 @@
+{
+  "id": "uniview-ipc6628sfw-x25e-c-vh2",
+  "brand": "Uniview",
+  "model": "IPC6628SFW-X25E-C-VH2",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "max_width": 3840,
+    "max_height": 2160,
+    "megapixels": 8,
+    "label": "8MP"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6 to 150",
+    "varifocal": true,
+    "aperture": "F1.5"
+  },
+  "field_of_view_deg": "56.51 to 2.93 horizontal, 33.64 to 1.65 vertical, 69.50 to 3.45 diagonal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 200,
+    "min_lux_color": 0.003
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "consumption_w": 20.88
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "two_way": true
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "Ø226.7 mm × 390.2 mm",
+  "weight_g": 5480,
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "Wise-ISP image processing engine, intelligent noise reduction, stunning visual effects in low-light conditions",
+    "People counting: supports people flow counting and crowd density monitoring, applicable to various scenarios",
+    "automatic selection of best snapshots, supports face detection masked area",
+    "supports front-end , supports blocklist and allowlist comparison",
+    "Built-in high-power speaker supports audio-visual alarms, delivering enhanced deterrence and protection",
+    "120 dB true WDR meets the image requirements in high-contrast scene"
+  ],
+  "sources": [
+    "https://www.uniview.com/Products/PTZ_Cameras/Prime_Series/Prime_Series/IPC6628SFW-X25E-C-VH2/"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-09-22",
+  "ndaa_compliant": true,
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Uniview IPC — ONVIF + Uniview /unicast RTSP path. Use the sub stream (s1) for Frigate detection."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  }
+}

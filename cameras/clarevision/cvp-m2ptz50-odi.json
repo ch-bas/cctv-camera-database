@@ -1,0 +1,126 @@
+{
+  "id": "clarevision-cvp-m2ptz50-odi",
+  "brand": "ClareVision",
+  "model": "CVP-M2PTZ50-ODI",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.264"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.7-94",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "58.3-3.2",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 150,
+    "min_lux_color": 0.02
+  },
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af)",
+    "voltage": "24 VAC",
+    "consumption_w": 32
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "features": [
+    "20x optical zoom",
+    "16x digital zoom",
+    "auto-focus",
+    "up to 300 presets",
+    "up to 8 patrols",
+    "intrusion detection",
+    "line crossing detection",
+    "motion detection",
+    "dynamic analysis",
+    "3D DNR",
+    "audio I/O",
+    "alarm I/O"
+  ],
+  "operating_temp_c": "-30 to 65",
+  "dimensions_mm": "185 x 330 (dia. x height)",
+  "weight_g": 4000,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "US"
+  ],
+  "sources": [
+    "https://www.clarecontrols.com/helpcenter/2-mp-pan-tilt-zoom-camera-cvp-m2ptz50-odi-datasheet-doc-id-1419",
+    "https://www.clarecontrols.com/hubfs/Tech%20Pubs/Product%20Information%20/ClareVision%20Plus/Data%20Sheets/2%20MP%20Pan-Tilt-Zoom%20Camera%20CVP-M2PTZ50-ODI%20Datasheet%20%28DOC%20ID%201419%29.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ClareVision Plus cameras use the Hikvision (ISAPI) protocol. The ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile. ClareVision Plus cameras use the Hikvision protocol."
+    }
+  },
+  "last_verified": "2026-09-22",
+  "environment": [
+    "outdoor"
+  ],
+  "cloud_dependency": "local"
+}

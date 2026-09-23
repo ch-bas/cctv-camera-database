@@ -1,0 +1,120 @@
+{
+  "id": "hikmicro-hm-td2618-3",
+  "brand": "HikMicro",
+  "model": "HM-TD2618-3",
+  "aliases": [
+    "HM-TD2618-3/G0/T1A"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 0.02,
+    "max_width": 160,
+    "max_height": 120,
+    "label": "160x120 (thermal)"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "160x120",
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "Thermal: uncooled VOx, 160x120, 12 um pixel pitch, 8-14 um, NETD <= 25 mK; optical: 1/2.7in CMOS 5 MP (2688x1944)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "3.6",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "50 x 37.3",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.0089
+  },
+  "power": {
+    "method": "12 VDC or PoE (802.3at class 4)",
+    "consumption_w": 24,
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "features": [
+    "thermal + optical bi-spectrum with dynamic fire detection (up to 10 fire points)",
+    "thermal detector: uncooled VOx 160x120, 12 um pitch, 8-14 um, NETD <= 25 mK",
+    "thermal lens 3.6 mm, FOV 50 x 37.3",
+    "optical channel: 5 MP (2688x1944), lens 4.3 mm, FOV 84.0 x 43.1",
+    "smart hybrid light: IR + white light + smart mode",
+    "IR / white light up to 30 m",
+    "temperature measurement -20 to 150 C",
+    "17 thermal color palettes",
+    "microSD up to 512 GB, NAS (NFS/SMB), ANR",
+    "ONVIF Profile S/G/T/M, ISAPI, Hikvision SDK",
+    "2 alarm in / 2 alarm out, RS-485"
+  ],
+  "operating_temp_c": "-40 to 65",
+  "dimensions_mm": "349.1 x 113 x 105",
+  "weight_g": 1710,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": false,
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://web.archive.org/web/20260215044324/https://www.hikmicrotech.com/en/security/heatpro-series/heatpro-series/hm-td2618-3-g0-t1a/"
+  ],
+  "last_verified": "2026-09-22",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform ONVIF (default port 80). Thermal + optical exposed as separate channels."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  },
+  "cloud_dependency": "local",
+  "release_notes": "HikMicro HM-TD2618-3 is a thermal & optical bi-spectrum network bullet camera (HeatPro) pairing a 160x120 uncooled VOx thermal module (NETD <= 25 mK, 3.6 mm lens) with a 5 MP optical channel, dynamic fire detection, smart hybrid IR/white-light to 30 m and -20 to 150 C temperature measurement.",
+  "ik_rating": "IK10"
+}

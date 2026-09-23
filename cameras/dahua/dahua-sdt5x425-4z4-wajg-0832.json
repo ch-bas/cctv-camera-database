@@ -1,0 +1,86 @@
+{
+  "id": "dahua-sdt5x425-4z4-wajg-0832",
+  "brand": "Dahua",
+  "model": "SDT5X425-4Z4-WAJG-0832",
+  "aliases": [
+    "DH-SDT5X425-4Z4-WAJG-0832"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "label": "4MP dual-PTZ"
+  },
+  "sensor": "1/1.8\" 4MP CMOS (panorama + detail)",
+  "lens": {
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 60
+  },
+  "ptz": {},
+  "power": {
+    "consumption_w": 40,
+    "voltage": "36V DC"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "385 x Φ277",
+  "weight_g": 9000,
+  "markets": [
+    "MENA"
+  ],
+  "features": [
+    "4MP Starlight+ WizMind dual-PTZ traffic camera (panorama 4x optical + detail 25x optical zoom)",
+    "Illegal parking capture, IR up to 100 m",
+    "WAJG Middle-East variant; 2-in/1-out alarm, ONVIF Profile S&G&T"
+  ],
+  "sources": [
+    "https://materialfile.dahuasecurity.com/uploads/soft/20210409/DH-SDT5X425-4Z4-WAJG-0832_datasheet_20210204.pdf",
+    "https://www.dahuasecurity.com/uk/products/discontinued-products/ptz-cameras/sdt5x425-4z4-wajg-0832"
+  ],
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua IP camera — ONVIF + Dahua /cam/realmonitor RTSP path; enable ONVIF and set a dedicated user."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (Dahua)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Dahua RTSP/ONVIF."
+    }
+  }
+}

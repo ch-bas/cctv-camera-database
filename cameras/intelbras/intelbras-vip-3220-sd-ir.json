@@ -1,0 +1,110 @@
+{
+  "id": "intelbras-vip-3220-sd-ir",
+  "brand": "Intelbras",
+  "model": "VIP 3220 SD IR",
+  "type": "ptz",
+  "sensor": "1/2.8\" CMOS",
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "lens": {
+    "focal_length_mm": "5-80",
+    "aperture": "F1.5",
+    "varifocal": true,
+    "count": 1
+  },
+  "field_of_view_deg": "57.7 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100,
+    "min_lux_color": 0.05
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "H.265",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30
+      }
+    ]
+  },
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "rtmp",
+    "http"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "audio": {
+    "two_way": true
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256
+  },
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "power": {
+    "method": "DC 12V/5A, PoE Ativo (802.3at)",
+    "consumption_w": 17
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "dimensions_mm": "295 x 160",
+  "weight_g": 4400,
+  "operating_temp_c": "-40 to 70",
+  "features": [
+    "20x optical zoom",
+    "PTZ",
+    "Starlight",
+    "face detection",
+    "tripwire (virtual line)",
+    "intrusion (virtual fence)",
+    "object abandonment/removal",
+    "heat map"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "markets": [
+    "BR",
+    "LATAM"
+  ],
+  "last_verified": "2026-09-22",
+  "sources": [
+    "https://backend.intelbras.com/sites/default/files/2024-12/Datasheet%20%20-%20VIP%203220%20SD%20IR%20-%20V10.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif"
+    },
+    "blue_iris": {
+      "profile": "ONVIF/Dahua"
+    }
+  }
+}

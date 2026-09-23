@@ -1,0 +1,127 @@
+{
+  "id": "clarevision-cvp-b2t28-odi",
+  "brand": "ClareVision",
+  "model": "CVP-B2T28-ODI",
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "108",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af)",
+    "voltage": "12 VDC",
+    "consumption_w": 7
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "microSD up to 128 GB, NAS (NFS, SMB/CIFS), ANR."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "features": [
+    "enhanced IR (no flashback)",
+    "120 dB WDR",
+    "BLC",
+    "3D DNR",
+    "line crossing detection",
+    "intrusion detection",
+    "unattended baggage detection",
+    "object removal detection",
+    "face detection",
+    "scene change detection",
+    "privacy mask",
+    "H.265+"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "127.3 x 95.5",
+  "weight_g": 620,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "US"
+  ],
+  "sources": [
+    "https://www.clarecontrols.com/helpcenter/2-mp-turret-camera-with-enhanced-ir-and-2.8-mm-lens-cvp-b2t28-odi-datasheet-data-sheet-doc-id-1651",
+    "https://www.clarecontrols.com/hubfs/Tech%20Pubs/Product%20Information%20/ClareVision%20Plus/Data%20Sheets/2%20MP%20Turret%20Camera%20with%20Enhanced%20IR%20and%202.8%20mm%20Lens%20CVP-B2T28-ODI%20Datasheet%20Data%20Sheet%20%28DOC%20ID%201651%29.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ClareVision Plus cameras use the Hikvision (ISAPI) protocol. The ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile. ClareVision Plus cameras use the Hikvision protocol."
+    }
+  },
+  "last_verified": "2026-09-22",
+  "environment": [
+    "outdoor"
+  ],
+  "cloud_dependency": "local"
+}

@@ -1,0 +1,108 @@
+{
+  "id": "lts-lxip1142w-28ma",
+  "brand": "LTS",
+  "model": "LXIP1142W-28MA",
+  "type": "turret",
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520
+  },
+  "sensor": "1/3” 4Megapixel progressive CMOS",
+  "lens": {
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "102 H / 55 V / 121 D",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.008
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "DC 12V / PoE",
+    "consumption_w": 6.6
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "connectivity": [
+    "ethernet"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "rtmp",
+    "p2p",
+    "http"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "audio": {
+    "microphone": true
+  },
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-40°C to 60°C",
+  "dimensions_mm": "105.4 mm × Φ122.0 mm (4.15\" × Φ4.8\")",
+  "weight_g": 520,
+  "features": [
+    "Outputs max. 4MP (2688×1520) @20fps or 4MP (2560 × 1440) @30fps",
+    "1/3” Starlight CMOS image sensor",
+    "Min. Illumination 0.008 Lux @ F1.6 (Color, 30 IRE), 0 Lux with IR Light on",
+    "Built-in IR LED, Matrix IR LED up to 98ft",
+    "Smart encoding H.265/H.264",
+    "120dB True WDR, 3D DNR, HLC, BLC",
+    "MD: intrusion, tripwire",
+    "Built-in Micro SD card slot, up to 256 GB",
+    "Built-in Mic",
+    "12V DC/POE power supply",
+    "IP67 protection"
+  ],
+  "cloud_dependency": "local",
+  "sources": [
+    "https://www.ltsmall.com/ipc-4mp/3116.html",
+    "https://pic.ltsmall.com/software/55c9a5847cf9f229729e0fd34627cc95/LXIP1142W-28MA.pdf"
+  ],
+  "last_verified": "2026-09-22",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "LTS IP camera (Uniview-OEM firmware) — enable ONVIF/RTSP and set a dedicated user."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (LTS)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF/RTSP",
+      "notes": "LTS RTSP/ONVIF."
+    }
+  }
+}

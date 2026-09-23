@@ -1,0 +1,104 @@
+{
+  "id": "sunell-sn-ipp8085qas-b",
+  "brand": "Sunell",
+  "model": "SN-IPP8085QAS-B",
+  "type": "panoramic",
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 4608,
+    "max_height": 1728,
+    "label": "8MP (4608x1728)"
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "sensor": "Dual 1/2.8” Progressive Scan CMOS",
+  "lens": {
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6"
+  },
+  "field_of_view_deg": "H: 180, V: 63",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.01,
+    "min_lux": 0.001
+  },
+  "video": {
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4608x1728",
+        "fps": 15
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "power": {
+    "method": "12 VDC (-15% to +20%) / PoE (802.3af)",
+    "voltage": "12 VDC",
+    "consumption_w": 11.5
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 1024
+  },
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "227.7 × 110 × 80 mm",
+  "weight_g": 820,
+  "features": [
+    "True WDR (120dB)",
+    "AI detection: face, human, vehicle",
+    "Smart dual illumination (IR + warm/white light)"
+  ],
+  "ndaa_compliant": true,
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 360,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/2",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Sunell IP camera — ONVIF (Profile S/T/G/M) + /snl/live RTSP path. Enable ONVIF and set a dedicated user."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S/T)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a Generic/ONVIF camera; RTSP auto-discovered via ONVIF."
+    }
+  },
+  "sources": [
+    "https://www.sunellsecurity.com/products/panoramic-ip-camera/sn-ipp8085qas-b-multi-sensor-panoramic-bullet-duo-camera.shtml"
+  ],
+  "last_verified": "2026-09-22",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local"
+}

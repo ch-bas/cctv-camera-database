@@ -1,0 +1,103 @@
+{
+  "id": "swnhd-1200be",
+  "brand": "Swann",
+  "model": "SWNHD-1200BE",
+  "aliases": [
+    "Swann Professional 6K (12MP) Add-on NVR Bullet Camera",
+    "SRNHD-1200BE"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 12,
+    "max_width": 4096,
+    "max_height": 3076,
+    "label": "6K (12MP)"
+  },
+  "field_of_view_deg": "65",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6"
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 40
+  },
+  "power": {
+    "method": "PoE"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4096x3076",
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "6K 12MP PoE bullet camera",
+    "40m B&W night vision",
+    "10m color night vision with sensor light",
+    "IR cut filter",
+    "PIR up to 8m",
+    "sensor spotlights",
+    "2-way audio",
+    "siren",
+    "IP66",
+    "for NVR-8580 range"
+  ],
+  "operating_temp_c": "-30 to 55",
+  "dimensions_mm": "151 x 70 x 70",
+  "sources": [
+    "https://us.swann.com/products/swnhd-1200be-us"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Some Swann models use Dahua protocol. Try ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Use 'Dahua' profile. Some Swann models use Dahua protocol."
+    }
+  },
+  "cloud_dependency": "cloud-optional",
+  "last_verified": "2026-09-22"
+}

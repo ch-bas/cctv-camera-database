@@ -1,0 +1,81 @@
+{
+  "id": "eufy-tracklight-cam-s1",
+  "brand": "Eufy",
+  "model": "TrackLight Cam S1",
+  "aliases": [
+    "T8L601",
+    "T8L60120",
+    "T8L60110"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "power_source": [
+    "battery",
+    "solar"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "night_vision": {
+    "type": "color"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "notes": "No built-in eMMC. Records to microSD (not included) or to a eufy HomeBase 3 / HomeBase Mini / HomeBase S1 / NVR S4. HomeBase 3 adds 16GB built-in, expandable to 16TB."
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "features": [
+    "Auto-tracking focused light beam with 105 dB siren",
+    "180 dual-radar detection up to 40 ft (12 m), 3-zone control",
+    "high-speed PTZ 360 coverage",
+    "4K color night vision (telephoto)",
+    "up to 10x manual zoom",
+    "smart welcome lighting (radar + Bluetooth family recognition)",
+    "15,000mAh battery + 5.5W solar panel",
+    "HomeBase S380 support (enhanced AI)",
+    "Apple Home (via HomeBase 3), Google Home, Alexa"
+  ],
+  "power": {
+    "method": "15,000mAh rechargeable battery + 5.5W solar panel"
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "sources": [
+    "https://us.eufy.com/products/t8l60120"
+  ],
+  "last_verified": "2026-09-22",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{homebase_ip}:554/live0",
+      "best_substream": "rtsp://{user}:{pass}@{homebase_ip}:554/live1",
+      "notes": "RTSP served by the HomeBase, not the camera. Enable in eufy Security app.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "eufy_security",
+      "notes": "No native ONVIF; use the HomeBase RTSP stream as a Generic Camera, or the eufy-security HACS integration (P2P)."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use the HomeBase RTSP URL as a Generic/RTSP source (no ONVIF)."
+    }
+  }
+}

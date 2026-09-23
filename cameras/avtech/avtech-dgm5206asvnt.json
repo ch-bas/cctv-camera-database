@@ -1,0 +1,108 @@
+{
+  "id": "avtech-dgm5206asvnt",
+  "brand": "AVTech",
+  "model": "DGM5206ASVNT",
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP (2592x1944)"
+  },
+  "sensor": "1/2.8\" SONY CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "94 H / 50 V / 109 D",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux": 0.001
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true
+  },
+  "power": {
+    "method": "PoE (802.3af)",
+    "consumption_w": 8,
+    "voltage": "DC12V"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "storage": {
+    "nvr_compatible": true
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "operating_temp_c": "-30 to 60",
+  "weight_g": 491,
+  "features": [
+    "AVNova 5MP dual-light turret camera powered by AVShield analytics",
+    "AVShield: human, vehicle, perimeter intrusion, virtual fence and flow counting detection",
+    "1/2.8\" SONY starlight CMOS, fixed f2.8 mm F1.6 lens, 94/50/109 degree FOV",
+    "Dual lights (IR & warm LED), effective distance up to 30 m, switches B/W to color on motion",
+    "120 dB WDR, 2D/3D DNR, AWB; built-in microphone with optional line-out (G.711-u / G.711-a)",
+    "Free P2P Cloud EaZy Networking (EagleEyes app), Alarm Server, ONVIF Profile S",
+    "PoE (IEEE 802.3af) or DC12V power, IP67 outdoor housing, under 8 W"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live/ch01_0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/live/ch01_1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "AVTech IP camera — ONVIF Profile S. If the RTSP path differs, use go2rtc ONVIF autodiscovery (onvif://{user}:{pass}@{ip})."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (AVTech)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "AVTech ONVIF/RTSP."
+    }
+  },
+  "status": "available",
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local",
+  "sources": [
+    "http://www.surveillance-download.com/user/datasheets/IPCAM/DGM/DGM5206ASVNT_Spec.pdf"
+  ]
+}

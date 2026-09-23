@@ -1,0 +1,120 @@
+{
+  "id": "vigi-c320i",
+  "brand": "VIGI",
+  "model": "VIGI C320I",
+  "ndaa_compliant": true,
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/3\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8/4/6",
+    "aperture": "F2.2 (2.8mm), F2.0 (4/6mm)",
+    "varifocal": false
+  },
+  "field_of_view_deg": "2.8mm: H 88.2, V 48.6, D 106.5",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "PoE",
+    "consumption_w": 5.5,
+    "voltage": "802.3af/at",
+    "poe_class": 0
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "78.5 x 188.03 x 71.55",
+  "operating_temp_c": "-30 to 60",
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "ir night vision",
+    "motion detection",
+    "corridor mode"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "sources": [
+    "https://www.vigi.com/en/business-networking/vigi-network-camera/vigi-c320i/"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/stream1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/stream2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "onvif_port": 80,
+      "two_way_audio": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "two_way_audio": false,
+      "onvif_events": true
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "TP-Link VIGI is ONVIF/RTSP-conformant — use the Generic/ONVIF (or RTSP) profile; main /stream1, sub /stream2."
+    }
+  },
+  "status": "available",
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local"
+}

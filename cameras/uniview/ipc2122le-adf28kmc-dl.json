@@ -1,0 +1,108 @@
+{
+  "id": "uniview-ipc2122le-adf28kmc-dl",
+  "brand": "Uniview",
+  "model": "IPC2122LE-ADF28KMC-DL",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "max_width": 1920,
+    "max_height": 1080,
+    "megapixels": 2,
+    "label": "2MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "varifocal": false
+  },
+  "field_of_view_deg": "106.7 horizontal, 57.1 vertical, 115.7 diagonal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.003
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "consumption_w": 4.4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "192 mm × 75 mm × 74 mm",
+  "weight_g": 400,
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "1080P (1920 × 1080)@30/25 fps; 720P (1280 × 720)@30/25 fps",
+    "Ultra 265, H.265, H.264, MJPEG",
+    "120 dB true WDR technology enables clear image in strong light scene",
+    "Supports 9:16 corridor mode",
+    "Built-in mic and speaker",
+    "Smart IR, up to 30 m (98.4 ft) IR distance"
+  ],
+  "sources": [
+    "https://www.uniview.com/Products/Network_Cameras/Easy_Series/EasyStar_Series/IPC2122LE-ADF28KMC-DL/"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-09-22",
+  "ndaa_compliant": true,
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Uniview IPC — ONVIF + Uniview /unicast RTSP path. Use the sub stream (s1) for Frigate detection."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  }
+}
