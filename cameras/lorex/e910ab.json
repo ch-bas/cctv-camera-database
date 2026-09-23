@@ -1,0 +1,111 @@
+{
+  "id": "lorex-e910ab",
+  "brand": "Lorex",
+  "model": "E910AB",
+  "aliases": [
+    "E910AB",
+    "4K+ 12MP Smart Security Lighting"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 12,
+    "max_width": 4512,
+    "max_height": 2512,
+    "label": "4K+ (12MP)"
+  },
+  "sensor": "12MP CMOS (4640 x 2624)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "139 diagonal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4512x2512",
+        "fps": 15,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3af) / 12V DC",
+    "consumption_w": 9.5
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true
+  },
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "78 x 174 x 78",
+  "weight_g": 520,
+  "operating_temp_c": "-30 to 60",
+  "features": [
+    "4K+ 12MP resolution",
+    "HDR",
+    "enhanced color night vision (pixel binning)",
+    "person, vehicle, face, face-mask, animal and package detection",
+    "active deterrence: warning light + siren + pre-recorded message",
+    "smart security lighting"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Lorex PoE camera (Dahua-OEM). Enable RTSP/ONVIF in the camera web UI; Dahua /cam/realmonitor path. If it fails, use ONVIF auto-discovery."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (Dahua protocol)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile; enable RTSP/ONVIF first."
+    }
+  },
+  "cloud_dependency": "cloud-optional",
+  "markets": [
+    "US"
+  ],
+  "sources": [
+    "https://www.lorex.com/products/e910ab-4k-plus-12mp-smart-security-lighting-bullet-ip-camera"
+  ],
+  "last_verified": "2026-09-22"
+}

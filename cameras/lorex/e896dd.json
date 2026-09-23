@@ -1,0 +1,96 @@
+{
+  "id": "lorex-e896dd",
+  "brand": "Lorex",
+  "model": "E896DD",
+  "aliases": [
+    "E896DD",
+    "E896DDB",
+    "4K Smart Security Lighting Deterrence Dome"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K (8MP)"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "127 diagonal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 45
+  },
+  "power": {
+    "method": "PoE (802.3af) / 12V DC"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "122 x 122 x 112",
+  "operating_temp_c": "-30 to 60",
+  "features": [
+    "HDR",
+    "color night vision",
+    "person, vehicle, face, mask and package detection",
+    "active deterrence: warning light + siren + pre-recorded message + smart security lighting",
+    "IR range 45m / 30m"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Lorex PoE camera (Dahua-OEM). Enable RTSP/ONVIF in the camera web UI; Dahua /cam/realmonitor path. If it fails, use ONVIF auto-discovery.",
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (Dahua protocol)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile; enable RTSP/ONVIF first."
+    }
+  },
+  "cloud_dependency": "cloud-optional",
+  "markets": [
+    "US"
+  ],
+  "sources": [
+    "https://www.lorex.com/products/e896dd-4k-smart-security-lighting-dome-ip-wired-camera"
+  ],
+  "last_verified": "2026-09-22"
+}
