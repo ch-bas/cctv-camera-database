@@ -1,0 +1,115 @@
+{
+  "id": "instar-in-9010-full-hd",
+  "brand": "INSTAR",
+  "model": "IN-9010 Full HD",
+  "aliases": [
+    "IN-9010 HD"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet",
+    "wifi"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p Full HD"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG",
+      "JPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/3\" Panasonic MN34229 CMOS (1080p, Wide Dynamic Range)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.2",
+    "aperture": "f/2.1",
+    "varifocal": false
+  },
+  "field_of_view_deg": "90 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux": 0.05
+  },
+  "power": {
+    "method": "DC power adapter (WiFi variant; the IN-9020 is the PoE equivalent)",
+    "consumption_w": 9
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "cloud": true,
+    "notes": "Ships with a 16GB microSD card installed. Also supports FTP upload and the optional INSTAR Cloud."
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "WiFi variant of the IN-9020 (PoE); same Panasonic 1080p WDR sensor",
+    "5 high-power 850nm IR LEDs, range 15-20m",
+    "integrated microphone plus 3.5mm audio-out jack for an external speaker",
+    "PIR heat sensor plus software motion detection",
+    "IP65 aluminium housing",
+    "MQTT for smart home integration"
+  ],
+  "operating_temp_c": "-5 to 55",
+  "ip_rating": "IP65",
+  "environment": [
+    "outdoor"
+  ],
+  "status": "discontinued",
+  "sources": [
+    "https://wiki.instar.com/en/Outdoor_Cameras/IN-9010_HD/",
+    "https://wiki.instar.com/en/Outdoor_Cameras/IN-9010_HD/Technical_Specifications/"
+  ],
+  "last_verified": "2026-09-22",
+  "dimensions_mm": "90x70x225",
+  "weight_g": 900,
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/11",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/12",
+      "notes": "INSTAR Full HD generation uses a simple numbered RTSP path (/11 main, /12/13 sub) rather than the '/livestream/NN' pattern of the newer 2K+/4K line. Exact substream numbering not independently confirmed; ONVIF was not documented for this legacy model (RTSP confirmed).",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "generic_camera",
+      "notes": "ONVIF unconfirmed; generic RTSP/MJPEG integration recommended. MQTT is a documented alternative.",
+      "connection_type": "local"
+    },
+    "blue_iris": {
+      "profile": "Generic RTSP",
+      "notes": "Not independently confirmed for this specific model."
+    }
+  },
+  "markets": [
+    "DE",
+    "EU"
+  ],
+  "cloud_dependency": "local"
+}

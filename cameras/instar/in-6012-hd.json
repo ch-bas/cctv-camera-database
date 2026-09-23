@@ -1,0 +1,116 @@
+{
+  "id": "instar-in-6012-hd",
+  "brand": "INSTAR",
+  "model": "IN-6012 HD",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet",
+    "wifi"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 1,
+    "max_width": 1280,
+    "max_height": 720,
+    "label": "720p HD"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG",
+      "JPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1280x720",
+        "fps": 25,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/3\" OmniVision OV10633 CMOS (720p, Wide Dynamic Range)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "8.0",
+    "aperture": "f/1.2",
+    "varifocal": false
+  },
+  "field_of_view_deg": "44.1 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10,
+    "min_lux": 0.05
+  },
+  "ptz": {
+    "autotracking": false
+  },
+  "power": {
+    "method": "PoE (802.3af, non-WiFi variant) or DC power adapter",
+    "consumption_w": 8,
+    "voltage": "5V DC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 32,
+    "cloud": true,
+    "notes": "Ships with a 4GB microSD card installed. Also supports FTP upload and the optional INSTAR Cloud."
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "indoor pan/tilt cube camera (350 deg pan / 100 deg tilt)",
+    "8mm telephoto lens (narrow 44 deg field of view)",
+    "10 x 850nm IR LEDs, range 5-10m",
+    "audio-out 3.5mm jack plus audio-in for an external microphone",
+    "available as WiFi (802.11 b/g/n) or PoE (802.3af) variant"
+  ],
+  "operating_temp_c": "-5 to 55",
+  "environment": [
+    "indoor"
+  ],
+  "status": "discontinued",
+  "sources": [
+    "https://wiki.instar.com/en/Indoor_Cameras/IN-6012_HD/",
+    "https://wiki.instar.com/en/Indoor_Cameras/IN-6012_HD/Technical_Specifications/"
+  ],
+  "last_verified": "2026-09-22",
+  "dimensions_mm": "124x110x110",
+  "weight_g": 368,
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/11",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/12",
+      "notes": "INSTAR HD generation uses a simple numbered RTSP path (/11 main, /12/13 sub). Pan/tilt is driven via INSTAR's own CGI/web UI rather than confirmed ONVIF PTZ. Exact substream numbering not independently confirmed.",
+      "verified": false,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "generic_camera",
+      "notes": "ONVIF unconfirmed; generic RTSP/MJPEG integration recommended. MQTT is a documented alternative.",
+      "connection_type": "local"
+    },
+    "blue_iris": {
+      "profile": "Generic RTSP",
+      "notes": "Not independently confirmed for this specific model."
+    }
+  },
+  "markets": [
+    "DE",
+    "EU"
+  ],
+  "cloud_dependency": "local"
+}
