@@ -1,0 +1,102 @@
+{
+  "id": "avtech-dgm2203svt",
+  "brand": "AVTech",
+  "model": "DGM2203SVT",
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP (1920x1080)"
+  },
+  "sensor": "1/2.8\" SONY CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "94 H / 50 V / 109 D",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux": 0.001
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true
+  },
+  "power": {
+    "method": "PoE (802.3af)",
+    "consumption_w": 8
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "storage": {
+    "nvr_compatible": true
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "weight_g": 295,
+  "operating_temp_c": "-30 to 60",
+  "features": [
+    "AI-based human / vehicle detection to reduce false alarms",
+    "Starlight visibility for clear color images at night",
+    "Available in three fixed-lens options: f2.8mm (94H), f3.6mm (76H), f6.0mm (45.6H)",
+    "3 IR LED units, IR effective range up to 30 meters",
+    "WDR 120dB, 2D/3D DNR, AWB",
+    "Free P2P Cloud EaZy Networking (EagleEyes app), PoE (IEEE 802.3af), built-in mic, ONVIF Profile S"
+  ],
+  "status": "available",
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live/ch01_0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/live/ch01_1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "AVTech IP camera — ONVIF Profile S. If the RTSP path differs, use go2rtc ONVIF autodiscovery (onvif://{user}:{pass}@{ip})."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (AVTech)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "AVTech ONVIF/RTSP."
+    }
+  },
+  "sources": [
+    "http://www.surveillance-download.com/user/datasheets/IPCAM/DGM/DGM2203SVT_Spec.pdf"
+  ]
+}

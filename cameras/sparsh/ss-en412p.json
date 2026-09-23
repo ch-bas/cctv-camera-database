@@ -1,0 +1,136 @@
+{
+  "id": "sparsh-ss-en412p",
+  "brand": "Sparsh",
+  "model": "SS-EN412P",
+  "aliases": [
+    "SS-EN412P-(I)",
+    "4MP PTZ Camera"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1920,
+    "label": "4MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1920",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" 4MP Low Illumination Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.5-162",
+    "aperture": "F1.2-F4.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "63-3 H / 38-1 V / 69-3 D",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 250,
+    "min_lux_color": 0.001
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "DC24V/1.5A or PoE+ (IEEE 802.3at)",
+    "consumption_w": 30,
+    "voltage": "24V",
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "notes": "SD card slot, up to 2TB"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "36X optical zoom (optional 42X), 16X digital zoom",
+    "auto tracking",
+    "3D positioning / intelligent positioning",
+    "WDR up to 120 dB, TWDR",
+    "3D DNR, defog, HLC/BLC",
+    "Smart IR (850nm) up to 250 m",
+    "optional IVA: smart motion detection, line crossing, intrusion, loitering, retrograde, absent, people counting, face detection",
+    "tamper detection, motion detection",
+    "8-area privacy masking, 4-zone ROI",
+    "300 presets, 8 cruise groups, 4 patterns, power-off memory",
+    "quad streaming",
+    "2Ch alarm in / 1Ch alarm out, audio 1 in / 1 out",
+    "TVS 6000V lightning/surge protection",
+    "fan and heater",
+    "cyber security STQC-certified (IoTSCS/MeitY): HTTPS, RTSPS, AES-256, SHA256/RSA2048, signed firmware, secure boot, TEE, TRNG",
+    "NDAA compliant, BIS registered, IS 13252 certified",
+    "MTBF > 100000 hours at 40C"
+  ],
+  "operating_temp_c": "-50 to 70",
+  "dimensions_mm": "216 (D) x 327 (H)",
+  "weight_g": 4500,
+  "environment": [
+    "outdoor"
+  ],
+  "ndaa_compliant": true,
+  "markets": [
+    "india",
+    "global"
+  ],
+  "release_notes": "Specs per official Sparsh datasheet SS-EN412P-(I) Rev 1.3. 4MP-class PTZ (1/2.8\" sensor, effective 2560x1920); main stream also supports 4MP 2560x1440@25/30fps and 1080p@60fps. Default 36X 4.5-162mm lens; optional 42X 7-300mm lens. IVA video analytics is an optional ordering variant.",
+  "sources": [
+    "https://www.sparshsecuritech.com/products/4mp-ptz-camera-ss-en-412p",
+    "https://b2b.sparshsecuritech.com/ajax/download?file=NDA5NThmYmQyNDIxNzM4ODAxNDMwLTNjYTJmNw%2C%2C"
+  ],
+  "last_verified": "2026-09-22",
+  "configs": {
+    "frigate": {
+      "onvif_port": 80,
+      "verified": false,
+      "two_way_audio": true,
+      "notes": "Sparsh does not publish the RTSP path; discover via ONVIF (Profile S/G/M/T). Default ONVIF/HTTP port 80, RTSP port 554. Frigate PTZ autotracking requires ONVIF relative movement (not stated in datasheet)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration; default ONVIF port 80. Camera exposes ONVIF Profile S/G/M/T."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Add as a generic ONVIF PTZ camera."
+    }
+  },
+  "cloud_dependency": "local"
+}

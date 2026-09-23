@@ -1,0 +1,105 @@
+{
+  "id": "intelbras-vip-5225-sd-ir",
+  "brand": "Intelbras",
+  "model": "VIP 5225 SD IR",
+  "type": "ptz",
+  "sensor": "1/2.8\" CMOS",
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.8-120",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "59.2 to 2.4 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 150,
+    "min_lux_color": 0.005
+  },
+  "ptz": {
+    "onvif_ptz": "continuous",
+    "autotracking": true
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "power": {
+    "method": "PoE+ (802.3at) / 24 Vac",
+    "consumption_w": 13
+  },
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128
+  },
+  "dimensions_mm": "Ø186 x 309",
+  "weight_g": 3500,
+  "operating_temp_c": "-10 to 60",
+  "features": [
+    "25x optical zoom",
+    "Autotracking",
+    "Face detection",
+    "Heat map",
+    "Virtual line/fence detection",
+    "Abandoned/removed object detection"
+  ],
+  "markets": [
+    "BR",
+    "LATAM"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "last_verified": "2026-09-22",
+  "sources": [
+    "https://backend.intelbras.com/sites/default/files/2021-04/Datasheet%20-%20VIP%205225%20SD%20IR.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif"
+    },
+    "blue_iris": {
+      "profile": "ONVIF/Dahua"
+    }
+  }
+}

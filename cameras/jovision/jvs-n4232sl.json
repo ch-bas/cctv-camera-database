@@ -1,0 +1,103 @@
+{
+  "id": "jovision-jvs-n4232sl",
+  "brand": "Jovision",
+  "model": "JVS-N4232SL",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "max_width": 2048,
+    "max_height": 1520,
+    "megapixels": 3,
+    "label": "3MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2048x1520",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" CMOS Sensor",
+  "lens": {
+    "focal_length_mm": "4",
+    "varifocal": false,
+    "count": 1
+  },
+  "field_of_view_deg": "H 79.6 / V 47.7 / D 97.8",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20
+  },
+  "power": {
+    "method": "DC12V/2A, PoE IEEE 802.3af",
+    "voltage": "DC12V",
+    "consumption_w": 7
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http",
+    "p2p"
+  ],
+  "ip_rating": "IP66",
+  "features": [
+    "Resolution 2048x1520@30fps",
+    "Starlight function",
+    "4mm Lens with wide viewing angle",
+    "35x IR-LED, up to 20 Meters",
+    "Ingress Protection IP66",
+    "Motion Detection with Email Alert",
+    "CloudSEE Embedded",
+    "ONVIF 2.4, Compatible with ONVIF Recorder"
+  ],
+  "operating_temp_c": "-30 to 60 C",
+  "dimensions_mm": "139.9 x 101.4",
+  "weight_g": 720,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.jovisionsecurity.com/jvs_n4232sl.html"
+  ],
+  "last_verified": "2026-09-22",
+  "status": "available",
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:8554/live0.264",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:8554/live1.264",
+      "verified": false,
+      "notes": "Jovision (CloudSEE) RTSP on non-standard port 8554 — main /live0.264, sub /live1.264. Enable ONVIF/RTSP in the web UI; paths vary by firmware — use ONVIF autodiscovery if these fail."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Generic ONVIF integration; Jovision RTSP is on port 8554."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use Generic ONVIF/RTSP; Jovision default RTSP port is 8554."
+    }
+  }
+}

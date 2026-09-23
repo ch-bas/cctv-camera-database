@@ -1,0 +1,120 @@
+{
+  "id": "lorex-lnb95mb",
+  "brand": "Lorex",
+  "model": "LNB95MB",
+  "aliases": [
+    "LNB95MBB",
+    "LNB95MBW",
+    "Nocturnal 4 Lite 4K Bullet"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K (8MP)"
+  },
+  "sensor": "4K 8MP CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-12",
+    "aperture": "F1.8",
+    "varifocal": true
+  },
+  "field_of_view_deg": "133 - 53 diagonal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 60
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "power": {
+    "method": "ePoE (802.3af) / 12V DC",
+    "consumption_w": 9
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true
+  },
+  "audio": {
+    "microphone": true
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "273.2 x 95.0 x 95.0",
+  "weight_g": 1120,
+  "operating_temp_c": "-40 to 60",
+  "features": [
+    "4x optical zoom, motorized varifocal 2.7-12mm",
+    "WDR",
+    "color night vision, 60m IR",
+    "person and vehicle detection",
+    "heat mapping",
+    "people counting",
+    "4 streams",
+    "line audio in/out"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Lorex PoE camera (Dahua-OEM). Enable RTSP/ONVIF in the camera web UI; Dahua /cam/realmonitor path. If it fails, use ONVIF auto-discovery."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (Dahua protocol)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile; enable RTSP/ONVIF first."
+    }
+  },
+  "cloud_dependency": "cloud-optional",
+  "markets": [
+    "US"
+  ],
+  "sources": [
+    "https://www.lorex.com/products/noc4-lite-4k-nocturnal-bullet-ip-camera"
+  ],
+  "last_verified": "2026-09-22"
+}

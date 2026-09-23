@@ -1,0 +1,110 @@
+{
+  "id": "dahua-sd8a440vi-hni",
+  "brand": "Dahua",
+  "model": "SD8A440VI-HNI",
+  "aliases": [
+    "DH-SD8A440VI-HNI"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2592,
+    "max_height": 1520,
+    "label": "4MP (2592x1520)"
+  },
+  "sensor": "1/1.8\" STARVIS CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.6-223",
+    "aperture": "F1.4-F4.8",
+    "varifocal": true
+  },
+  "field_of_view_deg": "63.9-2.0 H / 37.3-1.1 V / 71.6-2.3 D",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 450,
+    "min_lux": 0.0002,
+    "min_lux_color": 0.002
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1520",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "audio": {
+    "two_way": true
+  },
+  "power": {
+    "method": "AC24V/3A (Hi-PoE)",
+    "consumption_w": 38
+  },
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-40 °C to +70 °C",
+  "weight_g": 8500,
+  "dimensions_mm": "Φ262 × 415.6",
+  "features": [
+    "4MP 1/1.8\" STARVIS laser PTZ with 40x optical zoom (5.6-223 mm F1.4-F4.8), IR/laser up to 450 m",
+    "Auto-tracking, smart wiper, EIS, optical defog, WDR 120 dB, Ultra DNR (2D/3D)",
+    "Perimeter protection (tripwire/intrusion), face detection, heat map; 300 presets, tours/patterns",
+    "Audio in/out 1/1, alarm in/out 7/2, RS485, BNC video out; DH-SD and Pelco-P/D control",
+    "microSD up to 256 GB, ONVIF Profile S&G, AC24V or Hi-PoE (max 38 W with IR + heater), IP67"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua IP camera — ONVIF + Dahua /cam/realmonitor RTSP path; enable ONVIF and set a dedicated user."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (Dahua)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Dahua RTSP/ONVIF."
+    }
+  },
+  "sources": [
+    "https://www.dahuasecurity.com/uk/products/discontinued-products/ptz-cameras/sd8a440vi-hni"
+  ],
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local"
+}

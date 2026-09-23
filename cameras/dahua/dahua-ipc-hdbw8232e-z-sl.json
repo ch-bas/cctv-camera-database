@@ -1,0 +1,110 @@
+{
+  "id": "dahua-ipc-hdbw8232e-z-sl",
+  "brand": "Dahua",
+  "model": "IPC-HDBW8232E-Z-SL",
+  "aliases": [
+    "DH-IPC-HDBW8232E-Z-SL",
+    "DH-IPC-HDBW8232EP-Z-SL",
+    "DH-IPC-HDBW8232EN-Z-SL"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.1-16.4",
+    "aperture": "F1.53",
+    "varifocal": true
+  },
+  "field_of_view_deg": "92-32 H / 53-18 V",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux": 0.002
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "DC12V / AC24V / PoE+ (802.3at)",
+    "consumption_w": 18,
+    "poe_class": 4
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-40 to +60",
+  "dimensions_mm": "Φ162.5 x 118.1",
+  "weight_g": 2250,
+  "network": {
+    "ethernet_speed_mbps": 1000
+  },
+  "features": [
+    "2MP Starlight Ultra-series anti-corrosion IR dome (316L stainless steel, NEMA 4X)",
+    "4x motorized zoom (4.1-16.4 mm), WDR 120 dB, EIS",
+    "People counting, heat map, face detection, IVS (tripwire/intrusion/abandoned/missing)",
+    "1-in/1-out audio, 1-in/1-out alarm, PoE+ (Class 4)"
+  ],
+  "sources": [
+    "https://materialfile.dahuasecurity.com/uploads/soft/20190219/DH-IPC-HDBW8232E-Z-SL_Datasheet_20190214.pdf",
+    "https://www.dahuasecurity.com/uk/products/discontinued-products/ptz-cameras/ipc-hdbw8232e-z-sl=s2"
+  ],
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua IP camera — ONVIF + Dahua /cam/realmonitor RTSP path; enable ONVIF and set a dedicated user."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (Dahua)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Dahua RTSP/ONVIF."
+    }
+  }
+}

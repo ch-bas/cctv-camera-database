@@ -1,0 +1,108 @@
+{
+  "id": "avtech-dgm5203agcat",
+  "brand": "AVTech",
+  "model": "DGM5203AGCAT",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP (2592x1944)"
+  },
+  "sensor": "1/3\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "107 D",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux": 0.01
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "D1",
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true
+  },
+  "power": {
+    "method": "PoE (802.3af)",
+    "consumption_w": 8,
+    "voltage": "DC12V"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "storage": {
+    "nvr_compatible": true
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "operating_temp_c": "-30 to 60",
+  "weight_g": 274.5,
+  "features": [
+    "AI-based 5MP H.265 IR dome camera with human detection to reduce false alarms",
+    "1/3\" CMOS, fixed f2.8 mm F1.6 lens, 107 degree diagonal viewing angle",
+    "18 IR LEDs, IR effective range up to 30 m for night surveillance",
+    "Built-in microphone for audio recording (G.711-u / G.711-a)",
+    "DWDR / HLC / 2D DNR / 3D DNR / AWB image enhancement",
+    "H.265/H.264 dual-stream, 5MP @ 25 fps, ONVIF 17.06 compatible",
+    "PoE (IEEE 802.3af) or DC12V power, IP66 outdoor housing, under 8 W"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live/ch01_0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/live/ch01_1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "AVTech IP camera — ONVIF Profile S. If the RTSP path differs, use go2rtc ONVIF autodiscovery (onvif://{user}:{pass}@{ip})."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (AVTech)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "AVTech ONVIF/RTSP."
+    }
+  },
+  "status": "available",
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local",
+  "sources": [
+    "http://www.surveillance-download.com/user/datasheets/IPCAM/DGM/DGM5203AGCAT_Spec.pdf"
+  ]
+}

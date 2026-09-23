@@ -1,0 +1,90 @@
+{
+  "id": "lorex-lnz81p25",
+  "brand": "Lorex",
+  "model": "LNZ81P25",
+  "aliases": [
+    "LNZ81P25",
+    "4K Ultra HD 25x PTZ"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K (8MP)"
+  },
+  "sensor": "1/2.8\" 8MP CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": true
+  },
+  "field_of_view_deg": "66.6",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 46
+  },
+  "ptz": {
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "PoE (802.3af) / 12V DC"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "weight_g": 5300,
+  "operating_temp_c": "-40 to 70",
+  "features": [
+    "25x optical zoom",
+    "endless 360 pan (400 deg/s)",
+    "WDR",
+    "color night vision, 46m / 30m IR",
+    "aluminum housing, vandal-resistant"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Lorex PoE camera (Dahua-OEM). Enable RTSP/ONVIF in the camera web UI; Dahua /cam/realmonitor path. If it fails, use ONVIF auto-discovery."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (Dahua protocol)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile; enable RTSP/ONVIF first."
+    }
+  },
+  "cloud_dependency": "cloud-optional",
+  "markets": [
+    "US"
+  ],
+  "sources": [
+    "https://www.lorex.com/products/lorex-4k-ultra-hd-25x-pan-tilt-zoom-ip-camera"
+  ],
+  "last_verified": "2026-09-22"
+}

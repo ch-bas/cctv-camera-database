@@ -1,0 +1,102 @@
+{
+  "id": "dahua-psd81602-a360",
+  "brand": "Dahua",
+  "model": "PSD81602-A360",
+  "aliases": [
+    "DH-PSD81602-A360"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 16,
+    "label": "8x2MP panoramic + 2MP PTZ"
+  },
+  "sensor": "Eight 1/1.8\" 2MP CMOS (panoramic) + PTZ",
+  "lens": {
+    "focal_length_mm": "5"
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "min_lux": 0.003
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264"
+    ],
+    "streams": [
+      {
+        "name": "panoramic",
+        "resolution": "8192x1800",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "ptz",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "dimensions_mm": "Φ449.5 x 342.5",
+  "weight_g": 16000,
+  "features": [
+    "8x2MP multi-sensor 360° panoramic + PTZ camera",
+    "smart tracking between panoramic view and PTZ",
+    "300 presets, true day/night ICR",
+    "3D DNR, AWB, AGC, BLC",
+    "IP67, IK10, wide-voltage, lightning protection"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua PTZ — ONVIF + Dahua /cam/realmonitor RTSP path; enable ONVIF and set a dedicated user."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (Dahua)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Dahua RTSP/ONVIF PTZ."
+    }
+  },
+  "sources": [
+    "https://materialfile.dahuasecurity.com/uploads/soft/20190219/DH-PSD81602-A360_Datasheet_20190215.pdf",
+    "https://www.dahuasecurity.com/uk/products/discontinued-products/network-cameras/psd81602-a360"
+  ],
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local"
+}

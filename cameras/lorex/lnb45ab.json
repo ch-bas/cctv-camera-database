@@ -1,0 +1,115 @@
+{
+  "id": "lorex-lnb45ab",
+  "brand": "Lorex",
+  "model": "LNB45AB",
+  "aliases": [
+    "LNB45ABB",
+    "LNB45ABW",
+    "A4 Series"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "4MP CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "114 diagonal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3af) / 12V DC",
+    "consumption_w": 5.1
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "nvr_compatible": true
+  },
+  "audio": {
+    "microphone": true
+  },
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "166 x 70 x 70",
+  "weight_g": 480,
+  "operating_temp_c": "-40 to 60",
+  "features": [
+    "WDR",
+    "color night vision",
+    "built-in microphone (listen-in audio)",
+    "person and vehicle detection",
+    "A4 series 4MP wired IP camera"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Lorex PoE camera (Dahua-OEM). Enable RTSP/ONVIF in the camera web UI; Dahua /cam/realmonitor path. If it fails, use ONVIF auto-discovery."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (Dahua protocol)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile; enable RTSP/ONVIF first."
+    }
+  },
+  "cloud_dependency": "cloud-optional",
+  "markets": [
+    "US"
+  ],
+  "sources": [
+    "https://www.lorex.com/products/lnb45ab-a4-ip-wired-bullet-cameras"
+  ],
+  "last_verified": "2026-09-22"
+}

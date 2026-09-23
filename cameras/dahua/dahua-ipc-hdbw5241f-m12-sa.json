@@ -1,0 +1,111 @@
+{
+  "id": "dahua-ipc-hdbw5241f-m12-sa",
+  "brand": "Dahua",
+  "model": "IPC-HDBW5241F-M12-SA",
+  "aliases": [
+    "DH-IPC-HDBW5241F-M12-SA",
+    "IPC-HDBW5241FP-M12-SA",
+    "IPC-HDBW5241FN-M12-SA"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" STARVIS CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "106 H / 56 V / 126 D",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux": 0.002
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true
+  },
+  "power": {
+    "method": "PoE (802.3af)",
+    "consumption_w": 5.3
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-40 to +60",
+  "dimensions_mm": "55.0 x Φ108.9",
+  "weight_g": 426,
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "features": [
+    "2MP mobile STARVIS WizMind dome for rail/bus (EN50155, E-mark ECE R10)",
+    "M12 D-code Ethernet, PoE",
+    "Face detection, people counting, perimeter protection (tripwire/intrusion), WDR 120 dB",
+    "Built-in mic, ONVIF Profile S/G/T"
+  ],
+  "sources": [
+    "https://materialfile.dahuasecurity.com/uploads/soft/20200430/DH-IPC-HDBW5241F-M12-SA_datasheet_20200415.pdf",
+    "https://www.dahuasecurity.com/uk/products/discontinued-products/mobile-&-traffic/ipc-hdbw5241f-m12-sa"
+  ],
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua IP camera — ONVIF + Dahua /cam/realmonitor RTSP path; enable ONVIF and set a dedicated user."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (Dahua)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Dahua RTSP/ONVIF."
+    }
+  }
+}

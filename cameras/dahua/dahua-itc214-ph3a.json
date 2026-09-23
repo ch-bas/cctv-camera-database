@@ -1,0 +1,98 @@
+{
+  "id": "dahua-itc214-ph3a",
+  "brand": "Dahua",
+  "model": "ITC214-PH3A",
+  "aliases": [
+    "ITC214-PH3A",
+    "DHI-ITC214-PH3A"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP (1920x1080)"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "focal_length_mm": "3.6 / 6",
+    "varifocal": false
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "H.265",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 20
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 20
+      }
+    ]
+  },
+  "power": {
+    "method": "12V DC - 48V DC",
+    "consumption_w": 6,
+    "voltage": "12-48 VDC"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP50",
+  "environment": [
+    "indoor"
+  ],
+  "operating_temp_c": "-30 to +60",
+  "dimensions_mm": "Φ120.3 x 100.1",
+  "weight_g": 500,
+  "features": [
+    "smart video parking spot detector — real-time detection of 2 parking spots, detection rate >=99.5%",
+    "ANPR / license plate recognition and detection of crossing parking line via built-in deep learning algorithm",
+    "seven-color parking-spot indicator (red, yellow, blue, green, cyan, white, pink), one indicator per spot",
+    "true WDR 98 dB, 3DNR, for parking buildings and indoor parking lots",
+    "power supply cascading over network, standard 48V DC, up to 10 cascaded devices",
+    "RS-485 indicator port, 2x 100M RJ-45 Ethernet ports, ceiling mounting tray installation"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 2
+  },
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua IP camera — ONVIF + Dahua /cam/realmonitor RTSP path; enable ONVIF and set a dedicated user."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (Dahua)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Dahua RTSP/ONVIF."
+    }
+  },
+  "sources": [
+    "https://www.dahuasecurity.com/uk/products/discontinued-products/mobile-&-traffic/itc214-ph3a-series",
+    "https://materialfile.dahuasecurity.com/uploads/soft/20210903/DHI-ITC214-PH3A-Series_datasheet_20200708.pdf"
+  ],
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local"
+}
