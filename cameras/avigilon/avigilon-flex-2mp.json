@@ -1,0 +1,119 @@
+{
+  "id": "avigilon-flex-2mp",
+  "brand": "Avigilon",
+  "model": "Avigilon Alta Flex Camera 2MP (FLEX-2MP-7)",
+  "aliases": [
+    "FLEX-2MP-7",
+    "Ava Flex Camera",
+    "Avigilon Flex"
+  ],
+  "type": "box",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "usb"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.7\"",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.3",
+    "aperture": "F1.1",
+    "varifocal": false
+  },
+  "field_of_view_deg": "110 x 58",
+  "night_vision": {
+    "type": "color",
+    "min_lux_color": 0.1
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 15,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af Class 2) or USB-C (1.5A)",
+    "consumption_w": 6,
+    "poe_class": 2
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "cloud": true,
+    "notes": "microSD (SDXC High Speed) for on-camera storage; retention managed via Alta Video cloud"
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "environment": [
+    "indoor"
+  ],
+  "operating_temp_c": "0 to 40",
+  "dimensions_mm": "80 x 80 x 38",
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "features": [
+    "Wi-Fi 5 (802.11a/b/g/n/ac) and Bluetooth 5.0 for wireless onboarding",
+    "Adaptive white light with color night mode",
+    "Built-in AI video and audio analytics (on-device)",
+    "Audio classification",
+    "Integrated environmental sensors (temperature accuracy +/-2.5C, relative humidity accuracy +/-5%)",
+    "QR-code onboarding to Alta Video",
+    "Trusted Platform Module (TPM 2.0), factory-installed certificates, no default passwords",
+    "HTTPS/TLS encryption",
+    "ONVIF Profile S, T, G and M when set to ONVIF mode",
+    "Multi-exposure line-based HDR",
+    "Ball joint mount (with mount: 80 x 80 x 96mm, 202g); camera 142g",
+    "NDAA-compliant (designed and developed in Norway and the UK, manufactured in Taiwan)"
+  ],
+  "ndaa_compliant": true,
+  "sources": [
+    "https://docs-be.avigilon.com/bundle/avigilon-flex-cloud-camera/raw/resource/enus/avigilon-flex-cloud-camera.pdf",
+    "https://www.avigilon.com/fs/documents/Avigilon-Ava-Flex-Camera-Datasheet.pdf"
+  ],
+  "last_verified": "2026-09-22",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/defaultPrimary?streamType=u",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Requires the camera to be set to ONVIF mode."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration; camera must be in ONVIF mode (Profile S/T)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "ONVIF Profile S/T supported in ONVIF mode."
+    }
+  },
+  "weight_g": 142
+}
