@@ -6,6 +6,29 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.23.0] — 2026-09-23
+
+Dataset reaches **20,369 cameras / 191 brands** (+4,548). A large multi-brand expansion from **official manufacturer sources only** — every field is transcribed from a manufacturer specification, and fields a manufacturer does not publish are omitted rather than estimated. No Provision-ISR models are included.
+
+### Added — six new brands (+278)
+- **AVTech +89** — DGM-series IP cameras (2–8 MP domes/bullets/turrets, motorized varifocal, PTZ, fisheye, dual-lens and active-deterrence models).
+- **Zavio +60** — network camera catalogue (bullet/dome/box/cube).
+- **Yudor +44** — IP camera range.
+- **Bolin Technology +36** — professional NDI / IP / Dante-AV PTZ and box cameras.
+- **LevelOne +32** — network camera range.
+- **Verint FSS +17** — enterprise IP cameras.
+
+### Added — existing-brand catalogue expansion (+4,270)
+Deep gap-fills across 52 already-covered brands, each from the manufacturer's official product pages and datasheets (real specs only; no fabrication):
+
+- **Mapesen +376**, **Intelbras +346**, **Hikvision +303**, **TVT +288**, **Vivotek +269**, **Sunell +235**, **Uniview +204**, **Comelit +190**, **Dahua +144**, **RVi +135**, **Alibi +129**, **Beward +120**, **Speco +105**, **Hi-Focus +95**, **LTS +90**, **Longse +89**, **Grundig +68**, **Tiandy +57**, **Digital Watchdog +54**, **Matrix +52**, **Bolide +50**, **Prama +47**, **Dallmeier +43**, **EZVIZ +43**, **Avycon +41**, **Amcrest +40**, **GeoVision +40**, **Jovision +40**, **CP PLUS +38**, **Vitek +38**, **Ganz +37**, **Infinova +37**, **Honeywell +35**, **D-Link +34**, **Foscam +34**, **Avtron +32**, **Vicon +32**, **eneo +30**, **Lorex +29**, **Uniarch +29**, **HiLook +26**, **VStarcam +25**, **Costar +23**, **HIKMICRO +21**, **Kedacom +15**, **Milesight +14**, **Novus +14**, **OpenEye +13**, **ESP +7**, **Imou +7**, **Ubiquiti +6**, **Sparsh +1**.
+- Camera families span bullet, dome, turret, PTZ (with auto-tracking where applicable), fisheye/panoramic, multi-sensor, thermal/bi-spectrum, explosion-proof, ANPR/LPR, active-deterrence, doorbell, and HD-analog lines. Cross-brand OEM duplicates (e.g. shared Arecont/Costar model numbers) were de-duplicated by normalized model number.
+
+### Changed — data-quality passes
+- **`video.streams[]` backfill/enrichment** for the 2.22.0 additions (~2,900 records): per-stream capability breakdowns (name / resolution / fps / codec) — full main+sub where a datasheet publishes a per-stream table, accurate main-only otherwise (issue #177).
+- **Dahua field-of-view + dimensions backfill** for the 2.22.0 WizMind additions (`field_of_view_deg`, `dimensions_mm`).
+- **Re-sourcing to official URLs** — ABUS, Tiandy and Bosch records whose sources were reseller/dead links now point to official manufacturer sources (issues #336/#164).
+
 ## [2.22.0] — 2026-09-22
 
 Dataset reaches **15,821 cameras / 185 brands** (+3,416). A large multi-brand ingestion from **official sources only**:
