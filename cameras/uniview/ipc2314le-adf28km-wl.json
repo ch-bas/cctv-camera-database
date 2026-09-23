@@ -1,0 +1,96 @@
+{
+  "id": "uniview-ipc2314le-adf28km-wl",
+  "brand": "Uniview",
+  "model": "IPC2314LE-ADF28KM-WL",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4.0,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "field_of_view_deg": "111.3 horizontal, 61.2 vertical, 131.5 diagonal",
+  "lens": {
+    "focal_length_mm": "2.8",
+    "aperture": "F1.0",
+    "varifocal": false,
+    "count": 1
+  },
+  "night_vision": {
+    "type": "color",
+    "range_m": 30,
+    "min_lux_color": 0.0005
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ]
+  },
+  "power": {
+    "method": "DC 12 V±25%, PoE (IEEE 802.3af)",
+    "consumption_w": 5.9,
+    "voltage": "DC12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "ColorHunter full-color",
+    "WDR 120 dB"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "206 x 73 x 73",
+  "weight_g": 470,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "sources": [
+    "https://www.uniview.com/Products/Network_Cameras/Easy_Series/EasyStar_Series/IPC2314LE-ADF28KM-WL/",
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/ae5ddc4b-4073-4c45-9a1e-200e67a273a5/e48c2c75-f209-491a-8e56-17b8a276d279.pdf"
+  ],
+  "last_verified": "2026-09-22",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Main stream: /unicast/c1/s0/live, sub stream: /unicast/c1/s1/live. ONVIF on port 80."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration with default ONVIF port 80. RTSP: rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live"
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  },
+  "ndaa_compliant": true,
+  "cloud_dependency": "local"
+}

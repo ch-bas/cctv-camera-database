@@ -1,0 +1,101 @@
+{
+  "id": "uniview-ipc2328sb-adzkm-dl-i1",
+  "brand": "Uniview",
+  "model": "IPC2328SB-ADZKM-DL-I1",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8.0,
+    "label": "8MP"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "field_of_view_deg": "111.5 to 34.4 horizontal, 58.7 to 19.2 vertical, 132.5 to 39.4 diagonal",
+  "lens": {
+    "focal_length_mm": "2.8-12",
+    "aperture": "F1.4",
+    "varifocal": true,
+    "count": 1
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 60,
+    "min_lux_color": 0.002
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ]
+  },
+  "power": {
+    "method": "DC 12 V±25%, PoE (IEEE 802.3af)",
+    "consumption_w": 8.0,
+    "voltage": "DC12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "WDR 120 dB",
+    "person detection",
+    "vehicle detection",
+    "cross line detection",
+    "intrusion detection"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "245 x 85 x 86",
+  "weight_g": 930,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "sources": [
+    "https://www.uniview.com/Products/Network_Cameras/Prime_Series/PRIMEI_Series/IPC2328SB-ADZKM-DL-I1/",
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/1ee650f3-3f42-48be-941d-eb58b20fa904/9d4d0461-f7e1-4286-8add-65d30607180f.pdf"
+  ],
+  "last_verified": "2026-09-22",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Main stream: /unicast/c1/s0/live, sub stream: /unicast/c1/s1/live. ONVIF on port 80.",
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration with default ONVIF port 80. RTSP: rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live"
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  },
+  "ndaa_compliant": true,
+  "cloud_dependency": "local"
+}
