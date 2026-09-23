@@ -1,0 +1,88 @@
+{
+  "id": "dahua-ipc-hum4231-s2",
+  "brand": "Dahua",
+  "model": "IPC-HUM4231-S2",
+  "aliases": [
+    "DH-IPC-HUM4231-S2"
+  ],
+  "type": "covert",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "108 H / 59 V / 118 D",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.0005
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ]
+  },
+  "audio": {
+    "two_way": true
+  },
+  "power": {
+    "method": "12V DC",
+    "voltage": "12V DC"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "operating_temp_c": "-40 to +60",
+  "dimensions_mm": "34.6 x 44 x 30",
+  "weight_g": 82,
+  "features": [
+    "2MP covert/pinhole separated network camera (miniature sensor head)",
+    "WDR 120 dB, Smart H.265+/H.264+",
+    "1-ch audio in + 1-ch audio out (RCA), ONVIF Profile S"
+  ],
+  "sources": [
+    "https://materialfile.dahuasecurity.com/uploads/cpq/DH-IPC-HUM4231-S2_datsheet_20210305.pdf",
+    "https://www.dahuasecurity.com/uk/products/discontinued-products/network-cameras/ipc-hum4231-s2=s2"
+  ],
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua IP camera — ONVIF + Dahua /cam/realmonitor RTSP path; enable ONVIF and set a dedicated user."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (Dahua)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Dahua RTSP/ONVIF."
+    }
+  }
+}
