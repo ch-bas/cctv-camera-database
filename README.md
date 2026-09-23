@@ -285,11 +285,11 @@ A device type is only emitted when the camera has a known RJ45 link speed (`netw
 | Trassir | 162 | — |
 | ABUS | 161 | Consumer + professional, GDPR-first, DE/AT/CH |
 | Kenik | 160 | — |
+| Annke | 159 | Prosumer, global |
 | Hi-Focus | 155 | Made-in-India, BIS certified, IN |
 | FLIR (Teledyne) | 154 | Thermal imaging, NA/EU |
 | GeoVision | 150 | Enterprise, TW/Asia/global |
 | Grundig | 144 | — |
-| Annke | 140 | Prosumer, global |
 | RVi | 139 | — |
 | Reolink | 135 | Prosumer, no-subscription, global |
 | Arecont Vision | 132 | Enterprise megapixel/multi-sensor (legacy), US |
@@ -379,7 +379,6 @@ A device type is only emitted when the camera has a known RJ45 link speed (`netw
 | Ajax | 23 | Professional alarm + wired PoE cameras, EU/UK |
 | Wansview | 22 | — |
 | TRUEN | 20 | — |
-| ANNKE | 19 | — |
 | Jooan | 19 | — |
 | Sparsh | 18 | — |
 | Blink (Amazon) | 17 | Budget battery, US/UK/EU |

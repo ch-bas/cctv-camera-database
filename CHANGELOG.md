@@ -8,7 +8,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.23.0] — 2026-09-23
 
-Dataset reaches **21,573 cameras / 196 brands** (+5,752). A large multi-brand expansion from **official manufacturer sources only** — every field is transcribed from a manufacturer specification, and fields a manufacturer does not publish are omitted rather than estimated. No Provision-ISR models are included.
+Dataset reaches **21,573 cameras / 195 brands** (+5,752). A large multi-brand expansion from **official manufacturer sources only** — every field is transcribed from a manufacturer specification, and fields a manufacturer does not publish are omitted rather than estimated. No Provision-ISR models are included.
 
 ### Added — ten new brands (+355)
 - **AVTech +89** — DGM-series IP cameras (2–8 MP domes/bullets/turrets, motorized varifocal, PTZ, fisheye, dual-lens and active-deterrence models).
