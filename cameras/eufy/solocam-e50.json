@@ -1,0 +1,90 @@
+{
+  "id": "eufy-solocam-e50",
+  "brand": "Eufy",
+  "model": "SoloCam E50",
+  "aliases": [
+    "T8180",
+    "T81801"
+  ],
+  "type": "dual-lens",
+  "connectivity": [
+    "wifi"
+  ],
+  "power_source": [
+    "battery",
+    "solar"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "lens": {
+    "count": 2,
+    "varifocal": false
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "night_vision": {
+    "type": "color"
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "storage": {
+    "onboard": false,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": true,
+    "notes": "Records to microSD (up to 512GB, not included); pairs with HomeBase S380. Dual-view mode caps at 2K; single-view up to 4K."
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IP65",
+  "features": [
+    "Dual-lens 4K pan-tilt (wide + telephoto)",
+    "12x hybrid zoom (details up to 40 ft)",
+    "360 pan, 70 tilt",
+    "OmniTrack AI tracking with auto-framing (people/vehicles)",
+    "mmWave radar detection",
+    "spotlight + siren",
+    "5W solar panel with MPPT charging",
+    "dual-band Wi-Fi",
+    "two-way audio",
+    "no monthly fees, local storage"
+  ],
+  "power": {
+    "method": "Rechargeable battery + 5W solar panel"
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "sources": [
+    "https://us.eufy.com/products/t81801w0"
+  ],
+  "last_verified": "2026-09-22",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{homebase_ip}:554/live0",
+      "best_substream": "rtsp://{user}:{pass}@{homebase_ip}:554/live1",
+      "notes": "RTSP is served by the HomeBase, not the camera. Enable in eufy Security app.",
+      "verified": false,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "eufy_security",
+      "notes": "No native ONVIF; use the HomeBase RTSP stream as a Generic Camera, or the eufy-security HACS integration (P2P)."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use the HomeBase RTSP URL as a Generic/RTSP source (no ONVIF)."
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "id": "eufy-eufycam-e52",
+  "brand": "Eufy",
+  "model": "eufyCam E52",
+  "aliases": [
+    "T8174",
+    "T81741"
+  ],
+  "type": "dual-lens",
+  "connectivity": [
+    "wifi"
+  ],
+  "power_source": [
+    "battery",
+    "solar"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "lens": {
+    "count": 2,
+    "varifocal": false
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "storage": {
+    "onboard": false,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": true,
+    "notes": "Records to microSD (up to 512GB, not included) standalone, or to HomeBase S380 (64GB built-in, expandable to 16TB). No HomeBase required."
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IP65",
+  "features": [
+    "Dual-lens bullet-PTZ: upper 2K wide-angle bullet + lower 4K PTZ",
+    "360 auto-tracking with 8x auto zoom (details up to 33 ft)",
+    "OmniTrack AI tracking",
+    "radar motion detection",
+    "red/blue warning lights + siren deterrence",
+    "on-device AI human/vehicle detection",
+    "SolarPlus 2.0 solar charging (5W panel)",
+    "no monthly fee",
+    "HomeBase S380 optional (BionicMind AI, cross-cam tracking)",
+    "Alexa, Google Home"
+  ],
+  "power": {
+    "method": "Rechargeable removable battery + 5W solar panel"
+  },
+  "dimensions_mm": "163 x 88 x 158",
+  "weight_g": 837,
+  "environment": [
+    "outdoor"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "sources": [
+    "https://us.eufy.com/products/t81741w0"
+  ],
+  "last_verified": "2026-09-22",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{homebase_ip}:554/live0",
+      "best_substream": "rtsp://{user}:{pass}@{homebase_ip}:554/live1",
+      "notes": "RTSP is served by the HomeBase S380, not the camera. Enable in eufy Security app. Standalone (no HomeBase) is P2P/app only.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "eufy_security",
+      "notes": "No native ONVIF on the camera; use the HomeBase RTSP stream as a Generic Camera, or the eufy-security HACS integration (P2P)."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Not a Hikvision/ONVIF brand — use the HomeBase RTSP URL as a Generic/RTSP source (no ONVIF)."
+    }
+  }
+}
