@@ -1,0 +1,116 @@
+{
+  "id": "clarevision-cvp-m4b50-odi",
+  "brand": "ClareVision",
+  "model": "CVP-M4B50-ODI",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "video": {
+    "codecs": [
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 20,
+        "codec": "H.264+"
+      }
+    ]
+  },
+  "sensor": "1/3\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12",
+    "aperture": "F1.2",
+    "varifocal": true
+  },
+  "field_of_view_deg": "112-33.8",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af)",
+    "voltage": "12 VDC",
+    "consumption_w": 7.5,
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "features": [
+    "varifocal lens",
+    "120 dB WDR",
+    "3D DNR",
+    "intrusion detection",
+    "line crossing detection",
+    "motion detection",
+    "dynamic analysis",
+    "alarm I/O",
+    "H.264+"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "95 x 104.9 x 258.57",
+  "weight_g": 1200,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "US"
+  ],
+  "sources": [
+    "https://www.clarecontrols.com/helpcenter/4-mp-varifocal-bullet-camera-cvp-m4b50-odi-datasheet",
+    "https://www.clarecontrols.com/hubfs/Tech%20Pubs/Product%20Information%20/ClareVision%20Plus/Data%20Sheets/4%20MP%20Varifocal%20Bullet%20Camera%20CVP-M4B50-ODI%20Datasheet%20%28DOC%20ID%201403%29.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 360,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ClareVision Plus cameras use the Hikvision (ISAPI) protocol. The ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile. ClareVision Plus cameras use the Hikvision protocol."
+    }
+  },
+  "last_verified": "2026-09-22",
+  "environment": [
+    "outdoor"
+  ],
+  "cloud_dependency": "local"
+}
