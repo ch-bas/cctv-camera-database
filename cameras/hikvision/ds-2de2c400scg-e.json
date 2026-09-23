@@ -1,0 +1,104 @@
+{
+  "id": "hikvision-ds-2de2c400scg-e",
+  "brand": "Hikvision",
+  "model": "DS-2DE2C400SCG-E",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "aperture": "F1.0"
+  },
+  "night_vision": {
+    "type": "color",
+    "min_lux_color": 0.001
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ptz": {},
+  "power": {
+    "method": "12 VDC / PoE (802.3af)",
+    "consumption_w": 10
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "162 x 120 x 234.2",
+  "weight_g": 780,
+  "features": [
+    "4 MP ColorVu network speed dome (pan 0-340, tilt -5 to 105)",
+    "1/1.8\" CMOS, 2.8/4 mm F1.0 lens, 24/7 full colour",
+    "DWDR, white-light supplement",
+    "built-in mic + speaker",
+    "microSD up to 256 GB, ONVIF"
+  ],
+  "ndaa_compliant": false,
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hikvision ONVIF + RTSP (/Streaming/Channels/101 main, 102 sub).",
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (Hikvision)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Hikvision RTSP/ONVIF."
+    }
+  },
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000059112/DS-2DE2C400SCG-E_Datasheet_20250213.pdf"
+  ],
+  "last_verified": "2026-09-22"
+}
