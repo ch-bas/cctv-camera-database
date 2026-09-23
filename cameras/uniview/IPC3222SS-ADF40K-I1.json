@@ -1,0 +1,121 @@
+{
+  "id": "uniview-ipc3222ss-adf40k-i1",
+  "brand": "Uniview",
+  "model": "IPC3222SS-ADF40K-I1",
+  "ndaa_compliant": true,
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.0",
+    "aperture": "F1.6"
+  },
+  "field_of_view_deg": "86.88 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.003
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 8.2,
+    "voltage": "DC 12V"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "nvr_compatible": true,
+    "cloud": false,
+    "onboard": true,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "rtmp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30
+      }
+    ]
+  },
+  "features": [
+    "130 dB WDR",
+    "smart IR",
+    "HLC",
+    "BLC"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "176 x 104 x 72",
+  "weight_g": 620,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "http://sgcdn.uniview.com/Products/Network_Cameras/Prime_Series/PRIMEII_Series/IPC3222SS-ADF40K-I1/",
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/63860fc4-5c7f-4358-8bbd-180aeba684c7/0deb11a6-4450-4878-aeaa-f28c4d862afd.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Select 'Uniview' or generic ONVIF profile."
+    }
+  },
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local"
+}

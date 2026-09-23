@@ -1,0 +1,122 @@
+{
+  "id": "uniview-ipc3614le-adf28k-h",
+  "brand": "Uniview",
+  "model": "IPC3614LE-ADF28K-H",
+  "ndaa_compliant": true,
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/3.0\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6"
+  },
+  "field_of_view_deg": "97.0 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.003
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 4.4,
+    "voltage": "DC 12V"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "nvr_compatible": true,
+    "cloud": false,
+    "onboard": true,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "rtmp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 25
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30
+      }
+    ]
+  },
+  "features": [
+    "120 dB WDR",
+    "smart IR",
+    "human body detection",
+    "HLC",
+    "BLC"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Ø118 x 95",
+  "weight_g": 320,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "http://sgcdn.uniview.com/Products/Network_Cameras/Easy_Series/EasyStar_Series/IPC3614LE-ADF28K-H/",
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/ffce3642-594c-473e-a459-5d10a5203b68/ec450c3f-93ec-4e3b-b024-62ce695b531c.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Select 'Uniview' or generic ONVIF profile."
+    }
+  },
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local"
+}

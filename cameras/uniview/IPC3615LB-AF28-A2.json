@@ -1,0 +1,119 @@
+{
+  "id": "uniview-ipc3615lb-af28-a2",
+  "brand": "Uniview",
+  "model": "IPC3615LB-AF28-A2",
+  "ndaa_compliant": true,
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP"
+  },
+  "sensor": "1/3.0\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F2.0"
+  },
+  "field_of_view_deg": "94.3 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 3.9,
+    "voltage": "DC 12V"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "nvr_compatible": true,
+    "cloud": false,
+    "onboard": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "rtmp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "fps": 20
+      },
+      {
+        "name": "sub",
+        "resolution": "640x360",
+        "fps": 30
+      }
+    ]
+  },
+  "features": [
+    "smart IR",
+    "human body detection",
+    "HLC",
+    "BLC"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Ø118 x 95",
+  "weight_g": 250,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "http://sgcdn.uniview.com/Products/Network_Cameras/Easy_Series/EasyBasic_Series/IPC3615LB-AF28-A2/",
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/942ca396-da90-42c2-8101-411ce74145d4/6f0fe7a2-4189-453a-b9da-4ecf7ff9b879.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 360,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Select 'Uniview' or generic ONVIF profile."
+    }
+  },
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local"
+}
