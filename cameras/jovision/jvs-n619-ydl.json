@@ -1,0 +1,93 @@
+{
+  "id": "jovision-jvs-n619-ydl",
+  "brand": "Jovision",
+  "model": "JVS-N619-YDL",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "max_width": 3200,
+    "max_height": 1800,
+    "megapixels": 6.0,
+    "label": "6MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3200x1800",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/1.8\" CMOS Sensor",
+  "lens": {
+    "focal_length_mm": "4",
+    "varifocal": false,
+    "count": 1
+  },
+  "field_of_view_deg": "H 93 / V 50.5 / D 110.2",
+  "night_vision": {
+    "type": "color"
+  },
+  "power": {
+    "method": "DC12V or PoE",
+    "voltage": "DC12V"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http",
+    "p2p"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": false
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.jovisionsecurity.com/6_0MP_Black_light_IPC.html"
+  ],
+  "last_verified": "2026-09-22",
+  "status": "available",
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:8554/live0.264",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:8554/live1.264",
+      "verified": false,
+      "notes": "Jovision (CloudSEE) RTSP on non-standard port 8554 — main /live0.264, sub /live1.264. Enable ONVIF/RTSP in the web UI; paths vary by firmware — use ONVIF autodiscovery if these fail."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Generic ONVIF integration; Jovision RTSP is on port 8554."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use Generic ONVIF/RTSP; Jovision default RTSP port is 8554."
+    }
+  }
+}

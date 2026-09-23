@@ -1,0 +1,96 @@
+{
+  "id": "jovision-jvs-n913-ywc",
+  "brand": "Jovision",
+  "model": "JVS-N913-YWC",
+  "type": "bullet",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "max_width": 2304,
+    "max_height": 1296,
+    "megapixels": 3.0,
+    "label": "3MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.9\" CMOS",
+  "lens": {
+    "focal_length_mm": "4",
+    "varifocal": false,
+    "count": 1
+  },
+  "field_of_view_deg": "H 78.5 / V 42.8 / D 92.6",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 25
+  },
+  "power": {
+    "method": "DC12V",
+    "voltage": "DC12V",
+    "consumption_w": 6.0
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "features": [
+    "Resolution 2304x1296@25fps",
+    "Ingress Protection IP66",
+    "18x IR-LED, Up to 25 Me ters",
+    "With Starlight Function"
+  ],
+  "weight_g": 230.0,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.jovisionsecurity.com/jvs_n913_ywc.html"
+  ],
+  "last_verified": "2026-09-22",
+  "status": "available",
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:8554/live0.264",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:8554/live1.264",
+      "verified": false,
+      "notes": "Jovision (CloudSEE) RTSP on non-standard port 8554 — main /live0.264, sub /live1.264. Enable ONVIF/RTSP in the web UI; paths vary by firmware — use ONVIF autodiscovery if these fail."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Generic ONVIF integration; Jovision RTSP is on port 8554."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use Generic ONVIF/RTSP; Jovision default RTSP port is 8554."
+    }
+  }
+}
