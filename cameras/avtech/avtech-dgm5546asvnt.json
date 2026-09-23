@@ -1,0 +1,107 @@
+{
+  "id": "avtech-dgm5546asvnt",
+  "brand": "AVTech",
+  "model": "DGM5546ASVNT",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP (2592x1944)"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" SONY CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "87 H / 50 V / 93 D",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 50,
+    "min_lux": 0.001
+  },
+  "power": {
+    "method": "PoE (802.3af)",
+    "consumption_w": 8
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-30°C ~ 60°C",
+  "features": [
+    "Motorized vari-focal lens (f2.8~12mm), remote focal length and focus adjustment",
+    "AVShield analytics: human detection, vehicle detection, perimeter intrusion, virtual fence, flow counting",
+    "Free P2P Cloud EaZy Networking (EagleEyes app) with Buddy sharing",
+    "Starlight visibility for clear & color images at night",
+    "Dual lights (IR / warm light LED) auto-switching B/W to color on motion, IR up to 50 m",
+    "WDR (120dB), 2D/3D DNR, Alarm Server linkage",
+    "Microphone built-in, PoE (IEEE 802.3af), ONVIF Profile S"
+  ],
+  "status": "available",
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local",
+  "sources": [
+    "http://www.surveillance-download.com/user/datasheets/IPCAM/DGM/DGM5546ASVNT_Spec.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live/ch01_0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/live/ch01_1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "AVTech IP camera — ONVIF Profile S. If the RTSP path differs, use go2rtc ONVIF autodiscovery (onvif://{user}:{pass}@{ip})."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (AVTech)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "AVTech ONVIF/RTSP."
+    }
+  }
+}

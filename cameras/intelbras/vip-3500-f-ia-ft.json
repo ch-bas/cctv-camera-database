@@ -1,0 +1,108 @@
+{
+  "id": "intelbras-vip-3500-f-ia-ft",
+  "model": "VIP 3500 F IA FT",
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP"
+  },
+  "sensor": "1/2.7\" 5MP CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.4",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180",
+  "night_vision": {
+    "type": "color",
+    "min_lux_color": 0.006
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.265+",
+      "H.264",
+      "H.264+",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "12 Vdc / PoE",
+    "consumption_w": 8.8
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "rtmp",
+    "http"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "audio": {
+    "microphone": false
+  },
+  "environment": [
+    "indoor"
+  ],
+  "dimensions_mm": "126.2 (dia) x 44.6",
+  "weight_g": 299,
+  "operating_temp_c": "-10 to 50",
+  "features": [
+    "5MP fisheye panoramic IP camera, 180deg",
+    "fixed 1.4 mm lens",
+    "dewarp panoramic views",
+    "WDR (120 dB) / HLC / BLC",
+    "1 audio in / 1 out",
+    "ONVIF S/G/T",
+    "microSD up to 256 GB"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Intelbras IP camera (Dahua OEM protocol); ONVIF + Dahua /cam/realmonitor RTSP path."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Intelbras uses Dahua protocol; ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile (Intelbras = Dahua OEM)."
+    }
+  },
+  "sources": [
+    "https://www.intelbras.com/pt-br/camera-fisheye-com-resolucao-de-5mp-vip-3500-f-ia-ft"
+  ],
+  "brand": "Intelbras",
+  "markets": [
+    "BR",
+    "LATAM"
+  ],
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local",
+  "status": "available"
+}

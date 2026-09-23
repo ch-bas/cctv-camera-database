@@ -1,0 +1,110 @@
+{
+  "id": "avtech-dgm2937svat",
+  "brand": "AVTech",
+  "model": "DGM2937SVAT",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p (1920x1080)"
+  },
+  "sensor": "1/2.8\" SONY CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.7-94",
+    "aperture": "F1.6-F3.5",
+    "varifocal": true
+  },
+  "field_of_view_deg": "2.9-64 (D)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 120,
+    "min_lux": 0.001
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "720x480",
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true
+  },
+  "ptz": {},
+  "power": {
+    "method": "PoE+ (802.3at)",
+    "consumption_w": 20,
+    "voltage": "DC 12V"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "storage": {
+    "nvr_compatible": true
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "weight_g": 2500,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "20X optical zoom f4.7-94mm lens for wide-area to long-range monitoring",
+    "PTZ: 360 continuous pan, tilt -15 to 90, up to 255 preset points, proportional zoom",
+    "AI-based human detection to reduce false alarms",
+    "Starlight sensor for clear color images at night, IR range up to 120m (8 IR LEDs)",
+    "WDR 120dB, BLC/HLC, defog, forced anti-flicker",
+    "Built-in microphone plus line out (G.711) for audio recording and broadcasting",
+    "ONVIF 17.06 compatible, PoE+ (802.3at)"
+  ],
+  "status": "available",
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live/ch01_0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/live/ch01_1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "AVTech IP camera — ONVIF Profile S. If the RTSP path differs, use go2rtc ONVIF autodiscovery (onvif://{user}:{pass}@{ip})."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (AVTech)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "AVTech ONVIF/RTSP."
+    }
+  },
+  "sources": [
+    "http://www.surveillance-download.com/user/datasheets/IPCAM/DGM/DGM2937SVAT_Spec.pdf"
+  ]
+}

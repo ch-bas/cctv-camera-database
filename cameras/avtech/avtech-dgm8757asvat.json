@@ -1,0 +1,105 @@
+{
+  "id": "avtech-dgm8757asvat",
+  "brand": "AVTech",
+  "model": "DGM8757ASVAT",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP (3840x2160)"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" SONY CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.0-50",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "56 D",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 80,
+    "min_lux": 0.001
+  },
+  "audio": {
+    "microphone": true
+  },
+  "power": {
+    "method": "PoE (802.3af)",
+    "consumption_w": 8
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-30 ~ 60",
+  "weight_g": 1450,
+  "features": [
+    "10X optical zoom motorized lens f5.0~50mm for wider surveillance area",
+    "Starlight sensor for clear color images at night",
+    "AI-based human / vehicle detection to reduce false alarms",
+    "IR effective range up to 80 meters",
+    "WDR 120dB for backlit/overexposed scenes",
+    "Built-in microphone and line out plus external alarm I/O",
+    "PoE (IEEE 802.3af) powered, ONVIF 17.06 compatible"
+  ],
+  "status": "available",
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local",
+  "sources": [
+    "http://www.surveillance-download.com/user/datasheets/IPCAM/DGM/DGM8757ASVAT_Spec.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live/ch01_0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/live/ch01_1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "AVTech IP camera — ONVIF Profile S. If the RTSP path differs, use go2rtc ONVIF autodiscovery (onvif://{user}:{pass}@{ip})."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (AVTech)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "AVTech ONVIF/RTSP."
+    }
+  }
+}

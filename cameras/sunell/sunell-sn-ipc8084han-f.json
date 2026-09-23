@@ -1,0 +1,90 @@
+{
+  "id": "sunell-sn-ipc8084han-f",
+  "brand": "Sunell",
+  "model": "SN-IPC8084HAN-F",
+  "type": "box",
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP (3840x2160)"
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "sensor": "1/1.8” Progressive Scan CMOS",
+  "night_vision": {
+    "min_lux_color": 0.005,
+    "min_lux": 0.001
+  },
+  "video": {
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "power": {
+    "method": "12 VDC / 24 VAC (-10% to +25%) / PoE (802.3af)",
+    "voltage": "12 VDC",
+    "consumption_w": 8.2
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 1024
+  },
+  "audio": {
+    "microphone": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "152.9 × 74.4 × 69.7 mm",
+  "weight_g": 400,
+  "features": [
+    "True WDR (120dB)",
+    "AI detection: face, human, vehicle"
+  ],
+  "ndaa_compliant": true,
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 360,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/2",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Sunell IP camera — ONVIF (Profile S/T/G/M) + /snl/live RTSP path. Enable ONVIF and set a dedicated user."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S/T)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a Generic/ONVIF camera; RTSP auto-discovered via ONVIF."
+    }
+  },
+  "sources": [
+    "https://www.sunellsecurity.com/products/special-series/sn-ipc8084han-f-8mp-starlight-box-camera.shtml"
+  ],
+  "last_verified": "2026-09-22",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local"
+}

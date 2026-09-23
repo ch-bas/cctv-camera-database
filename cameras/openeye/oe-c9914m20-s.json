@@ -1,0 +1,116 @@
+{
+  "id": "openeye-oe-c9914m20-s",
+  "brand": "OpenEye",
+  "model": "OE-C9914M20-S",
+  "type": "panoramic",
+  "resolution": {
+    "megapixels": 20,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "20MP (4x 5MP)"
+  },
+  "ndaa_compliant": true,
+  "sensor": "4x 1/2.8\" 5MP Sony Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5",
+    "varifocal": true
+  },
+  "field_of_view_deg": "103-32",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "audio": {
+    "two_way": true
+  },
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-40 to 55",
+  "power": {
+    "method": "PoE+ (802.3at) / 24VDC / 24VAC",
+    "consumption_w": 25,
+    "poe_class": 4
+  },
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "connectivity": [
+    "ethernet"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "dimensions_mm": "247.5 x 202.3",
+  "weight_g": 3400,
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1500,
+    "notes": "Dual microSD slots, up to 1.5TB per card"
+  },
+  "features": [
+    "multi-sensor (four 5MP imagers)",
+    "True WDR",
+    "Adaptive IR",
+    "motorized varifocal (4x optical zoom)",
+    "remotely repositionable (pan 360, tilt 90)",
+    "two-way audio",
+    "alarm I/O",
+    "NDAA compliant",
+    "manufactured in Taiwan"
+  ],
+  "status": "available",
+  "markets": [
+    "US"
+  ],
+  "cloud_dependency": "local",
+  "sources": [
+    "https://www.openeye.net/products/camera/oe-c9914m20-s/",
+    "https://portal.openeye.net/assets/documents/oe-c9914m20-s-spec-sheet",
+    "https://answers.openeye.net/Troubleshooting/Frequently_Asked_Questions/Cameras/List_of_RTSP_URLs"
+  ],
+  "last_verified": "2026-09-22",
+  "configs": {
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S/T). Set the camera's ONVIF port and credentials."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a Generic/ONVIF camera; Blue Iris auto-discovers the RTSP stream via ONVIF."
+    },
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/media/video1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/media/video2",
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      }
+    }
+  }
+}

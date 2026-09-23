@@ -1,0 +1,107 @@
+{
+  "id": "avtech-dgm5104scht",
+  "brand": "AVTech",
+  "model": "DGM5104SCHT",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP (2592x1944)"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "720x480",
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.9\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "96 D",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux": 0.01
+  },
+  "power": {
+    "method": "PoE (802.3af)",
+    "consumption_w": 8,
+    "voltage": "DC12V"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "nvr_compatible": true
+  },
+  "audio": {
+    "microphone": true
+  },
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "AI-based human detection to reduce false alarms",
+    "1/2.9\" CMOS, fixed f3.6mm F1.6 lens, 96 diagonal FOV",
+    "IR LED, 4 units, effective range up to 30 m",
+    "DWDR, HLC, 2D/3D DNR, AWB image enhancement",
+    "Built-in microphone (G.711-u / G.711-a) with audio adjustment",
+    "ONVIF 17.06 compatible, PoE (IEEE 802.3af), IP67 casing"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live/ch01_0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/live/ch01_1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "AVTech IP camera — ONVIF Profile S. If the RTSP path differs, use go2rtc ONVIF autodiscovery (onvif://{user}:{pass}@{ip})."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (AVTech)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "AVTech ONVIF/RTSP."
+    }
+  },
+  "status": "available",
+  "cloud_dependency": "local",
+  "sources": [
+    "http://www.surveillance-download.com/user/datasheets/IPCAM/DGM/DGM5104SCHT_Spec.pdf"
+  ],
+  "last_verified": "2026-09-22"
+}

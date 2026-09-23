@@ -1,0 +1,101 @@
+{
+  "id": "dahua-sd10a448wa-hnf",
+  "brand": "Dahua",
+  "model": "DH-SD10A448WA-HNF",
+  "aliases": [
+    "SD10A448WA-HNF"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP (2560x1440)"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.7-275",
+    "aperture": "F1.4-F4.5",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 450,
+    "min_lux": 0.0001
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "Hi-PoE"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "300 x 527",
+  "features": [
+    "4MP 48x optical zoom laser PTZ network camera",
+    "IR distance up to 450 m, deep-learning auto-tracking and perimeter protection",
+    "7 alarm in / 2 alarm out, Hi-PoE, IP67"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua PTZ — ONVIF + Dahua /cam/realmonitor RTSP path; camera-side auto-tracking."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (Dahua)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Dahua RTSP/ONVIF PTZ."
+    }
+  },
+  "sources": [
+    "https://materialfile.dahuasecurity.com/uploads/cpq/DH-SD10A448WA-HNF_datasheet_20200604.pdf",
+    "https://www.dahuasecurity.com/uk/products/discontinued-products/ptz-cameras/sd10a448wa-hnf"
+  ],
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local"
+}

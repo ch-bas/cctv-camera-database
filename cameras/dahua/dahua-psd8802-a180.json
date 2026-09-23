@@ -1,0 +1,95 @@
+{
+  "id": "dahua-psd8802-a180",
+  "brand": "Dahua",
+  "model": "PSD8802-A180",
+  "aliases": [
+    "DH-PSD8802-A180",
+    "PSD8802P-A180",
+    "PSD8802N-A180"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 4096,
+    "max_height": 1800,
+    "label": "4×2MP panoramic + 2MP PTZ"
+  },
+  "sensor": "Panoramic: four 1/1.8\" 2MP CMOS; PTZ: 1/1.8\" 2MP CMOS",
+  "lens": {
+    "count": 5,
+    "focal_length_mm": "5.5-206",
+    "varifocal": true
+  },
+  "field_of_view_deg": "180 H (panoramic)",
+  "night_vision": {
+    "min_lux": 0.001
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 60
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "DC36V",
+    "consumption_w": 120,
+    "voltage": "36V DC"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-40 to +60",
+  "dimensions_mm": "Φ449.5 x 342.5",
+  "weight_g": 16000,
+  "features": [
+    "4×2MP multi-sensor panoramic (180°) plus 2MP 37x optical-zoom PTZ",
+    "Smart tracking (panorama-to-PTZ), IVS tripwire/intrusion",
+    "Day/Night ICR, WDR 120 dB, DH-SD/Pelco protocols"
+  ],
+  "sources": [
+    "https://materialfile.dahuasecurity.com/uploads/soft/20190219/DH-PSD8802-A180_Datasheet_20190215.pdf",
+    "https://www.dahuasecurity.com/uk/products/discontinued-products/network-cameras/psd8802-a180"
+  ],
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua IP camera — ONVIF + Dahua /cam/realmonitor RTSP path; enable ONVIF and set a dedicated user."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (Dahua)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Dahua RTSP/ONVIF."
+    }
+  }
+}

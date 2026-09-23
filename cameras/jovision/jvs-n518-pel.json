@@ -1,0 +1,87 @@
+{
+  "id": "jovision-jvs-n518-pel",
+  "brand": "Jovision",
+  "model": "JVS-N518-PEL",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "max_width": 2560,
+    "max_height": 1792,
+    "megapixels": 5,
+    "label": "5MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1792",
+        "fps": 30,
+        "codec": "H.265+"
+      }
+    ]
+  },
+  "sensor": "1/3\" CMOS",
+  "lens": {
+    "focal_length_mm": "2.7-13.5",
+    "varifocal": true,
+    "count": 1
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 80
+  },
+  "power": {
+    "method": "AC 220V",
+    "consumption_w": 7.5
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http",
+    "p2p"
+  ],
+  "ip_rating": "IP68",
+  "dimensions_mm": "165 x 160 x 270",
+  "weight_g": 6.5,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.jovisionsecurity.com/5_MP_Explosion_Proof__Corrosion_Proof_Motorized_Zoom_Camera.html"
+  ],
+  "last_verified": "2026-09-22",
+  "status": "available",
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:8554/live0.264",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:8554/live1.264",
+      "verified": false,
+      "notes": "Jovision (CloudSEE) RTSP on non-standard port 8554 — main /live0.264, sub /live1.264. Enable ONVIF/RTSP in the web UI; paths vary by firmware — use ONVIF autodiscovery if these fail."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Generic ONVIF integration; Jovision RTSP is on port 8554."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use Generic ONVIF/RTSP; Jovision default RTSP port is 8554."
+    }
+  }
+}

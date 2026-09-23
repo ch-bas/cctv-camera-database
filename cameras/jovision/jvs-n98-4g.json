@@ -1,0 +1,92 @@
+{
+  "id": "jovision-jvs-n98-4g",
+  "brand": "Jovision",
+  "model": "JVS-N98-4G",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet",
+    "4g"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "max_width": 2304,
+    "max_height": 1296,
+    "megapixels": 3,
+    "label": "3MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.9\" Progressive CMOS",
+  "lens": {
+    "focal_length_mm": "3.6",
+    "varifocal": false,
+    "count": 1
+  },
+  "field_of_view_deg": "H 82.4 / V 44.0 / D 95.9",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 40
+  },
+  "power": {
+    "method": "DC12V/2A",
+    "voltage": "DC12V",
+    "consumption_w": 12
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http",
+    "p2p"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": false
+  },
+  "weight_g": 746,
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.jovisionsecurity.com/3_0MP_4G_Pan_Tilt_Camera.html"
+  ],
+  "last_verified": "2026-09-22",
+  "status": "available",
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:8554/live0.264",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:8554/live1.264",
+      "verified": false,
+      "notes": "Jovision (CloudSEE) RTSP on non-standard port 8554 — main /live0.264, sub /live1.264. Enable ONVIF/RTSP in the web UI; paths vary by firmware — use ONVIF autodiscovery if these fail."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Generic ONVIF integration; Jovision RTSP is on port 8554."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use Generic ONVIF/RTSP; Jovision default RTSP port is 8554."
+    }
+  }
+}

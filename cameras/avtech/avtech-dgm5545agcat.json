@@ -1,0 +1,105 @@
+{
+  "id": "avtech-dgm5545agcat",
+  "brand": "AVTech",
+  "model": "DGM5545AGCAT",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP (2592x1944)"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "D1"
+      }
+    ]
+  },
+  "sensor": "1/3\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "117 D",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux": 0.01
+  },
+  "power": {
+    "method": "PoE (802.3af)",
+    "consumption_w": 8
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true
+  },
+  "storage": {
+    "nvr_compatible": true
+  },
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-30°C ~ 60°C",
+  "weight_g": 1050,
+  "features": [
+    "Motorized lens (f2.8~12mm)",
+    "AI-based human detection to avoid false detection alarms",
+    "IR effective range up to 30 m (20 IR LED units)",
+    "DWDR, HLC, 2D/3D DNR for overexposure and dark areas",
+    "Microphone built-in for audio recording",
+    "PoE (IEEE 802.3af), ONVIF 17.06 compatible"
+  ],
+  "status": "available",
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local",
+  "sources": [
+    "http://www.surveillance-download.com/user/datasheets/IPCAM/DGM/DGM5545AGCAT_Spec.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live/ch01_0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/live/ch01_1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "AVTech IP camera — ONVIF Profile S. If the RTSP path differs, use go2rtc ONVIF autodiscovery (onvif://{user}:{pass}@{ip})."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (AVTech)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "AVTech ONVIF/RTSP."
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "id": "avtech-dgm8076svat",
+  "brand": "AVTech",
+  "model": "DGM8076SVAT",
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP (3840x2160)"
+  },
+  "sensor": "1/2.8\" SONY CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "0.98",
+    "aperture": "F1.2",
+    "varifocal": false
+  },
+  "field_of_view_deg": "200 D",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux": 0.01
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "720x480"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true
+  },
+  "power": {
+    "method": "PoE (802.3af)",
+    "consumption_w": 8
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP65",
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-30°C ~ 60°C",
+  "weight_g": 303.5,
+  "features": [
+    "8MP IR fisheye with 0.98mm wide-angle lens, 200 diagonal ultra-wide view",
+    "Starlight visibility for clear color images at night, 1/2.8\" SONY CMOS",
+    "AI-based human / vehicle detection to reduce false alarms",
+    "IR effective range 10-20 meters (18 IR LEDs), WDR 120dB",
+    "Microphone & speaker built-in (G.711/AAC), PoE (IEEE 802.3af)",
+    "ONVIF 17.06 compatible, MicroSD up to 256GB"
+  ],
+  "status": "available",
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live/ch01_0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/live/ch01_1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "AVTech IP camera — ONVIF Profile S. If the RTSP path differs, use go2rtc ONVIF autodiscovery (onvif://{user}:{pass}@{ip})."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (AVTech)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "AVTech ONVIF/RTSP."
+    }
+  },
+  "sources": [
+    "http://www.surveillance-download.com/user/datasheets/IPCAM/DGM/DGM8076SVAT_Spec.pdf"
+  ]
+}

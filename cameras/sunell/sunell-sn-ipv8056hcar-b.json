@@ -1,0 +1,101 @@
+{
+  "id": "sunell-sn-ipv8056hcar-b",
+  "brand": "Sunell",
+  "model": "SN-IPV8056HCAR-B",
+  "type": "turret",
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP (2592x1944)"
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "sensor": "1/2.8” Progressive Scan CMOS",
+  "lens": {
+    "focal_length_mm": "2.8",
+    "aperture": "F2.0"
+  },
+  "field_of_view_deg": "2.8 mm: - H: 93.9, V: 68.7 4 mm: - H: 80.6, V: 57",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.005,
+    "min_lux": 0.001
+  },
+  "video": {
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "fps": 30
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "power": {
+    "method": "12 VDC (-10% to +25%)/PoE (802.3af)",
+    "voltage": "12 VDC",
+    "consumption_w": 6
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 1024
+  },
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "audio": {
+    "microphone": true
+  },
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "φ118.2 × 93.9 mm",
+  "weight_g": 550,
+  "features": [
+    "True WDR (120dB)",
+    "AI detection: face, human, vehicle"
+  ],
+  "ndaa_compliant": true,
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 360,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/2",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Sunell IP camera — ONVIF (Profile S/T/G/M) + /snl/live RTSP path. Enable ONVIF and set a dedicated user."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S/T)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a Generic/ONVIF camera; RTSP auto-discovered via ONVIF."
+    }
+  },
+  "sources": [
+    "https://www.sunellsecurity.com/products/pro-ip-camera/sn-ipv8056hcar-b.shtml"
+  ],
+  "last_verified": "2026-09-22",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local"
+}

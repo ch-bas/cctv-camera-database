@@ -1,0 +1,108 @@
+{
+  "id": "avtech-dgm8508asvgat",
+  "brand": "AVTech",
+  "model": "DGM8508ASVGAT",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP (3840x2160)"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" SONY CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "112 D",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux": 0.001
+  },
+  "power": {
+    "method": "PoE (802.3af)",
+    "consumption_w": 8
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true
+  },
+  "ip_rating": "IP67",
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "weight_g": 600,
+  "operating_temp_c": "-30 to 60",
+  "features": [
+    "Fixed f2.8mm F1.6 lens",
+    "Starlight visibility for clear color images at night",
+    "AI-based human / vehicle detection to reduce false alarms",
+    "Dual lights (IR / warm-light LED) smartly switch B/W to color at night on motion (6 dual LEDs, up to 30 m)",
+    "Active deterrence: siren and warm lights triggered automatically on intruder detection",
+    "WDR 120dB, BLC / HLC / 2D & 3D DNR / defog",
+    "Built-in microphone and speaker, PoE (802.3af), IP67"
+  ],
+  "status": "available",
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local",
+  "sources": [
+    "http://www.surveillance-download.com/user/datasheets/IPCAM/DGM/DGM8508ASVGAT_Spec.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live/ch01_0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/live/ch01_1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "AVTech IP camera — ONVIF Profile S. If the RTSP path differs, use go2rtc ONVIF autodiscovery (onvif://{user}:{pass}@{ip})."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (AVTech)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "AVTech ONVIF/RTSP."
+    }
+  }
+}

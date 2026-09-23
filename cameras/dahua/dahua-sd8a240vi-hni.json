@@ -1,0 +1,93 @@
+{
+  "id": "dahua-sd8a240vi-hni",
+  "brand": "Dahua",
+  "model": "SD8A240VI-HNI",
+  "aliases": [
+    "DH-SD8A240VI-HNI"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.6-223",
+    "aperture": "F1.4-F4.8",
+    "varifocal": true
+  },
+  "field_of_view_deg": "60.6-1.8 H / 35.8-1.0 V",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 450
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "2MP Ultra-series PTZ with 40x optical zoom, Starlight (IR up to 450 m)",
+    "Auto-tracking, smart wiper, WDR 120 dB",
+    "Smart H.265+, Day/Night ICR, ONVIF Profile S&G"
+  ],
+  "sources": [
+    "https://materialfile.dahuasecurity.com/uploads/soft/20190528/DH-SD8A240VI-HNI.pdf",
+    "https://www.dahuasecurity.com/uk/products/discontinued-products/ptz-cameras/sd8a240vi-hni"
+  ],
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua IP camera — ONVIF + Dahua /cam/realmonitor RTSP path; enable ONVIF and set a dedicated user."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (Dahua)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Dahua RTSP/ONVIF."
+    }
+  }
+}
