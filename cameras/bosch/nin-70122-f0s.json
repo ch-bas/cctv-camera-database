@@ -1,0 +1,99 @@
+{
+  "id": "bosch-nin-70122-f0s",
+  "brand": "Bosch",
+  "model": "NIN-70122-F0S",
+  "aliases": [
+    "FLEXIDOME IP panoramic 7000 MP",
+    "FLEXIDOME panoramic 7000 12MP"
+  ],
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 12,
+    "label": "12MP"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "sensor": "12MP CMOS (total); 3648x2160 used (180°), 2640x2640 used (360°)",
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "none"
+  },
+  "power": {
+    "method": "PoE IEEE 802.3af (802.3at Type 1)",
+    "consumption_w": 6.7,
+    "voltage": "48 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true
+  },
+  "features": [
+    "12MP panoramic sensor at 30 fps",
+    "180° and 360° versions",
+    "Edge and client-side dewarping",
+    "Simultaneous E-PTZ views",
+    "Essential / Intelligent Video Analytics on full panorama",
+    "Built-in microphone",
+    "Discreet low-profile indoor design",
+    "Twist-click installation"
+  ],
+  "operating_temp_c": "-20 to 40",
+  "dimensions_mm": "158 (dia) x 33 (H)",
+  "weight_g": 526,
+  "environment": [
+    "indoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.iqsight.com/en/products/cameras/panoramic-cameras/flexidome-ip-panoramic-7000-mp/nin-70122-f0s",
+    "https://resources.keenfinity.tech/public/documents/NIN_70122_Data_sheet_enUS_18235982475.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (set a password on first login). ONVIF Profile S/G/T/M. Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G/T/M compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "last_verified": "2026-09-22",
+  "cloud_dependency": "local"
+}
