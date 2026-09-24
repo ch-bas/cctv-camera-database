@@ -1,0 +1,112 @@
+{
+  "id": "truen-tx-p5230n10r",
+  "brand": "TRUEN",
+  "model": "TX-P5230N10R",
+  "aliases": [
+    "TRUEN TX-P5230N10R",
+    "Truen TX-P5230N10R"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 2.07,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.0\" Progressive scan CMOS",
+  "lens": {
+    "focal_length_mm": "5.2 to 156 (30x optical zoom, 16x digital)",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 300,
+    "min_lux_color": 0.01
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "two_way": true
+  },
+  "storage": {
+    "max_microsd_gb": 512
+  },
+  "power": {
+    "method": "AC24V",
+    "voltage": "AC24V",
+    "consumption_w": 40
+  },
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "232 diameter x 364",
+  "weight_g": 4880,
+  "features": [
+    "AI PTZ positioning camera, 30x optical / 16x digital zoom",
+    "quad streaming (Pri H.265/H.264, Sec x3 H.265/H.264/MJPEG)",
+    "WDR / BLC / HLC",
+    "DC auto iris",
+    "air wiper",
+    "ONVIF Profile M attribute data"
+  ],
+  "ptz": {
+    "autotracking": true
+  },
+  "markets": [
+    "global"
+  ],
+  "status": "available",
+  "sources": [
+    "https://www.truen.co.kr/product/product01.php?ptype=view&prdcode=2202100008&catcode=10101000"
+  ],
+  "last_verified": "2026-09-24",
+  "configs": {
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S/T). Set the camera's ONVIF port and credentials."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a Generic/ONVIF camera; Blue Iris auto-discovers the RTSP stream via ONVIF."
+    },
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/video1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/video2",
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      }
+    }
+  },
+  "cloud_dependency": "local"
+}
