@@ -1,0 +1,111 @@
+{
+  "id": "grundig-gu-ti-ap4603t",
+  "brand": "Grundig",
+  "model": "GU-TI-AP4603T",
+  "aliases": [
+    "Grundig GU-TI-AP4603T"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "H.264+",
+      "H.265",
+      "H.265+",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.7\" progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "H: 81; V: 57; D: 108",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux_color": 0.003
+  },
+  "protocols": [
+    "rtsp",
+    "onvif",
+    "http"
+  ],
+  "power": {
+    "consumption_w": 11,
+    "voltage": "12 VDC, PoE (IEEE 802.3af)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP67",
+  "features": [
+    "Bi-spectral: thermal (256x192 uncooled) + optical channel",
+    "Deep-learning object classification (person/vehicle)",
+    "Fire / temperature detection",
+    "120 dB WDR",
+    "ONVIF Profile S/G/T/M",
+    "NEMA 4X corrosion-resistant housing"
+  ],
+  "operating_temp_c": "-35 to 60",
+  "dimensions_mm": "Ø130 x 350",
+  "weight_g": 1235,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "status": "available",
+  "sources": [
+    "https://de.grundig-security.com/catalog/camera/thermal-imaging/bullet/GU-TI-AP4603T",
+    "https://download.grundig-security.com/DSH-GU-TI-AP4603T-V1-EN.pdf"
+  ],
+  "last_verified": "2026-09-24",
+  "configs": {
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S/T). Set the camera's ONVIF port and credentials."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a Generic/ONVIF camera; Blue Iris auto-discovers the RTSP stream via ONVIF."
+    },
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Bi-spectral thermal+optical; use the optical channel for detection. ONVIF Profile S/G/T/M."
+    }
+  },
+  "cloud_dependency": "local"
+}
