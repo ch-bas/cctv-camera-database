@@ -1,0 +1,102 @@
+{
+  "id": "sunell-sn-mv1090wan-ec",
+  "brand": "Sunell",
+  "model": "SN-MV1090WAN-EC",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 9,
+    "max_width": 4096,
+    "max_height": 2160,
+    "label": "9MP (4096x2160)"
+  },
+  "sensor": "1/1.1” GMOS",
+  "lens": {
+    "focal_length_mm": "25/35/50",
+    "aperture": "F1.4-F1.5",
+    "varifocal": false,
+    "count": 1
+  },
+  "field_of_view_deg": "- 25 mm: H 32.8 , V 17.2 - 35 mm: H 23.7 , V 12.5 - 50 mm: H 16.7 , V 8.8",
+  "night_vision": {
+    "min_lux": 0.0005,
+    "min_lux_color": 0.001
+  },
+  "video": {
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4096x2160",
+        "fps": 60
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "power": {
+    "method": "12 VDC / 24 VAC / PoE (802.3af)",
+    "voltage": "12 VDC",
+    "consumption_w": 12.0
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 1024
+  },
+  "environment": [
+    "indoor"
+  ],
+  "operating_temp_c": "-30 to 55",
+  "dimensions_mm": "194.8 × 99 × 91 mm",
+  "weight_g": 990,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 2
+  },
+  "features": [
+    "9MP Machine Vision Network Camera",
+    "AI detection (face, human, vehicle)"
+  ],
+  "ndaa_compliant": true,
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/2",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Sunell IP camera — ONVIF (Profile S/T/G/M) + /snl/live RTSP path. Enable ONVIF and set a dedicated user."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S/T)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a Generic/ONVIF camera; RTSP auto-discovered via ONVIF."
+    }
+  },
+  "sources": [
+    "https://www.sunellsecurity.com/products/machine-vision-cameras/sn-mv1090wan-ec-9mp-machine-vision-network-camera.shtml"
+  ],
+  "last_verified": "2026-09-24",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local"
+}
