@@ -1,0 +1,117 @@
+{
+  "id": "prama-pt-vd3b41-p",
+  "brand": "Prama",
+  "model": "PT-VD3B41-P",
+  "aliases": [
+    "4 MP Video Door Station"
+  ],
+  "markets": [
+    "india"
+  ],
+  "type": "doorbell",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "field_of_view_deg": "150 / 75 (horizontal / vertical)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 3
+  },
+  "power": {
+    "method": "12 VDC or PoE (IEEE 802.3at)",
+    "consumption_w": 10,
+    "voltage": "12 VDC / PoE"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP65",
+  "environment": [
+    "outdoor"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "120 dB WDR",
+    "Mifare card reader (13.56 MHz)",
+    "exit button, door contact, tamper, RS-485",
+    "2 relay lock control",
+    "sound classification (scream / glass break / crying)",
+    "motion detection",
+    "elevator call"
+  ],
+  "video": {
+    "codecs": [
+      "H.264",
+      "H.265",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "codec": "H.265"
+      }
+    ]
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "dimensions_mm": "164 x 69 x 24.7",
+  "weight_g": 273,
+  "operating_temp_c": "-40 to 60",
+  "cloud_dependency": "cloud-optional",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "verified": false,
+      "notes": "Hikvision-OEM video door station; native RTSP main 101 / sub 102. ONVIF on port 80. PRAMA ONLINE app is optional.",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF works locally; doorbell button and two-way audio via ONVIF.",
+      "doorbell_button": true,
+      "two_way_audio": true
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile (Prama is Hikvision-OEM)."
+    }
+  },
+  "last_verified": "2026-09-24",
+  "sources": [
+    "https://www.pramaindia.in/product/pt-vd3b41-p/"
+  ],
+  "ndaa_compliant": false
+}
