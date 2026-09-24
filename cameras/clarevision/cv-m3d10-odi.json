@@ -1,0 +1,112 @@
+{
+  "id": "clarevision-cv-m3d10-odi",
+  "brand": "ClareVision",
+  "model": "CV-M3D10-ODI",
+  "aliases": [
+    "Mainline 3MP Dome"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2048,
+    "max_height": 1536,
+    "label": "3MP"
+  },
+  "sensor": "1/3\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux": 0.07
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2048x1536",
+        "codec": "H.264"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af)",
+    "voltage": "12 VDC",
+    "consumption_w": 5.5
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 32,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "varifocal lens",
+    "3D DNR",
+    "digital WDR",
+    "manual 3-axis positioning",
+    "motion detection",
+    "alarm I/O",
+    "vandal-resistant housing"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "139.9 x 99.9 (dia. x height)",
+  "weight_g": 1000,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "US"
+  ],
+  "sources": [
+    "https://www.clarecontrols.com/helpcenter/mainline-3mp-dome-cv-m3d10-odi-datasheet-doc-id-301",
+    "https://www.clarecontrols.com/hubfs/Tech%20Pubs/Product%20Information%20/ClareVision%20Plus/Data%20Sheets/Mainline%203MP%20Dome%20CV-M3D10-ODI%20Datasheet%20%28DOC%20ID%20301%29.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 360,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ClareVision cameras use the Hikvision (ISAPI) protocol. The ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile. ClareVision cameras use the Hikvision protocol."
+    }
+  },
+  "last_verified": "2026-09-24",
+  "cloud_dependency": "local"
+}

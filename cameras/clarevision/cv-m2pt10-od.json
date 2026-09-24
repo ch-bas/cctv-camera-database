@@ -1,0 +1,113 @@
+{
+  "id": "clarevision-cv-m2pt10-od",
+  "brand": "ClareVision",
+  "model": "CV-M2PT10-OD",
+  "aliases": [
+    "Mainline 2MP PTZ Dome"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.05
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "ptz": {
+    "autotracking": false
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at)",
+    "voltage": "24 VAC",
+    "consumption_w": 18
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 32,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "4x optical zoom",
+    "16x digital zoom",
+    "power zoom and autofocus lens",
+    "360 degree endless pan",
+    "auto-flip",
+    "digital WDR",
+    "IR cut filter (external IR source)"
+  ],
+  "operating_temp_c": "-30 to 65",
+  "dimensions_mm": "179.4 x 239.5 (dia. x height)",
+  "weight_g": 2000,
+  "markets": [
+    "US"
+  ],
+  "sources": [
+    "https://www.clarecontrols.com/helpcenter/mainline-2mp-ptz-dome-camera-datasheet",
+    "https://www.clarecontrols.com/hubfs/Tech%20Pubs/Product%20Information%20/ClareVision%20Plus/Data%20Sheets/Mainline%202MP%20PTZ%20Dome%20Camera%20Datasheet%20%28DOC%20ID%20820%29.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "autotracking": false,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ClareVision cameras use the Hikvision (ISAPI) protocol. The ONVIF integration works for PTZ."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile. ClareVision cameras use the Hikvision protocol."
+    }
+  },
+  "last_verified": "2026-09-24",
+  "cloud_dependency": "local"
+}
