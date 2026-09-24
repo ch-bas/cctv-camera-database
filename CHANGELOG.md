@@ -6,6 +6,33 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.24.0] — 2026-09-24
+
+Dataset reaches **23,797 cameras / 206 brands** (+2,224). A broad multi-brand expansion from **official manufacturer sources only** — every field is transcribed from a manufacturer specification, and fields a manufacturer does not publish are omitted rather than estimated. No Provision-ISR models are included.
+
+### Added — eleven new brands (+259)
+- **Secureye +86** — Indian SP/SR/SG IP series, analog 4-in-1, and PTZ speed domes.
+- **Edimax +61** — IC-series network cameras (cube, pan-tilt, bullet, dome, fisheye, panoramic, peephole doorbell).
+- **AirLive +19** — Ovislink AirCam IP bullets/turrets/PTZ and dual-light AI cameras.
+- **Montavue +19** — US prosumer IP cameras.
+- **Meari +17** — WiFi / battery / solar / pan-tilt consumer cameras.
+- **Zumimall +14** — battery / solar WiFi consumer cameras.
+- **Zebronics +14** — analog 4-in-1, IP network, 4G and WiFi cameras.
+- **LiToKam +10** — WiFi consumer cameras.
+- **Soliom +7** — solar / battery WiFi cameras.
+- **Campark +7** — WiFi / solar consumer cameras.
+- **ANLAPUS +5** — PoE consumer cameras.
+
+### Added — existing-brand catalogue expansion (+1,965)
+Deep gap-fills across ~45 already-covered brands, each from the manufacturer's official product pages, datasheets and spec APIs (real specs only; no fabrication):
+
+- **Longse +331**, **Merit LILIN +224**, **Beward +210**, **Hikvision +202**, **Sunell +133**, **Vitek +108**, **Uniview +80**, **D-Link +62**, **Intelbras +43**, **Mapesen +42**, **RVi +41**, **American Dynamics +36**, **Messoa +35**, **Nuvico +34**, **KBVision +33**, **Prama +32**, **Dahua +29**, **Brickcom +29**, **Speco +26**, **Hanwha +26**, **Jovision +23**, **Pelco +21**, **Milesight +20**, **i-PRO +13**, **ACTi +13**, **Ganz +8**, **Truen +7**, **TVT +6**, **Grandstream +6**, **EmpireTech +6**, **Amcrest +6**, **Tiandy +5**, **Godrej +5**, **Axis +5**, **ANNKE +5**, **Hiseeu +4**, **GeoVision +4**, **EZVIZ +4**, **Synology +3**, **MOBOTIX +3**, **Foscam +3**, **Vivotek +2**, **Reolink +2**, **Lorex +1**, **EverFocus +1**.
+- Camera families span bullet, dome, turret, PTZ (with auto-tracking where applicable), fisheye/panoramic, multi-sensor, thermal/bi-spectrum, explosion-proof / marine / onboard, solar & 4G, laser PTZ, ANPR/LPR, active-deterrence, doorbell/door-station, and HD-analog (AHD/TVI/CVI) lines. HD-analog records carry `connectivity:[coax]` / `protocols:[hdcvi]` with encoder-side fields omitted; IP records carry ONVIF/RTSP with Frigate/Home Assistant/Blue Iris `configs`.
+
+### Changed — data-quality passes
+- Cross-brand and within-brand OEM de-duplication by normalized model number (region/color/lens-config variants folded into `aliases`).
+- Analog HD cameras normalized to native sensor resolution rather than interpolated marketing megapixels; enum/format corrections (`power_source`, `protocols`, source URIs) applied so every record passes strict schema validation and the data-consistency lint.
+
 ## [2.23.0] — 2026-09-23
 
 Dataset reaches **21,573 cameras / 195 brands** (+5,752). A large multi-brand expansion from **official manufacturer sources only** — every field is transcribed from a manufacturer specification, and fields a manufacturer does not publish are omitted rather than estimated. No Provision-ISR models are included.
