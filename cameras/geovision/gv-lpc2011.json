@@ -1,0 +1,116 @@
+{
+  "id": "geovision-gv-lpc2011",
+  "brand": "GeoVision",
+  "model": "GV-LPC2011",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.8\" progressive scan super low lux CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3-9",
+    "varifocal": true,
+    "aperture": "F1.7"
+  },
+  "field_of_view_deg": "102-40 horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 10,
+    "min_lux_color": 0.05,
+    "min_lux": 0.04
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 12.3
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30
+      }
+    ]
+  },
+  "features": [
+    "license plate recognition (reflective plates only)",
+    "3x motorized optical zoom",
+    "P-iris lens",
+    "up to 60 km/hr (37 mph) capture",
+    "intelligent IR (24 IR LEDs, 10m)",
+    "WDR",
+    "3D noise reduction",
+    "defog",
+    "IK10 vandal resistant"
+  ],
+  "operating_temp_c": "-30 to 50",
+  "dimensions_mm": "142.14 x 77.72 x 102.75",
+  "weight_g": 810,
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://dlcdn.geovision.com.tw/Manual/LPR-Cam/Datasheet/Datasheet_IPLPC2011.pdf",
+    "https://www.geovision.com.tw/product/GV-LPC2011"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:8554/CH001.sdp",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port may vary (8554 or 554)."
+    },
+    "blue_iris": {
+      "profile": "GeoVision",
+      "notes": "Select 'GeoVision' profile. Default RTSP port may be 8554."
+    }
+  },
+  "last_verified": "2026-09-24",
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "cloud_dependency": "local"
+}

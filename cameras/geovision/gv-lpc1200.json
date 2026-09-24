@@ -1,0 +1,112 @@
+{
+  "id": "geovision-gv-lpc1200",
+  "brand": "GeoVision",
+  "model": "GV-LPC1200",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 1,
+    "max_width": 1280,
+    "max_height": 720,
+    "label": "1MP"
+  },
+  "sensor": "Megapixel B/W progressive scan CCD",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.7-47",
+    "varifocal": true,
+    "aperture": "F3.5"
+  },
+  "field_of_view_deg": "59.9-6.4 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20
+  },
+  "power": {
+    "method": "DC 12V",
+    "consumption_w": 54
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1280x720",
+        "fps": 30
+      }
+    ]
+  },
+  "features": [
+    "license plate recognition (reflective plates only)",
+    "10x motorized optical zoom",
+    "up to 200 km/hr (124 mph) capture",
+    "intelligent IR (8 high power IR LEDs, 20m)",
+    "built-in heater and fan",
+    "TV-out (BNC)",
+    "digital I/O (2 in / 2 out)",
+    "defog",
+    "ONVIF Profile S conformant"
+  ],
+  "operating_temp_c": "-40 to 50",
+  "dimensions_mm": "406 x 145 x 109",
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://s3.amazonaws.com/geovision_downloads/Manual/LPR-Cam/Datasheet/Datasheet_IPLPC1200.pdf",
+    "https://www.geovision.com.tw/product/GV-LPC1200"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:8554/CH001.sdp",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port may vary (8554 or 554)."
+    },
+    "blue_iris": {
+      "profile": "GeoVision",
+      "notes": "Select 'GeoVision' profile. Default RTSP port may be 8554."
+    }
+  },
+  "last_verified": "2026-09-24",
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "cloud_dependency": "local"
+}
