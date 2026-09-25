@@ -1,0 +1,93 @@
+{
+  "id": "techage-dm13e",
+  "brand": "Techage",
+  "model": "DM13E",
+  "aliases": [
+    "XM-DM13EP-50G",
+    "Techage 5MP PoE Dome DM13E"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP (2592x1944)"
+  },
+  "sensor": "1/4\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.2",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 15,
+    "min_lux": 0.1,
+    "min_lux_color": 1
+  },
+  "video": {
+    "codecs": [
+      "H.265"
+    ],
+    "max_fps": 15
+  },
+  "power": {
+    "method": "PoE (48V)"
+  },
+  "power_source": [
+    "poe"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "ip_rating": "IP66",
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "features": [
+    "5MP (2592x1944) PoE dome, available in 2MP/4MP/5MP options at 15 fps",
+    "1/4\" CMOS, fixed 2.8 mm F1.2 lens, IR-CUT day/night, 15 IR LEDs to 15 m",
+    "H.265 encoding, face detection, motion detection with email alert",
+    "colour 1.0 lux / B&W 0.1 lux, AE/AWB/AGC",
+    "48V PoE, ONVIF for third-party NVRs, XMEye P2P app (iOS/Android) + CMS",
+    "IP66 metal/plastic housing for indoor/outdoor use"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/user={user}&password={pass}&channel=1&stream=0.sdp?",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/user={user}&password={pass}&channel=1&stream=1.sdp?",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Techage on the Xiongmai/XMEye (XMeye Pro / iCSee) OEM platform; RTSP path is firmware-dependent and UNVERIFIED. Legacy Xiongmai form shown; newer firmware may use /live/main and /live/sub. Confirm via ONVIF discovery."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Xiongmai/XMEye OEM, default port 80). XMEye/iCSee cloud is proprietary; ONVIF/RTSP is the local path."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Generic ONVIF/RTSP profile (Xiongmai/XMEye OEM)."
+    }
+  },
+  "sources": [
+    "https://www.techage.com/products/techage-dome-camera-dm13e"
+  ],
+  "last_verified": "2026-09-25",
+  "cloud_dependency": "cloud-optional"
+}

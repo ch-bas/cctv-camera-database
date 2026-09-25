@@ -1,0 +1,100 @@
+{
+  "id": "hikvision-ids-2cd7347g0p-xs",
+  "brand": "Hikvision",
+  "model": "iDS-2CD7347G0P-XS",
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "aperture": "F1.0"
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 40
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.265+",
+      "H.264",
+      "H.264+",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3af)",
+    "poe_class": 3,
+    "consumption_w": 9.69
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "notes": "microSD up to 1 TB"
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "138.6 (dia) x 124.4",
+  "weight_g": 820,
+  "features": [
+    "4 MP DarkfighterS ANPR fixed turret (LPR/vehicle capture)",
+    "1/1.8\" CMOS, F1.0 aperture, hybrid IR + white light up to 40 m",
+    "140 dB WDR, H.265+, up to 5 streams",
+    "3-axis adjust (pan 0-355, tilt 0-65, rotate 0-360)",
+    "perimeter protection, microSD up to 1 TB, ONVIF Profile S/G, 802.3af PoE"
+  ],
+  "ndaa_compliant": false,
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hikvision ONVIF + RTSP (/Streaming/Channels/101 main, 102 sub)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (Hikvision)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Hikvision RTSP/ONVIF."
+    }
+  },
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000159249/iDS-2CD7347G0P-XS_Datasheet_20240910.pdf"
+  ],
+  "last_verified": "2026-09-22"
+}

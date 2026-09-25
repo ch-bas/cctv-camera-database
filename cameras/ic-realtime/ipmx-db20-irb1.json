@@ -1,0 +1,102 @@
+{
+  "id": "ic-realtime-ipmx-db20-irb1",
+  "brand": "IC Realtime",
+  "model": "IPMX-DB20-IRB1",
+  "type": "doorbell",
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" 2MP CMOS",
+  "lens": {
+    "count": 1,
+    "aperture": "F2.1",
+    "varifocal": false
+  },
+  "field_of_view_deg": "110(H), 62(V)",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 5
+  },
+  "connectivity": [
+    "ethernet",
+    "wifi"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "rtmp",
+    "p2p",
+    "http"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 256
+  },
+  "ip_rating": "IP65",
+  "environment": [
+    "outdoor"
+  ],
+  "weight_g": 400,
+  "features": [
+    "Video door station",
+    "SIP intercom (registers to SIP server)",
+    "2-way talk",
+    "Door lock control",
+    "Black finish",
+    "Wi-Fi 2.4GHz or PoE",
+    "P2P remote view (IC Now / IC Now Pro app)",
+    "microSD up to 256GB"
+  ],
+  "markets": [
+    "US"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "sources": [
+    "https://store.icrealtime.com/IPMX-DB20-IRB1",
+    "https://icr-eb-bucket.s3.amazonaws.com/storage/docs/datasheet/Dat_IPMX-DB20-IRB1.pdf"
+  ],
+  "last_verified": "2026-09-24",
+  "release_notes": "IC Realtime IPMX-DB20-IRB1 2MP PoE/Wi-Fi network door station with 1/2.8\" CMOS, H.265/H.264, built-in mic and speaker for 2-way talk, SIP intercom support and IP65 housing.",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua-OEM; use ONVIF or the Dahua/Amcrest integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select Dahua profile - IC Realtime uses Dahua protocol."
+    }
+  }
+}

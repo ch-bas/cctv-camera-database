@@ -1,0 +1,96 @@
+{
+  "id": "sunell-sn-tpc4204vt-m",
+  "brand": "Sunell",
+  "model": "SN-TPC4204VT-M",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 0.111,
+    "max_width": 384,
+    "max_height": 288,
+    "label": "384×288 thermal"
+  },
+  "sensor": "VOx uncooled focal plane array",
+  "lens": {
+    "focal_length_mm": "25/50/75/100",
+    "aperture": "F1.0",
+    "varifocal": false,
+    "count": 1
+  },
+  "field_of_view_deg": "25 mm: H: 14, V: 11 50 mm: H: 7.4, V: 5.6 75 mm: H: 5.1, V: 3.8 100 mm: H: 3.8, V: 2.3",
+  "video": {
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1280x1024",
+        "fps": 25
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "power": {
+    "method": "12 VDC ±25%",
+    "voltage": "12 VDC",
+    "consumption_w": 5
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 1024
+  },
+  "environment": [
+    "indoor"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "52 × 52 × 70 mm",
+  "weight_g": 220,
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "features": [
+    "Thermal Imaging Box Network Camera",
+    "AI detection (human, vehicle, ship)",
+    "Temperature measurement: -20 °C to 150 °C (-4 °F to 302 °F)"
+  ],
+  "ndaa_compliant": true,
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/2",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Sunell IP camera — ONVIF (Profile S/T/G/M) + /snl/live RTSP path. Enable ONVIF and set a dedicated user."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S/T)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a Generic/ONVIF camera; RTSP auto-discovered via ONVIF."
+    }
+  },
+  "sources": [
+    "https://www.sunellsecurity.com/products/fixed-thermal-camera/sn-tpc4204vt-m.shtml"
+  ],
+  "last_verified": "2026-09-24",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local"
+}

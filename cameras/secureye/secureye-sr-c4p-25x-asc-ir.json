@@ -1,0 +1,123 @@
+{
+  "id": "secureye-sr-c4p-25x-asc-ir",
+  "brand": "Secureye",
+  "model": "SR-C4P-25X-ASC-IR",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "4",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.0005
+  },
+  "video": {
+    "codecs": [
+      "Ultra265",
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "720x576",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "DC 12V / PoE+ (IEEE 802.3at)",
+    "consumption_w": 24
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "rtmp",
+    "http"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-40°C to +65°C",
+  "dimensions_mm": "304 x 195 x 163",
+  "weight_g": 2270,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "4MP dual-lens (fixed + PTZ) network PTZ camera with 25X optical zoom",
+    "PTZ channel links to fixed channel smart intrusion to auto-track targets",
+    "Starlight low-light, 120dB WDR, Smart IR up to 30m",
+    "face capture, people counting/flow, crowd density monitoring",
+    "smart intrusion (crossline, intrusion, enter/leave area; human/vehicle)",
+    "sound and light warning, two-way audio, alarm 2-in/1-out, RS485",
+    "ONVIF Profile S/G/T/M, microSD up to 512GB"
+  ],
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/media/video1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/media/video2",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Secureye (Uniview OEM) ONVIF/RTSP PTZ; dual-lens camera exposes multiple channels."
+    },
+    "home_assistant": {
+      "integration": "onvif"
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "ONVIF/RTSP PTZ (Uniview OEM)."
+    }
+  },
+  "sources": [
+    "https://www.secureye.com/product/sr-c4p-25x-asc-ir-4mp-ip-dual-lens-25x-network-ptz-camera",
+    "https://www.secureye.com/uploads/product/SR-C4P-25X-ASC-IR.pdf"
+  ],
+  "last_verified": "2026-09-22"
+}

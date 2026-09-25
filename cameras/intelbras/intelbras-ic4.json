@@ -1,0 +1,97 @@
+{
+  "id": "intelbras-ic4",
+  "model": "iC4",
+  "type": "ptz",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 1,
+    "max_width": 1280,
+    "max_height": 720,
+    "label": "HD 720p"
+  },
+  "sensor": "1/4\" HD CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4",
+    "varifocal": false
+  },
+  "field_of_view_deg": "90",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "resolution": "1280x720",
+        "fps": 25,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "power": {
+    "method": "DC 5V (USB)"
+  },
+  "power_source": [
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "cloud": true,
+    "nvr_compatible": true
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "environment": [
+    "indoor"
+  ],
+  "features": [
+    "720p HD indoor Wi-Fi pan/tilt camera (Mibo line), 360 coverage, auto-tracking",
+    "1/4\" CMOS, 4 mm lens (90 diag), pan 0-355 / tilt -15 to 105, IR to 10 m",
+    "H.264 + AAC up to 25 fps, ICR day/night, WDR, 3D DNR, two-way voice",
+    "10/100 RJ45 + 2.4 GHz Wi-Fi, microSD 8-128 GB, ONVIF Profile S, Mibo app, DC 5V"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Intelbras Mibo Wi-Fi PT camera — ONVIF Profile S; enable ONVIF in app."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (Intelbras)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF/Intelbras",
+      "notes": "Intelbras RTSP/ONVIF."
+    }
+  },
+  "sources": [
+    "https://www.intelbras.com/pt-br/camera-de-seguranca-wi-fi-hd-ic4"
+  ],
+  "markets": [
+    "br"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "brand": "Intelbras",
+  "last_verified": "2026-09-22"
+}

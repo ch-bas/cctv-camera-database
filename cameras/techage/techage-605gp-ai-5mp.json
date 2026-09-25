@@ -1,0 +1,69 @@
+{
+  "id": "techage-605gp-ai-5mp",
+  "brand": "Techage",
+  "model": "605GP-AI (5MP)",
+  "aliases": [
+    "605GP-AI-50G",
+    "Techage 5MP PoE Bullet 605GP-AI"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "label": "5MP"
+  },
+  "power": {
+    "method": "PoE"
+  },
+  "power_source": [
+    "poe"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "ip_rating": "IP66",
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "features": [
+    "5MP PoE bullet with AI human-body detection",
+    "2 white LED alarm lights, 9 selectable alarm sounds, motion detection + email alert",
+    "two-way audio, ONVIF for third-party NVRs",
+    "XMEye Pro + iCSee apps + VMS PC client, IP66 metal housing"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/user={user}&password={pass}&channel=1&stream=0.sdp?",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/user={user}&password={pass}&channel=1&stream=1.sdp?",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Techage on the Xiongmai/XMEye (XMeye Pro / iCSee) OEM platform; RTSP path is firmware-dependent and UNVERIFIED. Legacy Xiongmai form shown; newer firmware may use /live/main and /live/sub. Confirm via ONVIF discovery."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Xiongmai/XMEye OEM, default port 80). XMEye/iCSee cloud is proprietary; ONVIF/RTSP is the local path."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Generic ONVIF/RTSP profile (Xiongmai/XMEye OEM)."
+    }
+  },
+  "sources": [
+    "https://www.techage.com/products/techage-5mp-poe-ip-ai-camera-human-detection-two-way-audio-camera-onvif-for-nvr-system"
+  ],
+  "last_verified": "2026-09-25",
+  "cloud_dependency": "cloud-optional"
+}

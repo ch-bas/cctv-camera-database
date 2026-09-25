@@ -1,0 +1,101 @@
+{
+  "id": "dahua-dh-ipc-hdw5859h-pv-as-jm-s4",
+  "brand": "Dahua",
+  "model": "DH-IPC-HDW5859H-PV-AS-JM-S4",
+  "aliases": [
+    "DH-IPC-HDW5859H-PV-AS-JM-S4",
+    "IPC-HDW5859H-PV-AS-JM-S4"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP 4K (3840x2160)"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 300,
+    "min_lux": 0.0001,
+    "min_lux_color": 0.0002
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "DC12V/PoE",
+    "voltage": "DC12V"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "rtmp",
+    "http"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "ip_rating": "IP68",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "8MP 4K fixed-lens IR eyeball/turret network camera (China-market)",
+    "1/1.8\" CMOS, fixed 2.8 mm lens, 3840x2160, 120 dB WDR",
+    "long-range IR supplement to 300 m",
+    "H.265/H.264/MJPEG, 2 alarm in / 2 alarm out, 1 audio in / 1 audio out",
+    "DC12V/PoE, IP68, motion/tripwire/intrusion detection"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua IP camera — ONVIF + Dahua /cam/realmonitor RTSP path; enable ONVIF and set a dedicated user."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (Dahua)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Dahua RTSP/ONVIF."
+    }
+  },
+  "sources": [
+    "https://www.dahuatech.com/product/info/13780.html"
+  ],
+  "last_verified": "2026-09-22",
+  "markets": [
+    "cn"
+  ],
+  "cloud_dependency": "local"
+}

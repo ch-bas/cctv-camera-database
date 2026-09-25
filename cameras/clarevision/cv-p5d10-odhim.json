@@ -1,0 +1,114 @@
+{
+  "id": "clarevision-cv-p5d10-odhim",
+  "brand": "ClareVision",
+  "model": "CV-P5D10-ODHIM",
+  "aliases": [
+    "Proline 5MP Dome"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2560,
+    "max_height": 1920,
+    "label": "5MP"
+  },
+  "sensor": "1/2.5\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.5-9",
+    "aperture": "F1.2",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux": 0.6
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MPEG-4",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1920",
+        "codec": "H.264"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3at)",
+    "voltage": "24 VAC",
+    "consumption_w": 24
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 32,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "motorized zoom and focus",
+    "3D DNR",
+    "built-in fan and heater",
+    "manual 3-axis positioning",
+    "motion detection",
+    "alarm I/O",
+    "vandal-resistant housing"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "159.8 x 146 (dia. x height)",
+  "weight_g": 2100,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "US"
+  ],
+  "sources": [
+    "https://www.clarecontrols.com/helpcenter/proline-5mp-dome-cv-p5d10-odhim-datasheet",
+    "https://www.clarecontrols.com/hubfs/Tech%20Pubs/Product%20Information%20/ClareVision%20Plus/Data%20Sheets/Proline%205MP%20Dome%20CV-P5D10-ODHIM%20Datasheet%20%28DOC%20ID%20299%29.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 360,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ClareVision cameras use the Hikvision (ISAPI) protocol. The ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile. ClareVision cameras use the Hikvision protocol."
+    }
+  },
+  "last_verified": "2026-09-24",
+  "cloud_dependency": "local"
+}

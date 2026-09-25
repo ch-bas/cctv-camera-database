@@ -1,0 +1,74 @@
+{
+  "id": "techage-629ebp",
+  "brand": "Techage",
+  "model": "629EBP",
+  "aliases": [
+    "Techage 5MP PoE Bullet 629EBP"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "label": "5MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265"
+    ]
+  },
+  "power": {
+    "method": "PoE"
+  },
+  "power_source": [
+    "poe"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "ip_rating": "IP66",
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "features": [
+    "5MP PoE bullet, AI human detection (head+shoulder) to cut false alarms",
+    "smart dual-light: 2 white LED + 2 IR LED, motion detection with alarm sound + email alert",
+    "two-way audio, H.265, ONVIF for third-party NVRs",
+    "P2P remote access + web interface, IP66 metal housing"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/user={user}&password={pass}&channel=1&stream=0.sdp?",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/user={user}&password={pass}&channel=1&stream=1.sdp?",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Techage on the Xiongmai/XMEye (XMeye Pro / iCSee) OEM platform; RTSP path is firmware-dependent and UNVERIFIED. Legacy Xiongmai form shown; newer firmware may use /live/main and /live/sub. Confirm via ONVIF discovery."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Xiongmai/XMEye OEM, default port 80). XMEye/iCSee cloud is proprietary; ONVIF/RTSP is the local path."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Generic ONVIF/RTSP profile (Xiongmai/XMEye OEM)."
+    }
+  },
+  "sources": [
+    "https://www.techage.com/products/5mp-bullet-poe-camera-with-misecu-logo"
+  ],
+  "last_verified": "2026-09-25",
+  "cloud_dependency": "cloud-optional"
+}

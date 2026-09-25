@@ -1,0 +1,80 @@
+{
+  "id": "techage-dm27s",
+  "brand": "Techage",
+  "model": "DM27S",
+  "aliases": [
+    "XM-DM27SP-AI-50G",
+    "Techage 5MP PoE Dome DM27S"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "label": "5MP"
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 25
+  },
+  "video": {
+    "codecs": [
+      "H.265"
+    ]
+  },
+  "power": {
+    "method": "PoE"
+  },
+  "power_source": [
+    "poe"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "ip_rating": "IP66",
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "features": [
+    "5MP PoE dome (also offered as 8MP) with red/blue alarm light",
+    "AI human detection (head+shoulder), 2 white LED + 2 IR LED dual-light night vision to 25 m",
+    "two-way audio, motion detection",
+    "ONVIF (compatible with Hikvision NVR; plug-and-play with MISECU NVR), XMEye app + CMS",
+    "IP66 housing for indoor/outdoor use"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/user={user}&password={pass}&channel=1&stream=0.sdp?",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/user={user}&password={pass}&channel=1&stream=1.sdp?",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Techage on the Xiongmai/XMEye (XMeye Pro / iCSee) OEM platform; RTSP path is firmware-dependent and UNVERIFIED. Legacy Xiongmai form shown; newer firmware may use /live/main and /live/sub. Confirm via ONVIF discovery."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Xiongmai/XMEye OEM, default port 80). XMEye/iCSee cloud is proprietary; ONVIF/RTSP is the local path."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Generic ONVIF/RTSP profile (Xiongmai/XMEye OEM)."
+    }
+  },
+  "sources": [
+    "https://www.techage.com/products/security-camera-dome-camera-indoor"
+  ],
+  "last_verified": "2026-09-25",
+  "cloud_dependency": "cloud-optional"
+}

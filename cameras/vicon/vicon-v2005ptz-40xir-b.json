@@ -1,0 +1,137 @@
+{
+  "id": "vicon-v2005ptz-40xir-b",
+  "brand": "Vicon",
+  "model": "V2005PTZ-40XIR-B",
+  "aliases": [
+    "Vicon Roughneck Pro 5MP PTZ"
+  ],
+  "type": "ptz",
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP"
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "rtmp",
+    "http"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" Sony progressive CMOS",
+  "lens": {
+    "focal_length_mm": "4.25-170",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "H: 1.9 (tele) - 62.6 (wide); V: 1.4 (tele) - 48.8 (wide)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 250,
+    "min_lux_color": 0.02
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "PoE++ IEEE 802.3bt Type 3; 24 VAC",
+    "consumption_w": 51,
+    "voltage": "24 VAC / PoE++",
+    "poe_class": 6
+  },
+  "network": {
+    "ethernet_speed_mbps": 1000
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "notes": "microSD/microSDHC/microSDXC up to 1.5 TB; NAS recording supported."
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "Ø241 x 349 (with sunshield)",
+  "weight_g": 5500,
+  "operating_temp_c": "-40 to 60",
+  "features": [
+    "40x optical zoom with motorized focus and P-iris",
+    "Gen3 multi-exposure HDR",
+    "True WDR 120 dB",
+    "electronic image stabilizer (EIS)",
+    "Advanced AF with built-in LiDAR module",
+    "Smart/Adaptive IR up to 250 m",
+    "auto-tracking of people",
+    "servo feedback zero-drifting positioning",
+    "3D motion-compensated noise reduction (MCTF)",
+    "wiper support",
+    "quad streaming",
+    "256 presets, 8 sequence / 8 cruise / 4 auto pan",
+    "extensive VCA (line crossing, LPR, face recognition, object classification)",
+    "TPM 2.0, FIPS 140 compliant",
+    "NDAA/GSA/TAA compliant"
+  ],
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "status": "available",
+  "release_year": 2026,
+  "last_verified": "2026-09-24",
+  "sources": [
+    "https://vicon-security.com/5mp-pro-ptz-dome-camera",
+    "https://vicon-security.com/hubfs/V2005PTZ-40XIR-B%203.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "autotracking": false,
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "ONVIF Profile S/G/T/M; PTZ control via ONVIF. Camera-side auto-tracking is onboard; Frigate autotracking would need ONVIF relative movement."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S/T). Set the camera's ONVIF port and credentials."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a Generic/ONVIF PTZ camera; RTSP via ONVIF discovery."
+    }
+  },
+  "cloud_dependency": "local"
+}

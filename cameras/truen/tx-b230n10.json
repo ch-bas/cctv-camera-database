@@ -1,0 +1,99 @@
+{
+  "id": "truen-tx-b230n10",
+  "brand": "TRUEN",
+  "model": "TX-B230N10",
+  "aliases": [
+    "TRUEN TX-B230N10",
+    "Truen TX-B230N10"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "dc",
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 2.07,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "focal_length_mm": "5.2 to 156 (30x optical zoom, 8x digital)",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.0003,
+    "min_lux_color": 0.06
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "storage": {
+    "max_microsd_gb": 512
+  },
+  "power": {
+    "method": "DC12V / PoE+ (802.3at)",
+    "voltage": "DC12V",
+    "poe_class": 4
+  },
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "features": [
+    "AI long-range zoom block camera, 30x optical / 8x digital zoom",
+    "quad streaming (Pri H.265/H.264, Sec x3 H.265/H.264/MJPEG)",
+    "WDR / BLC / HLC",
+    "ONVIF Profile M attribute data"
+  ],
+  "weight_g": 863.6,
+  "markets": [
+    "global"
+  ],
+  "status": "available",
+  "sources": [
+    "https://www.truen.co.kr/product/product01.php?ptype=view&prdcode=2303270002&catcode=10131000"
+  ],
+  "last_verified": "2026-09-24",
+  "configs": {
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S/T). Set the camera's ONVIF port and credentials."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a Generic/ONVIF camera; Blue Iris auto-discovers the RTSP stream via ONVIF."
+    },
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/video1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/video2",
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      }
+    }
+  },
+  "cloud_dependency": "local"
+}

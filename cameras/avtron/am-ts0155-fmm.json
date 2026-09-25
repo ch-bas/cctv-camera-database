@@ -1,0 +1,88 @@
+{
+  "id": "avtron-am-ts0155-fmm",
+  "brand": "Avtron",
+  "model": "AM-TS0155-FMM",
+  "aliases": [
+    "AM-TS0155-FMM"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 0.12,
+    "max_width": 400,
+    "max_height": 300,
+    "label": "Thermal 400x300"
+  },
+  "sensor": "Uncooled IRFPA microbolometer (17 µm, 8–14 µm spectral range)",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ]
+  },
+  "protocols": [
+    "rtsp",
+    "onvif",
+    "http"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128
+  },
+  "audio": {
+    "microphone": true
+  },
+  "power": {
+    "method": "DC 12V, PoE (IEEE 802.3af)"
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "features": [
+    "Uncooled thermal bullet IP camera",
+    "NETD 40 mK @ F1.0 (300K)",
+    "8/15/25/50/75/100 mm motorized lens options with motorized focus (400x300 sensor; 640x512 @60fps optional)",
+    "16x digital zoom",
+    "Temperature measurement -40 to 150 °C (±2°C / ±2%)",
+    "Fire / over-temperature and temperature-difference alarms",
+    "IVA: tripwire, perimeter, object abandon/lost",
+    "Color palettes (Black-Heat/White-Heat/Rainbow/Iron-Red, up to 17 modes)",
+    "ONVIF Profile S"
+  ],
+  "sources": [
+    "https://avtrontech.com/products/am-ts0155-fmm/"
+  ],
+  "last_verified": "2026-09-24",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 400,
+        "height": 300,
+        "fps": 5
+      },
+      "onvif_port": 80,
+      "two_way_audio": false,
+      "notes": "Avtron exposes ONVIF/RTSP but does not publish a fixed RTSP path; use ONVIF auto-config or the camera web UI to obtain the stream URL."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Add via the generic ONVIF integration (port 80)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use 'Generic/ONVIF' — find/inspect to auto-fill RTSP."
+    }
+  }
+}

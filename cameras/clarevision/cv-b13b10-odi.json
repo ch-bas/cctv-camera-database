@@ -1,0 +1,105 @@
+{
+  "id": "clarevision-cv-b13b10-odi",
+  "brand": "ClareVision",
+  "model": "CV-B13B10-ODI",
+  "aliases": [
+    "Budget 1.3MP Mini-Bullet"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 1.3,
+    "max_width": 1280,
+    "max_height": 960,
+    "label": "1.3MP"
+  },
+  "sensor": "1/3\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4",
+    "aperture": "F1.2",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux": 0.01
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1280x960",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af)",
+    "voltage": "12 VDC",
+    "consumption_w": 7
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "fixed lens",
+    "digital WDR",
+    "vandal-resistant housing"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "60.4 x 76.5 x 138.1",
+  "weight_g": 380,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "US"
+  ],
+  "sources": [
+    "https://www.clarecontrols.com/helpcenter/budget-1.3-mp-mini-bullet-camera-cv-b13b10-odi-datasheet-doc-id-306",
+    "https://www.clarecontrols.com/hubfs/Tech%20Pubs/Product%20Information%20/ClareVision%20Plus/Data%20Sheets/Budget%201.3%20MP%20Mini-Bullet%20Camera%20CV-B13B10-ODI%20Datasheet%20%28DOC%20ID%20306%29.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 360,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ClareVision cameras use the Hikvision (ISAPI) protocol. The ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile. ClareVision cameras use the Hikvision protocol."
+    }
+  },
+  "last_verified": "2026-09-24",
+  "cloud_dependency": "local"
+}

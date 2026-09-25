@@ -1,0 +1,118 @@
+{
+  "id": "grandstream-gds3710",
+  "brand": "Grandstream",
+  "model": "GDS3710",
+  "type": "doorbell",
+  "aliases": [
+    "Grandstream IP Video Door System"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.7\" CMOS, 2 Megapixel",
+  "lens": {
+    "count": 1,
+    "aperture": "F2.5",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 horizontal, 150 vertical",
+  "night_vision": {
+    "type": "color",
+    "min_lux": 0.5
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "Primary Stream",
+        "resolution": "1920x1080",
+        "fps": 30
+      },
+      {
+        "name": "Secondary Stream",
+        "resolution": "1280x720"
+      },
+      {
+        "name": "Third Stream",
+        "resolution": "320x240"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "power": {
+    "method": "PoE (IEEE 802.3af Class 3) / DC 12V 1A",
+    "voltage": "12V DC / PoE",
+    "poe_class": 3
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK09",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "173 x 80 x 36",
+  "weight_g": 600,
+  "features": [
+    "IP video door system with built-in hemispheric camera (180-degree wall-to-wall coverage)",
+    "Day & Night white LEDs with smart brightness control (0.5 lux minimum illumination)",
+    "Built-in RFID card reader (125KHz EM4100) for keyless entry, up to ~2000 cards",
+    "SIP/VoIP 2-way audio and video streaming to SIP endpoints and GDS management software",
+    "Built-in microphone and speaker for intercom",
+    "Motion detection with up to 4 privacy masks",
+    "2 relay outputs for electric lock / light switch, 2 alarm inputs",
+    "ONVIF Profile S compliant; manageable via GSURF Pro / GDS Manager",
+    "Metal weatherproof and vandal-resistant casing (IP66 / IK09)"
+  ],
+  "sources": [
+    "https://www.grandstream.com/hubfs/Product_Documentation/datasheet_gds3710_english.pdf",
+    "https://www.grandstream.com/products/facility-management/facility-access-systems/product/gds3710"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/0",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Grandstream GDS also has a native Home Assistant integration for door events."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Select 'ONVIF' profile. ONVIF Profile S supported."
+    }
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "last_verified": "2026-09-24",
+  "cloud_dependency": "local"
+}

@@ -1,0 +1,110 @@
+{
+  "id": "sunell-sn-tpc4157dlt-f-ii",
+  "brand": "Sunell",
+  "model": "SN-TPC4157DLT-F (II)",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP (2688x1520)"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "focal_length_mm": "10-30",
+    "aperture": "F1.6",
+    "varifocal": true,
+    "count": 1
+  },
+  "field_of_view_deg": "4 mm: H 87, V 47 6 mm: H 55, V 30 10-30 mm: H: 43.4-15.5, V: 23.8-8.8",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100,
+    "min_lux": 0.001,
+    "min_lux_color": 0.005
+  },
+  "video": {
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "power": {
+    "method": "12 VDC / 24 VAC / PoE+ (802.3at)",
+    "voltage": "12 VDC",
+    "consumption_w": 25
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 1024
+  },
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "140.04 × 120.72 mm",
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "features": [
+    "Thermal & Optical Bi-spectrum Bullet Network Camera",
+    "AI detection (human, vehicle)",
+    "True WDR (120 dB)",
+    "Temperature measurement: -20 °C to 150 °C (-4 °F to 302 °F)"
+  ],
+  "ndaa_compliant": true,
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/2",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Sunell IP camera — ONVIF (Profile S/T/G/M) + /snl/live RTSP path. Enable ONVIF and set a dedicated user."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S/T)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a Generic/ONVIF camera; RTSP auto-discovered via ONVIF."
+    }
+  },
+  "sources": [
+    "https://www.sunellsecurity.com/products/bullet-thermal-camera/sn-tpc4157dlt-f-bispectrum-bullet-camera.shtml"
+  ],
+  "last_verified": "2026-09-24",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local"
+}

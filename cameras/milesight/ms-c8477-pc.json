@@ -1,0 +1,105 @@
+{
+  "id": "milesight-ms-c8477-pc",
+  "brand": "Milesight",
+  "model": "MS-C8477-PC",
+  "aliases": [],
+  "type": "panoramic",
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 5084,
+    "max_height": 1520,
+    "label": "8MP"
+  },
+  "sensor": "Dual 1/1.8\" Progressive Scan CMOS",
+  "video": {
+    "codecs": [
+      "H.264",
+      "H.264+",
+      "H.265",
+      "H.265+",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "5084x1520",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "4",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "H180/V50",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.002
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "audio": {
+    "microphone": true,
+    "two_way": true
+  },
+  "power": {
+    "method": "PoE (802.3at) / DC 12V",
+    "consumption_w": 12
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024
+  },
+  "protocols": [
+    "onvif"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "Φ160 x 127.5",
+  "weight_g": 1500,
+  "features": [
+    "person detection",
+    "vehicle detection",
+    "face detection",
+    "line crossing",
+    "loitering",
+    "region entrance",
+    "object counting",
+    "heat map",
+    "panoramic stitching"
+  ],
+  "sources": [
+    "https://resource.milesight.com/milesight/security/document/datasheet/ipc/milesight-ai-dual-sensor-panoramic-network-camera-datasheet-en.pdf"
+  ],
+  "last_verified": "2026-09-23",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/main",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/sub",
+      "verified": false,
+      "onvif_port": 80,
+      "notes": "Milesight /main + /sub RTSP; ONVIF port 80."
+    },
+    "home_assistant": {
+      "integration": "onvif"
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF"
+    }
+  },
+  "cloud_dependency": "local",
+  "network": {
+    "ethernet_speed_mbps": 100
+  }
+}

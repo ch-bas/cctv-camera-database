@@ -1,0 +1,108 @@
+{
+  "id": "hikvision-ds-2se2c400mwg-e-14",
+  "brand": "Hikvision",
+  "model": "DS-2SE2C400MWG-E-14",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "lens": {
+    "count": 2,
+    "aperture": "F1.6"
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.265+",
+      "H.264",
+      "H.264+",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ptz": {},
+  "power": {
+    "method": "12 VDC / PoE (802.3at)",
+    "poe_class": 4,
+    "consumption_w": 21.5
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-30 to 50",
+  "dimensions_mm": "134 x 213.5 x 291.7",
+  "weight_g": 1000,
+  "features": [
+    "4 MP TandemVu dual-channel PT camera: fixed panoramic (2.8 mm) + PTZ (8 mm) channels",
+    "smart hybrid light (IR + white light) up to 30 m on both channels",
+    "panoramic pan 0-355, PTZ pan 0-345 / tilt 0-80",
+    "Smart H.265+/H.264+, up to 20 live channels",
+    "built-in mic + speaker, microSD up to 512 GB, ONVIF Profile S/G/T"
+  ],
+  "ndaa_compliant": false,
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hikvision ONVIF + RTSP (/Streaming/Channels/101 main, 102 sub).",
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (Hikvision)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Hikvision RTSP/ONVIF."
+    }
+  },
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000153210/DS-2SE2C400MWG-E-14_Datasheet_20250109.pdf"
+  ],
+  "last_verified": "2026-09-22"
+}

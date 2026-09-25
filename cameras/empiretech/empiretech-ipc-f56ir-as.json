@@ -1,0 +1,106 @@
+{
+  "id": "empiretech-ipc-f56ir-as",
+  "brand": "EmpireTech",
+  "model": "IPC-F56IR-AS",
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 2560,
+    "max_height": 2560,
+    "label": "6MP"
+  },
+  "sensor": "1/2.5\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.68",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "H: 185; V: 185; D: 185",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 15,
+    "min_lux_color": 0.005,
+    "min_lux": 0.0005
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x2560",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3af)",
+    "consumption_w": 10.1
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Ø122 x 53.3 (dia x H)",
+  "weight_g": 460,
+  "features": [
+    "6MP 1/2.5\" 360° fisheye, fixed 1.68mm F2.0",
+    "fisheye front-dewarp and back-dewarp, 2/4-window split screen",
+    "IR up to 15m (3 LEDs)",
+    "120 dB WDR, 3D NR, HLC, BLC",
+    "perimeter protection, people counting, heat map",
+    "built-in dual mic and speaker, two-way talk",
+    "up to 512GB microSD, ONVIF Profile S/G/T, 1/1 alarm I/O"
+  ],
+  "sources": [
+    "https://empiretech01.com/products/empiretech-ipc-f56ir-as-1-2-5-cmos-6mp-ir-fisheye-network-camera"
+  ],
+  "last_verified": "2026-09-24",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua-OEM RTSP path; independently unverified for the EmpireTech brand."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "ONVIF Profile S supported."
+    }
+  }
+}

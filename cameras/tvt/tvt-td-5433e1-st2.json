@@ -1,0 +1,98 @@
+{
+  "id": "tvt-td-5433e1-st2",
+  "brand": "TVT Digital",
+  "model": "TD-5433E1-ST2",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.11,
+    "max_width": 384,
+    "max_height": 288,
+    "label": "384x288 thermal"
+  },
+  "sensor": "384x288 uncooled infrared focal plane array (12µm)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "35",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "7.5 horizontal",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25
+  },
+  "power": {
+    "method": "DC12V / PoE (IEEE 802.3af)",
+    "consumption_w": 9
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "speaker": true
+  },
+  "features": [
+    "uncooled thermal imaging (NETD <=35mK)",
+    "multi-palette (black hot, white hot, rainbow, iron oxide red)",
+    "temperature measurement (-20 to 150 C, +/-8 C)",
+    "dynamic fire detection (up to 10 fire points)",
+    "temperature exception alarm",
+    "line crossing / region intrusion detection",
+    "sound and light warning"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "278.3 x 100.4 x 89",
+  "weight_g": 1050,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "sources": [
+    "https://en.tvt.net.cn/products/1764.html"
+  ],
+  "last_verified": "2026-09-22",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/ch01/0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/ch01/1",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /ch01/0 (main), /ch01/1 (sub)."
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "id": "hikvision-ds-2df6a436xg1-el",
+  "brand": "Hikvision",
+  "model": "DS-2DF6A436XG1-EL",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "aperture": "F1.2"
+  },
+  "night_vision": {
+    "type": "ir",
+    "min_lux_color": 0.0003
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.265+",
+      "H.264",
+      "H.264+",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "36 VDC / Hi-PoE",
+    "consumption_w": 45
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "notes": "microSD up to 1 TB"
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "231.1 (dia) x 355.6",
+  "weight_g": 6000,
+  "features": [
+    "4 MP 36x optical / 16x digital DarkFighter IR network speed dome",
+    "1/1.8\" CMOS, 6.0-216 mm zoom lens, F1.2",
+    "150 dB AWDR, up to 60 fps at 2688x1520",
+    "pan 360 endless, tilt -20 to 90, auto-flip, camera-side auto-tracking",
+    "human/face/vehicle detection, microSD up to 1 TB, ONVIF, Hi-PoE"
+  ],
+  "ndaa_compliant": false,
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hikvision ONVIF + RTSP (/Streaming/Channels/101 main, 102 sub).",
+      "autotracking": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (Hikvision)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Hikvision RTSP/ONVIF."
+    }
+  },
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/sm000086753/DS-2DF6A436XG1-EL_Datasheet_20241112.pdf"
+  ],
+  "last_verified": "2026-09-22"
+}

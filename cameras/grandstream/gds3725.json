@@ -1,0 +1,109 @@
+{
+  "id": "grandstream-gds3725",
+  "brand": "Grandstream",
+  "model": "GDS3725",
+  "type": "doorbell",
+  "aliases": [
+    "Grandstream Smart IP Video Door Station (Numeric keypad)"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/3\" CMOS, 4 Megapixel, HDR",
+  "lens": {
+    "count": 1,
+    "aperture": "F2.2",
+    "varifocal": false
+  },
+  "field_of_view_deg": "127 horizontal, 70 vertical, 152 diagonal",
+  "night_vision": {
+    "type": "color"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "Primary Stream",
+        "resolution": "1920x1080",
+        "fps": 30
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "power": {
+    "method": "PoE (IEEE 802.3af Class 3) / DC 9-36V, 12W",
+    "voltage": "9-36V DC / PoE",
+    "poe_class": 3
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "204 x 87 x 35.5",
+  "weight_g": 1560,
+  "features": [
+    "Smart IP video door station with 4MP HDR camera (WDR up to 120dB)",
+    "AI-based motion detection and auto-brightness white light supplement",
+    "15-key numeric keypad; unlock via SIP, HTTP API, SecureAccess app, QR code, RFID, Bluetooth, NFC",
+    "RFID: MIFARE Classic/Ultralight/PLUS/DESFire (13.56MHz) and 125kHz ID cards",
+    "PIR detection 3-5m; 2 microphones and 3W speaker with two-way audio",
+    "Bluetooth BLE 5.0; Wiegand, RS-485, alarm inputs and 2 relay outputs",
+    "microSD (TF) card slot up to 256GB",
+    "ONVIF Profile S, SIP and RTSP; managed via GDS Manager / GDMS SecureAccess",
+    "Weatherproof and vandal-resistant (IP66 / IK10)"
+  ],
+  "sources": [
+    "https://www.grandstream.com/hubfs/Product_Documentation/GDS3725_GDS3726_GDS3727/Datasheet_GDS3725_GDS3726_GDS3727_English.pdf",
+    "https://www.grandstream.com/products/facility-management/facility-access-systems/gds3720-series"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/0",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Select 'ONVIF' profile. ONVIF Profile S supported."
+    }
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "last_verified": "2026-09-24",
+  "cloud_dependency": "local"
+}

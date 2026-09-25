@@ -1,0 +1,103 @@
+{
+  "id": "hikvision-ds-2cd72205g0",
+  "brand": "Hikvision",
+  "model": "DS-2CD72205G0",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 20,
+    "max_width": 5472,
+    "max_height": 3648,
+    "label": "20MP"
+  },
+  "sensor": "1\" Progressive Scan CMOS",
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.01
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.265+",
+      "H.264",
+      "H.264+",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "5472x3648",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "12 VDC / 24 VAC / PoE (802.3at)",
+    "poe_class": 4,
+    "consumption_w": 17.8
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "environment": [
+    "indoor"
+  ],
+  "dimensions_mm": "177.3 x 74 x 94.3",
+  "weight_g": 1100,
+  "features": [
+    "20 MP (5472x3648) box camera, 1\" progressive-scan CMOS",
+    "DWDR, blue-glass IR-cut module",
+    "H.265+ compression, up to 5 streams",
+    "3 alarm in / 3 alarm out, RS-485, line-in/out audio",
+    "1000 Mbps RJ45, microSD up to 256 GB, ONVIF Profile S/G/T"
+  ],
+  "ndaa_compliant": false,
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hikvision ONVIF + RTSP (/Streaming/Channels/101 main, 102 sub).",
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "ONVIF (Hikvision)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Hikvision RTSP/ONVIF."
+    }
+  },
+  "sources": [
+    "https://assets.hikvision.com/prd/public/all/doc/m000013256/DS-2CD72205G0_Datasheet_20240327.pdf"
+  ],
+  "last_verified": "2026-09-22"
+}

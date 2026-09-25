@@ -1,0 +1,94 @@
+{
+  "id": "jovision-jvs-n515-hy-pe",
+  "brand": "Jovision",
+  "model": "JVS-N515-HY-PE",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "max_width": 2592,
+    "max_height": 1944,
+    "megapixels": 5,
+    "label": "5MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/3\" CMOS",
+  "lens": {
+    "focal_length_mm": "4",
+    "varifocal": false,
+    "count": 1
+  },
+  "field_of_view_deg": "88.4",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50
+  },
+  "power": {
+    "method": "DC12V/1A, PoE (IEEE 802.3af)",
+    "voltage": "DC12V",
+    "consumption_w": 8
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "features": [
+    "5MP bullet, max 2592x1944@20fps",
+    "1/3\" CMOS, H.265",
+    "4mm fixed lens, 88.4 horizontal FOV",
+    "4x array IR LEDs, IR up to 50m",
+    "ONVIF 2.4",
+    "2x streams"
+  ],
+  "dimensions_mm": "201 x 96 x 88",
+  "weight_g": 530,
+  "operating_temp_c": "-20 to 60",
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.jovisionsecurity.com/jvs_n515_hy.html"
+  ],
+  "last_verified": "2026-09-24",
+  "status": "available",
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:8554/live0.264",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:8554/live1.264",
+      "verified": false,
+      "notes": "Jovision (CloudSEE) RTSP on non-standard port 8554 - main /live0.264, sub /live1.264. Enable ONVIF/RTSP in the web UI; paths vary by firmware - use ONVIF autodiscovery if these fail."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Generic ONVIF integration; Jovision RTSP is on port 8554."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use Generic ONVIF/RTSP; Jovision default RTSP port is 8554."
+    }
+  }
+}

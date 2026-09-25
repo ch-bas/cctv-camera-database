@@ -1,0 +1,111 @@
+{
+  "id": "synology-tc510",
+  "brand": "Synology",
+  "model": "TC510",
+  "ndaa_compliant": true,
+  "aliases": [
+    "Synology 5MP Turret PoE Camera"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "release_year": 2025,
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2880,
+    "max_height": 1620,
+    "label": "5MP"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F1.8",
+    "varifocal": false
+  },
+  "field_of_view_deg": "110 horizontal, 56 vertical, 132 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "H.265"
+    ],
+    "streams": [
+      {
+        "name": "Primary Stream",
+        "resolution": "2880x1620",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af Type 1 Class 3)",
+    "voltage": "PoE",
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-30 to 50",
+  "dimensions_mm": "97 x 88",
+  "weight_g": 387,
+  "features": [
+    "Deep integration with Synology Surveillance Station",
+    "AI-based people and vehicle detection",
+    "5MP at 30fps",
+    "H.265/H.264 encoding",
+    "Built-in microphone, audio input",
+    "IP67 / IP66 and IK10 vandal-resistant",
+    "microSD edge recording (exFAT)",
+    "NDAA and TAA compliant"
+  ],
+  "sources": [
+    "https://www.synology.com/en-global/products/TC510",
+    "https://global.synologydownload.com/download/Document/Hardware/DataSheet/Camera/25-year/TC510/enu/Datasheet_TC510_enu.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Sms/Streaming/Channels/101",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "synology_dsm",
+      "notes": "Native Synology DSM integration for Surveillance Station cameras."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile via Surveillance Station RTSP output."
+    }
+  },
+  "last_verified": "2026-09-24",
+  "cloud_dependency": "local"
+}
