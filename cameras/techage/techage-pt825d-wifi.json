@@ -1,0 +1,84 @@
+{
+  "id": "techage-pt825d-wifi",
+  "brand": "Techage",
+  "model": "PT825D (WiFi)",
+  "aliases": [
+    "XM-PT825D-80W",
+    "Techage PT825D WiFi 8X Zoom Dual-Lens"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "label": "8MP dual-lens (4MP+4MP)"
+  },
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "2.8/8",
+    "varifocal": false
+  },
+  "video": {
+    "codecs": [
+      "H.265"
+    ]
+  },
+  "power": {
+    "method": "DC"
+  },
+  "power_source": [
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "ip_rating": "IP66",
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "ptz": {
+    "autotracking": true
+  },
+  "features": [
+    "8MP dual-lens WiFi PTZ (4MP wide 2.8 mm + 4MP tele 8 mm), 8X zoom, picture-in-picture",
+    "350 degree pan / 90 degree tilt, AI human detection with auto-tracking + auto-zoom",
+    "colour / IR / dual-light night vision (4 LEDs), two-way audio",
+    "supports both cable and WiFi connection, microSD 16-128 GB + cloud",
+    "iCSee app (iOS/Android/PC CMS), ONVIF, IP66 outdoor housing"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/user={user}&password={pass}&channel=1&stream=0.sdp?",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/user={user}&password={pass}&channel=1&stream=1.sdp?",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Techage on the Xiongmai/XMEye (XMeye Pro / iCSee) OEM platform; RTSP path is firmware-dependent and UNVERIFIED. Legacy Xiongmai form shown; newer firmware may use /live/main and /live/sub. Confirm via ONVIF discovery."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Xiongmai/XMEye OEM, default port 80). XMEye/iCSee cloud is proprietary; ONVIF/RTSP is the local path."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Generic ONVIF/RTSP profile (Xiongmai/XMEye OEM)."
+    }
+  },
+  "sources": [
+    "https://www.techage.com/products/8x-wifi-ptz-security-camera-dual-lens-auto-tracking"
+  ],
+  "last_verified": "2026-09-25",
+  "cloud_dependency": "cloud-optional"
+}

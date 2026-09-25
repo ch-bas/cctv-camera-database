@@ -1,0 +1,74 @@
+{
+  "id": "techage-dm27",
+  "brand": "Techage",
+  "model": "DM27",
+  "aliases": [
+    "Techage DM27 8MP 4K PoE"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "label": "8MP (4K)"
+  },
+  "video": {
+    "codecs": [
+      "H.265"
+    ]
+  },
+  "power": {
+    "method": "PoE"
+  },
+  "power_source": [
+    "poe"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "features": [
+    "8MP 4K ultra-HD PoE dome with active-deterrence warning lights",
+    "AI human/vehicle detection to reduce false alerts",
+    "two-way audio via mobile app, built-in warning light + illumination",
+    "single-cable PoE power+data, works with PoE NVR/switch",
+    "ONVIF (compatible with Hikvision NVR; plug-and-play with MISECU NVR)"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/user={user}&password={pass}&channel=1&stream=0.sdp?",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/user={user}&password={pass}&channel=1&stream=1.sdp?",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Techage on the Xiongmai/XMEye (XMeye Pro / iCSee) OEM platform; RTSP path is firmware-dependent and UNVERIFIED. Legacy Xiongmai form shown; newer firmware may use /live/main and /live/sub. Confirm via ONVIF discovery."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Xiongmai/XMEye OEM, default port 80). XMEye/iCSee cloud is proprietary; ONVIF/RTSP is the local path."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Generic ONVIF/RTSP profile (Xiongmai/XMEye OEM)."
+    }
+  },
+  "sources": [
+    "https://www.techage.com/products/8mp-dome-poe-camera-with-ai-night-version"
+  ],
+  "last_verified": "2026-09-25",
+  "cloud_dependency": "cloud-optional"
+}

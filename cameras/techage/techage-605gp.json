@@ -1,0 +1,89 @@
+{
+  "id": "techage-605gp",
+  "brand": "Techage",
+  "model": "605GP",
+  "aliases": [
+    "XM-605GP-AI-80",
+    "Techage 8MP 4K PoE Bullet 605GP"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "label": "8MP (4K)"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "90",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "video": {
+    "codecs": [
+      "H.265"
+    ],
+    "max_fps": 15
+  },
+  "power": {
+    "method": "DC 12V / PoE"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "ip_rating": "IP66",
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "features": [
+    "8MP 4K PoE bullet, 1/2.8\" CMOS, 3.6 mm lens (90 degree), 15 fps",
+    "smart person/vehicle detection, red/blue warning light (2 white + 2 IR LED), IR to 25-30 m",
+    "two-way audio (mic + speaker), H.265",
+    "DC12V or PoE, RTSP/FTP/DHCP/NTP/UPnP/P2P/ONVIF, XMEye Pro + iCSee apps + VMS",
+    "IP66 metal case, -30C to 50C operating range"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/user={user}&password={pass}&channel=1&stream=0.sdp?",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/user={user}&password={pass}&channel=1&stream=1.sdp?",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Techage on the Xiongmai/XMEye (XMeye Pro / iCSee) OEM platform; RTSP path is firmware-dependent and UNVERIFIED. Legacy Xiongmai form shown; newer firmware may use /live/main and /live/sub. Confirm via ONVIF discovery."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Xiongmai/XMEye OEM, default port 80). XMEye/iCSee cloud is proprietary; ONVIF/RTSP is the local path."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Generic ONVIF/RTSP profile (Xiongmai/XMEye OEM)."
+    }
+  },
+  "sources": [
+    "https://www.techage.com/products/4k-8mp-security-poe-ip-camera-two-way-audio-outdoor-cctv-security-camera-xm-605gp-ai-80"
+  ],
+  "last_verified": "2026-09-25",
+  "cloud_dependency": "cloud-optional"
+}
