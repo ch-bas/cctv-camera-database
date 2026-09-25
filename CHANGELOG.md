@@ -6,32 +6,38 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
-## [2.24.0] — 2026-09-24
+## [2.24.0] — 2026-09-25
 
-Dataset reaches **24,376 cameras / 211 brands** (+2,803). A broad multi-brand expansion from **official manufacturer sources only** — every field is transcribed from a manufacturer specification, and fields a manufacturer does not publish are omitted rather than estimated. No Provision-ISR models are included.
+Dataset reaches **24,975 cameras / 217 brands** (+3,402). A broad multi-brand expansion from **official manufacturer sources only** — every field is transcribed from a manufacturer specification, and fields a manufacturer does not publish are omitted rather than estimated. No Provision-ISR models are included.
 
-### Added — sixteen new brands (+380)
+### Added — twenty-two new brands (+566)
+- **Hyundai +119** — HYU-series IP and HD-analog bullets/domes/fisheye/covert (By Demes, Hikvision-OEM).
 - **Secureye +86** — Indian SP/SR/SG IP series, analog 4-in-1, and PTZ speed domes.
 - **Edimax +61** — IC-series network cameras (cube, pan-tilt, bullet, dome, fisheye, panoramic, peephole doorbell).
 - **GW Security +44** — 5/8/12 MP IP PoE bullets/domes/turrets/PTZ and analog 4-in-1.
 - **CNB +40** — T-series and Alpha300 VP/VQ IP domes/bullets/PTZ/fisheye/panoramic.
 - **AirLive +19** — Ovislink AirCam IP bullets/turrets/PTZ and dual-light AI cameras.
 - **Montavue +19** — US prosumer IP cameras.
+- **W Box +18** — ADI house-brand WBX IP and HD-analog bullets/domes/PTZ.
 - **Meari +17** — WiFi / battery / solar / pan-tilt consumer cameras.
+- **Techage +16** — PoE / WiFi / solar bullets, domes and pan-tilt cameras.
 - **Cantonk +15** — 4G / WiFi wire-free bullets, dual-lens and PTZ cameras.
 - **Zumimall +14** — battery / solar WiFi consumer cameras.
 - **Zebronics +14** — analog 4-in-1, IP network, 4G and WiFi cameras.
 - **Anran +14** — solar / battery WiFi pan-tilt, dual-lens and floodlight cameras.
+- **Pixord +14** — network LPR, fisheye, panoramic and box cameras.
+- **Sunba +12** — 20×–48× starlight / laser / 4G PTZ cameras.
 - **LiToKam +10** — WiFi consumer cameras.
 - **Zicom +8** — Indian IP and analog 4-in-1 cameras.
+- **Commax +7** — Korean IP and HD-analog cameras.
 - **Soliom +7** — solar / battery WiFi cameras.
 - **Campark +7** — WiFi / solar consumer cameras.
 - **ANLAPUS +5** — PoE consumer cameras.
 
-### Added — existing-brand catalogue expansion (+2,423)
-Deep gap-fills across ~60 already-covered brands, each from the manufacturer's official product pages, datasheets and spec APIs (real specs only; no fabrication):
+### Added — existing-brand catalogue expansion (+2,836)
+Deep gap-fills across ~75 already-covered brands, each from the manufacturer's official product pages, datasheets and spec APIs — including China-domestic (`markets: cn`) catalogues for Hikvision and Dahua (real specs only; no fabrication):
 
-- **Longse +331**, **Merit LILIN +224**, **Beward +210**, **Hikvision +202**, **Alibi +192**, **Sunell +133**, **Vitek +108**, **Uniview +80**, **D-Link +62**, **Trassir +51**, **Intelbras +43**, **Mapesen +42**, **RVi +41**, **American Dynamics +36**, **Messoa +35**, **Nuvico +34**, **KBVision +33**, **Prama +32**, **FLIR +32**, **Bolide +32**, **Dahua +29**, **Brickcom +29**, **Speco +26**, **Hanwha +26**, **Jovision +23**, **Pelco +21**, **Honeywell +21**, **Milesight +20**, **TKH Security +18**, **Digital Watchdog +17**, **Uniarch +16**, **JideTech +16**, **Kedacom +14**, **i-PRO +13**, **Grundig +13**, **ACTi +13**, **IC Realtime +9**, **ClareVision +9**, **Ganz +8**, **Costar +8**, **Truen +7**, **TVT +6**, **Grandstream +6**, **EmpireTech +6**, **Amcrest +6**, **Tiandy +5**, **Godrej +5**, **Axis +5**, **ANNKE +5**, **Turing +5**, **Avtron +4**, **Hiseeu +4**, **GeoVision +4**, **EZVIZ +4**, **Luma +4**, **SV3C +4**, **Synology +3**, **MOBOTIX +3**, **Foscam +3**, **Novus +2**, **Vivotek +2**, **Reolink +2**, **HIKMICRO +2**, **VStarcam +2**, **Sannce +2**, **Verkada +2**, **Lorex +1**, **EverFocus +1**, **Infinova +1**, **eneo +5**, **Vicon +1**, **Camius +1**, **Avycon +1**.
+- **Longse +331**, **Hikvision +248**, **Merit LILIN +224**, **Beward +210**, **Alibi +192**, **Sunell +164**, **Dahua +132**, **Vitek +108**, **InVID Tech +95**, **Uniview +80**, **BCS +68**, **RVi +63**, **D-Link +62**, **Mapesen +52**, **Trassir +51**, **Intelbras +43**, **American Dynamics +36**, **Messoa +35**, **Nuvico +34**, **KBVision +33**, **Prama +32**, **FLIR +32**, **Bolide +32**, **Brickcom +29**, **Speco +26**, **Hanwha +26**, **Arecont Vision +26**, **Jovision +23**, **Pelco +21**, **Honeywell +21**, **Milesight +20**, **TKH Security +18**, **Digital Watchdog +17**, **Uniarch +16**, **JideTech +16**, **Kedacom +14**, **i-PRO +13**, **Grundig +13**, **ACTi +13**, **IC Realtime +9**, **ClareVision +9**, **Ganz +8**, **Costar +8**, **Zmodo +7**, **Truen +7**, **Comelit +7**, **TVT +6**, **Grandstream +6**, **EmpireTech +6**, **Amcrest +6**, **Turing +5**, **Tiandy +5**, **Godrej +5**, **eneo +5**, **Axis +5**, **Asecam +5**, **ANNKE +5**, **SV3C +4**, **Luma +4**, **Hiseeu +4**, **GeoVision +4**, **EZVIZ +4**, **Avtron +4**, **Synology +3**, **MOBOTIX +3**, **Foscam +3**, **VStarcam +2**, **Vivotek +2**, **Verkada +2**, **Sannce +2**, **Reolink +2**, **Novus +2**, **HIKMICRO +2**, **Vicon +1**, **Lorex +1**, **Infinova +1**, **EverFocus +1**, **Camius +1**, **Avycon +1**.
 - Camera families span bullet, dome, turret, PTZ (with auto-tracking where applicable), fisheye/panoramic, multi-sensor, thermal/bi-spectrum, explosion-proof / marine / onboard, solar & 4G, laser PTZ, ANPR/LPR, active-deterrence, doorbell/door-station, and HD-analog (AHD/TVI/CVI) lines. HD-analog records carry `connectivity:[coax]` / `protocols:[hdcvi]` with encoder-side fields omitted; IP records carry ONVIF/RTSP with Frigate/Home Assistant/Blue Iris `configs`.
 
 ### Changed — data-quality passes
