@@ -1,0 +1,80 @@
+{
+  "id": "asecam-5mp-poe-bullet-4x",
+  "brand": "ASECAM",
+  "model": "5MP PoE Bullet 4X",
+  "aliases": [
+    "ASECAM 5MP POE IP Camera H.265 Zoom 4X Varifocal Bullet"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "label": "5MP"
+  },
+  "lens": {
+    "count": 1,
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 60
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ]
+  },
+  "power": {
+    "method": "PoE / DC 12V"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "p2p"
+  ],
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "5MP PoE bullet with 4X motorized varifocal zoom lens",
+    "IR night vision to ~200 ft (~60 m) with smart IR-cut filter",
+    "H.265/H.264, 2D/3D noise reduction, digital WDR",
+    "ONVIF (works with third-party NVRs), P2P XMEye app (iOS/Android)",
+    "motion detection, face detection, email alert; microSD storage",
+    "IP67 all-weather housing"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/user={user}&password={pass}&channel=1&stream=0.sdp?",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/user={user}&password={pass}&channel=1&stream=1.sdp?",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "ASECAM on the Xiongmai/XMEye OEM platform; RTSP path is firmware-dependent and UNVERIFIED. Legacy Xiongmai form shown; newer firmware may use /live/main and /live/sub. Confirm via ONVIF discovery."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Xiongmai/XMEye OEM, default port 80). XMEye cloud is proprietary; ONVIF/RTSP is the local path."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Generic ONVIF/RTSP profile (Xiongmai/XMEye OEM)."
+    }
+  },
+  "sources": [
+    "https://www.asecam.net/asecam-5mp-poe-h.265-netork-cctv-zoom-4-security-syetem-ip-camera.html"
+  ],
+  "last_verified": "2026-09-25",
+  "cloud_dependency": "cloud-optional"
+}

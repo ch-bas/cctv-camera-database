@@ -1,0 +1,82 @@
+{
+  "id": "asecam-8mp-4k-ptz-30x",
+  "brand": "ASECAM",
+  "model": "8MP 4K PTZ 30X",
+  "aliases": [
+    "ASECAM 8MP 4K IP PTZ POE 30X Zoom Speed Dome"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "label": "8MP (4K)"
+  },
+  "lens": {
+    "count": 1,
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 150
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "method": "PoE"
+  },
+  "power_source": [
+    "poe"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "p2p"
+  ],
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "ptz": {},
+  "features": [
+    "8MP 4K PoE PTZ speed dome, 360 degree endless pan / 90 degree tilt, 30X optical motorized zoom + varifocal",
+    "IR + laser night vision to ~150 m, ICR, auto-iris, PWM IR dimming",
+    "H.265 / MJPEG dual compression, triple stream, up to 30 fps, latency <200 ms",
+    "ONVIF 2.4 / RTSP, P2P XMEye cloud; works with Hikvision/Dahua/Xiongmai/Milestone platforms",
+    "6KV lightning surge protection, microSD storage, IP66 all-weather housing",
+    "3rd-party ONVIF support: Blue Iris, iSpy, Sighthound, SecuritySpy, Synology, QNAP"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/user={user}&password={pass}&channel=1&stream=0.sdp?",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/user={user}&password={pass}&channel=1&stream=1.sdp?",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "ASECAM on the Xiongmai/XMEye OEM platform; RTSP path is firmware-dependent and UNVERIFIED. Legacy Xiongmai form shown; newer firmware may use /live/main and /live/sub. Confirm via ONVIF discovery."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Xiongmai/XMEye OEM, default port 80). XMEye cloud is proprietary; ONVIF/RTSP is the local path."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Generic ONVIF/RTSP profile (Xiongmai/XMEye OEM)."
+    }
+  },
+  "sources": [
+    "https://www.asecam.net/asecam-8mp-4k-ip-ptz-30x-outdoor-camera.html"
+  ],
+  "last_verified": "2026-09-25",
+  "cloud_dependency": "cloud-optional",
+  "release_notes": "ASECAM (Xiongmai/XMEye OEM) 8MP 4K 30X PTZ speed dome. The product title/name states 8MP 4K; some copy on the same page also cites 5.0 MP (typical ASECAM listing inconsistency). Recorded at the titled 8MP; sensor model and exact varifocal focal range are not published."
+}
