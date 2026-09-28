@@ -1,0 +1,116 @@
+{
+  "id": "vigi-c450",
+  "brand": "VIGI",
+  "model": "VIGI C450",
+  "ndaa_compliant": true,
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2880,
+    "max_height": 1620,
+    "label": "5MP"
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8/4",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "2.8mm: H 109 / V 57 / D 128; 4mm: H 90 / V 48 / D 107",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux": 0.005
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2880x1620",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3af/at) or 12V DC",
+    "consumption_w": 10.5,
+    "poe_class": 0
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "5MP full-color turret network camera",
+    "24h full-color with large-aperture lens + supplemental white LEDs (2x IR + 2x white, 30m)",
+    "human & vehicle classification, people & vehicle analytics",
+    "area intrusion / line-crossing / region entering-exiting / object abandoned-removal / loitering detection",
+    "active defense (sound + white light), two-way audio, corridor mode",
+    "True WDR 120 dB, 3D DNR, Smart IR, microSD up to 512 GB, ONVIF Profile S"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "123 (diameter) x 84",
+  "weight_g": 240,
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.tp-link.com/in/business-networking/vigi-network-camera/vigi-c450/"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/stream1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/stream2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "two_way_audio": true,
+      "onvif_events": true
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "TP-Link VIGI is ONVIF/RTSP-conformant — use the Generic/ONVIF (or RTSP) profile; main /stream1, sub /stream2."
+    }
+  },
+  "status": "available",
+  "last_verified": "2026-09-28",
+  "cloud_dependency": "local"
+}

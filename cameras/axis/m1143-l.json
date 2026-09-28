@@ -1,0 +1,107 @@
+{
+  "id": "axis-m1143-l",
+  "brand": "Axis",
+  "model": "M1143-L",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 0.5,
+    "max_width": 800,
+    "max_height": 600,
+    "label": "SVGA"
+  },
+  "sensor": "1/4\" progressive scan RGB CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.5-6",
+    "aperture": "F1.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "72-34",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 15,
+    "min_lux": 0.6,
+    "min_lux_color": 0.6
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "800x600",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "power": {
+    "method": "Power over Ethernet IEEE 802.3af Class 2",
+    "consumption_w": 5.9,
+    "poe_class": 2
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 64,
+    "nvr_compatible": true
+  },
+  "features": [
+    "Built-in IR LEDs (range up to 15 m)",
+    "Day and night functionality",
+    "Varifocal DC-iris lens",
+    "Digital PTZ",
+    "Corridor Format",
+    "Pixel counter",
+    "Video motion detection",
+    "Active tampering alarm"
+  ],
+  "operating_temp_c": "0 to 40",
+  "weight_g": 250,
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "status": "discontinued",
+  "cloud_dependency": "local",
+  "sources": [
+    "https://web.archive.org/web/20121207004545/http://www.axis.com/files/datasheet/ds_m1143l_m1144l_47797_en_1211_lo.pdf"
+  ],
+  "last_verified": "2026-09-28",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=640x480",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "axis",
+      "notes": "Native Axis integration with auto-discovery via Zeroconf."
+    },
+    "blue_iris": {
+      "profile": "Axis",
+      "notes": "Select 'Axis' profile. Auto-discovery via ONVIF usually works."
+    }
+  }
+}

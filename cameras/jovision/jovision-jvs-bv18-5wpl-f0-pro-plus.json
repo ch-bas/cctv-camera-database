@@ -1,0 +1,103 @@
+{
+  "id": "jovision-jvs-bv18-5wpl-f0-pro-plus",
+  "brand": "Jovision",
+  "model": "JVS-BV18-5WPL-F0-PRO+",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2880,
+    "max_height": 1620,
+    "label": "5MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2880x1620",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "93.1 H / 49.6 V",
+  "night_vision": {
+    "type": "color",
+    "range_m": 65
+  },
+  "storage": {
+    "onboard": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http",
+    "p2p"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "5MP full-color warm-light bullet, 18 warm LEDs to 65m",
+    "1/1.8\" large sensor, F1.0 aperture",
+    "selectable 4mm / 6mm lens",
+    "PoE (802.3af) powered",
+    "two-way audio",
+    "ONVIF / GB28181 / CloudSEE cloud",
+    "IP67",
+    "dims 152x238x103mm, ~700g"
+  ],
+  "markets": [
+    "cn"
+  ],
+  "sources": [
+    "https://www.jovision.com/Products/pview.aspx?cid=131&id=1019"
+  ],
+  "last_verified": "2026-09-28",
+  "status": "available",
+  "cloud_dependency": "cloud-optional",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:8554/live0.264",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:8554/live1.264",
+      "verified": false,
+      "notes": "Jovision (CloudSEE) RTSP on non-standard port 8554 — main /live0.264, sub /live1.264. Enable ONVIF/RTSP in the web UI; paths vary by firmware — use ONVIF autodiscovery if these fail."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Generic ONVIF integration; Jovision RTSP is on port 8554."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use Generic ONVIF/RTSP; Jovision default RTSP port is 8554."
+    }
+  }
+}

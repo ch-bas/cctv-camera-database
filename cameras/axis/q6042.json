@@ -1,0 +1,114 @@
+{
+  "id": "axis-q6042",
+  "brand": "Axis",
+  "model": "Q6042",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 0.4,
+    "max_width": 736,
+    "max_height": 576,
+    "label": "Extended D1"
+  },
+  "sensor": "1/4\" ExView HAD progressive scan CCD",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.3-119",
+    "aperture": "F1.4-4.2",
+    "varifocal": true
+  },
+  "field_of_view_deg": "57.2-1.7",
+  "night_vision": {
+    "min_lux": 0.008,
+    "min_lux_color": 0.5
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "736x576",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "audio": {
+    "two_way": true
+  },
+  "power": {
+    "method": "Power over Ethernet Plus (PoE+) IEEE 802.3at",
+    "consumption_w": 30,
+    "poe_class": 4
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 64,
+    "nvr_compatible": true
+  },
+  "features": [
+    "36x optical zoom and 12x digital zoom",
+    "Pan 360 endless, tilt 180",
+    "256 preset positions, guard tour",
+    "Autotracking",
+    "Active Gatekeeper",
+    "Shock detection",
+    "Electronic image stabilization",
+    "Wide dynamic range (WDR)"
+  ],
+  "ip_rating": "IP52",
+  "operating_temp_c": "0 to 50",
+  "weight_g": 2600,
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "status": "discontinued",
+  "cloud_dependency": "local",
+  "sources": [
+    "https://web.archive.org/web/20190923091140/https://www.axis.com/files/datasheet/ds_q6042_t10020554_en_1905.pdf"
+  ],
+  "last_verified": "2026-09-28",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 576,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=480x360",
+      "onvif_port": 80,
+      "autotracking": false,
+      "two_way_audio": true,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "axis",
+      "notes": "Native Axis integration with auto-discovery via Zeroconf."
+    },
+    "blue_iris": {
+      "profile": "Axis",
+      "notes": "Select 'Axis' profile. Auto-discovery via ONVIF usually works."
+    }
+  }
+}

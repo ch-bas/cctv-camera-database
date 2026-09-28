@@ -1,0 +1,114 @@
+{
+  "id": "imou-ranger-mini",
+  "brand": "IMOU",
+  "model": "Ranger Mini",
+  "aliases": [
+    "IPC-K2M-3H1WE",
+    "IPC-K2M-5H1WE"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2880,
+    "max_height": 1620,
+    "label": "2K/3K (3MP/5MP selectable)"
+  },
+  "sensor": "1/3\" Progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "79 H / 43 V / 94 D",
+  "night_vision": {
+    "type": "color",
+    "range_m": 10
+  },
+  "ptz": {},
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2880x1620",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "DC 5V/1A (USB-C)",
+    "consumption_w": 4.2
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "cloud": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "indoor pan/tilt Wi-Fi 6 camera with integrated bracket",
+    "selectable 2K/3K image, smart full-color night vision with built-in spotlights",
+    "0-355 pan / -5 to 50 tilt, 8x digital zoom",
+    "human detection",
+    "USB-C connection, built-in mic & speaker (two-way audio)",
+    "microSD up to 512 GB, cloud or local storage"
+  ],
+  "operating_temp_c": "-10 to 45",
+  "dimensions_mm": "95 x 96 x 109.2",
+  "weight_g": 200,
+  "environment": [
+    "indoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "sources": [
+    "https://www.imou.com/en/product/detail/ranger-mini",
+    "https://www.imou.com/en/product/specs/ranger-mini"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention but is not independently verified on this SKU.",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+    }
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "status": "available",
+  "last_verified": "2026-09-28",
+  "cloud_dependency": "cloud-optional"
+}

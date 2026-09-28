@@ -1,0 +1,111 @@
+{
+  "id": "sunell-sn-ipv8084eear-vz-c",
+  "brand": "Sunell",
+  "model": "SN-IPV8084EEAR-VZ-C",
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP (3840x2160)"
+  },
+  "sensor": "1/1.8” Progressive Scan CMOS",
+  "lens": {
+    "focal_length_mm": "3.6-11",
+    "aperture": "F1.3",
+    "varifocal": true,
+    "count": 1
+  },
+  "field_of_view_deg": "H: 113.4-48.9, V: 59-26.6",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux_color": 0.003
+  },
+  "video": {
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "power": {
+    "method": "12 VDC (-15% to +25%) / PoE (802.3af)",
+    "voltage": "12 VDC",
+    "consumption_w": 8.8
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 1024
+  },
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "audio": {
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "φ130 × 113.3 mm",
+  "weight_g": 800,
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "features": [
+    "8MP starlight varifocal dome camera",
+    "Motorized varifocal 3.6-11 mm lens",
+    "IR night vision (up to 50 m, 850 nm)",
+    "FIPS 140-3 Level 3 secure element",
+    "Secure boot + signed/encrypted firmware",
+    "SD card AES-256 encryption, SBOM",
+    "AI detection (face, human, vehicle)",
+    "True WDR"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/2",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Sunell IP camera — ONVIF (Profile S/T/G/M) + /snl/live RTSP path. Enable ONVIF and set a dedicated user."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S/T)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a Generic/ONVIF camera; RTSP auto-discovered via ONVIF."
+    }
+  },
+  "sources": [
+    "https://www.sunellsecurity.com/products/fips-compliant/sn-ipv808edear-vz-c-8mp-starlight-varifocal-dome-camera.shtml"
+  ],
+  "last_verified": "2026-09-28",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "ik_rating": "IK10"
+}

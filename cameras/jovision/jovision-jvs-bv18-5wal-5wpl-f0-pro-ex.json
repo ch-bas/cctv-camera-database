@@ -1,0 +1,89 @@
+{
+  "id": "jovision-jvs-bv18-5wal-5wpl-f0-pro-ex",
+  "brand": "Jovision",
+  "model": "JVS-BV18-5WAL/5WPL-F0-PRO-EX",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "label": "5MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "87.9 H / 48 V",
+  "night_vision": {
+    "type": "color",
+    "range_m": 65,
+    "min_lux_color": 0.0005
+  },
+  "storage": {
+    "onboard": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http",
+    "p2p"
+  ],
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "5MP full-color warm-light bullet, 18 high-power warm LEDs",
+    "1/1.8\" sensor, F1.0 fixed aperture, 4mm",
+    "min illumination 0.0005lux@F1.0 (color)",
+    "DC12V or PoE (802.3af)",
+    "ONVIF / GB28181 / CloudSEE cloud",
+    "IP67, operating -20C to 60C",
+    "dims 155x262x112mm, ~0.56kg (4mm)"
+  ],
+  "markets": [
+    "cn"
+  ],
+  "sources": [
+    "https://www.jovision.com/Products/pview.aspx?cid=131&id=1076"
+  ],
+  "last_verified": "2026-09-28",
+  "status": "available",
+  "cloud_dependency": "cloud-optional",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:8554/live0.264",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:8554/live1.264",
+      "verified": false,
+      "notes": "Jovision (CloudSEE) RTSP on non-standard port 8554 — main /live0.264, sub /live1.264. Enable ONVIF/RTSP in the web UI; paths vary by firmware — use ONVIF autodiscovery if these fail."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Generic ONVIF integration; Jovision RTSP is on port 8554."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use Generic ONVIF/RTSP; Jovision default RTSP port is 8554."
+    }
+  }
+}

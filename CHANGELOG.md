@@ -6,6 +6,31 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.25.0] — 2026-09-28
+
+Dataset reaches **27,362 cameras / 226 brands** (+2,387). A broad multi-brand expansion from **official manufacturer sources** — every field is transcribed from a manufacturer specification (or its archived copy), and fields a manufacturer does not publish are omitted rather than estimated. No Provision-ISR models are included. This release leans on two veins: **China-domestic catalogues** (models not published on the global sites) and the **Internet Archive** (discontinued/defunct-brand catalogues that survive only in Wayback captures).
+
+### Added — nine new brands (+362)
+- **Interlogix +119** — TruVision Series 3–6 IP + HD-TVI bullets/domes/turrets/PTZ/fisheye (GE/UTC, defunct 2019; recovered from Wayback).
+- **Samsung Techwin +92** — pre-Hanwha SCB/SCD/SCO/SCP/SCV analog + HD-SDI + thermal (recovered from Wayback).
+- **ESCAM +62** — IP / battery-solar / 4G / PTZ / fisheye / doorbell / E27 bulb consumer cameras.
+- **Redvision +21** — UK ruggedised PTZ (X-SERIES Commander/Combat/Storm), Knight fixed IP, VEGA static/thermal.
+- **JVC +19** — Super LoLux VN-series network box/dome/bullet/PTZ (defunct; Wayback).
+- **Aoni +19** — Tuya/app consumer WiFi bullets/PT/doorbell/floodlight.
+- **Toshiba +18** — IK-WB/WD/WR/WP network box/dome/bullet/PTZ (defunct; Wayback).
+- **360 Vision +8** — UK ruggedised PTZ (Predator/Invictus, incl. radar + thermal).
+- **Sanyo +4** — VCC/VDC network box/dome (defunct; Wayback).
+
+### Added — existing-brand catalogue expansion (+2,025)
+Deep gap-fills across ~35 already-covered brands (real specs only; no fabrication):
+
+- **Hikvision +977** and **Dahua +195** — China-domestic catalogues (`markets: cn`): AcuSense/ColorVu/DeepinView/PanoVu/explosion-proof/solar/thermal IP + Turbo-HD analog, from the official CN datasheet mirror.
+- **RVi +339** (archived IP catalogue), **Sunell +81** (CN thermal/active-deterrence/explosion-proof), **Hyundai +59** (By Demes remainder), **ACTi +40** (legacy ACM/KCM/TCM via Wayback), **Jovision +36** (CN), **i-PRO +34** (Japan-market), **EZVIZ +32**, **Longse +31**, **Axis +31** (discontinued via Wayback), **Panasonic +26** (legacy WV via Wayback), **Beward +25**, **Vivotek +23** (discontinued), **Bosch +22** (current KEENFINITY + legacy via Wayback), **Mapesen +20** (analog-HD), **Hanwha +15** (newest Wisenet AI PTZ), **Tiandy +10**, **Sony +7** (SNC legacy via Wayback), plus TVT, Uniview, Ganz, VIGI, Kedacom, Pelco, Imou, BESDER.
+
+### Notes
+- **Provenance / #165:** ~3,300 records cite a China-domestic datasheet mirror or a `web.archive.org` capture of the official page rather than a live first-party OEM URL (the CN-domestic and defunct-brand catalogues are not reachable any other way). The data-consistency lint flags these under advisory #165; the specs themselves are transcribed from the official (or officially-archived) datasheets. Non-blocking.
+- **Validation:** `node scripts/build.js` — 27,362 cameras, all schema-valid. `npm run lint` — passes. Aggregates + `README.md` regenerated; version 2.25.0.
+
 ## [2.24.0] — 2026-09-25
 
 Dataset reaches **24,975 cameras / 217 brands** (+3,402). A broad multi-brand expansion from **official manufacturer sources only** — every field is transcribed from a manufacturer specification, and fields a manufacturer does not publish are omitted rather than estimated. No Provision-ISR models are included.

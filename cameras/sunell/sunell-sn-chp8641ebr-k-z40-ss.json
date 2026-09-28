@@ -1,0 +1,109 @@
+{
+  "id": "sunell-sn-chp8641ebr-k-z40-ss",
+  "brand": "Sunell",
+  "model": "SN-CHP8641EBR(-K)-Z40-SS",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2592,
+    "max_height": 1520,
+    "label": "4MP (2592x1520)"
+  },
+  "sensor": "1/1.8” Progressive Scan CMOS",
+  "lens": {
+    "focal_length_mm": "5.3-212",
+    "aperture": "F1.5-F4.8",
+    "varifocal": true,
+    "count": 1
+  },
+  "field_of_view_deg": "H: 60.4 to 2.5, V: 36.5 to 1.5",
+  "video": {
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1520",
+        "fps": 30
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "power_source": [
+    "ac-mains"
+  ],
+  "night_vision": {
+    "type": "ir",
+    "range_m": 200,
+    "min_lux": 0.0005,
+    "min_lux_color": 0.001
+  },
+  "power": {
+    "method": "100 to 240VAC",
+    "consumption_w": 36
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 1024
+  },
+  "ip_rating": "IP68",
+  "environment": [
+    "outdoor"
+  ],
+  "audio": {
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "523.5 × 405.6 × 220.6 mm",
+  "weight_g": 18000,
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "features": [
+    "4MP 40x Explosion-Proof Network Camera",
+    "ATEX & IECEx: Ex db IIC T6 Gb / Ex tb IIIC T80°C Db",
+    "316L stainless steel (SUS316L)",
+    "IP68",
+    "IR up to 200 m",
+    "40x optical zoom",
+    "-K: fiber optical interface option",
+    "True WDR"
+  ],
+  "sources": [
+    "https://www.sunellsecurity.com/products/explosion-proof-network-cameras/sn-chp8641ebr%28-k%29-z40-ss.shtml"
+  ],
+  "last_verified": "2026-09-28",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/2",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Sunell IP camera — ONVIF (Profile S/T/G/M) + /snl/live RTSP path. Enable ONVIF and set a dedicated user."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S/T)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a Generic/ONVIF camera; RTSP auto-discovered via ONVIF."
+    }
+  }
+}

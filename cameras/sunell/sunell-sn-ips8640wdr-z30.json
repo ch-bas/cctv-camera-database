@@ -1,0 +1,112 @@
+{
+  "id": "sunell-sn-ips8640wdr-z30",
+  "brand": "Sunell",
+  "model": "SN-IPS8640WDR-Z30",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2592,
+    "max_height": 1520,
+    "label": "4MP (2592x1520)"
+  },
+  "sensor": "1/2.8” Progressive Scan CMOS",
+  "lens": {
+    "focal_length_mm": "5.3-159",
+    "aperture": "F1.6-F4.3",
+    "varifocal": true,
+    "count": 1
+  },
+  "field_of_view_deg": "H: 56.3 to 2.7, V: 33.3 to 1.5",
+  "video": {
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1520",
+        "fps": 30
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "night_vision": {
+    "type": "ir",
+    "range_m": 200,
+    "min_lux": 0.007,
+    "min_lux_color": 0.07
+  },
+  "power": {
+    "method": "24 VAC / 36 VDC / PoE++ (802.3bt), Standard Equipped: 36 VDC",
+    "voltage": "36 VDC",
+    "consumption_w": 45
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 256
+  },
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "audio": {
+    "two_way": true
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "φ226.1 × 362.8 mm",
+  "weight_g": 5500,
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "features": [
+    "4MP 30x IR Network PTZ Camera",
+    "AI detection (face, human, vehicle)",
+    "30x optical zoom",
+    "IR up to 200 m",
+    "True WDR"
+  ],
+  "sources": [
+    "https://www.sunellsecurity.com/products/network-ptz-camera/sn-ips8640wdr-z30.shtml"
+  ],
+  "last_verified": "2026-09-28",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/2",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Sunell IP camera — ONVIF (Profile S/T/G/M) + /snl/live RTSP path. Enable ONVIF and set a dedicated user."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S/T)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a Generic/ONVIF camera; RTSP auto-discovered via ONVIF."
+    }
+  }
+}
