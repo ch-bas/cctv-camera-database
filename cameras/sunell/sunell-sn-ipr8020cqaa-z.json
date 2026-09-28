@@ -1,0 +1,110 @@
+{
+  "id": "sunell-sn-ipr8020cqaa-z",
+  "brand": "Sunell",
+  "model": "SN-IPR8020CQAA-Z",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p (1920x1080)"
+  },
+  "sensor": "1/2.8” Progressive Scan CMOS",
+  "lens": {
+    "focal_length_mm": "2.7-13.5",
+    "aperture": "F1.6",
+    "varifocal": true,
+    "count": 1
+  },
+  "field_of_view_deg": "H: 100.9-28.6, V: 54.2-15.2",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40,
+    "min_lux_color": 0.01
+  },
+  "video": {
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "power": {
+    "method": "12 VDC (-15% to +25%) / PoE (802.3af)",
+    "voltage": "12 VDC",
+    "consumption_w": 9
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 256
+  },
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-40 to 55",
+  "dimensions_mm": "φ140 × 119.2 mm",
+  "weight_g": 900,
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "features": [
+    "2MP outdoor IP camera",
+    "Motorized varifocal 2.7-13.5 mm lens",
+    "IR night vision (up to 40 m, 850 nm)",
+    "AI detection (face, human, vehicle) + people counting",
+    "Audible alarm + flashlight alarm",
+    "True WDR"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/2",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Sunell IP camera — ONVIF (Profile S/T/G/M) + /snl/live RTSP path. Enable ONVIF and set a dedicated user."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S/T)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a Generic/ONVIF camera; RTSP auto-discovered via ONVIF."
+    }
+  },
+  "sources": [
+    "https://www.sunellsecurity.com/products/active-deterrence-camera/2mp-sn-ipr8020cqaa-z-outdoor-ip-camera.shtml"
+  ],
+  "last_verified": "2026-09-28",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local"
+}

@@ -1,0 +1,104 @@
+{
+  "id": "sunell-sn-tpt6436hz-m",
+  "brand": "Sunell",
+  "model": "SN-TPT6436HZ-M",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2592,
+    "max_height": 1520,
+    "label": "4MP (2592x1520)"
+  },
+  "sensor": "1/2.8\" STARVIS CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "12.5-400",
+    "aperture": "F2.5-F16",
+    "varifocal": true
+  },
+  "field_of_view_deg": "H: 33-1.7",
+  "night_vision": {
+    "min_lux": 0.0005,
+    "min_lux_color": 0.001
+  },
+  "video": {
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1520",
+        "fps": 30
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "power": {
+    "method": "36 VDC",
+    "voltage": "36 VDC",
+    "consumption_w": 150
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 512
+  },
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true
+  },
+  "ptz": {},
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "730 × 443 × 636 mm",
+  "weight_g": 48000,
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "features": [
+    "Thermal & Optical Bi-spectrum PT Camera",
+    "Thermal sensor 640×512 (VOx uncooled), pixel pitch 12μm, NETD ≤ 40mK",
+    "Thermal lens focal length: 75 mm, 100 mm optional",
+    "Temperature measurement range: -20 °C to 150°C (-4°F to 302°F)",
+    "AI detection (face / human / vehicle)"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/2",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Sunell IP camera — ONVIF (Profile S/T/G/M) + /snl/live RTSP path. Enable ONVIF and set a dedicated user."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S/T)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a Generic/ONVIF camera; RTSP auto-discovered via ONVIF."
+    }
+  },
+  "sources": [
+    "https://www.sunellsecurity.com/products/pt-thermal-camera/sn-tpt6436hz-m.shtml"
+  ],
+  "last_verified": "2026-09-28",
+  "cloud_dependency": "local"
+}

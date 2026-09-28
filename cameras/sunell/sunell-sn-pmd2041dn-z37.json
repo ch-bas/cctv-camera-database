@@ -1,0 +1,102 @@
+{
+  "id": "sunell-sn-pmd2041dn-z37",
+  "brand": "Sunell",
+  "model": "SN-PMD2041DN-Z37",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2592,
+    "max_height": 1520,
+    "label": "4MP (2592x1520)"
+  },
+  "sensor": "1/1.8” Progressive Scan CMOS",
+  "lens": {
+    "focal_length_mm": "6.8-251",
+    "aperture": "F1.5-F4.8",
+    "varifocal": true,
+    "count": 1
+  },
+  "field_of_view_deg": "H: 60.4 to 2.5, V: 36.5 to 1.5",
+  "video": {
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1520",
+        "fps": 30
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "night_vision": {
+    "min_lux": 0.0005,
+    "min_lux_color": 0.001
+  },
+  "power": {
+    "method": "12 VDC ± 20%",
+    "voltage": "12 VDC",
+    "consumption_w": 8
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "max_microsd_gb": 1024
+  },
+  "environment": [
+    "indoor"
+  ],
+  "audio": {
+    "two_way": true
+  },
+  "operating_temp_c": "-20 to 60",
+  "dimensions_mm": "140.8 × 56.8 × 66.4 mm",
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "features": [
+    "4MP 37x Starlight Network Camera Module",
+    "AI detection (face, human, vehicle)",
+    "37x optical zoom",
+    "True WDR"
+  ],
+  "sources": [
+    "https://www.sunellsecurity.com/products/zoom-camera-module/sn-pmd2041dn-z37.shtml"
+  ],
+  "last_verified": "2026-09-28",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/2",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Sunell IP camera — ONVIF (Profile S/T/G/M) + /snl/live RTSP path. Enable ONVIF and set a dedicated user."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (Profile S/T)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a Generic/ONVIF camera; RTSP auto-discovered via ONVIF."
+    }
+  }
+}
