@@ -1,0 +1,105 @@
+{
+  "id": "bosch-nxf-9130-a4",
+  "brand": "Bosch",
+  "model": "NXF-9130-A4",
+  "aliases": [
+    "EXTEGRA IP starlight 9000 FX"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "release_year": 2016,
+  "resolution": {
+    "megapixels": 0.92,
+    "max_width": 1280,
+    "max_height": 720,
+    "label": "720p"
+  },
+  "sensor": "1/3\" Exmor CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": true
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG",
+      "JPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1280x720",
+        "fps": 60,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "night_vision": {
+    "min_lux": 0.052
+  },
+  "power": {
+    "method": "High PoE / 24 VAC",
+    "consumption_w": 18,
+    "voltage": "24 VAC / High PoE"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP68",
+  "storage": {
+    "max_microsd_gb": 2048
+  },
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "explosion-protected fixed camera (ATEX/IECEx)",
+    "UL Type 4X / Type 6",
+    "starlight low-light (0.052 lux at 720p)",
+    "30x optical zoom (12x digital) with autofocus",
+    "720p50/60 HD",
+    "Intelligent Video Analysis (IVA)",
+    "borosilicate float glass view window"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "381 x 114 x 114",
+  "weight_g": 6400,
+  "sources": [
+    "https://web.archive.org/web/20170329073901/http://resource.boschsecurity.com/documents/EXTEGRA_IP_9000_Data_sheet_enUS_16666657035.pdf"
+  ],
+  "last_verified": "2026-09-28",
+  "environment": [
+    "outdoor"
+  ],
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub. Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S. Not individually bench-tested.",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  }
+}
