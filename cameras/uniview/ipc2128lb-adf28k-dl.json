@@ -12,10 +12,12 @@
   ],
   "resolution": {
     "megapixels": 8,
-    "label": "8MP"
+    "label": "8MP",
+    "max_width": 3840,
+    "max_height": 2160
   },
   "sensor": "1/2.7\" CMOS",
-  "field_of_view_deg": "100.8 horizontal, 55.8 vertical, 105.7 diagonal",
+  "field_of_view_deg": "100.8 horizontal, 55.8 vertical, 105.7 diagonal (2.8mm)",
   "lens": {
     "focal_length_mm": "2.8",
     "aperture": "F1.6",
@@ -33,6 +35,21 @@
       "H.265",
       "H.264",
       "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
     ]
   },
   "power": {
@@ -43,7 +60,8 @@
   "storage": {
     "onboard": true,
     "max_microsd_gb": 512,
-    "nvr_compatible": true
+    "nvr_compatible": true,
+    "cloud": false
   },
   "protocols": [
     "onvif",
@@ -80,7 +98,12 @@
       "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
       "onvif_port": 80,
       "verified": false,
-      "notes": "Main stream: /unicast/c1/s0/live, sub stream: /unicast/c1/s1/live. ONVIF on port 80."
+      "notes": "Main stream: /unicast/c1/s0/live, sub stream: /unicast/c1/s1/live. ONVIF on port 80.",
+      "detect": {
+        "width": 640,
+        "height": 360,
+        "fps": 5
+      }
     },
     "home_assistant": {
       "integration": "onvif",
@@ -92,5 +115,11 @@
     }
   },
   "ndaa_compliant": true,
-  "cloud_dependency": "local"
+  "cloud_dependency": "local",
+  "aliases": [
+    "IPC2128LB-ADF40K-DL"
+  ],
+  "markets": [
+    "global"
+  ]
 }
