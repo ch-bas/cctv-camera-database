@@ -11,7 +11,8 @@
   ],
   "protocols": [
     "onvif",
-    "rtsp"
+    "rtsp",
+    "http"
   ],
   "cloud_dependency": "cloud-optional",
   "configs": {
@@ -19,7 +20,8 @@
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/id=0",
       "best_substream": "rtsp://{user}:{pass}@{ip}:554/id=1",
       "onvif_port": 80,
-      "verified": false
+      "verified": false,
+      "two_way_audio": true
     },
     "home_assistant": {
       "integration": "onvif"
@@ -51,10 +53,10 @@
   "lens": {
     "count": 1,
     "focal_length_mm": "2.8~12",
-    "aperture": "F1.6",
+    "aperture": "F1.6-F3.3",
     "varifocal": true
   },
-  "field_of_view_deg": "107 to 30.3 horizontal",
+  "field_of_view_deg": "30.3-107 horizontal / 17-56.1 vertical",
   "video": {
     "codecs": [
       "H.265+",
@@ -62,10 +64,20 @@
       "H.264",
       "MJPEG"
     ],
-    "max_fps": 30
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3072x1728",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
   },
   "power": {
-    "method": "12V DC / PoE (IEEE802.3af)"
+    "method": "12V DC / PoE (IEEE802.3af)",
+    "voltage": "12V DC / PoE",
+    "consumption_w": 11
   },
   "power_source": [
     "poe",
@@ -76,7 +88,8 @@
   },
   "storage": {
     "onboard": true,
-    "max_microsd_gb": 256
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
   },
   "ip_rating": "IP67",
   "ik_rating": "IK10",
@@ -93,5 +106,6 @@
     "Smart IR 50-70m",
     "IK10 (optional)",
     "IP67"
-  ]
+  ],
+  "status": "available"
 }
