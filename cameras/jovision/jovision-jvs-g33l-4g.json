@@ -1,0 +1,86 @@
+{
+  "id": "jovision-jvs-g33l-4g",
+  "brand": "Jovision",
+  "model": "JVS-G33L-4G",
+  "type": "dual-lens",
+  "connectivity": [
+    "4g"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "3MP+3MP dual-lens (6MP)"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 20
+  },
+  "sensor": "1/2.9\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4",
+    "varifocal": false
+  },
+  "field_of_view_deg": "80.9 H / 44.1 V",
+  "night_vision": {
+    "type": "hybrid"
+  },
+  "storage": {
+    "onboard": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http",
+    "p2p"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "dual-lens 4G camera: fixed 3MP bullet (4mm F1.6) + 3MP PT head (6mm)",
+    "bullet warm+IR dual-light supplement",
+    "built-in 4G module",
+    "ONVIF / GB28181 / CloudSEE cloud",
+    "microSD storage",
+    "DC12V/2A",
+    "dims 182x197x281mm"
+  ],
+  "markets": [
+    "cn"
+  ],
+  "sources": [
+    "https://www.jovision.com/Products/pview.aspx?cid=348&id=1056"
+  ],
+  "last_verified": "2026-09-28",
+  "status": "available",
+  "cloud_dependency": "cloud-optional",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:8554/live0.264",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:8554/live1.264",
+      "verified": false,
+      "notes": "Jovision (CloudSEE) RTSP on non-standard port 8554 — main /live0.264, sub /live1.264. Enable ONVIF/RTSP in the web UI; paths vary by firmware — use ONVIF autodiscovery if these fail."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Generic ONVIF integration; Jovision RTSP is on port 8554."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use Generic ONVIF/RTSP; Jovision default RTSP port is 8554."
+    }
+  }
+}

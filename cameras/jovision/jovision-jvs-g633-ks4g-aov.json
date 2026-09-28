@@ -1,0 +1,91 @@
+{
+  "id": "jovision-jvs-g633-ks4g-aov",
+  "brand": "Jovision",
+  "model": "JVS-G633-KS4G-AOV",
+  "type": "dual-lens",
+  "connectivity": [
+    "4g"
+  ],
+  "power_source": [
+    "battery",
+    "solar"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "label": "3MP dual-lens"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ]
+  },
+  "sensor": "1/2.9\" CMOS",
+  "lens": {
+    "count": 1,
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "80.9 H",
+  "night_vision": {
+    "type": "color",
+    "min_lux_color": 0.001
+  },
+  "storage": {
+    "onboard": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http",
+    "p2p"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "dual-lens 4G solar AOV camera (panorama + close-up)",
+    "panorama lens 4mm, warm-light full-color",
+    "min illumination 0.001lux@F1.0 (white light on)",
+    "built-in 4G module",
+    "solar panel + battery powered",
+    "two-way audio",
+    "ONVIF / GB28181 / CloudSEE cloud",
+    "dims 177x277.4x241.8mm, ~1.23kg (with battery)"
+  ],
+  "markets": [
+    "cn"
+  ],
+  "sources": [
+    "https://www.jovision.com/Products/pview.aspx?cid=348&id=1069"
+  ],
+  "last_verified": "2026-09-28",
+  "status": "available",
+  "cloud_dependency": "cloud-optional",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:8554/live0.264",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:8554/live1.264",
+      "verified": false,
+      "notes": "Jovision (CloudSEE) RTSP on non-standard port 8554 — main /live0.264, sub /live1.264. Enable ONVIF/RTSP in the web UI; paths vary by firmware — use ONVIF autodiscovery if these fail."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Generic ONVIF integration; Jovision RTSP is on port 8554."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Use Generic ONVIF/RTSP; Jovision default RTSP port is 8554."
+    }
+  }
+}
