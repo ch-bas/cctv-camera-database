@@ -1,0 +1,82 @@
+{
+  "id": "axis-q1922",
+  "brand": "Axis",
+  "model": "Q1922",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 0.3,
+    "max_width": 640,
+    "max_height": 480,
+    "label": "640x480 thermal"
+  },
+  "sensor": "Uncooled microbolometer 640x480, pixel size 17 um",
+  "lens": {
+    "count": 1
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "audio": {
+    "two_way": true
+  },
+  "power": {
+    "method": "Power over Ethernet IEEE 802.3af Class 3",
+    "poe_class": 3
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "features": [
+    "Thermal imaging for detection in complete darkness",
+    "Multiple lens options (10 mm, 19 mm)",
+    "Image scalable up to 800x600 (D1)",
+    "Video motion detection"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "weight_g": 950,
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "status": "discontinued",
+  "cloud_dependency": "local",
+  "sources": [
+    "https://web.archive.org/web/20130423043914/http://www.axis.com/files/datasheet/ds_q1922_q1922-e_46221_en_1301_lo.pdf"
+  ],
+  "last_verified": "2026-09-28",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=640x480",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "axis",
+      "notes": "Native Axis integration with auto-discovery via Zeroconf."
+    },
+    "blue_iris": {
+      "profile": "Axis",
+      "notes": "Select 'Axis' profile. Auto-discovery via ONVIF usually works."
+    }
+  }
+}

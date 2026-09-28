@@ -1,0 +1,99 @@
+{
+  "id": "axis-m1113",
+  "brand": "Axis",
+  "model": "M1113",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 0.5,
+    "max_width": 800,
+    "max_height": 600,
+    "label": "SVGA"
+  },
+  "sensor": "1/4\" progressive scan RGB CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.9-8.2",
+    "aperture": "F1.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "65-25",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.6
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "800x600",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "power": {
+    "method": "Power over Ethernet IEEE 802.3af Class 1",
+    "poe_class": 1
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "nvr_compatible": true
+  },
+  "features": [
+    "Varifocal DC-iris lens",
+    "Digital PTZ",
+    "Pixel counter",
+    "Video motion detection",
+    "Active tampering alarm"
+  ],
+  "operating_temp_c": "-20 to 50",
+  "weight_g": 200,
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "status": "discontinued",
+  "cloud_dependency": "local",
+  "sources": [
+    "https://web.archive.org/web/20151207135452/http://www.axis.com/files/datasheet/ds_m1113_1480596_en_1506.pdf"
+  ],
+  "last_verified": "2026-09-28",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=640x480",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "axis",
+      "notes": "Native Axis integration with auto-discovery via Zeroconf."
+    },
+    "blue_iris": {
+      "profile": "Axis",
+      "notes": "Select 'Axis' profile. Auto-discovery via ONVIF usually works."
+    }
+  }
+}

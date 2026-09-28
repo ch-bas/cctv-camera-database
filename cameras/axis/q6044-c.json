@@ -1,0 +1,105 @@
+{
+  "id": "axis-q6044-c",
+  "brand": "Axis",
+  "model": "Q6044-C",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 1,
+    "max_width": 1280,
+    "max_height": 720,
+    "label": "HDTV 720p"
+  },
+  "sensor": "1/3\" progressive scan CCD",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.4-132",
+    "aperture": "F1.4-4.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "62.9-2.2",
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "DC power via AXIS T8605 Media Converter Switch (IP66 multi-connector)"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 64,
+    "nvr_compatible": true
+  },
+  "features": [
+    "30x optical zoom and 12x digital zoom",
+    "Pan 360 endless, tilt 220",
+    "256 preset positions, guard tour",
+    "Autotracking",
+    "Active Gatekeeper",
+    "Electronic image stabilization",
+    "Automatic defog",
+    "Active cooling (Peltier) for high-temperature operation",
+    "Wide dynamic range (WDR)"
+  ],
+  "ip_rating": "IP66",
+  "operating_temp_c": "-20 to 75",
+  "weight_g": 5600,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "status": "discontinued",
+  "cloud_dependency": "local",
+  "sources": [
+    "https://web.archive.org/web/20141014014556/http://www.axis.com/files/datasheet/ds_q6042c_q6044c_q6045c_54849_en_1312_lo.pdf"
+  ],
+  "last_verified": "2026-09-28",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=640x360",
+      "onvif_port": 80,
+      "autotracking": false,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "axis",
+      "notes": "Native Axis integration with auto-discovery via Zeroconf."
+    },
+    "blue_iris": {
+      "profile": "Axis",
+      "notes": "Select 'Axis' profile. Auto-discovery via ONVIF usually works."
+    }
+  }
+}

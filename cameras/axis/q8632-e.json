@@ -1,0 +1,89 @@
+{
+  "id": "axis-q8632-e",
+  "brand": "Axis",
+  "model": "Q8632-E",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 0.3,
+    "max_width": 640,
+    "max_height": 480,
+    "label": "640x480 thermal"
+  },
+  "sensor": "Uncooled microbolometer 640x480, pixel pitch 17 um",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "35",
+    "aperture": "F1.2",
+    "varifocal": false
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "ptz": {},
+  "power": {
+    "method": "24 V AC / 120 V AC / 230 V AC",
+    "consumption_w": 40
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true
+  },
+  "features": [
+    "VGA thermal imaging",
+    "Pan/tilt positioning with presets (continuous pan)",
+    "No zoom",
+    "Selectable thermal palettes",
+    "Deterrent design"
+  ],
+  "ip_rating": "IP66",
+  "operating_temp_c": "-40 to 55",
+  "weight_g": 17500,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "status": "discontinued",
+  "cloud_dependency": "local",
+  "sources": [
+    "https://web.archive.org/web/20160910013900/http://www.axis.com/files/datasheet/ds_q8632e_1603382_en_1605.pdf"
+  ],
+  "last_verified": "2026-09-28",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=640x480",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "axis",
+      "notes": "Native Axis integration with auto-discovery via Zeroconf."
+    },
+    "blue_iris": {
+      "profile": "Axis",
+      "notes": "Select 'Axis' profile. Auto-discovery via ONVIF usually works."
+    }
+  }
+}

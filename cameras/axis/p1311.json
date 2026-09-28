@@ -1,0 +1,99 @@
+{
+  "id": "axis-p1311",
+  "brand": "Axis",
+  "model": "P1311",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 0.3,
+    "max_width": 640,
+    "max_height": 480,
+    "label": "VGA"
+  },
+  "sensor": "1/4\" progressive scan RGB CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.0",
+    "aperture": "F1.2",
+    "varifocal": false
+  },
+  "field_of_view_deg": "48",
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG",
+      "MPEG-4"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "audio": {
+    "two_way": true
+  },
+  "power": {
+    "method": "8-20 V DC or Power over Ethernet IEEE 802.3af",
+    "consumption_w": 2.8
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "nvr_compatible": true
+  },
+  "features": [
+    "Fixed lens box camera",
+    "Two-way audio",
+    "Video motion detection",
+    "Active tampering alarm",
+    "Pixel counter"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "status": "discontinued",
+  "cloud_dependency": "local",
+  "sources": [
+    "https://web.archive.org/web/20111005121304/http://www.axis.com/files/datasheet/ds_p1311_44325_en_1109_lo.pdf"
+  ],
+  "last_verified": "2026-09-28",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=640x480",
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "axis",
+      "notes": "Native Axis integration with auto-discovery via Zeroconf."
+    },
+    "blue_iris": {
+      "profile": "Axis",
+      "notes": "Select 'Axis' profile. Auto-discovery via ONVIF usually works."
+    }
+  }
+}

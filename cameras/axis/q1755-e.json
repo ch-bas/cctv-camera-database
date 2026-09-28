@@ -1,0 +1,97 @@
+{
+  "id": "axis-q1755-e",
+  "brand": "Axis",
+  "model": "Q1755-E",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "HDTV 1080i"
+  },
+  "sensor": "1/3\" progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.1-51",
+    "aperture": "F1.8-2.1",
+    "varifocal": true
+  },
+  "field_of_view_deg": "48.1-5.1",
+  "night_vision": {
+    "min_lux": 0.2,
+    "min_lux_color": 2
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "power": {
+    "method": "Power over Ethernet IEEE 802.3af Class 3 or High PoE",
+    "poe_class": 3
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "features": [
+    "10x optical zoom and 12x digital zoom, autofocus",
+    "Automatic day/night",
+    "Gatekeeper (auto zoom on activity)",
+    "Arctic Temperature Control",
+    "Optional pan/tilt head support"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "weight_g": 3500,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "status": "discontinued",
+  "cloud_dependency": "local",
+  "sources": [
+    "https://web.archive.org/web/20121018145920/http://www.axis.com/files/datasheet/ds_q1755_q1755e_42729_en_1210_lo.pdf"
+  ],
+  "last_verified": "2026-09-28",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=640x360",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "axis",
+      "notes": "Native Axis integration with auto-discovery via Zeroconf."
+    },
+    "blue_iris": {
+      "profile": "Axis",
+      "notes": "Select 'Axis' profile. Auto-discovery via ONVIF usually works."
+    }
+  }
+}

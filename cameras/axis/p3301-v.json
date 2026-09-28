@@ -1,0 +1,105 @@
+{
+  "id": "axis-p3301-v",
+  "brand": "Axis",
+  "model": "P3301-V",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 0.3,
+    "max_width": 640,
+    "max_height": 480,
+    "label": "VGA"
+  },
+  "sensor": "1/4\" progressive scan RGB CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-10",
+    "aperture": "F1.3",
+    "varifocal": true
+  },
+  "field_of_view_deg": "72-23",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 1.0
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "audio": {
+    "two_way": true
+  },
+  "power": {
+    "method": "4.9-5.1 V DC or Power over Ethernet IEEE 802.3af/802.3at Type 1 Class 2",
+    "consumption_w": 4.7,
+    "poe_class": 2
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "nvr_compatible": true
+  },
+  "features": [
+    "Vandal-resistant casing (1000 kg impact-resistant)",
+    "Varifocal lens",
+    "Video motion detection",
+    "Active tampering alarm",
+    "Pixel counter"
+  ],
+  "ik_rating": "IK10",
+  "operating_temp_c": "0 to 50",
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "status": "discontinued",
+  "cloud_dependency": "local",
+  "sources": [
+    "https://web.archive.org/web/20140123201632/http://www.axis.com/files/datasheet/ds_p3301v_p3304v_51533_en_1311_lo.pdf"
+  ],
+  "last_verified": "2026-09-28",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=640x480",
+      "onvif_port": 80,
+      "two_way_audio": true,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "axis",
+      "notes": "Native Axis integration with auto-discovery via Zeroconf."
+    },
+    "blue_iris": {
+      "profile": "Axis",
+      "notes": "Select 'Axis' profile. Auto-discovery via ONVIF usually works."
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "id": "axis-m3007-p",
+  "brand": "Axis",
+  "model": "M3007-P",
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5 MP"
+  },
+  "sensor": "1/3.2\" progressive scan RGB CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.3",
+    "aperture": "F2.8",
+    "varifocal": false
+  },
+  "field_of_view_deg": "187",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.6
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 12,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "fps": 12,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "power": {
+    "method": "Power over Ethernet IEEE 802.3af/802.3at Type 1 Class 2",
+    "consumption_w": 4.5,
+    "poe_class": 2
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true
+  },
+  "features": [
+    "360 overview with dewarped panorama, double panorama and quad views",
+    "Up to 4 dewarped view areas",
+    "Digital PTZ",
+    "Pixel counter"
+  ],
+  "operating_temp_c": "0 to 45",
+  "dimensions_mm": "131 x 53",
+  "weight_g": 570,
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "status": "discontinued",
+  "cloud_dependency": "local",
+  "sources": [
+    "https://web.archive.org/web/20240626065738/https://www.axis.com/files/datasheet/ds_m3007p_1485634_en_1705.pdf"
+  ],
+  "last_verified": "2026-09-28",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=640x480",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "axis",
+      "notes": "Native Axis integration with auto-discovery via Zeroconf."
+    },
+    "blue_iris": {
+      "profile": "Axis",
+      "notes": "Select 'Axis' profile. Auto-discovery via ONVIF usually works."
+    }
+  }
+}

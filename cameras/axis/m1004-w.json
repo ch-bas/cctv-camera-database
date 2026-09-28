@@ -1,0 +1,102 @@
+{
+  "id": "axis-m1004-w",
+  "brand": "Axis",
+  "model": "M1004-W",
+  "type": "box",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 1,
+    "max_width": 1280,
+    "max_height": 800,
+    "label": "HDTV 720p"
+  },
+  "sensor": "1/4\" progressive scan RGB CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "80",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 1.2
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1280x800",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "power": {
+    "method": "5 V DC",
+    "consumption_w": 6.5,
+    "voltage": "4.9-5.1 V DC"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "nvr_compatible": true
+  },
+  "features": [
+    "802.11b/g/n Wi-Fi with WPS pairing button",
+    "Digital PTZ, preset positions, guard tour",
+    "WDR - dynamic contrast",
+    "Pixel counter",
+    "Video motion detection",
+    "Active tampering alarm"
+  ],
+  "operating_temp_c": "0 to 40",
+  "weight_g": 111,
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "status": "discontinued",
+  "cloud_dependency": "local",
+  "sources": [
+    "https://web.archive.org/web/20161222055244/http://www.axis.com/files/datasheet/ds_m1004w_1480587_en_1609.pdf"
+  ],
+  "last_verified": "2026-09-28",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=640x480",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "axis",
+      "notes": "Native Axis integration with auto-discovery via Zeroconf."
+    },
+    "blue_iris": {
+      "profile": "Axis",
+      "notes": "Select 'Axis' profile. Auto-discovery via ONVIF usually works."
+    }
+  }
+}
