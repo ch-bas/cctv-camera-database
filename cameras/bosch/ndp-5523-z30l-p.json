@@ -1,0 +1,118 @@
+{
+  "id": "bosch-ndp-5523-z30l-p",
+  "brand": "Bosch",
+  "model": "AUTODOME IP starlight 5100i IR (NDP-5523-Z30L-P)",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "resolution": {
+    "label": "4MP",
+    "max_width": 2688,
+    "max_height": 1520,
+    "megapixels": 4.0
+  },
+  "video": {
+    "max_fps": 60,
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/1.8-inch HD CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6.6-198",
+    "aperture": "F1.5-F4.8",
+    "varifocal": true
+  },
+  "field_of_view_deg": "2.1-58.5",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 320,
+    "min_lux": 0.0016,
+    "min_lux_color": 0.0101
+  },
+  "ptz": {
+    "autotracking": true,
+    "onvif_ptz": "continuous"
+  },
+  "power": {
+    "method": "24 VAC or PoE (IEEE 802.3bt Type 3)",
+    "voltage": "24 VAC / 802.3bt Type 3",
+    "consumption_w": 39.4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2000,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "Intelligent Video Analytics",
+    "Intelligent Tracking (auto-tracking)",
+    "Starlight technology",
+    "HDR X (133 dB WDR)",
+    "30x optical zoom",
+    "16x digital zoom",
+    "320 m IR (850 nm) + 60 m white light",
+    "360 continuous pan",
+    "Privacy masking"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "285 x 456",
+  "weight_g": 9900,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/AUTODOME_star5100iIR_Data_sheet_enUS_81794242315.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub. PTZ control via ONVIF (Profile S/G/T). Default admin user is 'service' (set a password first). Onboard Intelligent Tracking is camera-side; Frigate PTZ autotracking not individually verified.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G/T compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "ONVIF PTZ",
+      "notes": "Bosch AUTODOME - ONVIF/RTSP with PTZ; default admin user 'service'."
+    }
+  },
+  "last_verified": "2026-09-28",
+  "cloud_dependency": "local"
+}
