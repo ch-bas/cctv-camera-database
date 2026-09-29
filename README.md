@@ -237,14 +237,14 @@ A device type is only emitted when the camera has a known RJ45 link speed (`netw
 | Total cameras | **28,400** |
 | Brands | **230** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
-| PoE wired | 19,507 |
+| PoE wired | 19,508 |
 | WiFi | 2,540 |
 | Battery / wire-free | 728 |
 | 4K / 8MP+ | 5,335 |
 | 4–7MP | 11,110 |
 | Under 4MP | 11,955 |
 | With integration configs (Frigate / Home Assistant) | 22,310 |
-| With color-lux rating (`night_vision.min_lux_color`) | 18,606 |
+| With color-lux rating (`night_vision.min_lux_color`) | 18,617 |
 
 ### All 230 brands
 
@@ -548,8 +548,8 @@ Shipped: JSON Schema CI, the [web frontend](https://cctv-database.com) (search /
 Open — contributions very welcome:
 
 - [ ] **Re-source ~1,051 reseller-only cameras** to official OEM datasheets (#164 / #165)
-- [ ] **Backfill pixel resolution** for the ~2,762 entries that state megapixels but no width×height (#169)
-- [ ] **Frigate verification drive** — only 1,301 of 22,073 shipped configs are community-verified; [confirm one you run](../../issues/new?template=verify-frigate-config.yml)
+- [ ] **Backfill pixel resolution** for the ~2,758 entries that state megapixels but no width×height (#169)
+- [ ] **Frigate verification drive** — only 31 of 22,073 shipped configs are community-verified; [confirm one you run](../../issues/new?template=verify-frigate-config.yml)
 - [ ] **Grow `community_notes`** — the per-camera quirks/behaviors layer (#297)
 
 ---
