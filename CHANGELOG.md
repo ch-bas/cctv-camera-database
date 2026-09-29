@@ -8,10 +8,21 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.26.0] — 2026-09-28
 
-Dataset reaches **27,938 cameras / 226 brands** (+576). A deep gap-fill across already-covered brands from **official manufacturer sources** — every field is transcribed from a manufacturer specification (or its archived copy), and fields a manufacturer does not publish are omitted rather than estimated. No Provision-ISR models are included. No new brands this release; the additions fill genuine catalogue gaps found via China-domestic mirrors, manufacturer datasheet APIs, and Internet-Archive captures of discontinued lines.
+Dataset reaches **28,185 cameras / 227 brands** (+823). A deep gap-fill across already-covered brands from **official manufacturer sources** — every field is transcribed from a manufacturer specification (or its archived copy), and fields a manufacturer does not publish are omitted rather than estimated. No Provision-ISR models are included. One new brand (Vivint); the rest fill genuine catalogue gaps found via manufacturer datasheet APIs/PDFs, China-domestic mirrors, and Internet-Archive captures of discontinued lines.
 
-### Added — existing-brand catalogue expansion (+576)
-- **Hikvision +198** — China-domestic PTZ (DS-2DF/iDS-2DF/DS-2DE/iDS-2DE), DS-2CD7 deep-learning, DS-2CD6 16MP panoramic/fisheye, DS-2XA AI/4G bullets & domes, DS-2DC/2PT mini-PTZ, and DS-2TB/DS-2TA bi-spectrum thermal cubes (`markets: cn` mirror + official global spec tables).
+### Added — new brand (+6)
+- **Vivint +6** — Outdoor Camera Pro (Gen 1–3), Indoor Camera Pro, Ping, Doorbell Camera Pro Gen 2 (cloud-managed smart-home cameras).
+
+### Added — existing-brand catalogue expansion (+817)
+- **eneo +127** — IC/IE/IP/IS/IT IP dome/bullet/box/PTZ/fisheye/thermal + M-series HD-analog (official datasheet-render PDFs).
+- **TRENDnet +29** — TV-IP H.265 bullet/dome/turret, varifocal, PTZ/speed-dome/multisensor, Wi-Fi cloud (was near-empty at 2 files).
+- **March Networks +25** — SE2/ME PTZ, VA2/VA4/VA5 dome/bullet/covert/360, EL/ME edge-AI, EL20 multisensor, mobile analog (was 4 files).
+- **Ganz +21** — analog covert door-frame/height-strip/gang-box, IP GXi covert, PixelPro dome.
+- **IDIS +16** — DirectCX 5MP analog dome/bullet/box + PoC, explosion-proof network box/PTZ.
+- **Ajax +16** — TurretCam HL/HLVF, BulletCam, Superior varifocal, BatteryCam, IndoorCam (new CCTV line).
+- **Vicon +11** — Anavio cloud-AI bullet/dome/fisheye/corner, Roughneck Pro PTZ/fisheye/zoom.
+- **Zmodo +8**, **Reolink +7** (Elite XPro/Pro 16MP dual-lens, Argus battery-solar), **EverFocus +6** (edge-AI Qualcomm/Jetson), **LaView +6**, **Dallmeier +5** (Panomera multifocal), **Night Owl +4**, **Geovision +4** (GT-Y series), **Planet +3**, **Milesight +3** (OpenVision), **Imou +3**, **Google/Nest +3**, **SimpliSafe +2**, **Mobotix +1**, **Kasa +1**, **Instar +1**, **Aqara +1**, plus **Hikvision +1 / HIKMICRO +2** thermal.
+- **Hikvision +199** — China-domestic PTZ (DS-2DF/iDS-2DF/DS-2DE/iDS-2DE), DS-2CD7 deep-learning, DS-2CD6 16MP panoramic/fisheye, DS-2XA AI/4G bullets & domes, DS-2DC/2PT mini-PTZ, DS-2TB/DS-2TA bi-spectrum thermal cubes, and a DS-2XS solar/4G bullet (`markets: cn` mirror + official global/dealer datasheets).
 - **Honeywell +85** — 25 Series R1/R2 dual-light dome/turret/bullet (2–8MP) + WB4R4 LPR, HDZ PTZ, HC60 fisheye, legacy HICC/HIDC, S1/HEI explosion-proof, HI-series (via the Honeywell PIF product API).
 - **RVi +75** — transport/marine 4STC, explosion-proof 4CFT, thermal 4TVC (thermal-only 160/400/640 + bi-spectrum), plus IP/analog/PTZ (official catalog-v2 API).
 - **Ganz +21** — analog covert door-frame/height-strip/gang-box, IP GXi covert, PixelPro dome (official datasheets).
@@ -32,7 +43,7 @@ Dataset reaches **27,938 cameras / 226 brands** (+576). A deep gap-fill across a
 
 ### Notes
 - **Provenance / #165:** ~3,524 records cite a China-domestic datasheet mirror or a `web.archive.org` capture of the official page rather than a live first-party OEM URL (these CN-domestic and discontinued catalogues are not reachable any other way). The data-consistency lint flags these under advisory #165; the specs are transcribed from the official (or officially-archived) datasheets. Non-blocking.
-- **Validation:** `node scripts/build.js` — 27,938 cameras, all schema-valid. `npm run lint` — passes. Aggregates + `README.md` regenerated; version 2.26.0.
+- **Validation:** `node scripts/build.js` — 28,185 cameras, all schema-valid. `npm run lint` — passes. Aggregates + `README.md` regenerated; version 2.26.0.
 
 ## [2.25.0] — 2026-09-28
 
