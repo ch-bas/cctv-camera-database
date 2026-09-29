@@ -57,7 +57,8 @@
   ],
   "release_notes": "The Dahua SDT4E425-8P-GB-APV1 is a dual-sensor TiOC 2.0 PTZ pairing an 8MP 180-degree panoramic view with a 4MP 25x optical-zoom PTZ, plus Auto Tracking 3.0 and active deterrence.",
   "sources": [
-    "https://www.dahuasecurity.com/products/network-products/ptz-cameras/x-spans-series/distribution/sdt4e425-8p-gb-apv1"
+    "https://www.dahuasecurity.com/products/network-products/ptz-cameras/x-spans-series/distribution/sdt4e425-8p-gb-apv1",
+    "https://material.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/SDT4E425-8P-GB-APV1_S0_datasheet_20240725.pdf"
   ],
   "power_source": [
     "poe",
@@ -66,8 +67,8 @@
   "configs": {
     "frigate": {
       "detect": {
-        "width": 1280,
-        "height": 720,
+        "width": 704,
+        "height": 576,
         "fps": 5
       },
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -93,6 +94,30 @@
   "environment": [
     "outdoor"
   ],
+  "video": {
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4096x1860",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ],
+    "max_fps": 30,
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ]
+  },
   "network": {
     "ethernet_speed_mbps": 1000,
     "ethernet_ports": 1
