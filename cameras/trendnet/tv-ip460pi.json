@@ -1,0 +1,110 @@
+{
+  "id": "trendnet-tv-ip460pi",
+  "model": "TV-IP460PI",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "label": "1080p (per sensor)",
+    "max_width": 1920,
+    "max_height": 1080
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "focal_length_mm": "2.8-12",
+    "aperture": "F2.0-2.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "120-56.6h",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10,
+    "min_lux": 0.01
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 20
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE+ (802.3at)",
+    "consumption_w": 24
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "ptz": {
+    "autotracking": false
+  },
+  "operating_temp_c": "-10 to 50",
+  "dimensions_mm": "183 x 133.2 x 133.2",
+  "weight_g": 900,
+  "cloud_dependency": "local",
+  "features": [
+    "Multi-sensor 360 PTZ camera: one 2MP 4x-optical-zoom PTZ lens + three 2MP fixed lenses",
+    "H.265+",
+    "50dB DWDR",
+    "PTZ lens FOV 120-56.6 (wide-tele), pan 0-350",
+    "10m IR (850nm)",
+    "2-way audio (3.5mm mic/speaker jacks)",
+    "microSD up to 256GB",
+    "ONVIF Profile S/G",
+    "PoE+ (802.3at)"
+  ],
+  "sources": [
+    "https://www.trendnet.com/products/product-detail.asp?prod=110_TV-IP460PI"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Src/MediaInput/stream_1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Src/MediaInput/stream_2",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif"
+    },
+    "blue_iris": {
+      "profile": "ONVIF"
+    }
+  },
+  "brand": "TRENDnet",
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-09-28"
+}
