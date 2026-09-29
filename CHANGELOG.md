@@ -8,26 +8,31 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.26.0] — 2026-09-28
 
-Dataset reaches **27,863 cameras / 226 brands** (+501). A deep gap-fill across already-covered brands from **official manufacturer sources** — every field is transcribed from a manufacturer specification (or its archived copy), and fields a manufacturer does not publish are omitted rather than estimated. No Provision-ISR models are included. No new brands this release; the additions fill genuine catalogue gaps found via China-domestic mirrors, manufacturer datasheet APIs, and Internet-Archive captures of discontinued lines.
+Dataset reaches **27,938 cameras / 226 brands** (+576). A deep gap-fill across already-covered brands from **official manufacturer sources** — every field is transcribed from a manufacturer specification (or its archived copy), and fields a manufacturer does not publish are omitted rather than estimated. No Provision-ISR models are included. No new brands this release; the additions fill genuine catalogue gaps found via China-domestic mirrors, manufacturer datasheet APIs, and Internet-Archive captures of discontinued lines.
 
-### Added — existing-brand catalogue expansion (+501)
-- **Hikvision +196** — China-domestic PTZ (DS-2DF/iDS-2DF/DS-2DE/iDS-2DE), DS-2CD7 deep-learning, DS-2CD6 16MP panoramic/fisheye, DS-2XA AI/4G bullets & domes, DS-2DC/2PT/2TB mini-PTZ & thermal (`markets: cn`, from the official CN datasheet mirror).
+### Added — existing-brand catalogue expansion (+576)
+- **Hikvision +198** — China-domestic PTZ (DS-2DF/iDS-2DF/DS-2DE/iDS-2DE), DS-2CD7 deep-learning, DS-2CD6 16MP panoramic/fisheye, DS-2XA AI/4G bullets & domes, DS-2DC/2PT mini-PTZ, and DS-2TB/DS-2TA bi-spectrum thermal cubes (`markets: cn` mirror + official global spec tables).
 - **Honeywell +85** — 25 Series R1/R2 dual-light dome/turret/bullet (2–8MP) + WB4R4 LPR, HDZ PTZ, HC60 fisheye, legacy HICC/HIDC, S1/HEI explosion-proof, HI-series (via the Honeywell PIF product API).
 - **RVi +75** — transport/marine 4STC, explosion-proof 4CFT, thermal 4TVC (thermal-only 160/400/640 + bi-spectrum), plus IP/analog/PTZ (official catalog-v2 API).
+- **Ganz +21** — analog covert door-frame/height-strip/gang-box, IP GXi covert, PixelPro dome (official datasheets).
 - **Vivotek +19** — Vortex AD/AF/AS/BD/BS/TD/TS line + legacy discontinued FD/IP/IZ/SD (official datasheets).
 - **Hanwha +17** — Wisenet Q IR box, Wisenet X modular AI heads, covert pinhole, mobile/LPR bullets.
+- **IDIS +16** — DirectCX 5MP analog dome/bullet/box + PoC variants, explosion-proof network box/PTZ.
 - **Axis +16** — Q86 PT thermal, Q8685-E PTZ, P1465-LE-3 LPR, plus early Neteye 2100-series & 205/206/210/211/213/230/232D legacy (discontinued via Wayback). Corrected the existing P1465-LE-3 lens to its 10.9–29 mm telephoto per the official datasheet.
+- **Ajax +16** — TurretCam HL/HLVF, BulletCam, Superior varifocal, BatteryCam, IndoorCam (Ajax's new CCTV line).
 - **Kedacom +13** — box/dome/bullet/turret/PTZ/dual-lens AI cameras (EN-site spec tables).
 - **Intelbras +12** — VIP IP bullet/dome, VHDM analog vehicular, VIP LPR, VIP-7200 thermal dual-lens.
 - **Arecont Vision +12** & **Panasonic +4** — legacy MegaVideo/MegaView/SurroundVideo and WV IP cameras (archived official datasheets).
 - **Pelco +11** — pre-Spectra-IV legacy analog: original/III Spectra PTZ, ICS Camclosure dome, CCD composite box cameras (archived spec sheets).
 - **Dahua +9** — WizSense 2 Smart Dual Light HDBW domes (global) + CN 4G active-deterrence/explosion-proof PTZ/bi-spectrum thermal/ITS box.
+- **Ring +8** — Stick Up Cam Elite PoE, Floodlight/Spotlight 1st-gen, Doorbell Pro/3/Battery Plus, Outdoor Cam Pro 4K, Dome Cam 4K.
+- **Reolink +7** — CX410C ColorX, Elite XPro/Pro 16MP dual-lens, Argus 3E/Eco Pro/4/PT Lite battery-solar.
 - **Bosch +7** — AUTODOME IP 4000i PTZ, EXTEGRA explosion-proof, MIC 7000 HD PTZ variants (archived datasheets).
-- **Swann +4**, **Digital Watchdog +3**, **Sony +2** (legacy SNC-RZ30 PTZ via Wayback), **Cisco Meraki +2** (1st-gen MV21/MV71 via Wayback), **TP-Link Tapo +10 / VIGI +1**, **i-PRO +1**, **Eufy +1**, **CP Plus +1**.
+- **Swann +4**, **Digital Watchdog +3**, **Google/Nest +3** (Nest Hello, Dropcam, Dropcam Pro), **Sony +2** (legacy SNC-RZ30 PTZ via Wayback), **HIKMICRO +2** (heat-resistant thermal bullets), **Cisco Meraki +2** (1st-gen MV21/MV71 via Wayback), **TP-Link Tapo +10 / VIGI +1**, **i-PRO +1**, **Eufy +1**, **CP Plus +1**.
 
 ### Notes
 - **Provenance / #165:** ~3,524 records cite a China-domestic datasheet mirror or a `web.archive.org` capture of the official page rather than a live first-party OEM URL (these CN-domestic and discontinued catalogues are not reachable any other way). The data-consistency lint flags these under advisory #165; the specs are transcribed from the official (or officially-archived) datasheets. Non-blocking.
-- **Validation:** `node scripts/build.js` — 27,863 cameras, all schema-valid. `npm run lint` — passes. Aggregates + `README.md` regenerated; version 2.26.0.
+- **Validation:** `node scripts/build.js` — 27,938 cameras, all schema-valid. `npm run lint` — passes. Aggregates + `README.md` regenerated; version 2.26.0.
 
 ## [2.25.0] — 2026-09-28
 
