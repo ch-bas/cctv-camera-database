@@ -10,6 +10,17 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 Dataset reaches **28,400 cameras / 230 brands** (+1,038). A deep gap-fill across already-covered brands from **official manufacturer sources** — every field is transcribed from a manufacturer specification (or its archived copy), and fields a manufacturer does not publish are omitted rather than estimated. No Provision-ISR models are included. Four new brands (Vivint, Defender, Geeni, Merkury); the rest fill genuine catalogue gaps found via manufacturer datasheet APIs/PDFs, China-domestic mirrors, and Internet-Archive captures of discontinued lines.
 
+### Enriched — field backfill across covered brands (~4,200 values)
+An ADD-only backfill pass filled missing per-camera fields (power draw, PoE class, voltage, FOV, IR range, main-stream, codecs, max fps, storage, dimensions, weight, operating temperature, aperture, NDAA) from each model's official datasheet — never overwriting an existing value and never estimating one the manufacturer does not publish. Largest contributions: **i-PRO ~415**, **Vivotek ~509**, **TVT +305**, **Speco +250**, **Hi-Focus +210**, **Axis +252**, **Bosch +93**, **Longse +112**, **Lilin +107**, **Hyundai ~563**, **Alibi/Beward +137/136**, **ACTi +121**, **Annke +110**, plus Avycon, Trassir, Avigilon, Sunell, Vitek, Novus, Safire, Pelco, Mapesen, Intelbras, Uniview, Eneo, InVid, BCS, Anpviz. `poe_class` is only recorded where a datasheet prints an explicit class number (802.3af/at without a class is left absent).
+
+### Fixed — data quality
+- **Hanwha RTSP** — corrected all 665 Wisenet cameras to the documented `/profile2/media.smp` (main) + `/profile3/media.smp` (sub) paths (profile1 is MJPEG); PNM multi-sensor units use the per-channel `/0/profile2/media.smp` form.
+- **`config_verified` reset** — 1,270 configs whose "community-verified" flag was unsubstantiated reset to `false` (31 genuinely verified kept).
+- **markets normalized** — 5,910 files lowercased with synonyms unified (uk→gb, japan→jp, india→in, germany→de, turkey→tr, europe→eu).
+- **analog cleanup** — stripped DVR-side `video.codecs`/`streams`/`configs` from 298 coax cameras (encoding is recorder-side).
+- **PTZ retyping** — 24 DS-2DE/2DC models corrected from other types to `ptz`; genuine multi-sensor PanoVu left as `panoramic`.
+- **Frigate detect** — clamped 1,421 detect blocks to a valid substream/main resolution.
+
 ### Added — four new brands (+40)
 - **Defender +16** — Guard/GO/EverWatch/Frontier consumer + Defender Pro PoE bullet/dome/fisheye/PTZ/ANPR.
 - **Geeni +16** — Orbit/Hawk/Scope/Look/Perch Tuya-consumer Wi-Fi cameras, doorbell, floodlight.
