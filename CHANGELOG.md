@@ -8,20 +8,24 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.26.0] — 2026-09-28
 
-Dataset reaches **28,185 cameras / 227 brands** (+823). A deep gap-fill across already-covered brands from **official manufacturer sources** — every field is transcribed from a manufacturer specification (or its archived copy), and fields a manufacturer does not publish are omitted rather than estimated. No Provision-ISR models are included. One new brand (Vivint); the rest fill genuine catalogue gaps found via manufacturer datasheet APIs/PDFs, China-domestic mirrors, and Internet-Archive captures of discontinued lines.
+Dataset reaches **28,400 cameras / 230 brands** (+1,038). A deep gap-fill across already-covered brands from **official manufacturer sources** — every field is transcribed from a manufacturer specification (or its archived copy), and fields a manufacturer does not publish are omitted rather than estimated. No Provision-ISR models are included. Four new brands (Vivint, Defender, Geeni, Merkury); the rest fill genuine catalogue gaps found via manufacturer datasheet APIs/PDFs, China-domestic mirrors, and Internet-Archive captures of discontinued lines.
 
-### Added — new brand (+6)
-- **Vivint +6** — Outdoor Camera Pro (Gen 1–3), Indoor Camera Pro, Ping, Doorbell Camera Pro Gen 2 (cloud-managed smart-home cameras).
+### Added — four new brands (+40)
+- **Defender +16** — Guard/GO/EverWatch/Frontier consumer + Defender Pro PoE bullet/dome/fisheye/PTZ/ANPR.
+- **Geeni +16** — Orbit/Hawk/Scope/Look/Perch Tuya-consumer Wi-Fi cameras, doorbell, floodlight.
+- **Vivint +6** — Outdoor Camera Pro (Gen 1–3), Indoor Camera Pro, Ping, Doorbell Camera Pro Gen 2 (cloud-managed).
+- **Merkury +2** — Smart Wi-Fi battery/solar PT + window camera.
 
-### Added — existing-brand catalogue expansion (+817)
+### Added — existing-brand catalogue expansion (+998)
 - **eneo +127** — IC/IE/IP/IS/IT IP dome/bullet/box/PTZ/fisheye/thermal + M-series HD-analog (official datasheet-render PDFs).
-- **TRENDnet +29** — TV-IP H.265 bullet/dome/turret, varifocal, PTZ/speed-dome/multisensor, Wi-Fi cloud (was near-empty at 2 files).
+- **TRENDnet +98** — 2 → 100 files; TV-IP 100–800 series legacy box/dome/bullet/PTZ/cloud + modern H.265, from official spec tables.
+- **Meari +84** — Bullet/Speed PTZ/Cell 4G/Flight floodlight/Bell doorbell/Snap battery/Mini + S1C Plus (official OEM catalogue).
 - **March Networks +25** — SE2/ME PTZ, VA2/VA4/VA5 dome/bullet/covert/360, EL/ME edge-AI, EL20 multisensor, mobile analog (was 4 files).
 - **Ganz +21** — analog covert door-frame/height-strip/gang-box, IP GXi covert, PixelPro dome.
 - **IDIS +16** — DirectCX 5MP analog dome/bullet/box + PoC, explosion-proof network box/PTZ.
 - **Ajax +16** — TurretCam HL/HLVF, BulletCam, Superior varifocal, BatteryCam, IndoorCam (new CCTV line).
 - **Vicon +11** — Anavio cloud-AI bullet/dome/fisheye/corner, Roughneck Pro PTZ/fisheye/zoom.
-- **Zmodo +8**, **Reolink +7** (Elite XPro/Pro 16MP dual-lens, Argus battery-solar), **EverFocus +6** (edge-AI Qualcomm/Jetson), **LaView +6**, **Dallmeier +5** (Panomera multifocal), **Night Owl +4**, **Geovision +4** (GT-Y series), **Planet +3**, **Milesight +3** (OpenVision), **Imou +3**, **Google/Nest +3**, **SimpliSafe +2**, **Mobotix +1**, **Kasa +1**, **Instar +1**, **Aqara +1**, plus **Hikvision +1 / HIKMICRO +2** thermal.
+- **Sunba +10** (4K/48X auto-track PTZ, dual-light, 4G solar, 960H analog), **Zmodo +8**, **Reolink +7** (Elite XPro/Pro 16MP dual-lens, Argus battery-solar), **Speco +6** (HD-TVI Intensifier + temp/facial panel + 8MP AI turret), **EverFocus +6** (edge-AI Qualcomm/Jetson), **LaView +6**, **Sannce +5** (PoE + analog), **Dallmeier +5** (Panomera multifocal), **Night Owl +4**, **Geovision +4** (GT-Y series), **Planet +3**, **Milesight +3** (OpenVision), **Imou +3**, **Google/Nest +3**, **Zumimall +3**, **Cantonk +2**, **SimpliSafe +2**, **Mobotix +1**, **Kasa +1**, **Instar +1**, **Aqara +1**, **Anran +1**, **Wansview +1**, plus **Hikvision +1 / HIKMICRO +2** thermal.
 - **Hikvision +199** — China-domestic PTZ (DS-2DF/iDS-2DF/DS-2DE/iDS-2DE), DS-2CD7 deep-learning, DS-2CD6 16MP panoramic/fisheye, DS-2XA AI/4G bullets & domes, DS-2DC/2PT mini-PTZ, DS-2TB/DS-2TA bi-spectrum thermal cubes, and a DS-2XS solar/4G bullet (`markets: cn` mirror + official global/dealer datasheets).
 - **Honeywell +85** — 25 Series R1/R2 dual-light dome/turret/bullet (2–8MP) + WB4R4 LPR, HDZ PTZ, HC60 fisheye, legacy HICC/HIDC, S1/HEI explosion-proof, HI-series (via the Honeywell PIF product API).
 - **RVi +75** — transport/marine 4STC, explosion-proof 4CFT, thermal 4TVC (thermal-only 160/400/640 + bi-spectrum), plus IP/analog/PTZ (official catalog-v2 API).
@@ -43,7 +47,7 @@ Dataset reaches **28,185 cameras / 227 brands** (+823). A deep gap-fill across a
 
 ### Notes
 - **Provenance / #165:** ~3,524 records cite a China-domestic datasheet mirror or a `web.archive.org` capture of the official page rather than a live first-party OEM URL (these CN-domestic and discontinued catalogues are not reachable any other way). The data-consistency lint flags these under advisory #165; the specs are transcribed from the official (or officially-archived) datasheets. Non-blocking.
-- **Validation:** `node scripts/build.js` — 28,185 cameras, all schema-valid. `npm run lint` — passes. Aggregates + `README.md` regenerated; version 2.26.0.
+- **Validation:** `node scripts/build.js` — 28,400 cameras, all schema-valid. `npm run lint` — passes. Aggregates + `README.md` regenerated; version 2.26.0.
 
 ## [2.25.0] — 2026-09-28
 
