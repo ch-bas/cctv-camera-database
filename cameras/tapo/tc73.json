@@ -1,0 +1,107 @@
+{
+  "id": "tapo-tc73",
+  "brand": "Tapo",
+  "model": "TC73",
+  "aliases": [
+    "TC73"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "2K QHD (2688x1520)"
+  },
+  "sensor": "1/2.9\" Progressive Scan CMOS Starlight Sensor",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.3",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "100.1 diagonal, 83.8 horizontal, 42.7 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 9
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "12V DC power adapter",
+    "voltage": "12V DC, 1A"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "cloud": true
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "environment": [
+    "indoor"
+  ],
+  "dimensions_mm": "80 x 80 x 112",
+  "operating_temp_c": "0 to 40",
+  "features": [
+    "indoor pan/tilt AI Wi-Fi camera, 2K QHD 4MP (2688x1520), HDR, 360 degree pan / 149 degree tilt",
+    "1/2.9\" starlight sensor, 4.3 mm F1.6 lens, 30 fps, 3D DNR + WDR",
+    "IR night vision 9 m: 1 x 850 nm + 2 x 940 nm invisible IR LEDs (toggleable)",
+    "smart motion tracking up to 120 degree/s; person, line-crossing, tamper, baby-cry, pet, glass-breaking detection",
+    "physical privacy shield (lens conceal), two-way audio with noise cancellation, 98 dB siren",
+    "microSD up to 512 GB or Tapo Care cloud; RTSP/ONVIF, Apple HomeKit, Alexa, Google Assistant"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/stream1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/stream2",
+      "onvif_port": 2020,
+      "verified": false,
+      "two_way_audio": true,
+      "notes": "Enable the camera account/ONVIF in the Tapo app. Streams: /stream1 (main), /stream2 (sub)."
+    },
+    "home_assistant": {
+      "integration": "tapo",
+      "notes": "Native TP-Link Tapo integration. Requires Tapo cloud account credentials."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP: /stream1 (main), /stream2 (sub). Enable ONVIF in Tapo app."
+    }
+  },
+  "sources": [
+    "https://www.tp-link.com/en/home-networking/cloud-camera/tc73/"
+  ],
+  "last_verified": "2026-09-28",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "cloud-optional"
+}

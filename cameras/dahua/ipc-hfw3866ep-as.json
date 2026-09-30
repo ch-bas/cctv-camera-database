@@ -21,10 +21,12 @@
   "night_vision": {
     "type": "ir",
     "range_m": 30,
-    "min_lux_color": 0.007
+    "min_lux_color": 0.007,
+    "min_lux": 0.0007
   },
   "power": {
-    "method": "PoE (802.3af) / DC 12V"
+    "method": "PoE (802.3af) / DC 12V",
+    "voltage": "12 VDC"
   },
   "storage": {
     "onboard": true,
@@ -49,12 +51,13 @@
     "WDR"
   ],
   "markets": [
-    "AU",
+    "au",
     "global"
   ],
   "release_notes": "The Dahua IPC-HFW3866EP-AS is an 8MP 4K fixed-lens (3.6mm) Starlight WizSense bullet with 30m IR, two-way audio and SMD 4.0 perimeter protection.",
   "sources": [
-    "https://www.securitywholesalers.com.au/product/dahua-dh-ipc-hfw3866ep-as-aus-8mp-4k-bullet-fixed-starlight-wizsense-camera/"
+    "https://www.securitywholesalers.com.au/product/dahua-dh-ipc-hfw3866ep-as-aus-8mp-4k-bullet-fixed-starlight-wizsense-camera/",
+    "https://www.securitywholesalers.com.au/wp-content/uploads/2023/05/DH-IPC-HFW3866EP-AS-AUS.pdf"
   ],
   "power_source": [
     "poe",
@@ -63,8 +66,8 @@
   "configs": {
     "frigate": {
       "detect": {
-        "width": 1280,
-        "height": 720,
+        "width": 704,
+        "height": 576,
         "fps": 5
       },
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -89,6 +92,30 @@
   "environment": [
     "outdoor"
   ],
+  "video": {
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ],
+    "max_fps": 30,
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ]
+  },
   "ndaa_compliant": false,
   "cloud_dependency": "local"
 }

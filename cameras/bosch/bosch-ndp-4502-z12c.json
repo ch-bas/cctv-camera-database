@@ -1,0 +1,111 @@
+{
+  "id": "bosch-ndp-4502-z12c",
+  "brand": "Bosch",
+  "model": "NDP-4502-Z12C",
+  "aliases": [
+    "AUTODOME IP 4000i"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "release_year": 2017,
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": true,
+    "focal_length_mm": "5.3-64",
+    "aperture": "F1.6"
+  },
+  "field_of_view_deg": "4.9-58.5",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.01,
+    "min_lux_color": 0.05
+  },
+  "power": {
+    "method": "PoE+ / 24 VAC",
+    "consumption_w": 12,
+    "voltage": "24 VAC / PoE+ (IEEE 802.3at)",
+    "poe_class": 4
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP51",
+  "ik_rating": "IK10",
+  "audio": {
+    "two_way": true
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048
+  },
+  "operating_temp_c": "-10 to 55",
+  "dimensions_mm": "198 x 159.3",
+  "features": [
+    "AUTODOME IP 4000i indoor in-ceiling PTZ",
+    "12x optical zoom (16x digital)",
+    "1080p60",
+    "Essential Video Analytics on the edge",
+    "Intelligent Dynamic Noise Reduction",
+    "mechanical switchable IR cut filter (true day/night)",
+    "clear bubble in-ceiling housing"
+  ],
+  "weight_g": 1810,
+  "sources": [
+    "https://web.archive.org/web/20171215035713/http://resource.boschsecurity.com/documents/AUTODOME_IP_4000i_Data_sheet_enUS_30276508939.pdf"
+  ],
+  "last_verified": "2026-09-28",
+  "environment": [
+    "indoor"
+  ],
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub. Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G. Not individually bench-tested.",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  }
+}

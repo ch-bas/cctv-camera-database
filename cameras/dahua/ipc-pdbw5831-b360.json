@@ -17,7 +17,8 @@
   "lens": {
     "count": 4,
     "focal_length_mm": "2.7-12",
-    "varifocal": true
+    "varifocal": true,
+    "aperture": "F1.8"
   },
   "field_of_view_deg": "360",
   "night_vision": {
@@ -26,7 +27,10 @@
     "min_lux_color": 0.005
   },
   "power": {
-    "method": "PoE+ (802.3at) / AC 24V"
+    "method": "PoE+ (802.3at) / AC 24V",
+    "poe_class": 4,
+    "voltage": "24 VAC",
+    "consumption_w": 31.2
   },
   "storage": {
     "onboard": true,
@@ -62,8 +66,8 @@
   "configs": {
     "frigate": {
       "detect": {
-        "width": 1280,
-        "height": 720,
+        "width": 704,
+        "height": 576,
         "fps": 5
       },
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -92,6 +96,32 @@
     "ethernet_ports": 1
   },
   "weight_g": 2700,
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "286.1 x 111.3",
   "ndaa_compliant": false,
-  "cloud_dependency": "local"
+  "cloud_dependency": "local",
+  "video": {
+    "max_fps": 30,
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG",
+      "H.265+",
+      "H.264+"
+    ],
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  }
 }

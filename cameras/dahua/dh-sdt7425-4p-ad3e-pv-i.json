@@ -8,7 +8,7 @@
   ],
   "release_year": 2022,
   "markets": [
-    "CN"
+    "cn"
   ],
   "resolution": {
     "megapixels": 4,
@@ -25,7 +25,8 @@
   "night_vision": {
     "type": "hybrid",
     "range_m": 150,
-    "min_lux_color": 0.001
+    "min_lux_color": 0.001,
+    "min_lux": 0.0001
   },
   "ptz": {
     "autotracking": true,
@@ -39,7 +40,8 @@
   "storage": {
     "onboard": false,
     "nvr_compatible": true,
-    "cloud": false
+    "cloud": false,
+    "max_microsd_gb": 512
   },
   "protocols": [
     "onvif",
@@ -70,8 +72,8 @@
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
       "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
       "detect": {
-        "width": 1280,
-        "height": 360,
+        "width": 960,
+        "height": 268,
         "fps": 5
       },
       "notes": "Dual-channel — configure as TWO Frigate cameras: panoramic = channel=1 (3840x1080, 32:9 — set detect to 1280x360 to match), PTZ = channel=2 (2560x1440, rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=2&subtype=0, detect 1280x720). For ONVIF autotracking on the PTZ channel add 'onvif: {host, port: 80, user, password, autotracking: {enabled: true}}'. ONVIF PTZ confirmed working — Channel 2 profiles have both VideoEncoderConfiguration and PTZConfiguration (no split-profile issue, unlike SDT4E series). Verified in frigate#22135. Note: powered by DC 36V, not PoE.",
@@ -133,5 +135,7 @@
     "outdoor"
   ],
   "ndaa_compliant": false,
-  "cloud_dependency": "local"
+  "cloud_dependency": "local",
+  "dimensions_mm": "247 x 202 x 359.8",
+  "weight_g": 5300
 }

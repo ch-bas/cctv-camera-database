@@ -25,14 +25,24 @@
   "sensor": "1/1.8\" CMOS",
   "lens": {
     "focal_length_mm": "40x optical zoom",
-    "varifocal": true
+    "varifocal": true,
+    "aperture": "F1.63-F4.94"
   },
   "night_vision": {
     "type": "ir",
-    "range_m": 200
+    "range_m": 200,
+    "min_lux": 0.001,
+    "min_lux_color": 0.005
   },
   "video": {
-    "max_fps": 30
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30
+      }
+    ]
   },
   "ip_rating": "IP68",
   "environment": [
@@ -42,7 +52,8 @@
     "microphone": true
   },
   "power": {
-    "consumption_w": 36
+    "consumption_w": 36,
+    "voltage": "100-240 VAC"
   },
   "dimensions_mm": "523.5 x 405.6 x 220.6",
   "weight_g": 18000,
@@ -62,7 +73,7 @@
   "last_verified": "2026-09-03",
   "sources": [
     "https://www.sunellsecurity.com/",
-    "https://www.sunellsecurity.com/products/explosion-proof-network-cameras/sn-chp8681ebr(-k)-z40-ss.shtml"
+    "https://www.sunellsecurity.com/products/explosion-proof-network-cameras/sn-chp8681ebr%28-k%29-z40-ss.shtml"
   ],
   "configs": {
     "home_assistant": {
@@ -82,5 +93,10 @@
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/1"
     }
   },
-  "cloud_dependency": "local"
+  "cloud_dependency": "local",
+  "field_of_view_deg": "H: 62 to 2.4, V: 36.6 to 1.3",
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024
+  }
 }

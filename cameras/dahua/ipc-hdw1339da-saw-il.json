@@ -27,7 +27,8 @@
   "night_vision": {
     "type": "hybrid",
     "range_m": 30,
-    "min_lux_color": 0.005
+    "min_lux_color": 0.005,
+    "min_lux": 0.0005
   },
   "power": {
     "method": "12VDC",
@@ -65,8 +66,8 @@
   "configs": {
     "frigate": {
       "detect": {
-        "width": 1280,
-        "height": 720,
+        "width": 640,
+        "height": 360,
         "fps": 5
       },
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -89,5 +90,26 @@
     "outdoor"
   ],
   "ndaa_compliant": false,
-  "cloud_dependency": "local"
+  "cloud_dependency": "local",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x360",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  }
 }

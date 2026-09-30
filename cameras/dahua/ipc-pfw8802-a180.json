@@ -55,7 +55,8 @@
     "-40C to +60C operation"
   ],
   "sources": [
-    "https://www.dahuasecurity.com/asset/upload/uploads/soft/20200720/1.3DH-IPC-PFW8802-A180_datasheet20200428V2.pdf"
+    "https://www.dahuasecurity.com/asset/upload/uploads/soft/20200720/1.3DH-IPC-PFW8802-A180_datasheet20200428V2.pdf",
+    "https://france.dahuatech.com/upload/datasheets/IPC-PFW8802-A180.pdf"
   ],
   "power_source": [
     "poe"
@@ -63,8 +64,8 @@
   "configs": {
     "frigate": {
       "detect": {
-        "width": 1280,
-        "height": 720,
+        "width": 1024,
+        "height": 452,
         "fps": 5
       },
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -88,6 +89,30 @@
   "environment": [
     "outdoor"
   ],
+  "video": {
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4096x1800",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1024x452",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ],
+    "max_fps": 25,
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ]
+  },
   "ndaa_compliant": false,
   "cloud_dependency": "local"
 }

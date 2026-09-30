@@ -1,0 +1,111 @@
+{
+  "id": "milesight-ms-c5372-rfipkg1",
+  "brand": "Milesight",
+  "model": "MS-C5372-RFIPKG1",
+  "aliases": [],
+  "ndaa_compliant": true,
+  "type": "dome",
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "video": {
+    "codecs": [
+      "H.264",
+      "H.264+",
+      "H.265",
+      "H.265+",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5",
+    "aperture": "F1.2",
+    "varifocal": true
+  },
+  "field_of_view_deg": "H93.5 to H32.5",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux_color": 0.004
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "power": {
+    "method": "PoE (802.3af) / DC 10V-28V",
+    "consumption_w": 10.5
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "notes": "Edge storage up to 1TB (UHS-I A2)"
+  },
+  "audio": {
+    "microphone": true
+  },
+  "protocols": [
+    "onvif"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "143 (dia) x 108.4",
+  "weight_g": 1250,
+  "features": [
+    "intrusion detection",
+    "region entrance",
+    "region exiting",
+    "advanced motion detection",
+    "line crossing",
+    "loitering",
+    "object left",
+    "object removed",
+    "face detection",
+    "object counting",
+    "heat map",
+    "helmet detection",
+    "edge VMS (Network Optix / Nx Server)"
+  ],
+  "release_notes": "Milesight OpenVision series AI motorized Pro Dome with embedded Network Optix (Nx) VMS server (NX license not included). P-Iris, VCA 2.0.",
+  "sources": [
+    "https://resource.milesight.com/milesight/security/document/datasheet/ipc/open-vision/milesight-openvision-pro-dome-camera-datasheet-en.pdf"
+  ],
+  "last_verified": "2026-09-28",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/main",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/sub",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Milesight /main + /sub RTSP; ONVIF port 80. OpenVision embeds Nx Witness VMS."
+    },
+    "home_assistant": {
+      "integration": "onvif"
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF"
+    }
+  },
+  "cloud_dependency": "local",
+  "network": {
+    "ethernet_speed_mbps": 100
+  }
+}

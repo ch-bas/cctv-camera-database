@@ -1,0 +1,116 @@
+{
+  "id": "hanwha-tnb-6030",
+  "brand": "Hanwha",
+  "model": "TNB-6030",
+  "ndaa_compliant": true,
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "2MP Covert/Pinhole Camera"
+  ],
+  "type": "covert",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.6",
+    "aperture": "F2.5",
+    "varifocal": false
+  },
+  "field_of_view_deg": "73.8 H / 39.6 V / 86.8 D",
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.06
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3) / DC 12V",
+    "consumption_w": 7,
+    "voltage": "12VDC",
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "notes": "1 microSD/SDHC/SDXC slot (Max. 256GB).",
+    "max_microsd_gb": 256
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "dimensions_mm": "240 x 46 x 25",
+  "weight_g": 245,
+  "operating_temp_c": "-10 to 50",
+  "features": [
+    "2MP covert board-in pinhole camera with separate lens module and HDMI output",
+    "4.6 mm fixed pinhole lens, F2.5, 24x digital zoom",
+    "150 dB WDR, SSNR III noise reduction, digital image stabilization",
+    "AI-based analytics (face/motion/virtual line & area), WiseStream II",
+    "HDMI 1080p output, audio mic/line in + line out, microSD",
+    "ONVIF Profile S/G, PoE (802.3af Class 3) or 12 VDC"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile3/media.smp",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hanwha profiles: profile1=MJPEG, profile2=main, profile3=sub (per Hanwha support)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration (Profiles S/G/T). Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  },
+  "sources": [
+    "https://www.hanwhavision.com/en/products/product-details/TNB-6030"
+  ],
+  "last_verified": "2026-09-28",
+  "cloud_dependency": "local"
+}

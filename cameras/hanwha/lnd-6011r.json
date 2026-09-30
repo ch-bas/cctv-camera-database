@@ -34,14 +34,18 @@
   "lens": {
     "count": 1,
     "focal_length_mm": "3",
-    "varifocal": false
+    "varifocal": false,
+    "aperture": "F2.0"
   },
   "night_vision": {
     "type": "ir",
-    "range_m": 20
+    "range_m": 20,
+    "min_lux_color": 0.18
   },
   "power": {
-    "method": "PoE (IEEE802.3af)"
+    "method": "PoE (IEEE802.3af)",
+    "consumption_w": 6.5,
+    "poe_class": 3
   },
   "protocols": [
     "onvif",
@@ -72,11 +76,11 @@
   "cloud_dependency": "local",
   "configs": {
     "frigate": {
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile3/media.smp",
       "onvif_port": 80,
       "verified": false,
-      "notes": "Hanwha Wisenet camera — ONVIF Profile S + /profile<n>/media.smp RTSP path; create a dedicated ONVIF user."
+      "notes": "Hanwha profiles: profile1=MJPEG, profile2=main, profile3=sub (per Hanwha support)."
     },
     "home_assistant": {
       "integration": "onvif",
@@ -86,5 +90,9 @@
       "profile": "ONVIF/Hanwha",
       "notes": "Hanwha Wisenet RTSP/ONVIF."
     }
-  }
+  },
+  "field_of_view_deg": "102 horizontal",
+  "operating_temp_c": "-10 to 55",
+  "dimensions_mm": "Ø110.0 x 86.0",
+  "weight_g": 230
 }

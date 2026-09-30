@@ -24,7 +24,9 @@
     "min_lux_color": 0.007
   },
   "power": {
-    "method": "PoE (802.3af) / DC 12V"
+    "method": "PoE (802.3af) / DC 12V",
+    "consumption_w": 9.7,
+    "voltage": "12 VDC"
   },
   "storage": {
     "onboard": true,
@@ -52,7 +54,7 @@
     "audio in/out"
   ],
   "markets": [
-    "AU",
+    "au",
     "global"
   ],
   "release_notes": "The Dahua IPC-HDBW3866EP-AS is an 8MP 4K Starlight WizSense vandal dome (IP67/IK10) with a fixed 2.8mm lens, 30m IR and one-in/one-out audio.",
@@ -66,8 +68,8 @@
   "configs": {
     "frigate": {
       "detect": {
-        "width": 1280,
-        "height": 720,
+        "width": 704,
+        "height": 576,
         "fps": 5
       },
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -99,5 +101,31 @@
   },
   "weight_g": 516,
   "ndaa_compliant": false,
-  "cloud_dependency": "local"
+  "cloud_dependency": "local",
+  "video": {
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ],
+    "max_fps": 30,
+    "codecs": [
+      "H.265",
+      "H.265+",
+      "H.264",
+      "H.264+",
+      "MJPEG"
+    ]
+  },
+  "operating_temp_c": "-40°C to 60°C",
+  "dimensions_mm": "89.1 mm × Φ111.7 mm"
 }

@@ -6,6 +6,62 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.26.0] — 2026-09-30
+
+Dataset reaches **28,400 cameras / 230 brands** (+1,038). A deep gap-fill across already-covered brands from **official manufacturer sources** — every field is transcribed from a manufacturer specification (or its archived copy), and fields a manufacturer does not publish are omitted rather than estimated. No Provision-ISR models are included. Four new brands (Vivint, Defender, Geeni, Merkury); the rest fill genuine catalogue gaps found via manufacturer datasheet APIs/PDFs, China-domestic mirrors, and Internet-Archive captures of discontinued lines.
+
+### Enriched — field backfill across covered brands (~24,000 datasheet-sourced values)
+A large ADD-only backfill campaign filled missing per-camera fields (power draw, PoE class, voltage, FOV, IR range, main-stream, codecs, max fps, storage, dimensions, weight, operating temperature, aperture, focal length, NDAA, audio) from each model's official datasheet — never overwriting an existing value and never estimating one the manufacturer does not publish. Combined with the new models, the release raised filled values across the 17 core spec lanes by **+26,204** vs 2.25.0, led by **power.voltage +5,311**, **consumption_w +2,981**, **poe_class +1,376**, **operating_temp +1,857**, **dimensions +1,706**, **weight +1,450**, **aperture +1,424**, **max_fps +1,266**, **streams +1,239**.
+
+Enrichment spanned ~40 brands to their honest floor: **Hikvision** (CN-domestic 7-series/PTZ/speed-domes via jiankongqicai spec tables), **Dahua** (local datasheets + materialfile PDFs), **ACTi** (live spec API), **Axis, i-PRO, Vivotek, Intelbras, Longse, Uniview, Bosch, Mapesen, Hanwha, Pelco, Hyundai, Alibi, Beward, Annke, Sunell, Vitek, Novus, Safire, Avycon, Trassir, Avigilon, Eneo, InVid, BCS, Anpviz, Lilin, Hi-Focus, Speco, TVT, LTS, Kedacom, FLIR, D-Link, RVi, Abus, Tapo, Jovision, Amcrest, Arecont Vision, EZVIZ, Samsung Techwin, Bolide, Ganz, Milesight, Honeywell, Geovision, Infiniti Optics, Jidetech**. `poe_class` is only recorded where a datasheet prints an explicit class number (802.3af/at without a class is left absent) — its low absolute coverage is a manufacturer-disclosure floor, not a gap.
+
+### Fixed — data quality
+- **Hanwha RTSP** — corrected all 665 Wisenet cameras to the documented `/profile2/media.smp` (main) + `/profile3/media.smp` (sub) paths (profile1 is MJPEG); PNM multi-sensor units use the per-channel `/0/profile2/media.smp` form.
+- **`config_verified` reset** — 1,270 configs whose "community-verified" flag was unsubstantiated reset to `false` (31 genuinely verified kept).
+- **markets normalized** — 5,910 files lowercased with synonyms unified (uk→gb, japan→jp, india→in, germany→de, turkey→tr, europe→eu).
+- **analog cleanup** — stripped DVR-side `video.codecs`/`streams`/`configs` from 298 coax cameras (encoding is recorder-side).
+- **PTZ retyping** — 24 DS-2DE/2DC models corrected from other types to `ptz`; genuine multi-sensor PanoVu left as `panoramic`.
+- **Frigate detect** — clamped 1,421 detect blocks to a valid substream/main resolution.
+
+### Added — four new brands (+40)
+- **Defender +16** — Guard/GO/EverWatch/Frontier consumer + Defender Pro PoE bullet/dome/fisheye/PTZ/ANPR.
+- **Geeni +16** — Orbit/Hawk/Scope/Look/Perch Tuya-consumer Wi-Fi cameras, doorbell, floodlight.
+- **Vivint +6** — Outdoor Camera Pro (Gen 1–3), Indoor Camera Pro, Ping, Doorbell Camera Pro Gen 2 (cloud-managed).
+- **Merkury +2** — Smart Wi-Fi battery/solar PT + window camera.
+
+### Added — existing-brand catalogue expansion (+998)
+- **eneo +127** — IC/IE/IP/IS/IT IP dome/bullet/box/PTZ/fisheye/thermal + M-series HD-analog (official datasheet-render PDFs).
+- **TRENDnet +98** — 2 → 100 files; TV-IP 100–800 series legacy box/dome/bullet/PTZ/cloud + modern H.265, from official spec tables.
+- **Meari +84** — Bullet/Speed PTZ/Cell 4G/Flight floodlight/Bell doorbell/Snap battery/Mini + S1C Plus (official OEM catalogue).
+- **March Networks +25** — SE2/ME PTZ, VA2/VA4/VA5 dome/bullet/covert/360, EL/ME edge-AI, EL20 multisensor, mobile analog (was 4 files).
+- **Ganz +21** — analog covert door-frame/height-strip/gang-box, IP GXi covert, PixelPro dome.
+- **IDIS +16** — DirectCX 5MP analog dome/bullet/box + PoC, explosion-proof network box/PTZ.
+- **Ajax +16** — TurretCam HL/HLVF, BulletCam, Superior varifocal, BatteryCam, IndoorCam (new CCTV line).
+- **Vicon +11** — Anavio cloud-AI bullet/dome/fisheye/corner, Roughneck Pro PTZ/fisheye/zoom.
+- **Sunba +10** (4K/48X auto-track PTZ, dual-light, 4G solar, 960H analog), **Zmodo +8**, **Reolink +7** (Elite XPro/Pro 16MP dual-lens, Argus battery-solar), **Speco +6** (HD-TVI Intensifier + temp/facial panel + 8MP AI turret), **EverFocus +6** (edge-AI Qualcomm/Jetson), **LaView +6**, **Sannce +5** (PoE + analog), **Dallmeier +5** (Panomera multifocal), **Night Owl +4**, **Geovision +4** (GT-Y series), **Planet +3**, **Milesight +3** (OpenVision), **Imou +3**, **Google/Nest +3**, **Zumimall +3**, **Cantonk +2**, **SimpliSafe +2**, **Mobotix +1**, **Kasa +1**, **Instar +1**, **Aqara +1**, **Anran +1**, **Wansview +1**, plus **Hikvision +1 / HIKMICRO +2** thermal.
+- **Hikvision +199** — China-domestic PTZ (DS-2DF/iDS-2DF/DS-2DE/iDS-2DE), DS-2CD7 deep-learning, DS-2CD6 16MP panoramic/fisheye, DS-2XA AI/4G bullets & domes, DS-2DC/2PT mini-PTZ, DS-2TB/DS-2TA bi-spectrum thermal cubes, and a DS-2XS solar/4G bullet (`markets: cn` mirror + official global/dealer datasheets).
+- **Honeywell +85** — 25 Series R1/R2 dual-light dome/turret/bullet (2–8MP) + WB4R4 LPR, HDZ PTZ, HC60 fisheye, legacy HICC/HIDC, S1/HEI explosion-proof, HI-series (via the Honeywell PIF product API).
+- **RVi +75** — transport/marine 4STC, explosion-proof 4CFT, thermal 4TVC (thermal-only 160/400/640 + bi-spectrum), plus IP/analog/PTZ (official catalog-v2 API).
+- **Ganz +21** — analog covert door-frame/height-strip/gang-box, IP GXi covert, PixelPro dome (official datasheets).
+- **Vivotek +19** — Vortex AD/AF/AS/BD/BS/TD/TS line + legacy discontinued FD/IP/IZ/SD (official datasheets).
+- **Hanwha +17** — Wisenet Q IR box, Wisenet X modular AI heads, covert pinhole, mobile/LPR bullets.
+- **IDIS +16** — DirectCX 5MP analog dome/bullet/box + PoC variants, explosion-proof network box/PTZ.
+- **Axis +16** — Q86 PT thermal, Q8685-E PTZ, P1465-LE-3 LPR, plus early Neteye 2100-series & 205/206/210/211/213/230/232D legacy (discontinued via Wayback). Corrected the existing P1465-LE-3 lens to its 10.9–29 mm telephoto per the official datasheet.
+- **Ajax +16** — TurretCam HL/HLVF, BulletCam, Superior varifocal, BatteryCam, IndoorCam (Ajax's new CCTV line).
+- **Kedacom +13** — box/dome/bullet/turret/PTZ/dual-lens AI cameras (EN-site spec tables).
+- **Intelbras +12** — VIP IP bullet/dome, VHDM analog vehicular, VIP LPR, VIP-7200 thermal dual-lens.
+- **Arecont Vision +12** & **Panasonic +4** — legacy MegaVideo/MegaView/SurroundVideo and WV IP cameras (archived official datasheets).
+- **Pelco +11** — pre-Spectra-IV legacy analog: original/III Spectra PTZ, ICS Camclosure dome, CCD composite box cameras (archived spec sheets).
+- **Dahua +9** — WizSense 2 Smart Dual Light HDBW domes (global) + CN 4G active-deterrence/explosion-proof PTZ/bi-spectrum thermal/ITS box.
+- **Ring +8** — Stick Up Cam Elite PoE, Floodlight/Spotlight 1st-gen, Doorbell Pro/3/Battery Plus, Outdoor Cam Pro 4K, Dome Cam 4K.
+- **Reolink +7** — CX410C ColorX, Elite XPro/Pro 16MP dual-lens, Argus 3E/Eco Pro/4/PT Lite battery-solar.
+- **Bosch +7** — AUTODOME IP 4000i PTZ, EXTEGRA explosion-proof, MIC 7000 HD PTZ variants (archived datasheets).
+- **Swann +4**, **Digital Watchdog +3**, **Google/Nest +3** (Nest Hello, Dropcam, Dropcam Pro), **Sony +2** (legacy SNC-RZ30 PTZ via Wayback), **HIKMICRO +2** (heat-resistant thermal bullets), **Cisco Meraki +2** (1st-gen MV21/MV71 via Wayback), **TP-Link Tapo +10 / VIGI +1**, **i-PRO +1**, **Eufy +1**, **CP Plus +1**.
+
+### Notes
+- **Provenance / #165:** ~3,524 records cite a China-domestic datasheet mirror or a `web.archive.org` capture of the official page rather than a live first-party OEM URL (these CN-domestic and discontinued catalogues are not reachable any other way). The data-consistency lint flags these under advisory #165; the specs are transcribed from the official (or officially-archived) datasheets. Non-blocking.
+- **Validation:** `node scripts/build.js` — 28,400 cameras, all schema-valid. `npm run lint` — passes. Aggregates + `README.md` regenerated; version 2.26.0.
+
 ## [2.25.0] — 2026-09-28
 
 Dataset reaches **27,362 cameras / 226 brands** (+2,387). A broad multi-brand expansion from **official manufacturer sources** — every field is transcribed from a manufacturer specification (or its archived copy), and fields a manufacturer does not publish are omitted rather than estimated. No Provision-ISR models are included. This release leans on two veins: **China-domestic catalogues** (models not published on the global sites) and the **Internet Archive** (discontinued/defunct-brand catalogues that survive only in Wayback captures).

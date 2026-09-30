@@ -1,0 +1,134 @@
+{
+  "id": "hikvision-ds-2xs2t26xm-igle",
+  "brand": "Hikvision",
+  "model": "DS-2XS2T26XM-IGLE",
+  "aliases": [
+    "DS-2XS2T26XM-IGLE/CH10S45"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet",
+    "4g"
+  ],
+  "power_source": [
+    "solar",
+    "battery",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4/6/8/12",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "83",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.002
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.265+",
+      "H.264",
+      "H.264+",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "notes": "Built-in 32 GB eMMC (approx. 25 GB usable) plus microSD/SDHC/SDXC up to 256 GB; edge storage with re-transmission on network recovery; NAS (NFS, SMB/CIFS)."
+  },
+  "protocols": [
+    "rtsp",
+    "http"
+  ],
+  "power": {
+    "method": "12 VDC (reverse-polarity protected); solar kit: 45 W photovoltaic panel + 10 Ah lithium (ternary) battery",
+    "voltage": "12 VDC +/- 25%"
+  },
+  "ip_rating": "IP67",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "200.2 x 140 x 68",
+  "weight_g": 680,
+  "markets": [
+    "cn"
+  ],
+  "features": [
+    "Solar-powered ultra-low-power 4G bullet camera kit (45 W PV panel + 10 Ah lithium battery)",
+    "PIR passive-infrared human detection up to 10 m, triggers fast wake-from-sleep, snapshot and recording upload",
+    "ultra-low power: typical 1.85 W (4G active), 40 mW standby, 4.8 W max",
+    "runtime: 3 days in low-power real-time mode, 25 days in sleep/wake mode (per datasheet duty cycle)",
+    "4G LTE-TDD/LTE-FDD/TD-SCDMA/EVDO with Micro SIM",
+    "IR supplement up to 30 m (850 nm), anti-overexposure supplement light",
+    "120 dB WDR, 3D DNR, BLC, HLC",
+    "remote low-power-mode configuration and multiple wake methods via platform",
+    "built-in microphone and speaker (two-way audio), audio noise filtering",
+    "RS-485 for battery information",
+    "Hik-Connect / EZVIZ cloud platform access"
+  ],
+  "release_notes": "Hikvision DS-2XS2T26XM-IGLE/CH10S45 is a 2 MP solar-powered, 4G ultra-low-power bullet camera kit for off-grid remote sites (power line, river, pipeline, forest monitoring). It ships with a 45 W solar panel and 10 Ah lithium battery, uses PIR-triggered wake-from-sleep, and consumes under 1.1 W at full resolution excluding 4G transmission.",
+  "sources": [
+    "https://dealer-static.hikvision.com/upload/file/doc/DOC000068784-DS-2XS2T26XM-IGLE_CH10S45.pdf"
+  ],
+  "last_verified": "2026-09-28",
+  "ndaa_compliant": false,
+  "cloud_dependency": "cloud-optional",
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "notes": "Battery/solar low-power 4G camera; sleep/wake duty cycle means the RTSP stream is only reachable while the camera is awake.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision-platform RTSP; low-power sleep/wake behaviour limits continuous local streaming."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  }
+}

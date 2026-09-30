@@ -1,0 +1,107 @@
+{
+  "id": "bosch-mic-7230-pg4",
+  "brand": "Bosch",
+  "model": "MIC-7230-PG4",
+  "aliases": [
+    "MIC IP dynamic 7000 HD"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "release_year": 2015,
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" Exmor CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": true,
+    "focal_length_mm": "4.3-129",
+    "aperture": "F1.6"
+  },
+  "field_of_view_deg": "2.3-65",
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.026,
+    "min_lux_color": 0.066
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "High PoE / 24 VAC",
+    "consumption_w": 40,
+    "voltage": "21-30 VAC / High PoE"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP68",
+  "ik_rating": "IK10",
+  "features": [
+    "MIC IP dynamic 7000 HD ruggedized PTZ",
+    "30x optical zoom (12x digital)",
+    "1080p25/30 High Dynamic Range (HDR)",
+    "Intelligent Tracking (auto-tracking)",
+    "Intelligent Video Analysis (IVA)",
+    "360° continuous pan, tilt -55° to +90°",
+    "NEMA 6P / Type 6P, IK10",
+    "housing color: grey (RAL 7001), available in specific regions only"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "217.75 x 368.89 x 178.33",
+  "sources": [
+    "https://web.archive.org/web/20160207180814/http://resource.boschsecurity.com/documents/MIC_IP_dynamic_7000__Data_sheet_enUS_16950850955.pdf"
+  ],
+  "last_verified": "2026-09-28",
+  "environment": [
+    "outdoor"
+  ],
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub. Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S. Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "markets": [
+    "eu"
+  ]
+}

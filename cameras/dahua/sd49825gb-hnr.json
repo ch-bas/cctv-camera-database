@@ -49,7 +49,8 @@
     "IP66"
   ],
   "sources": [
-    "https://www.dahuasecurity.com/products/All-Products/PTZ-Cameras/WizSense-Series/SD4/SD49825GB-HNR"
+    "https://www.dahuasecurity.com/products/All-Products/PTZ-Cameras/WizSense-Series/SD4/SD49825GB-HNR",
+    "https://material.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/SD49825GB-HNR_S0_datasheet_20221213.pdf"
   ],
   "lens": {
     "count": 1,
@@ -65,8 +66,8 @@
   "configs": {
     "frigate": {
       "detect": {
-        "width": 1280,
-        "height": 720,
+        "width": 704,
+        "height": 576,
         "fps": 5
       },
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -91,11 +92,37 @@
   "environment": [
     "outdoor"
   ],
+  "video": {
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ],
+    "max_fps": 30,
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ]
+  },
   "network": {
     "ethernet_speed_mbps": 100,
     "ethernet_ports": 1
   },
   "weight_g": 2400,
   "ndaa_compliant": false,
-  "cloud_dependency": "local"
+  "cloud_dependency": "local",
+  "dimensions_mm": "Ø160 x 270.4",
+  "operating_temp_c": "-40 to 70"
 }

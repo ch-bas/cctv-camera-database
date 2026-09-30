@@ -1,0 +1,94 @@
+{
+  "id": "cisco-meraki-mv71",
+  "brand": "Cisco Meraki",
+  "model": "MV71",
+  "aliases": [
+    "MV71",
+    "MV71-HW"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 0.92,
+    "max_width": 1280,
+    "max_height": 720,
+    "label": "720p"
+  },
+  "sensor": "1/3.2\" 5MP (2560x1920) progressive CMOS",
+  "lens": {
+    "focal_length_mm": "3-10",
+    "aperture": "f/1.3-f/2.5",
+    "varifocal": true
+  },
+  "field_of_view_deg": "28-82",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux": 0.001,
+    "min_lux_color": 0.27
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ]
+  },
+  "power": {
+    "method": "PoE+ (802.3at)",
+    "consumption_w": 21.95
+  },
+  "storage": {
+    "onboard": true,
+    "cloud": true,
+    "notes": "128GB high-endurance solid-state storage with full disk encryption; cloud-augmented edge storage"
+  },
+  "dimensions_mm": "173.3 x 115 mm",
+  "weight_g": 1482,
+  "operating_temp_c": "-50°C to 40°C",
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "weather-proof IP66 / vandal-proof IK10 housing",
+    "integrated heating elements for low-temperature outdoor operation",
+    "remote adjustment of focus, zoom, and aperture",
+    "automatic P-iris control",
+    "intelligent motion indexing with search engine",
+    "motion heat maps",
+    "motion alerts",
+    "dynamic day-to-night transition with IR illumination",
+    "cloud management via Meraki dashboard"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "markets": [
+    "global"
+  ],
+  "protocols": [
+    "rtsp"
+  ],
+  "sources": [
+    "https://meraki.cisco.com/lib/pdf/meraki_datasheet_mv21_mv71.pdf",
+    "https://documentation.meraki.com/MV/Product_Information/MV_Datasheets"
+  ],
+  "last_verified": "2026-09-28",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{ip}:9000/live",
+      "verified": false,
+      "notes": "Meraki external RTSP (enable per-camera in the Meraki Dashboard). No ONVIF."
+    },
+    "home_assistant": {
+      "integration": "generic",
+      "notes": "Add via Generic Camera with the Dashboard-provided RTSP URL (rtsp://{ip}:9000/live)."
+    },
+    "blue_iris": {
+      "profile": "Generic",
+      "notes": "Generic/RTSP: rtsp://{ip}:9000/live (enable external RTSP in Dashboard)."
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "id": "axis-q8631-e",
+  "brand": "Axis",
+  "model": "Q8631-E",
+  "aliases": [
+    "AXIS Q8631-E PT Thermal Network Camera"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.11,
+    "max_width": 384,
+    "max_height": 288,
+    "label": "thermal"
+  },
+  "sensor": "Uncooled microbolometer 384x288, 17 µm pixel pitch",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "35",
+    "aperture": "F1.2",
+    "varifocal": false
+  },
+  "field_of_view_deg": "10.7 horizontal",
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "384x288",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "power": {
+    "consumption_w": 55,
+    "voltage": "24 V AC / 120 V AC / 230 V AC"
+  },
+  "power_source": [
+    "ac-mains"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "ip_rating": "IP66",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-40 to 55",
+  "dimensions_mm": "258 x 584 x 463",
+  "weight_g": 17500,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "thermal imaging 384x288",
+    "NETD < 70 mK",
+    "360 degree endless pan",
+    "AXIS Video Motion Detection",
+    "shock detection",
+    "Arctic Temperature Control"
+  ],
+  "sources": [
+    "https://www.axis.com/products/axis-q8631-e",
+    "https://www.axis.com/dam/public/68/f6/59/axis-q8631-e-pt-thermal-network-camera-en-US-210023.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-09-28",
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 384,
+        "height": 288,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "axis",
+      "notes": "Native Axis integration with auto-discovery via Zeroconf."
+    },
+    "blue_iris": {
+      "profile": "Axis",
+      "notes": "Select 'Axis' profile. Auto-discovery via ONVIF usually works."
+    }
+  }
+}

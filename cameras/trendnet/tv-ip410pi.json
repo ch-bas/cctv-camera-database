@@ -1,0 +1,105 @@
+{
+  "id": "trendnet-tv-ip410pi",
+  "model": "TV-IP410PI",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "label": "1080p",
+    "max_width": 1920,
+    "max_height": 1080
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "focal_length_mm": "2.8",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10,
+    "min_lux": 0.01
+  },
+  "video": {
+    "codecs": [
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 25,
+        "codec": "H.264"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x360",
+        "fps": 30,
+        "codec": "MJPEG"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3af)",
+    "consumption_w": 9,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ptz": {
+    "autotracking": false
+  },
+  "operating_temp_c": "-10 to 40",
+  "dimensions_mm": "120 x 87",
+  "weight_g": 500,
+  "environment": [
+    "indoor"
+  ],
+  "cloud_dependency": "local",
+  "features": [
+    "2MP 1080p indoor mini pan/tilt IR camera",
+    "120dB WDR",
+    "pan -90 to 90, tilt 0 to 75",
+    "10m IR (850nm)",
+    "microSD up to 128GB",
+    "ONVIF Profile S/G, PSIA",
+    "PoE (802.3af)"
+  ],
+  "sources": [
+    "https://www.trendnet.com/products/product-detail.asp?prod=205_TV-IP410PI"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Src/MediaInput/stream_1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Src/MediaInput/stream_2",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif"
+    },
+    "blue_iris": {
+      "profile": "ONVIF"
+    }
+  },
+  "brand": "TRENDnet",
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-09-28"
+}

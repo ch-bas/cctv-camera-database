@@ -1,72 +1,107 @@
 {
   "id": "axis-p1465-le-3",
   "brand": "Axis",
-  "model": "P1465-LE-3 License Plate Verifier",
+  "model": "P1465-LE-3",
   "aliases": [
-    "Axis P1465-LE-3 LPR Bullet"
+    "AXIS P1465-LE-3 License Plate Verifier Kit"
   ],
   "type": "bullet",
   "connectivity": [
     "ethernet"
   ],
-  "release_year": 2023,
   "resolution": {
     "megapixels": 2,
     "max_width": 1920,
     "max_height": 1080,
     "label": "1080p"
   },
-  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "sensor": "1/2.8\" progressive scan RGB CMOS",
   "lens": {
     "count": 1,
-    "focal_length_mm": "3-9 (varifocal)",
+    "focal_length_mm": "10.9-29",
+    "aperture": "F1.7-1.7",
     "varifocal": true
   },
-  "field_of_view_deg": "100-35 horizontal",
+  "field_of_view_deg": "29-11 horizontal / 16-6 vertical",
   "night_vision": {
     "type": "ir",
-    "range_m": 40,
-    "min_lux_color": 0.06
+    "range_m": 45,
+    "min_lux_color": 0.07
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "H.265",
+      "MJPEG"
+    ],
+    "max_fps": 50,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 50,
+        "codec": "H.265"
+      }
+    ]
   },
   "power": {
-    "method": "PoE (802.3af)"
+    "method": "PoE (IEEE 802.3af/802.3at Type 1)",
+    "consumption_w": 12.95,
+    "voltage": "10-28 V DC",
+    "poe_class": 3
   },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
   "storage": {
     "onboard": true,
     "nvr_compatible": true,
     "cloud": false
   },
-  "protocols": [
-    "onvif",
-    "rtsp"
-  ],
-  "ip_rating": "IP67",
-  "ik_rating": "IK10",
   "audio": {
-    "microphone": true,
+    "microphone": false,
     "speaker": false,
     "two_way": false
   },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "132 x 132 x 280",
+  "weight_g": 1200,
+  "soc": "ARTPEC-8",
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
   "features": [
-    "AXIS License Plate Verifier preloaded",
-    "Lightfinder",
-    "OptimizedIR 40m",
-    "Forensic WDR",
-    "Zipstream H.265",
-    "AXIS Object Analytics",
+    "AXIS License Plate Verifier preinstalled",
     "license plate recognition",
-    "IP67/IK10"
+    "freeflow LPR up to 105 km/h",
+    "Forensic WDR",
+    "Lightfinder 2.0",
+    "OptimizedIR",
+    "Axis Zipstream",
+    "ARTPEC-8 SoC",
+    "electronic image stabilization"
   ],
   "sources": [
-    "https://www.axis.com/products/axis-p1465-le-3"
+    "https://www.axis.com/products/axis-p1465-le-3",
+    "https://www.axis.com/dam/public/71/d7/af/datasheet-axis-p1465-le-3-license-plate-verifier-kit-en-US-544993.pdf"
   ],
   "markets": [
     "global"
   ],
-  "last_verified": "2026-08-11",
-  "power_source": [
-    "poe"
-  ],
+  "last_verified": "2026-09-28",
+  "ndaa_compliant": true,
+  "cloud_dependency": "local",
   "configs": {
     "frigate": {
       "detect": {
@@ -74,9 +109,9 @@
         "height": 480,
         "fps": 5
       },
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=1920x1080",
-      "best_substream": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=640x480",
-      "onvif_port": 80
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp",
+      "onvif_port": 80,
+      "verified": false
     },
     "home_assistant": {
       "integration": "axis",
@@ -86,32 +121,5 @@
       "profile": "Axis",
       "notes": "Select 'Axis' profile. Auto-discovery via ONVIF usually works."
     }
-  },
-  "environment": [
-    "outdoor"
-  ],
-  "network": {
-    "ethernet_speed_mbps": 100,
-    "ethernet_ports": 1
-  },
-  "dimensions_mm": "Ø132 x 132 x 280",
-  "video": {
-    "codecs": [
-      "H.264",
-      "H.265",
-      "MJPEG"
-    ],
-    "max_fps": 30,
-    "streams": [
-      {
-        "name": "main",
-        "resolution": "1920x1080",
-        "fps": 30,
-        "codec": "H.265"
-      }
-    ]
-  },
-  "operating_temp_c": "-40 to 60",
-  "ndaa_compliant": true,
-  "cloud_dependency": "local"
+  }
 }

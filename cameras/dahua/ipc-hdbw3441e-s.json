@@ -16,10 +16,37 @@
   "night_vision": {
     "type": "ir",
     "range_m": 50,
-    "min_lux_color": 0.005
+    "min_lux_color": 0.005,
+    "min_lux": 0.0005
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
   },
   "power": {
-    "method": "PoE (802.3af) / DC 12V"
+    "method": "PoE (802.3af) / DC 12V",
+    "consumption_w": 8.3,
+    "voltage": "12 VDC"
   },
   "storage": {
     "onboard": true,
@@ -47,7 +74,8 @@
     "IK10"
   ],
   "sources": [
-    "https://www.dahuasecurity.com/products/All-Products/Network-Cameras/WizSense-Series/3-Series/4MP/IPC-HDBW3441E-S"
+    "https://www.dahuasecurity.com/products/All-Products/Network-Cameras/WizSense-Series/3-Series/4MP/IPC-HDBW3441E-S",
+    "https://material.dahuasecurity.com/uploads/soft/20220617/IPC-HDBW3441E-S_datasheet_20220616.pdf"
   ],
   "power_source": [
     "poe",
@@ -56,8 +84,8 @@
   "configs": {
     "frigate": {
       "detect": {
-        "width": 1280,
-        "height": 720,
+        "width": 704,
+        "height": 576,
         "fps": 5
       },
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -86,5 +114,10 @@
   },
   "weight_g": 378,
   "ndaa_compliant": false,
-  "cloud_dependency": "local"
+  "cloud_dependency": "local",
+  "lens": {
+    "aperture": "F1.4"
+  },
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "89.1 mm × Φ111.7 mm"
 }
