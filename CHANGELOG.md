@@ -6,12 +6,14 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
-## [2.26.0] — 2026-09-28
+## [2.26.0] — 2026-09-30
 
 Dataset reaches **28,400 cameras / 230 brands** (+1,038). A deep gap-fill across already-covered brands from **official manufacturer sources** — every field is transcribed from a manufacturer specification (or its archived copy), and fields a manufacturer does not publish are omitted rather than estimated. No Provision-ISR models are included. Four new brands (Vivint, Defender, Geeni, Merkury); the rest fill genuine catalogue gaps found via manufacturer datasheet APIs/PDFs, China-domestic mirrors, and Internet-Archive captures of discontinued lines.
 
-### Enriched — field backfill across covered brands (~4,200 values)
-An ADD-only backfill pass filled missing per-camera fields (power draw, PoE class, voltage, FOV, IR range, main-stream, codecs, max fps, storage, dimensions, weight, operating temperature, aperture, NDAA) from each model's official datasheet — never overwriting an existing value and never estimating one the manufacturer does not publish. Largest contributions: **i-PRO ~415**, **Vivotek ~509**, **TVT +305**, **Speco +250**, **Hi-Focus +210**, **Axis +252**, **Bosch +93**, **Longse +112**, **Lilin +107**, **Hyundai ~563**, **Alibi/Beward +137/136**, **ACTi +121**, **Annke +110**, plus Avycon, Trassir, Avigilon, Sunell, Vitek, Novus, Safire, Pelco, Mapesen, Intelbras, Uniview, Eneo, InVid, BCS, Anpviz. `poe_class` is only recorded where a datasheet prints an explicit class number (802.3af/at without a class is left absent).
+### Enriched — field backfill across covered brands (~24,000 datasheet-sourced values)
+A large ADD-only backfill campaign filled missing per-camera fields (power draw, PoE class, voltage, FOV, IR range, main-stream, codecs, max fps, storage, dimensions, weight, operating temperature, aperture, focal length, NDAA, audio) from each model's official datasheet — never overwriting an existing value and never estimating one the manufacturer does not publish. Combined with the new models, the release raised filled values across the 17 core spec lanes by **+26,204** vs 2.25.0, led by **power.voltage +5,311**, **consumption_w +2,981**, **poe_class +1,376**, **operating_temp +1,857**, **dimensions +1,706**, **weight +1,450**, **aperture +1,424**, **max_fps +1,266**, **streams +1,239**.
+
+Enrichment spanned ~40 brands to their honest floor: **Hikvision** (CN-domestic 7-series/PTZ/speed-domes via jiankongqicai spec tables), **Dahua** (local datasheets + materialfile PDFs), **ACTi** (live spec API), **Axis, i-PRO, Vivotek, Intelbras, Longse, Uniview, Bosch, Mapesen, Hanwha, Pelco, Hyundai, Alibi, Beward, Annke, Sunell, Vitek, Novus, Safire, Avycon, Trassir, Avigilon, Eneo, InVid, BCS, Anpviz, Lilin, Hi-Focus, Speco, TVT, LTS, Kedacom, FLIR, D-Link, RVi, Abus, Tapo, Jovision, Amcrest, Arecont Vision, EZVIZ, Samsung Techwin, Bolide, Ganz, Milesight, Honeywell, Geovision, Infiniti Optics, Jidetech**. `poe_class` is only recorded where a datasheet prints an explicit class number (802.3af/at without a class is left absent) — its low absolute coverage is a manufacturer-disclosure floor, not a gap.
 
 ### Fixed — data quality
 - **Hanwha RTSP** — corrected all 665 Wisenet cameras to the documented `/profile2/media.smp` (main) + `/profile3/media.smp` (sub) paths (profile1 is MJPEG); PNM multi-sensor units use the per-channel `/0/profile2/media.smp` form.
