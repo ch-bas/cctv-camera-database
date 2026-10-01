@@ -35,6 +35,22 @@
       "verified": true,
       "source": "i-PRO Command Interface ver1.09, Section 2.3.3 — legacy H.264-only form, stream (2)",
       "strix_lead": "strixcamdb:panasonic"
+    },
+    {
+      "stream": "main",
+      "path": "/profile1",
+      "codec": "H.264|H.265 (per-profile)",
+      "verified": true,
+      "source": "https://www.panasonic.com/content/dam/panasonic/mea/learn-more/datasheet-manuals-docs/User-Manual_Colour-IR-cameras.pdf — Panasonic Middle East PM-series (TVT-OEM) User Manual, Config → Network → RTSP: main stream address format \"rtsp://IP address: rtsp port/profile1?transportmode=mcast\" (multicast form; unicast drops the query), default RTSP port 554. Same text in the PM-EB2NLFR-W/PM-ED2NLFR-W, PM-VB2ULVR-W, PM-VB5ULFR-W and PM-VP4ULVR-W Operating Instructions.",
+      "strix_lead": "manual:panasonic"
+    },
+    {
+      "stream": "sub",
+      "path": "/profile2",
+      "codec": "H.264|H.265 (per-profile)",
+      "verified": true,
+      "source": "https://www.panasonic.com/content/dam/panasonic/mea/learn-more/datasheet-manuals-docs/User-Manual_Colour-IR-cameras.pdf — same section: sub stream address format \"rtsp://IP address: rtsp port/profile2?transportmode=mcast\".",
+      "strix_lead": "manual:panasonic"
     }
   ],
   "unverified_leads": [
@@ -59,6 +75,6 @@
       "note": "Generic SDP endpoint, not documented for Panasonic/i-PRO. Cross-brand contamination. Excluded."
     }
   ],
-  "notes": "Panasonic Security is now i-PRO Co., Ltd. Current/official RTSP scheme (i-PRO Command Interface spec, Section 2.3.3): rtsp://{ip}:554/Src/MediaInput/stream_<N> for N=1..4 (codec-agnostic, follows the per-stream encode profile H.264 or H.265). A legacy H.264-only form /Src/MediaInput/h264/stream_<N> (and /Src/MediaInput/h264) is also officially documented and returns error 503 if the stream is not set to H.264. Multi-sensor / Fisheye-quad models append /ch_<N> (e.g. /Src/MediaInput/stream_1/ch_1). Requesting rtsp://{ip}/Src/MediaInput with stream+ch omitted returns the configured Initial Stream. Default RTSP port 554. Legacy consumer BB-HCM/BL-C MPEG-4 cameras used /nphMpeg4/g726-<WxH> (recorded under unverified_leads pending a Panasonic-own manual).",
+  "notes": "Panasonic Security is now i-PRO Co., Ltd. Current/official RTSP scheme (i-PRO Command Interface spec, Section 2.3.3): rtsp://{ip}:554/Src/MediaInput/stream_<N> for N=1..4 (codec-agnostic, follows the per-stream encode profile H.264 or H.265). A legacy H.264-only form /Src/MediaInput/h264/stream_<N> (and /Src/MediaInput/h264) is also officially documented and returns error 503 if the stream is not set to H.264. Multi-sensor / Fisheye-quad models append /ch_<N> (e.g. /Src/MediaInput/stream_1/ch_1). Requesting rtsp://{ip}/Src/MediaInput with stream+ch omitted returns the configured Initial Stream. Default RTSP port 554. Legacy consumer BB-HCM/BL-C MPEG-4 cameras used /nphMpeg4/g726-<WxH> (recorded under unverified_leads pending a Panasonic-own manual). Panasonic Middle East \"PM-\" series (PM-EB/ED/ET/PA/PB/PD/PH/PX/VB/VD/VP/VT…) is a separate TVT-OEM line, not i-PRO: its manuals (data port 9008, Config → Network → RTSP) document /profile1 (main) and /profile2 (sub) on port 554.",
   "verified_on": "2026-08-14"
 }
