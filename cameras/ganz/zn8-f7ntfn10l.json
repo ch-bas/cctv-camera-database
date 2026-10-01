@@ -18,7 +18,8 @@
   ],
   "sources": [
     "https://ganzsecurity.com/",
-    "https://computarganz.s3.amazonaws.com/Ganz+Active+Resources/GENSTAR_IP_4P+brochure+09.01.23+V2.pdf"
+    "https://computarganz.s3.amazonaws.com/Ganz+Active+Resources/GENSTAR_IP_4P+brochure+09.01.23+V2.pdf",
+    "https://computarganz.s3.amazonaws.com/Ganz+Active+Resources/Genstar+Web+Operation+Guide+Manual+V3.6_02.09.2024.pdf"
   ],
   "last_verified": "2026-09-01",
   "video": {
@@ -75,5 +76,12 @@
   "markets": [
     "global"
   ],
-  "cloud_dependency": "local"
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/snl/live/1/2",
+      "notes": "GENSTAR firmware RTSP rule rtsp://ip:port/snl/live/<cameraid>/<streamid> (Genstar Web Operation Guide V3.6, Protocol Info page): cameraid 1 = first channel, streamid 1 = main stream, 2 = sub stream. From the manufacturer manual, not tested with Frigate."
+    }
+  }
 }
