@@ -14,12 +14,12 @@
     },
     {
       "stream": "sub",
-      "path": "/axis-media/media.amp?streamprofile=<profile>",
+      "path": "/axis-media/media.amp?videocodec=h264&resolution=640x480",
       "codec": "per profile (H.264|H.265|MJPEG)",
       "verified": true,
       "source": "Axis VAPIX Stream Profiles API — https://developer.axis.com/vapix/network-video/stream-profiles/ ; Video Streaming API — https://developer.axis.com/vapix/network-video/video-streaming/",
       "strix_lead": "strixcamdb:axis",
-      "note": "Axis does not expose a separate fixed RTSP path for sub/secondary streams. Lower-resolution or secondary streams are accessed via the same /axis-media/media.amp path with a named stream profile (e.g. streamprofile=Bandwidth) or explicit params (resolution=640x480&fps=5). NVRs/VMS systems configure this as a second RTSP request with different query params."
+      "note": "Axis has no separate fixed sub-stream path; a lower-resolution stream is requested from the same /axis-media/media.amp endpoint with query parameters. This path is the example given in the VAPIX Video Streaming API (videocodec=h264&resolution=640x480); the resolution must be one the device supports. Named stream profiles (?streamprofile=<name>) also work, but predefined profile names vary by product (see unverified_leads)."
     },
     {
       "stream": "onvif",
@@ -32,6 +32,10 @@
     }
   ],
   "unverified_leads": [
+    {
+      "path": "/axis-media/media.amp?streamprofile=<profile>",
+      "note": "Documented VAPIX parameter, but Axis documents no fixed default profile name (\"Most Axis products have a number of predefined stream profiles\"; names are per product in StreamProfile.S#.Name), so the website cannot fill <profile>. Use the resolution= form in templates instead."
+    },
     {
       "path": "/live3.sdp",
       "note": "Legacy MPEG-4 era SDP path (pre-VAPIX 3). Not present in current Axis documentation; superseded by /axis-media/media.amp."
