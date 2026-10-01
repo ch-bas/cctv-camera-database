@@ -1,9 +1,24 @@
 {
   "brand": "Ernitec",
   "brand_id": "ernitec",
-  "status": "unverified",
+  "status": "verified",
   "default_port": 554,
-  "templates": [],
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/snl/live/1/1",
+      "verified": true,
+      "source": "https://ernitec.com/wp-content/uploads/Ernitec_Weboperation_Guide_IPcameras_Base_Pro.pdf — Ernitec 'AI Network Camera Web Operation Guide' (IP cameras Base/Pro, V1.0 2023-02-10), §15.1 Protocol Information, Figure 15-1: RTSP Rule rtsp://ip:port/snl/live/cameraid/streamid, RTSP Example rtsp://192.168.99.14:554/snl/live/1/1",
+      "strix_lead": "manual:ernitec"
+    },
+    {
+      "stream": "sub",
+      "path": "/snl/live/1/2",
+      "verified": true,
+      "source": "https://ernitec.com/wp-content/uploads/Ernitec_Weboperation_Guide_IPcameras_Base_Pro.pdf — same §15.1 RTSP Rule rtsp://ip:port/snl/live/cameraid/streamid; streamid 2 = second (sub) stream of camera 1",
+      "strix_lead": "manual:ernitec"
+    }
+  ],
   "unverified_leads": [
     {
       "path": "/cam[CHANNEL]/h264",
@@ -34,6 +49,6 @@
       "note": "iSpyConnect crowd-sourced MJPEG entry (SX302IR); not officially documented by Ernitec."
     }
   ],
-  "notes": "Danish professional brand (ernitec.com). No official Ernitec documentation publishes a fixed RTSP URL/stream path. The Ernitec Hawk SX / SX Series / Orion SX user manuals, the EVA-series (EVA 101/201) manuals, the MicroView MVIB-01IR-E manual, and the 2018 generic 'Ernitec Network Camera' user manual only list RTSP as a *supported protocol* (IPv4/v6, TCP, UDP, RTP, RTSP, HTTP, HTTPS, ONVIF, ...) and expose a configurable 'RTSP port' plus a 'Streaming > Video Format' config menu (H.264 + MJPEG / H.264 + H.264 multi-stream); none specify a fixed RTSP path such as /cam1/h264. Cameras are accessed via web UI, the DeviceSearch/IPAdminTool utility, or ONVIF. All lead paths (cam[CHANNEL]/h264, h264, h264_2/3/4, mpeg4, jpeg) originate from crowd-sourced aggregators (iSpyConnect/Agent DVR, smartvision.dev, camlytics) that explicitly disclaim their data; iSpyConnect maps /cam[CHANNEL]/h264 to Hawk/Mercury/Orion/Vega and /h264,/h264_2..4,/mpeg4,/jpeg to model SX302IR, but this is not Ernitec's own documentation. Ernitec's own PDF hosts (files.ernitec.com, files.eetgroup.com) were unreachable at verification time (persistent connection timeouts), so the PDFs could not be directly parsed; readable ManualsLib mirrors of the same manuals were checked and contain no fixed RTSP path. Per the CC0 no-guessing rule, no template is published. To integrate, use ONVIF auto-discovery or read the exact RTSP URL from the camera's own web UI.",
-  "verified_on": "2026-08-14"
+  "notes": "Ernitec's current IP camera range (Deimos, Wolf, Pluto, Orion Pro, Jupitor Pro, Saturn Pro, Halo Pro) uses the Web Operation Guide published by Ernitec for its Base/Pro IP cameras, which documents the RTSP rule rtsp://ip:port/snl/live/<cameraid>/<streamid> (example rtsp://192.168.99.14:554/snl/live/1/1) on the Configuration > Protocol > Protocol Info page; each camera also displays its own RTSP rule/example on that page. The guide is titled for the Base/Pro lines; the Ultra multi-sensor/thermal lines are not explicitly named, so confirm on the camera's Protocol Info page (a second sensor would use cameraid 2). Legacy SX-series (Hawk/Mercury/Orion SX) manuals publish no path; the unverified_leads below come only from crowd-sourced lists.",
+  "verified_on": "2026-10-01"
 }
