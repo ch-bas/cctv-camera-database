@@ -6,7 +6,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
-## [2.27.0] — Unreleased
+## [2.27.0] — 2026-10-01
 
 A data-quality release from the 2026-09-29 CCTV expert audit. Every flagged record was checked against the manufacturer's own documentation (manuals, support KBs, datasheets), then re-checked by an independent reviewer that reverted any edit its source didn't support. Values a manufacturer does not publish were left as they are rather than estimated. No new cameras.
 
