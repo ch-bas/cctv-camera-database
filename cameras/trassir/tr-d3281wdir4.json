@@ -77,9 +77,11 @@
   "weight_g": 795,
   "configs": {
     "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/mode=real&idc=1&ids=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/stream?mode=real&idc=1&ids=2",
       "onvif_port": 80,
       "verified": false,
-      "notes": "Trassir (DSSL) IP camera; ONVIF/RTSP supported - Trassir RTSP is commonly rtsp://{user}:{pass}@{ip}:554/live/main, but confirm via ONVIF/web UI"
+      "notes": "Trassir (DSSL) 8 MP line; RTSP per the official TRASSIR user manual (QTR_UM, Appendix on RTSP/ONVIF): rtsp://[ip]:[port]/[optional stream?]mode=real&idc=1&ids=N, ids=1 main, ids=2-3 sub; default RTSP port 554. ONVIF supported."
     },
     "home_assistant": {
       "integration": "onvif"
@@ -89,9 +91,10 @@
     }
   },
   "sources": [
-    "https://trassir.com/products/cameras/ip-cameras/tr-d3281wdir4-2-8/"
+    "https://trassir.com/products/cameras/ip-cameras/tr-d3281wdir4-2-8/",
+    "https://www.dssl.ru/upload/iblock/758/QTR_UM-_4_.pdf"
   ],
-  "last_verified": "2026-09-21",
+  "last_verified": "2026-10-01",
   "markets": [
     "global"
   ],

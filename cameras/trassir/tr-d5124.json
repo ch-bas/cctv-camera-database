@@ -74,9 +74,11 @@
   ],
   "configs": {
     "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
       "onvif_port": 80,
       "verified": false,
-      "notes": "Trassir (DSSL) IP camera; ONVIF/RTSP supported - confirm RTSP path via ONVIF/web UI"
+      "notes": "Trassir (DSSL) speed dome; RTSP per the official TRASSIR user manual (TR_DTRsd_UM, Appendix on RTSP/ONVIF): /cam/realmonitor?channel=1&subtype=0 main, subtype=1 sub; default RTSP port 554. ONVIF supported."
     },
     "home_assistant": {
       "integration": "onvif"
@@ -86,9 +88,10 @@
     }
   },
   "sources": [
-    "https://www.dssl.ru/products/tr-d5124-povorotnaya-ip-kamera/"
+    "https://www.dssl.ru/products/tr-d5124-povorotnaya-ip-kamera/",
+    "https://www.dssl.ru/upload/iblock/0ff/TR_DTRsd_UM-_1_.pdf"
   ],
-  "last_verified": "2026-09-24",
+  "last_verified": "2026-10-01",
   "markets": [
     "global"
   ],
