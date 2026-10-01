@@ -89,7 +89,8 @@
     "dc"
   ],
   "sources": [
-    "https://www.snapav.com/shop/en/snapav/clr-v100-2t36w"
+    "https://www.snapav.com/shop/en/snapav/clr-v100-2t36w",
+    "https://www.clarecontrols.com/helpcenter/clarevision-camera-nvr-rtsp-stream-urls"
   ],
   "configs": {
     "frigate": {
@@ -98,20 +99,20 @@
         "height": 480,
         "fps": 5
       },
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/1",
       "onvif_port": 80
     },
     "home_assistant": {
       "integration": "onvif",
-      "notes": "Uses Hikvision protocol. ONVIF integration works."
+      "notes": "Use the ONVIF integration; RTSP main /0, sub /1."
     },
     "blue_iris": {
-      "profile": "Hikvision",
-      "notes": "Select 'Hikvision' profile. ClareVision uses Hikvision protocol."
+      "profile": "Generic/ONVIF",
+      "notes": "Add as Generic/ONVIF with the ClareVision RTSP paths /0 (main) and /1 (sub). The current CLR-V line does not use Hikvision /Streaming/Channels paths."
     }
   },
-  "last_verified": "2026-08-06",
+  "last_verified": "2026-10-01",
   "environment": [
     "outdoor"
   ],
