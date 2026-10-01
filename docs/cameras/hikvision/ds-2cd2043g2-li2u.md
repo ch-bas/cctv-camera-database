@@ -34,7 +34,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2043G2-LI2U.pdf
+- https://assets.hikvision.com/prd/public/all/doc/sm000064802/DS-2CD2043G2-LI2U_Datasheet_20250211.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2043g2-li2u.json — do not edit by hand.*

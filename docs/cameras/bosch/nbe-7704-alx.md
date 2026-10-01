@@ -10,7 +10,7 @@
 | Sensor | 1/1.2 inch CMOS |
 | Lens | 1× 5.9-13mm F1.6-F2.9 |
 | Field of view | 110-48 (H), 59-27 (V)° |
-| Night vision | ir (80m), 0.011 lux color |
+| Night vision | ir (80m), 0.002 lux, 0.011 lux color |
 | Power | PoE (IEEE 802.3af/at Type 1 Class 3), 24VAC, 12-26VDC |
 | Storage | microSD ≤ 2000GB, NVR |
 | Protocols | onvif, rtsp, http |
@@ -48,7 +48,6 @@
 
 - https://resources.keenfinity.tech/public/documents/NBE_7704_ALX_Bullet__Data_sheet_enUS_118094019211.pdf
 - https://commerce.boschsecurity.com/xf/en/DINION-7100i-IR/p/F.01U.390.692/
-- https://netcamcenter.de/de/produkte/ip-kameras/nbe-7704-alx
 
 ---
 *Auto-generated from bosch-nbe-7704-alx.json — do not edit by hand.*

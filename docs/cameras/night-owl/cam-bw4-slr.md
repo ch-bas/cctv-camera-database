@@ -10,6 +10,7 @@
 | Connectivity | wifi |
 | Resolution | 2K (4MP, 2560×1440) |
 | Power | rechargeable battery (2 per camera) + solar |
+| IP rating | IP65 |
 | Two-way audio | Yes |
 | Operating temp | 0 to 40°C |
 
@@ -24,6 +25,7 @@
 ## Sources
 
 - https://nightowlsp.com/products/2k-battery-solar-powered-camera-with-spotlight-and-2-way-audio-white
+- https://support.nightowlsp.com/en/support/solutions/articles/68000004017-bw4-series-solar-camera-specifications
 
 ---
 *Auto-generated from night-owl-cam-bw4-slr.json — do not edit by hand.*

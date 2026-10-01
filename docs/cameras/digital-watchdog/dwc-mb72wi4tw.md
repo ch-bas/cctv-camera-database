@@ -33,6 +33,7 @@
 
 - https://digital-watchdog.com/productdetail/DWC-MB72Wi4TW/
 - https://digitalwatchdog.s3.us-west-1.amazonaws.com/_downloads_2025/DW_DS_DWC-MB72Wi4TW_Rev0225.pdf
+- https://digitalwatchdog.happyfox.com/kb/article/323-megapix-ip-camera-rtsp-stream-list/
 
 ---
 *Auto-generated from digital-watchdog-dwc-mb72wi4tw.json — do not edit by hand.*

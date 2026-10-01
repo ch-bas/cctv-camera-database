@@ -1,6 +1,6 @@
 # Tapo C615F Kit
 
-*Also known as: 2K Floodlight Solar Pan/Tilt*
+*Also known as: 2K Floodlight Solar Pan/Tilt, Tapo C615F*
 
 | Field | Spec |
 |-------|------|

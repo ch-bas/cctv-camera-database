@@ -4,7 +4,7 @@
 |-------|------|
 | Brand | Tiandy |
 | Model | TC-C34HN |
-| Type | dome |
+| Type | turret |
 | Connectivity | ethernet |
 | Resolution | 4MP QHD (4MP, 2560×1440) |
 | Sensor | 1/2.7" Starlight CMOS |
@@ -29,7 +29,7 @@
 
 ## Sources
 
-- https://www.cctvcameraexpert.com/network-ip-camera/57625468.html
+- https://tiandy.systems/product/4mp-fixed-tc-c34hn-ir-turret-camera-i3-e-y-c-2-8mm/
 
 ---
 *Auto-generated from tiandy-tc-c34hn.json — do not edit by hand.*

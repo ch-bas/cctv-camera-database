@@ -15,6 +15,7 @@
 | Storage | microSD ≤ 128GB |
 | Protocols | onvif, rtsp, http |
 | IP rating | IP66 |
+| IK rating | IK10 |
 | Two-way audio | No |
 | Operating temp | -40 to 60°C |
 

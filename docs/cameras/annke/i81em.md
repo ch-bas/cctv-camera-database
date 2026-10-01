@@ -11,12 +11,14 @@
 | Resolution | 3K (3072x1728) (5MP, 3072×1728) |
 | Sensor | 1/1.8" Progressive Scan CMOS |
 | Lens | 1× 2.8 (fixed)mm F1.0 |
+| Field of view | 105.7 horizontal (124.9 diagonal)° |
 | Night vision | color (30m), 0.001 lux color |
 | Power | PoE (802.3af, max 10W) / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | rtsp, onvif |
 | IP rating | IP66 |
 | Two-way audio | Yes |
+| Operating temp | -30 to 50°C |
 
 ## Streams
 

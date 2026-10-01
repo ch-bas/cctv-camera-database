@@ -1,5 +1,7 @@
 # Hikvision DS-2CD2T46G2H-2I-4I
 
+*Also known as: DS-2CD2T46G2H-2I/4I, DS-2CD2T46G2H-4I (Black)*
+
 | Field | Spec |
 |-------|------|
 | Brand | Hikvision |
@@ -34,7 +36,8 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2T46G2H-2I-4I.pdf
+- https://assets.hikvision.com/prd/public/all/doc/sm000059035/DS-2CD2T46G2H-2I-4I_Datasheet_20240513.pdf
+- https://assets.hikvision.com/prd/public/all/doc/sm000061202/DS-2CD2T46G2H-2I-4I_Datasheet_20240513.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2t46g2h-2i-4i.json — do not edit by hand.*

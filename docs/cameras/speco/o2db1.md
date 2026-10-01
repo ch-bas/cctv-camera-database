@@ -7,7 +7,9 @@
 | Type | doorbell |
 | Connectivity | wifi, ethernet |
 | Resolution | 1080p/2MP (2MP, 1920×1080) |
-| Lens | 1× 2.8mm |
+| Sensor | 1/2.8” Progressive Scan CMOS |
+| Lens | 1× 2.8mm F2.2 |
+| Field of view | 139 H / 74 V / 170 D° |
 | Night vision | hybrid |
 | Power | PoE or existing doorbell wiring/transformer |
 | Storage | microSD ≤ 256GB, NVR |

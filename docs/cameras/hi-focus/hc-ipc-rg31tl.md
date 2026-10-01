@@ -9,11 +9,17 @@
 | Resolution | 3MP (3MP, 2304×1296) |
 | Lens | 1× 4 (fixed)mm |
 | Field of view | 103° |
-| Night vision | ir (20m) |
+| Night vision | ir (20m), 0.01 lux color |
 | Power | DC 5V/2A |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
 | Two-way audio | Yes |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2304x1296 | 20 | H.265 |
 
 ## Features
 

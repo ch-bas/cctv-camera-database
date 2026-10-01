@@ -11,6 +11,8 @@
 | Lens | 2× 2.8mm F1.6 |
 | Field of view | 160 horizontal (dual lens)° |
 | Night vision | hybrid (30m), 0.05 lux color |
+| Power | PoE/DC |
+| Storage | microSD ≤ 512GB |
 | Protocols | rtsp, onvif, rtmp |
 | IP rating | IP67 |
 | Two-way audio | No |

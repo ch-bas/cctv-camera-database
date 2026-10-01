@@ -8,7 +8,7 @@
 | Model | Titan Pro 6MP |
 | Type | ptz |
 | Connectivity | wifi, ethernet |
-| Resolution | 6MP/3K (6MP, 3072×2048) |
+| Resolution | 6MP/3K (6MP, 3200×1800) |
 | Sensor | 1/1.8" CMOS |
 | Lens | 1× 3.6mm F1.0 |
 | Field of view | pan 340 / tilt 0-90° |
@@ -17,12 +17,13 @@
 | Storage | NVR |
 | Protocols | onvif, rtsp |
 | Two-way audio | Yes |
+| Operating temp | -30 to 60°C |
 
 ## Streams
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| main | 3072x2048 | — | H.265 |
+| main | 3200x1800 | — | H.265 |
 
 ## Features
 

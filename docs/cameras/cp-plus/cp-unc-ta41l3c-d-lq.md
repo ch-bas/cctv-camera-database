@@ -10,10 +10,11 @@
 | Sensor | 1/2.9" 4MP progressive CMOS |
 | Lens | 1× 3.6mm |
 | Field of view | 78 H / 40 V / 93 D° |
-| Night vision | hybrid (30m) |
+| Night vision | hybrid (30m), 0.006 lux, 0.06 lux color |
 | Power | PoE (IEEE 802.3af) or 12V DC |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
+| IP rating | IP67 |
 | Two-way audio | No |
 | Operating temp | -40 to 60°C |
 
@@ -33,6 +34,7 @@
 ## Sources
 
 - https://cpplusworld.com/cp-unc-ta41l3c-d-lq
+- https://www.cpplusworld.com/prodassets/datasheet/CP-UNC-TA41L3C-D-LQ.pdf
 
 ---
 *Auto-generated from cp-plus-cp-unc-ta41l3c-d-lq.json — do not edit by hand.*

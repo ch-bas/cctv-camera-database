@@ -8,9 +8,9 @@
 | Connectivity | ethernet |
 | Resolution | 4MP (2560x1440) (4MP, 2560×1440) |
 | Sensor | 1/2.8" Progressive Scan CMOS |
-| Lens | 1× |
+| Lens | 1× F1.5 |
 | Field of view | 93.8-31.7 horizontal° |
-| Night vision | none, 0.005 lux color |
+| Night vision | none, 0.001 lux, 0.005 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -38,7 +38,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2DE3404W-DET5.pdf
+- https://assets.hikvision.com/prd/public/all/doc/m000051877/Datasheet-of-DS-2DE3404W-DET5_V5.7.1_20220927.pdf
 
 ---
 *Auto-generated from hikvision-ds-2de3404w-det5.json — do not edit by hand.*

@@ -10,7 +10,7 @@
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2688×1520) |
 | Sensor | 1/3" CMOS |
-| Lens | 1× 2.8 (fixed)mm |
+| Lens | 1× 2.8 (fixed)mm F1.6 |
 | Field of view | 95 (2.8mm) / 78 (3.6mm)° |
 | Night vision | color (30m), 0.007 lux color |
 | Power | PoE (802.3af) / DC 12V |
@@ -18,7 +18,15 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
+| Operating temp | -40 to 55°C |
 | Released | 2023 |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 30 | H.265 |
+| sub | 704x576 | 25 | H.265 |
 
 ## Features
 

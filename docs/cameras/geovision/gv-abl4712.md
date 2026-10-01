@@ -8,14 +8,16 @@
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2688×1520) |
 | Sensor | 1/2.7" Progressive Scan CMOS |
-| Lens | 1× 2.8-12mm |
+| Lens | 1× 2.8-12mm F1.4 |
 | Field of view | 102-30 horizontal° |
-| Night vision | ir (40m) |
+| Night vision | ir (40m), 0.005 lux color |
 | Power | PoE (IEEE 802.3af) / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
+| IK rating | IK10 |
 | Two-way audio | No |
+| Operating temp | -35 to 60°C |
 | Released | 2022 |
 
 ## Features

@@ -27,8 +27,8 @@
 ## Features
 
 - 5x optical zoom
-- 355° pan
-- 90° tilt
+- 355 pan
+- 90 tilt
 - human detection
 - tripwire
 - intrusion detection
@@ -36,7 +36,7 @@
 
 ## Sources
 
-- https://amcrest.com/4mp-poe-camera-ptz-ai-ip4m-s2112ew-ai.html
+- https://support.amcrest.com/hc/en-us/articles/15060240225165-Technical-Specifications-IP4M-S2112EW-AI
 
 ---
 *Auto-generated from amcrest-ip4m-s2112ew-ai.json — do not edit by hand.*

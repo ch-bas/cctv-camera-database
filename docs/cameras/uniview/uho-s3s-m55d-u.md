@@ -39,6 +39,7 @@
 
 ## Sources
 
+- https://global.uniview.com/Products/Wireless_Camera/S_Series/Indoor_Wired_Wi-Fi_PT_Cam/Uho-S3S-M55D-U/
 - https://www.uniview.com/Products/Network_Cameras/
 
 ---

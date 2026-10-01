@@ -39,6 +39,7 @@
 ## Sources
 
 - https://www.dahuasecurity.com/products/All-Products/Network-Cameras/Lite-Series/8-MP/IPC-HFW2831T-ZAS-S2=S2
+- https://material.dahuasecurity.com/uploads/cpq/DH-IPC-HFW2831T-ZAS-S2_datasheet_20201204.pdf
 
 ---
 *Auto-generated from dahua-ipc-hfw2831t-zas-s2.json — do not edit by hand.*

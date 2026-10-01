@@ -9,6 +9,7 @@
 | Type | doorbell |
 | Connectivity | wifi |
 | Resolution | 1536x1536 (square, full-body view) (2MP, 1536×1536) |
+| Sensor | 1/2.7" Progressive Scan CMOS (Supports low light sensitivity) |
 | Lens | 1× Fixedmm F2.4 |
 | Field of view | 160 vertical° |
 | Night vision | ir (6m) |
@@ -18,6 +19,12 @@
 | Two-way audio | Yes |
 | Operating temp | -10 to 45°C |
 | Released | 2021 |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1536x1536 | 15 | H.265 |
 
 ## Features
 

@@ -10,7 +10,8 @@
 | Connectivity | ethernet |
 | Resolution | 2MP LPR (2MP, 1920×1080) |
 | Sensor | 1/2.8" CMOS |
-| Lens | 1× 8-32 (motorized varifocal)mm |
+| Lens | 1× 8-32 (motorized varifocal)mm F1.6 |
+| Field of view | 101-36 horizontal° |
 | Night vision | ir (50m) |
 | Power | PoE / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |

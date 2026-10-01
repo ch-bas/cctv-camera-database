@@ -34,7 +34,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2421G0-IDW.pdf
+- https://www.hikvision.com/en/products/IP-Products/Network-Cameras/Pro-Series-EasyIP-/ds-2cd2421g0-i-d--w-/
 
 ---
 *Auto-generated from hikvision-ds-2cd2421g0-idw.json — do not edit by hand.*

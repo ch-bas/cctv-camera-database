@@ -17,10 +17,18 @@
 | IP rating | IP66/IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |
+| Operating temp | -40 to 60°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3072x1728 | 60 | H.265 |
 
 ## Sources
 
 - https://i-pro.com/products_and_solutions/en/surveillance/products/wv-x15502a-z1ln
+- https://i-pro.com/products_and_solutions/sites/default/files/2026-07/WV-X15502A-Z1LN%20_%20i-PRO%20A4_R2_260716.pdf
 
 ---
 *Auto-generated from i-pro-wv-x15502a-z1ln.json — do not edit by hand.*

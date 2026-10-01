@@ -1,0 +1,42 @@
+# Dahua DH-IPC-HFW3449M-A-LED
+
+*Also known as: DH-IPC-HFW3449M-A-LED, IPC-HFW3449M-A-LED*
+
+| Field | Spec |
+|-------|------|
+| Brand | Dahua |
+| Model | DH-IPC-HFW3449M-A-LED |
+| Type | bullet |
+| Connectivity | ethernet |
+| Resolution | 4MP (2688x1520) (4MP, 2688×1520) |
+| Sensor | 1/1.8" CMOS |
+| Lens | 1× 3.6mm F1.0 |
+| Field of view | 94 H / 50 V / 113 D° |
+| Night vision | hybrid (40m), 0.0001 lux, 0.0005 lux color |
+| Power | DC12V/PoE |
+| Storage | NVR |
+| Protocols | onvif, rtsp |
+| IP rating | IP67 |
+| Two-way audio | No |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 25 | H.265 |
+
+## Features
+
+- Dahua DH-IPC-HFW3449M-A-LED CN-domestic 4MP bullet camera
+- 1/1.8" CMOS, fixed 3.6mm F1.0 lens
+- dual-light (IR + white) supplement to 40 m
+- full-color; warm-light; fixed lens
+- ONVIF, GB/T28181, Dahua P2P cloud
+- DC12V/PoE, max 6.6W, IP67
+
+## Sources
+
+- https://www.jiankongqicai.com/news/8698.html
+
+---
+*Auto-generated from dahua-dh-ipc-hfw3449m-a-led.json — do not edit by hand.*

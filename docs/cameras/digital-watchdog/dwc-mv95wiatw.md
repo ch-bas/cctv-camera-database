@@ -24,6 +24,7 @@
 
 - https://digital-watchdog.com/productdetail/DWC-MV95WiATW/
 - https://digitalwatchdog.s3.us-west-1.amazonaws.com/_downloads_2025/aa7c6040-1030-464e-ab36-8e432e424831/DW_DS_DWC-MV95WiATW_Rev1221.pdf
+- https://digitalwatchdog.happyfox.com/kb/article/323-megapix-ip-camera-rtsp-stream-list/
 
 ---
 *Auto-generated from digital-watchdog-dwc-mv95wiatw.json — do not edit by hand.*

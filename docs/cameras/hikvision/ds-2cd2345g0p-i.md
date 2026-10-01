@@ -34,7 +34,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2345G0P-I.pdf
+- https://www.hikvision.com/ca-en/products/IP-Products/Network-Cameras/Pro-Series-EasyIP-/ds-2cd2345g0p-i/
 
 ---
 *Auto-generated from hikvision-ds-2cd2345g0p-i.json — do not edit by hand.*

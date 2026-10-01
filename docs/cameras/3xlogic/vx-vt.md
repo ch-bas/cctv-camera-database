@@ -8,7 +8,7 @@
 | Model | VX-VT-56 |
 | Type | bullet |
 | Connectivity | ethernet |
-| Resolution | Thermal 320x240 (1MP, 320×240) |
+| Resolution | Thermal 320x240 (0.08MP, 320×240) |
 | Sensor | 12 um uncooled Sun-Safe vanadium oxide microbolometer |
 | Lens | 4mmmm |
 | Field of view | 56 (VX-VT-56), 35 (VX-VT-35)° |

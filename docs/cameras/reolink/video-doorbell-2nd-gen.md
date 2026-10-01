@@ -10,6 +10,7 @@
 | Power | Rechargeable battery (up to 10 months per charge) or wired to existing doorbell transformer wiring; Qualcomm QCC730 Micro-Power WiFi chip |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | p2p |
+| IP rating | IP65 |
 | Two-way audio | Yes |
 | Released | 2026 |
 
@@ -26,6 +27,7 @@
 - https://reolink.com/blog/reolink-introduces-triple-lens-omvi-series-and-reolink-x-qualcomm-power-efficient-series-cameras/
 - https://support.reolink.com/articles/16279637037081-Which-NVRs-Support-Reolink-Video-Doorbell/
 - https://reolink.com/blog/reolink-new-products-at-ces/
+- https://reolink.com/product/reolink-video-doorbell-2nd-gen/
 
 ---
 *Auto-generated from reolink-video-doorbell-2nd-gen.json — do not edit by hand.*

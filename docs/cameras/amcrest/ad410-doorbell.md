@@ -33,7 +33,7 @@
 
 ## Sources
 
-- https://amcrest.com/4mp-wifi-camera-doorbell-ad410.html
+- https://support.amcrest.com/hc/en-us/articles/360055339051-Technical-Specifications-AD410
 
 ## Community notes (unverified)
 

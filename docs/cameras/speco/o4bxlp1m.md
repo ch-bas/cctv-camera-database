@@ -9,6 +9,7 @@
 | Type | box |
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2560×1520) |
+| Sensor | 1/1.8" Progressive Scan CMOS |
 | Lens | 1× 8-32mm |
 | Night vision | color (100m) |
 | Power | PoE++ (IEEE 802.3bt) or 12V DC / 24V AC |
@@ -16,6 +17,7 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | Yes |
+| Operating temp | -40 to 60°C |
 
 ## Streams
 

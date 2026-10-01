@@ -1,0 +1,57 @@
+# Dahua IPC-HFW5459Z-ZHE-PV-PRO
+
+*Also known as: DH-IPC-HFW5459Z-ZHE-PV-PRO*
+
+| Field | Spec |
+|-------|------|
+| Brand | Dahua |
+| Model | IPC-HFW5459Z-ZHE-PV-PRO |
+| Type | bullet |
+| Connectivity | ethernet |
+| Resolution | 4MP (4MP, 2688×1520) |
+| Sensor | 1/1.8" CMOS |
+| Lens | 1× 2.7-12mm F1.2 |
+| Field of view | 98° |
+| Night vision | hybrid (60m), 0.0003 lux color |
+| Power | 12 VDC / PoE+ (802.3at) / ePoE |
+| Storage | microSD ≤ 1024GB, NVR |
+| Protocols | onvif, rtsp |
+| IP rating | IP67 |
+| IK rating | IK10 |
+| Two-way audio | Yes |
+| Operating temp | -40 to 60°C |
+| Released | 2026 |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2688x1520 | 30 | H.265 |
+| sub | 704x576 | 25 | H.265 |
+
+## Features
+
+- WizMind
+- WizColor full-color
+- Smart Dual Light (IR + warm)
+- motorized varifocal 2.7-12mm
+- 60m IR
+- 60m warm light
+- Xinghan Large-Scale AI Models-Vision
+- AcuPick
+- SMD
+- face detection
+- perimeter protection (intrusion/tripwire)
+- people counting
+- heat map
+- heater
+- WDR (140dB)
+- ePoE
+
+## Sources
+
+- https://www.dahuasecurity.com/products/network-products/network-cameras/wizmind-5-series/pro/4mp/ipc-hfw5459z-zhe-pv-pro
+- https://materialfile.dahuasecurity.com/uploads/cpq/84407/datasheet/DH-IPC-HFW5459Z-ZHE-PV-PRO_S0_datasheet_20260725_English.pdf
+
+---
+*Auto-generated from dahua-ipc-hfw5459z-zhe-pv-pro.json — do not edit by hand.*

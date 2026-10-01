@@ -10,6 +10,7 @@
 | Sensor | 1/3" OS04D10 CMOS |
 | Lens | 6mm F1.6 |
 | Night vision | hybrid (80m) |
+| Storage | microSD ≤ 512GB |
 | Protocols | rtsp, onvif |
 | IP rating | IP66 |
 | Two-way audio | Yes |

@@ -36,7 +36,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2T87G2H-LI.pdf
+- https://assets.hikvision.com/prd/normal/all/doc/m000081925/DS-2CD2T87G2H-LI_Datasheet_20230719.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2t87g2h-li.json — do not edit by hand.*

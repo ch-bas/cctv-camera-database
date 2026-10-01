@@ -32,7 +32,7 @@
 
 ## Sources
 
-- https://amcrest.com/amcrest-smarthome-ai-human-detection-wifi-camera-indoor-pan-tilt-wireless-ip-camera-baby-monitor-mode-auto-tracking-home-security-camera-with-night-vision-two-way-audio-nanny-cam-ash21-w-white.html
+- https://support.amcrest.com/hc/en-us/articles/360038215392-Technical-Specifications-ASH21
 
 ---
 *Auto-generated from amcrest-ash21-w.json — do not edit by hand.*

@@ -9,7 +9,7 @@
 | Type | ptz |
 | Connectivity | wifi |
 | Resolution | 1080p (2MP, 1920×1080) |
-| Sensor | 1/2.9" CMOS |
+| Sensor | 1/2.9" CMOS (GalaxyCore GC2053) |
 | Lens | 1× 2.9 (fixed)mm F2.0 |
 | Field of view | 360 pan / 93 tilt° |
 | Night vision | color (9m) |

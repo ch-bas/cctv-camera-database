@@ -11,6 +11,7 @@
 | Lens | 1× 3.6mm F2.0 |
 | Night vision | color (15m) |
 | Power | 12V DC |
+| Two-way audio | No |
 | Operating temp | -10 to 50°C |
 
 ## Features

@@ -34,7 +34,7 @@
 
 ## Sources
 
-- https://amcrest.com/4k-dual-lens-panoramic-poe-ai-camera-ip8m-fcb2996ew-ai.html
+- https://support.amcrest.com/hc/en-us/articles/16256419653517-Technical-Specifications-IP8M-FCB2996EW-AI
 
 ---
 *Auto-generated from amcrest-ip8m-fcb2996ew-ai.json — do not edit by hand.*

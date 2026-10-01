@@ -34,6 +34,7 @@
 
 ## Sources
 
+- https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/b25ea374-ad2b-4339-9f1c-c0c7d56ff4ad/02917cce-7d40-4968-9fae-885039867a8c.pdf
 - https://www.uniview.com/Products/Network_Cameras/Easy_Series/EasyBasic_Series/IPC2124LB-AF28K-DL/
 - https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/2c0a2875-3ef1-42bf-88ea-5ced59f74d2c/e2822925-d841-4867-a810-7157dd9e84ff.pdf
 

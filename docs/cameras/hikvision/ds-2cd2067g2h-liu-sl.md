@@ -36,7 +36,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2067G2H-LIU_SL.pdf
+- https://assets.hikvision.com/prd/normal/all/doc/sm000062550/DS-2CD2067G2H-LIU_SL_Datasheet_20260105.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2067g2h-liu-sl.json — do not edit by hand.*

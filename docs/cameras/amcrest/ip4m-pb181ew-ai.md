@@ -37,7 +37,7 @@
 
 ## Sources
 
-- https://amcrest.com/4mp-poe-ai-camera-panoramic-ip4m-pb181ew-ai.html
+- https://support.amcrest.com/hc/en-us/articles/13951268802317-Technical-Specifications-IP4M-PB181EW-AI
 
 ---
 *Auto-generated from amcrest-ip4m-pb181ew-ai.json — do not edit by hand.*

@@ -39,7 +39,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2DE7A225IW-AEBT5.pdf
+- https://assets.hikvision.com/prd/public/all/doc/m000048585/Datasheet-of-DS-2DE7A225IW-AEBT5_V5.7.1_20220926.pdf
 
 ---
 *Auto-generated from hikvision-ds-2de7a225iw-aebt5.json — do not edit by hand.*

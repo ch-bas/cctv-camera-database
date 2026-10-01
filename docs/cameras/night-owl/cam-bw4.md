@@ -12,6 +12,7 @@
 | Night vision | hybrid (30m) |
 | Power | rechargeable battery (2 per camera); optional solar charger |
 | Storage | NVR |
+| IP rating | IP65 |
 | Two-way audio | Yes |
 | Operating temp | 0 to 40°C |
 
@@ -27,6 +28,7 @@
 ## Sources
 
 - https://nightowlsp.com/products/wire-free-2k-spotlight-camera-with-2-way-audio-white-1
+- https://support.nightowlsp.com/en/support/solutions/articles/68000004270-bw4-camera-specifications
 
 ---
 *Auto-generated from night-owl-cam-bw4.json — do not edit by hand.*

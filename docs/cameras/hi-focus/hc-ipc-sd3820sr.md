@@ -9,12 +9,19 @@
 | Resolution | 5MP (5MP, 2880×1620) |
 | Sensor | 1/2.8" progressive-scan CMOS |
 | Lens | 1× 4.05-162mm |
-| Night vision | ir (200m) |
+| Night vision | ir (200m), 0.003 lux color |
 | Power | PoE+ / AC 24V / DC |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | Yes |
+| Operating temp | -40°C ~ 70°C°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2880x1620 | 30 | H.265+ |
 
 ## Features
 

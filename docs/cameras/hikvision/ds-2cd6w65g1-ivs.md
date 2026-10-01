@@ -38,7 +38,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD6W65G1-IVS.pdf
+- https://assets.hikvision.com/prd/public/all/doc/m000071626/DS-2CD6W65G1-IVS_Datasheet_20231113.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd6w65g1-ivs.json — do not edit by hand.*

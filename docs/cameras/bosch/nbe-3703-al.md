@@ -31,12 +31,8 @@
 
 ## Sources
 
-- https://netcamcenter.de/de/produkte/ip-kameras/nbe-3703-al
-- https://commerce.keenfinity.tech/ca/en/DINION-3100i-IR/p/F.01U.414.800/
-- https://www.networkwebcams.co.uk/content/pdf/bosch/bosch-nbe-3703-al-datasheet.pdf
-- https://www.digital-key-world.com/en/Bosch-NBE-3703-AL/240036
-- https://www.bhphotovideo.com/c/product/1832248-REG/bosch_nbe_3703_al_dinion_3100i_ir.html
-- https://image.makewebeasy.net/makeweb/0/upnyp4ixT/Document/DINION_3100i_IR_Data_sheet_enUS_120604864011.pdf
+- https://resources.keenfinity.tech/public/documents/NBE_3703_AL_Data_sheet_enUS_120604925067.pdf
+- https://catalog.boschbuildingtechnologies.com/xf/en/DINION-3100i-IR/p/F.01U.414.800/
 
 ---
 *Auto-generated from bosch-nbe-3703-al.json — do not edit by hand.*

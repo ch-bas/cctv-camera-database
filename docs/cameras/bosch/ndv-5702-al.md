@@ -19,6 +19,7 @@
 | IP rating | IP54 |
 | IK rating | IK10 |
 | Two-way audio | Yes |
+| Operating temp | -20 to 50°C |
 
 ## Features
 
@@ -31,8 +32,7 @@
 
 ## Sources
 
-- https://www.amazon.com/Bosch-NDV-5702-AL-Flexidome-3-2-10-5mm-Varifocal/dp/B0C628FL3D
-- https://www.hattelandtechnology.se/media/multicase/documents//bosch/ndv_5702_al_data_sheet_enus_98577396491.pdf
+- https://resources.keenfinity.tech/public/documents/NDV_5702_AL_Data_sheet_enUS_98577396491.pdf
 
 ---
 *Auto-generated from bosch-ndv-5702-al.json — do not edit by hand.*

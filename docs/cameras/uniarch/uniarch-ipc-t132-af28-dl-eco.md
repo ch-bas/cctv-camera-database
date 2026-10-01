@@ -40,6 +40,7 @@
 ## Sources
 
 - https://www.uniarch.cn/Products/Network_Cameras/Entry_Series/Entry_Series/IPC-T132-AF28-DL-ECO/
+- https://www.uniarch.cn/Support/FAQ/202209/951565_575360_0.htm
 
 ---
 *Auto-generated from uniarch-ipc-t132-af28-dl-eco.json — do not edit by hand.*

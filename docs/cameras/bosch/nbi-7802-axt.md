@@ -10,7 +10,7 @@
 | Sensor | 1/1.8" CMOS |
 | Lens | 1× 10.5-47mm |
 | Field of view | 41.6–9.3 (H), 23.9–5.3 (V)° |
-| Night vision | none, 0.008 lux color |
+| Night vision | none, 0.0007 lux, 0.008 lux color |
 | Power | PoE IEEE 802.3at Type 1 / 12-26 VDC / 24 VAC |
 | Storage | NVR |
 | Protocols | onvif, rtsp, http |
@@ -35,8 +35,6 @@
 
 ## Sources
 
-- https://netcamcenter.de/de/produkte/ip-kameras/nbi-7802-axt
-- https://netcamcenter.com/en/products/ip-cameras/nbi-7802-axt
 - https://commerce.keenfinity.tech/au/en/DINION-7100s/p/F.01U.428.816/
 - https://keenfinity.blob.core.windows.net/public/documents/NBI_7802_AX_Data_sheet_enUS_172743006091.pdf
 

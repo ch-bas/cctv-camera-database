@@ -32,7 +32,7 @@
 
 ## Sources
 
-- https://manuals.plus/m/0e529842b08fb9f3e1973ce125608f709ac07da8bd51767628839f8b6c847298
+- https://www.hikvision.com/content/dam/hikvision/products/S000000001/S000000002/S000000003/S000000025/OFR007893/M000079042/Data_Sheet/DS-2CD2087G2H-LIU_Datasheet_20230719.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2087g2h-li.json — do not edit by hand.*

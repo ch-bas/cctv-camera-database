@@ -1,0 +1,43 @@
+# Hanwha SNP-3302HN
+
+*Also known as: Samsung SNP-3302HN, Samsung Techwin SNP-3302HN*
+
+| Field | Spec |
+|-------|------|
+| Brand | Hanwha |
+| Model | SNP-3302HN |
+| Type | ptz |
+| Connectivity | ethernet |
+| Resolution | 4CIF (704x480, 25/30fps) (0.4MP, 704×480) |
+| Sensor | 1/4" vertical double density interline transfer CCD |
+| Lens | 3.5-105.3 (30x optical zoom)mm F1.6-F3.6 |
+| Field of view | H: 55.5-1.92, V: 42.5-1.43° |
+| Night vision | none, 0.07 lux, 0.7 lux color |
+| Power | 24V AC / PoE+ (IEEE802.3at) |
+| Protocols | onvif, rtsp |
+| IP rating | IP66 |
+| Two-way audio | No |
+| Operating temp | -50 to 50°C |
+
+## Features
+
+- 30x optical zoom
+- 16x digital zoom
+- WDR
+- SSDR
+- SSNRIII
+- preset (255)
+- virtual line
+- enter/exit
+- appear/disappear
+- motion detection
+- privacy masking
+- multiple streaming
+- SD memory
+
+## Sources
+
+- https://www.hanwhavision.com/
+
+---
+*Auto-generated from hanwha-snp-3302hn.json — do not edit by hand.*

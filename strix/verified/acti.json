@@ -19,6 +19,14 @@
       "verified": true,
       "source": "ACTi 'Viewing video stream using VLC player' (download.acti.com/?id=29560): 'Command: rtsp://IPaddress:RTSPport/stream#' — stream number is 1-based index; Stream 2 documented as sub-stream in ACTi Camera Firmware Manual A713/A950/A951/Q450 (download.acti.com/?id=28964).",
       "strix_lead": "strixcamdb:acti"
+    },
+    {
+      "stream": "main",
+      "path": "/",
+      "codec": "MPEG-4",
+      "verified": true,
+      "source": "https://www2.acti.com/support_old/Package/%7BFCCD9EA1-3AA7-4C31-8F94-B17BCDAA67E.PDF — ACTi Support Package TS-00110 (How to test RTP protocol with ACTi devices, updated 2007-08-14): legacy MPEG-4 devices (ACM/TCM/KCM/CAM lines) are opened in VLC with the bare MRL rtsp://<IP Address>:7070 (with auth after firmware v2.04: rtsp://Admin:123456@192.168.1.107:7070), i.e. root path on legacy default RTSP port 7070.",
+      "strix_lead": "manual:acti"
     }
   ],
   "unverified_leads": [
@@ -63,6 +71,6 @@
       "note": "Bare path with no leading slash; not confirmed in any official ACTi RTSP documentation."
     }
   ],
-  "notes": "ACTi cameras expose RTSP streams at /stream<N> (1-based: /stream1 = main, /stream2 = sub, up to /stream4 on some models). The RTSP access name is user-configurable in the camera web UI (Streaming > RTSP > Access Name); /stream1 is the typical factory default observed in ACTi's own VLC guide. Default RTSP port is 554 per the current firmware manual. Port 7070 documented in the older ACTi Streaming Explorer tool (2011) is ACTi's proprietary SDK streaming protocol port — not standard RTSP. Cameras supporting up to 4 streams use /stream1–/stream4. ACTi is a Taiwanese manufacturer (acti.com), not an OEM of Dahua or Hikvision.",
-  "verified_on": "2026-08-14"
+  "notes": "ACTi cameras expose RTSP streams at /stream<N> (1-based: /stream1 = main, /stream2 = sub, up to /stream4 on some models). The RTSP access name is user-configurable in the camera web UI (Streaming > RTSP > Access Name); /stream1 is the typical factory default observed in ACTi's own VLC guide. Default RTSP port is 554 per the current firmware manual. Port 7070 is the legacy (MPEG-4-era) default RTSP port. Cameras supporting up to 4 streams use /stream1–/stream4. ACTi is a Taiwanese manufacturer (acti.com), not an OEM of Dahua or Hikvision. Legacy MPEG-4-era ACTi devices (ACM-/TCM-/KCM- series) serve RTSP at the root path on default RTSP port 7070 per ACTi Support Package TS-00110 (rtsp://<ip>:7070), so the \"/\" main template applies to those lines; current models use /stream<N> on port 554.",
+  "verified_on": "2026-10-01"
 }

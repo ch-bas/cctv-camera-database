@@ -37,6 +37,7 @@
 - https://digital-watchdog.com/productdetail/DWC-MB75Wi4TWDMP/
 - https://www.surveillance-video.com/camera-dwc-mb75wi4tw.html
 - https://www.a1securitycameras.com/digital-watchdog-dwc-mb75wi4t-5mp-ir-h-265-outdoor-bullet-ip-security-camera-with-4mm-fixed-lens.html
+- https://digitalwatchdog.happyfox.com/kb/article/323-megapix-ip-camera-rtsp-stream-list/
 
 ---
 *Auto-generated from digital-watchdog-dwc-mb75wi4twdmp.json — do not edit by hand.*

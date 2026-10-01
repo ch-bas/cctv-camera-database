@@ -41,7 +41,7 @@
 
 ## Sources
 
-- https://amcrest.com/4k-poe-camera-bullet-ai-ip8m-db3946ew-3ai.html
+- https://support.amcrest.com/hc/en-us/articles/20074104430093-Technical-Specifications-IP8M-DB3946EW-3AI
 
 ---
 *Auto-generated from amcrest-ip8m-db3946ew-3ai.json — do not edit by hand.*

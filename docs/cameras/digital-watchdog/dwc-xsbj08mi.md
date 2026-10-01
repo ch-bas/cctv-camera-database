@@ -35,6 +35,7 @@
 
 - https://digital-watchdog.com/productdetail/DWC-XSBJ08Mi/
 - https://digital-watchdog.com/admin/assets/_downloads/DS_DWC-XSBJ08Mi_0226.pdf
+- https://digitalwatchdog.happyfox.com/kb/article/323-megapix-ip-camera-rtsp-stream-list/
 
 ---
 *Auto-generated from digital-watchdog-dwc-xsbj08mi.json — do not edit by hand.*

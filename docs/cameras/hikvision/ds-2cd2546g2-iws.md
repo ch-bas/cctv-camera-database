@@ -38,7 +38,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2546G2-IWS-C.pdf
+- https://assets.hikvision.com/prd/public/all/doc/sm000059008/DS-2CD2546G2-IWS-C_Datasheet_V5.5.115_20230217.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2546g2-iws.json — do not edit by hand.*

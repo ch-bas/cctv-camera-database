@@ -83,12 +83,13 @@
   ],
   "sources": [
     "https://www.mobotix.com/en/support/download-center/documentation/technical-data-sheets",
-    "https://www.mobotix.com/sites/default/files/2017-10/Mx_TS_V15_en_20170324.pdf"
+    "https://www.mobotix.com/sites/default/files/2017-10/Mx_TS_V15_en_20170324.pdf",
+    "https://community.mobotix.com/t/rtsp-streaming-with-mobotix-cameras/4912"
   ],
   "configs": {
     "frigate": {
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/cam0/stream",
-      "notes": "Legacy MOBOTIX uses MxPEG by default (recorded as MJPEG). No ONVIF; use MxPEG/MJPEG over RTSP.",
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/stream0/mobotix.mjpeg",
+      "notes": "Mx4/5-generation MOBOTIX: no H.264 RTSP and no ONVIF. MJPEG over RTSP (/stream0/mobotix.mjpeg) requires firmware 4.4.2.51 r1 or later and Genetec integration enabled under Admin Menu > Camera Administration > Integration Protocols.",
       "verified": false
     },
     "home_assistant": {
@@ -100,7 +101,7 @@
       "notes": "Select the 'Mobotix' profile; MxPEG/MJPEG codec."
     }
   },
-  "last_verified": "2026-09-08",
+  "last_verified": "2026-10-01",
   "markets": [
     "global"
   ],

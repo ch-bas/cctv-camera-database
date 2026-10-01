@@ -12,12 +12,18 @@
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 2.8 (fixed)mm F2.0 |
 | Field of view | 106 horizontal / 122 diagonal° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.01 lux |
 | Power | DC 12V/1A (max 6W) |
 | Storage | microSD ≤ 256GB |
 | IP rating | IP67 |
 | Two-way audio | No |
 | Operating temp | -20 to 50°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 30 | H.265 |
 
 ## Features
 

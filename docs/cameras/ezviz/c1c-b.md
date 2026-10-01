@@ -12,7 +12,7 @@
 | Sensor | 1/3" CMOS |
 | Lens | 1× 2.8 (fixed)mm F2.2 |
 | Field of view | 91 horizontal / 50 vertical / 108 diagonal° |
-| Night vision | ir (12m) |
+| Night vision | ir (12m), 0.5 lux |
 | Power | DC 5V/1A (max 3W) |
 | Storage | microSD ≤ 256GB |
 | Two-way audio | Yes |

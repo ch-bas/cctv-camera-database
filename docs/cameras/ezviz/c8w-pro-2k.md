@@ -12,13 +12,19 @@
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 4 (fixed)mm F1.6 |
 | Field of view | 340 pan / 80 tilt° |
-| Night vision | color (30m) |
+| Night vision | color (30m), 0.5 lux |
 | Power | DC 12V adapter (RJ45 Ethernet port is data-only, no PoE) |
 | Storage | microSD ≤ 256GB, NVR |
 | IP rating | IP65 |
 | Two-way audio | Yes |
 | Operating temp | -30 to 60°C |
 | Released | 2023 |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 30 | H.265 |
 
 ## Features
 

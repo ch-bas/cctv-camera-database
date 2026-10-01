@@ -24,6 +24,7 @@
 
 - https://digital-watchdog.com/productdetail/DWC-XMDF32H/
 - https://digital-watchdog.com/admin/assets/_downloads/DW_DS_DWC-XMDF32H_Rev0726.pdf
+- https://digitalwatchdog.happyfox.com/kb/article/323-megapix-ip-camera-rtsp-stream-list/
 
 ---
 *Auto-generated from digital-watchdog-dwc-xmdf32h.json — do not edit by hand.*

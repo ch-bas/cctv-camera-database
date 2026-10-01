@@ -1,0 +1,33 @@
+# Grundig GU-CI-AP5647P
+
+*Also known as: Grundig GU-CI-AP5647P*
+
+| Field | Spec |
+|-------|------|
+| Brand | Grundig |
+| Model | GU-CI-AP5647P |
+| Type | ptz |
+| Connectivity | ethernet |
+| Resolution | 5MP (5MP, 2592×1944) |
+| Sensor | 1/2.7" progressive Scan CMOS |
+| Lens | 1× 4.3-142mm F1.6 |
+| Field of view | 55-2.3° |
+| Night vision | ir (150m), 0.003 lux color |
+| Storage | microSD ≤ 512GB, NVR |
+| Protocols | rtsp, onvif, http |
+| IP rating | IP66 |
+| Operating temp | -40 to 60°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| Main Stream | 2592x1944 | 25 | H.265 |
+
+## Sources
+
+- https://grundig-security.com/catalog/camera/ip/ptz-dome/GU-CI-AP5647P
+- https://download.grundig-security.com/DSH-GU-CI-AP5647P-V1-DE.pdf
+
+---
+*Auto-generated from grundig-gu-ci-ap5647p.json — do not edit by hand.*

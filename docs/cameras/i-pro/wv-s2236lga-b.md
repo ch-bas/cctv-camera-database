@@ -16,6 +16,7 @@
 | Protocols | onvif, rtsp |
 | IK rating | IK10 |
 | Two-way audio | Yes |
+| Operating temp | -10 to 50°C |
 
 ## Features
 
@@ -30,6 +31,7 @@
 ## Sources
 
 - https://i-pro.com/products_and_solutions/en/surveillance/products/wv-s2236lga-b
+- https://i-pro.com/products_and_solutions/sites/default/files/2026-02/WV-S2236LGA-B_i-PRO_A4_R9_260224.pdf
 
 ---
 *Auto-generated from i-pro-wv-s2236lga-b.json — do not edit by hand.*

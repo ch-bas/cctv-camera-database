@@ -21,12 +21,36 @@
       "strix_lead": "strixcamdb:flir"
     },
     {
-      "stream": "main-ch",
+      "stream": "main",
       "path": "/ch0",
       "codec": "H.264 or thermal per-model",
       "verified": true,
       "source": "FLIR Support KB article 'FLIR Thermal Security Cameras - Opening and troubleshooting video issues' (flir.custhelp.com/app/answers/detail/a_id/5428): documents rtsp://camera_IP:554/ch0 as Thermal 1 / primary channel for PT-Series, D-Series, A310pt, F-Series, FC-Series S/N/R, FC-Series ID/O, and PT-Series HD. Also confirmed for thermal-fusion cameras (ch0 = Thermal 1, ch2 = Visible 1 on PT/D-Series).",
       "strix_lead": "strixcamdb:flir"
+    },
+    {
+      "stream": "sub",
+      "path": "/ch1",
+      "codec": "H.264 or thermal per-model",
+      "verified": true,
+      "source": "FLIR Support KB article 'FLIR Thermal Security Cameras - Opening and troubleshooting video issues' (https://flir.custhelp.com/app/answers/detail/a_id/5428/~/flir-thermal-security-cameras---opening-and-troubleshooting-video-issues): documents rtsp://camera_IP:554/ch1 as Thermal 2 for PT-Series, D-Series, A310pt, F-Series, F-Series ID, FC-Series S/N/R and FC-Series ID/O.",
+      "strix_lead": "manual:flir"
+    },
+    {
+      "stream": "main",
+      "path": "/stream1/sensor1",
+      "codec": "H.264",
+      "verified": true,
+      "source": "FLIR Support KB article 'FLIR Thermal Security Cameras - Opening and troubleshooting video issues' (https://flir.custhelp.com/app/answers/detail/a_id/5428/~/flir-thermal-security-cameras---opening-and-troubleshooting-video-issues): documents rtsp://camera_IP:554/stream1/sensor1 as Thermal 1 for the Elara FB-Series ID/O.",
+      "strix_lead": "manual:flir"
+    },
+    {
+      "stream": "sub",
+      "path": "/stream2/sensor1",
+      "codec": "H.264",
+      "verified": true,
+      "source": "FLIR Support KB article 'FLIR Thermal Security Cameras - Opening and troubleshooting video issues' (https://flir.custhelp.com/app/answers/detail/a_id/5428/~/flir-thermal-security-cameras---opening-and-troubleshooting-video-issues): documents rtsp://camera_IP:554/stream2/sensor1 as Thermal 2 for the Elara FB-Series ID/O.",
+      "strix_lead": "manual:flir"
     },
     {
       "stream": "main-avc",
@@ -119,6 +143,6 @@
       "note": "Malformed lead (no leading slash) — duplicate of /wfov without proper prefix; excluded."
     }
   ],
-  "notes": "FLIR's security camera product line spans two distinct families with different RTSP path conventions. (1) FLIR IP security cameras (FH-Series ID/R, DM-Series, DX-Series, DH-390, FR-345-EST) use /stream1 (main/visible-1) and /stream2 (sub/visible-2) on port 554; some of these also have /stream3 and /stream4 for thermal channels. (2) FLIR thermal security cameras (PT-Series, D-Series, A310pt, F-Series, FC-Series) use /ch0 (thermal-1) and /ch1 (thermal-2), with /ch2 and /ch3 for visible on dual-sensor models. FB-Series ID/O uses /stream1/sensor1 and /stream2/sensor1 — a nested path variant documented in the same KB but not represented as a lead here. (3) FLIR automation/science cameras (AX8, A-series, G300a) use format-based paths: /avc (H.264), /mpeg4, /mjpg — all on port 554, no authentication required by default. FLIR acquired Lorex and Digimerge; the FLIR IP Series cameras sold under those brands (N-series models, e.g. N233ZC) use the same firmware and RTSP conventions as the FLIR IP security camera family (/stream1, /stream2). Many leads in the StrixCamDB set for this brand are Hikvision-style /ch<N><N>/0 paths — these are cross-brand contamination and are excluded. Default port is 554 for all security and automation cameras; FLIR Maritime thermal cameras use port 8554 but those are out of scope here.",
+  "notes": "FLIR's security camera product line spans two distinct families with different RTSP path conventions. (1) FLIR IP security cameras (FH-Series ID/R, DM-Series, DX-Series, DH-390, FR-345-EST) use /stream1 (main/visible-1) and /stream2 (sub/visible-2) on port 554; some of these also have /stream3 and /stream4 for thermal channels. (2) FLIR thermal security cameras (PT-Series, D-Series, A310pt, F-Series, FC-Series) use /ch0 (thermal-1) and /ch1 (thermal-2), with /ch2 and /ch3 for visible on dual-sensor models. FB-Series ID/O uses /stream1/sensor1 and /stream2/sensor1 — a nested path variant documented in the same KB (templates added 2026-10-01). The Quasar 4K IR PTZ (CP-6408-x1-I) uses /stream1 and /stream2 (Quasar 4K IR PTZ Installation and User Guide, flir.netx.net asset 26318; ch0/ch1 are legacy aliases); other Quasar models are not covered by that guide. (3) FLIR automation/science cameras (AX8, A-series, G300a) use format-based paths: /avc (H.264), /mpeg4, /mjpg — all on port 554, no authentication required by default. FLIR acquired Lorex and Digimerge; the FLIR IP Series cameras sold under those brands (N-series models, e.g. N233ZC) use the same firmware and RTSP conventions as the FLIR IP security camera family (/stream1, /stream2). Many leads in the StrixCamDB set for this brand are Hikvision-style /ch<N><N>/0 paths — these are cross-brand contamination and are excluded. Default port is 554 for all security and automation cameras; FLIR Maritime thermal cameras use port 8554 but those are out of scope here.",
   "verified_on": "2026-08-14"
 }

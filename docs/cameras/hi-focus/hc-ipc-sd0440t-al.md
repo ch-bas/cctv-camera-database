@@ -10,13 +10,20 @@
 | Sensor | 1/2.7" BSI CMOS (NIR+) |
 | Lens | 1× 2.8-12mm |
 | Field of view | 97-31° |
-| Night vision | hybrid (50m) |
+| Night vision | hybrid (50m), 0.002 lux, 0.01 lux color |
 | Power | PoE / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | IK rating | IK10 |
 | Two-way audio | Yes |
+| Operating temp | -40°C ~ 65°C°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 25 | H.265+ |
 
 ## Features
 

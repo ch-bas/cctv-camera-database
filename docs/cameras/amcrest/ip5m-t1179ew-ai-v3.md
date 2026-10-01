@@ -39,7 +39,7 @@
 
 ## Sources
 
-- https://amcrest.com/5mp-poe-camera-turret-ip5m-t1179ew-ai-v3.html
+- https://support.amcrest.com/hc/en-us/articles/22062123278733-Technical-Specifications-IP5M-T1179EW-AI-V3
 
 ---
 *Auto-generated from amcrest-ip5m-t1179ew-ai-v3.json — do not edit by hand.*

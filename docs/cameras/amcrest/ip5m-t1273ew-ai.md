@@ -29,7 +29,6 @@
 
 ## Sources
 
-- https://amcrest.com/prohd-5mp-outdoor-security-ip-turret-poe-camera-2-8mm-lens-98-fov-ip67-weatherproof-white-ip5m-t1273ew-ai.html
 - https://support.amcrest.com/hc/en-us/articles/360058785752-Technical-Specifications-IP5M-T1273EW-AI
 
 ---

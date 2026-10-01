@@ -12,11 +12,17 @@
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 4 (fixed)mm F1.6 |
 | Field of view | 340 pan / 65 tilt° |
-| Night vision | hybrid (15m) |
+| Night vision | hybrid (15m), 0.01 lux |
 | Power | Rechargeable battery (10,400mAh); DC 5V/2A adapter; solar-compatible (sold separately) |
 | Storage | microSD ≤ 256GB |
 | Two-way audio | Yes |
 | Operating temp | -20 to 50°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2304x1296 | 15 | H.265 |
 
 ## Features
 

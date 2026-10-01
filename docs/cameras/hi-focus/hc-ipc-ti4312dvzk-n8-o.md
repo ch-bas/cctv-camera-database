@@ -10,7 +10,7 @@
 | Sensor | 1/2.8" Sony Starvis CMOS |
 | Lens | 1× 2.7-13.5mm |
 | Field of view | 102.9-31.4° |
-| Night vision | ir (80m) |
+| Night vision | ir (80m), 0.002 lux color |
 | Power | PoE+ (802.3at) / DC 12V |
 | Storage | NVR |
 | Protocols | onvif, rtsp |

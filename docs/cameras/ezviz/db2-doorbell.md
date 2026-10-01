@@ -21,6 +21,12 @@
 | Operating temp | -20 to 50°C |
 | Released | 2022 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2000x1504 | 15 | H.265 |
+
 ## Features
 
 - head-to-toe video doorbell

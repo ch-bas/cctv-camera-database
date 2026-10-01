@@ -10,7 +10,7 @@
 | Connectivity | ethernet |
 | Resolution | 5MP (5MP, 2960×1668) |
 | Sensor | 1/2.7" CMOS |
-| Lens | 1× 2.8mm |
+| Lens | 1× 2.8mm F1.4 |
 | Field of view | 110° |
 | Night vision | hybrid (15m), 0.005 lux, 0.005 lux color |
 | Power | PoE (802.3af) / DC 12V |

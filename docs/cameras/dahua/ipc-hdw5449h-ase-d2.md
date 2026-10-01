@@ -10,7 +10,7 @@
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2688×1520) |
 | Sensor | 1/1.8" CMOS |
-| Lens | 2× 2.8 (fixed)mm |
+| Lens | 2× 2.8 (fixed)mm F1.0 |
 | Field of view | 97° |
 | Night vision | hybrid (50m), 0.0002 lux color |
 | Power | PoE (802.3at) / DC 12V |
@@ -19,7 +19,15 @@
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | Yes |
+| Operating temp | -40 to 60°C |
 | Released | 2024 |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2688x1520 | 30 | H.265 |
+| sub | 704x576 | 25 | H.265 |
 
 ## Features
 

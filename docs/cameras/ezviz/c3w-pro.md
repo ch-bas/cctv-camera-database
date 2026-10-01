@@ -12,12 +12,19 @@
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 2.8 (fixed)mm F1.6 |
 | Field of view | 100 horizontal / 121 diagonal° |
-| Night vision | color (30m) |
+| Night vision | color (30m), 0.01 lux |
 | Power | DC 12V |
 | Storage | microSD ≤ 256GB |
 | IP rating | IP67 |
 | Two-way audio | Yes |
+| Operating temp | -30 to 60°C |
 | Released | 2021 |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 30 | H.265 |
 
 ## Features
 
@@ -33,7 +40,7 @@
 
 ## Sources
 
-- https://www.ezviz.com/us/product/C3W-Pro-(4MP)/41181
+- https://www.ezviz.com/us/product/C3W-Pro-%284MP%29/41181
 
 ---
 *Auto-generated from ezviz-c3w-pro.json — do not edit by hand.*

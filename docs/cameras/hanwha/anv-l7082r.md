@@ -42,7 +42,7 @@
 ## Sources
 
 - https://www.hanwhavision.com/en/products/camera/network/dome/anv-l7082r/
-- https://www.a1securitycameras.com/content/product_documents/59159/Hanwha-Techwin-(Samsung)-ANV-L7082R-Datasheet-A1.pdf
+- https://www.a1securitycameras.com/content/product_documents/59159/Hanwha-Techwin-%28Samsung%29-ANV-L7082R-Datasheet-A1.pdf
 
 ---
 *Auto-generated from hanwha-anv-l7082r.json — do not edit by hand.*

@@ -40,6 +40,7 @@
 ## Sources
 
 - https://amcrest.com/helix-5mp-security-ai-ip-poe-bullet-camera-hlx-ip5m-b102ew-ai.html
+- https://support.amcrest.com/hc/en-us/articles/49119561879437-Accessing-Legacy-Helix-Devices-Using-RTSP
 
 ---
 *Auto-generated from amcrest-hlx-ip5m-b102ew-ai.json — do not edit by hand.*

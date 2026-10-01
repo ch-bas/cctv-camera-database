@@ -8,13 +8,14 @@
 | Connectivity | wifi |
 | Resolution | 4MP (4MP, 2560×1440) |
 | Sensor | 1/2.9" CMOS |
-| Lens | 1× 4mm |
+| Lens | 1× 4mm F1.6 |
 | Field of view | pan 355 / tilt 59° |
-| Night vision | ir (15m) |
+| Night vision | ir (15m), 0.01 lux, 0.1 lux color |
 | Power | USB DC 5V (~5W) |
 | Storage | microSD ≤ 256GB |
 | Protocols | http |
 | Two-way audio | Yes |
+| Operating temp | -20 to 60°C |
 
 ## Streams
 
@@ -31,6 +32,8 @@
 - Google Home
 - cloud + microSD
 - CTC cyber-secure tech
+- DWDR
+- built-in siren
 
 ## Sources
 

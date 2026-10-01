@@ -11,6 +11,7 @@
 | Night vision | hybrid (15m) |
 | Power | Rechargeable battery (9000 mAh) + solar |
 | Storage | microSD ≤ 128GB |
+| IP rating | IP66 |
 | Two-way audio | Yes |
 | Operating temp | -20 to 60°C |
 

@@ -9,13 +9,20 @@
 | Type | bullet |
 | Connectivity | wifi |
 | Resolution | 3MP (2K) (3MP, 2304×1296) |
+| Sensor | 1/2.7"Progressive Scan CMOS |
 | Lens | 1× 4 (fixed)mm F2.0 |
 | Field of view | 82 horizontal° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.01 lux |
 | Power | DC 12V/1A |
 | IP rating | IP67 |
 | Two-way audio | Yes |
 | Operating temp | -30 to 50°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2304x1296 | 30 | H.265 |
 
 ## Features
 

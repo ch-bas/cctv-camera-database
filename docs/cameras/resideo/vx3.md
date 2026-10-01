@@ -10,6 +10,7 @@
 | Connectivity | wifi, ethernet |
 | Resolution | 1080p HD (2MP, 1920×1080) |
 | Night vision | hybrid |
+| IP rating | IP66 |
 | Operating temp | -40 to 50°C |
 
 ## Features
@@ -27,6 +28,7 @@
 ## Sources
 
 - https://www.resideo.com/us/en/pro/products/security/video-cameras/connected-cameras/vx3-hd-outdoor-camera-camwe-wo/
+- https://digitalassets.resideo.com/damroot/Original/10003/L_VX3HDVDD_D.pdf
 
 ---
 *Auto-generated from resideo-vx3.json — do not edit by hand.*

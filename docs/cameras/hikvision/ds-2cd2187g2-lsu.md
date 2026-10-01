@@ -38,7 +38,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2187G2-LSU.pdf
+- https://assets.hikvision.com/prd/public/all/doc/sm000058412/DS-2CD2187G2-LSU_Datasheet_V5.7.11.20230418.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2187g2-lsu.json — do not edit by hand.*

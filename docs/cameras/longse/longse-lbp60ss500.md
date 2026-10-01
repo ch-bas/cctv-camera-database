@@ -14,6 +14,7 @@
 | Power | PoE or DC power adapter |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
+| IP rating | IP66 |
 | Two-way audio | No |
 
 ## Features
@@ -25,6 +26,8 @@
 ## Sources
 
 - https://www.pyramid.lt/en/ip-camera-longse-lbf30sv800-4k-8mp-36mm-40m-ir-microsd-slot-up-to-512gb-poe
+- https://web.archive.org/web/20190911214224/http://www.longse.com/SUPPORT/FAQ/Camera/2017/0822/973.html
+- https://web.archive.org/web/20191108001153/http://www.longse.com/product/NetworkCamera/5MPFixed-Varifocal/HisiliconSS500/VarifocalBullet/2018/1109/108073.html
 
 ---
 *Auto-generated from longse-lbp60ss500.json — do not edit by hand.*

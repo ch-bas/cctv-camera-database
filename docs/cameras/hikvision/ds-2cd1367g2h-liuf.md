@@ -24,6 +24,7 @@
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
 | main | 3200x1800 | 20 | H.265 |
+| sub | 1280x720 | 20 | H.265 |
 
 ## Features
 
@@ -35,7 +36,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD1367G2H-LIUF.pdf
+- https://assets.hikvision.com/prd/public/all/doc/sm000059801/DS-2CD1367G2H-LIUF_Datasheet_20240527.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd1367g2h-liuf.json — do not edit by hand.*

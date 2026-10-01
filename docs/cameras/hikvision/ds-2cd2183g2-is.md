@@ -36,7 +36,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2183G2-IS.pdf
+- https://assets.hikvision.com/prd/normal/all/doc/sm000058960/DS-2CD2183G2-IS_Datasheet_20260525.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2183g2-is.json — do not edit by hand.*

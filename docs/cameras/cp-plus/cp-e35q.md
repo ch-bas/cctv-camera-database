@@ -10,11 +10,12 @@
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 4mm F2.0 |
 | Field of view | pan 355 / tilt 59° |
-| Night vision | ir (15m) |
+| Night vision | ir (15m), 0.01 lux, 0.1 lux color |
 | Power | USB Type-C DC 5V/1A (max ~5W) |
 | Storage | microSD ≤ 256GB |
 | Protocols | http |
 | Two-way audio | Yes |
+| Operating temp | -20 to 60°C |
 
 ## Streams
 
@@ -30,6 +31,10 @@
 - motion + human detection
 - Google Home + Alexa
 - microSD up to 256GB
+- DWDR
+- sound detection
+- built-in siren
+- motion tracking
 
 ## Sources
 

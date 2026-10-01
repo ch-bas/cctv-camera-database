@@ -12,7 +12,7 @@
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 4 (fixed)mm F2.0 |
 | Field of view | 340 pan / 130 tilt° |
-| Night vision | ir (10m) |
+| Night vision | ir (10m), 0.51 lux |
 | Power | DC 5V/1A (Type-C, max 5W) |
 | Storage | microSD ≤ 512GB |
 | Two-way audio | Yes |

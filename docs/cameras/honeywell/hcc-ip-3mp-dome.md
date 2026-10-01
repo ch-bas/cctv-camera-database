@@ -17,7 +17,6 @@
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
-| Two-way audio | No |
 | Released | 2025 |
 
 ## Features

@@ -35,7 +35,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CV2Q21G1-IDW-W.pdf
+- https://www.hikvision.com/de/products/IP-Products/Network-Cameras/Wi-Fi-Series/ds-2cv2q21g1-idw--w-/
 
 ---
 *Auto-generated from hikvision-ds-2cv2q21g1-idw.json — do not edit by hand.*

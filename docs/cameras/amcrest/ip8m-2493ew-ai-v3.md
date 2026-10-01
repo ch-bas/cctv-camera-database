@@ -42,7 +42,6 @@
 ## Sources
 
 - https://support.amcrest.com/hc/en-us/articles/24606154802573-Technical-Specifications-IP8M-2493EW-AI-V3
-- https://amcrest.com/4k-ip-camera-poe-security-camera-dome-ip8m-2493eb-ai-v3.html
 
 ---
 *Auto-generated from amcrest-ip8m-2493ew-ai-v3.json — do not edit by hand.*

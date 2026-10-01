@@ -8,7 +8,7 @@
 | Connectivity | ethernet |
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/2.8" STARVIS CMOS |
-| Lens | 1× 3.95-177.7mm |
+| Lens | 1× 3.95-177.7mm F1.6-F4.95 |
 | Field of view | 1.8-70.3 (H)° |
 | Night vision | ir (350m), 0.005 lux color |
 | Power | AC24V / Hi-PoE |
@@ -31,7 +31,7 @@
 
 ## Sources
 
-- https://www.dahuasecurity.com/products/network-products/ptz-cameras/special-series/positioning-systems/ptz19245u-irb-n(-b)
+- https://www.dahuasecurity.com/products/network-products/ptz-cameras/special-series/positioning-systems/ptz19245u-irb-n%28-b%29
 
 ---
 *Auto-generated from dahua-ptz19245u-irb-n.json — do not edit by hand.*

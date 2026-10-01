@@ -8,13 +8,14 @@
 | Connectivity | ethernet |
 | Resolution | 5MP (5MP, 2592×1944) |
 | Sensor | 1/2.8" progressive scan low lux CMOS |
-| Lens | 1× 4.6-152mm |
+| Lens | 1× 4.6-152mm F1.6 |
 | Field of view | 55-2 horizontal° |
-| Night vision | ir (150m), 0.02 lux color |
+| Night vision | ir (150m), 0.002 lux, 0.02 lux color |
 | Power | High PoE (PoE++, 60W) / AC 24V / DC 30V |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
+| IK rating | IK10 |
 | Two-way audio | Yes |
 | Operating temp | -40 to 50°C |
 

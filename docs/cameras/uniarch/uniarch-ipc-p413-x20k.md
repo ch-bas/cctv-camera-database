@@ -40,6 +40,7 @@
 ## Sources
 
 - https://www.uniarch.cn/Products/Network_Cameras/Vari-focal_Series/Vari-focal_Series/IPC-P413-X20K/
+- https://www.uniarch.cn/Support/FAQ/202209/951565_575360_0.htm
 
 ---
 *Auto-generated from uniarch-ipc-p413-x20k.json — do not edit by hand.*

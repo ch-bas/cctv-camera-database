@@ -10,7 +10,7 @@
 | Sensor | 1/2.9" 4MP progressive CMOS |
 | Lens | 1× 3.6mm F2.0 |
 | Field of view | 78 H / 43 V / 92 D° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.003 lux, 0.03 lux color |
 | Power | PoE (IEEE 802.3af) or 12V DC |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
@@ -34,7 +34,7 @@
 
 ## Sources
 
-- https://cpplusworld.com/cp-unc-da41l3c-d-q2
+- https://cpplusworld.com/cp-unc-da41l3c-d-q
 
 ---
 *Auto-generated from cp-plus-cp-unc-da41l3c-d-q2.json — do not edit by hand.*

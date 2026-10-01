@@ -12,13 +12,14 @@
 | Sensor | 1/2.7" Progressive Scan CMOS |
 | Lens | 1× 2.7-13.5 (motorized varifocal)mm |
 | Field of view | 105-31 horizontal° |
-| Night vision | ir (50m), 0.075 lux color |
+| Night vision | ir (50m), 0.01 lux, 0.075 lux color |
 | Power | PoE (802.3af) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |
+| Operating temp | -50 to 60°C |
 
 ## Features
 

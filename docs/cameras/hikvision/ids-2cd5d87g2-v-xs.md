@@ -12,12 +12,13 @@
 | Sensor | 1/1.8" Progressive Scan CMOS |
 | Lens | 1× 2.8 or 4mm F1.0 |
 | Field of view | 108.8 (2.8mm), 93.0 (4mm) horizontal° |
-| Night vision | hybrid (40m), 0.0005 lux color |
+| Night vision | hybrid (40m), 0.0002 lux, 0.0005 lux color |
 | Power | PoE (802.3at, Type 2, Class 4), max. 15.6W, or 12 VDC max. 15.6W |
 | Storage | microSD ≤ 1024GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
+| Two-way audio | Yes |
 | Operating temp | -30 to 60°C |
 
 ## Streams

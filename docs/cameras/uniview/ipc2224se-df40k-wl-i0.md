@@ -17,7 +17,9 @@
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
+| IK rating | IK10 |
 | Two-way audio | No |
+| Operating temp | -30 to 60°C |
 
 ## Features
 
@@ -31,6 +33,7 @@
 ## Sources
 
 - https://www.123securityproducts.com/ipc2224sedf40kwli0.html
+- https://www.uniview.com/Products/Network_Cameras/Prime_Series/PRIMEIII_Series/IPC2224SE-DF40K-WL-I0/
 
 ---
 *Auto-generated from uniview-ipc2224se-df40k-wl-i0.json — do not edit by hand.*

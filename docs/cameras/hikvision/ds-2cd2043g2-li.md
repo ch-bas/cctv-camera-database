@@ -19,6 +19,12 @@
 | IP rating | IP67 |
 | Two-way audio | No |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2688x1520 | 30 | H.265 |
+
 ## Features
 
 - Smart Hybrid Light (IR + white light)
@@ -30,7 +36,7 @@
 
 ## Sources
 
-- https://manuals.plus/m/0e529842b08fb9f3e1973ce125608f709ac07da8bd51767628839f8b6c847298
+- https://assets.hikvision.com/prd/normal/all/doc/sm000064801/DS-2CD2043G2-LI_Datasheet_20260128.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2043g2-li.json — do not edit by hand.*

@@ -38,7 +38,7 @@
 
 ## Sources
 
-- https://amcrest.com/4mp-poe-camera-ptz-optical-zoom-ai-ip4m-1093ew-ai.html
+- https://support.amcrest.com/hc/en-us/articles/18127468236941-Technical-Specifications-IP4M-1093EW-AI
 
 ---
 *Auto-generated from amcrest-ip4m-1093ew-ai.json — do not edit by hand.*

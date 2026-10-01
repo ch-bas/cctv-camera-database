@@ -30,6 +30,7 @@
 ## Sources
 
 - https://www.flir.com/security/
+- https://flir.custhelp.com/app/answers/detail/a_id/5428/~/flir-thermal-security-cameras---opening-and-troubleshooting-video-issues
 
 ---
 *Auto-generated from flir-saros-dm-390.json — do not edit by hand.*

@@ -10,7 +10,7 @@
 | Sensor | 1/1.8" CMOS |
 | Lens | 1× 4.4-10mm F1.35-F1.97 |
 | Field of view | 103 – 49 (horizontal)° |
-| Night vision | none, 0.009 lux color |
+| Night vision | none, 0.0008 lux, 0.009 lux color |
 | Power | PoE IEEE 802.3at Type 1, Class 3 (12.95W); 24 VAC; 12-26 VDC |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp, http |
@@ -43,7 +43,6 @@
 ## Sources
 
 - https://resources.keenfinity.tech/public/documents/NBI_7803S_AX_Data_sheet_enUS_172775820171.pdf
-- https://netcamcenter.de/de/produkte/ip-kameras/nbi-7803s-ax
 
 ---
 *Auto-generated from bosch-nbi-7803s-ax.json — do not edit by hand.*

@@ -38,7 +38,7 @@
 
 ## Sources
 
-- https://amcrest.com/4k-poe-camera-bullet-ai-ip8m-2796ew-ai.html
+- https://support.amcrest.com/hc/en-us/articles/11609454641933-Technical-Specifications-IP8M-2796EW-AI
 
 ---
 *Auto-generated from amcrest-ip8m-2796ew-ai.json — do not edit by hand.*

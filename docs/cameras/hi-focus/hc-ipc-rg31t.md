@@ -10,11 +10,17 @@
 | Sensor | 1/3" color CMOS |
 | Lens | 1× 3.6 (fixed)mm |
 | Field of view | 105° |
-| Night vision | ir (15m) |
+| Night vision | ir (15m), 0.01 lux color |
 | Power | DC 5V/2A |
 | Storage | microSD ≤ 128GB |
 | Protocols | http |
 | Two-way audio | Yes |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2304x1296 | 20 | H.265 |
 
 ## Features
 

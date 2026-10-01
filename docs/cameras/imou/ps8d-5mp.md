@@ -10,13 +10,14 @@
 | Connectivity | ethernet |
 | Resolution | 5MP/3K (5MP, 2880×1620) |
 | Sensor | 1/3" progressive scan CMOS |
-| Lens | 1× 3.6mm |
+| Lens | 1× 3.6mm F1.6 |
 | Night vision | hybrid (30m) |
 | Power | PoE (IEEE 802.3af) |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | Yes |
+| Operating temp | -30 to 60°C |
 
 ## Streams
 

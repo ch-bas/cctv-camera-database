@@ -10,6 +10,8 @@
 | Sensor | 1/3" Color CMOS |
 | Lens | 3.6mm F1.6 |
 | Night vision | color (30m), 0.05 lux color |
+| IP rating | IP67 |
+| Two-way audio | No |
 | Operating temp | -20 to 50°C |
 
 ## Features
@@ -25,6 +27,7 @@
 ## Sources
 
 - https://www.mapesen.com/web/userfiles/productfile/gengxin/L6KH500LFspecification-mapesenV.I03.pdf
+- https://www.mapesen.com/normal-camera/l6k-full-color-series.html
 
 ---
 *Auto-generated from mapesen-l6kh500lf.json — do not edit by hand.*

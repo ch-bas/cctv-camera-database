@@ -10,13 +10,20 @@
 | Sensor | 1/2.7" progressive-scan CMOS |
 | Lens | 1× 2.8-12mm |
 | Field of view | 106.25-30.42° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.002 lux color |
 | Power | PoE / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |
+| Operating temp | -30°C ~ 60°C°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2592x1944 | 20 | H.265+ |
 
 ## Features
 

@@ -1,0 +1,42 @@
+# i-PRO WV-SW558
+
+*Also known as: i-PRO WV-SW558, Panasonic WV-SW558*
+
+| Field | Spec |
+|-------|------|
+| Brand | i-PRO |
+| Model | WV-SW558 |
+| Type | dome |
+| Connectivity | ethernet |
+| Resolution | 3MP (3MP, 2048×1536) |
+| Sensor | 1/3 type MOS |
+| Lens | 1× 2.8-10mm F1.3 (WIDE) - F3.0 (TELE) |
+| Field of view | 24.2 (TELE) - 86.6 (WIDE)° |
+| Night vision | none, 0.3 lux, 0.5 lux color |
+| Power | PoE (IEEE 802.3af) / DC 12V |
+| Protocols | onvif, rtsp |
+| IP rating | IP66 |
+| IK rating | IK10 |
+| Operating temp | -40 to 50°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2048x1536 | 30 | H.264 |
+
+## Features
+
+- Mega Super Dynamic
+- face detection
+- fog/smoke reduction
+- electronic sensitivity enhancement
+- day/night
+- ONVIF Profile S
+
+## Sources
+
+- https://i-pro.com/products_and_solutions/en/surveillance/products/wv-sw558
+
+---
+*Auto-generated from i-pro-wv-sw558.json — do not edit by hand.*

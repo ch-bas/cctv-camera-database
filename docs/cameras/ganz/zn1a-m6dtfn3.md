@@ -1,0 +1,40 @@
+# Ganz ZN1A-M6DTFN3
+
+| Field | Spec |
+|-------|------|
+| Brand | Ganz |
+| Model | ZN1A-M6DTFN3 |
+| Type | dome |
+| Connectivity | ethernet |
+| Resolution | 5MP (5MP, 2592×1944) |
+| Sensor | 1/2.8" Sony STARVIS Exmor 5MP CMOS |
+| Lens | 1× 2.8mm F2.0 |
+| Field of view | 115 (H), 64 (V)° |
+| Night vision | ir (18m), 0.03 lux color |
+| Power | 12VDC / PoE (802.3af) |
+| Protocols | rtsp, onvif, http |
+| IP rating | IP67 |
+| Two-way audio | No |
+| Operating temp | -20 to 50°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2592x1944 | 30 | H.265 |
+
+## Features
+
+- GXi video analytics
+- True WDR 120dB
+- Smart IR
+- True Day/Night
+- built-in mic
+
+## Sources
+
+- https://www.ganzsecurity.com/products/zn1a-m6dtfn3
+- https://computarganz.s3.amazonaws.com/Ganz+Active+Resources/ZN1A-M4DTFN3++ZN1A-M6DTFN3+spec.pdf
+
+---
+*Auto-generated from ganz-zn1a-m6dtfn3.json — do not edit by hand.*

@@ -17,6 +17,7 @@
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | rtsp, onvif |
 | IP rating | IP67 |
+| IK rating | IK10 |
 | Operating temp | -40 to 60°C |
 
 ## Streams
@@ -40,7 +41,7 @@
 
 ## Sources
 
-- https://amcrest.com/4k-poe-ai-camera-panoramic-ip8m-mb182e-ai.html
+- https://support.amcrest.com/hc/en-us/articles/14631232425229-Technical-Specifications-IP8M-MB182E-AI
 
 ---
 *Auto-generated from amcrest-ip8m-mb182e-ai.json — do not edit by hand.*

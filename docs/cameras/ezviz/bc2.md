@@ -12,11 +12,17 @@
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 4 (fixed)mm F1.6 |
 | Field of view | 46 horizontal / 85 diagonal° |
-| Night vision | ir (5m) |
+| Night vision | ir (5m), 0.1 lux |
 | Power | Rechargeable battery (2000mAh); DC 5V/2A adapter (sold separately) |
 | Storage | microSD ≤ 256GB |
 | Two-way audio | Yes |
 | Operating temp | -10 to 45°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 15 | H.265 |
 
 ## Features
 

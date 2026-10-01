@@ -41,6 +41,7 @@
 ## Sources
 
 - https://www.uniarch.cn/Products/Network_Cameras/Entry_Series/Entry_Series/IPC-D124-PF28K/
+- https://www.uniarch.cn/Support/FAQ/202209/951565_575360_0.htm
 
 ---
 *Auto-generated from uniarch-ipc-d124-pf28k.json — do not edit by hand.*

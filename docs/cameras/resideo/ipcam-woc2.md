@@ -10,6 +10,7 @@
 | Connectivity | wifi |
 | Resolution | 1080p HD (2MP, 1920×1080) |
 | Night vision | ir |
+| IP rating | IP66 |
 
 ## Features
 
@@ -25,6 +26,7 @@
 ## Sources
 
 - https://www.resideo.com/us/en/pro/products/security/video-cameras/connected-cameras/ipcam-woc2-1080p-hd-wifi-outdoor-video-camera-ipcam-woc2/
+- https://digitalassets.resideo.com/damroot/Original/10005/L_TCVHDFAMD_D.pdf
 
 ---
 *Auto-generated from resideo-ipcam-woc2.json — do not edit by hand.*

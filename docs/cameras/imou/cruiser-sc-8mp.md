@@ -18,6 +18,7 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | Two-way audio | Yes |
+| Operating temp | -30 to 50°C |
 
 ## Streams
 
@@ -40,6 +41,7 @@
 
 - https://www.imou.com/en/product/detail/cruiser-sc-8mp
 - https://www.orbitadigital.com/en/cctv-ip/consumer-ip-cameras/75273-imou-ipc-k7fp-8v0n-imou-cruiser-sc-motorized-camera-8mp-wifi-6-36-mm-.html
+- https://static-website.imou.com/ede7325e-f5a3-4670-8510-702e1eaf5305.pdf
 
 ---
 *Auto-generated from imou-cruiser-sc-8mp.json — do not edit by hand.*

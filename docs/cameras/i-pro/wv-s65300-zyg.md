@@ -17,6 +17,7 @@
 | IP rating | IP66 |
 | IK rating | IK10 |
 | Two-way audio | Yes |
+| Operating temp | -30 to 55°C |
 | Released | 2023 |
 
 ## Features
@@ -32,6 +33,7 @@
 ## Sources
 
 - https://i-pro.com/products_and_solutions/en/surveillance/products/wv-s65300-zyg
+- https://i-pro.com/products_and_solutions/sites/default/files/2026-03/WV-S65300-ZYG_i-PRO_A4_R13_260313.pdf
 
 ---
 *Auto-generated from i-pro-wv-s65300-zyg.json — do not edit by hand.*

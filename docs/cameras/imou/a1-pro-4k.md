@@ -1,5 +1,7 @@
 # IMOU A1 Pro 4K
 
+*Also known as: A1 Pro 8MP*
+
 | Field | Spec |
 |-------|------|
 | Brand | IMOU |
@@ -9,11 +11,12 @@
 | Resolution | 4K (8MP, 3840×2160) |
 | Lens | 1× 3.6mm |
 | Field of view | 91 H; pan 355 / tilt -5~80° |
-| Night vision | hybrid |
+| Night vision | hybrid (20m) |
 | Power | DC 5V via USB-C |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
 | Two-way audio | Yes |
+| Operating temp | -10 to 45°C |
 
 ## Streams
 
@@ -36,6 +39,7 @@
 
 - https://www.imou.com/en/product/detail/a1-pro4k
 - https://www.imou.com/en/product/specs/a1-pro4k
+- https://static-website.imou.com/98145c18-f39f-467a-a742-d6b2accf57bc.pdf
 
 ---
 *Auto-generated from imou-a1-pro-4k.json — do not edit by hand.*

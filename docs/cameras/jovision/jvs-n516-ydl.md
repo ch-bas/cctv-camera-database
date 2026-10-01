@@ -15,6 +15,7 @@
 | Protocols | onvif, rtsp, http |
 | IP rating | IP66 |
 | Two-way audio | No |
+| Operating temp | -20 to 60°C |
 
 ## Streams
 

@@ -34,9 +34,9 @@
 - 150m IR
 - Auto Tracking 3.0
 - SMD 4.0
-- auto flip 180°
+- auto flip 180
 - auto patrol
-- 360° endless pan
+- 360 endless pan
 - Starlight
 
 ## Sources

@@ -36,7 +36,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2386G2H-IS2U_SLRB.pdf
+- https://www.hikvision.com/content/dam/hikvision/products/S000000001/S000000002/S000000003/S000000025/OFR000041/M000129466/SM000070211/Data_Sheet/DS-2CD2386G2H-IS2U_SLRB_Datasheet_20240517.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2386g2h-is2u-slrb.json — do not edit by hand.*

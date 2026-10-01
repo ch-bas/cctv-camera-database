@@ -10,7 +10,7 @@
 | Connectivity | ethernet |
 | Resolution | 12MP (12MP, 2992×2992) |
 | Sensor | 1/2.3" CMOS |
-| Lens | 1× 1.2mm |
+| Lens | 1× 1.2mm F2.2 |
 | Field of view | 182° |
 | Night vision | ir (15m), 0.19 lux color |
 | Power | High PoE (802.3at) |

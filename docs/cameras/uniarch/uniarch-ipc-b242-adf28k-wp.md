@@ -37,6 +37,7 @@
 
 - https://www.uniarch.cn/Products/Network_Cameras/Halo_Series/Halo_Series/IPC-B242-ADF28K-WP/
 - https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/8600d684-9e42-4a9a-a464-166988337bde/3b49f2e9-81a5-4ac9-831e-d4d590f789f8.pdf
+- https://www.uniarch.cn/Support/FAQ/202209/951565_575360_0.htm
 
 ---
 *Auto-generated from uniarch-ipc-b242-adf28k-wp.json — do not edit by hand.*

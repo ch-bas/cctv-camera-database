@@ -35,7 +35,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2047G2H-LIU_SL-eF.pdf
+- https://assets.hikvision.com/prd/normal/all/doc/m000078507/DS-2CD2047G2H-LIU_SL_Datasheet_20260105.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2047g2h-liu-sl.json — do not edit by hand.*

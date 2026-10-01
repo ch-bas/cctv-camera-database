@@ -1,0 +1,38 @@
+# i-PRO WV-S4576LUX
+
+*Also known as: WV-S4576L, i-PRO WV-S4576L, Panasonic WV-S4576L*
+
+| Field | Spec |
+|-------|------|
+| Brand | i-PRO |
+| Model | WV-S4576LUX |
+| Type | fisheye |
+| Connectivity | ethernet |
+| Resolution | 12MP fisheye (12MP, 2992×2992) |
+| Sensor | 1/2" MOS |
+| Lens | 1× 1.4mm F1.9 |
+| Field of view | 183° |
+| Night vision | ir (14m), 0.3 lux color |
+| Power | PoE (IEEE802.3af, Class 0) / DC 12V |
+| Storage | microSD ≤ 512GB, NVR |
+| Protocols | onvif, rtsp |
+| IP rating | IP66 |
+| IK rating | IK10 |
+| Two-way audio | No |
+| Operating temp | -40 to 60°C |
+
+## Features
+
+- 360-degree fisheye
+- built-in IR LED (14 m)
+- in-camera de-warping
+- IP66 / IK10 vandal-resistant
+- ONVIF Profile S/G/M/T
+
+## Sources
+
+- https://i-pro.com/products_and_solutions/ja/surveillance/media/documentation_file/doc/support_and_documentation/spec-wv-s4556luxetc
+- https://i-pro.com/products_and_solutions/en/surveillance/products/wv-s4576l
+
+---
+*Auto-generated from i-pro-s4576lux.json — do not edit by hand.*

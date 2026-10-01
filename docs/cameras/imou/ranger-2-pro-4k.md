@@ -10,13 +10,14 @@
 | Connectivity | wifi, ethernet |
 | Resolution | 4K (8MP, 3840×2160) |
 | Sensor | 1/2.7" Progressive CMOS |
-| Lens | 1× 3.6mm |
+| Lens | 1× 3.6mm F1.6 |
 | Field of view | 89 H; pan 355 / tilt -5~80° |
 | Night vision | hybrid (15m) |
 | Power | DC 5V/1A via USB-C; <7.5W |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
 | Two-way audio | Yes |
+| Operating temp | -10 to 45°C |
 
 ## Streams
 

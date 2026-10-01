@@ -25,6 +25,7 @@
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
 | main | 1920x1080 | 30 | H.265 |
+| sub | 1280x720 | 30 | H.265 |
 
 ## Features
 
@@ -36,7 +37,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD1127G0-LUF-D.pdf
+- https://assets.hikvision.com/prd/public/all/doc/m000057690/DS-2CD1127G0-LUF-D_Datasheet_20240801.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd1127g0-luf-d.json — do not edit by hand.*

@@ -12,7 +12,7 @@
 | Field of view | 103-49 (horizontal)° |
 | Night vision | none, 0.009 lux color |
 | Power | PoE (IEEE 802.3at Type 1, Class 3) / 12 VDC / 24 VAC |
-| Storage | NVR |
+| Storage | microSD ≤ 2048GB, NVR |
 | Protocols | onvif, rtsp, http |
 | IP rating | IP5X |
 | Operating temp | -20 to 55°C |
@@ -39,7 +39,6 @@
 
 ## Sources
 
-- https://netcamcenter.de/de/produkte/ip-kameras/nbi-7803-ax
 - https://www.keenfinity-group.com/media/en/pb/images/news/online_tools/video-systems-product-overview.pdf
 - https://keenfinity.blob.core.windows.net/public/documents/NBI_7802_AX_Data_sheet_enUS_172743006091.pdf
 - https://resources.keenfinity.tech/public/documents/NBI_7803S_AX_Data_sheet_enUS_172775820171.pdf

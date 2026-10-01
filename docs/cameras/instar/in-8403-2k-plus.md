@@ -11,6 +11,7 @@
 | Night vision | hybrid |
 | Power | PoE (802.3af) or DC power adapter |
 | Protocols | onvif, rtsp |
+| IP rating | IP66 |
 | Two-way audio | No |
 
 ## Streams

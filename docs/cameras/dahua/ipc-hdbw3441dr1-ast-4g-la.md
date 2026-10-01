@@ -19,6 +19,14 @@
 | Two-way audio | Yes |
 | Operating temp | -40 to +60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2880x1620 | 30 | H.265 |
+| sub | 704x480 | 30 | H.265 |
+| third | 1920x1080 | 30 | H.265 |
+
 ## Features
 
 - 4G LTE connectivity

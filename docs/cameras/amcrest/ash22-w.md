@@ -39,7 +39,7 @@
 
 ## Sources
 
-- https://amcrest.com/amcrest-smarthome-ash22-w-white.html
+- https://support.amcrest.com/hc/en-us/articles/360056337891-Technical-Specifications-ASH22-W
 
 ---
 *Auto-generated from amcrest-ash22-w.json — do not edit by hand.*

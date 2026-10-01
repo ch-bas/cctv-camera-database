@@ -43,6 +43,7 @@
 
 - https://digital-watchdog.com/productdetail/DWC-PVX20WATX/
 - https://digitalwatchdog.s3.us-west-1.amazonaws.com/_downloads_2025/DW_DS_DWC-PVX20WATX_Rev0525.pdf
+- https://digitalwatchdog.happyfox.com/kb/article/323-megapix-ip-camera-rtsp-stream-list/
 
 ---
 *Auto-generated from digital-watchdog-dwc-pvx20watx.json — do not edit by hand.*

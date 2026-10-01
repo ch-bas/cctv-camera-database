@@ -30,7 +30,7 @@
 
 ## Features
 
-- 4x 4MP AI multi-directional camera (360° coverage)
+- 4x 4MP AI multi-directional camera (360 coverage)
 - per-channel PTRZ positioning (pan 360 / tilt 65 / rotate 90)
 - WiseIR 15m (PoE+) / 20m (PoE++)
 - AI object classification: person / face / vehicle / license plate + BestShot

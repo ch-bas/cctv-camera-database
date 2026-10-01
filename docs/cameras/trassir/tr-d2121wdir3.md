@@ -1,0 +1,41 @@
+# Trassir TR-D2121WDIR3
+
+| Field | Spec |
+|-------|------|
+| Brand | Trassir |
+| Model | TR-D2121WDIR3 |
+| Type | bullet |
+| Connectivity | ethernet |
+| Resolution | 1080p (2.1MP, 1920×1080) |
+| Sensor | 1/2.7" Progressive Scan CMOS |
+| Lens | 1× 2.8mm F1.8 |
+| Field of view | 116 H, 62 V, 122 D° |
+| Night vision | ir (35m), 0.005 lux color |
+| Power | DC 12 V/PoE (802.3af) |
+| Storage | microSD ≤ 128GB, NVR |
+| Protocols | onvif, rtsp |
+| IP rating | IP67 |
+| Two-way audio | No |
+| Operating temp | -40 … +60°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 25 | H.264 |
+
+## Features
+
+- Trassir Trend series
+- WDR 120 dB
+- 3D DNR
+- Defog
+- ROI
+- BLC
+
+## Sources
+
+- https://www.dssl.ru/products/tr-d2121wdir3-2-8-mm-ip-kamera/
+
+---
+*Auto-generated from trassir-tr-d2121wdir3.json — do not edit by hand.*

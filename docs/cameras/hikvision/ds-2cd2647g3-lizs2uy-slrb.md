@@ -40,7 +40,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2647G3-LIZS2UY_SLRB.pdf
+- https://assets.hikvision.com/prd/public/all/doc/sm000077878/DS-2CD2647G3-LIZS2UY_SLRB_Datasheet_20241018.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2647g3-lizs2uy-slrb.json — do not edit by hand.*

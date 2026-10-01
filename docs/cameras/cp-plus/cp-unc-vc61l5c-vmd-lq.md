@@ -10,7 +10,7 @@
 | Sensor | 1/2.7" 6MP progressive CMOS |
 | Lens | 1× 3.6mm F1.4 |
 | Field of view | 91 H / 46 V / 110 D° |
-| Night vision | hybrid (50m) |
+| Night vision | hybrid (50m), 0.0001 lux |
 | Power | PoE (IEEE 802.3af) or 12V DC |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
@@ -24,6 +24,9 @@
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
 | main | 3288x1850 | 30 | H.265 |
+| sub1 | 720x576 | 25 | H.265 |
+| sub2 | 720x576 | 25 | H.265 |
+| sub3 | 720x576 | 1 | H.265 |
 
 ## Features
 

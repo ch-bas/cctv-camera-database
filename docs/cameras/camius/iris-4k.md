@@ -28,6 +28,7 @@
 
 - https://www.camius.com/4k-poe-dome-camera-iris8r/
 - https://www.camius.com/8-4k-ethernet-powered-security-cameras/
+- https://www.camius.com/add-ip-cameras-on-network/
 
 ---
 *Auto-generated from camius-iris-4k.json — do not edit by hand.*

@@ -1,0 +1,24 @@
+# Aoni 96Q
+
+| Field | Spec |
+|-------|------|
+| Brand | Aoni |
+| Model | 96Q |
+| Type | bullet |
+| Connectivity | wifi |
+| Resolution | 3MP (3MP) |
+| Field of view | 100° |
+| Night vision | ir (10m) |
+| Storage | microSD ≤ 256GB |
+| Protocols | p2p |
+
+## Features
+
+- 24/7 recording
+
+## Sources
+
+- https://www.anc.cn/productinfo182.html
+
+---
+*Auto-generated from aoni-96q.json — do not edit by hand.*

@@ -1,0 +1,49 @@
+# Avigilon H6X 4MP Dome
+
+| Field | Spec |
+|-------|------|
+| Brand | Avigilon |
+| Model | H6X 4MP Dome |
+| Type | dome |
+| Connectivity | ethernet |
+| Resolution | 4MP (4MP, 2688×1520) |
+| Sensor | 1/1.8" progressive scan CMOS |
+| Lens | 1× 4.4-9.3mm F1.3 |
+| Field of view | 47-111 horizontal, 26-57 vertical (16:9)° |
+| Night vision | ir (50m), 0.003 lux, 0.008 lux color |
+| Power | PoE (802.3af Class 3) / PoE+ (802.3at Class 4) |
+| Storage | microSD ≤ 1500GB, NVR |
+| Protocols | onvif, rtsp, http |
+| IP rating | IP66/IP67/IP68 |
+| IK rating | IK11 |
+| Two-way audio | No |
+| Operating temp | -30 to 65°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2688x1520 | 30 | H.265 |
+
+## Features
+
+- No built-in microphone or wireless technology, designed for compliance/privacy requirements
+- AI-powered onboard video analytics; Dynamic Privacy Masking (separate license required)
+- FIPS 140-2 Level 3 onboard TPM, Secure Boot, CC EAL6+
+- ONVIF Profile S/T/M/G
+- Electronic Image Stabilization; adjustable Digital Defog
+- WDR up to 144 dB (triple exposure); IEC 62676: up to 136 dB
+- Optional 10.9-29mm telephoto lens: F1.7, IR up to 70m tele/40m wide, min illumination without IR 0.004 lux mono/0.01 lux color, FOV 15-42 horizontal
+- 18W power consumption with IR disabled
+- Extended operating temp -50C to 65C with PoE+ or external 12-24VDC power; seamless PoE/Aux failover
+- Indoor Dome variant: IP54, IK11 (IK10 surface mount w/IR), -10C to 55C
+- Two microSD/SDHC/SDXC slots, tested up to 1.5TB
+- Pan 360, Azimuth 349, Tilt 92 adjustment range
+- Limited 5-Year Warranty
+
+## Sources
+
+- https://docs.avigilon.com/bundle/h6-a-dome-camera-datasheet/resource/h6-a-dome-camera-datasheet.pdf
+
+---
+*Auto-generated from avigilon-h6x-dome-4mp.json — do not edit by hand.*

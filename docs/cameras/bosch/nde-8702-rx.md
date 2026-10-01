@@ -8,9 +8,9 @@
 | Connectivity | ethernet |
 | Resolution | 1080p Full HD (2MP, 1920×1080) |
 | Sensor | 1/1.8" CMOS |
-| Lens | 1× 4.4-10mm |
+| Lens | 1× 4.4-10mm F1.3-F1.97 |
 | Field of view | 48-110° |
-| Night vision | none, 0.009 lux color |
+| Night vision | none, 0.0007 lux, 0.009 lux color |
 | Power | PoE (IEEE 802.3af), 24V AC, 12-26V DC |
 | Storage | microSD ≤ 2048GB, NVR |
 | Protocols | onvif, rtsp |
@@ -43,8 +43,6 @@
 ## Sources
 
 - https://resources.keenfinity.tech/public/documents/NDE_8702_RX_Data_sheet_enUS_125842954635.pdf
-- https://netcamcenter.de/de/produkte/ip-kameras/nde-8702-rx
-- https://netcamcenter.com/en/products/ip-cameras/nde-8702-rx
 - https://networkcamerastore.com/products/bosch-nde-8702-rx-fixed-dome-2mp-hdr-x-4-4-10mm-ptrz-ip67
 - https://www.bhphotovideo.com/c/product/1908315-REG/bosch_flexidome_8100i_nde_8702_rx_x.html
 

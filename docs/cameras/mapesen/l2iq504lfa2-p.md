@@ -10,6 +10,7 @@
 | Sensor | 1/2.8" CMOS |
 | Lens | 3.6mm F1.6 |
 | Night vision | hybrid (35m), 0.005 lux color |
+| Storage | NVR |
 | Protocols | rtsp, onvif |
 | IP rating | IP66 |
 | Two-way audio | Yes |

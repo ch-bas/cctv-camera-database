@@ -16,6 +16,7 @@
 | Power | PoE (802.3af) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
+| IP rating | IP42 |
 | IK rating | IK08 |
 | Two-way audio | No |
 | Operating temp | 0 to 50°C |

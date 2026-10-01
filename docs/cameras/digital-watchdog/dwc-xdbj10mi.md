@@ -24,6 +24,7 @@
 
 - https://digital-watchdog.com/productdetail/DWC-XDBJ10Mi/
 - https://digital-watchdog.com/admin/assets/_downloads/DW_DS_DWC-XDBJ10Mi_Rev0726.pdf
+- https://digitalwatchdog.happyfox.com/kb/article/323-megapix-ip-camera-rtsp-stream-list/
 
 ---
 *Auto-generated from digital-watchdog-dwc-xdbj10mi.json — do not edit by hand.*

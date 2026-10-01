@@ -1,0 +1,44 @@
+# Dahua IPC-HUM8241-E1-L5
+
+*Also known as: DH-IPC-HUM8241-E1-L5*
+
+| Field | Spec |
+|-------|------|
+| Brand | Dahua |
+| Model | IPC-HUM8241-E1-L5 |
+| Type | covert |
+| Connectivity | ethernet |
+| Resolution | 2MP (2MP, 1920×1080) |
+| Sensor | 1/2.8" CMOS |
+| Lens | 1× 2.8mm F2.0 |
+| Field of view | 109h° |
+| Night vision | 0.0005 lux, 0.005 lux color |
+| Power | 12 VDC / PoE (802.3af) |
+| Storage | microSD ≤ 256GB |
+| Protocols | onvif, rtsp |
+| Two-way audio | Yes |
+| Operating temp | -40 to 60°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 30 | H.265 |
+| sub | 704x576 | 25 | H.264 |
+| sub2 | 1920x1080 | 30 | H.264 |
+
+## Features
+
+- 2MP separated (covert) pinhole camera with lens head on a cable
+- L5 lens head: 2.8mm F2.0, 109 deg horizontal FOV
+- No IR illuminator (covert design); ICR day/night
+- Audio 1 in / 1 out, alarm 2 in / 2 out, RS-232
+- Separate E1 main unit and lens head
+
+## Sources
+
+- https://www.dahuasecurity.com/products/discontinued-products/network-cameras/ipc-hum8241-e1-l5
+- https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/IPC-HUM8241-E1-L5_S0_datasheet_20240402.pdf
+
+---
+*Auto-generated from dahua-ipc-hum8241-e1-l5.json — do not edit by hand.*

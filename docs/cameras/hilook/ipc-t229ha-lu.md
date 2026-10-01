@@ -11,7 +11,7 @@
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/2.8" Progressive Scan CMOS |
 | Lens | 1× 2.8 / 4 (fixed)mm F1.0 |
-| Field of view | 106 horizontal (2.8 mm)° |
+| Field of view | 106 horizontal (2.8 mm) / 88 horizontal (4 mm)° |
 | Night vision | hybrid (30m), 0.001 lux color |
 | Power | PoE (802.3af, Class 3) / DC 12V |
 | Storage | microSD ≤ 512GB, NVR |
@@ -43,7 +43,8 @@
 
 ## Sources
 
-- https://www.hikvision.com/en/products/HiLook-IP-Products/
+- https://assets.hikvision.com/prd/normal/all/doc/sm000081007/IPC-T229HA-LUF_SL_Datasheet_20260703.pdf
+- https://www.hikvision.com/mena-en/products/HiLook-IP-Products/Network-Cameras/Value-Camera/ipc-t229ha-luf-s-l--rb-/
 
 ---
 *Auto-generated from hilook-ipc-t229ha-lu.json — do not edit by hand.*

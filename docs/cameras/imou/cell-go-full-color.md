@@ -7,7 +7,7 @@
 | Type | bullet |
 | Connectivity | wifi |
 | Resolution | 2K/3MP (3MP, 2304×1296) |
-| Lens | 1× 2.8mm |
+| Lens | 1× 2.8mm F2.0 |
 | Field of view | 98 H° |
 | Night vision | color (7m) |
 | Power | Rechargeable 5000mAh battery (up to 120 days); optional solar panel |
@@ -15,6 +15,7 @@
 | Protocols | http |
 | IP rating | IP65 |
 | Two-way audio | Yes |
+| Operating temp | -20 to 50°C |
 
 ## Streams
 

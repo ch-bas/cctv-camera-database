@@ -1,0 +1,40 @@
+# Bolin Technology SD530NX
+
+*Also known as: SD530NXW*
+
+| Field | Spec |
+|-------|------|
+| Brand | Bolin Technology |
+| Model | SD530NX |
+| Type | ptz |
+| Connectivity | ethernet |
+| Resolution | 1080p (1920x1080) (2.07MP, 1920×1080) |
+| Sensor | 1/2.8" Sony STARVIS 2 CMOS |
+| Lens | 1× 4.3-129mm F1.6-F14 |
+| Field of view | 64-2.4 H° |
+| Night vision | color, 0.00008 lux, 0.009 lux color |
+| Power | PoE++ / DC 36V / AC 24V |
+| Protocols | onvif, rtsp, rtmp, http |
+| IP rating | IP67 |
+| Operating temp | -30 to 60°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 60 | H.265 |
+
+## Features
+
+- Outdoor NDI HX3 dual-output PTZ, 30X optical zoom, IP67, NDAA compliant
+- 360 deg continuous pan, tilt 105 deg (-90 to +15), +/-15 roll
+- NDI HX3 / NDI 6, 3G-SDI + IP, FreeD
+- -30 to 60 C
+
+## Sources
+
+- https://bolintechnology.com/product/sd530nx-outdoor-ndi-hx3-ptz-camera
+- https://bolintechnology.com/wp-content/uploads/2023/08/SD530NX-Outdoor-NDI-PTZ-Camera-Datasheet-02052025.pdf
+
+---
+*Auto-generated from bolin-sd530nx.json — do not edit by hand.*

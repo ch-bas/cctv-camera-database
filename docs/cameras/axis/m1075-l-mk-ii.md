@@ -1,0 +1,41 @@
+# Axis M1075-L Mk II
+
+| Field | Spec |
+|-------|------|
+| Brand | Axis |
+| Model | M1075-L Mk II |
+| Type | box |
+| Connectivity | ethernet |
+| Resolution | 1080p (2MP, 1920×1080) |
+| Sensor | 1/2.9" progressive scan RGB CMOS |
+| Lens | 1× 3.16mm F2.0 |
+| Field of view | 103 horizontal / 55 vertical° |
+| Night vision | ir (18m), 0.18 lux color |
+| Power | PoE (IEEE 802.3af Type 1) |
+| Storage | NVR |
+| Protocols | onvif, rtsp |
+| Two-way audio | Yes |
+| Operating temp | 0 to 35°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 25 | H.265 |
+
+## Features
+
+- OptimizedIR
+- Axis Zipstream
+- AXIS Object Analytics
+- Axis Edge Vault cybersecurity
+- deep learning processing unit (DLPU)
+- signed video
+
+## Sources
+
+- https://www.axis.com/products/axis-m1075-l-mk-ii
+- https://www.axis.com/dam/public/52/7a/0b/datasheet-axis-m1075-l-mk-ii-box-camera-en-US-531893.pdf
+
+---
+*Auto-generated from axis-m1075-l-mk-ii.json — do not edit by hand.*

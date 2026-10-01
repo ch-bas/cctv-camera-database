@@ -12,6 +12,7 @@
 | Night vision | color (15m) |
 | Power | 12V DC |
 | IP rating | IP66 |
+| Two-way audio | No |
 | Operating temp | -10 to 50°C |
 
 ## Features

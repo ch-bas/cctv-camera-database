@@ -8,7 +8,7 @@
 | Connectivity | ethernet |
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/2.8" STARVIS CMOS |
-| Lens | 1× 4.8-153mm |
+| Lens | 1× 4.8-153mm F1.6-F4.0 |
 | Field of view | 58.4-3.0 (H)° |
 | Night vision | 0.005 lux color |
 | Power | PoE+ (802.3at) / DC 24V |

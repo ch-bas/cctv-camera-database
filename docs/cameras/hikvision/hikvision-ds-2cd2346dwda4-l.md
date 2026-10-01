@@ -1,0 +1,19 @@
+# Hikvision DS-2CD2346DWDA4-L
+
+| Field | Spec |
+|-------|------|
+| Brand | Hikvision |
+| Model | DS-2CD2346DWDA4-L |
+| Type | turret |
+| Connectivity | ethernet |
+| Resolution | (4MP) |
+| Night vision | color |
+| Protocols | onvif, rtsp |
+| Two-way audio | Yes |
+
+## Sources
+
+- https://www.jiankongqicai.com/chanpin/8370.html
+
+---
+*Auto-generated from hikvision-ds-2cd2346dwda4-l.json — do not edit by hand.*

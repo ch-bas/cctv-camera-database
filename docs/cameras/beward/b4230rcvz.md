@@ -1,0 +1,31 @@
+# BEWARD B4230RCVZ
+
+| Field | Spec |
+|-------|------|
+| Brand | BEWARD |
+| Model | B4230RCVZ |
+| Type | bullet |
+| Connectivity | ethernet |
+| Resolution | 4MP (4MP, 2590×1520) |
+| Sensor | 1/3" CMOS |
+| Lens | 1× 2.8-8mm F.1.4 |
+| Field of view | 34-83° |
+| Night vision | ir (20m), 0.05 lux color |
+| Power | PoE / DC 12V |
+| Storage | microSD ≤ 256GB, NVR |
+| Protocols | onvif, rtsp, http |
+| IP rating | IP66 |
+| Operating temp | -45 to 50°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2590x1520 | 25 | H.265 |
+
+## Sources
+
+- https://www.beward.ru/katalog/arhiv-oborudovaniya/arhiv-kamery/ip-kamera-b4230rcvz/
+
+---
+*Auto-generated from beward-b4230rcvz.json — do not edit by hand.*

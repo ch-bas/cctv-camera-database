@@ -12,12 +12,18 @@
 | Sensor | CMOS |
 | Lens | 1× Fixedmm F1.6 |
 | Field of view | 107 horizontal / 125 diagonal° |
-| Night vision | color (10m) |
+| Night vision | color (10m), 0.2 lux |
 | Power | Rechargeable battery (7,800mAh) / solar optional |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 | Operating temp | -20 to 50°C |
 | Released | 2022 |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 15 | H.265 |
 
 ## Features
 

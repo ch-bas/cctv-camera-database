@@ -1,0 +1,43 @@
+# Axis P3268-SLVE
+
+| Field | Spec |
+|-------|------|
+| Brand | Axis |
+| Model | P3268-SLVE |
+| Type | dome |
+| Connectivity | ethernet |
+| Resolution | 4K (8MP, 3840×2160) |
+| Sensor | 1/1.8" progressive scan RGB CMOS |
+| Lens | 1× 4.3-8.6mm F1.5 |
+| Field of view | 100-53 horizontal / 54-30 vertical° |
+| Night vision | ir (40m), 0.14 lux color |
+| Power | PoE (IEEE 802.3af Type 1) |
+| Storage | NVR |
+| Protocols | onvif, rtsp |
+| IP rating | IP67 |
+| IK rating | IK11 |
+| Two-way audio | No |
+| Operating temp | -40 to 50°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 25 | H.265 |
+
+## Features
+
+- Lightfinder 2.0
+- Forensic WDR
+- OptimizedIR
+- Axis Zipstream
+- ARTPEC-8 SoC
+- AXIS Object Analytics
+
+## Sources
+
+- https://www.axis.com/products/axis-p3268-slve
+- https://www.axis.com/dam/public/43/5e/89/datasheet-axis-p3268-slve-dome-camera-en-US-506733.pdf
+
+---
+*Auto-generated from axis-p3268-slve.json — do not edit by hand.*

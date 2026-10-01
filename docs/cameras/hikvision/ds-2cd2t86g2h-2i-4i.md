@@ -35,7 +35,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2T86G2H-2I_4I.pdf
+- https://assets.hikvision.com/prd/public/all/doc/sm000059149/DS-2CD2T86G2H-2I_4I_Datasheet_20230719.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2t86g2h-2i-4i.json — do not edit by hand.*

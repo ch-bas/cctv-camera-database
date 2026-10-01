@@ -36,6 +36,7 @@
 ## Sources
 
 - https://www.dahuasecurity.com/products/All-Products/Network-Cameras/WizSense-Series/2-Series/IPC-HFW2449T-AS-IL
+- https://material.dahuasecurity.com/uploads/soft/20240417/IPC-HFW2449T-AS-IL_S0_datasheet_20230302.pdf
 
 ---
 *Auto-generated from dahua-ipc-hfw2449t-as-il.json — do not edit by hand.*

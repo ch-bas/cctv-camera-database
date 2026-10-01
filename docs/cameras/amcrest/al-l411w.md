@@ -36,7 +36,7 @@
 
 ## Sources
 
-- https://amcrest.com/4mp-light-bulb-wifi-security-camera-pan-tilt-al-l411w.html
+- https://support.amcrest.com/hc/en-us/articles/37715436748557-Technical-Specifications-AL-L411W
 
 ---
 *Auto-generated from amcrest-al-l411w.json — do not edit by hand.*

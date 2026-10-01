@@ -19,6 +19,7 @@
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | Yes |
+| Operating temp | -40 to 55°C |
 
 ## Features
 
@@ -30,8 +31,7 @@
 
 ## Sources
 
-- https://www.bhphotovideo.com/c/product/1832250-REG/bosch_nbe_5702_al_dinion_5100i_ir.html
-- https://image.makewebeasy.net/makeweb/0/upnyp4ixT/Document/DINION_5100i_IR__Data_sheet_enUS_105250134283.pdf
+- https://resources.keenfinity.tech/public/documents/DINION_5100i_IR__Data_sheet_enUS_105250134283.pdf
 
 ---
 *Auto-generated from bosch-nbe-5702-al.json — do not edit by hand.*

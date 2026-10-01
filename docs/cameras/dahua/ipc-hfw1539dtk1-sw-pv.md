@@ -18,6 +18,13 @@
 | Two-way audio | Yes |
 | Operating temp | -30 to +50°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2880x1620 | 30 | H.265 |
+| sub | 640x360 | 30 | H.265 |
+
 ## Features
 
 - WiFi 6

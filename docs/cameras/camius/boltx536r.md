@@ -38,6 +38,7 @@
 
 - https://www.camius.com/poe-exterior-camera/
 - https://www.camius.com/5mp-ip-bullet-surveillance-camera/
+- https://www.camius.com/add-ip-cameras-on-network/
 
 ---
 *Auto-generated from camius-boltx536r.json — do not edit by hand.*

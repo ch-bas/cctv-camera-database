@@ -12,12 +12,19 @@
 | Sensor | Dual CMOS |
 | Lens | 2× 2.8mm + 4mm (fixed)mm F1.6 |
 | Field of view | 2.8mm: 105 horizontal / 120 diagonal; 4mm: 89 horizontal / 106 diagonal° |
-| Night vision | hybrid (30m) |
+| Night vision | hybrid (30m), 0.005 lux |
 | Power | DC 12V |
 | Storage | microSD ≤ 256GB |
 | IP rating | IP67 |
 | Two-way audio | Yes |
+| Operating temp | -30 to 60°C |
 | Released | 2020 |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 25 | H.265 |
 
 ## Features
 

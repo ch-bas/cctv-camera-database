@@ -51,6 +51,22 @@
       "verified": true,
       "source": "Illustra Essentials Network Camera Web3.0 User Manual 8200-1102-07 B0 (illustracameras.com, Dahua OEM): 'Sub stream: rtsp://username:password@ip:port/cam/realmonitor?channel=1&subtype=1', default port 554.",
       "strix_lead": "strixcamdb:american-dynamics"
+    },
+    {
+      "stream": "main",
+      "path": "/videoStreamId=1",
+      "codec": "H.264 / H.265 / MJPEG (per configured stream)",
+      "verified": true,
+      "source": "https://illustracameras.com/wp-content/uploads/2024/08/UM_PG4-2-4-5-8MP-Series_8200-2007-08_L.en_-1.pdf — Illustra Pro Gen 4 Series Installation and Configuration Guide, Appendix A: \"Stream 1: rtsp://cameraip:554/videoStreamId=1\". Same path in the Flex Gen 4 guide (https://illustracameras.com/wp-content/uploads/2024/05/UM-FG4-Series_A16381M7H7_J.en_.pdf), Essentials Gen 4 guide, PTZ, Fisheye, Multisensor and Dual-Sensor Gen 4 guides (all illustracameras.com). Applies to the Gen 4 generation (Pro Gen4 / Flex Gen4 / Essentials Gen4).",
+      "strix_lead": "manual:american-dynamics"
+    },
+    {
+      "stream": "sub",
+      "path": "/videoStreamId=2",
+      "codec": "H.264 / H.265 / MJPEG (per configured stream)",
+      "verified": true,
+      "source": "https://illustracameras.com/apac/wp-content/uploads/2020/04/EG4-2MP-Dome-Bullet-UM_8200-1929-03-A0_en.pdf — Illustra Essentials Gen 4 Series Installation and Configuration Guide: \"Stream 2: rtsp://cameraip:554/videoStreamId=2\"; also Pro Gen 4 12MP Fisheye guide (https://illustracameras.com/wp-content/uploads/2022/08/UM-PG4-12MP-FE_A163818NN6_B_en-1.pdf) lists Stream 2 = /videoStreamId=2, Stream 3 = /videoStreamId=3. Gen 4 generation.",
+      "strix_lead": "manual:american-dynamics"
     }
   ],
   "unverified_leads": [
@@ -75,6 +91,6 @@
       "note": "Not in any official Illustra doc; generic ONVIF/other-brand path, contamination."
     }
   ],
-  "notes": "American Dynamics = Illustra line (Sensormatic/Tyco/Johnson Controls). Path names differ by product generation, all confirmed against Tyco/JCI official manuals: (1) Illustra 600/610 use /primarystream + /secondarystream (+ /audio); note this older generation defaults its stream ports to 7777-7781, but standard/default RTSP is 554 and paths are the load-bearing part. (2) Illustra Pro / Standard HD use /ufirststream + /usecondstream on default port 554. (3) Illustra Essentials is a Dahua OEM and uses the Dahua path /cam/realmonitor?channel=1&subtype=<0|1>. Session/stream names are configurable in the camera Web-UI (Setup > Network > RTSP/RTP). Two leads (/primarystream, /ufirststream) directly match official docs and are confirmed; the .sdp / ch0_0.h264 / /Video leads are contamination.",
-  "verified_on": "2026-08-14"
+  "notes": "American Dynamics = Illustra line (Sensormatic/Tyco/Johnson Controls). Path names differ by product generation, all confirmed against Tyco/JCI official manuals: (1) Illustra 600/610 use /primarystream + /secondarystream (+ /audio); note this older generation defaults its stream ports to 7777-7781, but standard/default RTSP is 554 and paths are the load-bearing part. (2) Illustra Pro / Standard HD use /ufirststream + /usecondstream on default port 554. (3) Illustra Essentials is a Dahua OEM and uses the Dahua path /cam/realmonitor?channel=1&subtype=<0|1>. Session/stream names are configurable in the camera Web-UI (Setup > Network > RTSP/RTP). Two leads (/primarystream, /ufirststream) directly match official docs and are confirmed; the .sdp / ch0_0.h264 / /Video leads are contamination. (4) Gen 4 generation (Illustra Pro Gen4, Flex Gen4, Essentials Gen4 incl. PTZ/fisheye/multisensor/dual-sensor) documents /videoStreamId=<n> on port 554 (Stream 1 = main, Stream 2 = sub; multi-sensor heads put later sensors on ports 555/556) — added 2026-10-01 from the official Gen 4 Installation and Configuration Guides; Gen4 records use this path.",
+  "verified_on": "2026-10-01"
 }

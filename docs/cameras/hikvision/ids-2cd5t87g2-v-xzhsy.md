@@ -10,13 +10,15 @@
 | Connectivity | ethernet |
 | Resolution | 8MP (8MP, 3840×2160) |
 | Sensor | 1/1.8" Progressive Scan CMOS |
-| Lens | 1× |
-| Night vision | hybrid (80m), 0.002 lux color |
+| Lens | 1× F1.0 |
+| Field of view | 104 H / 54 V / 127 D° |
+| Night vision | hybrid (80m), 0.0002 lux, 0.002 lux color |
 | Power | PoE (802.3at, Type 2, Class 4), max. 22.8W, or 12 VDC max. 19.2W |
 | Storage | microSD ≤ 1024GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
+| Two-way audio | Yes |
 | Operating temp | -30 to 60°C |
 
 ## Streams

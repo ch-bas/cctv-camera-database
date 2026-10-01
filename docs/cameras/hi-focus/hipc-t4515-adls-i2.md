@@ -10,7 +10,7 @@
 | Sensor | 1/2.7" Sony CMOS |
 | Lens | 1× 2.8 (fixed)mm |
 | Field of view | 102.9° |
-| Night vision | hybrid (40m) |
+| Night vision | hybrid (40m), 0.02 lux color |
 | Power | PoE / DC 12V |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |

@@ -12,6 +12,7 @@
 | Night vision | ir |
 | Power | PoE or 12V DC |
 | Storage | microSD ≤ 1024GB, NVR |
+| IP rating | IP67 |
 | Two-way audio | No |
 
 ## Features
@@ -27,6 +28,7 @@
 ## Sources
 
 - https://www.resideo.com/us/en/pro/products/security/video-cameras/connected-cameras/cx4d-ai-dome-camera-cx4de08f28pw/
+- https://digitalassets.resideo.com/damroot/Original/10013/L_CX4AIDCDD_D.pdf
 
 ---
 *Auto-generated from resideo-cx4d-ai.json — do not edit by hand.*

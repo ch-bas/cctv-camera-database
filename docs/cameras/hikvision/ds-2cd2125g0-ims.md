@@ -37,7 +37,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2125G0-IMS.pdf
+- https://www.hikvision.com/content/dam/hikvision/usa/data-sheet/performance-ip/ds-2cd2125g0-ims_070119na.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2125g0-ims.json — do not edit by hand.*

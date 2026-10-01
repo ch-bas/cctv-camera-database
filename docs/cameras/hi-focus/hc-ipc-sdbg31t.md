@@ -7,13 +7,14 @@
 | Type | ptz |
 | Connectivity | wifi |
 | Resolution | 3MP (3MP, 2304×1296) |
-| Lens | 1× 4 (fixed)mm |
+| Lens | 1× 4 (fixed)mm F1.6 |
 | Field of view | 108° |
 | Night vision | hybrid (20m) |
 | Power | AC 110-240V (E27 bulb socket) |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
 | Two-way audio | Yes |
+| Operating temp | -10°C ~ 50°C°C |
 
 ## Features
 

@@ -39,6 +39,7 @@
 ## Sources
 
 - https://www.uniarch.cn/Products/Network_Cameras/Vari-focal_Series/Vari-focal_Series/IPC-B314-ADZK/
+- https://www.uniarch.cn/Support/FAQ/202209/951565_575360_0.htm
 
 ---
 *Auto-generated from uniarch-ipc-b314-adzk.json — do not edit by hand.*

@@ -37,6 +37,7 @@
 ## Sources
 
 - https://www.usa.canon.com/cameras/network-cameras
+- https://objects.icecat.biz/objects/mmo_74340182_1575970974_8684_7763.pdf
 
 ---
 *Auto-generated from canon-vb-r13ve.json — do not edit by hand.*

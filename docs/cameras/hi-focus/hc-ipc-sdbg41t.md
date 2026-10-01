@@ -7,13 +7,14 @@
 | Type | ptz |
 | Connectivity | wifi |
 | Resolution | 4MP (4MP, 2560×1440) |
-| Lens | 1× 4 (fixed)mm |
+| Lens | 1× 4 (fixed)mm F1.6 |
 | Field of view | 108° |
 | Night vision | hybrid (10m) |
 | Power | AC 110-240V (E27 bulb socket) |
 | Storage | microSD ≤ 128GB |
 | Protocols | http |
 | Two-way audio | Yes |
+| Operating temp | -10°C ~ 50°C°C |
 
 ## Features
 

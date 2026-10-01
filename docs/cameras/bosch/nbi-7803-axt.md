@@ -10,7 +10,7 @@
 | Sensor | 1/1.8" CMOS |
 | Lens | 1× 10.5–47mm |
 | Field of view | 9.3–41.6 (horizontal)° |
-| Night vision | none, 0.008 lux color |
+| Night vision | none, 0.0009 lux, 0.008 lux color |
 | Power | PoE (IEEE 802.3at Type 1, Class 3, 12.95W); 24 VAC; 12–26 VDC |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp, http |
@@ -36,7 +36,7 @@
 
 ## Sources
 
-- https://commerce.boschsecurity.com/us/en/Cameras/c/10164917899
+- https://resources.keenfinity.tech/public/documents/NBI_7803_AXT_Data_sheet_enUS_172775793291.pdf
 
 ---
 *Auto-generated from bosch-nbi-7803-axt.json — do not edit by hand.*

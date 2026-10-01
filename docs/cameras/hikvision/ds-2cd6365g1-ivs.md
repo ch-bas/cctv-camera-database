@@ -39,7 +39,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD6365G1-IVS.pdf
+- https://assets.hikvision.com/prd/normal/all/doc/m000071628/DS-2CD6365G1-IVS_Datasheet_20260414.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd6365g1-ivs.json — do not edit by hand.*

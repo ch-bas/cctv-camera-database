@@ -21,12 +21,12 @@
       "strix_lead": "strixcamdb:bosch"
     },
     {
-      "stream": "main-tunnel",
+      "stream": "main",
       "path": "/rtsp_tunnel",
       "codec": "H.264",
       "verified": true,
-      "source": "Bosch community (community.boschsecurity.com) and multiple Bosch VIP device integration references — /rtsp_tunnel on port 10600 is the RTSP-over-HTTP tunneling endpoint used on certain Bosch camera series (e.g. 4000 IP HD, FLEXIDOME IP). Port 10600 is Bosch-specific for this tunneled path. Referenced by Bosch community KB 'RTSP usage with Bosch VIP Devices' PDF (community.boschsecurity.com/varuj77995/attachments/varuj77995/bt_community-tkb-video/241/1/RTSP%20usage%20with%20Bosch%20Video%20IP%20Devices.pdf).",
-      "strix_lead": "strixcamdb:bosch"
+      "source": "https://download.catalogosicurezza.com/DOWNLOAD/Bosch/Documentazione/TVCC/Manuali/Prodotti_IP/rtsp%20.pdf — Bosch \"RTSP usage with Bosch VIP Devices\" (www.boschsecurity.com), section 3.2.8 Establish RTSP tunnel: parameter rtsp_tunnel, example RTSP://160.10.0.1/rtsp_tunnel (default RTSP port 554); note: rtsp_tunnel is a path, not part of the query string, and does not change the media transport mode — an alias of the default stream that also accepts the ?inst=<N> query (e.g. RTSP://160.10.1.100/rtsp_tunnel?tc=1...).",
+      "strix_lead": "manual:bosch"
     }
   ],
   "unverified_leads": [
@@ -103,6 +103,6 @@
       "note": "Malformed — 'line' is a Bosch RTSP query parameter (for multi-channel encoders: ?line=<N>), not a path segment. This appears to be a StrixCamDB parsing artifact of the query string. The valid usage is /?line=2&inst=1 as documented in the Bosch RTSP VIP Configuration Note."
     }
   ],
-  "notes": "Bosch VIP (Video IP) cameras use a query-string-only RTSP URL format with no fixed path beyond '/': rtsp://{user}:{pass}@{ip}:{port}/?inst=<N>. inst=1 = stream 1 (main/primary), inst=2 = stream 2 (sub/secondary). Additional documented parameters: line=<N> (selects camera/channel on multi-channel encoders), h26x=4 (selects H.264 encoding), multicast=1 (multicast transport), enableaudio=1&audio_line=<N> (audio). Port 554 is the standard RTSP port for direct streaming. Port 10600 is Bosch-specific for the RTSP-over-HTTP tunneling endpoint (/rtsp_tunnel), used on certain camera series (4000 IP HD and others) for firewall traversal. Applies to Bosch DINION IP, FLEXIDOME IP, AUTODOME IP, and VIP encoder product lines. Bosch is a proprietary OEM — these paths are not shared with Dahua/Hikvision/Axis. The 'RTSP VIP Configuration Note' is the authoritative source (doc 9007200806939915, originally at ipp.boschsecurity.com/en_US).",
-  "verified_on": "2026-08-14"
+  "notes": "Bosch VIP (Video IP) cameras use a query-string-only RTSP URL format with no fixed path beyond '/': rtsp://{user}:{pass}@{ip}:{port}/?inst=<N>. inst=1 = stream 1 (main/primary), inst=2 = stream 2 (sub/secondary). Additional documented parameters: line=<N> (selects camera/channel on multi-channel encoders), h26x=4 (selects H.264 encoding), multicast=1 (multicast transport), enableaudio=1&audio_line=<N> (audio). Port 554 is the standard RTSP port for direct streaming. /rtsp_tunnel is a documented alias path for the default stream on the standard RTSP port 554 (Bosch RTSP VIP note §3.2.8); it enables HTTP (port 80) tunneling when the client requests it and accepts the same ?inst=<N> query. Bosch is a proprietary OEM — these paths are not shared with Dahua/Hikvision/Axis. The 'RTSP VIP Configuration Note' is the authoritative source (doc 9007200806939915, originally at ipp.boschsecurity.com/en_US).",
+  "verified_on": "2026-10-01"
 }

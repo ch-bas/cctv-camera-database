@@ -9,7 +9,7 @@
 | Resolution | 3MP (3MP, 2304×1296) |
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 2.8 / 3.6 (fixed)mm |
-| Night vision | hybrid (30m) |
+| Night vision | hybrid (30m), 0.1 lux color |
 | Power | DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |

@@ -39,7 +39,7 @@
 
 ## Sources
 
-- https://amcrest.com/5mp-poe-camera-bullet-ai-ip5m-b1276ew-ai.html
+- https://support.amcrest.com/hc/en-us/articles/14379202542349-Technical-Specifications-IP5M-B1276EW-AI
 
 ---
 *Auto-generated from amcrest-ip5m-b1276ew-ai.json — do not edit by hand.*

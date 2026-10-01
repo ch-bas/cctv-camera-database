@@ -1,0 +1,41 @@
+# Tapo TCW34
+
+| Field | Spec |
+|-------|------|
+| Brand | Tapo |
+| Model | TCW34 |
+| Type | dual-lens |
+| Connectivity | wifi |
+| Resolution | 2K 3MP (3MP, 2304×1296) |
+| Sensor | 1/2.8" Progressive Scan CMOS (Starlight) |
+| Lens | 1× 2.8mm F1.6 |
+| Field of view | 125.5 (Diagonal), 107.8 (Horizontal), 57.8 (Vertical)° |
+| Night vision | hybrid (12m) |
+| Power | 5V DC Power Adapter |
+| Storage | microSD ≤ 512GB, NVR |
+| Protocols | rtsp, onvif, p2p |
+| IP rating | IP65 |
+| Two-way audio | Yes |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2304x1296 | 15 | H.264 |
+
+## Features
+
+- 2K 3MP indoor/outdoor dual-lens pan/tilt Wi-Fi camera
+- fixed wide lens + pan/tilt 6 mm telephoto lens
+- 360 pan with motion tracking, 10.8x digital zoom
+- starlight color night vision + IR to 12 m
+- person / vehicle / pet / line-crossing / baby-cry / glass-break / bark / meow detection
+- two-way audio, 99 dB siren
+- RTSP/ONVIF, SmartThings, microSD up to 512 GB
+
+## Sources
+
+- https://www.tapo.com/en/product/smart-camera/tcw34/
+
+---
+*Auto-generated from tapo-tcw34.json — do not edit by hand.*

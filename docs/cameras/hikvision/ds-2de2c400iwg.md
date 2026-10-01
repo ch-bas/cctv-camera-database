@@ -34,7 +34,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2DE2C400IWG_W.pdf
+- https://www.hikvision.com/de/products/IP-Products/Network-Cameras/Wi-Fi-Series/ds-2de2c400iwg-w/
 
 ---
 *Auto-generated from hikvision-ds-2de2c400iwg.json — do not edit by hand.*

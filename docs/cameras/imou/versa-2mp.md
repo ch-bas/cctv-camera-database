@@ -18,6 +18,7 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | Yes |
+| Operating temp | -20 to 45°C |
 
 ## Streams
 

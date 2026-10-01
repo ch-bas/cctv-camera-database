@@ -35,7 +35,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2326G2-IU-D.pdf
+- https://www.hikvision.com/content/dam/hikvision/products/S000000001/S000000002/S000000003/S000000025/OFR000041/M000014822/Data_Sheet/DS-2CD2326G2-IU-D_Datasheet_V5.7.0_20220607.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2326g2-iu.json — do not edit by hand.*

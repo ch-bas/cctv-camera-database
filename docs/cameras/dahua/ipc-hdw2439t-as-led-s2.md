@@ -7,6 +7,7 @@
 | Type | turret |
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2688×1520) |
+| Sensor | 1/3" CMOS |
 | Field of view | 96° |
 | Night vision | color (30m), 0.004 lux color |
 | Power | PoE/DC12V |

@@ -1,0 +1,31 @@
+# i-PRO M-44-V-T
+
+| Field | Spec |
+|-------|------|
+| Brand | i-PRO |
+| Model | M-44-V-T |
+| Type | bullet |
+| Connectivity | ethernet |
+| Resolution | (4.1MP, 2688×1520) |
+| Sensor | 1/3" Progressive Scan CMOS |
+| Lens | 1× 2.8-12mm |
+| Field of view | 98.26 H / 54.76 V / 127.74 D° |
+| Night vision | ir (30m), 0.003 lux color |
+| Storage | microSD ≤ 256GB |
+| Protocols | rtsp |
+| IP rating | IP67 |
+| Two-way audio | No |
+| Operating temp | -40 to 60°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2688x1520 | 30 | H.265 |
+
+## Sources
+
+- https://i-pro.com/products_and_solutions/en/surveillance/products/m-44-v-t
+
+---
+*Auto-generated from i-pro-m-44-v-t.json — do not edit by hand.*

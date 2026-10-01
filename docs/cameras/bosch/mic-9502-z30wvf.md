@@ -42,9 +42,8 @@
 
 ## Sources
 
-- https://commerce.boschsecurity.com/xl/en/MIC-IP-fusion-9000i/p/F.01U.368.932/
-- https://www.a1securitycameras.com/bosch-mic-9502-z30wvf.html
-- https://netcamcenter.de/de/produkte/ip-kameras/mic-9502-z30wvf
+- https://iqsight.com/f/292130204896374/2584b1aaae/mic_9502_z30wvf_data_sheet_enus_90976681867.pdf
+- https://iqsight.com/en/products/cameras/moving-cameras/mic-ip-fusion-9000i/mic-9502-z30wvf
 
 ---
 *Auto-generated from bosch-mic-9502-z30wvf.json — do not edit by hand.*

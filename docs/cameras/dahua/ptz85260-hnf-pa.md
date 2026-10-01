@@ -8,7 +8,7 @@
 | Connectivity | ethernet |
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/1.8" CMOS |
-| Lens | 1× 6-360mm |
+| Lens | 1× 6-360mm F1.4-F4.5 |
 | Field of view | 56.4-1.2 horizontal° |
 | Night vision | ir (400m), 0.001 lux color |
 | Power | 36 VDC, 5 A (±25%) |
@@ -31,7 +31,7 @@
 - positioning system PTZ
 - 60x optical zoom
 - 400m IR
-- 360° endless pan
+- 360 endless pan
 - face recognition
 - video metadata
 - perimeter protection (IVS tripwire/intrusion)

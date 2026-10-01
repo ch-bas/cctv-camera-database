@@ -10,6 +10,7 @@
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP) |
 | Sensor | 1/3" CMOS |
+| Lens | F1.6 |
 | Field of view | 107h° |
 | Night vision | color (15m), 0.008 lux, 0.008 lux color |
 | Power | PoE (802.3af) / DC 12V |
@@ -17,6 +18,7 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
+| Operating temp | -40 to 55°C |
 | Released | 2022 |
 
 ## Features

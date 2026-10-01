@@ -37,7 +37,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2H43G2-IZS.pdf
+- https://assets.hikvision.com/prd/public/all/doc/sm000058901/DS-2CD2H43G2-IZS_Datasheet_V5.5.113_20230303.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2h43g2-izs.json — do not edit by hand.*

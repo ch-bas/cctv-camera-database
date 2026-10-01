@@ -9,12 +9,20 @@
 | Resolution | 4K/8MP (8MP, 3840×2160) |
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 4.3-144mm |
-| Night vision | ir (200m) |
+| Field of view | 59.8° |
+| Night vision | ir (200m), 0.005 lux color |
 | Power | PoE+ (802.3at) / AC 24V / DC 24V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
+| Operating temp | -30°C ~ 60°C°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 30 | H.265 |
 
 ## Features
 

@@ -8,8 +8,11 @@
 | Connectivity | ethernet |
 | Resolution | 4K (8MP, 3840×2160) |
 | Sensor | 1/2.7" SSC378DE + GC8613 |
+| Lens | 2.7-13.5mm F1.6 |
 | Field of view | 355 pan/85 tilt° |
-| Night vision | ir (40m) |
+| Night vision | ir (40m), 0.001 lux, 0.01 lux color |
+| Power | PoE/DC |
+| Storage | microSD ≤ 512GB |
 | Protocols | rtsp, onvif |
 | Two-way audio | Yes |
 | Operating temp | -40 to 60°C |

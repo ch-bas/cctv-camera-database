@@ -43,7 +43,8 @@
 
 ## Sources
 
-- https://www.hikvision.com/en/products/HiLook-IP-Products/
+- https://assets.hikvision.com/prd/normal/all/doc/sm000098784/IPC-B129HAA-LUF_SL_SRB_Datasheet_20260409.pdf
+- https://www.hikvision.com/mena-en/products/HiLook-IP-Products/Network-Cameras/Value-Camera/ipc-b129haa-lu-f---sl---srb-/
 
 ---
 *Auto-generated from hilook-ipc-b129haa-lu.json — do not edit by hand.*

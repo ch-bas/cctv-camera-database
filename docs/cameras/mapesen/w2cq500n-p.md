@@ -1,0 +1,31 @@
+# Mapesen W2CQ500N-P
+
+| Field | Spec |
+|-------|------|
+| Brand | Mapesen |
+| Model | W2CQ500N-P |
+| Type | covert |
+| Connectivity | ethernet |
+| Resolution | 5MP (5MP, 2880×1616) |
+| Sensor | 1/2.8" CMOS |
+| Lens | 3.7mm |
+| Night vision | 0.01 lux color |
+| Protocols | onvif, rtsp, http |
+| Operating temp | -10 to 50°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2880x1616 | 25 | H.265+ |
+
+## Features
+
+- digital WDR
+
+## Sources
+
+- https://www.mapesen.com/covert-camera/w2c-convert-camera-series.html
+
+---
+*Auto-generated from mapesen-w2cq500n-p.json — do not edit by hand.*

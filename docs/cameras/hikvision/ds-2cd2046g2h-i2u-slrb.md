@@ -34,7 +34,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2046G2H-I2U_SLRB.pdf
+- https://assets.hikvision.com/prd/normal/all/doc/sm000070200/DS-2CD2046G2H-I2U_SLRB_Datasheet_20260105.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2046g2h-i2u-slrb.json — do not edit by hand.*

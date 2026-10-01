@@ -7,6 +7,8 @@
 | Type | dome |
 | Connectivity | ethernet |
 | Resolution | 1080p HD (2MP) |
+| Sensor | 1/2.8" Progressive CMOS |
+| Lens | 2.8mm F1.8 |
 | Field of view | 110h° |
 | Night vision | ir (15m), 0.07 lux color |
 | Power | PoE (802.3af) |
@@ -15,6 +17,7 @@
 | IP rating | IP41 |
 | IK rating | IK10 |
 | Two-way audio | No |
+| Operating temp | 0 to 45°C |
 | Released | 2018 |
 
 ## Features

@@ -8,7 +8,7 @@
 | Model | CAM-FTN12-DM |
 | Type | dome |
 | Connectivity | ethernet |
-| Resolution | 4K (12MP) (12MP, 3840×2160) |
+| Resolution | 4K (12MP) (12MP, 4000×3000) |
 | Field of view | 100 diagonal° |
 | Night vision | hybrid (30m) |
 | Power | PoE |
@@ -29,6 +29,7 @@
 ## Sources
 
 - https://nightowlsp.com/products/add-on-wired-ip-12mp-deterrence-dome-camera-with-2-way-audio-white
+- https://support.nightowlsp.com/en/support/solutions/articles/68000004456-ftn12-dome-camera-specifications
 
 ---
 *Auto-generated from night-owl-cam-ftn12-dm.json — do not edit by hand.*

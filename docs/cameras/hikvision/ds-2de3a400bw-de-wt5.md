@@ -35,7 +35,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2DE3A400BW-DE_WT5.pdf
+- https://assets.hikvision.com/prd/public/all/doc/m000056859/Datasheet-of-DS-2DE3A400BW-DE_WT5_V5.7.3_20230222.pdf
 
 ---
 *Auto-generated from hikvision-ds-2de3a400bw-de-wt5.json — do not edit by hand.*

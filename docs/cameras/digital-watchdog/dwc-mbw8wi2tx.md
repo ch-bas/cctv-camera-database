@@ -30,6 +30,7 @@
 
 - https://digital-watchdog.com/productdetail/DWC-MBW8Wi2TX/
 - https://digital-watchdog.com/admin/assets/_downloads/DW_DS_DWC-MBW8Wi2TX_Rev0726.pdf
+- https://digitalwatchdog.happyfox.com/kb/article/323-megapix-ip-camera-rtsp-stream-list/
 
 ---
 *Auto-generated from digital-watchdog-dwc-mbw8wi2tx.json — do not edit by hand.*

@@ -38,7 +38,7 @@
 
 ## Sources
 
-- https://amcrest.com/5mp-poe-camera-panoramic-ip5m-f1180ew-v2.html
+- https://support.amcrest.com/hc/en-us/articles/4409736293901-Technical-Specifications-IP5M-F1180EW-V2
 
 ---
 *Auto-generated from amcrest-ip5m-f1180ew-v2.json — do not edit by hand.*

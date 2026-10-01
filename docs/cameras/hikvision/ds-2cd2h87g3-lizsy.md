@@ -8,7 +8,7 @@
 | Connectivity | ethernet |
 | Resolution | 4K/8MP (8MP, 3840×2160) |
 | Sensor | 1/1.8" CMOS |
-| Lens | 1× 2.8-12 (motorized)mm |
+| Lens | 1× 2.8-12 (motorized)mm F1.2 |
 | Field of view | 112.3-41.2° |
 | Night vision | hybrid (40m), 0.001 lux color |
 | Power | PoE+ (802.3at, Class 4, max 20 W) / 12 VDC |
@@ -17,6 +17,7 @@
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |
+| Operating temp | -30°C to 60°C°C |
 
 ## Streams
 

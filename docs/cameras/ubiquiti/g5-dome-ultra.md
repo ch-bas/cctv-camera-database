@@ -30,6 +30,7 @@
 ## Sources
 
 - https://techspecs.ui.com/unifi/cameras-nvrs/uvc-g5-dome-ultra
+- https://store.ui.com/us/en/category/cameras-dome-turret/products/uvc-g5-dome-ultra
 
 ---
 *Auto-generated from ubiquiti-g5-dome-ultra.json — do not edit by hand.*

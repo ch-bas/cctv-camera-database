@@ -14,7 +14,7 @@
 | Field of view | 78.6 (3.6mm) / 53.2 (6mm) / 36.8 (8mm) / 23.7 (12mm) / 17.8 (16mm)° |
 | Night vision | ir, 0.05 lux color |
 | Power | PoE (IEEE802.3af) / 12V DC |
-| Storage | NVR |
+| Storage | microSD ≤ 128GB, NVR |
 | Protocols | onvif, rtsp, http |
 | IP rating | IP67 |
 | Operating temp | -40 to 70°C |

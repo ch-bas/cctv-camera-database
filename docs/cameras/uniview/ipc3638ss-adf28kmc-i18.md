@@ -1,0 +1,35 @@
+# Uniview IPC3638SS-ADF28KMC-I18
+
+*Also known as: IPC3638SS-ADF40KMC-I18*
+
+| Field | Spec |
+|-------|------|
+| Brand | Uniview |
+| Model | IPC3638SS-ADF28KMC-I18 |
+| Type | turret |
+| Connectivity | ethernet |
+| Resolution | 4K (8MP, 3840×2160) |
+| Sensor | 1/2.8" CMOS |
+| Lens | 1× 2.8mm F1.0 |
+| Field of view | 106.5 horizontal, 57.9 vertical, 132 diagonal (2.8mm)° |
+| Night vision | hybrid (30m), 0.001 lux color |
+| Power | PoE (IEEE 802.3af) / DC 12V |
+| Storage | microSD ≤ 512GB, NVR |
+| Protocols | onvif, rtsp |
+| IP rating | IP67 |
+| Two-way audio | Yes |
+| Operating temp | -30 to 60°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 30 | H.265 |
+| sub | 1280x720 | 30 | H.265 |
+
+## Sources
+
+- https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/052e63fe-c4bb-4db8-82f9-5b96528ea0e9/86ec0c97-92a9-4013-812d-7000f95988a2.pdf
+
+---
+*Auto-generated from uniview-ipc3638ss-adf28kmc-i18.json — do not edit by hand.*

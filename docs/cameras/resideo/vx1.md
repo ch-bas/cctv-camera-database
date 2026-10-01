@@ -10,6 +10,7 @@
 | Connectivity | wifi |
 | Resolution | 5MP HD (5MP) |
 | Night vision | color |
+| IP rating | IP65 |
 | Two-way audio | Yes |
 | Operating temp | -40 to 50°C |
 
@@ -28,6 +29,7 @@
 ## Sources
 
 - https://www.resideo.com/us/en/pro/products/security/video-cameras/connected-cameras/vx1-hd-video-doorbell-camw-wdb/
+- https://digitalassets.resideo.com/damroot/Original/10002/L_VX1HDVDD_D.pdf
 
 ---
 *Auto-generated from resideo-vx1.json — do not edit by hand.*

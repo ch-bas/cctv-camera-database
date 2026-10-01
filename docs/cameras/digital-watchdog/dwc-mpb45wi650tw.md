@@ -40,8 +40,9 @@
 
 ## Sources
 
-- https://digital-watchdog.com/productdetail/DWC-M(P)B45Wi650TW/
+- https://digital-watchdog.com/productdetail/DWC-M%28P%29B45Wi650TW/
 - https://digital-watchdog.com/admin/assets/_downloads/DW_DS_%20DWC-MB45Wi650TW_Rev0726.pdf
+- https://digitalwatchdog.happyfox.com/kb/article/323-megapix-ip-camera-rtsp-stream-list/
 
 ---
 *Auto-generated from digital-watchdog-dwc-mpb45wi650tw.json — do not edit by hand.*

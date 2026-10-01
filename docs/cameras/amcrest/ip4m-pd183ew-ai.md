@@ -39,7 +39,7 @@
 
 ## Sources
 
-- https://amcrest.com/4mp-poe-ai-dome-camera-panoramic-ip4m-pd183ew-ai.html
+- https://support.amcrest.com/hc/en-us/articles/13955700630413-Technical-Specifications-IP4M-PD183EW-AI
 
 ---
 *Auto-generated from amcrest-ip4m-pd183ew-ai.json — do not edit by hand.*

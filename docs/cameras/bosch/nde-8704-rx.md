@@ -1,9 +1,9 @@
-# Bosch FLEXIDOME 8100i — X series (NDE-8704-RX)
+# Bosch FLEXIDOME 8100i - X series (NDE-8704-RX)
 
 | Field | Spec |
 |-------|------|
 | Brand | Bosch |
-| Model | FLEXIDOME 8100i — X series (NDE-8704-RX) |
+| Model | FLEXIDOME 8100i - X series (NDE-8704-RX) |
 | Type | dome |
 | Connectivity | ethernet |
 | Resolution | 4K UHD (8.3MP, 3840×2160) |
@@ -38,8 +38,6 @@
 
 ## Sources
 
-- https://netcamcenter.de/de/produkte/ip-kameras/nde-8704-rx
-- https://netcamcenter.com/en/products/ip-cameras/nde-8704-rx
 - https://www.a1securitycameras.com/bosch-nde-8704-rx.html
 - https://www.alldataresource.com/Bosch-NDE-8704-RX-Flexidome-8100i-Series-Dome-Camera-Outdoor-8MP-110%C2%B0--48%C2%B0-Field-of-View-Starlight-and-HDR-Technology_p_683716.html
 - https://www.boschsecurity.com/us/en/products/cameras/fixed-cameras/flexidome-8100i/nde-8704-rx/

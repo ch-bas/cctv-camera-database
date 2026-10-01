@@ -37,7 +37,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2167G2H-LISU.pdf
+- https://www.hikvision.com/content/dam/hikvision/products/S000000001/S000000002/S000000003/S000000025/OFR007893/M000079044/SM000062546/Data_Sheet/DS-2CD2167G2H-LISU_Datasheet_20240116.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2167g2h-lisu.json — do not edit by hand.*

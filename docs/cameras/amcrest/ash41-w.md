@@ -39,7 +39,7 @@
 
 ## Sources
 
-- https://amcrest.com/4mp-smarthome-wifi-camera-dome-ptz-ash41-w.html
+- https://support.amcrest.com/hc/en-us/articles/4585013097485-Technical-Specifications-ASH41
 
 ---
 *Auto-generated from amcrest-ash41-w.json — do not edit by hand.*

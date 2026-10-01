@@ -40,6 +40,7 @@
 ## Sources
 
 - https://www.axis.com/dam/public/47/44/05/datasheet-canon-vb-h47-en-US-379306.pdf
+- http://gdlp01.c-wss.com/gds/1/0300044031/05/vbneog-e.pdf
 
 ---
 *Auto-generated from canon-vb-h47.json — do not edit by hand.*

@@ -12,12 +12,19 @@
 | Sensor | 1/2.8" Progressive Scan CMOS |
 | Lens | 1× 4.8-120mm F1.6-F3.5 |
 | Field of view | 59.5-2.6 horizontal (wide-tele)° |
-| Night vision | ir (100m), 0.005 lux color |
+| Night vision | ir (100m), 0.001 lux, 0.005 lux color |
 | Power | PoE+ (802.3at) / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp, http |
 | IP rating | IP66 |
 | Two-way audio | No |
+| Operating temp | -30 to 65°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 30 | H.265+ |
 
 ## Features
 

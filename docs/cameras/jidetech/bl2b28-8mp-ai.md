@@ -8,10 +8,14 @@
 | Connectivity | ethernet |
 | Resolution | 8MP (8MP, 3840×2160) |
 | Sensor | 1/1.8" CMOS |
+| Lens | 2.7-13.5mm F1.2 |
 | Field of view | 104.7 to 49.1 horizontal° |
 | Night vision | ir (50m), 0.001 lux color |
+| Power | PoE/DC |
+| Storage | microSD ≤ 512GB |
 | Protocols | rtsp, onvif |
 | IP rating | IP67 |
+| IK rating | IK10 |
 | Two-way audio | Yes |
 | Operating temp | -30 to 60°C |
 

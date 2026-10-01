@@ -34,6 +34,7 @@
 ## Sources
 
 - https://nellyssecurity.com/products/uniarch-by-uniview-fullhd-1080p-2mp-weatherproof-turret-ip-security-camera-with-a-2-8mm-fixed-lens-ipc-t122-apf28
+- https://www.uniarch.cn/Support/FAQ/202209/951565_575360_0.htm
 
 ---
 *Auto-generated from uniarch-ipc-t122-apf28.json — do not edit by hand.*

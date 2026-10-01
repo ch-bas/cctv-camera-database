@@ -15,6 +15,7 @@
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
 | Two-way audio | Yes |
+| Operating temp | -10 to 50°C |
 
 ## Features
 
@@ -31,6 +32,7 @@
 ## Sources
 
 - https://i-pro.com/products_and_solutions/en/surveillance/products/wv-s2136lga-b
+- https://i-pro.com/products_and_solutions/sites/default/files/2026-02/WV-S2136LGA-B_i-PRO_A4_R8_260224.pdf
 
 ---
 *Auto-generated from i-pro-wv-s2136lga-b.json — do not edit by hand.*

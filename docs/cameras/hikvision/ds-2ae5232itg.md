@@ -8,13 +8,14 @@
 | Connectivity | coax |
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/2.8" CMOS |
-| Lens | 1× 4.8-153.6mm |
+| Lens | 1× 4.8-153.6mm F1.6 |
 | Field of view | 55h° |
-| Night vision | ir (150m), 0.005 lux color |
+| Night vision | ir (150m), 0.001 lux, 0.005 lux color |
 | Power | 36 VDC |
 | Storage | NVR |
 | IP rating | IP66 |
 | Two-way audio | No |
+| Operating temp | -30 to 65°C |
 
 ## Features
 

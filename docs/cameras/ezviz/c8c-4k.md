@@ -12,7 +12,7 @@
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 4 (fixed)mm F1.6 |
 | Field of view | 350 pan / 90 tilt° |
-| Night vision | hybrid (30m) |
+| Night vision | hybrid (30m), 0.5 lux |
 | Power | DC 12V/1A (max 12W) |
 | Storage | microSD ≤ 512GB |
 | Two-way audio | Yes |

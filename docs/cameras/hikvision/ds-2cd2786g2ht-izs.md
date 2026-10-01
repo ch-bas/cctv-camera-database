@@ -39,7 +39,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2786G2HT-IZS.pdf
+- https://assets.hikvision.com/prd/public/all/doc/sm000059079/DS-2CD2786G2HT-IZS_Datasheet_20230719.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2786g2ht-izs.json — do not edit by hand.*

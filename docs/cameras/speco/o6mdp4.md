@@ -8,13 +8,15 @@
 | Connectivity | ethernet |
 | Resolution | 6MP (6MP, 3072×2048) |
 | Sensor | 1/2.5" progressive scan CMOS |
-| Lens | 1× 1.65mm |
+| Lens | 1× 1.65mm F2.0 |
 | Field of view | 360 (ceiling mount) or 180 (wall mount)° |
 | Night vision | ir (30m), 0.01 lux, 0.01 lux color |
 | Power | PoE (IEEE 802.3af) |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
+| Two-way audio | Yes |
+| Operating temp | -40 to 60°C |
 
 ## Streams
 

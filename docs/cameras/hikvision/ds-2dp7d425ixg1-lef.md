@@ -36,6 +36,7 @@
 ## Sources
 
 - https://www.hikvision.com/en/products/IP-Products/PTZ-Cameras/PanoVu-Series/
+- https://assets.hikvision.com/prd/public/all/doc/sm000085566/DS-2DP7D425IXG1-LEF_416_Datasheet_20250516.pdf
 
 ---
 *Auto-generated from hikvision-ds-2dp7d425ixg1-lef.json — do not edit by hand.*

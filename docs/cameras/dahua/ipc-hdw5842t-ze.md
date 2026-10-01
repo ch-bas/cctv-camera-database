@@ -10,15 +10,22 @@
 | Connectivity | ethernet |
 | Resolution | 4K UHD (8MP, 3840×2160) |
 | Sensor | 1/1.8" CMOS |
-| Lens | 1× 2.7-12mm |
+| Lens | 1× 2.7-12mm F1.8 |
 | Field of view | 113° |
-| Night vision | ir (40m), 0.0008 lux color |
+| Night vision | ir (40m), 0.0004 lux, 0.0008 lux color |
 | Power | PoE / ePoE / DC 12V |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |
+| Operating temp | -30 to +60°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 30 | H.265 |
 
 ## Features
 

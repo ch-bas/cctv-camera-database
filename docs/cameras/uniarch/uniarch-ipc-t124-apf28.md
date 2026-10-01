@@ -35,6 +35,7 @@
 
 - https://www.ponosurveillancellc.com/product-page/uniarch-by-uniview-1440p-4mp-ndaa-compliant-weatherproof-ip-security-camera
 - https://www.secureitsecurities.com/ecomm/product/ipc-t124-apf28
+- https://www.uniarch.cn/Support/FAQ/202209/951565_575360_0.htm
 
 ---
 *Auto-generated from uniarch-ipc-t124-apf28.json — do not edit by hand.*

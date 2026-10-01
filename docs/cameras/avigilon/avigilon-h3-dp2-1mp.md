@@ -1,0 +1,43 @@
+# Avigilon H3 1MP Pendant Dome (1.0-H3-DP2)
+
+*Also known as: 1.0-H3-DP2*
+
+| Field | Spec |
+|-------|------|
+| Brand | Avigilon |
+| Model | H3 1MP Pendant Dome (1.0-H3-DP2) |
+| Type | dome |
+| Connectivity | ethernet |
+| Resolution | 1MP (1MP, 1280×720) |
+| Sensor | 1/2.7" progressive scan CMOS |
+| Lens | 1× 9-22mm F1.6 |
+| Field of view | 15-35 horizontal° |
+| Night vision | none, 0.04 lux, 0.4 lux color |
+| Power | PoE (802.3af Class 3), 24 VAC, or 12 VDC |
+| Storage | NVR |
+| Protocols | onvif, rtsp, http |
+| IP rating | IP66 |
+| IK rating | IK10 |
+| Two-way audio | No |
+| Operating temp | -30 to 50°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1280x720 | 20 | H.264 |
+
+## Features
+
+- P-Iris lens with remote focus and zoom
+- 69 dB dynamic range
+- ONVIF compliant (v1.02, 2.00, Profile S)
+- 360° pan, 180° tilt, 180° azimuth adjustment
+- Analog video output (NTSC/PAL)
+
+## Sources
+
+- https://assets.avigilon.com/file_library/pdf/h3-dome/avigilon-h264-hd-outdoor-dome-camera-datasheet-en-rev3.pdf
+
+---
+*Auto-generated from avigilon-h3-dp2-1mp.json — do not edit by hand.*

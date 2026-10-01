@@ -10,6 +10,7 @@
 | Sensor | 1/3.02" Color CMOS |
 | Lens | 3.6mm F1.6 |
 | Night vision | color (25m), 0.01 lux color |
+| Two-way audio | No |
 | Operating temp | -20 to 50°C |
 
 ## Features

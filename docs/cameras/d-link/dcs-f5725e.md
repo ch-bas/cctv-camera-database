@@ -1,0 +1,47 @@
+# D-Link DCS-F5725E
+
+*Also known as: 5MP Day & Night Motorized Vari-Focal Bullet Camera*
+
+| Field | Spec |
+|-------|------|
+| Brand | D-Link |
+| Model | DCS-F5725E |
+| Type | bullet |
+| Connectivity | ethernet |
+| Resolution | 5MP (5MP, 2592×1944) |
+| Sensor | 1/2.7" progressive scan 5.0-megapixel CMOS |
+| Lens | 1× 2.7-13.5mm F1.2 |
+| Field of view | 93.38-28.56 horizontal, 88-16.4 vertical, 121.4-33.7 diagonal° |
+| Night vision | ir (50m), 0.002 lux color |
+| Power | PoE (802.3af) / DC12V |
+| Storage | microSD ≤ 128GB, NVR |
+| Protocols | onvif, rtsp, http |
+| IP rating | IP67 |
+| Two-way audio | Yes |
+| Operating temp | -35 to 60°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2592x1944 | 20 | H.265 |
+| sub | 1920x1080 | 30 | H.265 |
+
+## Features
+
+- Up to 120 dB optical WDR
+- Autofocus motorized varifocal 2.7-13.5mm
+- Face detection
+- People counting
+- Intrusion detection
+- Line crossing detection
+- Two-way audio
+- ONVIF Profile S / Profile G conformant
+
+## Sources
+
+- https://www.dlink.com/middle-east/en/products/dcs-f5725e-5mp-day-night-motorized-vari-focal-bullet-camera
+- https://www.dlink.com/middle-east/en/-/media/business_products/dcs/dcs-f5725e/datasheet/dcsf5725e.pdf
+
+---
+*Auto-generated from d-link-dcs-f5725e.json — do not edit by hand.*

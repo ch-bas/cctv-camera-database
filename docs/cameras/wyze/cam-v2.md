@@ -9,7 +9,7 @@
 | Type | box |
 | Connectivity | wifi |
 | Resolution | 1080p (2MP, 1920×1080) |
-| Sensor | 1/2.9" CMOS |
+| Sensor | 1/2.9" CMOS (SOI JXF22) |
 | Lens | 1× 2.8 (fixed)mm F2.0 |
 | Field of view | 110 diagonal° |
 | Night vision | ir (9m) |

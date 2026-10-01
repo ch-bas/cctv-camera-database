@@ -9,7 +9,7 @@
 | Resolution | 4MP (4MP, 2560×1440) |
 | Sensor | 1/3" CMOS |
 | Lens | 1× 2.8 / 4 (fixed)mm |
-| Night vision | hybrid (50m) |
+| Night vision | hybrid (50m), 0.001 lux color |
 | Power | PoE / DC 12V |
 | Storage | NVR |
 | Protocols | onvif, rtsp |

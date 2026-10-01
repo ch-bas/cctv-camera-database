@@ -36,6 +36,7 @@
 
 - https://nellyssecurity.com/products/uniarch-by-uniview-1080p-smart-ir-ndaa-compliant-weatherproof-bullet-camera-with-a-2-8mm-lens-ipc-b122-apf28
 - https://www.uma-tech.com/en/products/uniarch-ipc-b122-apf28-full-hd-2mp-buiten-bullet-camera-met-2-8-mm-lens-30m-smart-ir-wdr-poe-ingebouwde-microfoon-en-gratis-applicatie-1
+- https://www.uniarch.cn/Support/FAQ/202209/951565_575360_0.htm
 
 ---
 *Auto-generated from uniarch-ipc-b122-apf28.json — do not edit by hand.*

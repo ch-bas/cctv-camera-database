@@ -10,7 +10,7 @@
 | Sensor | 1/1.8" CMOS (2.9 μm) |
 | Lens | 1× 4.4-10mm F1.35-F1.97 |
 | Field of view | 103-49 (horizontal), 53-27 (vertical)° |
-| Night vision | none, 0.008 lux color |
+| Night vision | none, 0.0007 lux, 0.008 lux color |
 | Power | PoE (IEEE 802.3at Type 1 Class 3, 12.95W), 24 VAC, 12-26 VDC |
 | Storage | NVR |
 | Protocols | onvif, rtsp, http |
@@ -44,7 +44,6 @@
 
 - https://resources.keenfinity.tech/public/documents/NBI_7802_AX_Data_sheet_enUS_172743006091.pdf
 - https://commerce.keenfinity.tech/au/en/DINION-7100s/p/F.01U.428.815/
-- https://netcamcenter.de/de/produkte/ip-kameras/nbi-7802-ax
 
 ---
 *Auto-generated from bosch-nbi-7802-ax.json — do not edit by hand.*

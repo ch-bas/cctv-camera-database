@@ -1,6 +1,6 @@
 # Tapo C660 KIT
 
-*Also known as: VistaCam 360 Solar*
+*Also known as: VistaCam 360 Solar, Tapo C660*
 
 | Field | Spec |
 |-------|------|

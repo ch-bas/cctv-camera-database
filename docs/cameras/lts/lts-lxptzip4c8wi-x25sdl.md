@@ -11,12 +11,13 @@
 | Resolution | 8MP (8MP) |
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 5-125mm F1.6 |
-| Night vision | hybrid (100m) |
+| Night vision | hybrid (100m), 0.0006 lux, 0.006 lux color |
 | Power | 12V DC or PoE+ |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | Two-way audio | No |
+| Operating temp | -40 to 60°C |
 
 ## Features
 

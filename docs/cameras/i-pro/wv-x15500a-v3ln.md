@@ -17,6 +17,13 @@
 | IP rating | IP66/IP67 |
 | IK rating | IK10 |
 | Two-way audio | Yes |
+| Operating temp | -40 to 55°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3072x1728 | 60 | H.264 |
 
 ## Features
 
@@ -36,6 +43,7 @@
 ## Sources
 
 - https://i-pro.com/products_and_solutions/en/surveillance/products/wv-x15500a-v3ln
+- https://i-pro.com/products_and_solutions/sites/default/files/2026-07/WV-X15500A-V3LN%20_%20i-PRO%20A4_R2_260716.pdf
 
 ---
 *Auto-generated from i-pro-wv-x15500a-v3ln.json — do not edit by hand.*
