@@ -60,14 +60,16 @@
   "release_notes": "Longse is a Chinese OEM manufacturer whose hardware and firmware platform underpins a large share of unbranded/white-label budget cameras sold on Amazon and AliExpress under many different storefront names. This is one of the most searched-for Longse SKUs by owners trying to identify unbranded hardware.",
   "sources": [
     "https://www.pyramid.lt/en/ip-camera-longse-lbh30ss500-5mp-sony-starvis-28mm-40m-ir-poe-microsd-slot",
-    "https://www.longse.com/index.php?m=search&c=index&a=find&siteid=25&q=LBH30"
+    "https://www.longse.com/index.php?m=search&c=index&a=find&siteid=25&q=LBH30",
+    "https://web.archive.org/web/20190911214224/http://www.longse.com/SUPPORT/FAQ/Camera/2017/0822/973.html"
   ],
-  "last_verified": "2026-07-05",
+  "last_verified": "2026-10-01",
   "status": "available",
   "configs": {
     "frigate": {
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/",
-      "notes": "Bare-root RTSP path confirmed as the top crowd-sourced connection method for this exact model (iSpyConnect/Agent DVR community database). ONVIF auto-discovery is also reported to work.",
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/1",
+      "notes": "Longse official RTSP format (support FAQ): /0 = main stream, /1 = sub stream, /2 = third stream, port 554. A bare-root path was also reported by community users for this platform. Not independently verified for this exact model.",
       "verified": false,
       "onvif_port": 80
     },
