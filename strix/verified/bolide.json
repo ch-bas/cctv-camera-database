@@ -1,0 +1,23 @@
+{
+  "brand": "Bolide",
+  "brand_id": "bolide",
+  "status": "unverified",
+  "default_port": 554,
+  "templates": [],
+  "unverified_leads": [
+    {
+      "path": "/ch00/0",
+      "note": "Official, but legacy-only. Bolide \"HD Network Camera User Manual\" (https://cdn.shopify.com/s/files/1/0538/4264/1085/files/HD_NETWORK_CAMERA_USER_MANUAL.pdf, section 5.6 RTSP; PDF dated 2015, listed on bolideco.com/pages/downloads as \"HD Network Camera 1/27/2017\") prints: \"For IP cameras of 3MP/4MP Series: rtsp://IP:Port/ch00/A  A:0 (main bit stream), 1 (sub-bit stream), 2 (cell phone bit stream)\". The manual covers the old H.265 3MP/4MP iPac generation (media port 9988, default IP 192.168.1.168); no Bolide document states this path for the current 5MP/8MP/12MP IPAC-AI, NDAA/TAA, BTG-N/NS, thermal or 4G lines."
+    },
+    {
+      "path": "/ch00/1",
+      "note": "Sub stream of the same legacy 3MP/4MP-series scheme (same manual, section 5.6). /ch00/2 is the \"cell phone\" stream."
+    },
+    {
+      "path": "/0",
+      "note": "Same manual, section 5.6: \"For IP cameras of 2MP Series: rtsp://IP:Port/A  A:0 (main bit stream), 1 (sub-bit stream), 2 (cell phone bit stream)\" — the old H.264 1.3MP/2MP series only (sub stream /1)."
+    }
+  ],
+  "notes": "Bolide Technology Group (bolideco.com) publishes exactly one IP-camera manual that prints an RTSP URL: the legacy \"HD Network Camera User Manual\" (2015), which documents RTSP on default port 554 (changeable to 1024-65535) with rtsp://IP:Port/ch00/A for its H.265 3MP/4MP series and rtsp://IP:Port/A for its H.264 2MP series (A = 0 main, 1 sub, 2 mobile). None of the cameras in this dataset belong to those series: the current catalogue is 5MP/8MP/12MP IPAC-AI, NDAA/TAA, BTG-N/NS, panoramic, thermal and 4G/solar models, and their datasheets, the BN8037AI-4GS quick start guide, the 2026 product catalogue/portfolio PDFs, the product pages and the support/downloads pages list RTSP only as a supported protocol (plus ONVIF Profile S/G/T/M) without any URL path. Because the documented path is tied to an older firmware generation and the brand does not publish one for the current lines, no brand template is published; the legacy paths are kept as leads only. Practical guidance: use ONVIF discovery, or read the instruction string the camera prints on its own Network > RTSP page. Default port 554 is from the legacy manual. (The BN-NVR-NX recorder manual documents rtsp://IP:Port/chA/B for NVR channels — recorders, not cameras.) Checked 2026-10-01: bolideco.com downloads/support pages, all 215 product pages (products.json), site search, catalogue PDFs, and archived bolideco.com support/download pages.",
+  "verified_on": "2026-10-01"
+}
