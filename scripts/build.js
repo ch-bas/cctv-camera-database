@@ -551,6 +551,16 @@ function main() {
     };
     fs.writeFileSync(path.join(mirrorDir, "data-meta.json"), JSON.stringify(meta, null, 2) + "\n");
     outputs.push(path.join(mirrorDir, "data-meta.json"));
+
+    // The brand-level RTSP guide layer (built separately by
+    // `npm run build-rtsp-patterns`). Downstream sites render their RTSP
+    // guide pages from it, so it must travel with cameras.json — otherwise
+    // camera pages and guide pages disagree after a guide correction.
+    const rtspSrc = path.join(DATA_DIR, "rtsp-patterns.json");
+    if (fs.existsSync(rtspSrc)) {
+      fs.copyFileSync(rtspSrc, path.join(mirrorDir, "rtsp-patterns.json"));
+      outputs.push(path.join(mirrorDir, "rtsp-patterns.json"));
+    }
   }
 
   if (updateReadme(cameras)) outputs.push("README.md");
