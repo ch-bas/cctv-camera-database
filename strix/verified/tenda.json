@@ -1,0 +1,26 @@
+{
+  "brand": "Tenda",
+  "brand_id": "tenda",
+  "status": "verified",
+  "default_port": 8554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/profile0",
+      "codec": "H.264|H.265",
+      "verified": true,
+      "source": "https://www.tendacn.com/us/material/show/844937962672197 — Tenda FAQ \"How does third-party software retrieve camera video feed through RTSP?\" (Video Surveillance, 2026-09-03): \"Stream-access URL format (excluding CP6 V2.0): Main stream: rtsp://IP:port/profile0 ... port: RTSP port, default value is 8554 ... profile0 stands for the main stream and profile1 for the sub-stream\", example rtsp://192.168.1.203:8554/profile0 (username admin, password admin123456). Same path in Tenda's \"[Camera] Video playback from IP Cam by RTSP\" (https://www.tendacn.com/us/material/show/2003692, 2025-06-11) for CP3 v2, CP7 and the ITxx/ICxx series: rtsp://IP.address.of.camera:8554/profile0 (HiRes).",
+      "strix_lead": "manual:tenda"
+    },
+    {
+      "stream": "sub",
+      "path": "/profile1",
+      "codec": "H.264|H.265",
+      "verified": true,
+      "source": "https://www.tendacn.com/us/material/show/844937962672197 — Tenda FAQ \"How does third-party software retrieve camera video feed through RTSP?\": \"Sub-stream: rtsp://IP:port/profile1\", example rtsp://192.168.1.203:8554/profile1, default RTSP port 8554. Same path in Tenda's \"[Camera] Video playback from IP Cam by RTSP\" (https://www.tendacn.com/us/material/show/2003692) for CP3 v2, CP7 and the ITxx/ICxx series: rtsp://IP.address.of.camera:8554/profile1 (LowRes).",
+      "strix_lead": "manual:tenda"
+    }
+  ],
+  "notes": "Tenda's RTSP FAQ gives one format for every Tenda camera that supports RTSP except the CP6 V2.0: rtsp://{user}:{pass}@{ip}:8554/profile0 (main) and /profile1 (sub) — note the non-standard default port 8554. Default login admin / admin123456 (changeable in the TDSEE app or the camera web UI). Tenda's per-model table (\"[Camera] Video playback from IP Cam by RTSP\", 2025-06-11) lists the lines that differ, all on port 554: CP6 and CT6 use /tenda (main) and /tenda_sub (sub); CP3 v3 and CH3 v1/v2 use /ch=1?subtype=0 (main) and /ch=1?subtype=1 (sub) — those records carry their own URL. The same table confirms /profile0 + /profile1 on port 8554 for CP3 v2, CP7 and the ITxx/ICxx wired series. Newer models that the table does not name (CH7/CH9/CH10, CP3 Pro, the RH/RP/RT regional models, TC/BC series) fall under the FAQ's general format; if it does not connect, read the stream URL with an ONVIF client (Tenda recommends ONVIF Device Manager or Happytime Onvif Client) — the same Tenda article shows that route. Tenda NVRs use rtsp://<nvr-ip>:554/ch=<N>&subtype=0|1 and are not covered here.",
+  "verified_on": "2026-10-01"
+}

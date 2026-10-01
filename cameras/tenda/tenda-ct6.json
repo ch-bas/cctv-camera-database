@@ -64,9 +64,11 @@
   "cloud_dependency": "cloud-optional",
   "configs": {
     "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/tenda",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/tenda_sub",
       "onvif_port": 80,
       "verified": false,
-      "notes": "Tenda SMB camera exposes ONVIF and RTSP (main /1, sub /2 typical); confirm exact RTSP path via ONVIF discovery or the web UI."
+      "notes": "Tenda's RTSP table lists the CT6 at rtsp://<ip>/tenda (main) and /tenda_sub (sub) on the default RTSP port 554 - not the /profile0 path on 8554 of most Tenda cameras. ONVIF is also supported (datasheet)."
     },
     "home_assistant": {
       "integration": "onvif"
@@ -76,9 +78,10 @@
     }
   },
   "sources": [
-    "https://static.tenda.com.cn/tdeweb/download/CT6/CT6V2.0%20Datasheet.pdf"
+    "https://static.tenda.com.cn/tdeweb/download/CT6/CT6V2.0%20Datasheet.pdf",
+    "https://www.tendacn.com/us/material/show/2003692"
   ],
-  "last_verified": "2026-09-21",
+  "last_verified": "2026-10-01",
   "markets": [
     "global"
   ],

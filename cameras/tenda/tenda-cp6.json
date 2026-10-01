@@ -33,6 +33,9 @@
     "max_microsd_gb": 256,
     "cloud": true
   },
+  "protocols": [
+    "rtsp"
+  ],
   "audio": {
     "microphone": true,
     "speaker": true,
@@ -57,23 +60,26 @@
   "cloud_dependency": "cloud-optional",
   "configs": {
     "frigate": {
-      "onvif_port": 80,
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/tenda",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/tenda_sub",
       "verified": false,
-      "notes": "Tenda app/cloud camera (TDSEE app); ONVIF/RTSP not documented - no usable local stream for Frigate/Blue Iris."
+      "notes": "Tenda documents RTSP for the CP6 V2.0 on port 554: /tenda (main) and /tenda_sub (sub) - not the /profile0 path on 8554 of other Tenda cameras. ONVIF is not listed on the datasheet, so add it by RTSP URL (no ONVIF discovery/PTZ)."
     },
     "home_assistant": {
-      "integration": "onvif",
-      "notes": "Tenda app/cloud camera (TDSEE app); ONVIF/RTSP not documented - no usable local stream for Frigate/Blue Iris."
+      "integration": "generic",
+      "notes": "RTSP documented; ONVIF not listed - use Generic Camera with the RTSP URL."
     },
     "blue_iris": {
       "profile": "Generic/ONVIF",
-      "notes": "Tenda app/cloud camera (TDSEE app); ONVIF/RTSP not documented - no usable local stream for Frigate/Blue Iris."
+      "notes": "RTSP documented by Tenda (port 554, /tenda and /tenda_sub); ONVIF not listed - add by RTSP URL."
     }
   },
   "sources": [
-    "https://static.tenda.com.cn/tdeweb/download/CP6/CP6v2.0%20Datasheet.pdf"
+    "https://static.tenda.com.cn/tdeweb/download/CP6/CP6v2.0%20Datasheet.pdf",
+    "https://www.tendacn.com/us/material/show/844937962672197",
+    "https://www.tendacn.com/us/material/show/2003692"
   ],
-  "last_verified": "2026-09-21",
+  "last_verified": "2026-10-01",
   "markets": [
     "global"
   ],
