@@ -9,6 +9,7 @@
 | Resolution | (6MP) |
 | Power | PoE |
 | Storage | microSD ≤ 512GB |
+| Protocols | onvif |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 
@@ -23,6 +24,7 @@
 ## Sources
 
 - https://anpviz.com/products/anpviz-6mp-poe-camera-auto-tracking-camera-security-sound-light-alarm-25x-optical-zoom-2-way-audio-ai-motion-detection-ip66-dwdr-1
+- https://drive.google.com/file/d/1L41Lynx-L-0r8BrRpg3a1c-Xmk8nYjA2/view
 
 ---
 *Auto-generated from anpviz-ptzip40625e-sa.json — do not edit by hand.*

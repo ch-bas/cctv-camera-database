@@ -12,7 +12,7 @@
 | Field of view | H: 78.3, V: 44.1, D: 89.3° |
 | Night vision | ir (50m), 0.02 lux color |
 | Power | DC 12V / PoE (802.3af) |
-| Protocols | http, onvif |
+| Protocols | http, onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
 | Operating temp | -30 to 60°C |

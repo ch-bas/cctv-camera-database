@@ -5,6 +5,7 @@
 | Brand | Mapesen |
 | Model | T3HQ400LYA2-PT |
 | Type | fisheye |
+| Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2560×1440) |
 | Sensor | 1/2.8" CMOS |
 | Lens | 1.8mm |

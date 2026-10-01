@@ -6,7 +6,7 @@
 | Model | CMLETL8RC-X5 |
 | Type | dome |
 | Connectivity | ethernet |
-| Resolution | 8MP (8MP, 3864×2192) |
+| Resolution | 8MP (8MP, 3840×2160) |
 | Sensor | 1/2.8" SONY Starvis Back-illuminated CMOS sensor |
 | Lens | 2.7-13.5mm F1.6 |
 | Night vision | hybrid (40m), 0.005 lux color |

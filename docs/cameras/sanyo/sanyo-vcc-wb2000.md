@@ -16,7 +16,7 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| main | 640x480 | 30 | — |
+| main | 720x480 | — | — |
 
 ## Features
 

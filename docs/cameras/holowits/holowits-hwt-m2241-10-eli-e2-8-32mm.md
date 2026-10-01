@@ -10,6 +10,7 @@
 | Sensor | 1/1.8" CMOS (zoom lens); 1/2.7" CMOS (prime lens) |
 | Lens | 2× 8-32 (zoom); wide-angle (prime)mm |
 | Power | 12V DC / PoE (IEEE 802.3at) |
+| Protocols | rtsp |
 
 ## Features
 

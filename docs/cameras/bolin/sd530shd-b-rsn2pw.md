@@ -33,6 +33,7 @@
 
 - https://bolintechnology.com/product/pro-dual-output-sdi-outdoor-ptz-camera-discontinued
 - https://bolintechnology.com/wp-content/uploads/2023/03/SD530SHD-B-RSN2PW-DATASHEET-07052020-3.1.pdf
+- https://knowledge.bolintechnology.com/bc7part2
 
 ---
 *Auto-generated from bolin-sd530shd-b-rsn2pw.json — do not edit by hand.*

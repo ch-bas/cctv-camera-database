@@ -6,7 +6,7 @@
 | Model | DGM5727SVGAT |
 | Type | ptz |
 | Connectivity | ethernet |
-| Resolution | 5MP (2560x1944) (5MP, 2560×1944) |
+| Resolution | 5MP (2592x1944) (5MP, 2592×1944) |
 | Sensor | 1/2.8" SONY CMOS |
 | Lens | 1× 4.9-98mm F1.6 |
 | Field of view | 56 D° |

@@ -11,7 +11,7 @@
 | Lens | 1× 5.9-182.9mm F1.5 |
 | Field of view | 60.2 to 2.5° |
 | Power | 100 VAC |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | IP rating | IP68 |
 | Operating temp | -40 to 60°C |
 

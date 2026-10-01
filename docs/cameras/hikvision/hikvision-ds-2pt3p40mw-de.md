@@ -5,6 +5,7 @@
 | Brand | Hikvision |
 | Model | DS-2PT3P40MW-DE |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | (4MP, 2560×1440) |
 | Sensor | 1/2.8" progressive scan CMOS |
 | Lens | 2.8-12mm F1.6 |

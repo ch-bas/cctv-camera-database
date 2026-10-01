@@ -15,7 +15,7 @@
 | Night vision | hybrid (30m) |
 | Power | PoE (802.3at/PoE+, 48V, active) / DC 12V, 2A backup, <24W |
 | Storage | microSD ≤ 512GB, NVR |
-| Protocols | rtsp, rtmp, http, p2p |
+| Protocols | rtsp, rtmp, http, p2p, onvif |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 | Operating temp | -10 to 55°C |
@@ -43,6 +43,7 @@
 - https://reolink.com/product/omvi-3i-poe/
 - https://reolink.com/de/product/omvi-3i-poe/
 - https://support.reolink.com/articles/58080032485401-FAQs-Reolink-OMVI-3i-PoE/
+- https://support.reolink.com/articles/900000617826-Which-Reolink-Products-Support-CGI-RTSP-ONVIF/
 
 ---
 *Auto-generated from reolink-omvi-3i-poe.json — do not edit by hand.*

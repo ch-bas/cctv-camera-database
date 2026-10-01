@@ -37,6 +37,7 @@
 ## Sources
 
 - https://avyconaivo.com/data/item/AVC-NBM81F180/DataSheet_AVC-NBM81F180_EN.pdf
+- https://avycon.freshdesk.com/support/solutions/articles/36000299004-rtsp-syntax-for-plug-play-series-ip-cameras
 
 ---
 *Auto-generated from avycon-avc-nbm81f180.json — do not edit by hand.*

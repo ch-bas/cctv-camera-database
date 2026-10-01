@@ -5,6 +5,7 @@
 | Brand | Mapesen |
 | Model | B705Q60WLZ1A2-PT |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | 6MP (6MP, 3072×2048) |
 | Sensor | 1/2.7" CMOS |
 | Lens | 4.7-94.06mm F1.6-2.7 |

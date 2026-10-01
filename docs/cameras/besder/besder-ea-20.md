@@ -12,6 +12,7 @@
 | Field of view | 60-90° |
 | Night vision | ir (30m) |
 | Power | Built-in 4000 mAh rechargeable battery |
+| Protocols | rtsp |
 | Operating temp | -20°C to 45°C°C |
 
 ## Features

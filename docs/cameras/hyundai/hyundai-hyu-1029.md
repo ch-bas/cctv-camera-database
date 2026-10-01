@@ -12,7 +12,7 @@
 | Sensor | 1/3" CMOS |
 | Night vision | ir (30m), 0.005 lux |
 | Storage | NVR |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 
 ## Sources
 

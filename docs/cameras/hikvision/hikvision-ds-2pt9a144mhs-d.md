@@ -9,6 +9,7 @@
 | Resolution | 4MP (4MP) |
 | Lens | 2× |
 | Night vision | color |
+| Protocols | rtsp |
 
 ## Features
 

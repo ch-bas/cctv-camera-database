@@ -13,6 +13,7 @@
 | Lens | 2.8mm F1.6 |
 | Field of view | 101 H / 57 V / 118 D° |
 | Night vision | hybrid, 0.005 lux color |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
 | Operating temp | -30 to 60°C |
@@ -35,6 +36,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/ltcmip9342wi-28sdl-platinum-4mp-active-deterrence-bullet-network-camera.html
+- https://pic.ltsmall.com/software/a62baf85f03ca394242e4203e8134fc5/1jc5CwrdrbD4i0JUgBAHv5PNhLB2eGPh.pdf
 
 ---
 *Auto-generated from lts-ltcmip9342wi-28sdl.json — do not edit by hand.*

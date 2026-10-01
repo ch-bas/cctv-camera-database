@@ -34,6 +34,7 @@
 ## Sources
 
 - https://oncamgrandeye.com/app/uploads/EVO-05_12-ExD_2018-11-DataSheet.pdf
+- https://support.oncamgrandeye.com/hc/en-gb/articles/360015457780-Evolution-12-Connecting-to-Camera-RTSP-Stream
 
 ---
 *Auto-generated from oncam-evo-12-eoa.json — do not edit by hand.*

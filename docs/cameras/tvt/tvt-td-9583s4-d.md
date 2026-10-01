@@ -10,7 +10,7 @@
 | Lens | 1× |
 | Night vision | ir |
 | Storage | NVR |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 
 ## Features
 

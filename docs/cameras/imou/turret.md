@@ -13,7 +13,7 @@
 | Night vision | hybrid (30m) |
 | Power | DC 12V/1A |
 | Storage | microSD ≤ 256GB, NVR |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | Yes |
 | Operating temp | -30 to 60°C |

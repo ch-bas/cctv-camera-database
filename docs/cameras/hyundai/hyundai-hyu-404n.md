@@ -14,7 +14,7 @@
 | Field of view | (H) 75.5; (V) 41.6; (D) 87.3° |
 | Night vision | 0.002 lux, 0.002 lux color |
 | Storage | NVR |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | Operating temp | -30 to 60°C |
 
 ## Streams

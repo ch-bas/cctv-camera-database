@@ -11,6 +11,7 @@
 | Resolution | 4MP (4MP) |
 | Lens | 1× F1.0 |
 | Night vision | hybrid |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
 
@@ -27,6 +28,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/cmip3cd42wi-28laisp-4-mp-ai-color-24-7-turret-camera-with-active-deterrence.html
+- https://pic.ltsmall.com/software/449a4a73d684d068fbb55b48e97c3ed5/CMIP3CD42WI-28LAISP_Spec_Sheet_1.19.pdf
 
 ---
 *Auto-generated from lts-cmip3cd42wi-28laisp.json — do not edit by hand.*

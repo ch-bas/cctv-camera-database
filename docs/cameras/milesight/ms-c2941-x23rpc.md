@@ -5,6 +5,7 @@
 | Brand | Milesight |
 | Model | MS-C2941-X23RPC |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | 2MP (2MP, 1920×1080) |
 | Sensor | 1/2.8" Progressive Scan CMOS |
 | Lens | 1× 5-117mm F1.5-F3.5 |

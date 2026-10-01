@@ -12,6 +12,7 @@
 | Night vision | ir (12m) |
 | Power | 18650 Li-Ion rechargeable battery (~2600 mAh; 2 included, holds up to 4) |
 | Storage | microSD ≤ 128GB, NVR |
+| Protocols | rtsp |
 | IP rating | IP65 |
 | Two-way audio | Yes |
 | Operating temp | -20 to 50°C |

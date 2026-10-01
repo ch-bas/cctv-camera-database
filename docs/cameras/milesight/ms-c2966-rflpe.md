@@ -5,6 +5,7 @@
 | Brand | Milesight |
 | Model | MS-C2966-RFLPE |
 | Type | bullet |
+| Connectivity | ethernet |
 | Resolution | 2MP (2MP, 1920×1080) |
 | Sensor | 1/2.8" Progressive Scan CMOS |
 | Lens | 1× 2.7-13.5mm F1.4 |

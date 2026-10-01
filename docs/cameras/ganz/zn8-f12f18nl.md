@@ -37,6 +37,7 @@
 
 - https://www.ganzsecurity.com/products/zn8-f12f18nl
 - https://computarganz.s3.amazonaws.com/Ganz+Active+Resources/ZN8-F12F18NL+02.30.22+V1.2+spec.pdf
+- https://computarganz.s3.amazonaws.com/Ganz+Active+Resources/Genstar+Web+Operation+Guide+Manual+V3.6_02.09.2024.pdf
 
 ---
 *Auto-generated from ganz-zn8-f12f18nl.json — do not edit by hand.*

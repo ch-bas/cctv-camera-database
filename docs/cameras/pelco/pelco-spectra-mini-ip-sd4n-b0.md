@@ -15,7 +15,7 @@
 | Night vision | none, 3 lux |
 | Power | PoE (IEEE 802.3af Class 3) or 24 VAC |
 | Storage | NVR |
-| Protocols | http |
+| Protocols | http, rtsp |
 | Two-way audio | Yes |
 | Operating temp | 0 to 50°C |
 

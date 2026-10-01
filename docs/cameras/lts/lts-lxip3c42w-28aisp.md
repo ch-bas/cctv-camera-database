@@ -14,6 +14,7 @@
 | Night vision | color (30m) |
 | Power | 12V DC / PoE |
 | Storage | microSD ≤ 256GB, NVR |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
 
@@ -29,6 +30,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/lxip3c42w-28aisp-4mp-ai-isp-fixed-turret-network-camera.html
+- https://pic.ltsmall.com/software/96960c1eafd6e4a538a7f08ca0debe66/LXIP3C42W-28AISP.pdf
 
 ---
 *Auto-generated from lts-lxip3c42w-28aisp.json — do not edit by hand.*

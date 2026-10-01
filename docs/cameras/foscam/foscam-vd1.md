@@ -13,7 +13,7 @@
 | Night vision | ir (5m) |
 | Power | AC 8-24V / DC 12-30V / USB-C 5V |
 | Storage | microSD ≤ 512GB |
-| Protocols | rtsp, p2p |
+| Protocols | rtsp, onvif, p2p |
 | IP rating | IP65 |
 | Two-way audio | Yes |
 
@@ -43,6 +43,7 @@
 ## Sources
 
 - https://www.foscam.eu/vd1.html
+- https://www.foscam.com/downloads/file.html?cate=manual&id=118
 
 ---
 *Auto-generated from foscam-vd1.json — do not edit by hand.*

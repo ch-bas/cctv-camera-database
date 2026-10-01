@@ -26,6 +26,7 @@
 ## Sources
 
 - https://oncamgrandeye.com/app/uploads/Oncam-C-12-Indoor-Camera-Datasheet-V5.1.pdf
+- https://support.oncamgrandeye.com/hc/en-gb/articles/14214670218386-C-Series-Connecting-to-RTSP-Streams
 
 ---
 *Auto-generated from oncam-c12-iec1-o.json — do not edit by hand.*

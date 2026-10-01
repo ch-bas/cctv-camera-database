@@ -15,6 +15,7 @@
 | Night vision | hybrid (30m), 0.002 lux, 0.001 lux color |
 | Power | 12V DC / PoE (X-PoE) |
 | Storage | microSD ≤ 512GB, NVR |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
 | Operating temp | -40 to 60°C |
@@ -37,6 +38,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/lxip3c82wi-28mda-8mp-smart-dual-light-turret-network-camera.html
+- https://pic.ltsmall.com/software/58b72f15ed8079aecd92a00fe0844a69/LXIP3C82WI-28MDA.pdf
 
 ---
 *Auto-generated from lts-lxip3c82wi-28mda.json — do not edit by hand.*

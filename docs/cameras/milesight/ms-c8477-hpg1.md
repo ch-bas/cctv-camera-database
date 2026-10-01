@@ -5,6 +5,7 @@
 | Brand | Milesight |
 | Model | MS-C8477-HPG1 |
 | Type | panoramic |
+| Connectivity | ethernet |
 | Resolution | 8MP (8MP, 5120×1520) |
 | Sensor | Dual 1/1.8" Progressive Scan CMOS (Starvis Starlight) |
 | Lens | 2× 4mm F1.0 |
@@ -12,7 +13,7 @@
 | Night vision | hybrid (30m), 0.0005 lux color |
 | Power | PoE+ (802.3at) / DC 12V |
 | Storage | microSD ≤ 1024GB |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |

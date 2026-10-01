@@ -12,6 +12,7 @@
 | Field of view | 150° |
 | Power | dual power: existing doorbell wiring or built-in rechargeable battery |
 | Storage | NVR |
+| Protocols | rtsp |
 | Two-way audio | Yes |
 | Operating temp | 0 to 40°C |
 

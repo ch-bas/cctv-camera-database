@@ -7,7 +7,7 @@
 | Brand | Swann |
 | Model | SWIFI-2KOCAM |
 | Type | bullet |
-| Connectivity | wifi |
+| Connectivity | ethernet, wifi |
 | Resolution | 2K Quad HD (4MP, 2560×1440) |
 | Field of view | 100° |
 | Night vision | hybrid (30m) |

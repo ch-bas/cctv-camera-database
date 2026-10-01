@@ -25,6 +25,7 @@
 
 - https://pro.comelitgroup.com/en-gb/product/ipscams02f03a
 - https://staticpro.comelitgroup.com/en-001/datasheets/14762-ipscams02f03a.pdf
+- https://staticpro.comelitgroup.com/storage/2020/12/26488/mt-ipscams02f03a-en-1ed.pdf
 
 ---
 *Auto-generated from comelit-ipscams02f03a.json — do not edit by hand.*

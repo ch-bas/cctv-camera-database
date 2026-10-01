@@ -35,6 +35,7 @@
 ## Sources
 
 - https://web.archive.org/web/2id_/https://download.vivotek.com/downloadfile/downloads/datasheets/ip816a-lpcdatasheet_en.pdf
+- https://download.vivotek.com/downloadfile/downloads/datasheets/ip816a-lpcdatasheet_en.pdf
 
 ---
 *Auto-generated from vivotek-ip816a-lpc.json — do not edit by hand.*

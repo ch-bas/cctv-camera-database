@@ -6,7 +6,7 @@
 | Model | LVDBHKL5R-X5 |
 | Type | dome |
 | Connectivity | ethernet |
-| Resolution | 5MP (5MP, 2616×1964) |
+| Resolution | 5MP (5MP, 2592×1944) |
 | Sensor | 1/2.8" SONY Starvis Back-illuminated CMOS sensor |
 | Lens | F1.6 |
 | Night vision | 0.003 lux color |

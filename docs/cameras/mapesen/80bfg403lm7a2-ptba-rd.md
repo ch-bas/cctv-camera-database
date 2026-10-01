@@ -5,12 +5,13 @@
 | Brand | Mapesen |
 | Model | 80BFG403LM7A2-PTBA-RD |
 | Type | bullet |
+| Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2688×1520) |
 | Sensor | 1/1.8" CMOS |
 | Lens | 8-32mm F1.6 |
 | Night vision | hybrid (80m), 0.0001 lux, 0.0004 lux color |
 | Storage | microSD ≤ 512GB |
-| Protocols | rtsp, http |
+| Protocols | onvif, rtsp, http |
 | IP rating | IP67 |
 | Two-way audio | Yes |
 | Operating temp | -40 to 70°C |
@@ -28,6 +29,7 @@
 ## Sources
 
 - https://www.mapesen.com/road-monitoring-cameras/80bfg403lm7a2-ptba-rd.html
+- https://www.mapesen.com/web/userfiles/productfile/gengxin/80BFG403LM7A2PTBARDspecificationmapesenV.I02.pdf
 
 ---
 *Auto-generated from mapesen-80bfg403lm7a2-ptba-rd.json — do not edit by hand.*

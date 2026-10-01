@@ -9,6 +9,7 @@
 | Resolution | 4MP (4MP) |
 | Night vision | hybrid |
 | Power | PoE |
+| Protocols | onvif |
 | IP rating | IP67 |
 | Two-way audio | No |
 
@@ -24,6 +25,7 @@
 ## Sources
 
 - https://anpviz.com/products/ipc-b8247wd-aisp
+- https://anpvizsupport.com/u_file/file/2503/25/d2f527a589.pdf
 
 ---
 *Auto-generated from anpviz-ipc-b8247wd-aisp.json — do not edit by hand.*

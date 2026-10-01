@@ -12,7 +12,7 @@
 | Field of view | 110 H / 58.7 V / 130 D° |
 | Night vision | ir (30m), 0.003 lux color |
 | Storage | microSD ≤ 512GB |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |

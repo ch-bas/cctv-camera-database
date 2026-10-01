@@ -40,6 +40,7 @@
 ## Sources
 
 - https://ajax.systems/products/specs/superior-turretcam-hlvf-4-mp/
+- https://ajax.systems/support/manuals/onvif/
 
 ---
 *Auto-generated from ajax-superior-turretcam-hlvf-4mp.json — do not edit by hand.*

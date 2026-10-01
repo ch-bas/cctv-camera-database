@@ -7,6 +7,7 @@
 | Brand | Dahua |
 | Model | PTZ36432-HNR-XB |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2560×1440) |
 | Sensor | 1/1.8" CMOS |
 | Lens | 1× 5.4-135mm F1.6-F4.0 |

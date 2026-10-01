@@ -15,7 +15,7 @@
 | Night vision | hybrid (30m) |
 | Power | PoE IEEE 802.3af, 48V Active / DC 12V |
 | Storage | microSD ≤ 512GB, NVR |
-| Protocols | rtsp |
+| Protocols | rtsp, onvif |
 | IP rating | IP67 |
 | Two-way audio | Yes |
 | Operating temp | -10 to 55°C |
@@ -40,6 +40,7 @@
 ## Sources
 
 - https://reolink.com/product/reolink-duo-poe/
+- https://support.reolink.com/articles/900000617826-Which-Reolink-Products-Support-CGI-RTSP-ONVIF/
 
 ---
 *Auto-generated from reolink-duo-2-poe.json — do not edit by hand.*

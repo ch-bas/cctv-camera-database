@@ -14,6 +14,7 @@
 | Night vision | ir (500m), 0.0001 lux, 0.0002 lux color |
 | Power | DC48V |
 | Storage | NVR |
+| Protocols | rtsp, onvif |
 | IP rating | IP68 |
 | Two-way audio | Yes |
 
@@ -24,6 +25,7 @@
 ## Sources
 
 - https://www.dahuatech.com/product/info/13907.html
+- https://www.dahuatech.com/product/info/13517.html
 
 ---
 *Auto-generated from dahua-dh-tpc-sd8641b-c54.json — do not edit by hand.*

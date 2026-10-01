@@ -6,7 +6,7 @@
 | Model | GV-SD4825-IR |
 | Type | ptz |
 | Connectivity | ethernet |
-| Resolution | 4MP (4MP, 2560×1440) |
+| Resolution | 4MP (4MP, 2688×1520) |
 | Sensor | 1/2.5" Progressive Scan CMOS |
 | Lens | 1× 4.8-120mm F1.5 |
 | Field of view | 58-2.6 horizontal° |

@@ -12,7 +12,7 @@
 | Field of view | 58.2 to 4.8 horizontal° |
 | Night vision | ir (100m), 0.005 lux color |
 | Power | DC 12V / AC 24V / PoE+ (802.3at) |
-| Protocols | rtsp |
+| Protocols | rtsp, onvif |
 | IP rating | IP66 |
 | Operating temp | -30 to 60°C |
 
@@ -38,6 +38,7 @@
 ## Sources
 
 - https://support.amcrest.com/hc/en-us/articles/360000935271-Technical-Specifications-IP2M-853EW
+- https://support.amcrest.com/hc/en-us/articles/360000935051-User-Manual-IP2M-853EW
 
 ---
 *Auto-generated from amcrest-ip2m-853ew.json — do not edit by hand.*

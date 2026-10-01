@@ -38,6 +38,7 @@
 ## Sources
 
 - http://web.archive.org/web/20121010130841id_/http://zavio.com/downloads/product/31/datasheet_F731E.pdf
+- https://web.archive.org/web/20121010124338id_/http://zavio.com/downloads/product/30/F531E_F731E_UserManual.pdf
 
 ---
 *Auto-generated from zavio-f731e.json — do not edit by hand.*

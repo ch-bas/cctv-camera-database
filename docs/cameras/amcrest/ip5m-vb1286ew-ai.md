@@ -15,7 +15,7 @@
 | Night vision | ir (60m), 0.0005 lux, 0.005 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
-| Protocols | rtsp, p2p |
+| Protocols | rtsp, p2p, onvif |
 | IP rating | IP67 |
 | Operating temp | -30 to 60°C |
 
@@ -38,6 +38,7 @@
 ## Sources
 
 - https://support.amcrest.com/hc/en-us/articles/17227482922125-Technical-Specifications-IP5M-VB1286EW-AI
+- https://support.amcrest.com/hc/en-us/articles/17227852485517-User-Manual-IP5M-VB1286EW-AI
 
 ---
 *Auto-generated from amcrest-ip5m-vb1286ew-ai.json — do not edit by hand.*

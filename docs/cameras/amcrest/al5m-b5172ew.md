@@ -24,7 +24,7 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| main | 2688x1520 | 30 | H.264 |
+| main | 2960x1668 | 20 | H.264 |
 | sub | 704x480 | 30 | H.264 |
 
 ## Features
@@ -41,6 +41,7 @@
 ## Sources
 
 - https://amcrest.com/amlink-5mp-security-ai-ip-poe-camera-al5m-b5172ew.html
+- https://drive.google.com/file/d/1U_B4uszG5S80wQ381spKrmd-VoTZVGkb/view
 
 ---
 *Auto-generated from amcrest-al5m-b5172ew.json — do not edit by hand.*

@@ -34,6 +34,7 @@
 
 - https://bolintechnology.com/product/6g-sdi-4k-ptz-hdbaset-camera-bc-7-series
 - https://bolintechnology.com/wp-content/uploads/2023/05/BC-7-4K20S-S6MNB-DATASHEET_05182023.pdf
+- https://knowledge.bolintechnology.com/bc7part2
 
 ---
 *Auto-generated from bolin-bc-7-4k20s-s6mnb.json — do not edit by hand.*

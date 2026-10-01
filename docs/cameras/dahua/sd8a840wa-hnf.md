@@ -7,6 +7,7 @@
 | Brand | Dahua |
 | Model | SD8A840WA-HNF |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | 4K (8MP, 3840×2160) |
 | Sensor | 1/1.8" STARVIS CMOS |
 | Lens | 1× 5.6-223mm F1.4-F4.8 |

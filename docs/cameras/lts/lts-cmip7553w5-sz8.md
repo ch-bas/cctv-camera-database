@@ -10,7 +10,7 @@
 | Lens | 2.8-8mm |
 | Night vision | ir (34m), 0.005 lux color |
 | Storage | NVR |
-| Protocols | rtsp, http |
+| Protocols | onvif, rtsp, http |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |

@@ -15,6 +15,7 @@
 | Night vision | hybrid (50m) |
 | Power | 12 VDC |
 | Storage | microSD ≤ 512GB, NVR |
+| Protocols | rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | Yes |

@@ -8,7 +8,7 @@
 | Model | IP5M-B1186EB-AI-V3 |
 | Type | bullet |
 | Connectivity | ethernet |
-| Resolution | 5MP (5MP, 2592×1944) |
+| Resolution | 5MP (5MP, 2960×1668) |
 | Sensor | 1/2.7" Progressive CMOS |
 | Lens | 1× 2.8mm |
 | Field of view | 132° |
@@ -40,6 +40,7 @@
 ## Sources
 
 - https://support.amcrest.com/hc/en-us/articles/24406483480589-Technical-Specifications-IP5M-B1186EB-AI-V3
+- https://drive.google.com/file/d/19KcyRiah-HIBtZAs0h_vLGmkfaw8y97d/view
 
 ---
 *Auto-generated from amcrest-ip5m-b1186eb-ai-v3.json — do not edit by hand.*

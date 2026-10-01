@@ -8,7 +8,7 @@
 | Model | MD-H600Np-360 DN |
 | Type | fisheye |
 | Connectivity | ethernet |
-| Resolution | 6MP (6MP, 3096×2094) |
+| Resolution | 6MP (6MP, 2720×2040) |
 | Sensor | 1/1.8" Sony Exmor CMOS Sensor |
 | Lens | 1× 1.05mm F2.8 |
 | Field of view | 182 horizontal (180 panoramic / 360 surround)° |

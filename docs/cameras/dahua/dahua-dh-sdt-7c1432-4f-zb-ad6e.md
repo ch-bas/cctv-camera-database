@@ -14,6 +14,7 @@
 | Night vision | hybrid (600m), 0.0002 lux, 0.0002 lux color |
 | Power | DC36V/PoE |
 | Storage | NVR |
+| Protocols | rtsp, onvif |
 | IP rating | IP67 |
 | Two-way audio | Yes |
 

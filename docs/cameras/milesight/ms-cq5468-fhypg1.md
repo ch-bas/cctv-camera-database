@@ -5,6 +5,7 @@
 | Brand | Milesight |
 | Model | MS-CQ5468-FHYPG1 |
 | Type | bullet |
+| Connectivity | ethernet |
 | Resolution | 5MP (5MP, 2960×1664) |
 | Sensor | 1/2.65" Progressive Scan CMOS |
 | Lens | 1× 2.7-13.5mm F1.2 |
@@ -12,7 +13,7 @@
 | Night vision | hybrid (60m), 0.003 lux color |
 | Power | PoE (802.3at) / DC 12V |
 | Storage | microSD ≤ 1024GB |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |

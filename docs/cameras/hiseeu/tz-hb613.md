@@ -14,6 +14,7 @@
 | Night vision | ir (15m) |
 | Power | DC 12V |
 | Storage | NVR |
+| Protocols | rtsp |
 | IP rating | IP66 |
 | Two-way audio | No |
 

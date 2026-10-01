@@ -6,7 +6,7 @@
 | Model | CMLCBRL8RC |
 | Type | turret |
 | Connectivity | ethernet |
-| Resolution | 8MP (8MP, 3864×2192) |
+| Resolution | 8MP (8MP, 3840×2160) |
 | Sensor | 1/2.8" SONY Starvis2 Back-illuminated CMOS sensor |
 | Lens | 4mm F1.6 |
 | Field of view | 84 H / 48 V / 97 D° |
@@ -22,7 +22,7 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| main | 3072x2048 | 30 | H.265 |
+| main | 3840x2160 | 30 | H.265 |
 
 ## Features
 

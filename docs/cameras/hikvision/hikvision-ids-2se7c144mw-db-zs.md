@@ -9,7 +9,7 @@
 | Lens | 4mm |
 | Night vision | hybrid (150m) |
 | Storage | microSD ≤ 256GB, NVR |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | Two-way audio | No |
 

@@ -37,6 +37,7 @@
 ## Sources
 
 - http://web.archive.org/web/20121010134007id_/http://zavio.com/downloads/product/41/datasheet_P5110_P5115.pdf
+- https://web.archive.org/web/20121010132235id_/http://zavio.com/downloads/product/41/P5110_P5115%20_User%20Manual.pdf
 
 ---
 *Auto-generated from zavio-p5110.json — do not edit by hand.*

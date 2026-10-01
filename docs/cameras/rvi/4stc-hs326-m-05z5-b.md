@@ -9,7 +9,7 @@
 | Resolution | 5MP (5MP) |
 | Lens | 1× 2.7-13.5mm |
 | Storage | NVR |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP68 |
 | Operating temp | -60 to 60°C |
 

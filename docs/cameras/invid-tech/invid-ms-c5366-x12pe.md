@@ -38,6 +38,7 @@
 ## Sources
 
 - https://info.invidtech.com/hubfs/AAA_SpecSheets/Milesight/INVID-MS-C5366-X12PE.pdf
+- https://support.milesight.com/support/solutions/articles/69000859092-rtsp-stream-of-milesight-network-camera-nvr-vms
 
 ---
 *Auto-generated from invid-tech-invid-ms-c5366-x12pe.json — do not edit by hand.*

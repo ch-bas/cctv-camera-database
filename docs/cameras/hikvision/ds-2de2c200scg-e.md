@@ -12,7 +12,7 @@
 | Field of view | 106.1 / 83.6° |
 | Night vision | color (30m), 0.001 lux color |
 | Power | PoE: IEEE 802.3af |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | Two-way audio | No |
 

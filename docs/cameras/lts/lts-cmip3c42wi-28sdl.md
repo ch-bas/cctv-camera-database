@@ -12,7 +12,7 @@
 | Field of view | 100.2 H / 54.7 V / 119.7 D° |
 | Night vision | hybrid |
 | Storage | NVR |
-| Protocols | rtsp, http |
+| Protocols | onvif, rtsp, http |
 | IP rating | IP67 |
 | Two-way audio | Yes |
 | Operating temp | -30 to 60°C |

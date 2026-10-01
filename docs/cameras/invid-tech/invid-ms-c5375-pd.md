@@ -37,6 +37,7 @@
 ## Sources
 
 - https://info.invidtech.com/hubfs/AAA_SpecSheets/Milesight/INVID-MS-C5375-PD.pdf
+- https://support.milesight.com/support/solutions/articles/69000859092-rtsp-stream-of-milesight-network-camera-nvr-vms
 
 ---
 *Auto-generated from invid-tech-invid-ms-c5375-pd.json — do not edit by hand.*

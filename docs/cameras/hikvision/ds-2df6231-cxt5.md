@@ -12,7 +12,7 @@
 | Field of view | 58.5 to 2.4° |
 | Night vision | 0.0001 lux, 0.0005 lux color |
 | Power | 100 VAC |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | IP rating | IP68 |
 | Two-way audio | No |
 | Operating temp | -40 to 60°C |

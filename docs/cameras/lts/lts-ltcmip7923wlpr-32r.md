@@ -13,6 +13,7 @@
 | Lens | 1× 8-32mm F1.2 |
 | Night vision | ir (100m), 0.002 lux color |
 | Storage | microSD ≤ 256GB, NVR |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 
@@ -34,6 +35,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/2mp-vf-bullet-lpr-network-camera-cmip7923wlpr-32r.html
+- https://pic.ltsmall.com/software/56899a0658b0c2b7f6374891b64fe6fa/CMIP7923WLPR-32R%20SPEC.pdf
 
 ---
 *Auto-generated from lts-ltcmip7923wlpr-32r.json — do not edit by hand.*

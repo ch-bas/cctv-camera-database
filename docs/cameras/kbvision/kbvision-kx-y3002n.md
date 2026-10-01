@@ -13,6 +13,7 @@
 | Lens | 1× 3.6mm |
 | Night vision | ir (30m) |
 | Power | PoE |
+| Protocols | rtsp |
 | IP rating | IP67 |
 
 ## Streams

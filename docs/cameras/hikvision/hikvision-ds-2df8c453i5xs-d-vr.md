@@ -5,6 +5,7 @@
 | Brand | Hikvision |
 | Model | DS-2DF8C453I5XS-D/VR |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | (4MP, 2688×1520) |
 | Sensor | 1/1.2" Progressive Scan CMOS |
 | Lens | 6.6-350mm |

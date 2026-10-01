@@ -42,6 +42,7 @@
 ## Sources
 
 - https://vicon-security.com/hubfs/Product%20Resources/V940D-Series_Datasheet9.pdf
+- https://vicon-security.com/hubfs/Product%20Resources/V940D-series-Manual-02.pdf
 
 ---
 *Auto-generated from vicon-v944d-w312mir.json — do not edit by hand.*

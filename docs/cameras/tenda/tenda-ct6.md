@@ -30,6 +30,7 @@
 ## Sources
 
 - https://static.tenda.com.cn/tdeweb/download/CT6/CT6V2.0%20Datasheet.pdf
+- https://www.tendacn.com/us/material/show/2003692
 
 ---
 *Auto-generated from tenda-ct6.json — do not edit by hand.*

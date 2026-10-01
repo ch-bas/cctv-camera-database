@@ -37,6 +37,7 @@
 ## Sources
 
 - https://ajax.systems/products/specs/turretcam-hl-5-mp-2-8-mm/
+- https://ajax.systems/support/manuals/onvif/
 
 ---
 *Auto-generated from ajax-turretcam-hl-5mp-28mm.json — do not edit by hand.*

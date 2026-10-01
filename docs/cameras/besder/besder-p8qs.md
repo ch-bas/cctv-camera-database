@@ -12,6 +12,7 @@
 | Field of view | 60-70° |
 | Night vision | hybrid (30m) |
 | Power | DC 12V/2A |
+| Protocols | rtsp |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 | Operating temp | -20°C to 45°C°C |

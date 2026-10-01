@@ -36,6 +36,8 @@
 ## Sources
 
 - https://vikylin.com/wp-content/uploads/2025/07/camera-catalogue.pdf
+- https://vikylin.com/wp-content/uploads/2023/11/VD-Series-IP-Camera-Instructions.pdf
+- https://dahuawiki.com/Remote_Access/RTSP_via_VLC
 
 ---
 *Auto-generated from vikylin-vd-3t89-as-g2.json — do not edit by hand.*

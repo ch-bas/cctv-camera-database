@@ -7,6 +7,7 @@
 | Brand | Resideo |
 | Model | CX4T-AI |
 | Type | turret |
+| Connectivity | ethernet |
 | Resolution | 4K/8MP (8MP, 3840×2160) |
 | Lens | 1× 2.8mm |
 | Night vision | ir |

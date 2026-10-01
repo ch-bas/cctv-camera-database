@@ -11,6 +11,7 @@
 | Lens | 1× 2.7-12mm F1.2 |
 | Field of view | 0 to 355 pan / 0 to 75 tilt / 0 to 355 rotate (adjustable mount)° |
 | Night vision | ir (30m), 0.002 lux color |
+| Protocols | rtsp |
 | Two-way audio | No |
 
 ## Streams

@@ -13,7 +13,7 @@
 | Night vision | color (30m) |
 | Power | DC36V/2.23A±25%（标配） |
 | Storage | microSD ≤ 512GB, NVR |
-| Protocols | rtsp, rtmp, http |
+| Protocols | rtsp, rtmp, http, onvif |
 | IP rating | IP66 |
 | Two-way audio | No |
 

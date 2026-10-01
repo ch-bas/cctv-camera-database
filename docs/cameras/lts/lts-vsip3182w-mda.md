@@ -14,6 +14,7 @@
 | Night vision | ir (30m) |
 | Power | DC12V / PoE |
 | Storage | microSD ≤ 256GB, NVR |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
 
@@ -35,6 +36,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/vsip3182w-mda-4k-hd-ir-fixed-turret-network-camera.html
+- https://pic.ltsmall.com/software/7b79c882ce590de04a851a0be3968c17/VSIP3182W-28MDA%2C%20VSIP3182W-MDA%20Spec.pdf
 
 ---
 *Auto-generated from lts-vsip3182w-mda.json — do not edit by hand.*

@@ -8,7 +8,7 @@
 | Model | DS-2XS6F85G1-ILC1 |
 | Type | box |
 | Connectivity | 4g, wifi |
-| Resolution | 8MP (8MP, 3840×2160) |
+| Resolution | 4MP video (8MP stills) (4MP, 2688×1520) |
 | Sensor | 1/1.8" Progressive Scan CMOS |
 | Lens | F1.6 |
 | Night vision | hybrid (15m) |

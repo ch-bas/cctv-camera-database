@@ -40,6 +40,7 @@
 
 - https://illustracameras.com/
 - https://illustra.s3.us-east-1.amazonaws.com/Web_Files/Legacy/pro-ptz/Data%20Sheets/Illustra-PRO-2MP-30X-PTZ-Data-Sheet-r05_hs_en.pdf
+- https://illustra.s3.us-east-1.amazonaws.com/Web_Files/Legacy/pro-ptz/Manuals/Illustra-Pro-PTZ-30X-%26-625-20X-User-Guide-a1-lt_8200-1199-01A1_en.pdf
 
 ---
 *Auto-generated from illustra-ips02p6ocwtt.json — do not edit by hand.*

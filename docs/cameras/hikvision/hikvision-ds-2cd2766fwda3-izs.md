@@ -5,6 +5,7 @@
 | Brand | Hikvision |
 | Model | DS-2CD2766FWDA3-IZS |
 | Type | dome |
+| Connectivity | ethernet |
 | Resolution | (6MP, 3200×1800) |
 | Sensor | 1/2.4" Progressive Scan CMOS |
 | Lens | 2.7-13.5mm |

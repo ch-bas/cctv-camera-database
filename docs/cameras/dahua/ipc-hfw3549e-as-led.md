@@ -8,7 +8,7 @@
 | Model | IPC-HFW3549E-AS-LED |
 | Type | bullet |
 | Connectivity | ethernet |
-| Resolution | 5MP (5MP, 2880×1620) |
+| Resolution | 5MP (5MP, 2592×1944) |
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 2.8 / 3.6 (fixed options)mm |
 | Field of view | 98 (2.8mm) / 77 (3.6mm)° |

@@ -8,7 +8,7 @@
 | Resolution | (4MP) |
 | Night vision | hybrid (150m) |
 | Storage | NVR |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 
 ## Features
 

@@ -12,7 +12,7 @@
 | Lens | 1.98mm |
 | Night vision | ir (15m) |
 | Storage | NVR |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 
 ## Sources
 

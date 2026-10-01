@@ -13,6 +13,7 @@
 | Lens | 1× 2.8-8mm F2.0 |
 | Night vision | ir (50m), 0.001 lux, 0.01 lux color |
 | Storage | NVR |
+| Protocols | rtsp, onvif |
 | Two-way audio | No |
 
 ## Streams

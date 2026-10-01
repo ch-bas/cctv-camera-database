@@ -12,6 +12,7 @@
 | Night vision | hybrid (30m) |
 | Power | PoE |
 | Storage | microSD ≤ 512GB |
+| Protocols | onvif |
 | IP rating | IP67 |
 | IK rating | IK08 |
 | Two-way audio | No |
@@ -33,6 +34,7 @@
 ## Sources
 
 - https://anpviz.com/products/anpviz-4k-poe-security-camera-outdoor%2C-8mp-smart-dual-light-ip-dome-camera-with-human-vehicle-detection%2C-28mm-lens%2C-ture-wdr%2C-built-in-mic%2C-built-in-micro%2C-sd-card-slot
+- https://anpvizsupport.com/u_file/file/2503/25/d2f527a589.pdf
 
 ---
 *Auto-generated from anpviz-ipc-d2083wd-s.json — do not edit by hand.*

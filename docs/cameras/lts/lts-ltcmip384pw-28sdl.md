@@ -12,6 +12,7 @@
 | Sensor | 2x 1/2.5" sensors |
 | Lens | 2× 2.8mm |
 | Power | 12V DC / PoE |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | Yes |
 
@@ -27,6 +28,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/ltcmip384pw-28sdl-4-mp-panoramic-fixed-turret-network-camera.html
+- https://web.archive.org/web/20260119022307/https://ltsecurityinc.com/default/amfile/file/download/file/11146/product/8630/
 
 ---
 *Auto-generated from lts-ltcmip384pw-28sdl.json — do not edit by hand.*

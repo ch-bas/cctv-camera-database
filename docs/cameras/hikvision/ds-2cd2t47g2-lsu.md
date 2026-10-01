@@ -13,7 +13,7 @@
 | Night vision | color, 0.0005 lux color |
 | Power | 12 VDC ± 25% / PoE 802.3af |
 | Storage | microSD ≤ 512GB, NVR |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | Yes |
 | Operating temp | -30 to 60°C |

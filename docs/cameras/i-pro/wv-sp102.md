@@ -12,7 +12,7 @@
 | Field of view | 66.9 H / 52.3 V° |
 | Night vision | 1.3 lux, 2 lux color |
 | Power | PoE (IEEE 802.3af) / DC12V |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | Operating temp | 0 to 40°C |
 
 ## Streams

@@ -15,7 +15,7 @@
 | Night vision | hybrid (10m) |
 | Power | Built-in 5200mAh rechargeable battery / USB-C / Reolink Solar Panel compatible |
 | Storage | microSD ≤ 512GB |
-| Protocols | p2p |
+| Protocols | p2p, rtsp |
 | IP rating | IP65 |
 | Two-way audio | Yes |
 | Operating temp | -10 to 55°C |
@@ -40,6 +40,7 @@
 ## Sources
 
 - https://reolink.com/au/product/argus-3-pro/
+- https://support.reolink.com/articles/900000617826-Which-Reolink-Products-Support-CGI-RTSP-ONVIF/
 
 ---
 *Auto-generated from reolink-argus-3-pro-au.json — do not edit by hand.*

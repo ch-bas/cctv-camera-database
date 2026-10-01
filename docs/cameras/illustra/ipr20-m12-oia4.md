@@ -39,7 +39,7 @@
 
 - https://illustracameras.com/
 - https://illustracameras.com/wp-content/uploads/2022/08/Illustra-Pro-Gen4-Multisensor_ds_r03_hs_en-1.pdf
-- https://www.ispyconnect.com/camera/illustra
+- https://illustracameras.com/wp-content/uploads/2022/06/UM-PG4-20-32MP-MS-D-8200-2088-02_B.pdf
 
 ---
 *Auto-generated from illustra-ipr20-m12-oia4.json — do not edit by hand.*

@@ -13,6 +13,7 @@
 | Night vision | ir (10m) |
 | Power | DC / PoE |
 | Storage | NVR |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK08 |
 | Two-way audio | No |
@@ -28,6 +29,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/cmip3142w-28sda-wifi-4-mp-smart-fixed-mini-dome-network-camera.html
+- https://pic.ltsmall.com/software/c98d2975c7a7f7cbb8f80d45366247fd/CMIP3142W-28SDA-WIFI%20Spec.pdf
 
 ---
 *Auto-generated from lts-ltcmip3142w-28sda-wifi.json — do not edit by hand.*

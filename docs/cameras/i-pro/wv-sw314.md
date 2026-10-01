@@ -12,7 +12,7 @@
 | Field of view | 100.3° |
 | Night vision | 0.2 lux, 0.3 lux color |
 | Power | PoE (IEEE 802.3af) |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | Operating temp | -10 to 50°C |
 

@@ -11,6 +11,7 @@
 | Resolution | 3MP (3MP, 2304×1296) |
 | Power | USB plug-in |
 | Storage | NVR |
+| Protocols | rtsp |
 | Two-way audio | Yes |
 
 ## Features

@@ -13,7 +13,7 @@
 | Night vision | hybrid (60m) |
 | Power | PoE (IEEE 802.3at) / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
-| Protocols | rtsp, rtmp, http, p2p |
+| Protocols | rtsp, rtmp, http, p2p, onvif |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 | Operating temp | -10 to 55°C |
@@ -38,6 +38,7 @@
 
 - https://reolink.com/product/rlc-823a/
 - https://home-cdn.reolink.us/files/docs/specs/RLC-823A-IP-Camera-Specifications.pdf
+- https://support.reolink.com/articles/900000617826-Which-Reolink-Products-Support-CGI-RTSP-ONVIF/
 
 ---
 *Auto-generated from reolink-rlc-823a.json — do not edit by hand.*

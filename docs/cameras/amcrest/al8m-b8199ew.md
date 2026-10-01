@@ -23,7 +23,7 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| main | 2688x1520 | 30 | H.265 |
+| main | 3840x2160 | 20 | H.265 |
 | sub | 704x480 | 30 | H.264 |
 
 ## Features
@@ -41,6 +41,8 @@
 ## Sources
 
 - https://amcrest.com/amlink-4k-security-ai-ip-poe-bullet-camera-al8m-b8199ew.html
+- https://drive.google.com/file/d/1Mb43c3nIH5_Z-0wBnCXCXthnZHzrkPCI/view
+- https://drive.google.com/file/d/1daSvWHheKGfLLFXi77yAL71UanGuSztr/view
 
 ---
 *Auto-generated from amcrest-al8m-b8199ew.json — do not edit by hand.*

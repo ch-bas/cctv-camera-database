@@ -6,7 +6,7 @@
 | Model | GV-EFER3700 |
 | Type | fisheye |
 | Connectivity | ethernet |
-| Resolution | 3MP (3MP, 2304×1296) |
+| Resolution | 3MP (3MP, 2048×1536) |
 | Sensor | 1/2.8" Progressive Scan CMOS |
 | Lens | 1× 1.45mm F1.8 |
 | Field of view | 360 horizontal° |
@@ -37,6 +37,7 @@
 ## Sources
 
 - https://www.geovision.com.tw/product/GV-EFER3700
+- https://dlcdn.geovision.com.tw/Manual/IPCAM/GV-IPCAM_Spec_table-before-20260821.pdf
 
 ---
 *Auto-generated from geovision-gv-efer3700.json — do not edit by hand.*

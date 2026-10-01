@@ -10,6 +10,7 @@
 | Connectivity | wifi |
 | Resolution | 1080p (2MP, 1920×1080) |
 | Power | USB adapter (included) |
+| Protocols | rtsp |
 | Two-way audio | Yes |
 | Operating temp | 0 to 40°C |
 

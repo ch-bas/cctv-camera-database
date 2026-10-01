@@ -6,7 +6,7 @@
 | Model | DMSATL5RC |
 | Type | dome |
 | Connectivity | ethernet |
-| Resolution | 5MP (5MP, 2608×1964) |
+| Resolution | 5MP (5MP, 2592×1944) |
 | Sensor | 1/2.8" SONY Starvis Back-illuminated CMOS sensor |
 | Lens | 2.8mm F1.6 |
 | Field of view | 96 H / 72 V / 124 D° |

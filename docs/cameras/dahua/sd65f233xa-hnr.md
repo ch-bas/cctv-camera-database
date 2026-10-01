@@ -7,6 +7,7 @@
 | Brand | Dahua |
 | Model | SD65F233XA-HNR |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/1.8" CMOS |
 | Lens | 1× 5.8-191.4mm F1.5-F4.8 |

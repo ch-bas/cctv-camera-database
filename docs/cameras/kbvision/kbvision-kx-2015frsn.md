@@ -11,6 +11,7 @@
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/1.9" CMOS |
 | Power | PoE |
+| Protocols | rtsp |
 
 ## Streams
 

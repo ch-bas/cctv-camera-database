@@ -5,6 +5,7 @@
 | Brand | Milesight |
 | Model | MS-C5366-X12RIPG1 |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | 5MP (5MP, 2592×1944) |
 | Sensor | 1/2.8" Progressive Scan CMOS |
 | Lens | 1× 5 to 60mm F1.6 |
@@ -12,7 +13,7 @@
 | Night vision | ir (180m), 0.005 lux color |
 | Power | PoE+ (802.3at) / DC 10V ~ DC 28V |
 | Storage | microSD ≤ 1024GB |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | Yes |

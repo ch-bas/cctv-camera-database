@@ -28,6 +28,7 @@
 ## Sources
 
 - https://trassir.com/products/cameras/ip-cameras/tr-d2183zir6-v3-2-7-13-5/
+- https://www.dssl.ru/upload/iblock/758/QTR_UM-_4_.pdf
 
 ---
 *Auto-generated from trassir-tr-d2183zir6.json — do not edit by hand.*

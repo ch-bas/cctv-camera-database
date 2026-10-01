@@ -5,6 +5,7 @@
 | Brand | Uniarch |
 | Model | IPC-B244-ADF28K-WP |
 | Type | bullet |
+| Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2560×1440) |
 | Sensor | 1/1.8" CMOS |
 | Lens | 1× 2.8mm F1.0 |

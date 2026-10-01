@@ -11,7 +11,7 @@
 | Lens | 1× 5.9-147.5mm F1.5 |
 | Field of view | 59.8 to 3.3° |
 | Night vision | ir (400m), 0.0002 lux, 0.002 lux color |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Operating temp | -40 to 70°C |

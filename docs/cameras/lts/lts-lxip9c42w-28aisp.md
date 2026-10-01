@@ -14,6 +14,7 @@
 | Night vision | color (46m) |
 | Power | 12V DC / PoE |
 | Storage | microSD ≤ 256GB, NVR |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
 
@@ -29,6 +30,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/lxip9c42w-28aisp-4mp-ai-isp-fixed-bullet-network-camera.html
+- https://pic.ltsmall.com/software/ea8b51f332a3a01d2e0d7f53640889bf/LXIP9C42W-28AISP.pdf
 
 ---
 *Auto-generated from lts-lxip9c42w-28aisp.json — do not edit by hand.*

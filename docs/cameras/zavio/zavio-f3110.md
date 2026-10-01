@@ -38,6 +38,7 @@
 ## Sources
 
 - http://web.archive.org/web/20121010125843id_/http://zavio.com/downloads/product/63/datasheet_F3110_F3115.pdf
+- https://web.archive.org/web/20140702133621id_/http://www.zavio.com/downloads/product/63/F3102%20&%20F3107%20&%20F3110%20&%20F3115%20User%20Manual_20140417.pdf
 
 ---
 *Auto-generated from zavio-f3110.json — do not edit by hand.*

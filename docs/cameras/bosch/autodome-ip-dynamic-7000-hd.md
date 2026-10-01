@@ -30,5 +30,9 @@
 - dual recording (iSCSI + SD) and dual power (High PoE / 24 VAC); bidirectional audio
 - indoor/outdoor pendant (IP66/NEMA 4X) or indoor in-ceiling (IP54)
 
+## Sources
+
+- https://web.archive.org/web/20160222005959/http://resource.boschsecurity.com/documents/AutoDome_IP_dynamic__Data_sheet_enUS_15489531659.pdf
+
 ---
 *Auto-generated from bosch-autodome-ip-dynamic-7000-hd.json — do not edit by hand.*

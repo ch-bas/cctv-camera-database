@@ -10,6 +10,7 @@
 | Connectivity | wifi |
 | Resolution | 3MP (3MP, 2304×1296) |
 | Power | USB adapter (included) |
+| Protocols | rtsp |
 | Two-way audio | Yes |
 | Operating temp | 0 to 40°C |
 

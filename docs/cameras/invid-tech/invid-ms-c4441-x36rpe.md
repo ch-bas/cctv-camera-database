@@ -35,6 +35,7 @@
 
 - https://info.invidtech.com/hubfs/AAA_SpecSheets/Milesight/INVID-MS-C4441-X36RPE.pdf
 - https://resource.milesight.com/milesight/security/document/datasheet/ipc/series-e/milesight-ai-25x-30x-36x-42x-speed-dome-network-camera-ndaa-e-datasheet-en.pdf
+- https://support.milesight.com/support/solutions/articles/69000859092-rtsp-stream-of-milesight-network-camera-nvr-vms
 
 ---
 *Auto-generated from invid-tech-invid-ms-c4441-x36rpe.json — do not edit by hand.*

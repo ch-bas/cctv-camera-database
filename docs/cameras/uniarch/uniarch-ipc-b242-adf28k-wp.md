@@ -5,6 +5,7 @@
 | Brand | Uniarch |
 | Model | IPC-B242-ADF28K-WP |
 | Type | bullet |
+| Connectivity | ethernet |
 | Resolution | 1080p/2MP (2MP, 1920×1080) |
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 2.8mm F1.0 |

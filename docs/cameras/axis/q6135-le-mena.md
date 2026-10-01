@@ -13,7 +13,7 @@
 | Lens | 1× 4.3-137.6 (32x optical)mm F1.6 |
 | Field of view | 58.3-2.4 horizontal° |
 | Night vision | ir (250m), 0.008 lux, 0.06 lux color |
-| Power | High PoE (802.3bt) / 3-axis multi-connector cable |
+| Power | Axis High PoE 60 W midspan (camera max 51 W) or PoE+ IEEE 802.3at Type 2 Class 4 (camera max 25 W) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
@@ -42,6 +42,7 @@
 ## Sources
 
 - https://www.axis.com/products/axis-q6135-le
+- https://www.axis.com/dam/public/d2/3a/f8/datasheet-axis-q6135-le-ptz-network-camera-en-US-555528.pdf
 
 ---
 *Auto-generated from axis-q6135-le-mena.json — do not edit by hand.*

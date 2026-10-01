@@ -12,7 +12,7 @@
 | Field of view | 113 to 31 horizontal° |
 | Night vision | ir (40m), 0.005 lux color |
 | Power | 12V DC/PoE (802.3af) |
-| Protocols | rtsp, p2p |
+| Protocols | rtsp, p2p, onvif |
 | IP rating | IP67 |
 | Two-way audio | No |
 | Operating temp | -30 to 60°C |
@@ -38,6 +38,7 @@
 ## Sources
 
 - https://support.amcrest.com/hc/en-us/articles/17235963946125-Technical-Specifications-IP8M-VT2679EW-AI
+- https://support.amcrest.com/hc/en-us/articles/17235951987597-User-Manual-IP8M-VT2679EW-AI
 
 ---
 *Auto-generated from amcrest-ip8m-vt2679ew-ai.json — do not edit by hand.*

@@ -8,7 +8,7 @@
 | Model | IPC-HFW1439S1P-LED-S4 |
 | Type | bullet |
 | Connectivity | ethernet |
-| Resolution | 4MP (4MP, 2688×1520) |
+| Resolution | 4MP (4MP, 2560×1440) |
 | Sensor | 1/3" CMOS |
 | Lens | 1× 2.8 (fixed)mm F1.6 |
 | Field of view | 95 (2.8mm) / 78 (3.6mm)° |
@@ -41,6 +41,7 @@
 ## Sources
 
 - https://www.dahuasecurity.com/in/products/All-Products/Network-Cameras/Lite-Series/4-MP/DH-IPC-HFW1439S1P-LED-S4
+- https://web.archive.org/web/20230925000614/https://www.dahuasecurity.com/in/products/All-Products/Network-Cameras/Lite-Series/4-MP/DH-IPC-HFW1439S1P-LED-S4
 
 ---
 *Auto-generated from dahua-ipc-hfw1439s1p-led-s4.json — do not edit by hand.*

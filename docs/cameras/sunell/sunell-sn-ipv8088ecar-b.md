@@ -8,7 +8,7 @@
 | Model | SN-IPV8088ECAR-B |
 | Type | fisheye |
 | Connectivity | ethernet |
-| Resolution | 12MP (12MP, 4512×2512) |
+| Resolution | 12MP (12MP, 4000×3000) |
 | Sensor | 1/1.7" CMOS |
 | Lens | 1.8mm F2.4 |
 | Field of view | 180 x 180° |

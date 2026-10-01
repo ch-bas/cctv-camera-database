@@ -27,6 +27,7 @@
 
 - https://ganzsecurity.com/
 - https://computarganz.s3.amazonaws.com/Ganz+Active+Resources/GENSTAR_IP_4P+brochure+09.01.23+V2.pdf
+- https://computarganz.s3.amazonaws.com/Ganz+Active+Resources/Genstar+Web+Operation+Guide+Manual+V3.6_02.09.2024.pdf
 
 ---
 *Auto-generated from ganz-zn8-m4ntfn4l.json — do not edit by hand.*

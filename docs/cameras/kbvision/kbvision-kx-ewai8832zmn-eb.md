@@ -13,6 +13,7 @@
 | Night vision | ir (120m) |
 | Power | 12 VDC/24 VAC/PoE |
 | Storage | microSD ≤ 512GB |
+| Protocols | rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 

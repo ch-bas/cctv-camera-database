@@ -5,6 +5,7 @@
 | Brand | Mapesen |
 | Model | T2FQ500Y-P |
 | Type | fisheye |
+| Connectivity | ethernet |
 | Resolution | 5MP (5MP, 2880×1620) |
 | Sensor | 1/2.7" CMOS |
 | Lens | 1.8mm |

@@ -7,6 +7,7 @@
 | Brand | Milesight |
 | Model | MS-C5321-FPE |
 | Type | panoramic |
+| Connectivity | ethernet |
 | Resolution | 4x5MP (20MP, 2592×1944) |
 | Sensor | 4x 1/2.8" Progressive Scan CMOS |
 | Lens | 4× 3-9mm F1.6-F2.7 |
@@ -14,7 +15,7 @@
 | Night vision | ir (30m), 0.005 lux color |
 | Power | PoE (802.3at) / DC 12V |
 | Storage | microSD ≤ 1024GB |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | IK rating | IK10 |
 | Two-way audio | No |

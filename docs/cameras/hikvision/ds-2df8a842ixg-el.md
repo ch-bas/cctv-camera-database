@@ -12,7 +12,7 @@
 | Night vision | ir, 0.0005 lux, 0.005 lux color |
 | Power | PoE |
 | Storage | NVR |
-| Protocols | rtsp, http |
+| Protocols | onvif, rtsp, http |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Operating temp | -40°C to 70°C°C |

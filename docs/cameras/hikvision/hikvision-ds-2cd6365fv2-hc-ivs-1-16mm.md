@@ -7,7 +7,7 @@
 | Type | fisheye |
 | Resolution | (6MP) |
 | Storage | NVR |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | Two-way audio | No |
 
 ## Features

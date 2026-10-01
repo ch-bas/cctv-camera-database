@@ -35,6 +35,7 @@
 
 - https://bolintechnology.com/product/4k-ptz-camera-w-1-cmos-sensor-bc-9-series
 - https://bolintechnology.com/wp-content/uploads/2023/05/BC-9-4K12S-S6MN-DATASHEET_05182023.pdf
+- https://knowledge.bolintechnology.com/bc9part2
 
 ---
 *Auto-generated from bolin-bc-9-4k12s-s6mn.json — do not edit by hand.*

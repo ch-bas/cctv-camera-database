@@ -5,6 +5,7 @@
 | Brand | Hikvision |
 | Model | iDS-2SE4C226IMW-DE |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | (6MP, 3680×1656) |
 | Lens | 2.8mm |
 | Night vision | hybrid (100m) |

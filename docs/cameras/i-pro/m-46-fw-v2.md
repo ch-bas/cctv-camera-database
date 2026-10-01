@@ -12,7 +12,7 @@
 | Field of view | 112.9 H / 59.1 V / 121.2 D° |
 | Night vision | ir (30m), 0.003 lux color |
 | Storage | microSD ≤ 256GB |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |
@@ -27,6 +27,7 @@
 ## Sources
 
 - https://i-pro.com/products_and_solutions/en/surveillance/products/m-46-fw-v2
+- https://i-pro.com/products_and_solutions/sites/default/files/2025-10/M-46-FW-V2%20Specsheet_A4_1008.pdf
 
 ---
 *Auto-generated from i-pro-m-46-fw-v2.json — do not edit by hand.*

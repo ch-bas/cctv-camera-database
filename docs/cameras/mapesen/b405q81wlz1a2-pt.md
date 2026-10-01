@@ -5,6 +5,7 @@
 | Brand | Mapesen |
 | Model | B405Q81WLZ1A2-PT |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | 8MP (8MP, 3840×2160) |
 | Sensor | 1/2.66" CMOS |
 | Lens | 4.7-94.06mm F1.6-2.7 |

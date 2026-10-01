@@ -21,7 +21,7 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| main | 720x480 | 30 | H.265+ |
+| main | 4000x3000 | 25 | H.265+ |
 
 ## Features
 

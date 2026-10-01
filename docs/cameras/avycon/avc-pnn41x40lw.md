@@ -36,6 +36,7 @@
 ## Sources
 
 - https://avyconaivo.com/data/item/AVC-PNN41X40LW/DataSheet_AVC-PNN41X40LW_EN.pdf
+- https://avycon.freshdesk.com/support/solutions/articles/36000299004-rtsp-syntax-for-plug-play-series-ip-cameras
 
 ---
 *Auto-generated from avycon-avc-pnn41x40lw.json — do not edit by hand.*

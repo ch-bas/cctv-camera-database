@@ -34,6 +34,7 @@
 
 - https://info.invidtech.com/hubfs/AAA_SpecSheets/Milesight/INVID-MS-C2941-X42RPE.pdf
 - https://www.milesight.com/static/file/en/download/datasheet/ipc/Milesight-H.265-Speed-Dome-Network-Camera-Datasheet-en.pdf
+- https://support.milesight.com/support/solutions/articles/69000859092-rtsp-stream-of-milesight-network-camera-nvr-vms
 
 ---
 *Auto-generated from invid-tech-invid-ms-c2941-x42rpe.json — do not edit by hand.*

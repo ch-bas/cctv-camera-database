@@ -5,6 +5,7 @@
 | Brand | Hikvision |
 | Model | DS-2CD2T67SFWDA4-LS |
 | Type | bullet |
+| Connectivity | ethernet |
 | Resolution | (6MP, 3200×1800) |
 | Sensor | 1/1.8" Progressive Scan CMOS |
 | Lens | 4mm |

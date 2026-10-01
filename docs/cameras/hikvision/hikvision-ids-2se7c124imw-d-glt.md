@@ -10,7 +10,7 @@
 | Night vision | hybrid (150m) |
 | Power | DC 12V |
 | Storage | NVR |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | Two-way audio | No |
 | Operating temp | -30°C ~ 65°C°C |

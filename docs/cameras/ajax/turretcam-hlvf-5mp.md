@@ -38,6 +38,7 @@
 ## Sources
 
 - https://ajax.systems/products/specs/turretcam-hlvf-5-mp/
+- https://ajax.systems/support/manuals/onvif/
 
 ---
 *Auto-generated from ajax-turretcam-hlvf-5mp.json — do not edit by hand.*

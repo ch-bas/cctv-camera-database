@@ -7,6 +7,7 @@
 | Brand | Dahua |
 | Model | IPC-HFW5241E-Z12E |
 | Type | bullet |
+| Connectivity | ethernet |
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/2.8" 2MP progressive STARVIS CMOS |
 | Lens | 1× 5.3-64mm F1.5 |

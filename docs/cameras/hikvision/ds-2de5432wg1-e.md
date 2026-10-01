@@ -12,7 +12,7 @@
 | Field of view | 50.8 to 2.6° |
 | Night vision | 0.001 lux, 0.005 lux color |
 | Power | 24 VAC / PoE 802.3at |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | IK rating | IK10 |
 | Operating temp | -30 to 65°C |

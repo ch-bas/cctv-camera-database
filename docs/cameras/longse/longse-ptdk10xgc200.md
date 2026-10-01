@@ -12,7 +12,7 @@
 | Night vision | ir (60m), 0.008 lux color |
 | Power | DC12V/1A(Device power consumption) |
 | Storage | NVR |
-| Protocols | rtsp, http |
+| Protocols | onvif, rtsp, http |
 | IP rating | IP66 |
 
 ## Streams

@@ -5,13 +5,14 @@
 | Brand | Milesight |
 | Model | MS-C8152-PE |
 | Type | box |
+| Connectivity | ethernet |
 | Resolution | 4K (8MP, 3840×2160) |
 | Sensor | 1/2.8" Progressive Scan CMOS |
 | Lens | F1.2 |
 | Night vision | ir, 0.01 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 1024GB |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Operating temp | -40 to 60°C |

@@ -7,6 +7,7 @@
 | Brand | Hikvision |
 | Model | iDS-2PT3A20BX-DE(C2)(T5) |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | (2.07MP, 1920×1080) |
 | Lens | 4-8mm F1.0 |
 | Night vision | (30m) |

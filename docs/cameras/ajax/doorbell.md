@@ -41,6 +41,7 @@
 
 - https://ajax.systems/products/specs/doorbell/
 - https://ajax.systems/products/doorbell/
+- https://ajax.systems/support/manuals/onvif/
 
 ---
 *Auto-generated from ajax-doorbell.json — do not edit by hand.*

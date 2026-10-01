@@ -8,7 +8,7 @@
 | Model | SN-IPV8146HDBS-Z |
 | Type | dome |
 | Connectivity | ethernet |
-| Resolution | 4MP (4MP, 2688×1520) |
+| Resolution | 4MP (4MP, 2560×1440) |
 | Sensor | 1/3” Progressive Scan CMOS |
 | Lens | 2.7-13.5mm F1.6 |
 | Field of view | H: 91 to 29.5, V: 49 to 16.5° |

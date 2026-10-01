@@ -10,6 +10,7 @@
 | Lens | 1× 2.7-12mm |
 | Night vision | hybrid, 0.002 lux color |
 | Power | PoE |
+| Protocols | onvif, rtsp |
 
 ## Features
 
@@ -20,6 +21,7 @@
 ## Sources
 
 - https://www.jiankongqicai.com/chanpin/117.html
+- https://www.hikvision.com/cn/products/pdplist/63321/
 
 ---
 *Auto-generated from hikvision-ds-2xa2686f-lzs.json — do not edit by hand.*

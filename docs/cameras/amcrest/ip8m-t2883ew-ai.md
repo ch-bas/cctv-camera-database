@@ -13,7 +13,7 @@
 | Night vision | hybrid (50m), 0.0005 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
-| Protocols | rtsp, p2p |
+| Protocols | rtsp, p2p, onvif |
 | IP rating | IP67 |
 | Two-way audio | No |
 | Operating temp | -40 to 60°C |
@@ -39,6 +39,7 @@
 ## Sources
 
 - https://support.amcrest.com/hc/en-us/articles/20429973895693-Technical-Specifications-IP8M-T2883EW-AI
+- https://support.amcrest.com/hc/en-us/articles/20440017425549-User-Manual-IP8M-T2883EW-AI
 
 ---
 *Auto-generated from amcrest-ip8m-t2883ew-ai.json — do not edit by hand.*

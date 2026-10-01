@@ -14,7 +14,7 @@
 | Field of view | 110° |
 | Night vision | hybrid (50m), 0.005 lux color |
 | Power | 12V DC / PoE |
-| Protocols | rtsp, p2p |
+| Protocols | rtsp, p2p, onvif |
 | IP rating | IP67 |
 | Two-way audio | No |
 | Operating temp | -40 to 60°C |
@@ -41,6 +41,7 @@
 ## Sources
 
 - https://support.amcrest.com/hc/en-us/articles/11071625594637-Technical-Specifications-IP5M-T1277EW-AI
+- https://support.amcrest.com/hc/en-us/articles/11071645584141-User-Manual-IP5M-T1277EW-AI
 
 ---
 *Auto-generated from amcrest-ip5m-t1277ew-ai.json — do not edit by hand.*

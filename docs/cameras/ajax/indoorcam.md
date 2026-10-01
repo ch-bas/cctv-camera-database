@@ -31,6 +31,7 @@
 ## Sources
 
 - https://ajax.systems/products/specs/indoorcam/
+- https://ajax.systems/support/manuals/onvif/
 
 ---
 *Auto-generated from ajax-indoorcam.json — do not edit by hand.*

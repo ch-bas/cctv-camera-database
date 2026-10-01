@@ -13,7 +13,7 @@
 | Night vision | (30m) |
 | Power | DC12V/PoE |
 | Storage | microSD ≤ 256GB, NVR |
-| Protocols | rtsp, rtmp, http |
+| Protocols | rtsp, rtmp, http, onvif |
 | IP rating | IP68 |
 
 ## Features

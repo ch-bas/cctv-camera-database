@@ -12,7 +12,7 @@
 | Field of view | 98.26 H / 54.76 V / 127.74 D° |
 | Night vision | ir (30m), 0.003 lux color |
 | Storage | microSD ≤ 256GB |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
 | Operating temp | -40 to 60°C |

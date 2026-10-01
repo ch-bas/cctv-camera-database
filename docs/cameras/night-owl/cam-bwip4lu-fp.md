@@ -12,6 +12,7 @@
 | Field of view | 105 diagonal° |
 | Night vision | ir (18m) |
 | Power | built-in rechargeable battery |
+| Protocols | rtsp |
 | IP rating | IP65 |
 | Two-way audio | Yes |
 | Operating temp | -20 to 60°C |

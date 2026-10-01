@@ -6,7 +6,7 @@
 | Model | TH2AFCV5RC |
 | Type | dome |
 | Connectivity | ethernet |
-| Resolution | 5MP (5MP, 2968×1674) |
+| Resolution | 5MP (5MP, 2880×1620) |
 | Sensor | 1/2.7" Progressive Scan CMOS Sensor |
 | Lens | 2.8mm F1.6 |
 | Field of view | 109 H / 58 V / 129 D° |

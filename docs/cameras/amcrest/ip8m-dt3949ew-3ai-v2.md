@@ -13,7 +13,7 @@
 | Night vision | hybrid (30m), 0.004 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
-| Protocols | rtsp |
+| Protocols | rtsp, onvif |
 | IP rating | IP67 |
 | Two-way audio | Yes |
 | Operating temp | -40 to 60°C |
@@ -39,6 +39,7 @@
 ## Sources
 
 - https://support.amcrest.com/hc/en-us/articles/17689133941389-Technical-Specifications-IP8M-DT3949EW-3AI-V2
+- https://support.amcrest.com/hc/en-us/articles/17695726766605-User-Manual-IP8M-DT3949EW-3AI-V2
 
 ---
 *Auto-generated from amcrest-ip8m-dt3949ew-3ai-v2.json — do not edit by hand.*

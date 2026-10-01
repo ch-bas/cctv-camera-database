@@ -6,6 +6,26 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.27.1] — 2026-10-01
+
+Data-consistency fixes from the second CCTV expert audit (2026-10-01). Every value change cites the manufacturer's own documentation (manual, support KB, datasheet) and was re-checked by an independent reviewer that reverted edits its source didn't support. Third-party RTSP lists were not used; where a maker publishes nothing, the record is left as it was. No new cameras.
+
+### Fixed — RTSP paths
+- **20 new brand RTSP guides** (`strix/verified/`), 143 verified guides in total (was 120): 360 Vision Technology, Akuvox, AVYCON, Bolin, Comelit, Costar, Dallmeier, Eagle Eye Networks, Ernitec, ESCAM, Illustra, IQinVision, LILIN, Luminys, Oncam, Tenda, Toshiba, Trassir, Urmet, Vicon, Vikylin, Zavio. Cameras without a path of their own now get their brand's documented path: cameras listing RTSP with no path at all fell from **2,750 to 1,379**.
+- **Illustra (57)** — iSpy-sourced `/primarystream` → `/videoStreamId=1` + `/videoStreamId=2`, per Illustra's Gen4 manuals.
+- Per-model paths where a brand's product lines differ (Mapesen face-recognition `/stream_0`, ESCAM per-model URLs, Oncam EVO-05, Vikylin series and others).
+- **29 RTSP guide files** converted to the canonical shape, so brand names display correctly (i-PRO, IDIS, LTS, ZKTeco, HOLOWITS …).
+- Still without any official path: Mapesen (339), NOVUS, Grundig, Homaxi, Meari, Infiniti Optics, BCS, Avtron, Secureye, CNB, Ajax and smaller brands.
+
+### Fixed — specs and consistency
+- **ONVIF** — `onvif` added to `protocols` (or a wrong `onvif_port` removed) after checking the datasheets: mismatches fell from 804 to 35.
+- **PoE class vs power draw** — classes and maximum draw re-read from datasheets (a class is only kept when the datasheet prints it): contradictions fell from 350 to 114.
+- **Max resolution vs main stream** — max resolution is the main-stream output, not sensor pixels: mismatches fell from 442 to 83.
+- **Protocols / connectivity / storage** — `rtsp` added on 653 cameras that have an RTSP URL, `ethernet` on 333 PoE cameras, `storage.onboard` on 181 cameras that state a microSD capacity.
+- **Integration names** — Blue Iris profile values collapsed to the names Blue Iris uses (8,229 records); Home Assistant `generic_camera` → `generic`, `motionEye` → `motioneye`. 4 Sonoff RTSP templates use `{user}:{pass}@{ip}`.
+
+No new cameras.
+
 ## [2.27.0] — 2026-10-01
 
 A data-quality release from the 2026-09-29 CCTV expert audit. Every flagged record was checked against the manufacturer's own documentation (manuals, support KBs, datasheets), then re-checked by an independent reviewer that reverted any edit its source didn't support. Values a manufacturer does not publish were left as they are rather than estimated. No new cameras.

@@ -7,7 +7,7 @@
 | Brand | Ubiquiti |
 | Model | UniFi Protect G3 Instant |
 | Type | dome |
-| Connectivity | wifi |
+| Connectivity | ethernet, wifi |
 | Resolution | 1080p HD (2MP, 1920×1080) |
 | Sensor | 2MP CMOS |
 | Lens | 1× 2.8mm F2.0 |

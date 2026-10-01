@@ -31,6 +31,7 @@
 ## Sources
 
 - https://info.invidtech.com/hubfs/AAA_SpecSheets/Milesight/INVID-MS-C8274-PA.pdf
+- https://support.milesight.com/support/solutions/articles/69000859092-rtsp-stream-of-milesight-network-camera-nvr-vms
 
 ---
 *Auto-generated from invid-tech-invid-ms-c8274-pa.json — do not edit by hand.*

@@ -13,7 +13,7 @@
 | Night vision | ir (100m), 0.0005 lux color |
 | Power | PoE+ (802.3at) / DC 12V |
 | Storage | microSD ≤ 512GB, NVR |
-| Protocols | rtsp |
+| Protocols | rtsp, onvif |
 | IP rating | IP66 |
 | Operating temp | -40 to 70°C |
 
@@ -37,6 +37,7 @@
 ## Sources
 
 - https://support.amcrest.com/hc/en-us/articles/16291778239885-Technical-Specifications-IP2M-863EW-AI-V2
+- https://support.amcrest.com/hc/en-us/articles/16291906660237-User-Manual-IP2M-863EW-AI-V2
 
 ---
 *Auto-generated from amcrest-ip2m-863ew-ai-v2.json — do not edit by hand.*

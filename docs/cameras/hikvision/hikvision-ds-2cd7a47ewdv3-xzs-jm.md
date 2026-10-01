@@ -5,6 +5,7 @@
 | Brand | Hikvision |
 | Model | DS-2CD7A47EWDV3-XZS/JM |
 | Type | bullet |
+| Connectivity | ethernet |
 | Resolution | (4MP, 2688×1520) |
 | Sensor | 1/1.8" CMOS |
 | Lens | 2.8-12mm F1.2 |

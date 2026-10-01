@@ -14,6 +14,7 @@
 | Field of view | 2.2 to 54.2° |
 | Night vision | none, 1 lux color |
 | Power | AC 24V, DC 12V |
+| Protocols | rtsp |
 | Operating temp | 0 to 50°C |
 | Released | 2005 |
 
@@ -35,6 +36,7 @@
 ## Sources
 
 - https://www.sony.de/electronics/support/video-security-ip-cameras/snc-rx550n
+- https://web.archive.org/web/20080508171909/http://pro.sony.com/bbsc/ssr/product-SNCRX550N/B/
 
 ---
 *Auto-generated from sony-snc-rx550n.json — do not edit by hand.*

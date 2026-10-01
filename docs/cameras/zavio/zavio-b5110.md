@@ -39,6 +39,7 @@
 ## Sources
 
 - http://web.archive.org/web/20121010123319id_/http://zavio.com/downloads/product/32/datasheet_B5110.pdf
+- https://web.archive.org/web/20121010122954id_/http://zavio.com/downloads/product/32/B5110_User%20Manual.pdf
 
 ---
 *Auto-generated from zavio-b5110.json — do not edit by hand.*

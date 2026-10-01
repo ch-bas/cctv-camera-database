@@ -5,6 +5,7 @@
 | Brand | Hikvision |
 | Model | DS-2CD2T46SFWDA4-LS |
 | Type | bullet |
+| Connectivity | ethernet |
 | Resolution | (4MP, 2688×1520) |
 | Lens | F1.6 |
 | Night vision | hybrid (50m) |

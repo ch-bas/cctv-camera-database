@@ -6,7 +6,7 @@
 | Model | LVDBHKL2R-X5 |
 | Type | dome |
 | Connectivity | ethernet |
-| Resolution | 2MP (2MP, 1945×1097) |
+| Resolution | 2MP (2MP, 1920×1080) |
 | Sensor | 1/2.8" SONY Starvis Back-illuminated CMOS Sensor |
 | Lens | 2.7-13.5mm F1.6 |
 | Night vision | 0.001 lux color |

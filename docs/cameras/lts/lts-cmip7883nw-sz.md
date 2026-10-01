@@ -14,6 +14,7 @@
 | Field of view | 105 to 34.5° |
 | Night vision | ir (30m), 0.018 lux color |
 | Power | 12VDC ±25%, PoE (802.3af, class 3) |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Operating temp | -30 to 60°C |
@@ -36,6 +37,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/network-ip-dome-camera-cmip7883nw-sz.html
+- https://pic.ltsmall.com/pdf/LTCMIP7883NW-SZ_data%20sheet.pdf
 
 ---
 *Auto-generated from lts-cmip7883nw-sz.json — do not edit by hand.*

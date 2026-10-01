@@ -13,7 +13,7 @@
 | Lens | 2.8mm |
 | Night vision | ir (30m), 0.02 lux |
 | Storage | NVR |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 
 ## Features

@@ -13,7 +13,7 @@
 | Night vision | ir (50m), 0.0001 lux, 0.0005 lux color |
 | Power | 12 VDC ± 20% / PoE: IEEE 802.3at, Type 2, Class 4 |
 | Storage | microSD ≤ 256GB, NVR |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Operating temp | -30 to 60°C |

@@ -5,6 +5,7 @@
 | Brand | Milesight |
 | Model | MS-C2871-X20TPA |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | 2MP (2MP, 1920×1080) |
 | Sensor | 1/2" Progressive Scan CMOS |
 | Lens | 1× 6.4 to 128mm F1.6~F4.0 |
@@ -12,7 +13,7 @@
 | Night vision | ir (160m), 0.002 lux color |
 | Power | PoE (802.3at) / DC 12V |
 | Storage | microSD ≤ 256GB |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | IK rating | IK10 |
 | Two-way audio | No |

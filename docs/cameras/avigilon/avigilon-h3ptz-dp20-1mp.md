@@ -13,7 +13,7 @@
 | Lens | 1× 4.7-94mm F1.6 |
 | Field of view | 2.9-55.2° |
 | Night vision | none, 0.04 lux, 0.4 lux color |
-| Power | PoE (IEEE 802.3at Class 4 PoE Plus) or AC power |
+| Power | PoE (IEEE 802.3at Class 4 PoE Plus, 25.5 W) or 24 VAC/24 VDC external power (35 W, 50 VA with AC) |
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | IK rating | IK10 |

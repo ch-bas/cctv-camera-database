@@ -34,6 +34,7 @@
 
 - https://bolintechnology.com/product/vcc-m2h10b-video-conferencing-proav-ptz
 - https://bolintechnology.com/wp-content/uploads/2023/04/VCC-M2H10BI-4FN1-DATASHEET-06192021.pdf
+- https://knowledge.bolintechnology.com/vccm2part2
 
 ---
 *Auto-generated from bolin-vcc-m2h10bi-4fn1.json — do not edit by hand.*

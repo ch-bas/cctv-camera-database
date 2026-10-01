@@ -38,6 +38,7 @@
 ## Sources
 
 - http://web.archive.org/web/20121010134439id_/http://zavio.com/downloads/product/49/datasheet_F210A.pdf
+- https://web.archive.org/web/20121010134312id_/http://zavio.com/downloads/product/49/F210A%20%20Firmware%20User%20Manual%2016.03.pdf
 
 ---
 *Auto-generated from zavio-f210a.json — do not edit by hand.*

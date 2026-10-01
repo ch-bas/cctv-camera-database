@@ -13,7 +13,7 @@
 | Night vision | hybrid (150m) |
 | Power | DC24V |
 | Storage | NVR |
-| Protocols | rtsp, rtmp, http |
+| Protocols | rtsp, rtmp, http, onvif |
 | IP rating | IP66 |
 
 ## Features

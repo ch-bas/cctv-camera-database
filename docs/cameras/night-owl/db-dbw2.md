@@ -12,6 +12,7 @@
 | Field of view | 140 diagonal° |
 | Power | existing doorbell wiring |
 | Storage | NVR |
+| Protocols | rtsp |
 | IP rating | IP43 |
 | Two-way audio | Yes |
 | Operating temp | -30 to 65°C |

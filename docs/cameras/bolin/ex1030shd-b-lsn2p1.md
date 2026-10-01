@@ -33,6 +33,7 @@
 
 - https://bolintechnology.com/product/pro-outdoor-sdi-ip-ptz-camera-gen2-discontinued
 - https://bolintechnology.com/wp-content/uploads/2023/03/EX1030SHD-B-LSN2P1-07052020-2.pdf
+- https://knowledge.bolintechnology.com/bc7part2
 
 ---
 *Auto-generated from bolin-ex1030shd-b-lsn2p1.json — do not edit by hand.*

@@ -7,6 +7,7 @@
 | Brand | Dahua |
 | Model | SD6AE433XA-HNR |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2560×1440) |
 | Sensor | 1/1.8" CMOS |
 | Lens | 1× 5.8-191.4mm F1.5-F4.8 |

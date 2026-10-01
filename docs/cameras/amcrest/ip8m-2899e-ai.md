@@ -14,7 +14,7 @@
 | Field of view | 53.1 to 3.4 horizontal° |
 | Night vision | ir (100m) |
 | Power | DC 12V/3A / PoE+ (802.3at) |
-| Protocols | rtsp |
+| Protocols | rtsp, onvif |
 | IP rating | IP66 |
 | Operating temp | -40 to 70°C |
 
@@ -39,6 +39,7 @@
 ## Sources
 
 - https://support.amcrest.com/hc/en-us/articles/4505722116621-Technical-Specifications-IP8M-2899EW-AI
+- https://support.amcrest.com/hc/en-us/articles/4505803653261-User-Manual-IP8M-2899EW-AI
 
 ---
 *Auto-generated from amcrest-ip8m-2899e-ai.json — do not edit by hand.*

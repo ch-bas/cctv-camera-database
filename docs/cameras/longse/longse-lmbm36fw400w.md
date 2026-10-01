@@ -6,7 +6,7 @@
 | Model | LMBM36FW400W |
 | Type | box |
 | Connectivity | wifi, ethernet |
-| Resolution | 4MP (4MP, 2560×1440) |
+| Resolution | 4MP (4MP, 2688×1512) |
 | Sensor | 1/3" Progressive Scan CMOS Sensor |
 | Lens | 2.8mm |
 | Night vision | ir, 0.01 lux color |

@@ -15,7 +15,7 @@
 | Night vision | ir (10m) |
 | Power | DC 5V/1A mains adapter |
 | Storage | microSD ≤ 256GB, NVR |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | Two-way audio | Yes |
 | Operating temp | -10 to 45°C |
 

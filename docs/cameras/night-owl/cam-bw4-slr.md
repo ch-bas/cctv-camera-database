@@ -10,6 +10,7 @@
 | Connectivity | wifi |
 | Resolution | 2K (4MP, 2560×1440) |
 | Power | rechargeable battery (2 per camera) + solar |
+| Protocols | rtsp |
 | IP rating | IP65 |
 | Two-way audio | Yes |
 | Operating temp | 0 to 40°C |

@@ -14,6 +14,7 @@
 | Night vision | ir (30m) |
 | Power | DC12V / PoE |
 | Storage | microSD ≤ 256GB, NVR |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
 
@@ -35,6 +36,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/vsip3442w-mda-4mp-hd-ir-fixed-turret-network-camera.html
+- https://pic.ltsmall.com/software/a142455f06d83b848bb6e90849d59d9b/VSIP3442W-28MDA%2C%20VSIP3442W-MDA%20Spec.pdf
 
 ---
 *Auto-generated from lts-vsip3442w-mda.json — do not edit by hand.*

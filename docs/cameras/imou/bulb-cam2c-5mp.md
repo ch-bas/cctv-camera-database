@@ -13,7 +13,7 @@
 | Night vision | color (10m) |
 | Power | AC 100-240V (E27 screw mount) |
 | Storage | microSD ≤ 512GB |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | Two-way audio | Yes |
 | Operating temp | -20 to 50°C |
 

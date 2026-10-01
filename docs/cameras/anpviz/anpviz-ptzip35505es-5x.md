@@ -10,6 +10,7 @@
 | Lens | 2.7-13.5mmmm |
 | Night vision | ir (30m) |
 | Power | PoE |
+| Protocols | onvif |
 | IP rating | IP66 |
 | IK rating | IK10 |
 | Two-way audio | No |
@@ -31,6 +32,7 @@
 ## Sources
 
 - https://anpviz.com/products/ptzip35505es-5x
+- https://drive.google.com/file/d/1L41Lynx-L-0r8BrRpg3a1c-Xmk8nYjA2/view
 
 ---
 *Auto-generated from anpviz-ptzip35505es-5x.json — do not edit by hand.*

@@ -32,7 +32,7 @@
 
 - https://illustracameras.com/
 - https://illustracameras.com/wp-content/uploads/2022/08/Illustra-Pro-Gen4-Fisheye-Data-Sheet.pdf
-- https://www.ispyconnect.com/camera/illustra
+- https://illustracameras.com/wp-content/uploads/2022/08/UM-PG4-12MP-FE_A163818NN6_B_en-1.pdf
 
 ---
 *Auto-generated from illustra-ips12-f27-oia4.json — do not edit by hand.*

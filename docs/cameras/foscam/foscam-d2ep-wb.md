@@ -13,7 +13,7 @@
 | Night vision | ir (20m) |
 | Power | PoE (802.3af) or DC 12V/1.0A |
 | Storage | microSD ≤ 512GB, NVR |
-| Protocols | rtsp, http, p2p |
+| Protocols | rtsp, onvif, http, p2p |
 | IP rating | IP66 |
 | IK rating | IK10 |
 | Two-way audio | Yes |
@@ -41,6 +41,7 @@
 ## Sources
 
 - https://www.foscam.eu/d2ep-wb.html
+- https://www.foscam.com/downloads/file.html?cate=manual&id=100
 
 ---
 *Auto-generated from foscam-d2ep-wb.json — do not edit by hand.*

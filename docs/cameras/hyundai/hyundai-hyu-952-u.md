@@ -14,7 +14,7 @@
 | Field of view | 58° |
 | Night vision | ir (200m), 0.0018 lux |
 | Storage | microSD ≤ 256GB, NVR |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | Yes |

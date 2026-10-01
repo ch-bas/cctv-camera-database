@@ -11,6 +11,7 @@
 | Resolution | 4K UHD (8MP, 3840×2160) |
 | Night vision | color |
 | Storage | NVR |
+| Protocols | rtsp |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 

@@ -37,6 +37,7 @@
 ## Sources
 
 - https://www.tendacn.com/us/product/specification/807705463984197
+- https://www.tendacn.com/us/product/specification/CS6G-V1
 
 ---
 *Auto-generated from tenda-cs6g.json — do not edit by hand.*

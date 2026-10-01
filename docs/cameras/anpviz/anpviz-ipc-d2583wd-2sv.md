@@ -10,6 +10,7 @@
 | Night vision | hybrid (30m) |
 | Power | PoE |
 | Storage | microSD ≤ 512GB |
+| Protocols | onvif |
 | IP rating | IP67 |
 | IK rating | IK08 |
 | Two-way audio | No |
@@ -32,6 +33,7 @@
 ## Sources
 
 - https://anpviz.com/products/ipc-d2583wd-2sv
+- https://anpvizsupport.com/u_file/file/2503/25/d2f527a589.pdf
 
 ---
 *Auto-generated from anpviz-ipc-d2583wd-2sv.json — do not edit by hand.*

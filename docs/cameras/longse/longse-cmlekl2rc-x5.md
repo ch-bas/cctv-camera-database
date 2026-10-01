@@ -6,7 +6,7 @@
 | Model | CMLEKL2RC-X5 |
 | Type | turret |
 | Connectivity | ethernet |
-| Resolution | 2MP (2MP, 1945×1097) |
+| Resolution | 2MP (2MP, 1920×1080) |
 | Sensor | 1/2.8" SONY Starvis Back-illuminated CMOS Sensor |
 | Lens | 2.7-13.5mm F1.6~3.3 |
 | Field of view | 110-32 H / 58-19 V / 132-36 D° |

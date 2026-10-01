@@ -7,6 +7,7 @@
 | Brand | Hikvision |
 | Model | iDS-2DF8C425MH-AFW/SP/XA(T5) |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | (4MP) |
 | Night vision | ir (200m) |
 | Storage | microSD ≤ 256GB |

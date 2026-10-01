@@ -13,7 +13,7 @@
 | Night vision | hybrid |
 | Power | DC 12V/1A |
 | Storage | microSD ≤ 512GB |
-| Protocols | rtsp, p2p |
+| Protocols | rtsp, onvif, p2p |
 | IP rating | IP65 |
 | Two-way audio | Yes |
 
@@ -44,6 +44,7 @@
 ## Sources
 
 - https://www.foscam.eu/pd5-w.html
+- https://www.foscam.com/downloads/file.html?cate=manual&id=152
 
 ---
 *Auto-generated from foscam-pd5-w.json — do not edit by hand.*

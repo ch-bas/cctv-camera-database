@@ -12,7 +12,7 @@
 | Field of view | 106° |
 | Night vision | hybrid (30m), 0.004 lux color |
 | Power | 12 VDC / PoE (802.3af) |
-| Protocols | rtsp, p2p |
+| Protocols | rtsp, p2p, onvif |
 | IP rating | IP67 |
 | Two-way audio | No |
 | Operating temp | -40 to 60°C |
@@ -39,6 +39,7 @@
 ## Sources
 
 - https://support.amcrest.com/hc/en-us/articles/12580682660749-Technical-Specifications-IP8M-DT3949EW-3AI
+- https://support.amcrest.com/hc/en-us/articles/12580689011213-User-Manual-IP8M-DT3949EW-3AI
 
 ---
 *Auto-generated from amcrest-ip8m-dt3949ew-3ai.json — do not edit by hand.*

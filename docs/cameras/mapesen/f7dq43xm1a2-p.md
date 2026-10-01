@@ -5,6 +5,7 @@
 | Brand | Mapesen |
 | Model | F7DQ43XM1A2-P |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2560×1440) |
 | Sensor | 1/2.66" CMOS |
 | Lens | 2.8-12mm |

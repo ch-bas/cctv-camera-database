@@ -11,7 +11,7 @@
 | Lens | 1× 6.0-192mm F1.5 |
 | Field of view | 60.2 to 1.6° |
 | Night vision | ir (200m), 0.001 lux, 0.005 lux color |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | Operating temp | -30 to 65°C |
 

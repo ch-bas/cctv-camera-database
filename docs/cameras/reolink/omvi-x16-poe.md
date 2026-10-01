@@ -15,6 +15,7 @@
 | Night vision | hybrid (75m) |
 | Power | PoE / DC 12V (exact PoE standard/class not yet published by Reolink) |
 | Storage | microSD ≤ 512GB, NVR |
+| Protocols | rtsp, onvif |
 | IP rating | IP66 |
 | Released | 2026 |
 
@@ -35,6 +36,7 @@
 
 - https://reolink.com/blog/reolink-introduces-triple-lens-omvi-series-and-reolink-x-qualcomm-power-efficient-series-cameras/
 - https://reolink.com/lp/reolink-omvi-series/
+- https://support.reolink.com/articles/900000617826-Which-Reolink-Products-Support-CGI-RTSP-ONVIF/
 
 ---
 *Auto-generated from reolink-omvi-x16-poe.json — do not edit by hand.*

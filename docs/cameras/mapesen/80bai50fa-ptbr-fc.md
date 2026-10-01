@@ -42,6 +42,7 @@
 ## Sources
 
 - https://www.mapesen.com/face-recognition-cameras/80bai50fa-ptbr-fc.html
+- https://www.mapesen.com/web/userfiles/download/manual/20260415/MAPESEN%20Sentrust%205MP%20Face%20Recognition%20Camera%20User%20Manual%20V.H11.pdf
 
 ---
 *Auto-generated from mapesen-80bai50fa-ptbr-fc.json — do not edit by hand.*

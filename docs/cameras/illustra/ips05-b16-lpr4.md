@@ -40,7 +40,7 @@
 
 - https://illustracameras.com/
 - https://illustracameras.com/wp-content/uploads/2024/08/illustra-iq-Pro-Gen4-LPR_ds_hs_en_hr.pdf
-- https://www.ispyconnect.com/camera/illustra
+- https://illustracameras.com/wp-content/uploads/2024/08/UM_PG4-2-4-5-8MP-Series_8200-2007-08_L.en_-1.pdf
 
 ---
 *Auto-generated from illustra-ips05-b16-lpr4.json — do not edit by hand.*

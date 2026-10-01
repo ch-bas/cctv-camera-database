@@ -8,7 +8,7 @@
 | Model | DS-2DE3A400BW-DE |
 | Type | ptz |
 | Connectivity | ethernet |
-| Resolution | 4MP (4MP, 2688×1520) |
+| Resolution | 4MP (4MP, 2560×1440) |
 | Sensor | 1/1.8" Progressive Scan CMOS |
 | Lens | 1× 2.8-12 (4x optical zoom)mm F1.0 |
 | Field of view | 103-31 horizontal° |
@@ -38,6 +38,7 @@
 ## Sources
 
 - https://www.hikvision.com/en/products/IP-Products/PTZ-Cameras/
+- https://assets.hikvision.com/prd/normal/all/doc/m000056859/DS-2DE3A400BW-DE_WT5_Datasheet_20260918.pdf
 
 ---
 *Auto-generated from hikvision-ds-2de3a400bw-de.json — do not edit by hand.*

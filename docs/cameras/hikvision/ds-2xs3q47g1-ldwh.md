@@ -13,7 +13,7 @@
 | Night vision | color, 0.0005 lux color |
 | Power | DC 12V / Solar panel + rechargeable battery |
 | Storage | microSD ≤ 512GB, NVR |
-| Protocols | rtsp, http |
+| Protocols | onvif, rtsp, http |
 | IP rating | IP65 |
 | Two-way audio | Yes |
 | Operating temp | -20°C to 50°C°C |

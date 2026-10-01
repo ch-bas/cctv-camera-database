@@ -13,7 +13,7 @@
 | Night vision | hybrid (50m) |
 | Power | DC 12V/2.0A |
 | Storage | microSD ≤ 512GB, NVR |
-| Protocols | rtsp, p2p |
+| Protocols | rtsp, onvif, p2p |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 
@@ -45,6 +45,7 @@
 ## Sources
 
 - https://www.foscam.eu/sd8p-wb.html
+- https://www.foscam.com/downloads/file.html?cate=manual&id=149
 
 ---
 *Auto-generated from foscam-sd8p-wb.json — do not edit by hand.*

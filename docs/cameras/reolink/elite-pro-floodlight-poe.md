@@ -13,7 +13,7 @@
 | Night vision | hybrid (30m) |
 | Power | PoE (IEEE 802.3at, 48V Active) — no DC power option |
 | Storage | microSD ≤ 512GB, NVR |
-| Protocols | rtsp, rtmp, http, p2p |
+| Protocols | rtsp, rtmp, http, p2p, onvif |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 | Operating temp | -10 to 55°C |
@@ -40,6 +40,7 @@
 ## Sources
 
 - https://reolink.com/product/elite-pro-floodlight-poe/
+- https://support.reolink.com/articles/900000617826-Which-Reolink-Products-Support-CGI-RTSP-ONVIF/
 
 ---
 *Auto-generated from reolink-elite-pro-floodlight-poe.json — do not edit by hand.*

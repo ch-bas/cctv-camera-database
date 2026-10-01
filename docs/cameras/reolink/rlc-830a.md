@@ -13,7 +13,7 @@
 | Night vision | hybrid (30m) |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
-| Protocols | rtsp |
+| Protocols | rtsp, onvif |
 | IP rating | IP65 |
 | Two-way audio | Yes |
 | Operating temp | -10 to 55°C |
@@ -36,6 +36,8 @@
 ## Sources
 
 - https://reolink.com/product/rlc-830a/
+- https://support.reolink.com/articles/900000617826-Which-Reolink-Products-Support-CGI-RTSP-ONVIF/
+- https://cdn.reolink.com/files/docs/specs/RLC-830A-IP-Camera-Specifications.pdf
 
 ---
 *Auto-generated from reolink-rlc-830a.json — do not edit by hand.*

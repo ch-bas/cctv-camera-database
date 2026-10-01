@@ -12,7 +12,7 @@
 | Night vision | ir (150m), 0.008 lux color |
 | Power | Operating Humidity ≤90% Non Condensing DC12/2.1A(Device power consumption) DC12/ |
 | Storage | NVR |
-| Protocols | rtsp, http |
+| Protocols | onvif, rtsp, http |
 | IP rating | IP66 |
 | Two-way audio | No |
 

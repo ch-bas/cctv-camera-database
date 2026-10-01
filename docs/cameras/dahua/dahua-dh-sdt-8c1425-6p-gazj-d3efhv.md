@@ -13,7 +13,7 @@
 | Night vision | hybrid (30m) |
 | Power | DC36V/2.23A（-25%～+25%）（标配） |
 | Storage | microSD ≤ 512GB, NVR |
-| Protocols | rtsp, rtmp, http |
+| Protocols | rtsp, rtmp, http, onvif |
 | IP rating | IP67 |
 | Two-way audio | No |
 

@@ -37,7 +37,7 @@
 
 - https://illustracameras.com/
 - https://illustracameras.com/wp-content/uploads/2023/04/Illustra-Flex-G4-PTZ-IR_Bubble-Data-Sheet_9-20-25.pdf
-- https://www.ispyconnect.com/camera/illustra
+- https://illustracameras.com/wp-content/uploads/2024/05/UM-FG4-Series_A16381M7H7_J.en_.pdf
 
 ---
 *Auto-generated from illustra-ifs04-p07-oia4.json — do not edit by hand.*

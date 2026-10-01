@@ -9,7 +9,7 @@
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/3" Panasonic Exmor CMOS, Progressive Scan, Super Low Light |
 | Lens | 1× 6mm Fixed aperture |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 
 ## Streams
 

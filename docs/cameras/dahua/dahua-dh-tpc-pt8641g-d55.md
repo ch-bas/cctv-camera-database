@@ -14,6 +14,7 @@
 | Night vision | ir (150m), 0.0001 lux, 0.0002 lux color |
 | Power | DC24V |
 | Storage | microSD ≤ 512GB, NVR |
+| Protocols | rtsp, onvif |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 | Operating temp | -40 to 70°C |

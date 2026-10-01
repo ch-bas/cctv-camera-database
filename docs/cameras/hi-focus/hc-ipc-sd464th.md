@@ -8,7 +8,7 @@
 | Connectivity | ethernet |
 | Resolution | (4MP) |
 | Storage | NVR |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP66 |
 
 ## Sources

@@ -11,6 +11,7 @@
 | Resolution | (8MP) |
 | Night vision | ir (300m), 0.0001 lux, 0.0002 lux color |
 | Storage | NVR |
+| Protocols | rtsp, onvif |
 | IP rating | IP66 |
 | Two-way audio | No |
 | Operating temp | -20°C to 60°C°C |

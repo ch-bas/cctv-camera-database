@@ -6,7 +6,7 @@
 | Model | VDC-DP9584N |
 | Type | dome |
 | Connectivity | ethernet |
-| Resolution | High-res CCD (768x494 effective, 520 TVL) (0.38MP, 768×494) |
+| Resolution | High-res CCD (768x494 effective, 520 TVL) (0.38MP, 640×480) |
 | Sensor | 1/4" interline-transfer CCD (3.6 x 2.7 mm, 768x494 effective) |
 | Lens | 2.8-7.3mm F1.9-3.0 |
 | Night vision | hybrid, 0.024 lux, 0.06 lux color |
@@ -20,7 +20,7 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| main | 720x240 | 30 | MJPEG |
+| main | 640x480 | — | MJPEG |
 
 ## Features
 

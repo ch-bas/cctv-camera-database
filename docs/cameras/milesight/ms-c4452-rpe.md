@@ -5,12 +5,13 @@
 | Brand | Milesight |
 | Model | MS-C4452-RPE |
 | Type | box |
+| Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2688×1520) |
 | Sensor | 1/1.8" Progressive Scan CMOS |
 | Night vision | 0.001 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 1024GB |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Operating temp | -40 to 60°C |

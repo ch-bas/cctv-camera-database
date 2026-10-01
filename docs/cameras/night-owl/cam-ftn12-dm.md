@@ -13,6 +13,7 @@
 | Night vision | hybrid (30m) |
 | Power | PoE |
 | Storage | NVR |
+| Protocols | rtsp |
 | IP rating | IP65 |
 | Two-way audio | Yes |
 | Operating temp | -20 to 60°C |

@@ -14,6 +14,7 @@
 | Night vision | 0.01 lux |
 | Power | DC12V / PoE (802.3af) |
 | Storage | microSD ≤ 64GB, NVR |
+| Protocols | onvif, rtsp |
 | Two-way audio | Yes |
 | Operating temp | -30 to 60°C |
 
@@ -35,6 +36,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/ip-camera/ip-covert/ip-network-covert-camera-cmip183.html
+- https://pic.ltsmall.com/pdf/LTCMIP183_data%20sheet.pdf
 
 ---
 *Auto-generated from lts-cmip183.json — do not edit by hand.*

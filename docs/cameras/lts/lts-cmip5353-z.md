@@ -15,7 +15,7 @@
 | Night vision | ir (30m), 0.6 lux color |
 | Power | 12V DC +/-10% / PoE (802.3af) |
 | Storage | NVR |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | Operating temp | -10 to 60°C |
 
@@ -36,6 +36,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/ip-camera/ip-bullet/cmip5353-z.html
+- https://pic.ltsmall.com/pdf/LTCMIP5353-Z_data%20sheet.pdf
 
 ---
 *Auto-generated from lts-cmip5353-z.json — do not edit by hand.*

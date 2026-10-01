@@ -15,6 +15,7 @@
 | Night vision | ir (15m) |
 | Power | DC 24V/1.5A |
 | Storage | microSD ≤ 512GB |
+| Protocols | rtsp |
 | Two-way audio | Yes |
 | Operating temp | -20 to 50°C |
 

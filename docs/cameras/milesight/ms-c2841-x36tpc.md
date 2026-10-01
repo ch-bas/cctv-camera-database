@@ -5,6 +5,7 @@
 | Brand | Milesight |
 | Model | MS-C2841-X36TPC |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | 2MP (2MP, 1920×1080) |
 | Sensor | 1/2" Progressive Scan CMOS |
 | Lens | 1× 5.7-205.2mm F1.55-F4.8 |

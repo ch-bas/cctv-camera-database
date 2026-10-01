@@ -20,7 +20,7 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| main | 2560x1440 | 20 | — |
+| main | 2688x1520 | 20 | — |
 | sub | 704x480 | 30 | — |
 
 ## Features

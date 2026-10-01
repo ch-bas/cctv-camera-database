@@ -30,6 +30,7 @@
 ## Sources
 
 - https://avyconaivo.com/data/item/AVC-PNN61FLT/DataSheet_PNN61FLT_EN.pdf
+- https://avycon.freshdesk.com/support/solutions/articles/36000299004-rtsp-syntax-for-plug-play-series-ip-cameras
 
 ---
 *Auto-generated from avycon-avc-pnn61flt.json — do not edit by hand.*

@@ -12,7 +12,7 @@
 | Field of view | 106 horizontal° |
 | Night vision | ir (30m) |
 | Power | 12V DC or PoE (802.3af) |
-| Protocols | rtsp, p2p |
+| Protocols | rtsp, p2p, onvif |
 | IP rating | IP67 |
 | Two-way audio | No |
 | Operating temp | -40 to 60°C |
@@ -29,6 +29,7 @@
 ## Sources
 
 - https://support.amcrest.com/hc/en-us/articles/24603850135437-Technical-Specifications-IP8M-2496EW-AI-V3
+- https://support.amcrest.com/hc/en-us/articles/24603933711117-User-Manual-IP8M-2496EW-AI-V3
 
 ---
 *Auto-generated from amcrest-ip8m-2496ew-ai-v3.json — do not edit by hand.*

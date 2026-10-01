@@ -12,6 +12,7 @@
 | Sensor | 1/2.8" CMOS |
 | Power | DC12V |
 | Storage | NVR |
+| Protocols | rtsp, onvif |
 | IP rating | IP66 |
 
 ## Features

@@ -5,6 +5,7 @@
 | Brand | Hikvision |
 | Model | DS-2DE7530IW-D |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | (5MP, 2560×1920) |
 | Sensor | 1/1.8＂progressive scan CMOS |
 | Lens | 5.9-177mm |

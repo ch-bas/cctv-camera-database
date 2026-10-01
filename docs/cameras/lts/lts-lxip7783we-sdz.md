@@ -14,6 +14,7 @@
 | Night vision | hybrid (61m) |
 | Power | 12V DC / PoE |
 | Storage | microSD ≤ 256GB, NVR |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
 
@@ -29,6 +30,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/lxip7783we-sdz-8mp-dual-light-vari-focal-dome-network-camera.html
+- https://pic.ltsmall.com/software/a15bde344a386922b60cd36c67bf686f/LXIP7783WE-SDZ_Spec%20Sheet.pdf
 
 ---
 *Auto-generated from lts-lxip7783we-sdz.json — do not edit by hand.*

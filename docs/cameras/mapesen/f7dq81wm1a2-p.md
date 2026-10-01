@@ -5,6 +5,7 @@
 | Brand | Mapesen |
 | Model | F7DQ81WM1A2-P |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | 8MP (8MP, 3840×2160) |
 | Sensor | 1/2.7" CMOS |
 | Lens | 2.8-12mm |

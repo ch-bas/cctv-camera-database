@@ -41,6 +41,7 @@
 ## Sources
 
 - https://www.uniview.com/Products/Network_Cameras/Pro_Series/ProBasic_Series/IPC8645EA-ADZKM-I1/
+- https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/64bf63cf-e7e0-42f3-946e-147b5076dff8/8bcd4585-1e02-4e7d-8c36-4b4ec3ed7560.pdf
 
 ---
 *Auto-generated from uniview-ipc8645ea-adzkm-i1.json — do not edit by hand.*

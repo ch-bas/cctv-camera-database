@@ -14,7 +14,7 @@
 | Night vision | hybrid (15m), 0.001 lux, 0.01 lux color |
 | Power | DC12V/PoE |
 | Storage | NVR |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP54 |
 | Two-way audio | No |
 | Operating temp | -10 to +60°C |

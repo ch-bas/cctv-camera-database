@@ -14,6 +14,7 @@
 | Night vision | hybrid (10m) |
 | Power | DC 12V |
 | Storage | microSD ≤ 128GB |
+| Protocols | rtsp |
 | Two-way audio | Yes |
 
 ## Features

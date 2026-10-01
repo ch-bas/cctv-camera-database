@@ -6,7 +6,7 @@
 | Model | DWC-MPV82WiATW |
 | Type | dome |
 | Connectivity | ethernet |
-| Resolution | 1080p (2.1MP, 1945×1109) |
+| Resolution | 1080p (2.1MP, 1920×1080) |
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 2.8-12mm F1.4 |
 | Field of view | 96-35 H / 51-20 V° |

@@ -8,7 +8,7 @@
 | Resolution | (4MP, 3840×1080) |
 | Night vision | hybrid (150m) |
 | Storage | microSD ≤ 256GB, NVR |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | Two-way audio | No |
 

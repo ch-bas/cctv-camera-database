@@ -7,7 +7,7 @@
 | Brand | Hikvision |
 | Model | DS-2TD8166 |
 | Type | ptz |
-| Connectivity | 4g |
+| Connectivity | ethernet, 4g |
 | Resolution | (2.07MP, 1920×1080) |
 | Lens | 12.5-775mm |
 | Protocols | onvif, rtsp |

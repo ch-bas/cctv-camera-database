@@ -6,7 +6,7 @@
 | Model | DWC-MV82DiVT |
 | Type | dome |
 | Connectivity | ethernet |
-| Resolution | 1080p (2.1MP, 2001×1121) |
+| Resolution | 1080p (2.1MP, 1920×1080) |
 | Sensor | 1/2.9" CMOS |
 | Lens | 1× 2.7-13.5mm F1.6 |
 | Field of view | 27 - 89.6° |

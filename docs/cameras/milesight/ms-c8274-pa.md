@@ -5,6 +5,7 @@
 | Brand | Milesight |
 | Model | MS-C8274-PA |
 | Type | fisheye |
+| Connectivity | ethernet |
 | Resolution | 4K (8MP, 3840×2160) |
 | Sensor | 1/1.8" Progressive Scan CMOS |
 | Lens | 1× 1.5mm F1.8 |
@@ -12,7 +13,7 @@
 | Night vision | ir (15m), 0.008 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 256GB |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | Yes |

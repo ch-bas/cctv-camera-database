@@ -15,6 +15,7 @@
 | Night vision | ir (10m) |
 | Power | DC 5V USB |
 | Storage | microSD ≤ 256GB |
+| Protocols | rtsp |
 | Two-way audio | Yes |
 | Operating temp | -10 to 45°C |
 
@@ -32,6 +33,7 @@
 ## Sources
 
 - https://support.amcrest.com/hc/en-us/articles/4411391810061-Technical-Specifications-ASH21-V2
+- https://support.amcrest.com/hc/en-us/articles/360040091111
 
 ---
 *Auto-generated from amcrest-ash21-v2.json — do not edit by hand.*

@@ -14,6 +14,7 @@
 | Night vision | ir (30m) |
 | Power | DC12V / PoE |
 | Storage | microSD ≤ 256GB, NVR |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |
@@ -36,6 +37,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/vsip7182w-mda-4k-hd-vandal-resistant-ir-fixed-dome-network-camera.html
+- https://pic.ltsmall.com/software/880e70b08f2eb2f68b6caeb028771b1d/VSIP7182W-28MDA%2C%20VSIP7182W-MDA%20Spec.pdf
 
 ---
 *Auto-generated from lts-vsip7182w-mda.json — do not edit by hand.*

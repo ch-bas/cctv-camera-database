@@ -32,6 +32,7 @@
 ## Sources
 
 - https://www.hanwhavision.com/ko/products/product-details/XNO-6324RHP
+- https://hvsgmpprdstorage.blob.core.windows.net/pim/XNO-6324RHP/DataSheet_XNO-6324RHP_20251212_KO_131017.pdf
 
 ---
 *Auto-generated from hanwha-xno-6324rhp.json — do not edit by hand.*

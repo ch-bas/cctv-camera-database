@@ -5,6 +5,7 @@
 | Brand | Hikvision |
 | Model | DS-2DF8C845I5XS-DFW/LM/VR/SP |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | (8MP, 3840×2160) |
 | Sensor | 1/1.2" Progressive Scan CMOS |
 | Lens | 7.1-320mm |

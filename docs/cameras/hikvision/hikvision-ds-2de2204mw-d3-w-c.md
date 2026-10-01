@@ -5,6 +5,7 @@
 | Brand | Hikvision |
 | Model | DS-2DE2204MW-D3/W/C |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | (2MP, 1920×1080) |
 | Lens | 2.8-12mm F1.8 |
 | Night vision | hybrid (30m) |

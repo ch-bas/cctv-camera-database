@@ -5,6 +5,7 @@
 | Brand | Intelbras |
 | Model | VIP 7200 TH MT |
 | Type | dual-lens |
+| Connectivity | ethernet |
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/2.8" CMOS (visible) + uncooled vanadium oxide 256x192 (thermal) |
 | Lens | 2× 7 / 8mm F1.0 (thermal) / F1.9 (visible) |

@@ -13,6 +13,7 @@
 | Lens | 1× 6-186mm |
 | Power | AC220V |
 | Storage | NVR |
+| Protocols | rtsp, onvif |
 | IP rating | IP68 |
 | Operating temp | -40 to 60°C |
 

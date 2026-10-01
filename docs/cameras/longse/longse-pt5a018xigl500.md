@@ -12,7 +12,7 @@
 | Night vision | ir (80m), 0.008 lux color |
 | Power | DC12V/1.2A(Device power consumption) DC12/3A(Power supply) Lightning Protection  |
 | Storage | NVR |
-| Protocols | rtsp, http |
+| Protocols | onvif, rtsp, http |
 | IP rating | IP66 |
 | Two-way audio | No |
 

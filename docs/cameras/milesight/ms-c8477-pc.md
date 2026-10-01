@@ -5,6 +5,7 @@
 | Brand | Milesight |
 | Model | MS-C8477-PC |
 | Type | panoramic |
+| Connectivity | ethernet |
 | Resolution | 8MP (8MP, 5084×1520) |
 | Sensor | Dual 1/1.8" Progressive Scan CMOS |
 | Lens | 2× 4mm F1.6 |
@@ -12,7 +13,7 @@
 | Night vision | ir (30m), 0.002 lux color |
 | Power | PoE (802.3at) / DC 12V |
 | Storage | microSD ≤ 1024GB |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | Yes |

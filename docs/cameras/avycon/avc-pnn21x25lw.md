@@ -32,6 +32,7 @@
 ## Sources
 
 - https://avyconaivo.com/data/item/AVC-PNN21X25LW/DataSheet_AVC-PNN21X25LW_EN.pdf
+- https://avycon.freshdesk.com/support/solutions/articles/36000299004-rtsp-syntax-for-plug-play-series-ip-cameras
 
 ---
 *Auto-generated from avycon-avc-pnn21x25lw.json — do not edit by hand.*

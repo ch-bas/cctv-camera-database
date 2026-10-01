@@ -14,6 +14,7 @@
 | Night vision | ir, 0.001 lux, 0.003 lux color |
 | Power | DC12V/PoE |
 | Storage | NVR |
+| Protocols | rtsp, onvif |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 

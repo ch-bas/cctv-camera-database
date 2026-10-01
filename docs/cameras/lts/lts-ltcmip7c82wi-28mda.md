@@ -12,6 +12,7 @@
 | Lens | 1× 2.8mm F1.0 |
 | Night vision | hybrid, 0.0008 lux color |
 | Power | 12V DC / PoE |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |
@@ -28,6 +29,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/ltcmip7c82wi-28mda-8mp-dual-illumination-dome-ip-camera-2-8mm-full-color-built-in-microphone-dc-12v-poe.html
+- https://pic.ltsmall.com/software/04bb1aa50325e824cdfcf46702fd772f/CMIP7C82WI-28MDA_Spec%20Sheet_1.20.26.pdf
 
 ---
 *Auto-generated from lts-ltcmip7c82wi-28mda.json — do not edit by hand.*

@@ -13,7 +13,7 @@
 | Night vision | ir (80m), 0.002 lux color |
 | Power | DC 12V / PoE (802.3af) |
 | Storage | microSD ≤ 512GB |
-| Protocols | onvif, http |
+| Protocols | onvif, http, rtsp |
 | IP rating | IP67 |
 | Operating temp | -40 to 65°C |
 

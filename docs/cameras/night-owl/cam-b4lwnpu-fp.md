@@ -13,6 +13,7 @@
 | Night vision | hybrid (18m) |
 | Power | built-in rechargeable battery; USB-C solar-panel charger compatible |
 | Storage | NVR |
+| Protocols | rtsp |
 | IP rating | IP65 |
 | Two-way audio | Yes |
 | Operating temp | -20 to 60°C |

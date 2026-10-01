@@ -15,7 +15,7 @@
 | Night vision | hybrid (30m) |
 | Power | PoE or DC 12V/1A; <12W |
 | Storage | microSD ≤ 512GB, NVR |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | Two-way audio | Yes |
 | Operating temp | -30 to 50°C |
 

@@ -12,6 +12,7 @@
 | Sensor | 1/3" CMOS |
 | Power | AC24V/PoE |
 | Storage | NVR |
+| Protocols | rtsp, onvif |
 | IP rating | IP50 |
 
 ## Features

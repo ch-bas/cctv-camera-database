@@ -7,6 +7,7 @@
 | Brand | Milesight |
 | Model | MS-C4583-PD |
 | Type | dome |
+| Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2688×1520) |
 | Sensor | 1/2.8" Progressive Scan CMOS |
 | Lens | 1× 2.8mm F1.6 |
@@ -14,7 +15,7 @@
 | Night vision | ir (20m), 0.005 lux color |
 | Power | PoE (802.3af) |
 | Storage | microSD ≤ 1024GB |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |

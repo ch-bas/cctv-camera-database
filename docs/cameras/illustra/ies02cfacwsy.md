@@ -32,6 +32,7 @@
 
 - https://illustracameras.com/
 - https://illustra.s3.us-east-1.amazonaws.com/Web_Files/Legacy/essentials-indoor-mini-dome/Data%20Sheets/Illustra-Essentials-IP-Indoor-Mini-Dome-Datasheet-R03-lt_en.pdf
+- https://illustra.s3.us-east-1.amazonaws.com/Web_Files/Legacy/essentials-indoor-mini-dome/Manuals/Illustra-Essentials-Network-Camera-Web3.0-User-Manual-B0_lt_EN.pdf
 
 ---
 *Auto-generated from illustra-ies02cfacwsy.json — do not edit by hand.*

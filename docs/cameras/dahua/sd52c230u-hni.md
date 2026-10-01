@@ -7,6 +7,7 @@
 | Brand | Dahua |
 | Model | SD52C230U-HNI |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | 1080P (2MP, 1920×1080) |
 | Sensor | 1/2.8" STARVIS CMOS |
 | Lens | 1× 4.5-135 (30x optical)mm F1.6-F4.4 |

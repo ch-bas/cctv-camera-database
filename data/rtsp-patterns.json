@@ -6,10 +6,10 @@
     "methodology": "StrixCamDB is used ONLY as a lead source; every path here is independently re-verified against the manufacturer's official docs (manual / API / KB), so each record is independently sourced and CC0-clean, with Strix credited as the discovery source (strix_lead). Leads that could not be confirmed officially are recorded under unverified_leads and never published as fact.",
     "generated": "2026-10-01",
     "totals": {
-      "brands": 183,
-      "verified": 120,
-      "unverified": 63,
-      "templates": 367
+      "brands": 203,
+      "verified": 143,
+      "unverified": 60,
+      "templates": 422
     }
   },
   "brands": [
@@ -31,6 +31,32 @@
       "unverified_leads": [],
       "notes": "2N IP intercoms expose per-codec RTSP paths, not a main/sub hierarchy. Official docs list four paths: / (uses configured profile), /h264_stream (H.264), /mpeg4_stream (MPEG-4), /mjpeg_stream (MJPEG). No sub-stream or channel-indexed URL is documented. RTSP is limited to 4 parallel connections. An Enhanced Video licence (Part No. 9137906) is required to enable streaming on older firmware; newer Helios models include it. 2N is now an Axis subsidiary. Port 554 is the RTSP default; docs do not specify a non-standard port.",
       "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "360 Vision Technology",
+      "brand_id": "360-vision",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/h264main",
+          "codec": "H.264",
+          "verified": true,
+          "source": "https://www.360visiontechnology.com/wp-content/uploads/dlm_uploads/2016/03/Predator-HD-Installation-Manual-V2.1.23.2.pdf — 360 Vision Predator HD Installation Manual V2.1.23.2, section 'Stream Resolutions & RTSP Links': 'Dual H.264 (rtsp://ipaddress/h264main)'. Same table in the Invictus (V2.1.25.3), Visiondome HD (V2.1.29), Predator (V11) and Predator Radar (V8) installation manuals; RTSP port 554 TCP per the manuals' port table.",
+          "strix_lead": "manual:360-vision"
+        },
+        {
+          "stream": "sub",
+          "path": "/h264sub",
+          "codec": "H.264",
+          "verified": true,
+          "source": "https://www.360visiontechnology.com/wp-content/uploads/dlm_uploads/2016/03/Visiondome-HD-Installation-Manual-V2.1.29.pdf — 360 Vision Visiondome HD Installation Manual V2.1.29, section 12 '1080p Stream Resolutions & RTSP Links': 'Dual H.264 (rtsp://ipaddress/h264main) (rtsp://ipaddress/h264sub)'. Same in the Predator HD and Invictus installation manuals.",
+          "strix_lead": "manual:360-vision"
+        }
+      ],
+      "notes": "Paths are documented in the V2.1.x-platform installation manuals (Predator, Predator HD, Predator Radar, Invictus, Visiondome HD). The same manuals also list /mpeg4main, /mpeg4sub and /mjpeg for the MPEG4/MJPEG stream modes. The 2025 V2.3 platform manuals (Predator V2.3.00.29.3, Invictus V2.3.00.29.5) no longer print the path; the web UI shows the stream's RTSP URL with a 'Copy' button under Video settings, so check it there on newer firmware. ONVIF Profile S is the alternative.",
+      "verified_on": "2026-10-01"
     },
     {
       "brand": "3S Vision",
@@ -579,6 +605,30 @@
       ],
       "notes": "AirLive's own user manuals (OD-325HD, OD-2025HD, OD-2060HD, CU-720PIR, CW-720IR/CU-720IR, POE-200CAMv2, WL-2600CAM — all on fs.airlive.com) document exactly ONE RTSP URL: 'rtsp://host/mpeg4/media.3gp', presented under the 3GPP appendix for mobile viewing. Default RTSP port is 554 (some older firmware defaults to 8554, and 8554 is also cited for computer view on POE-200CAMv2/WL-2600CAM). The device serves H.264/MPEG-4/JPEG multi-profile streams but the manuals only expose a single fixed RTSP URL path (media.3gp = the MPEG-4 stream); no separate main/sub URL paths are documented. AirLive does NOT use the Axis-style /media.amp or the /liveN.264 paths despite those appearing in the leads — those are cross-brand contamination. AirLive cameras are also ONVIF-conformant, so ONVIF discovery is the practical way to obtain full-resolution H.264 stream URIs.",
       "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Akuvox",
+      "brand_id": "akuvox",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/live/ch00_0",
+          "verified": true,
+          "source": "https://knowledge.akuvox.com/docs/streaming-and-integration-ipc — Akuvox VC50B/VC50T Video Camera Administrator Guide, 'Streaming and Integration': 'Main stream: rtsp://Device's IP/live/ch00_0'",
+          "strix_lead": "manual:akuvox"
+        },
+        {
+          "stream": "sub",
+          "path": "/live/ch00_1",
+          "verified": true,
+          "source": "https://knowledge.akuvox.com/docs/streaming-and-integration-ipc — Akuvox VC50B/VC50T Video Camera Administrator Guide, 'Streaming and Integration': 'Sub stream: rtsp://Device's IP/live/ch00_1'",
+          "strix_lead": "manual:akuvox"
+        }
+      ],
+      "notes": "Akuvox's official IP-camera admin guide (VC50B/VC50T) states 'The URL format of Akuvox devices is rtsp://Device's IP/live/ch00_0' (main) and '/live/ch00_1' (sub). No port is given in the URL, so the RTSP default 554 applies. RTSP authorization is configured under Settings > RTSP; ONVIF under Settings > ONVIF.",
+      "verified_on": "2026-10-01"
     },
     {
       "brand": "Alibi",
@@ -1466,6 +1516,40 @@
       "verified_on": "2026-08-14"
     },
     {
+      "brand": "AVYCON",
+      "brand_id": "avycon",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/rtsp/streaming?channel=01&subtype=0",
+          "codec": "H.265|H.264",
+          "verified": true,
+          "source": "https://avycon.freshdesk.com/support/solutions/articles/36000299011-rtsp-syntax-for-ndaa-diversity-series-ip-cameras — AVYCON Support Portal, \"RTSP Syntax for NDAA / Diversity Series IP Cameras\": Diversity IP cameras on v8.2.4 firmware and later (also multisensor cameras) use rtsp://user:password@<host>:<port>/rtsp/streaming?channel=yy&subtype=x; yy = channel number (01 if a single sensor), x = 0 Main Stream; default RTSP port 554.",
+          "strix_lead": "manual:avycon"
+        },
+        {
+          "stream": "sub",
+          "path": "/rtsp/streaming?channel=01&subtype=1",
+          "codec": "H.265|H.264",
+          "verified": true,
+          "source": "https://avycon.freshdesk.com/support/solutions/articles/36000299011-rtsp-syntax-for-ndaa-diversity-series-ip-cameras — same AVYCON Support Portal article: subtype x = 1 is the Sub Stream.",
+          "strix_lead": "manual:avycon"
+        },
+        {
+          "stream": "third",
+          "path": "/rtsp/streaming?channel=01&subtype=2",
+          "codec": "H.265|H.264",
+          "verified": true,
+          "source": "https://avycon.freshdesk.com/support/solutions/articles/36000299011-rtsp-syntax-for-ndaa-diversity-series-ip-cameras — same AVYCON Support Portal article: subtype x = 2 is the Mobile Stream.",
+          "strix_lead": "manual:avycon"
+        }
+      ],
+      "notes": "AVYCON sells three IP-camera platforms with different RTSP paths; this guide carries the Diversity (NDAA) Series, by far the largest line (AVC-NA/NB/NC/ND/NK/NL/NP*/NS/NU/NX, AVC-NSZ PTZ, AVC-NT thermal, AVC-NCMS multisensor, AVC-NF fisheye, AVC-SNDB solar). Diversity cameras on firmware v8.2.4 or later use /rtsp/streaming?channel=01&subtype=0 (main), subtype=1 (sub), subtype=2 (mobile stream); on multisensor cameras the channel number selects the sensor (01 for a single sensor). Diversity cameras on firmware older than v8.2.4 use /ch01/0 (main), /ch01/1 (sub), /ch01/2 (mobile) instead — the same form printed in the AVC-NS Series manual (https://avycon.com/downloads/documents/AVC-NS%20Series%20Manual.pdf, section 8.7 RTSP). Other lines, set on the individual camera records: Plug & Play Series IP cameras (e.g. AVC-PNN PTZ/fisheye, AVC-N4M81F360, AVC-NBM81F180, AVC-DB21F23 doorbell) use /profile1 (main), /profile2 (sub), /profile3 (third, not on all models) per https://avycon.freshdesk.com/support/solutions/articles/36000299004-rtsp-syntax-for-plug-play-series-ip-cameras; Autotracking and Panoramic 180° cameras (AVC-NPTZ, AVC-LHN, AVC-NVP, AVC-NP51F180) use /main, /sub, /third per https://avycon.freshdesk.com/support/solutions/articles/36000328602-autotracking-and-panoramic-180-rtsp-syntax. Which series a model belongs to follows AVYCON's own catalogue categories (avyconaivo.com Diversity Series / Plug & Play Series listings). No official RTSP path was found for the EVO Series (AVC-NMS41P3) or the AVC-WDB51F21 Wi-Fi doorbell — add those via ONVIF. Default RTSP port is 554 on all lines; special characters in the password may need percent-encoding.",
+      "verified_on": "2026-10-01"
+    },
+    {
       "brand": "Axis Communications",
       "brand_id": "axis",
       "status": "verified",
@@ -1744,6 +1828,53 @@
       ],
       "notes": "Official Boavision docs use bare numeric paths: /11 = main (H.264), /12 = sub (H.264), both on port 554. Authentication credentials are embedded in the URL (rtsp://user:pass@ip:554/11). ONVIF port is 8080. No channel index in the path — these are fixed single-channel paths. Confirmed from the HD22M102M user manual (pages 23 and 30), which is the only official Boavision manual publicly available. All 12 strix leads were cross-brand noise — none matched the documented paths.",
       "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Bolide",
+      "brand_id": "bolide",
+      "status": "unverified",
+      "default_port": 554,
+      "templates": [],
+      "unverified_leads": [
+        {
+          "path": "/ch00/0",
+          "note": "Official, but legacy-only. Bolide \"HD Network Camera User Manual\" (https://cdn.shopify.com/s/files/1/0538/4264/1085/files/HD_NETWORK_CAMERA_USER_MANUAL.pdf, section 5.6 RTSP; PDF dated 2015, listed on bolideco.com/pages/downloads as \"HD Network Camera 1/27/2017\") prints: \"For IP cameras of 3MP/4MP Series: rtsp://IP:Port/ch00/A  A:0 (main bit stream), 1 (sub-bit stream), 2 (cell phone bit stream)\". The manual covers the old H.265 3MP/4MP iPac generation (media port 9988, default IP 192.168.1.168); no Bolide document states this path for the current 5MP/8MP/12MP IPAC-AI, NDAA/TAA, BTG-N/NS, thermal or 4G lines."
+        },
+        {
+          "path": "/ch00/1",
+          "note": "Sub stream of the same legacy 3MP/4MP-series scheme (same manual, section 5.6). /ch00/2 is the \"cell phone\" stream."
+        },
+        {
+          "path": "/0",
+          "note": "Same manual, section 5.6: \"For IP cameras of 2MP Series: rtsp://IP:Port/A  A:0 (main bit stream), 1 (sub-bit stream), 2 (cell phone bit stream)\" — the old H.264 1.3MP/2MP series only (sub stream /1)."
+        }
+      ],
+      "notes": "Bolide Technology Group (bolideco.com) publishes exactly one IP-camera manual that prints an RTSP URL: the legacy \"HD Network Camera User Manual\" (2015), which documents RTSP on default port 554 (changeable to 1024-65535) with rtsp://IP:Port/ch00/A for its H.265 3MP/4MP series and rtsp://IP:Port/A for its H.264 2MP series (A = 0 main, 1 sub, 2 mobile). None of the cameras in this dataset belong to those series: the current catalogue is 5MP/8MP/12MP IPAC-AI, NDAA/TAA, BTG-N/NS, panoramic, thermal and 4G/solar models, and their datasheets, the BN8037AI-4GS quick start guide, the 2026 product catalogue/portfolio PDFs, the product pages and the support/downloads pages list RTSP only as a supported protocol (plus ONVIF Profile S/G/T/M) without any URL path. Because the documented path is tied to an older firmware generation and the brand does not publish one for the current lines, no brand template is published; the legacy paths are kept as leads only. Practical guidance: use ONVIF discovery, or read the instruction string the camera prints on its own Network > RTSP page. Default port 554 is from the legacy manual. (The BN-NVR-NX recorder manual documents rtsp://IP:Port/chA/B for NVR channels — recorders, not cameras.) Checked 2026-10-01: bolideco.com downloads/support pages, all 215 product pages (products.json), site search, catalogue PDFs, and archived bolideco.com support/download pages.",
+      "verified_on": "2026-10-01"
+    },
+    {
+      "brand": "Bolin Technology",
+      "brand_id": "bolin",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/media/video1",
+          "verified": true,
+          "source": "https://knowledge.bolintechnology.com/ex1030huserguide — Bolin EX1030H User Guide, Streaming Server Connection Strings: RTSP port 554, rtsp://<username>:<password>@<IP address>:<RTSP port>/media/video<1/2> (same string in the EXU230H, EXU230NX, EX1030NX, SD530H/SD530NX, D2-210H/D2-220H and R9-L420N user guides and the RANGE / R9-L420N datasheets)",
+          "strix_lead": "manual:bolin"
+        },
+        {
+          "stream": "sub",
+          "path": "/media/video2",
+          "verified": true,
+          "source": "https://knowledge.bolintechnology.com/r9l420n — Bolin R9-L420N User Guide: RTSP rtsp://<camera-IP>:<port>/media/video1 for Main Stream; /media/video2 for Sub Stream, port 554",
+          "strix_lead": "manual:bolin"
+        }
+      ],
+      "notes": "Current Bolin PTZ firmware (EX/EXU outdoor, SD530H/NX, D2 Dante AV-H, R9, RANGE) serves RTSP on port 554 at /media/video1 (main) and /media/video2 (sub); authentication is disabled by default and credentials may be put in the URL. The B2/B6/B7/N2/N6/N7 and R9 user guides say to copy the exact URL from the web UI's RTSP tab. Legacy lines use other paths and carry their own per-camera URL: BC-7, BC-9, B9-418, EX1030SHD-B-LSN2P1 and SD530SHD-B-RSN2PW use /PSIA/Streaming/channels/0 (main) and /1 (sub) (https://knowledge.bolintechnology.com/bc7part2, https://knowledge.bolintechnology.com/b9418userguide); the D412/D220 Dante AV Ultra and VCC-M2 use /stream/main and /stream/sub (https://knowledge.bolintechnology.com/d412partthree, https://knowledge.bolintechnology.com/vccm2part2).",
+      "verified_on": "2026-10-01"
     },
     {
       "brand": "Bosch Security Systems",
@@ -2062,6 +2193,37 @@
       "notes": "CNB Technology (cnbtec.com) blocks all direct access (HTTP 403). ManualsLib installation guides for XNET series (IVC5055VR, IDC4000T, IBP5030CR, IDP4030VR) only document RTSP port numbers (default 554 for MPEG4, 8554 for MJPEG) without providing RTSP path strings. No official CNB CGI/API developer guide or stream URL documentation was found via web search or direct fetch. All sources with URL paths (e.g. /mpeg4) are third-party aggregators, not manufacturer documentation."
     },
     {
+      "brand": "Comelit",
+      "brand_id": "comelit",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/profile1",
+          "verified": true,
+          "source": "https://staticpro.comelitgroup.com/storage/2025/09/51030/mt-ipcam-comelit-cctv-en-6ed.pdf — Comelit \"Comelit CCTV IP Cameras\" user manual (6th ed.), section 3.6.7 RTSP (p.56): Config > Network > RTSP shows the unicast address \"rtsp://IP or domain name:port/profile1\" (main stream), port default 554; multicast form rtsp://IP address:rtsp port/profile1?transportmode=mcast. Same paths in the Advance series manual (https://staticpro.comelitgroup.com/storage/2020/02/23963/mt-ipcam-advance-en-1ed.pdf, section 3.5.7) and the Advance PTZ manual (https://staticpro.comelitgroup.com/storage/2022/05/31271/mt-ptz-advance-en-1ed.pdf, section 4.6.7).",
+          "strix_lead": "manual:comelit"
+        },
+        {
+          "stream": "sub",
+          "path": "/profile2",
+          "verified": true,
+          "source": "https://staticpro.comelitgroup.com/storage/2025/09/51030/mt-ipcam-comelit-cctv-en-6ed.pdf — Comelit \"Comelit CCTV IP Cameras\" user manual (6th ed.), section 3.6.7 RTSP (p.56): Config > Network > RTSP shows the unicast address \"rtsp://IP or domain name:port/profile2\" (sub stream), port default 554; multicast form rtsp://IP address:rtsp port/profile2?transportmode=mcast. Same paths in the Advance series manual (https://staticpro.comelitgroup.com/storage/2020/02/23963/mt-ipcam-advance-en-1ed.pdf, section 3.5.7) and the Advance PTZ manual (https://staticpro.comelitgroup.com/storage/2022/05/31271/mt-ptz-advance-en-1ed.pdf, section 4.6.7).",
+          "strix_lead": "manual:comelit"
+        },
+        {
+          "stream": "third",
+          "path": "/profile3",
+          "verified": true,
+          "source": "https://staticpro.comelitgroup.com/storage/2025/09/51030/mt-ipcam-comelit-cctv-en-6ed.pdf — Comelit \"Comelit CCTV IP Cameras\" user manual (6th ed.), section 3.6.7 RTSP (p.56): Config > Network > RTSP shows the unicast address \"rtsp://IP or domain name:port/profile3\" (third stream), port default 554; multicast form rtsp://IP address:rtsp port/profile3?transportmode=mcast. Same paths in the Advance series manual (https://staticpro.comelitgroup.com/storage/2020/02/23963/mt-ipcam-advance-en-1ed.pdf, section 3.5.7) and the Advance PTZ manual (https://staticpro.comelitgroup.com/storage/2022/05/31271/mt-ptz-advance-en-1ed.pdf, section 4.6.7).",
+          "strix_lead": "manual:comelit"
+        }
+      ],
+      "notes": "Applies to the Comelit Advance, Next and current \"Comelit CCTV\" IP camera lines (IPBCAMA/IPTCAMA/IPKCAMA/IPBCAMN/IPTCAMN, IPPTZA PTZ, IPLPRA, IPSCAMA, WIBCAMA/WICAMA/WB/WC Wi-Fi, and the IB/IT/IK/IP/IBM/ITM/MIB/MIT/MIK codes): Comelit's own manuals for these lines all document rtsp://<ip>:554/profile1 (main), /profile2 (sub), /profile3 (third); RTSP is enabled under Config > Network > RTSP and requires the camera user/password unless anonymous login is allowed. Codec is whatever each stream is configured for (H.264/H.265/MJPEG). Thermal models add /profile4 for the thermal channel (IPTHBCAMA05F01A manual, section 5.6.5); fisheye models IPFCAMA06FA/IPFCAMA12FA list /profile1 to /profile11 (fisheye, panoramic and PTZ view channels). NOT covered by this guide: the Smart series (IPBCAMS/IPDCAMS/IPSCAMS/WIBCAMS) uses rtsp://<ip>:554/0 (main) and /1 (sub) per the Smart series user manuals and carries its own URL on each camera record; the legacy Easy series manual gives /ch0_0.264 and /ch0_1.264; no official RTSP path was found for the LPRCAM number-plate cameras or for the Smart Wi-Fi kit cameras WIBCAMS02FASP/WIBCAMS02FBSP/WIBCAMS05FASP.",
+      "verified_on": "2026-10-01"
+    },
+    {
       "brand": "Compro",
       "brand_id": "compro",
       "status": "verified",
@@ -2112,11 +2274,34 @@
     {
       "brand": "Costar",
       "brand_id": "costar",
-      "status": "unverified",
+      "status": "verified",
       "default_port": 554,
-      "templates": [],
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/trackID=1",
+          "verified": true,
+          "source": "https://costarvideo-wpimages.sfo3.digitaloceanspaces.com/wp-content/uploads/2023/04/17013917/StarNET_Cameras_Bullet_Cameras_CBI5D4IW_Manual_CBI5D4IWOperation_ManualV1.1.pdf — Costar Video CBI5D4IW Operation Manual V1.1 (Network > Port): rtsp://ID:Password@IP Address:RTSP Port Number/trackID=Stream Number (1 Primary, 2 Secondary, 3 Tertiary), e.g. rtsp://admin:@10.0.152.35:554/trackID=1. Same text in the CBI5D13IFWH, CBI8D33IW, CDI2D12IFW, CDI5D13VIFWH, CDI5D28VIW and CDI8D33VIW operation manuals on costarvideo.com.",
+          "strix_lead": "manual:costar"
+        },
+        {
+          "stream": "sub",
+          "path": "/trackID=2",
+          "verified": true,
+          "source": "https://costarvideo-wpimages.sfo3.digitaloceanspaces.com/wp-content/uploads/2023/04/17013917/StarNET_Cameras_Bullet_Cameras_CBI5D4IW_Manual_CBI5D4IWOperation_ManualV1.1.pdf — Costar Video CBI5D4IW Operation Manual V1.1 (Network > Port): rtsp://ID:Password@IP Address:RTSP Port Number/trackID=Stream Number (1 Primary, 2 Secondary, 3 Tertiary), e.g. rtsp://admin:@10.0.152.35:554/trackID=1. Same text in the CBI5D13IFWH, CBI8D33IW, CDI2D12IFW, CDI5D13VIFWH, CDI5D28VIW and CDI8D33VIW operation manuals on costarvideo.com.",
+          "strix_lead": "manual:costar"
+        },
+        {
+          "stream": "third",
+          "path": "/trackID=3",
+          "verified": true,
+          "source": "https://costarvideo-wpimages.sfo3.digitaloceanspaces.com/wp-content/uploads/2023/04/17013917/StarNET_Cameras_Bullet_Cameras_CBI5D4IW_Manual_CBI5D4IWOperation_ManualV1.1.pdf — Costar Video CBI5D4IW Operation Manual V1.1 (Network > Port): rtsp://ID:Password@IP Address:RTSP Port Number/trackID=Stream Number (1 Primary, 2 Secondary, 3 Tertiary), e.g. rtsp://admin:@10.0.152.35:554/trackID=1. Same text in the CBI5D13IFWH, CBI8D33IW, CDI2D12IFW, CDI5D13VIFWH, CDI5D28VIW and CDI8D33VIW operation manuals on costarvideo.com.",
+          "strix_lead": "manual:costar"
+        }
+      ],
       "unverified_leads": [],
-      "notes": "CoStar Technologies is a holding company with multiple camera sub-brands (CoStar Video Systems, CostarHD, Arecont Vision Costar, Innotech Security), each with different RTSP URL formats. The Innotech Security support portal (support.innotechsecurity.com) has an article titled 'EXCA203: RTSP URLs – Costar Technologies' (https://support.innotechsecurity.com/hc/en-us/articles/19831979168275-EXCA203-RTSP-URLs) that documents unicast format rtsp://<ip>/cam0_0 on port 554 for the EXCA203 tri-camera dome, but the article is behind authentication (HTTP 403) and cannot be read directly. CostarHD RISE series uses Stream0-Stream9 paths; OCTIMA 3430HD uses /media/video1-video3 paths. No single canonical RTSP URL format applies across the brand family, and no publicly accessible official document was found confirming the sub-stream path."
+      "notes": "Guide covers the Costar Video Systems StarNET/DirectNET IP cameras (CBI*/CDI* models), whose official operation manuals document rtsp://<user>:<pass>@<ip>:554/trackID=<stream> with stream 1 = primary, 2 = secondary, 3 = tertiary. The Arecont Vision Costar (AV*) records in this brand directory use a different path (/media/video1, per Arecont docs) and carry their own rtsp_url_template on each record. The Innotech Security EXCA203 article (cam0_0) is behind authentication and is not used.",
+      "verified_on": "2026-10-01"
     },
     {
       "brand": "COTIER",
@@ -2403,6 +2588,37 @@
       ],
       "notes": "Dahua's official RTSP URL format is /cam/realmonitor?channel=<N>&subtype=<typeNo>. Channel numbering starts at 1. subtype: 0=main stream, 1=extra stream 1 (sub), 2=extra stream 2 (third stream). Default RTSP port is 554 and may be omitted if unchanged. Both basic and digest authentication are supported (credentials embedded in the URL as rtsp://{user}:{pass}@{ip}:{port}/...). The `unicast=true&proto=Onvif` query params seen in some leads are optional ONVIF-layer hints, not required by the base RTSP URL. Many budget brands (realmonitor OEMs) share this exact URL scheme — confirm via brand's own docs before attributing. The leads with hardcoded base64 `authbasic=` values are device-specific credential injections, not a Dahua URL schema feature.",
       "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Dallmeier",
+      "brand_id": "dallmeier",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/encoder1",
+          "verified": true,
+          "source": "https://www.dallmeier.com/api/1617455215/cloud?action=show&path=/Download_Centre_2.0/Product_Documents/02_Camera/RDF6100DN_Series/02_Documentation/Configuration/conf_DOMERA_OS_en.pdf — Dallmeier \"Configuration – Camera Web Interface\", Domera OS release 14.4.0.11 (Doc. Rev. 0.3.5, 2025-03-24), section 19.2 RTSP Application: \"[Stream 1]: rtsp://192.168.2.28:554/encoder1\", port 554 (default setting). Same path in the legacy manuals: https://www.dallmeier.com/api/1617455215/cloud?action=show&path=/Download_Centre_2.0/Product_History/02_Camera/01_Dome_Camera/DDF5200HDV-DN/02_Documentation/Configuration/conf_Firmware_Cameras_5000_Series_en.pdf (Cameras 5000 Series, firmware 8.5.2.9 / 10.1.2.4 / 11.1.0.26, Rev. 1.0.3, section 15.2: \"Encoder 1  rtsp://IP address of the device/encoder1\") and https://www.dallmeier.com/api/1617455215/cloud?action=show&path=/Download_Centre_2.0/Product_History/02_Camera/04_PTZ_Camera/DDZ5200HD_Indoor_Series/02_Documentation/Configuration/conf_Firmware_PTZ_Cameras_en.pdf (PTZ Cameras 4000 / 5000 Series, firmware 9.2.0.2 / 12.2.1.8, Rev. 1.0.1: \"Encoder 1  rtsp://IP address of the device:554/encoder1\").",
+          "strix_lead": "manual:dallmeier"
+        },
+        {
+          "stream": "sub",
+          "path": "/encoder2",
+          "verified": true,
+          "source": "https://www.dallmeier.com/api/1617455215/cloud?action=show&path=/Download_Centre_2.0/Product_Documents/02_Camera/RDF6100DN_Series/02_Documentation/Configuration/conf_DOMERA_OS_en.pdf — Dallmeier \"Configuration – Camera Web Interface\", Domera OS release 14.4.0.11 (Doc. Rev. 0.3.5, 2025-03-24), section 19.2 RTSP Application: \"[Stream 2]: rtsp://192.168.2.28:554/encoder2\", port 554 (default setting). Same path in the legacy manuals: https://www.dallmeier.com/api/1617455215/cloud?action=show&path=/Download_Centre_2.0/Product_History/02_Camera/01_Dome_Camera/DDF5200HDV-DN/02_Documentation/Configuration/conf_Firmware_Cameras_5000_Series_en.pdf (Cameras 5000 Series, firmware 8.5.2.9 / 10.1.2.4 / 11.1.0.26, Rev. 1.0.3, section 15.2: \"Encoder 2  rtsp://IP address of the device/encoder2\") and https://www.dallmeier.com/api/1617455215/cloud?action=show&path=/Download_Centre_2.0/Product_History/02_Camera/04_PTZ_Camera/DDZ5200HD_Indoor_Series/02_Documentation/Configuration/conf_Firmware_PTZ_Cameras_en.pdf (PTZ Cameras 4000 / 5000 Series, firmware 9.2.0.2 / 12.2.1.8, Rev. 1.0.1: \"Encoder 2  rtsp://IP address of the device:554/encoder2\").",
+          "strix_lead": "manual:dallmeier"
+        },
+        {
+          "stream": "third",
+          "path": "/encoder3",
+          "verified": true,
+          "source": "https://www.dallmeier.com/api/1617455215/cloud?action=show&path=/Download_Centre_2.0/Product_Documents/02_Camera/RDF6100DN_Series/02_Documentation/Configuration/conf_DOMERA_OS_en.pdf — Dallmeier \"Configuration – Camera Web Interface\", Domera OS release 14.4.0.11 (Doc. Rev. 0.3.5, 2025-03-24), section 19.2 RTSP Application: \"[Stream 3]: rtsp://192.168.2.28:554/encoder3\", port 554 (default setting). Same path in the legacy manuals: https://www.dallmeier.com/api/1617455215/cloud?action=show&path=/Download_Centre_2.0/Product_History/02_Camera/01_Dome_Camera/DDF5200HDV-DN/02_Documentation/Configuration/conf_Firmware_Cameras_5000_Series_en.pdf (Cameras 5000 Series, firmware 8.5.2.9 / 10.1.2.4 / 11.1.0.26, Rev. 1.0.3, section 15.2: \"Encoder 3  rtsp://IP address of the device/encoder3\"). Not listed in the PTZ Cameras 4000 / 5000 Series manual, which documents encoder1 and encoder2 only.",
+          "strix_lead": "manual:dallmeier"
+        }
+      ],
+      "notes": "One scheme across the brand: Domera OS cameras (DDF6050DN, RDF5000DN/RDF6000DN Domera, SDF6800DN/SDF6900DN, DDZ5230DN/DDZ5530DN/DDZ5000DN-IR and the Panomera MK2 / Perimeter / Skyview / V8 multifocal systems), the legacy 5000 series (DF/DDF/MDF/SDF 5xxx HD) and the legacy 4000/5000 PTZ firmware (DDZ52xxHD, DDZ5x36HD-DN-IR) all serve rtsp://<ip>:554/encoder<N>. Domera OS documents streams 1-3 (stream 1 is always enabled; streams 2 and 3 must be enabled first), the 5000 series firmware documents encoders 1-4 (/encoder4 as well), and the legacy PTZ firmware documents encoders 1-2 only. The codec is whatever is configured for that encoder in the web interface. The RTSP server must be enabled under Network Services, and either a user holding the RTSP live access right is used or \"Allow RTSP access without credentials\" is selected. A changed RTSP port must be written into the URL.",
+      "verified_on": "2026-10-01"
     },
     {
       "brand": "DBPOWER",
@@ -2712,6 +2928,24 @@
       "verified_on": "2026-09-10"
     },
     {
+      "brand": "Eagle Eye Networks",
+      "brand_id": "eagle-eye-networks",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/snl/live/1/1",
+          "verified": true,
+          "source": "https://support.een.com/portal/en/kb/articles/adding-cameras-via-rtsp — Eagle Eye Networks Knowledge Base 'Adding Cameras Via RTSP' (v2.0, 2024-05-27): example RTSP path for 'Eagle Eye Networks cameras: snl/live/1/1'",
+          "strix_lead": "manual:eagle-eye-networks"
+        }
+      ],
+      "unverified_leads": [],
+      "notes": "Eagle Eye Networks' own KB gives snl/live/1/1 as the RTSP path of Eagle Eye Networks cameras (the camera's first/main stream). No official sub-stream path is published, so none is listed. EEN cameras are normally connected to the EEN cloud via a Bridge/CMVR (ONVIF or EEN-native); RTSP access is described by EEN as a fallback.",
+      "verified_on": "2026-10-01"
+    },
+    {
       "brand": "EasyN",
       "brand_id": "easyn",
       "status": "unverified",
@@ -2909,9 +3143,24 @@
     {
       "brand": "Ernitec",
       "brand_id": "ernitec",
-      "status": "unverified",
+      "status": "verified",
       "default_port": 554,
-      "templates": [],
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/snl/live/1/1",
+          "verified": true,
+          "source": "https://ernitec.com/wp-content/uploads/Ernitec_Weboperation_Guide_IPcameras_Base_Pro.pdf — Ernitec 'AI Network Camera Web Operation Guide' (IP cameras Base/Pro, V1.0 2023-02-10), §15.1 Protocol Information, Figure 15-1: RTSP Rule rtsp://ip:port/snl/live/cameraid/streamid, RTSP Example rtsp://192.168.99.14:554/snl/live/1/1",
+          "strix_lead": "manual:ernitec"
+        },
+        {
+          "stream": "sub",
+          "path": "/snl/live/1/2",
+          "verified": true,
+          "source": "https://ernitec.com/wp-content/uploads/Ernitec_Weboperation_Guide_IPcameras_Base_Pro.pdf — same §15.1 RTSP Rule rtsp://ip:port/snl/live/cameraid/streamid; streamid 2 = second (sub) stream of camera 1",
+          "strix_lead": "manual:ernitec"
+        }
+      ],
       "unverified_leads": [
         {
           "path": "/cam[CHANNEL]/h264",
@@ -2942,75 +3191,32 @@
           "note": "iSpyConnect crowd-sourced MJPEG entry (SX302IR); not officially documented by Ernitec."
         }
       ],
-      "notes": "Danish professional brand (ernitec.com). No official Ernitec documentation publishes a fixed RTSP URL/stream path. The Ernitec Hawk SX / SX Series / Orion SX user manuals, the EVA-series (EVA 101/201) manuals, the MicroView MVIB-01IR-E manual, and the 2018 generic 'Ernitec Network Camera' user manual only list RTSP as a *supported protocol* (IPv4/v6, TCP, UDP, RTP, RTSP, HTTP, HTTPS, ONVIF, ...) and expose a configurable 'RTSP port' plus a 'Streaming > Video Format' config menu (H.264 + MJPEG / H.264 + H.264 multi-stream); none specify a fixed RTSP path such as /cam1/h264. Cameras are accessed via web UI, the DeviceSearch/IPAdminTool utility, or ONVIF. All lead paths (cam[CHANNEL]/h264, h264, h264_2/3/4, mpeg4, jpeg) originate from crowd-sourced aggregators (iSpyConnect/Agent DVR, smartvision.dev, camlytics) that explicitly disclaim their data; iSpyConnect maps /cam[CHANNEL]/h264 to Hawk/Mercury/Orion/Vega and /h264,/h264_2..4,/mpeg4,/jpeg to model SX302IR, but this is not Ernitec's own documentation. Ernitec's own PDF hosts (files.ernitec.com, files.eetgroup.com) were unreachable at verification time (persistent connection timeouts), so the PDFs could not be directly parsed; readable ManualsLib mirrors of the same manuals were checked and contain no fixed RTSP path. Per the CC0 no-guessing rule, no template is published. To integrate, use ONVIF auto-discovery or read the exact RTSP URL from the camera's own web UI.",
-      "verified_on": "2026-08-14"
+      "notes": "Ernitec's current IP camera range (Deimos, Wolf, Pluto, Orion Pro, Jupitor Pro, Saturn Pro, Halo Pro) uses the Web Operation Guide published by Ernitec for its Base/Pro IP cameras, which documents the RTSP rule rtsp://ip:port/snl/live/<cameraid>/<streamid> (example rtsp://192.168.99.14:554/snl/live/1/1) on the Configuration > Protocol > Protocol Info page; each camera also displays its own RTSP rule/example on that page. The guide is titled for the Base/Pro lines; the Ultra multi-sensor/thermal lines are not explicitly named, so confirm on the camera's Protocol Info page (a second sensor would use cameraid 2). Legacy SX-series (Hawk/Mercury/Orion SX) manuals publish no path; the unverified_leads below come only from crowd-sourced lists.",
+      "verified_on": "2026-10-01"
     },
     {
       "brand": "ESCAM",
       "brand_id": "escam",
-      "status": "unverified",
+      "status": "verified",
       "default_port": 554,
-      "templates": [],
-      "unverified_leads": [
+      "templates": [
         {
-          "path": "/user={user}&password={pass}&channel=<N>&stream=0.sdp",
-          "note": "Xiongmai/XMeye OEM main-stream form (stream=0). Widely documented for ESCAM only in community aggregators (iSpy, ZoneMinder, camlytics, GeniusVision, Scribd) — NOT confirmable against ESCAM's own official documentation. escam.cn publishes no RTSP URL in an accessible manual/FAQ (product pages omit it; download page behind an expired TLS cert)."
+          "stream": "main",
+          "path": "/live/0/main",
+          "verified": true,
+          "source": "http://www.escam.cn/product/60-en.html — ESCAM official product page (PVR001), Download/RTSP tab: 'rtsp://[IP]:[port]/live/[channel]/[stream_type]', IPC channel 0, main stream = main, default port 554 (same text on the PVR/Q6/QD800WIFI/QD900WIFI/QF508 pages)",
+          "strix_lead": "manual:escam"
         },
         {
-          "path": "/user={user}&password={pass}&channel=<N>&stream=1.sdp",
-          "note": "Xiongmai/XMeye OEM sub-stream form (stream=1). Same status as above — community-sourced only, no official ESCAM confirmation."
-        },
-        {
-          "path": "/user={user}_password={pass}_channel=<N>_stream=0.sdp",
-          "note": "Underscore variant of the Xiongmai form (same firmware family). Community-sourced only, unconfirmed by official docs."
-        },
-        {
-          "path": "/user={user}_password={pass}_channel=<N>_stream=1.sdp",
-          "note": "Underscore sub-stream variant. Community-sourced only, unconfirmed."
-        },
-        {
-          "path": "/onvif1",
-          "note": "Reported for ESCAM Q6 (720p) in community forums; ONVIF media-profile path, not from official ESCAM docs."
-        },
-        {
-          "path": "/live/ch00_1",
-          "note": "Community-reported path; no official ESCAM documentation confirms it."
-        },
-        {
-          "path": "/live0.264",
-          "note": "Community lead; unconfirmed, no official source."
-        },
-        {
-          "path": "/ch01.264",
-          "note": "Community lead; unconfirmed, no official source."
-        },
-        {
-          "path": "/Streaming/Channels/1",
-          "note": "Hikvision path — cross-brand contamination, not ESCAM."
-        },
-        {
-          "path": "/realmonitor",
-          "note": "Dahua /cam/realmonitor family — cross-brand contamination, not ESCAM."
-        },
-        {
-          "path": "/cam[CHANNEL]/h264",
-          "note": "Dahua/other OEM style — cross-brand contamination, not ESCAM."
-        },
-        {
-          "path": "/tcp/av0_0",
-          "note": "Generic/other-OEM lead — not confirmable for ESCAM."
-        },
-        {
-          "path": "/img/video.sav",
-          "note": "AXIS-style/other lead — cross-brand contamination, not ESCAM."
-        },
-        {
-          "path": "/H264",
-          "note": "Generic lead; unconfirmed for ESCAM."
+          "stream": "sub",
+          "path": "/live/0/sub",
+          "verified": true,
+          "source": "http://www.escam.cn/product/60-en.html — ESCAM official product page (PVR001), Download/RTSP tab: sub stream = sub",
+          "strix_lead": "manual:escam"
         }
       ],
-      "notes": "ESCAM is a budget IP-camera brand running Xiongmai (XMeye) OEM firmware. The Xiongmai RTSP form 'user={user}&password={pass}&channel=<N>&stream=<0|1>.sdp' (stream=0 main, stream=1 sub; underscore and ampersand variants both appear) is almost certainly the correct pattern in practice and matches the strongest leads, but it could NOT be confirmed against ESCAM's OWN official documentation, which is required for 'verified' status. The official site (escam.cn) does not publish an RTSP URL in any accessible manual or FAQ, and its TLS certificate has expired (pages unfetchable). All ESCAM RTSP paths located come from third-party/community aggregators only. Default: IP 192.168.1.188, user 'admin'. Per-model paths also vary. Leads contain clear cross-brand contamination (Hikvision /Streaming/Channels, Dahua /realmonitor & /cam*/h264, Axis /img/video.sav) which are excluded.",
-      "verified_on": "2026-08-14"
+      "notes": "ESCAM publishes the RTSP URL per product on escam.cn product pages (second tab), and its lines use different firmware: (1) /live/<channel>/<main|sub> (channel 0 on IPCs) on the PVR, Q6, QD800WIFI, QD900WIFI and QF508 pages — used as the brand default here; (2) Xiongmai-style /user=<user>&password=<pass>&channel=1&stream=<0 main|1 sub>.sdp? on the QD100/QD300/QD410/QD420/QD500/QF007/QF218/QF288/QF518 pages; (3) /11 (main) and /12 (sub) on the G01/G02/Q2068 pages; (4) /ch0_0.264 (main) and /ch0_1.264 (sub) on RTSP port 80 on the QP180 page. Lines 2-4 carry their own rtsp_url_template on the camera records. Q8, QD900S, QF903, QH001/QH002/QH005 and TY003 pages publish no RTSP URL.",
+      "verified_on": "2026-10-01"
     },
     {
       "brand": "Eufy Security",
@@ -4728,6 +4934,32 @@
       "verified_on": "2026-08-14"
     },
     {
+      "brand": "Illustra",
+      "brand_id": "illustra",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/videoStreamId=1",
+          "codec": "H.264|H.265",
+          "verified": true,
+          "source": "https://illustracameras.com/wp-content/uploads/2024/08/UM_PG4-2-4-5-8MP-Series_8200-2007-08_L.en_-1.pdf — Illustra Pro Gen 4 2MP, 4MP, 5MP & 8MP Installation and Configuration Guide (8200-2007-08 L), appendix \"Using Media Player to View RTSP Streaming\": \"Stream 1: rtsp://cameraip:554/videoStreamId=1\". The same line is printed in the Flex Gen 4 guide (https://illustracameras.com/wp-content/uploads/2024/05/UM-FG4-Series_A16381M7H7_J.en_.pdf), the Pro Gen 4 PTZ guide (https://illustracameras.com/wp-content/uploads/2022/08/UM_PG4-2-8MP-PTZ-D_8200-2007-02_G.en_.pdf), the Pro Gen3 guide (https://illustra.s3.us-east-1.amazonaws.com/Web_Files/Legacy/pro-gen3-mini-domes/Manuals/Pro-Gen3-2MP-3MP-5MP-8MP-Install-Configuration-Guide-B0_8200-1630-02-B0_en.pdf), the Flex 2MP/3MP/8MP manual (https://illustra.s3.us-east-1.amazonaws.com/Web_Files/Legacy/flex-3mp-4k-bullet/Manuals/Illustra-Flex-2MP-3MP-8MP-Install-Configuration-User-Manual-M0_8200-1456-01-M0_en.pdf) and the Pro 2MP/3MP Compact Mini-Dome manual (https://illustra.s3.us-east-1.amazonaws.com/Web_Files/Legacy/pro-2mp-3mp-compact-mini-domes/Manuals/Pro-2MP-3MP-Compact-Mini-Dome-Configuration-User-Manual-C0_8200-1631-03-C0_en.pdf)",
+          "strix_lead": "manual:illustra"
+        },
+        {
+          "stream": "sub",
+          "path": "/videoStreamId=2",
+          "codec": "H.264|H.265",
+          "verified": true,
+          "source": "https://illustracameras.com/apac/wp-content/uploads/2020/04/EG4-2MP-Dome-Bullet-UM_8200-1929-03-A0_en.pdf — Illustra Essentials Gen 4 Series Installation and Configuration Guide (8200-1929-03 A0), appendix \"Using Media Player to View RTSP Streaming\": \"Stream 2: rtsp://cameraip:554/videoStreamId=2\". Also printed in the Pro Gen 4 12MP Fisheye guide (https://illustracameras.com/wp-content/uploads/2022/08/UM-PG4-12MP-FE_A163818NN6_B_en-1.pdf: Stream 2 = /videoStreamId=2, Stream 3 = /videoStreamId=3) and, as \"Secondary Video Stream ... rtsp://CAMERAIP/VideoStreamId=2\", in the default-settings tables of the Pro 12MP Fisheye quick start guide (https://illustra.s3.us-east-1.amazonaws.com/Web_Files/Legacy/pro-12mp-fisheye/Manuals/Illustra-Pro-12MP-Fisheye-Quick-Start-Guide-c0-lt_8200-1485-01C0_en.pdf) and the Flex 2MP PTZ quick start guide (https://illustra.s3.us-east-1.amazonaws.com/Web_Files/Legacy/flex-2mp-ptz/Manuals/Illustra-Flex-2MP-PTZ-Quick-Start-Guide-b0_lt_8200-1486-01B0_en.pdf)",
+          "strix_lead": "manual:illustra"
+        }
+      ],
+      "notes": "Illustra (Johnson Controls / Tyco) cameras running the Illustra firmware platform address streams by number: rtsp://<ip>:554/videoStreamId=<n> (1 = Stream 1, 2 = Stream 2, 3 = Stream 3, which the web UI uses for live view). Audio is /audioStreamId=1, and video with audio is /videoStreamId=1&audioStreamId=1. This is the documented path for the Gen 4 generation (Pro Gen4, Flex Gen4, Essentials Gen4, incl. PTZ, fisheye and LPR), Pro Gen3 mini-domes, the Flex 2MP/3MP/8MP dome, bullet, box, compact and IR PTZ cameras, the Pro 2MP/3MP compact mini-dome, the Pro 12MP fisheye and the Flex 2MP 20x PTZ (the last two print it in their quick start guides as rtsp://CAMERAIP/videoStreamId=1&audioStreamID=1). Several Gen 4 guides (Pro Gen4, Flex Gen4, PTZ) and the Gen3/Flex manuals print only the Stream 1 URL plus the audio URL; the Stream 2 URL is printed in the Essentials Gen4, Gen4 fisheye and the two quick start guides. Multi-sensor models use one port per sensor: Flex Gen4 dual-sensor = sensor 1 on 554 (videoStreamId 1-3), sensor 2 on 555 (videoStreamId 4-6); Pro Gen4 20MP/32MP multisensor = sensors 1-4 on ports 554-557 (videoStreamId 1-4, 5-8, 9-12, 13-16). Lines with a DIFFERENT documented path carry it on the camera record instead: older Illustra Pro models (Pro 2MP/3MP/5MP mini-domes IPSxxD2/D3, Pro 30x PTZ IPS02P6, Pro 5MP LT fisheye ADCi825LT) use /StreamId=1 and /StreamId=2 on port 554, and the Essentials Gen 1 indoor mini-dome (Dahua-based firmware V2.420) uses /cam/realmonitor?channel=1&subtype=0|1. NOT confirmed by any official document found: Essentials Gen 3 (IES02CFBCWIYB, IES02MFBNWIYB, IES02D1OCWIYB, firmware Illustra.Esse6/Esse7) and the IP5M multisensor/panoramic models — do not assume this path for them; use ONVIF discovery. Official manuals are hosted on illustracameras.com and on the Illustra document bucket (illustra.s3.us-east-1.amazonaws.com/Web_Files/Legacy/).",
+      "verified_on": "2026-10-01"
+    },
+    {
       "brand": "IMOU",
       "brand_id": "imou",
       "status": "unverified",
@@ -5124,6 +5356,24 @@
       ],
       "notes": "IQeye = IQinVision, acquired by Vicon Industries. Official streaming API is the OID-based 'now.mp4' interface documented in the IQeye Network API Manual (Ch.6 Serverpush, Ch.10 H.264 Streams). RTSP: rtsp://{user}:{pass}@{ip}:554/now.mp4 with &res=high (main) or &res=low (sub); res selectors are per-family (IQ73xx/IQ83xx/IQD3xx/IQM3xx support only 'low' and 'high'). Default RTSP listener port 554 (configurable 1025-65535 via OID 1.17.3.1); UDP unicast negotiation starts at port 6970. HTTP-tunneled RTSP available at http://{ip}/rtsp/now.mp4. Codec H.264.",
       "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "IQinVision",
+      "brand_id": "iqinvision",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/now.mp4",
+          "codec": "H.264",
+          "verified": true,
+          "source": "https://web.archive.org/web/2020/http://www.iqeye.com/Collateral/Documents/English-US/Products/IQDocs-Dwgs/Network%20API%20manual_Vicon.pdf — IQeye Network API Manual (IQinVision/Vicon, 2014-04-05), §10.1.1: request an H.264 stream via unicast/multicast UDP or unicast TCP with rtsp://<camera_ip>/now.mp4 (RTSP control on TCP port 554; RTSP listener port OID default 554).",
+          "strix_lead": "manual:iqinvision"
+        }
+      ],
+      "notes": "Official IQeye Network API Manual (archived copy of iqeye.com): rtsp://<camera_ip>/now.mp4 is the H.264 RTSP request URL for all IQeye cameras (§10.1.1; HTTP-tunnelled variant http://<camera_ip>/rtsp/now.mp4). §10.4 documents modifiers: append &res=low to get the lower-resolution H.264 stream when the configured mode provides one, &mm=v for video only. Cameras of the IQ76/IQ86, IQA3, IQD5, IQM5 and IQR5 families can also be run in stream-based operation, where §10.3 lists rtsp://<camera_ip>/stream1 … /stream4 for streams 1-4. No sub-stream template is listed here because the documented sub-stream URL differs between mode-based and stream-based operation.",
+      "verified_on": "2026-10-01"
     },
     {
       "brand": "Jennov",
@@ -5709,6 +5959,40 @@
       "notes": "LG Business Solutions IP camera manuals (LNB/LND/LNU/LNV/LNP series) are available on lg.com/global/business and gscs-b2c.lge.com but are all scanned image-based PDFs (Adobe Illustrator/Photoshop exports) with no machine-readable text. No RTSP URL path could be extracted from any official LG document. Third-party aggregators (iSpyConnect, security.world) cite paths such as /video1+audio1 for the LG 7210R, but these are community-sourced and do not meet the official-documentation requirement."
     },
     {
+      "brand": "LILIN",
+      "brand_id": "lilin",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/stream0",
+          "codec": "H.264|H.265",
+          "verified": true,
+          "source": "https://lilin.zendesk.com/hc/en-gb/articles/360045653451-LILIN-IP-Camera-RTSP-Information — LILIN Technical Support KB \"LILIN IP Camera RTSP Information\": \"/stream0 - Encoder 1 (typically the camera's primary HD stream)\", example rtsp://admin:pass@192.168.1.200/stream0, default RTSP port 554; the article's Setup > Video > General screenshots show Encoder1 RTSP URL rtsp://<ip>:554/stream0. Same default in the LILIN user manuals (RTSP page: RTSP Port 554, Encoder1 = stream0): https://meritlilin.com/downloads/UserManual-P7Z7_series-EN.pdf (P6/P7/Z6/Z7/V1), https://meritlilin.com/downloads/UserManual-S7Series-EN.pdf (S7/S8 PTZ), https://meritlilin.com/downloads/UserManual_P5_Z5_Series-EN.pdf (P5/Z5), https://meritlilin.com/downloads/UserManual_P2_Z2_Series-EN.pdf (H.265 P2/Z2).",
+          "strix_lead": "manual:lilin"
+        },
+        {
+          "stream": "sub",
+          "path": "/stream1",
+          "codec": "H.264|H.265",
+          "verified": true,
+          "source": "https://lilin.zendesk.com/hc/en-gb/articles/360045653451-LILIN-IP-Camera-RTSP-Information — LILIN Technical Support KB \"LILIN IP Camera RTSP Information\": \"/stream1 - Encoder 2 (typically the camera's secondary SD stream)\"; the article's screenshots show Encoder2 RTSP URL rtsp://<ip>:554/stream1. Same default (Encoder2 = stream1) on the RTSP page of the LILIN P6/P7/Z6/Z7/V1, S7/S8, P5/Z5 and P2/Z2 user manuals (meritlilin.com/downloads/UserManual-P7Z7_series-EN.pdf, UserManual-S7Series-EN.pdf, UserManual_P5_Z5_Series-EN.pdf, UserManual_P2_Z2_Series-EN.pdf).",
+          "strix_lead": "manual:lilin"
+        },
+        {
+          "stream": "third",
+          "path": "/stream2",
+          "codec": "H.264|H.265",
+          "verified": true,
+          "source": "https://meritlilin.com/downloads/UserManual_P5_Z5_Series-EN.pdf — LILIN P5/Z5 Series IP Camera User Manual, chapter 4-2-1 (Setup > Video > General): Encoder3 RTSP URL rtsp://<ip>/stream2, and chapter 4-4-3 RTSP: Encoder3 = stream2. The P6/P7/Z6/Z7/V1, S7/S8 and P2/Z2 manuals list the same name for \"Encoder3 (TV Out)\" — on models with an analog TV output Encoder3 is out of service while TV out is enabled.",
+          "strix_lead": "manual:lilin"
+        }
+      ],
+      "notes": "Current LILIN IP cameras name each encoder's RTSP path /stream<N>, counted from 0: /stream0 = Encoder 1 (main), /stream1 = Encoder 2 (sub), /stream2 = Encoder 3 (shared with the analog TV output on models that have one — not available while TV out is enabled), /stream3 = Encoder 4 (JPEG profile on models with four encoders). Default RTSP port 554; RTSP over HTTP on port 80 is also documented (rtsp://admin:pass@<ip>:80/stream0). RTSP authentication is on by default, so pass user:pass in the URL. The encoder names are editable under Setup > Network > RTSP (HTTP/RTSP Service), and the live URL of every encoder is printed under Setup > Video > General, so check there if a path was renamed. LILIN's HTTP API Document v3.01.04 (lilinfiles.co.uk, IP Camera SDK) confirms rtsp.url0..3 = stream0..stream3 for the P2/Z2, P3/Z3, P5/Z5, P6/Z6 and P7/Z7 series. Legacy firmware-1.x cameras (IPG/IPS/IPR/IPD iMEGAPRO and first L series, c. 2013) use a codec+resolution name instead — /rtsph2641080p, /rtsph264720p, /rtsph264480p, /rtspjpeg480p (\"Merit LILIN RTSP Streaming Document\", 2013, lilinfiles.co.uk IP Camera SDK; LILIN KB \"Testing a LILIN IP camera RTSP Stream using VLC\"). The E-Series (E5R...) has its own manual (UserManual_ESeries_IPC, section \"RTSP setting\") that could not be retrieved in full, so these templates are not confirmed for that line — read the URL from the camera's web UI. LILIN NVR/DVR recorders use a different scheme and are not covered here.",
+      "verified_on": "2026-10-01"
+    },
+    {
       "brand": "Longse",
       "brand_id": "longse",
       "status": "verified",
@@ -5955,6 +6239,30 @@
       ],
       "notes": "Luma is a Hikvision OEM sold by SnapAV (now Snap One). RTSP path is the standard Hikvision ISAPI /Streaming/channels/<N> form: 1=main, 2=sub, 3=third (X10 series only; third stream must be enabled in System Settings > Hardware Settings). Default RTSP port is 554. Authentication is required (RTSP authentication defaults to Basic). The sub-stream example in the original bulletin (rtsp://admin:pw123@192.186.1.11:10554/Streaming/channels/2) shows direct camera access on a non-default port, confirming the path applies to standalone cameras not just NVR relay.",
       "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Luminys",
+      "brand_id": "luminys",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/video/livemedia?Ch=<N>&Streamtype=0",
+          "verified": true,
+          "source": "https://wiki.luminyscorp.com/NVR/RTSP_URL_Formatting — Luminys Wiki ‘RTSP URL Formatting’ (rtsp://USER:PASS@IPADDRESS:PORT/video/livemedia?Ch=1&Streamtype=0; 0 = main stream, 1 = sub stream); same format in the Luminys Network Camera User Manual Rev. 1 (March 2025), Port settings – RTSP Port (https://datacenter.luminyscorp.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdE1GIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a50876e28586c2a5834c017dd543f13064cd28fd/Manual_NetworkCamera_Rev1_Final%202.pdf)",
+          "strix_lead": "manual:luminys"
+        },
+        {
+          "stream": "sub",
+          "path": "/video/livemedia?Ch=<N>&Streamtype=1",
+          "verified": true,
+          "source": "https://wiki.luminyscorp.com/NVR/RTSP_URL_Formatting — Luminys Wiki ‘RTSP URL Formatting’ (rtsp://USER:PASS@IPADDRESS:PORT/video/livemedia?Ch=1&Streamtype=0; 0 = main stream, 1 = sub stream); same format in the Luminys Network Camera User Manual Rev. 1 (March 2025), Port settings – RTSP Port (https://datacenter.luminyscorp.com/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdE1GIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a50876e28586c2a5834c017dd543f13064cd28fd/Manual_NetworkCamera_Rev1_Final%202.pdf)",
+          "strix_lead": "manual:luminys"
+        }
+      ],
+      "notes": "Format documented by Luminys itself: rtsp://{user}:{pass}@{ip}:{port}/video/livemedia?Ch=<channel>&Streamtype=<type>. Ch = channel number starting from 1 (Ch=1 on a single-sensor camera; on a recorder, the channel of the camera). Streamtype=0 is the main stream, Streamtype=1 the sub stream; the official documents describe no value for a third stream, so none is listed. Default RTSP port 554 (may be omitted when default). Credentials can be embedded in the URL or supplied by the client when it prompts. The Luminys Wiki article states the format for Luminys devices in general; the Network Camera User Manual Rev. 1 (linked from the N3/N4/N5/N9 camera product pages) and the LPR Camera User Manual Rev. 1 (N9L) print the same format. The N2 series product pages and the LumiCloud camera manual (N5x-…C models) do not restate the URL, although their datasheets list RTSP as a supported protocol.",
+      "verified_on": "2026-10-01"
     },
     {
       "brand": "Lupus Electronics",
@@ -6474,6 +6782,40 @@
       ],
       "unverified_leads": [],
       "notes": "RTSP Address field in camera web UI (Config > Network > RTSP) shows three stream paths: /profile1, /profile2, /profile3. Confirmed via NCT-4M-E2 Eyeball Camera User Manual page 35 screenshot. Port 554 is the default RTSP port."
+    },
+    {
+      "brand": "Oncam",
+      "brand_id": "oncam",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/h264/video.sdp?camera=13",
+          "codec": "H.264",
+          "verified": true,
+          "source": "https://support.oncamgrandeye.com/hc/en-gb/articles/360017723940-Evolution-05-05-Mini-Connecting-to-the-camera-RTSP-stream — Oncam Support Centre 'Evolution 05 / 05-Mini - Connecting to the camera RTSP stream': 4MP rtsp://camera_ip_address:554/h264/video.sdp?camera=13 (also in the EVO-05 User Manual OG-003719)",
+          "strix_lead": "manual:oncam"
+        },
+        {
+          "stream": "sub",
+          "path": "/h264/video.sdp?camera=12",
+          "codec": "H.264",
+          "verified": true,
+          "source": "https://support.oncamgrandeye.com/hc/en-gb/articles/360017723940-Evolution-05-05-Mini-Connecting-to-the-camera-RTSP-stream — same article: 1MP rtsp://camera_ip_address:554/h264/video.sdp?camera=12 (2MP = camera=25, 1/4MP = camera=26)",
+          "strix_lead": "manual:oncam"
+        },
+        {
+          "stream": "third",
+          "path": "/h264/video.sdp?camera=26",
+          "codec": "H.264",
+          "verified": true,
+          "source": "https://support.oncamgrandeye.com/hc/en-gb/articles/360017723940-Evolution-05-05-Mini-Connecting-to-the-camera-RTSP-stream — same article: 1/4MP rtsp://camera_ip_address:554/h264/video.sdp?camera=26",
+          "strix_lead": "manual:oncam"
+        }
+      ],
+      "notes": "Guide covers the Evolution 05 / 05 Mini family (EVO-05-*), the most common Oncam line. Other lines use different documented paths, set per record: Evolution 12 (EVO-12-*) rtsp://<ip>:<port>/h264/video.sdp?name=FE1 (https://support.oncamgrandeye.com/hc/en-gb/articles/360015457780-Evolution-12-Connecting-to-Camera-RTSP-Stream); Evolution 180 (EVO-180-*) rtsp://<ip>:<port>/video.sdp?name=FE1 (https://support.oncamgrandeye.com/hc/en-gb/articles/360017724480-Evolution-180-Connecting-to-RTSP-Streams); C-Series C-08/C-12 rtsp://<ip>:554/h264/video.sdp?name=MP1..MP4 (also /h265/ and /MJPEG/) per media profile (https://support.oncamgrandeye.com/hc/en-gb/articles/14214670218386-C-Series-Connecting-to-RTSP-Streams). H.264 RTSP port is 554; Evolution multicast uses port 8556 /h264/multicast.sdp.",
+      "verified_on": "2026-10-01"
     },
     {
       "brand": "Panasonic i-PRO",
@@ -8410,6 +8752,32 @@
       "verified_on": "2026-08-14"
     },
     {
+      "brand": "Tenda",
+      "brand_id": "tenda",
+      "status": "verified",
+      "default_port": 8554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/profile0",
+          "codec": "H.264|H.265",
+          "verified": true,
+          "source": "https://www.tendacn.com/us/material/show/844937962672197 — Tenda FAQ \"How does third-party software retrieve camera video feed through RTSP?\" (Video Surveillance, 2026-09-03): \"Stream-access URL format (excluding CP6 V2.0): Main stream: rtsp://IP:port/profile0 ... port: RTSP port, default value is 8554 ... profile0 stands for the main stream and profile1 for the sub-stream\", example rtsp://192.168.1.203:8554/profile0 (username admin, password admin123456). Same path in Tenda's \"[Camera] Video playback from IP Cam by RTSP\" (https://www.tendacn.com/us/material/show/2003692, 2025-06-11) for CP3 v2, CP7 and the ITxx/ICxx series: rtsp://IP.address.of.camera:8554/profile0 (HiRes).",
+          "strix_lead": "manual:tenda"
+        },
+        {
+          "stream": "sub",
+          "path": "/profile1",
+          "codec": "H.264|H.265",
+          "verified": true,
+          "source": "https://www.tendacn.com/us/material/show/844937962672197 — Tenda FAQ \"How does third-party software retrieve camera video feed through RTSP?\": \"Sub-stream: rtsp://IP:port/profile1\", example rtsp://192.168.1.203:8554/profile1, default RTSP port 8554. Same path in Tenda's \"[Camera] Video playback from IP Cam by RTSP\" (https://www.tendacn.com/us/material/show/2003692) for CP3 v2, CP7 and the ITxx/ICxx series: rtsp://IP.address.of.camera:8554/profile1 (LowRes).",
+          "strix_lead": "manual:tenda"
+        }
+      ],
+      "notes": "Tenda's RTSP FAQ gives one format for every Tenda camera that supports RTSP except the CP6 V2.0: rtsp://{user}:{pass}@{ip}:8554/profile0 (main) and /profile1 (sub) — note the non-standard default port 8554. Default login admin / admin123456 (changeable in the TDSEE app or the camera web UI). Tenda's per-model table (\"[Camera] Video playback from IP Cam by RTSP\", 2025-06-11) lists the lines that differ, all on port 554: CP6 and CT6 use /tenda (main) and /tenda_sub (sub); CP3 v3 and CH3 v1/v2 use /ch=1?subtype=0 (main) and /ch=1?subtype=1 (sub) — those records carry their own URL. The same table confirms /profile0 + /profile1 on port 8554 for CP3 v2, CP7 and the ITxx/ICxx wired series. Newer models that the table does not name (CH7/CH9/CH10, CP3 Pro, the RH/RP/RT regional models, TC/BC series) fall under the FAQ's general format; if it does not connect, read the stream URL with an ONVIF client (Tenda recommends ONVIF Device Manager or Happytime Onvif Client) — the same Tenda article shows that route. Tenda NVRs use rtsp://<nvr-ip>:554/ch=<N>&subtype=0|1 and are not covered here.",
+      "verified_on": "2026-10-01"
+    },
+    {
       "brand": "TENVIS",
       "brand_id": "tenvis",
       "status": "verified",
@@ -8531,6 +8899,40 @@
       ],
       "notes": "Tiandy Technologies (tiandy.com / en.tiandy.com) is a Chinese manufacturer founded in 1994, ranked among the top 10 global surveillance brands. Despite checking the official download portal (en.tiandy.com/download.html), multiple official distributor-hosted PDF manuals (tiandy.sk, g4cctv.com, pliki.genway.pl — all image-based scanned PDFs with no extractable RTSP text), the official NVR user manual (anabon.com), the ManualsLib catalog, and the Korean regional Tiandy PDF, no official Tiandy document was found that explicitly publishes the RTSP stream URL path for their IP cameras. A 2020 firmware security research report (github.com/zb3/tiandy-research) explicitly states 'Tiandy's official documentation does not provide instructions for accessing streams via [RTSP] protocols.' The /cam/realmonitor?channel=<N>&subtype=0 path circulates heavily in community databases but is attributed to Dahua-compatibility observation, not an official Tiandy source. Tiandy cameras do support RTSP (port 554) and ONVIF Profile S/T per product spec sheets, but the actual RTSP path is not published in accessible official documentation. Re-verify if Tiandy publishes a developer guide or SDK documentation via their partner portal (partner.tiandy.com, requires login).",
       "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Toshiba",
+      "brand_id": "toshiba",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/live.sdp",
+          "codec": "H.264",
+          "verified": true,
+          "source": "https://web.archive.org/web/20140330095606/http://toshibasecurity.com/pdf/_manuals/IK-WB81A_UserManual_v1.00.pdf — Toshiba IK-WB81A User Manual (archived), Network > Streaming protocols > RTSP Streaming: URL format rtsp://<ip address>:<rtsp port>/<access name for stream1 ~ 5>, default access name for stream 1 = live.sdp, RTSP port 554 (same defaults in the IK-WB16A/WB30A/WB70A/WB80A/WD04A/WD12A/WR04A/WR12A/WR14A manuals).",
+          "strix_lead": "manual:toshiba"
+        },
+        {
+          "stream": "sub",
+          "path": "/live2.sdp",
+          "codec": "H.264",
+          "verified": true,
+          "source": "https://web.archive.org/web/20140330095606/http://toshibasecurity.com/pdf/_manuals/IK-WB81A_UserManual_v1.00.pdf — Toshiba IK-WB81A User Manual (archived), RTSP Streaming settings: default access name for stream 2 = live2.sdp (also shown in the IK-WB70A User Manual).",
+          "strix_lead": "manual:toshiba"
+        },
+        {
+          "stream": "third",
+          "path": "/live3.sdp",
+          "codec": "H.264",
+          "verified": true,
+          "source": "https://web.archive.org/web/20140330095606/http://toshibasecurity.com/pdf/_manuals/IK-WB81A_UserManual_v1.00.pdf — Toshiba IK-WB81A User Manual (archived), RTSP Streaming settings: default access name for stream 3 = live3.sdp (stream 4 = live4.sdp, stream 5 = liveany.sdp).",
+          "strix_lead": "manual:toshiba"
+        }
+      ],
+      "notes": "Toshiba Surveillance IK-W series IP cameras (IK-WB16A/WB30A/WB70A/WB80A/WB81A, IK-WD04A/WD12A/WD14A, IK-WR04A/WR12A/WR14A). The RTSP access names are user-configurable in Configuration > Network > Streaming protocols; the paths here are the factory defaults shown in the manuals. Older two-stream models (e.g. IK-WB70A) only expose live.sdp and live2.sdp. The IK-WP41A PTZ uses a different firmware whose manual documents rtsp://<ip>:554/livestream; that record carries its own template.",
+      "verified_on": "2026-10-01"
     },
     {
       "brand": "Toucan",
@@ -8684,6 +9086,37 @@
       ],
       "notes": "Both TP-Link camera lines confirmed: Tapo (consumer) and VIGI (business) use /stream1 (main/high-quality) and /stream2 (sub/low-quality) on port 554. Dual-lens Tapo models add /stream6 + /stream7 for the telephoto lens (per FAQ 2680). Codec is H.264/H.265 per ONVIF Profile T support noted in VIGI docs. A separate 'camera account' must be created in the Tapo app before third-party RTSP/ONVIF access; battery-only models (e.g. C410/C420/C425/D230) do not support RTSP. ONVIF default port is 80.",
       "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Trassir",
+      "brand_id": "trassir",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/live/main",
+          "verified": true,
+          "source": "https://www.dssl.ru/upload/iblock/582/9gvrri424ycd11ksqwvy1csyrm6fcgzs/AC_ETR2_UM_en-1.pdf — TRASSIR IP Cameras User Manual (firmware 4.x, DSSL, Jan 2026), Supplement D \"Operation on RTSP and ONVIF\" and the RTSP-port note in section 3.4.3.2; same paths in the Russian edition https://www.dssl.ru/upload/iblock/197/8vi3l8nb5dyp19vfrc0drn52jpog6r93/AC_ETR2_UM-1.pdf and the older manuals https://www.dssl.ru/upload/iblock/658/AC_ETR2_UM.pdf and https://trassir.com/upload/AC-ETR_UM_en.pdf",
+          "strix_lead": "manual:trassir"
+        },
+        {
+          "stream": "sub",
+          "path": "/live/sub",
+          "verified": true,
+          "source": "https://www.dssl.ru/upload/iblock/582/9gvrri424ycd11ksqwvy1csyrm6fcgzs/AC_ETR2_UM_en-1.pdf — TRASSIR IP Cameras User Manual (firmware 4.x, DSSL, Jan 2026), Supplement D \"Operation on RTSP and ONVIF\" and the RTSP-port note in section 3.4.3.2; same paths in the Russian edition https://www.dssl.ru/upload/iblock/197/8vi3l8nb5dyp19vfrc0drn52jpog6r93/AC_ETR2_UM-1.pdf and the older manuals https://www.dssl.ru/upload/iblock/658/AC_ETR2_UM.pdf and https://trassir.com/upload/AC-ETR_UM_en.pdf",
+          "strix_lead": "manual:trassir"
+        },
+        {
+          "stream": "third",
+          "path": "/live/mobile",
+          "verified": true,
+          "source": "https://www.dssl.ru/upload/iblock/582/9gvrri424ycd11ksqwvy1csyrm6fcgzs/AC_ETR2_UM_en-1.pdf — TRASSIR IP Cameras User Manual (firmware 4.x, DSSL, Jan 2026), Supplement D \"Operation on RTSP and ONVIF\" and the RTSP-port note in section 3.4.3.2; same paths in the Russian edition https://www.dssl.ru/upload/iblock/197/8vi3l8nb5dyp19vfrc0drn52jpog6r93/AC_ETR2_UM-1.pdf and the older manuals https://www.dssl.ru/upload/iblock/658/AC_ETR2_UM.pdf and https://trassir.com/upload/AC-ETR_UM_en.pdf (third stream is documented only in the 4.x-firmware manuals)",
+          "strix_lead": "manual:trassir"
+        }
+      ],
+      "notes": "Official TRASSIR (DSSL) IP-camera user manuals give rtsp://[login]:[password]@[ip]:[rtsp port]/live/main (main), /live/sub (sub) and, on 4.x firmware, /live/mobile (third stream); default RTSP port 554. This covers the mainstream TR-D fixed-camera lines listed in those manuals (TR-D1xxx/2xxx/3xxx/4xxx/7xxx/8xxx/9xxx 2-6 MP models and revisions v2-v7, TR-D2B/2D/2S/4B/4D/4S, TR-D6124IR10 v3, TR-D6154IR10 v3, TR-DP8422ZIR2). Two product lines use other paths and carry their own URL on the camera record: the 8 MP line documented in the QTR manual (https://www.dssl.ru/upload/iblock/758/QTR_UM-_4_.pdf — TR-D2181IR3 v2/v3, TR-D2183IR6 v2/v3, TR-D2183ZIR6 v2/v3, TR-D3181IR3 v2/v3, TR-D3183ZIR3 v2/v3, TR-D8181IR3 v2/v3, TR-D2281WDIR4, TR-D2283WDZIR7, TR-D3281WDIR4, TR-D3283WDZIR3, TR-D4281WDIR2, TR-D8281WDIR4) uses rtsp://[ip]:[port]/mode=real&idc=1&ids=1 (ids=1 main, 2-3 sub), and the speed-dome line documented in https://www.dssl.ru/upload/iblock/0ff/TR_DTRsd_UM-_1_.pdf (TR-D5123IR3, TR-D5124, TR-D6224IR10, TR-D6254, TR-D6254IR15 and its rev.2 — the later TR-D6254IR15 v3 is not in that manual) uses /cam/realmonitor?channel=1&subtype=0 (main) / subtype=1 (sub). Models that no TRASSIR manual lists by name (dual-light DL models, TR-D23xx/33xx/83xx, 8 MP v3/v7 revisions, v3 speed domes, TR-W Wi-Fi, TR-Lite, TR-P) are not individually documented — confirm the path in the camera web UI (Network > RTSP) or via ONVIF.",
+      "verified_on": "2026-10-01"
     },
     {
       "brand": "TRENDnet",
@@ -9217,6 +9650,37 @@
       "verified_on": "2026-08-14"
     },
     {
+      "brand": "Urmet",
+      "brand_id": "urmet",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/ch01/0",
+          "verified": true,
+          "source": "https://www.urmet.com/it-it/Professionista/Strumenti/Libretti-e-Certificazioni — Urmet official manual library (Libretti, search the product code): LIBRETTO UTENTE DS1099-007A (doc ID 528077) for H.265 1080P series 1099/200, /201, /202, /203, /300, /301, /302, /303, /304, section 10.3.6 RTSP (p.25): \"rtsp://IP:Port/ch01/A  A: 0 (Main Stream), 1 (Sub Stream), 2 (Stream Mobile)\", RTSP port default 554. Same rtsp://IP:Port/ch01/A wording in LIBRETTO UTENTE DS1093-519C (doc ID 496414, 4MP I-series 1093/125M4I, /142M4I, /144M4ZI, /180M4I, /181M4ZI, /182M4ZI), DS1099-023B (doc ID 562754, 1099/600, /601, /700, /701), DS1093-560A (doc ID 549654, 1093/185FE, /186BN, /187C) and DS1099-040B (doc ID 557786, 1099/500-502, /550-553; main/sub only).",
+          "strix_lead": "manual:urmet"
+        },
+        {
+          "stream": "sub",
+          "path": "/ch01/1",
+          "verified": true,
+          "source": "https://www.urmet.com/it-it/Professionista/Strumenti/Libretti-e-Certificazioni — Urmet official manual library (Libretti, search the product code): LIBRETTO UTENTE DS1099-007A (doc ID 528077) for H.265 1080P series 1099/200, /201, /202, /203, /300, /301, /302, /303, /304, section 10.3.6 RTSP (p.25): \"rtsp://IP:Port/ch01/A  A: 0 (Main Stream), 1 (Sub Stream), 2 (Stream Mobile)\", RTSP port default 554. Same rtsp://IP:Port/ch01/A wording in LIBRETTO UTENTE DS1093-519C (doc ID 496414, 4MP I-series 1093/125M4I, /142M4I, /144M4ZI, /180M4I, /181M4ZI, /182M4ZI), DS1099-023B (doc ID 562754, 1099/600, /601, /700, /701), DS1093-560A (doc ID 549654, 1093/185FE, /186BN, /187C) and DS1099-040B (doc ID 557786, 1099/500-502, /550-553; main/sub only).",
+          "strix_lead": "manual:urmet"
+        },
+        {
+          "stream": "third",
+          "path": "/ch01/2",
+          "verified": true,
+          "source": "https://www.urmet.com/it-it/Professionista/Strumenti/Libretti-e-Certificazioni — Urmet official manual library (Libretti, search the product code): LIBRETTO UTENTE DS1099-007A (doc ID 528077) for H.265 1080P series 1099/200, /201, /202, /203, /300, /301, /302, /303, /304, section 10.3.6 RTSP (p.25): \"rtsp://IP:Port/ch01/A  A: 0 (Main Stream), 1 (Sub Stream), 2 (Stream Mobile)\", RTSP port default 554 (third = \"Stream Mobile\"; not present on the DS1099-040B 5MP line).",
+          "strix_lead": "manual:urmet"
+        }
+      ],
+      "notes": "Urmet publishes its camera manuals only through the urmet.com Libretti search (download links are session tokens, so the library page + document code/ID is cited). Covers the Urmet IP lines whose user manuals give rtsp://<ip>:554/ch01/0 (main), /ch01/1 (sub), /ch01/2 (mobile): 1099/200-203 and 1099/300-304 (1080P H.265), 1099/600, /601, /700, /701, the 1093/*M4I and *M4ZI 4MP I-series, the 1093/185FE, /186BN, /187C line and VK 1099/553 (DS1099-040B, main/sub only). RTSP is enabled by default under Network > RTSP and uses the camera user/password. NOT covered: the 720p/1080p Wi-Fi and compact models 1093/151WM1, /152WM1, /181WM1, /182WM1 (DS1093-574), 1093/143M2 and 1099/204 (DS1093-587) and 1099/001 (DS1099-009) use rtsp://<ip>:554/live/0/MAIN and /live/0/SUB (channel ID 0, SUB2 = mobile) and carry their own URL on each camera record. No official RTSP path was found for the current VK 1099/5xxB/6xx/7xx/801 range (LIBRETTO D'USO DS1099-254 documents no RTSP URL), 1093/139M2, /142M2 (manual DS1093-176 unavailable), 1093/184M18 (DS1093-489 only mentions an \"RTSP URI\" setting), 1093/656M2 and 1099/390 (manuals give the port only), 1099/392 and VK 1099/680.",
+      "verified_on": "2026-10-01"
+    },
+    {
       "brand": "V380",
       "brand_id": "v380",
       "status": "verified",
@@ -9326,11 +9790,59 @@
     {
       "brand": "Verkada",
       "brand_id": "verkada",
-      "status": "unverified",
+      "status": "verified",
+      "default_port": 8554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/high",
+          "codec": "H.264|H.265",
+          "verified": true,
+          "source": "https://help.verkada.com/command/organization-settings/integrations/set-up-the-verkada-fusus-camera-integration — Verkada Help, Fusus Camera integration, Verkada RTSP stream details: \"Path (/standard or /high - depending on desired image quality)\" (high quality / HQ stream); RTSP port 8554 and HQ/SQ stream definitions per https://help.verkada.com/verkada-cameras/video-streaming-and-sharing/live-streaming/low-latency-rtsp-streaming (Low-Latency RTSP Streaming)",
+          "strix_lead": "manual:verkada"
+        },
+        {
+          "stream": "sub",
+          "path": "/standard",
+          "codec": "H.264|H.265",
+          "verified": true,
+          "source": "https://help.verkada.com/command/organization-settings/integrations/set-up-the-verkada-fusus-camera-integration — Verkada Help, Fusus Camera integration, Verkada RTSP stream details: \"Path (/standard or /high - depending on desired image quality)\" (standard quality / SQ stream); RTSP port 8554 and HQ/SQ stream definitions per https://help.verkada.com/verkada-cameras/video-streaming-and-sharing/live-streaming/low-latency-rtsp-streaming (Low-Latency RTSP Streaming)",
+          "strix_lead": "manual:verkada"
+        }
+      ],
+      "notes": "Verkada is cloud-managed (Verkada Command); RTSP 1.0 (RFC 2326) is off by default and must be enabled per camera in Command (Cameras > camera > Settings > Device > Real Time Streaming Protocol) by a Site Admin, who sets a dedicated RTSP username and password there. Command shows the ready-made standard and high-resolution URLs to copy (and can export a CSV of all RTSP-enabled cameras). RTSP uses port 8554, not 554. Streams are reachable only from RFC 1918 private addresses on the local network; max 2 concurrent RTSP streams per camera. Resolution and bitrate match the HQ/SQ streams in Command and the codec follows the camera's configured codec (H.264 or H.265). Multisensor cameras (CH52-E, CH53-E, CH63-E, CY53-E, CY63-E) need the per-sensor camera ID before the quality segment (/<camera-id>/high, /<camera-id>/standard; 2 streams per sensor) — copy the exact URL from Command. The CR63-E remote camera does not support RTSP. No ONVIF.",
+      "verified_on": "2026-10-01"
+    },
+    {
+      "brand": "Vicon",
+      "brand_id": "vicon",
+      "status": "verified",
       "default_port": 554,
-      "templates": [],
-      "notes": "Verkada is cloud-managed (Verkada Command). Newer CD-series domes support RTSP 1.0 (max 2 concurrent streams) but it must be enabled per-camera in Command and the stream URL is device-specific — no universal path template. No ONVIF.",
-      "verified_on": "2026-08-18"
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/stream1",
+          "verified": true,
+          "source": "https://vicon-security.com/hubfs/Product%20Resources/Roughneck_V2000-V2100_UserGuide-02.pdf — Vicon Roughneck AI V2000 / Roughneck V2100 Series User Guide (XX318-00-04), section 5.4 RTSP: rtsp://(camera IP address)/(URL stream N), RTSP Settings figure shows the URL fields as stream1 / stream2 / stream3 and Port 554; the V2008PTZ-IR User Manual (https://vicon-security.com/hubfs/Product%20Resources/V2008PTZ-IR_User-Manual.pdf, Network - RTSP) prints the same paths as \"Default URL Path of Stream 1 to Stream 3\"",
+          "strix_lead": "manual:vicon"
+        },
+        {
+          "stream": "sub",
+          "path": "/stream2",
+          "verified": true,
+          "source": "https://vicon-security.com/hubfs/Product%20Resources/Roughneck_V2000-V2100_UserGuide-02.pdf — Vicon Roughneck AI V2000 / Roughneck V2100 Series User Guide (XX318-00-04), section 5.4 RTSP: rtsp://(camera IP address)/(URL stream N), RTSP Settings figure shows the URL fields as stream1 / stream2 / stream3 and Port 554; the V2008PTZ-IR User Manual (https://vicon-security.com/hubfs/Product%20Resources/V2008PTZ-IR_User-Manual.pdf, Network - RTSP) prints the same paths as \"Default URL Path of Stream 1 to Stream 3\"",
+          "strix_lead": "manual:vicon"
+        },
+        {
+          "stream": "third",
+          "path": "/stream3",
+          "verified": true,
+          "source": "https://vicon-security.com/hubfs/Product%20Resources/Roughneck_V2000-V2100_UserGuide-02.pdf — Vicon Roughneck AI V2000 / Roughneck V2100 Series User Guide (XX318-00-04), section 5.4 RTSP: rtsp://(camera IP address)/(URL stream N), RTSP Settings figure shows the URL fields as stream1 / stream2 / stream3 and Port 554; the V2008PTZ-IR User Manual (https://vicon-security.com/hubfs/Product%20Resources/V2008PTZ-IR_User-Manual.pdf, Network - RTSP) prints the same paths as \"Default URL Path of Stream 1 to Stream 3\"",
+          "strix_lead": "manual:vicon"
+        }
+      ],
+      "notes": "Applies to the Roughneck AI V2000 / Roughneck V2100 lines (V2002/V2005/V2008 bullet, dome, micro dome, box, LPR, corner, V-CELL, V2360W fisheye, V2105) and the V2000D-PTZ and V2008PTZ-IR PTZ domes: default RTSP port 554, stream URL names stream1 / stream2 / stream3. The names are editable in the camera web UI (Network > RTSP), so a reconfigured camera may differ. Lines with other documented paths carry their own URL on the camera record: V940 series (V942/V944/V945 bullet and dome) use /ch1/stream1, /ch1/stream2, /ch1/stream3 (V940B/V940D/V945B/V945D manuals); the V2020/V2032-WIR-360 multi-sensor uses one path per sensor, /stream1_1 to /stream1_4 (primary) and /stream2_1 to /stream2_4 (secondary) (Multi-Sensor 360 User Manual). The V800B, V930D, V9501D, V980B/V980D, V8360W and V9360 user manuals document only the RTSP port (554), not the stream path — use ONVIF discovery on those models.",
+      "verified_on": "2026-10-01"
     },
     {
       "brand": "Victure",
@@ -9404,6 +9916,30 @@
       ],
       "notes": "TP-Link VIGI is a separate business-grade camera line (distinct from the consumer Tapo/Kasa line). Official TP-Link FAQ 3718 and 4201 document RTSP paths /stream1 (main/high quality) and /stream2 (sub/low quality) on port 554. Credentials (camera account username/password set via VIGI app) are prompted separately by the connecting client, not embedded in the URL path. Some clients may require the explicit port: rtsp://{ip}:554/stream1. VIGI cameras support H.264, H.264+, H.265, H.265+ on main stream; H.264/H.265 on sub stream. ONVIF is also supported for full device control via third-party NVR/NAS.",
       "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Vikylin",
+      "brand_id": "vikylin",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/stream0",
+          "verified": true,
+          "source": "https://vikylin.com/wp-content/uploads/2023/11/YCX-Series-IP-Camera-Instructions.pdf — Vikylin YC Series Quick Start Guide, FAQ 5.4 'How to fetch the RTSP video stream and http snapshot?': 'Main Stream: rtsp://admin:123456@IP address/stream0'. Identical text in the PG Series guide (https://vikylin.com/wp-content/uploads/2023/11/PG-Series-IP-Camera-Instructions.pdf, FAQ 5.4).",
+          "strix_lead": "manual:vikylin"
+        },
+        {
+          "stream": "sub",
+          "path": "/stream1",
+          "verified": true,
+          "source": "https://vikylin.com/wp-content/uploads/2023/11/YCX-Series-IP-Camera-Instructions.pdf — Vikylin YC Series Quick Start Guide, FAQ 5.4: 'Sub Stream: rtsp://admin:123456@IP address/stream1'. Identical text in the PG Series guide (https://vikylin.com/wp-content/uploads/2023/11/PG-Series-IP-Camera-Instructions.pdf, FAQ 5.4).",
+          "strix_lead": "manual:vikylin"
+        }
+      ],
+      "notes": "Vikylin sells several OEM lines with different firmware, so the RTSP path depends on the series. This guide is the path Vikylin's own manuals print for the PG and YC series (AjDevTools / Videolink firmware): /stream0 (main) and /stream1 (sub). The manuals print the URL without a port, i.e. the RTSP default 554; the example credentials are admin / 123456. Other lines documented by Vikylin: VK series (Hikvision-OEM) — the VK Series guide gives /h264/ch1/main/av_stream and /h265/ch1/sub/av_stream, and Vikylin's stream-access article (https://vikylin.com/nvr-and-ipc-stream-access/) gives /Streaming/Channels/101 (main) and /Streaming/Channels/102 (sub); VD series — the VD Series guide states these are OEM models customized from Dahua and refers to Dahua's guidance, i.e. /cam/realmonitor?channel=1&subtype=0 (main) and subtype=1 (sub); PG-N series (Remoteyes / SettingTool firmware) — the PG-N quick start guide gives /media/live/1/1 (main) and /media/live/1/2 (sub) on port 554. Cameras of the lines that differ carry their own URL on the camera record. No Vikylin document states an RTSP path for the PTZ-* models; confirm their path via ONVIF or the camera web UI.",
+      "verified_on": "2026-10-01"
     },
     {
       "brand": "Vitek",
@@ -10138,6 +10674,37 @@
       ],
       "notes": "YCC365 (YCC365 Plus / iCam365 app platform) is a budget OEM app/cloud ecosystem covering many rebadged cameras. The official manufacturer site (ycc365plus.com) confirms RTSP is supported on port 554 with the form rtsp://[username]:[password]@[ip]:554, and lists ONVIF port 80 — but it documents NO fixed stream PATH (the example URL ends at :554 with nothing after it). Because YCC365 spans many OEM hardware variants, the actual RTSP path is device/firmware-dependent and is meant to be reached via ONVIF discovery rather than a single fixed URL. No official doc publishes a canonical main/sub path, so no template can be verified. Default credentials per official page: admin / 123456 (or blank).",
       "verified_on": "2026-08-14"
+    },
+    {
+      "brand": "Zavio",
+      "brand_id": "zavio",
+      "status": "verified",
+      "default_port": 554,
+      "templates": [
+        {
+          "stream": "main",
+          "path": "/video.pro1",
+          "verified": true,
+          "source": "https://web.archive.org/web/20140719185557/http://www.zavio.com/downloads/product/83/Zavio%20User%20Manual_D4210_20140626.pdf — Zavio D4210 User Manual (archived), 9.5.1 RTSP, RTSP Configuration: 'By default, the video URL and profile number are related, e.g., profilex = video.prox ... rtsp://camera_address:554/video.pro1'. Same text in the archived C-series manual https://web.archive.org/web/20190714045749/http://www.zavio.com:80/downloads/product/147/ZAVIO_UserManual_CB321X.pdf",
+          "strix_lead": "manual:zavio"
+        },
+        {
+          "stream": "sub",
+          "path": "/video.pro2",
+          "verified": true,
+          "source": "https://web.archive.org/web/20140719185557/http://www.zavio.com/downloads/product/83/Zavio%20User%20Manual_D4210_20140626.pdf — Zavio D4210 User Manual (archived), 9.5.1 RTSP, RTSP Configuration: 'rtsp://camera_address:554/video.pro2' (stream profile 2)",
+          "strix_lead": "manual:zavio"
+        },
+        {
+          "stream": "third",
+          "path": "/video.pro3",
+          "verified": true,
+          "source": "https://web.archive.org/web/20140719185557/http://www.zavio.com/downloads/product/83/Zavio%20User%20Manual_D4210_20140626.pdf — Zavio D4210 User Manual (archived), 9.5.1 RTSP, RTSP Configuration: 'rtsp://camera_address:554/video.pro3' (stream profile 3)",
+          "strix_lead": "manual:zavio"
+        }
+      ],
+      "notes": "The RTSP path follows the stream-profile number: profile N is served at /video.proN (the manuals list /video.pro1 to /video.pro4), default RTSP port 554. The access name and per-profile authentication can be changed under Network > Advanced > RTSP, and each profile's codec and resolution are user-defined under Video > Profile, so which profile is the main or sub stream depends on the camera's profile setup. Printed verbatim in the archived Zavio user manuals for D4210, D4211, P6210, F3210/F3215, D7320/D7510, B7320/B7510, B8210, D8210, B6210, B8220, D8220, D8X20, D4X20, P4X20, P4520, CB321X, CB5220/CB6X30 and CD5220/CD6X30. The 2012-2014 manuals for B5010, B5111, B5210, B7210, D3100/D3200, D5113/D7111, D5210/D7210, F3000, F3102/F3110, F3201/F3206, F7210, P5111 and P5210 describe the same per-profile RTSP configuration ('Configure the RTSP by profile', 'Access Name') without printing the default path, and no readable manual is archived for B6220/B6320/B6520, D6210/D6220/D6320/D6520, CD3210/CD3211 and CL7200/CL7500 — treat the path as the brand default on those models, not as model-specific documentation. Older lines use different documented paths, set on those camera records: first-generation megapixel models (B5110, D5110, P5110) use one path per codec (/video.h264, /video.mp4, /video.mjpg, /video.3gp), and legacy VGA models (F210A, F312A, M511E, F531E, F731E) document only /video.3gp, the 3GPP mobile stream.",
+      "verified_on": "2026-10-01"
     },
     {
       "brand": "ZKTeco",

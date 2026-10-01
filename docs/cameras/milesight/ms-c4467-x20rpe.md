@@ -5,6 +5,7 @@
 | Brand | Milesight |
 | Model | MS-C4467-X20RPE |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2688×1520) |
 | Sensor | 1/1.8" Progressive Scan CMOS |
 | Lens | 1× 6.4 to 128mm F1.6 to F4.0 |
@@ -12,7 +13,7 @@
 | Night vision | ir (180m), 0.002 lux color |
 | Power | PoE (802.3at) / DC 12V |
 | Storage | microSD ≤ 1024GB |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 | Operating temp | -40 to 60°C |

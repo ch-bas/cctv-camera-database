@@ -13,7 +13,7 @@
 | Night vision | hybrid (30m) |
 | Power | DC 12V |
 | Storage | microSD ≤ 512GB, NVR |
-| Protocols | rtsp |
+| Protocols | rtsp, onvif |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | Yes |
@@ -37,6 +37,7 @@
 ## Sources
 
 - https://reolink.com/product/rlc-840wa/
+- https://support.reolink.com/articles/900000617826-Which-Reolink-Products-Support-CGI-RTSP-ONVIF/
 
 ---
 *Auto-generated from reolink-rlc-840wa.json — do not edit by hand.*

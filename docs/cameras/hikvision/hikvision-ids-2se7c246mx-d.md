@@ -9,7 +9,7 @@
 | Lens | 2.8mm |
 | Night vision | hybrid |
 | Storage | NVR |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 
 ## Features
 

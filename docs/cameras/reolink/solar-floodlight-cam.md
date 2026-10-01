@@ -41,6 +41,7 @@
 
 - https://reolink.com/product/reolink-solar-floodlight-cam/
 - https://reolink.com/blog/reolink-new-products-at-ces/
+- https://support.reolink.com/articles/900000617826-Which-Reolink-Products-Support-CGI-RTSP-ONVIF/
 
 ---
 *Auto-generated from reolink-solar-floodlight-cam.json — do not edit by hand.*

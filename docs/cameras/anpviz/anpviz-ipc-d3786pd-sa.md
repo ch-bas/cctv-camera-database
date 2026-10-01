@@ -13,6 +13,7 @@
 | Night vision | hybrid (30m) |
 | Power | PoE |
 | Storage | microSD ≤ 512GB, NVR |
+| Protocols | onvif |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 
@@ -32,6 +33,7 @@
 ## Sources
 
 - https://anpviz.com/products/ipc-d3786pd-sa
+- https://drive.google.com/file/d/1L41Lynx-L-0r8BrRpg3a1c-Xmk8nYjA2/view
 
 ---
 *Auto-generated from anpviz-ipc-d3786pd-sa.json — do not edit by hand.*

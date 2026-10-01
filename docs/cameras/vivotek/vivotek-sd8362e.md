@@ -27,6 +27,7 @@
 ## Sources
 
 - https://web.archive.org/web/2id_/https://download.vivotek.com/downloadfile/downloads/datasheets/SD8362Edatasheet_en.pdf
+- https://download.vivotek.com/downloadfile/downloads/datasheets/sd8362edatasheet_en.pdf
 
 ---
 *Auto-generated from vivotek-sd8362e.json — do not edit by hand.*

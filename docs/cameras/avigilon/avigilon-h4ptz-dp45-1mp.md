@@ -13,7 +13,7 @@
 | Lens | 1× 4.3-129mm F1.6-F4.7 |
 | Field of view | 1.5-63.7 horizontal° |
 | Night vision | color, 0.03 lux, 0.1 lux color |
-| Power | 24V DC / 24V AC, or IEEE 802.3at Class 4 PoE+, or High Power 60W PoE++ (POE-INJ2-60W) |
+| Power | IEEE 802.3at Class 4 PoE+ (25.5 W max), or 24V DC / 24V AC or High Power 60W PoE++ (POE-INJ2-60W) (57 W max) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP66/IP67 |

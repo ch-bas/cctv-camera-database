@@ -11,7 +11,7 @@
 | Lens | 2× 3.1mm F1.1 |
 | Field of view | 50 x 37.2 thermal (H x V), 92.6 x 75.8 optical (H x V)° |
 | Power | 10-30 VDC / PoE (802.3af) |
-| Protocols | rtsp, http |
+| Protocols | onvif, rtsp, http |
 | IP rating | IP67 |
 | Operating temp | -20 to 50°C |
 
@@ -33,6 +33,7 @@
 ## Sources
 
 - https://www.hikvision.com/en/products/Thermal-Products/Thermography-thermal-cameras/Fixed-series/ds-2ta21-3avf/
+- https://assets.hikvision.com/prd/normal/all/doc/m000011235/UD29962B_Thermographic-Cube-Camera_User-Manual_5.5.42_20220830.pdf
 
 ---
 *Auto-generated from hikvision-ds-2ta21-3avf.json — do not edit by hand.*

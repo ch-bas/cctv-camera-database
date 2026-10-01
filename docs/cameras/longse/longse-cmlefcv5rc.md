@@ -6,7 +6,7 @@
 | Model | CMLEFCV5RC |
 | Type | turret |
 | Connectivity | ethernet |
-| Resolution | 5MP (5MP, 2960×1666) |
+| Resolution | 5MP (5MP, 2880×1620) |
 | Sensor | 1/2.7" Progressive Scan CMOS Sensor |
 | Lens | 4mm F1.6 |
 | Field of view | 91 H / 47 V / 109 D° |

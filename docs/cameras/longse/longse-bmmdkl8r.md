@@ -6,7 +6,7 @@
 | Model | BMMDKL8R |
 | Type | bullet |
 | Connectivity | ethernet |
-| Resolution | 8MP (8MP, 3864×2192) |
+| Resolution | 8MP (8MP, 3840×2160) |
 | Sensor | 1/2.8" SONY Starvis Back-illuminated CMOS Sensor |
 | Lens | 4mm F1.6 |
 | Field of view | 84 H / 48 V / 97 D° |

@@ -12,6 +12,7 @@
 | Night vision | hybrid |
 | Power | plug-in adapter |
 | Storage | NVR |
+| Protocols | rtsp |
 | IP rating | IP65 |
 | Two-way audio | Yes |
 
