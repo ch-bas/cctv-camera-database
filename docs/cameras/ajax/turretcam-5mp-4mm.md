@@ -36,6 +36,7 @@
 ## Sources
 
 - https://ajax.systems/products/specs/turretcam-5-mp-4-mm/
+- https://ajax.systems/support/manuals/onvif/
 
 ---
 *Auto-generated from ajax-turretcam-5mp-4mm.json — do not edit by hand.*

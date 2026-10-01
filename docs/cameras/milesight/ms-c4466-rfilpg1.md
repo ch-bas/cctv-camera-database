@@ -5,6 +5,7 @@
 | Brand | Milesight |
 | Model | MS-C4466-RFILPG1 |
 | Type | bullet |
+| Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2688×1520) |
 | Sensor | 1/1.8" Progressive Scan CMOS |
 | Lens | 1× 2.8-12mm F1.2 |

@@ -34,6 +34,7 @@
 ## Sources
 
 - https://assets.hikvision.com/prd/public/all/doc/sm000074881/DS-2DF7A436IXG-EL_Datasheet_20250308.pdf
+- https://web.archive.org/web/20260110150510id_/https://assets.hikvision.com/prd/public/all/doc/sm000074881/DS-2DF7A436IXG-EL_Datasheet_20250308.pdf
 
 ---
 *Auto-generated from hikvision-ds-2df7a436ixg-el.json — do not edit by hand.*

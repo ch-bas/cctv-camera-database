@@ -11,6 +11,7 @@
 | Night vision | hybrid (90m) |
 | Power | PoE (802.3at)/DC |
 | Storage | microSD ≤ 512GB, NVR |
+| Protocols | onvif |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 | Operating temp | -20 to 60°C |
@@ -32,6 +33,7 @@
 ## Sources
 
 - https://anpviz.com/products/ptzip46820e-sa
+- https://drive.google.com/file/d/1L41Lynx-L-0r8BrRpg3a1c-Xmk8nYjA2/view
 
 ---
 *Auto-generated from anpviz-ptzip46820e-sa.json — do not edit by hand.*

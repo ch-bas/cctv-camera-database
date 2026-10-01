@@ -9,7 +9,7 @@
 | Resolution | 4MP (4MP, 2560×1440) |
 | Sensor | 1/3" Panasonic Exmor Sensor, Progressive Scan, Super Low Light CMOS |
 | Lens | 1× 6mm |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | Two-way audio | No |
 
 ## Streams

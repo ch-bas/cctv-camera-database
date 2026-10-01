@@ -14,7 +14,7 @@
 | Field of view | (H) 100; (V) 55; (D) 117° |
 | Night vision | ir (30m), 0.02 lux, 0.0028 lux color |
 | Storage | NVR |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Operating temp | -30 to 50°C |
 

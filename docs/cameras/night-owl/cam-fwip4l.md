@@ -10,6 +10,7 @@
 | Connectivity | wifi |
 | Resolution | 2K (4MP, 2560×1440) |
 | Power | AC plug-in (adapter included) |
+| Protocols | rtsp |
 | IP rating | IP65 |
 | Two-way audio | Yes |
 | Operating temp | -20 to 60°C |

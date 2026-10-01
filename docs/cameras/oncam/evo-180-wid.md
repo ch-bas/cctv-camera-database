@@ -29,6 +29,7 @@
 ## Sources
 
 - https://www.oncamgrandeye.com/app/uploads/OG-006169-DS-2-EVO-180-Indoor-Datasheet.pdf
+- https://support.oncamgrandeye.com/hc/en-gb/articles/360017724480-Evolution-180-Connecting-to-RTSP-Streams
 
 ---
 *Auto-generated from oncam-evo-180-wid.json — do not edit by hand.*

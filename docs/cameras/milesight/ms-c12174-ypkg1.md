@@ -7,6 +7,7 @@
 | Brand | Milesight |
 | Model | MS-C12174-YPKG1 |
 | Type | fisheye |
+| Connectivity | ethernet |
 | Resolution | 12MP (12MP, 3520×3520) |
 | Sensor | 1/1.6" Progressive Scan CMOS |
 | Lens | 1× 1.7mm F2.0 |
@@ -14,7 +15,7 @@
 | Night vision | ir (20m), 0.008 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 1024GB |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | Yes |

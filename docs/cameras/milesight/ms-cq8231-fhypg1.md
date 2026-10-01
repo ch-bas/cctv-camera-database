@@ -5,6 +5,7 @@
 | Brand | Milesight |
 | Model | MS-CQ8231-FHYPG1 |
 | Type | turret |
+| Connectivity | ethernet |
 | Resolution | 4K UHD (8MP, 3840×2160) |
 | Sensor | 1/1.8" Progressive Scan CMOS |
 | Lens | 1× 2.8-12mm F1.2 |
@@ -12,7 +13,7 @@
 | Night vision | hybrid (60m), 0.0008 lux color |
 | Power | PoE (802.3at) / DC 12V |
 | Storage | microSD ≤ 1024GB |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |

@@ -12,7 +12,7 @@
 | Sensor | 1/2" CMOS |
 | Night vision | ir (15m), 0.016 lux |
 | Storage | NVR |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | Yes |

@@ -11,7 +11,7 @@
 | Lens | 1× 2.8mm |
 | Night vision | ir (30m), 0.01 lux color |
 | Storage | NVR |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Operating temp | -40 to 60°C |
 

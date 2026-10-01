@@ -11,7 +11,7 @@
 | Lens | 1× 4.4-132mm F1.4-4.6 |
 | Field of view | 58.1-2.4 horizontal / 33.8-1.3 vertical° |
 | Night vision | 0.15 lux color |
-| Power | PoE (IEEE 802.3at Type 2) |
+| Power | PoE+ IEEE 802.3at Type 2 Class 4 (camera max 19 W; Axis PoE+ midspan: 100-240 V AC, max 37 W), 20-28 V DC (max 16 W) or 20-24 V AC (max 22 VA) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP52 |

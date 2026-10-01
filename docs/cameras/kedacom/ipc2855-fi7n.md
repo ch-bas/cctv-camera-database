@@ -8,6 +8,7 @@
 | Connectivity | ethernet |
 | Resolution | 4K (8MP, 3840×2160) |
 | Night vision | 0.0002 lux color |
+| Protocols | rtsp |
 | IP rating | IP67 |
 
 ## Streams

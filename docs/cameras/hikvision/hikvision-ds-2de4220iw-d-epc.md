@@ -8,7 +8,7 @@
 | Resolution | (2MP) |
 | Lens | 4.8-96mm F1.6 |
 | Field of view | 55-3.0° |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP66 |
 
 ## Features

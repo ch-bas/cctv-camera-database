@@ -5,6 +5,7 @@
 | Brand | Uniarch |
 | Model | IPC-P222-AF40C |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | 1080p/2MP (2MP, 1920×1080) |
 | Sensor | 1/3.0" CMOS |
 | Lens | 1× 4.0mm F1.6 |

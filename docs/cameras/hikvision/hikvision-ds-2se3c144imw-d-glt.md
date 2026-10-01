@@ -8,7 +8,7 @@
 | Resolution | (4MP, 2560×1440) |
 | Night vision | hybrid (80m) |
 | Storage | NVR |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 

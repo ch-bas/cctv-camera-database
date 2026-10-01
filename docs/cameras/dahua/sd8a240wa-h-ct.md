@@ -7,6 +7,7 @@
 | Brand | Dahua |
 | Model | SD8A240WA-H-CT |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/1.8" CMOS |
 | Lens | 1× 5.6-223mm F1.4-F4.8 |

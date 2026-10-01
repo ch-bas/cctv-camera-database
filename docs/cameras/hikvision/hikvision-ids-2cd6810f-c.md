@@ -11,6 +11,7 @@
 | Lens | 2× 2.8mm |
 | Field of view | 93.76 H / 69.24 V (2.8 mm)° |
 | Power | DC 12V / PoE (802.3af) |
+| Protocols | rtsp |
 | Operating temp | -10 to 40°C |
 
 ## Features

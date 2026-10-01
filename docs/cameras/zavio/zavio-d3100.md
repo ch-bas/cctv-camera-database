@@ -37,6 +37,7 @@
 ## Sources
 
 - http://web.archive.org/web/20130203035219id_/http://www.zavio.com:80/downloads/product/76/datasheet_D3100.pdf
+- https://web.archive.org/web/20140702113452id_/http://www.zavio.com/downloads/product/75/D3100_D3200%20User%20Manual_140417.pdf
 
 ---
 *Auto-generated from zavio-d3100.json — do not edit by hand.*

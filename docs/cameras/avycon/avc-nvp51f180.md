@@ -30,6 +30,8 @@
 ## Sources
 
 - https://avyconaivo.com/data/item/AVC-NVP51F180/DataSheet_AVC-NVP51F180_EN.pdf
+- https://avycon.freshdesk.com/support/solutions/articles/36000328602-autotracking-and-panoramic-180-rtsp-syntax
+- https://avyconaivo.com/data/item/AVC-NVP51F180/AVYCON_LHN_NPTZ_Operation%20Manual.pdf
 
 ---
 *Auto-generated from avycon-avc-nvp51f180.json — do not edit by hand.*

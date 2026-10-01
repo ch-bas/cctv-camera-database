@@ -15,7 +15,7 @@
 | Night vision | hybrid (50m), 0.0002 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
-| Protocols | rtsp, p2p |
+| Protocols | rtsp, p2p, onvif |
 | IP rating | IP67 |
 | Two-way audio | Yes |
 | Operating temp | -40 to 60°C |
@@ -40,6 +40,7 @@
 ## Sources
 
 - https://support.amcrest.com/hc/en-us/articles/12423554074893-Technical-Specifications-IP4M-T1044EW-AI
+- https://support.amcrest.com/hc/en-us/articles/12423558907661-User-Manual-IP4M-T1044EW-AI
 
 ---
 *Auto-generated from amcrest-ip4m-t1044ew-ai.json — do not edit by hand.*

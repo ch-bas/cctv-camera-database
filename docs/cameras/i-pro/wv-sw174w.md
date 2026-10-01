@@ -11,7 +11,7 @@
 | Lens | 1× 1.95mm F2.2 |
 | Field of view | 85° |
 | Night vision | 0.5 lux, 0.6 lux color |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | IP rating | IP55 |
 | Two-way audio | Yes |
 | Operating temp | -20 to 50°C |

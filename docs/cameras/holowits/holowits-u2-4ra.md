@@ -13,7 +13,7 @@
 | Night vision | ir (10m), 0.025 lux, 0.05 lux color |
 | Power | Micro USB (5V, 1A) |
 | Storage | microSD ≤ 256GB |
-| Protocols | http |
+| Protocols | http, rtsp |
 | Two-way audio | Yes |
 | Operating temp | -10 to 45°C |
 

@@ -25,6 +25,7 @@
 
 - https://www.ganzsecurity.com/products/zn8-d4ntfn4l-e
 - https://computarganz.s3.amazonaws.com/Ganz+Active+Resources/ZN8-D4NTFN4L-E+07-17+SPEC.pdf
+- https://computarganz.s3.amazonaws.com/Ganz+Active+Resources/Genstar+Web+Operation+Guide+Manual+V3.6_02.09.2024.pdf
 
 ---
 *Auto-generated from ganz-zn8-d4ntfn4l-e.json — do not edit by hand.*

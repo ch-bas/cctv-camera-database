@@ -7,6 +7,7 @@
 | Brand | Dahua |
 | Model | SD6AL245U-HNI |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/2.8" STARVIS CMOS |
 | Lens | 1× 3.95-177.7mm F1.6-F4.95 |

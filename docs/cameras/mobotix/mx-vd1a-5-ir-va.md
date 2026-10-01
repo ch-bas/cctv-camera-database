@@ -8,7 +8,7 @@
 | Model | Mx-VD1A-5-IR-VA |
 | Type | dome |
 | Connectivity | ethernet |
-| Resolution | 5MP (5MP, 2720×1976) |
+| Resolution | 5MP (5MP, 2688×1944) |
 | Sensor | 1/2.7" Progressive CMOS, 5MP (2720x1976), 2.0 um pixel |
 | Lens | 1× 2.7-12mm F1.6-F2.9 |
 | Field of view | 34.13-96.76 (H), 19.24-52.21 (V)° |

@@ -11,6 +11,7 @@
 | Resolution | 4K (8MP, 3840×2160) |
 | Power | plug-in adapter |
 | Storage | NVR |
+| Protocols | rtsp |
 | IP rating | IP65 |
 | Two-way audio | Yes |
 

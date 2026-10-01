@@ -12,7 +12,7 @@
 | Field of view | 103.3 - 38.6 horizontal / 54.2 - 21.9 vertical° |
 | Night vision | ir (50m) |
 | Power | DC 12V / High PoE (IEEE 802.3at); 14 W (DC) |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Operating temp | -30 to 60°C |

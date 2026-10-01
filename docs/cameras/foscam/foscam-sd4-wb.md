@@ -13,7 +13,7 @@
 | Night vision | ir (50m) |
 | Power | DC 12V/2.0A |
 | Storage | microSD ≤ 512GB, NVR |
-| Protocols | http, rtsp, p2p |
+| Protocols | http, rtsp, onvif, p2p |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 
@@ -37,6 +37,7 @@
 ## Sources
 
 - https://www.foscam.eu/sd4-wb.html
+- https://www.foscam.com/downloads/file.html?cate=manual&id=129
 
 ---
 *Auto-generated from foscam-sd4-wb.json — do not edit by hand.*

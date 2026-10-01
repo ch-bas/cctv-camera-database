@@ -13,7 +13,7 @@
 | Night vision | ir (30m) |
 | Power | DC 12V (PoE not supported) |
 | Storage | microSD ≤ 256GB, NVR |
-| Protocols | rtsp, rtmp |
+| Protocols | rtsp, rtmp, onvif |
 | IP rating | IP66 |
 | Two-way audio | No |
 | Operating temp | -10 to 55°C |
@@ -36,6 +36,7 @@
 ## Sources
 
 - https://reolink.com/product/rlc-410w/
+- https://support.reolink.com/articles/900000617826-Which-Reolink-Products-Support-CGI-RTSP-ONVIF/
 
 ---
 *Auto-generated from reolink-rlc-410w.json — do not edit by hand.*

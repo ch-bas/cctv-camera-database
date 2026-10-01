@@ -12,7 +12,7 @@
 | Lens | 3.6mm F1.2 |
 | Night vision | ir (25m) |
 | Storage | NVR |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
 | Operating temp | -30 to 60°C |

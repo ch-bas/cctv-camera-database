@@ -13,6 +13,7 @@
 | Night vision | hybrid (30m), 0.007 lux color |
 | Power | 12V DC / PoE |
 | Storage | microSD ≤ 256GB, NVR |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
 
@@ -28,6 +29,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/lxip3142we-28mda-4mp-lite-ai-dual-light-fixed-mini-dome-network-camera.html
+- https://pic.ltsmall.com/software/830e5ebacef1381eb0a800e5ca796825/LXIP3142WE-28MDA_Spec%20Sheet_12.30.25.pdf
 
 ---
 *Auto-generated from lts-lxip3142we-28mda.json — do not edit by hand.*

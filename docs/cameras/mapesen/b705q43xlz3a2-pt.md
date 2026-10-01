@@ -5,6 +5,7 @@
 | Brand | Mapesen |
 | Model | B705Q43XLZ3A2-PT |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2560×1440) |
 | Sensor | 1/2.66" CMOS |
 | Lens | 4.5-135mm F1.6-2.7 |

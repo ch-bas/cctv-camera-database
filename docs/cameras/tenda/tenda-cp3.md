@@ -39,6 +39,7 @@
 
 - https://www.tendacn.com/us/product/specification/789746156924997
 - https://static.tenda.com.cn/document/2026/05/11/769d2eb7900d45fc9af204aea5d4c209/CP3V3.2_Datasheet.pdf
+- https://www.tendacn.com/us/material/show/2003692
 
 ---
 *Auto-generated from tenda-cp3.json — do not edit by hand.*

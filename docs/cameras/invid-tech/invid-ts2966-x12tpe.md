@@ -31,6 +31,7 @@
 ## Sources
 
 - https://info.invidtech.com/hubfs/AAA_SpecSheets/Milesight/INVID-TS2966-X12TPE.pdf
+- https://support.milesight.com/support/solutions/articles/69000859092-rtsp-stream-of-milesight-network-camera-nvr-vms
 
 ---
 *Auto-generated from invid-tech-invid-ts2966-x12tpe.json — do not edit by hand.*

@@ -12,6 +12,7 @@
 | Night vision | hybrid (41m) |
 | Power | PoE |
 | Storage | microSD ≤ 512GB |
+| Protocols | onvif |
 | IP rating | IP67 |
 | Two-way audio | No |
 
@@ -26,6 +27,7 @@
 ## Sources
 
 - https://anpviz.com/products/ipc-b7382wd-2slv
+- https://anpvizsupport.com/u_file/file/2503/25/d2f527a589.pdf
 
 ---
 *Auto-generated from anpviz-ipc-b7382wd-2slv.json — do not edit by hand.*

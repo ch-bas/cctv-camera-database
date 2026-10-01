@@ -13,7 +13,7 @@
 | Night vision | ir (30m) |
 | Power | PoE (IEEE 802.3af) / DC 12V |
 | Storage | microSD ≤ 512GB, NVR |
-| Protocols | rtsp |
+| Protocols | rtsp, onvif |
 | IP rating | IP66 |
 | IK rating | IK10 |
 | Two-way audio | No |
@@ -36,6 +36,7 @@
 ## Sources
 
 - https://reolink.com/product/rlc-842a/
+- https://support.reolink.com/articles/900000617826-Which-Reolink-Products-Support-CGI-RTSP-ONVIF/
 
 ---
 *Auto-generated from reolink-rlc-842a.json — do not edit by hand.*

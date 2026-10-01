@@ -14,6 +14,7 @@
 | Field of view | 102° |
 | Night vision | ir (30m), 0.01 lux |
 | Power | DC12V |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Operating temp | -40 to 60°C |
@@ -36,6 +37,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/ip-camera/ip-dome/network-ip-dome-camera-cmip7382w-28m.html
+- https://pic.ltsmall.com/pdf/LTCMIP7382W-28M_data%20sheet.pdf
 
 ---
 *Auto-generated from lts-cmip7382w-28m.json — do not edit by hand.*

@@ -5,6 +5,7 @@
 | Brand | Mapesen |
 | Model | 80BF202M4A2-PTBR-RD |
 | Type | bullet |
+| Connectivity | ethernet |
 | Resolution | 2MP (2MP, 1920×1080) |
 | Sensor | 1/2.8" Sony CMOS |
 | Lens | 5-50mm F1.6 |

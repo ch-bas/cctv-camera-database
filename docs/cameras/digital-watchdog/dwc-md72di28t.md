@@ -6,7 +6,7 @@
 | Model | DWC-MD72Di28T |
 | Type | dome |
 | Connectivity | ethernet |
-| Resolution | 1080p (2.1MP, 2001×1121) |
+| Resolution | 1080p (2.1MP, 1920×1080) |
 | Sensor | 1/2.9" CMOS |
 | Lens | 1× 2.8mm F2.0 |
 | Field of view | 109° |

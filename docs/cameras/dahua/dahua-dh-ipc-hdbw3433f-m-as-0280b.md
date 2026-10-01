@@ -14,6 +14,7 @@
 | Night vision | ir (50m), 0.0001 lux, 0.0005 lux color |
 | Power | DC12V/POE |
 | Storage | NVR |
+| Protocols | rtsp, onvif |
 | IP rating | IP67 |
 
 ## Features
@@ -23,6 +24,7 @@
 ## Sources
 
 - https://www.dahuatech.com/product/info/13789.html
+- https://www.dahuatech.com/product/info/5450.html
 
 ---
 *Auto-generated from dahua-dh-ipc-hdbw3433f-m-as-0280b.json — do not edit by hand.*

@@ -43,6 +43,7 @@
 
 - https://vicon-security.com/hubfs/Product%20Resources/V940B-1-Series_Datasheet12.pdf
 - https://vicon-security.com/product/v942b-w310mir-xs-1
+- https://vicon-security.com/hubfs/Product%20Resources/V940B-series-Manual-04.pdf
 
 ---
 *Auto-generated from vicon-v942b-w310mir-xs-1.json — do not edit by hand.*

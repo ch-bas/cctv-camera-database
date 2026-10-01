@@ -41,6 +41,8 @@
 
 - https://www.verkada.com/security-cameras/multisensor/cy63-e/
 - https://docs.verkada.com/docs/video-security-cy63-e-datasheet.pdf
+- https://help.verkada.com/command/organization-settings/integrations/set-up-the-verkada-fusus-camera-integration
+- https://help.verkada.com/verkada-cameras/video-streaming-and-sharing/live-streaming/low-latency-rtsp-streaming
 
 ---
 *Auto-generated from verkada-cy63-e.json — do not edit by hand.*

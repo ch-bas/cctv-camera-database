@@ -10,6 +10,7 @@
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP) |
 | Night vision | hybrid |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |
@@ -26,6 +27,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/ltcmip7342wi-28mda-platinum-4mp-dome-network-camera.html
+- https://pic.ltsmall.com/software/f3bb2d4cce74994977d595eb0519da8e/CMIP7342WI-28MDA_Spec%20sheet.pdf
 
 ---
 *Auto-generated from lts-ltcmip7342wi-28mda.json — do not edit by hand.*

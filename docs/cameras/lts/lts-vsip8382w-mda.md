@@ -14,6 +14,7 @@
 | Night vision | ir (50m) |
 | Power | DC12V / PoE |
 | Storage | microSD ≤ 256GB, NVR |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
 
@@ -35,6 +36,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/vsip8382w-mda-4k-mini-fixed-bullet-network-camera.html
+- https://pic.ltsmall.com/software/b3e04c5a33eff3d898ab969e7865e416/VSIP8382W-28MDA%2C%20VSIP8382W-MDA%20Spec.pdf
 
 ---
 *Auto-generated from lts-vsip8382w-mda.json — do not edit by hand.*

@@ -8,7 +8,7 @@
 | Model | DS-2DE4425IWG-E |
 | Type | ptz |
 | Connectivity | ethernet |
-| Resolution | 4MP (4MP, 2688×1520) |
+| Resolution | 4MP (4MP, 2560×1440) |
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 4.8-120 (25x optical)mm F1.6 |
 | Field of view | 58-2.8 horizontal (25x zoom)° |
@@ -40,6 +40,7 @@
 ## Sources
 
 - https://www.hikvision.com/in-en/
+- https://assets.hikvision.com/prd/normal/all/doc/m000150238/DS-2DE4425IWG-E-C_Datasheet_20260917.pdf
 
 ---
 *Auto-generated from hikvision-ds-2de4425iw-de-t5-india.json — do not edit by hand.*

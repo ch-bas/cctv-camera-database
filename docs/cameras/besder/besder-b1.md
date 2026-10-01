@@ -13,6 +13,7 @@
 | Night vision | ir (30m) |
 | Power | DC 12V/2A |
 | Storage | microSD ≤ 128GB |
+| Protocols | rtsp |
 | IP rating | IP66 |
 | Two-way audio | No |
 | Operating temp | -30°C to 45°C°C |

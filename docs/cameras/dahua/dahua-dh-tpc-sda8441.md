@@ -13,7 +13,7 @@
 | Night vision | ir (250m) |
 | Power | PoE |
 | Storage | microSD ≤ 512GB, NVR |
-| Protocols | rtsp |
+| Protocols | rtsp, onvif |
 | IP rating | IP66 |
 | Two-way audio | No |
 | Operating temp | -40°C~+65°C°C |
@@ -29,6 +29,7 @@
 ## Sources
 
 - https://www.jiankongqicai.com/news/8749.html
+- https://www.onvif.org/member-tools/wp-content/uploads/sites/2/2023/06/ONVIF_DoC_DHI-TPC-SDA8441_2.630.0000000.3.R-Build-Date-2023-06-02_2023-06-28_9h1m40s.pdf
 
 ---
 *Auto-generated from dahua-dh-tpc-sda8441.json — do not edit by hand.*

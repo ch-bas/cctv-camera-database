@@ -11,6 +11,7 @@
 | Lens | 1× 5-75mm F1.6 |
 | Night vision | ir, 0.001 lux, 0.005 lux color |
 | Power | PoE |
+| Protocols | rtsp |
 
 ## Features
 

@@ -15,7 +15,7 @@
 | Night vision | hybrid (30m) |
 | Power | DC 12V, 2A, <24W (plug-in only, no battery) |
 | Storage | microSD ≤ 512GB, NVR |
-| Protocols | rtsp, rtmp, http, p2p |
+| Protocols | rtsp, rtmp, http, p2p, onvif |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 | Operating temp | -10 to 55°C |
@@ -42,6 +42,7 @@
 
 - https://reolink.com/product/omvi-3i-wifi/
 - https://reolink.com/blog/reolink-omvi-3i-wifi/
+- https://support.reolink.com/articles/900000617826-Which-Reolink-Products-Support-CGI-RTSP-ONVIF/
 
 ---
 *Auto-generated from reolink-omvi-3i-wifi.json — do not edit by hand.*

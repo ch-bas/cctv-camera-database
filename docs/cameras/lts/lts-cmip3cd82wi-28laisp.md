@@ -11,6 +11,7 @@
 | Resolution | 8MP (8MP) |
 | Lens | 1× F1.0 |
 | Night vision | hybrid |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
 
@@ -27,6 +28,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/cmip3cd82wi-28laisp-8mp-ai-color-24-7-with-active-deterrence-camera.html
+- https://pic.ltsmall.com/software/09815e7d65cf68819e2a017fba33c462/CMIP3CD82WI-28LAISP_Spec%20Sheet_1.19.pdf
 
 ---
 *Auto-generated from lts-cmip3cd82wi-28laisp.json — do not edit by hand.*

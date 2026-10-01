@@ -14,6 +14,7 @@
 | Field of view | 53.1-3.4° |
 | Night vision | ir (150m), 0.0002 lux, 0.0002 lux color |
 | Storage | NVR |
+| Protocols | rtsp, onvif |
 
 ## Streams
 

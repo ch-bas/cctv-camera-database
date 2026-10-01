@@ -6,7 +6,7 @@
 | Model | BMMDKL5RC-X5 |
 | Type | bullet |
 | Connectivity | ethernet |
-| Resolution | 5MP (5MP, 2616×1964) |
+| Resolution | 5MP (5MP, 2592×1944) |
 | Sensor | 1/2.8" SONY Starvis Back-illuminated CMOS sensor |
 | Lens | 2.7-13.5mm F1.6~F3.3 |
 | Field of view | 98-28 H / 71-21 V / 133-35 D° |

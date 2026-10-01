@@ -36,6 +36,7 @@
 ## Sources
 
 - https://vikylin.com/wp-content/uploads/2024/02/YC2365IW-21-Specification.pdf
+- https://vikylin.com/wp-content/uploads/2023/11/YCX-Series-IP-Camera-Instructions.pdf
 
 ---
 *Auto-generated from vikylin-yc2365iw-21.json — do not edit by hand.*

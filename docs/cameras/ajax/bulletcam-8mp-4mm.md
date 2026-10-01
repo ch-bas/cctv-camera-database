@@ -36,6 +36,7 @@
 ## Sources
 
 - https://ajax.systems/products/specs/bulletcam-8-mp-4-mm/
+- https://ajax.systems/support/manuals/onvif/
 
 ---
 *Auto-generated from ajax-bulletcam-8mp-4mm.json — do not edit by hand.*

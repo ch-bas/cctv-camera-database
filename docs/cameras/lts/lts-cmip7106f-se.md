@@ -12,7 +12,7 @@
 | Field of view | 180 H / 180 V° |
 | Night vision | ir (15m), 0.005 lux, 0.005 lux color |
 | Storage | NVR |
-| Protocols | rtsp, http |
+| Protocols | onvif, rtsp, http |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | Yes |

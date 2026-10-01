@@ -28,6 +28,7 @@
 ## Sources
 
 - https://trassir.com/products/cameras/ip-cameras/tr-d8281wdir4-2-8/
+- https://www.dssl.ru/upload/iblock/758/QTR_UM-_4_.pdf
 
 ---
 *Auto-generated from trassir-tr-d8281wdir4.json — do not edit by hand.*

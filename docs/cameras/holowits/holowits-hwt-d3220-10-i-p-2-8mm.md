@@ -11,6 +11,7 @@
 | Lens | 1× 2.8mm F1.6 |
 | Night vision | ir, 0.001 lux, 0.002 lux color |
 | Power | 12V DC / PoE (IEEE 802.3af) |
+| Protocols | rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Operating temp | -30 to 60°C |

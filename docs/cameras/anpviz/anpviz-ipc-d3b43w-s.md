@@ -10,6 +10,7 @@
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2560×1440) |
 | Night vision | hybrid (20m) |
+| Protocols | onvif |
 | IP rating | IP66 |
 | Two-way audio | No |
 
@@ -30,6 +31,9 @@
 ## Sources
 
 - https://anpviz.com/products/ipc-d3b43w-s-eu
+- https://anpvizsupport.com/u_file/file/2503/25/d2f527a589.pdf
+- https://drive.google.com/file/d/1L41Lynx-L-0r8BrRpg3a1c-Xmk8nYjA2/view
+- https://drive.google.com/file/d/1LBHDCDUi2QJxe5gSe3TprZuSxAmCXtwu/view
 
 ---
 *Auto-generated from anpviz-ipc-d3b43w-s.json — do not edit by hand.*

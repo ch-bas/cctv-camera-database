@@ -8,7 +8,7 @@
 | Model | ZEB-FE6MD3L20M |
 | Type | fisheye |
 | Connectivity | wifi, ethernet |
-| Resolution | 6MP fisheye (6MP, 3096×2202) |
+| Resolution | 6MP fisheye (6MP, 2048×2048) |
 | Sensor | 1/2.9" Sony CMOS |
 | Lens | 1× 1.05mm |
 | Night vision | ir (20m) |

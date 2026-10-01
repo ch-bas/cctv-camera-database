@@ -6,7 +6,7 @@
 | Model | CMSBTL8RC |
 | Type | dome |
 | Connectivity | ethernet |
-| Resolution | 8MP (8MP, 3864×2192) |
+| Resolution | 8MP (8MP, 3840×2160) |
 | Sensor | 1/2.8" SONY Starvis Back-illuminated CMOS sensor |
 | Lens | 2.8mm F1.6 |
 | Field of view | 96 H / 52 V / 114 D° |

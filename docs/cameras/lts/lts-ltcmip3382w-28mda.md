@@ -12,6 +12,7 @@
 | Sensor | 1/2.8" |
 | Lens | 1× 2.8mm |
 | Storage | NVR |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
 
@@ -33,6 +34,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/ltcmip3382w-28mda-8-mp-smart-fixed-turret-network-camera-1.html
+- https://pic.ltsmall.com/software/5ae3064d1ff3d7c0727f5788d675c8e1/CMIP3382W-28MDA%2C%20CMIP3382W-MDA%20Spec.pdf
 
 ---
 *Auto-generated from lts-ltcmip3382w-28mda.json — do not edit by hand.*

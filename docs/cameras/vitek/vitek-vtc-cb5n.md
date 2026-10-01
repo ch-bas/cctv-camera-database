@@ -8,7 +8,7 @@
 | Model | VTC-CB5N |
 | Type | box |
 | Connectivity | ethernet |
-| Resolution | 5MP (5MP, 2704×2104) |
+| Resolution | 5MP (5MP, 2592×1944) |
 | Sensor | 1/2.8" 5.69 Megapixel Sony STARVIS CMOS |
 | Lens | 1× |
 | Night vision | none |

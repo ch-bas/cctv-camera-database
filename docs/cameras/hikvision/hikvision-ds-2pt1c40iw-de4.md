@@ -10,6 +10,7 @@
 | Lens | 1× |
 | Night vision | ir (15m) |
 | Storage | microSD ≤ 256GB |
+| Protocols | onvif, rtsp |
 | Operating temp | -10 to 40°C |
 
 ## Streams
@@ -30,6 +31,7 @@
 ## Sources
 
 - https://www.jiankongqicai.com/chanpin/7378.html
+- https://www.hikvision.com/cn/products/pdplist/92082/
 
 ---
 *Auto-generated from hikvision-ds-2pt1c40iw-de4.json — do not edit by hand.*

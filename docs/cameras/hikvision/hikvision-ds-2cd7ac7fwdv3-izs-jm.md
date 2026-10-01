@@ -7,7 +7,7 @@
 | Type | bullet |
 | Resolution | (12MP) |
 | Storage | microSD ≤ 512GB |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | Two-way audio | No |
 
 ## Features

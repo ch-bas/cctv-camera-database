@@ -13,7 +13,7 @@
 | Night vision | hybrid (60m), 0.009 lux color |
 | Power | DC 12-28V |
 | Storage | microSD ≤ 1024GB |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Operating temp | -40 to 60°C |
 

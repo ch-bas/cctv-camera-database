@@ -15,7 +15,7 @@
 | Night vision | ir (30m), 0.01 lux, 0.03 lux color |
 | Power | PoE (802.3af) |
 | Storage | microSD ≤ 128GB |
-| Protocols | rtsp, http |
+| Protocols | onvif, rtsp, http |
 | IP rating | IP67 |
 | IK rating | IK07 |
 | Two-way audio | No |
@@ -41,6 +41,7 @@
 ## Sources
 
 - https://flir.netx.net/file/asset/10975/original/attachment
+- https://flir.netx.net/file/asset/12312/original/attachment
 
 ---
 *Auto-generated from flir-cb-3102-01-i.json — do not edit by hand.*

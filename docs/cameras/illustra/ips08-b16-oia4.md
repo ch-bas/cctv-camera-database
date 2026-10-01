@@ -40,7 +40,7 @@
 
 - https://illustracameras.com/
 - https://illustracameras.com/wp-content/uploads/2023/12/Illustra-Pro-Gen4-Bullet-Datasheet.pdf
-- https://www.ispyconnect.com/camera/illustra
+- https://illustracameras.com/wp-content/uploads/2024/08/UM_PG4-2-4-5-8MP-Series_8200-2007-08_L.en_-1.pdf
 
 ---
 *Auto-generated from illustra-ips08-b16-oia4.json — do not edit by hand.*

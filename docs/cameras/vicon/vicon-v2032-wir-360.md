@@ -32,6 +32,7 @@
 
 - https://www.vicon-security.com/
 - https://info.vicon-security.com/hubfs/Product%20Resources/Vicon-RNAI-Multi-Sensor_DS.pdf
+- https://vicon-security.com/hubfs/Product%20Resources/Multi-Sensor-360-User-Manual.pdf
 
 ---
 *Auto-generated from vicon-v2032-wir-360.json — do not edit by hand.*

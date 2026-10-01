@@ -11,7 +11,7 @@
 | Lens | 1× 4.3-129mm F1.6 ~ F4.7 |
 | Field of view | 2.3-64° |
 | Night vision | 0.01 lux, 0.14 lux color |
-| Power | PoE |
+| Power | PoE Plus (IEEE 802.3at) / High Power PoE / AC 24V |
 | Storage | NVR |
 | Protocols | onvif, rtsp, http |
 | IP rating | IP67 |
@@ -35,6 +35,7 @@
 ## Sources
 
 - https://web.archive.org/web/2id_/https://download.vivotek.com/downloadfile/downloads/datasheets/sd8364edatasheet_en.pdf
+- https://download.vivotek.com/downloadfile/downloads/datasheets/sd8364edatasheet_en.pdf
 
 ---
 *Auto-generated from vivotek-sd8364e.json — do not edit by hand.*

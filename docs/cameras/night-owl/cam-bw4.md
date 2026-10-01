@@ -12,6 +12,7 @@
 | Night vision | hybrid (30m) |
 | Power | rechargeable battery (2 per camera); optional solar charger |
 | Storage | NVR |
+| Protocols | rtsp |
 | IP rating | IP65 |
 | Two-way audio | Yes |
 | Operating temp | 0 to 40°C |

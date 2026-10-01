@@ -5,6 +5,7 @@
 | Brand | Mapesen |
 | Model | E1AQ400F-P |
 | Type | bullet |
+| Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2560×1440) |
 | Sensor | 1/2.8" CMOS |
 | Lens | 3.6mm F1.6 |

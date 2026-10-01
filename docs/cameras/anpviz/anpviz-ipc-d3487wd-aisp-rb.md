@@ -9,6 +9,7 @@
 | Resolution | 8MP (8MP) |
 | Night vision | hybrid |
 | Power | PoE |
+| Protocols | onvif |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | Yes |
@@ -25,6 +26,7 @@
 ## Sources
 
 - https://anpviz.com/products/ipc-d3487wd-aisp-rb
+- https://anpvizsupport.com/u_file/file/2503/25/d2f527a589.pdf
 
 ---
 *Auto-generated from anpviz-ipc-d3487wd-aisp-rb.json — do not edit by hand.*

@@ -5,6 +5,7 @@
 | Brand | Hikvision |
 | Model | DS-2CD2T46SWDV3-LT |
 | Type | bullet |
+| Connectivity | ethernet |
 | Resolution | (4MP) |
 | Power | PoE / DC 12V |
 | Storage | NVR |

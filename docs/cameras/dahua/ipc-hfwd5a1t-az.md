@@ -7,6 +7,7 @@
 | Brand | Dahua |
 | Model | IPC-HFWD5A1T-AZ |
 | Type | bullet |
+| Connectivity | ethernet |
 | Resolution | 5MP (5MP, 2592×1944) |
 | Sensor | 1/2.7" 5MP progressive CMOS |
 | Lens | 1× 2.7-13.5mm F1.4 |

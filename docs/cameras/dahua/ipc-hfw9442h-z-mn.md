@@ -7,6 +7,7 @@
 | Brand | Dahua |
 | Model | IPC-HFW9442H-Z-MN |
 | Type | bullet |
+| Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2688×1520) |
 | Sensor | 1/1.8" 4MP progressive CMOS |
 | Lens | 1× 2.7-12mm F1.2 |

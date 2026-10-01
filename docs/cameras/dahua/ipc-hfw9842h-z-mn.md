@@ -7,6 +7,7 @@
 | Brand | Dahua |
 | Model | IPC-HFW9842H-Z-MN |
 | Type | bullet |
+| Connectivity | ethernet |
 | Resolution | 4K (8MP, 3840×2160) |
 | Sensor | 1/1.8" 8MP progressive CMOS |
 | Lens | 1× 2.7-12mm F1.2 |

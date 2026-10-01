@@ -11,6 +11,7 @@
 | Lens | 1× |
 | Night vision | hybrid, 0.01 lux, 0.02 lux color |
 | Storage | microSD ≤ 512GB |
+| Protocols | rtsp |
 | Operating temp | -30 to 50°C |
 
 ## Streams

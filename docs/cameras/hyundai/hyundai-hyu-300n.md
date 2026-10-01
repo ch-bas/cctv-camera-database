@@ -12,7 +12,7 @@
 | Lens | 2.7-12mm F1.2 |
 | Night vision | ir (40m), 0.1 lux color |
 | Storage | NVR |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | Operating temp | -10 to 55°C |
 
 ## Streams

@@ -12,6 +12,7 @@
 | Field of view | 101° |
 | Night vision | ir (30m) |
 | Power | DC 12V |
+| Protocols | rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
 | Operating temp | -30 to 50°C |
@@ -29,6 +30,7 @@
 ## Sources
 
 - https://support.amcrest.com/hc/en-us/articles/360038610371-Technical-Specifications-ASH42
+- https://support.amcrest.com/hc/en-us/articles/360039536012
 
 ---
 *Auto-generated from amcrest-ash42.json — do not edit by hand.*

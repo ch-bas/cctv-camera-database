@@ -8,7 +8,7 @@
 | Model | SD5A432GB-HNR |
 | Type | ptz |
 | Connectivity | ethernet |
-| Resolution | 4MP (4MP, 2688×1520) |
+| Resolution | 4MP (4MP, 2560×1440) |
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 5.4-172.8 (32x optical zoom)mm F1.6-F4.0 |
 | Field of view | 55.8-2.4 horizontal° |

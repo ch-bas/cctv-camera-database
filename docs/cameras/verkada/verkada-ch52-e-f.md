@@ -41,6 +41,8 @@
 
 - https://www.verkada.com/security-cameras/multisensor/ch52-e-f/
 - https://docs.verkada.com/docs/video-security-ch52-e-f-datasheet.pdf
+- https://help.verkada.com/command/organization-settings/integrations/set-up-the-verkada-fusus-camera-integration
+- https://help.verkada.com/verkada-cameras/video-streaming-and-sharing/live-streaming/low-latency-rtsp-streaming
 
 ---
 *Auto-generated from verkada-ch52-e-f.json — do not edit by hand.*

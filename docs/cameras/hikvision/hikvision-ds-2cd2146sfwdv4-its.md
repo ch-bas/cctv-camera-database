@@ -5,6 +5,7 @@
 | Brand | Hikvision |
 | Model | DS-2CD2146SFWDV4-ITS |
 | Type | dome |
+| Connectivity | ethernet |
 | Resolution | (4MP, 2560×1440) |
 | Lens | 2.8mm |
 | Night vision | ir (30m), 0.005 lux color |

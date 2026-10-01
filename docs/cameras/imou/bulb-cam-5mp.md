@@ -13,7 +13,7 @@
 | Night vision | color (25m) |
 | Power | AC 100-240V (screw mount); functional bulb 5.2W / 350 lumen |
 | Storage | microSD ≤ 512GB |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | Two-way audio | Yes |
 | Operating temp | -10 to 45°C |
 

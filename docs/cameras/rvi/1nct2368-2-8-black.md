@@ -11,7 +11,7 @@
 | Lens | 1× 2.8mm |
 | Night vision | ir (50m), 0.002 lux color |
 | Storage | microSD ≤ 256GB, NVR |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
 | Operating temp | -40 to 60°C |

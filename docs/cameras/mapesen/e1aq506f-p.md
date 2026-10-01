@@ -5,6 +5,7 @@
 | Brand | Mapesen |
 | Model | E1AQ506F-P |
 | Type | bullet |
+| Connectivity | ethernet |
 | Resolution | 5MP (5MP, 2592×1904) |
 | Sensor | 1/2.8" Sony CMOS |
 | Lens | 3.6mm F1.6 |

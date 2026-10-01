@@ -21,6 +21,7 @@
 
 - https://pro.comelitgroup.com/en-gb/product/ipbcams08f01b
 - https://staticpro.comelitgroup.com/en-001/datasheets/19172-ipbcams08f01b.pdf
+- https://staticpro.comelitgroup.com/storage/2021/05/29517/mt-ipcam-smart-en-2ed.pdf
 
 ---
 *Auto-generated from comelit-ipbcams08f01b.json — do not edit by hand.*

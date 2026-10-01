@@ -13,7 +13,7 @@
 | Night vision | ir (60m), 0.005 lux color |
 | Power | 12V DC / PoE (802.3af) |
 | Storage | microSD ≤ 256GB, NVR |
-| Protocols | rtsp, p2p |
+| Protocols | rtsp, p2p, onvif |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Operating temp | -30 to 60°C |
@@ -39,6 +39,7 @@
 ## Sources
 
 - https://support.amcrest.com/hc/en-us/articles/17233303247117-Technical-Specifications-IP8M-VB2696EW-AI
+- https://support.amcrest.com/hc/en-us/articles/17233360184333-User-Manual-IP8M-VB2696EW-AI
 
 ---
 *Auto-generated from amcrest-ip8m-vb2696ew-ai.json — do not edit by hand.*

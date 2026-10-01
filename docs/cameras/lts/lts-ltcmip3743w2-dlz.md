@@ -11,6 +11,7 @@
 | Resolution | 4MP (4MP) |
 | Lens | 2× 2.8/4mm F1.6 |
 | Night vision | hybrid |
+| Protocols | onvif, rtsp |
 | Two-way audio | No |
 | Operating temp | -30 to 60°C |
 
@@ -33,6 +34,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/ltcmip3743w2-dlz-platinum-4-mp-dual-lens-fixed-point-zoom-turret-network-camera.html
+- https://pic.ltsmall.com/software/7064075450447444b52418e944ffdde9/CMIP3743W2-DLZ_Spec%20Sheet_5.20.26.pdf
 
 ---
 *Auto-generated from lts-ltcmip3743w2-dlz.json — do not edit by hand.*

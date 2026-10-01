@@ -12,7 +12,7 @@
 | Field of view | 102.79 H / 54.5 V / 106.94 D° |
 | Night vision | ir (40m), 0.003 lux color |
 | Storage | microSD ≤ 256GB |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
 | Operating temp | -30 to 60°C |
@@ -26,6 +26,7 @@
 ## Sources
 
 - https://i-pro.com/products_and_solutions/en/surveillance/products/m-44-v-t-v2
+- https://i-pro.com/products_and_solutions/sites/default/files/2025-10/M-44-V-T-V2%20Specsheet_A4_251008.pdf
 
 ---
 *Auto-generated from i-pro-m-44-v-t-v2.json — do not edit by hand.*

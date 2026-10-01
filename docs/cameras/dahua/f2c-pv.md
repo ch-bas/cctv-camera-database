@@ -15,6 +15,7 @@
 | Night vision | hybrid (30m) |
 | Power | 12 VDC |
 | Storage | microSD ≤ 256GB |
+| Protocols | rtsp, onvif |
 | IP rating | IP67 |
 | Two-way audio | Yes |
 | Operating temp | -40 to 60°C |
@@ -39,6 +40,7 @@
 
 - https://www.dahuasecurity.com/products/wireless-products/outdoor-cameras/bullet-series/f2c-pv
 - https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/F2C-PV_S0_datasheet_20240429.pdf
+- https://www.onvif.org/member-tools/wp-content/uploads/sites/2/2024/02/ONVIF_DoC_DH-F2C-PV_2.840.0000000.7.R-2024-02-21_2024-02-23_18h57m29s.pdf
 
 ---
 *Auto-generated from dahua-f2c-pv.json — do not edit by hand.*

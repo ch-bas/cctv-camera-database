@@ -28,6 +28,7 @@
 ## Sources
 
 - https://trassir.com/products/cameras/ip-cameras/tr-d2283wdzir7-2-7-13-5/
+- https://www.dssl.ru/upload/iblock/758/QTR_UM-_4_.pdf
 
 ---
 *Auto-generated from trassir-tr-d2283wdzir7.json — do not edit by hand.*

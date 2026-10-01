@@ -6,7 +6,7 @@
 | Model | BMSDFCV8RC |
 | Type | bullet |
 | Connectivity | ethernet |
-| Resolution | 8MP (8MP, 3864×2184) |
+| Resolution | 8MP (8MP, 3840×2160) |
 | Sensor | 1/2.7" Progressive Scan CMOS Sensor |
 | Lens | 4mm F1.6 |
 | Field of view | 87 H / 46 V / 105 D° |

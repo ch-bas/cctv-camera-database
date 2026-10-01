@@ -14,6 +14,7 @@
 | Night vision | ir (30m) |
 | Power | DC12V / PoE |
 | Storage | microSD ≤ 256GB, NVR |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 
@@ -35,6 +36,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/vsip7442w-md-4mp-hd-vandal-resistant-ir-fixed-dome-network-camera.html
+- https://pic.ltsmall.com/software/3fe14815fe7d8c57ed02cd4e83251fbe/VSIP7442W-28MD%2C%20VSIP7442W-MD%20Spec.pdf
 
 ---
 *Auto-generated from lts-vsip7442w-md.json — do not edit by hand.*

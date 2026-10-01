@@ -25,6 +25,7 @@
 
 - https://pro.comelitgroup.com/en-gb/product/ipdcams05va
 - https://staticpro.comelitgroup.com/en-001/datasheets/14758-ipdcams05va.pdf
+- https://staticpro.comelitgroup.com/storage/2019/12/23452/mt-ipcam-smart-en-1ed.pdf
 
 ---
 *Auto-generated from comelit-ipdcams05va.json — do not edit by hand.*

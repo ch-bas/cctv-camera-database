@@ -12,7 +12,7 @@
 | Field of view | 55 to 2.4° |
 | Night vision | ir (150m), 0.01 lux, 0.05 lux color |
 | Power | 12 VDC |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | IP rating | IP66 |
 
 ## Streams

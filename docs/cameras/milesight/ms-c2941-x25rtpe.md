@@ -7,6 +7,7 @@
 | Brand | Milesight |
 | Model | MS-C2941-X25RTPE |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | 2MP (2MP, 1920×1080) |
 | Sensor | 1/2.8" Progressive Scan CMOS |
 | Lens | 1× 4.8-120mm F1.5-F3.5 |
@@ -14,7 +15,7 @@
 | Night vision | ir (200m), 0.005 lux color |
 | Power | PoE (802.3at) / AC 24V / DC 24V |
 | Storage | microSD ≤ 1024GB |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | IK rating | IK10 |
 | Two-way audio | No |

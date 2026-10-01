@@ -12,7 +12,7 @@
 | Night vision | 0.1 lux color |
 | Power | DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP66 |
 
 ## Streams

@@ -39,6 +39,7 @@
 ## Sources
 
 - https://trassir.ru/products/videonablyudenie/kamery_videonablyudeniya/ip_kamery_videonablyudeniya/tr_d3283wdzir3_2_7_13_5/
+- https://www.dssl.ru/upload/iblock/758/QTR_UM-_4_.pdf
 
 ---
 *Auto-generated from trassir-tr-d3283wdzir3.json — do not edit by hand.*

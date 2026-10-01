@@ -39,6 +39,7 @@
 ## Sources
 
 - https://ajax.systems/products/specs/domecam-hlvf-8-mp/
+- https://ajax.systems/support/manuals/onvif/
 
 ---
 *Auto-generated from ajax-domecam-hlvf-8mp.json — do not edit by hand.*

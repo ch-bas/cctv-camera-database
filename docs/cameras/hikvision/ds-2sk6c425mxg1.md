@@ -13,7 +13,7 @@
 | Lens | 3× [Panoramic] 10-50mm; [PTZ] 6-150mmmm [Panoramic] F1.6 / [PTZ] F1.5 |
 | Field of view | [Panoramic] 36.4-13.1 horizontal; [PTZ] 58.8-3.1 horizontal° |
 | Night vision | ir (200m), 0.0005 lux color |
-| Power | 36 VDC / Hi-PoE |
+| Power | 36 VDC |
 | Storage | microSD ≤ 1024GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
@@ -35,6 +35,7 @@
 ## Sources
 
 - https://www.hikvision.com/en/products/IP-Products/PTZ-Cameras/
+- https://assets.hikvision.com/prd/normal/all/doc/m000168129/DS-2SK6C425MXG1_LM-L_216C5C5_Datasheet_20260827.pdf
 
 ---
 *Auto-generated from hikvision-ds-2sk6c425mxg1.json — do not edit by hand.*

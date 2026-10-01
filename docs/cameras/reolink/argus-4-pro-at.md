@@ -15,7 +15,7 @@
 | Night vision | color (10m) |
 | Power | Built-in 5000mAh rechargeable battery / USB-C / Reolink Solar Panel 2 (6W) optional |
 | Storage | microSD ≤ 512GB |
-| Protocols | p2p |
+| Protocols | p2p, rtsp |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 | Operating temp | -10 to 55°C |
@@ -44,6 +44,7 @@
 - https://reolink.com/at/product/argus-4-pro/
 - https://reolink.com/product/argus-4-pro/
 - https://reolink.com/blog/argus-4-pro-review/
+- https://support.reolink.com/articles/900000617826-Which-Reolink-Products-Support-CGI-RTSP-ONVIF/
 
 ---
 *Auto-generated from reolink-argus-4-pro-at.json — do not edit by hand.*

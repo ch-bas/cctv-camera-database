@@ -5,6 +5,7 @@
 | Brand | Milesight |
 | Model | MS-C8477-HPKG1 |
 | Type | panoramic |
+| Connectivity | ethernet |
 | Resolution | 8MP (8MP, 5120×1520) |
 | Sensor | Dual 1/1.8" Progressive Scan CMOS |
 | Lens | 2× 4mm F1.0 |

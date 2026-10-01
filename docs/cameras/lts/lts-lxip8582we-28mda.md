@@ -14,6 +14,7 @@
 | Night vision | hybrid (30m) |
 | Power | 12V DC / PoE |
 | Storage | microSD ≤ 256GB, NVR |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
 
@@ -29,6 +30,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/lxip8582we-28mda-8mp-dual-light-lite-fixed-bullet-network-camera.html
+- https://pic.ltsmall.com/software/6d4a05e6c07d801e2f0223eaa2cf689c/LXIP8582WE-28MDA_Spec%20Sheet.pdf
 
 ---
 *Auto-generated from lts-lxip8582we-28mda.json — do not edit by hand.*

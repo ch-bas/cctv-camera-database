@@ -32,6 +32,8 @@
 ## Sources
 
 - https://avyconaivo.com/data/item/AVC-NPTZ21X23L/DataSheet_AVC-NPTZ21X23L_EN.pdf
+- https://avycon.freshdesk.com/support/solutions/articles/36000328602-autotracking-and-panoramic-180-rtsp-syntax
+- https://avyconaivo.com/data/item/AVC-NPTZ21X23L/AVYCON_LHN_NPTZ_Operation%20Manual.pdf
 
 ---
 *Auto-generated from avycon-avc-nptz21x23l.json — do not edit by hand.*

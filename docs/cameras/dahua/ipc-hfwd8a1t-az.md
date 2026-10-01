@@ -7,6 +7,7 @@
 | Brand | Dahua |
 | Model | IPC-HFWD8A1T-AZ |
 | Type | bullet |
+| Connectivity | ethernet |
 | Resolution | 4K (8MP, 3840×2160) |
 | Sensor | 1/1.8" 8MP progressive CMOS |
 | Lens | 1× 3.7-11mm F1.9 |

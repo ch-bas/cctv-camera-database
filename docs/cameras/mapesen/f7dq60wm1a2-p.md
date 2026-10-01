@@ -5,6 +5,7 @@
 | Brand | Mapesen |
 | Model | F7DQ60WM1A2-P |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | 6MP (6MP, 3072×2048) |
 | Sensor | 1/2.7" CMOS |
 | Lens | 2.8-12mm |

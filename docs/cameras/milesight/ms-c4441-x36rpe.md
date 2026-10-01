@@ -7,6 +7,7 @@
 | Brand | Milesight |
 | Model | MS-C4441-X36RPE |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2688×1520) |
 | Sensor | 1/1.8" Progressive Scan CMOS |
 | Lens | 1× 5.7-205.3mm F1.4-F4.8 |
@@ -14,7 +15,7 @@
 | Night vision | ir (300m), 0.002 lux color |
 | Power | PoE (802.3at) / AC 24V / DC 24V |
 | Storage | microSD ≤ 1024GB |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | IK rating | IK10 |
 | Two-way audio | No |

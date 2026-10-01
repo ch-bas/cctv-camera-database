@@ -13,7 +13,7 @@
 | Field of view | 180° |
 | Night vision | ir (10m), 0.028 lux |
 | Storage | microSD ≤ 256GB, NVR |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | Operating temp | -10 to 40°C |
 
 ## Streams

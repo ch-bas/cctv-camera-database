@@ -14,6 +14,7 @@
 | Night vision | ir (500m), 0.0001 lux, 0.0002 lux color |
 | Power | DC48V |
 | Storage | NVR |
+| Protocols | rtsp, onvif |
 | IP rating | IP68 |
 | Two-way audio | Yes |
 
@@ -24,6 +25,7 @@
 ## Sources
 
 - https://www.dahuatech.com/product/info/13903.html
+- https://www.dahuatech.com/product/info/10973.html
 
 ---
 *Auto-generated from dahua-dh-tpc-sd5241-c13.json — do not edit by hand.*

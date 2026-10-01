@@ -36,6 +36,7 @@
 ## Sources
 
 - https://vikylin.com/wp-content/uploads/2023/11/YC2165I-28-S-Specification.pdf
+- https://vikylin.com/wp-content/uploads/2023/11/YCX-Series-IP-Camera-Instructions.pdf
 
 ---
 *Auto-generated from vikylin-yc2165i-28-s.json — do not edit by hand.*

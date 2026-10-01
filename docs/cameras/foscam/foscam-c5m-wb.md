@@ -13,7 +13,7 @@
 | Night vision | ir (8m) |
 | Power | USB-C 5V/1A |
 | Storage | microSD ≤ 512GB |
-| Protocols | rtsp, p2p |
+| Protocols | rtsp, onvif, p2p |
 | Two-way audio | Yes |
 | Operating temp | -10 to 50°C |
 
@@ -41,6 +41,7 @@
 ## Sources
 
 - https://www.foscam.eu/c5m-wb.html
+- https://www.foscam.com/downloads/file.html?cate=manual&id=146
 
 ---
 *Auto-generated from foscam-c5m-wb.json — do not edit by hand.*

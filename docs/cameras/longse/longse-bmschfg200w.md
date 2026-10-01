@@ -13,7 +13,7 @@
 | Night vision | ir, 0.005 lux color |
 | Power | DC12V±10%, 550mA |
 | Storage | NVR |
-| Protocols | p2p |
+| Protocols | onvif, p2p, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
 | Operating temp | -20℃ ~ +60℃°C |

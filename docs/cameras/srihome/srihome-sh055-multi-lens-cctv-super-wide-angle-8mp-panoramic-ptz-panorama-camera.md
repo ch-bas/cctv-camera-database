@@ -14,6 +14,7 @@
 | Night vision | hybrid |
 | Power | DC 12V |
 | Storage | microSD ≤ 512GB |
+| Protocols | rtsp |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 

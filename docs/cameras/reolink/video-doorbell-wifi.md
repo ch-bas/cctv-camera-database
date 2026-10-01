@@ -23,7 +23,7 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| main | 1920x2560 | 20 | H.264 |
+| main | 2560x1920 | 20 | H.264 |
 | sub | unknown | 10 | H.264 |
 
 ## Features
@@ -43,6 +43,7 @@
 
 - https://reolink.com/product/reolink-video-doorbell-wifi/
 - https://support.reolink.com/articles/16929500357657-Introduction-to-Reolink-Video-Doorbell-Cameras/
+- https://cdn.reolink.com/files/docs/specs/Reolink-Video-Doorbell-WiFi-Specifications.pdf
 
 ---
 *Auto-generated from reolink-video-doorbell-wifi.json — do not edit by hand.*

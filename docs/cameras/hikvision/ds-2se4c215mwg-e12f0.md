@@ -10,7 +10,7 @@
 | Lens | 1× 5-75mm F1.0 |
 | Field of view | 54.8 to 4° |
 | Night vision | hybrid (100m), 0.001 lux, 0.005 lux color |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | IP rating | IP66 |
 
 ## Streams
@@ -28,6 +28,7 @@
 ## Sources
 
 - https://assets.hikvision.com/prd/normal/all/doc/m000062042/DS-2SE4C215MWG-E12F0_Datasheet_20230829.pdf
+- https://assets.hikvision.com/prd/public/all/doc/m000062042/DS-2SE4C215MWG-E12F0_Datasheet_20230829.pdf
 
 ---
 *Auto-generated from hikvision-ds-2se4c215mwg-e12f0.json — do not edit by hand.*

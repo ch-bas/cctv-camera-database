@@ -5,6 +5,7 @@
 | Brand | Hikvision |
 | Model | DS-2CD7T45DWDV3-XZS |
 | Type | bullet |
+| Connectivity | ethernet |
 | Resolution | (4MP, 2560×1440) |
 | Sensor | 1/2.7" Progressive Scan CMOS |
 | Lens | 4mm F1.2 |

@@ -38,7 +38,7 @@
 
 - https://illustracameras.com/
 - https://illustracameras.com/wp-content/uploads/2024/05/Illustra-Flex-Gen4-Long-Range-Bullet-Camera_ds_en-1.pdf
-- https://www.ispyconnect.com/camera/illustra
+- https://illustracameras.com/wp-content/uploads/2024/05/UM-FG4-Series_A16381M7H7_J.en_.pdf
 
 ---
 *Auto-generated from illustra-ifs05-b31-oib4.json — do not edit by hand.*

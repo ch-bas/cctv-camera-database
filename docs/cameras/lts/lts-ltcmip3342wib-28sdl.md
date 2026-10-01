@@ -12,6 +12,7 @@
 | Lens | 1× 2.8mm |
 | Night vision | hybrid |
 | Storage | NVR |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
 
@@ -27,6 +28,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/ltcmip3342wib-28sdl-platinum-4mp-active-deterrence-turret-network-camera.html
+- https://pic.ltsmall.com/software/d4adb22bfa6548b8ff35ba843aa186c8/3f5eysFoIgitBArJoMwAkysb3uXmpS1h.pdf
 
 ---
 *Auto-generated from lts-ltcmip3342wib-28sdl.json — do not edit by hand.*

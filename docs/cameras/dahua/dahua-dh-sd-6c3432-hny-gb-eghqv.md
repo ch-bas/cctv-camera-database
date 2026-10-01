@@ -14,6 +14,7 @@
 | Night vision | hybrid (30m), 0.005 lux, 0.005 lux color |
 | Power | DC12V |
 | Storage | NVR |
+| Protocols | rtsp, onvif |
 | IP rating | IP66 |
 | Two-way audio | No |
 

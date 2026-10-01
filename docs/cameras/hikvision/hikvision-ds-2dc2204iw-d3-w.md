@@ -9,6 +9,7 @@
 | Resolution | 1080p (2MP, 1920×1080) |
 | Night vision | ir (30m) |
 | Power | PoE (802.3af) |
+| Protocols | rtsp |
 | Two-way audio | Yes |
 
 ## Features

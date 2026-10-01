@@ -7,6 +7,7 @@
 | Brand | Dahua |
 | Model | SD10A848WA-HNF |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | 4K (8MP, 3840×2160) |
 | Sensor | 1/1.8" STARVIS CMOS |
 | Lens | 1× 5.7-275mm F1.4-F4.5 |

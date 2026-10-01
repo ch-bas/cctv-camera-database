@@ -22,6 +22,7 @@
 
 - https://pro.comelitgroup.com/en-gb/product/ipdcams08za
 - https://staticpro.comelitgroup.com/en-001/datasheets/14761-ipdcams08za.pdf
+- https://staticpro.comelitgroup.com/storage/2019/12/23452/mt-ipcam-smart-en-1ed.pdf
 
 ---
 *Auto-generated from comelit-ipdcams08za.json — do not edit by hand.*

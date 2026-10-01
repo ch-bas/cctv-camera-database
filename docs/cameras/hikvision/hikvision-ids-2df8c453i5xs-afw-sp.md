@@ -8,7 +8,7 @@
 | Resolution | (4MP, 2560×1440) |
 | Night vision | ir (500m) |
 | Storage | NVR |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
 

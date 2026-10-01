@@ -10,7 +10,7 @@
 | Sensor | 1/3 type MOS Sensor |
 | Night vision | 0.3 lux, 0.5 lux color |
 | Power | PoE (IEEE 802.3af) / DC12V |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | Two-way audio | No |
 | Operating temp | -10 to 50°C |
 

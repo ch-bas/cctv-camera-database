@@ -37,7 +37,7 @@
 
 - https://illustracameras.com/
 - https://illustracameras.com/wp-content/uploads/2024/02/Illustra-Flex-Gen4-Outdoor-MiniDome-Camera_ds.pdf
-- https://www.ispyconnect.com/camera/illustra
+- https://illustracameras.com/wp-content/uploads/2024/05/UM-FG4-Series_A16381M7H7_J.en_.pdf
 
 ---
 *Auto-generated from illustra-ifs08-d13-oib4.json — do not edit by hand.*

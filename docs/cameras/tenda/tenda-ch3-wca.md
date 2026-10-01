@@ -40,6 +40,7 @@
 
 - https://www.tendacn.com/us/product/specification/790782836830277
 - https://static.tenda.com.cn/image/2026/05/11/f05f9856af074e9886b6d80476f14f13/CH3-WCAV2.1_Datasheet.pdf
+- https://www.tendacn.com/us/material/show/2003692
 
 ---
 *Auto-generated from tenda-ch3-wca.json — do not edit by hand.*

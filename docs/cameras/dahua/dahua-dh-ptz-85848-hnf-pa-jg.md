@@ -14,6 +14,7 @@
 | Night vision | (1000m), 0.0001 lux, 0.0001 lux color |
 | Power | AC24V |
 | Storage | NVR |
+| Protocols | rtsp, onvif |
 | IP rating | IP67 |
 | Two-way audio | Yes |
 

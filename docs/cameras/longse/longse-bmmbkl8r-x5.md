@@ -6,7 +6,7 @@
 | Model | BMMBKL8R-X5 |
 | Type | bullet |
 | Connectivity | ethernet |
-| Resolution | 8MP (8MP, 3864×2192) |
+| Resolution | 8MP (8MP, 3840×2160) |
 | Sensor | 1/2.8" SONY Starvis Back-illuminated CMOS sensor |
 | Lens | 2.7-13.5mm F1.6-F3.3 |
 | Field of view | 108 H / 59 V / 130 D° |

@@ -5,13 +5,14 @@
 | Brand | Milesight |
 | Model | MS-C5373-PC |
 | Type | dome |
+| Connectivity | ethernet |
 | Resolution | 5MP (5MP, 2592×1944) |
 | Sensor | 1/2.8" Progressive Scan CMOS |
 | Lens | 1× 2.8/4/6mm F1.6 |
 | Night vision | ir (30m), 0.008 lux color |
 | Power | PoE (802.3af) |
 | Storage | microSD ≤ 256GB |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | Yes |

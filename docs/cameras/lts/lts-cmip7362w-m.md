@@ -15,6 +15,7 @@
 | Night vision | ir (30m), 0.028 lux color |
 | Power | DC12V / PoE |
 | Storage | microSD ≤ 128GB, NVR |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Operating temp | -30 to 60°C |
@@ -37,6 +38,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/ip-camera/ip-dome/network-ip-dome-camera-cmip7362w-m.html
+- https://pic.ltsmall.com/pdf/LTCMIP7362W-M_data%20sheet.pdf
 
 ---
 *Auto-generated from lts-cmip7362w-m.json — do not edit by hand.*

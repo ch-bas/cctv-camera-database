@@ -12,6 +12,7 @@
 | Night vision | ir (20m) |
 | Power | PoE |
 | Storage | NVR |
+| Protocols | onvif |
 | IP rating | IP66 |
 | Two-way audio | No |
 | Operating temp | -20 to 60°C |
@@ -32,6 +33,7 @@
 ## Sources
 
 - https://anpviz.com/products/ipc-b8740w-s
+- https://drive.google.com/file/d/1L41Lynx-L-0r8BrRpg3a1c-Xmk8nYjA2/view
 
 ---
 *Auto-generated from anpviz-ipc-b8740w-s.json — do not edit by hand.*

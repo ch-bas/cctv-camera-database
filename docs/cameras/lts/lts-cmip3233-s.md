@@ -14,6 +14,7 @@
 | Night vision | ir (30m), 0.1 lux color |
 | Power | 12V DC / PoE (802.3af) |
 | Storage | microSD ≤ 64GB, NVR |
+| Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 | Operating temp | -30 to 60°C |
@@ -36,6 +37,7 @@
 ## Sources
 
 - https://www2.ltsecurityinc.com/ip-camera/ip-dome/cmip3233-s.html
+- https://pic.ltsmall.com/pdf/LTCMIP3233-S_data%20sheet.pdf
 
 ---
 *Auto-generated from lts-cmip3233-s.json — do not edit by hand.*

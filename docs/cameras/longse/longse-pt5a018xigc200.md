@@ -12,7 +12,7 @@
 | Night vision | ir (80m), 0.008 lux color |
 | Power | Light on: -20~45℃ Operating Temperature Light off:-20~55℃ Operating Humidity ≤90 |
 | Storage | NVR |
-| Protocols | rtsp, http |
+| Protocols | onvif, rtsp, http |
 | IP rating | IP66 |
 | Two-way audio | No |
 

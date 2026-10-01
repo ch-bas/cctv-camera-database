@@ -5,13 +5,14 @@
 | Brand | Milesight |
 | Model | MS-C8173-PC |
 | Type | dome |
+| Connectivity | ethernet |
 | Resolution | 4K (8MP, 3840×2160) |
 | Sensor | 1/2.8" Progressive Scan CMOS |
 | Lens | 1× 2.8/4/6mm F1.6 |
 | Night vision | ir (30m), 0.012 lux color |
 | Power | PoE (802.3af) |
 | Storage | microSD ≤ 256GB |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | Yes |

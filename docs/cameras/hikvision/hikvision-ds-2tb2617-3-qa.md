@@ -11,6 +11,7 @@
 | Lens | 2× 3 (thermal)mm |
 | Night vision | ir (30m), 0.005 lux color |
 | Storage | microSD ≤ 256GB, NVR |
+| Protocols | rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
 | Operating temp | 15 to 35°C |

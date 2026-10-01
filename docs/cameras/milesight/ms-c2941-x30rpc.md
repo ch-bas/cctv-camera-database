@@ -5,6 +5,7 @@
 | Brand | Milesight |
 | Model | MS-C2941-X30RPC |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | 2MP (2MP, 1920×1080) |
 | Sensor | 1/2.8" Progressive Scan CMOS |
 | Lens | 1× 4.7-141mm F1.5-F4.0 |

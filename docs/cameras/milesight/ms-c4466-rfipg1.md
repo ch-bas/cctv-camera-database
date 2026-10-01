@@ -5,6 +5,7 @@
 | Brand | Milesight |
 | Model | MS-C4466-RFIPG1 |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2688×1520) |
 | Sensor | 1/1.8" Progressive Scan CMOS |
 | Lens | 1× 2.8-12mm F1.2 |
@@ -12,7 +13,7 @@
 | Night vision | ir (80m), 0.001 lux color |
 | Power | PoE+ (802.3at) / DC 10V~DC 28V |
 | Storage | microSD ≤ 1024GB |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |

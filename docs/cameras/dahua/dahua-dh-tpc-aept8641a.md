@@ -13,6 +13,7 @@
 | Lens | 1× 5.5-248mm |
 | Night vision | ir (150m), 0.001 lux, 0.001 lux color |
 | Storage | NVR |
+| Protocols | rtsp, onvif |
 | IP rating | IP68 |
 | Two-way audio | Yes |
 | Operating temp | -40°C to 60°C°C |

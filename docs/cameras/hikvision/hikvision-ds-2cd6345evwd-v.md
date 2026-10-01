@@ -5,6 +5,7 @@
 | Brand | Hikvision |
 | Model | DS-2CD6345EVWD-V |
 | Type | fisheye |
+| Connectivity | ethernet |
 | Resolution | (4MP, 1920×1920) |
 | Sensor | 1/2.7" CMOS |
 | Lens | 1.16mm |

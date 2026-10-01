@@ -31,6 +31,7 @@
 ## Sources
 
 - https://web.archive.org/web/20120619113444/http://www.toshibasecurity.com/pdf/_datasheets/IK-WP41A.pdf
+- https://web.archive.org/web/20121004073920/http://www.toshibasecurity.com:80/pdf/_manuals/IK-WP41A_operation_manual.pdf
 
 ---
 *Auto-generated from toshiba-ik-wp41a.json — do not edit by hand.*

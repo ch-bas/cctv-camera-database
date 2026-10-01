@@ -7,6 +7,7 @@
 | Brand | Dahua |
 | Model | IPC-HFW1530S-S6 |
 | Type | bullet |
+| Connectivity | ethernet |
 | Resolution | 5MP (5MP, 2880×1620) |
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 2.8mm F2.0 |

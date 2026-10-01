@@ -13,6 +13,7 @@
 | Night vision | hybrid (30m) |
 | Power | PoE |
 | Storage | microSD ≤ 512GB, NVR |
+| Protocols | onvif |
 | IP rating | IP67 |
 | Two-way audio | Yes |
 
@@ -28,6 +29,7 @@
 ## Sources
 
 - https://anpviz.com/products/ipc-d3483wd-sav
+- https://anpvizsupport.com/u_file/file/2503/25/d2f527a589.pdf
 
 ---
 *Auto-generated from anpviz-ipc-d3483wd-sav.json — do not edit by hand.*

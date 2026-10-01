@@ -37,6 +37,7 @@
 ## Sources
 
 - http://web.archive.org/web/20121010135424id_/http://zavio.com/downloads/product/39/datasheet_M511E_M511W.pdf
+- https://web.archive.org/web/20121010135130id_/http://zavio.com/downloads/product/39/M511E%20%20Firmware%20User%20Manual%2016.03.pdf
 
 ---
 *Auto-generated from zavio-m511e.json — do not edit by hand.*

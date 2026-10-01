@@ -28,6 +28,7 @@
 ## Sources
 
 - https://web.archive.org/web/20120114044542/http://www.zavio.com/product.php?id=33
+- https://web.archive.org/web/20121010135516id_/http://zavio.com/downloads/product/33/D5110_D5111_D7110_UserManual.pdf
 
 ---
 *Auto-generated from zavio-d5110.json — do not edit by hand.*

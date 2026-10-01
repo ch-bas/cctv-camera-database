@@ -1,67 +1,24 @@
 {
   "brand": "ESCAM",
   "brand_id": "escam",
-  "status": "unverified",
+  "status": "verified",
   "default_port": 554,
-  "templates": [],
-  "unverified_leads": [
+  "templates": [
     {
-      "path": "/user={user}&password={pass}&channel=<N>&stream=0.sdp",
-      "note": "Xiongmai/XMeye OEM main-stream form (stream=0). Widely documented for ESCAM only in community aggregators (iSpy, ZoneMinder, camlytics, GeniusVision, Scribd) — NOT confirmable against ESCAM's own official documentation. escam.cn publishes no RTSP URL in an accessible manual/FAQ (product pages omit it; download page behind an expired TLS cert)."
+      "stream": "main",
+      "path": "/live/0/main",
+      "verified": true,
+      "source": "http://www.escam.cn/product/60-en.html — ESCAM official product page (PVR001), Download/RTSP tab: 'rtsp://[IP]:[port]/live/[channel]/[stream_type]', IPC channel 0, main stream = main, default port 554 (same text on the PVR/Q6/QD800WIFI/QD900WIFI/QF508 pages)",
+      "strix_lead": "manual:escam"
     },
     {
-      "path": "/user={user}&password={pass}&channel=<N>&stream=1.sdp",
-      "note": "Xiongmai/XMeye OEM sub-stream form (stream=1). Same status as above — community-sourced only, no official ESCAM confirmation."
-    },
-    {
-      "path": "/user={user}_password={pass}_channel=<N>_stream=0.sdp",
-      "note": "Underscore variant of the Xiongmai form (same firmware family). Community-sourced only, unconfirmed by official docs."
-    },
-    {
-      "path": "/user={user}_password={pass}_channel=<N>_stream=1.sdp",
-      "note": "Underscore sub-stream variant. Community-sourced only, unconfirmed."
-    },
-    {
-      "path": "/onvif1",
-      "note": "Reported for ESCAM Q6 (720p) in community forums; ONVIF media-profile path, not from official ESCAM docs."
-    },
-    {
-      "path": "/live/ch00_1",
-      "note": "Community-reported path; no official ESCAM documentation confirms it."
-    },
-    {
-      "path": "/live0.264",
-      "note": "Community lead; unconfirmed, no official source."
-    },
-    {
-      "path": "/ch01.264",
-      "note": "Community lead; unconfirmed, no official source."
-    },
-    {
-      "path": "/Streaming/Channels/1",
-      "note": "Hikvision path — cross-brand contamination, not ESCAM."
-    },
-    {
-      "path": "/realmonitor",
-      "note": "Dahua /cam/realmonitor family — cross-brand contamination, not ESCAM."
-    },
-    {
-      "path": "/cam[CHANNEL]/h264",
-      "note": "Dahua/other OEM style — cross-brand contamination, not ESCAM."
-    },
-    {
-      "path": "/tcp/av0_0",
-      "note": "Generic/other-OEM lead — not confirmable for ESCAM."
-    },
-    {
-      "path": "/img/video.sav",
-      "note": "AXIS-style/other lead — cross-brand contamination, not ESCAM."
-    },
-    {
-      "path": "/H264",
-      "note": "Generic lead; unconfirmed for ESCAM."
+      "stream": "sub",
+      "path": "/live/0/sub",
+      "verified": true,
+      "source": "http://www.escam.cn/product/60-en.html — ESCAM official product page (PVR001), Download/RTSP tab: sub stream = sub",
+      "strix_lead": "manual:escam"
     }
   ],
-  "notes": "ESCAM is a budget IP-camera brand running Xiongmai (XMeye) OEM firmware. The Xiongmai RTSP form 'user={user}&password={pass}&channel=<N>&stream=<0|1>.sdp' (stream=0 main, stream=1 sub; underscore and ampersand variants both appear) is almost certainly the correct pattern in practice and matches the strongest leads, but it could NOT be confirmed against ESCAM's OWN official documentation, which is required for 'verified' status. The official site (escam.cn) does not publish an RTSP URL in any accessible manual or FAQ, and its TLS certificate has expired (pages unfetchable). All ESCAM RTSP paths located come from third-party/community aggregators only. Default: IP 192.168.1.188, user 'admin'. Per-model paths also vary. Leads contain clear cross-brand contamination (Hikvision /Streaming/Channels, Dahua /realmonitor & /cam*/h264, Axis /img/video.sav) which are excluded.",
-  "verified_on": "2026-08-14"
+  "notes": "ESCAM publishes the RTSP URL per product on escam.cn product pages (second tab), and its lines use different firmware: (1) /live/<channel>/<main|sub> (channel 0 on IPCs) on the PVR, Q6, QD800WIFI, QD900WIFI and QF508 pages — used as the brand default here; (2) Xiongmai-style /user=<user>&password=<pass>&channel=1&stream=<0 main|1 sub>.sdp? on the QD100/QD300/QD410/QD420/QD500/QF007/QF218/QF288/QF518 pages; (3) /11 (main) and /12 (sub) on the G01/G02/Q2068 pages; (4) /ch0_0.264 (main) and /ch0_1.264 (sub) on RTSP port 80 on the QP180 page. Lines 2-4 carry their own rtsp_url_template on the camera records. Q8, QD900S, QF903, QH001/QH002/QH005 and TY003 pages publish no RTSP URL.",
+  "verified_on": "2026-10-01"
 }

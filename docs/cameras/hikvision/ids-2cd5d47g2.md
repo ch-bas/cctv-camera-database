@@ -13,7 +13,7 @@
 | Night vision | hybrid (40m) |
 | Power | 12 VDC ± 20% / PoE: IEEE 802.3af, Type 1, Class 3 |
 | Storage | NVR |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |

@@ -13,7 +13,7 @@
 | Night vision | 0.013 lux, 0.1 lux color |
 | Power | PoE+ (IEEE 802.3at) / DC54V / AC24V |
 | Storage | microSD ≤ 128GB, NVR |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | IK rating | IK10 |
 | Two-way audio | Yes |

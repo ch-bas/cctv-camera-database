@@ -6,7 +6,7 @@
 | Model | SDT4E425-8P-GB-APV1 |
 | Type | ptz |
 | Connectivity | ethernet |
-| Resolution | 8MP panoramic + 4MP PTZ (8MP, 3840×2160) |
+| Resolution | 8MP panoramic + 4MP PTZ (8MP, 4096×1860) |
 | Sensor | STARVIS CMOS |
 | Lens | 1× |
 | Field of view | 180° |

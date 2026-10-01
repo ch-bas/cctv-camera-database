@@ -34,6 +34,7 @@
 ## Sources
 
 - https://assets.hikvision.com/prd/normal/all/doc/m000141060/DS-2DF8C442IXG1-ELW_Datasheet_20250313.pdf
+- https://web.archive.org/web/20250921071254id_/https://assets.hikvision.com/prd/normal/all/doc/m000141060/DS-2DF8C442IXG1-ELW_Datasheet_20250313.pdf
 
 ---
 *Auto-generated from hikvision-ds-2df8c442ixg1-elw.json — do not edit by hand.*

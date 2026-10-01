@@ -13,6 +13,7 @@
 | Lens | 1× 2.7-13.5mm |
 | Night vision | ir (30m) |
 | Power | PoE |
+| Protocols | onvif |
 | Two-way audio | Yes |
 
 ## Features
@@ -26,6 +27,9 @@
 ## Sources
 
 - https://anpviz.com/products/ptzip2a80wd-su-3x-us
+- https://anpvizsupport.com/u_file/file/2503/25/d2f527a589.pdf
+- https://drive.google.com/file/d/1L41Lynx-L-0r8BrRpg3a1c-Xmk8nYjA2/view
+- https://drive.google.com/file/d/1LBHDCDUi2QJxe5gSe3TprZuSxAmCXtwu/view
 
 ---
 *Auto-generated from anpviz-ptzip2a80wd-su-3x.json — do not edit by hand.*

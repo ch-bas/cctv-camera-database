@@ -11,7 +11,7 @@
 | Lens | 1× 2.8-8.5mm F1.2 |
 | Field of view | 72-39° |
 | Night vision | 0.11 lux color |
-| Power | PoE (IEEE 802.3af Type 1) |
+| Power | PoE IEEE 802.3af/802.3at Type 1 Class 3 (max 12.95 W) or High PoE (max 25.5 W) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |

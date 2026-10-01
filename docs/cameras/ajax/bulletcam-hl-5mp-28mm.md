@@ -38,6 +38,7 @@
 ## Sources
 
 - https://ajax.systems/products/specs/bulletcam-hl-5-mp-2-8-mm/
+- https://ajax.systems/support/manuals/onvif/
 
 ---
 *Auto-generated from ajax-bulletcam-hl-5mp-28mm.json — do not edit by hand.*

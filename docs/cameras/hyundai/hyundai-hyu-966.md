@@ -13,7 +13,7 @@
 | Lens | 2.8-12mm F1.6 |
 | Night vision | ir (60m), 0.005 lux, 0.005 lux color |
 | Storage | microSD ≤ 256GB, NVR |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | Yes |

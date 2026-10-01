@@ -13,7 +13,7 @@
 | Night vision | hybrid (20m) |
 | Power | DC 12V/1.0A |
 | Storage | microSD ≤ 512GB |
-| Protocols | rtsp, p2p |
+| Protocols | rtsp, onvif, p2p |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 
@@ -41,6 +41,7 @@
 ## Sources
 
 - https://www.foscam.eu/v5p-wb.html
+- https://www.foscam.com/downloads/file.html?cate=manual&id=141
 
 ---
 *Auto-generated from foscam-v5p-wb.json — do not edit by hand.*

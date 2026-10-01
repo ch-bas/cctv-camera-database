@@ -9,7 +9,7 @@
 | Resolution | (3MP, 2304×1296) |
 | Power | DC 12V |
 | Storage | microSD ≤ 128GB, NVR |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP65 |
 | Two-way audio | Yes |
 | Operating temp | -10°C ~ 50°C°C |

@@ -14,6 +14,7 @@
 | Night vision | ir (300m), 0.0001 lux, 0.0005 lux color |
 | Power | DC36V/AC24V |
 | Storage | NVR |
+| Protocols | rtsp, onvif |
 | IP rating | IP67 |
 | Two-way audio | Yes |
 | Operating temp | -50°C to 80°C°C |

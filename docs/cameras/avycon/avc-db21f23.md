@@ -36,6 +36,7 @@
 ## Sources
 
 - https://avyconaivo.com/data/item/AVC-DB21F23/DataSheet_AVC-DB21F23_EN.pdf
+- https://avyconaivo.com/data/item/AVC-DB21F23/AVC-DB21F23_Manual.pdf
 
 ---
 *Auto-generated from avycon-avc-db21f23.json — do not edit by hand.*

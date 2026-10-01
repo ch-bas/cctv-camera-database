@@ -6,7 +6,7 @@
 | Model | BMMBNP8AC |
 | Type | bullet |
 | Connectivity | ethernet |
-| Resolution | 8MP (8MP, 3856×2180) |
+| Resolution | 8MP (8MP, 3840×2160) |
 | Sensor | 1/1.8" SONY Starvis2 Back-illuminated CMOS sensor |
 | Lens | 6mm F1.0 |
 | Field of view | 92 H / 49 V / 111 D° |

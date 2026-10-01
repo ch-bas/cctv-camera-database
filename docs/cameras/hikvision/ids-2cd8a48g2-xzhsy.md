@@ -11,7 +11,7 @@
 | Night vision | 0.0001 lux, 0.0005 lux color |
 | Power | PoE (802.3at, Class 4) / DC 12V |
 | Storage | NVR |
-| Protocols | rtsp, http |
+| Protocols | onvif, rtsp, http |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |

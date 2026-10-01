@@ -11,7 +11,7 @@
 | Resolution | 2MP (2MP) |
 | Night vision | ir (20m), 0.01 lux |
 | Storage | NVR |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 
 ## Sources
 

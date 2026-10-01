@@ -7,6 +7,7 @@
 | Brand | Dahua |
 | Model | IPC-PDBW8840-A180 |
 | Type | panoramic |
+| Connectivity | ethernet |
 | Resolution | 8MP panoramic (8MP, 4096×1800) |
 | Sensor | 1/2.8" 2Megapixel progressive CMOS (x4) |
 | Lens | 4× 2.8mm F1.6 |

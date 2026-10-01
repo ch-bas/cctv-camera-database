@@ -7,6 +7,7 @@
 | Brand | Hikvision |
 | Model | iDS-2PT3S40BW-DE(C2)(B)( |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | (3.69MP, 2560×1440) |
 | Lens | 4-8mm F1.0 |
 | Field of view | 26.8-89° |

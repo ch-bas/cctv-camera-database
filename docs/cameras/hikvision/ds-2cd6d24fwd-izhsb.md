@@ -12,7 +12,7 @@
 | Night vision | ir, 0.002 lux, 0.006 lux color |
 | Power | PoE / DC 24V |
 | Storage | microSD ≤ 128GB, NVR |
-| Protocols | rtsp, http |
+| Protocols | onvif, rtsp, http |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Operating temp | -30°C to 60°C°C |

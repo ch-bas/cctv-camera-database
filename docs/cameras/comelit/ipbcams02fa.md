@@ -25,6 +25,7 @@
 
 - https://pro.comelitgroup.com/en-gb/product/ipbcams02fa
 - https://staticpro.comelitgroup.com/en-001/datasheets/14746-ipbcams02fa.pdf
+- https://staticpro.comelitgroup.com/storage/2019/12/23452/mt-ipcam-smart-en-1ed.pdf
 
 ---
 *Auto-generated from comelit-ipbcams02fa.json — do not edit by hand.*

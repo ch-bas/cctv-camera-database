@@ -14,6 +14,7 @@
 | Night vision | hybrid (30m), 0.001 lux color |
 | Power | 12 VDC / PoE (X-POE) |
 | Storage | microSD ≤ 512GB, NVR |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
 
@@ -29,6 +30,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/lxip9c82wi-28mda-8mp-smart-dual-light-bullet-network-camera.html
+- https://pic.ltsmall.com/software/4dff04fa76bb71a400a19019d9949f10/LXIP9C82WI-28MDA.pdf
 
 ---
 *Auto-generated from lts-lxip9c82wi-28mda.json — do not edit by hand.*

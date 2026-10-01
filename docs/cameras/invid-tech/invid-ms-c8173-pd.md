@@ -35,6 +35,7 @@
 
 - https://info.invidtech.com/hubfs/AAA_SpecSheets/Milesight/INVID-MS-C8173-PD.pdf
 - https://resource.milesight.com/milesight/security/document/datasheet/ipc/series-a/milesight-ai-vandal-proof-mini-dome-network-camera-ndaa-datasheet-en.pdf
+- https://support.milesight.com/support/solutions/articles/69000859092-rtsp-stream-of-milesight-network-camera-nvr-vms
 
 ---
 *Auto-generated from invid-tech-invid-ms-c8173-pd.json — do not edit by hand.*

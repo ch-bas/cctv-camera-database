@@ -8,7 +8,7 @@
 | Model | DS-2XC3646G0H-LIZSU |
 | Type | dome |
 | Connectivity | ethernet |
-| Resolution | (4MP, 2560×1440) |
+| Resolution | (4MP, 2688×1520) |
 | Sensor | 1/1.8" Progressive Scan CMOS |
 | Lens | 2.7-13.5mm F1.7 |
 | Night vision | hybrid (50m), 0.001 lux color |

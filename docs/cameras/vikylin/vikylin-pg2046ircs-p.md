@@ -39,6 +39,7 @@
 ## Sources
 
 - https://vikylin.com/wp-content/uploads/2023/11/PG2046IRCS-P-Specification.pdf
+- https://vikylin.com/wp-content/uploads/2023/11/PG-Series-IP-Camera-Instructions.pdf
 
 ---
 *Auto-generated from vikylin-pg2046ircs-p.json — do not edit by hand.*

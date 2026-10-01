@@ -39,6 +39,8 @@
 ## Sources
 
 - https://vikylin.com/wp-content/uploads/2023/11/VD-2BR81-ZAS-G2-Specification.pdf
+- https://vikylin.com/wp-content/uploads/2023/11/VD-Series-IP-Camera-Instructions.pdf
+- https://dahuawiki.com/Remote_Access/RTSP_via_VLC
 
 ---
 *Auto-generated from vikylin-vd-2br81-zas-g2.json — do not edit by hand.*

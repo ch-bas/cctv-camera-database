@@ -38,6 +38,7 @@
 
 - https://www.ganzsecurity.com/products/zn8-2p5x30dl-h
 - https://computarganz.s3.us-east-1.amazonaws.com/Ganz+Active+Resources/ZN8-2P5X30DL-H+05.26.2026+v1.2.pdf
+- https://computarganz.s3.amazonaws.com/Ganz+Active+Resources/Genstar+Web+Operation+Guide+Manual+V3.6_02.09.2024.pdf
 
 ---
 *Auto-generated from ganz-zn8-2p5x30dl-h.json — do not edit by hand.*

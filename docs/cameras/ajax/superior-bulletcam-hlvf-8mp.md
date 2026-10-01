@@ -40,6 +40,7 @@
 ## Sources
 
 - https://ajax.systems/products/specs/superior-bulletcam-hlvf-8-mp/
+- https://ajax.systems/support/manuals/onvif/
 
 ---
 *Auto-generated from ajax-superior-bulletcam-hlvf-8mp.json — do not edit by hand.*

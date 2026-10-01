@@ -13,7 +13,7 @@
 | Night vision | hybrid (15m) |
 | Power | DC 5V/1A; <5W |
 | Storage | microSD ≤ 512GB |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | Two-way audio | Yes |
 | Operating temp | -10 to 45°C |
 

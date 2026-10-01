@@ -14,6 +14,7 @@
 | Night vision | hybrid (250m), 0.0001 lux, 0.0002 lux color |
 | Power | AC24V |
 | Storage | NVR |
+| Protocols | rtsp, onvif |
 | IP rating | IP66 |
 | Two-way audio | No |
 | Operating temp | -40°C to 70°C°C |

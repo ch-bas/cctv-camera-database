@@ -77,9 +77,10 @@
     "alarm I/O"
   ],
   "sources": [
-    "https://www.mapesen.com/face-recognition-cameras/80bai40fa-ptbr-fc-.html"
+    "https://www.mapesen.com/face-recognition-cameras/80bai40fa-ptbr-fc-.html",
+    "https://www.mapesen.com/web/userfiles/download/manual/20260415/MAPESEN%20Sentrust%204MP%20Face%20Recognition%20Camera%20User%20Manual%20V.H11.pdf"
   ],
-  "last_verified": "2026-08-31",
+  "last_verified": "2026-10-01",
   "configs": {
     "frigate": {
       "detect": {
@@ -87,16 +88,18 @@
         "height": 576,
         "fps": 5
       },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/stream_0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/stream_1",
       "onvif_port": 80,
       "two_way_audio": false,
-      "notes": "Mapesen exposes ONVIF/RTSP but does not publish a fixed RTSP path; use ONVIF auto-config or the camera web UI to obtain the stream URL."
+      "notes": "RTSP addresses per the Mapesen Sentrust Face Recognition Camera User Manual, section 7.2.7 (System Management > RTSP): main stream /stream_0, auxiliary stream /stream_1, port 554. RTSP authentication is a switch on the same page; when it is enabled the stream asks for the camera username and password."
     },
     "home_assistant": {
       "integration": "onvif",
       "notes": "Add via the generic ONVIF integration (port 80)."
     },
     "blue_iris": {
-      "profile": "ONVIF",
+      "profile": "Generic/ONVIF",
       "notes": "Use 'Generic/ONVIF' — find/inspect to auto-fill RTSP."
     }
   },

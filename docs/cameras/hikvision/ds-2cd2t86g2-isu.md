@@ -13,7 +13,7 @@
 | Night vision | 0.003 lux color |
 | Power | PoE (802.3at) |
 | Storage | NVR |
-| Protocols | rtsp, http |
+| Protocols | onvif, rtsp, http |
 | IP rating | IP67 |
 | Two-way audio | Yes |
 | Operating temp | -30°C to 60°C°C |

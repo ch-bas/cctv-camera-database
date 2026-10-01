@@ -13,6 +13,7 @@
 | Night vision | ir (12m) |
 | Power | DC 9V 0.6A |
 | Storage | microSD ≤ 256GB |
+| Protocols | rtsp |
 | Two-way audio | Yes |
 | Operating temp | -10 to 50°C |
 
@@ -28,6 +29,8 @@
 ## Sources
 
 - https://static.tenda.com.cn/tdeweb/download/CP6/CP6v2.0%20Datasheet.pdf
+- https://www.tendacn.com/us/material/show/844937962672197
+- https://www.tendacn.com/us/material/show/2003692
 
 ---
 *Auto-generated from tenda-cp6.json — do not edit by hand.*

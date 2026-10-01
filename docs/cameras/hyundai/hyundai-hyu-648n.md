@@ -13,7 +13,7 @@
 | Lens | 2.8mm F1.6 |
 | Night vision | ir (30m), 0.018 lux, 0.018 lux color |
 | Storage | microSD ≤ 256GB, NVR |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | Two-way audio | Yes |
 | Operating temp | -30 to 50°C |
 

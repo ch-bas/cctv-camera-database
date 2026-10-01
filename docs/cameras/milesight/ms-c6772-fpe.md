@@ -5,6 +5,7 @@
 | Brand | Milesight |
 | Model | MS-C6772-FPE |
 | Type | dome |
+| Connectivity | ethernet |
 | Resolution | 6MP (6MP, 3200×1800) |
 | Sensor | 1/2.4" Progressive Scan CMOS |
 | Lens | 1× 2.7 to 13.5mm F1.6 |
@@ -12,7 +13,7 @@
 | Night vision | ir (50m), 0.005 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 1024GB |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |

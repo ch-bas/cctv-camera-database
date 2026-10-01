@@ -13,7 +13,7 @@
 | Night vision | ir (8m) |
 | Power | USB-C 5V/2A |
 | Storage | microSD ≤ 512GB |
-| Protocols | rtsp, p2p |
+| Protocols | rtsp, onvif, p2p |
 | Two-way audio | Yes |
 
 ## Streams
@@ -43,6 +43,7 @@
 ## Sources
 
 - https://www.foscam.eu/r8m-wb.html
+- https://www.foscam.com/downloads/file.html?cate=manual&id=151
 
 ---
 *Auto-generated from foscam-r8m-wb.json — do not edit by hand.*

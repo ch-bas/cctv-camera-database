@@ -14,7 +14,7 @@
 | Field of view | 108° |
 | Night vision | ir (60m), 0.003 lux |
 | Storage | microSD ≤ 256GB, NVR |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 | Operating temp | -30 to 60°C |

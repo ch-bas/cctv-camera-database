@@ -14,7 +14,7 @@
 | Night vision | hybrid (10m) |
 | Power | USB-C (DC 5V) |
 | Storage | microSD ≤ 512GB, NVR |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | Two-way audio | Yes |
 | Operating temp | -10 to 45°C |
 

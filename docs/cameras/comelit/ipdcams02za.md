@@ -19,12 +19,13 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| main | 1920x1080 | 30 | H.265+ |
+| main | 2048x1536 | 15 | H.265+ |
 
 ## Sources
 
 - https://pro.comelitgroup.com/en-gb/product/ipdcams02za
 - https://staticpro.comelitgroup.com/en-001/datasheets/14756-ipdcams02za.pdf
+- https://staticpro.comelitgroup.com/storage/2019/12/23452/mt-ipcam-smart-en-1ed.pdf
 
 ---
 *Auto-generated from comelit-ipdcams02za.json — do not edit by hand.*

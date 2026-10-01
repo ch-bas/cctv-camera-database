@@ -12,7 +12,7 @@
 | Sensor | 35mm full-frame Exmor CMOS |
 | Lens | 1× |
 | Night vision | color, 0.006 lux color |
-| Power | PoE (802.3af) Class 3, DC 12V, AC 24V |
+| Power | PoE (802.3af), DC 12V, AC 24V |
 | Storage | microSD ≤ 128GB |
 | Protocols | onvif, rtsp |
 | Operating temp | -5 to 50°C |
@@ -36,6 +36,7 @@
 ## Sources
 
 - https://www.sony.de/electronics/support/video-security-ip-cameras/snc-vb770
+- https://web.archive.org/web/20200930004557/https://www.sony.jp/snc/products/SNC-VB770/spec.html
 
 ---
 *Auto-generated from sony-snc-vb770.json — do not edit by hand.*

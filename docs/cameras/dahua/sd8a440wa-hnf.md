@@ -7,6 +7,7 @@
 | Brand | Dahua |
 | Model | SD8A440WA-HNF |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2560×1440) |
 | Sensor | 1/1.8" CMOS |
 | Lens | 1× 5.6-223mm F1.4-F4.8 |

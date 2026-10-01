@@ -15,7 +15,7 @@
 | Night vision | ir (30m), 0.01 lux, 0.15 lux color |
 | Power | PoE IEEE 802.3af, Class 3 |
 | Storage | microSD ≤ 1000GB |
-| Protocols | onvif, http |
+| Protocols | onvif, http, rtsp |
 | IP rating | IP66 |
 | IK rating | IK10 |
 | Two-way audio | Yes |

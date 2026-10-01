@@ -24,7 +24,7 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| main | 2688x1520 | 30 | H.264 |
+| main | 2960x1668 | 20 | H.264 |
 | sub | 704x480 | 30 | H.264 |
 
 ## Features
@@ -40,6 +40,7 @@
 ## Sources
 
 - https://support.amcrest.com/hc/en-us/articles/14379202542349-Technical-Specifications-IP5M-B1276EW-AI
+- https://drive.google.com/file/d/1BTWbEpJKr-ZZ1tdTVjjwjhfLhFpaZ3MK/view
 
 ---
 *Auto-generated from amcrest-ip5m-b1276ew-ai.json — do not edit by hand.*

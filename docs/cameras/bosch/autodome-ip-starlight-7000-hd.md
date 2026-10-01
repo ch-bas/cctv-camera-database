@@ -31,5 +31,9 @@
 - dual recording (iSCSI + SD) and dual power (High PoE / 24 VAC); bidirectional audio
 - indoor/outdoor pendant (IP66/NEMA 4X) or indoor in-ceiling (IP54)
 
+## Sources
+
+- https://web.archive.org/web/20170918220054/http://resource.boschsecurity.com/documents/AUTODOME_IP_starligh_Data_sheet_enUS_23680906251.pdf
+
 ---
 *Auto-generated from bosch-autodome-ip-starlight-7000-hd.json — do not edit by hand.*

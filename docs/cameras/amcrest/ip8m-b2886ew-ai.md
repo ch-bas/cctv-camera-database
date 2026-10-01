@@ -12,7 +12,7 @@
 | Field of view | 112 horizontal° |
 | Night vision | color (50m), 0.0005 lux color |
 | Power | 12V DC/PoE (802.3af)/ePoE |
-| Protocols | rtsp, p2p |
+| Protocols | rtsp, p2p, onvif |
 | IP rating | IP67 |
 | Two-way audio | Yes |
 | Operating temp | -40 to 60°C |
@@ -38,6 +38,7 @@
 ## Sources
 
 - https://support.amcrest.com/hc/en-us/articles/4686724705037-Technical-Specifications-IP8M-B2886EW-AI
+- https://support.amcrest.com/hc/en-us/articles/4686753259661-User-Manual-IP8M-B2886EW-AI
 
 ---
 *Auto-generated from amcrest-ip8m-b2886ew-ai.json — do not edit by hand.*

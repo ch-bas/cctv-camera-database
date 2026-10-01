@@ -12,7 +12,7 @@
 | Lens | 2.8mm |
 | Night vision | color, 0.0005 lux |
 | Storage | NVR |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 
 ## Features
 

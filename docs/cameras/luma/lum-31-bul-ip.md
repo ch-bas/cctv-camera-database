@@ -14,6 +14,7 @@
 | Night vision | ir (30m), 0.01 lux color |
 | Power | PoE (IEEE 802.3af Class 3) |
 | Storage | NVR |
+| Protocols | rtsp |
 | IP rating | IP66 |
 | Two-way audio | No |
 | Operating temp | -25 to 50°C |

@@ -32,6 +32,7 @@
 ## Sources
 
 - https://web.archive.org/web/2id_/https://download.vivotek.com/downloadfile/downloads/datasheets/sd8161datasheet_en.pdf
+- https://download.vivotek.com/downloadfile/downloads/datasheets/sd8161datasheet_en.pdf
 
 ---
 *Auto-generated from vivotek-sd8161.json — do not edit by hand.*

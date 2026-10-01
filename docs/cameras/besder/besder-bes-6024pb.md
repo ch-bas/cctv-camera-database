@@ -14,7 +14,7 @@
 | Night vision | ir (20m) |
 | Power | DC 12V/1A |
 | Storage | microSD ≤ 64GB |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | Two-way audio | No |
 | Operating temp | -35°C to 45°C°C |
 

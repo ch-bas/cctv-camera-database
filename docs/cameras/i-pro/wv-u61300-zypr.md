@@ -13,7 +13,7 @@
 | Night vision | ir, 0.004 lux, 0.007 lux color |
 | Power | PoE (IEEE 802.3af) / DC12V |
 | Storage | microSD ≤ 512GB, NVR |
-| Protocols | rtsp |
+| Protocols | onvif, rtsp |
 | Two-way audio | Yes |
 | Operating temp | -10 to 50°C |
 
@@ -32,6 +32,7 @@
 
 - https://i-pro.com/products_and_solutions/en/surveillance/products/wv-u61300-zypr
 - https://i-pro.com/products_and_solutions/sites/default/files/2026-09/WV-U61300-ZYPR_i-PRO_Letter_20260918%20r1.pdf
+- https://i-pro.com/products_and_solutions/sites/default/files/2026-09/WV-U61300-ZYPR_AE_spec_r1.0.docx
 
 ---
 *Auto-generated from i-pro-wv-u61300-zypr.json — do not edit by hand.*

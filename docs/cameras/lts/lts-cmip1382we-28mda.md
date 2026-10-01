@@ -13,7 +13,7 @@
 | Night vision | hybrid (30m), 0.01 lux color |
 | Power | PoE |
 | Storage | microSD ≤ 512GB |
-| Protocols | rtsp, http |
+| Protocols | onvif, rtsp, http |
 | IP rating | IP67 |
 | Two-way audio | No |
 | Operating temp | -30 to 60°C |

@@ -7,6 +7,7 @@
 | Brand | Dahua |
 | Model | SD6C3425XB-HNR-A-PV1 |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2560×1440) |
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 4.8-120mm F1.6-F3.5 |

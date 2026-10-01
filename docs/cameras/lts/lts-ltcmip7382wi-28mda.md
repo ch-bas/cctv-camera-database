@@ -10,6 +10,7 @@
 | Connectivity | ethernet |
 | Resolution | 8MP (8MP) |
 | Night vision | hybrid |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |
@@ -26,6 +27,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/ltcmip7382wi-28mda-platinum-8mp-dome-network-camera.html
+- https://pic.ltsmall.com/software/fd2aaa3b1bb5b1599fdb189bda400d63/CMIP7382WI-28MDA_Spec%20sheet.pdf
 
 ---
 *Auto-generated from lts-ltcmip7382wi-28mda.json — do not edit by hand.*

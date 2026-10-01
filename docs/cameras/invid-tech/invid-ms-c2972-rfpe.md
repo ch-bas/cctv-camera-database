@@ -32,6 +32,7 @@
 
 - https://info.invidtech.com/hubfs/AAA_SpecSheets/Milesight/INVID-MS-C2972-RFPE.pdf
 - https://resource.milesight.com/milesight/security/document/datasheet/ipc/series-e/milesight-ai-motorized-pro-dome-network-camera-ndaa-e-datasheet-en.pdf
+- https://support.milesight.com/support/solutions/articles/69000859092-rtsp-stream-of-milesight-network-camera-nvr-vms
 
 ---
 *Auto-generated from invid-tech-invid-ms-c2972-rfpe.json — do not edit by hand.*

@@ -14,6 +14,7 @@
 | Night vision | hybrid (30m) |
 | Power | 12V DC / PoE |
 | Storage | microSD ≤ 256GB, NVR |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |
@@ -30,6 +31,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/lxip7582we-28mda-8mp-dual-light-lite-fixed-dome-network-camera.html
+- https://pic.ltsmall.com/software/963d8e185fe229e0c491ab79ce616270/LXIP7582WE-28MDA_Spec%20Sheet.pdf
 
 ---
 *Auto-generated from lts-lxip7582we-28mda.json — do not edit by hand.*

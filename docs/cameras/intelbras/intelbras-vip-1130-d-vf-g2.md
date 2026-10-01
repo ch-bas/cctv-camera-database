@@ -12,7 +12,7 @@
 | Field of view | 23.23-64.01 horizontal / 12.87-34.68 vertical° |
 | Night vision | ir (30m), 0.1 lux color |
 | Power | PoE passivo / 12 Vdc |
-| Protocols | onvif, http |
+| Protocols | onvif, http, rtsp |
 | IP rating | IP66 |
 | Operating temp | -10 to 60°C |
 

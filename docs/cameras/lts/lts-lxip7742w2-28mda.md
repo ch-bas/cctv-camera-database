@@ -14,6 +14,7 @@
 | Night vision | ir (30m) |
 | Power | 12V DC / PoE |
 | Storage | microSD ≤ 256GB, NVR |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
 
@@ -29,6 +30,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/lxip7742w2-28mda-2-x-4mp-dual-directional-fixed-focal-dome-network-camera.html
+- https://pic.ltsmall.com/software/16c1ae32766788f82aa0bd6af56fdf1a/LXIP7742W2-28MDA%201.pdf
 
 ---
 *Auto-generated from lts-lxip7742w2-28mda.json — do not edit by hand.*

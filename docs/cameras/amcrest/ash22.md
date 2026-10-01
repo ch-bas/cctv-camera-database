@@ -15,6 +15,7 @@
 | Night vision | hybrid (30m), 0.033 lux color |
 | Power | DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
+| Protocols | rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
 | Operating temp | -30 to 60°C |

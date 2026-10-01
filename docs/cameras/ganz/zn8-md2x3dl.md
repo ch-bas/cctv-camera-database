@@ -26,6 +26,7 @@
 ## Sources
 
 - https://www.ganzsecurity.com/products/zn8-md2x3dl
+- https://computarganz.s3.amazonaws.com/Ganz+Active+Resources/Genstar+Web+Operation+Guide+Manual+V3.6_02.09.2024.pdf
 
 ---
 *Auto-generated from ganz-zn8-md2x3dl.json — do not edit by hand.*

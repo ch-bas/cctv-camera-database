@@ -13,7 +13,7 @@
 | Lens | 1× 2.8-9.5mm F1.6 (WIDE) - F3.3 (TELE) |
 | Field of view | 31 (TELE) - 109 (WIDE)° |
 | Night vision | none, 0.01 lux, 0.07 lux color |
-| Power | PoE (IEEE 802.3af, Class 2) / DC 12V |
+| Power | PoE (IEEE 802.3af, Class 0) / DC 12V |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
@@ -33,6 +33,7 @@
 ## Sources
 
 - https://i-pro.com/products_and_solutions/en/surveillance/products/wv-sfv531
+- https://i-pro.com/products_and_solutions/sites/default/files/2023-01/WV-SFV531-A4_1511770911.7633.pdf
 
 ---
 *Auto-generated from i-pro-wv-sfv531.json — do not edit by hand.*

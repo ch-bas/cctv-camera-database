@@ -35,6 +35,7 @@
 
 - https://illustracameras.com/
 - https://illustra.s3.us-east-1.amazonaws.com/Web_Files/Legacy/pro-fisheye-lt/Data%20Sheets/Illustra-Pro-5mp-Fisheye-LT-Data-Sheet-r03_hs_en.pdf
+- https://illustra.s3.us-east-1.amazonaws.com/Web_Files/Legacy/pro-fisheye-lt/Manuals/Pro-5MP-LT-5MP-Fisheye-Configuration-%26-User-Guide-C0_8200-1031-01_C0_en.pdf
 
 ---
 *Auto-generated from illustra-adci825lt-f311.json — do not edit by hand.*

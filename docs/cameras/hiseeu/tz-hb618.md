@@ -14,6 +14,7 @@
 | Night vision | hybrid (15m) |
 | Power | DC 12V |
 | Storage | NVR |
+| Protocols | rtsp |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 | Operating temp | -10 to 55°C |

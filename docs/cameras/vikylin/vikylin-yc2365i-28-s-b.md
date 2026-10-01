@@ -36,6 +36,7 @@
 ## Sources
 
 - https://vikylin.com/wp-content/uploads/2024/03/YC2365I-28-S-B-Specification.pdf
+- https://vikylin.com/wp-content/uploads/2023/11/YCX-Series-IP-Camera-Instructions.pdf
 
 ---
 *Auto-generated from vikylin-yc2365i-28-s-b.json — do not edit by hand.*

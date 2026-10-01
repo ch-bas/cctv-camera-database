@@ -24,7 +24,7 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| main | 2688x1520 | 30 | H.264 |
+| main | 2960x1668 | 20 | H.264 |
 | sub | 704x480 | 30 | H.264 |
 
 ## Features
@@ -40,6 +40,7 @@
 ## Sources
 
 - https://amcrest.com/5mp-poe-camera-bullet-ai-ip5m-b1276eb-ai.html
+- https://drive.google.com/file/d/1C47rv3OYtmgTGBb0_uz3zF4mBMrBlHDj/view
 
 ---
 *Auto-generated from amcrest-ip5m-b1276eb-ai.json — do not edit by hand.*

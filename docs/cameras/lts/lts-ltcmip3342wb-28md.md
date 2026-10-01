@@ -11,6 +11,7 @@
 | Resolution | 4MP (4MP) |
 | Lens | 1× 2.8mm |
 | Storage | microSD ≤ 128GB, NVR |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 
 ## Features
@@ -25,6 +26,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/cmip3342wb-28md-4-mp-smart-fixed-turret-network-camera-black.html
+- https://pic.ltsmall.com/software/eb573346ff10f5d3645a9057c257a3c0/CMIP3342WB-28MD%2C%20CMIP3342WB-MD%20Spec.pdf
 
 ---
 *Auto-generated from lts-ltcmip3342wb-28md.json — do not edit by hand.*

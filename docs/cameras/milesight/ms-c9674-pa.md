@@ -5,6 +5,7 @@
 | Brand | Milesight |
 | Model | MS-C9674-PA |
 | Type | fisheye |
+| Connectivity | ethernet |
 | Resolution | 12MP (12MP, 4000×3000) |
 | Sensor | 1/1.7" Progressive Scan CMOS |
 | Lens | 1× 1.98mm F2.8 |
@@ -12,7 +13,7 @@
 | Night vision | ir (15m), 0.05 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 256GB |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | Yes |

@@ -13,7 +13,7 @@
 | Night vision | hybrid (10m) |
 | Power | Built-in 21.6Wh rechargeable battery / USB-C / optional Reolink solar panel |
 | Storage | microSD ≤ 512GB |
-| Protocols | p2p |
+| Protocols | p2p, rtsp |
 | IP rating | IP65 |
 | Two-way audio | Yes |
 | Operating temp | -10 to 55°C |
@@ -42,6 +42,7 @@
 - https://reolink.com/product/argus-3-ultra/
 - https://reolink.com/us/product/argus-3-ultra/
 - https://reolink.com/blog/reolink-argus-3-ultra-review/
+- https://support.reolink.com/articles/900000617826-Which-Reolink-Products-Support-CGI-RTSP-ONVIF/
 
 ---
 *Auto-generated from reolink-argus-3-ultra.json — do not edit by hand.*

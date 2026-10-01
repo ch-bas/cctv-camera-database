@@ -1,0 +1,34 @@
+{
+  "brand": "AVYCON",
+  "brand_id": "avycon",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/rtsp/streaming?channel=01&subtype=0",
+      "codec": "H.265|H.264",
+      "verified": true,
+      "source": "https://avycon.freshdesk.com/support/solutions/articles/36000299011-rtsp-syntax-for-ndaa-diversity-series-ip-cameras — AVYCON Support Portal, \"RTSP Syntax for NDAA / Diversity Series IP Cameras\": Diversity IP cameras on v8.2.4 firmware and later (also multisensor cameras) use rtsp://user:password@<host>:<port>/rtsp/streaming?channel=yy&subtype=x; yy = channel number (01 if a single sensor), x = 0 Main Stream; default RTSP port 554.",
+      "strix_lead": "manual:avycon"
+    },
+    {
+      "stream": "sub",
+      "path": "/rtsp/streaming?channel=01&subtype=1",
+      "codec": "H.265|H.264",
+      "verified": true,
+      "source": "https://avycon.freshdesk.com/support/solutions/articles/36000299011-rtsp-syntax-for-ndaa-diversity-series-ip-cameras — same AVYCON Support Portal article: subtype x = 1 is the Sub Stream.",
+      "strix_lead": "manual:avycon"
+    },
+    {
+      "stream": "third",
+      "path": "/rtsp/streaming?channel=01&subtype=2",
+      "codec": "H.265|H.264",
+      "verified": true,
+      "source": "https://avycon.freshdesk.com/support/solutions/articles/36000299011-rtsp-syntax-for-ndaa-diversity-series-ip-cameras — same AVYCON Support Portal article: subtype x = 2 is the Mobile Stream.",
+      "strix_lead": "manual:avycon"
+    }
+  ],
+  "notes": "AVYCON sells three IP-camera platforms with different RTSP paths; this guide carries the Diversity (NDAA) Series, by far the largest line (AVC-NA/NB/NC/ND/NK/NL/NP*/NS/NU/NX, AVC-NSZ PTZ, AVC-NT thermal, AVC-NCMS multisensor, AVC-NF fisheye, AVC-SNDB solar). Diversity cameras on firmware v8.2.4 or later use /rtsp/streaming?channel=01&subtype=0 (main), subtype=1 (sub), subtype=2 (mobile stream); on multisensor cameras the channel number selects the sensor (01 for a single sensor). Diversity cameras on firmware older than v8.2.4 use /ch01/0 (main), /ch01/1 (sub), /ch01/2 (mobile) instead — the same form printed in the AVC-NS Series manual (https://avycon.com/downloads/documents/AVC-NS%20Series%20Manual.pdf, section 8.7 RTSP). Other lines, set on the individual camera records: Plug & Play Series IP cameras (e.g. AVC-PNN PTZ/fisheye, AVC-N4M81F360, AVC-NBM81F180, AVC-DB21F23 doorbell) use /profile1 (main), /profile2 (sub), /profile3 (third, not on all models) per https://avycon.freshdesk.com/support/solutions/articles/36000299004-rtsp-syntax-for-plug-play-series-ip-cameras; Autotracking and Panoramic 180° cameras (AVC-NPTZ, AVC-LHN, AVC-NVP, AVC-NP51F180) use /main, /sub, /third per https://avycon.freshdesk.com/support/solutions/articles/36000328602-autotracking-and-panoramic-180-rtsp-syntax. Which series a model belongs to follows AVYCON's own catalogue categories (avyconaivo.com Diversity Series / Plug & Play Series listings). No official RTSP path was found for the EVO Series (AVC-NMS41P3) or the AVC-WDB51F21 Wi-Fi doorbell — add those via ONVIF. Default RTSP port is 554 on all lines; special characters in the password may need percent-encoding.",
+  "verified_on": "2026-10-01"
+}

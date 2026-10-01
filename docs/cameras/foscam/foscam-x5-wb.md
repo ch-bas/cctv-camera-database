@@ -13,7 +13,7 @@
 | Night vision | ir (8m) |
 | Power | USB-C 5V/1.0A |
 | Storage | microSD ≤ 512GB |
-| Protocols | rtsp, p2p |
+| Protocols | rtsp, onvif, p2p |
 | Two-way audio | Yes |
 
 ## Streams
@@ -42,6 +42,7 @@
 ## Sources
 
 - https://www.foscam.eu/x5-wb.html
+- https://www.foscam.com/downloads/file.html?cate=manual&id=12
 
 ---
 *Auto-generated from foscam-x5-wb.json — do not edit by hand.*

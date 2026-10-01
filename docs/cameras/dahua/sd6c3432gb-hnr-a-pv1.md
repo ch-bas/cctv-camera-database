@@ -8,7 +8,7 @@
 | Model | SD6C3432GB-HNR-A-PV1 |
 | Type | ptz |
 | Connectivity | ethernet |
-| Resolution | 4MP (4MP, 2688×1520) |
+| Resolution | 4MP (4MP, 2560×1440) |
 | Sensor | 1/2.8" STARVIS CMOS |
 | Lens | 1× 4.8-154 (32x optical zoom)mm F1.6-F4.0 |
 | Field of view | 55.8-2.3 (wide-tele)° |

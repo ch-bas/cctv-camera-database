@@ -38,6 +38,7 @@
 ## Sources
 
 - http://web.archive.org/web/20121010131909id_/http://zavio.com/downloads/product/23/datasheet_F312A.pdf
+- https://web.archive.org/web/20121010131630id_/http://zavio.com/downloads/product/23/F312A%20%20Firmware%20User%20Manual%2016.03.pdf
 
 ---
 *Auto-generated from zavio-f312a.json — do not edit by hand.*

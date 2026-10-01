@@ -15,6 +15,7 @@
 | Night vision | hybrid (10m), 0.263 lux color |
 | Power | AC100-240V |
 | Storage | microSD ≤ 256GB |
+| Protocols | rtsp |
 | IP rating | IP65 |
 | Two-way audio | Yes |
 | Operating temp | -30 to 50°C |
@@ -33,6 +34,7 @@
 ## Sources
 
 - https://support.amcrest.com/hc/en-us/articles/360041040031-Technical-Specifications-ASH26
+- https://support.amcrest.com/hc/en-us/articles/360046019252
 
 ---
 *Auto-generated from amcrest-ash26.json — do not edit by hand.*

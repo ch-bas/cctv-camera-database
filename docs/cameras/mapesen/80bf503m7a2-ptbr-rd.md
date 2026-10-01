@@ -5,6 +5,7 @@
 | Brand | Mapesen |
 | Model | 80BF503M7A2-PTBR-RD |
 | Type | bullet |
+| Connectivity | ethernet |
 | Resolution | 5MP (5MP, 2448×2048) |
 | Sensor | 1/1.8" Sony CMOS |
 | Lens | 8-32mm F1.6 |

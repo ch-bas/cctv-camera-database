@@ -15,6 +15,7 @@
 | Night vision | hybrid (30m), 0.0001 lux, 0.0005 lux color |
 | Power | 12V DC / PoE |
 | Storage | microSD ≤ 256GB, NVR |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | Yes |
 | Operating temp | -40 to 60°C |
@@ -37,6 +38,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/lxip3c82nwib-28sdl-pro-x-8-mp-color-24-7-x-deterrence-x-search-turret-ip-camera.html
+- https://pic.ltsmall.com/software/4fc774dc7119c618526e0794b687780e/LXIP3C82NWI-28SDL.pdf
 
 ---
 *Auto-generated from lts-lxip3c82nwib-28sdl.json — do not edit by hand.*

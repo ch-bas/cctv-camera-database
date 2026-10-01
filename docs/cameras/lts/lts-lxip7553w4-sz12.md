@@ -14,6 +14,7 @@
 | Night vision | color (30m), 0.005 lux color |
 | Power | 12V DC / PoE+ |
 | Storage | microSD ≤ 256GB, NVR |
+| Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 
@@ -29,6 +30,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/default/lxip7553w4-sz12-pro-x-4-lens-panoramic-dome-ip-camera.html
+- https://pic.ltsmall.com/software/c3b8b17af75f05973a29e8dfe8ce0923/LXIP7553W4-SZ12_Specs.pdf
 
 ---
 *Auto-generated from lts-lxip7553w4-sz12.json — do not edit by hand.*

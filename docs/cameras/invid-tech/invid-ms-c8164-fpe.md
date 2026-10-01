@@ -38,6 +38,7 @@
 
 - https://info.invidtech.com/hubfs/AAA_SpecSheets/Milesight/INVID-MS-C8164-FPE.pdf
 - https://resource.milesight.com/milesight/security/document/datasheet/ipc/series-e/milesight-ai-motorized-bullet-network-camera-ndaa-e-datasheet-en.pdf
+- https://support.milesight.com/support/solutions/articles/69000859092-rtsp-stream-of-milesight-network-camera-nvr-vms
 
 ---
 *Auto-generated from invid-tech-invid-ms-c8164-fpe.json — do not edit by hand.*

@@ -197,7 +197,7 @@ Other scripts: `npm run add` (interactive add-a-camera wizard) and `npm run chec
 
 ### RTSP reference layer
 
-`data/rtsp-patterns.json` is a **CC0 brand-level RTSP URL reference** for 183 brands (120 verified / 63 unverified / 367 stream templates). Each path is confirmed against the manufacturer's own documentation — never copied from aggregators. Regenerate after editing `strix/verified/`:
+`data/rtsp-patterns.json` is a **CC0 brand-level RTSP URL reference** for 203 brands (143 verified / 60 unverified / 422 stream templates). Each path is confirmed against the manufacturer's own documentation — never copied from aggregators. Regenerate after editing `strix/verified/`:
 
 ```bash
 RTSP_PATTERNS_DATE=$(date +%Y-%m-%d) node scripts/build-rtsp-patterns.js
@@ -237,13 +237,13 @@ A device type is only emitted when the camera has a known RJ45 link speed (`netw
 | Total cameras | **28,400** |
 | Brands | **230** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
-| PoE wired | 19,508 |
+| PoE wired | 19,507 |
 | WiFi | 2,540 |
 | Battery / wire-free | 728 |
-| 4K / 8MP+ | 5,338 |
-| 4–7MP | 11,107 |
+| 4K / 8MP+ | 5,336 |
+| 4–7MP | 11,109 |
 | Under 4MP | 11,955 |
-| With integration configs (Frigate / Home Assistant) | 22,083 |
+| With integration configs (Frigate / Home Assistant) | 22,196 |
 | With color-lux rating (`night_vision.min_lux_color`) | 18,990 |
 
 ### All 230 brands
@@ -514,7 +514,7 @@ cctv-camera-database/
 ├── data/                 # GENERATED — do not edit by hand
 │   ├── cameras.json      # all 28,400 cameras as one array
 │   ├── cameras.csv       # flattened, spreadsheet-friendly
-│   └── rtsp-patterns.json  # CC0 brand-level RTSP URL layer (183 brands)
+│   └── rtsp-patterns.json  # CC0 brand-level RTSP URL layer (203 brands)
 ├── strix/
 │   └── verified/         # per-brand RTSP source files → rtsp-patterns.json
 ├── schema/
@@ -547,7 +547,7 @@ Open — contributions very welcome:
 
 - [ ] **Re-source ~1,051 reseller-only cameras** to official OEM datasheets (#164 / #165)
 - [ ] **Backfill pixel resolution** for the ~2,757 entries that state megapixels but no width×height (#169)
-- [ ] **Frigate verification drive** — only 31 of 21,846 shipped configs are community-verified; [confirm one you run](../../issues/new?template=verify-frigate-config.yml)
+- [ ] **Frigate verification drive** — only 31 of 21,967 shipped configs are community-verified; [confirm one you run](../../issues/new?template=verify-frigate-config.yml)
 - [ ] **Grow `community_notes`** — the per-camera quirks/behaviors layer (#297)
 
 ---
@@ -581,7 +581,7 @@ Specifications are compiled from manufacturer datasheets and reputable retailers
 If you use this dataset, a link back is appreciated:
 
 ```
-CCTV Camera Database (v2.27.0), CC0 1.0. https://cctv-database.com — https://github.com/ch-bas/cctv-camera-database
+CCTV Camera Database (v2.27.1), CC0 1.0. https://cctv-database.com — https://github.com/ch-bas/cctv-camera-database
 ```
 
 ---

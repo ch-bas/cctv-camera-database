@@ -38,6 +38,8 @@
 ## Sources
 
 - https://vikylin.com/wp-content/uploads/2025/01/VD-2TM81-AS-G2.pdf
+- https://vikylin.com/wp-content/uploads/2023/11/VD-Series-IP-Camera-Instructions.pdf
+- https://dahuawiki.com/Remote_Access/RTSP_via_VLC
 
 ---
 *Auto-generated from vikylin-vd-2tm81-as-g2.json — do not edit by hand.*

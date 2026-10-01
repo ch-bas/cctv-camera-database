@@ -5,6 +5,7 @@
 | Brand | Hikvision |
 | Model | iDS-2PT3326IX-DE3(C0F5) |
 | Type | ptz |
+| Connectivity | ethernet |
 | Resolution | (2MP, 1920×1080) |
 | Lens | 2mm |
 | Night vision | ir (20m) |

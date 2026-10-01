@@ -31,6 +31,7 @@
 
 - https://www.ganzsecurity.com/products/zn8-vd4m212-nir
 - https://computarganz.s3.amazonaws.com/Ganz+Active+Resources/ZN8-VD4M212-NIR_11-17+spec.pdf
+- https://computarganz.s3.amazonaws.com/Ganz+Active+Resources/Genstar+Web+Operation+Guide+Manual+V3.6_02.09.2024.pdf
 
 ---
 *Auto-generated from ganz-zn8-vd4m212-nir.json — do not edit by hand.*

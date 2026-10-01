@@ -22,7 +22,7 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| main | 640x480 | 25 | JPEG |
+| main | 736x544 | — | JPEG |
 
 ## Features
 

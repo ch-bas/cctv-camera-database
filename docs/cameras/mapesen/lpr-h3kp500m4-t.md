@@ -6,7 +6,7 @@
 | Model | LPR-H3KP500M4-T |
 | Type | bullet |
 | Connectivity | ethernet |
-| Resolution | 5MP (5MP, 3200×1800) |
+| Resolution | 5MP (5MP, 1920×1080) |
 | Sensor | 5MP starlight CMOS |
 | Lens | 5-50mm |
 | Night vision | ir (25m), 0.1 lux color |
@@ -37,6 +37,7 @@
 - FTP / HTTP push of capture images
 - 2D/3D noise reduction
 - MQTT
+- 3200x1800 capture image resolution
 
 ## Sources
 

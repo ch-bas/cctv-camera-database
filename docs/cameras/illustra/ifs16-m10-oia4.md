@@ -38,7 +38,7 @@
 
 - https://illustracameras.com/
 - https://illustracameras.com/wp-content/uploads/2023/08/Illustra-Flex-Gen4-Dual-Sensor-Data-Sheet_draft1_cs.pdf
-- https://www.ispyconnect.com/camera/illustra
+- https://illustracameras.com/latam/wp-content/uploads/2024/01/UM_FG4-Dual-S_A163821KC7_A.en_-3.pdf
 
 ---
 *Auto-generated from illustra-ifs16-m10-oia4.json — do not edit by hand.*

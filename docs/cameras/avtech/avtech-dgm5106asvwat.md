@@ -6,7 +6,7 @@
 | Model | DGM5106ASVWAT |
 | Type | bullet |
 | Connectivity | ethernet |
-| Resolution | 5MP (2560x1944) (5MP, 2560×1944) |
+| Resolution | 5MP (2592x1944) (5MP, 2592×1944) |
 | Sensor | 1/2.8" SONY CMOS |
 | Lens | 1× 2.8mm F1.0 |
 | Field of view | 112 D° |

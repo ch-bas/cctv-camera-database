@@ -12,6 +12,7 @@
 | Night vision | color (30m) |
 | Power | AC plug-in (adapter included) |
 | Storage | microSD ≤ 128GB, NVR |
+| Protocols | rtsp |
 | IP rating | IP65 |
 | Two-way audio | Yes |
 | Operating temp | -20 to 60°C |

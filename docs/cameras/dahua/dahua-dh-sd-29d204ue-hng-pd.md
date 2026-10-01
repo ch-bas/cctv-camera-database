@@ -12,6 +12,7 @@
 | Sensor | 1/2.8" CMOS |
 | Power | DC12V/PoE |
 | Storage | NVR |
+| Protocols | rtsp, onvif |
 | Two-way audio | No |
 
 ## Features

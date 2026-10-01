@@ -40,6 +40,7 @@
 ## Sources
 
 - https://www.hanwhavision.com/global/products/product-details/QNP-6230RH
+- https://hvsgmpprdstorage.blob.core.windows.net/pim/CDB/QNP-6230RH/Manuals_QNP-6230RH_230602_EN.pdf
 
 ---
 *Auto-generated from hanwha-qnp-6230rh.json — do not edit by hand.*

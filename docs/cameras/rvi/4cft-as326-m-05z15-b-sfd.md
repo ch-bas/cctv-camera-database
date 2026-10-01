@@ -11,7 +11,7 @@
 | Lens | 1× 5.3-79.5mm |
 | Field of view | 4.5-56.2 H / 3.3-42.3 V° |
 | Storage | NVR |
-| Protocols | onvif |
+| Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | Operating temp | -65 to 60°C |
 

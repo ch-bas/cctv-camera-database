@@ -38,6 +38,7 @@
 
 - https://illustracameras.com/
 - https://illustra.s3.us-east-1.amazonaws.com/Web_Files/Legacy/pro-mini-dome/Data%20Sheets/Illustra-Pro-IP-2MP-3MP-5MP-Mini-Domes-Data-Sheet-r09_hs_en.pdf
+- https://illustra.s3.us-east-1.amazonaws.com/Web_Files/Legacy/pro-mini-dome/Manuals/Illustra-Pro-5MP-3MP-2MP-Mini-Dome-User-Guide-K0-lt_8200-1135-01K0_en.pdf
 
 ---
 *Auto-generated from illustra-ips03d2ocwit.json — do not edit by hand.*

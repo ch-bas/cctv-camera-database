@@ -38,6 +38,7 @@
 ## Sources
 
 - http://web.archive.org/web/20121010125333id_/http://zavio.com/downloads/product/58/datasheet_F1100.pdf
+- https://web.archive.org/web/20121010125455id_/http://zavio.com/downloads/product/58/F1100%20F1105%20Manual%202012%203%201.pdf
 
 ---
 *Auto-generated from zavio-f1100.json — do not edit by hand.*

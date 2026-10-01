@@ -46,11 +46,14 @@
     "onvif"
   ],
   "sources": [
-    "https://www.urmet.de/"
+    "https://www.urmet.de/",
+    "https://www.urmet.com/it-it/Professionista/Strumenti/Libretti-e-Certificazioni"
   ],
-  "last_verified": "2026-08-31",
+  "last_verified": "2026-10-01",
   "configs": {
     "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live/0/MAIN",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/live/0/SUB",
       "detect": {
         "width": 640,
         "height": 480,
@@ -58,14 +61,14 @@
       },
       "onvif_port": 80,
       "two_way_audio": false,
-      "notes": "Urmet exposes ONVIF/RTSP; confirm the exact RTSP path in the camera web UI or via ONVIF."
+      "notes": "Urmet RTSP rtsp://IP:554/live/A/B (A = channel ID, any e.g. 0; B = MAIN main stream, SUB sub stream), default port 554, per the Urmet LIBRETTO UTENTE DS1093-574 (doc ID 486678, section 7.2.2 (p.21))."
     },
     "home_assistant": {
       "integration": "onvif",
       "notes": "Add via the generic ONVIF integration."
     },
     "blue_iris": {
-      "profile": "ONVIF",
+      "profile": "Generic/ONVIF",
       "notes": "Use 'Generic/ONVIF' — find/inspect to auto-fill RTSP."
     }
   },

@@ -36,6 +36,7 @@
 ## Sources
 
 - https://vikylin.com/wp-content/uploads/2023/11/YC2387C-28-Specification.pdf
+- https://vikylin.com/wp-content/uploads/2023/11/YCX-Series-IP-Camera-Instructions.pdf
 
 ---
 *Auto-generated from vikylin-yc2387c-28.json — do not edit by hand.*
