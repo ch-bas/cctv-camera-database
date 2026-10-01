@@ -6,10 +6,30 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
-## [2.26.1] — 2026-10-01
+## [2.27.0] — Unreleased
 
-### Fixed
+A data-quality release from the 2026-09-29 CCTV expert audit. Every flagged record was checked against the manufacturer's own documentation (manuals, support KBs, datasheets), then re-checked by an independent reviewer that reverted any edit its source didn't support. Values a manufacturer does not publish were left as they are rather than estimated. No new cameras.
+
+### Fixed — RTSP paths (1,005 cameras, 11 brands)
+Per-camera RTSP paths that contradicted the brand's documented format:
+- **TVT Digital (404)** — `/ch01/0` → `/profile1` (main) + `/profile2` (sub), per TVT's camera manuals; the config notes now match.
+- **Longse (274)** — bare `/` → `/0` (main) + `/1` (sub), per Longse's RTSP FAQ.
+- **Digital Watchdog (115)** — Dahua `realmonitor` → `/profile1` + `/profile2` (DW KB 323); the brand guide was corrected too.
+- **Honeywell (57)** — 35 and 60 Series → `/live1s1.sdp`, per Honeywell's series guides.
+- **Mobotix (42)** — `/cam0/stream` / `/mobotix.pro/mxpeg` → `/stream/profile0` (+ `/stream/profile1` sub on single-sensor models), per platform.
+- **American Dynamics (41)** — `/ufirststream` → `/videoStreamId=1` + `/videoStreamId=2` (Illustra Gen4 guides); guide corrected.
+- **Panasonic Middle East PM-series (39)** — Dahua path → `/profile1` + `/profile2` (this TVT-made line differs from i-PRO WV-*).
+- **RVi (13)** — `/1/1` → `/RVi/1/1` + `/RVi/1/2`, per RVi's RTSP list.
+- **Camius (9)** — Dahua path → `/ch01/0` + `/ch01/1` for direct camera access.
+- **FLIR (7)** — `/avc` (FLIR's science-camera path) → the security-camera paths per product family (KB 5428).
+- **ACTi (4)** — `/rtsp/av0` → `/stream1` + `/stream2`.
 - **Amcrest Helix RTSP (#394)** — the three Helix (`HLX-`) cameras (`HLX-IP5M-B102EW-AI`, `HLX-IP5M-T103EW-AI`, `HLX-IP8M-T303EW-AI`) carried the Dahua-style `/cam/realmonitor?channel=1&subtype=0` path used by other Amcrest models. Amcrest's KB article [Accessing Legacy Helix Devices Using RTSP](https://support.amcrest.com/hc/en-us/articles/49119561879437-Accessing-Legacy-Helix-Devices-Using-RTSP) documents a different format for this line: `rtsp://{user}:{pass}@{ip}:554/<channel>/<stream>`, with stream 1 = main and 0 = sub. Main is now `/1/1` and the substream `/1/0`, with `/1/main` / `/1/sub` noted as a fallback. Home Assistant now points at the ONVIF integration and Blue Iris at Generic/ONVIF instead of the Dahua-based options. The Amcrest RTSP guide (`strix/verified/amcrest.json`) gains the Helix templates, marked Helix-only. Reported via the website by SrDri and Michael M. (Amcrest support).
+- **RTSP guides** (`strix/verified/`) — Bosch `/rtsp_tunnel`, Hanwha multi-sensor `/0/profile2/media.smp` and ACTi legacy `:7070/` documented as valid; Digital Watchdog and American Dynamics guides corrected; Camius, Panasonic PM and FLIR templates added.
+
+### Fixed — specs
+- **`ip_rating` +243** on outdoor cameras that had none, only where the datasheet states it (Mapesen, GW Security, American Dynamics, Hanwha, Bosch and others).
+- **Resolution** — ~130 records whose megapixels disagreed with the pixel dimensions corrected from datasheets (mostly i-PRO and ACTi).
+- **`weight_g`** — 15 parse errors (e.g. 5 g) corrected or removed; **`environment`** corrected on 10.
 
 No new cameras.
 
