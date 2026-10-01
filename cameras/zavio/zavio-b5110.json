@@ -92,23 +92,24 @@
   ],
   "cloud_dependency": "local",
   "sources": [
-    "http://web.archive.org/web/20121010123319id_/http://zavio.com/downloads/product/32/datasheet_B5110.pdf"
+    "http://web.archive.org/web/20121010123319id_/http://zavio.com/downloads/product/32/datasheet_B5110.pdf",
+    "https://web.archive.org/web/20121010122954id_/http://zavio.com/downloads/product/32/B5110_User%20Manual.pdf"
   ],
-  "last_verified": "2026-09-22",
+  "last_verified": "2026-10-01",
   "configs": {
     "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/video.h264",
       "recommended_stream_type": "go2rtc",
-      "onvif_port": 80,
       "verified": false,
-      "notes": "Zavio ONVIF camera (discontinued brand) — use go2rtc ONVIF autodiscovery (onvif://{user}:{pass}@{ip})."
+      "notes": "No ONVIF stated in the datasheet or user manual. The user manual documents one RTSP path per codec stream: /video.h264 (H.264), /video.mp4 (MPEG-4), /video.mjpg (MJPEG) and /video.3gp (3GPP mobile stream, 160x120); default RTSP port 554."
     },
     "home_assistant": {
-      "integration": "onvif",
-      "notes": "Generic ONVIF."
+      "integration": "generic",
+      "notes": "Add via Generic Camera using the RTSP path /video.h264; ONVIF is not stated for this model."
     },
     "blue_iris": {
       "profile": "Generic/ONVIF",
-      "notes": "Generic ONVIF/RTSP."
+      "notes": "Generic RTSP."
     }
   }
 }

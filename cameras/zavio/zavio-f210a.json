@@ -81,23 +81,24 @@
   ],
   "cloud_dependency": "local",
   "sources": [
-    "http://web.archive.org/web/20121010134439id_/http://zavio.com/downloads/product/49/datasheet_F210A.pdf"
+    "http://web.archive.org/web/20121010134439id_/http://zavio.com/downloads/product/49/datasheet_F210A.pdf",
+    "https://web.archive.org/web/20121010134312id_/http://zavio.com/downloads/product/49/F210A%20%20Firmware%20User%20Manual%2016.03.pdf"
   ],
-  "last_verified": "2026-09-22",
+  "last_verified": "2026-10-01",
   "configs": {
     "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/video.3gp",
       "recommended_stream_type": "go2rtc",
-      "onvif_port": 80,
       "verified": false,
-      "notes": "Zavio ONVIF camera (discontinued brand) — use go2rtc ONVIF autodiscovery (onvif://{user}:{pass}@{ip})."
+      "notes": "Legacy Zavio firmware without ONVIF. The user manual documents one RTSP URL, rtsp://<IP>:<PORT>/video.3gp (default port 554, RTSP mode must be On) — the 3GPP mobile-view stream, fixed at 160x120; it prints no RTSP path for the full-resolution MPEG-4 stream."
     },
     "home_assistant": {
-      "integration": "onvif",
-      "notes": "Generic ONVIF."
+      "integration": "generic",
+      "notes": "Add via Generic Camera using the RTSP path /video.3gp; ONVIF is not stated for this model."
     },
     "blue_iris": {
       "profile": "Generic/ONVIF",
-      "notes": "Generic ONVIF/RTSP."
+      "notes": "Generic RTSP."
     }
   }
 }
