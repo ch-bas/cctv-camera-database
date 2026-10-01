@@ -9,7 +9,7 @@
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/2.8" Sony Starvis CMOS |
 | Lens | 1× 4 (fixed)mm |
-| Night vision | ir (50m) |
+| Night vision | ir (50m), 0.02 lux color |
 | Power | PoE (802.3af) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |

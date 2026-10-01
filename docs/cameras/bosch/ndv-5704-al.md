@@ -41,7 +41,6 @@
 
 - https://assets.catalog.boschbuildingtechnologies.com/public/documents/NDV_5704_AL_GOV_Data_sheet_enUS_101276248971.pdf
 - https://commerce.boschsecurity.com/ma/en/FLEXIDOME-indoor-5100i-IR/p/F.01U.394.455/
-- https://netcamcenter.de/de/produkte/ip-kameras/ndv-5704-al
 
 ---
 *Auto-generated from bosch-ndv-5704-al.json — do not edit by hand.*

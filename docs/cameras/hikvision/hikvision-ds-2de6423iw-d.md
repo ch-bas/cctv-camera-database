@@ -1,0 +1,30 @@
+# Hikvision DS-2DE6423IW-D
+
+| Field | Spec |
+|-------|------|
+| Brand | Hikvision |
+| Model | DS-2DE6423IW-D |
+| Type | ptz |
+| Connectivity | ethernet |
+| Resolution | 4MP (2560x1440) (4MP, 2560×1440) |
+| Sensor | 1/2.8" CMOS |
+| Lens | 4.8mm F1.6 |
+| Field of view | 55-2.7° |
+| Night vision | (150m), 0.001 lux, 0.005 lux color |
+| Storage | microSD ≤ 512GB |
+| Protocols | onvif, rtsp |
+| IP rating | IP66 |
+| Operating temp | -30℃~65℃°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 25 | H.265 |
+
+## Sources
+
+- https://www.jiankongqicai.com/chanpin/2663.html
+
+---
+*Auto-generated from hikvision-ds-2de6423iw-d.json — do not edit by hand.*

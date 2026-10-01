@@ -36,7 +36,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2347G2P-LSU_SL-C.pdf
+- https://assets.hikvision.com/prd/public/all/doc/sm000058406/DS-2CD2347G2P-LSU_SL-C_Datasheet_20240731.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2347g2p-lsu-sl.json — do not edit by hand.*

@@ -26,6 +26,7 @@
 ## Sources
 
 - https://camius.com/4k-ip-security-camera-2-pack-boltx8
+- https://www.camius.com/add-ip-cameras-on-network/
 
 ---
 *Auto-generated from camius-boltx-4k.json — do not edit by hand.*

@@ -12,6 +12,7 @@
 | Power | PoE (802.3af) or DC |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | rtsp |
+| IP rating | IP66 |
 | Two-way audio | Yes |
 
 ## Features

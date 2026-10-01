@@ -10,10 +10,11 @@
 | Sensor | 1/2.7" 2MP progressive CMOS |
 | Lens | 1× 3.6mm F1.4 |
 | Field of view | 86 H / 46 V / 103 D° |
-| Night vision | hybrid (30m) |
+| Night vision | hybrid (30m), 0.0001 lux, 0.001 lux color |
 | Power | PoE (IEEE 802.3af) or 12V DC |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
+| IP rating | IP67 |
 | Two-way audio | Yes |
 | Operating temp | -40 to 60°C |
 
@@ -34,6 +35,7 @@
 ## Sources
 
 - https://cpplusworld.com/cp-unc-da21l3b-lq
+- https://www.cpplusworld.com/prodassets/datasheet/CP-UNC-DA21L3B-LQ.pdf
 
 ---
 *Auto-generated from cp-plus-cp-unc-da21l3b-lq.json — do not edit by hand.*

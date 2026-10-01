@@ -42,10 +42,7 @@
 
 ## Sources
 
-- https://image.makewebeasy.net/makeweb/0/upnyp4ixT/Document/DINION_5100i_IR__Data_sheet_enUS_105250134283.pdf?v=202405291424
-- https://netcamcenter.de/de/produkte/ip-kameras/nbe-5704-al
-- https://www.use-ip.co.uk/bosch-nbe-5704-al.html
-- https://www.bhphotovideo.com/c/product/1832254-REG/bosch_nbe_5704_al_dinion_5100i_ir.html
+- https://resources.keenfinity.tech/public/documents/DINION_5100i_IR__Data_sheet_enUS_105250134283.pdf
 
 ---
 *Auto-generated from bosch-nbe-5704-al.json — do not edit by hand.*

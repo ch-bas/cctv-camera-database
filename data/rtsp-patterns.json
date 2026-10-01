@@ -4,12 +4,12 @@
     "license": "CC0-1.0",
     "description": "Brand-level RTSP URL templates for IP cameras, each verified against the manufacturer's own documentation.",
     "methodology": "StrixCamDB is used ONLY as a lead source; every path here is independently re-verified against the manufacturer's official docs (manual / API / KB), so each record is independently sourced and CC0-clean, with Strix credited as the discovery source (strix_lead). Leads that could not be confirmed officially are recorded under unverified_leads and never published as fact.",
-    "generated": "2026-09-10",
+    "generated": "2026-10-01",
     "totals": {
       "brands": 183,
       "verified": 120,
       "unverified": 63,
-      "templates": 351
+      "templates": 367
     }
   },
   "brands": [
@@ -293,6 +293,14 @@
           "verified": true,
           "source": "ACTi 'Viewing video stream using VLC player' (download.acti.com/?id=29560): 'Command: rtsp://IPaddress:RTSPport/stream#' — stream number is 1-based index; Stream 2 documented as sub-stream in ACTi Camera Firmware Manual A713/A950/A951/Q450 (download.acti.com/?id=28964).",
           "strix_lead": "strixcamdb:acti"
+        },
+        {
+          "stream": "main",
+          "path": "/",
+          "codec": "MPEG-4",
+          "verified": true,
+          "source": "https://www2.acti.com/support_old/Package/%7BFCCD9EA1-3AA7-4C31-8F94-B17BCDAA67E.PDF — ACTi Support Package TS-00110 (How to test RTP protocol with ACTi devices, updated 2007-08-14): legacy MPEG-4 devices (ACM/TCM/KCM/CAM lines) are opened in VLC with the bare MRL rtsp://<IP Address>:7070 (with auth after firmware v2.04: rtsp://Admin:123456@192.168.1.107:7070), i.e. root path on legacy default RTSP port 7070.",
+          "strix_lead": "manual:acti"
         }
       ],
       "unverified_leads": [
@@ -337,8 +345,8 @@
           "note": "Bare path with no leading slash; not confirmed in any official ACTi RTSP documentation."
         }
       ],
-      "notes": "ACTi cameras expose RTSP streams at /stream<N> (1-based: /stream1 = main, /stream2 = sub, up to /stream4 on some models). The RTSP access name is user-configurable in the camera web UI (Streaming > RTSP > Access Name); /stream1 is the typical factory default observed in ACTi's own VLC guide. Default RTSP port is 554 per the current firmware manual. Port 7070 documented in the older ACTi Streaming Explorer tool (2011) is ACTi's proprietary SDK streaming protocol port — not standard RTSP. Cameras supporting up to 4 streams use /stream1–/stream4. ACTi is a Taiwanese manufacturer (acti.com), not an OEM of Dahua or Hikvision.",
-      "verified_on": "2026-08-14"
+      "notes": "ACTi cameras expose RTSP streams at /stream<N> (1-based: /stream1 = main, /stream2 = sub, up to /stream4 on some models). The RTSP access name is user-configurable in the camera web UI (Streaming > RTSP > Access Name); /stream1 is the typical factory default observed in ACTi's own VLC guide. Default RTSP port is 554 per the current firmware manual. Port 7070 is the legacy (MPEG-4-era) default RTSP port. Cameras supporting up to 4 streams use /stream1–/stream4. ACTi is a Taiwanese manufacturer (acti.com), not an OEM of Dahua or Hikvision. Legacy MPEG-4-era ACTi devices (ACM-/TCM-/KCM- series) serve RTSP at the root path on default RTSP port 7070 per ACTi Support Package TS-00110 (rtsp://<ip>:7070), so the \"/\" main template applies to those lines; current models use /stream<N> on port 554.",
+      "verified_on": "2026-10-01"
     },
     {
       "brand": "ADT",
@@ -737,6 +745,20 @@
           "verified": true,
           "source": "Amcrest Support KB — 'Accessing Amcrest Products Using RTSP' (https://support.amcrest.com/hc/en-us/articles/360052688931-Accessing-Amcrest-Products-Using-RTSP)",
           "strix_lead": "strixcamdb:amcrest"
+        },
+        {
+          "stream": "main",
+          "path": "/<N>/1",
+          "verified": true,
+          "source": "Amcrest Support KB — 'Accessing Legacy Helix Devices Using RTSP' (https://support.amcrest.com/hc/en-us/articles/49119561879437-Accessing-Legacy-Helix-Devices-Using-RTSP) — Helix (HLX-) line only",
+          "strix_lead": "manual:amcrest"
+        },
+        {
+          "stream": "sub",
+          "path": "/<N>/0",
+          "verified": true,
+          "source": "Amcrest Support KB — 'Accessing Legacy Helix Devices Using RTSP' (https://support.amcrest.com/hc/en-us/articles/49119561879437-Accessing-Legacy-Helix-Devices-Using-RTSP) — Helix (HLX-) line only",
+          "strix_lead": "manual:amcrest"
         }
       ],
       "unverified_leads": [
@@ -761,8 +783,8 @@
           "note": "Truncated variant; official docs always use /cam/realmonitor"
         }
       ],
-      "notes": "Amcrest is a Dahua OEM (confirmed by Amcrest's own RTSP KB article using the Dahua /cam/realmonitor path). subtype=0 = main stream, subtype=1 = sub stream, subtype=2 = third stream (when supported). channel=1 for standalone IP cameras; for NVRs channel indexes per-camera (1–N). Authentication is passed in the URL as rtsp://{user}:{pass}@{ip}:{port}/... Some Smart Home product docs append &authbasic=64 but the core path is identical. Default port 554.",
-      "verified_on": "2026-08-14"
+      "notes": "Amcrest is a Dahua OEM (confirmed by Amcrest's own RTSP KB article using the Dahua /cam/realmonitor path). subtype=0 = main stream, subtype=1 = sub stream, subtype=2 = third stream (when supported). channel=1 for standalone IP cameras; for NVRs channel indexes per-camera (1–N). Authentication is passed in the URL as rtsp://{user}:{pass}@{ip}:{port}/... Some Smart Home product docs append &authbasic=64 but the core path is identical. Default port 554. Exception: the Helix (HLX-) line, Amcrest’s NDAA-compliant range, uses a different format, rtsp://{user}:{pass}@{ip}:554/<channel>/<stream>, with stream 1 = main and 0 = sub (Amcrest KB ‘Accessing Legacy Helix Devices Using RTSP’).",
+      "verified_on": "2026-10-01"
     },
     {
       "brand": "American Dynamics",
@@ -817,6 +839,22 @@
           "verified": true,
           "source": "Illustra Essentials Network Camera Web3.0 User Manual 8200-1102-07 B0 (illustracameras.com, Dahua OEM): 'Sub stream: rtsp://username:password@ip:port/cam/realmonitor?channel=1&subtype=1', default port 554.",
           "strix_lead": "strixcamdb:american-dynamics"
+        },
+        {
+          "stream": "main",
+          "path": "/videoStreamId=1",
+          "codec": "H.264 / H.265 / MJPEG (per configured stream)",
+          "verified": true,
+          "source": "https://illustracameras.com/wp-content/uploads/2024/08/UM_PG4-2-4-5-8MP-Series_8200-2007-08_L.en_-1.pdf — Illustra Pro Gen 4 Series Installation and Configuration Guide, Appendix A: \"Stream 1: rtsp://cameraip:554/videoStreamId=1\". Same path in the Flex Gen 4 guide (https://illustracameras.com/wp-content/uploads/2024/05/UM-FG4-Series_A16381M7H7_J.en_.pdf), Essentials Gen 4 guide, PTZ, Fisheye, Multisensor and Dual-Sensor Gen 4 guides (all illustracameras.com). Applies to the Gen 4 generation (Pro Gen4 / Flex Gen4 / Essentials Gen4).",
+          "strix_lead": "manual:american-dynamics"
+        },
+        {
+          "stream": "sub",
+          "path": "/videoStreamId=2",
+          "codec": "H.264 / H.265 / MJPEG (per configured stream)",
+          "verified": true,
+          "source": "https://illustracameras.com/apac/wp-content/uploads/2020/04/EG4-2MP-Dome-Bullet-UM_8200-1929-03-A0_en.pdf — Illustra Essentials Gen 4 Series Installation and Configuration Guide: \"Stream 2: rtsp://cameraip:554/videoStreamId=2\"; also Pro Gen 4 12MP Fisheye guide (https://illustracameras.com/wp-content/uploads/2022/08/UM-PG4-12MP-FE_A163818NN6_B_en-1.pdf) lists Stream 2 = /videoStreamId=2, Stream 3 = /videoStreamId=3. Gen 4 generation.",
+          "strix_lead": "manual:american-dynamics"
         }
       ],
       "unverified_leads": [
@@ -841,8 +879,8 @@
           "note": "Not in any official Illustra doc; generic ONVIF/other-brand path, contamination."
         }
       ],
-      "notes": "American Dynamics = Illustra line (Sensormatic/Tyco/Johnson Controls). Path names differ by product generation, all confirmed against Tyco/JCI official manuals: (1) Illustra 600/610 use /primarystream + /secondarystream (+ /audio); note this older generation defaults its stream ports to 7777-7781, but standard/default RTSP is 554 and paths are the load-bearing part. (2) Illustra Pro / Standard HD use /ufirststream + /usecondstream on default port 554. (3) Illustra Essentials is a Dahua OEM and uses the Dahua path /cam/realmonitor?channel=1&subtype=<0|1>. Session/stream names are configurable in the camera Web-UI (Setup > Network > RTSP/RTP). Two leads (/primarystream, /ufirststream) directly match official docs and are confirmed; the .sdp / ch0_0.h264 / /Video leads are contamination.",
-      "verified_on": "2026-08-14"
+      "notes": "American Dynamics = Illustra line (Sensormatic/Tyco/Johnson Controls). Path names differ by product generation, all confirmed against Tyco/JCI official manuals: (1) Illustra 600/610 use /primarystream + /secondarystream (+ /audio); note this older generation defaults its stream ports to 7777-7781, but standard/default RTSP is 554 and paths are the load-bearing part. (2) Illustra Pro / Standard HD use /ufirststream + /usecondstream on default port 554. (3) Illustra Essentials is a Dahua OEM and uses the Dahua path /cam/realmonitor?channel=1&subtype=<0|1>. Session/stream names are configurable in the camera Web-UI (Setup > Network > RTSP/RTP). Two leads (/primarystream, /ufirststream) directly match official docs and are confirmed; the .sdp / ch0_0.h264 / /Video leads are contamination. (4) Gen 4 generation (Illustra Pro Gen4, Flex Gen4, Essentials Gen4 incl. PTZ/fisheye/multisensor/dual-sensor) documents /videoStreamId=<n> on port 554 (Stream 1 = main, Stream 2 = sub; multi-sensor heads put later sensors on ports 555/556) — added 2026-10-01 from the official Gen 4 Installation and Configuration Guides; Gen4 records use this path.",
+      "verified_on": "2026-10-01"
     },
     {
       "brand": "ANNKE",
@@ -1730,12 +1768,12 @@
           "strix_lead": "strixcamdb:bosch"
         },
         {
-          "stream": "main-tunnel",
+          "stream": "main",
           "path": "/rtsp_tunnel",
           "codec": "H.264",
           "verified": true,
-          "source": "Bosch community (community.boschsecurity.com) and multiple Bosch VIP device integration references — /rtsp_tunnel on port 10600 is the RTSP-over-HTTP tunneling endpoint used on certain Bosch camera series (e.g. 4000 IP HD, FLEXIDOME IP). Port 10600 is Bosch-specific for this tunneled path. Referenced by Bosch community KB 'RTSP usage with Bosch VIP Devices' PDF (community.boschsecurity.com/varuj77995/attachments/varuj77995/bt_community-tkb-video/241/1/RTSP%20usage%20with%20Bosch%20Video%20IP%20Devices.pdf).",
-          "strix_lead": "strixcamdb:bosch"
+          "source": "https://download.catalogosicurezza.com/DOWNLOAD/Bosch/Documentazione/TVCC/Manuali/Prodotti_IP/rtsp%20.pdf — Bosch \"RTSP usage with Bosch VIP Devices\" (www.boschsecurity.com), section 3.2.8 Establish RTSP tunnel: parameter rtsp_tunnel, example RTSP://160.10.0.1/rtsp_tunnel (default RTSP port 554); note: rtsp_tunnel is a path, not part of the query string, and does not change the media transport mode — an alias of the default stream that also accepts the ?inst=<N> query (e.g. RTSP://160.10.1.100/rtsp_tunnel?tc=1...).",
+          "strix_lead": "manual:bosch"
         }
       ],
       "unverified_leads": [
@@ -1812,8 +1850,8 @@
           "note": "Malformed — 'line' is a Bosch RTSP query parameter (for multi-channel encoders: ?line=<N>), not a path segment. This appears to be a StrixCamDB parsing artifact of the query string. The valid usage is /?line=2&inst=1 as documented in the Bosch RTSP VIP Configuration Note."
         }
       ],
-      "notes": "Bosch VIP (Video IP) cameras use a query-string-only RTSP URL format with no fixed path beyond '/': rtsp://{user}:{pass}@{ip}:{port}/?inst=<N>. inst=1 = stream 1 (main/primary), inst=2 = stream 2 (sub/secondary). Additional documented parameters: line=<N> (selects camera/channel on multi-channel encoders), h26x=4 (selects H.264 encoding), multicast=1 (multicast transport), enableaudio=1&audio_line=<N> (audio). Port 554 is the standard RTSP port for direct streaming. Port 10600 is Bosch-specific for the RTSP-over-HTTP tunneling endpoint (/rtsp_tunnel), used on certain camera series (4000 IP HD and others) for firewall traversal. Applies to Bosch DINION IP, FLEXIDOME IP, AUTODOME IP, and VIP encoder product lines. Bosch is a proprietary OEM — these paths are not shared with Dahua/Hikvision/Axis. The 'RTSP VIP Configuration Note' is the authoritative source (doc 9007200806939915, originally at ipp.boschsecurity.com/en_US).",
-      "verified_on": "2026-08-14"
+      "notes": "Bosch VIP (Video IP) cameras use a query-string-only RTSP URL format with no fixed path beyond '/': rtsp://{user}:{pass}@{ip}:{port}/?inst=<N>. inst=1 = stream 1 (main/primary), inst=2 = stream 2 (sub/secondary). Additional documented parameters: line=<N> (selects camera/channel on multi-channel encoders), h26x=4 (selects H.264 encoding), multicast=1 (multicast transport), enableaudio=1&audio_line=<N> (audio). Port 554 is the standard RTSP port for direct streaming. /rtsp_tunnel is a documented alias path for the default stream on the standard RTSP port 554 (Bosch RTSP VIP note §3.2.8); it enables HTTP (port 80) tunneling when the client requests it and accepts the same ?inst=<N> query. Bosch is a proprietary OEM — these paths are not shared with Dahua/Hikvision/Axis. The 'RTSP VIP Configuration Note' is the authoritative source (doc 9007200806939915, originally at ipp.boschsecurity.com/en_US).",
+      "verified_on": "2026-10-01"
     },
     {
       "brand_id": "bosch-smart-home",
@@ -1865,10 +1903,24 @@
           "verified": true,
           "source": "RTSP Streaming Setup Guide for NVR, DVR and IP Cameras — https://www.camius.com/rtsp-ip-camera-camius/",
           "strix_lead": "manual:camius"
+        },
+        {
+          "stream": "main",
+          "path": "/ch01/0",
+          "verified": true,
+          "source": "How To Add IP Camera To NVR (direct IP camera RTSP, port 554) — https://www.camius.com/add-ip-cameras-on-network/",
+          "strix_lead": "manual:camius"
+        },
+        {
+          "stream": "sub",
+          "path": "/ch01/1",
+          "verified": true,
+          "source": "How To Add IP Camera To NVR (direct IP camera RTSP, port 554) — https://www.camius.com/add-ip-cameras-on-network/",
+          "strix_lead": "manual:camius"
         }
       ],
-      "notes": "Camius NVRs and DVRs use the path /rtsp/streaming?channel=<N>&subtype=0 (main) or subtype=1 (sub). Default RTSP port is 80 for firmware V8.2.4.1+; earlier firmware defaults to port 554. Port is configurable via Network >> General >> Port Configuration. Authentication uses admin credentials. Camius appears to be a US-based brand selling their own NVR/DVR systems; no confirmed OEM relationship identified from official docs.",
-      "verified_on": "2026-08-14"
+      "notes": "Camius NVRs and DVRs use the path /rtsp/streaming?channel=<N>&subtype=0 (main) or subtype=1 (sub). Default RTSP port is 80 for firmware V8.2.4.1+; earlier firmware defaults to port 554. Port is configurable via Network >> General >> Port Configuration. Authentication uses admin credentials. Camius appears to be a US-based brand selling their own NVR/DVR systems; no confirmed OEM relationship identified from official docs. Individual Camius IP cameras accessed directly use rtsp://CAMERA_IP:554/ch01/0 (main), /ch01/1 (sub), /ch01/2 (mobile) per the official add-IP-camera guide.",
+      "verified_on": "2026-10-01"
     },
     {
       "brand": "Canon",
@@ -2528,23 +2580,23 @@
       "templates": [
         {
           "stream": "main",
-          "path": "/cam/realmonitor?channel=1&subtype=0",
-          "codec": "H.264|H.265",
+          "path": "/profile1",
+          "codec": "H.264",
           "verified": true,
-          "source": "https://digital-watchdog.com/productdetail/DWC-MB45Wi650TW/ — MEGApix cameras use Dahua-compatible RTSP",
+          "source": "https://digitalwatchdog.happyfox.com/kb/article/323-megapix-ip-camera-rtsp-stream-list/ — DW KB 323 MEGApix IP Camera RTSP Stream List (Core Professional & Value Line)",
           "strix_lead": "manual:digital-watchdog"
         },
         {
           "stream": "sub",
-          "path": "/cam/realmonitor?channel=1&subtype=1",
-          "codec": "H.264|H.265",
+          "path": "/profile2",
+          "codec": "H.264",
           "verified": true,
-          "source": "https://digital-watchdog.com/productdetail/DWC-MB45Wi650TW/ — MEGApix cameras use Dahua-compatible RTSP",
+          "source": "https://digitalwatchdog.happyfox.com/kb/article/323-megapix-ip-camera-rtsp-stream-list/ — DW KB 323 MEGApix IP Camera RTSP Stream List (Core Professional & Value Line)",
           "strix_lead": "manual:digital-watchdog"
         }
       ],
-      "notes": "Digital Watchdog MEGApix series uses Dahua-compatible firmware. RTSP paths follow Dahua realmonitor format. Specialty cameras (panoramic, PTZ) may use different paths.",
-      "verified_on": "2026-08-17"
+      "notes": "Per DW KB 323: current MEGApix cameras (Core Professional & Value Line) use /profile1 (1st) and /profile2 (2nd). Exceptions in the same KB: MEGApix PTZ DWC-XPZA03Mi/XPZA08Mi use /video1+audio1 and /video1s+audio1; MEGApix PANO (DWC-PZ21M69TW, DWC-PVX20) expose profile1-4 (1st stream per channel) and profile5-8 (2nd); legacy models differ (DWC-EN672 /channel1, DWC-MB950/MV950 /rtpvideo1.sdp, DWC-MV85DiA AVStream1_1, HIK-OEM DWC-MVH2I4WV/MBH2I4WV channel 101/102). The earlier Dahua realmonitor template was not supported by any DW document.",
+      "verified_on": "2026-10-01"
     },
     {
       "brand": "Digitus",
@@ -3218,12 +3270,36 @@
           "strix_lead": "strixcamdb:flir"
         },
         {
-          "stream": "main-ch",
+          "stream": "main",
           "path": "/ch0",
           "codec": "H.264 or thermal per-model",
           "verified": true,
           "source": "FLIR Support KB article 'FLIR Thermal Security Cameras - Opening and troubleshooting video issues' (flir.custhelp.com/app/answers/detail/a_id/5428): documents rtsp://camera_IP:554/ch0 as Thermal 1 / primary channel for PT-Series, D-Series, A310pt, F-Series, FC-Series S/N/R, FC-Series ID/O, and PT-Series HD. Also confirmed for thermal-fusion cameras (ch0 = Thermal 1, ch2 = Visible 1 on PT/D-Series).",
           "strix_lead": "strixcamdb:flir"
+        },
+        {
+          "stream": "sub",
+          "path": "/ch1",
+          "codec": "H.264 or thermal per-model",
+          "verified": true,
+          "source": "FLIR Support KB article 'FLIR Thermal Security Cameras - Opening and troubleshooting video issues' (https://flir.custhelp.com/app/answers/detail/a_id/5428/~/flir-thermal-security-cameras---opening-and-troubleshooting-video-issues): documents rtsp://camera_IP:554/ch1 as Thermal 2 for PT-Series, D-Series, A310pt, F-Series, F-Series ID, FC-Series S/N/R and FC-Series ID/O.",
+          "strix_lead": "manual:flir"
+        },
+        {
+          "stream": "main",
+          "path": "/stream1/sensor1",
+          "codec": "H.264",
+          "verified": true,
+          "source": "FLIR Support KB article 'FLIR Thermal Security Cameras - Opening and troubleshooting video issues' (https://flir.custhelp.com/app/answers/detail/a_id/5428/~/flir-thermal-security-cameras---opening-and-troubleshooting-video-issues): documents rtsp://camera_IP:554/stream1/sensor1 as Thermal 1 for the Elara FB-Series ID/O.",
+          "strix_lead": "manual:flir"
+        },
+        {
+          "stream": "sub",
+          "path": "/stream2/sensor1",
+          "codec": "H.264",
+          "verified": true,
+          "source": "FLIR Support KB article 'FLIR Thermal Security Cameras - Opening and troubleshooting video issues' (https://flir.custhelp.com/app/answers/detail/a_id/5428/~/flir-thermal-security-cameras---opening-and-troubleshooting-video-issues): documents rtsp://camera_IP:554/stream2/sensor1 as Thermal 2 for the Elara FB-Series ID/O.",
+          "strix_lead": "manual:flir"
         },
         {
           "stream": "main-avc",
@@ -3316,7 +3392,7 @@
           "note": "Malformed lead (no leading slash) — duplicate of /wfov without proper prefix; excluded."
         }
       ],
-      "notes": "FLIR's security camera product line spans two distinct families with different RTSP path conventions. (1) FLIR IP security cameras (FH-Series ID/R, DM-Series, DX-Series, DH-390, FR-345-EST) use /stream1 (main/visible-1) and /stream2 (sub/visible-2) on port 554; some of these also have /stream3 and /stream4 for thermal channels. (2) FLIR thermal security cameras (PT-Series, D-Series, A310pt, F-Series, FC-Series) use /ch0 (thermal-1) and /ch1 (thermal-2), with /ch2 and /ch3 for visible on dual-sensor models. FB-Series ID/O uses /stream1/sensor1 and /stream2/sensor1 — a nested path variant documented in the same KB but not represented as a lead here. (3) FLIR automation/science cameras (AX8, A-series, G300a) use format-based paths: /avc (H.264), /mpeg4, /mjpg — all on port 554, no authentication required by default. FLIR acquired Lorex and Digimerge; the FLIR IP Series cameras sold under those brands (N-series models, e.g. N233ZC) use the same firmware and RTSP conventions as the FLIR IP security camera family (/stream1, /stream2). Many leads in the StrixCamDB set for this brand are Hikvision-style /ch<N><N>/0 paths — these are cross-brand contamination and are excluded. Default port is 554 for all security and automation cameras; FLIR Maritime thermal cameras use port 8554 but those are out of scope here.",
+      "notes": "FLIR's security camera product line spans two distinct families with different RTSP path conventions. (1) FLIR IP security cameras (FH-Series ID/R, DM-Series, DX-Series, DH-390, FR-345-EST) use /stream1 (main/visible-1) and /stream2 (sub/visible-2) on port 554; some of these also have /stream3 and /stream4 for thermal channels. (2) FLIR thermal security cameras (PT-Series, D-Series, A310pt, F-Series, FC-Series) use /ch0 (thermal-1) and /ch1 (thermal-2), with /ch2 and /ch3 for visible on dual-sensor models. FB-Series ID/O uses /stream1/sensor1 and /stream2/sensor1 — a nested path variant documented in the same KB (templates added 2026-10-01). The Quasar 4K IR PTZ (CP-6408-x1-I) uses /stream1 and /stream2 (Quasar 4K IR PTZ Installation and User Guide, flir.netx.net asset 26318; ch0/ch1 are legacy aliases); other Quasar models are not covered by that guide. (3) FLIR automation/science cameras (AX8, A-series, G300a) use format-based paths: /avc (H.264), /mpeg4, /mjpg — all on port 554, no authentication required by default. FLIR acquired Lorex and Digimerge; the FLIR IP Series cameras sold under those brands (N-series models, e.g. N233ZC) use the same firmware and RTSP conventions as the FLIR IP security camera family (/stream1, /stream2). Many leads in the StrixCamDB set for this brand are Hikvision-style /ch<N><N>/0 paths — these are cross-brand contamination and are excluded. Default port is 554 for all security and automation cameras; FLIR Maritime thermal cameras use port 8554 but those are out of scope here.",
       "verified_on": "2026-08-14"
     },
     {
@@ -3722,6 +3798,14 @@
           "verified": true,
           "source": "Hanwha Vision Support Portal — 'Camera - RTSP URL' (https://support.hanwhavision.com/hc/en-001/articles/47782445700243-Camera-RTSP-URL): profile3 is the documented sub stream. Also confirmed by 'RTSP URLs' (https://support.hanwhavision.eu/hc/en-gb/articles/4414178841746-RTSP-URLs) and 'What are the RTSP URLs of Hanwha Devices?' (https://support.hanwhavision.com/hc/en-001/articles/47257361792659-What-are-the-RTSP-URLs-of-Hanwha-Devices)",
           "strix_lead": "strixcamdb:hanwha"
+        },
+        {
+          "stream": "main",
+          "path": "/0/profile2/media.smp",
+          "codec": "H.264/H.265",
+          "verified": true,
+          "source": "https://support.hanwhavision.eu/hc/en-gb/articles/4414178841746-RTSP-URLs — Hanwha Vision Europe Support \"RTSP URLs\": Multi-Sensor IP Cameras & Encoders use rtsp://<DeviceIP>:<port>/<sensor#>/profile2/media.smp, sensor# 0-3 (0 = Sensor 1); examples PNM-9081VQ, PNM-9080VQ, PNM-9322VQP, PNM-9002VQ, PNM-7002VD. Camera 1 = /0/profile2/media.smp (multi-sensor/multi-directional models only).",
+          "strix_lead": "manual:hanwha"
         }
       ],
       "unverified_leads": [
@@ -6051,6 +6135,14 @@
         },
         {
           "stream": "main",
+          "path": "/stream0/mobotix.mjpeg",
+          "codec": "MJPEG",
+          "verified": true,
+          "source": "MOBOTIX Community — 'RTSP Streaming with Mobotix Cameras' (https://community.mobotix.com/t/rtsp-streaming-with-mobotix-cameras/4912): Mx4/5 cameras (D14, M25, T24 etc.; no H.264 RTSP, no ONVIF) — 'rtsp://user:password@CameraIP:554/stream0/mobotix.mjpeg' after updating to firmware 4.4.2.51 r1+ and enabling Genetec integration; also listed for Mx6 pre-5.4.0.44 ('M-JPEG with a standard user account').",
+          "strix_lead": "manual:mobotix"
+        },
+        {
+          "stream": "main",
           "path": "/onvif/mobotix.h264",
           "codec": "H.264",
           "verified": true,
@@ -6374,6 +6466,22 @@
           "verified": true,
           "source": "i-PRO Command Interface ver1.09, Section 2.3.3 — legacy H.264-only form, stream (2)",
           "strix_lead": "strixcamdb:panasonic"
+        },
+        {
+          "stream": "main",
+          "path": "/profile1",
+          "codec": "H.264|H.265 (per-profile)",
+          "verified": true,
+          "source": "https://www.panasonic.com/content/dam/panasonic/mea/learn-more/datasheet-manuals-docs/User-Manual_Colour-IR-cameras.pdf — Panasonic Middle East PM-series (TVT-OEM) User Manual, Config → Network → RTSP: main stream address format \"rtsp://IP address: rtsp port/profile1?transportmode=mcast\" (multicast form; unicast drops the query), default RTSP port 554. Same text in the PM-EB2NLFR-W/PM-ED2NLFR-W, PM-VB2ULVR-W, PM-VB5ULFR-W and PM-VP4ULVR-W Operating Instructions.",
+          "strix_lead": "manual:panasonic"
+        },
+        {
+          "stream": "sub",
+          "path": "/profile2",
+          "codec": "H.264|H.265 (per-profile)",
+          "verified": true,
+          "source": "https://www.panasonic.com/content/dam/panasonic/mea/learn-more/datasheet-manuals-docs/User-Manual_Colour-IR-cameras.pdf — same section: sub stream address format \"rtsp://IP address: rtsp port/profile2?transportmode=mcast\".",
+          "strix_lead": "manual:panasonic"
         }
       ],
       "unverified_leads": [
@@ -6398,7 +6506,7 @@
           "note": "Generic SDP endpoint, not documented for Panasonic/i-PRO. Cross-brand contamination. Excluded."
         }
       ],
-      "notes": "Panasonic Security is now i-PRO Co., Ltd. Current/official RTSP scheme (i-PRO Command Interface spec, Section 2.3.3): rtsp://{ip}:554/Src/MediaInput/stream_<N> for N=1..4 (codec-agnostic, follows the per-stream encode profile H.264 or H.265). A legacy H.264-only form /Src/MediaInput/h264/stream_<N> (and /Src/MediaInput/h264) is also officially documented and returns error 503 if the stream is not set to H.264. Multi-sensor / Fisheye-quad models append /ch_<N> (e.g. /Src/MediaInput/stream_1/ch_1). Requesting rtsp://{ip}/Src/MediaInput with stream+ch omitted returns the configured Initial Stream. Default RTSP port 554. Legacy consumer BB-HCM/BL-C MPEG-4 cameras used /nphMpeg4/g726-<WxH> (recorded under unverified_leads pending a Panasonic-own manual).",
+      "notes": "Panasonic Security is now i-PRO Co., Ltd. Current/official RTSP scheme (i-PRO Command Interface spec, Section 2.3.3): rtsp://{ip}:554/Src/MediaInput/stream_<N> for N=1..4 (codec-agnostic, follows the per-stream encode profile H.264 or H.265). A legacy H.264-only form /Src/MediaInput/h264/stream_<N> (and /Src/MediaInput/h264) is also officially documented and returns error 503 if the stream is not set to H.264. Multi-sensor / Fisheye-quad models append /ch_<N> (e.g. /Src/MediaInput/stream_1/ch_1). Requesting rtsp://{ip}/Src/MediaInput with stream+ch omitted returns the configured Initial Stream. Default RTSP port 554. Legacy consumer BB-HCM/BL-C MPEG-4 cameras used /nphMpeg4/g726-<WxH> (recorded under unverified_leads pending a Panasonic-own manual). Panasonic Middle East \"PM-\" series (PM-EB/ED/ET/PA/PB/PD/PH/PX/VB/VD/VP/VT…) is a separate TVT-OEM line, not i-PRO: its manuals (data port 9008, Config → Network → RTSP) document /profile1 (main) and /profile2 (sub) on port 554.",
       "verified_on": "2026-08-14"
     },
     {
@@ -9285,20 +9393,28 @@
           "verified": true,
           "source": "Vivotek Support KB (vivotek.zendesk.com/hc/en-001/articles/900006469063): stream indexing follows live1s<N>.sdp pattern — 'replace s0 with s1, s2, or s3 for stream2, stream3, or stream4 respectively'; stream 2 access name is therefore live1s2.sdp by the documented convention. Confirmed in Vivotek IB9367-EHT-v2 User Manual (ManualsLib manual/2744629): 'URL format rtsp://<ip>:<port>/<access name for stream 1 to 3>'.",
           "strix_lead": "strixcamdb:vivotek"
+        },
+        {
+          "stream": "main",
+          "path": "/live.sdp",
+          "codec": "H.264 or H.265 (per camera configuration)",
+          "verified": true,
+          "source": "https://download.vivotek.com/downloadfile/downloads/usersmanuals/md8563-dehmanual_en.pdf — Vivotek MD8563-DEH User Manual: example \"rtsp://192.168.5.151:554/live.sdp\" and \"live.sdp = s0_accessname (stream1), live2.sdp = s1_accessname (stream2)\". Vivotek Support KB https://vivotek.zendesk.com/hc/en-001/articles/900006469063 : live.sdp/live2.sdp remain the access names on firmware below 0x13 and on units upgraded to 0x13+ without a factory reset (live1s1.sdp only after reset on 0x13+).",
+          "strix_lead": "manual:vivotek"
+        },
+        {
+          "stream": "sub",
+          "path": "/live2.sdp",
+          "codec": "H.264 or H.265 (per camera configuration)",
+          "verified": true,
+          "source": "https://download.vivotek.com/downloadfile/downloads/usersmanuals/md8563-dehmanual_en.pdf — Vivotek MD8563-DEH User Manual: example \"rtsp://192.168.5.151:554/live.sdp\" and \"live.sdp = s0_accessname (stream1), live2.sdp = s1_accessname (stream2)\". Vivotek Support KB https://vivotek.zendesk.com/hc/en-001/articles/900006469063 : live.sdp/live2.sdp remain the access names on firmware below 0x13 and on units upgraded to 0x13+ without a factory reset (live1s1.sdp only after reset on 0x13+).",
+          "strix_lead": "manual:vivotek"
         }
       ],
       "unverified_leads": [
         {
-          "path": "/live.sdp",
-          "note": "Legacy firmware default (pre-0x13): documented in Vivotek Support KB as the old stream 1 access name before firmware 0x13 changed it to live1s1.sdp. Still functionally valid on cameras that were not factory-reset after firmware upgrade, but not the current documented default."
-        },
-        {
           "path": "live.sdp",
           "note": "Same as /live.sdp (missing leading slash variant in strix lead). See /live.sdp note."
-        },
-        {
-          "path": "/live2.sdp",
-          "note": "Legacy firmware default for stream 2 (pre-0x13). Superseded by /live1s2.sdp in current firmware. Not a current documented default."
         },
         {
           "path": "/live1.sdp",
@@ -9345,8 +9461,8 @@
           "note": "Malformed double-slash path. Not documented in any official Vivotek source."
         }
       ],
-      "notes": "Vivotek (vivotek.com, Taiwanese manufacturer) uses user-configurable RTSP access names. Factory defaults changed at firmware 0x13: stream 1 changed from live.sdp to live1s1.sdp, stream 2 from live2.sdp to live1s2.sdp. The naming convention is live1s<N>.sdp where N is the 1-based stream index. Default RTSP port is 554. Access names are configurable under Configuration > Network > Streaming Protocols > RTSP > Access name for stream <N>. Newer firmware (2.2002.x.x+) also supports ONVIF Media2 at /media2/stream.sdp?profile=token (documented in Vivotek Support KB vivotek.zendesk.com/hc/en-001/articles/4952515434649) but this profile-based URL is outside the fixed-template scope of this dataset.",
-      "verified_on": "2026-08-14"
+      "notes": "Vivotek (vivotek.com, Taiwanese manufacturer) uses user-configurable RTSP access names. Factory defaults changed at firmware 0x13: stream 1 changed from live.sdp to live1s1.sdp, stream 2 from live2.sdp to live1s2.sdp. The naming convention is live1s<N>.sdp where N is the 1-based stream index. Default RTSP port is 554. Access names are configurable under Configuration > Network > Streaming Protocols > RTSP > Access name for stream <N>. Newer firmware (2.2002.x.x+) also supports ONVIF Media2 at /media2/stream.sdp?profile=token (documented in Vivotek Support KB vivotek.zendesk.com/hc/en-001/articles/4952515434649) but this profile-based URL is outside the fixed-template scope of this dataset. Legacy access names /live.sdp (stream 1) and /live2.sdp (stream 2) are documented in Vivotek user manuals for pre-0x13 firmware and persist on upgraded-but-not-reset units, so both naming schemes are listed as verified templates.",
+      "verified_on": "2026-10-01"
     },
     {
       "brand": "VStarcam",

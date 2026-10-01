@@ -10,6 +10,8 @@
 | Sensor | 1/3" Color CMOS |
 | Lens | 3.6mm F1.6 |
 | Night vision | hybrid (25m), 0.05 lux color |
+| IP rating | IP66 |
+| Two-way audio | No |
 | Operating temp | -20 to 50°C |
 
 ## Features
@@ -27,6 +29,7 @@
 ## Sources
 
 - https://www.mapesen.com/web/userfiles/productfile/gengxin/L2IH500LFspecification-mapesenV.I03.pdf
+- https://www.mapesen.com/normal-camera/l2i-full-color-series.html
 
 ---
 *Auto-generated from mapesen-l2ih500lf.json — do not edit by hand.*

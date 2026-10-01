@@ -15,6 +15,7 @@
 | Storage | microSD ≤ 256GB |
 | Protocols | onvif, rtsp, http |
 | Two-way audio | Yes |
+| Operating temp | -30 to 60 C°C |
 
 ## Streams
 

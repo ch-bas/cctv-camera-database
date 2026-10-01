@@ -12,6 +12,7 @@
 | Field of view | 132° |
 | Night vision | hybrid |
 | Power | Built-in 10000mAh battery with integrated solar panel; USB Type-C charging |
+| IP rating | IP66 |
 | Two-way audio | No |
 | Operating temp | -20 to 55°C |
 

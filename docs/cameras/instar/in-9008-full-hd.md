@@ -16,6 +16,7 @@
 | Power | PoE (802.3af, on the PoE variant) or DC power adapter / WiFi variant |
 | Storage | microSD ≤ 128GB, NVR |
 | Protocols | rtsp |
+| IP rating | IP65 |
 | Two-way audio | No |
 | Operating temp | -5 to 55 (-20 to 55 with optional heater accessory)°C |
 

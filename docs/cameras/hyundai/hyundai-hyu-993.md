@@ -1,0 +1,32 @@
+# Hyundai HYU-993
+
+*Also known as: HYU-993*
+
+| Field | Spec |
+|-------|------|
+| Brand | Hyundai |
+| Model | HYU-993 |
+| Type | bullet |
+| Connectivity | ethernet |
+| Resolution | 2MP (2MP) |
+| Lens | 2.8mm F1.6 |
+| Field of view | 111° |
+| Night vision | ir (30m), 0.005 lux |
+| Storage | microSD ≤ 256GB, NVR |
+| Protocols | rtsp |
+| IP rating | IP66 |
+| Two-way audio | Yes |
+| Operating temp | -30 to 60°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 30 | H.265+ |
+
+## Sources
+
+- https://bydemes.com/en/products/cctv/network-cameras/bullet/HYU-993
+
+---
+*Auto-generated from hyundai-hyu-993.json — do not edit by hand.*

@@ -1,0 +1,52 @@
+# Avigilon H6A PTZ 2MP In-Ceiling (2.0C-H6A-PTZ-DC30-B)
+
+*Also known as: 2.0C-H6A-PTZ-DC30-B*
+
+| Field | Spec |
+|-------|------|
+| Brand | Avigilon |
+| Model | H6A PTZ 2MP In-Ceiling (2.0C-H6A-PTZ-DC30-B) |
+| Type | ptz |
+| Connectivity | ethernet |
+| Resolution | 2MP (2MP, 1920×1080) |
+| Sensor | 1/1.8" progressive scan CMOS |
+| Lens | 1× 6.5-162.5mm F1.6-F4.8 |
+| Field of view | 58.1 x 34.8 (wide) to 2.3 x 1.4 (tele)° |
+| Night vision | none, 0.06 lux, 0.1 lux color |
+| Power | PoE (IEEE 802.3at Type 2, Class 4 compliant) |
+| Storage | NVR |
+| Protocols | onvif, rtsp, http |
+| IK rating | IK10 |
+| Two-way audio | Yes |
+| Operating temp | -10 to 50°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 60 | H.265 |
+
+## Features
+
+- AI-Powered Video Analytics
+- Auto-Tracking (post-launch firmware upgrade)
+- 30x Enhanced Optical Zoom
+- 12x Digital Zoom
+- HDSM SmartCodec technology
+- Idle scene mode
+- Digital Defog
+- Electronic Image Stabilization
+- 3D Noise Reduction Filter
+- 300 configurable P/T Presets
+- 100 configurable P/T Tours
+- FIPS 140-3 Level 3 onboard TPM
+- Secure Boot
+- IK09 (bubble) impact rating
+- ONVIF Profile S, T, G, M compliant
+
+## Sources
+
+- https://docs.avigilon.com/bundle/h6-a-ptz-camera-datasheet/resource/h6-a-ptz-camera-datasheet.pdf
+
+---
+*Auto-generated from avigilon-h6a-ptz-dc30-b-2mp.json — do not edit by hand.*

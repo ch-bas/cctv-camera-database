@@ -18,6 +18,7 @@
 | Protocols | onvif, rtsp, http |
 | IP rating | IP67 |
 | Two-way audio | No |
+| Operating temp | -30 to 60°C |
 
 ## Streams
 
@@ -39,7 +40,7 @@
 
 ## Sources
 
-- https://www.hikvision.com/en/products/IP-Products/Network-Cameras/
+- https://assets.hikvision.com/prd/normal/all/doc/sm000064598/DS-2CD2087G2-LU-C_Datasheet_V5.5.115_20230418.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2087g2-lu.json — do not edit by hand.*

@@ -23,6 +23,7 @@
 
 - https://digital-watchdog.com/productdetail/DWC-MV72Di28T/
 - https://digitalwatchdog.s3.us-west-1.amazonaws.com/_downloads_2025/4f520256-769f-4e04-95e1-969dc2352527/DW_DS_DWC-MV72Di28T_REV0421.pdf
+- https://digitalwatchdog.happyfox.com/kb/article/323-megapix-ip-camera-rtsp-stream-list/
 
 ---
 *Auto-generated from digital-watchdog-dwc-mv72di28t.json — do not edit by hand.*

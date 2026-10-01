@@ -10,7 +10,7 @@
 | Connectivity | ethernet, 4g, wifi |
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/1.8" CMOS |
-| Lens | 1× 6-186mm |
+| Lens | 1× 6-186mm F1.6-F4.0 |
 | Field of view | 2.8-59.8° |
 | Night vision | ir (100m), 0.001 lux color |
 | Power | DC 12V, 5A |

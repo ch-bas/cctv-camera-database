@@ -29,7 +29,7 @@
 
 ## Features
 
-- 6 MP ColorVu 180° panoramic turret
+- 6 MP ColorVu 180-degree panoramic turret
 - 24/7 full-color imaging
 - Smart Hybrid Light (IR + white light)
 - Person and Vehicle Detection
@@ -44,7 +44,8 @@
 
 ## Sources
 
-- https://www.hikvision.com/en/products/HiLook-IP-Products/
+- https://assets.hikvision.com/prd/public/all/doc/sm000084271/IPC-T269HAD-LUF_SLRB_Datasheet_20250225.pdf
+- https://www.hikvision.com/mena-en/products/HiLook-IP-Products/Network-Cameras/Value-Camera/ipc-t269had-luf-s-l--rb-/
 
 ---
 *Auto-generated from hilook-ipc-t269had-luf.json — do not edit by hand.*

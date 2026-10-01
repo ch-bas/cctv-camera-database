@@ -35,7 +35,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2T27G2-L-C.pdf
+- https://assets.hikvision.com/prd/public/all/doc/sm000058337/DS-2CD2T27G2-L-C_Datasheet_V5.5.113_20230418.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2t27g2-l.json — do not edit by hand.*

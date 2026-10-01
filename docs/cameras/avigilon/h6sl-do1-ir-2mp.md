@@ -10,7 +10,7 @@
 | Connectivity | ethernet |
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/2.8" CMOS |
-| Lens | 1× 3.4-10.5 (motorized varifocal)mm |
+| Lens | 1× 3.4-10.5 (motorized varifocal)mm F1.6 |
 | Field of view | 97-33 horizontal° |
 | Night vision | ir (30m), 0.01 lux color |
 | Power | PoE (802.3af) |
@@ -19,6 +19,7 @@
 | IP rating | IP66 |
 | IK rating | IK10 |
 | Two-way audio | No |
+| Operating temp | -40 to +60°C |
 
 ## Features
 

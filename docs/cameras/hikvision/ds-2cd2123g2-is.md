@@ -35,7 +35,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2123G2-IS.pdf
+- https://assets.hikvision.com/prd/normal/all/doc/sm000058885/DS-2CD2123G2-I-D-Black_Datasheet_20260525.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2123g2-is.json — do not edit by hand.*

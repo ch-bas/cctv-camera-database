@@ -1,21 +1,22 @@
-# Bosch FLEXIDOME 8100i IR — X series (NDE-8702-RXL)
+# Bosch FLEXIDOME 8100i IR - X series (NDE-8702-RXL)
 
 | Field | Spec |
 |-------|------|
 | Brand | Bosch |
-| Model | FLEXIDOME 8100i IR — X series (NDE-8702-RXL) |
+| Model | FLEXIDOME 8100i IR - X series (NDE-8702-RXL) |
 | Type | dome |
 | Connectivity | ethernet |
 | Resolution | 1080p (2.1MP, 1920×1080) |
 | Sensor | 1/1.8" CMOS |
 | Lens | 1× 4.4-10mm F1.3 |
 | Field of view | 48-110 (horizontal)° |
-| Night vision | ir (50m), 0.009 lux color |
+| Night vision | ir (50m), 0.0007 lux, 0.009 lux color |
 | Power | PoE (IEEE 802.3at Type 2 / PoE+) or 24 VAC |
-| Storage | NVR |
+| Storage | microSD ≤ 2000GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP66/IP67/IP6K9K |
 | IK rating | IK11 |
+| Two-way audio | No |
 | Operating temp | -50 to 60°C |
 | Released | 2024 |
 
@@ -40,8 +41,6 @@
 
 ## Sources
 
-- https://netcamcenter.de/de/produkte/ip-kameras/nde-8702-rxl
-- https://netcamcenter.com/en/products/ip-cameras/nde-8702-rxl
 - https://www.a1securitycameras.com/bosch-nde-8702-rxl.html
 - https://resources.keenfinity.tech/public/documents/FD_8100i_IR_X_series_Data_sheet_enUS_125842920971.pdf
 - https://www.cdw.com/product/bosch-flexidome-8100i-ir-x-network-surveillance-camera-dome-taa-com/8307966

@@ -8,6 +8,7 @@
 | Connectivity | ethernet |
 | Resolution | 5MP (5MP, 2960×1668) |
 | Sensor | 1/2.7" 5MP progressive CMOS |
+| Night vision | none, 0.0001 lux, 0.001 lux color |
 | Power | PoE (IEEE 802.3af) or 12V DC |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |

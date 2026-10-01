@@ -14,6 +14,7 @@
 | Field of view | 113-64° |
 | Night vision | ir (40m), 0.03 lux color |
 | Power | DC12V / PoE (IEEE802.3af) |
+| Storage | microSD ≤ 128GB |
 | Protocols | onvif, rtsp, http |
 | IP rating | IP67 |
 | IK rating | IK11 |

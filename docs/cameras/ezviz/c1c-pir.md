@@ -19,6 +19,12 @@
 | Operating temp | -10 to 45°C |
 | Released | 2020 |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 20 | H.264 |
+
 ## Features
 
 - magnetic base (360° positioning)

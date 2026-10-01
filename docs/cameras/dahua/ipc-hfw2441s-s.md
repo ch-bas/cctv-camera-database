@@ -7,13 +7,16 @@
 | Type | bullet |
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2688×1520) |
+| Sensor | 1/2.9" CMOS |
+| Lens | F1.6 |
 | Field of view | 106h° |
-| Night vision | ir (30m), 0.006 lux color |
+| Night vision | ir (30m), 0.0006 lux, 0.006 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
+| Operating temp | -40 to +60°C |
 | Released | 2022 |
 
 ## Streams

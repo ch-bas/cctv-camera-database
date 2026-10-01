@@ -35,7 +35,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2327G2-LU-C.pdf
+- https://assets.hikvision.com/prd/normal/all/doc/sm000058326/DS-2CD2327G2-LU-C_Datasheet_20260713.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2327g2-lu.json — do not edit by hand.*

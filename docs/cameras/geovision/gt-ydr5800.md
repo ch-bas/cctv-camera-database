@@ -1,0 +1,49 @@
+# GeoVision GT-YDR5800
+
+*Also known as: GT-YDR5800*
+
+| Field | Spec |
+|-------|------|
+| Brand | GeoVision |
+| Model | GT-YDR5800 |
+| Type | dome |
+| Connectivity | ethernet |
+| Resolution | 5MP (5MP, 2592×1944) |
+| Sensor | 1/2.8" CMOS |
+| Lens | 1× 2.8mm F2.2 |
+| Field of view | 98 H / 71.7 V / 127.9 D° |
+| Night vision | ir (40m), 0.008 lux, 0.05 lux color |
+| Power | 12V DC / PoE (IEEE 802.3af) |
+| Storage | microSD ≤ 1024GB, NVR |
+| Protocols | onvif, rtsp, http |
+| IP rating | IP66 |
+| IK rating | IK10 |
+| Two-way audio | Yes |
+| Operating temp | -30 to 50°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2592x1944 | 30 | H.265 |
+
+## Features
+
+- AI human and vehicle detection
+- intrusion detection
+- line crossing detection
+- missing object detection
+- WDR Pro (up to 120 dB)
+- 3D noise reduction
+- privacy masking (4 zones)
+- motion detection
+- tamper detection
+- smart IR LED
+
+## Sources
+
+- https://www.geovision.com.tw/tw/product/GT-YDR5800
+- https://dlcdn.geovision.com.tw/pd/multilngdatasheet/GT-Y_Series/Datasheet_GT-YDR5800.pdf
+
+---
+*Auto-generated from gt-ydr5800.json — do not edit by hand.*

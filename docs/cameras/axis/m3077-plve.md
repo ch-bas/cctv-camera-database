@@ -10,7 +10,7 @@
 | Connectivity | ethernet |
 | Resolution | 6MP (6MP, 2016×2016) |
 | Sensor | 1/1.8" Progressive Scan CMOS |
-| Lens | 1× 1.56mm |
+| Lens | 1× 1.56mm F2.0 |
 | Field of view | 360 horizontal° |
 | Night vision | ir (20m), 0.16 lux color |
 | Power | PoE (802.3af) |
@@ -41,6 +41,7 @@
 
 ## Sources
 
+- https://www.axis.com/dam/public/38/7b/2a/datasheet-axis-m3077-plve-network-camera-en-US-470367.pdf
 - https://www.axis.com/products/axis-m3077-plve
 
 ---

@@ -7,15 +7,24 @@
 | Type | dome |
 | Connectivity | ethernet |
 | Resolution | 4K (8MP, 3840×2160) |
-| Lens | 1× 2.8 (fixed)mm |
+| Sensor | 1/2.7" CMOS |
+| Lens | 1× 2.8 (fixed)mm F1.4 |
 | Field of view | 110° |
-| Night vision | hybrid (30m), 0.007 lux color |
+| Night vision | hybrid (30m), 0.0007 lux, 0.007 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | Yes |
+| Operating temp | -40 to +60°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 30 | H.265 |
+| sub | 1920x1080 | 30 | H.265 |
 
 ## Features
 

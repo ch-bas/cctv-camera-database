@@ -36,7 +36,7 @@
 
 ## Sources
 
-- https://compare.3xlogic.cloud/hardware/Content/Resources/PDFs/VX_SPEC_3xLOGIC%20VISIX%20%20VX-10M28(4)-DUAL-OD-IAW(-X)%20Datasheet.pdf
+- https://compare.3xlogic.cloud/hardware/Content/Resources/PDFs/VX_SPEC_3xLOGIC%20VISIX%20%20VX-10M28%284%29-DUAL-OD-IAW%28-X%29%20Datasheet.pdf
 
 ---
 *Auto-generated from 3xlogic-vx-10m28-dual-od-iaw.json — do not edit by hand.*

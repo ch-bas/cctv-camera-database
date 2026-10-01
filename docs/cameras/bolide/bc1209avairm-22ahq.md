@@ -1,0 +1,27 @@
+# Bolide BC1209AVAIRM/22AHQ
+
+| Field | Spec |
+|-------|------|
+| Brand | Bolide |
+| Model | BC1209AVAIRM/22AHQ |
+| Type | dome |
+| Connectivity | coax |
+| Resolution | 1080p (2MP, 1920×1080) |
+| Sensor | 1/2.7" CMOS |
+| Lens | 6-22mm |
+| Night vision | ir (26m), 0.1 lux color |
+| Protocols | hdcvi |
+
+## Features
+
+- 2MP 1080p motorized-zoom vandal-proof dome
+- 6-22 mm motorized lens
+- 4-in-1 AHD/CVI/TVI/CVBS, DWDR
+- IR up to 85 ft, control over coax
+
+## Sources
+
+- https://bolideco.com/products/angelo-hd-hd-4-in-1-1080p-ir-dome-camera-with-motorized-zoom-lens-bc1209avairm-22ahq
+
+---
+*Auto-generated from bolide-bc1209avairm-22ahq.json — do not edit by hand.*

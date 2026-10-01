@@ -33,6 +33,7 @@
 
 - https://digital-watchdog.com/productdetail/DWC-PDS10Wi28A/
 - https://digital-watchdog.com/admin/assets/_downloads/DS_DWC-PDS10Wi28A_0226.pdf
+- https://digitalwatchdog.happyfox.com/kb/article/323-megapix-ip-camera-rtsp-stream-list/
 
 ---
 *Auto-generated from digital-watchdog-dwc-pds10wi28a.json — do not edit by hand.*

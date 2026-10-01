@@ -40,6 +40,7 @@
 ## Sources
 
 - https://www.axis.com/dam/public/b9/43/62/datasheet-canon-vb-m46-en-US-379307.pdf
+- http://gdlp01.c-wss.com/gds/1/0300044031/05/vbneog-e.pdf
 
 ---
 *Auto-generated from canon-vb-m46.json — do not edit by hand.*

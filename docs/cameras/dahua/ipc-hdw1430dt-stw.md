@@ -18,6 +18,13 @@
 | Two-way audio | Yes |
 | Operating temp | -30 to +60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 20 | H.265 |
+| sub | 640x480 | 30 | H.265 |
+
 ## Features
 
 - WiFi
@@ -27,6 +34,7 @@
 ## Sources
 
 - https://www.dahuasecurity.com/products/All-Products/Network-Cameras/Entry-Level-Series/1-Series/IPC-HDW1430DT-STW
+- https://material.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/IPC-HDW1430DT-STW_datasheet_202331121.pdf
 
 ---
 *Auto-generated from dahua-ipc-hdw1430dt-stw.json — do not edit by hand.*

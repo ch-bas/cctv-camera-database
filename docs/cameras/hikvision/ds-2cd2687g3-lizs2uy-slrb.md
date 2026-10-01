@@ -38,7 +38,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2687G3-LIZS2UY_SLRB.pdf
+- https://assets.hikvision.com/prd/public/all/doc/sm000077886/DS-2CD2687G3-LIZS2UY_SLRB_Datasheet_20250620.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2687g3-lizs2uy-slrb.json — do not edit by hand.*

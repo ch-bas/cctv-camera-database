@@ -8,7 +8,7 @@
 | Connectivity | ethernet |
 | Resolution | 4MP (2688x1520) (4MP, 2688×1520) |
 | Sensor | 1/1.8" Progressive Scan CMOS |
-| Lens | 1× 2.8/4mm |
+| Lens | 1× 2.8/4mm F1.0 |
 | Field of view | 112 (2.8mm)/95 (4mm) horizontal° |
 | Night vision | color, 0.0005 lux color |
 | Power | PoE (802.3af) / DC 12V |
@@ -37,7 +37,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2147G2-SU-C.pdf
+- https://assets.hikvision.com/prd/normal/all/doc/sm000058350/DS-2CD2147G2-SU-C_Datasheet_V5.5.112_20230418.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2147g2-su.json — do not edit by hand.*

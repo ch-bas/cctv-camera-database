@@ -8,9 +8,9 @@
 | Connectivity | ethernet |
 | Resolution | 5MP (5MP, 2592×1944) |
 | Sensor | 1/2.8" progressive scan low lux CMOS |
-| Lens | 1× 4.6-152mm |
+| Lens | 1× 4.6-152mm F1.6 |
 | Field of view | 55.4-1.9 horizontal° |
-| Night vision | ir, 0.02 lux color |
+| Night vision | ir, 0.002 lux, 0.02 lux color |
 | Power | PoE+ (802.3at) / AC 24V / DC 30V |
 | Storage | NVR |
 | Protocols | onvif, rtsp |

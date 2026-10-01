@@ -40,6 +40,7 @@
 ## Sources
 
 - https://amcrest.com/helix-5mp-security-ai-ip-poe-turret-camera-hlx-ip5m-t103ew-ai.html
+- https://support.amcrest.com/hc/en-us/articles/49119561879437-Accessing-Legacy-Helix-Devices-Using-RTSP
 
 ---
 *Auto-generated from amcrest-hlx-ip5m-t103ew-ai.json — do not edit by hand.*

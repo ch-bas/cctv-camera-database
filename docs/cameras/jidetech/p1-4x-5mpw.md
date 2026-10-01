@@ -8,8 +8,11 @@
 | Connectivity | wifi, ethernet |
 | Resolution | 5MP (5MP, 2592×1920) |
 | Sensor | 1/2.8" IMX335 CMOS |
+| Lens | 2.8-12mm |
 | Field of view | 355 pan/90 tilt° |
 | Night vision | ir (20m) |
+| Power | DC |
+| Storage | microSD ≤ 128GB |
 | Protocols | rtsp, onvif |
 | IP rating | IP66 |
 | Two-way audio | Yes |

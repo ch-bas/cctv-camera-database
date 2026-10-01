@@ -10,6 +10,8 @@
 | Sensor | 1/2.8" Sony Color CMOS |
 | Lens | 3.6mm F1.6 |
 | Night vision | hybrid (30m), 0.01 lux color |
+| IP rating | IP67 |
+| Two-way audio | No |
 | Operating temp | -20 to 50°C |
 
 ## Features
@@ -26,6 +28,7 @@
 ## Sources
 
 - https://www.mapesen.com/web/userfiles/productfile/gengxin/L2KH800LFspecification-mapesenV.I03.pdf
+- https://www.mapesen.com/normal-camera/l2k-full-color-series.html
 
 ---
 *Auto-generated from mapesen-l2kh800lf.json — do not edit by hand.*

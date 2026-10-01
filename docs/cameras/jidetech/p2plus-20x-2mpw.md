@@ -7,8 +7,11 @@
 | Type | ptz |
 | Connectivity | wifi, ethernet |
 | Resolution | 2MP (2MP, 1920×1080) |
+| Lens | 4.7-84.6mm |
 | Field of view | 360 pan/90 tilt° |
 | Night vision | ir (60m) |
+| Power | DC |
+| Storage | microSD ≤ 128GB |
 | Protocols | rtsp, onvif |
 | IP rating | IP66 |
 | Two-way audio | Yes |

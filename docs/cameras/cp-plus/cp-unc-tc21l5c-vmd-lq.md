@@ -10,10 +10,10 @@
 | Sensor | 1/2.7" 2MP progressive CMOS |
 | Lens | 1× 3.6mm F1.4 |
 | Field of view | 84 H / 42 V / 101 D° |
-| Night vision | hybrid (50m) |
+| Night vision | hybrid (50m), 0.0001 lux, 0.001 lux color |
 | Power | PoE (IEEE 802.3af) or 12V DC |
 | Storage | microSD ≤ 512GB, NVR |
-| Protocols | onvif, rtsp |
+| Protocols | onvif, rtsp, http, rtmp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | Yes |
@@ -24,6 +24,7 @@
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
 | main | 1920x1080 | 30 | H.265 |
+| sub | 1280x720 | 30 | — |
 
 ## Features
 
@@ -34,6 +35,8 @@
 - WDR 120dB
 - IK10 vandal-resistant
 - Dahua-OEM platform (ONVIF Profile S/G/T + RTSP)
+- line crossing
+- intrusion detection
 
 ## Sources
 

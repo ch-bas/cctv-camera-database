@@ -1,0 +1,38 @@
+# Milesight MS-C2983-RPC
+
+| Field | Spec |
+|-------|------|
+| Brand | Milesight |
+| Model | MS-C2983-RPC |
+| Type | dome |
+| Resolution | 1080p (2MP, 1920×1080) |
+| Sensor | 1/2.8" Progressive Scan CMOS |
+| Lens | 1× 2.8/4/6mm F1.6 |
+| Night vision | ir (20m), 0.005 lux color |
+| Power | PoE (802.3af) |
+| Storage | microSD ≤ 256GB |
+| Protocols | onvif |
+| Two-way audio | No |
+| Operating temp | -40 to 60°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 60 | H.265 |
+
+## Features
+
+- person detection
+- vehicle detection
+- face detection
+- line crossing
+- loitering
+- region entrance
+
+## Sources
+
+- https://resource.milesight.com/milesight/security/document/datasheet/ipc/milesight-ai-ir-mini-dome-network-camera-datasheet-en.pdf
+
+---
+*Auto-generated from milesight-ms-c2983-rpc.json — do not edit by hand.*

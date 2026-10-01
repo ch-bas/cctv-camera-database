@@ -1,0 +1,38 @@
+# Tiandy TC-C32WN I5/E/Y/4mm/V4.1
+
+| Field | Spec |
+|-------|------|
+| Brand | Tiandy |
+| Model | TC-C32WN I5/E/Y/4mm/V4.1 |
+| Type | bullet |
+| Connectivity | ethernet |
+| Resolution | 2MP (2MP, 1920×1080) |
+| Sensor | 1/2.8" CMOS |
+| Lens | 1× 4mm F2.0 |
+| Field of view | H: 87.7, V: 46.8, D: 98.6° |
+| Night vision | ir (50m), 0.02 lux color |
+| Power | DC 12V / PoE (802.3af) |
+| Storage | microSD ≤ 512GB |
+| Protocols | onvif, rtsp, p2p, http |
+| IP rating | IP67 |
+| Two-way audio | No |
+| Operating temp | -40 to 65°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 30 | H.265+ |
+
+## Features
+
+- 2MP Fixed IR Bullet Camera
+- WDR: DWDR
+- Smart IR up to 50m (850nm)
+
+## Sources
+
+- https://en.tiandy.com/pro-2023790/63692865.html
+
+---
+*Auto-generated from tiandy-tc-c32wn-i5-e-y-4mm-v4-1.json — do not edit by hand.*

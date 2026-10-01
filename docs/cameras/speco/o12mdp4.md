@@ -8,7 +8,7 @@
 | Connectivity | ethernet |
 | Resolution | 12MP (12MP, 3000×3000) |
 | Sensor | 1/1.7" progressive scan CMOS |
-| Lens | 1× 1.65mm |
+| Lens | 1× 1.65mm F2.0 |
 | Field of view | 360 (ceiling mount) or 180 (wall mount)° |
 | Night vision | ir (30m), 0.01 lux color |
 | Power | PoE (IEEE 802.3af) or 12V DC |

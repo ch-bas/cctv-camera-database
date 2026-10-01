@@ -40,7 +40,6 @@
 
 ## Sources
 
-- https://amcrest.com/4k-dual-lens-panoramic-poe-ai-camera-turret-ip8m-fct2999ew-ai.html
 - https://support.amcrest.com/hc/en-us/articles/16094320992141-Technical-Specifications-IP8M-FCT2999EW-AI
 
 ---

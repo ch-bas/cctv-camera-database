@@ -10,6 +10,8 @@
 | Sensor | 1/2.3" CMOS SONY IMX577 |
 | Lens | 2.7-13.5mm F1.6 |
 | Night vision | hybrid (50m), 0.05 lux color |
+| Power | PoE/DC |
+| Storage | microSD ≤ 512GB |
 | Protocols | rtsp, onvif, rtmp |
 | IP rating | IP66 |
 | Two-way audio | No |

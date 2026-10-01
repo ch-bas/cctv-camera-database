@@ -42,7 +42,8 @@
 
 ## Sources
 
-- https://www.hikvision.com/en/products/HiLook-IP-Products/
+- https://assets.hikvision.com/prd/normal/all/doc/sm000041075/IPC-B140HA_Datasheet_20260409.pdf
+- https://www.hikvision.com/mena-en/products/HiLook-IP-Products/Network-Cameras/Value-Camera/ipc-b140ha/
 
 ---
 *Auto-generated from hilook-ipc-b140ha.json — do not edit by hand.*

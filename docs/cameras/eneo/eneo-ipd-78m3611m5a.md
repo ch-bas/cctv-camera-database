@@ -1,0 +1,34 @@
+# eneo IPD-78M3611M5A
+
+*Also known as: eneo IPD-78M3611M5A*
+
+| Field | Spec |
+|-------|------|
+| Brand | eneo |
+| Model | IPD-78M3611M5A |
+| Type | dome |
+| Connectivity | ethernet |
+| Resolution | 4K (8MP, 3840×2160) |
+| Sensor | 1/2.5" CMOS |
+| Lens | 3.6-11mm F1.5 |
+| Field of view | 84-40 H / 46-21 V° |
+| Night vision | ir, 0.2 lux |
+| Power | PoE (802.3af) |
+| Protocols | rtsp, onvif |
+| IP rating | IP67 |
+| IK rating | IK10 |
+| Two-way audio | Yes |
+| Operating temp | -50 to 50°C |
+
+## Features
+
+- D-WDR
+- 3x optical zoom
+
+## Sources
+
+- https://eneo-security.com/en/ipd-78m3611m5a.html
+- https://eneo-security.com/en/generate/datasheet/render/product_sku/220930/
+
+---
+*Auto-generated from eneo-ipd-78m3611m5a.json — do not edit by hand.*

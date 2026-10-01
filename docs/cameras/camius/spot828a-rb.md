@@ -40,6 +40,7 @@
 
 - https://www.camius.com/4k-outdoor-poe-camera/
 - https://www.camius.com/4k-spotlight-poe-security-camera/
+- https://www.camius.com/add-ip-cameras-on-network/
 
 ---
 *Auto-generated from camius-spot828a-rb.json — do not edit by hand.*

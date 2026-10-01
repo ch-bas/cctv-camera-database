@@ -10,12 +10,13 @@
 | Sensor | 1/2.9" CMOS |
 | Lens | 1× 4mm |
 | Field of view | pan 345 / tilt 70° |
-| Night vision | hybrid (15m) |
+| Night vision | hybrid (15m), 0.01 lux, 0.1 lux color |
 | Power | USB DC 5V/1A |
 | Storage | microSD ≤ 256GB |
 | Protocols | http |
 | IP rating | IP65 |
 | Two-way audio | Yes |
+| Operating temp | -20 to 60°C |
 
 ## Streams
 

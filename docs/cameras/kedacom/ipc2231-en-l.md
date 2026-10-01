@@ -10,11 +10,12 @@
 | Sensor | 1/1.9" progressive scan CMOS |
 | Lens | 2.95mm |
 | Field of view | 142° |
-| Night vision | color, 0.002 lux color |
+| Night vision | color, 0.0002 lux, 0.002 lux color |
 | Power | PoE (IEEE802.3af) / DC12V |
 | Storage | microSD ≤ 128GB |
 | Protocols | onvif, rtsp, http |
 | IP rating | IP67 |
+| IK rating | IK10 |
 | Two-way audio | Yes |
 | Operating temp | -30 to 60°C |
 

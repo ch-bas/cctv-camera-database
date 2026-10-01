@@ -12,10 +12,11 @@
 | Field of view | 36-12° |
 | Night vision | color, 0.0885 lux color |
 | Power | PoE (IEEE 802.3af/at), 12-26 VDC, 24 VAC |
-| Storage | NVR |
+| Storage | microSD ≤ 2000GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP66/IP67/IP6K9K |
 | IK rating | IK11 |
+| Operating temp | -50 to 60°C |
 
 ## Streams
 
@@ -41,7 +42,6 @@
 - https://www.a1securitycameras.com/iqsight-nde-8704-rt.html
 - https://commerce.keenfinity.tech/au/en/FLEXIDOME-8100i/p/104629967371/
 - https://www.bhphotovideo.com/c/product/1882866-REG/bosch_nde_8704_rt_flexidome_8100i_ptrz_8mp.html
-- https://netcamcenter.de/de/produkte/ip-kameras/nde-8704-rt
 - https://resources.keenfinity.tech/public/documents/NDE_8704_RT_Data_sheet_enUS_125843080331.pdf
 
 ---

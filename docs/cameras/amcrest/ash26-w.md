@@ -35,7 +35,7 @@
 
 ## Sources
 
-- https://amcrest.com/smarthome-2-megapixel-wifi-outdoor-security-camera-1920-x-1080p-floodlight-outdoor-ip-wifi-camera-ip65-weatherproof-two-way-audio-ash26-w-white.html
+- https://support.amcrest.com/hc/en-us/articles/360041040031-Technical-Specifications-ASH26
 
 ---
 *Auto-generated from amcrest-ash26-w.json — do not edit by hand.*

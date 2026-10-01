@@ -38,7 +38,7 @@
 
 ## Sources
 
-- https://amcrest.com/4k-poe-camera-turret-ai-nightcolor-ip8m-2779eb-ai.html
+- https://support.amcrest.com/hc/en-us/articles/20705338985485-Technical-Specifications-IP8M-2779EB-AI
 
 ---
 *Auto-generated from amcrest-ip8m-2779eb-ai.json — do not edit by hand.*

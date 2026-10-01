@@ -37,7 +37,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2186G2-ISU-C.pdf
+- https://assets.hikvision.com/prd/public/all/doc/sm000059263/DS-2CD2186G2-ISU-C_Datasheet_V5.5.112_20230217.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2186g2-isu.json — do not edit by hand.*

@@ -10,9 +10,9 @@
 | Sensor | 2x 1/2.8" CMOS (panoramic + PTZ) |
 | Lens | 2× panoramic: 2.8 fixed / PTZ: 4.8-120 (25x optical)mm F1.0 (panoramic) / F1.6-3.6 (PTZ) |
 | Field of view | 180 horizontal (panoramic) / 55.8-2.4 (PTZ)° |
-| Night vision | hybrid (150m), 0.001 lux color |
+| Night vision | hybrid (150m), 0.0001 lux, 0.001 lux color |
 | Power | DC 36V/2.23A (±25%) |
-| Storage | NVR |
+| Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | Two-way audio | Yes |
@@ -29,7 +29,7 @@
 
 ## Features
 
-- dual-channel: 180° panoramic 4MP stitched + 4MP PTZ 25x zoom
+- dual-channel: 180 panoramic 4MP stitched + 4MP PTZ 25x zoom
 - starlight 0.001 lux color @F1.0
 - 150m IR (PTZ) + 30m white light (panoramic)
 - face detection with attributes (6 attributes, 8 expressions)

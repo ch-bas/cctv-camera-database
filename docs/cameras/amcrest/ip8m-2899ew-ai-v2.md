@@ -49,7 +49,6 @@
 ## Sources
 
 - https://support.amcrest.com/hc/en-us/articles/25039301718285-Technical-Specifications-IP8M-2899EW-AI-V2
-- https://amcrest.com/4k-8-megapixel-ip-poe-camera-ptz-25x-optical-zoom-ai-ip8m-2899ew-ai-v2.html
 
 ---
 *Auto-generated from amcrest-ip8m-2899ew-ai-v2.json — do not edit by hand.*

@@ -18,6 +18,12 @@
 | Two-way audio | Yes |
 | Operating temp | -30 to 50°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2048x1536 | 25 | H.265 |
+
 ## Features
 
 - security wall-light camera (floodlight + camera combo)

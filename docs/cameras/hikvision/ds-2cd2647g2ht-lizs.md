@@ -37,7 +37,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2647G2HT-LIZS.pdf
+- https://assets.hikvision.com/prd/normal/all/doc/sm000058448/DS-2CD2647G2HT-LIZS_Datasheet_20230720.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2647g2ht-lizs.json — do not edit by hand.*

@@ -18,6 +18,7 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | Two-way audio | Yes |
+| Operating temp | -30 to 50°C |
 
 ## Streams
 
@@ -39,6 +40,7 @@
 
 - https://www.imou.com/en/product/detail/ps70f-5mp-plus5mp
 - https://www.orbitadigital.com/en/cctv-ip/77815-imou-ipc-ps70fp-10m0-imou-ps70f-55mp-camera-poe-connection-dual-lens-.html
+- https://static-website.imou.com/6f3836d6-10b9-4be0-8e84-9c6690a01dcf.pdf
 
 ---
 *Auto-generated from imou-ps70f-10mp.json — do not edit by hand.*

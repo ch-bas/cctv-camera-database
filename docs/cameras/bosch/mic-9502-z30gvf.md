@@ -50,7 +50,6 @@
 ## Sources
 
 - https://resources.keenfinity.tech/public/documents/MIC_9502_Z30GVF_Data_sheet_enUS_90976684939.pdf
-- https://netcamcenter.de/de/produkte/ip-kameras/mic-9502-z30gvf
 - https://www.a1securitycameras.com/content/product_documents/53239/Bosch-MIC-9502-Z30GVF-Datasheet-A1.pdf
 
 ---

@@ -32,8 +32,7 @@
 
 ## Sources
 
-- https://amcrest.com/4k-poe-camera-turret-optical-zoom-ip8m-vt2879ew-ai.html
-- https://support.amcrest.com/hc/en-us/articles/360060835671-User-Manual-IP8M-VT2879EW-AI
+- https://support.amcrest.com/hc/en-us/articles/360060835871-Technical-Specifications-IP8M-VT2879EW-AI
 
 ---
 *Auto-generated from amcrest-ip8m-vt2879ew-ai.json — do not edit by hand.*

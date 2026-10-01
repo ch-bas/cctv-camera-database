@@ -8,7 +8,7 @@
 | Connectivity | ethernet |
 | Resolution | 4K (8MP, 3840×2160) |
 | Sensor | 1/2.8" progressive scan CMOS |
-| Lens | 1× 2.8-12mm |
+| Lens | 1× 2.8-12mm F1.4 |
 | Field of view | 96-32 H° |
 | Night vision | ir (50m), 0.015 lux color |
 | Power | PoE (IEEE 802.3af) |
@@ -17,12 +17,14 @@
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | Yes |
+| Operating temp | -40 to 60°C |
 
 ## Streams
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
 | main | 3840x2160 | 30 | H.265 |
+| sub | 1280x720 | 30 | H.265 |
 
 ## Features
 

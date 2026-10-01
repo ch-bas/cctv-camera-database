@@ -10,7 +10,7 @@
 | Sensor | 1/1.8-inch CMOS |
 | Lens | 1× 4.4-10mm F1.6 |
 | Field of view | 44-108° |
-| Night vision | ir (60m), 0.037 lux color |
+| Night vision | ir (60m), 0.0098 lux, 0.037 lux color |
 | Power | PoE (IEEE 802.3at), 12 VDC, 24 VAC |
 | Storage | microSD ≤ 2000GB, NVR |
 | Protocols | onvif, rtsp |
@@ -33,7 +33,6 @@
 ## Sources
 
 - https://catalog.boschbuildingtechnologies.com/xf/en/DINION-7100i-IR/p/F.01U.390.690/
-- https://netcamcenter.de/de/produkte/ip-kameras/nbe-7704-al
 - https://www.a1securitycameras.com/bosch-nbe-7704-al.html
 - https://www.surveillance-video.com/camera-nbe-7704-al.html
 - https://www.csd.com.au/products/BOS-NBE-7704-AL

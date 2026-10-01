@@ -29,6 +29,7 @@
 
 - https://www.pyramid.lt/en/ip-camera-longse-lbh30ss500-5mp-sony-starvis-28mm-40m-ir-poe-microsd-slot
 - https://www.longse.com/index.php?m=search&c=index&a=find&siteid=25&q=LBH30
+- https://web.archive.org/web/20190911214224/http://www.longse.com/SUPPORT/FAQ/Camera/2017/0822/973.html
 
 ---
 *Auto-generated from longse-lbh30ss500.json — do not edit by hand.*

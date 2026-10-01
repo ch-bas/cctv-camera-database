@@ -1,6 +1,6 @@
 # Arlo Video Doorbell 2K (2nd Gen)
 
-*Also known as: Arlo Essential Video Doorbell Wire-Free 2K*
+*Also known as: Arlo Essential Video Doorbell Wire-Free 2K, AVD4001, AVD3001*
 
 | Field | Spec |
 |-------|------|

@@ -39,7 +39,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD3686G2T-IZSY-H.pdf
+- https://assets.hikvision.com/prd/normal/all/doc/sm000107399/DS-2CD3686G2T-IZSY-H_Datasheet_20230912.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd3686g2t-izsy-h.json — do not edit by hand.*

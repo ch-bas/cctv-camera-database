@@ -8,6 +8,7 @@
 | Connectivity | ethernet |
 | Resolution | 4K (8MP, 3840×2160) |
 | Lens | 1× 2.8mm |
+| Field of view | 106 H / 57 V / 124 D° |
 | Night vision | hybrid, 0.02 lux color |
 | Power | PoE (IEEE 802.3af) |
 | Storage | microSD ≤ 256GB, NVR |
@@ -20,6 +21,7 @@
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
 | main | 3840x2160 | 20 | H.265 |
+| sub | 1280x720 | 30 | H.265 |
 
 ## Features
 

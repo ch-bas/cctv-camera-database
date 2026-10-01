@@ -31,7 +31,7 @@
 
 ## Features
 
-- 4MP 1/2.7" starlight CMOS, wide-angle 2.1mm / 180° FOV (outputs 4MP 2688×1520, supports a 5MP mode)
+- 4MP 1/2.7" starlight CMOS, wide-angle 2.1mm / 180 FOV (outputs 4MP 2688×1520, supports a 5MP mode)
 - WizSense AI: SMD Plus, perimeter protection (tripwire / intrusion)
 - built-in mic + 1 audio in / 1 out
 - Smart H.265+ / H.264+ and AI H.265/H.264 coding

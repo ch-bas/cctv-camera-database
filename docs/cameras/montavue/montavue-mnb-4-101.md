@@ -1,0 +1,34 @@
+# Montavue MNB-4-101
+
+| Field | Spec |
+|-------|------|
+| Brand | Montavue |
+| Model | MNB-4-101 |
+| Type | bullet |
+| Connectivity | ethernet |
+| Resolution | 4MP (2688x1520) (4MP, 2688×1520) |
+| Sensor | 1/2.9" Progressive Scan CMOS |
+| Lens | 1× 2.8mm |
+| Field of view | 100 H / 55 V / 116 D° |
+| Night vision | hybrid (30m) |
+| Power | PoE |
+| Storage | microSD ≤ 512GB, NVR |
+| Protocols | onvif, rtsp |
+| IP rating | IP67 |
+| Two-way audio | Yes |
+
+## Features
+
+- 4MP smart-light bullet, fixed 2.8mm lens
+- Smart light: warm light 100ft + IR 100ft, ICR day/night
+- AI: smart motion detect, tripwire, intrusion, vehicle/human
+- BLC/HLC/WDR, two-way audio
+- ONVIF Profile S/G/T + SDK, microSD up to 512GB, FTP/SFTP
+
+## Sources
+
+- https://montavue.com/products/mnb-4-101-montavue-nexus-4mp-smart-light-bullet-camera
+- https://cdn.shopify.com/s/files/1/0398/1980/4829/files/Montavue_Catalog_2026_refreshed.pdf?v=1784902892
+
+---
+*Auto-generated from montavue-mnb-4-101.json — do not edit by hand.*

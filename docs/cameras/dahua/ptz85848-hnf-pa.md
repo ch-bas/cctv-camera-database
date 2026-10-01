@@ -8,7 +8,7 @@
 | Connectivity | ethernet |
 | Resolution | 4K (8MP, 3840×2160) |
 | Sensor | 1/1.8" CMOS |
-| Lens | 1× 6.25-300mm |
+| Lens | 1× 6.25-300mm F1.4-F4.5 |
 | Field of view | 64.9-1.8 horizontal° |
 | Night vision | ir (400m), 0.005 lux color |
 | Power | DC 36V |

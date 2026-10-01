@@ -12,9 +12,18 @@
 | Field of view | 180° |
 | Night vision | hybrid (100m), 0.005 lux color |
 | Power | Hi-PoE (802.3bt) / 24 VAC |
-| Storage | NVR |
+| Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
+| IP rating | IP66 |
 | Two-way audio | Yes |
+| Operating temp | -40 to +65°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 4096x1860 | 30 | H.265 |
+| sub | 704x576 | 25 | H.265 |
 
 ## Features
 
@@ -30,6 +39,7 @@
 ## Sources
 
 - https://www.dahuasecurity.com/products/network-products/ptz-cameras/x-spans-series/distribution/sdt4e425-8p-gb-apv1
+- https://material.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/SDT4E425-8P-GB-APV1_S0_datasheet_20240725.pdf
 
 ---
 *Auto-generated from dahua-sdt4e425-8p-gb-apv1.json — do not edit by hand.*

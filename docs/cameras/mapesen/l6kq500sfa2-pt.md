@@ -10,6 +10,7 @@
 | Sensor | 1/2.7" 5MP low illumination CMOS |
 | Lens | 3.6mmmm F1.6 |
 | Night vision | hybrid (40m), 0.005 lux color |
+| Storage | microSD ≤ 512GB |
 | Protocols | rtsp, onvif |
 | IP rating | IP67 |
 | Two-way audio | Yes |

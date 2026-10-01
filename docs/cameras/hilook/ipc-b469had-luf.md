@@ -43,7 +43,8 @@
 
 ## Sources
 
-- https://www.hikvision.com/en/products/HiLook-IP-Products/
+- https://assets.hikvision.com/prd/public/all/doc/sm000084279/IPC-B469HAD-LUF_SLRB_Datasheet_20241108.pdf
+- https://www.hikvision.com/mena-en/products/HiLook-IP-Products/Network-Cameras/Value-Camera/ipc-b469had-luf-s-l--rb-/
 
 ---
 *Auto-generated from hilook-ipc-b469had-luf.json — do not edit by hand.*

@@ -10,7 +10,7 @@
 | Sensor | 1/2.8" Progressive Scan CMOS |
 | Lens | 1× 4.8-120mm |
 | Field of view | 57.6 H / 34.4 V / 64.5 D° |
-| Night vision | none, 0.005 lux color |
+| Night vision | none, 0.001 lux, 0.005 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -40,7 +40,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2DE5225W-AE3T5.pdf
+- https://assets.hikvision.com/prd/public/all/doc/m000052503/Datasheet-of-DS-2DE5225W-AE3T5_V5.7.1_20220704.pdf
 
 ---
 *Auto-generated from hikvision-ds-2de5225w-ae3t5.json — do not edit by hand.*

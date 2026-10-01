@@ -8,7 +8,7 @@
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2592×1520) |
 | Sensor | 1/3" progressive scan CMOS |
-| Lens | 1× 2.8mm |
+| Lens | 1× 2.8mm F1.4 |
 | Field of view | Horizontal 96° |
 | Night vision | hybrid (50m), 0.02 lux color |
 | Power | PoE (IEEE 802.3af) or DC |
@@ -16,12 +16,14 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | Two-way audio | Yes |
+| Operating temp | -40 to 60°C |
 
 ## Streams
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
 | main | 2592x1520 | 30 | H.265 |
+| sub | 1280x720 | 30 | H.265 |
 
 ## Features
 

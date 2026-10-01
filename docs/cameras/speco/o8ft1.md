@@ -15,6 +15,7 @@
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
+| IK rating | IK10 |
 | Two-way audio | No |
 
 ## Streams
@@ -22,6 +23,7 @@
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
 | main | 3840x2160 | 30 | H.265 |
+| sub | 1920x1080 | 30 | H.265 |
 
 ## Features
 

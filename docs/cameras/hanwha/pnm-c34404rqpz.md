@@ -31,8 +31,8 @@
 
 ## Features
 
-- 4x 4K PTRZ multi-directional channels (360° coverage) + 2MP 40x optical zoom PTZ
-- PTZ: 360° endless pan (max 700°/s), 110° tilt, IR 200m, 150 dB WDR, auto tracking (person/vehicle) + target lock
+- 4x 4K PTRZ multi-directional channels (360 coverage) + 2MP 40x optical zoom PTZ
+- PTZ: 360 endless pan (max 700/s), 110 tilt, IR 200m, 150 dB WDR, auto tracking (person/vehicle) + target lock
 - 4K channels: IR 20m, 120 dB WDR, PTRZ remote adjustment
 - AI smart zoom and advanced hand-over between channels and PTZ
 - AI object classification: person / face / vehicle / license plate + BestShot

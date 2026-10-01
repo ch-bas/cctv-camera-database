@@ -36,6 +36,7 @@
 ## Sources
 
 - https://digital-watchdog.com/productdetail/DWC-XMDS20Mi/
+- https://digitalwatchdog.happyfox.com/kb/article/323-megapix-ip-camera-rtsp-stream-list/
 
 ---
 *Auto-generated from digital-watchdog-dwc-xmds20mi.json — do not edit by hand.*

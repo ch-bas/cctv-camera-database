@@ -33,7 +33,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2T43G2-2I_4I.pdf
+- https://assets.hikvision.com/prd/public/all/doc/sm000058875/DS-2CD2T43G2-2I_4I_Datasheet_V5.5.113_20230303.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2t43g2-2i-4i.json — do not edit by hand.*

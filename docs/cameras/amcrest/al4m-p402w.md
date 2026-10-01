@@ -40,7 +40,7 @@
 
 ## Sources
 
-- https://amcrest.com/amlink-2x-2mp-dual-lens-wifi-camera-outdoor-al4m-p402w.html
+- https://support.amcrest.com/hc/en-us/articles/33567485161869-Technical-Specifications-AL-P402W
 
 ---
 *Auto-generated from amcrest-al4m-p402w.json — do not edit by hand.*

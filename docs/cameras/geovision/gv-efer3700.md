@@ -8,16 +8,23 @@
 | Connectivity | ethernet |
 | Resolution | 3MP (3MP, 2304×1296) |
 | Sensor | 1/2.8" Progressive Scan CMOS |
-| Lens | 1× 1.45mm |
+| Lens | 1× 1.45mm F1.8 |
 | Field of view | 360 horizontal° |
-| Night vision | ir (10m) |
+| Night vision | ir (10m), 0.001 lux |
 | Power | PoE (IEEE 802.3af) / DC 12V |
 | Storage | microSD ≤ 128GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | IK rating | IK10 |
 | Two-way audio | No |
+| Operating temp | -30 to 50°C |
 | Released | 2021 |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2048x1536 | 30 | H.265 |
 
 ## Features
 

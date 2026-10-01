@@ -10,7 +10,7 @@
 | Connectivity | ethernet |
 | Resolution | 4K / 8MP (8MP, 3840×2160) |
 | Sensor | 1/2.8" CMOS |
-| Lens | 1× 2.7-13.5 (motorized)mm |
+| Lens | 1× 2.7-13.5 (motorized)mm F1.5 |
 | Field of view | 113-31° |
 | Night vision | ir (40m), 0.008 lux color |
 | Power | PoE (802.3af) / DC 12V |
@@ -18,6 +18,7 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
+| Operating temp | -30 to +60°C |
 | Released | 2023 |
 
 ## Streams

@@ -38,7 +38,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2586G2-IS-C.pdf
+- https://assets.hikvision.com/prd/public/all/doc/sm000059242/DS-2CD2586G2-IS-C_Datasheet_20230617.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2586g2-is.json — do not edit by hand.*

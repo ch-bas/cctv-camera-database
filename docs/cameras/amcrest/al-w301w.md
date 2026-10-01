@@ -31,7 +31,7 @@
 
 ## Sources
 
-- https://amcrest.com/3mp-wifi-window-sticker-camera-dual-band-al-w301w.html
+- https://support.amcrest.com/hc/en-us/articles/37723509098637-Technical-Specifications-AL-W301W
 
 ---
 *Auto-generated from amcrest-al-w301w.json — do not edit by hand.*

@@ -34,7 +34,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CV2041G2-IDW-W.pdf
+- https://www.hikvision.com/content/dam/hikvision/products/S000000001/S000000002/S000000003/S000000801/OFR000063/M000016310/SM000062364/Data_Sheet/DS-2CV2041G2-IDW-W_Datasheet_20231114.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cv2041g2-idw.json — do not edit by hand.*

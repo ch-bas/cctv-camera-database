@@ -17,7 +17,9 @@
 | Storage | NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP22 |
+| IK rating | IK10 |
 | Two-way audio | No |
+| Operating temp | -10 to +55°C |
 
 ## Features
 

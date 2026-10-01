@@ -37,6 +37,7 @@
 ## Sources
 
 - https://www.uniarch.cn/Products/Wireless_Series/Basic_Series/Basic_Series/Uho-S2-M4/
+- https://www.uniarch.cn/Support/FAQ/202209/951565_575360_0.htm
 
 ---
 *Auto-generated from uniarch-uho-s2-m4.json — do not edit by hand.*

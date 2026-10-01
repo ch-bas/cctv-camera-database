@@ -25,6 +25,7 @@
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
 | main | 1920x1080 | 30 | H.265 |
+| sub | 640x480 | 30 | H.265 |
 
 ## Features
 
@@ -36,7 +37,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD1123G2-LIUF.pdf
+- https://assets.hikvision.com/prd/public/all/doc/sm000042452/DS-2CD1123G2-LIUF_Datasheet_20230914.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd1123g2-liuf.json — do not edit by hand.*

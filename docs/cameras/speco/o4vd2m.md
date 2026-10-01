@@ -7,7 +7,9 @@
 | Type | dome |
 | Connectivity | ethernet |
 | Resolution | 1440p/4MP (4MP, 2560×1440) |
-| Lens | 1× 2.8-12mm |
+| Sensor | Progressive scan 1/3” CMOS |
+| Lens | 1× 2.8-12mm F1.6 |
+| Field of view | 112 - 35.6 D° |
 | Night vision | ir (51m), 0.005 lux, 0.005 lux color |
 | Power | PoE (IEEE 802.3af) |
 | Storage | microSD ≤ 256GB, NVR |
@@ -15,12 +17,14 @@
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |
+| Operating temp | -40 to 60°C |
 
 ## Streams
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
 | main | 2560x1440 | 30 | H.265 |
+| sub | 1280x720 | 15 | H.265 |
 
 ## Features
 

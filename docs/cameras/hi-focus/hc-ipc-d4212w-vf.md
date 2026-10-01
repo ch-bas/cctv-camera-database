@@ -8,13 +8,20 @@
 | Connectivity | ethernet |
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/2.8" progressive-scan CMOS |
-| Lens | 1× 3.6 (fixed)mm |
-| Night vision | ir (30m) |
+| Lens | 1× 3.6 (fixed)mm F2.0 |
+| Night vision | ir (30m), 0.01 lux color |
 | Power | PoE / DC 12V |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
+| Operating temp | -30°C ~ 60°C°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 30 | H.265+ |
 
 ## Features
 

@@ -34,6 +34,7 @@
 
 - https://www.camius.com/2k-poe-dome-5mp-camera/
 - https://www.camius.com/security-camera-poe-dome-2-pack/
+- https://www.camius.com/add-ip-cameras-on-network/
 
 ---
 *Auto-generated from camius-iris-5mp.json — do not edit by hand.*

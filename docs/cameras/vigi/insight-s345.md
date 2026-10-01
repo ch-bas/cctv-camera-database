@@ -1,0 +1,46 @@
+# VIGI VIGI InSight S345
+
+| Field | Spec |
+|-------|------|
+| Brand | VIGI |
+| Model | VIGI InSight S345 |
+| Type | bullet |
+| Connectivity | ethernet |
+| Resolution | 4MP (4MP, 2688×1520) |
+| Sensor | 1/2.7" Progressive Scan CMOS |
+| Lens | 1× 2.8/4/6mm F1.6 |
+| Field of view | 2.8mm: H 100, V 54, D 118° |
+| Night vision | hybrid (30m), 0.005 lux color |
+| Power | PoE / DC |
+| Storage | microSD ≤ 512GB, NVR |
+| Protocols | onvif, rtsp, http |
+| IP rating | IP67 |
+| Two-way audio | Yes |
+| Operating temp | -30 to 60°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2688x1520 | 30 | H.265+ |
+| sub | 640x480 | 30 | H.265 |
+
+## Features
+
+- full-color night vision
+- person detection
+- vehicle detection
+- human & vehicle classification
+- line-crossing detection
+- intrusion detection
+- two-way audio
+- active defense
+- wdr 120db
+- corridor mode
+
+## Sources
+
+- https://www.vigi.com/en/business-networking/vigi-network-camera/insight-s345/
+
+---
+*Auto-generated from vigi-insight-s345.json — do not edit by hand.*

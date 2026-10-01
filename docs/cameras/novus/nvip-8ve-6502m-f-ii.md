@@ -1,0 +1,34 @@
+# NOVUS NVIP-8VE-6502M/F-II
+
+| Field | Spec |
+|-------|------|
+| Brand | NOVUS |
+| Model | NVIP-8VE-6502M/F-II |
+| Type | dome |
+| Connectivity | ethernet |
+| Resolution | 4K (8MP, 3840×2160) |
+| Sensor | 8 MPX CMOS 1/2.8" SONY STARVIS |
+| Lens | 1× 2.8-12mm F1.4 |
+| Night vision | ir (50m), 0.015 lux color |
+| Power | PoE (802.3af) / 12 VDC |
+| Storage | microSD ≤ 256GB |
+| Protocols | rtsp, onvif |
+| IP rating | IP67 |
+| IK rating | IK10 |
+| Two-way audio | No |
+| Operating temp | -30 to 60°C |
+
+## Features
+
+- WDR
+- Smart IR
+- deep-learning AI
+- human/vehicle classification
+- optical zoom
+
+## Sources
+
+- https://www.novuscctv.com/en/product/5996
+
+---
+*Auto-generated from novus-nvip-8ve-6502m-f-ii.json — do not edit by hand.*

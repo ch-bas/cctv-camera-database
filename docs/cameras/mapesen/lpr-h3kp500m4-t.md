@@ -10,6 +10,7 @@
 | Sensor | 5MP starlight CMOS |
 | Lens | 5-50mm |
 | Night vision | ir (25m), 0.1 lux color |
+| Storage | microSD ≤ 64GB |
 | Protocols | rtsp, onvif |
 | IP rating | IP65 |
 | Operating temp | -35 to 75°C |

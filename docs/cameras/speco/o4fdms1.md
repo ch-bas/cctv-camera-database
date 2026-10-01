@@ -8,15 +8,16 @@
 | Connectivity | ethernet |
 | Resolution | 4MP x2 (dual-sensor) (4MP) |
 | Sensor | Two 1/3" progressive scan CMOS (one per imager) |
-| Lens | 2× 2.8mm |
+| Lens | 2× 2.8mm F1.6 |
 | Field of view | 101 H / 55 V / 122 D (per lens)° |
-| Night vision | ir (30m), 0.05 lux color |
+| Night vision | ir (30m), 0.05 lux, 0.05 lux color |
 | Power | PoE (IEEE 802.3af) or 12VDC |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | IK rating | IK10 |
 | Two-way audio | Yes |
+| Operating temp | -30 to 60°C |
 
 ## Features
 

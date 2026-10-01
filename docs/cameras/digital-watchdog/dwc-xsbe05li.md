@@ -38,6 +38,7 @@
 
 - https://digital-watchdog.com/productdetail/DWC-XSBE05Li/
 - https://digital-watchdog.com/admin/assets/_downloads/DW_DS_DWC-XSBE05Li_Rev0826.pdf
+- https://digitalwatchdog.happyfox.com/kb/article/323-megapix-ip-camera-rtsp-stream-list/
 
 ---
 *Auto-generated from digital-watchdog-dwc-xsbe05li.json — do not edit by hand.*

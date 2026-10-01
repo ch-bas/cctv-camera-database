@@ -37,6 +37,7 @@
 
 - https://www.uniarch.cn/Products/Network_Cameras/Entry_Series/Entry_Series/IPC-P224-AF40C/
 - https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/8bfad90e-7537-4352-9ea7-05541452a1dd/5ae469ef-f46f-459d-9baf-3b2207e720c7.pdf
+- https://www.uniarch.cn/Support/FAQ/202209/951565_575360_0.htm
 
 ---
 *Auto-generated from uniarch-ipc-p224-af40c.json — do not edit by hand.*

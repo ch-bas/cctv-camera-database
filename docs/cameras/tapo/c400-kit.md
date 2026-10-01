@@ -1,5 +1,7 @@
 # Tapo C400 Kit
 
+*Also known as: Tapo C400, Tapo C400S2*
+
 | Field | Spec |
 |-------|------|
 | Brand | Tapo |

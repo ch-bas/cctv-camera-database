@@ -1,0 +1,31 @@
+# Intelbras VIP 5450 D Z
+
+| Field | Spec |
+|-------|------|
+| Brand | Intelbras |
+| Model | VIP 5450 D Z |
+| Type | dome |
+| Connectivity | ethernet |
+| Resolution | 1080p (4MP, 2688×1520) |
+| Sensor | 1/3" CMOS |
+| Lens | 1× 2.7-12mm F1.4 |
+| Field of view | H: 93° |
+| Night vision | ir (50m), 0.03 lux color |
+| Power | PoE / 12 Vdc |
+| Protocols | onvif, rtsp |
+| IP rating | IP67 |
+| IK rating | IK10 |
+| Operating temp | -10 to 60°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2688x1520 | 30 | H.265 |
+
+## Sources
+
+- https://backend.intelbras.com/sites/default/files/2021-03/datasheet-vip-5450-d-z_0.pdf
+
+---
+*Auto-generated from intelbras-vip-5450-d-z.json — do not edit by hand.*

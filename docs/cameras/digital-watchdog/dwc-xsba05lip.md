@@ -34,6 +34,7 @@
 
 - https://digital-watchdog.com/productdetail/DWC-XSBA05LiP/
 - https://digital-watchdog.com/admin/assets/_downloads/DW_DS_DWC-XSBA05LiP_Rev0726.pdf
+- https://digitalwatchdog.happyfox.com/kb/article/323-megapix-ip-camera-rtsp-stream-list/
 
 ---
 *Auto-generated from digital-watchdog-dwc-xsba05lip.json — do not edit by hand.*

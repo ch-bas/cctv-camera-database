@@ -16,7 +16,7 @@
 | Protocols | http |
 | IP rating | IP65 |
 | Two-way audio | Yes |
-| Released | 2022 |
+| Released | 2020 |
 
 ## Features
 

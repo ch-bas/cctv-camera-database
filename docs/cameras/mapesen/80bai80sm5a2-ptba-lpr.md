@@ -10,6 +10,7 @@
 | Sensor | 1/2.8" Sony IMX415 CMOS |
 | Lens | 3.3-10.5mm F1.6-3.1 |
 | Night vision | hybrid (80m) |
+| Storage | microSD ≤ 512GB |
 | Protocols | rtsp, onvif |
 | IP rating | IP66 |
 | Two-way audio | Yes |

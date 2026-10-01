@@ -197,7 +197,7 @@ Other scripts: `npm run add` (interactive add-a-camera wizard) and `npm run chec
 
 ### RTSP reference layer
 
-`data/rtsp-patterns.json` is a **CC0 brand-level RTSP URL reference** for 183 brands (120 verified / 63 unverified / 351 stream templates). Each path is confirmed against the manufacturer's own documentation — never copied from aggregators. Regenerate after editing `strix/verified/`:
+`data/rtsp-patterns.json` is a **CC0 brand-level RTSP URL reference** for 183 brands (120 verified / 63 unverified / 367 stream templates). Each path is confirmed against the manufacturer's own documentation — never copied from aggregators. Regenerate after editing `strix/verified/`:
 
 ```bash
 RTSP_PATTERNS_DATE=$(date +%Y-%m-%d) node scripts/build-rtsp-patterns.js
@@ -240,8 +240,8 @@ A device type is only emitted when the camera has a known RJ45 link speed (`netw
 | PoE wired | 19,508 |
 | WiFi | 2,540 |
 | Battery / wire-free | 728 |
-| 4K / 8MP+ | 5,335 |
-| 4–7MP | 11,110 |
+| 4K / 8MP+ | 5,338 |
+| 4–7MP | 11,107 |
 | Under 4MP | 11,955 |
 | With integration configs (Frigate / Home Assistant) | 22,083 |
 | With color-lux rating (`night_vision.min_lux_color`) | 18,990 |
@@ -267,12 +267,12 @@ A device type is only emitted when the camera has a known RJ45 link speed (`netw
 | Axis | 558 | Enterprise premium, global |
 | Mapesen | 531 | OEM/budget IP + analog, CN/global |
 | Avigilon | 517 | Enterprise NDAA, global |
-| Vivotek | 482 | Enterprise AI, global |
+| Vivotek | 501 | Enterprise AI, global |
 | Longse | 455 | OEM/budget, CN/global |
 | TVT | 446 | Prosumer budget, CN/IN/SE Asia |
 | Alibi | 377 | — |
 | HiLook (Hikvision) | 377 | Budget installer, EU/UK/AU |
-| BEWARD | 336 | — |
+| BEWARD | 361 | — |
 | LILIN | 334 | — |
 | Bosch | 302 | Enterprise + thermal, EU/global |
 | LTS | 278 | Prosumer/installer, US |
@@ -391,7 +391,6 @@ A device type is only emitted when the camera has a known RJ45 link speed (`netw
 | Wyze | 27 | Budget consumer, US |
 | Ctronics | 26 | — |
 | Oncam | 26 | — |
-| Beward | 25 | — |
 | Instar | 25 | Privacy-first prosumer, DE/EU |
 | TOGUARD | 25 | — |
 | EverFocus | 23 | Enterprise/transport, TW/global |
@@ -404,7 +403,6 @@ A device type is only emitted when the camera has a known RJ45 link speed (`netw
 | Jooan | 19 | — |
 | JVC | 19 | — |
 | Montavue | 19 | — |
-| VIVOTEK | 19 | — |
 | Sparsh | 18 | — |
 | Toshiba | 18 | — |
 | W Box | 18 | — |
@@ -548,7 +546,7 @@ Shipped: JSON Schema CI, the [web frontend](https://cctv-database.com) (search /
 Open — contributions very welcome:
 
 - [ ] **Re-source ~1,051 reseller-only cameras** to official OEM datasheets (#164 / #165)
-- [ ] **Backfill pixel resolution** for the ~2,758 entries that state megapixels but no width×height (#169)
+- [ ] **Backfill pixel resolution** for the ~2,757 entries that state megapixels but no width×height (#169)
 - [ ] **Frigate verification drive** — only 31 of 21,846 shipped configs are community-verified; [confirm one you run](../../issues/new?template=verify-frigate-config.yml)
 - [ ] **Grow `community_notes`** — the per-camera quirks/behaviors layer (#297)
 
@@ -583,7 +581,7 @@ Specifications are compiled from manufacturer datasheets and reputable retailers
 If you use this dataset, a link back is appreciated:
 
 ```
-CCTV Camera Database (v2.26.0), CC0 1.0. https://cctv-database.com — https://github.com/ch-bas/cctv-camera-database
+CCTV Camera Database (v2.27.0), CC0 1.0. https://cctv-database.com — https://github.com/ch-bas/cctv-camera-database
 ```
 
 ---

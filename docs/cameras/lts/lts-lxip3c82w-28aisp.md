@@ -15,6 +15,7 @@
 | Power | PoE or DC power adapter |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
+| IP rating | IP67 |
 | Two-way audio | No |
 
 ## Features
@@ -26,6 +27,7 @@
 ## Sources
 
 - https://ltsecurityinc.com/products/product-lines/pro-x.html
+- https://ltsecurityinc.com/default/lxip3c82w-28aisp-8mp-ai-isp-fixed-turret-network-camera.html
 
 ---
 *Auto-generated from lts-lxip3c82w-28aisp.json — do not edit by hand.*

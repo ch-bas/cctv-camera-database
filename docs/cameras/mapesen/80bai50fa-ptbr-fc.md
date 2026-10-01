@@ -10,6 +10,7 @@
 | Sensor | 1/2.8" CMOS |
 | Lens | 6mm F1.0 |
 | Night vision | ir (60m), 0.001 lux color |
+| Storage | microSD ≤ 512GB |
 | Protocols | rtsp, onvif |
 | IP rating | IP66 |
 | Two-way audio | Yes |

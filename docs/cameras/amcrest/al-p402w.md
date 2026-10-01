@@ -40,7 +40,7 @@
 
 ## Sources
 
-- https://amcrest.com/2mp-wifi-camera-pan-tilt-al-p402w.html
+- https://support.amcrest.com/hc/en-us/articles/33567485161869-Technical-Specifications-AL-P402W
 
 ---
 *Auto-generated from amcrest-al-p402w.json — do not edit by hand.*

@@ -10,7 +10,7 @@
 | Sensor | 1/1.8" CMOS |
 | Lens | 1× 12-38mm F2.05-F2.25 |
 | Field of view | 12.1-35.8 (horizontal)° |
-| Night vision | ir (120m), 0.0899 lux color |
+| Night vision | ir (120m), 0.0095 lux, 0.0899 lux color |
 | Power | PoE (IEEE 802.3af/at Type 1, Class 3), 24 VAC, 12-26 VDC |
 | Storage | microSD ≤ 2000GB, NVR |
 | Protocols | onvif, rtsp, http |
@@ -44,7 +44,6 @@
 
 - https://commerce.boschsecurity.com/tw/en/DINION-7100i-IR/p/F.01U.390.691/
 - https://resources.keenfinity.tech/public/documents/NBE_7704_ALT_Data_sheet_enUS_121156504843.pdf
-- https://netcamcenter.de/de/produkte/ip-kameras/nbe-7704-alt
 
 ---
 *Auto-generated from bosch-nbe-7704-alt.json — do not edit by hand.*

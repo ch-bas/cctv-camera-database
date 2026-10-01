@@ -10,7 +10,7 @@
 | Connectivity | ethernet |
 | Resolution | 1440p/4MP (4MP, 2560×1440) |
 | Sensor | 1/3" progressive scan CMOS |
-| Lens | 1× 2.8mm |
+| Lens | 1× 2.8mm F1.6 |
 | Field of view | Horizontal 94, Vertical 50, Diagonal 115° |
 | Night vision | ir (30m), 0.005 lux color |
 | Power | PoE (IEEE 802.3af) or 12V DC |
@@ -25,6 +25,7 @@
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
 | main | 2560x1440 | 30 | H.265 |
+| sub | 1280x720 | 15 | H.265 |
 
 ## Features
 

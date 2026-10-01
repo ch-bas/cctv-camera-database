@@ -10,16 +10,23 @@
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2560×1440) |
 | Sensor | 1/2.8" Progressive Scan CMOS |
-| Lens | 1× 4.8-153 (32x optical zoom)mm |
+| Lens | 1× 4.8-153 (32x optical zoom)mm F1.5 |
 | Field of view | 60.6-2.4 horizontal° |
-| Night vision | ir (200m), 0.005 lux color |
+| Night vision | ir (200m), 0.001 lux, 0.005 lux color |
 | Power | High PoE (802.3at) / AC 24V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | IK rating | IK10 |
 | Two-way audio | Yes |
+| Operating temp | -30 to 65°C |
 | Released | 2023 |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 24 | H.265+ |
 
 ## Features
 

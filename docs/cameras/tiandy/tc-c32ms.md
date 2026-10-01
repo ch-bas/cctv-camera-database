@@ -27,7 +27,7 @@
 
 ## Sources
 
-- https://www.cctvcameraexpert.com/network-ip-camera/57613765.html
+- https://en.tiandy.com/pro-2023790/63693052.html
 
 ---
 *Auto-generated from tiandy-tc-c32ms.json — do not edit by hand.*

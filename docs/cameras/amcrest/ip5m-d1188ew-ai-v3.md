@@ -43,7 +43,6 @@
 ## Sources
 
 - https://support.amcrest.com/hc/en-us/articles/25855591714573-Technical-Specifications-IP5M-D1188EW-AI-V3
-- https://amcrest.com/5mp-poe-camera-dome-ip5m-d1188ew-ai-v3.html
 
 ---
 *Auto-generated from amcrest-ip5m-d1188ew-ai-v3.json — do not edit by hand.*

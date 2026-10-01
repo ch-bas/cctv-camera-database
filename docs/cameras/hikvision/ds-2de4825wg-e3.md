@@ -8,9 +8,9 @@
 | Connectivity | ethernet |
 | Resolution | 4K (8MP, 3840×2160) |
 | Sensor | 1/1.8" CMOS |
-| Lens | 1× |
+| Lens | 1× 6.5 to 162.5mm F1.6 |
 | Field of view | 58.5-3.7 horizontal° |
-| Night vision | color, 0.005 lux color |
+| Night vision | color, 0.001 lux, 0.005 lux color |
 | Power | PoE / 12 VDC |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |

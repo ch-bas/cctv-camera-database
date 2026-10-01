@@ -12,13 +12,14 @@
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 10.5-47 (motorized varifocal)mm F1.6 |
 | Field of view | 31-8 horizontal° |
-| Night vision | ir (200m), 0.0061 lux color |
+| Night vision | ir (200m), 0.001 lux, 0.0061 lux color |
 | Power | PoE (802.3af) / DC 12V |
-| Storage | NVR |
+| Storage | microSD ≤ 2048GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
-| Two-way audio | No |
+| Two-way audio | Yes |
+| Operating temp | -40 to 60°C |
 
 ## Features
 

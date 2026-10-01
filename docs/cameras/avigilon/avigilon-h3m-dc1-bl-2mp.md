@@ -1,0 +1,43 @@
+# Avigilon H3M 2MP In-Ceiling Dome Black (2.0-H3M-DC1-BL)
+
+*Also known as: 2.0-H3M-DC1-BL*
+
+| Field | Spec |
+|-------|------|
+| Brand | Avigilon |
+| Model | H3M 2MP In-Ceiling Dome Black (2.0-H3M-DC1-BL) |
+| Type | dome |
+| Connectivity | ethernet |
+| Resolution | 2MP (2MP, 1920×1080) |
+| Sensor | 1/3.6" progressive scan CMOS |
+| Lens | 1× 2.8mm F2.0 |
+| Field of view | 86 horizontal° |
+| Night vision | none, 0.6 lux |
+| Power | PoE (802.3af Class 1) |
+| Protocols | onvif, rtsp |
+| Operating temp | -10 to 50°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 30 | H.264 |
+
+## Features
+
+- Progressive scan CMOS sensor
+- 72.4 dB dynamic range
+- Selectable motion detection sensitivity/threshold
+- Automatic/manual electronic shutter (1/8-1/8000 sec)
+- 50/60Hz flicker control
+- Adjustable backlight compensation
+- Up to 64 privacy zones
+- ONVIF Profile S compliant (v1.02, 2.00)
+- Black finish (RAL 9005)
+
+## Sources
+
+- https://assets.avigilon.com/file_library/pdf/h3-micro-dome/avigilon-h3-micro-dome-camera-datasheet-en-rev1.pdf
+
+---
+*Auto-generated from avigilon-h3m-dc1-bl-2mp.json — do not edit by hand.*

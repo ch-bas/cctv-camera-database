@@ -37,7 +37,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2746G2-IZS-C.pdf
+- https://assets.hikvision.com/prd/public/all/doc/sm000059097/DS-2CD2746G2-IZS-C_Datasheet_V5.5.112_20230217.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2746g2-izs.json — do not edit by hand.*

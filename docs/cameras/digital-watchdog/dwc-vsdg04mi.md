@@ -33,6 +33,7 @@
 
 - https://digital-watchdog.com/productdetail/DWC-VSDG04Mi/
 - https://digitalwatchdog.s3.us-west-1.amazonaws.com/_downloads_2025/DW_DS_DWC-VSDG04Mi_Rev0525.pdf
+- https://digitalwatchdog.happyfox.com/kb/article/323-megapix-ip-camera-rtsp-stream-list/
 
 ---
 *Auto-generated from digital-watchdog-dwc-vsdg04mi.json — do not edit by hand.*

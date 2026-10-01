@@ -1,0 +1,30 @@
+# RVi RVi-4TVC-400L8/M1-AT
+
+| Field | Spec |
+|-------|------|
+| Brand | RVi |
+| Model | RVi-4TVC-400L8/M1-AT |
+| Type | bullet |
+| Connectivity | ethernet |
+| Resolution | 400x300 (thermal) (0.12MP, 400×300) |
+| Lens | 1× 8mm |
+| Field of view | 43.6° |
+| Power | PoE |
+| Storage | microSD ≤ 512GB, NVR |
+| Protocols | onvif, rtsp, http |
+| IP rating | IP66 |
+| Two-way audio | No |
+| Operating temp | -40 to 60°C |
+
+## Features
+
+- thermal imaging
+- video analytics
+- temperature measurement
+
+## Sources
+
+- https://rvigroup.ru/catalog-v2/teplovizor_rvi_4tvc_400l8_m1_at/
+
+---
+*Auto-generated from rvi-4tvc-400l8-m1-at.json — do not edit by hand.*

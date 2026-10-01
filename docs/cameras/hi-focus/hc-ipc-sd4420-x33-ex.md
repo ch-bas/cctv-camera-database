@@ -8,13 +8,21 @@
 | Connectivity | ethernet |
 | Resolution | 2MP (2MP, 1920×1080) |
 | Sensor | 1/2.8" CMOS |
-| Lens | 1× 5.5-180mm |
-| Night vision | ir (150m) |
+| Lens | 1× 5.5-180mm F1.5 |
+| Field of view | 59.8° |
+| Night vision | ir (150m), 0.0001 lux, 0.005 lux color |
 | Power | DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP68 |
 | Two-way audio | No |
+| Operating temp | -40°C ~ 60°C°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 30 | H.265+ |
 
 ## Features
 

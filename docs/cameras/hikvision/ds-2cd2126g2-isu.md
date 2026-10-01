@@ -37,7 +37,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2126G2-ISU-C.pdf
+- https://assets.hikvision.com/prd/normal/all/doc/sm000064595/DS-2CD2126G2-ISU_Datasheet_20260525.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2126g2-isu.json — do not edit by hand.*

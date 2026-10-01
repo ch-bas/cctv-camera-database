@@ -35,6 +35,7 @@
 
 - https://digital-watchdog.com/productdetail/DWC-MF5Wi4TWDMP/
 - https://digitalwatchdog.s3.us-west-1.amazonaws.com/_downloads_2025/9dac1016-ec13-4a66-ab18-60a06ec47e27/DW_DS_DWC-MF5Wi4TWDMP_Rev0421.pdf
+- https://digitalwatchdog.happyfox.com/kb/article/323-megapix-ip-camera-rtsp-stream-list/
 
 ---
 *Auto-generated from digital-watchdog-dwc-mf5wi4twdmp.json — do not edit by hand.*

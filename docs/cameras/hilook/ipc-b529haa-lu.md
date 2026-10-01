@@ -11,7 +11,7 @@
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/2.8" Progressive Scan CMOS |
 | Lens | 1× 2.8 / 4 (fixed)mm F1.0 |
-| Field of view | 106 horizontal° |
+| Field of view | 106 horizontal (2.8 mm) / 88 horizontal (4 mm)° |
 | Night vision | hybrid (50m), 0.0005 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | NVR |
@@ -42,7 +42,8 @@
 
 ## Sources
 
-- https://www.hikvision.com/en/products/HiLook-IP-Products/
+- https://assets.hikvision.com/prd/normal/all/doc/sm000098807/IPC-B529HAA-LU_Datasheet_20250925.pdf
+- https://www.hikvision.com/mena-en/products/HiLook-IP-Products/Network-Cameras/Value-Camera/ipc-b529haa-lu-f---sl---srb-/
 
 ---
 *Auto-generated from hilook-ipc-b529haa-lu.json — do not edit by hand.*

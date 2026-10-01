@@ -35,7 +35,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2346G2H-IU.pdf
+- https://assets.hikvision.com/prd/normal/all/doc/sm000050843/DS-2CD2346G2H-IU_Datasheet_20260713.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2346g2h-iu.json — do not edit by hand.*

@@ -10,7 +10,7 @@
 | Connectivity | ethernet |
 | Resolution | 3MP (3MP, 2048×1536) |
 | Sensor | 1/2.8" CMOS |
-| Lens | 1× 3.1-8.4 (motorized varifocal)mm |
+| Lens | 1× 3.1-8.4 (motorized varifocal)mm F1.6 |
 | Field of view | 97-33 horizontal° |
 | Night vision | ir (30m), 0.03 lux color |
 | Power | PoE (802.3af) |
@@ -19,6 +19,7 @@
 | IP rating | IP66 |
 | IK rating | IK10 |
 | Two-way audio | No |
+| Operating temp | -40 to 60°C |
 
 ## Features
 

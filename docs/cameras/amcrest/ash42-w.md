@@ -7,6 +7,8 @@
 | Type | bullet |
 | Connectivity | wifi |
 | Resolution | 2K QHD (4MP, 2560×1440) |
+| Sensor | 1/3" CMOS |
+| Lens | F2.0 |
 | Field of view | 101 horizontal° |
 | Night vision | ir (10m) |
 | Power | DC 5V (USB) |
@@ -25,7 +27,7 @@
 
 ## Sources
 
-- https://www.amazon.com/dp/B08NSY7KT6
+- https://support.amcrest.com/hc/en-us/articles/360038610371-Technical-Specifications-ASH42
 
 ---
 *Auto-generated from amcrest-ash42-w.json — do not edit by hand.*

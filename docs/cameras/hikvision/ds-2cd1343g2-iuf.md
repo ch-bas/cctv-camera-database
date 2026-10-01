@@ -24,6 +24,7 @@
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
 | main | 2560x1440 | 20 | H.265 |
+| sub | 1280x720 | 24 | H.265 |
 
 ## Features
 
@@ -35,7 +36,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD1343G2-IUF.pdf
+- https://assets.hikvision.com/prd/public/all/doc/sm000041017/DS-2CD1343G2-IUF_Datasheet_20240828.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd1343g2-iuf.json — do not edit by hand.*

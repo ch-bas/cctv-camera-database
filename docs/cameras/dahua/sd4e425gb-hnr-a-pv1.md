@@ -1,5 +1,7 @@
 # Dahua SD4E425GB-HNR-A-PV1
 
+*Also known as: DH-SD4E425GB-HNR-A-PV1*
+
 | Field | Spec |
 |-------|------|
 | Brand | Dahua |
@@ -8,6 +10,7 @@
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2560×1440) |
 | Sensor | 1/2.8" CMOS |
+| Lens | 1× 5-125mm F1.6-F3.6 |
 | Field of view | 51.9-3.0 horizontal° |
 | Night vision | hybrid (100m), 0.005 lux color |
 | Power | PoE+ (802.3at) / DC 12V |
@@ -40,6 +43,7 @@
 ## Sources
 
 - https://www.dahuasecurity.com/products/network-products/ptz-cameras/wizsense-series/sd4/sd4e425gb-hnr-a-pv1
+- https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/DH-SD4E425GB-HNR-A-PV1_S0_datasheet_20250122.pdf
 
 ---
 *Auto-generated from dahua-sd4e425gb-hnr-a-pv1.json — do not edit by hand.*

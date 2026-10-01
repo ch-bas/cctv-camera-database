@@ -12,11 +12,17 @@
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 2.8 (fixed)mm F1.6 |
 | Field of view | 100 horizontal / 52 vertical / 116 diagonal° |
-| Night vision | hybrid (10m) |
+| Night vision | hybrid (10m), 0.01 lux |
 | Power | Rechargeable battery (10,400mAh); DC 5V/2A adapter included; solar-compatible (EZVIZ Solar Panel, sold separately) |
 | IP rating | IP66 |
 | Two-way audio | Yes |
 | Operating temp | -20 to 50°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 15 | H.265 |
 
 ## Features
 

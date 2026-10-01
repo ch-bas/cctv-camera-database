@@ -10,7 +10,7 @@
 | Sensor | 1/2.8" 2MP progressive CMOS |
 | Lens | 1× 3.6mm F2.0 |
 | Field of view | 86 H / 47 V / 103 D° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.001 lux, 0.01 lux color |
 | Power | PoE (IEEE 802.3af) or 12V DC |
 | Storage | NVR |
 | Protocols | onvif, rtsp |

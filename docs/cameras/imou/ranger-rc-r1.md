@@ -15,6 +15,7 @@
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | http |
 | Two-way audio | Yes |
+| Operating temp | -10 to 45°C |
 | Released | 2026 |
 
 ## Streams

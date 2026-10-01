@@ -17,6 +17,7 @@
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | rtsp, onvif |
 | IP rating | IP67 |
+| IK rating | IK10 |
 | Operating temp | -40 to 60°C |
 
 ## Streams
@@ -39,7 +40,7 @@
 
 ## Sources
 
-- https://amcrest.com/ultrahd-4k-8mp-ai-dome-poe-ip-camera-security-3840x2160-98ft-nightvision-2-8mm-lens-ip67-weatherproof-artificial-intelligence-white-ip8m-2693ew-ai.html
+- https://support.amcrest.com/hc/en-us/articles/360050566651-Technical-Specifications-IP8M-2693EW-AI
 
 ---
 *Auto-generated from amcrest-ip8m-2693ew-ai.json — do not edit by hand.*

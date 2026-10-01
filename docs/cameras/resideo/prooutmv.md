@@ -9,6 +9,7 @@
 | Type | box |
 | Resolution | (0.08MP) |
 | Night vision | ir |
+| IP rating | IP65 |
 
 ## Features
 
@@ -23,6 +24,7 @@
 ## Sources
 
 - https://www.resideo.com/us/en/pro/products/security/video-cameras/connected-cameras/prooutmv-proseries-outdoor-motionviewerr-prooutmv/
+- https://digitalassets.resideo.com/damroot/Original/10014/L_PSINDMOVD_D.pdf
 
 ---
 *Auto-generated from resideo-prooutmv.json — do not edit by hand.*

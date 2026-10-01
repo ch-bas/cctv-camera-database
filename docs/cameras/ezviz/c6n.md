@@ -35,6 +35,7 @@
 - https://www.ezviz.com/eu/product/C6N/11391
 - https://www.ezviz.com/us/product/c6n/21692
 - https://m-support.ezviz.com/faq/article/Whether-EZVIZ-devices-support-ONVIF-protocol
+- https://support.ezviz.com/faq/article/How-to-set-up-C6N-TY1-TY2-as-a-webcam
 
 ---
 *Auto-generated from ezviz-c6n.json — do not edit by hand.*

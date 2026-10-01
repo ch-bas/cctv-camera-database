@@ -19,6 +19,7 @@
 | IP rating | IP66 |
 | IK rating | IK10 |
 | Two-way audio | Yes |
+| Operating temp | -50 to 55°C |
 
 ## Features
 

@@ -10,11 +10,12 @@
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 2.8mm |
 | Field of view | 92.5 horizontal / 59.9 vertical° |
-| Night vision | ir (20m) |
+| Night vision | ir (20m), 0.05 lux |
 | Power | PoE (IEEE 802.3af) / DC 12V |
 | Protocols | onvif, rtsp, http |
 | IP rating | IP66 |
 | Two-way audio | No |
+| Operating temp | -30 to 60 C°C |
 
 ## Streams
 

@@ -35,7 +35,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2423G2-IW-W.pdf
+- https://assets.hikvision.com/prd/public/all/doc/m000131940/DS-2CD2423G2-IW-W_Datasheet_20250324.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2423g2-iw.json — do not edit by hand.*

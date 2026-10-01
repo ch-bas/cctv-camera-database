@@ -12,7 +12,7 @@
 | Sensor | 1/3" CMOS |
 | Lens | 2× 2.8mm (top) + 6mm (bottom) (fixed)mm F1.6 |
 | Field of view | Top lens: 220 pan/10 tilt, 110 diagonal/96 horizontal/54 vertical optical; Bottom lens: 324 pan/90 tilt, 60 diagonal/52 horizontal/28 vertical optical° |
-| Night vision | hybrid (40m) |
+| Night vision | hybrid (40m), 0.5 lux |
 | Power | AC/DC power adapter (max 18W) |
 | Storage | microSD ≤ 512GB |
 | IP rating | IP65 |

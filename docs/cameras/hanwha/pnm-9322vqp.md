@@ -43,7 +43,7 @@
 ## Sources
 
 - https://hanwhavision.eu/product/pnm-9322vqp/
-- https://www.a1securitycameras.com/content/product_documents/55945/Hanwha-Techwin-(Samsung)-PNM-9322VQP-Datasheet-A1.pdf
+- https://www.a1securitycameras.com/content/product_documents/55945/Hanwha-Techwin-%28Samsung%29-PNM-9322VQP-Datasheet-A1.pdf
 
 ---
 *Auto-generated from hanwha-pnm-9322vqp.json — do not edit by hand.*

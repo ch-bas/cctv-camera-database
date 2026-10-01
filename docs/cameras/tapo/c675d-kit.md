@@ -1,6 +1,6 @@
 # Tapo C675D Kit
 
-*Also known as: Solar Dual-Lens Pan/Tilt 4K*
+*Also known as: Solar Dual-Lens Pan/Tilt 4K, Tapo C675D*
 
 | Field | Spec |
 |-------|------|

@@ -41,7 +41,8 @@
 
 ## Sources
 
-- https://www.hikvision.com/en/products/HiLook-IP-Products/
+- https://assets.hikvision.com/prd/normal/all/doc/m000108265/IPC-T249HA-LU_Datasheet_20260701.pdf
+- https://www.hikvision.com/mena-en/products/HiLook-IP-Products/Network-Cameras/Value-Camera/ipc-t249ha-lu/
 
 ---
 *Auto-generated from hilook-ipc-t249ha-lu.json — do not edit by hand.*

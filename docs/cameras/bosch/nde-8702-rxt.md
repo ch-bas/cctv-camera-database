@@ -1,16 +1,16 @@
-# Bosch FLEXIDOME 8100i — X series (NDE-8702-RXT)
+# Bosch FLEXIDOME 8100i - X series (NDE-8702-RXT)
 
 | Field | Spec |
 |-------|------|
 | Brand | Bosch |
-| Model | FLEXIDOME 8100i — X series (NDE-8702-RXT) |
+| Model | FLEXIDOME 8100i - X series (NDE-8702-RXT) |
 | Type | dome |
 | Connectivity | ethernet |
 | Resolution | Full HD 1080p (2MP) (2.1MP, 1920×1080) |
 | Sensor | 1/1.8" CMOS (4.1 µm, 2.10 MP) |
 | Lens | 1× 12-38mm F2.3 |
 | Field of view | 36-12 (horizontal), 20-7 (vertical)° |
-| Night vision | color, 0.0252 lux color |
+| Night vision | color, 0.0022 lux, 0.0252 lux color |
 | Power | PoE IEEE 802.3af/802.3at Type 1 Class 3; 24 VAC; 12-26 VDC |
 | Storage | microSD ≤ 2048GB, NVR |
 | Protocols | onvif, rtsp, http |
@@ -46,7 +46,6 @@
 ## Sources
 
 - https://resources.keenfinity.tech/public/documents/NDE_8702_RXT_Data_sheet_enUS_125842961291.pdf
-- https://netcamcenter.de/de/produkte/ip-kameras/nde-8702-rxt
 - https://www.a1securitycameras.com/bosch-nde-8702-rxt.html
 - https://commerce.keenfinity.tech/xl/en/FLEXIDOME-8100i-X-series/p/F.01U.411.088/
 

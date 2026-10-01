@@ -37,7 +37,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2643G2-IZS.pdf
+- https://assets.hikvision.com/prd/normal/all/doc/sm000058948/DS-2CD2643G2-IZS_Datasheet_V5.5.113_20230318.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2643g2-izs.json — do not edit by hand.*

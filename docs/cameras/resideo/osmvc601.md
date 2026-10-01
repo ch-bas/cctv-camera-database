@@ -12,6 +12,7 @@
 | Lens | 1× |
 | Field of view | 90° |
 | Night vision | ir |
+| IP rating | IP54 |
 | Operating temp | -25 to 70°C |
 
 ## Features
@@ -29,6 +30,7 @@
 ## Sources
 
 - https://www.resideo.com/us/en/pro/products/security/video-cameras/connected-cameras/osmvc601-outdoor-video-live-motionviewer-osmvc601/
+- https://digitalassets.resideo.com/damroot/Original/10016/223-OSMVC.pdf
 
 ---
 *Auto-generated from resideo-osmvc601.json — do not edit by hand.*

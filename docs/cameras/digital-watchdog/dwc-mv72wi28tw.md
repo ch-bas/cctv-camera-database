@@ -31,8 +31,9 @@
 
 ## Sources
 
-- https://digital-watchdog.com/productdetail/DWC-M(P)V72WixTW/
+- https://digital-watchdog.com/productdetail/DWC-M%28P%29V72WixTW/
 - https://digitalwatchdog.s3.us-west-1.amazonaws.com/_downloads_2025/DW_DS_DWC-MV72WixTW_Rev0225.pdf
+- https://digitalwatchdog.happyfox.com/kb/article/323-megapix-ip-camera-rtsp-stream-list/
 
 ---
 *Auto-generated from digital-watchdog-dwc-mv72wi28tw.json — do not edit by hand.*

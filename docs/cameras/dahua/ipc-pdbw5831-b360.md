@@ -10,7 +10,7 @@
 | Connectivity | ethernet |
 | Resolution | 4x2MP 360deg (8MP) |
 | Sensor | 4x 1/2.8" CMOS |
-| Lens | 4× 2.7-12mm |
+| Lens | 4× 2.7-12mm F1.8 |
 | Field of view | 360° |
 | Night vision | ir (30m), 0.005 lux color |
 | Power | PoE+ (802.3at) / AC 24V |
@@ -19,6 +19,14 @@
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |
+| Operating temp | -30 to 60°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 30 | H.265 |
+| sub | 704x576 | 30 | H.265 |
 
 ## Features
 

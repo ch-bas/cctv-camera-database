@@ -1,0 +1,47 @@
+# Pelco Sarix Multi Enhanced 12MP Pendant Mount
+
+| Field | Spec |
+|-------|------|
+| Brand | Pelco |
+| Model | Sarix Multi Enhanced 12MP Pendant Mount |
+| Type | panoramic |
+| Connectivity | ethernet |
+| Resolution | (12MP, 8192×1536) |
+| Sensor | 1/2.8" CMOS |
+| Lens | 4× 3.3-5.7mm F1.5-F1.9 |
+| Field of view | 53-99 horizontal, 39-69 vertical (per sensor, 4:3)° |
+| Night vision | ir (30m), 0.018 lux, 0.02 lux color |
+| Power | PoE (IEEE 802.3at Type 2, PoE+) |
+| Storage | NVR |
+| Protocols | onvif, rtsp |
+| IP rating | IP66/IP67 |
+| IK rating | IK10 |
+| Two-way audio | No |
+| Operating temp | -40 to 60°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 8192x1536 | 40 | H.265 |
+
+## Features
+
+- Multi-directional coverage (180°, 270°, or 360° from 3 or 4 configurable sensors)
+- Variofocal lenses with lens distortion correction
+- Pelco Smart Analytics powered by Motorola Solutions (object detection/classification)
+- ONVIF Profile S, G, T, M compliant
+- FIPS-compliant cryptography, integrated TPM, Secure Boot
+- 120 dB true WDR (dual exposure)
+- 3D Noise Reduction Filter
+- Redundant power (seamless PoE/Aux failover)
+- 5-year warranty
+- NEMA TS2 rated
+- Optional IR illuminator ring accessory (30 m range, requires PoE++ high-power)
+
+## Sources
+
+- https://www.pelco.com/fs/documents/pelco-sarix-multi-enhanced-specification-sheet-en.pdf
+
+---
+*Auto-generated from pelco-sarix-multi-enhanced-12mp-pendant-mount.json — do not edit by hand.*

@@ -10,6 +10,7 @@
 | Sensor | 1/2.8" Sony Color CMOS |
 | Lens | 3.6mm F1.6 |
 | Night vision | color (30m), 0.01 lux color |
+| IP rating | IP67 |
 | Operating temp | -20 to 50°C |
 
 ## Features
@@ -26,6 +27,7 @@
 ## Sources
 
 - https://www.mapesen.com/web/userfiles/productfile/gengxin/L6KH800LFspecification-mapesenV.I03.pdf
+- https://www.mapesen.com/normal-camera/l6k-full-color-series.html
 
 ---
 *Auto-generated from mapesen-l6kh800lf.json — do not edit by hand.*

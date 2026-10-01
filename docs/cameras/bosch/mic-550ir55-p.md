@@ -16,6 +16,7 @@
 | Storage | NVR |
 | IP rating | IP68 |
 | Two-way audio | Yes |
+| Operating temp | -40 to +60°C |
 
 ## Features
 

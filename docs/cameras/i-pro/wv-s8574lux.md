@@ -1,0 +1,58 @@
+# i-PRO WV-S8574LUX
+
+*Also known as: WV-S8574L, Panasonic WV-S8574L, i-PRO S-Series 4x4K Multi-Directional AI*
+
+| Field | Spec |
+|-------|------|
+| Brand | i-PRO |
+| Model | WV-S8574LUX |
+| Type | panoramic |
+| Connectivity | ethernet |
+| Resolution | 4x 4K per sensor (~33MP total, 4-sensor) (8MP, 3840×2160) |
+| Sensor | 4 x 1/2.8" CMOS (four independently steerable sensors) |
+| Lens | 4× 3.1mm F1.4 |
+| Field of view | 108 horizontal, 56 vertical (per sensor); 360 total coverage° |
+| Night vision | hybrid (40m), 0.084 lux color |
+| Power | PoE+ (IEEE 802.3at, Class 4) / DC 54V |
+| Storage | microSD ≤ 512GB, NVR |
+| Protocols | onvif, rtsp, http |
+| IP rating | IP66/IP67 |
+| IK rating | IK10 |
+| Two-way audio | Yes |
+| Operating temp | -40 to +60°C |
+| Released | 2023 |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 15 | H.265 |
+| sub | 1920x1080 | 15 | H.265 |
+| third | 640x360 | 15 | H.264 |
+
+## Features
+
+- 4-sensor multi-directional (4x 4K, ~33MP total)
+- 360 coverage with a single IP address
+- Each sensor independently steerable (Pan +/-125, Tilt +10 to +105, Yaw +/-90, Twist +/-30)
+- i-PRO AI Engine on-device (AI People / Vehicle / Face / Non-mask / Occupancy Detection)
+- AI Sound Classification (gunshot, yell, vehicle horn, glass break)
+- Intelligent Auto (AI image optimisation)
+- Super Dynamic 120dB WDR
+- Color Night Vision (0.084 lx)
+- Built-in 360 IR LED (40m irradiation)
+- Smart Coding (AI compression)
+- Built-in FIPS 140-2 Level 3 Certified Secure Element (NXP EdgeLock SE050F)
+- NDAA compliant
+- ONVIF Profile G/M/S/T
+- IK10 vandal-resistant, IP66/IP67, NEMA 4X
+- IK10
+
+## Sources
+
+- https://i-pro.com/products_and_solutions/ja/surveillance/media/documentation_file/doc/support_and_documentation/spec-wv-s8543luxetc
+- https://i-pro.com/products_and_solutions/sites/default/files/2024-01/WV-S8574L%20_%20i-PRO%20US_R8_240115.pdf
+- https://i-pro.com/products_and_solutions/en/surveillance/products/wv-s8574l
+
+---
+*Auto-generated from i-pro-s8574lux.json — do not edit by hand.*

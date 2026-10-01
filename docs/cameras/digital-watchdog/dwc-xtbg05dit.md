@@ -37,6 +37,7 @@
 
 - https://digital-watchdog.com/productdetail/DWC-XTBG05DiT/
 - https://digital-watchdog.com/admin/assets/_downloads/DW_DS_DWC-XTBG05DiT_Rev0726.pdf
+- https://digitalwatchdog.happyfox.com/kb/article/323-megapix-ip-camera-rtsp-stream-list/
 
 ---
 *Auto-generated from digital-watchdog-dwc-xtbg05dit.json — do not edit by hand.*

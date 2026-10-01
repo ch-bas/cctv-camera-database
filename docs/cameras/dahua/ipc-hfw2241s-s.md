@@ -7,6 +7,8 @@
 | Type | bullet |
 | Connectivity | ethernet |
 | Resolution | 1080p HD (2MP, 1920×1080) |
+| Sensor | 1/2.8" CMOS |
+| Lens | F1.6 |
 | Field of view | 106h° |
 | Night vision | ir (30m), 0.002 lux color |
 | Power | PoE (802.3af) / DC 12V |
@@ -14,6 +16,7 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
+| Operating temp | -40 to +60°C |
 | Released | 2022 |
 
 ## Streams
@@ -34,6 +37,7 @@
 ## Sources
 
 - https://www.dahuasecurity.com/products/all-products/network-cameras/wizsense-series/2-series/2mp/ipc-hfw2241s-s
+- https://material.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/IPC-HFW2241S-S_S0_datasheet_20240302.pdf
 
 ---
 *Auto-generated from dahua-ipc-hfw2241s-s.json — do not edit by hand.*

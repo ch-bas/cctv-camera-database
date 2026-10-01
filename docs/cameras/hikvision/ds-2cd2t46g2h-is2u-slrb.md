@@ -35,7 +35,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2T46G2H-IS2U_SLRB.pdf
+- https://assets.hikvision.com/prd/public/all/doc/sm000070229/DS-2CD2T46G2H-IS2U_SLRB_Datasheet_20240517.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2t46g2h-is2u-slrb.json — do not edit by hand.*

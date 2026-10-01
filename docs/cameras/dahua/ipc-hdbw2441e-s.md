@@ -10,15 +10,16 @@
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2688×1520) |
 | Sensor | 1/2.9" CMOS |
-| Lens | 1× 2.8 / 3.6 (fixed)mm |
+| Lens | 1× 2.8 / 3.6 (fixed)mm F1.6 |
 | Field of view | 102 (2.8mm) / 84 (3.6mm)° |
-| Night vision | ir (30m), 0.006 lux color |
+| Night vision | ir (30m), 0.0006 lux, 0.006 lux color |
 | Power | PoE / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |
+| Operating temp | -40 to +60°C |
 
 ## Streams
 

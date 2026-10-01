@@ -1,0 +1,37 @@
+# i-PRO WV-S8544LUX
+
+*Also known as: WV-S8544L*
+
+| Field | Spec |
+|-------|------|
+| Brand | i-PRO |
+| Model | WV-S8544LUX |
+| Type | panoramic |
+| Connectivity | ethernet |
+| Resolution | 4x4MP (16MP) (16MP, 2688×1520) |
+| Sensor | 4x 1/2.7" CMOS |
+| Lens | 4× 2.9-7.3mm f/2.0-3.0 |
+| Field of view | 43-100 (H, per sensor)° |
+| Night vision | ir (20m), 0.12 lux, 0.21 lux color |
+| Power | PoE+ |
+| Storage | microSD ≤ 512GB, NVR |
+| Protocols | onvif, rtsp |
+| IP rating | IP67 |
+| IK rating | IK10 |
+| Two-way audio | Yes |
+| Operating temp | -40 to 60°C |
+
+## Features
+
+- AI Engine
+- motorized zoom
+- multi-directional
+- ONVIF Profile G/M/S/T
+
+## Sources
+
+- https://i-pro.com/products_and_solutions/ja/surveillance/media/documentation_file/doc/support_and_documentation/spec-wv-s8543luxetc
+- https://i-pro.com/products_and_solutions/en/surveillance/products/wv-s8544l
+
+---
+*Auto-generated from i-pro-s8544lux.json — do not edit by hand.*

@@ -10,7 +10,7 @@
 | Connectivity | wifi, ethernet |
 | Resolution | 5MP/3K (5MP, 2880×1620) |
 | Sensor | 1/3" 5MP progressive CMOS |
-| Lens | 2× |
+| Lens | 2× F1.6 |
 | Field of view | wide 95.3 H + tele 24.4 H; pan 355 / tilt 0-90° |
 | Night vision | hybrid (56m) |
 | Power | DC 12V |
@@ -18,6 +18,7 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | Two-way audio | Yes |
+| Operating temp | -30 to 50°C |
 
 ## Streams
 

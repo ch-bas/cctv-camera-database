@@ -48,7 +48,6 @@
 ## Sources
 
 - https://resources.keenfinity.tech/public/documents/FLEXIDOME_8100i_Data_sheet_enUS_125842914315.pdf
-- https://netcamcenter.de/de/produkte/ip-kameras/nde-8703-rt
 - https://www.adiglobaldistribution.us/Product/PB-NDE8703RT
 - https://madison.tech/products/bosch-flexidome-8100i-nde-8703-rt/
 

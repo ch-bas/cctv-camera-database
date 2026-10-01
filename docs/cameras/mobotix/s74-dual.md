@@ -22,7 +22,7 @@
 
 - MOBOTIX 7 dual-sensor
 - 2x interchangeable heads
-- 180° panoramic
+- 180 panoramic
 - on-camera AI Certified Apps
 - microSD up to 2TB
 - IP66
@@ -31,6 +31,7 @@
 ## Sources
 
 - https://www.mobotix.com/en/products/mobotix-7/s74
+- https://community.mobotix.com/t/rtsp-streaming-with-mobotix-cameras/4912
 
 ---
 *Auto-generated from mobotix-s74-dual.json — do not edit by hand.*

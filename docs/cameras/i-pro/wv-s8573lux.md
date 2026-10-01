@@ -1,0 +1,41 @@
+# i-PRO WV-S8573LUX
+
+*Also known as: WV-S8573L*
+
+| Field | Spec |
+|-------|------|
+| Brand | i-PRO |
+| Model | WV-S8573LUX |
+| Type | panoramic |
+| Connectivity | ethernet |
+| Resolution | 3x 4K (25MP, 3840×2160) |
+| Sensor | 3x 1/2.8" CMOS |
+| Lens | 3× 3.1mm F1.4 |
+| Field of view | 108H x 56V (270 total coverage)° |
+| Night vision | ir (40m), 0.084 lux, 0.084 lux color |
+| Power | PoE+ (IEEE 802.3at) |
+| Storage | microSD ≤ 512GB, NVR |
+| Protocols | onvif, rtsp |
+| IP rating | IP67 |
+| IK rating | IK10 |
+| Two-way audio | No |
+| Operating temp | -40 to 60°C |
+
+## Features
+
+- AI Engine
+- Super Dynamic 120dB WDR
+- FIPS 140-2 Level 3 Secure Element
+- NDAA Compliant
+- 360 IR LED
+- Smart Coding
+- ONVIF Profile G/M/S/T
+- Multi-directional 3-sensor
+
+## Sources
+
+- https://i-pro.com/products_and_solutions/ja/surveillance/media/documentation_file/doc/support_and_documentation/spec-wv-s8543luxetc
+- https://i-pro.com/products_and_solutions/en/surveillance/products/wv-s8573l
+
+---
+*Auto-generated from i-pro-s8573lux.json — do not edit by hand.*

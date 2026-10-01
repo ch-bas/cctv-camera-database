@@ -34,7 +34,7 @@
 - onboard auto-tracking (Auto Tracking 1.0)
 - SMD 3.0
 - 100m IR
-- 360° endless pan
+- 360 endless pan
 - perimeter protection
 
 ## Sources

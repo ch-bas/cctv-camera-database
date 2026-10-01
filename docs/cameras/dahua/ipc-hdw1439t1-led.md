@@ -6,7 +6,7 @@
 | Model | IPC-HDW1439T1-LED |
 | Type | turret |
 | Connectivity | ethernet |
-| Resolution | 4MP (4MP) |
+| Resolution | 4MP (4MP, 2560×1440) |
 | Sensor | 1/3" CMOS |
 | Field of view | 107h° |
 | Night vision | color (15m), 0.006 lux, 0.006 lux color |
@@ -16,7 +16,15 @@
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |
+| Operating temp | -40°C to 60°C°C |
 | Released | 2021 |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 2560x1440 | 30 | H.265 |
+| sub | 704x576 | 25 | H.265 |
 
 ## Features
 

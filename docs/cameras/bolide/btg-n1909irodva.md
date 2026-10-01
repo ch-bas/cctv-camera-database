@@ -1,0 +1,36 @@
+# Bolide BTG-N1909IRODVA
+
+| Field | Spec |
+|-------|------|
+| Brand | Bolide |
+| Model | BTG-N1909IRODVA |
+| Type | turret |
+| Connectivity | ethernet |
+| Resolution | 4K (3840x2160) (8MP, 3840×2160) |
+| Sensor | 1/3" CMOS |
+| Lens | 2.8-12mm |
+| Night vision | ir |
+| Storage | NVR |
+| Protocols | onvif, rtsp |
+| IP rating | IP66 |
+| Operating temp | -40 to 60 C°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | — | H.265+ |
+
+## Features
+
+- 4K (3840x2160) IP turret (2.8-12 mm varifocal)
+- H.265+/H.265/H.264, S/N >50 dB
+- 1 RJ45 10/100M, ONVIF
+- IP66 outdoor, 12 VDC / PoE
+
+## Sources
+
+- https://bolideco.com/products/4k-2-8-12mm-varifocal-lens-dome-camera-btg-n1909irodva
+
+---
+*Auto-generated from bolide-btg-n1909irodva.json — do not edit by hand.*

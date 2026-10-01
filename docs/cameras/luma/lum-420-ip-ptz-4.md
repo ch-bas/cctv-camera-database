@@ -15,6 +15,7 @@
 | Power | DC12V / PoE+ (IEEE 802.3at) |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
+| IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |
 | Operating temp | -40°C - 70°C (IR off) / -40°C - 60°C (IR on)°C |

@@ -38,6 +38,7 @@
 ## Sources
 
 - https://www.uniarch.cn/Products/Wireless_Series/Basic_Series/Basic_Series/Uho-P1A-M5F4D/
+- https://www.uniarch.cn/Support/FAQ/202209/951565_575360_0.htm
 
 ---
 *Auto-generated from uniarch-uho-p1a-m5f4d.json — do not edit by hand.*

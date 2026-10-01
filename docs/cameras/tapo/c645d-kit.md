@@ -1,5 +1,7 @@
 # Tapo C645D Kit
 
+*Also known as: Tapo C645D*
+
 | Field | Spec |
 |-------|------|
 | Brand | Tapo |

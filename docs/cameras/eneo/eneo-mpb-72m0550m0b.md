@@ -1,0 +1,35 @@
+# eneo MPB-72M0550M0B
+
+*Also known as: eneo MPB-72M0550M0B*
+
+| Field | Spec |
+|-------|------|
+| Brand | eneo |
+| Model | MPB-72M0550M0B |
+| Type | bullet |
+| Connectivity | coax |
+| Resolution | 1080p (2MP, 1920×1080) |
+| Sensor | 1/2.8" CMOS |
+| Lens | 5-50mm F1.6 |
+| Field of view | 47 - 10° |
+| Night vision | ir (60m), 0.0005 lux, 0.005 lux color |
+| Power | DC 12V |
+| Protocols | hdcvi |
+| IP rating | IP67 |
+| Operating temp | -30 to 50°C |
+
+## Features
+
+- WDR
+- multi-signal HD-TVI / AHD / CVBS
+- EX-SDI / HD-SDI output
+- 10x optical zoom
+- NDAA compliant
+
+## Sources
+
+- https://eneo-security.com/en/mpb-72m0550m0b.html
+- https://eneo-security.com/en/generate/datasheet/render/product_sku/243649/
+
+---
+*Auto-generated from eneo-mpb-72m0550m0b.json — do not edit by hand.*

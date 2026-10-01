@@ -15,6 +15,7 @@
 | Storage | microSD ≤ 512GB |
 | Protocols | http |
 | Two-way audio | Yes |
+| Operating temp | -20 to 50°C |
 
 ## Streams
 

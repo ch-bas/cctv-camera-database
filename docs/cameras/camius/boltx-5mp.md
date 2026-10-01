@@ -26,6 +26,7 @@
 ## Sources
 
 - https://www.camius.com/outdoor-ip-camera-boltx5pa
+- https://www.camius.com/add-ip-cameras-on-network/
 
 ---
 *Auto-generated from camius-boltx-5mp.json — do not edit by hand.*

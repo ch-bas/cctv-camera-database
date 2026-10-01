@@ -41,7 +41,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2DE2A404IW-DE3S6_C.pdf
+- https://assets.hikvision.com/prd/normal/all/doc/m000045324/es-es/DS-2DE2A404IW-DE3S6-C_Datasheet_20250226.pdf
 
 ---
 *Auto-generated from hikvision-ds-2de2a404iw-de3s6.json — do not edit by hand.*

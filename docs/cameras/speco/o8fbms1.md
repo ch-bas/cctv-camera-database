@@ -10,7 +10,7 @@
 | Sensor | 4x progressive scan CMOS (multi-sensor panoramic array) |
 | Lens | 4× 3.3mm |
 | Field of view | Horizontal 175, Vertical 80° |
-| Night vision | ir (20m), 0.008 lux color |
+| Night vision | ir (20m), 0.008 lux, 0.008 lux color |
 | Power | PoE |
 | Storage | NVR |
 | Protocols | onvif, rtsp, http |

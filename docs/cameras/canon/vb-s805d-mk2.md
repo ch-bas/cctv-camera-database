@@ -35,6 +35,7 @@
 ## Sources
 
 - https://www.usa.canon.com/cameras/network-cameras
+- https://objects.icecat.biz/objects/mmo_21304715_1593606623_2699_26651.pdf
 
 ---
 *Auto-generated from canon-vb-s805d-mk2.json — do not edit by hand.*

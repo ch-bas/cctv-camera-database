@@ -8,13 +8,14 @@
 | Connectivity | coax |
 | Resolution | 4MP (4MP, 2560×1440) |
 | Sensor | 1/2.8" CMOS |
-| Lens | 1× 4.8-120mm |
+| Lens | 1× 4.8-120mm F1.6 |
 | Field of view | 55h° |
-| Night vision | ir (100m), 0.005 lux color |
+| Night vision | ir (100m), 0.001 lux, 0.005 lux color |
 | Power | 12 VDC (IR 7W) |
 | Storage | NVR |
 | IP rating | IP66 |
 | Two-way audio | No |
+| Operating temp | -30 to 65°C |
 
 ## Features
 

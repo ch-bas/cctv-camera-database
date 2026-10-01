@@ -17,10 +17,12 @@
 | IP rating | IP66 |
 | IK rating | IK10 |
 | Two-way audio | Yes |
+| Operating temp | -40 to 60°C |
 
 ## Sources
 
 - https://i-pro.com/products_and_solutions/en/surveillance/products/wv-s1536la
+- https://i-pro.com/products_and_solutions/sites/default/files/2026-02/WV-S1536LA_i-PRO_A4_R9_260226.pdf
 
 ---
 *Auto-generated from i-pro-wv-s1536la.json — do not edit by hand.*

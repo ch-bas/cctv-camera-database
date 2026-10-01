@@ -1,0 +1,38 @@
+# RVi RVi-CFU40/50M4/ADMSI rev. I1
+
+| Field | Spec |
+|-------|------|
+| Brand | RVi |
+| Model | RVi-CFU40/50M4/ADMSI rev. I1 |
+| Type | bullet |
+| Connectivity | ethernet |
+| Resolution | 8MP (8MP, 3840×2160) |
+| Sensor | 1/2.7" CMOS |
+| Lens | 1× 1.68mm F2.0 |
+| Field of view | 180° |
+| Night vision | ir (20m), 0.01 lux color |
+| Power | PoE |
+| Storage | microSD ≤ 512GB, NVR |
+| Protocols | onvif, rtsp, http, p2p |
+| IP rating | IP67 |
+| Two-way audio | No |
+| Operating temp | -40 to 60°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 30 | H.265 |
+
+## Features
+
+- WDR
+- line crossing detection
+- intrusion detection
+
+## Sources
+
+- https://rvigroup.ru/catalog-v2/rvi_cfu40_50m4_admsi_rev_i1/
+
+---
+*Auto-generated from rvi-cfu40-50m4-admsi-rev-i1.json — do not edit by hand.*

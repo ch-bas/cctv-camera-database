@@ -36,7 +36,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2T86G2-ISU_SL-C.pdf
+- https://assets.hikvision.com/prd/normal/all/doc/sm000059154/pl-pl/DS-2CD2T86G2-ISU_SL-D_Datasheet_20250211.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2t86g2-isu-sl.json — do not edit by hand.*

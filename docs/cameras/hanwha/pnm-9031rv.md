@@ -30,7 +30,7 @@
 
 ## Features
 
-- 15MP 192° panoramic stitching image
+- 15MP 192 panoramic stitching image
 - WiseIR IR 20m (850nm), 4 individual zones
 - 120 dB WDR
 - IK10 vandal resistance, NEMA 250 type 4X

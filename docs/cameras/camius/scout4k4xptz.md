@@ -38,6 +38,7 @@
 ## Sources
 
 - https://www.camius.com/4k-pan-tilt-zoom-camera/
+- https://www.camius.com/add-ip-cameras-on-network/
 
 ---
 *Auto-generated from camius-scout4k4xptz.json — do not edit by hand.*

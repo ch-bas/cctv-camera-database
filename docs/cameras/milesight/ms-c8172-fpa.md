@@ -7,29 +7,31 @@
 | Type | dome |
 | Connectivity | ethernet |
 | Resolution | 4K UHD (8MP, 3840×2160) |
-| Sensor | 1/1.8" Progressive Scan CMOS |
-| Lens | 1× 2.8mm |
-| Field of view | 112 horizontal° |
-| Night vision | ir (30m) |
+| Sensor | 1/2.8" Progressive Scan CMOS |
+| Lens | 1× 2.7-13.5mm F1.4 |
+| Field of view | 96 to 33 horizontal° |
+| Night vision | ir (50m), 0.012 lux color |
 | Power | PoE (IEEE 802.3af) / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
 | Two-way audio | No |
+| Operating temp | -40 to 60°C |
 | Released | 2023 |
 
 ## Features
 
 - smart IR
 - H.265+ compression
-- WDR 140dB
+- WDR 120dB
 - vandal-resistant IK10
 - 3D DNR
 
 ## Sources
 
 - https://www.milesight.com/product/ms-c8172-fpa
+- https://www.milesight.com/static/file/en/download/datasheet/ipc/series-a/Milesight-AI-Motorized-Pro-Dome-Network-Camera-NDAA-Datasheet-en.pdf
 
 ---
 *Auto-generated from milesight-ms-c8172-fpa.json — do not edit by hand.*

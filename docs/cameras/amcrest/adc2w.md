@@ -40,7 +40,7 @@
 
 ## Sources
 
-- https://amcrest.com/2mp-ip-wifi-camera-bullet-deterrent-adc2w.html
+- https://support.amcrest.com/hc/en-us/articles/360037895111-Technical-Specifications-ADC2W
 
 ---
 *Auto-generated from amcrest-adc2w.json — do not edit by hand.*

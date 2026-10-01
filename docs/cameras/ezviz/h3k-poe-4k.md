@@ -12,13 +12,19 @@
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 2.8 (fixed)mm F1.6 |
 | Field of view | 113 horizontal / 62 vertical / 134 diagonal° |
-| Night vision | hybrid (30m) |
+| Night vision | hybrid (30m), 0.005 lux |
 | Power | PoE (IEEE 802.3af, Class 3, max 9.5W); alternative 12VDC +/-25%, 0.66A, max 8W |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | rtsp |
 | IP rating | IP67 |
 | Two-way audio | Yes |
 | Operating temp | -30 to 60°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 15 | H.265 |
 
 ## Features
 

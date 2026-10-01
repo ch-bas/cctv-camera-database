@@ -15,6 +15,7 @@
 | Storage | NVR |
 | Protocols | onvif, rtsp |
 | Two-way audio | No |
+| Operating temp | -30 to 60°C |
 | Released | 2023 |
 
 ## Streams
@@ -33,7 +34,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2D25G1-D_NF.pdf
+- https://assets.hikvision.com/prd/public/all/doc/m000054353/DS-2CD2D25G1-D_NF_Datasheet_20241207.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2d25g1-d-nf.json — do not edit by hand.*

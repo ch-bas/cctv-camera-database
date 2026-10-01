@@ -8,7 +8,8 @@
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2688×1520) |
 | Sensor | 1/2.7" progressive scan CMOS |
-| Night vision | ir (200m) |
+| Night vision | ir (200m), 0.002 lux, 0.003 lux color |
+| Power | PoE/DC |
 | Protocols | rtsp, onvif, rtmp |
 | IP rating | IP66 |
 | Operating temp | -20 to 60°C |

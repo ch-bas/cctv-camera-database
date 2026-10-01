@@ -38,7 +38,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2747G2H-LIPTRZS2U_SLRB.pdf
+- https://assets.hikvision.com/prd/normal/all/doc/sm000068441/DS-2CD2747G2H-LIPTRZS2U_SLRB_Datasheet_20240925.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2747g2h-liptrzs2u-slrb.json — do not edit by hand.*

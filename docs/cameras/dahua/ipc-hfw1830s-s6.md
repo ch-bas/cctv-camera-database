@@ -7,6 +7,8 @@
 | Type | bullet |
 | Connectivity | ethernet |
 | Resolution | 4K UHD (8MP) |
+| Sensor | 1/2.7" CMOS |
+| Lens | 1× 2.8 / 3.6mm F2.0 |
 | Field of view | 107h° |
 | Night vision | ir (30m), 0.04 lux color |
 | Power | PoE (802.3af) / DC 12V |
@@ -14,7 +16,14 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
+| Operating temp | -40 to +60°C |
 | Released | 2022 |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3840x2160 | 15 | H.265 |
 
 ## Features
 

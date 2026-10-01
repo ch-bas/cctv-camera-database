@@ -41,7 +41,7 @@
 ## Sources
 
 - https://www.hanwhavision.com/en/products/camera/network/bullet/ano-l7082r/
-- https://www.a1securitycameras.com/content/product_documents/59156/Hanwha-Techwin-(Samsung)-ANO-L7082R-Datasheet-A1.pdf
+- https://www.a1securitycameras.com/content/product_documents/59156/Hanwha-Techwin-%28Samsung%29-ANO-L7082R-Datasheet-A1.pdf
 
 ---
 *Auto-generated from hanwha-ano-l7082r.json — do not edit by hand.*

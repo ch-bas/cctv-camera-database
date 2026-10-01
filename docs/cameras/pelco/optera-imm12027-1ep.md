@@ -10,13 +10,14 @@
 | Sensor | 1/2.7" CMOS (x3) |
 | Lens | 3× 1.6mm |
 | Field of view | 270 horizontal° |
-| Night vision | ir (20m), 0.3 lux color |
+| Night vision | ir (20m), 0.2 lux, 0.3 lux color |
 | Power | PoE+ (IEEE 802.3at) |
 | Storage | NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | IK rating | IK10 |
 | Two-way audio | No |
+| Operating temp | -40 to 50°C |
 | Released | 2020 |
 
 ## Features

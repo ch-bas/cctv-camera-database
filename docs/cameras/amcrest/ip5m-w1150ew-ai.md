@@ -17,6 +17,7 @@
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | rtsp, onvif |
 | IP rating | IP67 |
+| IK rating | IK10 |
 | Two-way audio | No |
 | Operating temp | -40 to 60°C |
 
@@ -36,7 +37,7 @@
 
 ## Sources
 
-- https://amcrest.com/5mp-ip-poe-camera-wedge-ai-ip5m-w1150ew-ai.html
+- https://support.amcrest.com/hc/en-us/articles/4421682893069-Technical-Specifications-IP5M-W1150EW-AI
 
 ---
 *Auto-generated from amcrest-ip5m-w1150ew-ai.json — do not edit by hand.*

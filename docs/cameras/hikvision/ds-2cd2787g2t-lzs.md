@@ -38,7 +38,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2787G2T-LZS.pdf
+- https://www.hikvision.com/content/dam/hikvision/products/S000000001/S000000002/S000000003/S000000025/OFR007893/M000065836/SM000058426/Data_Sheet/DS-2CD2787G2T-LZS_Datasheet_20230708.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2787g2t-lzs.json — do not edit by hand.*

@@ -8,7 +8,7 @@
 | Connectivity | ethernet |
 | Resolution | 4MP (4MP, 2688×1520) |
 | Sensor | 1/1.8" CMOS |
-| Lens | 1× 2.8-56mm |
+| Lens | 1× 2.8-56mm F1.0-F1.1 |
 | Field of view | 7-105° |
 | Night vision | color (80m), 0.0005 lux color |
 | Power | PoE+ (802.3at) / DC 12V |

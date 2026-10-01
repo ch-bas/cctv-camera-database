@@ -45,7 +45,7 @@
 
 ## Sources
 
-- https://amcrest.com/4k-dual-lens-panoramic-wifi-ai-camera-ip8m-dlb2998w-ai.html
+- https://support.amcrest.com/hc/en-us/articles/37641578743693-Technical-Specifications-IP8M-DLB2998W-AI
 
 ---
 *Auto-generated from amcrest-ip8m-dlb2998w-ai.json — do not edit by hand.*

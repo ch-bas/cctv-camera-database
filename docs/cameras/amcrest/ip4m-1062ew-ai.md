@@ -40,7 +40,7 @@
 
 ## Sources
 
-- https://amcrest.com/4k-poe-camera-bullet-ai-license-plate-reader-ip4m-1062ew-ai-1.html
+- https://support.amcrest.com/hc/en-us/articles/14414139357709-Technical-Specifications-IP4M-1062EW-AI
 
 ---
 *Auto-generated from amcrest-ip4m-1062ew-ai.json — do not edit by hand.*

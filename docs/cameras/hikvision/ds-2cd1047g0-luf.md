@@ -24,6 +24,7 @@
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
 | main | 2560x1440 | 20 | H.265 |
+| sub | 1280x720 | 30 | H.265 |
 
 ## Features
 
@@ -34,7 +35,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD1047G0-LUF.pdf
+- https://assets.hikvision.com/prd/public/all/doc/m000050701/DS-2CD1047G0-LUF-C_Datasheet_20240801.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd1047g0-luf.json — do not edit by hand.*

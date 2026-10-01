@@ -9,12 +9,20 @@
 | Type | dual-lens |
 | Connectivity | wifi |
 | Resolution | 1080p HD (dual-lens, 8x combined optical+digital zoom) (2MP, 1920×1080) |
+| Sensor | Dual-1/2.7" Progressive Scan CMOS |
 | Lens | 2× 2.8mm wide + 12mm tele (fixed)mm F1.6 |
 | Field of view | 340 pan / 80 tilt (wide + tele simultaneous)° |
 | Night vision | color (30m), 0.05 lux |
 | Power | DC 12V/1A (max 12W) |
 | Storage | microSD ≤ 512GB, NVR |
 | Two-way audio | Yes |
+| Operating temp | -30 to 60°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 15 | H.265 |
 
 ## Features
 

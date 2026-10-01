@@ -37,7 +37,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2DE4A225IW-DES6.pdf
+- https://assets.hikvision.com/prd/public/all/doc/m000045331/Datasheet-of-DS-2DE4A225IW-DES6_V5.7.11_20230303.pdf
 
 ---
 *Auto-generated from hikvision-ds-2de4a225iw-des6.json — do not edit by hand.*

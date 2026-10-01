@@ -35,7 +35,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD1T27G0-LUF-C.pdf
+- https://assets.hikvision.com/prd/public/all/doc/m000050700/DS-2CD1T27G0-LUF-C_Datasheet_20240802.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd1t27g0-luf-c.json — do not edit by hand.*

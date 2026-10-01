@@ -25,6 +25,7 @@
 ## Sources
 
 - https://nellyssecurity.com/products/uniarch-by-uniview-2mp-wi-fi-smart-pt-security-camera-with-hd-night-vision-and-two-way-audio-uho-s2e-unv
+- https://www.uniarch.cn/Support/FAQ/202209/951565_575360_0.htm
 
 ---
 *Auto-generated from uniarch-uho-s2e.json — do not edit by hand.*

@@ -1,0 +1,32 @@
+# Intelbras VIP 3230 D W
+
+| Field | Spec |
+|-------|------|
+| Brand | Intelbras |
+| Model | VIP 3230 D W |
+| Type | dome |
+| Connectivity | ethernet, wifi |
+| Resolution | (2MP, 1920×1080) |
+| Sensor | 1/2.9" CMOS |
+| Lens | 1× 2.8mm |
+| Field of view | 106 H / 56 V° |
+| Night vision | ir (30m), 0.03 lux, 0.3 lux color |
+| Power | 12 Vdc |
+| Storage | microSD ≤ 128GB |
+| Protocols | onvif, rtsp |
+| IP rating | IP67 |
+| IK rating | IK10 |
+| Operating temp | -10 to 50°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 30 | H.265+ |
+
+## Sources
+
+- https://backend.intelbras.com/sites/default/files/2020-07/Datasheet_VIP_3230_W_e_VIP%203230_D_W_portugues.pdf
+
+---
+*Auto-generated from intelbras-vip-3230-d-w.json — do not edit by hand.*

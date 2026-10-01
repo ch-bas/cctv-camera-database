@@ -1,0 +1,43 @@
+# Alibi ALI-NS2036VRB
+
+*Also known as: Alibi 6 MP Starlight 120 IR H 265 Outdoor Dome IP Security Camera*
+
+| Field | Spec |
+|-------|------|
+| Brand | Alibi |
+| Model | ALI-NS2036VRB |
+| Type | dome |
+| Connectivity | ethernet |
+| Resolution | 6MP (6MP, 3072×2048) |
+| Sensor | 1/2.4" Progressive Scan CMOS |
+| Lens | 1× 2.8mm F1.2 |
+| Field of view | 99° |
+| Night vision | ir (37m), 0.008 lux |
+| Power | DC 12V, PoE |
+| Storage | microSD ≤ 128GB, NVR |
+| Protocols | onvif, rtsp |
+| IP rating | IP67 |
+| IK rating | IK10 |
+| Two-way audio | No |
+| Operating temp | -30 to 60°C |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3072x2048 | 20 | H.265 |
+
+## Features
+
+- Yes
+- 3D DNR
+- Starlight low-light
+- vandal-resistant (IK10)
+- motion detection
+
+## Sources
+
+- https://www.alibisecurity.com/media/docs/ali-ns2036vrb-datasheet-dlr.pdf
+
+---
+*Auto-generated from alibi-ns2036vrb.json — do not edit by hand.*

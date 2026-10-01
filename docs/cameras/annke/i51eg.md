@@ -18,6 +18,12 @@
 | Two-way audio | No |
 | Operating temp | -30 to 60°C |
 
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 3072x1728 | 20 | H.265 |
+
 ## Features
 
 - Smart Dual Light
@@ -33,6 +39,7 @@
 ## Sources
 
 - https://www.annkecctv.com/products/i51eg
+- https://cdn.shopify.com/s/files/1/0908/7343/0297/files/I51EG.pdf
 
 ---
 *Auto-generated from annke-i51eg.json — do not edit by hand.*

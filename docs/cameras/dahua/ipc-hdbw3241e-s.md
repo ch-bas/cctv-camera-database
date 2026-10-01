@@ -7,8 +7,10 @@
 | Type | dome |
 | Connectivity | ethernet |
 | Resolution | 1080p HD (2MP) |
+| Sensor | 1/2.8" CMOS |
+| Lens | 1× 2.8mm F1.6 |
 | Field of view | 106h° |
-| Night vision | ir (50m), 0.002 lux color |
+| Night vision | ir (50m), 0.0002 lux, 0.002 lux color |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -16,6 +18,12 @@
 | IK rating | IK10 |
 | Two-way audio | No |
 | Released | 2022 |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 30 | H.265 |
 
 ## Features
 

@@ -10,11 +10,13 @@
 | Sensor | 1/1.8-inch CMOS |
 | Lens | 1× 10.5-47mm F1.35-F1.55 |
 | Field of view | 9.3-41.6 (horizontal)° |
-| Night vision | ir, 0.0078 lux color |
+| Night vision | ir, 0.001 lux, 0.0078 lux color |
 | Power | PoE (IEEE 802.3af/at), 12 VDC, 24 VAC |
+| Storage | microSD ≤ 2048GB |
 | Protocols | onvif, rtsp, http |
 | IP rating | IP66/IP67 |
 | IK rating | IK10 |
+| Two-way audio | Yes |
 | Operating temp | -40 °C to +60 °C (PoE); down to -50 °C with 12 VDC / 24 VAC°C |
 | Released | 2023 |
 
@@ -31,8 +33,6 @@
 
 ## Sources
 
-- https://netcamcenter.de/de/produkte/ip-kameras/nbe-7703-alxt
-- https://netcamcenter.com/en/products/ip-cameras/nbe-7703-alxt
 - https://www.a1securitycameras.com/bosch-nbe-7703-alxt.html
 - https://www.adiglobaldistribution.co.uk/Product/NBE-7703-ALXT
 - https://www.jvsg.com/cameras/bosch/NBE-7703-ALXT/

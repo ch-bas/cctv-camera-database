@@ -24,6 +24,7 @@
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
 | main | 2560x1440 | 20 | H.265 |
+| sub | 1280x720 | 24 | H.265 |
 
 ## Features
 
@@ -35,7 +36,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD1H43G2-IZS.pdf
+- https://assets.hikvision.com/prd/public/all/doc/sm000041003/DS-2CD1H43G2-IZS_Datasheet_V5.7.1_20221216.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd1h43g2-izs.json — do not edit by hand.*

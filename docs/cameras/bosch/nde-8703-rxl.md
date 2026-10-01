@@ -1,9 +1,9 @@
-# Bosch FLEXIDOME 8100i IR 4MP — X series (NDE-8703-RXL)
+# Bosch FLEXIDOME 8100i IR 4MP - X series (NDE-8703-RXL)
 
 | Field | Spec |
 |-------|------|
 | Brand | Bosch |
-| Model | FLEXIDOME 8100i IR 4MP — X series (NDE-8703-RXL) |
+| Model | FLEXIDOME 8100i IR 4MP - X series (NDE-8703-RXL) |
 | Type | dome |
 | Connectivity | ethernet |
 | Resolution | 4MP (4.1MP, 2688×1520) |

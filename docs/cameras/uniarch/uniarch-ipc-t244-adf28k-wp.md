@@ -37,6 +37,7 @@
 
 - https://www.uniarch.cn/Products/Network_Cameras/Halo_Series/Halo_Series/IPC-T244-ADF28K-WP/
 - https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/2760f810-f153-4b55-97c2-5b280554fa0e/579ea296-3ac2-42f0-8877-69679aff45a3.pdf
+- https://www.uniarch.cn/Support/FAQ/202209/951565_575360_0.htm
 
 ---
 *Auto-generated from uniarch-ipc-t244-adf28k-wp.json — do not edit by hand.*

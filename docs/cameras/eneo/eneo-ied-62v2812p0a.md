@@ -1,0 +1,23 @@
+# eneo IED-62V2812P0A
+
+*Also known as: eneo IED-62V2812P0A*
+
+| Field | Spec |
+|-------|------|
+| Brand | eneo |
+| Model | IED-62V2812P0A |
+| Type | dome |
+| Connectivity | ethernet |
+| Resolution | 1080p (2MP, 1920×1080) |
+| Sensor | 1/2.8" |
+| Lens | 2.8-12mm |
+| Night vision | ir |
+| Protocols | rtsp |
+
+## Sources
+
+- https://eneo-security.com/en/ied-62v2812p0a.html
+- https://eneo-security.com/en/generate/datasheet/render/product_sku/214864/
+
+---
+*Auto-generated from eneo-ied-62v2812p0a.json — do not edit by hand.*

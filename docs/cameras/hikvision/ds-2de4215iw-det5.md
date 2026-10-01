@@ -40,7 +40,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2DE4215IW-DET5.pdf
+- https://assets.hikvision.com/prd/public/all/doc/m000052499/Datasheet-of-DS-2DE4215IW-DET5_V5.7.1_20220704.pdf
 
 ---
 *Auto-generated from hikvision-ds-2de4215iw-det5.json — do not edit by hand.*

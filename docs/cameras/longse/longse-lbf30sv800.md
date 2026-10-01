@@ -33,6 +33,7 @@
 
 - https://vienthongthanhhung.com/camera-ip-than-tru-8mp-longse-lbf30sv800
 - https://www.pyramid.lt/en/ip-camera-longse-lbf30sv800-4k-8mp-36mm-40m-ir-microsd-slot-up-to-512gb-poe
+- https://web.archive.org/web/20190911214224/http://www.longse.com/SUPPORT/FAQ/Camera/2017/0822/973.html
 
 ---
 *Auto-generated from longse-lbf30sv800.json — do not edit by hand.*

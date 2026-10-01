@@ -10,7 +10,7 @@
 | Connectivity | ethernet |
 | Resolution | 6MP (6MP, 2160×2160) |
 | Sensor | 1/1.8" Progressive Scan CMOS |
-| Lens | 1× 1.1mm |
+| Lens | 1× 1.1mm F2.2 |
 | Field of view | 360 horizontal° |
 | Night vision | ir (20m), 0.16 lux color |
 | Power | PoE (802.3af) |

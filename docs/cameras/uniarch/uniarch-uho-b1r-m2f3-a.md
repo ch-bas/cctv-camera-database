@@ -39,6 +39,7 @@
 
 - https://www.uniarch.cn/Products/Wireless_Series/Basic_Series/Basic_Series/Uho-B1R-M2F3-A/
 - https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/d8abd2ee-d895-495b-be2a-b5694cc1853d/593dbf9d-ea1b-45a6-a398-80005e9529a8.pdf
+- https://www.uniarch.cn/Support/FAQ/202209/951565_575360_0.htm
 
 ---
 *Auto-generated from uniarch-uho-b1r-m2f3-a.json — do not edit by hand.*

@@ -17,12 +17,13 @@
 | Storage | NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP68 |
+| Operating temp | -30 to 60°C |
 
 ## Streams
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| main | 2560x1440 | — | H.265 |
+| main | 2560x1440 | 30 | H.265 |
 
 ## Features
 

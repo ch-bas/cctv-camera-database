@@ -37,7 +37,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2146G2H-ISU.pdf
+- https://assets.hikvision.com/prd/public/all/doc/sm000050849/DS-2CD2146G2H-ISU_Datasheet_20230719.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2146g2h-isu.json — do not edit by hand.*

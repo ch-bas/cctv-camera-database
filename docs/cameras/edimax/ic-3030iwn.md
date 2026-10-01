@@ -1,0 +1,36 @@
+# Edimax IC-3030iWn
+
+| Field | Spec |
+|-------|------|
+| Brand | Edimax |
+| Model | IC-3030iWn |
+| Type | box |
+| Connectivity | wifi, ethernet |
+| Resolution | (1.3MP) |
+| Sensor | 1.3MP CMOS |
+| Lens | 5mm F2.8 |
+| Night vision | ir (4m) |
+| Power | 12V DC |
+| Two-way audio | Yes |
+| Operating temp | 0 to 40°C |
+
+## Features
+
+- Wireless 802.11b/g/n
+- WPS
+- Night vision (IR LEDs up to 4m)
+- Triple-mode H.264/MPEG-4/M-JPEG
+- Multi-area motion detection
+- Snapshot to email and FTP
+- Pre- and post-recording
+- 2-way audio
+- SDHC/SD card slot
+- iPhone & Android viewer app
+- DDNS and UPnP
+
+## Sources
+
+- https://www.edimax.com/edimax/merchandise/merchandise_detail/data/edimax/global/home_legacy_ip_cameras_network_cameras/ic-3030iwn/
+
+---
+*Auto-generated from edimax-ic-3030iwn.json — do not edit by hand.*

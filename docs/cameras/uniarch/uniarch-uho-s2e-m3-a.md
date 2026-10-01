@@ -37,6 +37,7 @@
 
 - https://www.uniarch.cn/Products/Wireless_Series/Basic_Series/Basic_Series/Uho-S2E-M3-A/
 - https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/fa111a30-580d-4b0f-b32b-fd2a186cc3e1/bdb2e75c-921e-416a-8800-7d364ce82fa0.pdf
+- https://www.uniarch.cn/Support/FAQ/202209/951565_575360_0.htm
 
 ---
 *Auto-generated from uniarch-uho-s2e-m3-a.json — do not edit by hand.*

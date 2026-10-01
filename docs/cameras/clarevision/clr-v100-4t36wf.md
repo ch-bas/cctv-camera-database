@@ -40,6 +40,7 @@
 ## Sources
 
 - https://www.snapav.com/shop/en/snapav/clr-v100-4t36wf-w
+- https://www.clarecontrols.com/helpcenter/clarevision-camera-nvr-rtsp-stream-urls
 
 ---
 *Auto-generated from clarevision-clr-v100-4t36wf.json — do not edit by hand.*

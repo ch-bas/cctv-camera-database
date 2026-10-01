@@ -40,6 +40,7 @@
 ## Sources
 
 - https://amcrest.com/helix-4k-8mp-security-ai-ip-poe-turret-camera-hlx-ip8m-t303ew-ai.html
+- https://support.amcrest.com/hc/en-us/articles/49119561879437-Accessing-Legacy-Helix-Devices-Using-RTSP
 
 ---
 *Auto-generated from amcrest-hlx-ip8m-t303ew-ai.json — do not edit by hand.*

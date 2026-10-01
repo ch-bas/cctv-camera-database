@@ -18,6 +18,7 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
+| Operating temp | -30 to 60°C |
 
 ## Features
 
@@ -29,7 +30,7 @@
 
 ## Sources
 
-- https://www.uniview.com/Backup_Products/Cameras/Easy/IPC2122LE-ADF28(40)KMC-WL/
+- https://www.uniview.com/Backup_Products/Cameras/Easy/IPC2122LE-ADF28%2840%29KMC-WL/
 
 ---
 *Auto-generated from uniview-ipc2122le-adf40kmc-wl.json — do not edit by hand.*

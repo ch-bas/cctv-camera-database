@@ -39,6 +39,7 @@
 ## Sources
 
 - https://www.camius.com/4k-poe-dome-camera-iris8pro/
+- https://www.camius.com/add-ip-cameras-on-network/
 
 ---
 *Auto-generated from camius-iris8pro.json — do not edit by hand.*

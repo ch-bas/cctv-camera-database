@@ -36,7 +36,7 @@
 
 ## Sources
 
-- https://download.axilogi.com/Hikvision/Datasheet/DS-2CD2747G2T-LZS-C.pdf
+- https://assets.hikvision.com/prd/public/all/doc/sm000058410/DS-2CD2747G2T-LZS-C_Datasheet_20230912.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2747g2t-lzs.json — do not edit by hand.*

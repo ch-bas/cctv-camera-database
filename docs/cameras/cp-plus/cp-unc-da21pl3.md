@@ -12,13 +12,21 @@
 | Sensor | 1/2.8" 2MP Progressive Scan CMOS |
 | Lens | 1× 2.8 / 3.6 (fixed)mm F2.0 |
 | Field of view | 103 horizontal (2.8mm)° |
-| Night vision | ir (30m) |
+| Night vision | ir (30m), 0.01 lux |
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 128GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | No |
+| Operating temp | -40 to 60°C |
 | Released | 2021 |
+
+## Streams
+
+| Stream | Resolution | FPS | Codec |
+|--------|-----------|-----|-------|
+| main | 1920x1080 | 30 | — |
+| sub | 704x480 | 30 | — |
 
 ## Features
 
