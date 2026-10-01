@@ -19,20 +19,28 @@
       "verified": true,
       "source": "Vivotek Support KB (vivotek.zendesk.com/hc/en-001/articles/900006469063): stream indexing follows live1s<N>.sdp pattern — 'replace s0 with s1, s2, or s3 for stream2, stream3, or stream4 respectively'; stream 2 access name is therefore live1s2.sdp by the documented convention. Confirmed in Vivotek IB9367-EHT-v2 User Manual (ManualsLib manual/2744629): 'URL format rtsp://<ip>:<port>/<access name for stream 1 to 3>'.",
       "strix_lead": "strixcamdb:vivotek"
+    },
+    {
+      "stream": "main",
+      "path": "/live.sdp",
+      "codec": "H.264 or H.265 (per camera configuration)",
+      "verified": true,
+      "source": "https://download.vivotek.com/downloadfile/downloads/usersmanuals/md8563-dehmanual_en.pdf — Vivotek MD8563-DEH User Manual: example \"rtsp://192.168.5.151:554/live.sdp\" and \"live.sdp = s0_accessname (stream1), live2.sdp = s1_accessname (stream2)\". Vivotek Support KB https://vivotek.zendesk.com/hc/en-001/articles/900006469063 : live.sdp/live2.sdp remain the access names on firmware below 0x13 and on units upgraded to 0x13+ without a factory reset (live1s1.sdp only after reset on 0x13+).",
+      "strix_lead": "manual:vivotek"
+    },
+    {
+      "stream": "sub",
+      "path": "/live2.sdp",
+      "codec": "H.264 or H.265 (per camera configuration)",
+      "verified": true,
+      "source": "https://download.vivotek.com/downloadfile/downloads/usersmanuals/md8563-dehmanual_en.pdf — Vivotek MD8563-DEH User Manual: example \"rtsp://192.168.5.151:554/live.sdp\" and \"live.sdp = s0_accessname (stream1), live2.sdp = s1_accessname (stream2)\". Vivotek Support KB https://vivotek.zendesk.com/hc/en-001/articles/900006469063 : live.sdp/live2.sdp remain the access names on firmware below 0x13 and on units upgraded to 0x13+ without a factory reset (live1s1.sdp only after reset on 0x13+).",
+      "strix_lead": "manual:vivotek"
     }
   ],
   "unverified_leads": [
     {
-      "path": "/live.sdp",
-      "note": "Legacy firmware default (pre-0x13): documented in Vivotek Support KB as the old stream 1 access name before firmware 0x13 changed it to live1s1.sdp. Still functionally valid on cameras that were not factory-reset after firmware upgrade, but not the current documented default."
-    },
-    {
       "path": "live.sdp",
       "note": "Same as /live.sdp (missing leading slash variant in strix lead). See /live.sdp note."
-    },
-    {
-      "path": "/live2.sdp",
-      "note": "Legacy firmware default for stream 2 (pre-0x13). Superseded by /live1s2.sdp in current firmware. Not a current documented default."
     },
     {
       "path": "/live1.sdp",
@@ -79,6 +87,6 @@
       "note": "Malformed double-slash path. Not documented in any official Vivotek source."
     }
   ],
-  "notes": "Vivotek (vivotek.com, Taiwanese manufacturer) uses user-configurable RTSP access names. Factory defaults changed at firmware 0x13: stream 1 changed from live.sdp to live1s1.sdp, stream 2 from live2.sdp to live1s2.sdp. The naming convention is live1s<N>.sdp where N is the 1-based stream index. Default RTSP port is 554. Access names are configurable under Configuration > Network > Streaming Protocols > RTSP > Access name for stream <N>. Newer firmware (2.2002.x.x+) also supports ONVIF Media2 at /media2/stream.sdp?profile=token (documented in Vivotek Support KB vivotek.zendesk.com/hc/en-001/articles/4952515434649) but this profile-based URL is outside the fixed-template scope of this dataset.",
-  "verified_on": "2026-08-14"
+  "notes": "Vivotek (vivotek.com, Taiwanese manufacturer) uses user-configurable RTSP access names. Factory defaults changed at firmware 0x13: stream 1 changed from live.sdp to live1s1.sdp, stream 2 from live2.sdp to live1s2.sdp. The naming convention is live1s<N>.sdp where N is the 1-based stream index. Default RTSP port is 554. Access names are configurable under Configuration > Network > Streaming Protocols > RTSP > Access name for stream <N>. Newer firmware (2.2002.x.x+) also supports ONVIF Media2 at /media2/stream.sdp?profile=token (documented in Vivotek Support KB vivotek.zendesk.com/hc/en-001/articles/4952515434649) but this profile-based URL is outside the fixed-template scope of this dataset. Legacy access names /live.sdp (stream 1) and /live2.sdp (stream 2) are documented in Vivotek user manuals for pre-0x13 firmware and persist on upgraded-but-not-reset units, so both naming schemes are listed as verified templates.",
+  "verified_on": "2026-10-01"
 }
