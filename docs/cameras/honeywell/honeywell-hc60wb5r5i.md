@@ -47,6 +47,7 @@
 - https://www.honeywell.com/
 - https://buildings.honeywell.com/
 - https://prod-edam.honeywell.com/content/dam/honeywell-edam/hbt/en-us/documents/literature-and-specs/datasheets/HBA-SEC-HC60WB5RxI-Datasheet.pdf
+- https://buildings.honeywell.com/us/en/brands/our-brands/security/solutions/ndaa
 
 ---
 *Auto-generated from honeywell-hc60wb5r5i.json — do not edit by hand.*

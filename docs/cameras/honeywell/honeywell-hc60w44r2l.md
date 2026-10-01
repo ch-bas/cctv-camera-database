@@ -38,6 +38,7 @@
 - https://www.honeywell.com/
 - https://buildings.honeywell.com/
 - https://www.sourcesecurity.com/datasheets/honeywell-security-hc60w44r2l-ip-camera/co-2173-ga/hc60w44r2l-datasheet.pdf
+- https://buildings.honeywell.com/us/en/brands/our-brands/security/solutions/ndaa
 
 ---
 *Auto-generated from honeywell-hc60w44r2l.json — do not edit by hand.*

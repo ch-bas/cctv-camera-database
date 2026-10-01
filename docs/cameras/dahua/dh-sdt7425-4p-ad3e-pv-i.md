@@ -23,9 +23,9 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| panoramic main | 3840x1080 | 25 | H.265 |
-| panoramic sub | 960x268 | 25 | H.264 |
-| PTZ main | 2560x1440 | 25 | H.265 |
+| panoramic-main | 3840x1080 | 25 | H.265 |
+| panoramic-sub | 960x268 | 25 | H.264 |
+| ptz-main | 2560x1440 | 25 | H.265 |
 
 ## Features
 

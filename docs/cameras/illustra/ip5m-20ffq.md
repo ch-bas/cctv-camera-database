@@ -37,7 +37,6 @@
 
 - https://illustracameras.com/
 - https://illustracameras.com/wp-content/uploads/2026/02/illustra-Multisensor-Fixed-Datasheet-Specs_de_FINAL.pdf
-- https://www.ispyconnect.com/camera/illustra
 
 ---
 *Auto-generated from illustra-ip5m-20ffq.json — do not edit by hand.*

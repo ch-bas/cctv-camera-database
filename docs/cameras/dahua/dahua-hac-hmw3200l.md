@@ -12,7 +12,7 @@
 | Sensor | 1/2.7" CMOS |
 | Lens | 1× 2.1mm F2.0 |
 | Field of view | 132 H / 69 V / 164 D° |
-| Night vision | none (3m), 0.02 lux color |
+| Night vision | ir (3m), 0.02 lux color |
 | Power | 12V DC ±30% |
 | Protocols | hdcvi |
 | Two-way audio | No |

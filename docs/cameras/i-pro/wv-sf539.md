@@ -16,7 +16,7 @@
 | Power | PoE (802.3af) / DC 12V |
 | Storage | microSD ≤ 64GB, NVR |
 | Protocols | onvif, rtsp |
-| Two-way audio | No |
+| Two-way audio | Yes |
 | Operating temp | -10 to 50°C |
 
 ## Features

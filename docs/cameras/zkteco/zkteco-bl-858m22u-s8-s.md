@@ -26,7 +26,6 @@
 
 - https://www.zkteco.com/
 - https://www.zkivision.com/
-- https://www.ispyconnect.com/camera/zkteco
 
 ---
 *Auto-generated from zkteco-bl-858m22u-s8-s.json — do not edit by hand.*

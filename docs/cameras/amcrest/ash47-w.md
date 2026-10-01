@@ -37,6 +37,7 @@
 ## Sources
 
 - https://support.amcrest.com/hc/en-us/articles/4402369128461-Technical-Specifications-ASH47-W
+- https://drive.google.com/file/d/1-gTJB8wFBlAQX3OUbhtbALi8m5Wi7As3/view
 
 ---
 *Auto-generated from amcrest-ash47-w.json — do not edit by hand.*

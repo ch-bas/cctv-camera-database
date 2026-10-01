@@ -21,8 +21,8 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| panorama | 3840x1568 | 25 | H.265 |
-| detail | 2560x1440 | 25 | H.265 |
+| main-panorama | 3840x1568 | 25 | H.265 |
+| main-detail | 2560x1440 | 25 | H.265 |
 
 ## Features
 

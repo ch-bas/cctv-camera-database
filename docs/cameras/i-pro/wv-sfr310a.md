@@ -17,7 +17,7 @@
 | Storage | microSD ≤ 64GB, NVR |
 | Protocols | onvif, rtsp |
 | IK rating | IK10 |
-| Two-way audio | No |
+| Two-way audio | Yes |
 | Operating temp | -10 to 50°C |
 
 ## Features

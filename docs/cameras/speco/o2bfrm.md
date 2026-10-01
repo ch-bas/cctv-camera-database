@@ -14,7 +14,7 @@
 | Storage | microSD ≤ 128GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
-| Two-way audio | No |
+| Two-way audio | Yes |
 | Operating temp | -30 to 60°C |
 
 ## Streams

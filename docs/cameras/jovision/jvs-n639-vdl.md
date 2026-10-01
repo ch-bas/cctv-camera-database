@@ -14,7 +14,7 @@
 | Power | DC12V or PoE (IEEE802.3af) |
 | Protocols | onvif, rtsp, http, p2p |
 | IP rating | IP67 |
-| Two-way audio | No |
+| Two-way audio | Yes |
 | Operating temp | -30 to 60 C°C |
 
 ## Streams

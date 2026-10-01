@@ -38,6 +38,7 @@
 - https://www.honeywell.com/
 - https://buildings.honeywell.com/
 - https://www.honeywellbuildings.in/uploads/security/product/doc/b1d4c58655136c02f2d74ecb89f71978HC60WB5R2_HC60WB5R5.pdf
+- https://buildings.honeywell.com/us/en/brands/our-brands/security/solutions/ndaa
 
 ---
 *Auto-generated from honeywell-hc60wb5r5.json — do not edit by hand.*

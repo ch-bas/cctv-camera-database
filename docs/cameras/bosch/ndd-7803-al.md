@@ -24,8 +24,7 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| Imager 1 | 5MP | 30 | — |
-| Imager 2 | 5MP | 30 | — |
+| main | 2592x1944 | 30 | — |
 
 ## Features
 

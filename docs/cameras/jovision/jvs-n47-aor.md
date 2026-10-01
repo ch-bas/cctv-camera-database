@@ -15,7 +15,7 @@
 | Storage | microSD ≤ 512GB |
 | Protocols | p2p |
 | IP rating | IP66 |
-| Two-way audio | No |
+| Two-way audio | Yes |
 | Operating temp | -5 to 45°C |
 
 ## Streams

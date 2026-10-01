@@ -25,8 +25,8 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| Mainstream (wide lens) | 3840x2160 | 20 | H.265 |
-| Telephoto lens | 2304x1296 | 20 | H.265 |
+| wide-main | 3840x2160 | 20 | H.265 |
+| tele-main | 2304x1296 | 20 | H.265 |
 
 ## Features
 

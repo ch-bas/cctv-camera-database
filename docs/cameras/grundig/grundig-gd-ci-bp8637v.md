@@ -24,9 +24,9 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| Main Stream | 3840x2160 | 25 | H.265 |
-| Sub Stream | 640x480 | 25 | H.265 |
-| Third Stream | 1920x1080 | 25 | H.265 |
+| main | 3840x2160 | 25 | H.265 |
+| sub | 640x480 | 25 | H.265 |
+| third | 1920x1080 | 25 | H.265 |
 
 ## Features
 

@@ -11,7 +11,7 @@
 | Resolution | 1080p (2MP, 1920×1080) |
 | Sensor | 1/1.9" CMOS |
 | Power | PoE |
-| Protocols | rtsp |
+| Protocols | rtsp, onvif |
 
 ## Streams
 
@@ -30,6 +30,7 @@
 ## Sources
 
 - https://kbvisiongroup.com/product/kx-2015frsn.html
+- https://kbvisiongroup.com/brochure/KX-2015FRSN-brochure.jpg
 
 ---
 *Auto-generated from kbvision-kx-2015frsn.json — do not edit by hand.*

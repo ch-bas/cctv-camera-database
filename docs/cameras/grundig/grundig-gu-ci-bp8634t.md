@@ -24,7 +24,7 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| Main Stream | 3840x2160 | 50 | H.265 |
+| main | 3840x2160 | 50 | H.265 |
 
 ## Sources
 

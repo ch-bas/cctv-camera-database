@@ -23,7 +23,7 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| Main stream | 5120x1552 | 20 | — |
+| main | 5120x1552 | 20 | — |
 
 ## Features
 

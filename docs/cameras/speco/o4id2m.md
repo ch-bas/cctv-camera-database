@@ -16,7 +16,7 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | IK rating | IK10 |
-| Two-way audio | No |
+| Two-way audio | Yes |
 | Operating temp | -40 to 60°C |
 
 ## Streams
@@ -28,6 +28,7 @@
 ## Sources
 
 - https://specotech.com/wp-content/uploads/2023/11/O4iD2M_spec-1.pdf
+- https://specotech.com/product/o4id2m/
 
 ---
 *Auto-generated from speco-o4id2m.json — do not edit by hand.*

@@ -33,7 +33,6 @@
 ## Sources
 
 - https://www.panasonic.com/mea/en/business/surveillance-solutions/bullet-cameras/pm-vb2ulvr-w.specs.html
-- https://www.ispyconnect.com/camera/dahua
 - https://www.panasonic.com/content/dam/panasonic/mea/learn-more/datasheet-manuals-docs/Operating-Instructions_PM-VB2ULVR-W_PM-VD2ULFR-W.pdf
 
 ---

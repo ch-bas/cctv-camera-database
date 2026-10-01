@@ -15,7 +15,7 @@
 | Night vision | hybrid (40m), 0.003 lux |
 | Power | DC 12V |
 | IP rating | IP67 |
-| Two-way audio | No |
+| Two-way audio | Yes |
 | Operating temp | -30 to 60°C |
 
 ## Features

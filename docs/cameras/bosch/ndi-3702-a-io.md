@@ -22,7 +22,7 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| Main | 1920x1080 | 30 | H.265 |
+| main | 1920x1080 | 30 | H.265 |
 
 ## Features
 

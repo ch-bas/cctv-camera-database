@@ -18,7 +18,7 @@
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
 | IK rating | IK10 |
-| Two-way audio | No |
+| Two-way audio | Yes |
 | Operating temp | -30 to 50°C |
 
 ## Sources

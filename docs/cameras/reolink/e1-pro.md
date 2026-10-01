@@ -22,8 +22,8 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| Main/Clear | 2880x1616 | 20 | — |
-| Sub/Fluent | 640x360 | 10 | — |
+| main | 2880x1616 | 20 | — |
+| sub | 640x360 | 10 | — |
 
 ## Features
 

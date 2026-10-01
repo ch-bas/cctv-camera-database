@@ -41,6 +41,7 @@
 
 - https://www.snapav.com/shop/en/snapav/clr-v200-8dvfw
 - https://www.clarecontrols.com/helpcenter/clarevision-camera-nvr-rtsp-stream-urls
+- https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/documents/SmartHome/SupportDocuments/CLR-V200-8DVF-X-2021-12-2047-05.pdf
 
 ---
 *Auto-generated from clarevision-clr-v200-8dvf.json — do not edit by hand.*

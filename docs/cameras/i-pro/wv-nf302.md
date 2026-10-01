@@ -16,7 +16,7 @@
 | Power | PoE (IEEE 802.3af, Class 2) / DC 12V |
 | Storage | microSD ≤ 2GB, NVR |
 | Protocols | rtsp |
-| Two-way audio | No |
+| Two-way audio | Yes |
 | Operating temp | -10 to 50°C |
 
 ## Sources

@@ -36,7 +36,6 @@
 
 - https://illustracameras.com/
 - https://illustracameras.com/wp-content/uploads/2026/02/Illustra-Panoramic-Camera_ds_en.pdf
-- https://www.ispyconnect.com/camera/illustra
 
 ---
 *Auto-generated from illustra-ip5m-15pnt.json — do not edit by hand.*

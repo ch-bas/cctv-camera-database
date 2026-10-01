@@ -31,6 +31,7 @@
 - https://www.honeywell.com/
 - https://buildings.honeywell.com/
 - https://prod-edam.honeywell.com/content/dam/honeywell-edam/hbt/en-us/documents/literature-and-specs/datasheets/HC60W45R2-Datasheet.pdf
+- https://buildings.honeywell.com/us/en/brands/our-brands/security/solutions/ndaa
 
 ---
 *Auto-generated from honeywell-hc60w45r2.json — do not edit by hand.*

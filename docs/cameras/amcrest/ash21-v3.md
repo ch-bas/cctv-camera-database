@@ -13,7 +13,7 @@
 | Night vision | ir (10m), 0.33 lux color |
 | Power | DC 5V, 1.0A, USB |
 | Storage | microSD ≤ 256GB, NVR |
-| Protocols | onvif, rtsp |
+| Protocols | rtsp |
 | Two-way audio | Yes |
 | Operating temp | -10 to 45°C |
 

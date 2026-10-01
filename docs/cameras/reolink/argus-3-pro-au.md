@@ -25,8 +25,8 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| Main stream | 2880x1620 | 15 | H.265 |
-| Sub stream | unknown | 15 | H.264 |
+| main | 2880x1620 | 15 | H.265 |
+| sub | unknown | 15 | H.264 |
 
 ## Features
 

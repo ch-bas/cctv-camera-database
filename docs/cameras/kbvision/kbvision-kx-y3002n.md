@@ -13,7 +13,7 @@
 | Lens | 1× 3.6mm |
 | Night vision | ir (30m) |
 | Power | PoE |
-| Protocols | rtsp |
+| Protocols | rtsp, onvif |
 | IP rating | IP67 |
 
 ## Streams
@@ -34,6 +34,7 @@
 ## Sources
 
 - https://kbvisiongroup.com/product/kx-y3002n.html
+- https://kbvisiongroup.com/brochure/KX-Y3002N-Brochure.jpg
 
 ---
 *Auto-generated from kbvision-kx-y3002n.json — do not edit by hand.*

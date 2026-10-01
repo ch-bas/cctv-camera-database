@@ -15,7 +15,7 @@
 | Storage | NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
-| Two-way audio | No |
+| Two-way audio | Yes |
 
 ## Features
 

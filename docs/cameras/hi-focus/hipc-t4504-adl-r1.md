@@ -14,7 +14,7 @@
 | Storage | NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
-| Two-way audio | No |
+| Two-way audio | Yes |
 
 ## Features
 
@@ -29,6 +29,7 @@
 ## Sources
 
 - https://hifocuscctv.com/categories/ip-cameras/hipc-t4504-adl-r1
+- https://api.hifocuscctv.com/public/product_catalog/hipc-t4504-adl-r1-full-datasheet_1775913470926_6b5ff76e97f7.pdf
 
 ---
 *Auto-generated from hifocus-hipc-t4504-adl-r1.json — do not edit by hand.*
