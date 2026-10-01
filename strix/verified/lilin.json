@@ -1,0 +1,34 @@
+{
+  "brand": "LILIN",
+  "brand_id": "lilin",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/stream0",
+      "codec": "H.264|H.265",
+      "verified": true,
+      "source": "https://lilin.zendesk.com/hc/en-gb/articles/360045653451-LILIN-IP-Camera-RTSP-Information — LILIN Technical Support KB \"LILIN IP Camera RTSP Information\": \"/stream0 - Encoder 1 (typically the camera's primary HD stream)\", example rtsp://admin:pass@192.168.1.200/stream0, default RTSP port 554; the article's Setup > Video > General screenshots show Encoder1 RTSP URL rtsp://<ip>:554/stream0. Same default in the LILIN user manuals (RTSP page: RTSP Port 554, Encoder1 = stream0): https://meritlilin.com/downloads/UserManual-P7Z7_series-EN.pdf (P6/P7/Z6/Z7/V1), https://meritlilin.com/downloads/UserManual-S7Series-EN.pdf (S7/S8 PTZ), https://meritlilin.com/downloads/UserManual_P5_Z5_Series-EN.pdf (P5/Z5), https://meritlilin.com/downloads/UserManual_P2_Z2_Series-EN.pdf (H.265 P2/Z2).",
+      "strix_lead": "manual:lilin"
+    },
+    {
+      "stream": "sub",
+      "path": "/stream1",
+      "codec": "H.264|H.265",
+      "verified": true,
+      "source": "https://lilin.zendesk.com/hc/en-gb/articles/360045653451-LILIN-IP-Camera-RTSP-Information — LILIN Technical Support KB \"LILIN IP Camera RTSP Information\": \"/stream1 - Encoder 2 (typically the camera's secondary SD stream)\"; the article's screenshots show Encoder2 RTSP URL rtsp://<ip>:554/stream1. Same default (Encoder2 = stream1) on the RTSP page of the LILIN P6/P7/Z6/Z7/V1, S7/S8, P5/Z5 and P2/Z2 user manuals (meritlilin.com/downloads/UserManual-P7Z7_series-EN.pdf, UserManual-S7Series-EN.pdf, UserManual_P5_Z5_Series-EN.pdf, UserManual_P2_Z2_Series-EN.pdf).",
+      "strix_lead": "manual:lilin"
+    },
+    {
+      "stream": "third",
+      "path": "/stream2",
+      "codec": "H.264|H.265",
+      "verified": true,
+      "source": "https://meritlilin.com/downloads/UserManual_P5_Z5_Series-EN.pdf — LILIN P5/Z5 Series IP Camera User Manual, chapter 4-2-1 (Setup > Video > General): Encoder3 RTSP URL rtsp://<ip>/stream2, and chapter 4-4-3 RTSP: Encoder3 = stream2. The P6/P7/Z6/Z7/V1, S7/S8 and P2/Z2 manuals list the same name for \"Encoder3 (TV Out)\" — on models with an analog TV output Encoder3 is out of service while TV out is enabled.",
+      "strix_lead": "manual:lilin"
+    }
+  ],
+  "notes": "Current LILIN IP cameras name each encoder's RTSP path /stream<N>, counted from 0: /stream0 = Encoder 1 (main), /stream1 = Encoder 2 (sub), /stream2 = Encoder 3 (shared with the analog TV output on models that have one — not available while TV out is enabled), /stream3 = Encoder 4 (JPEG profile on models with four encoders). Default RTSP port 554; RTSP over HTTP on port 80 is also documented (rtsp://admin:pass@<ip>:80/stream0). RTSP authentication is on by default, so pass user:pass in the URL. The encoder names are editable under Setup > Network > RTSP (HTTP/RTSP Service), and the live URL of every encoder is printed under Setup > Video > General, so check there if a path was renamed. LILIN's HTTP API Document v3.01.04 (lilinfiles.co.uk, IP Camera SDK) confirms rtsp.url0..3 = stream0..stream3 for the P2/Z2, P3/Z3, P5/Z5, P6/Z6 and P7/Z7 series. Legacy firmware-1.x cameras (IPG/IPS/IPR/IPD iMEGAPRO and first L series, c. 2013) use a codec+resolution name instead — /rtsph2641080p, /rtsph264720p, /rtsph264480p, /rtspjpeg480p (\"Merit LILIN RTSP Streaming Document\", 2013, lilinfiles.co.uk IP Camera SDK; LILIN KB \"Testing a LILIN IP camera RTSP Stream using VLC\"). The E-Series (E5R...) has its own manual (UserManual_ESeries_IPC, section \"RTSP setting\") that could not be retrieved in full, so these templates are not confirmed for that line — read the URL from the camera's web UI. LILIN NVR/DVR recorders use a different scheme and are not covered here.",
+  "verified_on": "2026-10-01"
+}
