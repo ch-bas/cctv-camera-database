@@ -100,23 +100,25 @@
         "height": 576,
         "fps": 5
       },
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/1/1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/1/0",
       "onvif_port": 80,
-      "two_way_audio": false
+      "two_way_audio": false,
+      "notes": "Helix (HLX-) cameras use Amcrest’s Helix RTSP format /<channel>/<stream>, not the Dahua /cam/realmonitor path used by other Amcrest cameras. Channel 1 on a standalone camera; stream 1 = main, 0 = sub (per Amcrest’s Helix RTSP article). If /1/1 is rejected, try /1/main and /1/sub."
     },
     "home_assistant": {
-      "integration": "amcrest",
-      "notes": "Native Amcrest integration or ONVIF. Default ONVIF port 80."
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (default ONVIF port 80). The native Amcrest integration targets the Dahua-based API of Amcrest’s non-Helix cameras and may not work with the Helix line."
     },
     "blue_iris": {
-      "profile": "Dahua",
-      "notes": "Select 'Dahua' profile. Amcrest uses Dahua protocol."
+      "profile": "Generic/ONVIF",
+      "notes": "Add as Generic/ONVIF with the Helix RTSP paths (/1/1 main, /1/0 sub). The Dahua profile’s /cam/realmonitor paths don’t apply to the Helix line."
     }
   },
   "sources": [
-    "https://amcrest.com/helix-4k-8mp-security-ai-ip-poe-turret-camera-hlx-ip8m-t303ew-ai.html"
+    "https://amcrest.com/helix-4k-8mp-security-ai-ip-poe-turret-camera-hlx-ip8m-t303ew-ai.html",
+    "https://support.amcrest.com/hc/en-us/articles/49119561879437-Accessing-Legacy-Helix-Devices-Using-RTSP"
   ],
-  "last_verified": "2026-08-31",
+  "last_verified": "2026-10-01",
   "cloud_dependency": "cloud-optional"
 }
