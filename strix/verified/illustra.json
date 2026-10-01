@@ -1,0 +1,26 @@
+{
+  "brand": "Illustra",
+  "brand_id": "illustra",
+  "status": "verified",
+  "default_port": 554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/videoStreamId=1",
+      "codec": "H.264|H.265",
+      "verified": true,
+      "source": "https://illustracameras.com/wp-content/uploads/2024/08/UM_PG4-2-4-5-8MP-Series_8200-2007-08_L.en_-1.pdf — Illustra Pro Gen 4 2MP, 4MP, 5MP & 8MP Installation and Configuration Guide (8200-2007-08 L), appendix \"Using Media Player to View RTSP Streaming\": \"Stream 1: rtsp://cameraip:554/videoStreamId=1\". The same line is printed in the Flex Gen 4 guide (https://illustracameras.com/wp-content/uploads/2024/05/UM-FG4-Series_A16381M7H7_J.en_.pdf), the Pro Gen 4 PTZ guide (https://illustracameras.com/wp-content/uploads/2022/08/UM_PG4-2-8MP-PTZ-D_8200-2007-02_G.en_.pdf), the Pro Gen3 guide (https://illustra.s3.us-east-1.amazonaws.com/Web_Files/Legacy/pro-gen3-mini-domes/Manuals/Pro-Gen3-2MP-3MP-5MP-8MP-Install-Configuration-Guide-B0_8200-1630-02-B0_en.pdf), the Flex 2MP/3MP/8MP manual (https://illustra.s3.us-east-1.amazonaws.com/Web_Files/Legacy/flex-3mp-4k-bullet/Manuals/Illustra-Flex-2MP-3MP-8MP-Install-Configuration-User-Manual-M0_8200-1456-01-M0_en.pdf) and the Pro 2MP/3MP Compact Mini-Dome manual (https://illustra.s3.us-east-1.amazonaws.com/Web_Files/Legacy/pro-2mp-3mp-compact-mini-domes/Manuals/Pro-2MP-3MP-Compact-Mini-Dome-Configuration-User-Manual-C0_8200-1631-03-C0_en.pdf)",
+      "strix_lead": "manual:illustra"
+    },
+    {
+      "stream": "sub",
+      "path": "/videoStreamId=2",
+      "codec": "H.264|H.265",
+      "verified": true,
+      "source": "https://illustracameras.com/apac/wp-content/uploads/2020/04/EG4-2MP-Dome-Bullet-UM_8200-1929-03-A0_en.pdf — Illustra Essentials Gen 4 Series Installation and Configuration Guide (8200-1929-03 A0), appendix \"Using Media Player to View RTSP Streaming\": \"Stream 2: rtsp://cameraip:554/videoStreamId=2\". Also printed in the Pro Gen 4 12MP Fisheye guide (https://illustracameras.com/wp-content/uploads/2022/08/UM-PG4-12MP-FE_A163818NN6_B_en-1.pdf: Stream 2 = /videoStreamId=2, Stream 3 = /videoStreamId=3) and, as \"Secondary Video Stream ... rtsp://CAMERAIP/VideoStreamId=2\", in the default-settings tables of the Pro 12MP Fisheye quick start guide (https://illustra.s3.us-east-1.amazonaws.com/Web_Files/Legacy/pro-12mp-fisheye/Manuals/Illustra-Pro-12MP-Fisheye-Quick-Start-Guide-c0-lt_8200-1485-01C0_en.pdf) and the Flex 2MP PTZ quick start guide (https://illustra.s3.us-east-1.amazonaws.com/Web_Files/Legacy/flex-2mp-ptz/Manuals/Illustra-Flex-2MP-PTZ-Quick-Start-Guide-b0_lt_8200-1486-01B0_en.pdf)",
+      "strix_lead": "manual:illustra"
+    }
+  ],
+  "notes": "Illustra (Johnson Controls / Tyco) cameras running the Illustra firmware platform address streams by number: rtsp://<ip>:554/videoStreamId=<n> (1 = Stream 1, 2 = Stream 2, 3 = Stream 3, which the web UI uses for live view). Audio is /audioStreamId=1, and video with audio is /videoStreamId=1&audioStreamId=1. This is the documented path for the Gen 4 generation (Pro Gen4, Flex Gen4, Essentials Gen4, incl. PTZ, fisheye and LPR), Pro Gen3 mini-domes, the Flex 2MP/3MP/8MP dome, bullet, box, compact and IR PTZ cameras, the Pro 2MP/3MP compact mini-dome, the Pro 12MP fisheye and the Flex 2MP 20x PTZ (the last two print it in their quick start guides as rtsp://CAMERAIP/videoStreamId=1&audioStreamID=1). Several Gen 4 guides (Pro Gen4, Flex Gen4, PTZ) and the Gen3/Flex manuals print only the Stream 1 URL plus the audio URL; the Stream 2 URL is printed in the Essentials Gen4, Gen4 fisheye and the two quick start guides. Multi-sensor models use one port per sensor: Flex Gen4 dual-sensor = sensor 1 on 554 (videoStreamId 1-3), sensor 2 on 555 (videoStreamId 4-6); Pro Gen4 20MP/32MP multisensor = sensors 1-4 on ports 554-557 (videoStreamId 1-4, 5-8, 9-12, 13-16). Lines with a DIFFERENT documented path carry it on the camera record instead: older Illustra Pro models (Pro 2MP/3MP/5MP mini-domes IPSxxD2/D3, Pro 30x PTZ IPS02P6, Pro 5MP LT fisheye ADCi825LT) use /StreamId=1 and /StreamId=2 on port 554, and the Essentials Gen 1 indoor mini-dome (Dahua-based firmware V2.420) uses /cam/realmonitor?channel=1&subtype=0|1. NOT confirmed by any official document found: Essentials Gen 3 (IES02CFBCWIYB, IES02MFBNWIYB, IES02D1OCWIYB, firmware Illustra.Esse6/Esse7) and the IP5M multisensor/panoramic models — do not assume this path for them; use ONVIF discovery. Official manuals are hosted on illustracameras.com and on the Illustra document bucket (illustra.s3.us-east-1.amazonaws.com/Web_Files/Legacy/).",
+  "verified_on": "2026-10-01"
+}
