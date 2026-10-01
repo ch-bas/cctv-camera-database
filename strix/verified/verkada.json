@@ -1,9 +1,26 @@
 {
   "brand": "Verkada",
   "brand_id": "verkada",
-  "status": "unverified",
-  "default_port": 554,
-  "templates": [],
-  "notes": "Verkada is cloud-managed (Verkada Command). Newer CD-series domes support RTSP 1.0 (max 2 concurrent streams) but it must be enabled per-camera in Command and the stream URL is device-specific — no universal path template. No ONVIF.",
-  "verified_on": "2026-08-18"
+  "status": "verified",
+  "default_port": 8554,
+  "templates": [
+    {
+      "stream": "main",
+      "path": "/high",
+      "codec": "H.264|H.265",
+      "verified": true,
+      "source": "https://help.verkada.com/command/organization-settings/integrations/set-up-the-verkada-fusus-camera-integration — Verkada Help, Fusus Camera integration, Verkada RTSP stream details: \"Path (/standard or /high - depending on desired image quality)\" (high quality / HQ stream); RTSP port 8554 and HQ/SQ stream definitions per https://help.verkada.com/verkada-cameras/video-streaming-and-sharing/live-streaming/low-latency-rtsp-streaming (Low-Latency RTSP Streaming)",
+      "strix_lead": "manual:verkada"
+    },
+    {
+      "stream": "sub",
+      "path": "/standard",
+      "codec": "H.264|H.265",
+      "verified": true,
+      "source": "https://help.verkada.com/command/organization-settings/integrations/set-up-the-verkada-fusus-camera-integration — Verkada Help, Fusus Camera integration, Verkada RTSP stream details: \"Path (/standard or /high - depending on desired image quality)\" (standard quality / SQ stream); RTSP port 8554 and HQ/SQ stream definitions per https://help.verkada.com/verkada-cameras/video-streaming-and-sharing/live-streaming/low-latency-rtsp-streaming (Low-Latency RTSP Streaming)",
+      "strix_lead": "manual:verkada"
+    }
+  ],
+  "notes": "Verkada is cloud-managed (Verkada Command); RTSP 1.0 (RFC 2326) is off by default and must be enabled per camera in Command (Cameras > camera > Settings > Device > Real Time Streaming Protocol) by a Site Admin, who sets a dedicated RTSP username and password there. Command shows the ready-made standard and high-resolution URLs to copy (and can export a CSV of all RTSP-enabled cameras). RTSP uses port 8554, not 554. Streams are reachable only from RFC 1918 private addresses on the local network; max 2 concurrent RTSP streams per camera. Resolution and bitrate match the HQ/SQ streams in Command and the codec follows the camera's configured codec (H.264 or H.265). Multisensor cameras (CH52-E, CH53-E, CH63-E, CY53-E, CY63-E) need the per-sensor camera ID before the quality segment (/<camera-id>/high, /<camera-id>/standard; 2 streams per sensor) — copy the exact URL from Command. The CR63-E remote camera does not support RTSP. No ONVIF.",
+  "verified_on": "2026-10-01"
 }
