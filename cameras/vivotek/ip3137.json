@@ -46,8 +46,7 @@
     "voltage": "5V DC"
   },
   "protocols": [
-    "http",
-    "rtsp"
+    "http"
   ],
   "audio": {
     "microphone": true
@@ -66,24 +65,22 @@
   ],
   "configs": {
     "frigate": {
-      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live.sdp",
-      "best_substream": "rtsp://{user}:{pass}@{ip}:554/live2.sdp",
-      "onvif_port": 80,
       "verified": false,
-      "notes": "Vivotek IP camera — ONVIF + RTSP (live.sdp). Enable a dedicated user."
+      "notes": "Vivotek legacy MPEG-4 camera — no ONVIF and no RTSP: the datasheet protocol list is TCP/IP, HTTP, SMTP, FTP, DDNS, UPnP, Telnet, NTP, DNS and DHCP."
     },
     "home_assistant": {
-      "integration": "onvif",
-      "notes": "ONVIF (Vivotek)."
+      "integration": "generic",
+      "notes": "No ONVIF or RTSP on this model (HTTP only per the datasheet protocol list)."
     },
     "blue_iris": {
       "profile": "Vivotek",
-      "notes": "Vivotek RTSP/ONVIF."
+      "notes": "Vivotek (HTTP; no RTSP/ONVIF on this model)."
     }
   },
   "sources": [
-    "https://web.archive.org/web/2id_/http://download.vivotek.com/downloadfile/downloads/datasheets/ip3137datasheet_en.pdf"
+    "https://web.archive.org/web/2id_/http://download.vivotek.com/downloadfile/downloads/datasheets/ip3137datasheet_en.pdf",
+    "https://download.vivotek.com/downloadfile/downloads/usersmanuals/ip3137manual_en.pdf"
   ],
-  "last_verified": "2026-09-22",
+  "last_verified": "2026-10-01",
   "cloud_dependency": "local"
 }
