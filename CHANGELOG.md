@@ -6,6 +6,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.26.1] — 2026-10-01
+
+### Fixed
+- **Amcrest Helix RTSP (#394)** — the three Helix (`HLX-`) cameras (`HLX-IP5M-B102EW-AI`, `HLX-IP5M-T103EW-AI`, `HLX-IP8M-T303EW-AI`) carried the Dahua-style `/cam/realmonitor?channel=1&subtype=0` path used by other Amcrest models. Amcrest's KB article [Accessing Legacy Helix Devices Using RTSP](https://support.amcrest.com/hc/en-us/articles/49119561879437-Accessing-Legacy-Helix-Devices-Using-RTSP) documents a different format for this line: `rtsp://user:pass@ip:554/<channel>/<stream>`, with stream 1 = main and 0 = sub. Main is now `/1/1` and the substream `/1/0`, with `/1/main` / `/1/sub` noted as a fallback. Home Assistant now points at the ONVIF integration and Blue Iris at Generic/ONVIF instead of the Dahua-based options. The Amcrest RTSP guide (`strix/verified/amcrest.json`) gains the Helix templates, marked Helix-only. Reported via the website by SrDri and Michael M. (Amcrest support).
+
+No new cameras.
+
 ## [2.26.0] — 2026-09-30
 
 Dataset reaches **28,400 cameras / 230 brands** (+1,038). A deep gap-fill across already-covered brands from **official manufacturer sources** — every field is transcribed from a manufacturer specification (or its archived copy), and fields a manufacturer does not publish are omitted rather than estimated. No Provision-ISR models are included. Four new brands (Vivint, Defender, Geeni, Merkury); the rest fill genuine catalogue gaps found via manufacturer datasheet APIs/PDFs, China-domestic mirrors, and Internet-Archive captures of discontinued lines.
