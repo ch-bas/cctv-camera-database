@@ -22,7 +22,7 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| Clear/Main | 5120x1440 | 15 | H.265 |
+| main | 5120x1440 | 15 | H.265 |
 | sub | unknown | 15 | H.265 |
 
 ## Features

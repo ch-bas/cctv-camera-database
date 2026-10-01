@@ -24,8 +24,7 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| Main (per imager, 4:3) | 2048x1536 | 30 | H.265 |
-| Main (per imager, 16:9) | 1920x1080 | 30 | H.265 |
+| main | 2048x1536 | 30 | H.265 |
 
 ## Features
 

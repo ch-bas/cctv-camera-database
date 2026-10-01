@@ -15,7 +15,7 @@
 | Storage | NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
-| Two-way audio | No |
+| Two-way audio | Yes |
 | Operating temp | -40 to 60°C |
 
 ## Streams

@@ -16,7 +16,7 @@
 | Storage | NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP66 |
-| Two-way audio | No |
+| Two-way audio | Yes |
 | Operating temp | -40 … +60°C |
 
 ## Streams
@@ -37,6 +37,7 @@
 ## Sources
 
 - https://trassir.com/products/cameras/ip-cameras/tr-d2121cl3w-2-8/
+- https://trassir.com/upload/iblock/3d1/urucjt9rjauz0llfzfptw94amhsry54m/TR-D2121CL3W_passport_en.pdf
 
 ---
 *Auto-generated from trassir-tr-d2121cl3w.json — do not edit by hand.*

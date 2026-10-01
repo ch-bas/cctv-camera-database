@@ -23,8 +23,8 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| Clear (Main) | 2560x1920 | 20 | H.264 |
-| Fluent (Sub) | — | 10 | H.264 |
+| main | 2560x1920 | 20 | H.264 |
+| sub | — | 10 | H.264 |
 
 ## Features
 

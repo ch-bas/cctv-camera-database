@@ -33,6 +33,7 @@
 
 - https://www.honeywell.com/
 - https://buildings.honeywell.com/
+- https://buildings.honeywell.com/us/en/brands/our-brands/security/solutions/ndaa
 
 ---
 *Auto-generated from honeywell-hc60w35r2.json — do not edit by hand.*

@@ -40,6 +40,7 @@
 ## Sources
 
 - https://support.amcrest.com/hc/en-us/articles/33533728299405-Technical-Specifications-AL-P401W
+- https://amcrest.com/amlink-4mp-wifi-camera-pan-tilt-al-p401w.html
 
 ---
 *Auto-generated from amcrest-al4m-p401w.json — do not edit by hand.*

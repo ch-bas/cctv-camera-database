@@ -40,7 +40,6 @@
 ## Sources
 
 - https://www.panasonic.com/mea/en/business/surveillance-solutions/ptz-cameras/pm-pp8ulvr-w.specs.html
-- https://www.ispyconnect.com/camera/dahua
 
 ---
 *Auto-generated from panasonic-pm-pp8ulvr-w.json — do not edit by hand.*

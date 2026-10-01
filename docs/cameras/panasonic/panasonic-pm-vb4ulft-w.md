@@ -33,7 +33,6 @@
 ## Sources
 
 - https://www.panasonic.com/mea/en/business/surveillance-solutions/bullet-cameras/pm-vb4ulft-w.specs.html
-- https://www.ispyconnect.com/camera/dahua
 - https://www.panasonic.com/content/dam/panasonic/mea/learn-more/datasheet-manuals-docs/User-Manual_True-colour-and-IR-cameras.pdf
 
 ---

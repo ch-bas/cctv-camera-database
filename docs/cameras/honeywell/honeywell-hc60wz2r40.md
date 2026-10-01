@@ -48,6 +48,7 @@
 - https://www.honeywell.com/
 - https://buildings.honeywell.com/
 - https://prod-edam.honeywell.com/content/dam/honeywell-edam/hbt/en-us/documents/literature-and-specs/datasheets/HBT-SEC-60Series-Camera-HC60WZ2R40-DS-US-EN.pdf
+- https://buildings.honeywell.com/us/en/brands/our-brands/security/solutions/ndaa
 
 ---
 *Auto-generated from honeywell-hc60wz2r40.json — do not edit by hand.*

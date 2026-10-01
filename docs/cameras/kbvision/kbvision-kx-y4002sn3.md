@@ -13,7 +13,7 @@
 | Night vision | ir (30m) |
 | Power | 12 VDC/PoE |
 | Storage | microSD ≤ 256GB |
-| Protocols | rtsp |
+| Protocols | rtsp, onvif |
 | IP rating | IP67 |
 | IK rating | IK10 |
 
@@ -26,6 +26,7 @@
 ## Sources
 
 - https://kbvisiongroup.com/product/kx-y4002sn3.html
+- https://kbvisiongroup.com/brochure/KX-Y4002SN3-Brochure.jpg
 
 ---
 *Auto-generated from kbvision-kx-y4002sn3.json — do not edit by hand.*

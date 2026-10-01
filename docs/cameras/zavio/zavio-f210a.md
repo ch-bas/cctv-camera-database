@@ -24,7 +24,7 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| — | 640x480 | 30 | MPEG-4 |
+| main | 640x480 | 30 | MPEG-4 |
 
 ## Features
 

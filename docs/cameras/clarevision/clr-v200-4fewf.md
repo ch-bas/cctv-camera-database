@@ -40,6 +40,7 @@
 
 - https://www.snapav.com/shop/en/snapav/clr-v200-4fewfw
 - https://www.clarecontrols.com/helpcenter/clarevision-camera-nvr-rtsp-stream-urls
+- https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/documents/Surveillance/Cutsheets/CLR-V200-4FEWFW-2022-04-2133-04.pdf
 
 ---
 *Auto-generated from clarevision-clr-v200-4fewf.json — do not edit by hand.*

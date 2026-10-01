@@ -26,7 +26,6 @@
 
 - https://www.zkteco.com/
 - https://www.zkivision.com/
-- https://www.ispyconnect.com/camera/zkteco
 
 ---
 *Auto-generated from zkteco-zk-th255-35a.json — do not edit by hand.*

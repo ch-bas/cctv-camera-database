@@ -14,7 +14,7 @@
 | Power | DC12V or PoE |
 | Protocols | onvif, rtsp, http, p2p |
 | IP rating | IP67 |
-| Two-way audio | No |
+| Two-way audio | Yes |
 
 ## Streams
 

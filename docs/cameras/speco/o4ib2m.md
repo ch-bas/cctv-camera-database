@@ -15,7 +15,7 @@
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
-| Two-way audio | No |
+| Two-way audio | Yes |
 | Operating temp | -40 to 60°C |
 
 ## Streams
@@ -27,6 +27,7 @@
 ## Sources
 
 - https://specotech.com/wp-content/uploads/2023/10/O4iB2M_spec.pdf
+- https://specotech.com/product/o4ib2m/
 
 ---
 *Auto-generated from speco-o4ib2m.json — do not edit by hand.*

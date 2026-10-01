@@ -43,6 +43,7 @@
 - https://www.honeywell.com/
 - https://buildings.honeywell.com/
 - https://www.honeywellbuildings.in/uploads/security/product/doc/7dc4ca2fa1d7e13791786b12a83de9e3HC60W34R2L.pdf
+- https://buildings.honeywell.com/us/en/brands/our-brands/security/solutions/ndaa
 
 ---
 *Auto-generated from honeywell-hc60w34r2.json — do not edit by hand.*

@@ -25,8 +25,8 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| Main stream | 5120x1440 | 15 | H.265 |
-| Sub stream | 640x360 | 15 | H.265 |
+| main | 5120x1440 | 15 | H.265 |
+| sub | 640x360 | 15 | H.265 |
 
 ## Features
 

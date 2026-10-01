@@ -6,23 +6,23 @@
   "templates": [
     {
       "stream": "main",
-      "path": "/h264.sdp?res=full&doublescan=0&ssn=<uniq>",
+      "path": "/h264.sdp?res=full&doublescan=0&ssn=1",
       "codec": "H.264",
       "verified": true,
-      "source": "Arecont Vision API and Camera Web Page Manual (2017-06-30), Chapter IV - Alternative Access Protocols, 'RTSP Request Format for Continuous H.264 Video Streaming' (sales.arecontvision.com/marketing/contents/Arecont%20Vision%20API%20and%20Camera%20Web%20Page%20Manual_2017-06-30_1.pdf); minimal form rtsp://camera_ip/h264.sdp?res=full&doublescan=0&fps=fps&ssn=[1..65535], res=full = full resolution (main)",
+      "source": "Arecont Vision API and Camera Web Page Manual (2017-06-30), Chapter IV - Alternative Access Protocols, 'RTSP Request Format for Continuous H.264 Video Streaming' (sales.arecontvision.com/marketing/contents/Arecont%20Vision%20API%20and%20Camera%20Web%20Page%20Manual_2017-06-30_1.pdf): rtsp://camera_ip/h264.sdp?res=(half|full)&...&[ssn=(1..65535)]&[doublescan=(0|1)]...; ssn is the stream identifier (1..65535), 'use a unique ssn for each stream' and each client must have a unique (ip:ssn); the manual's own request examples use ssn=1. res=full = full resolution (main); ssn=1 as in the manual examples.",
       "strix_lead": "strixcamdb:arecont"
     },
     {
       "stream": "sub",
-      "path": "/h264.sdp?res=half&doublescan=0&ssn=<uniq>",
+      "path": "/h264.sdp?res=half&doublescan=0&ssn=2",
       "codec": "H.264",
       "verified": true,
-      "source": "Arecont Vision API and Camera Web Page Manual (2017-06-30), same RTSP section; res=half reduces resolution by a factor of 2 in each direction (sub/second stream)",
+      "source": "Arecont Vision API and Camera Web Page Manual (2017-06-30), Chapter IV - Alternative Access Protocols, 'RTSP Request Format for Continuous H.264 Video Streaming' (sales.arecontvision.com/marketing/contents/Arecont%20Vision%20API%20and%20Camera%20Web%20Page%20Manual_2017-06-30_1.pdf): rtsp://camera_ip/h264.sdp?res=(half|full)&...&[ssn=(1..65535)]&[doublescan=(0|1)]...; ssn is the stream identifier (1..65535), 'use a unique ssn for each stream' and each client must have a unique (ip:ssn); the manual's own request examples use ssn=1. res=half decimates the image by a factor of 2 in each dimension (sub); ssn=2 so it differs from the main stream's ssn=1, as the manual requires a unique ssn per stream.",
       "strix_lead": "strixcamdb:arecont"
     },
     {
       "stream": "main-multisensor",
-      "path": "/h264.sdp<N>?res=full&doublescan=0&ssn=<uniq>",
+      "path": "/h264.sdp<N>?res=full&doublescan=0&ssn=1",
       "codec": "H.264",
       "verified": true,
       "source": "Arecont Vision API and Camera Web Page Manual (2017-06-30): multi-sensor form rtsp://camera_ip/h264.sdp<channel>?res=(half|full)... for Omni, SurroundVideo and other multi-sensor MegaVideo models; <N> = sensor/channel index (1-based, seen as sdp1/sdp3 in leads)",
@@ -80,5 +80,5 @@
     }
   ],
   "notes": "Two documented generations. (1) Legacy MegaVideo/MegaDome/SurroundVideo (H.264 models): base RTSP path /h264.sdp with query params; res=full = main (full res), res=half = sub (half res in each dimension); ssn is a required unique stream identifier (1-65535, up to 8 non-identical streams per camera); doublescan=0 = wait for fresh frame. Multi-sensor cameras (Omni, SurroundVideo) use /h264.sdp<N> where N is the sensor/channel index (leads show sdp1/sdp3). Optional params: x0/y0/x1/y1 (crop), qp, ratelimit, bitrate, fps, sei. (2) Contera (ConteraIP, newer H.264/H.265 platform): /stream1_<N> = main, /stream2_<N> = sub, /stream3_<N> = MJPEG; append _X for the channel on multi-channel/multi-sensor models (MicroDome Duo, Omni LX/RS 1-4). Default RTSP unicast port 554 (configurable 1-65535) confirmed in the API manual. Arecont was acquired by Costar Technologies; the HTTP/RTSP API also lives at http-api.arecontvision.com. Leads contained Hikvision PSIA and Axis media.amp cross-brand contamination — excluded.",
-  "verified_on": "2026-08-14"
+  "verified_on": "2026-10-01"
 }

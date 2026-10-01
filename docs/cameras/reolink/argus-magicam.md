@@ -24,8 +24,7 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| Clear (battery-powered) | 1920x1080 | 15 | H.264 |
-| Clear (DC power) | 1920x1080 | 20 | H.264 |
+| main | 1920x1080 | 20 | H.264 |
 
 ## Features
 

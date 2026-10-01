@@ -39,7 +39,6 @@
 
 - https://www.zkteco.com/
 - https://www.zkivision.com/
-- https://www.ispyconnect.com/camera/zkteco
 
 ---
 *Auto-generated from zkteco-zkmd470.json — do not edit by hand.*

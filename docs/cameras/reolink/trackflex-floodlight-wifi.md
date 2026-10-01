@@ -25,8 +25,8 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| Wide-angle (8MP) | 3840x2160 | 20 | — |
-| Secondary (2MP) | 1920x1080 | 20 | — |
+| wide-main | 3840x2160 | 20 | — |
+| tele-main | 1920x1080 | 20 | — |
 
 ## Features
 

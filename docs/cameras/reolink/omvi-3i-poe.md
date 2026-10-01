@@ -25,8 +25,8 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| Panoramic (upper) | 5120x1920 | 20 | H.265 |
-| PT (lower) | 3840x2160 | 20 | H.265 |
+| panoramic-main | 5120x1920 | 20 | H.265 |
+| ptz-main | 3840x2160 | 20 | H.265 |
 
 ## Features
 

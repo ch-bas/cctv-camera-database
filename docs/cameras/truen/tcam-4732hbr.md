@@ -30,7 +30,7 @@
 ## Sources
 
 - https://www.truen.co.kr/
-- https://www.ispyconnect.com/camera/truen
+- https://www.truen.co.kr/customer/technology.php?ptype=view&idx=68&page=1&code=technology&category=10
 
 ---
 *Auto-generated from truen-tcam-4732hbr.json — do not edit by hand.*

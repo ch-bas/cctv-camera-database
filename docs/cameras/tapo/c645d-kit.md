@@ -23,8 +23,8 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| wide-angle lens | 2304x1296 | 15 | — |
-| telephoto lens | 2304x1296 | 15 | — |
+| wide main | 2304x1296 | 15 | — |
+| tele main | 2304x1296 | 15 | — |
 
 ## Features
 

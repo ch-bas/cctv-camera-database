@@ -1248,23 +1248,23 @@
       "templates": [
         {
           "stream": "main",
-          "path": "/h264.sdp?res=full&doublescan=0&ssn=<uniq>",
+          "path": "/h264.sdp?res=full&doublescan=0&ssn=1",
           "codec": "H.264",
           "verified": true,
-          "source": "Arecont Vision API and Camera Web Page Manual (2017-06-30), Chapter IV - Alternative Access Protocols, 'RTSP Request Format for Continuous H.264 Video Streaming' (sales.arecontvision.com/marketing/contents/Arecont%20Vision%20API%20and%20Camera%20Web%20Page%20Manual_2017-06-30_1.pdf); minimal form rtsp://camera_ip/h264.sdp?res=full&doublescan=0&fps=fps&ssn=[1..65535], res=full = full resolution (main)",
+          "source": "Arecont Vision API and Camera Web Page Manual (2017-06-30), Chapter IV - Alternative Access Protocols, 'RTSP Request Format for Continuous H.264 Video Streaming' (sales.arecontvision.com/marketing/contents/Arecont%20Vision%20API%20and%20Camera%20Web%20Page%20Manual_2017-06-30_1.pdf): rtsp://camera_ip/h264.sdp?res=(half|full)&...&[ssn=(1..65535)]&[doublescan=(0|1)]...; ssn is the stream identifier (1..65535), 'use a unique ssn for each stream' and each client must have a unique (ip:ssn); the manual's own request examples use ssn=1. res=full = full resolution (main); ssn=1 as in the manual examples.",
           "strix_lead": "strixcamdb:arecont"
         },
         {
           "stream": "sub",
-          "path": "/h264.sdp?res=half&doublescan=0&ssn=<uniq>",
+          "path": "/h264.sdp?res=half&doublescan=0&ssn=2",
           "codec": "H.264",
           "verified": true,
-          "source": "Arecont Vision API and Camera Web Page Manual (2017-06-30), same RTSP section; res=half reduces resolution by a factor of 2 in each direction (sub/second stream)",
+          "source": "Arecont Vision API and Camera Web Page Manual (2017-06-30), Chapter IV - Alternative Access Protocols, 'RTSP Request Format for Continuous H.264 Video Streaming' (sales.arecontvision.com/marketing/contents/Arecont%20Vision%20API%20and%20Camera%20Web%20Page%20Manual_2017-06-30_1.pdf): rtsp://camera_ip/h264.sdp?res=(half|full)&...&[ssn=(1..65535)]&[doublescan=(0|1)]...; ssn is the stream identifier (1..65535), 'use a unique ssn for each stream' and each client must have a unique (ip:ssn); the manual's own request examples use ssn=1. res=half decimates the image by a factor of 2 in each dimension (sub); ssn=2 so it differs from the main stream's ssn=1, as the manual requires a unique ssn per stream.",
           "strix_lead": "strixcamdb:arecont"
         },
         {
           "stream": "main-multisensor",
-          "path": "/h264.sdp<N>?res=full&doublescan=0&ssn=<uniq>",
+          "path": "/h264.sdp<N>?res=full&doublescan=0&ssn=1",
           "codec": "H.264",
           "verified": true,
           "source": "Arecont Vision API and Camera Web Page Manual (2017-06-30): multi-sensor form rtsp://camera_ip/h264.sdp<channel>?res=(half|full)... for Omni, SurroundVideo and other multi-sensor MegaVideo models; <N> = sensor/channel index (1-based, seen as sdp1/sdp3 in leads)",
@@ -1322,7 +1322,7 @@
         }
       ],
       "notes": "Two documented generations. (1) Legacy MegaVideo/MegaDome/SurroundVideo (H.264 models): base RTSP path /h264.sdp with query params; res=full = main (full res), res=half = sub (half res in each dimension); ssn is a required unique stream identifier (1-65535, up to 8 non-identical streams per camera); doublescan=0 = wait for fresh frame. Multi-sensor cameras (Omni, SurroundVideo) use /h264.sdp<N> where N is the sensor/channel index (leads show sdp1/sdp3). Optional params: x0/y0/x1/y1 (crop), qp, ratelimit, bitrate, fps, sei. (2) Contera (ConteraIP, newer H.264/H.265 platform): /stream1_<N> = main, /stream2_<N> = sub, /stream3_<N> = MJPEG; append _X for the channel on multi-channel/multi-sensor models (MicroDome Duo, Omni LX/RS 1-4). Default RTSP unicast port 554 (configurable 1-65535) confirmed in the API manual. Arecont was acquired by Costar Technologies; the HTTP/RTSP API also lives at http-api.arecontvision.com. Leads contained Hikvision PSIA and Axis media.amp cross-brand contamination — excluded.",
-      "verified_on": "2026-08-14"
+      "verified_on": "2026-10-01"
     },
     {
       "brand": "AvertX",
@@ -1565,12 +1565,12 @@
         },
         {
           "stream": "sub",
-          "path": "/axis-media/media.amp?streamprofile=<profile>",
+          "path": "/axis-media/media.amp?videocodec=h264&resolution=640x480",
           "codec": "per profile (H.264|H.265|MJPEG)",
           "verified": true,
           "source": "Axis VAPIX Stream Profiles API — https://developer.axis.com/vapix/network-video/stream-profiles/ ; Video Streaming API — https://developer.axis.com/vapix/network-video/video-streaming/",
           "strix_lead": "strixcamdb:axis",
-          "note": "Axis does not expose a separate fixed RTSP path for sub/secondary streams. Lower-resolution or secondary streams are accessed via the same /axis-media/media.amp path with a named stream profile (e.g. streamprofile=Bandwidth) or explicit params (resolution=640x480&fps=5). NVRs/VMS systems configure this as a second RTSP request with different query params."
+          "note": "Axis has no separate fixed sub-stream path; a lower-resolution stream is requested from the same /axis-media/media.amp endpoint with query parameters. This path is the example given in the VAPIX Video Streaming API (videocodec=h264&resolution=640x480); the resolution must be one the device supports. Named stream profiles (?streamprofile=<name>) also work, but predefined profile names vary by product (see unverified_leads)."
         },
         {
           "stream": "onvif",
@@ -1583,6 +1583,10 @@
         }
       ],
       "unverified_leads": [
+        {
+          "path": "/axis-media/media.amp?streamprofile=<profile>",
+          "note": "Documented VAPIX parameter, but Axis documents no fixed default profile name (\"Most Axis products have a number of predefined stream profiles\"; names are per product in StreamProfile.S#.Name), so the website cannot fill <profile>. Use the resolution= form in templates instead."
+        },
         {
           "path": "/live3.sdp",
           "note": "Legacy MPEG-4 era SDP path (pre-VAPIX 3). Not present in current Axis documentation; superseded by /axis-media/media.amp."
@@ -2132,30 +2136,34 @@
           "strix_lead": "strixcamdb:cisco"
         },
         {
-          "stream": "sub",
-          "path": "/<code>",
-          "codec": "H.264|MPEG-4|MJPEG",
-          "verified": true,
-          "source": "Cisco Video Surveillance IP Camera User Guide, CIVS-IPC-2500 (OL-19273-02): secondary (lower-resolution 352x240/352x288) stream is reached at rtsp://username:password@ip_address/<code>, where <code> is the configured RTSP access name",
-          "strix_lead": "strixcamdb:cisco"
-        },
-        {
           "stream": "main-8000-series",
           "path": "/live.sdp",
           "codec": "H.265|H.264|MJPEG",
           "verified": true,
           "source": "Cisco Video Surveillance 8020/8030 (and 8000P/8070/8620-8630/8930) IP Camera Reference Guide, RTSP configuration: 'rtsp://ip address:rtsp port/access name for stream 1 to 4', default access name for stream 1 = live.sdp (e.g. rtsp://192.168.10.15:554/live2.sdp for a secondary stream); RTSP requires H.264/H.265 mode",
           "strix_lead": "strixcamdb:cisco"
+        },
+        {
+          "stream": "sub-8000-series",
+          "path": "/live2.sdp",
+          "codec": "H.265|H.264|MJPEG",
+          "verified": true,
+          "source": "Cisco Video Surveillance 8020/8030 (and 8000P/8070/8620-8630/8930) IP Camera Reference Guide, RTSP configuration: 'rtsp://ip address:rtsp port/access name for stream 1 to 4', example rtsp://192.168.10.15:554/live2.sdp for the secondary stream (stream 2 default access name live2.sdp)",
+          "strix_lead": "strixcamdb:cisco"
         }
       ],
       "unverified_leads": [
+        {
+          "path": "/<code>",
+          "note": "CIVS-IPC-2500 (OL-19273-02) secondary (352x240/352x288) stream is reached at rtsp://<ip>/<code>, where <code> is the user-configured RTSP access name; the guide gives no default value, so it cannot be a fixed template. Read the access name from the camera's streaming settings."
+        },
         {
           "path": "/StreamingSetting?version=1.0&action=getRTSPStream&ChannelID=1&ChannelName=Channel1",
           "note": "Not a Cisco path — this getRTSPStream query pattern is from other brands (e.g. Vivotek/OEM cross-contamination). No official Cisco doc uses it."
         }
       ],
       "notes": "Two documented URL families across the CIVS IP camera line. (1) Older CIVS-IPC-2500/2900/4300-era cameras use the .sav/.sdp endpoints: /img/media.sav (video+audio, also /img/media.sdp), /img/video.sav (video only), /img/audio.sav (audio only) for the primary stream, and /<code> for the configurable secondary stream. (2) Newer 8000-series (8020/8030/8000P/8070/8400/8620/8630/8930) cameras use a user-defined 'access name for stream 1 to 4', default live.sdp / live2.sdp, per the reference guides. Default RTSP port 554 on both. Cisco discontinued the CIVS line (sold to Verkada); current Cisco Meraki MV cameras are cloud-managed and do NOT expose RTSP. Cisco.com reference-guide HTML/PDF pages return HTTP 403 to automated fetchers; paths confirmed via the official CIVS-IPC-2500 user guide (OL-19273-02) third-party-viewing section and the 8000-series reference-guide RTSP configuration sections.",
-      "verified_on": "2026-08-14"
+      "verified_on": "2026-10-01"
     },
     {
       "brand": "ClareVision",
@@ -6305,22 +6313,30 @@
       "templates": [
         {
           "stream": "main",
-          "path": "/rtsph264<res>",
-          "codec": "H.264",
+          "path": "/stream0",
+          "codec": "H.264|H.265",
           "verified": true,
-          "source": "LILIN Technical Support KB, 'UHD 4K Camera's RTSP Streaming Codes and URL' (lilin.zendesk.com/hc/en-gb/articles/212217363): rtsp://<IP Address>/rtsph2644k. The <res> token is the per-encoder resolution suffix (e.g. 4k, 1080p, 720p, 480p, 960h, 3m, 5m, sxga, cif).",
-          "strix_lead": "strixcamdb:merit-lilin"
+          "source": "https://lilin.zendesk.com/hc/en-gb/articles/360045653451-LILIN-IP-Camera-RTSP-Information — LILIN Technical Support KB \"LILIN IP Camera RTSP Information\": \"/stream0 - Encoder 1 (typically the camera's primary HD stream)\", example rtsp://admin:pass@192.168.1.200/stream0, default RTSP port 554.",
+          "strix_lead": "manual:merit-lilin"
         },
         {
           "stream": "sub",
-          "path": "/rtspjpeg<res>",
-          "codec": "MJPEG",
+          "path": "/stream1",
+          "codec": "H.264|H.265",
           "verified": true,
-          "source": "Same LILIN KB scheme — the JPEG-codec sibling of rtsph264<res>; the encoder-type prefix (rtsph264 vs rtspjpeg) selects codec, resolution suffix selects the stream. Per-encoder RTSP URLs are exposed in the camera GUI under Setup > Video/Audio per LILIN KB 'LILIN IP Camera RTSP URL's' (lilin.zendesk.com/hc/en-gb/articles/360045653451).",
-          "strix_lead": "strixcamdb:merit-lilin"
+          "source": "https://lilin.zendesk.com/hc/en-gb/articles/360045653451-LILIN-IP-Camera-RTSP-Information — LILIN Technical Support KB \"LILIN IP Camera RTSP Information\": \"/stream1 - Encoder 2 (typically the camera's secondary SD stream)\". LILIN KB 115003156583 (Control4 / M Series) also shows Encoder2's default RTSP name as 'stream1'.",
+          "strix_lead": "manual:merit-lilin"
         }
       ],
       "unverified_leads": [
+        {
+          "path": "/rtsph264<res>",
+          "note": "Legacy firmware-1.x LILIN codec+resolution naming (e.g. /rtsph2641080p, /rtsph264720p, /rtsph2644k per older LILIN KB 212217363, now no longer published). The <res> suffix is model/encoder-specific with no single documented default, so it cannot be a fixed template; current LILIN cameras default to /stream0 and /stream1."
+        },
+        {
+          "path": "/rtspjpeg<res>",
+          "note": "Legacy MJPEG sibling of /rtsph264<res> (e.g. /rtspjpeg480p); resolution suffix is model-specific with no documented default."
+        },
         {
           "path": "main_[CHANNEL]",
           "note": "sub_/main_ channel form — LILIN NVR/DVR uses a different scheme (/rtspstream?channel=<ch>&stream=<n>, per LILIN's official GitHub NVR RTSP SDK), not the standalone-IP-camera rtsph264 scheme; not confirmed for cameras."
@@ -6334,8 +6350,8 @@
           "note": "Generic/cross-brand MPEG4 path; not found in any official LILIN IP-camera doc."
         }
       ],
-      "notes": "LILIN standalone IP cameras use a codec+resolution path token: /rtsph264<res> for H.264 and /rtspjpeg<res> for MJPEG, where <res> is the encoder's resolution (leads seen: 4k, 1080p, 1024p, 720p, 480p, 960h, 3m, 5m, sxga, cif; plus bare /rtsph264 and /rtspjpeg). Confirmed directly by LILIN's own support KB for the 4K variant (rtsph2644k). Default RTSP port is 554; LILIN also allows RTSP over HTTP on port 80 (e.g. rtsp://user:pass@ip:80/rtsph264480p). Auth is inline user:pass@. Each encoder/stream has its own URL, listed in the camera web GUI (Setup > Video/Audio). NOTE: a separate/newer LILIN IP-camera line (E-Series, per meritlilin.com UserManual_ESeries_IPC-EN.pdf) instead uses /av0_0 (main) and /av0_1 (sub) on port 554 — a distinct scheme not covered by these templates; and LILIN DVR/NVR use /rtspstream?channel=<ch>&stream=<n>. Templates here cover the classic rtsph264<res>/rtspjpeg<res> IP-camera scheme matching the leads.",
-      "verified_on": "2026-08-14"
+      "notes": "Current LILIN IP cameras name each encoder's RTSP path /stream<N> counted from 0 (/stream0 = Encoder 1 main, /stream1 = Encoder 2 sub), default RTSP port 554, RTSP over HTTP on port 80 also documented; the live URL of every encoder is listed in the camera web GUI (Setup > Video/Audio) and the names are editable. Legacy firmware-1.x cameras used codec+resolution names (/rtsph264<res>, /rtspjpeg<res>) — kept as unverified leads because the suffix has no single default. A separate E-Series line uses /av0_0 and /av0_1 (UserManual_ESeries_IPC-EN.pdf); LILIN DVR/NVR use /rtspstream?channel=<ch>&stream=<n>. See also strix/verified/lilin.json.",
+      "verified_on": "2026-10-01"
     },
     {
       "brand": "Merkury Innovations",
@@ -7768,18 +7784,18 @@
       "templates": [
         {
           "stream": "main",
-          "path": "/VideoInput/<x>/h264/<z>",
+          "path": "/VideoInput/1/h264/1",
           "codec": "H.264",
           "verified": true,
-          "source": "Siqura/TKH Security S-60 E Firmware v4.22 User Manual, ch. 'Stream media via RTSP' - RTSP URL format: rtsp://<IP>:<RTSP Port>/VideoInput/<x>/<y>/<z> (proficomms.cz/files/datasheets/TKH/s60e-4.22_v10-UM-EN.pdf); also BC620WDR FW 4.0 User Manual (tkhsecurity.it/media/import/siqura_bc620wdr_4_0_v2_um_en.pdf)",
+          "source": "Siqura/TKH Security S-60 E Firmware v4.22 User Manual, ch. 'Stream media via RTSP' (proficomms.cz/files/datasheets/TKH/s60e-4.22_v10-UM-EN.pdf) and BC620WDR FW 4.0 User Manual (tkhsecurity.it/media/import/siqura_bc620wdr_4_0_v2_um_en.pdf): rtsp://<IP>:<RTSP Port>/VideoInput/<x>/<y>/<z>, <x> = Video Input number, <y> = media type, <z> = encoder number counting only enabled encoders of that media type; port 554 by default. Video Input 1, first enabled H.264 encoder.",
           "strix_lead": "strixcamdb:siqura"
         },
         {
           "stream": "sub",
-          "path": "/VideoInput/<x>/mpeg4/<z>",
+          "path": "/VideoInput/1/mpeg4/1",
           "codec": "MPEG-4",
           "verified": true,
-          "source": "Siqura/TKH Security S-60 E Firmware v4.22 User Manual, RTSP URL format rtsp://<IP>:<RTSP Port>/VideoInput/<x>/<y>/<z>, <y> = media type (mpeg4/h264/mpeg2)",
+          "source": "Siqura/TKH Security S-60 E Firmware v4.22 User Manual, ch. 'Stream media via RTSP' (proficomms.cz/files/datasheets/TKH/s60e-4.22_v10-UM-EN.pdf) and BC620WDR FW 4.0 User Manual (tkhsecurity.it/media/import/siqura_bc620wdr_4_0_v2_um_en.pdf): rtsp://<IP>:<RTSP Port>/VideoInput/<x>/<y>/<z>, <x> = Video Input number, <y> = media type, <z> = encoder number counting only enabled encoders of that media type; port 554 by default. The manuals' own example pulls 'Video Input 1 and the first enabled MPEG-4 encoder' (= /VideoInput/1/mpeg4/1).",
           "strix_lead": "strixcamdb:siqura"
         }
       ],
@@ -7810,7 +7826,7 @@
         }
       ],
       "notes": "Dutch professional brand (TKH Security). Official RTSP URL format from Siqura user manuals: rtsp://<IP>:<port>/VideoInput/<x>/<y>/<z> where <x>=Video Input number, <y>=media type (h264/mpeg4/mpeg2/mjpeg), <z>=encoder number (only ENABLED encoders of that media type are counted for the index). Default RTSP port 554. Leads 'VideoInput/1/h264/1' and 'VideoInput/1/mpeg4/1' match this format exactly and are confirmed. Cameras/encoders also support ONVIF Profile S (stream URIs queried via ONVIF, not fixed URLs). Same URL scheme documented across S-60 E, C-60 E, S-64 E, BC620WDR and other Siqura encoders/cameras.",
-      "verified_on": "2026-08-14"
+      "verified_on": "2026-10-01"
     },
     {
       "brand": "Sony (IPELA)",

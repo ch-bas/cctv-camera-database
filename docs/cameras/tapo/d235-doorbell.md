@@ -45,6 +45,7 @@
 - https://www.tp-link.com/us/support/faq/4465/
 - https://www.tp-link.com/us/support/faq/3972/
 - https://community.tp-link.com/en/smart-home/forum/topic/712770
+- https://www.tapo.com/us/faq/724/
 
 ---
 *Auto-generated from tapo-d235.json — do not edit by hand.*

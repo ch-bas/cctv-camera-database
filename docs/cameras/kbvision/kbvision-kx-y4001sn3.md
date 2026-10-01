@@ -13,7 +13,7 @@
 | Night vision | ir (30m) |
 | Power | 12 VDC/PoE |
 | Storage | microSD ≤ 256GB |
-| Protocols | rtsp |
+| Protocols | rtsp, onvif |
 | IP rating | IP67 |
 
 ## Streams
@@ -25,6 +25,7 @@
 ## Sources
 
 - https://kbvisiongroup.com/product/kx-y4001sn3.html
+- https://kbvisiongroup.com/brochure/KX-Y4001SN3-Brochure.jpg
 
 ---
 *Auto-generated from kbvision-kx-y4001sn3.json — do not edit by hand.*

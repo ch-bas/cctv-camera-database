@@ -36,7 +36,6 @@
 ## Sources
 
 - https://www.wifi-stock.com/details/imou-ranger-s2-IPC-DK2-3H1W.html
-- https://www.ispyconnect.com/camera/imou
 
 ---
 *Auto-generated from imou-ranger-s2.json — do not edit by hand.*

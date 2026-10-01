@@ -16,7 +16,7 @@
 | Protocols | onvif, rtsp, http |
 | IP rating | IP68 (Type 6P) |
 | IK rating | IK10 |
-| Two-way audio | No |
+| Two-way audio | Yes |
 | Operating temp | -40 to +65°C |
 | Released | 2022 |
 
@@ -51,6 +51,7 @@
 
 - https://resources.keenfinity.tech/public/documents/MIC_9502_Z30GVF_Data_sheet_enUS_90976684939.pdf
 - https://www.a1securitycameras.com/content/product_documents/53239/Bosch-MIC-9502-Z30GVF-Datasheet-A1.pdf
+- https://cdn.commerce.boschsecurity.com/public/documents/MIC_IP_fusion_9000i_Data_sheet_enUS_75058032907.pdf
 
 ---
 *Auto-generated from bosch-mic-9502-z30gvf.json — do not edit by hand.*

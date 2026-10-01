@@ -32,7 +32,6 @@
 ## Sources
 
 - https://www.panasonic.com/mea/en/business/surveillance-solutions/bullet-cameras/pm-eb2nlfr-w.specs.html
-- https://www.ispyconnect.com/camera/dahua
 - https://www.panasonic.com/content/dam/panasonic/mea/learn-more/datasheet-manuals-docs/Operating-Instructionsl_PM-EB2NLFR-WPM-ED2NLFR-W.pdf
 
 ---

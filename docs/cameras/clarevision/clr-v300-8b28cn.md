@@ -42,6 +42,7 @@
 
 - https://www.snapav.com/shop/en/snapav/clr-v300-8b28cnw
 - https://www.clarecontrols.com/helpcenter/clarevision-camera-nvr-rtsp-stream-urls
+- https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/documents/Surveillance/Cutsheets/CLR-V300-8B28CNX-2021-12-2125-05.pdf
 
 ---
 *Auto-generated from clarevision-clr-v300-8b28cn.json — do not edit by hand.*

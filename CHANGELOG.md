@@ -6,6 +6,22 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.27.2] — 2026-10-01
+
+Data-consistency fixes from the third CCTV expert audit (2026-10-01). Every value change cites the manufacturer's own documentation and was re-checked by an independent reviewer that reverted edits its source didn't support. No new cameras.
+
+### Fixed
+- **RTSP URLs taken from iSpy (60 → 0)** — re-sourced from each maker's own documentation: TRUEN now uses its documented `/video1+audio1` paths, Panasonic PM-series keeps `/profile1` with the manual as source; where no official path exists (ZKTeco, some ABUS, Illustra multisensor, IMOU) the iSpy path was removed so the brand guide (if any) applies.
+- **RTSP guides without placeholders** — Axis, Arecont Vision, LILIN, Siqura and Cisco guides no longer carry placeholders such as `<profile>` or `<uniq>`: documented defaults were filled in or the template moved to `unverified_leads`.
+- **NDAA claims on brands that resell Hikvision/Dahua cameras** — checked against each maker's statement: Honeywell (89, NDAA page and datasheets added as sources), ClareVision CLR-V (25), Luma X20 (21), IC Realtime IPND (9), Amcrest AMLINK and Helix and Night Owl (brand NDAA statement) keep their claim; unsupported Amcrest claims were removed.
+- **ONVIF** — `onvif_port` without ONVIF listed: 35 → 9, checked against datasheets.
+- **Two-way audio** — cameras with a microphone and speaker but "no two-way audio": 112 → 75, from datasheets.
+- **Stream names** — `video.streams` use `main` / `sub` / `third` on 341 more records ("Main Stream", "Stream 1", unnamed lists in descending resolution) plus 95 from datasheets; 9 left.
+- **Night vision** — 4 records with type "none" and an IR range corrected.
+- **Doorbells** marked outdoor (8); a substream identical to the main stream removed (1).
+
+No new cameras.
+
 ## [2.27.1] — 2026-10-01
 
 Data-consistency fixes from the second CCTV expert audit (2026-10-01). Every value change cites the manufacturer's own documentation (manual, support KB, datasheet) and was re-checked by an independent reviewer that reverted edits its source didn't support. Third-party RTSP lists were not used; where a maker publishes nothing, the record is left as it was. No new cameras.

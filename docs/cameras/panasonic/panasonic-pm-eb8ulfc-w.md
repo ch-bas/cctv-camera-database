@@ -29,7 +29,6 @@
 ## Sources
 
 - https://www.panasonic.com/mea/en/business/surveillance-solutions/bullet-cameras/pm-eb8ulfc-w.specs.html
-- https://www.ispyconnect.com/camera/dahua
 - https://www.panasonic.com/content/dam/panasonic/mea/learn-more/datasheet-manuals-docs/User-Manual_Colour-IR-cameras.pdf
 
 ---
