@@ -1,0 +1,95 @@
+{
+  "id": "revodata-i706-p-hs",
+  "brand": "Revodata",
+  "model": "I706-P-HS",
+  "type": "covert",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2880,
+    "max_height": 1616,
+    "label": "5MP"
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "75",
+  "night_vision": {
+    "type": "ir"
+  },
+  "protocols": [
+    "rtsp",
+    "onvif",
+    "http",
+    "p2p"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2880x1616",
+        "fps": 25,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "features": [
+    "Tiny indoor PoE camera with an adjustable M12 3.6 mm lens",
+    "Infrared night vision",
+    "Snapshot URL: /cgi-bin/snapshot.cgi",
+    "Motion detection",
+    "P2P remote view"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/stream1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/stream2",
+      "onvif_port": 80,
+      "notes": "Paths from the maker's manual (Revotech): /stream1 main, /stream2 second stream, RTSP port 554, ONVIF port 80. Community-tested in Frigate. Main stream 2880x1616 at up to 25 fps.",
+      "verified": true,
+      "tested_by": "ElectronicBattle (frigate discussion #24489)"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (ONVIF port 80)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as Generic/ONVIF with /stream1 (main) and /stream2 (sub)."
+    }
+  },
+  "markets": [
+    "gb"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "community_notes": [
+    {
+      "note": "Works in Frigate as a bird-box camera: configured in about ten minutes using the RTSP paths from the manual. Main stream runs at 2880x1616, 25 fps H.264; the camera web UI resembles Hikvision-style OEM firmware.",
+      "category": "frigate",
+      "source": "https://github.com/blakeblackshear/frigate/discussions/24489",
+      "reported_by": "ElectronicBattle",
+      "date": "2026-10-08"
+    }
+  ],
+  "last_verified": "2026-10-08",
+  "sources": [
+    "https://www.amazon.co.uk/dp/B09T9HXZD3",
+    "https://github.com/blakeblackshear/frigate/discussions/24489",
+    "https://github.com/ch-bas/cctv-camera-database/discussions/402"
+  ]
+}
