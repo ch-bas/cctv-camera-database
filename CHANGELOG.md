@@ -13,6 +13,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ### Fixed
 - **Lorex W482CAD and B451AJD doorbell (#403)** — both WiFi cameras were listed with no RTSP and as cloud-required. They stream locally on port 554 with the Dahua-style path other Lorex cameras use (main `/cam/realmonitor?channel=1&subtype=0`, sub `subtype=1`); a user runs both in Frigate through a go2rtc restream and published the working config. Both records now list RTSP, a community-verified Frigate config and a community note. Reported by [comradestu](https://github.com/comradestu).
+- **Lorex W881AAD** — also listed with no RTSP; an owner streams it locally with the same Dahua path ([rroller/dahua#353](https://github.com/rroller/dahua/issues/353)). The record now lists RTSP and the stream URLs (not yet Frigate-tested). Other Lorex Wi-Fi models stay unchanged: Lorex documents the RTSP path only for its IP cameras and recorders, and no owner report was found for them.
 
 ## [2.27.2] — 2026-10-01
 
