@@ -6,6 +6,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.27.3] — Unreleased
+
+### Fixed
+- **Lorex W482CAD (#403)** — the WiFi camera was listed with no RTSP and as cloud-required. It streams locally on port 554 with the Dahua-style path other Lorex cameras use (main `/cam/realmonitor?channel=1&subtype=0`, sub `subtype=1`); a user runs it in Frigate through a go2rtc restream and published the working config. The record now lists RTSP, a community-verified Frigate config and a community note. Reported by [comradestu](https://github.com/comradestu).
+
+No new cameras.
+
 ## [2.27.2] — 2026-10-01
 
 Data-consistency fixes from the third CCTV expert audit (2026-10-01). Every value change cites the manufacturer's own documentation and was re-checked by an independent reviewer that reverted edits its source didn't support. No new cameras.

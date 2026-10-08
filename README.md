@@ -243,7 +243,7 @@ A device type is only emitted when the camera has a known RJ45 link speed (`netw
 | 4K / 8MP+ | 5,336 |
 | 4–7MP | 11,109 |
 | Under 4MP | 11,955 |
-| With integration configs (Frigate / Home Assistant) | 22,196 |
+| With integration configs (Frigate / Home Assistant) | 22,197 |
 | With color-lux rating (`night_vision.min_lux_color`) | 18,990 |
 
 ### All 230 brands
@@ -547,7 +547,7 @@ Open — contributions very welcome:
 
 - [ ] **Re-source ~1,051 reseller-only cameras** to official OEM datasheets (#164 / #165)
 - [ ] **Backfill pixel resolution** for the ~2,757 entries that state megapixels but no width×height (#169)
-- [ ] **Frigate verification drive** — only 31 of 21,967 shipped configs are community-verified; [confirm one you run](../../issues/new?template=verify-frigate-config.yml)
+- [ ] **Frigate verification drive** — only 32 of 21,968 shipped configs are community-verified; [confirm one you run](../../issues/new?template=verify-frigate-config.yml)
 - [ ] **Grow `community_notes`** — the per-camera quirks/behaviors layer (#297)
 
 ---
@@ -581,7 +581,7 @@ Specifications are compiled from manufacturer datasheets and reputable retailers
 If you use this dataset, a link back is appreciated:
 
 ```
-CCTV Camera Database (v2.27.2), CC0 1.0. https://cctv-database.com — https://github.com/ch-bas/cctv-camera-database
+CCTV Camera Database (v2.27.3), CC0 1.0. https://cctv-database.com — https://github.com/ch-bas/cctv-camera-database
 ```
 
 ---

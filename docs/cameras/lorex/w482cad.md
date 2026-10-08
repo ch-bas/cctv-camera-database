@@ -15,6 +15,7 @@
 | Night vision | color (10m) |
 | Power | DC 12V/8.4W (AC adapter, plug-in) |
 | Storage | microSD ≤ 256GB |
+| Protocols | rtsp |
 | IP rating | IP65 |
 | Two-way audio | Yes |
 | Operating temp | -30 to 55°C |
@@ -36,6 +37,14 @@
 - https://www.lorextechnology.com/downloads/security-cameras/W482CAD/W482CAD_Series_Specs_R1.pdf
 - https://www.lorex.com/products/w482cad-e-2k-spotlight-indoor-outdoor-wifi-camera
 - https://www.lorex.com/products/w482cad-f-2k-spotlight-outdoor-wifi-camera
+
+## Community notes (unverified)
+
+*Reported by users. Not from the datasheet, not verified by the project.*
+
+- Streams locally over RTSP on port 554 despite being a WiFi app camera: main /cam/realmonitor?channel=1&subtype=0, sub ...&subtype=1, using the camera admin account. A working Frigate config is published by the reporter.
+  
+  rtsp · reported by comradestu · 2026-10-08 · [source](https://github.com/comradestu/Lorex-W482CAD-Frigate/blob/main/LorexFrigateConfig.txt)
 
 ---
 *Auto-generated from lorex-w482cad.json — do not edit by hand.*
