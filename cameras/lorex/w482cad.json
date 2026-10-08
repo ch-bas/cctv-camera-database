@@ -43,7 +43,9 @@
     "nvr_compatible": false,
     "cloud": true
   },
-  "protocols": [],
+  "protocols": [
+    "rtsp"
+  ],
   "ip_rating": "IP65",
   "audio": {
     "microphone": true,
@@ -74,6 +76,24 @@
   "power_source": [
     "dc"
   ],
-  "last_verified": "2026-07-06",
-  "cloud_dependency": "cloud-required"
+  "last_verified": "2026-10-08",
+  "cloud_dependency": "cloud-optional",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "notes": "Community-tested: works in Frigate through a go2rtc restream (main for record, sub for detect) with the Dahua-style /cam/realmonitor path, like other Lorex cameras. Use the camera admin account.",
+      "verified": true,
+      "tested_by": "comradestu (#403)"
+    }
+  },
+  "community_notes": [
+    {
+      "note": "Streams locally over RTSP on port 554 despite being a WiFi app camera: main /cam/realmonitor?channel=1&subtype=0, sub ...&subtype=1, using the camera admin account. A working Frigate config is published by the reporter.",
+      "category": "rtsp",
+      "source": "https://github.com/comradestu/Lorex-W482CAD-Frigate/blob/main/LorexFrigateConfig.txt",
+      "reported_by": "comradestu",
+      "date": "2026-10-08"
+    }
+  ]
 }
