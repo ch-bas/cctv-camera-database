@@ -8,10 +8,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.27.3] — Unreleased
 
+### Added
+- **Revodata I706-P-HS** (new brand) — tiny indoor 5MP PoE camera with an adjustable 3.6 mm M12 lens and IR, suggested in discussion #402. RTSP `/stream1` (main) and `/stream2` on port 554 and ONVIF on port 80, from the maker's manual; community-tested in Frigate by [ElectronicBattle](https://github.com/ElectronicBattle) ([review](https://github.com/blakeblackshear/frigate/discussions/24489)).
+
 ### Fixed
 - **Lorex W482CAD and B451AJD doorbell (#403)** — both WiFi cameras were listed with no RTSP and as cloud-required. They stream locally on port 554 with the Dahua-style path other Lorex cameras use (main `/cam/realmonitor?channel=1&subtype=0`, sub `subtype=1`); a user runs both in Frigate through a go2rtc restream and published the working config. Both records now list RTSP, a community-verified Frigate config and a community note. Reported by [comradestu](https://github.com/comradestu).
-
-No new cameras.
 
 ## [2.27.2] — 2026-10-01
 
