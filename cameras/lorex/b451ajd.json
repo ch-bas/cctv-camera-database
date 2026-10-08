@@ -56,12 +56,33 @@
     "chime kit included",
     "32GB microSD included (up to 256GB)"
   ],
-  "cloud_dependency": "cloud-required",
+  "cloud_dependency": "cloud-optional",
   "markets": [
     "us"
   ],
   "sources": [
     "https://www.lorex.com/products/2k-wi-fi-video-doorbell-with-person-detection-wired"
   ],
-  "last_verified": "2026-09-22"
+  "last_verified": "2026-10-08",
+  "protocols": [
+    "rtsp"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "notes": "Community-tested: works in Frigate through a go2rtc restream (main for record, sub for detect) with the Dahua-style /cam/realmonitor path, like other Lorex cameras. Use the camera admin account.",
+      "verified": true,
+      "tested_by": "comradestu (#403)"
+    }
+  },
+  "community_notes": [
+    {
+      "note": "Streams locally over RTSP on port 554: main /cam/realmonitor?channel=1&subtype=0, sub ...&subtype=1, using the camera admin account. Runs in the same published Frigate config as the reporter's Lorex W482CAD (record, detect, zones and alerts).",
+      "category": "rtsp",
+      "source": "https://github.com/comradestu/Lorex-W482CAD-Frigate/blob/main/LorexFrigateConfig.txt",
+      "reported_by": "comradestu",
+      "date": "2026-10-08"
+    }
+  ]
 }

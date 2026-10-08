@@ -13,6 +13,7 @@
 | Night vision | hybrid |
 | Power | 16-24V AC / 12-24V DC (wired doorbell transformer) |
 | Storage | microSD ≤ 256GB |
+| Protocols | rtsp |
 | IP rating | IP65 |
 | Two-way audio | Yes |
 | Operating temp | -20 to 50°C |
@@ -33,6 +34,14 @@
 ## Sources
 
 - https://www.lorex.com/products/2k-wi-fi-video-doorbell-with-person-detection-wired
+
+## Community notes (unverified)
+
+*Reported by users. Not from the datasheet, not verified by the project.*
+
+- Streams locally over RTSP on port 554: main /cam/realmonitor?channel=1&subtype=0, sub ...&subtype=1, using the camera admin account. Runs in the same published Frigate config as the reporter's Lorex W482CAD (record, detect, zones and alerts).
+  
+  rtsp · reported by comradestu · 2026-10-08 · [source](https://github.com/comradestu/Lorex-W482CAD-Frigate/blob/main/LorexFrigateConfig.txt)
 
 ---
 *Auto-generated from lorex-b451ajd.json — do not edit by hand.*

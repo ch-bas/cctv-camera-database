@@ -35,7 +35,9 @@
     "nvr_compatible": false,
     "cloud": true
   },
-  "protocols": [],
+  "protocols": [
+    "rtsp"
+  ],
   "ip_rating": "IP65",
   "audio": {
     "microphone": true,
@@ -53,17 +55,34 @@
   ],
   "sources": [
     "https://www.lorex.com/products/w881aad-4k-spotlight-indoor-outdoor-wi-fi-security-camera",
-    "https://d2zri47w41ywm3.cloudfront.net/downloads/security-cameras/W881AA/W881AAD_Series_Specs_R6.pdf"
+    "https://d2zri47w41ywm3.cloudfront.net/downloads/security-cameras/W881AA/W881AAD_Series_Specs_R6.pdf",
+    "https://www.lorex.com/blogs/help/ip-cameras-using-real-time-streaming-protocol-rtsp-with-your-dvr-nvr"
   ],
   "power_source": [
     "dc"
   ],
-  "last_verified": "2026-07-06",
+  "last_verified": "2026-10-08",
   "environment": [
     "outdoor"
   ],
   "markets": [
     "us"
   ],
-  "cloud_dependency": "cloud-required"
+  "cloud_dependency": "cloud-optional",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "notes": "An owner streams this WiFi camera locally with the Dahua-style /cam/realmonitor path (camera admin account), the same path Lorex documents for its IP cameras and recorders. Not yet tested in Frigate; the substream (subtype=1) follows the same convention."
+    }
+  },
+  "community_notes": [
+    {
+      "note": "Streams locally over RTSP without a Lorex recorder: the owner uses rtsp://admin:<password>@<camera ip>/cam/realmonitor?channel=1&subtype=0. The local Dahua HTTP API (used by the Home Assistant Dahua integration) did not work with default settings.",
+      "category": "rtsp",
+      "source": "https://github.com/rroller/dahua/issues/353",
+      "reported_by": "jhouse1989",
+      "date": "2026-10-08"
+    }
+  ]
 }
