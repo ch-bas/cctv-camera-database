@@ -6,7 +6,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
-## [2.28.0] — Unreleased
+## [2.29.0] — Unreleased
+
+### Added
+
+---
+
+## [2.28.0] — 2026-10-21
 
 ### Added
 - **157 Dahua cameras** (Dahua now has 2,695) — every model in Dahua's official catalogue that the dataset lacked, from each model's product page and datasheet: 50 IP cameras (the new WizSense 3 `-IL` line, WizMind 5 5853Z, WizMind 4/8, a 3-sensor MFW), 18 PTZ, thermal, explosion-proof and analog models (SD5 MB-HNR, X-Spans S2, TPC V1, Ex-certified ECA/EPT/ESD), 47 traffic, ANPR and parking cameras (ITC Spotter Sky and Nano, parking-spot detection) and 42 vehicle and project-only models. Lens or PoE twins that share one datasheet are aliases of one record. Values a datasheet does not state, or states two ways, are left out. RTSP uses Dahua's documented path, not yet verified per model.
