@@ -6,7 +6,20 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
-## [2.28.0] — Unreleased
+## [2.29.0] — Unreleased
+
+### Added
+- **Motorola Solutions, new brand: 5 Vigilant license-plate (ALPR) cameras.** L5F (fixed), L5M (vehicle-mounted), L6D (dual-purpose LPR plus color video), and the L5Q and L6Q quick-deploy units, each from Motorola's product page and datasheet. Where a datasheet states a value two ways (L6D lists 3.0MP beside a 1440x1080 image resolution), the record keeps the stated pixel resolution and notes the conflict. Avigilon and Pelco stay separate brands.
+- **Genetec, new brand: 4 AutoVu license-plate (ALPR) cameras.** SharpV (current G3, 1920x1200), the earlier SharpV G1/G2 (1280x960), the vehicle-mounted SharpZ3 and the SharpX, from Genetec datasheets and TechDocs. Models whose resolution Genetec doesn't publish (SharpX VGA, Cloudrunner) are left out.
+- **Bosch MIC IP starlight 7000 HD** (MIC-7130-PB4/PG4/PW4): the 720p 30x ruggedized PTZ, from Bosch's archived official datasheet.
+
+### Fixed
+- **IMOU Cruiser 4MP** night vision is hybrid (IMOU's Smart Color Night Vision), not IR-only (#416).
+- **Reolink E331** Frigate config is now community-verified on the main stream (#415).
+
+---
+
+## [2.28.0] — 2026-10-21
 
 ### Added
 - **157 Dahua cameras** (Dahua now has 2,695) — every model in Dahua's official catalogue that the dataset lacked, from each model's product page and datasheet: 50 IP cameras (the new WizSense 3 `-IL` line, WizMind 5 5853Z, WizMind 4/8, a 3-sensor MFW), 18 PTZ, thermal, explosion-proof and analog models (SD5 MB-HNR, X-Spans S2, TPC V1, Ex-certified ECA/EPT/ESD), 47 traffic, ANPR and parking cameras (ITC Spotter Sky and Nano, parking-spot detection) and 42 vehicle and project-only models. Lens or PoE twins that share one datasheet are aliases of one record. Values a datasheet does not state, or states two ways, are left out. RTSP uses Dahua's documented path, not yet verified per model.

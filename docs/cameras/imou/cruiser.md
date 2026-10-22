@@ -12,7 +12,7 @@
 | Sensor | 1/2.7" progressive CMOS |
 | Lens | 1× 3.6mm |
 | Field of view | 105 diagonal; pan 355 / tilt 0-90° |
-| Night vision | ir (30m) |
+| Night vision | hybrid (30m) |
 | Power | DC 12V/1A |
 | Storage | microSD ≤ 256GB, NVR |
 | Protocols | onvif, rtsp |
@@ -34,6 +34,7 @@
 - two-way talk
 - dual-antenna Wi-Fi
 - NVR support
+- Smart Color Night Vision (official product page)
 
 ## Sources
 
