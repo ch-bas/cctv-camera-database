@@ -13,6 +13,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - **Genetec, new brand: 4 AutoVu license-plate (ALPR) cameras.** SharpV (current G3, 1920x1200), the earlier SharpV G1/G2 (1280x960), the vehicle-mounted SharpZ3 and the SharpX, from Genetec datasheets and TechDocs. Models whose resolution Genetec doesn't publish (SharpX VGA, Cloudrunner) are left out.
 - **Bosch MIC IP starlight 7000 HD** (MIC-7130-PB4/PG4/PW4): the 720p 30x ruggedized PTZ, from Bosch's archived official datasheet.
 
+### Fixed
+- **IMOU Cruiser 4MP** night vision is hybrid (IMOU's Smart Color Night Vision), not IR-only (#416).
+- **Reolink E331** Frigate config is now community-verified on the main stream (#415).
+
 ---
 
 ## [2.28.0] — 2026-10-21
