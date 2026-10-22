@@ -9,6 +9,9 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 ## [2.29.0] — Unreleased
 
 ### Added
+- **Motorola Solutions, new brand: 5 Vigilant license-plate (ALPR) cameras.** L5F (fixed), L5M (vehicle-mounted), L6D (dual-purpose LPR plus color video), and the L5Q and L6Q quick-deploy units, each from Motorola's product page and datasheet. Where a datasheet states a value two ways (L6D lists 3.0MP beside a 1440x1080 image resolution), the record keeps the stated pixel resolution and notes the conflict. Avigilon and Pelco stay separate brands.
+- **Genetec, new brand: 4 AutoVu license-plate (ALPR) cameras.** SharpV (current G3, 1920x1200), the earlier SharpV G1/G2 (1280x960), the vehicle-mounted SharpZ3 and the SharpX, from Genetec datasheets and TechDocs. Models whose resolution Genetec doesn't publish (SharpX VGA, Cloudrunner) are left out.
+- **Bosch MIC IP starlight 7000 HD** (MIC-7130-PB4/PG4/PW4): the 720p 30x ruggedized PTZ, from Bosch's archived official datasheet.
 
 ---
 
