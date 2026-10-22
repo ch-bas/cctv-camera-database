@@ -9,7 +9,7 @@
  */
 const fs = require("fs");
 const path = require("path");
-const { execSync } = require("child_process");
+const { execFileSync } = require("child_process");
 const Ajv = require("ajv");
 const addFormats = require("ajv-formats");
 
@@ -86,11 +86,12 @@ function loadCameras() {
 // "generated files are stale" rebuild would compute different dates.
 function addedDates() {
   try {
-    const shallow = execSync("git rev-parse --is-shallow-repository", { cwd: ROOT })
+    const shallow = execFileSync("git", ["rev-parse", "--is-shallow-repository"], { cwd: ROOT })
       .toString().trim();
     if (shallow === "true") return {};
-    const out = execSync(
-      "git log --diff-filter=A --name-only --format=__%ad --date=short -- cameras",
+    const out = execFileSync(
+      "git",
+      ["log", "--diff-filter=A", "--name-only", "--format=__%ad", "--date=short", "--", "cameras"],
       { cwd: ROOT, maxBuffer: 64 * 1024 * 1024 }
     ).toString();
     const map = {};
@@ -111,8 +112,9 @@ function addedDates() {
 // attributes the A to the old path): follow the file's history individually.
 function addedDateFollow(file) {
   try {
-    const out = execSync(
-      `git log --follow --diff-filter=A --format=%ad --date=short -- "${file}"`,
+    const out = execFileSync(
+      "git",
+      ["log", "--follow", "--diff-filter=A", "--format=%ad", "--date=short", "--", file],
       { cwd: ROOT }
     ).toString().trim().split("\n");
     return out[out.length - 1] || null; // oldest add

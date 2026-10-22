@@ -65,6 +65,12 @@ function camerasFromArgs(args) {
       if (fs.statSync(d).isDirectory()) for (const f of fs.readdirSync(d)) if (f.endsWith(".json")) files.push(path.join(d, f));
     }
   } else if (brandIdx !== -1 && args[brandIdx + 1]) {
+    const camsRoot = path.resolve("cameras");
+    const resolvedBrand = path.resolve(camsRoot, args[brandIdx + 1]);
+    if (resolvedBrand === camsRoot || !resolvedBrand.startsWith(camsRoot + path.sep)) {
+      console.log(`⚠  Invalid brand directory: ${args[brandIdx + 1]} — nothing to archive.`);
+      return files;
+    }
     const d = path.join("cameras", args[brandIdx + 1]);
     // A typo'd/absent brand dir must not throw an unhandled rejection in the
     // IIFE below (this workflow promises never to fail CI) — return empty.

@@ -28,7 +28,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const os = require('node:os');
-const { execSync } = require('node:child_process');
+const { execFileSync } = require('node:child_process');
 
 const ROOT = path.resolve(__dirname, '..');
 const OUT_DIR = path.join(ROOT, 'strix');
@@ -63,15 +63,16 @@ function main() {
 /** Stage 0: download the latest StrixCamDB release asset (the compiled SQLite db). */
 function fetchDb() {
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'strixcamdb-'));
-  const dbPath = path.join(tmp, DB_NAME);
+  const safeName = path.basename(DB_NAME);
+  const dbPath = path.join(tmp, safeName);
   try {
-    execSync(`curl -fsSL "${DB_URL}" -o "${dbPath}"`, { stdio: 'ignore' });
+    execFileSync('curl', ['-fsSL', DB_URL, '-o', dbPath], { stdio: 'ignore' });
   } catch {
     console.warn('strix-fetch: release-asset download failed — treating as no delta.');
     process.exit(0); // upstream outage is a no-op, not a pipeline failure
   }
   if (!fs.existsSync(dbPath) || fs.statSync(dbPath).size === 0) {
-    console.warn(`strix-fetch: ${DB_NAME} download was empty — no-op.`);
+    console.warn(`strix-fetch: ${safeName} download was empty — no-op.`);
     process.exit(0);
   }
   return dbPath;
@@ -88,7 +89,7 @@ function dumpStreams(dbPath) {
     "'protocol',protocol,'port',port,'notes',notes)) FROM streams;";
   let out;
   try {
-    out = execSync(`sqlite3 "${dbPath}" "${sql}"`, { maxBuffer: 128 * 1024 * 1024 }).toString().trim();
+    out = execFileSync('sqlite3', [dbPath, sql], { maxBuffer: 128 * 1024 * 1024 }).toString().trim();
   } catch (e) {
     console.error('strix-fetch: sqlite3 read failed (is the sqlite3 CLI installed?):', e.message);
     process.exit(1);
