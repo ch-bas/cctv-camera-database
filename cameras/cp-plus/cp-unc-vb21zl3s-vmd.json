@@ -1,0 +1,128 @@
+{
+  "id": "cp-plus-cp-unc-vb21zl3s-vmd",
+  "brand": "CP Plus",
+  "model": "CP-UNC-VB21ZL3S-VMD",
+  "aliases": [
+    "2 MP Full HD WDR IR Vandal Dome Camera - 30Mtr."
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30
+      },
+      {
+        "name": "third",
+        "resolution": "704x480",
+        "fps": 30
+      }
+    ]
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5",
+    "varifocal": true
+  },
+  "field_of_view_deg": "106-29",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "PoE (802.3af) / 12V DC",
+    "consumption_w": 9,
+    "voltage": "12V DC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128
+  },
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "features": [
+    "2.7-13.5mm motorized lens",
+    "WDR 120dB",
+    "Day/Night (ICR)",
+    "3D-DNR",
+    "Smart IR",
+    "ROI",
+    "BLC",
+    "HLC",
+    "16x digital zoom",
+    "tripwire and intrusion detection",
+    "audio in/out (1/1)",
+    "alarm in/out (1/1)",
+    "microSD up to 128GB",
+    "ONVIF Profile S/G"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "122 (dia.) x 88.9",
+  "weight_g": 400,
+  "environment": [
+    "outdoor"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "markets": [
+    "in"
+  ],
+  "release_notes": "Specs per official CP Plus datasheet (CP-UNC-VB21ZL3S-VMD.pdf). Datasheet lists both F1.4 and F1.2 lens variants (0.006 lux@F1.4 / 0.005 lux@F1.2 color), so aperture not recorded.",
+  "sources": [
+    "https://www.cpplusworld.com/prodassets/datasheet/CP-UNC-VB21ZL3S-VMD.pdf"
+  ],
+  "last_verified": "2026-10-24",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua-style RTSP path used by other CP Plus U-series cameras; not yet verified on this model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "CP Plus U-series cameras use the Dahua protocol."
+    }
+  }
+}

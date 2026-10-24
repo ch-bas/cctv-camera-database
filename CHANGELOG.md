@@ -6,7 +6,32 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
-## [2.29.0] — Unreleased
+## [2.30.0] — Unreleased
+
+### Added
+- **UNICAM Systems, new brand: 53 cameras** from the Indian maker's official catalogue at unicamsystems.com. They break down as:
+  - 25 analog HD cameras (2MP, 2.4MP and 5MP domes and bullets with AHD/TVI/CVI/CVBS output)
+  - 13 2MP IP bullets, domes and turrets
+  - 6 IP PTZ cameras, including a thermal/optical bi-spectrum model and two vehicle-mounted units
+  - 2 long-range motorized-zoom IP cameras
+  - 7 4G and 4G-solar cameras
+
+  Each record is built from that model's own datasheet. Where the live link is dead, a Wayback Machine capture of the official PDF is used instead. Models whose datasheet is unavailable everywhere are left out: the ANPR, Wi-Fi, face-capture, IP fisheye and project-series cameras, and the 4MP/5MP/8MP IP lines. Minimum-illumination figures that a datasheet doesn't label as colour or black-and-white are not recorded. IP cameras that list RTSP use ONVIF discovery, because UNICAM publishes no stream path.
+
+- **99 CP Plus professional cameras** (CP Plus now has 205). The dataset previously held mostly CP Plus's consumer EzyKam models. This release adds:
+  - IP bullets, domes, box and fisheye cameras (CP-UNC, CP-VNC)
+  - PTZ cameras (CP-UNP, CP-VNP), including an explosion-proof model
+  - analog HD cameras (CP-USC, CP-VAC, CP-UVC, CP-USP, Guard+ CP-GPC)
+  - Wi-Fi floodlight, vehicle and Wi-Fi pan-tilt cameras
+
+  Each record comes from that model's own datasheet on cpplusworld.com. Many of those datasheets are image-only and were read visually. Minimum-illumination figures not labelled colour or black-and-white are left out. U-series IP cameras use the Dahua-style RTSP path that the other CP Plus records use, not yet verified per model. The V-series, floodlight, vehicle and Wi-Fi lines use ONVIF discovery.
+
+### Changed
+- **Revodata I706-P-HS** Frigate config now has a second independent report that it works (#405). The camera was suggested in discussion #402 and first tested by [ElectronicBattle](https://github.com/ElectronicBattle).
+
+---
+
+## [2.29.0] — 2026-10-22
 
 ### Added
 - **Motorola Solutions, new brand: 5 Vigilant license-plate (ALPR) cameras.** L5F (fixed), L5M (vehicle-mounted), L6D (dual-purpose LPR plus color video), and the L5Q and L6Q quick-deploy units, each from Motorola's product page and datasheet. Where a datasheet states a value two ways (L6D lists 3.0MP beside a 1440x1080 image resolution), the record keeps the stated pixel resolution and notes the conflict. Avigilon and Pelco stay separate brands.

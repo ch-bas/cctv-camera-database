@@ -1,0 +1,124 @@
+{
+  "id": "cp-plus-cp-unc-dd4k081l5ce-md",
+  "brand": "CP Plus",
+  "model": "CP-UNC-DD4K081L5CE-MD",
+  "aliases": [
+    "4K Full HD WDR IR Dome Camera - 50Mtr."
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "dc",
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP (4K)"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 15
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 30
+      }
+    ]
+  },
+  "sensor": "1/2.5\" 8MP Progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (4 optional)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "112 (2.8mm), 88 (4mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux_color": 0.06
+  },
+  "audio": {
+    "microphone": true
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128
+  },
+  "protocols": [
+    "http",
+    "rtsp",
+    "onvif"
+  ],
+  "power": {
+    "method": "DC12V / ePoE",
+    "consumption_w": 6,
+    "voltage": "12V DC"
+  },
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "ip_rating": "IP67",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Ø106 x 93.7",
+  "weight_g": 470,
+  "environment": [
+    "outdoor"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "features": [
+    "Orange series",
+    "ePoE",
+    "WDR 120dB",
+    "Day/Night ICR",
+    "3D-DNR",
+    "ROI",
+    "BLC/HLC",
+    "16x digital zoom",
+    "Built-in mic",
+    "Tripwire, intrusion, abandoned/missing object, face detection",
+    "Triple stream",
+    "15fps at 4K, 25/30fps at 3MP",
+    "microSD up to 128GB"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua-style RTSP path used by other CP Plus U-series cameras; not yet verified on this model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "CP Plus U-series cameras use the Dahua protocol."
+    }
+  },
+  "markets": [
+    "in"
+  ],
+  "release_notes": "Specs per official CP Plus datasheet (CP-UNC-DD4K081L5CE-MD.pdf). Main stream 4K up to 15fps, 3MP up to 25/30fps (max_fps 30 is at 3MP). Sub stream D1 (dimensions ambiguous, omitted). Color min. illumination 0.06 lux @F1.6 (1/3s); 0.3 lux at 1/30s. Power source 'ePoE' recorded as poe.",
+  "sources": [
+    "https://www.cpplusworld.com/prodassets/datasheet/CP-UNC-DD4K081L5CE-MD.pdf"
+  ],
+  "last_verified": "2026-10-24"
+}

@@ -1,0 +1,134 @@
+{
+  "id": "cp-plus-cp-unp-e2521l15-dap",
+  "brand": "CP Plus",
+  "model": "CP-UNP-E2521L15-DAP",
+  "aliases": [
+    "2 MP WDR 25x IR Network PTZ Camera"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 30
+      }
+    ]
+  },
+  "sensor": "1/2.8\" PS CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.8-120",
+    "aperture": "F1.6-F4.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "62.8-2.6",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 150,
+    "min_lux": 0.0005,
+    "min_lux_color": 0.005
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "AC24V/3A (±10%), PoE+ (802.3at)",
+    "voltage": "24V AC",
+    "consumption_w": 23
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "features": [
+    "25x optical zoom",
+    "16x digital zoom",
+    "WDR (120dB)",
+    "3D DNR",
+    "Day/Night (ICR)",
+    "Starlight",
+    "EIS",
+    "Defog",
+    "ROI",
+    "Auto tracking",
+    "300 presets, 5 patterns, 8 tours, auto scan, auto pan",
+    "Preset speed up to 400°/s",
+    "IVS: tripwire, intrusion, abandoned/missing, face detection, heat map",
+    "Alarm I/O 2/1",
+    "Audio I/O 1/1",
+    "Micro SD card slot (up to 256GB)",
+    "iCMOB/gCMOB mobile app"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "Φ186.0 x 309",
+  "weight_g": 3500,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "cloud_dependency": "cloud-optional",
+  "markets": [
+    "in"
+  ],
+  "release_notes": "Specs per official CP Plus datasheet (CP-UNP-E2521L15-DAP.pdf). H.265+ mentioned only in marketing text; codec list follows the spec table (Instastream/H.265/H.264+/H.264).",
+  "sources": [
+    "https://www.cpplusworld.com/prodassets/datasheet/CP-UNP-E2521L15-DAP.pdf"
+  ],
+  "last_verified": "2026-10-24",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua-style RTSP path used by other CP Plus U-series cameras; not yet verified on this model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "CP Plus U-series cameras use the Dahua protocol."
+    }
+  }
+}

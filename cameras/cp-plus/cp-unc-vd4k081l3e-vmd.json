@@ -1,0 +1,126 @@
+{
+  "id": "cp-plus-cp-unc-vd4k081l3e-vmd",
+  "brand": "CP Plus",
+  "model": "CP-UNC-VD4K081L3E-VMD",
+  "aliases": [
+    "4K Full HD WDR IR Vandal Dome Camera - 30Mtr."
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "8MP (4K)"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 15
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 30
+      }
+    ]
+  },
+  "sensor": "1/2.5\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "varifocal": false
+  },
+  "field_of_view_deg": "112",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.06
+  },
+  "power": {
+    "method": "ePoE / 12V DC",
+    "consumption_w": 5.5,
+    "voltage": "12V DC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128
+  },
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "features": [
+    "4mm lens option (88 deg H FOV)",
+    "WDR 120dB",
+    "Day/Night (ICR)",
+    "ROI",
+    "BLC",
+    "HLC",
+    "16x digital zoom",
+    "tripwire, intrusion, object abandoned/missing, face detection",
+    "audio in/out (1/1)",
+    "alarm in/out (1/1)",
+    "ePoE",
+    "microSD up to 128GB",
+    "3MP at 25/30fps"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "109.9 (dia.) x 81",
+  "weight_g": 410,
+  "environment": [
+    "outdoor"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "markets": [
+    "in"
+  ],
+  "release_notes": "Specs per official CP Plus datasheet (CP-UNC-VD4K081L3E-VMD.pdf). Despite the -VMD suffix, the datasheet specifies a 2.8mm fixed lens (4mm optional). Max 15fps at 4K; 25/30fps at 3MP.",
+  "sources": [
+    "https://www.cpplusworld.com/prodassets/datasheet/CP-UNC-VD4K081L3E-VMD.pdf"
+  ],
+  "last_verified": "2026-10-24",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua-style RTSP path used by other CP Plus U-series cameras; not yet verified on this model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "CP Plus U-series cameras use the Dahua protocol."
+    }
+  }
+}
