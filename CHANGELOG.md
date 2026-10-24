@@ -18,6 +18,9 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
   Each record is built from that model's own datasheet. Where the live link is dead, a Wayback Machine capture of the official PDF is used instead. Models whose datasheet is unavailable everywhere are left out: the ANPR, Wi-Fi, face-capture, IP fisheye and project-series cameras, and the 4MP/5MP/8MP IP lines. Minimum-illumination figures that a datasheet doesn't label as colour or black-and-white are not recorded. IP cameras that list RTSP use ONVIF discovery, because UNICAM publishes no stream path.
 
+### Changed
+- **Revodata I706-P-HS** Frigate config now has a second independent report that it works (#405). The camera was suggested in discussion #402 and first tested by [ElectronicBattle](https://github.com/ElectronicBattle).
+
 ---
 
 ## [2.29.0] — 2026-10-22
