@@ -1,0 +1,118 @@
+{
+  "id": "cp-plus-cp-unc-ta21l2-gp",
+  "brand": "CP Plus",
+  "model": "CP-UNC-TA21L2-GP",
+  "aliases": [
+    "2MP Full-color Guard+ Network IR Bullet Camera"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 30
+      }
+    ]
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "91",
+  "night_vision": {
+    "type": "color",
+    "range_m": 15
+  },
+  "power": {
+    "method": "PoE (802.3af) / 12V DC",
+    "consumption_w": 4.8,
+    "voltage": "12V DC"
+  },
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http",
+    "p2p"
+  ],
+  "ip_rating": "IP67",
+  "features": [
+    "Full-color (warm LED, 15m)",
+    "2.8mm lens option (110 deg H FOV)",
+    "DWDR",
+    "Day/Night (ICR)",
+    "3D-DNR",
+    "ROI",
+    "BLC",
+    "HLC",
+    "motion detection",
+    "video tampering detection",
+    "privacy mask (4 areas)",
+    "ONVIF Profile S",
+    "Guard+ series"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "162.6 x 70 (dia.)",
+  "weight_g": 220,
+  "environment": [
+    "outdoor"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "markets": [
+    "in"
+  ],
+  "release_notes": "Specs per official CP Plus datasheet (CP-UNC-TA21L2-GP.pdf). Minimum illumination given as 0.005 lux@F1.6 without a Color/B&W label, so not recorded. Lens/FOV recorded for the default 3.6mm lens.",
+  "sources": [
+    "https://www.cpplusworld.com/prodassets/datasheet/CP-UNC-TA21L2-GP.pdf"
+  ],
+  "last_verified": "2026-10-24",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua-style RTSP path used by other CP Plus U-series cameras; not yet verified on this model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "CP Plus U-series cameras use the Dahua protocol."
+    }
+  }
+}

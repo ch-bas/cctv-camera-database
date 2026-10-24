@@ -1,0 +1,129 @@
+{
+  "id": "cp-plus-cp-unc-te21zl20e-vmd",
+  "brand": "CP Plus",
+  "model": "CP-UNC-TE21ZL20E-VMD",
+  "aliases": [
+    "2MP Full HD WDR IR Bullet Camera - 200Mtr."
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 60
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 30
+      }
+    ]
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.3-64",
+    "aperture": "F1.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "59-5",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 200,
+    "min_lux": 0.1,
+    "min_lux_color": 0.006
+  },
+  "power": {
+    "method": "PoE (802.3af) / 12V DC",
+    "consumption_w": 12.95,
+    "voltage": "12V DC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128
+  },
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "features": [
+    "5.3-64mm motorized lens (auto iris)",
+    "Starlight",
+    "Instastream encoding",
+    "WDR 120dB",
+    "Day/Night (ICR)",
+    "3D-DNR",
+    "Smart IR",
+    "ROI",
+    "BLC",
+    "HLC",
+    "intrusion, tripwire, object abandoned/missing, face detection",
+    "audio in/out (RCA)",
+    "alarm in/out (2/1)",
+    "microSD up to 128GB"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "273.2 x 95.0 x 95.0",
+  "weight_g": 1110,
+  "environment": [
+    "outdoor"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "markets": [
+    "in"
+  ],
+  "release_notes": "Specs per official CP Plus datasheet (CP-UNC-TE21ZL20E-VMD.pdf).",
+  "sources": [
+    "https://www.cpplusworld.com/prodassets/datasheet/CP-UNC-TE21ZL20E-VMD.pdf"
+  ],
+  "last_verified": "2026-10-24",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua-style RTSP path used by other CP Plus U-series cameras; not yet verified on this model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "CP Plus U-series cameras use the Dahua protocol."
+    }
+  }
+}
