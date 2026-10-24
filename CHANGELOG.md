@@ -18,6 +18,14 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
   Each record is built from that model's own datasheet. Where the live link is dead, a Wayback Machine capture of the official PDF is used instead. Models whose datasheet is unavailable everywhere are left out: the ANPR, Wi-Fi, face-capture, IP fisheye and project-series cameras, and the 4MP/5MP/8MP IP lines. Minimum-illumination figures that a datasheet doesn't label as colour or black-and-white are not recorded. IP cameras that list RTSP use ONVIF discovery, because UNICAM publishes no stream path.
 
+- **99 CP Plus professional cameras** (CP Plus now has 205). The dataset previously held mostly CP Plus's consumer EzyKam models. This release adds:
+  - IP bullets, domes, box and fisheye cameras (CP-UNC, CP-VNC)
+  - PTZ cameras (CP-UNP, CP-VNP), including an explosion-proof model
+  - analog HD cameras (CP-USC, CP-VAC, CP-UVC, CP-USP, Guard+ CP-GPC)
+  - Wi-Fi floodlight, vehicle and Wi-Fi pan-tilt cameras
+
+  Each record comes from that model's own datasheet on cpplusworld.com. Many of those datasheets are image-only and were read visually. Minimum-illumination figures not labelled colour or black-and-white are left out. U-series IP cameras use the Dahua-style RTSP path that the other CP Plus records use, not yet verified per model. The V-series, floodlight, vehicle and Wi-Fi lines use ONVIF discovery.
+
 ### Changed
 - **Revodata I706-P-HS** Frigate config now has a second independent report that it works (#405). The camera was suggested in discussion #402 and first tested by [ElectronicBattle](https://github.com/ElectronicBattle).
 
