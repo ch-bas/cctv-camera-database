@@ -34,6 +34,14 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
   Each record comes from that model's official datasheet, or from the specifications section of its manual where no datasheet is published. Explosion-proof SKUs that differ only by certification suffix (-C/-M/-Z) are merged into one record, with the other codes as aliases. Weights that the source gives only as "up to" a maximum are not recorded. Models with no published spec table are left out, as are installation guides that don't name the model. IP cameras use Hanwha's standard `profile2/media.smp` stream path, not yet verified per model.
 
+- **46 Axis cameras** (Axis now has 604), found by comparing the axis.com product sitemap with the dataset. This release adds:
+  - 17 modular F-series sensor units: F1004/F1005-E/F1015/F1025/F1035-E, F2105-RE/F2107-RE/F2108/F2115-R/F2135-RE/F2137-RE, F4005/F4005-E, F7225-RE and the F8804 stereo unit
+  - legacy M1114-E, M3113/M3114 and M3203/M3204 cameras
+  - P1343–P1365 box cameras and P3343 domes
+  - the Q1931-E thermal camera, the Q6000-E quad-sensor overview unit, and the Q6032-C and Q6045 (incl. Mk II -C/-E/-S) PTZs
+
+  Most of these models are discontinued, and their axis.com pages no longer carry specs. Each record comes from that exact model's official Axis datasheet or user manual, some through archived (Wayback Machine) copies of axis.com files. Sensor units record only the sensor's own specs; codecs and streaming come from the F-series main unit. Models with no source for the exact variant are left out: Q6034-C, Q6035-C, Q6044-ZE, P3344-VE, the M1011/M1031-W, Q8721-E/Q8722-E, and the F2180-TE.
+
 ### Changed
 - **Revodata I706-P-HS** Frigate config now has a second independent report that it works (#405). The camera was suggested in discussion #402 and first tested by [ElectronicBattle](https://github.com/ElectronicBattle).
 
