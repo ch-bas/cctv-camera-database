@@ -57,6 +57,16 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
   Resource-center entries that link the wrong document are left out: a generic user manual, another model's datasheet, or a datasheet with no resolution. So are accessories listed as cameras: batteries, solar panels, cables and furnace-camera control units.
 
+- **108 Bosch cameras** (Bosch now has 413), found by comparing the IQSIGHT (Keenfinity) product sitemap and Bosch's library of 276 camera datasheet families with the dataset. This release adds:
+  - legacy DINION, FLEXIDOME and AUTODOME IP lines: 4000/5000/7000/8000 HD and MP, starlight, micro 2000/3000i/5000, 3000i/4000i IR, panoramic 5000/7000
+  - AUTODOME 600/700/800, AUTODOME Easy II and AUTODOME IP 4000/5000 HD PTZs
+  - FLEXIDOME analog 4000/5000 and VDC/VDN/VDI analog domes
+  - DINION thermal 8000/9000
+  - MIC inteox 7100i OC PTZs
+  - the current AUTODOME 7100s, AUTODOME 7100i IR, FLEXIDOME 7000 VR and FLEXIDOME multi+ 7100i IR
+
+  Each record comes from that model's official Bosch datasheet, most still hosted at resources.keenfinity.tech. A datasheet often lists several order numbers for one camera that differ only in PAL/NTSC, housing colour, bubble, mount or a regional -GOV/-IN suffix. Those are folded into one record as aliases, and 47 such codes are also added to existing records. `ndaa_compliant` is set only where the datasheet states NDAA compliance for that order number. Placeholders, accessories and SKUs whose datasheet gives no resolution are left out.
+
 ### Changed
 - **Revodata I706-P-HS** Frigate config now has a second independent report that it works (#405). The camera was suggested in discussion #402 and first tested by [ElectronicBattle](https://github.com/ElectronicBattle).
 

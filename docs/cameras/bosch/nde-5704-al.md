@@ -1,5 +1,7 @@
 # Bosch FLEXIDOME outdoor 5100i IR (NDE-5704-AL)
 
+*Also known as: NDE-5704-AL-GOV*
+
 | Field | Spec |
 |-------|------|
 | Brand | Bosch |

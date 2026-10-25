@@ -1,6 +1,6 @@
 # Bosch FLEXIDOME indoor 5100i 5MP (NDV-5703-AL)
 
-*Also known as: NDV-5703-AL*
+*Also known as: NDV-5703-AL, NDV-5703-AL-GOV*
 
 | Field | Spec |
 |-------|------|

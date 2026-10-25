@@ -1,6 +1,6 @@
 # Bosch FLEXIDOME 5100i (MENA)
 
-*Also known as: NDE-5503-AL MENA, Bosch 5100i UAE premium*
+*Also known as: NDE-5503-AL MENA, Bosch 5100i UAE premium, NDE-5503-AL-IN*
 
 | Field | Spec |
 |-------|------|

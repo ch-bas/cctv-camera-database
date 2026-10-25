@@ -1,6 +1,6 @@
 # Bosch FLEXIDOME outdoor 5100i 5MP (NDE-5703-AL)
 
-*Also known as: NDE-5703-AL*
+*Also known as: NDE-5703-AL, NDE-5703-AL-GOV*
 
 | Field | Spec |
 |-------|------|

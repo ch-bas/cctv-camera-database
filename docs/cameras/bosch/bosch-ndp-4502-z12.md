@@ -1,6 +1,6 @@
 # Bosch NDP-4502-Z12
 
-*Also known as: AUTODOME IP 4000i*
+*Also known as: AUTODOME IP 4000i, NDP-4502-Z12-P*
 
 | Field | Spec |
 |-------|------|

@@ -1,5 +1,7 @@
 # Bosch FLEXIDOME 8100i (NDE-8703-RT)
 
+*Also known as: NDE-8703-RT-H*
+
 | Field | Spec |
 |-------|------|
 | Brand | Bosch |

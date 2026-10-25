@@ -1,5 +1,7 @@
 # Bosch DINION 3100i IR (NBE-3702-AL)
 
+*Also known as: NBE-3702-AL-GOV*
+
 | Field | Spec |
 |-------|------|
 | Brand | Bosch |

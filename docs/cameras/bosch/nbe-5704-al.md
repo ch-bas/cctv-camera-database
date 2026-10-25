@@ -1,5 +1,7 @@
 # Bosch DINION 5100i IR (NBE-5704-AL)
 
+*Also known as: NBE-5704-AL-GOV*
+
 | Field | Spec |
 |-------|------|
 | Brand | Bosch |

@@ -1,6 +1,6 @@
 # Bosch AUTODOME IP dynamic 7000 HD
 
-*Also known as: AUTODOME IP dynamic 7000 HD, AUTODOME 7000 dynamic HD*
+*Also known as: AUTODOME IP dynamic 7000 HD, AUTODOME 7000 dynamic HD, VG5-7230-CPT4, VG5-7230-EPC4*
 
 | Field | Spec |
 |-------|------|

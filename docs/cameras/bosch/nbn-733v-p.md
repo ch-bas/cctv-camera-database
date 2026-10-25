@@ -1,6 +1,6 @@
 # Bosch DINION starlight 7000 (NBN-733V-P)
 
-*Also known as: NBN-733V-P, DINION starlight 7000*
+*Also known as: NBN-733V-P, DINION starlight 7000, NBN-733V-IP*
 
 | Field | Spec |
 |-------|------|
