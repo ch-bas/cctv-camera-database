@@ -26,6 +26,14 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
   Each record comes from that model's own datasheet on cpplusworld.com. Many of those datasheets are image-only and were read visually. Minimum-illumination figures not labelled colour or black-and-white are left out. U-series IP cameras use the Dahua-style RTSP path that the other CP Plus records use, not yet verified per model. The V-series, floodlight, vehicle and Wi-Fi lines use ONVIF discovery.
 
+- **77 Hanwha Vision cameras** (Hanwha now has 847), found by comparing the hanwhavision.com product sitemap with the dataset. This release adds:
+  - Wisenet X AI cameras (XND/XNO/XNV/XNF-A·014R) and Wisenet L, P and Q models
+  - 32MP PNM-C32084RQZ multi-sensor cameras (Lumeo and SolidEDGE/WAVE bundles)
+  - analog HD+ cameras (ACx, HCx, SCx), including PTZ and box models
+  - explosion-proof and stainless TNO/TNU/TNM cameras: X6320 PTZ families, thermal and bi-spectrum models, multi-sensor and fisheye
+
+  Each record comes from that model's official datasheet, or from the specifications section of its manual where no datasheet is published. Explosion-proof SKUs that differ only by certification suffix (-C/-M/-Z) are merged into one record, with the other codes as aliases. Weights that the source gives only as "up to" a maximum are not recorded. Models with no published spec table are left out, as are installation guides that don't name the model. IP cameras use Hanwha's standard `profile2/media.smp` stream path, not yet verified per model.
+
 ### Changed
 - **Revodata I706-P-HS** Frigate config now has a second independent report that it works (#405). The camera was suggested in discussion #402 and first tested by [ElectronicBattle](https://github.com/ElectronicBattle).
 
