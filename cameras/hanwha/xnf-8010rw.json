@@ -1,0 +1,126 @@
+{
+  "id": "hanwha-xnf-8010rw",
+  "brand": "Hanwha",
+  "model": "XNF-8010RW",
+  "aliases": [
+    "X series 6 MP sensor 360-degree Indoor IR Fisheye (white)"
+  ],
+  "generation": "Wisenet X",
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 4.2,
+    "max_width": 2048,
+    "max_height": 2048,
+    "label": "4.2MP"
+  },
+  "sensor": "1/1.8\" CMOS (6MP)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.6",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "192",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 15,
+    "min_lux": 0.01,
+    "min_lux_color": 0.1
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2048x2048",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3) / 12VDC",
+    "consumption_w": 12,
+    "voltage": "12VDC",
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "notes": "2x microSD/SDHC/SDXC slots, 256GB each (512GB total)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "120 dB true WDR",
+    "IR LED, 15 m",
+    "360 fisheye, 192 field of view",
+    "Dewarping view modes: fisheye, single/double panorama, quad view",
+    "Digital PTZ (8x)",
+    "Built-in mic, selectable mic/line in, line out (bi-directional audio)",
+    "Analytics: tampering, loitering, directional detection, virtual line/area, audio detection, sound classification",
+    "People counting, queue management, heatmap",
+    "WiseStream II",
+    "Alarm I/O 1 in / 1 out",
+    "ONVIF Profile S/G",
+    "Direct cloud connection optional (needs gateway)"
+  ],
+  "operating_temp_c": "-10 to 55",
+  "dimensions_mm": "Ø146 x 54.8",
+  "weight_g": 730,
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "cloud_dependency": "local",
+  "sources": [
+    "https://www.hanwhavision.com/us/products/product-details/XNF-8010RW",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/XNF-8010RW/DataSheet_XNF-8010RW_20260721_US_131936.pdf"
+  ],
+  "last_verified": "2026-10-25",
+  "release_notes": "Specs per official Hanwha Vision datasheet (DataSheet_XNF-8010RW_20260721_US_131936.pdf). 6MP sensor, max output 2048x2048 (4.2MP). MJPEG max 15fps. 12VDC max 11 W. Cloud connection requires a gateway, so cloud_dependency kept local.",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile3/media.smp",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hanwha profiles: profile1=MJPEG, profile2=main, profile3=sub (default Wisenet profile layout); not yet verified on this model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select the Samsung/Hanwha profile."
+    }
+  }
+}

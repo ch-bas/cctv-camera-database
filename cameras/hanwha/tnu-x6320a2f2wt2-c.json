@@ -1,0 +1,119 @@
+{
+  "id": "hanwha-tnu-x6320a2f2wt2-c",
+  "brand": "Hanwha",
+  "model": "TNU-X6320A2F2WT2-C",
+  "aliases": [
+    "Explosion-Proof Positioning Camera Station (TNU-X6320A* series)",
+    "Explosion-proof PTZ Camera"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.44-142.6 (32x optical zoom)",
+    "aperture": "F1.6-4.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "64.44-2.29 horizontal / 38.08-1.30 vertical",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.005,
+    "min_lux_color": 0.05
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "110VAC",
+    "consumption_w": 80,
+    "voltage": "110VAC"
+  },
+  "power_source": [
+    "ac-mains"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "notes": "2 microSD/SDHC/SDXC slots (256GB each, 512GB total); NAS recording supported."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66/IP67",
+  "features": [
+    "Explosion-proof PTZ camera station for hazardous areas (onshore, offshore, marine, heavy industrial)",
+    "TNU-X6320A2F2WT2-C: cLC CSA (Ex d IIC T4, CAN CSA-C22.2 No.60079-0/60079-1, cert 11396-1S-CSA)",
+    "32x optical zoom, 16x digital zoom",
+    "360 endless pan / 180 tilt (-90 to 90), pan 45 deg/s, tilt 24 deg/s",
+    "Integrated silicone wiper",
+    "Integral duplex single-mode 9/125um fiber module (F2)",
+    "Electro-polished 316L stainless steel housing, toughened glass window, 316L sun shield",
+    "Day & Night (ICR), 120 dB WDR, Defog, HLC, SSNR5",
+    "Gyro-sensor digital image stabilization",
+    "Video analytics: tampering, loitering, directional/virtual line, enter/exit, appear/disappear, face, fog, motion, shock detection",
+    "WiseStream II",
+    "ONVIF Profile S/G, SUNAPI 2.0, Wisenet Open Platform",
+    "Housing made in U.K.",
+    "weight up to 33 kg depending on configuration"
+  ],
+  "operating_temp_c": "-60 to 60",
+  "dimensions_mm": "418 x 457 x 401",
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://www.hanwhavision.com/us/products/product-details/TNU-X6320A2F2WT2-C",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/TNU-X6320A2F2WT2-C%20/DataSheet_TNU-X6320A2F2WT2-C%20_20260823_EN.pdf"
+  ],
+  "last_verified": "2026-10-25",
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile3/media.smp",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hanwha profiles: profile1=MJPEG, profile2=main, profile3=sub (default Wisenet profile layout); not yet verified on this model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select the Samsung/Hanwha profile."
+    }
+  },
+  "release_notes": "Specs per official Hanwha Vision TNU-X6320A* series datasheet (DataSheet_TNU-X6320A2F2WT2-C%20_20260823_EN.pdf). The series datasheet covers all TNU-X6320A* variants; this record's input voltage (110VAC), temperature rating (T2: -60 to 60 C), F2 fiber module and certification suffix are decoded from the datasheet's model-number key (1=24VAC, 2=110VAC; T1/T2; F2=single-mode fiber; W=wiper; C=cLC CSA, M=INMETRO, Z=cLCus C1/D1). Power (max 80W) and weight (33kg) are the series' stated maxima (\"up to\", \"depending on model\"). The series sheet lists \"WDR (150dB)\" in one features line but 120dB in the WDR row and key features; 120dB recorded. Digital zoom stated 16x (key features) vs 32x (operational table); 16x recorded. Autotracking not stated. Weight is given only as a maximum (up to 33 kg), so weight_g is not recorded."
+}

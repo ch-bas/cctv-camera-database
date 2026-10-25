@@ -1,0 +1,110 @@
+{
+  "id": "hanwha-tno-p9072ept1-z",
+  "brand": "Hanwha",
+  "model": "TNO-P9072EPT1-Z",
+  "aliases": [
+    "4K Network Explosion Proof Fixed AI Camera"
+  ],
+  "generation": "Wisenet P",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K 8MP"
+  },
+  "sensor": "1/1.8\" 8MP CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.9-10 (i-CS varifocal, CS mount)",
+    "aperture": "F1.5",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.003,
+    "min_lux_color": 0.03
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at)",
+    "consumption_w": 25.5
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "notes": "SD/SDHC/SDXC 2 slots (up to 512GB total)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "Explosion-proof: cFMus Class I/II/III Division 1 Groups B, C, D, E, F, G; IECEx/ATEX II 2 G Ex db IIB+H2, II 2 D Ex tb IIIC",
+    "Powder-coated aluminum housing (RAL2000) made in USA, NEMA Type 4X",
+    "AI analytics: object detection, face mask detection, directional detection, digital auto tracking, enter/exit, loitering, virtual line, BestShot & metadata",
+    "120 dB WDR, SSNR V, DIS with built-in gyro, defog, LDC",
+    "Digital PTZ 24x",
+    "RS-485, alarm in 1 / out 1, audio in (mic/line) + line out, bi-directional audio",
+    "ONVIF Profile S/G, SUNAPI, Wisenet Open Platform",
+    "WiseStream II"
+  ],
+  "operating_temp_c": "-40 to 55",
+  "dimensions_mm": "183 x 152 x 352 (7.2 x 5.97 x 13.85 in)",
+  "weight_g": 6350,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "cloud_dependency": "local",
+  "release_notes": "Specs per official Hanwha Vision specification sheet (Specifications_TNO-P9072EPT1-Z_260101_EN.pdf). Dimensions converted from the stated inches. Angular field of view not stated. Stream resolution list in the sheet tops out at 2560x1920, inconsistent with the stated 3840x2160 effective pixels, so no per-stream entry recorded.",
+  "sources": [
+    "https://www.hanwhavision.com/latam-es/products/product-details/TNO-P9072EPT1-Z",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/TNO-P9072EPT1-Z/Specifications_TNO-P9072EPT1-Z_260101_EN.pdf"
+  ],
+  "last_verified": "2026-10-25",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile3/media.smp",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hanwha profiles: profile1=MJPEG, profile2=main, profile3=sub (default Wisenet profile layout); not yet verified on this model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select the Samsung/Hanwha profile."
+    }
+  }
+}

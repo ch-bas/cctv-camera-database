@@ -1,0 +1,118 @@
+{
+  "id": "hanwha-pnm-c32084rqz-8xe256g-lu",
+  "brand": "Hanwha",
+  "model": "PNM-C32084RQZ-8XE256G-LU",
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 32,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "32MP total (4x 8MP channels)"
+  },
+  "sensor": "4x 1/1.8\" CMOS",
+  "lens": {
+    "count": 4,
+    "focal_length_mm": "4.38-9.33 (2.1x motorized varifocal) per channel",
+    "aperture": "F1.3-2.15",
+    "varifocal": true
+  },
+  "field_of_view_deg": "113-47 (per channel)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 25,
+    "min_lux_color": 0.07
+  },
+  "power": {
+    "method": "PoE++ (IEEE 802.3bt Type 4, Class 8)",
+    "poe_class": 8,
+    "consumption_w": 66
+  },
+  "power_source": [
+    "poe"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false
+  },
+  "operating_temp_c": "-40 to 55",
+  "dimensions_mm": "Ø315 x 180",
+  "weight_g": 6100,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "markets": [
+    "global"
+  ],
+  "aliases": [
+    "4CH AI Multi-sensor Camera with Lumeo Analytics"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 20
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": true,
+    "notes": "2 microSD/SDHC/SDXC slots (512GB each, 1TB total) plus 256GB SSD on the NVIDIA carrier board."
+  },
+  "features": [
+    "4-channel 8MP multi-directional, PTRZ remote lens adjustment (pan 0-360 / tilt 30-90 / rotate 0-90)",
+    "WiseIR 25m (850nm)",
+    "120dB WDR, WiseNR II (AI), WiseStream",
+    "AI object detection: person, face, vehicle, license plate; BestShot; virtual line/area analytics",
+    "NVIDIA Jetson Orin NX 8GB carrier board",
+    "Audio and extra alarm I/O via optional SPM-4210 I/O box",
+    "2 configurable alarm I/O ports",
+    "TPM 2.0, FIPS 140-2 level 2",
+    "IP66, IK10, NEMA 4X",
+    "Lumeo Analytics: 4x Lumeo AI Platform Enterprise licenses, pre-built analytics library, custom analytics builder",
+    "Lumeo cloud-based management, remote live view, dashboards (30-day retention)",
+    "256GB SSD included",
+    "ONVIF Profile S/T/M, SUNAPI, MQTT",
+    "15fps per channel with AI on, 20fps with AI off (MJPEG max 5fps at 8MP)"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "sources": [
+    "https://www.hanwhavision.com/us/products/product-details/PNM-C32084RQZ-8XE256G-LU",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/PNM-C32084RQZ-8XE256G-LU/DataSheet_PNM-C32084RQZ-8XE256G-LU_260101_EN.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile3/media.smp",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hanwha profiles: profile1=MJPEG, profile2=main, profile3=sub (default Wisenet profile layout); not yet verified on this model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select the Samsung/Hanwha profile."
+    }
+  },
+  "release_notes": "Specs per official Hanwha Vision datasheet (DataSheet_PNM-C32084RQZ-8XE256G-LU_260101_EN.pdf). Lumeo-analytics bundle of the PNM-C32084RQZ-8XE256G hardware, kept as a separate SKU. B/W min. illumination is 0 lux (IR LED on) and is not recorded. Power consumption is the max for the included Orin NX 8GB module (66W; 71W with Orin NX 16GB).",
+  "last_verified": "2026-10-25"
+}

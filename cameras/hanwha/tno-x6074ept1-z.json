@@ -1,0 +1,79 @@
+{
+  "id": "hanwha-tno-x6074ept1-z",
+  "brand": "Hanwha",
+  "model": "TNO-X6074EPT1-Z",
+  "aliases": [
+    "Explosion Proof Fixed Camera"
+  ],
+  "generation": "Wisenet 9",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "label": "2MP"
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-9",
+    "varifocal": true
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ]
+  },
+  "power": {
+    "method": "PoE only (90W total with heater)",
+    "consumption_w": 90
+  },
+  "power_source": [
+    "poe"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "features": [
+    "Explosion-proof: FM certified, Class 1 Division 1 (C1/D1)",
+    "NEMA Type 4X, IP66",
+    "Uses XNB-A6004 box camera (Wisenet 9 / WN9) in explosion-proof housing",
+    "Heater, no wiper"
+  ],
+  "operating_temp_c": "-50 to 55",
+  "environment": [
+    "outdoor"
+  ],
+  "cloud_dependency": "local",
+  "release_notes": "Specs per official Hanwha Vision datasheet (DataSheet_TNO-X6074EPT1-Z_20260920_US_130424.pdf), a 2-page summary sheet: sensor, pixel count, frame rate, min. illumination, dimensions and weight are not stated. Datasheet describes a box camera form factor inside the explosion-proof housing.",
+  "sources": [
+    "https://www.hanwhavision.com/us/products/product-details/TNO-X6074EPT1-Z",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/TNO-X6074EPT1-Z/DataSheet_TNO-X6074EPT1-Z_20260920_US_130424.pdf"
+  ],
+  "last_verified": "2026-10-25",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile3/media.smp",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hanwha profiles: profile1=MJPEG, profile2=main, profile3=sub (default Wisenet profile layout); not yet verified on this model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select the Samsung/Hanwha profile."
+    }
+  }
+}

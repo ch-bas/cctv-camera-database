@@ -1,0 +1,128 @@
+{
+  "id": "hanwha-xnf-a9014rs",
+  "brand": "Hanwha",
+  "model": "XNF-A9014RS",
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 12,
+    "max_width": 3536,
+    "max_height": 3536,
+    "label": "12MP"
+  },
+  "sensor": "1/1.6\" CMOS",
+  "soc": "Wisenet 9",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.76",
+    "aperture": "F1.8",
+    "varifocal": false
+  },
+  "field_of_view_deg": "185",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20,
+    "min_lux": 0.001,
+    "min_lux_color": 0.02
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3536x3536",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3) / PoE+ (IEEE 802.3at, Class 4) / 12VDC",
+    "consumption_w": 20,
+    "voltage": "12VDC"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "notes": "1x microSD/SDHC/SDXC slot, max 1TB."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66/IP67/IP68",
+  "ik_rating": "IK11",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "120 dB WDR",
+    "IR LED 850nm, 20 m",
+    "WiseIR",
+    "1.76mm fixed fisheye lens, 185 field of view, digital rotation, digital PTZ",
+    "Stainless steel STS316L housing, nylon dome",
+    "IP66/IP67/IP68, ISO 20653 IP6K9K, IK11, NEMA 250 Type 4X, NSF/ANSI 169, NEMA TS 2",
+    "Dual NPU AI: object detection (person, vehicle), color attributes, BestShot",
+    "Analytics: virtual line/area, motion, defocus, tampering, audio, shock detection",
+    "Business intelligence: people/vehicle/crowd counting, queue management, heatmap",
+    "Selectable mic/line in, line out",
+    "2 configurable alarm I/O ports",
+    "PoE / PoE+ / 12VDC with power failover redundancy",
+    "802.1AE MACsec",
+    "ONVIF Profile S/G/T/M",
+    "Direct cloud connection (OnCloud)",
+    "IEC 62443-4-1 process certification"
+  ],
+  "operating_temp_c": "-40 to 50",
+  "dimensions_mm": "Ø180 x 80.5",
+  "weight_g": 2110,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "cloud_dependency": "cloud-optional",
+  "sources": [
+    "https://www.hanwhavision.com/us/products/product-details/XNF-A9014RS",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/XNF-A9014RS/DataSheet_XNF-A9014RS_20260929_US_012814.pdf"
+  ],
+  "last_verified": "2026-10-25",
+  "release_notes": "Specs per official Hanwha Vision datasheet (DataSheet_XNF-A9014RS_20260929_US_012814.pdf). Power typical 7.7 (PoE) / 10.5 (PoE+) W. PoE max 11.2 W / PoE+ max 19.8 W; 12VDC max 20.0 W. Operating temp -40 to 50 C on PoE, -40 to 45 C on PoE+ (IR turns off above 40 C in PoE+ mode). Max resolution 3536x3536 (12MP fisheye circle); 3584x2688 also listed. MJPEG max 5fps. Datasheet key-features line states 'IP69'; certifications section lists IP66/IP67/IP68 and IP6K9K. Field of view 185 H/V/D.",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile3/media.smp",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hanwha profiles: profile1=MJPEG, profile2=main, profile3=sub (default Wisenet profile layout); not yet verified on this model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select the Samsung/Hanwha profile."
+    }
+  }
+}

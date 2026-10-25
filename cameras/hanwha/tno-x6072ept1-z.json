@@ -1,0 +1,119 @@
+{
+  "id": "hanwha-tno-x6072ept1-z",
+  "brand": "Hanwha",
+  "model": "TNO-X6072EPT1-Z",
+  "aliases": [
+    "2MP Network Explosion Proof Fixed Camera"
+  ],
+  "generation": "Wisenet X",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" 2MP CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-9 (varifocal, P-iris, C/CS mount)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "98-39",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.001,
+    "min_lux_color": 0.01
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "Camera: PoE (IEEE 802.3af), 7.5W max; heater: 12-24VDC, 25W",
+    "consumption_w": 7.5,
+    "voltage": "Heater 12-24VDC"
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "notes": "SD/SDHC/SDXC 2 slots (up to 512GB total)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "Explosion-proof: cFMus Class I/II/III Division 1 Groups B, C, D, E, F, G; IECEx/ATEX II 2 G Ex db IIB+H2, II 2 D Ex tb IIIC",
+    "Powder-coated aluminum housing (RAL2000) made in USA, NEMA Type 4X",
+    "150 dB WDR, SSDR, SSNR V, DIS with built-in gyro, defog, LDC",
+    "Digital PTZ 24x",
+    "Analytics: tampering, loitering, directional, defocus, fog, virtual line, enter/exit, (dis)appear, audio, face, motion detection, digital auto tracking, sound classification",
+    "RS-485, alarm in 1 / out 1, audio in (mic/line) + line out, bi-directional audio",
+    "ONVIF Profile S/G, SUNAPI, Wisenet Open Platform",
+    "WiseStream II"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "183 x 152 x 352 (7.2 x 5.97 x 13.85 in)",
+  "weight_g": 6350,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "cloud_dependency": "local",
+  "release_notes": "Specs per official Hanwha Vision specification sheet (Specifications_TNO-X6072EPT1-Z_260101_EN.pdf). Operating temperature: -40 to +60C (USA) / -50 to +60C (Canada); a second row lists -10 to +55C (PoE only). WDR is 150 dB in the spec table (key features say 120 dB). Key features say 2 x 256GB SD; spec table says 2 slots up to 512GB. Dimensions converted from inches.",
+  "sources": [
+    "https://www.hanwhavision.com/us/products/product-details/TNO-X6072EPT1-Z",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/TNO-X6072EPT1-Z/Specifications_TNO-X6072EPT1-Z_260101_EN.pdf"
+  ],
+  "last_verified": "2026-10-25",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile3/media.smp",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hanwha profiles: profile1=MJPEG, profile2=main, profile3=sub (default Wisenet profile layout); not yet verified on this model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select the Samsung/Hanwha profile."
+    }
+  }
+}

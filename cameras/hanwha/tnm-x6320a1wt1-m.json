@@ -1,0 +1,111 @@
+{
+  "id": "hanwha-tnm-x6320a1wt1-m",
+  "brand": "Hanwha",
+  "model": "TNM-X6320A1WT1-M",
+  "aliases": [
+    "Bi-spectrum AI Thermal Camera (explosion-proof)"
+  ],
+  "type": "dual-lens",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP visible + 384x288 thermal (bi-spectrum)"
+  },
+  "sensor": "1/2.8\" CMOS (visible) + uncooled microbolometer 384x288, 17um pixel (thermal, 8-14um, NETD <=30mK)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "4.44-142.6 visible (32x optical zoom) / 9.7 thermal fixed",
+    "aperture": "F1.6-4.4 visible / F1.0 thermal",
+    "varifocal": true
+  },
+  "field_of_view_deg": "64.66-2.29 visible / 38 thermal (horizontal)",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.005,
+    "min_lux_color": 0.05
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "24VAC",
+    "voltage": "24VAC"
+  },
+  "power_source": [
+    "ac-mains"
+  ],
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "notes": "Visible module: microSD/SDHC/SDXC max 256GB x 1 slot; thermal module: max 1TB x 1 slot."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66/IP67",
+  "features": [
+    "Explosion-proof: ATEX & IECEx (II 2 G Ex db IIB+H2, II 2 D Ex tb IIIC), INMETRO, cFMus Class I/II/III Division 1 Groups B, C, D, E, F, G",
+    "Electro-polished 316L stainless steel on all welded assemblies, toughened-glass window",
+    "Bi-spectrum: 2MP 32x optical zoom visible + 384x288 thermal (9.7mm, iFoV 1.8 mRad)",
+    "Radiometry: -40 to 550C, accuracy +/-2C (<=150C) / +/-15% (>150C), 10 ROI zones, spot temperature",
+    "AI object detection (person, vehicle), BestShot; thermal: temperature, tank level and temperature change detection",
+    "Thermal palettes: Whitehot, Blackhot, Rainbow, Rainbow2, Sepia, Red, Iron, Custom",
+    "120 dB WDR, SSNR V, DIS, defog",
+    "RS-485, alarm I/O, audio in (mic/line) + line out",
+    "Network: visible 10/100BASE-T, thermal 10/100/1000BASE-T RJ-45",
+    "ONVIF S/G/T (visible), S/G/T/M (thermal), SUNAPI",
+    "TPM 2.0 FIPS 140-2 level 2 (thermal module)",
+    "DORI (visible, wide/tele): detect 60.7/1921.3m, identify 6.1/192.1m"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "419 x 641 x 457",
+  "environment": [
+    "outdoor"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "release_notes": "Specs per official Hanwha Vision preliminary datasheet (DataSheet_TNM-X6320A1WT1-M_20251001_EN_112639.pdf). Weight and power consumption not stated. Direct cloud connection listed (visible: optional via gateway; thermal: supported).",
+  "sources": [
+    "https://www.hanwhavision.com/latam-es/products/product-details/TNM-X6320A1WT1-M",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/TNM-X6320A1WT1-M/DataSheet_TNM-X6320A1WT1-M_20251001_EN_112639.pdf"
+  ],
+  "last_verified": "2026-10-25",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile3/media.smp",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hanwha profiles: profile1=MJPEG, profile2=main, profile3=sub (default Wisenet profile layout); not yet verified on this model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select the Samsung/Hanwha profile."
+    }
+  }
+}
