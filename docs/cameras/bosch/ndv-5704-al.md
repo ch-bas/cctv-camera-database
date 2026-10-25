@@ -1,5 +1,7 @@
 # Bosch FLEXIDOME indoor 5100i IR (NDV-5704-AL)
 
+*Also known as: NDV-5704-AL-GOV*
+
 | Field | Spec |
 |-------|------|
 | Brand | Bosch |

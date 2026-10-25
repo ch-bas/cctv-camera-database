@@ -1,0 +1,129 @@
+{
+  "id": "bosch-vg5-825-ecev",
+  "brand": "Bosch",
+  "model": "AUTODOME 800 Series HD (VG5-825-ECEV)",
+  "aliases": [
+    "VG5-825-ECEV",
+    "VG5-825-ETEV",
+    "AUTODOME 800 Series HD"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.264"
+      },
+      {
+        "name": "main-720p60",
+        "resolution": "1280x720",
+        "fps": 60,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/2.8-inch CMOS",
+  "lens": {
+    "focal_length_mm": "4.7-94",
+    "aperture": "F1.6-F3.5",
+    "varifocal": true,
+    "count": 1
+  },
+  "field_of_view_deg": "2.9 to 55.4 (horizontal, 1080p)",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.12,
+    "min_lux_color": 0.8
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "21-30 VAC, 50/60 Hz",
+    "consumption_w": 55,
+    "voltage": "24 VAC"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "features": [
+    "20x optical zoom (4.7-94 mm), 12x digital (240x total)",
+    "Intelligent Tracking",
+    "Intelligent Video Analytics (IVA)",
+    "Quad streaming (3x H.264 + M-JPEG)",
+    "1080p30 or 720p60",
+    "86 dB WDR",
+    "Day/night (color/mono/auto)",
+    "Pan 360 deg continuous, tilt 18 deg above horizon",
+    "Variable speed 0.1-120 deg/s; preset speed pan 360 deg/s, tilt 100 deg/s",
+    "99 pre-positions, guard tours",
+    "24 privacy masks",
+    "2 alarm inputs, 1 open-collector output",
+    "Optional fiber optic kit (VG4-SFPSCKT)",
+    "iSCSI recording support",
+    "IPv6, QoS, SNMPv3"
+  ],
+  "operating_temp_c": "-45 to 55",
+  "weight_g": 3030,
+  "environment": [
+    "outdoor",
+    "indoor"
+  ],
+  "generation": "AUTODOME 800 Series HD",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/AutoDome_800_Data_sheet_enUS_9007201729491595.pdf"
+  ],
+  "last_verified": "2026-10-25",
+  "release_notes": "Specs per official Bosch datasheet (AutoDome_800_Data_sheet_enUS_9007201729491595.pdf). Outdoor pendant housing with sunshield (converts to indoor pendant by removing sunshield). ECEV = clear bubble, ETEV = tinted bubble (tinted adds 0.8 f-stop loss). Sensitivity at 30 IRE, SensUP off: day 0.8 lx, night mode 0.12 lx. Weight is outdoor pendant (indoor pendant 2.88 kg). Consumption 55 W typical with heater (19 W without). The datasheet lists VG5-836-ECEV (separate record) with the same description; the difference between the 825 and 836 SKUs is not stated.",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  }
+}

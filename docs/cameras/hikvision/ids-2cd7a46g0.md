@@ -1,5 +1,7 @@
 # Hikvision iDS-2CD7A46G0
 
+*Also known as: iDS-2CD7A46G0/H-IZHS(Y)*
+
 | Field | Spec |
 |-------|------|
 | Brand | Hikvision |

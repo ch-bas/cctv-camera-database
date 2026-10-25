@@ -1,0 +1,121 @@
+{
+  "id": "bosch-ndp-7602-z30k",
+  "brand": "Bosch",
+  "model": "AUTODOME inteox 7000i (NDP-7602-Z30K)",
+  "aliases": [
+    "NDP-7602-Z30K",
+    "AUTODOME inteox 7000i 2MP 30x IK10 pendant"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG",
+      "JPEG"
+    ]
+  },
+  "sensor": "1/2.8-inch CMOS (1944x1212, 2.35MP)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.3-129",
+    "aperture": "F1.6-F4.7",
+    "varifocal": true
+  },
+  "field_of_view_deg": "2.3 to 64.7",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.0008,
+    "min_lux_color": 0.0077
+  },
+  "power": {
+    "method": "24 VAC, High PoE 60 W (NPD-6001B, required for heater) or PoE+ 30 W (IEEE 802.3at Class 4, without heater); redundant",
+    "poe_class": 4,
+    "consumption_w": 51
+  },
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "notes": "Full-size SD card slot, max 2 TB (microSD not recommended)"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "Open camera platform (Security & Safety Things application store)",
+    "30x optical zoom (4.3-129 mm), 12x digital zoom",
+    "Starlight: 0.0077 lx color / 0.0008 lx mono (30 IRE, F1.6)",
+    "120 dB HDR (100 dB per IEC 62676-5)",
+    "Intelligent Video Analytics; three independent streams; H.265",
+    "Pan 360 deg continuous; preset speed pan 400 deg/s, tilt 300 deg/s",
+    "256 pre-positions; 32 privacy masks; 24 virtual masks",
+    "Outdoor pendant, cast aluminum, IK10 nylon bubble, NEMA 4X",
+    "7 alarm inputs (2 supervised), 4 alarm outputs; audio line in/out",
+    "ONVIF Profile S/G/T"
+  ],
+  "operating_temp_c": "-40 to 55",
+  "dimensions_mm": "224 x 299.4",
+  "weight_g": 3200,
+  "environment": [
+    "outdoor",
+    "indoor"
+  ],
+  "generation": "AUTODOME inteox 7000i",
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/NDP_7602_Z30K_Data_sheet_enUS_84741847051.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "last_verified": "2026-10-25",
+  "cloud_dependency": "local",
+  "release_notes": "Specs per official Bosch datasheet (NDP_7602_Z30K_Data_sheet_enUS_84741847051.pdf). -K = IK10 rugged bubble outdoor pendant. Power 51 W / 54 VA typical with heaters (19.2 W heaters off). Operating -40 to +55 C with heater wired (-10 to +55 C without). Max frame rate is not stated explicitly (IP delay quoted at 30 fps), so max_fps is left out. Autotracking is not listed, so ptz is left out."
+}

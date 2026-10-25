@@ -1,0 +1,136 @@
+{
+  "id": "hikvision-ds-2cd2147g2",
+  "brand": "Hikvision",
+  "model": "DS-2CD2147G2",
+  "aliases": [
+    "DS-2CD2147G2(2.8mm)",
+    "DS-2CD2147G2(4mm)",
+    "4 MP ColorVu Fixed Dome Network Camera"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "112 (2.8mm) / 95 (4mm) horizontal",
+  "night_vision": {
+    "type": "color",
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V",
+    "consumption_w": 6.5,
+    "poe_class": 3,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Ø121.4 x 100.1",
+  "weight_g": 580,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "4 MP ColorVu fixed dome, F1.0 aperture",
+    "24/7 colour imaging (no supplement light listed)",
+    "Blue glass module to reduce ghosting",
+    "Human and vehicle classification (deep learning)",
+    "Face capture",
+    "130 dB WDR",
+    "H.265+ compression",
+    "microSD up to 512 GB",
+    "IP67, IK10",
+    "ONVIF Profile S/G/T, ISAPI, SDK"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000058351/DS-2CD2147G2-SU-C_Datasheet_V5.5.112_20230418.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "release_notes": "Specs per official Hikvision datasheet (DS-2CD2147G2-SU-C_Datasheet_V5.5.112_20230418.pdf), which covers DS-2CD2147G2(-SU); this record is the base model without microphone/audio/alarm I/O (the -SU variant has its own record). Stream fps are 60 Hz values (25 fps at 50 Hz); third stream only under certain settings. Consumption is the PoE max (DC max 5 W). The datasheet lists no supplement light.",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 10,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "cloud_dependency": "cloud-optional",
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "last_verified": "2026-10-25",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  }
+}

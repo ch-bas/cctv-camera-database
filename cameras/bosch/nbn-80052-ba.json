@@ -1,0 +1,123 @@
+{
+  "id": "bosch-nbn-80052-ba",
+  "brand": "Bosch",
+  "model": "DINION IP starlight 8000 MP (NBN-80052-BA)",
+  "aliases": [
+    "NBN-80052-BA",
+    "DINION IP starlight 8000 MP"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2992,
+    "max_height": 1680,
+    "label": "5MP (16:9)"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2992x1680",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/1.8-inch CMOS (6.1MP total)",
+  "lens": {
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.004,
+    "min_lux_color": 0.0121
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af / 802.3at Type 1, Class 3) or 12 VDC",
+    "poe_class": 3,
+    "voltage": "12 VDC",
+    "consumption_w": 9
+  },
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "5MP 16:9 (2992x1680) and 5.5MP 4:3 (2704x2032) modes at 30 fps",
+    "Starlight: 0.0121 lx color / 0.004 lx mono at 5MP (0.00825 / 0.00275 lx in 1080p mode)",
+    "97 dB WDR (97+16 dB with IAE); 103 dB in 1080p mode",
+    "Intelligent Video Analytics (IVA / IVA flow / MOTION+)",
+    "Intelligent Dynamic Noise Reduction; Intelligent Streaming; ROI / E-PTZ",
+    "CS-mount (C-mount with adapter ring), DC-iris and P-iris; motorized back-focus; lens sold separately",
+    "Analog SMB video out; audio line in/out; 2 alarm inputs, 1 output; RS-232/422/485",
+    "ONVIF Profile S/G/M/T",
+    "NDAA compliant (per datasheet)"
+  ],
+  "operating_temp_c": "-20 to 50",
+  "dimensions_mm": "78 x 66 x 140 (W x H x L, without lens)",
+  "weight_g": 840,
+  "environment": [
+    "indoor"
+  ],
+  "generation": "DINION IP starlight 8000 MP",
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/NBN_80052_Data_sheet_enUS_78712137995.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "last_verified": "2026-10-25",
+  "ndaa_compliant": true,
+  "cloud_dependency": "local",
+  "release_notes": "Specs per official Bosch datasheet (NBN_80052_Data_sheet_enUS_78712137995.pdf). Body only, lens sold separately. Resolution recorded as the 5MP 16:9 mode; a 5.5MP 4:3 mode (2704x2032) is also available. Sensitivity at 3200K, 30 IRE, F1.2. Indoor box camera; outdoor use requires a separate housing. Datasheet ordering information states NDAA compliant."
+}

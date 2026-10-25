@@ -1,0 +1,123 @@
+{
+  "id": "bosch-nez-4212-cpcw4",
+  "brand": "Bosch",
+  "model": "AUTODOME IP 4000 HD (NEZ-4212-CPCW4)",
+  "aliases": [
+    "NEZ-4212-CPCW4",
+    "AUTODOME IP 4000 HD",
+    "AUTODOME IP 4000 HD 1080p"
+  ],
+  "generation": "AUTODOME IP 4000 HD",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "sensor": "1/2.8\" progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.1-61.2",
+    "aperture": "F1.6-3.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "4.6-51.3",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.039,
+    "min_lux_color": 0.17
+  },
+  "power": {
+    "method": "24 VAC or PoE+ (IEEE 802.3at Class 4)",
+    "consumption_w": 12,
+    "voltage": "24 VAC",
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP51",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "12x optical zoom (5.1-61.2 mm) + 16x digital zoom",
+    "1080p25/30 HD",
+    "76 dB DWDR, sodium vapor white balance",
+    "Mechanical day/night (switchable IR filter); no IR illuminator",
+    "Intelligent Dynamic Noise Reduction",
+    "Quad streaming (2x H.264, 1x M-JPEG, 1x I-frame)",
+    "256 presets, preset accuracy +/-0.2 deg, pan 160 deg/s, tilt 120 deg/s, 360 deg continuous pan",
+    "24 privacy masks, MOTION+ video motion detection",
+    "2 alarm inputs, 1 relay output, audio line in/out",
+    "ONVIF Profile S, GB/T 28181",
+    "Indoor in-ceiling housing, clear bubble (tinted bubble NEZ-A4-BUB-CTIP optional)"
+  ],
+  "operating_temp_c": "-10 to 60",
+  "dimensions_mm": "198 x 159.3 (dia x H)",
+  "weight_g": 1810,
+  "environment": [
+    "indoor"
+  ],
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/AUTODOME_IP_4000_HD_Data_sheet_enUS_19166796555.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "status": "discontinued",
+  "cloud_dependency": "local",
+  "last_verified": "2026-10-25",
+  "release_notes": "Specs per official Bosch datasheet (AUTODOME_IP_4000_HD_Data_sheet_enUS_19166796555.pdf, V8 May 2016). NEZ-4212-CPCW4 = 12x 1080p30 camera in indoor in-ceiling housing, clear bubble (C = in-ceiling; P = pendant). Sensitivity: colour 0.17 lux / mono 0.039 lux at 30 IRE, SensUp off. Power 12 W on 24 VAC or PoE+. The pendant models NEZ-4212-PPCW4 / NEZ-4112-PPCW4 are in autodome-ip-4000-hd.json. Status discontinued follows that family record; the datasheet itself does not state it."
+}

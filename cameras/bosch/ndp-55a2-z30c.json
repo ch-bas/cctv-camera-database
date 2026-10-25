@@ -1,0 +1,127 @@
+{
+  "id": "bosch-ndp-55a2-z30c",
+  "brand": "Bosch",
+  "model": "AUTODOME IP starlight 5000i (NDP-55A2-Z30C)",
+  "aliases": [
+    "NDP-55A2-Z30C",
+    "AUTODOME IP starlight 5000i"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8-inch progressive scan CMOS (1945x1097, 2.13MP)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.5-135",
+    "aperture": "F1.6-F4.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "2.4 to 60.9",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.004,
+    "min_lux_color": 0.0186
+  },
+  "power": {
+    "method": "24 VAC (21-30 VAC) or PoE+ (IEEE 802.3at Class 4)",
+    "poe_class": 4,
+    "consumption_w": 24
+  },
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "1080p60 at all resolutions; H.265/H.264 + M-JPEG quad streaming",
+    "30x optical zoom (4.5-135 mm), 16x digital zoom",
+    "Starlight: 0.0186 lx color / 0.004 lx mono (30 IRE, F1.6)",
+    "120 dB HDR (107 dB per IEC 62676-5)",
+    "Essential Video Analytics with object classes",
+    "Pan 360 deg continuous, tilt -90 to 0 deg; preset speed pan 300 deg/s, tilt 200 deg/s",
+    "256 pre-positions; 32 privacy masks; Intelligent Streaming",
+    "Dual power: 24 VAC and PoE+",
+    "2 alarm inputs, 1 relay output; audio line in/out",
+    "In-ceiling housing with clear high-resolution coated bubble",
+    "ONVIF Profile S/G/T; GB/T 28181"
+  ],
+  "operating_temp_c": "-10 to 60",
+  "dimensions_mm": "198 x 176.6 (D x H)",
+  "weight_g": 2100,
+  "environment": [
+    "indoor"
+  ],
+  "generation": "AUTODOME IP starlight 5000i",
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/NDP_55A2_Z30C_Data_sheet_enUS_70923958027.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "last_verified": "2026-10-25",
+  "cloud_dependency": "local",
+  "release_notes": "Specs per official Bosch datasheet (NDP_55A2_Z30C_Data_sheet_enUS_70923958027.pdf, V2 2019). In-ceiling model, clear bubble. Power 14 W heater off / 24 W heater on. No ingress rating is stated for the in-ceiling model. Autotracking is not listed, so ptz is left out."
+}

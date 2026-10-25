@@ -1,0 +1,131 @@
+{
+  "id": "bosch-ndp-7602-z30-oc",
+  "brand": "Bosch",
+  "model": "AUTODOME inteox 7000i (NDP-7602-Z30-OC)",
+  "aliases": [
+    "NDP-7602-Z30-OC",
+    "AUTODOME inteox 7000i"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "resolution": {
+    "label": "1080p",
+    "max_width": 1920,
+    "max_height": 1080,
+    "megapixels": 2
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG",
+      "JPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8-inch CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.3-129",
+    "aperture": "F1.6-F4.7",
+    "varifocal": true
+  },
+  "field_of_view_deg": "2.3 to 64.7",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.0008,
+    "min_lux_color": 0.0077
+  },
+  "power": {
+    "method": "24 VAC or PoE (30 W IEEE 802.3at Class 4 without heater; 60 W midspan NPD-6001B with heater)",
+    "voltage": "24 VAC",
+    "consumption_w": 51
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "notes": "Full-size SD card slot, up to 2 TB (Bosch does not recommend microSD cards or adapters)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "Open camera platform (OC) driven by OSSA, Azena application store",
+    "AI-based traffic detection for traffic monitoring",
+    "30x optical zoom, 12x digital zoom",
+    "Starlight (color 0.0077 lx, mono 0.0008 lx)",
+    "High Dynamic Range 120 dB",
+    "Intelligent Video Analytics, including while the camera is moving",
+    "Pan 360 continuous, tilt 18 above horizon",
+    "Pre-position speed pan 400 / tilt 300 deg per s",
+    "Three independent configurable streams",
+    "Redundant 24 VAC + PoE power",
+    "Audio line in/out",
+    "ONVIF Profile S/G/T"
+  ],
+  "operating_temp_c": "-40 to 55",
+  "dimensions_mm": "224 x 299.4",
+  "weight_g": 3200,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "generation": "AUTODOME inteox 7000i",
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/AUTODOME_inteox_7000_Data_sheet_enUS_84333629707.pdf"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "release_notes": "Specs per official Bosch datasheet (AUTODOME_inteox_7000_Data_sheet_enUS_84333629707.pdf). Clear-bubble IP66 pendant model, open camera platform (OC); \"available in specific regions only\". Effective pixels 1944x1212 (2.35 MP), 1080p output. Power 51 W typical with heaters (19.2 W heaters off). Operating temperature -40 to 55 C with heater wired (-10 to 55 C without). IK10 applies only to \"-IK10\" bubble models, not this SKU. Max fps taken from the highest-resolution bitrate table (30 fps).",
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-10-25",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  }
+}

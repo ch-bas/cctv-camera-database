@@ -1,0 +1,132 @@
+{
+  "id": "bosch-ndp-5502-z30l",
+  "brand": "Bosch",
+  "model": "AUTODOME IP 5000i IR (NDP-5502-Z30L)",
+  "aliases": [
+    "NDP-5502-Z30L",
+    "AUTODOME IP 5000i IR"
+  ],
+  "generation": "AUTODOME IP 5000i IR",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.5-135",
+    "aperture": "F1.6-4.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "2.4-60.9",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 180,
+    "min_lux": 0.01,
+    "min_lux_color": 0.05
+  },
+  "power": {
+    "method": "24 VAC (21-30 VAC) or PoE+ (IEEE 802.3at Class 4)",
+    "consumption_w": 25,
+    "voltage": "24 VAC",
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP66",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "30x optical zoom (4.5-135 mm) + 16x digital zoom",
+    "1080p60 HD, H.265/H.264 quad streaming",
+    "Integrated intelligent IR illuminator (4 LEDs, 850 nm), up to 180 m detection, zoom-adaptive wide/narrow beam",
+    "94 dB HDR, Intelligent Auto Exposure, Intelligent Defog",
+    "Essential Video Analytics with object classification",
+    "Intelligent Dynamic Noise Reduction",
+    "256 pre-positions, accuracy +/-0.1 deg, preset pan 240 deg/s, tilt 160 deg/s, 360 deg continuous pan",
+    "32 privacy masks",
+    "2 alarm inputs, 1 relay output, audio line in/out",
+    "TPM, PKI, Embedded Login Firewall",
+    "ONVIF Profile S and G, GB/T 28181",
+    "Outdoor pendant housing with sunshield"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "207 x 346.6 (dia x H)",
+  "weight_g": 4600,
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/AUTODOME_IP_5000iIR_Data_sheet_enUS_30314161931.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "cloud_dependency": "local",
+  "last_verified": "2026-10-25",
+  "release_notes": "Specs per official Bosch datasheet (AUTODOME_IP_5000iIR_Data_sheet_enUS_30314161931.pdf). NDP-5502-Z30L = outdoor pendant PTZ dome with sunshield and integrated IR (L = IR illuminator); distinct from the non-IR NDP-5502-Z30 / -Z30C in ndp-5502-30.json. Sensitivity colour 0.05 lx / mono 0.01 lx at 30 IRE. Power 20 W (IR off) / 25 W (IR on). IR range 180 m is the stated detection distance. Serial PTZ protocols (Bosch OSRD, Pelco P/D, Forward Vision, Cohu) need licence MVS-FCOM-PRCL."
+}

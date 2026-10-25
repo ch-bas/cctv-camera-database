@@ -1,0 +1,127 @@
+{
+  "id": "hanwha-xnv-a8014r",
+  "brand": "Hanwha",
+  "model": "XNV-A8014R",
+  "aliases": [
+    "5MP AI IR Vandal Dome Camera"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2560,
+    "max_height": 1920,
+    "label": "5MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.0",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "100",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 25,
+    "min_lux": 0.006,
+    "min_lux_color": 0.06
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1920",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3)",
+    "consumption_w": 8,
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "notes": "1x microSD/SDHC/SDXC slot, max 1TB."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66/IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "120 dB WDR",
+    "IR LED 850nm, 25 m",
+    "AI object detection & classification (person, face, vehicle, license plate) with attributes and BestShot",
+    "AI analytics: virtual line/area, loitering, intrusion, slip & fall, social distancing, face mask detection",
+    "Business intelligence: people/vehicle/crowd counting, queue management, heatmap",
+    "Dynamic privacy masking (person/vehicle/license plate)",
+    "WiseNR II AI noise reduction, WiseStream (AI)",
+    "2 configurable alarm I/O ports",
+    "ONVIF Profile S/G/T/M",
+    "Secure element (FIPS 140-3 level 3, CC EAL6+)",
+    "Wisepower (power monitoring, eco mode)",
+    "Selectable mic/line in, line out",
+    "Hallway view",
+    "IP66/IP67, IK10, NEMA 250 Type 4X, NEMA TS 2"
+  ],
+  "operating_temp_c": "-40 to 55",
+  "dimensions_mm": "Ø120 x 85",
+  "weight_g": 540,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "cloud_dependency": "local",
+  "sources": [
+    "https://www.hanwhavision.com/us/products/product-details/XNV-A8014R",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/XNV-A8014R/DataSheet_XNV-A8014R_20260928_US_223948.pdf"
+  ],
+  "last_verified": "2026-10-25",
+  "release_notes": "Specs per official Hanwha Vision datasheet (DataSheet_XNV-A8014R_20260928_US_223948.pdf). Power typical 6.1 W. Field of view H 100 / V 74 / D 130. Max +74C per NEMA TS 2; start up above -30C. Key-features line reads 'A9014R Rated' (datasheet typo); ratings taken from the Certifications section.",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile3/media.smp",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hanwha profiles: profile1=MJPEG, profile2=main, profile3=sub (default Wisenet profile layout); not yet verified on this model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select the Samsung/Hanwha profile."
+    }
+  }
+}

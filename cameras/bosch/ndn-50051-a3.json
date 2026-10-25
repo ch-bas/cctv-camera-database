@@ -1,0 +1,125 @@
+{
+  "id": "bosch-ndn-50051-a3",
+  "brand": "Bosch",
+  "model": "FLEXIDOME IP outdoor 5000 MP (NDN-50051-A3)",
+  "aliases": [
+    "NDN-50051-A3",
+    "FLEXIDOME IP outdoor 5000 MP"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 12
+  },
+  "sensor": "1/3-inch CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3-10",
+    "aperture": "F1.3",
+    "varifocal": true
+  },
+  "field_of_view_deg": "27.8 to 86.8 (horizontal)",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.05,
+    "min_lux_color": 0.35
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af Class 2) or +12 VDC",
+    "poe_class": 2,
+    "consumption_w": 3.8,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "5MP (2592 x 1944) at 12 fps",
+    "Automatic varifocal (AVF) 3-10 mm lens with motorized zoom/focus",
+    "Auto zoom/focus lens wizard",
+    "True day/night with mechanical IR filter",
+    "81 dB WDR",
+    "Intelligent Dynamic Noise Reduction (IDNR)",
+    "Area-based encoding (8 regions)",
+    "Quad streaming (H.264 + M-JPEG), regions of interest and E-PTZ",
+    "Hybrid mode analog video out (SMB, CVBS PAL/NTSC)",
+    "Two-way audio and audio alarm",
+    "MOTION+ motion and tamper detection",
+    "1 alarm input, 1 alarm output",
+    "IP66 / NEMA Type 4X, IK10 vandal-resistant",
+    "ONVIF Profile S; GB/T 28181",
+    "TLS 1.2 encryption, 802.1x"
+  ],
+  "operating_temp_c": "-40 to 50",
+  "dimensions_mm": "145 x 131 (dia x H)",
+  "weight_g": 1102,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "generation": "FLEXIDOME IP outdoor 5000 MP",
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/NDN(I)_50051_A3_Data_sheet_enUS_19108560267.pdf"
+  ],
+  "release_notes": "Specs per official Bosch datasheet (NDN(I)_50051_A3_Data_sheet_enUS_19108560267.pdf). NDN = version without IR illuminator (NDI-50051-A3 is the IR version). Sensitivity at F1.3, 30 IRE. Platform CPP4. Datasheet V18, Jan 2021.",
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-10-25",
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  }
+}

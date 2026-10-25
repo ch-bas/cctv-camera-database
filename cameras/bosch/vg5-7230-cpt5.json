@@ -1,0 +1,137 @@
+{
+  "id": "bosch-vg5-7230-cpt5",
+  "brand": "Bosch",
+  "model": "AUTODOME IP starlight 7000 HD (VG5-7230-CPT5)",
+  "aliases": [
+    "VG5-7230-CPT5",
+    "AUTODOME IP starlight 7000 HD 1080p in-ceiling"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG",
+      "JPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.264"
+      },
+      {
+        "name": "main-60",
+        "resolution": "1280x720",
+        "fps": 60,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/2.8-inch Exmor R CMOS (1945x1097, 2.13MP)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.3-129",
+    "aperture": "F1.6-F4.7",
+    "varifocal": true
+  },
+  "field_of_view_deg": "2.3 to 63.7",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.0008,
+    "min_lux_color": 0.0077
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "24 VAC (21-30 VAC, 50/60 Hz) or PoE+ (IEEE 802.3at Class 4) / High PoE",
+    "poe_class": 4,
+    "consumption_w": 24
+  },
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "notes": "Full-size SD/SDHC/SDXC card slot, max 2 TB; iSCSI recording"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP54",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "1080p25/30 (720p50/60 mode); 30x optical zoom, 12x digital zoom",
+    "Starlight low-light: 0.0077 lx color / 0.0008 lx mono (30 IRE, F1.6)",
+    "High Dynamic Range 120 dB (100 dB per IEC 62676-5)",
+    "Intelligent Tracking with built-in Intelligent Video Analytics (IVA)",
+    "Quad streaming (two H.264 recording streams + two non-recording profiles)",
+    "Dedicated AES 256-bit crypto engine",
+    "Dual redundant power: 24 VAC plus High PoE / PoE+",
+    "Pan 360 deg continuous; preset speed pan 400 deg/s, tilt 300 deg/s",
+    "256 pre-positions; 24 privacy masks; image stabilization; defog",
+    "7 alarm inputs (2 supervised), 4 alarm outputs; audio line in/out",
+    "ONVIF Profile S",
+    "In-ceiling magnesium housing, tinted HD acrylic bubble, plenum rated"
+  ],
+  "operating_temp_c": "-10 to 40",
+  "weight_g": 2590,
+  "environment": [
+    "indoor"
+  ],
+  "generation": "AUTODOME IP starlight 7000 HD",
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/AUTODOME_star_7000HD_Data_sheet_enUS_23680906251.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "last_verified": "2026-10-25",
+  "cloud_dependency": "local",
+  "release_notes": "Specs per official Bosch datasheet (AUTODOME_star_7000HD_Data_sheet_enUS_23680906251.pdf, 1080p edition), In-Ceiling column. VG5-7230-CPT5 = in-ceiling mount, tinted bubble, IP54. Distinct from the 720p AUTODOME IP starlight 7000 HD (VG5-7130) already in the dataset. Power 24 W / 44 VA typical. Datasheet lists ONVIF and RTSP; RTSP config uses Bosch's standard ?inst= scheme (not bench-tested)."
+}

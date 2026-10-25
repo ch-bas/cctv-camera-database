@@ -1,6 +1,6 @@
 # Hikvision DS-2CD3063G3-LIUY
 
-*Also known as: 6 MP Acusense Smart Hybrid Light Fixed Bullet Network Camera*
+*Also known as: 6 MP Acusense Smart Hybrid Light Fixed Bullet Network Camera, DS-2CD3063G3-LIUY/SX*
 
 | Field | Spec |
 |-------|------|

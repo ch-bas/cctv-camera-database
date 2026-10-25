@@ -1,6 +1,6 @@
 # Bosch AUTODOME 4000 Series (VEZ-413/VEZ-423)
 
-*Also known as: VEZ-413-EWCS, VEZ-423-EWCS, AUTODOME 4000 Mini PTZ Dome 30x*
+*Also known as: VEZ-413-EWCS, VEZ-423-EWCS, AUTODOME 4000 Mini PTZ Dome 30x, VEZ-413-ECCS, VEZ-413-ECTS, VEZ-413-EWTS, VEZ-423-ECCS, VEZ-423-ECTS, VEZ-423-EWTS*
 
 | Field | Spec |
 |-------|------|

@@ -1,0 +1,132 @@
+{
+  "id": "hanwha-xnp-6040hw",
+  "brand": "Hanwha",
+  "model": "XNP-6040HW",
+  "aliases": [
+    "2M H.265 4.3x PTZ Camera"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12 (4.3x)",
+    "aperture": "F1.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "119.5-27.9",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.0015,
+    "min_lux_color": 0.015
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3) / 12VDC",
+    "consumption_w": 9.6,
+    "voltage": "12VDC",
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "notes": "2x microSD/SDHC/SDXC slots, 512GB."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "150 dB WDR",
+    "4.3x optical zoom (2.8-12mm), 32x digital zoom",
+    "Pan 0-350, tilt 0-90, 0.1-60 deg/sec",
+    "300 presets, swing, group, trace, tour, auto run, schedule; preset accuracy ±0.5",
+    "Auto tracking",
+    "DIS with built-in gyro sensor",
+    "SSNR V, defog",
+    "Analytics: directional, fog, face, motion, audio detection, appear/disappear, enter/exit, loitering, tampering, virtual line, sound classification",
+    "RS-485 (Samsung-T, Pelco-D/P and others)",
+    "Alarm I/O 1 in / 1 out",
+    "Selectable mic/line in, line out",
+    "WiseStream II",
+    "ONVIF Profile S/G/T",
+    "NTCIP 1205",
+    "IP66, IK10"
+  ],
+  "operating_temp_c": "-30 to 55",
+  "dimensions_mm": "Ø136 x 106",
+  "weight_g": 780,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "cloud_dependency": "local",
+  "sources": [
+    "https://www.hanwhavision.com/us/products/product-details/XNP-6040HW",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/XNP-6040HW/DataSheet_XNP-6040HW_260101_EN.pdf"
+  ],
+  "last_verified": "2026-10-25",
+  "release_notes": "Specs per official Hanwha Vision datasheet (DataSheet_XNP-6040HW_260101_EN.pdf). 12VDC max 8.6 W. No IR illuminator. Datasheet lists both '4.3x' and 'Optical Zoom 4x'.",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile3/media.smp",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hanwha profiles: profile1=MJPEG, profile2=main, profile3=sub (default Wisenet profile layout); not yet verified on this model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select the Samsung/Hanwha profile."
+    }
+  }
+}

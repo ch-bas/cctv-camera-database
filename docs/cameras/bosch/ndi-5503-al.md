@@ -1,5 +1,7 @@
 # Bosch NDI-5503-AL
 
+*Also known as: NDI-5503-AL-IN*
+
 | Field | Spec |
 |-------|------|
 | Brand | Bosch |

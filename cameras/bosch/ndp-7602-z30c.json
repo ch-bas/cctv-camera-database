@@ -1,0 +1,130 @@
+{
+  "id": "bosch-ndp-7602-z30c",
+  "brand": "Bosch",
+  "model": "AUTODOME inteox 7000i (NDP-7602-Z30C)",
+  "aliases": [
+    "NDP-7602-Z30C",
+    "AUTODOME inteox 7000i",
+    "PTZ 2MP 30x starlight in-ceiling"
+  ],
+  "generation": "AUTODOME inteox 7000i",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.3-129",
+    "aperture": "F1.6-4.7",
+    "varifocal": true
+  },
+  "field_of_view_deg": "2.3-64.7",
+  "night_vision": {
+    "type": "color",
+    "min_lux": 0.0008,
+    "min_lux_color": 0.0077
+  },
+  "power": {
+    "method": "24 VAC, PoE+ 30 W (IEEE 802.3at Class 4, heater not powered) or 60 W midspan NPD-6001B (powers heater)",
+    "consumption_w": 19.2,
+    "voltage": "24 VAC",
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "notes": "Full-size SD card slot, max 2 TB (Bosch does not recommend microSD or microSD-to-SD adapters)"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP54",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "Open camera platform (third-party apps from the Security & Safety Things application store)",
+    "Starlight: colour 0.0077 lx, mono 0.0008 lx (30 IRE)",
+    "120 dB HDR (100 dB per IEC 62676 Part 5)",
+    "30x optical zoom (4.3-129 mm) + 12x digital zoom",
+    "Built-in Intelligent Video Analytics with object classes",
+    "3 independently configurable streams (H.265/H.264/M-JPEG)",
+    "Pre-position speed pan 400 deg/s, tilt 300 deg/s, accuracy +/-0.1 deg, 360 deg continuous pan",
+    "7 alarm inputs, 4 alarm outputs, audio line in/out",
+    "Indoor in-ceiling housing, plenum rated, clear acrylic bubble",
+    "ONVIF Profile S, G and T"
+  ],
+  "operating_temp_c": "-10 to 40",
+  "dimensions_mm": "306.7 x 204.5",
+  "weight_g": 2600,
+  "environment": [
+    "indoor"
+  ],
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/NDP_7602_Z30C_Data_sheet_enUS_84741839883.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "cloud_dependency": "local",
+  "last_verified": "2026-10-25",
+  "release_notes": "Specs per official Bosch datasheet (NDP_7602_Z30C_Data_sheet_enUS_84741839883.pdf, V6 Mar 2021). NDP-7602-Z30C = indoor in-ceiling PTZ dome, clear bubble (C = in-ceiling). Power consumption 19.2 W / 33.6 VA typical without heaters. Max fps 30 per the published bitrate/latency tables. Datasheet does not mention Intelligent Tracking, so ptz.autotracking is not recorded."
+}

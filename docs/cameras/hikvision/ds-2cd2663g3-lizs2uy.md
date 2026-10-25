@@ -1,6 +1,6 @@
 # Hikvision DS-2CD2663G3-LIZS2UY
 
-*Also known as: 6 MP Acusense Smart Hybrid Light Motorized Varifocal Bullet Network Camera*
+*Also known as: 6 MP Acusense Smart Hybrid Light Motorized Varifocal Bullet Network Camera, DS-2CD2663G3-LIZS2UY/SX*
 
 | Field | Spec |
 |-------|------|

@@ -1,6 +1,6 @@
 # Hikvision DS-2CD2363G3-LI2UY
 
-*Also known as: 6 MP Acusense Smart Hybrid Light Fixed Turret Network Camera*
+*Also known as: 6 MP Acusense Smart Hybrid Light Fixed Turret Network Camera, DS-2CD2363G3-LI2UY/SX*
 
 | Field | Spec |
 |-------|------|

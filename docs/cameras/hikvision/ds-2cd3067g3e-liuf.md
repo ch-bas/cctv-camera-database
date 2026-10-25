@@ -1,6 +1,6 @@
 # Hikvision DS-2CD3067G3E-LIUF
 
-*Also known as: DS-2CD3067G3E-LIUF/SL, 6 MP Strobe Light and Audible Warning Fixed Mini Bullet Network Camera*
+*Also known as: DS-2CD3067G3E-LIUF/SL, 6 MP Strobe Light and Audible Warning Fixed Mini Bullet Network Camera, DS-2CD3067G3E-LIUF/SRB*
 
 | Field | Spec |
 |-------|------|

@@ -1,0 +1,132 @@
+{
+  "id": "bosch-mic-7602-z30wr-oc",
+  "brand": "Bosch",
+  "model": "MIC inteox 7100i (MIC-7602-Z30WR-OC)",
+  "aliases": [
+    "MIC-7602-Z30WR-OC",
+    "MIC inteox 7100i"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "resolution": {
+    "label": "1080p",
+    "max_width": 1920,
+    "max_height": 1080,
+    "megapixels": 2
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG",
+      "JPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2-inch CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6.6-198",
+    "aperture": "F1.5-F4.8",
+    "varifocal": true
+  },
+  "field_of_view_deg": "2.1 to 58.3",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.0013,
+    "min_lux_color": 0.0047
+  },
+  "power": {
+    "method": "High PoE (60 W NPD-6001B or 95 W NPD-9501A/-E midspan) or 21-30 VAC",
+    "voltage": "24 VAC",
+    "consumption_w": 40
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP68",
+  "ik_rating": "IK10",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "Open camera platform (OC) driven by OSSA / Security & Safety Things app store",
+    "AI-based traffic detection for traffic monitoring",
+    "30x optical zoom, 12x digital zoom",
+    "Starlight (color 0.0047 lx, mono 0.0013 lx)",
+    "High Dynamic Range 120 dB (106 dB per IEC 62676-5)",
+    "Intelligent Video Analytics",
+    "Integrated window wiper and defroster (enhanced model)",
+    "Pan 360 continuous, tilt 290; upright / inverted / canted mounting",
+    "IP66 / IP68 / Type 6P, IK10 anodized cast-aluminum housing",
+    "Optional MIC-ILW-400 IR/white-light illuminator accessory",
+    "Two-way full-duplex audio",
+    "SD card slot",
+    "ONVIF Profile S/G/T"
+  ],
+  "operating_temp_c": "-40 to 65",
+  "dimensions_mm": "287.93 x 400.34 x 210.65 (W x H x D, upright, without illuminator)",
+  "weight_g": 8700,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "generation": "MIC inteox 7100i",
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/MIC_7602_Z30WR_OC_Data_sheet_enUS_89031170571.pdf"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "release_notes": "Specs per official Bosch datasheet (MIC_7602_Z30WR_OC_Data_sheet_enUS_89031170571.pdf, V6 2021). -OC = open camera platform variant with AI-based traffic detection (distinct SKU from MIC-7602-Z30WR). White (RAL 9010), enhanced model with defroster; \"available in specific regions only\". Power 40 W typical without illuminator (70 W typical with the optional illuminator accessory). IP68 requires installation on a MIC-DCA or MIC wall mount with MIC-SCA. No integrated IR; night vision depends on the optional illuminator. Memory card capacity not stated.",
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-10-25",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  }
+}

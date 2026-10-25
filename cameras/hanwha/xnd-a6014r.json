@@ -1,0 +1,126 @@
+{
+  "id": "hanwha-xnd-a6014r",
+  "brand": "Hanwha",
+  "model": "XND-A6014R",
+  "aliases": [
+    "2MP AI IR Dome Camera"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.0 (fixed)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "108 horizontal / 59 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 25,
+    "min_lux": 0.004,
+    "min_lux_color": 0.04
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, Class 3)",
+    "consumption_w": 7.1,
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "notes": "1 microSD/SDHC/SDXC slot (max 1TB); NAS recording supported."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP52",
+  "ik_rating": "IK08",
+  "audio": {
+    "microphone": true,
+    "speaker": false
+  },
+  "features": [
+    "25m IR (850nm IR LED)",
+    "150 dB WDR",
+    "AI analytics: person/face/vehicle/license plate classification with attributes, BestShot, similarity search",
+    "AI events: object detection, virtual line/area, face mask, social distancing, slip & fall detection",
+    "Business intelligence: people/vehicle/crowd counting, queue management, heatmap",
+    "Dynamic privacy masking (person/vehicle/license plate)",
+    "WiseNR II AI noise reduction, SSNR5, DIS, defog, LDC",
+    "Built-in mic, audio in (mic/line) + line out",
+    "2 configurable alarm I/O",
+    "HDMI 1080p video out, USB-C (installation preview, requires Wi-Fi dongle)",
+    "Hallway view",
+    "WisePower (power monitoring, eco mode)",
+    "Secure element (FIPS 140-3 level 3, CC EAL6+), ETSI EN 303 645, IEC 62443-4-1, SBOM",
+    "AI WiseStream",
+    "ONVIF Profile S/G/T/M, SUNAPI, MQTT"
+  ],
+  "operating_temp_c": "-10 to 50",
+  "dimensions_mm": "120 (diameter) x 85",
+  "weight_g": 410,
+  "environment": [
+    "indoor"
+  ],
+  "sources": [
+    "https://www.hanwhavision.com/us/products/product-details/XND-A6014R",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/XND-A6014R/DataSheet_XND-A6014R_20260929_US_012644.pdf"
+  ],
+  "last_verified": "2026-10-25",
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile3/media.smp",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hanwha profiles: profile1=MJPEG, profile2=main, profile3=sub (default Wisenet profile layout); not yet verified on this model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select the Samsung/Hanwha profile."
+    }
+  },
+  "release_notes": "Specs per official Hanwha Vision datasheet (DataSheet_XND-A6014R_20260929_US_012644.pdf). Datasheet does not name a Wisenet line, so generation omitted; NDAA not stated in the source, so omitted."
+}

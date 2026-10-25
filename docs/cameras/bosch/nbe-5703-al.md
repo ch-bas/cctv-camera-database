@@ -1,6 +1,6 @@
 # Bosch DINION 5100i 5MP Bullet (NBE-5703-AL)
 
-*Also known as: NBE-5703-AL, DINION outdoor 5100i 5MP*
+*Also known as: NBE-5703-AL, DINION outdoor 5100i 5MP, NBE-5703-AL-GOV*
 
 | Field | Spec |
 |-------|------|

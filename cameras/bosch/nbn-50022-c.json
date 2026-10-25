@@ -1,0 +1,126 @@
+{
+  "id": "bosch-nbn-50022-c",
+  "brand": "Bosch",
+  "model": "DINION IP 5000 HD (NBN-50022-C)",
+  "aliases": [
+    "NBN-50022-C",
+    "DINION IP 5000 HD"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/2.7-inch CMOS (1952x1092, 2MP)",
+  "lens": {
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.05,
+    "min_lux_color": 0.25
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af / 802.3at Type 1, Class 1) or 12 VDC",
+    "poe_class": 1,
+    "voltage": "12 VDC",
+    "consumption_w": 3.6
+  },
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": true,
+    "notes": "SD card slot (up to 32 GB SDHC / 2 TB SDXC); iSCSI; FTP/Dropbox posting"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true,
+    "two_way": true
+  },
+  "features": [
+    "1080p HD at 25/30 ips",
+    "Built-in microphone, two-way audio, audio alarm",
+    "76 dB WDR; true day/night mechanical filter",
+    "Intelligent Dynamic Noise Reduction; Content Based Imaging Technology",
+    "Multiple H.264 streams plus M-JPEG; upright 400x720 mode; ROI / E-PTZ",
+    "MOTION+ motion and tamper detection",
+    "Simultaneous analog CVBS output (2.5 mm jack)",
+    "1 alarm input, 1 alarm output",
+    "ONVIF Profile S",
+    "NDAA compliant (per datasheet)",
+    "CS-mount (C-mount with adapter ring), 4-pin DC-iris connector; lens sold separately"
+  ],
+  "operating_temp_c": "-30 to 50",
+  "dimensions_mm": "55 x 64 x 113 (H x W x D, without lens)",
+  "weight_g": 550,
+  "environment": [
+    "indoor"
+  ],
+  "generation": "DINION IP 5000 HD",
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/NBN_50022_Data_sheet_enUS_13659371787.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "last_verified": "2026-10-25",
+  "ndaa_compliant": true,
+  "cloud_dependency": "local",
+  "release_notes": "Specs per official Bosch datasheet (NBN_50022_Data_sheet_enUS_13659371787.pdf, V23 2022). NBN-50022-C = body only, no lens (CS mount). Sensitivity 0.25 lx color / 0.05 lx mono (3200K, F1.4, 30 IRE). Datasheet ordering information states NDAA compliant."
+}

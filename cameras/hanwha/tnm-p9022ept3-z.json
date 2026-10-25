@@ -1,0 +1,119 @@
+{
+  "id": "hanwha-tnm-p9022ept3-z",
+  "brand": "Hanwha",
+  "model": "TNM-P9022EPT3-Z",
+  "aliases": [
+    "2MP x 4CH H.265 Explosion Proof Panoramic Network Camera (209/180-degree)"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 8.3,
+    "max_width": 4608,
+    "max_height": 1800,
+    "label": "8.3MP stitched (4x 2MP)"
+  },
+  "sensor": "1/2.8\" CMOS x 4",
+  "lens": {
+    "count": 4,
+    "focal_length_mm": "2.8 fixed x 4",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "209 or 180 (mount dependent) horizontal / 83 vertical",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.01,
+    "min_lux_color": 0.1
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4608x1800",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at, Class 4)",
+    "consumption_w": 18,
+    "poe_class": 4
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "notes": "SD/SDHC/SDXC 2 slots, 1TB total (512GB x 2)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66/IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false
+  },
+  "features": [
+    "Explosion-proof: cFMus Class I/II/III Division 1 (Groups B, C, D, E, F, G), IECEx & ATEX Zone 1/21 (Ex db IIB+H2 T6 Gb, Ex tb IIIC T85C Db)",
+    "4x 2MP sensors, up to 8.3MP stitched image; 209 or 180-degree modes (4608x1800 / 4096x1800)",
+    "Marine-grade aluminum housing made in USA, multi-chambered enclosure, Type 4X",
+    "Pan 0-355 / tilt 0-60 (install adjustment)",
+    "Extreme WDR 120 dB, SSNR V, defog",
+    "Analytics: defocus, motion, appear/disappear, enter/exit, tampering, virtual line, audio detection; heatmap",
+    "Audio in (selectable mic/line in) + line out, alarm I/O (2 selectable ports)",
+    "ONVIF Profile S/G/T, SUNAPI, Wisenet Open Platform",
+    "WiseStream II"
+  ],
+  "operating_temp_c": "-20 to 55",
+  "dimensions_mm": "218.44 (W) x 347.269 (H)",
+  "weight_g": 12247,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "cloud_dependency": "local",
+  "release_notes": "Specs per official Hanwha Vision datasheet (DataSheet_TNM-P9022EPT3-Z_260101_EN.pdf). Max resolution is the 209-degree stitched mode.",
+  "sources": [
+    "https://www.hanwhavision.com/us/products/product-details/TNM-P9022EPT3-Z",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/TNM-P9022EPT3-Z/DataSheet_TNM-P9022EPT3-Z_260101_EN.pdf"
+  ],
+  "last_verified": "2026-10-25",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile3/media.smp",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hanwha profiles: profile1=MJPEG, profile2=main, profile3=sub (default Wisenet profile layout); not yet verified on this model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select the Samsung/Hanwha profile."
+    }
+  }
+}

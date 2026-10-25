@@ -1,6 +1,6 @@
 # Hikvision iDS-2CD70C5G0
 
-*Also known as: iDS-2CD70C5G0(-AP), 12 MP Box Network Camera*
+*Also known as: iDS-2CD70C5G0(-AP), 12 MP Box Network Camera, iDS-2CD70C5G0/H-AP*
 
 | Field | Spec |
 |-------|------|

@@ -1,6 +1,6 @@
 # Hikvision DS-2CD3047G3E-LIUF
 
-*Also known as: DS-2CD3047G3E-LIUF/SL, 4 MP Strobe Light and Audible Warning Fixed Mini Bullet Network Camera*
+*Also known as: DS-2CD3047G3E-LIUF/SL, 4 MP Strobe Light and Audible Warning Fixed Mini Bullet Network Camera, DS-2CD3047G3E-LIUF/SRB*
 
 | Field | Spec |
 |-------|------|

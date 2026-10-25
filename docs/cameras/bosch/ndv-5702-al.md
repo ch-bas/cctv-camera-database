@@ -1,6 +1,6 @@
 # Bosch FLEXIDOME indoor 5100i 2MP (NDV-5702-AL)
 
-*Also known as: NDV-5702-AL*
+*Also known as: NDV-5702-AL, NDV-5702-AL-GOV*
 
 | Field | Spec |
 |-------|------|

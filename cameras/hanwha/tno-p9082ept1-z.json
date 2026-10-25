@@ -1,0 +1,119 @@
+{
+  "id": "hanwha-tno-p9082ept1-z",
+  "brand": "Hanwha",
+  "model": "TNO-P9082EPT1-Z",
+  "aliases": [
+    "8MP (4K) Network Explosion Proof Fixed AI Camera"
+  ],
+  "generation": "Wisenet P",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K 8MP"
+  },
+  "sensor": "1/1.2\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.9-13.3 (2.25x motorized varifocal)",
+    "aperture": "F1.5-2.9",
+    "varifocal": true
+  },
+  "field_of_view_deg": "109-49 horizontal / 59-27 vertical",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.0015,
+    "min_lux_color": 0.015
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "Camera only: PoE+ (IEEE 802.3at, Class 4), 13.6W max; camera & heaters: PoE++ (IEEE 802.3bt), 90W max",
+    "consumption_w": 90
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048,
+    "nvr_compatible": true,
+    "notes": "Micro SD/SDHC/SDXC 2 slots, max 1TB each (2TB total)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": false
+  },
+  "features": [
+    "Explosion-proof: cFMus C1/D1 certified",
+    "Powder-coated aluminum housing (RAL2000) made in USA, NEMA Type 4X",
+    "AI object detection (person, face, vehicle, license plate) with attributes, BestShot, slip & fall, face mask, social distancing",
+    "AI people/vehicle/crowd counting, queue management, heatmap",
+    "Dynamic privacy masking",
+    "extremeWDR 120 dB, WiseNR II, SSNR V, DIS, defog",
+    "Built-in mic, selectable mic/line in, line out; RS-485; 2 configurable alarm I/O",
+    "ONVIF S/G/T/M, SUNAPI, Hanwha Vision Open Platform, MQTT",
+    "Secure element (FIPS 140-3 level 3, CC EAL6+), SBOM, Wisepower power monitoring, power redundancy failover"
+  ],
+  "operating_temp_c": "-50 to 55",
+  "dimensions_mm": "191 x 151.6 x 351.8",
+  "weight_g": 6350,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "cloud_dependency": "cloud-optional",
+  "release_notes": "Specs per official Hanwha Vision datasheet (DataSheet_TNO-P9082EPT1-Z_260101_EN.pdf). Power consumption is the 90W camera+heater maximum (camera only 13.6W). MJPEG limited to 5fps at 8MP. Direct cloud connection listed as supported.",
+  "sources": [
+    "https://www.hanwhavision.com/us/products/product-details/TNO-P9082EPT1-Z",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/TNO-P9082EPT1-Z/DataSheet_TNO-P9082EPT1-Z_260101_EN.pdf"
+  ],
+  "last_verified": "2026-10-25",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile3/media.smp",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hanwha profiles: profile1=MJPEG, profile2=main, profile3=sub (default Wisenet profile layout); not yet verified on this model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select the Samsung/Hanwha profile."
+    }
+  }
+}

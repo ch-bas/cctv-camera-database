@@ -1,0 +1,130 @@
+{
+  "id": "hikvision-ds-2cd6395g2-s",
+  "brand": "Hikvision",
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "model": "DS-2CD6395G2-S/RC",
+  "aliases": [
+    "9MP DeepinView Fisheye Network Camera"
+  ],
+  "resolution": {
+    "megapixels": 9,
+    "max_width": 3040,
+    "max_height": 3040,
+    "label": "9MP"
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.82",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 (H) / 180 (V)",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.006,
+    "min_lux_color": 0.01
+  },
+  "power": {
+    "method": "PoE (802.3af, Class 3) / DC 12V",
+    "consumption_w": 9.5,
+    "poe_class": 3,
+    "voltage": "12 VDC"
+  },
+  "audio": {
+    "microphone": true
+  },
+  "operating_temp_c": "-10 to 40",
+  "dimensions_mm": "Ø165.0 x 48.9",
+  "weight_g": 470,
+  "environment": [
+    "indoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3040x3040",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "720x720",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "features": [
+    "360 fisheye with 20 live view dewarping modes (hardware and software decoding)",
+    "Wall, table and ceiling mounting",
+    "Deep-learning people counting, heat map, queue management and intersection analysis",
+    "Line crossing, intrusion, region entrance/exiting, loitering, people gathering/running, parking detection",
+    "SIP support for VoIP integration",
+    "2 alarm inputs / 2 alarm outputs, RS-485",
+    "Audio line in/out (3.5 mm)",
+    "ISAPI, SDK, ISUP; ONVIF Profile S/G/T",
+    "microSD up to 512 GB with card encryption and health detection",
+    "DeepinView indoor fisheye (no IR illuminator)",
+    "4 built-in microphones",
+    "Digital WDR",
+    "Metal base, plastic cover"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000184985/DS-2CD6395G2-S_RC_Datasheet_20261021.pdf"
+  ],
+  "release_notes": "Specs per official Hikvision datasheet (DS-2CD6395G2-S_RC_Datasheet_20261021.pdf). Indoor model: no supplement light and no ingress rating listed.",
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "last_verified": "2026-10-25",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  }
+}

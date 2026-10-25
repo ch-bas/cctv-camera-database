@@ -6,7 +6,73 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
-## [2.29.0] — Unreleased
+## [2.30.0] — Unreleased
+
+### Added
+- **UNICAM Systems, new brand: 53 cameras** from the Indian maker's official catalogue at unicamsystems.com. They break down as:
+  - 25 analog HD cameras (2MP, 2.4MP and 5MP domes and bullets with AHD/TVI/CVI/CVBS output)
+  - 13 2MP IP bullets, domes and turrets
+  - 6 IP PTZ cameras, including a thermal/optical bi-spectrum model and two vehicle-mounted units
+  - 2 long-range motorized-zoom IP cameras
+  - 7 4G and 4G-solar cameras
+
+  Each record is built from that model's own datasheet. Where the live link is dead, a Wayback Machine capture of the official PDF is used instead. Models whose datasheet is unavailable everywhere are left out: the ANPR, Wi-Fi, face-capture, IP fisheye and project-series cameras, and the 4MP/5MP/8MP IP lines. Minimum-illumination figures that a datasheet doesn't label as colour or black-and-white are not recorded. IP cameras that list RTSP use ONVIF discovery, because UNICAM publishes no stream path.
+
+- **99 CP Plus professional cameras** (CP Plus now has 205). The dataset previously held mostly CP Plus's consumer EzyKam models. This release adds:
+  - IP bullets, domes, box and fisheye cameras (CP-UNC, CP-VNC)
+  - PTZ cameras (CP-UNP, CP-VNP), including an explosion-proof model
+  - analog HD cameras (CP-USC, CP-VAC, CP-UVC, CP-USP, Guard+ CP-GPC)
+  - Wi-Fi floodlight, vehicle and Wi-Fi pan-tilt cameras
+
+  Each record comes from that model's own datasheet on cpplusworld.com. Many of those datasheets are image-only and were read visually. Minimum-illumination figures not labelled colour or black-and-white are left out. U-series IP cameras use the Dahua-style RTSP path that the other CP Plus records use, not yet verified per model. The V-series, floodlight, vehicle and Wi-Fi lines use ONVIF discovery.
+
+- **77 Hanwha Vision cameras** (Hanwha now has 847), found by comparing the hanwhavision.com product sitemap with the dataset. This release adds:
+  - Wisenet X AI cameras (XND/XNO/XNV/XNF-A·014R) and Wisenet L, P and Q models
+  - 32MP PNM-C32084RQZ multi-sensor cameras (Lumeo and SolidEDGE/WAVE bundles)
+  - analog HD+ cameras (ACx, HCx, SCx), including PTZ and box models
+  - explosion-proof and stainless TNO/TNU/TNM cameras: X6320 PTZ families, thermal and bi-spectrum models, multi-sensor and fisheye
+
+  Each record comes from that model's official datasheet, or from the specifications section of its manual where no datasheet is published. Explosion-proof SKUs that differ only by certification suffix (-C/-M/-Z) are merged into one record, with the other codes as aliases. Weights that the source gives only as "up to" a maximum are not recorded. Models with no published spec table are left out, as are installation guides that don't name the model. IP cameras use Hanwha's standard `profile2/media.smp` stream path, not yet verified per model.
+
+- **46 Axis cameras** (Axis now has 604), found by comparing the axis.com product sitemap with the dataset. This release adds:
+  - 17 modular F-series sensor units: F1004/F1005-E/F1015/F1025/F1035-E, F2105-RE/F2107-RE/F2108/F2115-R/F2135-RE/F2137-RE, F4005/F4005-E, F7225-RE and the F8804 stereo unit
+  - legacy M1114-E, M3113/M3114 and M3203/M3204 cameras
+  - P1343–P1365 box cameras and P3343 domes
+  - the Q1931-E thermal camera, the Q6000-E quad-sensor overview unit, and the Q6032-C and Q6045 (incl. Mk II -C/-E/-S) PTZs
+
+  Most of these models are discontinued, and their axis.com pages no longer carry specs. Each record comes from that exact model's official Axis datasheet or user manual, some through archived (Wayback Machine) copies of axis.com files. Sensor units record only the sensor's own specs; codecs and streaming come from the F-series main unit. Models with no source for the exact variant are left out: Q6034-C, Q6035-C, Q6044-ZE, P3344-VE, the M1011/M1031-W, Q8721-E/Q8722-E, and the F2180-TE.
+
+- **37 Hikvision cameras** (Hikvision now has 3,895), found by comparing Hikvision's resource-center datasheet library with the dataset. This release adds:
+  - G3 Smart Hybrid Light bullets, turrets and domes (DS-2CD1x83G3, 2xx3G3, 3x63G3/3x83G3)
+  - DE3A and DE7A PTZs
+  - 9MP and 16MP fisheyes
+  - an ATEX explosion-proof PTZ
+  - strobe-light AcuSense models
+  - two Turbo HD analog cameras
+  - an industrial stereo-vision camera
+
+  Each record comes from that model's own Hikvision datasheet.
+
+- **107 Hikvision variant codes added as aliases** to 83 existing records, for example /SL, /SRB and /SX strobe variants and thermal /P, /PY and /QA variants. Each alias is added only where the variant's datasheet names that exact code. They follow the dataset's one-record-per-base-model convention.
+
+  Resource-center entries that link the wrong document are left out: a generic user manual, another model's datasheet, or a datasheet with no resolution. So are accessories listed as cameras: batteries, solar panels, cables and furnace-camera control units.
+
+- **108 Bosch cameras** (Bosch now has 413), found by comparing the IQSIGHT (Keenfinity) product sitemap and Bosch's library of 276 camera datasheet families with the dataset. This release adds:
+  - legacy DINION, FLEXIDOME and AUTODOME IP lines: 4000/5000/7000/8000 HD and MP, starlight, micro 2000/3000i/5000, 3000i/4000i IR, panoramic 5000/7000
+  - AUTODOME 600/700/800, AUTODOME Easy II and AUTODOME IP 4000/5000 HD PTZs
+  - FLEXIDOME analog 4000/5000 and VDC/VDN/VDI analog domes
+  - DINION thermal 8000/9000
+  - MIC inteox 7100i OC PTZs
+  - the current AUTODOME 7100s, AUTODOME 7100i IR, FLEXIDOME 7000 VR and FLEXIDOME multi+ 7100i IR
+
+  Each record comes from that model's official Bosch datasheet, most still hosted at resources.keenfinity.tech. A datasheet often lists several order numbers for one camera that differ only in PAL/NTSC, housing colour, bubble, mount or a regional -GOV/-IN suffix. Those are folded into one record as aliases, and 47 such codes are also added to existing records. `ndaa_compliant` is set only where the datasheet states NDAA compliance for that order number. Placeholders, accessories and SKUs whose datasheet gives no resolution are left out.
+
+### Changed
+- **Revodata I706-P-HS** Frigate config now has a second independent report that it works (#405). The camera was suggested in discussion #402 and first tested by [ElectronicBattle](https://github.com/ElectronicBattle).
+
+---
+
+## [2.29.0] — 2026-10-22
 
 ### Added
 - **Motorola Solutions, new brand: 5 Vigilant license-plate (ALPR) cameras.** L5F (fixed), L5M (vehicle-mounted), L6D (dual-purpose LPR plus color video), and the L5Q and L6Q quick-deploy units, each from Motorola's product page and datasheet. Where a datasheet states a value two ways (L6D lists 3.0MP beside a 1440x1080 image resolution), the record keeps the stated pixel resolution and notes the conflict. Avigilon and Pelco stay separate brands.

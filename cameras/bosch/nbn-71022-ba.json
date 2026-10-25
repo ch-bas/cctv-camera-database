@@ -1,0 +1,117 @@
+{
+  "id": "bosch-nbn-71022-ba",
+  "brand": "Bosch",
+  "model": "DINION IP 7000 HD (NBN-71022-BA)",
+  "aliases": [
+    "NBN-71022-BA",
+    "NBN-71022-B",
+    "DINION IP 7000 HD"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "sensor": "1/2.7-inch CMOS",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.05,
+    "min_lux_color": 0.22
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af / 802.3at Type 1), 12 VDC or 24 VAC",
+    "consumption_w": 10.8,
+    "voltage": "12 VDC / 24 VAC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "1080p30 HD",
+    "Built-in Intelligent Video Analytics (NBN-71022-BA) / MOTION+ (NBN-71022-B)",
+    "Intelligent Dynamic Noise Reduction (IDNR)",
+    "Content Based Imaging Technology (CBIT)",
+    "Auto motorized back focus / lens wizard",
+    "True day/night with mechanical filter",
+    "76 dB WDR (92 dB with IAE)",
+    "Intelligent Defog",
+    "Hybrid IP + analog video output (SMB, CVBS PAL/NTSC)",
+    "H.264 quad-streaming, regions of interest",
+    "CS-mount (C-mount with adapter ring), lens sold separately",
+    "Audio line in/out, full duplex",
+    "2 alarm inputs, 1 relay output, RS-232/422/485 data port",
+    "ONVIF Profile S, G and Q",
+    "Cloud services: JPEG posting to FTP / Dropbox"
+  ],
+  "operating_temp_c": "-20 to 55",
+  "dimensions_mm": "78 x 66 x 140 (W x H x L, without lens)",
+  "weight_g": 690,
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "generation": "DINION IP 7000 HD",
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/NBN_71022_Data_sheet_enUS_14398127371.pdf"
+  ],
+  "release_notes": "Specs per official Bosch datasheet (NBN_71022_Data_sheet_enUS_14398127371.pdf). NBN-71022-B = MOTION+ motion detection; NBN-71022-BA = with Intelligent Video Analytics (IVA). Hardware identical. Max power consumption 10.8 W is the 24 VAC IVA figure (PoE IVA 8.4 W). Operating temperature with IVA is -20 to 50 C. Sensitivity at F1.2, 30 IRE. Datasheet dated May 2016.",
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-10-25",
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  }
+}

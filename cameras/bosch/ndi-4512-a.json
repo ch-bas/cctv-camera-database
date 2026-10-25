@@ -1,0 +1,132 @@
+{
+  "id": "bosch-ndi-4512-a",
+  "brand": "Bosch",
+  "model": "FLEXIDOME IP 4000i indoor (NDI-4512-A)",
+  "aliases": [
+    "NDI-4512-A",
+    "FLEXIDOME IP 4000i"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "resolution": {
+    "label": "1080p",
+    "max_width": 1920,
+    "max_height": 1080,
+    "megapixels": 2
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8-inch CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3-9",
+    "aperture": "F1.3",
+    "varifocal": true
+  },
+  "field_of_view_deg": "37 to 106 (horizontal)",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.0051,
+    "min_lux_color": 0.0225
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af / 802.3at Type 1, Class 3), 12 VDC or 24 VAC",
+    "voltage": "12 VDC / 24 VAC",
+    "poe_class": 3,
+    "consumption_w": 7.15
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2000,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "generation": "FLEXIDOME IP 4000i",
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/FLEXIDOME_IP_4000i_Data_sheet_enUS_95646289035.pdf"
+  ],
+  "audio": {
+    "microphone": true,
+    "two_way": true
+  },
+  "features": [
+    "1080p at 60 fps",
+    "Starlight low-light performance",
+    "3-9 mm automatic varifocal (AVF) lens, motorized zoom/focus",
+    "High Dynamic Range 146 dB WDR (107 dB per IEC 62676-5)",
+    "Essential Video Analytics",
+    "H.265 / H.264 multi-streaming + M-JPEG",
+    "Intelligent Dynamic Noise Reduction",
+    "Analog video out (SMB, CVBS)",
+    "Audio line in/out",
+    "ONVIF Profile S/G/M/T",
+    "Built-in microphone (can be permanently disabled)"
+  ],
+  "operating_temp_c": "-20 to 50",
+  "dimensions_mm": "135 x 102 (dia x H)",
+  "weight_g": 450,
+  "environment": [
+    "indoor"
+  ],
+  "release_notes": "Specs per official Bosch datasheet (FLEXIDOME_IP_4000i_Data_sheet_enUS_95646289035.pdf, V7 2024). Indoor variant with built-in microphone; no IP/IK rating stated for the indoor model. The datasheet ordering text marks this SKU \"NDAA compliant\" (ndaa_compliant field left unset per project convention for Bosch).",
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-10-25",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "cloud_dependency": "local",
+  "ndaa_compliant": true
+}

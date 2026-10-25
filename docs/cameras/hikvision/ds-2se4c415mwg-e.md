@@ -1,6 +1,6 @@
 # Hikvision DS-2SE4C415MWG-E
 
-*Also known as: DS-2SE4C415MWG-E/14, DS-2SE4C415MWG-E(14F0), TandemVu 4+4MP 15X ColorVu & IR AcuSense Network Speed Dome*
+*Also known as: DS-2SE4C415MWG-E/14, DS-2SE4C415MWG-E(14F0), TandemVu 4+4MP 15X ColorVu & IR AcuSense Network Speed Dome, DS-2SE4C415MWG-E/26*
 
 | Field | Spec |
 |-------|------|

@@ -1,5 +1,7 @@
 # Hikvision DS-2CD2T46G2H-IS2U/SLRB
 
+*Also known as: DS-2CD2T46G2H-IS2U/SRB, DS-2CD2T46G2H-IS2U/SRB(2.8mm), DS-2CD2T46G2H-IS2U/SRB(4mm), DS-2CD2T46G2H-IS2U/SL, DS-2CD2T46G2H-IS2U/SL(2.8mm), DS-2CD2T46G2H-IS2U/SL(4mm), 4 MP AcuSense Strobe Light and Audible Warning Fixed Bullet Network Camera*
+
 | Field | Spec |
 |-------|------|
 | Brand | Hikvision |
@@ -36,6 +38,7 @@
 ## Sources
 
 - https://assets.hikvision.com/prd/public/all/doc/sm000070229/DS-2CD2T46G2H-IS2U_SLRB_Datasheet_20240517.pdf
+- https://assets.hikvision.com/prd/public/all/doc/sm000081060/DS-2CD2T46G2H-IS2U_SLRB_Datasheet_20240517.pdf
 
 ---
 *Auto-generated from hikvision-ds-2cd2t46g2h-is2u-slrb.json — do not edit by hand.*

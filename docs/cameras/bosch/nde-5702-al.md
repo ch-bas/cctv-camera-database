@@ -1,6 +1,6 @@
 # Bosch FLEXIDOME outdoor 5100i 2MP (NDE-5702-AL)
 
-*Also known as: NDE-5702-AL*
+*Also known as: NDE-5702-AL, NDE-5702-AL-GOV*
 
 | Field | Spec |
 |-------|------|

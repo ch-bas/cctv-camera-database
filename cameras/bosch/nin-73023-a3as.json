@@ -1,0 +1,136 @@
+{
+  "id": "bosch-nin-73023-a3as",
+  "brand": "Bosch",
+  "model": "FLEXIDOME IP starlight 7000 VR (NIN-73023-A3AS)",
+  "aliases": [
+    "NIN-73023-A3AS",
+    "NIN-73023-A3A",
+    "FLEXIDOME IP starlight 7000 VR"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "label": "1080p",
+    "max_width": 1920,
+    "max_height": 1080,
+    "megapixels": 2
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/2.8-inch CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3-9",
+    "aperture": "F1.2",
+    "varifocal": true
+  },
+  "field_of_view_deg": "37 to 117 (horizontal)",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.0039,
+    "min_lux_color": 0.0104
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af / 802.3at Type 1, Class 3) and/or 12 VDC auxiliary",
+    "voltage": "12 VDC",
+    "poe_class": 3,
+    "consumption_w": 7.2
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2000,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "1080p up to 60 fps",
+    "Starlight low-light performance",
+    "3-9 mm automatic varifocal (AVF) SR lens, IR corrected",
+    "HDR / extended dynamic range mode 120 dB (108 dB per IEC 62676-5)",
+    "Built-in Intelligent Video Analytics (IVA)",
+    "Intelligent Dynamic Noise Reduction",
+    "Hybrid IP + analog video output (BNC)",
+    "Audio line in/out, 2 alarm inputs, 1 alarm output",
+    "IP66 / NEMA 4X, IK10",
+    "Surface mount box included",
+    "ONVIF Profile S/G/M/T"
+  ],
+  "operating_temp_c": "-30 to 50",
+  "dimensions_mm": "158 x 124 (D x H)",
+  "weight_g": 1280,
+  "environment": [
+    "outdoor",
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "generation": "FLEXIDOME IP starlight 7000 VR",
+  "sources": [
+    "https://www.iqsight.com/en/products/cameras/dome-cameras/flexidome-ip-starlight-7000-vr/nin-73023-a3as",
+    "https://a.storyblok.com/f/292130204896374/57c149f920/nin_7300_data_sheet_enus_22459002123.pdf"
+  ],
+  "release_notes": "Specs per official Bosch datasheet (nin_7300_data_sheet_enus_22459002123.pdf, V26 2022), linked from the IQSIGHT product page. 2MP (1080p) version with 3-9 mm lens. Suffix S = supplied with surface mount box (NIN-73023-A3A = same camera for flush mounting, 0.85 kg). Sensitivity (0.0104 lx color / 0.0039 lx mono) measured per IEC 62676 Part 5 at 1/25, F1.2. Datasheet ordering text marks both \"NDAA compliant\" (ndaa_compliant left unset per project convention).",
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-10-25",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "cloud_dependency": "local",
+  "ndaa_compliant": true
+}

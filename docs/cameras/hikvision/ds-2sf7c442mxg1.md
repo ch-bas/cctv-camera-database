@@ -1,6 +1,6 @@
 # Hikvision DS-2SF7C442MXG1
 
-*Also known as: DS-2SF7C442MXG1/LM-EL(W)(Y)/26, DeepinViewX TandemVu 7C Series Panoramic 4 MP 42X DarkFighter Network Speed Dome*
+*Also known as: DS-2SF7C442MXG1/LM-EL(W)(Y)/26, DeepinViewX TandemVu 7C Series Panoramic 4 MP 42X DarkFighter Network Speed Dome, DS-2SF7C442MXG1/LM-ELW/26*
 
 | Field | Spec |
 |-------|------|

@@ -1,0 +1,123 @@
+{
+  "id": "unicam-uc-p632ae2",
+  "brand": "Unicam",
+  "model": "UC-P632AE2",
+  "aliases": [
+    "Thermal Network Speed Dome"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "dc",
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 0.11,
+    "max_width": 384,
+    "max_height": 288,
+    "label": "384x288 (thermal)"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30
+      }
+    ]
+  },
+  "sensor": "Thermal: 12 um 384x288 uncooled focal plane array, 8-14 um, NETD <= 50 mK; optical: 1/2.8\" CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "25 (thermal, fixed) + 4.8-154 (optical, 32x)",
+    "aperture": "F1.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "10.5",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 300,
+    "min_lux": 0.002,
+    "min_lux_color": 0.01
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "DC24V 2500mA or PoE++ (802.3bt)",
+    "consumption_w": 35,
+    "voltage": "24V DC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "features": [
+    "thermal + optical bi-spectrum network speed dome",
+    "optical channel: 4MP (2560x1440) with 32x optical zoom (4.8-154mm, F1.65-F4.70)",
+    "thermal detector: 384x288, 12 um, 25mm F1.0 lens (10.5 x 7.9 FOV)",
+    "thermal palettes: black hot, white hot, rainbow, iron oxide red",
+    "temperature measurement -20 to 150 C (+/-8 C or 8%), 10 point/line/area rules, high/low temperature alarm",
+    "dynamic fire detection, up to 10 fire points",
+    "human/vehicle detection and auto-tracking (deep-learning engine)",
+    "line crossing, region intrusion/entrance/exit, target counting, face detection (optical)",
+    "IR 200-300m",
+    "1CH audio input / 1CH audio output (G.711A/U)",
+    "1CH alarm input / 1CH alarm output",
+    "RS485",
+    "micro SD card slot (up to 256GB)",
+    "6KV surge protection",
+    "CE, FCC"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "197 x 302",
+  "weight_g": 3000,
+  "environment": [
+    "outdoor"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "markets": [
+    "in"
+  ],
+  "release_notes": "Specs per official UNICAM datasheet (UC-P632AE2.pdf, image-only). Resolution field records the thermal module; optical channel is 4MP. Thermal HxV FOV 10.5 x 7.9; optical H 59.38-2.28. NETD given as <35 mK on the cover but <=50 mK in the spec table. Power row says DC24V or PoE++ (802.3bt) (avg 24W, max 35W) while a PoE row says IEEE802.3af.",
+  "sources": [
+    "https://www.unicamsystems.com/PDF/IP-PTZ/UC-P632AE2.pdf",
+    "https://www.unicamsystems.com/IP-PTZ-Cameras.html"
+  ],
+  "last_verified": "2026-10-24",
+  "configs": {
+    "frigate": {
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "UNICAM does not publish the RTSP path; discover the stream via ONVIF. Default HTTP/ONVIF port 80, RTSP port 554."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a generic ONVIF camera."
+    }
+  }
+}

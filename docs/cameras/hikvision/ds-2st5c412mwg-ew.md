@@ -1,6 +1,6 @@
 # Hikvision DS-2ST5C412MWG-EW
 
-*Also known as: DS-2ST5C412MWG-EW/4G/14(PA)*
+*Also known as: DS-2ST5C412MWG-EW/4G/14(PA), DS-2ST5C412MWG-EW/4G/14, DS-2ST5C412MWG-EW/26, DS-2ST5C412MWG-EW/14*
 
 | Field | Spec |
 |-------|------|

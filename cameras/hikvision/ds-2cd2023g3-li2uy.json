@@ -1,0 +1,137 @@
+{
+  "id": "hikvision-ds-2cd2023g3-li2uy",
+  "brand": "Hikvision",
+  "model": "DS-2CD2023G3-LI2UY",
+  "aliases": [
+    "DS-2CD2023G3-LI2UY(Black)",
+    "DS-2CD2023G3-LI2UY(2.8mm)",
+    "DS-2CD2023G3-LI2UY(4mm)",
+    "DS-2CD2023G3-LI2UY(6mm)",
+    "2 MP Acusense Smart Hybrid Light Fixed Bullet Network Camera"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 / 6 (fixed)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "112 (2.8mm) / 91 (4mm) / 56 (6mm) horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 40,
+    "min_lux_color": 0.001
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V",
+    "consumption_w": 7.3,
+    "poe_class": 3,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Ø74.4 x 176.3",
+  "weight_g": 500,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "2 MP AcuSense fixed bullet, Powered by DarkFighter",
+    "Smart Hybrid Light (Smart / IR / White Light modes), up to 40 m",
+    "Person and vehicle classification (deep learning)",
+    "Face capture",
+    "130 dB WDR + AI WDR",
+    "Arrayed dual-microphone (-2U)",
+    "microSD up to 512 GB",
+    "IP67, NEMA 4X anti-corrosion",
+    "ONVIF Profile S/G/T, ISAPI, SDK, ISUP"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000116841/DS-2CD2023G3-LI2UYBlack_Datasheet_20260812.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "release_notes": "Specs per official Hikvision datasheet (DS-2CD2023G3-LI2UYBlack_Datasheet_20260812.pdf). Stream fps are 60 Hz values (25 fps at 50 Hz); third stream only under certain settings. Consumption is the PoE max (DC max 6.6 W).",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "768x432",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 10,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "cloud_dependency": "cloud-optional",
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "last_verified": "2026-10-25",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  }
+}

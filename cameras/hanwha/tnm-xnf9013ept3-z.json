@@ -1,0 +1,120 @@
+{
+  "id": "hanwha-tnm-xnf9013ept3-z",
+  "brand": "Hanwha",
+  "model": "TNM-XNF9013EPT3-Z",
+  "aliases": [
+    "Explosion Proof 12MP Fisheye Camera"
+  ],
+  "generation": "Wisenet X",
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 12,
+    "max_width": 3008,
+    "max_height": 3008,
+    "label": "12MP"
+  },
+  "sensor": "1/2.3\" 12MP CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.08 fixed (stereographic fisheye)",
+    "aperture": "F2.2",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.39
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3008x3008",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at) / 12VDC",
+    "consumption_w": 23,
+    "voltage": "12VDC"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024,
+    "nvr_compatible": true,
+    "notes": "Micro SD/SDHC/SDXC 2 slots, 1TB total (512GB x 2)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "speaker": false
+  },
+  "features": [
+    "Explosion-proof: cFMus Class I/II/III Division 1 (Groups B, C, D, E, F, G), IECEx & ATEX Zone 1/21 (IIB+H2/IIIC)",
+    "Marine-grade aluminum housing made in USA, NEMA 4X",
+    "AI object detection (person, face, vehicle, license plate), IVA, BestShot",
+    "AI people counting, queue management, heatmap",
+    "Original view 3008x3008, double panorama 3584x1792, single panorama 3584x896, quad view",
+    "Extreme WDR 120 dB, WiseNR, defog",
+    "Built-in mic, selectable mic/line in, line out; 2 configurable alarm I/O",
+    "ONVIF Profile S/G/T/M, SUNAPI, Wisenet Open Platform",
+    "TPM 2.0 (FIPS 140-2), WiseStream (AI-based)",
+    "DORI: detect 34.9m, observe 13.9m, recognize 7.0m, identify 3.5m"
+  ],
+  "operating_temp_c": "-20 to 55",
+  "weight_g": 8610,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "cloud_dependency": "local",
+  "release_notes": "Specs per official Hanwha Vision datasheet (DataSheet_TNM-XNF9013EPT3-Z_260101_EN.pdf). Operating temperature is the certified hazardous-area range stated for the housing (-20 to +55C); the spec table lists -40 to +60C for the camera. Field of view omitted: the datasheet's 'H: 209/180, V: 83' row appears copied from the TNM-P9022 panoramic model. PoE class text is inconsistent (802.3at listed with Class 3), so no class recorded. Dimensions not stated.",
+  "sources": [
+    "https://www.hanwhavision.com/us/products/product-details/TNM-XNF9013EPT3-Z",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/TNM-XNF9013EPT3-Z/DataSheet_TNM-XNF9013EPT3-Z_260101_EN.pdf"
+  ],
+  "last_verified": "2026-10-25",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile3/media.smp",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hanwha profiles: profile1=MJPEG, profile2=main, profile3=sub (default Wisenet profile layout); not yet verified on this model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select the Samsung/Hanwha profile."
+    }
+  }
+}

@@ -1,6 +1,6 @@
 # Bosch AUTODOME Easy II Compact PTZ (VEZ-221-IWCS)
 
-*Also known as: VEZ-221-IWCS, AUTODOME Easy II*
+*Also known as: VEZ-221-IWCS, AUTODOME Easy II, VEZ-211-IWTS, VEZ-221-IWTS*
 
 | Field | Spec |
 |-------|------|

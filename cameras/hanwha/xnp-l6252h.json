@@ -1,0 +1,123 @@
+{
+  "id": "hanwha-xnp-l6252h",
+  "brand": "Hanwha",
+  "model": "XNP-L6252H",
+  "aliases": [
+    "2MP 25x PTZ Camera"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "markets": [
+    "kr"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.44-111 (25x optical zoom)",
+    "aperture": "F1.6-3.9",
+    "varifocal": true
+  },
+  "field_of_view_deg": "64.66-2.99",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.005,
+    "min_lux_color": 0.05
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at, Class 4)",
+    "consumption_w": 23,
+    "poe_class": 4
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "notes": "1x microSD/SDHC/SDXC slot, max 256GB."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "features": [
+    "120 dB WDR",
+    "25x optical zoom, 32x digital zoom",
+    "360 endless pan, tilt 90 to -15",
+    "Preset speed pan 700 deg/s, tilt 300 deg/s; manual 0.024-200 deg/s",
+    "300 presets, swing, group, trace, tour, auto run, schedule; preset accuracy ±0.2",
+    "Auto tracking",
+    "DIS with built-in gyro sensor",
+    "SSNR V, defog",
+    "Analytics: motion detection, tampering, virtual area (intrusion/enter/exit), virtual line (crossing/direction)",
+    "WiseStream II",
+    "ONVIF Profile S/G/T",
+    "IP66, IK10, NEMA 250 Type 4X",
+    "Max +74C per NEMA TS 2"
+  ],
+  "operating_temp_c": "-35 to 55",
+  "dimensions_mm": "Ø204.3 x 265",
+  "weight_g": 2700,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "cloud_dependency": "local",
+  "sources": [
+    "https://www.hanwhavision.com/ko/products/product-details/XNP-L6252H",
+    "https://hvsgmpprdstorage.blob.core.windows.net/pim/XNP-L6252H/DataSheet_XNP-L6252H_20261007_KO_183610.pdf"
+  ],
+  "last_verified": "2026-10-25",
+  "release_notes": "Specs per official Hanwha Vision datasheet (DataSheet_XNP-L6252H_20261007_KO_183610.pdf), Korean-language source; alias translated from the Korean title. Power typical 14 W. White or black housing. No audio interface listed (audio detection only via optional network I/O box). Start up above -30C.",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile3/media.smp",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Hanwha profiles: profile1=MJPEG, profile2=main, profile3=sub (default Wisenet profile layout); not yet verified on this model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select the Samsung/Hanwha profile."
+    }
+  }
+}

@@ -1,6 +1,6 @@
 # Bosch AUTODOME IP starlight 7000 HD
 
-*Also known as: AUTODOME IP starlight 7000 HD, Starlight 7000HD, VG5-7130-CPT4, VG5-7130*
+*Also known as: AUTODOME IP starlight 7000 HD, Starlight 7000HD, VG5-7130-CPT4, VG5-7130, VG5-7130-EPC4*
 
 | Field | Spec |
 |-------|------|

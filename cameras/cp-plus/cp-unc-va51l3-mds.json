@@ -1,0 +1,122 @@
+{
+  "id": "cp-plus-cp-unc-va51l3-mds",
+  "brand": "CP Plus",
+  "model": "CP-UNC-VA51L3-MDS",
+  "aliases": [
+    "5MP Full HD WDR IR Vandal Dome Camera - 30Mtr."
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "fps": 15
+      },
+      {
+        "name": "sub",
+        "resolution": "704x480",
+        "fps": 15
+      },
+      {
+        "name": "third",
+        "resolution": "1280x720",
+        "fps": 15
+      }
+    ]
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "varifocal": false
+  },
+  "field_of_view_deg": "96",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.03
+  },
+  "power": {
+    "method": "PoE (802.3af) / 12V DC",
+    "consumption_w": 4.2,
+    "voltage": "12V DC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128
+  },
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "features": [
+    "3.6mm lens option (78 deg H FOV)",
+    "WDR 120dB",
+    "Day/Night (ICR)",
+    "ROI",
+    "BLC",
+    "HLC",
+    "16x digital zoom",
+    "tripwire and intrusion detection",
+    "microSD up to 128GB"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "109.9 (dia.) x 81",
+  "weight_g": 340,
+  "environment": [
+    "outdoor"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "markets": [
+    "in"
+  ],
+  "release_notes": "Specs per official CP Plus datasheet (CP-UNC-VA51L3-MDS.pdf). Max 15fps at 5MP. Lens/FOV recorded for the default 2.8mm lens.",
+  "sources": [
+    "https://www.cpplusworld.com/prodassets/datasheet/CP-UNC-VA51L3-MDS.pdf"
+  ],
+  "last_verified": "2026-10-24",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Dahua-style RTSP path used by other CP Plus U-series cameras; not yet verified on this model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration (port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "CP Plus U-series cameras use the Dahua protocol."
+    }
+  }
+}

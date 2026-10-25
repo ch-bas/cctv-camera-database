@@ -1,0 +1,125 @@
+{
+  "id": "bosch-nuc-52051-f0e",
+  "brand": "Bosch",
+  "model": "FLEXIDOME IP panoramic 5000 MP outdoor (NUC-52051-F0E)",
+  "aliases": [
+    "NUC-52051-F0E",
+    "FLEXIDOME IP panoramic 5000 MP"
+  ],
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "label": "5MP sensor (1792x1792 image circle)",
+    "max_width": 1792,
+    "max_height": 1792,
+    "megapixels": 3.2
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1792x1792",
+        "fps": 15,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/3-inch CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.19",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 x 180 (H x V)",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.12,
+    "min_lux_color": 0.36
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af / 802.3at Type 1, Class 1) or 12 VDC",
+    "voltage": "12 VDC",
+    "poe_class": 1,
+    "consumption_w": 3.6
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2000,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "features": [
+    "360 fisheye 1.19 mm fixed lens, 5MP sensor at 15 fps",
+    "Simultaneous panoramic overview and dewarped views",
+    "81 dB WDR",
+    "Intelligent Dynamic Noise Reduction",
+    "MOTION+ video analysis",
+    "Metal housing with IP66 outdoor surface mount box (included)",
+    "IK10 vandal resistance",
+    "microSD up to 2 TB",
+    "ONVIF Profile S, GB/T 28181"
+  ],
+  "operating_temp_c": "-30 to 50",
+  "dimensions_mm": "107 x 114 (H x dia, with outdoor SMB)",
+  "weight_g": 830,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "generation": "FLEXIDOME IP panoramic 5000 MP",
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/NUC_52051_Data_sheet_enUS_18780709643.pdf"
+  ],
+  "release_notes": "Specs per official Bosch datasheet (NUC_52051_Data_sheet_enUS_18780709643.pdf, V15 2017). -F0E = outdoor version (metal housing, IP66 only with the included outdoor surface mount box); the indoor plastic version is NUC-52051-F0. 5MP sensor; used pixels in the optical circle 1792x1792 (3.2MP). Integrated microphone is indoor-model only. Camera alone 57 x 110 mm / 360 g.",
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-10-25",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "cloud_dependency": "local"
+}

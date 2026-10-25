@@ -1,5 +1,7 @@
 # Hikvision DS-2SE4C215MWG-E
 
+*Also known as: DS-2SE4C215MWG-E/26, DS-2SE4C215MWG-E/12*
+
 | Field | Spec |
 |-------|------|
 | Brand | Hikvision |

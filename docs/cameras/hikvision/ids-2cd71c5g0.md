@@ -1,6 +1,6 @@
 # Hikvision iDS-2CD71C5G0
 
-*Also known as: iDS-2CD71C5G0/H-IZ(H)S(Y), 12MP DeepinView HEOP Moto Varifocal Dome Camera*
+*Also known as: iDS-2CD71C5G0/H-IZ(H)S(Y), 12MP DeepinView HEOP Moto Varifocal Dome Camera, iDS-2CD71C5G0/H-IZS*
 
 | Field | Spec |
 |-------|------|

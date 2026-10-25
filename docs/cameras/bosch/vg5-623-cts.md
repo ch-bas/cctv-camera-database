@@ -1,6 +1,6 @@
 # Bosch AUTODOME 600 Series PTZ (VG5-623-CTS)
 
-*Also known as: VG5-623-CTS, AUTODOME 600 Series*
+*Also known as: VG5-623-CTS, AUTODOME 600 Series, VG5-613-CCS, VG5-613-PCS, VG5-623-PCS*
 
 | Field | Spec |
 |-------|------|

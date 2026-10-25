@@ -1,6 +1,6 @@
 # Bosch DINION 5100i 2MP Bullet (NBE-5702-AL)
 
-*Also known as: NBE-5702-AL, DINION outdoor 5100i 2MP*
+*Also known as: NBE-5702-AL, DINION outdoor 5100i 2MP, NBE-5702-AL-GOV*
 
 | Field | Spec |
 |-------|------|

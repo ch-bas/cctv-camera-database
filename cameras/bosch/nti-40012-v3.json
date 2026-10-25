@@ -1,0 +1,125 @@
+{
+  "id": "bosch-nti-40012-v3",
+  "brand": "Bosch",
+  "model": "DINION IP bullet 4000 HD (NTI-40012-V3)",
+  "aliases": [
+    "NTI-40012-V3",
+    "DINION IP bullet 4000",
+    "DINION IP bullet 4000 HD"
+  ],
+  "generation": "DINION IP bullet 4000",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 1.2,
+    "max_width": 1280,
+    "max_height": 960,
+    "label": "720p (1.3MP 4:3 mode)"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3-10",
+    "aperture": "F1.3",
+    "varifocal": true
+  },
+  "field_of_view_deg": "36-107 (horizontal)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 25,
+    "min_lux": 0.05,
+    "min_lux_color": 0.24
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af / 802.3at Type 1, Class 3) or 12 VDC",
+    "consumption_w": 9.2,
+    "voltage": "12 VDC",
+    "poe_class": 3
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP66",
+  "ik_rating": "IK08",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "720p HD; 1280x960 1.3MP 4:3 mode",
+    "Built-in IR illuminator, 12 LED 850 nm, up to 25 m",
+    "Varifocal 3-10 mm DC-iris IR-corrected lens",
+    "76 dB WDR, Intelligent Dynamic Noise Reduction",
+    "Quad streaming H.264 + M-JPEG, regions of interest / E-PTZ",
+    "MOTION+ motion/tamper detection, 4 privacy masks",
+    "Analog CVBS output (BNC), alarm in, relay out, audio line in/out",
+    "IP66, IK08; NEMA TS 2 (-34 to 74 C)",
+    "ONVIF Profile S"
+  ],
+  "operating_temp_c": "-30 to 50",
+  "dimensions_mm": "103 x 100 x 252 (H x W x D)",
+  "weight_g": 1600,
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/NTI_4000_Data_sheet_enUS_14798654859.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "cloud_dependency": "local",
+  "last_verified": "2026-10-25",
+  "release_notes": "Specs per official Bosch datasheet (NTI_4000_Data_sheet_enUS_14798654859.pdf, V9 Oct 2015). Sensitivity colour 0.24 lx / mono 0.05 lx at 30 IRE (0 lx with IR). 2MP sensor (1952x1092 total pixels) but the camera outputs 720p (max 1280x960 4:3). Local storage (memory card) is not listed in this datasheet."
+}
