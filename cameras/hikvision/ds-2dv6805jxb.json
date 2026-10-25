@@ -1,0 +1,146 @@
+{
+  "id": "hikvision-ds-2dv6805jxb",
+  "brand": "Hikvision",
+  "model": "DS-2DV6805JXB/PLD-RSG",
+  "aliases": [
+    "3D Perimeter Protection Camera"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5.5,
+    "max_width": 2560,
+    "max_height": 2160,
+    "label": "2560x2160"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "88 (horizontal) / 78.3 (vertical)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10,
+    "min_lux": 0.0002,
+    "min_lux_color": 0.002
+  },
+  "power": {
+    "method": "PoE (802.3at) / DC 24V",
+    "consumption_w": 18.5,
+    "poe_class": 4,
+    "voltage": "24 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "190 x 135.5 x 55",
+  "weight_g": 1350,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "Stereo-vision 3D camera for industrial robotic-arm anti-collision / perimeter protection",
+    "Embedded GPU; stereo vision and deep-learning algorithms",
+    "Two channels of stereo depth images (pseudocolor output)",
+    "Person detection and people count in the robot working area",
+    "Up to 4 customizable protective areas",
+    "Built-in G-sensor with automatic calibration and angle-offset alarm",
+    "Alarm 2 inputs / 4 outputs (safety relay / PLC compatible)",
+    "1000M FC fiber optical interface in addition to RJ45",
+    "ISO 13849-1:2023 PLd, SGS-PLd, IEC 61000-6-7:2014",
+    "Smart264 / Smart265 compression",
+    "IR up to 10 m (850 nm)",
+    "ONVIF, ISAPI",
+    "Four streams",
+    "IP67"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/m000188316/DS-2DV6805JXB_PLD-RSG_Datasheet_20260814.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "release_notes": "Specs per official Hikvision datasheet (DS-2DV6805JXB_PLD-RSG_Datasheet_20260814.pdf). Industrial stereo-vision safety camera, not a general surveillance camera; type set to box as the datasheet lists one image sensor/lens row and no housing type. Main stream 2560x2160 at 12.5 fps (50 Hz) / 10 fps (60 Hz); sub-stream lists 2560x2160 and 640x480 at 25/30 fps; fps values are 60 Hz figures. Megapixels computed from 2560x2160. Consumption is the PoE max (24 VDC max 17.7 W). No audio.",
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x2160",
+        "fps": 10,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "2560x2160",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1280x1080",
+        "fps": 10,
+        "codec": "H.265"
+      },
+      {
+        "name": "fourth",
+        "resolution": "2560x2160",
+        "fps": 10,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "cloud_dependency": "local",
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "last_verified": "2026-10-25",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "id": "hikvision-ds-2cd2387g2-l",
+  "brand": "Hikvision",
+  "model": "DS-2CD2387G2-L",
+  "aliases": [
+    "DS-2CD2387G2-L(2.8mm)",
+    "DS-2CD2387G2-L(4mm)",
+    "8 MP ColorVu Fixed Turret Network Camera"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "sensor": "1/1.2\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 4 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "102 (2.8mm) / 88 (4mm) horizontal",
+  "night_vision": {
+    "type": "color",
+    "range_m": 30,
+    "min_lux_color": 0.0005
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V",
+    "consumption_w": 6,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false
+  },
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Ø138.3 x 120.1",
+  "weight_g": 870,
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "8 MP ColorVu fixed turret, F1.0 aperture, 1/1.2\" sensor",
+    "24/7 colour imaging with white light up to 30 m",
+    "Human and vehicle classification (deep learning)",
+    "Face capture",
+    "130 dB WDR",
+    "H.265+ compression",
+    "microSD up to 512 GB",
+    "IP67",
+    "ONVIF Profile S/G/T, ISAPI, SDK, ISUP"
+  ],
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000058383/DS-2CD2387G2-LU-C_Datasheet_V5.5.115_20230418.pdf"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "release_notes": "Specs per official Hikvision datasheet (DS-2CD2387G2-LU-C_Datasheet_V5.5.115_20230418.pdf), which covers DS-2CD2387G2-L(U); this record is the -L model without built-in microphone (the -LU variant has its own record). 4K main stream at 25 fps (50 Hz) / 24 fps (60 Hz); lower resolutions up to 30 fps; third stream 1920x1080 at 10 fps. Consumption is the PoE max (DC max 5 W).",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 25,
+        "codec": "H.265+"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 10,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "cloud_dependency": "cloud-optional",
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "last_verified": "2026-10-25",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Hikvision ONVIF (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select the 'Hikvision' profile."
+    }
+  }
+}
