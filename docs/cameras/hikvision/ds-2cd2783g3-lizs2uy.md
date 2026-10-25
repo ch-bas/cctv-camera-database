@@ -1,6 +1,6 @@
 # Hikvision DS-2CD2783G3-LIZS2UY
 
-*Also known as: 8 MP Acusense Smart Hybrid Light Motorized Varifocal Dome Network Camera*
+*Also known as: 8 MP Acusense Smart Hybrid Light Motorized Varifocal Dome Network Camera, DS-2CD2783G3-LIZS2UY/SL*
 
 | Field | Spec |
 |-------|------|

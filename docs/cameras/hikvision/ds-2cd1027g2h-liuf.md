@@ -1,5 +1,7 @@
 # Hikvision DS-2CD1027G2H-LIUF
 
+*Also known as: DS-2CD1027G2H-LIUF/SL*
+
 | Field | Spec |
 |-------|------|
 | Brand | Hikvision |

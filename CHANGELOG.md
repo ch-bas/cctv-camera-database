@@ -42,6 +42,21 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
   Most of these models are discontinued, and their axis.com pages no longer carry specs. Each record comes from that exact model's official Axis datasheet or user manual, some through archived (Wayback Machine) copies of axis.com files. Sensor units record only the sensor's own specs; codecs and streaming come from the F-series main unit. Models with no source for the exact variant are left out: Q6034-C, Q6035-C, Q6044-ZE, P3344-VE, the M1011/M1031-W, Q8721-E/Q8722-E, and the F2180-TE.
 
+- **37 Hikvision cameras** (Hikvision now has 3,895), found by comparing Hikvision's resource-center datasheet library with the dataset. This release adds:
+  - G3 Smart Hybrid Light bullets, turrets and domes (DS-2CD1x83G3, 2xx3G3, 3x63G3/3x83G3)
+  - DE3A and DE7A PTZs
+  - 9MP and 16MP fisheyes
+  - an ATEX explosion-proof PTZ
+  - strobe-light AcuSense models
+  - two Turbo HD analog cameras
+  - an industrial stereo-vision camera
+
+  Each record comes from that model's own Hikvision datasheet.
+
+- **107 Hikvision variant codes added as aliases** to 83 existing records, for example /SL, /SRB and /SX strobe variants and thermal /P, /PY and /QA variants. Each alias is added only where the variant's datasheet names that exact code. They follow the dataset's one-record-per-base-model convention.
+
+  Resource-center entries that link the wrong document are left out: a generic user manual, another model's datasheet, or a datasheet with no resolution. So are accessories listed as cameras: batteries, solar panels, cables and furnace-camera control units.
+
 ### Changed
 - **Revodata I706-P-HS** Frigate config now has a second independent report that it works (#405). The camera was suggested in discussion #402 and first tested by [ElectronicBattle](https://github.com/ElectronicBattle).
 

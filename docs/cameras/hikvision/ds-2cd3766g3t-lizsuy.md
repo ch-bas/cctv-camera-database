@@ -1,5 +1,7 @@
 # Hikvision DS-2CD3766G3T-LIZSUY
 
+*Also known as: DS-2CD3766G3T-LIZSUY/SL*
+
 | Field | Spec |
 |-------|------|
 | Brand | Hikvision |

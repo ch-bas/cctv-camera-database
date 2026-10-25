@@ -1,5 +1,7 @@
 # Hikvision DS-2CD1663G2-LIZSU
 
+*Also known as: DS-2CD1663G2-LIZSU/SL*
+
 | Field | Spec |
 |-------|------|
 | Brand | Hikvision |

@@ -1,6 +1,6 @@
 # Hikvision DS-2CD3723G2-LIZSU
 
-*Also known as: 2 MP AcuSense Smart Hybrid Light Motorized Varifocal Dome Network Camera*
+*Also known as: 2 MP AcuSense Smart Hybrid Light Motorized Varifocal Dome Network Camera, DS-2CD3723G2-LIZSU/SL*
 
 | Field | Spec |
 |-------|------|

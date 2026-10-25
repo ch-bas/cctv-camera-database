@@ -1,6 +1,6 @@
 # Hikvision DS-2CD2D45G2
 
-*Also known as: DS-2CD2D45G2/S-UW, DS-2CD2D45G2/S-UW(2.8mm), 4 MP Mini Network Camera*
+*Also known as: DS-2CD2D45G2/S-UW, DS-2CD2D45G2/S-UW(2.8mm), 4 MP Mini Network Camera, DS-2CD2D45G2/S-U*
 
 | Field | Spec |
 |-------|------|

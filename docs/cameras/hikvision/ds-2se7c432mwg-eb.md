@@ -1,5 +1,7 @@
 # Hikvision DS-2SE7C432MWG-EB
 
+*Also known as: DS-2SE7C432MWG-EB/14*
+
 | Field | Spec |
 |-------|------|
 | Brand | Hikvision |

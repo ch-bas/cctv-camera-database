@@ -1,6 +1,6 @@
 # Hikvision DS-2CD37167G3-LIZSU
 
-*Also known as: DS-2CD37167G3-LIZSU/SL(PTRZ)(Y)*
+*Also known as: DS-2CD37167G3-LIZSU/SL(PTRZ)(Y), DS-2CD37167G3-LIZSU/SL*
 
 | Field | Spec |
 |-------|------|

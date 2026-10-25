@@ -1,6 +1,6 @@
 # Hikvision DS-2SF8C442MXG-EL
 
-*Also known as: DS-2SF8C442MXG-EL/26(B), DS-2SF8C442MXG-EL-26B*
+*Also known as: DS-2SF8C442MXG-EL/26(B), DS-2SF8C442MXG-EL-26B, DS-2SF8C442MXG-EL/26*
 
 | Field | Spec |
 |-------|------|

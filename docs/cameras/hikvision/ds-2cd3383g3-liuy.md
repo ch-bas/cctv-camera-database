@@ -1,6 +1,6 @@
 # Hikvision DS-2CD3383G3-LIUY
 
-*Also known as: 8 MP Acusense Smart Hybrid Light Fixed Turret Network Camera*
+*Also known as: 8 MP Acusense Smart Hybrid Light Fixed Turret Network Camera, DS-2CD3383G3-LIUY/SX*
 
 | Field | Spec |
 |-------|------|

@@ -1,5 +1,7 @@
 # Hikvision DS-2CD1327G2H-LIUF
 
+*Also known as: DS-2CD1327G2H-LIUF/SRB*
+
 | Field | Spec |
 |-------|------|
 | Brand | Hikvision |

@@ -1,6 +1,6 @@
 # Hikvision DS-2CD1B23G2-LIUF
 
-*Also known as: DS-2CD1B23G2-LIU(F), DS-2CD1B23G2-LIU*
+*Also known as: DS-2CD1B23G2-LIU(F), DS-2CD1B23G2-LIU, DS-2CD1B23G2-LIUF/SL*
 
 | Field | Spec |
 |-------|------|

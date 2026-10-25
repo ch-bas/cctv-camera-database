@@ -1,5 +1,7 @@
 # Hikvision DS-2DY9C442SXG-W
 
+*Also known as: DS-2DY9C442SXG-W/SP*
+
 | Field | Spec |
 |-------|------|
 | Brand | Hikvision |

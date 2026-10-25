@@ -1,5 +1,7 @@
 # Hikvision DS-2DE2A604IWG1-E
 
+*Also known as: DS-2DE2A604IWG1-E/W*
+
 | Field | Spec |
 |-------|------|
 | Brand | Hikvision |

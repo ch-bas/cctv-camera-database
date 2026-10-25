@@ -1,6 +1,6 @@
 # Hikvision DS-2SF7C425MXG1
 
-*Also known as: DS-2SF7C425MXG1/LM-EL(W)(Y)/26*
+*Also known as: DS-2SF7C425MXG1/LM-EL(W)(Y)/26, DS-2SF7C425MXG1/LM-ELY/26*
 
 | Field | Spec |
 |-------|------|

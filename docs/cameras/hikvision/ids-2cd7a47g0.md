@@ -1,6 +1,6 @@
 # Hikvision iDS-2CD7A47G0
 
-*Also known as: iDS-2CD7A47G0/P-XZHS(Y), iDS-2CD7A47G0/P-XZHSY*
+*Also known as: iDS-2CD7A47G0/P-XZHS(Y), iDS-2CD7A47G0/P-XZHSY, iDS-2CD7A47G0/P-XZHS*
 
 | Field | Spec |
 |-------|------|
