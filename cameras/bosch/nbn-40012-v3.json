@@ -1,0 +1,130 @@
+{
+  "id": "bosch-nbn-40012-v3",
+  "brand": "Bosch",
+  "model": "DINION IP 4000 HD (NBN-40012-V3)",
+  "aliases": [
+    "NBN-40012-V3",
+    "DINION IP 4000 HD"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "label": "720p",
+    "max_width": 1280,
+    "max_height": 960,
+    "megapixels": 1.2
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1280x720",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/2.7-inch CMOS",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.05,
+    "min_lux_color": 0.25
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af / 802.3at Type 1, Class 1) or 12 VDC",
+    "voltage": "12 VDC",
+    "poe_class": 1,
+    "consumption_w": 3.2
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2000,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true,
+    "two_way": true
+  },
+  "operating_temp_c": "-30 to 50",
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "generation": "DINION IP 4000 HD",
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/NBN_40012_Data_sheet_enUS_13661240971.pdf"
+  ],
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.3-12",
+    "aperture": "F1.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "34 to 110 (horizontal)",
+  "features": [
+    "720p HD (1280x960 4:3 mode)",
+    "True day/night (color/mono/auto)",
+    "76 dB WDR",
+    "Intelligent Dynamic Noise Reduction (IDNR)",
+    "Intelligent defog",
+    "MOTION+ motion/tamper/audio detection",
+    "H.264 quad-streaming + M-JPEG, regions of interest",
+    "Built-in microphone, mono line in/out",
+    "SD card slot (up to 2 TB SDXC)",
+    "1 alarm input, 1 alarm output",
+    "ONVIF Profile S",
+    "Included 3.3-12 mm varifocal DC-iris F1.4 IR-corrected lens"
+  ],
+  "dimensions_mm": "55 x 64 x 149 (H x W x D, with lens)",
+  "weight_g": 590,
+  "release_notes": "Specs per official Bosch datasheet (NBN_40012_Data_sheet_enUS_13661240971.pdf, V14 2016). -V3 = supplied with 3.3-12 mm varifocal lens. Sensitivity 0.25 lx color / 0.05 lx mono at 30 IRE, F1.4.",
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-10-25",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "cloud_dependency": "local"
+}

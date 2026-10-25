@@ -1,0 +1,117 @@
+{
+  "id": "bosch-nht-8001-f17vs",
+  "brand": "Bosch",
+  "model": "DINION IP thermal 8000 (NHT-8001-F17VS)",
+  "aliases": [
+    "NHT-8001-F17VS",
+    "DINION IP thermal 8000"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 0.3,
+    "max_width": 640,
+    "max_height": 480,
+    "label": "VGA"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 9
+  },
+  "sensor": "Un-cooled vanadium oxide (VOx) microbolometer FPA, 17 um pixel pitch",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "16.7",
+    "varifocal": false
+  },
+  "field_of_view_deg": "37.5 x 28 (H x V)",
+  "night_vision": {
+    "type": "none"
+  },
+  "power": {
+    "method": "24 VAC (SELV)",
+    "consumption_w": 34,
+    "voltage": "24 VAC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "Thermal imaging, VGA 640 x 480 at 9 fps (<9 Hz version)",
+    "Thermal sensitivity < 50 mK",
+    "12 selectable thermal color mapping modes",
+    "Integrated Intelligent Video Analytics (line crossing, loitering, counting, ship tracking)",
+    "Detection range 315 m (human) / 1450 m (object) with 16.7 mm lens",
+    "Hybrid operation with surge-protected analog CVBS (NTSC) output",
+    "Audio line in/out (2 x 3.5 mm jacks), full/half duplex",
+    "2 alarm inputs, 1 alarm output, RS-232/422/485 data port",
+    "IP66 / NEMA-4X, wind load 150 mph, salt mist tested",
+    "Germanium glass window (52 x 3 mm)",
+    "TPM, PKI, 802.1x EAP/TLS, TLS 1.2",
+    "ONVIF Profile S, G and M"
+  ],
+  "operating_temp_c": "-40 to 55",
+  "dimensions_mm": "141 x 164 x 430 (H x W x L, incl. sunshield)",
+  "weight_g": 3500,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "ndaa_compliant": true,
+  "generation": "DINION IP thermal 8000",
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/DINION_IP_thermal_80_Data_sheet_enUS_23112691083.pdf"
+  ],
+  "release_notes": "Specs per official Bosch datasheet (DINION_IP_thermal_80_Data_sheet_enUS_23112691083.pdf). VS suffix = <9 Hz (9 fps) VGA export-friendly version (VF = 30 fps). Weight stated as <3.5 kg. ndaa_compliant set because the datasheet ordering entry states 'NDAA compliant' for this SKU. Datasheet V5, May 2022.",
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-10-25",
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  }
+}

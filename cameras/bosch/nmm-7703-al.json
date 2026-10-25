@@ -1,0 +1,137 @@
+{
+  "id": "bosch-nmm-7703-al",
+  "brand": "Bosch",
+  "model": "FLEXIDOME multi+ 7100i IR (NMM-7703-AL)",
+  "aliases": [
+    "NMM-7703-AL",
+    "FLEXIDOME multi+ 7100i IR"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 20,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "20MP total (4x 5MP imagers)"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "4x 1/2.8-inch CMOS",
+  "lens": {
+    "count": 4,
+    "focal_length_mm": "3.2-8.1",
+    "aperture": "F1.9-F3.2",
+    "varifocal": true
+  },
+  "field_of_view_deg": "Per imager 37 to 104 H (73 to 28 V)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux": 0.003,
+    "min_lux_color": 0.035
+  },
+  "power": {
+    "method": "PoE++ (IEEE 802.3bt Type 4 Class 8 90W, or Type 3 Class 6 60W), 24/36 VDC or 24 VAC",
+    "voltage": "24 VAC / 24-36 VDC",
+    "poe_class": 8,
+    "consumption_w": 38.1
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "notes": "Dual microSD (SDHC/SDXC) slots, up to 3 TB; mirror, failover or extend modes."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": true,
+    "two_way": true
+  },
+  "features": [
+    "Four independent 5MP imagers on one IP address",
+    "Modular design: combine with a PTZ, panoramic or fixed camera in the center",
+    "Motorized 3.2-8.1 mm AVF lenses, 3-axis imager adjustment",
+    "HDR X 120 dB",
+    "Integrated surround IR (850 nm), 30 m, 4 controllable zones",
+    "IVA Pro Buildings, IVA Pro Perimeter, Camera Trainer",
+    "MultiGuard PTZ (future firmware)",
+    "Secure Element (CC EAL6+, FIPS 140-3 Level 3)",
+    "Built-in MEMS microphone, audio line in/out",
+    "USB-C for wireless setup dongle",
+    "Optional SFP fiber with fiber mounts",
+    "IP66 / NEMA 4X, IK10",
+    "ONVIF Profile S/G/T/M"
+  ],
+  "operating_temp_c": "-40 to 55",
+  "dimensions_mm": "430 x 170.5 (dia x H)",
+  "weight_g": 5780,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "generation": "FLEXIDOME multi+ 7100i IR",
+  "sources": [
+    "https://www.iqsight.com/en/products/cameras/multi-imager-cameras/flexidome-multiplus-7100i/NMM-7703-AL",
+    "https://a.storyblok.com/f/292130204896374/x/b73740c92c/nmm_7703_al_ds_en_data_sheet_enus_180543751691.pdf"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "release_notes": "Specs per official IQSIGHT (formerly Bosch Video Systems) datasheet (nmm_7703_al_ds_en_data_sheet_enus_180543751691.pdf), linked from the IQSIGHT product page. Sensitivity measured per IEC 62676 Part 5. Power 38.1 W max at 24 VAC (36.3 W PoE/VDC), standalone with NDA-7050-M. Datasheet compliance line lists NDAA for the North/Latin America model (ndaa_compliant left unset per project convention). The product page key specs state 1/2.7-inch sensors; the datasheet states 1/2.8-inch (used here).",
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-10-25",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  }
+}

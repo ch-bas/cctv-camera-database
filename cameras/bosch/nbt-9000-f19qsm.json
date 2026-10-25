@@ -1,0 +1,123 @@
+{
+  "id": "bosch-nbt-9000-f19qsm",
+  "brand": "Bosch",
+  "model": "DINION IP thermal 9000 RM (NBT-9000-F19QSM)",
+  "aliases": [
+    "NBT-9000-F19QSM",
+    "DINION IP thermal 9000 RM"
+  ],
+  "generation": "DINION IP thermal 9000 RM",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 0.08,
+    "max_width": 320,
+    "max_height": 240,
+    "label": "QVGA thermal"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 9,
+    "streams": [
+      {
+        "name": "Thermal",
+        "resolution": "320x240",
+        "fps": 9,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "Uncooled VOx microbolometer FPA, 320x240, 17 um pitch, 8-14 um",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "19",
+    "varifocal": false
+  },
+  "field_of_view_deg": "16 x 12 (H x V)",
+  "night_vision": {
+    "type": "none"
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af / 802.3at Type 1, Class 2) or 12 VDC",
+    "consumption_w": 5.6,
+    "voltage": "12 VDC",
+    "poe_class": 2
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "Radiometric thermal camera for indoor human skin temperature detection",
+    "Radiometric accuracy +/-0.5 C after on-site calibration; NETD < 50 mK",
+    "QVGA 320x240 at 9 fps, 19 mm lens",
+    "Intelligent Video Analytics with gyro/accelerometer calibration",
+    "12 selectable thermal colour maps",
+    "Analog CVBS output (SMB) for field-of-view adjustment",
+    "TPM, PKI, 802.1x EAP/TLS, TLS 1.2",
+    "2 alarm inputs, 1 alarm output, RS-232/422/485, audio line in/out",
+    "ONVIF Profile S and G, GB/T 28181"
+  ],
+  "operating_temp_c": "10 to 50",
+  "dimensions_mm": "59 x 80 x 157.4 (H x W x L)",
+  "weight_g": 610,
+  "environment": [
+    "indoor"
+  ],
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/DINION_IP_thermal_90_Data_sheet_enUS_77561426955.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "cloud_dependency": "local",
+  "last_verified": "2026-10-25",
+  "release_notes": "Specs per official Bosch datasheet (DINION_IP_thermal_90_Data_sheet_enUS_77561426955.pdf, V2 Oct 2020). Fixed thermal QVGA <9 Hz, 19 mm, radiometric. The skin-temperature system functions require the VIDEOJET decoder 7000 (VJD-7513) with thermal analytics plus a firmware licence; on its own the camera does not perform them, and no temperature data is stored on the camera or SD card. Power consumption 5.6 W max on PoE (5.4 W on 12 VDC)."
+}

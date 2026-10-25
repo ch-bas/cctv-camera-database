@@ -1,0 +1,117 @@
+{
+  "id": "bosch-nbn-832v-ip",
+  "brand": "Bosch",
+  "model": "DINION IP 7000 HD (NBN-832V-IP)",
+  "aliases": [
+    "NBN-832V-IP",
+    "DINION IP 7000 HD"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/2.7-inch CMOS",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.05,
+    "min_lux_color": 0.22
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af / 802.3at Type 1), 12 VDC or 24 VAC",
+    "consumption_w": 10.8,
+    "voltage": "12 VDC / 24 VAC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "features": [
+    "1080p30 progressive scan",
+    "Intelligent Video Analytics (IVA)",
+    "Intelligent Auto Exposure (iAE)",
+    "76 dB WDR (92 dB with iAE)",
+    "Intelligent noise reduction (iDNR)",
+    "Content-Based Imaging Technology (C-BIT)",
+    "Auto back focus, lens wizard",
+    "Switched mechanical IR filter (true day/night)",
+    "H.264 quad streaming, regions of interest",
+    "Audio line in / line out",
+    "2 alarm inputs, 1 relay output",
+    "RS-232/422/485 data port",
+    "CS-mount, 4-pin DC-iris",
+    "ONVIF Profile S"
+  ],
+  "operating_temp_c": "-20 to 50",
+  "dimensions_mm": "78 x 66 x 140 (W x H x L) without lens",
+  "weight_g": 690,
+  "environment": [
+    "indoor"
+  ],
+  "generation": "DINION IP 7000 HD",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/NBN_832_Data_sheet_enUS_2032962571.pdf"
+  ],
+  "last_verified": "2026-10-25",
+  "release_notes": "Specs per official Bosch datasheet (NBN_832_Data_sheet_enUS_2032962571.pdf). IVA version of NBN-832V-P (adds IVA and iAE). Body only, lens not included. Operating temperature -20 to 50 C with IVA. Sensitivity at 30 IRE (F1.2). Consumption max 10.8 W at 24 VAC with IVA (8.4 W PoE).",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  }
+}

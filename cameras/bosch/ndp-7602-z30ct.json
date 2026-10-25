@@ -1,0 +1,124 @@
+{
+  "id": "bosch-ndp-7602-z30ct",
+  "brand": "Bosch",
+  "model": "AUTODOME inteox 7000i (NDP-7602-Z30CT)",
+  "aliases": [
+    "NDP-7602-Z30CT",
+    "AUTODOME inteox 7000i"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG",
+      "JPEG"
+    ],
+    "max_fps": 30
+  },
+  "sensor": "1/2.8-inch CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.3-129",
+    "aperture": "F1.6-4.7",
+    "varifocal": true
+  },
+  "field_of_view_deg": "2.3 to 64.7",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.0008,
+    "min_lux_color": 0.0077
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3at Class 4, 30 W, heater unpowered), Bosch 60 W midspan, or 24 VAC",
+    "poe_class": 4,
+    "consumption_w": 19.2,
+    "voltage": "24 VAC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048,
+    "nvr_compatible": true,
+    "notes": "Full-size SD card slot (max 2 TB); microSD not recommended."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP54",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "30x optical zoom (12x digital)",
+    "Starlight (color 0.0077 lx)",
+    "High dynamic range 120 dB (100 dB per IEC 62676-5)",
+    "Open camera platform with apps from the Security & Safety Things store",
+    "Intelligent Video Analytics",
+    "Three fully configurable H.265/H.264 streams",
+    "Turbo pan 400 deg/s, tilt 300 deg/s; normal 0.1-120 deg/s",
+    "360 deg continuous pan",
+    "7 alarm inputs (2 supervised), 4 alarm outputs",
+    "Audio line in/out",
+    "Indoor in-ceiling mount, tinted bubble, plenum rated",
+    "ONVIF Profile S, G and T"
+  ],
+  "operating_temp_c": "-10 to 40",
+  "dimensions_mm": "306.7 x 204.5",
+  "weight_g": 2600,
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "generation": "AUTODOME inteox 7000i",
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/NDP_7602_Z30CT_Data_sheet_enUS_84741843467.pdf"
+  ],
+  "release_notes": "Specs per official Bosch datasheet (NDP_7602_Z30CT_Data_sheet_enUS_84741843467.pdf). CT = in-ceiling, tinted bubble. Power consumption 19.2 W typical without heaters. Sensitivity at F1.6, 30 IRE. Platform CPP13. Datasheet V6, Mar 2021.",
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-10-25",
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  }
+}

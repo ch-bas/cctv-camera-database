@@ -1,0 +1,138 @@
+{
+  "id": "bosch-ndp-7602-z40l",
+  "brand": "Bosch",
+  "model": "AUTODOME 7100i IR (NDP-7602-Z40L)",
+  "aliases": [
+    "NDP-7602-Z40L",
+    "AUTODOME 7100i IR"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains",
+    "dc"
+  ],
+  "resolution": {
+    "label": "1080p",
+    "max_width": 1920,
+    "max_height": 1080,
+    "megapixels": 2
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8-inch CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.25-170",
+    "aperture": "F1.6-F4.95",
+    "varifocal": true
+  },
+  "field_of_view_deg": "1.9 to 66.35",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 300,
+    "min_lux": 0.001,
+    "min_lux_color": 0.0067
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3bt Type 4, Class 8, 90W), 24 VAC or 36 VDC",
+    "voltage": "24 VAC / 36 VDC",
+    "poe_class": 8,
+    "consumption_w": 66.6
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "notes": "SD card slot (SDHC/SDXC); Bosch does not recommend microSD cards or adapters. Capacity not stated."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "40x optical zoom (4.25-170 mm), 32x digital zoom",
+    "1080p up to 60 fps",
+    "Starlight imaging, HDR 120 dB (92 dB per IEC 62676-5)",
+    "Integrated IR (850 nm and 940 nm), 300 m detection, wide/medium/narrow beams",
+    "IVA Pro Buildings and IVA Pro Perimeter pre-installed",
+    "Intelligent tracking (camera-side)",
+    "Electronic image stabilization",
+    "Pan 360 continuous, tilt -90 to 20, up to 400/300 deg per s",
+    "Optional direct fiber (SFP) connection",
+    "Audio line in/out (full duplex)",
+    "ONVIF Profile S/G/T/M",
+    "Remote Portal / Genetec Stratocast cloud services"
+  ],
+  "operating_temp_c": "-40 to 50",
+  "dimensions_mm": "210.65 x 324 (dia x H)",
+  "weight_g": 5620,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "generation": "AUTODOME 7100i IR",
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/NDP_7602_Z40L_Data_sheet_enUS_103590454411.pdf"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "release_notes": "Specs per official Bosch datasheet (NDP_7602_Z40L_Data_sheet_enUS_103590454411.pdf). IP66 pendant model with IR; the datasheet ordering text marks it \"NDAA compliant\" (ndaa_compliant left unset per project convention). Power 66.6 W max at 36 VDC (64.8 W PoE, 53 W at 24 VAC).",
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-10-25",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "ndaa_compliant": true
+}

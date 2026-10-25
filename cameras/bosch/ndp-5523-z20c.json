@@ -1,0 +1,127 @@
+{
+  "id": "bosch-ndp-5523-z20c",
+  "brand": "Bosch",
+  "model": "AUTODOME IP starlight 5100i (NDP-5523-Z20C)",
+  "aliases": [
+    "NDP-5523-Z20C",
+    "AUTODOME IP starlight 5100i",
+    "NDP-5523-Z20C-P"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "1440p"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60
+  },
+  "sensor": "1/1.8-inch CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6.5-130",
+    "aperture": "F1.55-3.95",
+    "varifocal": true
+  },
+  "field_of_view_deg": "3.5 to 61.1",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.0016,
+    "min_lux_color": 0.0107
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at Class 4) or 24 VAC",
+    "poe_class": 4,
+    "consumption_w": 14.4,
+    "voltage": "24 VAC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP51",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "20x optical zoom (16x digital)",
+    "4MP at 60 fps at all resolutions",
+    "Starlight low-light performance",
+    "HDR X 133 dB",
+    "Essential Video Analytics",
+    "H.265 intelligent streaming, IDNR",
+    "Pan/tilt turbo up to 300/200 deg/s, normal 0.1-120 deg/s",
+    "360 deg continuous pan",
+    "256 pre-positions, recorded and pre-position tours",
+    "32 privacy masks",
+    "2 alarm inputs, 1 relay output",
+    "Audio line in/out",
+    "Indoor in-ceiling mount, clear bubble",
+    "TPM, PKI, 802.1x, TLS 1.2",
+    "ONVIF Profile S, G and T; GB/T 28181"
+  ],
+  "operating_temp_c": "-10 to 60",
+  "dimensions_mm": "198 x 176.6 (dia x H)",
+  "weight_g": 2100,
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "generation": "AUTODOME IP starlight 5100i",
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/AUTODOME_5100I_Data_sheet_enUS_84686761483.pdf",
+    "https://resources.keenfinity.tech/public/documents/AUTODOME_IP_starligh_Data_sheet_enUS_79209435403.pdf"
+  ],
+  "release_notes": "Specs per official Bosch datasheet (AUTODOME_5100I_Data_sheet_enUS_84686761483.pdf). C = clear bubble, indoor in-ceiling model; available in specific regions only. Sensor effective pixels 2688 x 1520 (4 MP); max stream resolution 2560 x 1440. Spec table states a 1/1.8-inch sensor (body text also mentions 1/2-inch). Sensitivity at F1.55, 30 IRE. Datasheet V3, Jun 2021. NDP-5523-Z20C-P is the regional order number of the same in-ceiling camera (listed in the AUTODOME IP starlight 5100i datasheet).",
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-10-25",
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  }
+}

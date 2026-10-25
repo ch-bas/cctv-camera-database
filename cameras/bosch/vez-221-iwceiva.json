@@ -1,0 +1,125 @@
+{
+  "id": "bosch-vez-221-iwceiva",
+  "brand": "Bosch",
+  "model": "AutoDome Easy II IP (VEZ-221-IWCEIVA)",
+  "aliases": [
+    "VEZ-221-IWCEIVA",
+    "VEZ-211-IWCEIVA",
+    "VEZ-221-ICCEIVA",
+    "VEZ-211-ICCEIVA",
+    "VEZ-221-IWTEIVA",
+    "VEZ-211-IWTEIVA",
+    "VEZ-221-ICTEIVA",
+    "VEZ-211-ICTEIVA",
+    "AutoDome Easy II IP"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 0.4,
+    "max_width": 704,
+    "max_height": 576,
+    "label": "4CIF/D1"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG",
+      "JPEG"
+    ],
+    "max_fps": 30
+  },
+  "sensor": "1/4-inch Exview HAD CCD",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.2-42",
+    "aperture": "F1.8",
+    "varifocal": true
+  },
+  "field_of_view_deg": "4.6 to 46",
+  "night_vision": {
+    "type": "none",
+    "min_lux_color": 0.83
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af Class 3) or 24 VAC",
+    "poe_class": 3,
+    "consumption_w": 12,
+    "voltage": "24 VAC"
+  },
+  "storage": {
+    "nvr_compatible": true,
+    "notes": "No memory card slot; iSCSI recording supported."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "features": [
+    "120x zoom (10x optical / 12x digital) autofocus",
+    "530 TVL color camera",
+    "360-degree continuous pan, 0-94 degree tilt",
+    "Variable pan/tilt speed 0.1-120 deg/s; preset speed pan 360 deg/s, tilt 100 deg/s",
+    "99 presets, 1 preset tour, 2 recorded tours, 2 auto-pan modes",
+    "AutoScaling (proportional zoom) and AutoPivot",
+    "Tri-streaming: two H.264 streams plus one JPEG stream",
+    "4CIF/D1 and CIF at 25/30 ips (PAL/NTSC)",
+    "Embedded Intelligent Video Analytics (IVA) and MOTION+",
+    "12 privacy masks (black, white or blurred)",
+    "iSCSI recording support",
+    "2 alarm inputs, 1 alarm output",
+    "ONVIF conformant",
+    "Sensitivity 0.83 lx at 30 IRE (tinted bubble, SensUP off); 0.043 lx with SensUP on"
+  ],
+  "operating_temp_c": "-10 to 40",
+  "dimensions_mm": "153 x 133 (dia x H)",
+  "weight_g": 1300,
+  "environment": [
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "generation": "AutoDome Easy II IP",
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/AutoDomeEasyII_IP_Data_sheet_enUS_2461381387.pdf"
+  ],
+  "release_notes": "Specs per official Bosch datasheet (AutoDomeEasyII_IP_Data_sheet_enUS_2461381387.pdf). Indoor models. SKU code: VEZ-2[1=PAL|2=NTSC]1-I[W=white|C=charcoal][C=clear|T=tinted bubble]EIVA (IVA = IP with IVA). min_lux_color is the datasheet's 30 IRE figure measured with the tinted bubble (clear bubble approx. 0.6 F-stop better). Max frame rate 30 ips NTSC / 25 ips PAL. Datasheet dated Oct 2013.",
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-10-25",
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  }
+}

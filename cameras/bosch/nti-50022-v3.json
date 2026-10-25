@@ -1,0 +1,121 @@
+{
+  "id": "bosch-nti-50022-v3",
+  "brand": "Bosch",
+  "model": "IP bullet 5000 HD (NTI-50022-V3)",
+  "aliases": [
+    "NTI-50022-V3",
+    "IP bullet 5000 HD",
+    "IP bullet 5000"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "sensor": "1/2.7-inch CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3-10",
+    "aperture": "F1.3",
+    "varifocal": true
+  },
+  "field_of_view_deg": "36 to 107 (horizontal)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 25
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af Class 3) or +12 VDC",
+    "poe_class": 3,
+    "consumption_w": 9.2,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK08",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "Built-in IR illuminator, 25 m (12 LEDs, 850 nm)",
+    "Varifocal 3-10 mm DC-iris lens",
+    "Sensitivity 0.24 lx (30 IRE, F1.3), 0.0 lx with IR",
+    "76 dB dynamic range",
+    "True day/night with mechanical filter",
+    "Intelligent Dynamic Noise Reduction (iDNR)",
+    "Quad streaming (H.264 + M-JPEG), regions of interest and E-PTZ",
+    "Two-way full-duplex audio, audio alarm",
+    "Tamper and motion detection",
+    "Alarm input, relay output",
+    "IP66 / NEMA Type 4X, IK08",
+    "Analog video out (BNC, NTSC) for installation",
+    "ONVIF Profile S"
+  ],
+  "operating_temp_c": "-30 to 50",
+  "dimensions_mm": "103 x 100 x 252 (H x W x D)",
+  "weight_g": 1600,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "generation": "IP bullet 5000",
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/NTI_20022_Data_sheet_enUS_11195641867.pdf"
+  ],
+  "release_notes": "Specs per official Bosch datasheet (NTI_20022_Data_sheet_enUS_11195641867.pdf). Datasheet sensitivity 0.24 lx is not labelled colour/mono, so it is kept in features only. No memory card slot listed. Datasheet V6, Dec 2013.",
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-10-25",
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  }
+}

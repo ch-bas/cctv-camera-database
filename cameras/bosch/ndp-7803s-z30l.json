@@ -1,0 +1,142 @@
+{
+  "id": "bosch-ndp-7803s-z30l",
+  "brand": "Bosch",
+  "model": "AUTODOME 7100s IR (NDP-7803S-Z30L)",
+  "aliases": [
+    "NDP-7803S-Z30L",
+    "AUTODOME 7100s IR"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains",
+    "dc"
+  ],
+  "resolution": {
+    "label": "4MP (1440p)",
+    "max_width": 2560,
+    "max_height": 1440,
+    "megapixels": 4
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 60,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/1.8-inch CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6.6-198",
+    "aperture": "F1.5-F4.8",
+    "varifocal": true
+  },
+  "field_of_view_deg": "2.2 to 58.7 (horizontal)",
+  "ptz": {
+    "autotracking": true
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2000,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "two_way": false
+  },
+  "dimensions_mm": "210.65 x 324 (dia x H)",
+  "weight_g": 5500,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 1
+  },
+  "cloud_dependency": "cloud-optional",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 550,
+    "min_lux": 0.0017,
+    "min_lux_color": 0.0168
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3bt Type 4, Class 8, 90W; Type 3 Class 6 60W intelligent power mode; Type 2 Class 4 30W low-power mode), 24 VAC or 36 VDC",
+    "voltage": "24 VAC / 36 VDC",
+    "poe_class": 8,
+    "consumption_w": 66.6
+  },
+  "features": [
+    "30x optical zoom (6.6-198 mm), 16x digital zoom",
+    "4MP at 60 fps (single exposure) / 30 fps HDR X",
+    "Starlight 1/1.8-inch sensor",
+    "HDR X 133 dB",
+    "IVA Pro Buildings, IVA Pro Perimeter, IVA Pro Privacy",
+    "GenAI+ (announced for Q4 2026)",
+    "Intelligent tracking (camera-side)",
+    "Electronic image stabilization (EIS)",
+    "Pan 360 continuous, tilt -90 to +20, up to 400/300 deg per s",
+    "Secure Element (CC EAL6+, FIPS 140-3 Level 3)",
+    "Optional direct fiber (SFP) connection",
+    "Audio line in/out (unidirectional streaming)",
+    "ONVIF Profile S/G/T/M",
+    "Remote Portal / Genetec Stratocast cloud services",
+    "Integrated 850 nm IR illuminator, 550 m detection distance"
+  ],
+  "operating_temp_c": "-40 to 50",
+  "generation": "AUTODOME 7100s IR",
+  "sources": [
+    "https://www.iqsight.com/en/products/cameras/moving-cameras/autodome-7100s/NDP-7803S-Z30L",
+    "https://a.storyblok.com/f/292130204896374/x/64a4df54ff/ndp_7803s_z30l_data_sheet_enus_171699840267.pdf"
+  ],
+  "release_notes": "Specs per official IQSIGHT (formerly Bosch Video Systems) datasheet (ndp_7803s_z30l_data_sheet_enus_171699840267.pdf), linked from the IQSIGHT product page. IP66 pendant with integrated IR. Operating temperature -40 to 50 C with IR on (-40 to 60 C with IR off). Power 66.6 W max at 36 VDC (64.8 W PoE, 84 VA at 24 VAC). Intelligent tracking listed as built-in; IVA Pro Intelligent Tracking is a separate license.",
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-10-25",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "ndaa_compliant": true
+}

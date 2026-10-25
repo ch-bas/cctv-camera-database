@@ -1,0 +1,131 @@
+{
+  "id": "bosch-nde-8504-rt",
+  "brand": "Bosch",
+  "model": "FLEXIDOME IP starlight 8000i (NDE-8504-RT)",
+  "aliases": [
+    "NDE-8504-RT",
+    "FLEXIDOME IP starlight 8000i 8MP 12-40mm"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/1.8-inch CMOS (3840x2160, 8.3MP)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "12-40",
+    "aperture": "F2.3",
+    "varifocal": true
+  },
+  "field_of_view_deg": "12.6 to 36.2 (horizontal)",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.02,
+    "min_lux_color": 0.1251
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af / 802.3at Type 1, Class 3), 24 VAC or 12-26 VDC (redundant)",
+    "poe_class": 3,
+    "consumption_w": 16
+  },
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048,
+    "nvr_compatible": true,
+    "notes": "Dual SD card slots (mirror/failover/extend), up to 2 TB each"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66/IP6K9K",
+  "ik_rating": "IK10",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "4K UHD 8MP at 30 fps (20 fps HDR mode); H.265/H.264/M-JPEG",
+    "Remote Pan/Tilt/Roll/Zoom (PTRZ) positioning; wireless commissioning via Project Assistant app (802.11b/g/n)",
+    "12-40 mm P-iris IR-corrected tele lens, motorized zoom/focus",
+    "Starlight: 0.1251 lx color / 0.02 lx mono at F2.3 (IEC 62676-5)",
+    "HDR 120 dB (106 dB per IEC 62676-5 with 12-40 mm lens)",
+    "Intelligent Video Analytics with Camera Trainer; 3D tracking",
+    "Dual SD card slots; TPM crypto coprocessor; end-to-end encryption",
+    "IP66, IP6K9K, NEMA 4X; IK10+ (50 J)",
+    "2 supervised alarm inputs, 1 alarm output; audio line in/out",
+    "ONVIF Profile S/G/T/M"
+  ],
+  "operating_temp_c": "-50 to 60",
+  "dimensions_mm": "175 x 148 (D x H)",
+  "weight_g": 2300,
+  "environment": [
+    "outdoor",
+    "indoor"
+  ],
+  "generation": "FLEXIDOME IP starlight 8000i",
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/NDE_8504_RT_Fixed_do_Data_sheet_enUS_94290272779.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "last_verified": "2026-10-25",
+  "cloud_dependency": "local",
+  "release_notes": "Specs per official Bosch datasheet (NDE_8504_RT_Fixed_do_Data_sheet_enUS_94290272779.pdf), 12-40 mm lens columns. NDE-8504-RT = tele-lens variant of NDE-8504-R (3.9-10 mm, separate record); motorized tilt -3 to +90 deg on the RT. Made to order. FOV wide 36.2 x 19.9, tele 12.6 x 7.1 (H x V). Power consumption max 16 W (12-26 VDC), 12.95 W max on PoE."
+}

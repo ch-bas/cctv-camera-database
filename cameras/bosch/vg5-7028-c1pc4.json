@@ -1,0 +1,123 @@
+{
+  "id": "bosch-vg5-7028-c1pc4",
+  "brand": "Bosch",
+  "model": "AUTODOME 7000 IP 28x In-ceiling (VG5-7028-C1PC4)",
+  "aliases": [
+    "VG5-7028-C1PC4",
+    "VG5-7028-C2PT4",
+    "AUTODOME 7000 IP"
+  ],
+  "generation": "AUTODOME 7000 IP",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 0.41,
+    "max_width": 704,
+    "max_height": 576,
+    "label": "4CIF/D1 (704x576 PAL / 704x480 NTSC)"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "sensor": "1/4\" Exview HAD CCD (progressive scan)",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.5-98",
+    "aperture": "F1.35-3.7",
+    "varifocal": true
+  },
+  "field_of_view_deg": "2.1-55.8",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.066,
+    "min_lux_color": 0.33
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "21-30 VAC 50/60 Hz or High PoE",
+    "consumption_w": 24,
+    "voltage": "24 VAC"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "notes": "SD/SDHC/SDXC card slot (max 2 TB SDXC); iSCSI / VRM recording"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "ip_rating": "IP54",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "28x optical zoom (3.5-98 mm) + 12x digital zoom",
+    "Intelligent Tracking with on-board Intelligent Video Analytics (IVA)",
+    "92 dB WDR, sodium vapor white balance, SensUp",
+    "Mechanical day/night (IR-cut filter removed in low light); no IR illuminator",
+    "256 pre-positions, preset tours and 2 recorded tours",
+    "Pan 360 deg continuous, pre-position speed pan 400 deg/s, tilt 300 deg/s, accuracy +/-0.1 deg",
+    "Quad streaming (CPP4, H.264 + M-JPEG), SD resolution",
+    "24 privacy masks, virtual masking",
+    "Plenum rated in-ceiling housing (IK8 with optional polycarbonate bubble)",
+    "7 alarm inputs / 4 alarm outputs, audio line in/out (full duplex)",
+    "ONVIF Profile S"
+  ],
+  "operating_temp_c": "-10 to 40",
+  "weight_g": 2580,
+  "environment": [
+    "indoor"
+  ],
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/AUTODOME_7000_Series_Data_sheet_enUS_11388903435.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "cloud_dependency": "local",
+  "last_verified": "2026-10-25",
+  "release_notes": "Specs per official Bosch datasheet (AUTODOME_7000_Series_Data_sheet_enUS_11388903435.pdf). In-ceiling 28x SD model. VG5-7028-C1PC4 = PAL with clear bubble; VG5-7028-C2PT4 = NTSC with tinted bubble (the datasheet heading for C2PT4 is misprinted as \"C1PC4 ... NTSC with Tinted Bubble\"). Sensitivity: colour 0.33 lux / mono 0.066 lux at 30 IRE with SensUp off. Resolution 704x480 on NTSC. Operating temperature -10 to 40 C (or -10 to 55 C without heater connected in the power supply box). Power consumption 24 W / 44 VA typical. Pendant (E1PC4/E2PC4) and 36x (VG5-7036) models in this datasheet are separate cameras and not covered by this record."
+}

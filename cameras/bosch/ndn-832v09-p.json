@@ -1,0 +1,133 @@
+{
+  "id": "bosch-ndn-832v09-p",
+  "brand": "Bosch",
+  "model": "FLEXIDOME IP 7000 RD (NDN-832V09-P)",
+  "aliases": [
+    "NDN-832V09-P",
+    "NDN-832V09-IP",
+    "FLEXIDOME IP 7000 RD"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "resolution": {
+    "label": "1080p",
+    "max_width": 1920,
+    "max_height": 1080,
+    "megapixels": 2
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/2.7-inch CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "9-40",
+    "varifocal": true
+  },
+  "field_of_view_deg": "8.5 to 37 (horizontal)",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.05,
+    "min_lux_color": 0.22
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af / 802.3at Type 1), 12 VDC or 24 VAC",
+    "voltage": "12 VDC / 24 VAC",
+    "consumption_w": 13.4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2000,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "1080p30 HD, 1/2.7-inch CMOS",
+    "9-40 mm varifocal SR lens, manual zoom/focus, auto back focus",
+    "True day/night (color/mono/auto)",
+    "76 dB WDR (92 dB with IAE)",
+    "Intelligent Dynamic Noise Reduction (IDNR)",
+    "Content-Based Imaging Technology (C-BIT)",
+    "MOTION+ (IVA on -IP version)",
+    "H.264 quad-streaming + M-JPEG, 2 regions of interest",
+    "Ruggedized cast-aluminum housing, >IK10, IP66 / IP67 / NEMA-4X",
+    "Audio line in/out (full duplex), 2 alarm inputs, 1 relay output",
+    "ONVIF Profile S"
+  ],
+  "operating_temp_c": "-50 to 55",
+  "dimensions_mm": "208 x 151 (D x H)",
+  "weight_g": 2200,
+  "environment": [
+    "outdoor",
+    "indoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "generation": "FLEXIDOME IP 7000 RD",
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/NDN_832_Data_sheet_enUS_2035096075.pdf"
+  ],
+  "release_notes": "Specs per official Bosch datasheet (NDN_832_Data_sheet_enUS_2035096075.pdf, V19 2016). Suffix -P = MOTION+ version; -IP = same camera with Intelligent Video Analytics (IVA) installed (NDN-832V09-IP). Power 13.4 W max is the MOTION+ figure (24 VAC, heater on); the IVA version draws up to 15.8 W. Operating temperature -50 to 55 C is the non-IVA figure (IVA: -50 to 50 C).",
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-10-25",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "cloud_dependency": "local"
+}

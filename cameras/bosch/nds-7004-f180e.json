@@ -1,0 +1,122 @@
+{
+  "id": "bosch-nds-7004-f180e",
+  "brand": "Bosch",
+  "model": "FLEXIDOME IP panoramic 7000 - outdoor (NDS-7004-F180E)",
+  "aliases": [
+    "NDS-7004-F180E",
+    "FLEXIDOME IP panoramic 7000 - outdoor"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 7.9,
+    "max_width": 3640,
+    "max_height": 2160,
+    "label": "8MP (180 image circle)"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3640x2160",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/2.3-inch CMOS (12MP)",
+  "lens": {
+    "focal_length_mm": "2.1",
+    "aperture": "F2.8",
+    "varifocal": false,
+    "count": 1
+  },
+  "field_of_view_deg": "180 x 93 (H x V)",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.15,
+    "min_lux_color": 0.46
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af / 802.3at Type 1), 48 VDC nominal, 200 mA"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "notes": "SDHC/SDXC card slot up to 2 TB; industrial SD health monitoring"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "features": [
+    "12MP sensor at 30 fps",
+    "Edge or client-side dewarping",
+    "Intelligent Video Analytics and MOTION+",
+    "92 dB WDR (+16 dB with Intelligent Auto Exposure)",
+    "Intelligent Dynamic Noise Reduction",
+    "Intelligent Defog",
+    "E-PTZ, regions of interest, six pre-positions",
+    "Switched mechanical IR filter",
+    "ONVIF Profile S, G and T",
+    "IP66 / IK10",
+    "NDAA compliant (per datasheet)",
+    "180 deg panoramic view"
+  ],
+  "operating_temp_c": "-30 to 45",
+  "dimensions_mm": "174.9 x 108.4 (dia x H)",
+  "weight_g": 2060,
+  "environment": [
+    "outdoor",
+    "indoor"
+  ],
+  "generation": "FLEXIDOME IP panoramic 7000 - outdoor",
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": true,
+  "cloud_dependency": "local",
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/FLEXIDOME_IP_panoram_Data_sheet_enUS_69521632523.pdf"
+  ],
+  "last_verified": "2026-10-25",
+  "release_notes": "Specs per official Bosch datasheet (FLEXIDOME_IP_panoram_Data_sheet_enUS_69521632523.pdf). 180-degree version; 3648 x 2160 (8MP) used pixels, image circle stream 3640 x 2160. Sensitivity at 30 IRE (F2.8).",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "id": "bosch-nuc-21002-f2",
+  "brand": "Bosch",
+  "model": "FLEXIDOME IP micro 2000 (NUC-21002-F2)",
+  "aliases": [
+    "NUC-21002-F2",
+    "FLEXIDOME IP micro 2000"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 0.3,
+    "max_width": 640,
+    "max_height": 480,
+    "label": "VGA"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/4-inch CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.5",
+    "aperture": "F2.8",
+    "varifocal": false
+  },
+  "field_of_view_deg": "66.7 (horizontal)",
+  "night_vision": {
+    "type": "none"
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af / 802.3at Type 1, Class 1) or 12-24 VDC",
+    "poe_class": 1,
+    "voltage": "12-24 VDC",
+    "consumption_w": 2.8
+  },
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048,
+    "nvr_compatible": true,
+    "cloud": true,
+    "notes": "microSD (32 GB SDHC / 2 TB SDXC); iSCSI; FTP/Dropbox posting"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true
+  },
+  "features": [
+    "Compact indoor microdome, 3-axis adjustment",
+    "Built-in microphone; audio detection",
+    "H.264 multi-streaming plus M-JPEG at up to 30 ips",
+    "Intelligent Dynamic Noise Reduction; area-based encoding",
+    "Motion, tamper and audio alarms; FTP/Dropbox/e-mail",
+    "Electronic day/night; 76 dB dynamic range",
+    "ONVIF Profile S/G/Q; GB/T 28181",
+    "sensitivity 1 lx (not labelled colour or B/W)"
+  ],
+  "operating_temp_c": "-20 to 50",
+  "dimensions_mm": "105 x 55 (D x H)",
+  "weight_g": 250,
+  "environment": [
+    "indoor"
+  ],
+  "generation": "FLEXIDOME IP micro 2000",
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/FLEXIDOME_IP_micro_2_Data_sheet_enUS_13209126027.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "last_verified": "2026-10-25",
+  "cloud_dependency": "local",
+  "release_notes": "Specs per official Bosch datasheet (FLEXIDOME_IP_micro_2_Data_sheet_enUS_13209126027.pdf, V14 2016), VGA version (480p/240p streams). Sensitivity 1.0 lx (3200 K, F2.8, 30 IRE; color/mono not distinguished, recorded as min_lux). View angle 66.7 x 50 (H x V)."
+}

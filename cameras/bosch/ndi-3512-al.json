@@ -1,0 +1,128 @@
+{
+  "id": "bosch-ndi-3512-al",
+  "brand": "Bosch",
+  "model": "FLEXIDOME IP 3000i IR (NDI-3512-AL)",
+  "aliases": [
+    "NDI-3512-AL",
+    "FLEXIDOME IP 3000i IR"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8-inch CMOS",
+  "lens": {
+    "focal_length_mm": "3-9",
+    "aperture": "F1.3",
+    "varifocal": true,
+    "count": 1
+  },
+  "field_of_view_deg": "37 to 106 (horizontal)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux": 0.01,
+    "min_lux_color": 0.05
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af / 802.3at Type 1, Class 3), +12 VDC ±5% or 24 VAC ±10% (redundant PoE + DC/AC supported)",
+    "consumption_w": 10.8,
+    "poe_class": 3,
+    "voltage": "12 VDC / 24 VAC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "features": [
+    "120 dB High Dynamic Range",
+    "Measured dynamic range 103 dB (IEC 62676-5)",
+    "Integrated IR illuminator, 10 LEDs 850 nm, up to 30 m",
+    "Automatic varifocal lens with motorized zoom/focus",
+    "Switched mechanical IR filter (true day/night)",
+    "Essential Video Analytics",
+    "Hybrid mode: analog CVBS out (SMB)",
+    "Audio line in / line out",
+    "1 alarm input / 1 alarm output",
+    "Automatic image rotation (gyro sensor)",
+    "Trusted Platform Module, TLS 1.2, AES 256",
+    "ONVIF Profile S, G, M and T",
+    "Edge recording on microSD up to 2 TB",
+    "NDAA and TAA compliant (per datasheet)"
+  ],
+  "operating_temp_c": "0 to 50",
+  "dimensions_mm": "135 x 102 (dia x H)",
+  "weight_g": 450,
+  "environment": [
+    "indoor"
+  ],
+  "generation": "FLEXIDOME IP 3000i IR",
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": true,
+  "cloud_dependency": "local",
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/FLEXIDOME_IP_3000i_I_Data_sheet_enUS_102664526603.pdf"
+  ],
+  "last_verified": "2026-10-25",
+  "release_notes": "Specs per official Bosch datasheet (FLEXIDOME_IP_3000i_I_Data_sheet_enUS_102664526603.pdf). Indoor 2MP version. Sensitivity at 30 IRE (F1.3, 1/25).",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  }
+}

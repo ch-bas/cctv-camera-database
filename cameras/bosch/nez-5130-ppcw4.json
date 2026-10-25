@@ -1,0 +1,122 @@
+{
+  "id": "bosch-nez-5130-ppcw4",
+  "brand": "Bosch",
+  "model": "AUTODOME IP 5000 HD (NEZ-5130-PPCW4)",
+  "aliases": [
+    "NEZ-5130-PPCW4",
+    "AUTODOME IP 5000 HD",
+    "AUTODOME IP 5000 HD 720p"
+  ],
+  "generation": "AUTODOME IP 5000 HD",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 0.9,
+    "max_width": 1280,
+    "max_height": 720,
+    "label": "720p"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "sensor": "1/2.8\" progressive scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.3-129",
+    "aperture": "F1.6-5.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "2.3-65",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.044,
+    "min_lux_color": 0.22
+  },
+  "power": {
+    "method": "24 VAC or PoE+ (IEEE 802.3at Class 4)",
+    "consumption_w": 24,
+    "voltage": "24 VAC",
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "30x optical zoom (4.3-129 mm) + 16x digital zoom",
+    "720p25/30 HD; people identification up to 125 m",
+    "76 dB DWDR, Intelligent Defog, sodium vapor white balance",
+    "Mechanical day/night (switchable IR filter); no IR illuminator",
+    "Intelligent Dynamic Noise Reduction, area-based encoding",
+    "Quad streaming (2x H.264, 1x M-JPEG, 1x I-frame)",
+    "256 presets, preset accuracy +/-0.2 deg, pan 300 deg/s, tilt 200 deg/s, 360 deg continuous pan",
+    "24 privacy masks, MOTION+ video motion detection",
+    "2 alarm inputs, 1 relay output, audio line in/out",
+    "ONVIF Profile S, GB/T 28181",
+    "Indoor pendant housing, clear bubble"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "190 x 303.6 (dia x H)",
+  "weight_g": 2650,
+  "environment": [
+    "indoor"
+  ],
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/AUTODOME_IP_5000_HD_Data_sheet_enUS_19166825227.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "status": "discontinued",
+  "cloud_dependency": "local",
+  "last_verified": "2026-10-25",
+  "release_notes": "Specs per official Bosch datasheet (AUTODOME_IP_5000_HD_Data_sheet_enUS_19166825227.pdf, V12 Jan 2017). NEZ-5130-PPCW4 = 30x 720p30 camera in indoor housing for pendant installation, clear bubble (P = indoor pendant; E = outdoor pendant with sunshield; C = in-ceiling). The datasheet lists IP66 / IK10 and -40 to 60 C (24 VAC; -20 to 60 C on PoE+) for \"pendant models\" without separating the indoor pendant from the outdoor pendant, so IP/IK ratings are not recorded for this indoor housing; the temperature range shown is that pendant-models value. The 720p outdoor pendant NEZ-5130-EPCW4 is in autodome-ip-5000-hd.json. Sensitivity: colour 0.22 lux / mono 0.044 lux at 30 IRE, SensUp off. Power consumption 24 VAC: 14 W (24 W with heater); PoE+: 13 W (heater not supported). Status discontinued follows the existing family record (autodome-ip-5000-hd.json); the datasheet itself does not state it."
+}

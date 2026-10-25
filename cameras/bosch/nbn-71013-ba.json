@@ -1,0 +1,123 @@
+{
+  "id": "bosch-nbn-71013-ba",
+  "brand": "Bosch",
+  "model": "DINION IP starlight 7000 HD (NBN-71013-BA)",
+  "aliases": [
+    "NBN-71013-BA",
+    "NBN-71013-B",
+    "DINION IP starlight 7000 HD"
+  ],
+  "generation": "DINION IP starlight 7000 HD",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 1.3,
+    "max_width": 1280,
+    "max_height": 1024,
+    "label": "720p60 (1.3MP 5:4 at 30p)"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1280x720",
+        "fps": 60,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/3\" CMOS (1312 x 1069, 1.4MP)",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.0057,
+    "min_lux_color": 0.017
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af / 802.3at Type 1), 12 VDC or 24 VAC",
+    "consumption_w": 10.8,
+    "voltage": "12 VDC / 24 VAC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "Starlight low-light: 0.017 lx colour, 0.0057 lx mono (30 IRE)",
+    "720p up to 60 fps; 1280x1024 (5:4) at 30 fps max without IVA",
+    "84 dB WDR (100 dB with Intelligent Auto Exposure)",
+    "Intelligent Video Analytics (IVA) with Intelligent Tracking and face detection (-BA); MOTION+ (-B)",
+    "Content Based Imaging Technology (CBIT), Intelligent Dynamic Noise Reduction",
+    "Hybrid operation: simultaneous IP stream + analog CVBS output (SMB)",
+    "Auto motorized back focus, lens wizard",
+    "True day/night mechanical IR-cut filter",
+    "Regions of interest / E-PTZ, area-based encoding, upright 9:16 mode",
+    "CS-mount (C-mount with adapter ring), DC-iris; lens sold separately",
+    "2 alarm inputs, 1 relay output, RS-232/422/485, audio line in/out",
+    "ONVIF Profile S, Q and G"
+  ],
+  "operating_temp_c": "-20 to 55",
+  "dimensions_mm": "78 x 66 x 140 (W x H x L, without lens)",
+  "weight_g": 690,
+  "environment": [
+    "indoor"
+  ],
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/NBN_71013_Data_sheet_enUS_14410331915.pdf"
+  ],
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "cloud_dependency": "local",
+  "last_verified": "2026-10-25",
+  "release_notes": "Specs per official Bosch datasheet (NBN_71013_Data_sheet_enUS_14410331915.pdf, V15 May 2016). NBN-71013-BA = IVA (Intelligent Video Analytics) version; NBN-71013-B = same camera with MOTION+ only. Power consumption 10.8 W is the IVA model on 24 VAC (4.8-8.4 W for the non-IVA model). Operating temperature -20 to 55 C (-20 to 50 C for IVA). Box camera sold without lens, so no lens/FOV is recorded."
+}

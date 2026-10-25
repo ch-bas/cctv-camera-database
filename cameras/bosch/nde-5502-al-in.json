@@ -1,0 +1,130 @@
+{
+  "id": "bosch-nde-5502-al-in",
+  "brand": "Bosch",
+  "model": "FLEXIDOME starlight 5000i IR (NDE-5502-AL-IN)",
+  "aliases": [
+    "NDE-5502-AL-IN",
+    "FLEXIDOME starlight 5000i IR"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc",
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60
+  },
+  "sensor": "1/2.8-inch CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3-9",
+    "aperture": "F1.3",
+    "varifocal": true
+  },
+  "field_of_view_deg": "37 to 106 (horizontal)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 45,
+    "min_lux": 0.0051,
+    "min_lux_color": 0.0225
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af Class 3), +12 VDC or 24 VAC",
+    "poe_class": 3,
+    "consumption_w": 10.8,
+    "voltage": "12 VDC / 24 VAC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "1080p at up to 60 fps",
+    "Starlight low-light performance",
+    "High Dynamic Range 146 dB (107 dB per IEC 62676-5)",
+    "Built-in IR illuminator, 45 m (10 LEDs, 850 nm)",
+    "Automatic varifocal (AVF) 3-9 mm motorized zoom/focus",
+    "Essential Video Analytics",
+    "H.265 intelligent streaming, IDNR",
+    "Automatic image rotation (gyro/accelerometer)",
+    "Hybrid mode analog video out (SMB, CVBS)",
+    "Two-way audio and audio alarm",
+    "1 alarm input, 1 alarm output",
+    "IP66 / NEMA 4X, IK10",
+    "TPM, PKI, 802.1x, TLS 1.2",
+    "ONVIF Profile S, G, M and T",
+    "Made in India",
+    "NDAA compliant"
+  ],
+  "operating_temp_c": "-40 to 50",
+  "dimensions_mm": "145 x 131 (dia x H)",
+  "weight_g": 1102,
+  "environment": [
+    "outdoor"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100
+  },
+  "ndaa_compliant": true,
+  "generation": "FLEXIDOME starlight 5000i IR",
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/NDE_5502_AL_IN_Data_sheet_enUS_119184618635.pdf"
+  ],
+  "release_notes": "Specs per official Bosch datasheet (NDE_5502_AL_IN_Data_sheet_enUS_119184618635.pdf). -IN = Made in India version (country of origin India). ndaa_compliant set because the datasheet ordering entry states 'NDAA compliant'. Sensitivity at F1.3, 30 IRE. Platform CPP7.3. Datasheet V2, Feb 2024.",
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-10-25",
+  "cloud_dependency": "local",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  }
+}

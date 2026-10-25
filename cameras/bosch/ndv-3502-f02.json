@@ -1,0 +1,128 @@
+{
+  "id": "bosch-ndv-3502-f02",
+  "brand": "Bosch",
+  "model": "FLEXIDOME IP micro 3000i (NDV-3502-F02)",
+  "aliases": [
+    "NDV-3502-F02",
+    "NDV-3502-F02-P",
+    "FLEXIDOME IP micro 3000i"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8-inch CMOS",
+  "lens": {
+    "focal_length_mm": "2.3",
+    "aperture": "F2.2",
+    "varifocal": false,
+    "count": 1
+  },
+  "field_of_view_deg": "132 x 77 (H x V)",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.05,
+    "min_lux_color": 0.1
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af / 802.3at Type 1, Class 3) or 12 VDC ±30%",
+    "consumption_w": 10.5,
+    "poe_class": 3,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ik_rating": "IK08",
+  "audio": {
+    "microphone": true
+  },
+  "features": [
+    "120 dB High Dynamic Range",
+    "Measured dynamic range 103 dB (IEC 62676-5)",
+    "Essential Video Analytics (line crossing, loitering, people counting, crowd density, 3D tracking)",
+    "Intelligent Dynamic Noise Reduction",
+    "Intelligent Defog",
+    "Built-in microphone, audio line out",
+    "1 alarm input / 1 alarm output",
+    "Trusted Platform Module, TLS 1.2, AES 256",
+    "ONVIF Profile S, G and T",
+    "Edge recording on microSD up to 2 TB",
+    "IK08 impact resistance",
+    "Surface mount, 3-axis adjustment"
+  ],
+  "operating_temp_c": "-20 to 50",
+  "dimensions_mm": "110 x 66 (dia x H)",
+  "weight_g": 290,
+  "environment": [
+    "indoor"
+  ],
+  "generation": "FLEXIDOME IP micro 3000i",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/FLEXIDOME_IP_micro_3_Data_sheet_enUS_73270000523.pdf"
+  ],
+  "last_verified": "2026-10-25",
+  "release_notes": "Specs per official Bosch datasheet (FLEXIDOME_IP_micro_3_Data_sheet_enUS_73270000523.pdf). 2MP, 2.3 mm lens (ordering text says 130 degree lens; spec table gives 132 x 77 FOV). Sensitivity per IEC 62676-5 (1/30). The -P variant is listed in the datasheet with an identical description and its own order number; the datasheet does not state what the -P suffix means.",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  }
+}

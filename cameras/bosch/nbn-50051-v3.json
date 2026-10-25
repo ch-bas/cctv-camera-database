@@ -1,0 +1,125 @@
+{
+  "id": "bosch-nbn-50051-v3",
+  "brand": "Bosch",
+  "model": "DINION IP 5000 MP (NBN-50051-V3)",
+  "aliases": [
+    "NBN-50051-V3",
+    "DINION IP 5000 MP"
+  ],
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP"
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 12,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2592x1944",
+        "fps": 12,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/3-inch CMOS",
+  "lens": {
+    "focal_length_mm": "3.3-12",
+    "aperture": "F1.4",
+    "varifocal": true,
+    "count": 1
+  },
+  "field_of_view_deg": "25 to 82 (horizontal)",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.05,
+    "min_lux_color": 0.35
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af / 802.3at Type 1, Class 1) or 12 VDC",
+    "consumption_w": 3.6,
+    "poe_class": 1,
+    "voltage": "12 VDC"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "notes": "SDHC up to 32 GB / SDXC up to 2 TB card slot"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": true
+  },
+  "features": [
+    "Intelligent Dynamic Noise Reduction",
+    "81 dB WDR",
+    "Day/night (color/mono/auto)",
+    "MOTION+ motion detection, tamper and audio detection",
+    "Built-in microphone, audio line in / line out",
+    "1 alarm input / 1 alarm output",
+    "Analog CVBS service out (2.5 mm jack)",
+    "CS-mount, 4-pin DC-iris connector",
+    "ONVIF Profile S",
+    "FTP, Dropbox and e-mail alarm posting",
+    "iSCSI / VRM recording",
+    "Supplied 3.3-12 mm DC-iris IR-corrected varifocal lens"
+  ],
+  "operating_temp_c": "-30 to 50",
+  "dimensions_mm": "55 x 64 x 149 (H x W x D) with lens",
+  "weight_g": 590,
+  "environment": [
+    "indoor"
+  ],
+  "generation": "DINION IP 5000 MP",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "sources": [
+    "https://resources.keenfinity.tech/public/documents/DINION_IP_5000_MP_Data_sheet_enUS_17066670859.pdf"
+  ],
+  "last_verified": "2026-10-25",
+  "release_notes": "Specs per official Bosch datasheet (DINION_IP_5000_MP_Data_sheet_enUS_17066670859.pdf). Version with 3.3-12 mm varifocal lens (-V3). FOV 82 x 60 (wide) to 25 x 19 (tele). Sensitivity at 30 IRE (F1.4). Encoding interval 1 to 12 fps.",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  }
+}
