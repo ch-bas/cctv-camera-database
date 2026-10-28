@@ -1,0 +1,71 @@
+{
+  "id": "quarkview-ta-xm-pt825g-50p",
+  "brand": "QuarkView",
+  "model": "TA-XM-PT825G-50P",
+  "aliases": [
+    "PT825G-50P",
+    "QuarkView PT825G 5MP PoE Camera"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "label": "5MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265"
+    ]
+  },
+  "night_vision": {
+    "type": "hybrid"
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af / 48V)"
+  },
+  "storage": {
+    "notes": "microSD card slot (maximum capacity not stated)."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "remote mechanical pan / tilt",
+    "human detection",
+    "infrared and white-light colour night modes",
+    "iCSee app (per the PoE PTZ family setup guide)"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "sources": [
+    "https://quarkview.com/products/8mp-5mp-360-poe-ai-camera-support-sd-card",
+    "https://quarkview.com/manuals/poe-pt-family-manual-en.pdf"
+  ],
+  "last_verified": "2026-10-28",
+  "release_notes": "Specs per the official QuarkView product page (Shenzhen Kuake Trading Co., Ltd.); the page states 5MP for the -50P model (an 8MP -80P model is offered on the same page as a separate variant with no other separate specs, so it is not recorded here), wired IEEE 802.3af / 48V PoE, H.265, two-way audio, pan/tilt, human detection and a microSD slot. RTSP path from the QuarkView PT825 PoE camera family manual linked on the page (main stream only; default user admin with an empty password, default IP 192.168.1.10); the same manual states ONVIF and RTSP support. Pan/tilt angles, lens, field of view, frame rate, IP rating, sensor and dimensions are not published on this page.",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/user={user}&password={pass}&channel=1&stream=0.sdp?",
+      "verified": false,
+      "notes": "Main-stream path from the QuarkView PT825 PoE camera family manual (Xiongmai platform). The manual does not document a sub-stream; on Xiongmai firmware it is usually stream=1.sdp, but confirm via ONVIF discovery before using it for detect. Set a password first: the factory password is empty."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration; the manual lists ONVIF support but not the ONVIF port."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a generic ONVIF/RTSP camera (Xiongmai platform)."
+    }
+  }
+}

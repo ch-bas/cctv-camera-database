@@ -1,0 +1,69 @@
+{
+  "id": "quarkview-xm-dm27sp-ai-50g",
+  "brand": "QuarkView",
+  "model": "XM-DM27SP-AI-50G",
+  "aliases": [
+    "DM27SP-AI-50G",
+    "QuarkView DM27SP 5MP Dome PoE Camera"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "label": "5MP"
+  },
+  "night_vision": {
+    "type": "hybrid"
+  },
+  "power": {
+    "method": "PoE"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "features": [
+    "2 IR LEDs + 2 white LEDs (white light on human detection)",
+    "red/blue warning lights",
+    "human detection",
+    "plastic housing",
+    "XMEye Pro app (Android / iOS)"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "sources": [
+    "https://quarkview.com/products/5mp-poe-dome-cameras-with-color-night-vision",
+    "https://quarkview.com/manuals/poe-fixed-family-manual-en.pdf"
+  ],
+  "last_verified": "2026-10-28",
+  "release_notes": "Specs per the official QuarkView product page (Shenzhen Kuake Trading Co., Ltd.); the page states 5MP, wired PoE, IP66 plastic housing, two-way audio, human detection, 2 IR + 2 white LEDs, red/blue warning lights and ONVIF support; it is positioned for office entrances and shop interiors (IP66 also allows outdoor use). RTSP path from the QuarkView fixed PoE camera family manual linked on the page (main stream only; default user admin with an empty password, default IP 192.168.1.10); the same manual states ONVIF and RTSP support. Lens, field of view, frame rate, codecs, sensor and dimensions are not published.",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/user={user}&password={pass}&channel=1&stream=0.sdp?",
+      "verified": false,
+      "notes": "Main-stream path from the QuarkView fixed PoE camera family manual (Xiongmai platform). The manual does not document a sub-stream; on Xiongmai firmware it is usually stream=1.sdp, but confirm via ONVIF discovery before using it for detect. Set a password first: the factory password is empty."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration; the manual lists ONVIF support but not the ONVIF port."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a generic ONVIF/RTSP camera (Xiongmai platform)."
+    }
+  }
+}

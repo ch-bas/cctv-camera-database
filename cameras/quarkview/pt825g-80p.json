@@ -1,0 +1,61 @@
+{
+  "id": "quarkview-pt825g-80p",
+  "brand": "QuarkView",
+  "model": "PT825G-80P",
+  "aliases": [
+    "QuarkView PT825G 8MP PoE Camera"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 8
+  },
+  "night_vision": {
+    "type": "hybrid"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "storage": {
+    "nvr_compatible": true
+  },
+  "features": [
+    "mechanical pan and tilt (no optical zoom)",
+    "human detection",
+    "infrared and white-light colour night modes",
+    "iCSee app (Android / iOS)"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "sources": [
+    "https://quarkview.com/products/8mp-360-outdoor-poe-camera-system-support-pan-control",
+    "https://quarkview.com/manuals/poe-pt-family-manual-en.pdf"
+  ],
+  "last_verified": "2026-10-28",
+  "release_notes": "Camera supplied in the official QuarkView PT825G 8MP PoE system with 8CH NVR (kit TA-6708KR-4-PT825G-80P, Shenzhen Kuake Trading Co., Ltd.); the kit page lists the camera model PT825G-80P at 8MP over wired PoE, with a built-in microphone and speaker (two-way talk), human detection, mechanical pan/tilt and infrared or white-light colour night modes. Pixel dimensions, lens, field of view, pan/tilt range, codecs, microSD capacity, IP rating and dimensions are not published for this variant. ONVIF/RTSP support and the RTSP path come from the linked PT825 PoE camera family manual (main stream only; default user admin with an empty password, default IP 192.168.1.10).",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/user={user}&password={pass}&channel=1&stream=0.sdp?",
+      "verified": false,
+      "notes": "Main-stream path from the QuarkView PT825 PoE family manual (Xiongmai/iCSee platform). The manual does not document a sub-stream; confirm one via ONVIF discovery before using it for detect. Set a password first: the factory password is empty."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration; the manual lists ONVIF support but not the ONVIF port."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a generic ONVIF/RTSP camera (Xiongmai/iCSee platform)."
+    }
+  }
+}
