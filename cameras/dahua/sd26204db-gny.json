@@ -1,0 +1,139 @@
+{
+  "id": "sd26204db-gny",
+  "brand": "Dahua",
+  "model": "SD26204DB-GNY",
+  "aliases": [
+    "DH-SD26204DB-GNY"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "ptz",
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sources": [
+    "https://www.dahuasecurity.com/kr/products/network-products/pt-cameras/ip-pt-3-series/sd2/sd26204db-gny",
+    "https://materialfile.dahuasecurity.com/uploads/soft/20260904/DH-SD26204DB-GNY_S0_datasheet_20260414.pdf"
+  ],
+  "last_verified": "2026-10-28",
+  "ndaa_compliant": false,
+  "release_notes": "Specs per official Dahua datasheet (DH-SD26204DB-GNY, 2MP 4x Starlight WizSense network PTZ). No IR or white-light illuminator is listed (starlight only), so night_vision.type is 'none' with the labelled Color/B/W min. illumination. Datasheet lists face detection/face track but not subject auto-tracking, so ptz.autotracking is omitted; ONVIF PTZ movement model is not stated.",
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12",
+    "aperture": "F1.6-F3.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "H 99.1-31.9 / V 53.4-18.0 / D 117.7-36.6",
+  "night_vision": {
+    "type": "none",
+    "min_lux": 0.0005,
+    "min_lux_color": 0.005
+  },
+  "power": {
+    "method": "12 VDC (±10%) 1 A / PoE (802.3af)",
+    "voltage": "12 VDC",
+    "consumption_w": 6.1
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "Micro SD up to 512 GB; FTP; NAS."
+  },
+  "ip_rating": "IP66",
+  "ik_rating": "IK10",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.265+",
+      "H.264",
+      "H.264+",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub2",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "features": [
+    "4x optical zoom (2.8-12 mm), 16x digital zoom",
+    "pan 0-355 deg up to 100 deg/s, tilt 0-90 deg",
+    "300 presets, 8 tours, 5 patterns",
+    "face detection / face track / snapshot",
+    "IVS perimeter protection with human/vehicle classification; SMD 3.0",
+    "DWDR, EIS, electronic defog",
+    "ONVIF Profile S/G/T/M; Pelco-P/D",
+    "6000 V lightning-proof"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "89 x 122 (diameter)",
+  "weight_g": 500,
+  "environment": [
+    "outdoor"
+  ],
+  "connectivity": [
+    "ethernet"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "rtmp",
+    "http",
+    "p2p"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 576,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP (main subtype=0 / sub subtype=1).",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "cloud_dependency": "local"
+}

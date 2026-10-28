@@ -1,0 +1,147 @@
+{
+  "id": "sd5a432xb-hnr-ac",
+  "brand": "Dahua",
+  "model": "SD5A432XB-HNR-AC",
+  "aliases": [
+    "DH-SD5A432XB-HNR-AC"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "ptz",
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP"
+  },
+  "sources": [
+    "https://www.dahuasecurity.com/tr/products/All-Products/PTZ-Cameras/WizSense-Series/SD5/4MP/SD5A432XB-HNR-AC",
+    "https://materialfile.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/SD5A432XB-HNR-AC_datasheet_20210824.pdf"
+  ],
+  "last_verified": "2026-10-28",
+  "ndaa_compliant": false,
+  "release_notes": "Specs per official Dahua datasheet (DH-SD5A432XB-HNR-AC, 4MP 32x Starlight IR WizSense network PTZ, 24 VAC version, Rev 001.001 2021). Datasheet states two-way audio via 1/1 audio I/O but no built-in mic/speaker. ONVIF PTZ movement model is not stated.",
+  "sensor": "1/2.8\" STARVIS CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.8-154",
+    "aperture": "F1.6-F4.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "H 55.81-2.37 / V 31.92-1.34 / D 63.71-2.71",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 150,
+    "min_lux": 0.0005,
+    "min_lux_color": 0.005
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "24 VAC 3 A (±25%) / PoE+ (802.3at)",
+    "voltage": "24 VAC",
+    "consumption_w": 22
+  },
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "Micro SD up to 512 GB; FTP; NAS."
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "rtmp",
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "audio": {
+    "two_way": true
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.265+",
+      "H.264",
+      "H.264+",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub2",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "features": [
+    "32x optical zoom (4.8-154 mm), 16x digital zoom",
+    "IR up to 150 m (4 IR), Starlight",
+    "deep-learning auto tracking and perimeter protection, face detection, SMD Plus",
+    "pan 360 deg endless up to 300 deg/s (preset 400 deg/s); tilt -15 to 90 deg",
+    "120 dB WDR, EIS",
+    "2 alarm in / 1 alarm out; 1 audio in / 1 audio out",
+    "ONVIF Profile S/G/T; Pelco-P/D",
+    "24 VAC (-AC) version with included 24 VAC/3 A adapter; PoE+",
+    "TVS 6000 V lightning protection"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "331.9 x 190.4 (diameter)",
+  "weight_g": 4700,
+  "environment": [
+    "outdoor"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 576,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP (main subtype=0 / sub subtype=1). PTZ: ONVIF movement model not stated on the datasheet.",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "cloud_dependency": "local"
+}

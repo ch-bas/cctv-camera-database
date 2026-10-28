@@ -1,0 +1,132 @@
+{
+  "id": "annke-c500d-i51hk",
+  "brand": "Annke",
+  "model": "C500D I51HK",
+  "aliases": [
+    "I51HK",
+    "AN-I51HK0102",
+    "AN-I51HK",
+    "3K Dual Light PoE Dome"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 3072,
+    "max_height": 1728,
+    "label": "3K (3072x1728)"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (fixed)",
+    "varifocal": false
+  },
+  "field_of_view_deg": "104 horizontal, 57 vertical (123 diagonal)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux_color": 0.01
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3072x1728",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1280x720",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "power": {
+    "method": "PoE (802.3af, max 9W) / DC 12V (max 7.5W)",
+    "consumption_w": 9,
+    "voltage": "12 VDC"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "http",
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "features": [
+    "3K (3072x1728) 16:9 PoE dome",
+    "Smart Dual-Light: IR up to 30 m, white light up to 30 m (switches to colour on human/vehicle detection)",
+    "Motion Detection 2.0 with human & vehicle classification",
+    "built-in microphone (G.711ulaw/AAC)",
+    "BLC, HLC, 3D DNR",
+    "1 polygon privacy mask",
+    "H.265+",
+    "IP67",
+    "ONVIF (Version 19.12) / RTSP"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "Ø121.5 x 97.6",
+  "weight_g": 570,
+  "markets": [
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Uses Hikvision protocol. ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile. Most Annke cameras use Hikvision protocol."
+    }
+  },
+  "cloud_dependency": "cloud-optional",
+  "sources": [
+    "https://www.annke.com/products/c500d",
+    "https://cdn.shopify.com/s/files/1/0110/6385/3156/files/I51HK.pdf"
+  ],
+  "release_notes": "Specs per official Annke datasheet (I51HK) and product page (C500D). The product page's Specifications tab shows an older 5MP 2560x1920 bullet spec and links a C500 (I51DL/I51DS) PDF; both were ignored in favour of the I51HK datasheet, which matches the page description (3072x1728@20fps, 30 m IR/white light). No microSD slot is stated, so onboard storage is omitted.",
+  "last_verified": "2026-10-28"
+}

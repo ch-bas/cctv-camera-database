@@ -1,0 +1,137 @@
+{
+  "id": "ipc-hdw2449f-as-ts",
+  "brand": "Dahua",
+  "model": "IPC-HDW2449F-AS-TS",
+  "aliases": [
+    "DH-IPC-HDW2449F-AS-TS",
+    "DHI-IPC-HDW2449F-AS-TS"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "turret",
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sources": [
+    "https://www.dahuasecurity.com/bd/products/All-Products/Network-Cameras/WizSense-2-Series/Smart-Dual-Light/DH-IPC-HDW2449F-AS-TS",
+    "https://materialfile.dahuasecurity.com/uploads/other/soft/20260520/DHI-IPC-HDW2449F-AS-TS_Datasheet.pdf"
+  ],
+  "last_verified": "2026-10-28",
+  "ndaa_compliant": false,
+  "release_notes": "Specs per official Dahua datasheet (DH-IPC-HDW2449F-AS-TS, 4MP Smart Dual Light fixed-focal eyeball, WizSense 2). Main stream 2688x1520 @ max 20 fps or 2560x1440 @ 25/30 fps; datasheet lists 2 streams. Alarm events reference an SD card but no max capacity is stated, so max_microsd_gb is omitted.",
+  "sensor": "1/2.9\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8; 3.6",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "2.8 mm: H 101 / V 54 / D 120; 3.6 mm: H 83 / V 43 / D 100",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "min_lux": 0.0006,
+    "min_lux_color": 0.006
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3af)",
+    "voltage": "12 VDC",
+    "consumption_w": 8.5
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.265+",
+      "H.264",
+      "H.264+",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "features": [
+    "Smart Dual Light: IR up to 30 m + warm light up to 30 m",
+    "IVS intrusion / tripwire with human/vehicle classification",
+    "SMD Plus",
+    "Smart H.265+ / H.264+, ROI",
+    "DWDR, 3D NR, HLC, BLC",
+    "built-in mic; 1 audio in / 1 audio out (RCA); 1 alarm in / 1 alarm out",
+    "ONVIF Profile S/G/T; RTSP; RTMP; P2P"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "103.2 x 109.9 (diameter)",
+  "weight_g": 240,
+  "environment": [
+    "outdoor"
+  ],
+  "ik_rating": "IK10",
+  "connectivity": [
+    "ethernet"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "rtmp",
+    "http",
+    "p2p"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 576,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP (main subtype=0 / sub subtype=1).",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "cloud_dependency": "local"
+}
