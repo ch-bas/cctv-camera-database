@@ -6,6 +6,19 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.32.0] — Unreleased
+
+### Added
+- **51 Imou cameras** (Imou now has 170), found by comparing imou.com's product catalogue with the dataset. They include:
+  - the 2MP and 3MP variants of the Bullet, Cruiser, Cell and Ranger lines (where the dataset had only the 4MP/5MP model)
+  - DK3, the PS-series bullets, turrets, PTZs and dual-lens cameras (PS2M, PS3D, PS3E, PS7F, PS70F, PS8D, PS8E)
+  - Rex, Rex 2D, Rex 3D and Rex VT
+  - the S21FA/S41FA PoE PTZs and T22EA/T42EA PoE turrets
+  - Doorbell Wired and the VDP7 2-wire video door phone
+
+  Specs come from Imou's own detail and specification pages and the datasheets they link. Model codes are recorded where Imou publishes them. RTSP/ONVIF configs are included only where the spec sheet lists ONVIF, using the Dahua path existing Imou records use (unverified).
+- **eufy Window Camera E10** (T8404121), from the official us.eufy.com spec table.
+
 ## [2.31.0] — Unreleased
 
 ### Added
