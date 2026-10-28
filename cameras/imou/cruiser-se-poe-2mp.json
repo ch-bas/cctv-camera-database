@@ -1,0 +1,102 @@
+{
+  "id": "imou-cruiser-se-poe-2mp",
+  "brand": "IMOU",
+  "model": "Cruiser SE PoE 2MP",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP/1080p"
+  },
+  "sensor": "1/2.9\" 2MP Progressive CMOS",
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 20,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6 / 6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "86 H / 45 V / 105 D (3.6mm); 51 H / 29 V / 59 D (6mm); pan 355 / tilt 0-90",
+  "night_vision": {
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "onvif"
+  ],
+  "ip_rating": "IP66",
+  "operating_temp_c": "-20 to 50",
+  "dimensions_mm": "120.7 x 136.2 x 183.3",
+  "weight_g": 390,
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "PoE pan/tilt (355 / 0-90)",
+    "spotlight",
+    "human detection",
+    "configurable detection region",
+    "8x digital zoom"
+  ],
+  "release_notes": "Specs per official Imou spec page (Cruiser SE PoE, 2MP; Thai-locale page with English spec table). Wired PoE version of the Cruiser SE (no Wi-Fi listed). Night-vision type not stated in the spec table (product page mentions a spotlight). Spec page lists ONVIF but not RTSP, so only onvif is recorded under protocols; the config RTSP path follows the Imou/Dahua convention and is unverified. No IPC model code on the page.",
+  "sources": [
+    "https://www.imou.com/th/product/detail/cruiser-se-poe",
+    "https://www.imou.com/th/product/specs/cruiser-se-poe"
+  ],
+  "last_verified": "2026-10-28",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF is listed for this model but the exact path is not independently verified on this SKU.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+    }
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "cloud_dependency": "cloud-optional"
+}

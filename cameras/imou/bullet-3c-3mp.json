@@ -1,0 +1,105 @@
+{
+  "id": "imou-bullet-3c-3mp",
+  "brand": "IMOU",
+  "model": "Bullet 3C 3MP",
+  "type": "bullet",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "3MP/2K"
+  },
+  "sensor": "1/2.8\" 3MP Progressive CMOS",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 3.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "104 H / 55 V / 124 D (2.8mm); 88 H / 44 V / 105 D (3.6mm)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "power": {
+    "method": "DC 12V/1A",
+    "voltage": "DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-30 to 50",
+  "dimensions_mm": "147.7 x 74.2 x 75.6",
+  "weight_g": 254,
+  "audio": {
+    "microphone": true,
+    "speaker": true
+  },
+  "features": [
+    "IR night vision (up to 30m)",
+    "IMOU SENSE AI human & vehicle detection",
+    "110 dB siren",
+    "8x digital zoom",
+    "Wi-Fi 6"
+  ],
+  "release_notes": "Specs per official Imou product page and spec page (Bullet 3C), which lists the 3MP 2304x1296 variant; the 5MP variant (IPC-S3DP-5M0WJ) is a separate record. Spec page lists ONVIF but not RTSP, so only onvif is recorded under protocols; the config RTSP path follows the Imou/Dahua convention and is unverified. No IPC model code for the 3MP variant on the page.",
+  "sources": [
+    "https://www.imou.com/en/product/detail/bullet3c",
+    "https://www.imou.com/en/product/specs/bullet3c"
+  ],
+  "last_verified": "2026-10-28",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF is listed for this model but the exact path is not independently verified on this SKU.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+    }
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "cloud_dependency": "cloud-optional"
+}

@@ -1,0 +1,119 @@
+{
+  "id": "imou-ps8d-3mp",
+  "brand": "IMOU",
+  "model": "PS8D 3MP",
+  "aliases": [
+    "IPC-PS8DP-3V0",
+    "IPC-PS8DN-3V0",
+    "PD2K-CMS/WL",
+    "PD2K-CMS/WL-28",
+    "IPC-PS8DP-3V0-JD"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "3MP/2K"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/3\" progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8/3.6",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "2.8mm: 96 H / 52 V / 111 D; 3.6mm: 78 H / 41 V / 91 D",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE or DC 12V/1A",
+    "consumption_w": 6
+  },
+  "dimensions_mm": "109.9 x 109.9 x 95.7",
+  "weight_g": 254,
+  "operating_temp_c": "-30 to 60",
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "PoE outdoor turret",
+    "built-in spotlights + red-blue warning lights",
+    "four-mode smart color night vision",
+    "IMOU SENSE human & vehicle detection",
+    "abnormal sound alarm",
+    "AOR (always-on-record) mode",
+    "built-in microphone"
+  ],
+  "release_notes": "Specs per official IMOU product page and datasheet (PS8D 3MP). The '-D' does not denote dual-lens. The Middle-East 'PS8D 3MP JD' page (IPC-PS8DP-3V0-JD) lists identical specs but omits the built-in mic. Frame rate stated as 'up to 25/30fps'.",
+  "sources": [
+    "https://www.imou.com/en/product/detail/ps8d-3mp",
+    "https://www.imou.com/en/product/specs/ps8d-3mp",
+    "https://static-website.imou.com/d069a0d0-3790-4785-b5dc-5be6daf0d474.pdf",
+    "https://www.imou.com/me/product/specs/ps8d-3mp-jd"
+  ],
+  "last_verified": "2026-10-28",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+    }
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "cloud_dependency": "cloud-optional"
+}
