@@ -1,0 +1,105 @@
+{
+  "id": "imou-a1-pro-3mp",
+  "brand": "IMOU",
+  "model": "A1 Pro 3MP",
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "3MP/2K"
+  },
+  "sensor": "1/3\" Progressive CMOS",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "91 H / 47 V / 107 D; pan 355 / tilt -5~80",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 10
+  },
+  "power": {
+    "method": "DC 5V/1A",
+    "voltage": "DC 5V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "cloud": true
+  },
+  "protocols": [
+    "onvif"
+  ],
+  "operating_temp_c": "-10 to 45",
+  "dimensions_mm": "77.4 x 77.4 x 106.2",
+  "weight_g": 197,
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "indoor pan/tilt (355 pan / -5~80 tilt)",
+    "dual-band Wi-Fi 6",
+    "smart color night vision",
+    "human, pet & abnormal-sound detection",
+    "one-touch call",
+    "8x digital zoom"
+  ],
+  "release_notes": "Specs per official Imou spec page (A1 Pro, DE site), which lists the 3MP 2304x1296 variant (the 4K variant is a separate record). The spec page lists ONVIF but not RTSP, so only onvif is recorded under protocols; the config RTSP path follows the Imou/Dahua convention and is unverified. Night vision is marketed as \"Intelligente Farbnachtsicht\" (smart color); 10m distance per spec. No IPC model code published on the page.",
+  "sources": [
+    "https://www.imou.com/de/product/detail/a1-pro",
+    "https://www.imou.com/de/product/specs/a1-pro"
+  ],
+  "last_verified": "2026-10-28",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF is listed for this model but the exact path is not independently verified on this SKU.",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+    }
+  },
+  "environment": [
+    "indoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "cloud_dependency": "cloud-optional"
+}

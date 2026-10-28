@@ -1,0 +1,112 @@
+{
+  "id": "imou-cruiser-2-3mp",
+  "brand": "IMOU",
+  "model": "Cruiser 2 3MP",
+  "type": "ptz",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "3MP/2K"
+  },
+  "sensor": "1/2.8\" 3MP Progressive CMOS",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "82 H / 42 V / 100 D; pan 0-340 / tilt 0-90",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "DC 12V/1A",
+    "voltage": "DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "onvif"
+  ],
+  "ip_rating": "IP66",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "110.4 x 128.8 x 132.7",
+  "weight_g": 370,
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "pan/tilt (340 / 0-90)",
+    "smart tracking",
+    "smart full-color night vision",
+    "110 dB siren",
+    "IMOU SENSE human & vehicle detection",
+    "8x digital zoom",
+    "Wi-Fi 6"
+  ],
+  "release_notes": "Specs per official Imou product page and spec page (Cruiser 2), which lists the 3MP 2304x1296 variant; the 5MP variant (IPC-GS7EP-5M0WE) is a separate record. Spec page lists ONVIF but not RTSP, so only onvif is recorded under protocols; the config RTSP path follows the Imou/Dahua convention and is unverified. No IPC model code for the 3MP variant on the page.",
+  "sources": [
+    "https://www.imou.com/en/product/detail/cruiser2",
+    "https://www.imou.com/en/product/specs/cruiser2"
+  ],
+  "last_verified": "2026-10-28",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF is listed for this model but the exact path is not independently verified on this SKU.",
+      "onvif_port": 80,
+      "two_way_audio": true
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+    }
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "cloud_dependency": "cloud-optional"
+}

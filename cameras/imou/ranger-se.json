@@ -1,0 +1,116 @@
+{
+  "id": "imou-ranger-se",
+  "brand": "IMOU",
+  "model": "Ranger SE",
+  "aliases": [
+    "IPC-A23"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" 2MP progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "83 H / 44 V / 99 D; pan 0-355 / tilt -10 to 80",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "DC 5V/1A",
+    "consumption_w": 5,
+    "voltage": "DC 5V"
+  },
+  "dimensions_mm": "80 x 80 x 110.4",
+  "weight_g": 192,
+  "operating_temp_c": "-10 to 45",
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "indoor pan/tilt",
+    "Wi-Fi (IEEE802.11b/g/n)",
+    "smart tracking",
+    "privacy mode",
+    "human detection",
+    "abnormal sound alarm",
+    "built-in siren",
+    "two-way audio"
+  ],
+  "release_notes": "Specs per official IMOU product page and datasheet (Ranger SE). 1080p (2MP) base model of the Ranger SE line (the 4MP model is a separate record). Frame rate stated as 'up to 25/30fps'.",
+  "sources": [
+    "https://www.imou.com/en/product/detail/ranger-se",
+    "https://www.imou.com/en/product/specs/ranger-se",
+    "https://static-website.imou.com/3bb839d7-cdb0-417c-85c8-ce33e8480423.pdf"
+  ],
+  "last_verified": "2026-10-28",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+    }
+  },
+  "environment": [
+    "indoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "cloud_dependency": "cloud-optional"
+}
