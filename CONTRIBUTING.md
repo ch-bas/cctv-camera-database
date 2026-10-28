@@ -91,7 +91,7 @@ Only five fields are required. Everything else is optional — partial entries a
 }
 ```
 
-A complete entry looks like this:
+A fuller entry looks like this:
 
 ```json
 {
@@ -100,74 +100,94 @@ A complete entry looks like this:
   "model":         "RLC-823A",
   "aliases":       ["Reolink 4K Smart Spotlight Camera"],
   "type":          "bullet",
-  "connectivity":  ["poe", "wifi"],
+  "connectivity":  ["ethernet"],
+  "power_source":  ["poe", "dc"],
   "release_year":  2023,
-  "resolution":    { "megapixels": 8, "label": "4K UHD" },
+  "resolution":    { "megapixels": 8, "max_width": 3840, "max_height": 2160, "label": "4K UHD" },
+  "video":         { "codecs": ["H.265", "H.264"], "max_fps": 25 },
   "sensor":        "1/2.7\" CMOS",
   "lens":          { "count": 1, "focal_length_mm": "2.8", "aperture": "F1.6", "varifocal": false },
-  "field_of_view_deg": "110 horizontal",
+  "field_of_view_deg": "110",
   "night_vision":  { "type": "color", "range_m": 20 },
   "power":         { "method": "PoE (802.3af) / DC 12V" },
   "storage":       { "onboard": true, "max_microsd_gb": 512, "nvr_compatible": true, "cloud": false },
   "protocols":     ["onvif", "rtsp"],
   "ip_rating":     "IP67",
   "audio":         { "microphone": true, "speaker": true, "two_way": true },
+  "environment":   ["outdoor"],
   "features":      ["no subscription", "person/vehicle/animal/package AI", "active deterrence"],
-  "msrp_usd":      79.99,
   "markets":       ["US", "CA", "AU", "EU"],
-  "sources":       ["https://reolink.com/product/rlc-823a/"]
+  "sources":       ["https://reolink.com/product/rlc-823a/"],
+  "last_verified": "2026-10-26"
 }
 ```
 
+(Illustrative only: take every value from the camera's own datasheet.)
+
 ### Field reference
+
+The authoritative definition is [`schema/camera.schema.json`](schema/camera.schema.json); unknown fields are rejected. The most used fields:
 
 | Field | Required | Type | Notes |
 |-------|----------|------|-------|
 | `id` | ✅ | string | lowercase slug, e.g. `reolink-rlc-823a`. Must be unique. |
 | `brand` | ✅ | string | Canonical brand name, e.g. `Hikvision` |
 | `model` | ✅ | string | Exact model number from the manufacturer |
-| `type` | ✅ | enum | `bullet` `dome` `turret` `ptz` `dual-lens` `panoramic` `fisheye` `covert` `box` |
-| `resolution` | ✅ | object | `{ megapixels: 8, label: "4K UHD" }` |
-| `aliases` | — | string[] | Alternate model names, marketing names, regional SKUs |
-| `connectivity` | — | enum[] | `poe` `wifi` `ethernet` `battery` `4g` `analog` |
+| `type` | ✅ | enum | `bullet` `dome` `turret` `ptz` `dual-lens` `fisheye` `covert` `box` `panoramic` `floodlight` `doorbell` |
+| `resolution` | ✅ | object | `{ megapixels, max_width, max_height, label }`, e.g. `{ "megapixels": 8, "label": "4K UHD" }` |
+| `aliases` | — | string[] | Other order numbers for the same camera (lens size, colour, regional or option suffixes) and marketing names |
+| `connectivity` | — | enum[] | How the camera sends data: `ethernet` `wifi` `4g` `5g` `coax`. Power over Ethernet goes in `power_source`, not here. |
+| `power_source` | — | enum[] | `poe` `dc` `usb` `battery` `solar` `ac-mains` (use `ac-mains` for 24 VAC) |
+| `video.codecs` | — | enum[] | `H.264` `H.264+` `H.265` `H.265+` `MJPEG` `JPEG` `AV1` `Ultra265` `MPEG-4` |
+| `video.max_fps` | — | integer | Max frame rate at the highest resolution |
+| `video.streams` | — | object[] | `{ name: main\|sub\|third, resolution: "WxH", fps, codec }` as listed in the datasheet |
 | `release_year` | — | integer | Year first sold |
 | `sensor` | — | string | e.g. `1/2.7" CMOS` |
-| `lens.focal_length_mm` | — | string | e.g. `2.8` or `2.7-13.5 (5x motorized varifocal)` |
+| `lens.count` | — | integer | Number of lenses |
+| `lens.focal_length_mm` | — | string | e.g. `2.8` or `2.7-13.5` |
 | `lens.aperture` | — | string | e.g. `F1.6` |
 | `lens.varifocal` | — | boolean | |
-| `field_of_view_deg` | — | string | e.g. `110 horizontal` |
+| `field_of_view_deg` | — | string | Horizontal FOV without the `°` sign, e.g. `110` or `102-31` |
 | `night_vision.type` | — | enum | `ir` `color` `hybrid` `none` |
-| `night_vision.range_m` | — | integer | Manufacturer-stated range in metres |
-| `night_vision.min_lux` |  — |  number | minimum illumination for usable image (B&W or unspecified) |
-| `night_vision.min_lux_color` | — | number |  minimum illumination for usable color image |
+| `night_vision.range_m` | — | integer | Manufacturer-stated range in metres (the maximum of a range) |
+| `night_vision.min_lux` | — | number | Black-and-white minimum illumination, **only if the datasheet labels it B/W**. Never record "0 lux with IR". |
+| `night_vision.min_lux_color` | — | number | Colour minimum illumination, only if labelled colour |
+| `ptz.autotracking` | — | boolean | Camera-side (motorised) subject tracking |
+| `ptz.onvif_ptz` | — | enum | `relative` `absolute` `continuous` `none` (only if stated) |
 | `power.method` | — | string | e.g. `PoE (802.3af) / DC 12V` |
+| `power.consumption_w` | — | number | Maximum power draw in watts |
+| `power.poe_class` | — | integer | `0`–`8`, only if the class is stated |
 | `storage.onboard` | — | boolean | Has a microSD slot |
 | `storage.max_microsd_gb` | — | integer | |
 | `storage.nvr_compatible` | — | boolean | Works with third-party NVRs |
-| `storage.cloud` | — | boolean | Has cloud storage option |
-| `protocols` | — | enum[] | `onvif` `rtsp` `rtmp` `http` `p2p` |
+| `storage.cloud` | — | boolean | Has a cloud storage option |
+| `protocols` | — | enum[] | `onvif` `rtsp` `rtmp` `http` `p2p` `hdcvi` `mxpeg` |
 | `ip_rating` | — | string | e.g. `IP67`, `IP66` |
-| `ik_rating` | — | enum[] | `IK00` `IK01` `IK02` `IK03` `IK04` `IK05` `IK06` `IK07` `IK08` `IK09` `IK10` `IK11` |
-| `audio.microphone` | — | boolean | |
-| `audio.speaker` | — | boolean | |
-| `audio.two_way` | — | boolean | |
-| `features` | — | string[] | Free-text list of notable features |
-| `msrp_usd` | — | number | Approximate price in USD |
-| `msrp_eur` | — | number | Approximate price in EUR |
-| `msrp_gbp` | — | number | Approximate price in GBP |
-| `msrp_aud` | — | number | Approximate price in AUD |
-| `msrp_inr` | — | number | Approximate price in INR |
-| `msrp_aed` | — | number | Approximate price in AED |
-| `msrp_cad` | — | number | Approximate price in CAD |
-| `markets` | — | string[] | ISO country codes + region tags: `US` `UK` `EU` `DE` `FR` `IN` `AU` `AE` `SA` `MENA` `LATAM` etc. |
-| `sources` | — | string[] | Datasheet / retailer URLs — please include at least one |
+| `ik_rating` | — | enum | `IK00` … `IK11` |
+| `audio.microphone` / `audio.speaker` / `audio.two_way` | — | boolean | |
+| `environment` | — | enum[] | `indoor` `outdoor` (a weatherproof IP rating means `outdoor`) |
+| `operating_temp_c` | — | string | e.g. `-30 to 60` |
+| `dimensions_mm` | — | string | as stated, e.g. `167.5 x 74.5 x 74.5` |
+| `weight_g` | — | number | Net weight in grams |
+| `network.ethernet_speed_mbps` | — | enum | `10` `100` `1000` `2500` `10000` |
+| `ndaa_compliant` | — | boolean | Only with an official basis (maker statement, compliance list, or Section 889-named brand); otherwise omit |
+| `cloud_dependency` | — | enum | `local` `cloud-optional` `cloud-required` |
+| `status` | — | enum | `available` `announced` `discontinued` |
+| `generation` | — | string | Product line, e.g. `Wisenet X` |
+| `soc` | — | string | System-on-chip, only if officially stated |
+| `features` | — | string[] | Short factual list of notable features |
+| `markets` | — | string[] | Country codes and region tags: `US` `UK` `EU` `DE` `FR` `IN` `AU` `AE` `SA` `MENA` `LATAM` `global` etc. |
+| `sources` | — | string[] | Official datasheet / product page URLs (at least one) |
+| `last_verified` | — | string | `YYYY-MM-DD` date the record was last checked against its sources |
+| `release_notes` | — | string | Short note on the source and any caveats |
+| `configs` | — | object | Frigate / Home Assistant / Blue Iris settings (see below) |
 
 ### ID conventions
 
 - Always lowercase
 - Hyphens only — no underscores, dots, or spaces
 - Format: `<brand-slug>-<model-slug>`
-- Regional variants: append `-<region>`, e.g. `hikvision-ds-2cd2387g2-lu-uk`
+- Regional variants with different hardware: append `-<region>`, e.g. `hikvision-ds-2cd2387g2-lu-uk` (packaging-only variants are aliases, not new IDs)
 - Generation variants: append `-v2`, `-gen2`, `-s2`, etc.
 
 ### Naming the file
@@ -187,9 +207,9 @@ cameras/hikvision/ds-2cd2387g2-lu.json   →   id: "hikvision-ds-2cd2387g2-lu"
 
 ## What makes a good entry
 
-- **Source it.** Always include at least one URL in `sources` — official datasheet preferred, reputable retailer accepted
+- **Source it officially.** Always include at least one URL in `sources` pointing at the manufacturer's datasheet, manual or product page. Retailer listings can corroborate a value but are never the only source
 - **Don't guess specs.** If you're unsure, leave the field out — a partial entry is better than a wrong one
-- **One file per variant.** Regional editions (different firmware, power supply, certifications) should be separate entries with a market suffix in the ID
+- **One record per camera, variants as aliases.** Order numbers that differ only in lens size, housing colour, PAL/NTSC, mount or a regional/option suffix go in `aliases` of one record. Use a separate record (with a suffix in the ID) only when the hardware differs: different sensor, resolution, lens type, housing, power or certification
 - **No marketing copy in `features`.** Keep features factual and terse: `"no subscription"` not `"experience true security freedom with zero monthly fees"`
 - **Auto-tracking → set `ptz.autotracking`.** If a `ptz` / `dual-lens` / `panoramic` camera does onboard auto-tracking (it physically moves to follow a subject), set `"ptz": { "autotracking": true }` — the build **fails** if such a camera mentions auto-tracking only in `features`. If the tracking is *digital*/e-PTZ (software crop, no motor), don't set the flag; describe it as digital in `features` instead.
 

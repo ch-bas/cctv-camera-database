@@ -9,7 +9,7 @@
  * hardware; it does not help access it.
  *
  * Usage:  node scripts/gen-model-enrichment.js
- * Output: data/model-enrichment.json (compact JSON, ~1 MB)
+ * Output: data/model-enrichment.json (compact JSON, ~10 MB)
  */
 const fs = require("fs");
 const path = require("path");

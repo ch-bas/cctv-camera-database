@@ -205,7 +205,7 @@ RTSP_PATTERNS_DATE=$(date +%Y-%m-%d) node scripts/build-rtsp-patterns.js
 
 ### Local QA tool
 
-`tools/qa.html` is a zero-dependency, offline browser tool for **previewing and sanity-checking camera data before you open a PR** — a wide grid view across the dataset, gap highlighting, outlier flags, and in-browser schema validation (the schema is compiled to `tools/qa-validator.js` via `node tools/build-qa-validator.js`, regenerate after any schema change). Open it from the repo root (it reads `../data/cameras.json`, or use the file picker). See [`tools/plan-demo-and-tools.md`](tools/plan-demo-and-tools.md).
+`tools/qa.html` is a zero-dependency, offline browser tool for **previewing and sanity-checking camera data before you open a PR** — a wide grid view across the dataset, gap highlighting, outlier flags, and in-browser schema validation (the schema is compiled to `tools/qa-validator.js` via `node tools/build-qa-validator.js`, regenerate after any schema change). Serve the repo root with any static server (e.g. `python3 -m http.server`) and open `tools/qa.html`; it loads `../docs/cameras.json` (falling back to `../data/cameras.json`), or pick a file with the file picker, which also works when the page is opened straight from disk. See [`tools/plan-demo-and-tools.md`](tools/plan-demo-and-tools.md).
 
 ### Verifying Frigate configs
 
