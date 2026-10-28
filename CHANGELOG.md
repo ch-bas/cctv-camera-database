@@ -6,7 +6,29 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
-## [2.30.0] — Unreleased
+## [2.31.0] — Unreleased
+
+### Added
+- **QuarkView, new brand: 22 cameras** (Shenzhen Kuake Trading Co., Ltd.), starting from the TA-XM-605GP-AI-80N requested in #421. The others are PoE bullets and domes (605GP, 608GP, 629EBP, DM13EP, DM27SP), PT825-family PoE and Wi-Fi pan-tilt and dual-lens cameras, Wi-Fi, battery and solar cameras, and two Tuya cameras. Specs come from QuarkView's own product pages and family manuals. RTSP paths are included only where a QuarkView manual documents them (the Xiongmai main-stream path); app-only cameras are marked `cloud-required`.
+- **41 cameras found by comparing makers' catalogues with the dataset:**
+  - Milesight: 15 D2-series mini bullets and domes (PD2 / FPD2), from their own datasheets (NDAA per the datasheet)
+  - Dahua: 13, including the WizColor Lite PRO line, WizSense 2 TS cameras, Lite and HDCVI full-colour models, and SD2/SD4/SD5 PTZs
+  - Swann: EliteX 6K bullet, AdvancedX bullet and dome, MaxRanger4K
+  - Uniview: the HC191 ANPR checkpoint units
+  - Tiandy: 2; Annke: 2 (C500D I51HK, I81HZ thermal); Wyze Bulb Cam Pan Color; Reolink OMVI 2i Ultra (announced); Lorex IC301
+
+  Every value comes from the maker's own product page or datasheet. Catalogue entries that are variants of existing records, accessories, subscription plans, unreleased pages, or products whose page has no spec table were left out.
+
+### Changed
+- **ACTi RTSP port:** 22 ACTi cameras now use port 554 instead of 7070: A214, A426, A711, A713, A826, A951, A952, A956, Q450, Q83, Z32, Z33, Z34, Z36, Z37, Z41, Z42, Z71, Z710, Z84, Z94 and Z95. ACTi's own firmware manuals give two defaults: 7070 for most firmware generations (V, A, S and C series) and 554 for newer models and the Z-series OEM line. Only records whose own manual states 554 changed; every other ACTi record keeps 7070. Configs a user has verified are never changed by bulk corrections (none of these had one). The brand-level RTSP pattern for ACTi now says 7070, with 554 for the newer lines.
+- **CONTRIBUTING.md:**
+  - The field reference is rebuilt from the schema. The removed `msrp_*` price fields are gone, the type, connectivity, protocol and IK enums are corrected, and 19 undocumented fields are now documented.
+  - The rules now match how records are built: official sources only (retailers only corroborate), one record per camera with packaging variants as aliases, and min-lux only when labelled.
+- **README:** the QA tool section now gives the correct data path.
+
+---
+
+## [2.30.0] — 2026-10-25
 
 ### Added
 - **UNICAM Systems, new brand: 53 cameras** from the Indian maker's official catalogue at unicamsystems.com. They break down as:
