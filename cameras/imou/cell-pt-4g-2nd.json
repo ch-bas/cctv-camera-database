@@ -36,22 +36,23 @@
   "lens": {
     "count": 1,
     "focal_length_mm": "3.6",
-    "varifocal": false
+    "varifocal": false,
+    "aperture": "F1.6"
   },
   "field_of_view_deg": "88 H / 45 V / 107 D; pan 330 / tilt 90",
   "night_vision": {
-    "type": "ir",
+    "type": "hybrid",
     "range_m": 20
   },
   "power": {
-    "method": "15000mAh rechargeable battery (up to ~365 days); optional 3W solar; DC 5V/2A",
+    "method": "10000mAh rechargeable battery; optional solar; DC 5V/2A",
     "consumption_w": 3.5
   },
   "storage": {
     "onboard": true,
     "max_microsd_gb": 256,
     "nvr_compatible": false,
-    "cloud": true
+    "cloud": false
   },
   "protocols": [
     "http"
@@ -73,12 +74,13 @@
     "siren/alarm",
     "two-way talk"
   ],
-  "release_notes": "2nd-generation Cell PT 4G, distinct from the 1st-gen (IPC-K9EP-3T0TE-EU). Marketed as '2K QHD' but the 2304x1296 sensor is ~3MP. Specs from the 2nd-gen manual + distributor listings.",
+  "release_notes": "2nd-generation Cell PT 4G, distinct from the 1st-gen (IPC-K9EP-3T0TE-EU). Marketed as '2K QHD' but the 2304x1296 sensor is ~3MP. Specs from the 2nd-gen manual + distributor listings. Corrected 2026-10-30 against the official Imou spec sheet: battery 15000mAh → 10000mAh (spec page and datasheet), night_vision.type ir → hybrid (2 white-light lamps + 1 IR lamp), added aperture F1.6, storage.cloud true → false (datasheet: \"Cloud Storage: Not Support\"), added model code IPC-B7ED-3T1TEH. Official sources disagree on night-vision range (20 m page / 25 m datasheet), microSD (512/256 GB), weight (737.7/640 g) and power (<3.5/<4.9 W); the page values are kept.",
   "sources": [
     "https://www.imou.com/en/product/detail/cell-pt4g-2nd",
-    "https://www.imou.com/en/product/specs/cell-pt4g-2nd"
+    "https://www.imou.com/en/product/specs/cell-pt4g-2nd",
+    "https://static-website.imou.com/47b9f4c8-d6cc-4ead-b689-38c20048fe15.pdf"
   ],
-  "last_verified": "2026-07-05",
+  "last_verified": "2026-10-30",
   "status": "available",
   "configs": {
     "frigate": {
@@ -93,5 +95,8 @@
     "global"
   ],
   "ndaa_compliant": false,
-  "cloud_dependency": "cloud-required"
+  "cloud_dependency": "cloud-required",
+  "aliases": [
+    "IPC-B7ED-3T1TEH"
+  ]
 }

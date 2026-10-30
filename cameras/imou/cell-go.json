@@ -13,10 +13,10 @@
     "max_height": 1296,
     "label": "2K/3MP"
   },
-  "field_of_view_deg": "108h",
+  "field_of_view_deg": "98 H / 54 V / 121 D",
   "night_vision": {
     "type": "color",
-    "range_m": 10
+    "range_m": 7
   },
   "power": {
     "method": "Rechargeable battery / solar",
@@ -24,9 +24,9 @@
   },
   "storage": {
     "onboard": true,
-    "max_microsd_gb": 256,
     "nvr_compatible": false,
-    "cloud": true
+    "cloud": true,
+    "notes": "4GB internal eMMC storage (no microSD slot)"
   },
   "protocols": [
     "http"
@@ -36,9 +36,9 @@
   "dimensions_mm": "63 x 88 x 42",
   "weight_g": 210,
   "audio": {
-    "microphone": false,
-    "speaker": false,
-    "two_way": false
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
   },
   "features": [
     "100% wire-free battery camera",
@@ -51,13 +51,15 @@
   "sources": [
     "https://www.imou.com/en/product/detail/cell-go",
     "https://www.imou.com/en/product/specs/cell-go",
-    "https://www.wifi-stock.com/details/imou-3mp-h-265-wi-fi-battery-camera-cell-go-ipc-b32p-v2.html"
+    "https://www.wifi-stock.com/details/imou-3mp-h-265-wi-fi-battery-camera-cell-go-ipc-b32p-v2.html",
+    "https://static-website.imou.com/e5d2c3e2-b30b-43ed-94e8-baae66699338.pdf"
   ],
   "power_source": [
     "battery",
     "solar"
   ],
   "aliases": [
+    "IPC-B32",
     "IPC-B32P-V2",
     "IMOU Cell Go"
   ],
@@ -67,14 +69,14 @@
     "focal_length_mm": "2.8",
     "varifocal": false
   },
-  "release_notes": "Cell Go (IPC-B32P-V2): a 3MP Wi-Fi battery camera. Corrected from wrong 4MP resolution and a wrong '4G' connectivity claim (Cell Go is Wi-Fi; the 4G battery model is Cell PT 4G).",
+  "release_notes": "Cell Go (IPC-B32P-V2): a 3MP Wi-Fi battery camera. Corrected from wrong 4MP resolution and a wrong '4G' connectivity claim (Cell Go is Wi-Fi; the 4G battery model is Cell PT 4G). Corrected 2026-10-30 against the official Imou spec sheet: field_of_view_deg \"108h\" -> 98 H / 54 V / 121 D; night_vision.range_m 10 -> 7; audio mic/speaker/two-way false -> true; storage microSD up to 256 GB -> 4 GB internal eMMC (no microSD slot on the sheet); added H.265 up to 15 fps and model code IPC-B32.",
   "configs": {
     "frigate": {
       "notes": "100% wire-free battery camera — it sleeps between events and does not expose a continuous local RTSP stream, so Frigate/local-NVR use is not supported. Recording is via the Imou Life app + cloud and on-device microSD.",
       "verified": false
     }
   },
-  "last_verified": "2026-07-05",
+  "last_verified": "2026-10-30",
   "status": "available",
   "environment": [
     "outdoor"
@@ -83,5 +85,11 @@
     "global"
   ],
   "ndaa_compliant": false,
-  "cloud_dependency": "cloud-required"
+  "cloud_dependency": "cloud-required",
+  "video": {
+    "codecs": [
+      "H.265"
+    ],
+    "max_fps": 15
+  }
 }

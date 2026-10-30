@@ -39,7 +39,7 @@
     "focal_length_mm": "3.6",
     "varifocal": false
   },
-  "field_of_view_deg": "88-91 H / 47 V / 107 D; pan 355 / tilt -10~70",
+  "field_of_view_deg": "88 H / 47 V / 107 D; pan 355 / tilt -10~70",
   "night_vision": {
     "type": "ir",
     "range_m": 10
@@ -58,7 +58,8 @@
     "cloud": true
   },
   "protocols": [
-    "http"
+    "http",
+    "onvif"
   ],
   "audio": {
     "microphone": true,
@@ -77,12 +78,13 @@
     "microSD up to 512GB + NVR + cloud"
   ],
   "release_year": 2026,
-  "release_notes": "New (~2026) Wi-Fi 6 successor to the older 2.4GHz Ranger RC (IPC-GK2CP-3C0WR/4C0WR/5C0WR). Sold in 3MP (2304x1296), 4MP (2560x1440) and 5MP (2880x1620) variants; the 5MP is used here as the top SKU. RTSP/ONVIF is not documented for this new SKU (the older Ranger RC supported Dahua RTSP).",
+  "release_notes": "New (~2026) Wi-Fi 6 successor to the older 2.4GHz Ranger RC (IPC-GK2CP-3C0WR/4C0WR/5C0WR). Sold in 3MP (2304x1296), 4MP (2560x1440) and 5MP (2880x1620) variants; the 5MP is used here as the top SKU. RTSP/ONVIF is not documented for this new SKU (the older Ranger RC supported Dahua RTSP). Corrected 2026-10-30 against the official Imou spec sheet: FOV \"88-91 H\" → 88/47/107 (5MP-R1 datasheet), protocols add onvif (certification \"CE, Onvif\"), ptz.autotracking true (smart tracking).",
   "sources": [
     "https://www.imou.com/en/product/detail/ranger-rc-r1",
-    "https://www.imou.com/en/product/specs/ranger-rc-r1"
+    "https://www.imou.com/en/product/specs/ranger-rc-r1",
+    "https://static-website.imou.com/31a64e3b-6e40-46af-aab8-b082ffc1da03.pdf"
   ],
-  "last_verified": "2026-07-05",
+  "last_verified": "2026-10-30",
   "status": "available",
   "configs": {
     "frigate": {
@@ -94,5 +96,8 @@
     "global"
   ],
   "ndaa_compliant": false,
-  "cloud_dependency": "cloud-required"
+  "cloud_dependency": "cloud-required",
+  "ptz": {
+    "autotracking": true
+  }
 }

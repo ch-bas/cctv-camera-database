@@ -2,7 +2,7 @@
   "id": "imou-rex-3d-r1-5mp",
   "brand": "IMOU",
   "model": "Rex 3D-R1 5MP",
-  "type": "turret",
+  "type": "ptz",
   "environment": [
     "indoor"
   ],
@@ -15,7 +15,7 @@
   ],
   "resolution": {
     "megapixels": 5,
-    "max_width": 2688,
+    "max_width": 2880,
     "max_height": 1620,
     "label": "5MP"
   },
@@ -24,36 +24,36 @@
       "H.265",
       "H.264"
     ],
-    "max_fps": 30,
+    "max_fps": 20,
     "streams": [
       {
         "name": "main",
-        "resolution": "2688x1620",
-        "fps": 30,
+        "resolution": "2880x1620",
+        "fps": 20,
         "codec": "H.265"
       }
     ]
   },
-  "sensor": "1/2.8\" CMOS",
+  "sensor": "1/3\" Progressive CMOS",
   "lens": {
     "count": 1,
     "focal_length_mm": "3.6",
     "varifocal": false
   },
-  "field_of_view_deg": "77 H / 40 V / 91 D; pan 355 / tilt 0~90",
+  "field_of_view_deg": "88 H / 47 V / 107 D; pan 355 / tilt 0~90",
   "night_vision": {
     "type": "hybrid",
     "range_m": 15
   },
   "power": {
-    "method": "DC 5V/1.5A; <5W",
+    "method": "DC 5V/1A; <5W",
     "consumption_w": 5
   },
   "operating_temp_c": "-10 to 45",
   "dimensions_mm": "90 x 90 x 107.4",
   "storage": {
     "onboard": true,
-    "max_microsd_gb": 256,
+    "max_microsd_gb": 512,
     "nvr_compatible": true,
     "cloud": true
   },
@@ -68,20 +68,22 @@
   },
   "features": [
     "indoor pan/tilt",
-    "IR night vision",
+    "smart full-color night vision (auto IR→colour)",
     "human & pet detection",
     "customizable siren",
-    "8x/16x digital zoom",
+    "8x digital zoom",
     "two-way talk",
-    "ONVIF / NVR / cloud storage"
+    "ONVIF / NVR / cloud storage",
+    "smart tracking",
+    "dual-band Wi-Fi 6 (2.4/5 GHz)"
   ],
-  "release_notes": "'-R1' is a refreshed revision of the Rex 3D 5MP (base model IPC-GS2DP-5K0W); the R1's own model code was not found and retailers conflate the two, so listed specs fall back to the base Rex 3D. Sensor conflicts across sources (1/2.8\" vs 1/3\"); the R1 refresh may add full-color night vision and a larger microSD — verify against the official datasheet.",
+  "release_notes": "'-R1' is a refreshed revision of the Rex 3D 5MP (base model IPC-GS2DP-5K0W); the R1's own model code was not found and retailers conflate the two, so listed specs fall back to the base Rex 3D. Sensor conflicts across sources (1/2.8\" vs 1/3\"); the R1 refresh may add full-color night vision and a larger microSD — verify against the official datasheet. Corrected 2026-10-30 against the official Imou spec sheet: record carried base Rex 3D values; per the Rex 3D 5MP-R1 datasheet: type turret → ptz (Wi-Fi P&T camera, smart tracking), resolution 2688x1620 → 2880x1620, sensor 1/2.8\" → 1/3\", FOV 77/40/91 → 88/47/107, max fps 30 → 20, microSD 256 → 512 GB, power DC 5V/1.5A → 5V/1A, IR-only/16x zoom feature claims replaced by smart full-colour night vision / 8x zoom, added dual-band Wi-Fi 6.",
   "sources": [
     "https://www.imou.com/en/product/detail/rex3d-r1-5mp",
     "https://www.imou.com/en/product/specs/rex3d-r1-5mp",
     "https://static-website.imou.com/187a55aa-91ec-41f7-a52b-056951e30226.pdf"
   ],
-  "last_verified": "2026-09-02",
+  "last_verified": "2026-10-30",
   "status": "available",
   "configs": {
     "frigate": {
@@ -106,5 +108,8 @@
   ],
   "weight_g": 195,
   "ndaa_compliant": false,
-  "cloud_dependency": "cloud-optional"
+  "cloud_dependency": "cloud-optional",
+  "ptz": {
+    "autotracking": true
+  }
 }

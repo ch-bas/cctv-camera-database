@@ -4,6 +4,7 @@
   "model": "Bullet 2 4MP",
   "type": "bullet",
   "connectivity": [
+    "wifi",
     "ethernet"
   ],
   "release_year": 2023,
@@ -13,20 +14,20 @@
     "max_height": 1440,
     "label": "4MP"
   },
-  "field_of_view_deg": "107h",
+  "field_of_view_deg": "104 H / 56 V / 124 D (2.8mm); 86 H / 44 V / 103 D (3.6mm); 53 H / 29 V / 62 D (6mm)",
   "night_vision": {
     "type": "hybrid",
     "range_m": 30
   },
   "power": {
-    "method": "PoE / DC 12V",
+    "method": "DC 12V 1A",
     "consumption_w": 7
   },
   "storage": {
     "onboard": true,
     "max_microsd_gb": 256,
     "nvr_compatible": true,
-    "cloud": false
+    "cloud": true
   },
   "protocols": [
     "onvif",
@@ -37,24 +38,28 @@
   "dimensions_mm": "147.7 x 74.2 x 74.2",
   "weight_g": 357,
   "audio": {
-    "microphone": false,
-    "speaker": false,
-    "two_way": false
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
   },
   "features": [
-    "IMOU Bullet 2 4MP PoE outdoor bullet",
-    "AI human/vehicle",
-    "30m IR",
+    "IMOU Bullet 2 4MP Wi-Fi outdoor bullet",
+    "dual-antenna Wi-Fi + 100Mbps Ethernet port",
+    "smart color night vision (30m)",
+    "built-in spotlight",
+    "110 dB siren",
+    "human detection",
     "H.265",
     "ONVIF/RTSP",
     "IP67"
   ],
   "sources": [
     "https://www.imou.com/en/product/detail/bullet2",
-    "https://www.wifi-stock.com/details/imou-4mp-h-265-bullet-poe-camera-ipc-f42eap.html"
+    "https://www.wifi-stock.com/details/imou-4mp-h-265-bullet-poe-camera-ipc-f42eap.html",
+    "https://www.imou.com/en/product/specs/bullet2",
+    "https://static-website.imou.com/de4599b4-da04-4694-950c-d7c7f68397d6.pdf"
   ],
   "power_source": [
-    "poe",
     "dc"
   ],
   "configs": {
@@ -75,19 +80,20 @@
     }
   },
   "aliases": [
-    "IPC-F42EAP",
+    "IPC-F42FE",
+    "IPC-F42FE-D",
     "IPC-F42FEP",
     "IMOU Bullet 2 4MP"
   ],
-  "sensor": "1/2.7\" progressive CMOS",
+  "sensor": "1/2.7\" 4 Megapixel Progressive CMOS",
   "lens": {
     "count": 1,
-    "focal_length_mm": "2.8",
+    "focal_length_mm": "2.8 / 3.6 / 6",
     "aperture": "F1.6",
     "varifocal": false
   },
-  "release_notes": "Bullet 2 4MP. Wi-Fi variant is IPC-F42FEP(-D); the PoE variant (matching this entry) is IPC-F42EAP. Night vision is smart dual-mode (IR + full-color spotlight).",
-  "last_verified": "2026-07-05",
+  "release_notes": "Bullet 2 4MP Wi-Fi bullet (IPC-F42FE / IPC-F42FE-D). Night vision is smart dual-mode (IR + full-color spotlight). Corrected 2026-10-30 against the official Imou spec sheet: the record had been built as a PoE/Ethernet-only variant; the official Bullet 2 4MP (IPC-F42FE) is Wi-Fi + Ethernet with DC 12V 1A power and no PoE, so connectivity [ethernet] -> [wifi, ethernet], power_source [poe, dc] -> [dc], audio none -> mic + speaker + two-way, cloud false -> true, field_of_view_deg 107h -> per-lens 104/86/53 H, added max_fps 30 and codecs, and removed the alias IPC-F42EAP (not a Bullet 2 code).",
+  "last_verified": "2026-10-30",
   "status": "available",
   "environment": [
     "outdoor"
@@ -96,5 +102,12 @@
     "global"
   ],
   "ndaa_compliant": false,
-  "cloud_dependency": "cloud-optional"
+  "cloud_dependency": "cloud-optional",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30
+  }
 }

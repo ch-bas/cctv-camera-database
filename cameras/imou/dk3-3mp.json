@@ -7,7 +7,8 @@
   ],
   "type": "bullet",
   "connectivity": [
-    "wifi"
+    "wifi",
+    "ethernet"
   ],
   "power_source": [
     "dc"
@@ -27,24 +28,27 @@
       {
         "name": "main",
         "resolution": "2304x1296",
-        "codec": "H.265"
+        "codec": "H.265",
+        "fps": 20
       }
-    ]
+    ],
+    "max_fps": 20
   },
   "sensor": "1/2.8\" CMOS",
   "lens": {
     "count": 1,
-    "focal_length_mm": "3.6",
+    "focal_length_mm": "2.8 / 3.6",
     "varifocal": false
   },
-  "field_of_view_deg": "104 diagonal",
+  "field_of_view_deg": "2.8mm: 98 H / 54 V / 121 D; 3.6mm: 82 H / 44 V / 104 D",
   "night_vision": {
     "type": "ir",
     "range_m": 30
   },
   "power": {
-    "method": "DC power adapter",
-    "consumption_w": 6
+    "method": "DC 12V/0.5A",
+    "consumption_w": 6,
+    "voltage": "DC 12V"
   },
   "dimensions_mm": "147.7 x 74.2 x 74.2",
   "weight_g": 230,
@@ -62,8 +66,8 @@
   "ip_rating": "IP67",
   "audio": {
     "microphone": true,
-    "speaker": true,
-    "two_way": true
+    "speaker": false,
+    "two_way": false
   },
   "features": [
     "outdoor fixed bullet",
@@ -74,12 +78,14 @@
     "NVR/cloud/microSD storage",
     "Alexa"
   ],
-  "release_notes": "DK3 (IPC-DK3-3H1WY): fixed outdoor bullet — NOT an indoor pan/tilt. 2MP and 4MP variants also exist. Two-way audio/Ethernet not confirmed for this SKU.",
+  "release_notes": "DK3 (IPC-DK3-3H1WY): fixed outdoor bullet — NOT an indoor pan/tilt. 2MP and 4MP variants also exist. Two-way audio/Ethernet not confirmed for this SKU. Corrected 2026-10-30 against the official Imou spec sheet: audio speaker/two-way true -> false (built-in mic only); connectivity wifi -> wifi + ethernet (1 x 100Mbps port); field_of_view_deg \"104 diagonal\" -> 2.8mm 98 H / 54 V / 121 D, 3.6mm 82 H / 44 V / 104 D; lens 3.6 -> 2.8 or 3.6 mm; power -> DC 12V/0.5A; added max 20 fps.",
   "sources": [
     "https://www.imou.com/en/product/detail/dk3",
-    "https://www.flipkart.com/imou-dk3-3mp-bullet-ip67-wi-fi-camera-human-detection-security/p/itmdd274b6cbe0d7"
+    "https://www.flipkart.com/imou-dk3-3mp-bullet-ip67-wi-fi-camera-human-detection-security/p/itmdd274b6cbe0d7",
+    "https://www.imou.com/en/product/specs/dk3",
+    "https://static-website.imou.com/52641fe6-941c-4a92-b3ce-8a337f67c05f.pdf"
   ],
-  "last_verified": "2026-07-05",
+  "last_verified": "2026-10-30",
   "status": "available",
   "configs": {
     "frigate": {
@@ -106,5 +112,9 @@
     "global"
   ],
   "ndaa_compliant": false,
-  "cloud_dependency": "cloud-optional"
+  "cloud_dependency": "cloud-optional",
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  }
 }
