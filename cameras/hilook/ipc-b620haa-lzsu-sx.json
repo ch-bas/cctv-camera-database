@@ -1,0 +1,130 @@
+{
+  "id": "hilook-ipc-b620haa-lzsu-sx",
+  "brand": "HiLook",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "cloud_dependency": "local",
+  "last_verified": "2026-10-28",
+  "model": "IPC-B620HAA-LZSU/SX",
+  "aliases": [
+    "IPC-B620HAA-LZSU/SX(2.8-12mm)"
+  ],
+  "type": "bullet",
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "video": {
+    "codecs": [
+      "H.265+",
+      "H.265",
+      "H.264+",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30
+      },
+      {
+        "name": "sub",
+        "resolution": "640x480",
+        "fps": 30
+      }
+    ]
+  },
+  "sensor": "1/2.9\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-12",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "99 to 30 horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 50,
+    "min_lux_color": 0.003
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V",
+    "consumption_w": 12.9,
+    "voltage": "12 VDC ± 25%",
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "Smart Hybrid Light 3.0 (IR + white light, up to 50 m)",
+    "Live Guard: strobe light flashing (white / red-blue, configurable)",
+    "two-way audio (built-in mic + speaker, 10 m / 60 dB)",
+    "motorized varifocal lens 2.8-12 mm",
+    "audio line in/out and 1 alarm in / 1 alarm out",
+    "microSD up to 512 GB",
+    "Digital WDR",
+    "IP67"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "251 x 86.7 x 83.3",
+  "weight_g": 785,
+  "sources": [
+    "https://assets.hikvision.com/prd/normal/all/doc/sm000113464/IPC-B620HAA-LZSU_SX_Datasheet_20261022.pdf"
+  ],
+  "release_notes": "Specs per official HiLook datasheet (IPC-B620HAA-LZSU_SX_Datasheet_20261022.pdf). /SX variant with Live Guard strobe (white / red-blue) and built-in speaker; distinct from the plain IPC-B620HAA-LZU record. Adds audio line in/out and 1 alarm in/out (-S).",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "HiLook (Hikvision OEM); ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "HiLook uses the Hikvision protocol - select the 'Hikvision' profile."
+    }
+  }
+}
