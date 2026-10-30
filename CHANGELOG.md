@@ -6,7 +6,12 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
-## [2.31.0] — Unreleased
+## [2.31.1] — Unreleased
+
+### Changed
+- **Tenda CP7 RTSP (#424):** the documented path is `rtsp://<ip>:8554/profile0` (main) and `/profile1` (sub). A user reported that their CP7 serves the main stream at `rtsp://<ip>:554/ch=1?subtype=0` instead, which is the path Tenda documents for the CP3 v3 and CH3; it is likely a newer V2.x revision. This is recorded as a community note, and the Frigate notes now give both paths. The config stays unverified.
+
+## [2.31.0] — 2026-10-30
 
 ### Added
 - **QuarkView, new brand: 22 cameras** (Shenzhen Kuake Trading Co., Ltd.), starting from the TA-XM-605GP-AI-80N requested in #421. The others are PoE bullets and domes (605GP, 608GP, 629EBP, DM13EP, DM27SP), PT825-family PoE and Wi-Fi pan-tilt and dual-lens cameras, Wi-Fi, battery and solar cameras, and two Tuya cameras. Specs come from QuarkView's own product pages and family manuals. RTSP paths are included only where a QuarkView manual documents them (the Xiongmai main-stream path); app-only cameras are marked `cloud-required`.

@@ -40,5 +40,13 @@
 - https://www.tendacn.com/us/product/specification/793529395552325
 - https://static.tenda.com.cn/document/2026/05/11/700de615e8414aaca5a1810de5104147/CP7V2.1_Datesheet.pdf
 
+## Community notes (unverified)
+
+*Reported by users. Not from the datasheet, not verified by the project.*
+
+- The documented main-stream path rtsp://<ip>:8554/profile0 did not work on the reporter's CP7; the main stream was reachable at rtsp://<ip>:554/ch=1?subtype=0 instead (the path Tenda documents for the CP3 v3 and CH3). Possibly a CP7 V2.x hardware or firmware revision.
+  
+  rtsp · reported by anonymous-web · 2026-10-29 · [source](https://github.com/ch-bas/cctv-camera-database/issues/424)
+
 ---
 *Auto-generated from tenda-cp7.json — do not edit by hand.*
