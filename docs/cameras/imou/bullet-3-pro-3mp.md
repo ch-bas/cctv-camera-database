@@ -1,6 +1,6 @@
 # IMOU Bullet 3 Pro 3MP
 
-*Also known as: IPC-S3EN-3V0W*
+*Also known as: IPC-S3EP-3V0W, IPC-S3EN-3V0W, S3EP-3V0W*
 
 | Field | Spec |
 |-------|------|
@@ -8,9 +8,10 @@
 | Model | Bullet 3 Pro 3MP |
 | Type | bullet |
 | Connectivity | wifi, ethernet |
-| Resolution | 2K (3MP, 1920×1080) |
+| Resolution | 3MP (3MP, 2304×1296) |
 | Sensor | 1/2.9" Progressive CMOS |
 | Lens | 1× 2.8 or 3.6mm F1.6 |
+| Field of view | 2.8mm: 96 H / 52 V / 111 D; 3.6mm: 78 H / 41 V / 91 D° |
 | Night vision | hybrid (25m) |
 | Power | DC 12V/1A; <9W |
 | Storage | microSD ≤ 512GB, NVR |
@@ -33,6 +34,7 @@
 
 - https://www.imou.com/en/support/product-manual
 - https://static-website.imou.com/69d15e55-067f-4595-afbd-943e1e60057f.pdf
+- https://www.imou.com/en/product/specs/bullet3-pro
 
 ---
 *Auto-generated from imou-bullet-3-pro-3mp.json — do not edit by hand.*

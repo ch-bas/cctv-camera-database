@@ -1,6 +1,6 @@
 # IMOU Titan Pro 6MP
 
-*Also known as: IPC-U7LP-6V0NE*
+*Also known as: IPC-U7LP-6V0NE, IPC-U7LN-6V0NE*
 
 | Field | Spec |
 |-------|------|
@@ -11,10 +11,10 @@
 | Resolution | 6MP/3K (6MP, 3200×1800) |
 | Sensor | 1/1.8" CMOS |
 | Lens | 1× 3.6mm F1.0 |
-| Field of view | pan 340 / tilt 0-90° |
+| Field of view | 89 H / 47 V / 107 D; pan 340 / tilt 0-90° |
 | Night vision | hybrid (30m) |
-| Power | PoE or DC 12V |
-| Storage | NVR |
+| Power | PoE or DC 12V/1A |
+| Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
 | Two-way audio | Yes |
 | Operating temp | -30 to 60°C |
@@ -23,7 +23,7 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| main | 3200x1800 | — | H.265 |
+| main | 3200x1800 | 20 | H.265 |
 
 ## Features
 
@@ -32,7 +32,7 @@
 - Aurora full-color night vision
 - auto human/vehicle tracking
 - red-blue warning lights
-- spotlight + siren
+- spotlight + 125 dB siren
 - dual-band Wi-Fi 6
 - AOR adaptive recording
 - people counting
@@ -43,6 +43,8 @@
 - https://www.imou.com/en/product/detail/titan-pro
 - https://www.megateh.eu/products/imou-cloud-cameras/imou-titan-pro-6mp-ptz-camera-with-aurora-color-night-vision
 - https://static-website.imou.com/673b89be-cf64-4782-b9cf-30f4779c1d81.pdf
+- https://www.imou.com/en/product/specs/titan-pro
+- https://static-website.imou.com/e997cf47-4525-4a82-b760-65d68bc0d8ea.pdf
 
 ---
 *Auto-generated from imou-titan-pro-6mp.json — do not edit by hand.*

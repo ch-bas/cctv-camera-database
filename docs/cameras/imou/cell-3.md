@@ -10,9 +10,9 @@
 | Sensor | 1/2.8" Progressive CMOS |
 | Lens | 1× 2.8mm F2.0 |
 | Field of view | 98 H / 54 V / 121 D° |
-| Night vision | hybrid |
+| Night vision | hybrid (15m) |
 | Power | Rechargeable battery; USB-C DC 5V/2A, power bank, or Imou solar panel |
-| Storage | microSD ≤ 512GB |
+| Storage | microSD ≤ 256GB |
 | Protocols | http |
 | IP rating | IP66 |
 | Two-way audio | Yes |
@@ -37,6 +37,7 @@
 
 - https://www.imou.com/en/product/detail/cell3
 - https://www.imou.com/en/product/specs/cell3
+- https://static-website.imou.com/7bea24d5-b381-4411-a117-e16b378c8224.pdf
 
 ---
 *Auto-generated from imou-cell-3.json — do not edit by hand.*

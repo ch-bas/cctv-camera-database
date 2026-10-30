@@ -1,5 +1,7 @@
 # IMOU Turret
 
+*Also known as: IPC-T26E*
+
 | Field | Spec |
 |-------|------|
 | Brand | IMOU |
@@ -33,6 +35,7 @@
 ## Sources
 
 - https://www.imou.com/en/product/specs/turret
+- https://static-website.imou.com/02451b42-3a11-4846-b767-7c1077cdf39d.pdf
 
 ---
 *Auto-generated from imou-turret.json — do not edit by hand.*

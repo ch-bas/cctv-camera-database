@@ -1,5 +1,7 @@
 # IMOU Bulb Cam 2C 3MP
 
+*Also known as: IPC-K6C-3H1WEB, K6C-3H1WEB*
+
 | Field | Spec |
 |-------|------|
 | Brand | IMOU |
@@ -34,6 +36,7 @@
 ## Sources
 
 - https://www.imou.com/en/product/specs/bulb-cam2c
+- https://static-website.imou.com/e32cbd42-01ab-461c-91ff-3971a6bf4661.pdf
 
 ---
 *Auto-generated from imou-bulb-cam2c-3mp.json — do not edit by hand.*

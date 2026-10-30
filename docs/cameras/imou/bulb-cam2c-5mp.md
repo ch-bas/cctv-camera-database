@@ -1,5 +1,7 @@
 # IMOU Bulb Cam 2C 5MP
 
+*Also known as: IPC-K6C-5H1WEB*
+
 | Field | Spec |
 |-------|------|
 | Brand | IMOU |
@@ -34,6 +36,7 @@
 ## Sources
 
 - https://www.imou.com/en/product/specs/bulb-cam2c
+- https://static-website.imou.com/adefbf5b-4b97-4aee-8494-cffc94fcec7d.pdf
 
 ---
 *Auto-generated from imou-bulb-cam2c-5mp.json — do not edit by hand.*

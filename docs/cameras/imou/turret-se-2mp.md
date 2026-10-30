@@ -1,5 +1,7 @@
 # IMOU Turret SE 2MP
 
+*Also known as: IPC-T22E, IPC-T22E-C, T22EA, IPC-T22EA*
+
 | Field | Spec |
 |-------|------|
 | Brand | IMOU |
@@ -31,6 +33,10 @@
 ## Sources
 
 - https://www.imou.com/en/product/specs/turret-se
+- https://static-website.imou.com/0859eba6-b788-40e3-9580-240a727684eb.pdf
+- https://www.imou.com/en/product/detail/t22ea-t42ea
+- https://www.imou.com/en/product/specs/t22ea-t42ea
+- https://static-website.imou.com/e157b273-af05-45d6-809e-536c34afb249.pdf
 
 ---
 *Auto-generated from imou-turret-se-2mp.json — do not edit by hand.*

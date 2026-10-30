@@ -1,0 +1,110 @@
+{
+  "id": "milesight-ms-c5475-pd2",
+  "brand": "Milesight",
+  "model": "MS-C5475-PD2",
+  "ndaa_compliant": true,
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2960,
+    "max_height": 1664,
+    "label": "5MP"
+  },
+  "sensor": "1/2.65\" Progressive Scan CMOS",
+  "video": {
+    "codecs": [
+      "H.264",
+      "H.264+",
+      "H.265",
+      "H.265+",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2960x1664",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "112.1",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.008
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "power": {
+    "method": "PoE (802.3af)",
+    "consumption_w": 3.4
+  },
+  "power_source": [
+    "poe"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024
+  },
+  "audio": {
+    "microphone": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "rtmp",
+    "http"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "Φ106 x 76.5",
+  "weight_g": 410,
+  "features": [
+    "120dB Super WDR",
+    "AI human/vehicle detection",
+    "people counting"
+  ],
+  "release_notes": "Specs per official Milesight datasheet (AI Weather-proof Mini Dome Network Camera (PD2)). D2-series (PD2) generation with a new sensor (vs the earlier -PD line), distinct hardware. Weight/dimensions are the cable-out version (junction-box version: approx. 600g, Φ108 x 96.5 mm).",
+  "sources": [
+    "https://resource.milesight.com/milesight/security/document/datasheet/ipc/series-d2/milesight-ai-weather-proof-mini-dome-network-camera-ndaa-pd2-datasheet-en.pdf"
+  ],
+  "last_verified": "2026-10-28",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/main",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/sub",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Milesight /main + /sub RTSP; ONVIF port 80."
+    },
+    "home_assistant": {
+      "integration": "onvif"
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF"
+    }
+  },
+  "cloud_dependency": "local",
+  "network": {
+    "ethernet_speed_mbps": 100
+  }
+}

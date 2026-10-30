@@ -1,0 +1,82 @@
+{
+  "id": "quarkview-xm-pt825d-80p",
+  "brand": "QuarkView",
+  "model": "XM-PT825D-80P",
+  "aliases": [
+    "PT825D-80P",
+    "QuarkView PT825D Dual-Lens PoE Camera"
+  ],
+  "type": "dual-lens",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "label": "8MP combined (two 4MP lenses)"
+  },
+  "video": {
+    "codecs": [
+      "H.265"
+    ]
+  },
+  "lens": {
+    "count": 2
+  },
+  "night_vision": {
+    "type": "hybrid"
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "PoE"
+  },
+  "storage": {
+    "max_microsd_gb": 128
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "near and far lens views with picture-in-picture",
+    "remote pan / tilt",
+    "human tracking",
+    "infrared and white-light colour night modes",
+    "iCSee app (Android / iOS)"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "sources": [
+    "https://quarkview.com/products/8x-zoom-dual-lens-poe-cameras-waterproof-pt825d",
+    "https://quarkview.com/manuals/poe-pt-family-manual-en.pdf"
+  ],
+  "last_verified": "2026-10-28",
+  "release_notes": "Specs per the official QuarkView product page (Shenzhen Kuake Trading Co., Ltd.); the page states two lenses labelled 4MP each (8MP combined sensor count, explicitly not one 4K stream), near/far picture-in-picture views (no continuous optical-zoom ratio despite the 8X naming), remote pan/tilt, human tracking, wired PoE, IP66, two-way audio, H.265, microSD up to 128GB and ONVIF support. RTSP path from the QuarkView PT825 PoE camera family manual linked on the page (main stream only; default user admin with an empty password, default IP 192.168.1.10); the same manual states ONVIF and RTSP support. Focal lengths, field of view, sensor and dimensions are not published.",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/user={user}&password={pass}&channel=1&stream=0.sdp?",
+      "verified": false,
+      "notes": "Main-stream path from the QuarkView PT825 PoE camera family manual (Xiongmai platform). The manual does not document a sub-stream; on Xiongmai firmware it is usually stream=1.sdp, but confirm via ONVIF discovery before using it for detect. Set a password first: the factory password is empty."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration; the manual lists ONVIF support but not the ONVIF port."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a generic ONVIF/RTSP camera (Xiongmai platform)."
+    }
+  }
+}

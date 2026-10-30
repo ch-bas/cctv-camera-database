@@ -1,5 +1,7 @@
 # TOGUARD SC30
 
+*Also known as: Campark SC30, SC30XXHEU*
+
 | Field | Spec |
 |-------|------|
 | Brand | TOGUARD |
@@ -30,6 +32,7 @@
 ## Sources
 
 - https://toguardshop.com/products/toguard-sc30-4mp-light-bulb-security-camera-wireless-cam-with-color-night-vision-auto-motion-tracking-and-alexa
+- https://www.campark.net/products/campark-sc30-4mp-light-bulb-security-camera-wireless-cam-with-color-night-vision-auto-motion-tracking-and-alexa
 
 ---
 *Auto-generated from toguard-sc30.json — do not edit by hand.*

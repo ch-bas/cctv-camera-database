@@ -1,5 +1,7 @@
 # IMOU AOV PT 4K
 
+*Also known as: IPC-SA7E-T-8M1T3, IPC-SA7E-T-8M0T3*
+
 | Field | Spec |
 |-------|------|
 | Brand | IMOU |
@@ -37,6 +39,7 @@
 
 - https://www.imou.com/en/product/detail/aov-pt4k
 - https://www.imou.com/en/product/specs/aov-pt4k
+- https://static-website.imou.com/931fe591-41c8-422a-b81d-7b20e2936d45.pdf
 
 ---
 *Auto-generated from imou-aov-pt-4k.json — do not edit by hand.*

@@ -9,8 +9,9 @@
 | Type | ptz |
 | Connectivity | wifi, ethernet |
 | Resolution | 4K (8MP, 3840×2160) |
+| Sensor | 1/2.7" Progressive CMOS |
 | Lens | 1× 3.6mm |
-| Field of view | 91 H; pan 355 / tilt -5~80° |
+| Field of view | 89 H / 45 V / 105 D; pan 355 / tilt -5 to 80° |
 | Night vision | hybrid (20m) |
 | Power | DC 5V via USB-C |
 | Storage | microSD ≤ 512GB, NVR |
@@ -22,7 +23,7 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| main | 3840x2160 | — | H.265 |
+| main | 3840x2160 | 15 | H.265 |
 
 ## Features
 

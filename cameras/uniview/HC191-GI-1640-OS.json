@@ -1,0 +1,118 @@
+{
+  "id": "uniview-hc191-gi-1640-os",
+  "brand": "Uniview",
+  "ndaa_compliant": true,
+  "model": "HC191-GI-1640-OS",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "ac-mains"
+  ],
+  "resolution": {
+    "megapixels": 9,
+    "max_width": 4096,
+    "max_height": 2160,
+    "label": "9MP (4096x2160)"
+  },
+  "sensor": "1.1\" 9MP Global Shutter CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "16-40",
+    "aperture": "F1.5",
+    "varifocal": true
+  },
+  "field_of_view_deg": "H: 50.1 to 21.2, V: 34.4 to 14.7, D: 60.3 to 25.3",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 50,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4096x2160",
+        "fps": 50
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080"
+      },
+      {
+        "name": "third",
+        "resolution": "720x576"
+      }
+    ]
+  },
+  "power": {
+    "method": "100-240 V AC (50/60 Hz)",
+    "consumption_w": 16
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "rtmp",
+    "http"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256
+  },
+  "ip_rating": "IP65",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "211.7(W) x 137.2(H) x 575(D)",
+  "weight_g": 5670,
+  "network": {
+    "ethernet_speed_mbps": 1000,
+    "ethernet_ports": 2
+  },
+  "features": [
+    "9MP IR checkpoint (ANPR) camera unit, 1.1\" global-shutter sensor",
+    "built-in motorized varifocal 16-40mm lens, P-iris",
+    "built-in IR illuminator (3 beads) up to 30m; ICR with daytime polarizer",
+    "optional external all-in-one light (IR flash, white flash, IR strobe)",
+    "ANPR: plate recognition, vehicle type (10), colour (12) and 133-manufacturer recognition; up to 3 lanes",
+    "speeding capture 5-300 km/h with external radar; radar or video vehicle detection",
+    "4 violation images merged into one composite; JPEG 4096x2160 snapshots",
+    "8GB eMMC + microSD up to 256GB; ANR with Uniview NVR",
+    "I/O: 4 sync outputs (switch), 4 TTL outputs or 4 inputs, 1 relay, 3x RS485, 1x RS232, USB 3.0",
+    "ONVIF, SDK; up to 32 users"
+  ],
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s0/live",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/unicast/c1/s1/live",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Uniview RTSP: main /unicast/c1/s0/live, sub /unicast/c1/s1/live. ONVIF on port 80."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration; default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP paths: /unicast/c1/s0/live (main), /unicast/c1/s1/live (sub)."
+    }
+  },
+  "sources": [
+    "https://sgcdn.uniview.com/Products/Intelligent_Traffic/Intelligent_Traffic_Products/ITS_ANPR_Camera/HC191-GI-1640-OS/",
+    "https://ubox-eu.oss-eu-central-1.aliyuncs.com/datacenter/doc/0ae5850e-c02f-43a5-8a87-7fe7ae5dfe4b/b0404dcb-d8ab-49ca-8f26-23173f8d51ee.pdf"
+  ],
+  "last_verified": "2026-10-28",
+  "markets": [
+    "global"
+  ],
+  "cloud_dependency": "local",
+  "release_notes": "Specs per official Uniview datasheet (UNV HC191 9MP IR Checkpoint Camera Unit, HC191-GI-1640-OS). Datasheet also lists 3840x2336@50fps. Min. illumination stated only as '0.001 Lux' (not labelled colour/B&W), so not recorded. RTSP/ONVIF are listed in the datasheet; the /unicast path follows the brand convention and is unverified on this ITS unit."
+}

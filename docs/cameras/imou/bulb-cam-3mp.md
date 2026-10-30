@@ -1,5 +1,7 @@
 # IMOU Bulb Cam 3MP
 
+*Also known as: IPC-GS6D-3M0WEB*
+
 | Field | Spec |
 |-------|------|
 | Brand | IMOU |
@@ -33,6 +35,7 @@
 ## Sources
 
 - https://www.imou.com/en/product/specs/bulb-cam
+- https://static-website.imou.com/0749b508-e94a-40f9-a570-9651ffcb3e98.pdf
 
 ---
 *Auto-generated from imou-bulb-cam-3mp.json — do not edit by hand.*

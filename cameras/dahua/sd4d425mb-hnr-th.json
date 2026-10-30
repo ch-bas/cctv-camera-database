@@ -1,0 +1,143 @@
+{
+  "id": "sd4d425mb-hnr-th",
+  "brand": "Dahua",
+  "model": "SD4D425MB-HNR-TH",
+  "aliases": [
+    "DH-SD4D425MB-HNR-TH"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "ptz",
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sources": [
+    "https://www.dahuasecurity.com/bd/products/All-Products/PTZ-Cameras/WizSense-Series/SD4/DH-SD4D425MB-HNR-TH",
+    "https://materialfile.dahuasecurity.com/uploads/other/soft/20260521/DH-SD4D425MB-HNR-TH_S0_datasheet_202507122.pdf"
+  ],
+  "last_verified": "2026-10-28",
+  "ndaa_compliant": false,
+  "release_notes": "Specs per official Dahua datasheet (DH-SD4D425MB-HNR-TH, 4MP 25x Smart Dual Light WizSense network PTZ, Rev 002 2025). Distinct spec from the existing SD4D425MB-HNR record (4.8-125 mm F1.5 lens, 2688x1520 max, Auto Tracking 3.0). ONVIF PTZ movement model is not stated.",
+  "sensor": "1/2.8\" STARVIS CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.8-125",
+    "aperture": "F1.5-F3.8",
+    "varifocal": true
+  },
+  "field_of_view_deg": "H 52.2-2.74 / V 30.81-1.54 / D 64.2-3.23",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 100,
+    "min_lux": 0.0003,
+    "min_lux_color": 0.003
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "12 VDC 3 A / PoE+ (802.3at)",
+    "voltage": "12 VDC",
+    "consumption_w": 23
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "Micro SD up to 512 GB; FTP/SFTP; NAS."
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.265+",
+      "H.264",
+      "H.264+",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub2",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "features": [
+    "25x optical zoom (4.8-125 mm), 16x digital zoom",
+    "Smart Dual Light: IR 100 m + warm light 100 m",
+    "Auto Tracking 3.0, Auto Patrol",
+    "pan 360 deg endless up to 200 deg/s; tilt -15 to 90 deg",
+    "IVS perimeter protection, face detection, SMD 4.0, AcuPick",
+    "120 dB WDR, EIS",
+    "1 audio in / 1 audio out; 2 alarm in / 1 alarm out",
+    "ONVIF Profile S/G/T/M",
+    "TVS 6000 V lightning protection"
+  ],
+  "operating_temp_c": "-40 to 70",
+  "dimensions_mm": "270.4 x 160 (diameter)",
+  "weight_g": 2400,
+  "environment": [
+    "outdoor"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 576,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP (main subtype=0 / sub subtype=1). PTZ: ONVIF movement model not stated on the datasheet.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "connectivity": [
+    "ethernet"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "rtmp",
+    "http"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "cloud_dependency": "local"
+}

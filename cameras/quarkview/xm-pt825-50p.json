@@ -1,0 +1,74 @@
+{
+  "id": "quarkview-xm-pt825-50p",
+  "brand": "QuarkView",
+  "model": "XM-PT825-50P",
+  "aliases": [
+    "PT825-50P",
+    "QuarkView PT825 5MP Outdoor PoE Camera"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "label": "5MP"
+  },
+  "night_vision": {
+    "type": "hybrid"
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "PoE"
+  },
+  "storage": {
+    "max_microsd_gb": 64
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "355-degree pan / 90-degree tilt",
+    "digital zoom (ratio not specified)",
+    "human detection and tracking",
+    "infrared and white-light colour night modes",
+    "iCSee app (Android / iOS)"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "sources": [
+    "https://quarkview.com/products/5mp-poe-camera-outdoor-using-support-cloud-storage",
+    "https://quarkview.com/manuals/poe-pt-family-manual-en.pdf"
+  ],
+  "last_verified": "2026-10-28",
+  "release_notes": "Specs per the official QuarkView product page (Shenzhen Kuake Trading Co., Ltd.); the page states a 5MP label, wired PoE, IP66, two-way audio, 355/90-degree pan/tilt, digital zoom (no ratio, no optical zoom), human tracking, microSD up to 64GB and ONVIF support. RTSP path from the QuarkView PT825 PoE camera family manual linked on the page (main stream only; default user admin with an empty password, default IP 192.168.1.10); the same manual states ONVIF and RTSP support. Lens, field of view, frame rate, codecs, IR range, sensor and dimensions are not published.",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/user={user}&password={pass}&channel=1&stream=0.sdp?",
+      "verified": false,
+      "notes": "Main-stream path from the QuarkView PT825 PoE camera family manual (Xiongmai platform). The manual does not document a sub-stream; on Xiongmai firmware it is usually stream=1.sdp, but confirm via ONVIF discovery before using it for detect. Set a password first: the factory password is empty."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration; the manual lists ONVIF support but not the ONVIF port."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a generic ONVIF/RTSP camera (Xiongmai platform)."
+    }
+  }
+}

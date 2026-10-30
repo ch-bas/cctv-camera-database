@@ -1,0 +1,119 @@
+{
+  "id": "imou-rex2d-3mp",
+  "brand": "IMOU",
+  "model": "Rex 2D 3MP",
+  "aliases": [
+    "IPC-GK2D-3C0W"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "3MP/2K"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "83 H / 46 V / 102 D; pan 0-355 / tilt 0-90",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "DC 5V/1A",
+    "consumption_w": 3.4,
+    "voltage": "DC 5V"
+  },
+  "dimensions_mm": "90 x 90 x 104",
+  "weight_g": 206,
+  "operating_temp_c": "-10 to 45",
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "indoor pan/tilt",
+    "Wi-Fi (IEEE802.11b/g/n, 2.4GHz) + 100Mbps Ethernet port",
+    "smart tracking",
+    "auto-cruise",
+    "privacy mode",
+    "human detection",
+    "abnormal sound alarm",
+    "built-in siren",
+    "digital zoom",
+    "two-way audio"
+  ],
+  "release_notes": "Specs per official IMOU product page and datasheet (Rex 2D 3MP). Frame rate stated as 'up to 25/30fps'.",
+  "sources": [
+    "https://www.imou.com/en/product/detail/rex2d",
+    "https://www.imou.com/en/product/specs/rex2d",
+    "https://static-website.imou.com/107e7e7a-90ec-4a09-9b10-69076df4fa8a.pdf"
+  ],
+  "last_verified": "2026-10-28",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+    }
+  },
+  "environment": [
+    "indoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "cloud_dependency": "cloud-optional"
+}

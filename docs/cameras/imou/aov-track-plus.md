@@ -1,5 +1,7 @@
 # IMOU AOV Track Plus
 
+*Also known as: IPC-V7M-U-8X0S2/FSP14*
+
 | Field | Spec |
 |-------|------|
 | Brand | IMOU |
@@ -31,6 +33,7 @@
 ## Sources
 
 - https://www.imou.com/en/product/specs/aov-track-plus
+- https://static-website.imou.com/3320842b-5b90-4862-8eb4-5af5520ee643.pdf
 
 ---
 *Auto-generated from imou-aov-track-plus.json — do not edit by hand.*

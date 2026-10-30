@@ -1,5 +1,7 @@
 # Amcrest IP8M-B2886EW-AI
 
+*Also known as: IP8M-TB2886EW-AI*
+
 | Field | Spec |
 |-------|------|
 | Brand | Amcrest |

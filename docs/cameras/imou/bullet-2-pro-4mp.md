@@ -1,6 +1,6 @@
 # IMOU Bullet 2 Pro 4MP
 
-*Also known as: IPC-F46FEP, IPC-F26FEP (2MP)*
+*Also known as: IPC-F46FE-D, IPC-F46FEP*
 
 | Field | Spec |
 |-------|------|
@@ -9,9 +9,9 @@
 | Type | bullet |
 | Connectivity | wifi, ethernet |
 | Resolution | 4MP (4MP, 2560×1440) |
-| Sensor | 1/2.7" CMOS |
-| Lens | 1× 2.8mm F1.6 |
-| Field of view | 108 H / 56 V / 128 D° |
+| Sensor | 1/3" Progressive CMOS |
+| Lens | 1× 2.8 / 3.6mm F1.6 |
+| Field of view | 2.8mm: 95 H / 52 V / 114 D; 3.6mm: 78 H / 41 V / 94 D° |
 | Night vision | hybrid (30m) |
 | Power | DC 12V/1A |
 | Storage | microSD ≤ 256GB, NVR |
@@ -24,7 +24,7 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| main | 2560x1440 | 30 | H.265 |
+| main | 2560x1440 | 25 | H.265 |
 
 ## Features
 
@@ -34,13 +34,14 @@
 - human detection
 - motion detection
 - 8x digital zoom
-- ONVIF Profile S
+- ONVIF Profile S/G
 
 ## Sources
 
 - https://www.imou.com/en/product/detail/bullet2-pro
 - https://www.imou.com/en/product/specs/bullet2-pro
 - https://www.wifi-stock.com/details/imou-4mp-h-265-bullet-wi-fi-camera-bullet-2-pro-4-mp-ipc-f46fep-d.html
+- https://static-website.imou.com/462c93eb-592d-48a1-acff-0425069bc8b1.pdf
 
 ---
 *Auto-generated from imou-bullet-2-pro-4mp.json — do not edit by hand.*

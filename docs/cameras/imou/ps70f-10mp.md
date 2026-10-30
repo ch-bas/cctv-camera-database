@@ -11,7 +11,7 @@
 | Resolution | 10MP (5MP+5MP) (10MP, 2880×1620) |
 | Sensor | 1/3" progressive scan CMOS (per lens) |
 | Lens | 2× 3.6mm |
-| Field of view | 91 diagonal (per lens); PT pan 355 / tilt 0-90° |
+| Field of view | 76 H / 41 V / 91 D (per lens); fixed lens pan 0-260 / tilt 0-25; PT lens pan 355 / tilt 0-90° |
 | Night vision | hybrid (30m) |
 | Power | PoE or DC 12V/1A |
 | Storage | microSD ≤ 512GB, NVR |
@@ -41,6 +41,7 @@
 - https://www.imou.com/en/product/detail/ps70f-5mp-plus5mp
 - https://www.orbitadigital.com/en/cctv-ip/77815-imou-ipc-ps70fp-10m0-imou-ps70f-55mp-camera-poe-connection-dual-lens-.html
 - https://static-website.imou.com/6f3836d6-10b9-4be0-8e84-9c6690a01dcf.pdf
+- https://www.imou.com/en/product/specs/ps70f-5mp-plus5mp
 
 ---
 *Auto-generated from imou-ps70f-10mp.json — do not edit by hand.*

@@ -1,5 +1,7 @@
 # IMOU Cell PT 3C 5MP
 
+*Also known as: IPC-B7CP-5B0S1/FSP14, IPC-B7CN-5B0S1/FSP14*
+
 | Field | Spec |
 |-------|------|
 | Brand | IMOU |

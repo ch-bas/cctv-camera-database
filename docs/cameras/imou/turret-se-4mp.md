@@ -1,5 +1,7 @@
 # IMOU Turret SE 4MP
 
+*Also known as: IPC-T42E, IPC-T42E-C*
+
 | Field | Spec |
 |-------|------|
 | Brand | IMOU |
@@ -31,6 +33,7 @@
 ## Sources
 
 - https://www.imou.com/en/product/specs/turret-se
+- https://static-website.imou.com/c00188aa-44a7-4bd4-adf9-dde64c5e6ede.pdf
 
 ---
 *Auto-generated from imou-turret-se-4mp.json — do not edit by hand.*

@@ -1,5 +1,7 @@
 # IMOU Bullet 2E Pro 5MP
 
+*Also known as: IPC-K3DP-5V0W, IPC-K3DN-5V0W*
+
 | Field | Spec |
 |-------|------|
 | Brand | IMOU |
@@ -7,7 +9,7 @@
 | Type | bullet |
 | Connectivity | wifi, ethernet |
 | Resolution | 5MP/3K (5MP, 2880×1620) |
-| Sensor | 1/2.9" progressive CMOS (3MP variant) |
+| Sensor | 1/2.9" Progressive CMOS |
 | Lens | 1× 2.8mm |
 | Field of view | 96 H / 52 V / 111 D° |
 | Night vision | ir (25m) |
@@ -37,6 +39,7 @@
 
 - https://www.imou.com/en/product/detail/bullet2e-pro
 - https://www.imou.com/en/product/specs/bullet2e-pro
+- https://static-website.imou.com/5d773b8e-ed1b-4f04-9c42-a489b84768b7.pdf
 
 ---
 *Auto-generated from imou-bullet-2e-pro-5mp.json — do not edit by hand.*

@@ -1,6 +1,6 @@
 # IMOU Ranger Dual 6MP
 
-*Also known as: Ranger Dual 3MP+3MP*
+*Also known as: IPC-S2X-6M0WED, Ranger Dual 3MP+3MP*
 
 | Field | Spec |
 |-------|------|
@@ -36,6 +36,7 @@
 ## Sources
 
 - https://www.imou.com/en/product/specs/ranger-dual
+- https://static-website.imou.com/b93c8722-c5d0-49e0-a6c6-b776592f1edf.pdf
 
 ---
 *Auto-generated from imou-ranger-dual-6mp.json — do not edit by hand.*

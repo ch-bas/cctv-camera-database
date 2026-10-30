@@ -1,0 +1,107 @@
+{
+  "id": "imou-bullet-2-2mp",
+  "brand": "IMOU",
+  "model": "Bullet 2 2MP",
+  "type": "bullet",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "2MP/1080p"
+  },
+  "sensor": "1/2.8\" 2MP Progressive CMOS",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 / 3.6 / 6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "108 H / 56 V / 128 D (2.8mm); 88 H / 46 V / 104 D (3.6mm); 54 H / 29 V / 63 D (6mm)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "DC 12V/1A",
+    "voltage": "DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "onvif"
+  ],
+  "ip_rating": "IP67",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "147.7 x 74.2 x 74.2",
+  "weight_g": 357,
+  "audio": {
+    "microphone": true,
+    "speaker": true
+  },
+  "features": [
+    "smart color night vision",
+    "built-in spotlight",
+    "110 dB siren",
+    "human detection",
+    "configurable detection region",
+    "8x digital zoom",
+    "metal + plastic housing"
+  ],
+  "release_notes": "Specs per official Imou spec page (Bullet 2), which lists the 2MP 1920x1080 variant (lens options 2.8/3.6/6mm); the 4MP variant is a separate record. Spec page lists ONVIF but not RTSP, so only onvif is recorded under protocols; the config RTSP path follows the Imou/Dahua convention and is unverified. No IPC model code on the page.",
+  "sources": [
+    "https://www.imou.com/en/product/detail/bullet2",
+    "https://www.imou.com/en/product/specs/bullet2"
+  ],
+  "last_verified": "2026-10-28",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF is listed for this model but the exact path is not independently verified on this SKU.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+    }
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "cloud_dependency": "cloud-optional"
+}

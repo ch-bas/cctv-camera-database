@@ -40,6 +40,7 @@
 
 - https://www.imou.com/en/product/detail/cell3c-all-in-one-5mp
 - https://www.imou.com/en/product/specs/cell3c-all-in-one-5mp
+- https://static-website.imou.com/9cf04495-e897-468d-b9d8-168a2fe1cec8.pdf
 
 ---
 *Auto-generated from imou-cell-3c-all-in-one-5mp.json — do not edit by hand.*

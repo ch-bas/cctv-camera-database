@@ -6,7 +6,67 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
-## [2.30.0] — Unreleased
+## [2.31.0] — Unreleased
+
+### Added
+- **QuarkView, new brand: 22 cameras** (Shenzhen Kuake Trading Co., Ltd.), starting from the TA-XM-605GP-AI-80N requested in #421. The others are PoE bullets and domes (605GP, 608GP, 629EBP, DM13EP, DM27SP), PT825-family PoE and Wi-Fi pan-tilt and dual-lens cameras, Wi-Fi, battery and solar cameras, and two Tuya cameras. Specs come from QuarkView's own product pages and family manuals. RTSP paths are included only where a QuarkView manual documents them (the Xiongmai main-stream path); app-only cameras are marked `cloud-required`.
+- **41 cameras found by comparing makers' catalogues with the dataset:**
+  - Milesight: 15 D2-series mini bullets and domes (PD2 / FPD2), from their own datasheets (NDAA per the datasheet)
+  - Dahua: 13, including the WizColor Lite PRO line, WizSense 2 TS cameras, Lite and HDCVI full-colour models, and SD2/SD4/SD5 PTZs
+  - Swann: EliteX 6K bullet, AdvancedX bullet and dome, MaxRanger4K
+  - Uniview: the HC191 ANPR checkpoint units
+  - Tiandy: 2; Annke: 2 (C500D I51HK, I81HZ thermal); Wyze Bulb Cam Pan Color; Reolink OMVI 2i Ultra (announced); Lorex IC301
+
+  Every value comes from the maker's own product page or datasheet. Catalogue entries that are variants of existing records, accessories, subscription plans, unreleased pages, or products whose page has no spec table were left out.
+- **50 Imou cameras** (Imou now has 164), found by comparing imou.com's product catalogue with the dataset. They include:
+  - the 2MP and 3MP variants of the Bullet, Cruiser, Cell and Ranger lines (where the dataset had only the 4MP/5MP model)
+  - DK3, the PS-series bullets, turrets, PTZs and dual-lens cameras (PS2M, PS3D, PS3E, PS7F, PS70F, PS8D, PS8E)
+  - Rex, Rex 2D, Rex 3D and Rex VT
+  - the S21FA/S41FA PoE PTZs and the T42EA PoE turret
+  - Doorbell Wired and the VDP7 2-wire video door phone
+
+  Specs come from Imou's own detail and specification pages and the datasheets they link. Model codes are recorded where Imou publishes them. RTSP/ONVIF configs are included only where the spec sheet lists ONVIF, using the Dahua path existing Imou records use (unverified).
+- **eufy Window Camera E10** (T8404121), from the official us.eufy.com spec table.
+- **22 more cameras from makers' stores and datasheet libraries:**
+  - Amcrest (12): the NOVALINK solar, 4G and pan-tilt cameras, the AF-2M HD-analog bullets and dome, Qcam IP bullets, and the Eco 720p bullet and dome
+  - HiLook (7): HAA-series domes, /SX strobe bullets and the DS-T200 Turbo HD camera
+  - Campark (2): SC22 and BC1154
+  - Techage (1): the DM28 8MP fisheye
+
+  Store listings that turned out to be existing cameras now match through new aliases (EmpireTech PTZ8C42X-T180, Hiseeu HD975B-P, Amcrest IP8M-TB2886EW-AI). Campark SC30 is now an alias of the identical Toguard SC30.
+
+### Changed
+- **Imou correction pass: 96 of the 119 existing Imou records corrected** against Imou's official spec pages and the datasheets they link. The fixes:
+  - values copied from a sibling variant: the 5MP Bullet 2C/2C Pro/2E Pro/3, Cell 3C All-in-One, Rex 3D R1 and Cruiser Dual records
+  - the VDP7 PoE door phone carried the 2-wire model's power and Wi-Fi values
+  - the Cruiser 4G night-vision range (10 → 30 m)
+  - three cameras typed as box/turret that are pan-tilt (A1 4MP, PS2M 4K, Rex 3D R1)
+  - Wi-Fi-only models listing an Ethernet port
+  - wrong or sibling order codes (official codes are now aliases)
+  - missing sensor, FOV, frame-rate and microSD values added where the sheets state them
+  - two retail price strings removed
+
+  Every corrected record says what changed in `release_notes` and cites the spec page and datasheet. Values the official sheets don't state were left unchanged. Where Imou's spec page and datasheet disagree, the record notes both.
+- **Imou duplicates merged:** Imou publishes some cameras under two names with identical official spec tables. Each pair is now one record, with the other name and codes kept as aliases:
+  - Ranger 2C Pro 5MP → Ranger 2 Pro 5MP
+  - Cue 2 3MP → Cue 2E 3MP
+  - Ranger 2C Dual 10MP → Ranger 2 Dual
+  - A1 Dual → Ranger 2C Dual 6MP
+  - T22EA → Turret SE 2MP
+
+  On the website, the old camera URLs redirect to the remaining record.
+
+### Removed
+- **`imou-indoor-2k`:** it matched no Imou product. Its sources describe the 2MP fixed Cue 2, but the record claimed a 3MP pan-tilt camera. Its URL now redirects to the Imou brand page.
+- **ACTi RTSP port:** 22 ACTi cameras now use port 554 instead of 7070: A214, A426, A711, A713, A826, A951, A952, A956, Q450, Q83, Z32, Z33, Z34, Z36, Z37, Z41, Z42, Z71, Z710, Z84, Z94 and Z95. ACTi's own firmware manuals give two defaults: 7070 for most firmware generations (V, A, S and C series) and 554 for newer models and the Z-series OEM line. Only records whose own manual states 554 changed; every other ACTi record keeps 7070. Configs a user has verified are never changed by bulk corrections (none of these had one). The brand-level RTSP pattern for ACTi now says 7070, with 554 for the newer lines.
+- **CONTRIBUTING.md:**
+  - The field reference is rebuilt from the schema. The removed `msrp_*` price fields are gone, the type, connectivity, protocol and IK enums are corrected, and 19 undocumented fields are now documented.
+  - The rules now match how records are built: official sources only (retailers only corroborate), one record per camera with packaging variants as aliases, and min-lux only when labelled.
+- **README:** the QA tool section now gives the correct data path.
+
+---
+
+## [2.30.0] — 2026-10-25
 
 ### Added
 - **UNICAM Systems, new brand: 53 cameras** from the Indian maker's official catalogue at unicamsystems.com. They break down as:

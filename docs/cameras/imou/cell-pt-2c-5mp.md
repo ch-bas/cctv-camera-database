@@ -1,5 +1,7 @@
 # IMOU Cell PT 2C 5MP
 
+*Also known as: IPC-B7C-5M0WEH*
+
 | Field | Spec |
 |-------|------|
 | Brand | IMOU |
@@ -7,10 +9,12 @@
 | Type | ptz |
 | Connectivity | wifi |
 | Resolution | 5MP/3K (5MP, 2880×1620) |
-| Lens | 1× F1.6 |
-| Field of view | pan 350 / tilt 90° |
+| Sensor | 1/2.8" Progressive CMOS |
+| Lens | 1× 4.0mm F1.6 |
+| Field of view | 76 H / 41 V / 91 D; pan 350 / tilt 90° |
 | Night vision | hybrid (15m) |
 | Power | 5000mAh rechargeable battery + included 3W solar panel (charges to -10C); USB-C charging |
+| Storage | microSD ≤ 512GB |
 | Protocols | http |
 | Two-way audio | Yes |
 | Operating temp | -20 to 50°C |
@@ -19,7 +23,7 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| main | 2880x1620 | — | H.265 |
+| main | 2880x1620 | 15 | H.265 |
 
 ## Features
 

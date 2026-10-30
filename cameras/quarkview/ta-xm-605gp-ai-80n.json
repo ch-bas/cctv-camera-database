@@ -1,0 +1,80 @@
+{
+  "id": "quarkview-ta-xm-605gp-ai-80n",
+  "brand": "QuarkView",
+  "model": "TA-XM-605GP-AI-80N",
+  "aliases": [
+    "QuarkView 605GP 4K 8MP Outdoor PoE Camera",
+    "605GP"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "label": "4K"
+  },
+  "video": {
+    "max_fps": 15
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "90",
+  "night_vision": {
+    "type": "hybrid"
+  },
+  "power": {
+    "method": "PoE / DC 12V"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "2 IR LEDs + 2 white LEDs",
+    "red/blue warning lights",
+    "human and vehicle detection",
+    "line-crossing detection",
+    "face detection",
+    "metal housing",
+    "XMEye Pro app (Android / iOS)"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "sources": [
+    "https://quarkview.com/products/new-4k-8mp-security-poe-ip-camera-with-red-blue-light",
+    "https://quarkview.com/manuals/poe-fixed-family-manual-en.pdf"
+  ],
+  "last_verified": "2026-10-28",
+  "release_notes": "Specs per the official QuarkView product page (Shenzhen Kuake Trading Co., Ltd.); the page states 8MP / 4K at 15 fps, a 3.6 mm fixed lens and a 90-degree viewing angle (axis not stated). Sensor, codecs, IR range, microSD, power draw, dimensions and weight are not published. RTSP path from the QuarkView fixed PoE camera family manual (main stream only; default user admin with an empty password, default IP 192.168.1.10). Requested in #421.",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/user={user}&password={pass}&channel=1&stream=0.sdp?",
+      "verified": false,
+      "notes": "Main-stream path from the QuarkView family manual (Xiongmai/XMEye platform). The manual does not document a sub-stream; on Xiongmai firmware it is usually stream=1.sdp, but confirm via ONVIF discovery before using it for detect. Set a password first: the factory password is empty."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration; the manual lists ONVIF support but not the ONVIF port."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a generic ONVIF/RTSP camera (Xiongmai/XMEye platform)."
+    }
+  }
+}

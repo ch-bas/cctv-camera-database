@@ -10,8 +10,8 @@
 | Connectivity | wifi, ethernet |
 | Resolution | 11MP (2x3MP fixed + 5MP PT) (11MP, 2880×1620) |
 | Sensor | fixed 1/2.8" 3MP CMOS x2; PT 1/3.06" 5MP CMOS |
-| Lens | 3× |
-| Field of view | fixed 87 H / PT 51 H; PT lens pan 355 / tilt 0-90° |
+| Lens | 3× 3.6 (fixed) / 6 (PT)mm |
+| Field of view | fixed lenses 87 H / 47 V / 106 D; PT lens 51 H / 28 V / 60 D, pan 355 / tilt 0-90° |
 | Night vision | hybrid (30m) |
 | Power | DC 12V/1.5A, <18W |
 | Storage | microSD ≤ 1024GB, NVR |
@@ -44,6 +44,8 @@
 - https://www.imou.com/en/product/detail/cruiser-triple
 - https://static-website.imou.com/3a1a94ba-6119-4774-98a5-32303df42971.pdf
 - https://skiteck.com/products/imou-cruiser-triple-lens-11mp-wifi-ourdoor-camera-ipc-s7up-11mowed
+- https://www.imou.com/en/product/specs/cruiser-triple
+- https://static-website.imou.com/21f7c36e-f153-494a-b799-fdc89ee2021f.pdf
 
 ---
 *Auto-generated from imou-cruiser-triple.json — do not edit by hand.*

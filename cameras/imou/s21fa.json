@@ -1,0 +1,114 @@
+{
+  "id": "imou-s21fa",
+  "brand": "IMOU",
+  "model": "S21FA",
+  "aliases": [
+    "IPC-S21FA"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 20,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/2.9\" 2MP progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6/6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "3.6mm: 86 H / 45 V / 105 D; 6mm: 51 H / 29 V / 59 D; pan 355 / tilt 0-90",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "ptz": {
+    "autotracking": true
+  },
+  "power": {
+    "method": "PoE",
+    "consumption_w": 6.2
+  },
+  "dimensions_mm": "120.7 x 136.2 x 183.3",
+  "weight_g": 390,
+  "operating_temp_c": "-20 to 50",
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "outdoor PoE pan/tilt",
+    "3.6mm or 6mm lens options",
+    "four-mode smart color night vision + spotlight",
+    "smart tracking",
+    "human detection",
+    "16x digital zoom",
+    "built-in microphone"
+  ],
+  "release_notes": "Specs per official IMOU product page and datasheet (IPC-S21FA). H.264 only.",
+  "sources": [
+    "https://www.imou.com/en/product/detail/s21fa-s41fa",
+    "https://www.imou.com/en/product/specs/s21fa-s41fa",
+    "https://static-website.imou.com/be034eec-2983-49bb-84f6-a24f5f78aedf.pdf"
+  ],
+  "last_verified": "2026-10-28",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+    }
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "cloud_dependency": "cloud-optional"
+}

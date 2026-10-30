@@ -1,0 +1,115 @@
+{
+  "id": "milesight-ms-c2973-pd2",
+  "brand": "Milesight",
+  "model": "MS-C2973-PD2",
+  "ndaa_compliant": true,
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.9\" Progressive Scan CMOS",
+  "video": {
+    "codecs": [
+      "H.264",
+      "H.264+",
+      "H.265",
+      "H.265+",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "102.6",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30,
+    "min_lux_color": 0.005
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "power": {
+    "method": "PoE (802.3af) / DC 12V",
+    "consumption_w": 3.7,
+    "voltage": "DC 12V±10%"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024
+  },
+  "audio": {
+    "microphone": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "rtmp",
+    "http"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "118.5 x 110.8 x 65",
+  "weight_g": 500,
+  "features": [
+    "120dB Super WDR",
+    "4mm lens option",
+    "audio I/O",
+    "alarm I/O",
+    "AI human/vehicle detection",
+    "people counting"
+  ],
+  "release_notes": "Specs per official Milesight datasheet (AI Vandal-proof Mini Dome Network Camera (PD2)). D2-series (PD2) generation with a new sensor (vs the earlier -PD line), distinct hardware. Lens options 2.8mm/4mm@F1.6 (FOV/fields reflect 2.8mm). Audio I/O 1/1 and alarm I/O 1/1. Power consumption is PoE max with IR on.",
+  "sources": [
+    "https://resource.milesight.com/milesight/security/document/datasheet/ipc/series-d2/milesight-ai-vandal-proof-mini-dome-network-camera-ndaa-pd2-datasheet-en.pdf"
+  ],
+  "last_verified": "2026-10-28",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/main",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/sub",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Milesight /main + /sub RTSP; ONVIF port 80."
+    },
+    "home_assistant": {
+      "integration": "onvif"
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF"
+    }
+  },
+  "cloud_dependency": "local",
+  "network": {
+    "ethernet_speed_mbps": 100
+  }
+}

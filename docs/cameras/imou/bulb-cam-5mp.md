@@ -1,5 +1,7 @@
 # IMOU Bulb Cam 5MP
 
+*Also known as: IPC-GS6D-5M0WEB, S6DP-5M0WEB*
+
 | Field | Spec |
 |-------|------|
 | Brand | IMOU |
@@ -33,6 +35,8 @@
 ## Sources
 
 - https://www.imou.com/en/product/specs/bulb-cam
+- https://www.imou.com/en/product/detail/bulb-cam
+- https://static-website.imou.com/6e51f6c7-fca3-452f-b74d-7ee3dbf0be91.pdf
 
 ---
 *Auto-generated from imou-bulb-cam-5mp.json — do not edit by hand.*

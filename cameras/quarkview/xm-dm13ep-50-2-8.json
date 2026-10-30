@@ -1,0 +1,79 @@
+{
+  "id": "quarkview-xm-dm13ep-50-2-8",
+  "brand": "QuarkView",
+  "model": "XM-DM13EP-50-2.8",
+  "aliases": [
+    "DM13EP-50-2.8",
+    "DM13EP",
+    "QuarkView DM13EP 5MP PoE Dome Camera with 2.8mm Lens"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP"
+  },
+  "video": {
+    "codecs": [
+      "H.265"
+    ],
+    "max_fps": 15
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 15
+  },
+  "power": {
+    "method": "48V PoE"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true
+  },
+  "environment": [
+    "indoor"
+  ],
+  "features": [
+    "15 IR LEDs",
+    "face detection (no identity recognition)",
+    "built-in microphone (audio recording)",
+    "XMEye Pro app (Android / iOS)"
+  ],
+  "cloud_dependency": "cloud-optional",
+  "sources": [
+    "https://quarkview.com/products/5mp-dome-48v-poe-camera-with-2-8mm-len",
+    "https://quarkview.com/manuals/poe-fixed-family-manual-en.pdf"
+  ],
+  "last_verified": "2026-10-28",
+  "release_notes": "Specs per the official QuarkView product page (Shenzhen Kuake Trading Co., Ltd.); the page states 5MP (2592x1944) at 15 fps, a fixed 2.8 mm lens, 48V PoE, H.265, 15 IR LEDs with a 15 m IR distance and a built-in microphone (no speaker or two-way talk specified); it is positioned for indoor rooms. The page explicitly says no viewing angle is published. RTSP path from the QuarkView fixed PoE camera family manual linked on the page (main stream only; default user admin with an empty password, default IP 192.168.1.10); the same manual states ONVIF and RTSP support. Sensor, IP rating and dimensions are not published.",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/user={user}&password={pass}&channel=1&stream=0.sdp?",
+      "verified": false,
+      "notes": "Main-stream path from the QuarkView fixed PoE camera family manual (Xiongmai platform). The manual does not document a sub-stream; on Xiongmai firmware it is usually stream=1.sdp, but confirm via ONVIF discovery before using it for detect. Set a password first: the factory password is empty."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use the ONVIF integration; the manual lists ONVIF support but not the ONVIF port."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Add as a generic ONVIF/RTSP camera (Xiongmai platform)."
+    }
+  }
+}

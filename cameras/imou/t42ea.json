@@ -1,0 +1,107 @@
+{
+  "id": "imou-t42ea",
+  "brand": "IMOU",
+  "model": "T42EA",
+  "aliases": [
+    "IPC-T42EA"
+  ],
+  "type": "turret",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "4MP/QHD"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" 4MP progressive CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8/3.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "2.8mm: 90 H / 50 V / 107 D; 3.6mm: 76 H / 40 V / 92 D",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE",
+    "consumption_w": 3
+  },
+  "dimensions_mm": "109.9 (dia) x 81.3",
+  "weight_g": 200,
+  "operating_temp_c": "-20 to 50",
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "PoE turret",
+    "2.8mm or 3.6mm lens options",
+    "IR night vision (30m)",
+    "human detection",
+    "16x digital zoom",
+    "built-in microphone"
+  ],
+  "release_notes": "Specs per official IMOU product page and datasheet (IPC-T42EA). No IP rating stated (listed under IMOU's indoor category), so environment is left unset. Frame rate stated as 'up to 25/30fps'.",
+  "sources": [
+    "https://www.imou.com/en/product/detail/t22ea-t42ea",
+    "https://www.imou.com/en/product/specs/t22ea-t42ea",
+    "https://static-website.imou.com/f3e5475c-7c5b-4d07-b5be-f74e9872ee98.pdf"
+  ],
+  "last_verified": "2026-10-28",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+    }
+  },
+  "markets": [
+    "global"
+  ],
+  "ndaa_compliant": false,
+  "cloud_dependency": "cloud-optional"
+}

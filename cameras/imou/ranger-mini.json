@@ -3,6 +3,10 @@
   "brand": "IMOU",
   "model": "Ranger Mini",
   "aliases": [
+    "IPC-K2MP-3R1W",
+    "IPC-K2MN-3R1W",
+    "IPC-K2MP-5R1W",
+    "IPC-K2MN-5R1W",
     "IPC-K2M-3H1WE",
     "IPC-K2M-5H1WE"
   ],
@@ -16,8 +20,8 @@
   ],
   "resolution": {
     "megapixels": 5,
-    "max_width": 2880,
-    "max_height": 1620,
+    "max_width": 2688,
+    "max_height": 1664,
     "label": "2K/3K (3MP/5MP selectable)"
   },
   "sensor": "1/3\" Progressive CMOS",
@@ -26,12 +30,14 @@
     "focal_length_mm": "3.6",
     "varifocal": false
   },
-  "field_of_view_deg": "79 H / 43 V / 94 D",
+  "field_of_view_deg": "3MP: 79 H / 43 V / 94 D; 5MP: 87 H / 48 V / 108 D; pan 355 / tilt -5-50",
   "night_vision": {
-    "type": "color",
+    "type": "hybrid",
     "range_m": 10
   },
-  "ptz": {},
+  "ptz": {
+    "autotracking": true
+  },
   "video": {
     "codecs": [
       "H.265",
@@ -41,20 +47,21 @@
     "streams": [
       {
         "name": "main",
-        "resolution": "2880x1620",
+        "resolution": "2688x1664",
         "fps": 20,
         "codec": "H.265"
       }
     ]
   },
   "power": {
-    "method": "DC 5V/1A (USB-C)",
+    "method": "DC 5V/1A",
     "consumption_w": 4.2
   },
   "storage": {
     "onboard": true,
     "max_microsd_gb": 512,
-    "cloud": true
+    "cloud": true,
+    "nvr_compatible": true
   },
   "protocols": [
     "onvif",
@@ -84,7 +91,9 @@
   ],
   "sources": [
     "https://www.imou.com/en/product/detail/ranger-mini",
-    "https://www.imou.com/en/product/specs/ranger-mini"
+    "https://www.imou.com/en/product/specs/ranger-mini",
+    "https://static-website.imou.com/898f87d9-7090-4fb4-8d9a-f15d1354cd7d.pdf",
+    "https://static-website.imou.com/3ed9030f-2722-4113-ba58-d9d6d7af9c6f.pdf"
   ],
   "configs": {
     "frigate": {
@@ -109,6 +118,7 @@
     "ethernet_ports": 1
   },
   "status": "available",
-  "last_verified": "2026-09-28",
-  "cloud_dependency": "cloud-optional"
+  "last_verified": "2026-10-30",
+  "cloud_dependency": "cloud-optional",
+  "release_notes": "Corrected 2026-10-30 against the official Imou spec sheet: 5MP resolution 2880x1620 → 2688x1664, FOV now lists 3MP 79/43/94 and 5MP 87/48/108 (was 3MP-only), night_vision.type color → hybrid (four-mode smart colour), ptz.autotracking true (smart tracking), nvr_compatible true, added productReportedModel codes IPC-K2MP/K2MN-3R1W and -5R1W."
 }

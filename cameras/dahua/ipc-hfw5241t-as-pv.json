@@ -1,0 +1,144 @@
+{
+  "id": "ipc-hfw5241t-as-pv",
+  "brand": "Dahua",
+  "model": "IPC-HFW5241T-AS-PV",
+  "aliases": [
+    "DH-IPC-HFW5241T-AS-PV",
+    "DH-IPC-HFW5241TP-AS-PV",
+    "DH-IPC-HFW5241TN-AS-PV"
+  ],
+  "markets": [
+    "global"
+  ],
+  "type": "bullet",
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sources": [
+    "https://www.dahuasecurity.com/products/All-Products/Network-Cameras/WizMind-Series/5-Series/Active-Deterrence/IPC-HFW5241T-AS-PV",
+    "https://material.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/datasheetzipfiles/IPC-HFW5241T-AS-PV_datasheet_20220513.pdf"
+  ],
+  "last_verified": "2026-10-28",
+  "ndaa_compliant": false,
+  "release_notes": "Specs per official Dahua datasheet (DH-IPC-HFW5241T-AS-PV, 2MP IR fixed-focal bullet WizMind, active deterrence, Rev 002 2022). Product is now listed under Dahua's discontinued products; the listed product page renders a generic shell. The datasheet does not state a built-in mic or speaker row explicitly (it lists RCA audio in/out and sound-and-light alarm linkage with speaker volume), so audio booleans are omitted. Warm light is a deterrence light; night vision is IR (60 m).",
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8; 3.6; 6; 8",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "2.8 mm: H 106 / V 57 / D 126; 3.6 mm: H 87 / V 46 / D 104; 6 mm: H 53 / V 30 / D 60; 8 mm: H 41 / V 23 / D 47",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 60,
+    "min_lux": 0.0002,
+    "min_lux_color": 0.002
+  },
+  "power": {
+    "method": "12 VDC / PoE (802.3af)",
+    "voltage": "12 VDC",
+    "consumption_w": 8.3
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "Micro SD up to 256 GB; FTP/SFTP; NAS."
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.265+",
+      "H.264",
+      "H.264+",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "third",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "features": [
+    "active deterrence: sound and light alarm linkage (1 warm light)",
+    "IR up to 60 m (2 IR LEDs)",
+    "WizMind deep learning: intrusion/tripwire/fast moving with human/vehicle classification, loitering, gathering, parking detection, heat map, people counting, abandoned/missing object",
+    "SMD 3.0",
+    "120 dB WDR, defog, scene self-adaptation",
+    "Smart H.265+/H.264+, AI coding",
+    "1 audio in / 1 audio out (RCA); 1 alarm in / 1 alarm out",
+    "ONVIF Profile S/G/T; Milestone; P2P",
+    "discontinued (Dahua lists it under discontinued products)"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "244.1 x 79.0 x 75.9",
+  "weight_g": 815,
+  "environment": [
+    "outdoor"
+  ],
+  "status": "discontinued",
+  "connectivity": [
+    "ethernet"
+  ],
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "rtmp",
+    "http",
+    "p2p"
+  ],
+  "network": {
+    "ethernet_speed_mbps": 100,
+    "ethernet_ports": 1
+  },
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 704,
+        "height": 576,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "verified": false,
+      "notes": "Dahua native RTSP (main subtype=0 / sub subtype=1).",
+      "onvif_port": 80
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Dahua; ONVIF integration works (default port 80)."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select the 'Dahua' profile."
+    }
+  },
+  "cloud_dependency": "local"
+}

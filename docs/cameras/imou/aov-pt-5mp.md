@@ -1,6 +1,6 @@
 # IMOU AOV PT 5MP
 
-*Also known as: IPC-B7ED-5M0TEA-EU*
+*Also known as: IPC-B7ED-5M0TEA-EU, IPC-B7ED-5M1TEA-EU*
 
 | Field | Spec |
 |-------|------|
@@ -40,6 +40,8 @@
 
 - https://www.imou.com/en/product/detail/aov-pt-5mp
 - https://static-website.imou.com/5e5b85af-9949-4b6a-aa61-7b5f0cd2a510.pdf
+- https://www.imou.com/en/product/specs/aov-pt-5mp
+- https://static-website.imou.com/26b66f28-cc26-475a-be46-b74db30f41a6.pdf
 
 ---
 *Auto-generated from imou-aov-pt-5mp.json — do not edit by hand.*

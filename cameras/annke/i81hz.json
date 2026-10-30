@@ -1,0 +1,122 @@
+{
+  "id": "annke-i81hz",
+  "brand": "Annke",
+  "model": "I81HZ",
+  "aliases": [
+    "Thermal & Optical Bi-spectrum Outdoor PoE Network Camera (Bullet)"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.05,
+    "max_width": 256,
+    "max_height": 192,
+    "label": "256x192 (thermal)"
+  },
+  "sensor": "Thermal: uncooled VOx, 256x192, 12 um pixel pitch, 8-14 um, NETD < 40 mK; optical: 1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "9.7 (fixed, thermal); 8.0 (fixed, optical)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "18 horizontal (thermal), 39.4 horizontal (optical)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "optical",
+        "resolution": "2688x1520",
+        "fps": 30,
+        "codec": "H.265"
+      },
+      {
+        "name": "thermal",
+        "resolution": "1280x720",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "power": {
+    "method": "24 VAC / 12 VDC / PoE (802.3af Class 3)",
+    "consumption_w": 8.5,
+    "voltage": "24 VAC / 12 VDC",
+    "poe_class": 3
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "dimensions_mm": "321.3 x 106.1 x 107.0",
+  "weight_g": 1550,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "features": [
+    "thermal + optical bi-spectrum bullet",
+    "optical channel: 4 MP (2688x1520), 8.0 mm F1.6, 120 dB WDR, 0.0089 lux colour @F1.6",
+    "thermal detector: uncooled VOx 256x192, 12 um, NETD < 40 mK, 9.7 mm F1.0, IFOV 1.24 mrad",
+    "temperature measurement -20 to 150 C, accuracy +/- 8 C (10 points, 10 areas, 1 line)",
+    "fire detection, smoking detection, sun-reflection filter",
+    "VCA: line crossing, intrusion, region entrance/exit with human/vehicle filtering",
+    "IR up to 30 m and white light up to 30 m; strobe + audible alarm (custom voice alerts)",
+    "digital zoom x2, x4 (thermal)",
+    "ONVIF Profile S/G, ISAPI",
+    "TVS 6000V lightning/surge protection"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "onvif_port": 80,
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Uses Hikvision protocol (ISAPI / ONVIF Profile S, G). Thermal and optical are exposed as separate channels."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile. Most Annke cameras use Hikvision protocol."
+    }
+  },
+  "cloud_dependency": "cloud-optional",
+  "sources": [
+    "https://www.annke.com/products/thermal-camera",
+    "https://cdn.shopify.com/s/files/1/0110/6385/3156/files/DS-2TD2628-10QA.pdf"
+  ],
+  "release_notes": "Specs per official Annke product page (Thermal & Optical Bi-spectrum Outdoor PoE Network Camera, Bullet variant I81HZ) and the DS-2TD2628-10/QA specification PDF it links. Hikvision-OEM unit but with a 4 MP (2688x1520) optical channel, unlike Hikvision's 2 MP DS-2TD2628-10. Resolution field = thermal module per dataset convention. Operating temperature not stated. The page's Turret variant (I81DY) has no separate specifications and was not recorded.",
+  "last_verified": "2026-10-28"
+}

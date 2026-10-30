@@ -36,11 +36,13 @@
 - chime works as Wi-Fi extender for the doorbell
 - weatherproof
 - microSD recording in chime (up to 512GB)
+- AI package detection
 
 ## Sources
 
 - https://www.imou.com/en/product/specs/doorbell3-kit
 - https://static-website.imou.com/4196a5b4-a012-4303-a437-ebc1ce67cd9c.png
+- https://static-website.imou.com/3e5b6e18-356e-42b8-a761-ade329f42bd0.pdf
 
 ---
 *Auto-generated from imou-doorbell-3-kit.json — do not edit by hand.*

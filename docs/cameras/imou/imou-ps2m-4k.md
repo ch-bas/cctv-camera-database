@@ -6,12 +6,12 @@
 |-------|------|
 | Brand | IMOU |
 | Model | PS2M 4K |
-| Type | box |
+| Type | ptz |
 | Connectivity | ethernet |
 | Resolution | 4K (8MP, 3840×2160) |
 | Sensor | 1/2.7" Progressive CMOS |
 | Lens | 1× 3.6mm |
-| Field of view | 89 H / 45 V / 105 D° |
+| Field of view | 89 H / 45 V / 105 D; pan 0-355 / tilt -5 to 50° |
 | Night vision | color (15m) |
 | Power | PoE / DC 5V/1A |
 | Storage | microSD ≤ 512GB, NVR |
@@ -40,6 +40,7 @@
 
 - https://www.imou.com/en/product/specs/ps2m4k
 - https://static-website.imou.com/5db9573c-3a11-46b2-a13f-d1e7335d97f3.png
+- https://static-website.imou.com/819ecef4-1bae-4a5d-addb-557b8e0f5801.pdf
 
 ---
 *Auto-generated from imou-ps2m-4k.json — do not edit by hand.*

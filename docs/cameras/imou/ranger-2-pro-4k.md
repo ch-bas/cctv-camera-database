@@ -11,9 +11,9 @@
 | Resolution | 4K (8MP, 3840×2160) |
 | Sensor | 1/2.7" Progressive CMOS |
 | Lens | 1× 3.6mm F1.6 |
-| Field of view | 89 H; pan 355 / tilt -5~80° |
-| Night vision | hybrid (15m) |
-| Power | DC 5V/1A via USB-C; <7.5W |
+| Field of view | 89 H / 45 V / 105 D; pan 355 / tilt -5~80° |
+| Night vision | hybrid (20m) |
+| Power | DC 5V/1.5A via USB-C; <7.5W |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
 | Two-way audio | Yes |
@@ -40,6 +40,7 @@
 
 - https://www.imou.com/en/product/detail/ranger2-pro4k
 - https://www.imou.com/en/product/specs/ranger2-pro4k
+- https://static-website.imou.com/88a7fdb6-5def-4cd1-99d9-a9578d4daa16.pdf
 
 ---
 *Auto-generated from imou-ranger-2-pro-4k.json — do not edit by hand.*

@@ -1,0 +1,116 @@
+{
+  "id": "milesight-ms-c8175-fpd2",
+  "brand": "Milesight",
+  "model": "MS-C8175-FPD2",
+  "ndaa_compliant": true,
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K"
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "video": {
+    "codecs": [
+      "H.264",
+      "H.264+",
+      "H.265",
+      "H.265+",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 25,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "704x576",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5",
+    "aperture": "F1.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "H114.7 to H41.6",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50,
+    "min_lux_color": 0.012
+  },
+  "ip_rating": "IP67",
+  "ik_rating": "IK10",
+  "environment": [
+    "outdoor"
+  ],
+  "power": {
+    "method": "PoE (802.3af) / DC 12V",
+    "consumption_w": 5.8,
+    "voltage": "DC 12V±10%"
+  },
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 1024
+  },
+  "audio": {
+    "microphone": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "rtmp",
+    "http"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "Φ130 x 115",
+  "weight_g": 780,
+  "features": [
+    "motorized varifocal lens",
+    "autofocus",
+    "120dB Super WDR",
+    "audio I/O",
+    "alarm I/O",
+    "AI human/vehicle detection",
+    "people counting"
+  ],
+  "release_notes": "Specs per official Milesight datasheet (AI Motorized Mini Dome Network Camera (FPD2)). D2-series (PD2) generation with a new sensor (vs the earlier -PD line), distinct hardware. Power consumption is PoE max with IR on. Audio I/O 1/1 and alarm I/O 1/1.",
+  "sources": [
+    "https://resource.milesight.com/milesight/security/document/datasheet/ipc/series-d2/milesight-ai-motorized-dome-network-camera-ndaa-pd2-datasheet-en.pdf"
+  ],
+  "last_verified": "2026-10-28",
+  "configs": {
+    "frigate": {
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/main",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/sub",
+      "onvif_port": 80,
+      "verified": false,
+      "notes": "Milesight /main + /sub RTSP; ONVIF port 80."
+    },
+    "home_assistant": {
+      "integration": "onvif"
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF"
+    }
+  },
+  "cloud_dependency": "local",
+  "network": {
+    "ethernet_speed_mbps": 100
+  }
+}
