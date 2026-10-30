@@ -39,6 +39,7 @@
 
 - https://www.imou.com/en/product/detail/ranger2c-pro4k
 - https://www.imou.com/en/product/specs/ranger2c-pro4k
+- https://static-website.imou.com/ce5849fa-b82c-46b5-bb6d-a3ca9fb060c5.pdf
 
 ---
 *Auto-generated from imou-ranger-2c-pro-4k.json — do not edit by hand.*

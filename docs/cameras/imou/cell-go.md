@@ -1,6 +1,6 @@
 # IMOU Cell Go
 
-*Also known as: IPC-B32P-V2, IMOU Cell Go*
+*Also known as: IPC-B32, IPC-B32P-V2, IMOU Cell Go*
 
 | Field | Spec |
 |-------|------|
@@ -11,13 +11,12 @@
 | Resolution | 2K/3MP (3MP, 2304×1296) |
 | Sensor | 1/2.8" CMOS |
 | Lens | 1× 2.8mm |
-| Field of view | 108h° |
-| Night vision | color (10m) |
+| Field of view | 98 H / 54 V / 121 D° |
+| Night vision | color (7m) |
 | Power | Rechargeable battery / solar |
-| Storage | microSD ≤ 256GB |
 | Protocols | http |
 | IP rating | IP66 |
-| Two-way audio | No |
+| Two-way audio | Yes |
 | Operating temp | -20 to 50°C |
 | Released | 2023 |
 
@@ -35,6 +34,7 @@
 - https://www.imou.com/en/product/detail/cell-go
 - https://www.imou.com/en/product/specs/cell-go
 - https://www.wifi-stock.com/details/imou-3mp-h-265-wi-fi-battery-camera-cell-go-ipc-b32p-v2.html
+- https://static-website.imou.com/e5d2c3e2-b30b-43ed-94e8-baae66699338.pdf
 
 ---
 *Auto-generated from imou-cell-go.json — do not edit by hand.*

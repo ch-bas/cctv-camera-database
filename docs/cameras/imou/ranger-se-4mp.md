@@ -1,6 +1,6 @@
 # IMOU Ranger SE 4MP
 
-*Also known as: Imou Ranger SE 4MP*
+*Also known as: IPC-A43, Imou Ranger SE 4MP*
 
 | Field | Spec |
 |-------|------|
@@ -10,7 +10,8 @@
 | Connectivity | wifi |
 | Resolution | 4MP/QHD (4MP, 2560×1440) |
 | Sensor | 1/2.7" 4MP Progressive CMOS |
-| Lens | 1× |
+| Lens | 1× 3.6mm |
+| Field of view | 79 H / 44 V / 94 D; pan 355 / tilt -10 to 80° |
 | Night vision | ir (10m) |
 | Power | DC 5V/1A |
 | Storage | microSD ≤ 256GB, NVR |
@@ -30,6 +31,7 @@
 ## Sources
 
 - https://static-website.imou.com/8632fc9d-665e-4561-9279-18c740f54aa2.pdf
+- https://www.imou.com/en/product/specs/ranger-se-4mp
 
 ---
 *Auto-generated from imou-ranger-se-4mp.json — do not edit by hand.*

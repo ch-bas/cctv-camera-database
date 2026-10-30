@@ -7,7 +7,7 @@
 | Brand | IMOU |
 | Model | Ranger Dual Pro 6MP |
 | Type | dual-lens |
-| Connectivity | wifi |
+| Connectivity | wifi, ethernet |
 | Resolution | 3MP per lens (6MP total) (3MP, 2304×1296) |
 | Sensor | 1/3" Progressive CMOS (per lens) |
 | Lens | 2× 3.6mm |
@@ -36,6 +36,7 @@
 ## Sources
 
 - https://www.imou.com/en/product/specs/ranger-dual-pro
+- https://static-website.imou.com/017d9fff-fc43-4ef9-9623-dc36008ecdd3.pdf
 
 ---
 *Auto-generated from imou-ranger-dual-pro-6mp.json — do not edit by hand.*

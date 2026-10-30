@@ -1,6 +1,6 @@
 # IMOU Ranger 2 5MP
 
-*Also known as: Imou Ranger 2 5MP, IPC-K2EP-5H2W, Ranger 2 3K*
+*Also known as: IPC-K2E-5H2W, IPC-K2EP-5H2W, Imou Ranger 2 5MP, Ranger 2 3K*
 
 | Field | Spec |
 |-------|------|
@@ -11,7 +11,7 @@
 | Resolution | 5MP/3K (5MP, 2688×1664) |
 | Sensor | 1/3" Progressive CMOS |
 | Lens | 1× 3.6mm F2.0 |
-| Field of view | 87 (H), 108 (D)° |
+| Field of view | 87 H / 48 V / 108 D; pan 355 / tilt -5~80° |
 | Night vision | ir (10m), 0.1 lux color |
 | Power | USB (DC 5V/1A) |
 | Storage | microSD ≤ 512GB, NVR |
@@ -21,7 +21,7 @@
 
 ## Features
 
-- dual-band Wi-Fi 6 (IEEE802.11b/g/n/ax)
+- Wi-Fi 6 (IEEE802.11b/g/n/ax)
 - pan 0 to 355 / tilt -5 to 80
 - 8x digital zoom
 - smart tracking
@@ -36,6 +36,7 @@
 - https://www.imou.com/en/product/specs/ranger2-5mp
 - https://www.wifi-stock.com/details/imou-5mp-h-265-wi-fi-pan_tilt-camera-with-privacy-mode-ranger-2-5mp-ipc-k2ep-5h2w.html
 - https://www.wifi-stock.com/file/ipc-k2ep-5h2w_ds.pdf
+- https://static-website.imou.com/28bbc353-10dc-474e-a5c1-fbcc849f3df8.pdf
 
 ---
 *Auto-generated from imou-ranger2-5mp.json — do not edit by hand.*

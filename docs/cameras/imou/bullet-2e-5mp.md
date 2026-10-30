@@ -1,6 +1,6 @@
 # IMOU Bullet 2E 5MP
 
-*Also known as: IPC-K3DP-5H0WF, IMOU Bullet 2E 5MP*
+*Also known as: IPC-K3D-5H0WF, IPC-K3DP-5H0WF, IMOU Bullet 2E 5MP*
 
 | Field | Spec |
 |-------|------|
@@ -9,11 +9,11 @@
 | Type | bullet |
 | Connectivity | wifi, ethernet |
 | Resolution | 5MP 3K (5MP, 2880×1620) |
-| Sensor | 1/2.7" CMOS |
-| Lens | 1× 2.8 (fixed)mm F1.6 |
-| Field of view | 102 horizontal° |
+| Sensor | 1/3" Progressive CMOS |
+| Lens | 1× 2.8 / 3.6mm F1.6 |
+| Field of view | 2.8mm: 88 H / 49 V / 105 D; 3.6mm: 73 H / 40 V / 89 D° |
 | Night vision | color (30m) |
-| Power | PoE (802.3af) / DC 12V / WiFi |
+| Power | DC 12V/0.5A |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | rtsp, onvif |
 | IP rating | IP67 |
@@ -28,15 +28,15 @@
 - AI human detection
 - spotlight
 - IP67
-- WiFi + PoE + Ethernet
+- Wi-Fi 6 + Ethernet
 - H.265
 - Alexa
-- ₹5,000–7,000 popular India outdoor
 
 ## Sources
 
 - https://www.imou.com/en/product/detail/bullet2e
 - https://www.imou.com/en/product/specs/bullet2e
+- https://static-website.imou.com/733149e5-8720-47b2-a35a-d3b61c17f995.pdf
 
 ---
 *Auto-generated from imou-bullet-2e-5mp.json — do not edit by hand.*

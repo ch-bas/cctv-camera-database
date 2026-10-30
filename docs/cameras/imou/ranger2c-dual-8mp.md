@@ -7,7 +7,7 @@
 | Brand | IMOU |
 | Model | Ranger 2C Dual 8MP |
 | Type | dual-lens |
-| Connectivity | wifi, ethernet |
+| Connectivity | wifi |
 | Resolution | 4MP per lens (8MP total) (4MP, 2560×1440) |
 | Sensor | 1/2.8" Progressive CMOS (per lens) |
 | Lens | 2× 3.6mm |
@@ -32,12 +32,12 @@
 - spotlight + siren
 - privacy mode
 - dual-band Wi-Fi 6 (2.4GHz/5GHz)
-- Ethernet port
 - two-way talk
 
 ## Sources
 
 - https://www.imou.com/en/product/specs/ranger2c-dual
+- https://static-website.imou.com/1b52cc47-b9a5-481c-b125-013fb5a2b91d.pdf
 
 ---
 *Auto-generated from imou-ranger2c-dual-8mp.json — do not edit by hand.*

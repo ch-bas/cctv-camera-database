@@ -1,16 +1,17 @@
 # IMOU Ranger 2 Pro 5MP
 
-*Also known as: Imou Ranger 2 Pro 5MP*
+*Also known as: IPC-S2EP-5R1S, IPC-S2EN-5R1S, S2EP-5R1S, Imou Ranger 2 Pro 5MP*
 
 | Field | Spec |
 |-------|------|
 | Brand | IMOU |
 | Model | Ranger 2 Pro 5MP |
 | Type | ptz |
-| Connectivity | wifi, ethernet |
+| Connectivity | wifi |
 | Resolution | 5MP/QHD (5MP, 2880×1620) |
 | Sensor | 1/3" Progressive CMOS |
-| Lens | 1× |
+| Lens | 1× 3.6mm |
+| Field of view | 88 H / 47 V / 107 D; pan 355 / tilt -5 to 80° |
 | Night vision | hybrid (10m) |
 | Power | USB-C (DC 5V) |
 | Storage | microSD ≤ 512GB, NVR |
@@ -35,6 +36,7 @@
 ## Sources
 
 - https://static-website.imou.com/c75e81ab-e8fb-4446-b2e4-92a3a5fa1ba2.pdf
+- https://www.imou.com/en/product/specs/ranger2-pro-5mp
 
 ---
 *Auto-generated from imou-ranger-2-pro-5mp.json — do not edit by hand.*

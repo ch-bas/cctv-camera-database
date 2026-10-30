@@ -1,6 +1,6 @@
 # IMOU Cruiser Pano Z 13MP
 
-*Also known as: IPC-S76DP-13M0N*
+*Also known as: IPC-S76DP-13M0N, IPC-S76DN-13M0N*
 
 | Field | Spec |
 |-------|------|
@@ -10,8 +10,8 @@
 | Connectivity | wifi, ethernet |
 | Resolution | 13MP (2x4MP pano + 5MP PT zoom) (13MP, 2880×1620) |
 | Sensor | fixed 1/3" 4MP CMOS x2; PT 1/3" 5MP CMOS |
-| Lens | 4× F1.6 |
-| Field of view | panoramic 158 H; PT lens 12x mixed zoom° |
+| Lens | 4× 3.6 (panoramic) / 2.8 + 12 (PT)mm F1.6 |
+| Field of view | panoramic 158 H / 47 V / 165 D; PT lens max 94 H / 52 V / 111 D° |
 | Night vision | hybrid (56m) |
 | Power | DC 12V/1.5A or PoE 802.3at, <18W |
 | Storage | microSD ≤ 1024GB, NVR |
@@ -43,6 +43,8 @@
 - https://www.imou.com/en/product/detail/cruiser-pano-z
 - https://static-website.imou.com/3f65ed29-9082-45c8-8226-5b08e9b8d57e.pdf
 - https://www.setik.biz/en/cameras/12807-imou-ipc-s76dp-13m0n-imou-cruiser-pano-z-13mp-quad-lens-wifi-ptz-camera-with-12x-zoom-ai-detection-and-color-night-vision-imou.html
+- https://www.imou.com/en/product/specs/cruiser-pano-z
+- https://static-website.imou.com/af2d3f14-2ec5-4843-ae1c-533f21edc47f.pdf
 
 ---
 *Auto-generated from imou-cruiser-pano-z.json — do not edit by hand.*

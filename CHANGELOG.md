@@ -36,6 +36,17 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
   Store listings that turned out to be existing cameras now match through new aliases (EmpireTech PTZ8C42X-T180, Hiseeu HD975B-P, Amcrest IP8M-TB2886EW-AI). Campark SC30 is now an alias of the identical Toguard SC30.
 
 ### Changed
+- **Imou correction pass: 96 of the 119 existing Imou records corrected** against Imou's official spec pages and the datasheets they link. The fixes:
+  - values copied from a sibling variant: the 5MP Bullet 2C/2C Pro/2E Pro/3, Cell 3C All-in-One, Rex 3D R1 and Cruiser Dual records
+  - the VDP7 PoE door phone carried the 2-wire model's power and Wi-Fi values
+  - the Cruiser 4G night-vision range (10 → 30 m)
+  - three cameras typed as box/turret that are pan-tilt (A1 4MP, PS2M 4K, Rex 3D R1)
+  - Wi-Fi-only models listing an Ethernet port
+  - wrong or sibling order codes (official codes are now aliases)
+  - missing sensor, FOV, frame-rate and microSD values added where the sheets state them
+  - two retail price strings removed
+
+  Every corrected record says what changed in `release_notes` and cites the spec page and datasheet. Values the official sheets don't state were left unchanged. Where Imou's spec page and datasheet disagree, the record notes both.
 - **ACTi RTSP port:** 22 ACTi cameras now use port 554 instead of 7070: A214, A426, A711, A713, A826, A951, A952, A956, Q450, Q83, Z32, Z33, Z34, Z36, Z37, Z41, Z42, Z71, Z710, Z84, Z94 and Z95. ACTi's own firmware manuals give two defaults: 7070 for most firmware generations (V, A, S and C series) and 554 for newer models and the Z-series OEM line. Only records whose own manual states 554 changed; every other ACTi record keeps 7070. Configs a user has verified are never changed by bulk corrections (none of these had one). The brand-level RTSP pattern for ACTi now says 7070, with 554 for the newer lines.
 - **CONTRIBUTING.md:**
   - The field reference is rebuilt from the schema. The removed `msrp_*` price fields are gone, the type, connectivity, protocol and IK enums are corrected, and 19 undocumented fields are now documented.

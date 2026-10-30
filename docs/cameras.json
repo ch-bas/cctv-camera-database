@@ -1818565,10 +1818565,9 @@
       "IPC-A42P-B-V2",
       "IPC-A42P-L-V2"
     ],
-    "type": "box",
+    "type": "ptz",
     "connectivity": [
-      "wifi",
-      "ethernet"
+      "wifi"
     ],
     "power_source": [
       "usb"
@@ -1818579,7 +1818578,7 @@
       "max_height": 1440,
       "label": "4MP/QHD"
     },
-    "sensor": "1/2.7\" Progressive CMOS",
+    "sensor": "1/3\" Progressive CMOS",
     "video": {
       "codecs": [
         "H.265",
@@ -1818591,7 +1818590,7 @@
       "focal_length_mm": "3.6",
       "varifocal": false
     },
-    "field_of_view_deg": "92 (H) / 48 (V) / 109 (D)",
+    "field_of_view_deg": "79 H / 43 V / 95.5 D; pan 355 / tilt -5 to 80",
     "night_vision": {
       "type": "ir",
       "range_m": 10
@@ -1818603,7 +1818602,7 @@
     },
     "power": {
       "method": "USB (DC 5V/1A)",
-      "consumption_w": 5,
+      "consumption_w": 3.75,
       "voltage": "DC 5V"
     },
     "storage": {
@@ -1818613,8 +1818612,8 @@
       "cloud": true
     },
     "operating_temp_c": "-10 to 45",
-    "dimensions_mm": "77.4 x 77.4 x 106.1",
-    "weight_g": 211,
+    "dimensions_mm": "77.4 x 77.4 x 106.2",
+    "weight_g": 197,
     "environment": [
       "indoor"
     ],
@@ -1818627,19 +1818626,22 @@
     ],
     "features": [
       "2.4GHz Wi-Fi (802.11b/g/n)",
-      "16x digital zoom",
+      "digital zoom",
       "AI human detection",
       "two-way audio",
       "abnormal sound detection",
       "privacy mode",
-      "works with NVRs via ONVIF"
+      "works with NVRs via ONVIF",
+      "smart tracking"
     ],
     "sources": [
       "https://www.imou.com/en/product/specs/a1-4mp",
       "https://www.visiotechsecurity.com/en/products/ip-cctv-1/consumer-ip-10/imou-652/ipc-a42p-d-v2-imou-detail",
-      "https://networkintegrators.ae/imou-a1-4mp-ipc-a42p-d-v2.html"
+      "https://networkintegrators.ae/imou-a1-4mp-ipc-a42p-d-v2.html",
+      "https://www.imou.com/it/product/specs/a1-4mp",
+      "https://static-website.imou.com/41dfee43-6250-453f-b7bf-8d2b182d5c22.pdf"
     ],
-    "last_verified": "2026-09-03",
+    "last_verified": "2026-10-30",
     "configs": {
       "frigate": {
         "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -1818651,8 +1818653,12 @@
     },
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "ptz": {
+      "autotracking": true
+    },
+    "release_notes": "Corrected 2026-10-30 against the official Imou spec sheet: type box -> ptz (355 pan / -5 to 80 tilt, smart tracking); connectivity wifi + ethernet -> wifi (no Ethernet port on the sheet); sensor 1/2.7\" -> 1/3\" CMOS; field_of_view_deg 92 H / 48 V / 109 D -> 79 H / 43 V / 95.5 D; power consumption 5 -> 3.75 W; weight 211 -> 197 g; dimensions height 106.1 -> 106.2 mm; feature \"16x digital zoom\" -> digital zoom (source: the A1 4MP (-L) datasheet linked from the Imou spec page; the en spec page carries no spec table).",
     "added": "2026-09-03",
-    "sensor_size_inch": 0.3704
+    "sensor_size_inch": 0.3333
   },
   {
     "id": "imou-a1-dual",
@@ -1818660,11 +1818666,13 @@
     "model": "A1 Dual 3MP",
     "aliases": [
       "Ranger 2 Dual",
-      "A1 Dual"
+      "A1 Dual",
+      "A1 Dual 6MP"
     ],
     "type": "dual-lens",
     "connectivity": [
-      "wifi"
+      "wifi",
+      "ethernet"
     ],
     "power_source": [
       "usb"
@@ -1818690,7 +1818698,7 @@
     },
     "field_of_view_deg": "91 H / 47 V / 107 D (per lens)",
     "night_vision": {
-      "type": "color",
+      "type": "hybrid",
       "range_m": 15
     },
     "ptz": {
@@ -1818737,11 +1818745,12 @@
       "human & pet detection",
       "two-way talk"
     ],
-    "release_notes": "A1 Dual is sold/badged as Ranger 2 Dual (QSG 'Imou Ranger 2 Dual Security Camera'). Single 3MP-per-lens version.",
+    "release_notes": "A1 Dual is sold/badged as Ranger 2 Dual (QSG 'Imou Ranger 2 Dual Security Camera'). Single 3MP-per-lens version. Corrected 2026-10-30 against the official Imou spec sheet: night_vision.type color → hybrid (smart IR→full-colour, four night-vision modes), connectivity adds ethernet (Ethernet port on back view), alias A1 Dual 6MP (datasheet title).",
     "sources": [
-      "https://www.imou.com/en/product/specs/a1-dual"
+      "https://www.imou.com/en/product/specs/a1-dual",
+      "https://static-website.imou.com/6ca314db-fd8e-4cdc-9fa5-965cdb061187.pdf"
     ],
-    "last_verified": "2026-09-03",
+    "last_verified": "2026-10-30",
     "configs": {
       "frigate": {
         "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -1818898,16 +1818907,18 @@
         {
           "name": "main",
           "resolution": "3840x2160",
-          "codec": "H.265"
+          "codec": "H.265",
+          "fps": 15
         }
-      ]
+      ],
+      "max_fps": 15
     },
     "lens": {
       "count": 1,
       "focal_length_mm": "3.6",
       "varifocal": false
     },
-    "field_of_view_deg": "91 H; pan 355 / tilt -5~80",
+    "field_of_view_deg": "89 H / 45 V / 105 D; pan 355 / tilt -5 to 80",
     "night_vision": {
       "type": "hybrid",
       "range_m": 20
@@ -1818941,13 +1818952,13 @@
       "Ethernet port",
       "two-way talk"
     ],
-    "release_notes": "A1 industrial-design body on the IPC-S2E1P platform (the A1 Pro 3MP is IPC-S2E1P-3R1S; the exact 8MP model code was not found). Third distinct SKU of the shared 4K platform. Sensor size, aperture, night-vision distance and max FPS unconfirmed for this SKU.",
+    "release_notes": "A1 industrial-design body on the IPC-S2E1P platform (the A1 Pro 3MP is IPC-S2E1P-3R1S; the exact 8MP model code was not found). Third distinct SKU of the shared 4K platform. Sensor size, aperture, night-vision distance and max FPS unconfirmed for this SKU. Corrected 2026-10-30 against the official Imou spec sheet: field_of_view_deg 91 H -> 89 H / 45 V / 105 D; added sensor 1/2.7\" Progressive CMOS and max_fps 15 (sensor, night-vision 20 m and frame rate now confirmed).",
     "sources": [
       "https://www.imou.com/en/product/detail/a1-pro4k",
       "https://www.imou.com/en/product/specs/a1-pro4k",
       "https://static-website.imou.com/98145c18-f39f-467a-a742-d6b2accf57bc.pdf"
     ],
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1818978,7 +1818989,9 @@
     "operating_temp_c": "-10 to 45",
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "sensor": "1/2.7\" Progressive CMOS",
     "added": "2026-07-05",
+    "sensor_size_inch": 0.3704,
     "substream_count": 0,
     "substream_max_resolution": null
   },
@@ -1819203,11 +1819216,14 @@
     ],
     "resolution": {
       "megapixels": 5,
+      "max_width": 2880,
+      "max_height": 1620,
       "label": "3K (5MP dual-lens)"
     },
     "lens": {
       "count": 2,
-      "varifocal": false
+      "varifocal": false,
+      "focal_length_mm": "3.6"
     },
     "night_vision": {
       "type": "hybrid",
@@ -1819244,12 +1819260,13 @@
       "4G LTE + Wi-Fi auto-switch",
       "128GB SD pre-inserted"
     ],
-    "release_notes": "Dual-lens wire-free AOV battery camera (fixed wide + PT lens). Sensor, focal lengths, IP rating and codecs not stated on accessible official sources.",
+    "release_notes": "Dual-lens wire-free AOV battery camera (fixed wide + PT lens). Sensor, focal lengths, IP rating and codecs not stated on accessible official sources. Corrected 2026-10-30 against the official Imou spec sheet: added model code IPC-SA70F-10M0T2-EU/FSP008, sensor 1/3\" CMOS, max resolution 2880x1620 per lens, 3.6 mm fixed + 3.6 mm PT lenses, FOV 76 H / 41 V / 91 D, H.265/H.264 up to 15 fps.",
     "sources": [
       "https://www.imou.com/en/product/detail/aov-dual",
-      "https://www.imou.com/en/product/specs/aov-dual"
+      "https://www.imou.com/en/product/specs/aov-dual",
+      "https://static-website.imou.com/5f11b011-2a90-4a1c-935e-a0fed2916837.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1819262,7 +1819279,20 @@
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-required",
-    "added": "2026-07-05"
+    "aliases": [
+      "IPC-SA70F-10M0T2-EU/FSP008"
+    ],
+    "sensor": "1/3\" Progressive CMOS",
+    "field_of_view_deg": "76 H / 41 V / 91 D; fixed lens 260 horizontal / 25 vertical; PT lens pan 340 / tilt 90",
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 15
+    },
+    "added": "2026-07-05",
+    "sensor_size_inch": 0.3333
   },
   {
     "id": "imou-aov-pt-4k",
@@ -1819342,12 +1819372,13 @@
       "dual-band Wi-Fi",
       "8W solar-compatible"
     ],
-    "release_notes": "4K/8MP AOV pan/tilt. Specs from Imou's official spec-page embedded JSON (Wi-Fi variant). A separate 4G LTE AOV PT 4K SKU is advertised on store.imou.com. IP rating not stated for the 4K variant (Pro/Lite are IP66).",
+    "release_notes": "4K/8MP AOV pan/tilt. Specs from Imou's official spec-page embedded JSON (Wi-Fi variant). A separate 4G LTE AOV PT 4K SKU is advertised on store.imou.com. IP rating not stated for the 4K variant (Pro/Lite are IP66). Corrected 2026-10-30 against the official Imou spec sheet: added model-code aliases IPC-SA7E-T-8M1T3 / IPC-SA7E-T-8M0T3 (productReportedModel, sold bundled with the FSP008 solar panel).",
     "sources": [
       "https://www.imou.com/en/product/detail/aov-pt4k",
-      "https://www.imou.com/en/product/specs/aov-pt4k"
+      "https://www.imou.com/en/product/specs/aov-pt4k",
+      "https://static-website.imou.com/931fe591-41c8-422a-b81d-7b20e2936d45.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1819360,6 +1819391,10 @@
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-required",
+    "aliases": [
+      "IPC-SA7E-T-8M1T3",
+      "IPC-SA7E-T-8M0T3"
+    ],
     "added": "2026-07-05",
     "sensor_size_inch": 0.3333,
     "substream_count": 0,
@@ -1819371,7 +1819406,8 @@
     "model": "AOV PT 5MP",
     "type": "ptz",
     "aliases": [
-      "IPC-B7ED-5M0TEA-EU"
+      "IPC-B7ED-5M0TEA-EU",
+      "IPC-B7ED-5M1TEA-EU"
     ],
     "connectivity": [
       "wifi",
@@ -1819448,12 +1819484,14 @@
       "4G LTE + Wi-Fi",
       "two-way talk"
     ],
-    "release_notes": "AOV PT 4G 5MP standalone (model IPC-B7ED-5M0TEA-EU). Values from the official Imou datasheet PDF; cloud storage explicitly 'Not Support' in the datasheet. Operating temp -20 to +50C.",
+    "release_notes": "AOV PT 4G 5MP standalone (model IPC-B7ED-5M0TEA-EU). Values from the official Imou datasheet PDF; cloud storage explicitly 'Not Support' in the datasheet. Operating temp -20 to +50C. Corrected 2026-10-30 against the official Imou spec sheet: added the current productReportedModel IPC-B7ED-5M1TEA-EU as an alias; the 5M1 revision sheet lists 25 m night vision and a 330/340 pan figure, while the 5M0 sheet this record was built from lists 20 m, so range_m stays 20.",
     "sources": [
       "https://www.imou.com/en/product/detail/aov-pt-5mp",
-      "https://static-website.imou.com/5e5b85af-9949-4b6a-aa61-7b5f0cd2a510.pdf"
+      "https://static-website.imou.com/5e5b85af-9949-4b6a-aa61-7b5f0cd2a510.pdf",
+      "https://www.imou.com/en/product/specs/aov-pt-5mp",
+      "https://static-website.imou.com/26b66f28-cc26-475a-be46-b74db30f41a6.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1819700,9 +1819738,11 @@
         {
           "name": "main",
           "resolution": "2880x1620",
-          "codec": "H.265"
+          "codec": "H.265",
+          "fps": 15
         }
-      ]
+      ],
+      "max_fps": 15
     },
     "sensor": "1/1.8\" Progressive CMOS",
     "lens": {
@@ -1819711,7 +1819751,7 @@
       "aperture": "F1.0",
       "varifocal": false
     },
-    "field_of_view_deg": "107 D; pan 340 / tilt 0-90",
+    "field_of_view_deg": "89 H / 47 V / 107 D; pan 340 / tilt 0-90",
     "night_vision": {
       "type": "hybrid",
       "range_m": 25
@@ -1819748,12 +1819788,14 @@
       "integrated siren",
       "4G LTE + Wi-Fi"
     ],
-    "release_notes": "Flagship AOV pan/tilt (model IPC-UA7E-5M0T2-EU). Its datasheet explicitly states no browser access — the camera exposes no RTSP/ONVIF stream. F1.0 is Imou's headline lens spec.",
+    "release_notes": "Flagship AOV pan/tilt (model IPC-UA7E-5M0T2-EU). Its datasheet explicitly states no browser access — the camera exposes no RTSP/ONVIF stream. F1.0 is Imou's headline lens spec. Corrected 2026-10-30 against the official Imou spec sheet: field_of_view_deg 107 D -> 89 H / 47 V / 107 D and added max_fps 15; model code IPC-UA7E-5M0T2-EU confirmed (kit IPC-UA7E-5M0T2-EU/FSP14). The spec page says 1/3\" sensor while the datasheet says 1/1.8\", so sensor is left as the datasheet value.",
     "sources": [
       "https://www.imou.com/en/product/detail/aov-pt-pro",
-      "https://s3-eu-west-1.amazonaws.com/files.visiotech.es/files/pdf/IPC-UA7E-5M0T2-EU-IMOU_ES.pdf"
+      "https://s3-eu-west-1.amazonaws.com/files.visiotech.es/files/pdf/IPC-UA7E-5M0T2-EU-IMOU_ES.pdf",
+      "https://www.imou.com/en/product/specs/aov-pt-pro",
+      "https://static-website.imou.com/c613d997-f771-4374-9e85-af5df97e8fb0.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1819844,11 +1819886,12 @@
       "solar-compatible",
       "two-way audio"
     ],
-    "release_notes": "AOV Track Plus: Wi-Fi 6 battery/solar AOV pan-tilt camera, 1/2.5\" 8MP sensor, 10000mAh. Specs from Imou's official spec-page table. As a low-power AOV camera it does not list RTSP/ONVIF, so protocols/configs are omitted. No official IPC code published; min-lux not stated.",
+    "release_notes": "AOV Track Plus: Wi-Fi 6 battery/solar AOV pan-tilt camera, 1/2.5\" 8MP sensor, 10000mAh. Specs from Imou's official spec-page table. As a low-power AOV camera it does not list RTSP/ONVIF, so protocols/configs are omitted. No official IPC code published; min-lux not stated. Corrected 2026-10-30 against the official Imou spec sheet: added the official 8MP model code IPC-V7M-U-8X0S2/FSP14 (the spec page also lists IPC-V7M-U-6X0S2/FSP14 for the 6MP variant) and the datasheet source; specs otherwise confirmed.",
     "sources": [
-      "https://www.imou.com/en/product/specs/aov-track-plus"
+      "https://www.imou.com/en/product/specs/aov-track-plus",
+      "https://static-website.imou.com/3320842b-5b90-4862-8eb4-5af5520ee643.pdf"
     ],
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1819864,6 +1819907,9 @@
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-required",
+    "aliases": [
+      "IPC-V7M-U-8X0S2/FSP14"
+    ],
     "added": "2026-09-02",
     "sensor_size_inch": 0.4
   },
@@ -1819945,11 +1819991,12 @@
       "Wi-Fi 6 (2.4GHz)",
       "two-way talk"
     ],
-    "release_notes": "Bulb Cam (original): pan/tilt camera in a functional light bulb (5.2W / 350lm). 3MP and 5MP versions. Adds vehicle detection vs the 2C.",
+    "release_notes": "Bulb Cam (original): pan/tilt camera in a functional light bulb (5.2W / 350lm). 3MP and 5MP versions. Adds vehicle detection vs the 2C. Corrected 2026-10-30 against the official Imou spec sheet: added model-code alias IPC-GS6D-3M0WEB (productReportedModel 3MP variant).",
     "sources": [
-      "https://www.imou.com/en/product/specs/bulb-cam"
+      "https://www.imou.com/en/product/specs/bulb-cam",
+      "https://static-website.imou.com/0749b508-e94a-40f9-a570-9651ffcb3e98.pdf"
     ],
-    "last_verified": "2026-09-03",
+    "last_verified": "2026-10-30",
     "configs": {
       "frigate": {
         "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -1819961,6 +1820008,9 @@
     },
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "aliases": [
+      "IPC-GS6D-3M0WEB"
+    ],
     "added": "2026-09-03"
   },
   {
@@ -1820041,11 +1820091,13 @@
       "Wi-Fi 6 (2.4GHz)",
       "two-way talk"
     ],
-    "release_notes": "Bulb Cam (original): pan/tilt camera in a functional light bulb (5.2W / 350lm). 3MP and 5MP versions. Adds vehicle detection vs the 2C.",
+    "release_notes": "Bulb Cam (original): pan/tilt camera in a functional light bulb (5.2W / 350lm). 3MP and 5MP versions. Adds vehicle detection vs the 2C. Corrected 2026-10-30 against the official Imou spec sheet: added the 5MP model codes IPC-GS6D-5M0WEB / S6DP-5M0WEB from productReportedModel and the 5MP datasheet source (the spec page says up to 15 fps while the datasheet says 25/30 fps, so max_fps is left unchanged).",
     "sources": [
-      "https://www.imou.com/en/product/specs/bulb-cam"
+      "https://www.imou.com/en/product/specs/bulb-cam",
+      "https://www.imou.com/en/product/detail/bulb-cam",
+      "https://static-website.imou.com/6e51f6c7-fca3-452f-b74d-7ee3dbf0be91.pdf"
     ],
-    "last_verified": "2026-09-03",
+    "last_verified": "2026-10-30",
     "configs": {
       "frigate": {
         "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -1820057,6 +1820109,10 @@
     },
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "aliases": [
+      "IPC-GS6D-5M0WEB",
+      "S6DP-5M0WEB"
+    ],
     "added": "2026-09-03"
   },
   {
@@ -1820138,11 +1820194,12 @@
       "Wi-Fi 6 (2.4GHz)",
       "two-way talk"
     ],
-    "release_notes": "Bulb Cam 2C: pan/tilt camera in a bulb form factor (screw-in mount). 3MP and 5MP versions. Human detection only (the original Bulb Cam adds vehicle detection).",
+    "release_notes": "Bulb Cam 2C: pan/tilt camera in a bulb form factor (screw-in mount). 3MP and 5MP versions. Human detection only (the original Bulb Cam adds vehicle detection). Corrected 2026-10-30 against the official Imou spec sheet: added the official 3MP model codes IPC-K6C-3H1WEB / K6C-3H1WEB and the datasheet source; specs otherwise confirmed.",
     "sources": [
-      "https://www.imou.com/en/product/specs/bulb-cam2c"
+      "https://www.imou.com/en/product/specs/bulb-cam2c",
+      "https://static-website.imou.com/e32cbd42-01ab-461c-91ff-3971a6bf4661.pdf"
     ],
-    "last_verified": "2026-09-03",
+    "last_verified": "2026-10-30",
     "configs": {
       "frigate": {
         "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -1820154,6 +1820211,10 @@
     },
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "aliases": [
+      "IPC-K6C-3H1WEB",
+      "K6C-3H1WEB"
+    ],
     "added": "2026-09-03",
     "sensor_size_inch": 0.3125
   },
@@ -1820236,11 +1820297,12 @@
       "Wi-Fi 6 (2.4GHz)",
       "two-way talk"
     ],
-    "release_notes": "Bulb Cam 2C: pan/tilt camera in a bulb form factor (screw-in mount). 3MP and 5MP versions. Human detection only (the original Bulb Cam adds vehicle detection).",
+    "release_notes": "Bulb Cam 2C: pan/tilt camera in a bulb form factor (screw-in mount). 3MP and 5MP versions. Human detection only (the original Bulb Cam adds vehicle detection). Corrected 2026-10-30 against the official Imou spec sheet: added model-code alias IPC-K6C-5H1WEB (productReportedModel 5MP variant); specs confirmed against the 5MP datasheet.",
     "sources": [
-      "https://www.imou.com/en/product/specs/bulb-cam2c"
+      "https://www.imou.com/en/product/specs/bulb-cam2c",
+      "https://static-website.imou.com/adefbf5b-4b97-4aee-8494-cffc94fcec7d.pdf"
     ],
-    "last_verified": "2026-09-03",
+    "last_verified": "2026-10-30",
     "configs": {
       "frigate": {
         "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -1820252,6 +1820314,9 @@
     },
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "aliases": [
+      "IPC-K6C-5H1WEB"
+    ],
     "added": "2026-09-03",
     "sensor_size_inch": 0.3333
   },
@@ -1820372,6 +1820437,7 @@
     "model": "Bullet 2 4MP",
     "type": "bullet",
     "connectivity": [
+      "wifi",
       "ethernet"
     ],
     "release_year": 2023,
@@ -1820381,20 +1820447,20 @@
       "max_height": 1440,
       "label": "4MP"
     },
-    "field_of_view_deg": "107h",
+    "field_of_view_deg": "104 H / 56 V / 124 D (2.8mm); 86 H / 44 V / 103 D (3.6mm); 53 H / 29 V / 62 D (6mm)",
     "night_vision": {
       "type": "hybrid",
       "range_m": 30
     },
     "power": {
-      "method": "PoE / DC 12V",
+      "method": "DC 12V 1A",
       "consumption_w": 7
     },
     "storage": {
       "onboard": true,
       "max_microsd_gb": 256,
       "nvr_compatible": true,
-      "cloud": false
+      "cloud": true
     },
     "protocols": [
       "onvif",
@@ -1820405,24 +1820471,28 @@
     "dimensions_mm": "147.7 x 74.2 x 74.2",
     "weight_g": 357,
     "audio": {
-      "microphone": false,
-      "speaker": false,
-      "two_way": false
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
     },
     "features": [
-      "IMOU Bullet 2 4MP PoE outdoor bullet",
-      "AI human/vehicle",
-      "30m IR",
+      "IMOU Bullet 2 4MP Wi-Fi outdoor bullet",
+      "dual-antenna Wi-Fi + 100Mbps Ethernet port",
+      "smart color night vision (30m)",
+      "built-in spotlight",
+      "110 dB siren",
+      "human detection",
       "H.265",
       "ONVIF/RTSP",
       "IP67"
     ],
     "sources": [
       "https://www.imou.com/en/product/detail/bullet2",
-      "https://www.wifi-stock.com/details/imou-4mp-h-265-bullet-poe-camera-ipc-f42eap.html"
+      "https://www.wifi-stock.com/details/imou-4mp-h-265-bullet-poe-camera-ipc-f42eap.html",
+      "https://www.imou.com/en/product/specs/bullet2",
+      "https://static-website.imou.com/de4599b4-da04-4694-950c-d7c7f68397d6.pdf"
     ],
     "power_source": [
-      "poe",
       "dc"
     ],
     "configs": {
@@ -1820443,19 +1820513,20 @@
       }
     },
     "aliases": [
-      "IPC-F42EAP",
+      "IPC-F42FE",
+      "IPC-F42FE-D",
       "IPC-F42FEP",
       "IMOU Bullet 2 4MP"
     ],
-    "sensor": "1/2.7\" progressive CMOS",
+    "sensor": "1/2.7\" 4 Megapixel Progressive CMOS",
     "lens": {
       "count": 1,
-      "focal_length_mm": "2.8",
+      "focal_length_mm": "2.8 / 3.6 / 6",
       "aperture": "F1.6",
       "varifocal": false
     },
-    "release_notes": "Bullet 2 4MP. Wi-Fi variant is IPC-F42FEP(-D); the PoE variant (matching this entry) is IPC-F42EAP. Night vision is smart dual-mode (IR + full-color spotlight).",
-    "last_verified": "2026-07-05",
+    "release_notes": "Bullet 2 4MP Wi-Fi bullet (IPC-F42FE / IPC-F42FE-D). Night vision is smart dual-mode (IR + full-color spotlight). Corrected 2026-10-30 against the official Imou spec sheet: the record had been built as a PoE/Ethernet-only variant; the official Bullet 2 4MP (IPC-F42FE) is Wi-Fi + Ethernet with DC 12V 1A power and no PoE, so connectivity [ethernet] -> [wifi, ethernet], power_source [poe, dc] -> [dc], audio none -> mic + speaker + two-way, cloud false -> true, field_of_view_deg 107h -> per-lens 104/86/53 H, added max_fps 30 and codecs, and removed the alias IPC-F42EAP (not a Bullet 2 code).",
+    "last_verified": "2026-10-30",
     "status": "available",
     "environment": [
       "outdoor"
@@ -1820465,6 +1820536,13 @@
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30
+    },
     "added": "2026-06-06",
     "sensor_size_inch": 0.3704
   },
@@ -1820473,8 +1820551,8 @@
     "brand": "IMOU",
     "model": "Bullet 2 Pro 4MP",
     "aliases": [
-      "IPC-F46FEP",
-      "IPC-F26FEP (2MP)"
+      "IPC-F46FE-D",
+      "IPC-F46FEP"
     ],
     "type": "bullet",
     "connectivity": [
@@ -1820495,24 +1820573,24 @@
         "H.265",
         "H.264"
       ],
-      "max_fps": 30,
+      "max_fps": 25,
       "streams": [
         {
           "name": "main",
           "resolution": "2560x1440",
-          "fps": 30,
+          "fps": 25,
           "codec": "H.265"
         }
       ]
     },
-    "sensor": "1/2.7\" CMOS",
+    "sensor": "1/3\" Progressive CMOS",
     "lens": {
       "count": 1,
-      "focal_length_mm": "2.8",
+      "focal_length_mm": "2.8 / 3.6",
       "aperture": "F1.6",
       "varifocal": false
     },
-    "field_of_view_deg": "108 H / 56 V / 128 D",
+    "field_of_view_deg": "2.8mm: 95 H / 52 V / 114 D; 3.6mm: 78 H / 41 V / 94 D",
     "night_vision": {
       "type": "hybrid",
       "range_m": 30
@@ -1820547,15 +1820625,16 @@
       "human detection",
       "motion detection",
       "8x digital zoom",
-      "ONVIF Profile S"
+      "ONVIF Profile S/G"
     ],
-    "release_notes": "Bullet 2 Pro (IPC-F46FEP 4MP / IPC-F26FEP 2MP): wired DC Wi-Fi bullet (not PoE) with spotlight, speaker and siren. ONVIF Profile S confirmed.",
+    "release_notes": "Bullet 2 Pro (IPC-F46FEP 4MP / IPC-F26FEP 2MP): wired DC Wi-Fi bullet (not PoE) with spotlight, speaker and siren. ONVIF Profile S confirmed. Corrected 2026-10-30 against the official Imou spec sheet: sensor 1/2.7\" -> 1/3\" CMOS; field_of_view_deg 108 H / 56 V / 128 D (2MP values) -> 2.8mm 95 H / 52 V / 114 D, 3.6mm 78 H / 41 V / 94 D; lens 2.8 -> 2.8 or 3.6 mm; max_fps 30 -> 25; added model code IPC-F46FE-D and removed the 2MP sibling code IPC-F26FEP; ONVIF Profile S/G.",
     "sources": [
       "https://www.imou.com/en/product/detail/bullet2-pro",
       "https://www.imou.com/en/product/specs/bullet2-pro",
-      "https://www.wifi-stock.com/details/imou-4mp-h-265-bullet-wi-fi-camera-bullet-2-pro-4-mp-ipc-f46fep-d.html"
+      "https://www.wifi-stock.com/details/imou-4mp-h-265-bullet-wi-fi-camera-bullet-2-pro-4-mp-ipc-f46fep-d.html",
+      "https://static-website.imou.com/462c93eb-592d-48a1-acff-0425069bc8b1.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1820584,7 +1820663,7 @@
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
     "added": "2026-07-05",
-    "sensor_size_inch": 0.3704,
+    "sensor_size_inch": 0.3333,
     "substream_count": 0,
     "substream_max_resolution": null
   },
@@ -1820817,9 +1820896,9 @@
     ],
     "resolution": {
       "megapixels": 5,
-      "max_width": 2880,
-      "max_height": 1620,
-      "label": "5MP/3K"
+      "max_width": 2688,
+      "max_height": 1664,
+      "label": "5MP"
     },
     "video": {
       "codecs": [
@@ -1820830,19 +1820909,19 @@
       "streams": [
         {
           "name": "main",
-          "resolution": "2880x1620",
+          "resolution": "2688x1664",
           "fps": 20,
           "codec": "H.265"
         }
       ]
     },
-    "sensor": "1/3.2\" progressive CMOS (3MP variant)",
+    "sensor": "1/3.06\" Progressive CMOS",
     "lens": {
       "count": 1,
       "focal_length_mm": "2.8",
       "varifocal": false
     },
-    "field_of_view_deg": "100 H / 54 V / 117 D",
+    "field_of_view_deg": "95 H / 53 V / 112 D (2.8mm); 73 H / 40 V / 89 D (3.6mm)",
     "night_vision": {
       "type": "ir",
       "range_m": 30
@@ -1820878,12 +1820957,13 @@
       "motion detection",
       "8x digital zoom"
     ],
-    "release_notes": "Bullet 2C (URL bullet-2c3-5mp): entry Wi-Fi 6 IR bullet, mic only, 1/3.2\" sensor (lower power than the 2C Pro). 3MP confirmed on the official spec page; 5MP top variant inferred. No IPC code published yet.",
+    "release_notes": "Bullet 2C (URL bullet-2c3-5mp): entry Wi-Fi 6 IR bullet, mic only, 1/3.2\" sensor (lower power than the 2C Pro). 3MP confirmed on the official spec page; 5MP top variant inferred. No IPC code published yet. Corrected 2026-10-30 against the official Imou spec sheet: resolution 2880x1620 → 2688x1664, sensor 1/3.2\" (3MP variant) → 1/3.06\" 5MP CMOS, FOV 100/54/117 (3MP figures) → 95/53/112 for 2.8mm (73/40/89 for 3.6mm), per the Bullet 2C 5MP datasheet.",
     "sources": [
       "https://www.imou.com/en/product/detail/bullet-2c3-5mp",
-      "https://www.imou.com/en/product/specs/bullet-2c3-5mp"
+      "https://www.imou.com/en/product/specs/bullet-2c3-5mp",
+      "https://static-website.imou.com/7182cbaf-60b8-4622-b0ef-9b3ea6fdeb4a.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1820911,7 +1820991,7 @@
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
     "added": "2026-07-05",
-    "sensor_size_inch": 0.3125,
+    "sensor_size_inch": 0.3268,
     "substream_count": 0,
     "substream_max_resolution": null
   },
@@ -1821059,13 +1821139,13 @@
         }
       ]
     },
-    "sensor": "1/2.9\" progressive CMOS (3MP variant)",
+    "sensor": "1/2.9\" 5 Megapixel Progressive CMOS",
     "lens": {
       "count": 1,
-      "focal_length_mm": "2.8",
+      "focal_length_mm": "2.8 / 3.6",
       "varifocal": false
     },
-    "field_of_view_deg": "100 H / 54 V / 117 D",
+    "field_of_view_deg": "2.8mm: 96 H / 54 V / 114 D; 3.6mm: 76 H / 40 V / 92 D",
     "night_vision": {
       "type": "ir",
       "range_m": 25
@@ -1821101,12 +1821181,13 @@
       "motion detection",
       "8x digital zoom"
     ],
-    "release_notes": "Bullet 2C Pro: Wi-Fi 6 IR bullet, built-in mic only (no speaker). 3MP variant confirmed on the official spec page; 5MP top variant inferred from the product name. No IPC model code published yet (new 2025 model).",
+    "release_notes": "Bullet 2C Pro: Wi-Fi 6 IR bullet, built-in mic only (no speaker). Corrected 2026-10-30 against the official Imou spec sheet: sensor and field_of_view_deg had been copied from the 3MP variant; now the 5MP values (1/2.9\" 5MP CMOS; 2.8mm 96 H / 54 V / 114 D, 3.6mm 76 H / 40 V / 92 D, was 100 H / 54 V / 117 D), lens options 2.8 / 3.6 mm, and added the 5MP model codes IPC-K3CP-5V0W / IPC-K3CN-5V0W from productReportedModel.",
     "sources": [
       "https://www.imou.com/en/product/detail/bullet2c-pro",
-      "https://www.imou.com/en/product/specs/bullet2c-pro"
+      "https://www.imou.com/en/product/specs/bullet2c-pro",
+      "https://static-website.imou.com/e9f1cca2-2e29-46b5-98e6-fed4b04f2eff.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1821133,6 +1821214,10 @@
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "aliases": [
+      "IPC-K3CP-5V0W",
+      "IPC-K3CN-5V0W"
+    ],
     "added": "2026-07-05",
     "sensor_size_inch": 0.3448,
     "substream_count": 0,
@@ -1821255,6 +1821340,7 @@
     "brand": "IMOU",
     "model": "Bullet 2E 5MP",
     "aliases": [
+      "IPC-K3D-5H0WF",
       "IPC-K3DP-5H0WF",
       "IMOU Bullet 2E 5MP"
     ],
@@ -1821274,20 +1821360,20 @@
       "max_height": 1620,
       "label": "5MP 3K"
     },
-    "sensor": "1/2.7\" CMOS",
+    "sensor": "1/3\" Progressive CMOS",
     "lens": {
       "count": 1,
-      "focal_length_mm": "2.8 (fixed)",
+      "focal_length_mm": "2.8 / 3.6",
       "aperture": "F1.6",
       "varifocal": false
     },
-    "field_of_view_deg": "102 horizontal",
+    "field_of_view_deg": "2.8mm: 88 H / 49 V / 105 D; 3.6mm: 73 H / 40 V / 89 D",
     "night_vision": {
       "type": "color",
       "range_m": 30
     },
     "power": {
-      "method": "PoE (802.3af) / DC 12V / WiFi",
+      "method": "DC 12V/0.5A",
       "consumption_w": 6
     },
     "storage": {
@@ -1821315,14 +1821401,14 @@
       "AI human detection",
       "spotlight",
       "IP67",
-      "WiFi + PoE + Ethernet",
+      "Wi-Fi 6 + Ethernet",
       "H.265",
-      "Alexa",
-      "₹5,000–7,000 popular India outdoor"
+      "Alexa"
     ],
     "sources": [
       "https://www.imou.com/en/product/detail/bullet2e",
-      "https://www.imou.com/en/product/specs/bullet2e"
+      "https://www.imou.com/en/product/specs/bullet2e",
+      "https://static-website.imou.com/733149e5-8720-47b2-a35a-d3b61c17f995.pdf"
     ],
     "power_source": [
       "dc"
@@ -1821344,16 +1821430,22 @@
         "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
       }
     },
-    "release_notes": "Bullet 2E 5MP (IPC-K3DP-5H0WF). Corrected from a fabricated code (IPC-F57FEP-D, which returns no matching product).",
-    "last_verified": "2026-07-05",
+    "release_notes": "Bullet 2E 5MP (IPC-K3DP-5H0WF). Corrected from a fabricated code (IPC-F57FEP-D, which returns no matching product). Corrected 2026-10-30 against the official Imou spec sheet: sensor 1/2.7\" -> 1/3\" CMOS; field_of_view_deg \"102 horizontal\" -> 2.8mm 88 H / 49 V / 105 D, 3.6mm 73 H / 40 V / 89 D; lens 2.8 -> 2.8 or 3.6 mm; power \"PoE (802.3af) / DC 12V\" -> DC 12V/0.5A (no PoE on the sheet) and PoE removed from features; added H.265/H.264 codecs and model code IPC-K3D-5H0WF; removed a retail price string from features.",
+    "last_verified": "2026-10-30",
     "status": "available",
     "environment": [
       "outdoor"
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ]
+    },
     "added": "2026-06-06",
-    "sensor_size_inch": 0.3704
+    "sensor_size_inch": 0.3333
   },
   {
     "id": "imou-bullet-2e-pro-3mp",
@@ -1821499,7 +1821591,7 @@
         }
       ]
     },
-    "sensor": "1/2.9\" progressive CMOS (3MP variant)",
+    "sensor": "1/2.9\" Progressive CMOS",
     "lens": {
       "count": 1,
       "focal_length_mm": "2.8",
@@ -1821541,12 +1821633,13 @@
       "motion detection",
       "8x digital zoom"
     ],
-    "release_notes": "Bullet 2E Pro: Wi-Fi 6 IR bullet, built-in mic only. 3MP variant confirmed on the official spec page; 5MP top variant inferred. No IPC model code published yet. (Legacy non-Pro Bullet 2E had color spotlight NV — verify whether the 5MP Pro adds a spotlight.)",
+    "release_notes": "Bullet 2E Pro: Wi-Fi 6 IR bullet, built-in mic only. 3MP variant confirmed on the official spec page; 5MP top variant inferred. No IPC model code published yet. (Legacy non-Pro Bullet 2E had color spotlight NV — verify whether the 5MP Pro adds a spotlight.) Corrected 2026-10-30 against the official Imou spec sheet: sensor \"1/2.9\\\" (3MP variant)\" → 1/2.9\" confirmed for the 5MP (2880x1620) model by the 3MP/5MP datasheet; added model codes IPC-K3DP-5V0W / IPC-K3DN-5V0W (productReportedModel). The datasheet gives no FOV, so the FOV (96/52/111, from the 3MP spec page) stays unverified for 5MP.",
     "sources": [
       "https://www.imou.com/en/product/detail/bullet2e-pro",
-      "https://www.imou.com/en/product/specs/bullet2e-pro"
+      "https://www.imou.com/en/product/specs/bullet2e-pro",
+      "https://static-website.imou.com/5d773b8e-ed1b-4f04-9c42-a489b84768b7.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1821573,6 +1821666,10 @@
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "aliases": [
+      "IPC-K3DP-5V0W",
+      "IPC-K3DN-5V0W"
+    ],
     "added": "2026-07-05",
     "sensor_size_inch": 0.3448,
     "substream_count": 0,
@@ -1821583,8 +1821680,8 @@
     "brand": "IMOU",
     "model": "Bullet 3 5MP",
     "aliases": [
-      "IPC-S3EP-5M0WE",
-      "IPC-S3EP-3M0WE (3MP)"
+      "IPC-S3E-5M0WE",
+      "IPC-S3EP-5M0WE"
     ],
     "type": "bullet",
     "connectivity": [
@@ -1821592,8 +1821689,7 @@
       "ethernet"
     ],
     "power_source": [
-      "dc",
-      "poe"
+      "dc"
     ],
     "resolution": {
       "megapixels": 5,
@@ -1821619,23 +1821715,23 @@
     "sensor": "1/3\" 5MP progressive CMOS",
     "lens": {
       "count": 1,
-      "focal_length_mm": "2.8",
+      "focal_length_mm": "2.8 / 3.6",
       "varifocal": false
     },
-    "field_of_view_deg": "104 H",
+    "field_of_view_deg": "2.8mm: 94 H / 52 V / 111 D; 3.6mm: 78 H / 41 V / 94 D",
     "night_vision": {
       "type": "hybrid",
       "range_m": 30
     },
     "power": {
-      "method": "DC 12V or PoE",
+      "method": "DC 12V 1A",
       "consumption_w": 12
     },
     "storage": {
       "onboard": true,
       "nvr_compatible": true,
       "cloud": true,
-      "max_microsd_gb": 256
+      "max_microsd_gb": 512
     },
     "protocols": [
       "onvif",
@@ -1821659,12 +1821755,14 @@
       "8x digital zoom",
       "two-way audio"
     ],
-    "release_notes": "Bullet 3 (IPC-S3EP-5M0WE 5MP / -3M0WE 3MP): Wi-Fi 6 full-color bullet, DC or PoE. The full-color, higher-tier sibling of the Bullet 3C.",
+    "release_notes": "Bullet 3 (IPC-S3E-5M0WE, retail IPC-S3EP-5M0WE): Wi-Fi 6 full-color bullet with Ethernet port. The full-color, higher-tier sibling of the Bullet 3C. Corrected 2026-10-30 against the official Imou spec sheet: field_of_view_deg 104 H (3MP value) -> 2.8mm 94 H / 52 V / 111 D, 3.6mm 78 H / 41 V / 94 D; max_microsd_gb 256 -> 512; power is DC 12V 1A only, so poe was removed from power_source; added productReportedModel IPC-S3E-5M0WE and removed the 3MP code IPC-S3EP-3M0WE from aliases.",
     "sources": [
       "https://www.imou.com/en/product/detail/bullet3",
-      "https://www.setik.biz/en/cameras/9582-imou-ipc-s3ep-5m0we-imou-camera-imou-bullet-3-wi-fi-5mp-28mm-full-color-ir-imou-sense.html"
+      "https://www.setik.biz/en/cameras/9582-imou-ipc-s3ep-5m0we-imou-camera-imou-bullet-3-wi-fi-5mp-28mm-full-color-ir-imou-sense.html",
+      "https://www.imou.com/en/product/specs/bullet3",
+      "https://static-website.imou.com/cb79d56b-b9b8-4277-b160-5f8d28385309.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1821702,7 +1821800,9 @@
     "brand": "IMOU",
     "model": "Bullet 3 Pro 3MP",
     "aliases": [
-      "IPC-S3EN-3V0W"
+      "IPC-S3EP-3V0W",
+      "IPC-S3EN-3V0W",
+      "S3EP-3V0W"
     ],
     "type": "bullet",
     "connectivity": [
@@ -1821714,9 +1821814,9 @@
     ],
     "resolution": {
       "megapixels": 3,
-      "max_width": 1920,
-      "max_height": 1080,
-      "label": "2K"
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "3MP"
     },
     "video": {
       "codecs": [
@@ -1821769,12 +1821869,13 @@
       "AI human & vehicle detection",
       "two-way audio"
     ],
-    "release_notes": "Bullet 3 Pro 3MP (IPC-S3EN-3V0W): active-deterrence full-color Wi-Fi 6 bullet, DC-only (no PoE). Specs from Imou's official datasheet (Rev 1.0.0). Distinct S3E family from the plain Bullet 3 (IPC-S3EP). FOV, min-lux and IK not stated.",
+    "release_notes": "Bullet 3 Pro 3MP (IPC-S3EN-3V0W): active-deterrence full-color Wi-Fi 6 bullet, DC-only (no PoE). Specs from Imou's official datasheet (Rev 1.0.0). Distinct S3E family from the plain Bullet 3 (IPC-S3EP). FOV, min-lux and IK not stated. Corrected 2026-10-30 against the official Imou spec sheet: resolution 1920x1080 -> 2304x1296 (3MP, per the spec page; the combined 3MP/5MP datasheet misprints 1920x1080), added FOV 2.8mm 96 H / 52 V / 111 D and 3.6mm 78 H / 41 V / 91 D, added model code IPC-S3EP-3V0W; the spec page and datasheet disagree on night-vision range (30 vs 25 m), power (<12 vs <9 W) and weight (265 vs 290 g), so those were left as the datasheet states.",
     "sources": [
       "https://www.imou.com/en/support/product-manual",
-      "https://static-website.imou.com/69d15e55-067f-4595-afbd-943e1e60057f.pdf"
+      "https://static-website.imou.com/69d15e55-067f-4595-afbd-943e1e60057f.pdf",
+      "https://www.imou.com/en/product/specs/bullet3-pro"
     ],
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1821802,6 +1821903,7 @@
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "field_of_view_deg": "2.8mm: 96 H / 52 V / 111 D; 3.6mm: 78 H / 41 V / 91 D",
     "added": "2026-09-02",
     "sensor_size_inch": 0.3448
   },
@@ -1821979,12 +1822081,14 @@
       "AI human & vehicle detection",
       "two-way audio"
     ],
-    "release_notes": "Bullet 3 Pro 8MP: active-deterrence full-color Wi-Fi 6 4K bullet, larger 1/2.8\" sensor, DC-only (no PoE). Specs from Imou's official Bullet 3 Pro 8MP datasheet (Rev 1.0.0). Full SKU code, FOV, min-lux and IK not published.",
+    "release_notes": "Bullet 3 Pro 8MP: active-deterrence full-color Wi-Fi 6 4K bullet, larger 1/2.8\" sensor, DC-only (no PoE). Specs from Imou's official Bullet 3 Pro 8MP datasheet (Rev 1.0.0). Full SKU code, FOV, min-lux and IK not published. Corrected 2026-10-30 against the official Imou spec sheet: added the 8MP field of view (2.8mm 109 H / 57 V / 129 D, 3.6mm 89 H / 45 V / 105 D) and the 8MP model codes IPC-S3EP-8V0W / IPC-S3EN-8V0W / S3EP-1L8V0W from productReportedModel (the spec page says <12 W and the datasheet <9 W, so consumption is left as the datasheet states).",
     "sources": [
       "https://www.imou.com/en/support/product-manual",
-      "https://static-website.imou.com/72c2f222-2d1c-4954-8cff-e309ff3ce5d0.pdf"
+      "https://static-website.imou.com/72c2f222-2d1c-4954-8cff-e309ff3ce5d0.pdf",
+      "https://www.imou.com/en/product/detail/bullet3-pro",
+      "https://www.imou.com/en/product/specs/bullet3-pro"
     ],
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1822012,6 +1822116,12 @@
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "field_of_view_deg": "2.8mm: 109 H / 57 V / 129 D; 3.6mm: 89 H / 45 V / 105 D",
+    "aliases": [
+      "IPC-S3EP-8V0W",
+      "IPC-S3EN-8V0W",
+      "S3EP-1L8V0W"
+    ],
     "added": "2026-09-02",
     "sensor_size_inch": 0.3571
   },
@@ -1822129,6 +1822239,7 @@
     "brand": "IMOU",
     "model": "Bullet 3C 5MP",
     "aliases": [
+      "IPC-S3D-5M0WJ",
       "IPC-S3DP-5M0WJ"
     ],
     "type": "bullet",
@@ -1822162,7 +1822273,7 @@
     },
     "lens": {
       "count": 1,
-      "focal_length_mm": "3.6",
+      "focal_length_mm": "2.8 / 3.6",
       "varifocal": false
     },
     "night_vision": {
@@ -1822200,13 +1822311,14 @@
       "H.265",
       "2.4GHz Wi-Fi"
     ],
-    "release_notes": "Bullet 3C (IPC-S3DP-5M0WJ, moderate-confidence code; 3MP variant also sold): the IR, 2.4GHz-Wi-Fi budget sibling of the Bullet 3 (which adds full-color + Wi-Fi 6 + PoE).",
+    "release_notes": "Bullet 3C (IPC-S3DP-5M0WJ, moderate-confidence code; 3MP variant also sold): the IR, 2.4GHz-Wi-Fi budget sibling of the Bullet 3 (which adds full-color + Wi-Fi 6 + PoE). Corrected 2026-10-30 against the official Imou spec sheet: added sensor 1/3\" CMOS, FOV 2.8mm 94 H / 52 V / 111 D and 3.6mm 78 H / 41 V / 94 D, lens 3.6 -> 2.8 or 3.6 mm (both offered), and the official model code IPC-S3D-5M0WJ.",
     "sources": [
       "https://www.imou.com/en/product/detail/bullet3c",
       "https://www.imou.com/en/product/specs/bullet3c",
-      "https://e-catalog.com/IMOU-BULLET-3C-5MP.htm"
+      "https://e-catalog.com/IMOU-BULLET-3C-5MP.htm",
+      "https://static-website.imou.com/a40fdd7b-e723-439c-93aa-2a47930134b8.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1822234,7 +1822346,10 @@
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "sensor": "1/3\" Progressive CMOS",
+    "field_of_view_deg": "2.8mm: 94 H / 52 V / 111 D; 3.6mm: 78 H / 41 V / 94 D",
     "added": "2026-07-05",
+    "sensor_size_inch": 0.3333,
     "substream_count": 0,
     "substream_max_resolution": null
   },
@@ -1822280,7 +1822395,7 @@
       "aperture": "F2.0",
       "varifocal": false
     },
-    "field_of_view_deg": "110 H",
+    "field_of_view_deg": "110 H / 61 V / 130 D",
     "night_vision": {
       "type": "hybrid",
       "range_m": 10
@@ -1822290,7 +1822405,7 @@
     },
     "storage": {
       "onboard": true,
-      "max_microsd_gb": 256,
+      "max_microsd_gb": 128,
       "nvr_compatible": false,
       "cloud": true
     },
@@ -1822317,12 +1822432,13 @@
       "16x digital zoom",
       "pre-record"
     ],
-    "release_notes": "microSD max varies by source (128GB / 256GB); 256GB used per most listings. Sensor and F-number are from retailer datasheets (Imou's official spec table is JS-rendered). Model code IPC-B46LP (this entry supersedes a former mislabeled 'doorbell-b46lp' ghost).",
+    "release_notes": "microSD max varies by source (128GB / 256GB); 256GB used per most listings. Sensor and F-number are from retailer datasheets (Imou's official spec table is JS-rendered). Model code IPC-B46LP (this entry supersedes a former mislabeled 'doorbell-b46lp' ghost). Corrected 2026-10-30 against the official Imou spec sheet: storage.max_microsd_gb 256 → 128 (spec page and datasheet both say up to 128 GB), FOV \"110 H\" → \"110 H / 61 V / 130 D\", added productReportedModel code IPC-B46L.",
     "sources": [
       "https://www.imou.com/en/product/detail/cell2",
-      "https://www.imou.com/en/product/specs/cell2"
+      "https://www.imou.com/en/product/specs/cell2",
+      "https://static-website.imou.com/bccbe3e6-0a29-41a8-8588-f2bc0c6c4d48.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1822331,6 +1822447,7 @@
       }
     },
     "aliases": [
+      "IPC-B46L",
       "IPC-B46LP"
     ],
     "environment": [
@@ -1822390,7 +1822507,8 @@
     },
     "field_of_view_deg": "98 H / 54 V / 121 D",
     "night_vision": {
-      "type": "hybrid"
+      "type": "hybrid",
+      "range_m": 15
     },
     "power": {
       "method": "Rechargeable battery; USB-C DC 5V/2A, power bank, or Imou solar panel",
@@ -1822398,7 +1822516,7 @@
     },
     "storage": {
       "onboard": true,
-      "max_microsd_gb": 512,
+      "max_microsd_gb": 256,
       "nvr_compatible": false,
       "cloud": true
     },
@@ -1822422,12 +1822540,13 @@
       "privacy mode",
       "solar-compatible"
     ],
-    "release_notes": "Base model of the Cell 3 series. Imou's official product page is JavaScript-rendered and did not expose a spec table; resolution (3MP/2K, 2304x1296) is taken from the Cell 3 series documentation and retailer listings and should be confirmed against the official datasheet.",
+    "release_notes": "Base model of the Cell 3 series (Imou publishes no model code for it; productReportedModel is a placeholder). Corrected 2026-10-30 against the official Imou spec sheet: added night_vision range_m 15, max_microsd_gb 512 -> 256; resolution 2304x1296, 1/2.8\" sensor, F2.0 and 98 H / 54 V / 121 D FOV confirmed by the datasheet.",
     "sources": [
       "https://www.imou.com/en/product/detail/cell3",
-      "https://www.imou.com/en/product/specs/cell3"
+      "https://www.imou.com/en/product/specs/cell3",
+      "https://static-website.imou.com/7bea24d5-b381-4411-a117-e16b378c8224.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1822584,14 +1822703,14 @@
         }
       ]
     },
-    "sensor": "1/2.8\" Progressive CMOS",
+    "sensor": "1/3\" Progressive CMOS",
     "lens": {
       "count": 1,
       "focal_length_mm": "2.8",
-      "aperture": "F2.0",
+      "aperture": "F2.2",
       "varifocal": false
     },
-    "field_of_view_deg": "98 H / 54 V / 121 D",
+    "field_of_view_deg": "95 H / 53 V / 112 D",
     "night_vision": {
       "type": "hybrid",
       "range_m": 15
@@ -1822634,7 +1822753,7 @@
       "https://www.imou.com/en/product/detail/cell3c-5mp",
       "https://www.imou.com/en/product/specs/cell3c-5mp"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1822650,8 +1822769,9 @@
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-required",
+    "release_notes": "Corrected 2026-10-30 against the official Imou spec sheet: sensor 1/2.8\" -> 1/3\" CMOS, aperture F2.0 -> F2.2, field_of_view_deg 98 H / 54 V / 121 D -> 95 H / 53 V / 112 D (the old values were the 3MP Cell 3C sheet; the only linked datasheet is the 3MP one, so the 5MP spec-page table was used).",
     "added": "2026-07-05",
-    "sensor_size_inch": 0.3571,
+    "sensor_size_inch": 0.3333,
     "substream_count": 0,
     "substream_max_resolution": null
   },
@@ -1822704,7 +1822824,7 @@
     },
     "power": {
       "method": "Rechargeable 5000mAh battery kept charged by an integrated 3W solar panel; USB-C DC 5V/2A",
-      "consumption_w": 3.75
+      "consumption_w": 3
     },
     "storage": {
       "onboard": true,
@@ -1822717,8 +1822837,8 @@
     ],
     "ip_rating": "IP66",
     "operating_temp_c": "-20 to 50",
-    "dimensions_mm": "168.1 x 72.2 x 60.6",
-    "weight_g": 270,
+    "dimensions_mm": "168.1 x 117 x 75",
+    "weight_g": 398,
     "audio": {
       "microphone": true,
       "speaker": true,
@@ -1822735,12 +1822855,13 @@
       "Amazon Alexa",
       "TLS encryption"
     ],
-    "release_notes": "Same camera as the Cell 3C 5MP, bundled/integrated with a 3W solar panel for self-charging (per the official 'Cell 3C All In One' technical document).",
+    "release_notes": "Same camera as the Cell 3C 5MP, bundled/integrated with a 3W solar panel for self-charging (per the official 'Cell 3C All In One' technical document). Corrected 2026-10-30 against the official Imou spec sheet: body specs were the plain Cell 3C values; per the Cell 3C All in One 5MP datasheet dimensions 168.1 x 72.2 x 60.6 → 168.1 x 117 x 75 mm, weight 270 → 398 g, consumption 3.75 → 3 W (sensor 1/2.8\", F2.0, FOV 98/54/121 already matched the datasheet; the imou.com spec page for this SKU still shows the Cell 3C body table).",
     "sources": [
       "https://www.imou.com/en/product/detail/cell3c-all-in-one-5mp",
-      "https://www.imou.com/en/product/specs/cell3c-all-in-one-5mp"
+      "https://www.imou.com/en/product/specs/cell3c-all-in-one-5mp",
+      "https://static-website.imou.com/9cf04495-e897-468d-b9d8-168a2fe1cec8.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1822776,10 +1822897,10 @@
       "max_height": 1296,
       "label": "2K/3MP"
     },
-    "field_of_view_deg": "108h",
+    "field_of_view_deg": "98 H / 54 V / 121 D",
     "night_vision": {
       "type": "color",
-      "range_m": 10
+      "range_m": 7
     },
     "power": {
       "method": "Rechargeable battery / solar",
@@ -1822787,9 +1822908,9 @@
     },
     "storage": {
       "onboard": true,
-      "max_microsd_gb": 256,
       "nvr_compatible": false,
-      "cloud": true
+      "cloud": true,
+      "notes": "4GB internal eMMC storage (no microSD slot)"
     },
     "protocols": [
       "http"
@@ -1822799,9 +1822920,9 @@
     "dimensions_mm": "63 x 88 x 42",
     "weight_g": 210,
     "audio": {
-      "microphone": false,
-      "speaker": false,
-      "two_way": false
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
     },
     "features": [
       "100% wire-free battery camera",
@@ -1822814,13 +1822935,15 @@
     "sources": [
       "https://www.imou.com/en/product/detail/cell-go",
       "https://www.imou.com/en/product/specs/cell-go",
-      "https://www.wifi-stock.com/details/imou-3mp-h-265-wi-fi-battery-camera-cell-go-ipc-b32p-v2.html"
+      "https://www.wifi-stock.com/details/imou-3mp-h-265-wi-fi-battery-camera-cell-go-ipc-b32p-v2.html",
+      "https://static-website.imou.com/e5d2c3e2-b30b-43ed-94e8-baae66699338.pdf"
     ],
     "power_source": [
       "battery",
       "solar"
     ],
     "aliases": [
+      "IPC-B32",
       "IPC-B32P-V2",
       "IMOU Cell Go"
     ],
@@ -1822830,14 +1822953,14 @@
       "focal_length_mm": "2.8",
       "varifocal": false
     },
-    "release_notes": "Cell Go (IPC-B32P-V2): a 3MP Wi-Fi battery camera. Corrected from wrong 4MP resolution and a wrong '4G' connectivity claim (Cell Go is Wi-Fi; the 4G battery model is Cell PT 4G).",
+    "release_notes": "Cell Go (IPC-B32P-V2): a 3MP Wi-Fi battery camera. Corrected from wrong 4MP resolution and a wrong '4G' connectivity claim (Cell Go is Wi-Fi; the 4G battery model is Cell PT 4G). Corrected 2026-10-30 against the official Imou spec sheet: field_of_view_deg \"108h\" -> 98 H / 54 V / 121 D; night_vision.range_m 10 -> 7; audio mic/speaker/two-way false -> true; storage microSD up to 256 GB -> 4 GB internal eMMC (no microSD slot on the sheet); added H.265 up to 15 fps and model code IPC-B32.",
     "configs": {
       "frigate": {
         "notes": "100% wire-free battery camera — it sleeps between events and does not expose a continuous local RTSP stream, so Frigate/local-NVR use is not supported. Recording is via the Imou Life app + cloud and on-device microSD.",
         "verified": false
       }
     },
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "environment": [
       "outdoor"
@@ -1822847,6 +1822970,12 @@
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-required",
+    "video": {
+      "codecs": [
+        "H.265"
+      ],
+      "max_fps": 15
+    },
     "added": "2026-06-06",
     "sensor_size_inch": 0.3571
   },
@@ -1822870,7 +1822999,8 @@
     },
     "video": {
       "codecs": [
-        "H.265"
+        "H.265",
+        "H.264"
       ],
       "max_fps": 15,
       "streams": [
@@ -1822888,10 +1823018,10 @@
       "aperture": "F2.0",
       "varifocal": false
     },
-    "field_of_view_deg": "98 H",
+    "field_of_view_deg": "98 H / 54 V / 121 D",
     "night_vision": {
       "type": "color",
-      "range_m": 7
+      "range_m": 15
     },
     "power": {
       "method": "Rechargeable 5000mAh battery (up to 120 days); optional solar panel",
@@ -1822924,12 +1823054,13 @@
       "100% wire-free",
       "Alexa & Google Home"
     ],
-    "release_notes": "Distinct SKU from the base Cell Go (IPC-TB3FP-3T0WE): the Full Color adds spotlight full-color night vision and active deterrence versus the base model's IR night vision. Specs from authorized-retailer datasheets (Imou spec table is JS-rendered).",
+    "release_notes": "Distinct SKU from the base Cell Go (IPC-B32): the Full Color (IPC-TB3F-3T0WE) adds spotlight full-color night vision and active deterrence versus the base model's IR night vision. Corrected 2026-10-30 against the official Imou spec sheet: night_vision range_m 7 (base Cell Go value) -> 15, field_of_view_deg 98 H -> 98 H / 54 V / 121 D, added sensor 1/2.8\" and H.264, added model codes IPC-TB3F-3T0WE(/FSP12-TYPEC); the spec page gives 168.1 x 72.2 x 60.6 mm / 270 g but the product datasheet gives 88 x 63 x 41 mm / 180 g, so dimensions and weight are left unchanged pending a check.",
     "sources": [
       "https://www.imou.com/en/product/detail/cell-go-full-color",
-      "https://www.imou.com/en/product/specs/cell-go-full-color"
+      "https://www.imou.com/en/product/specs/cell-go-full-color",
+      "https://static-website.imou.com/28eb59c0-a91c-411c-bdf1-d31e8b2018a9.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1822945,7 +1823076,13 @@
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-required",
+    "sensor": "1/2.8\" Progressive CMOS",
+    "aliases": [
+      "IPC-TB3F-3T0WE",
+      "IPC-TB3F-3T0WE/FSP12-TYPEC"
+    ],
     "added": "2026-07-05",
+    "sensor_size_inch": 0.3571,
     "substream_count": 0,
     "substream_max_resolution": null
   },
@@ -1822976,13 +1823113,16 @@
         {
           "name": "main",
           "resolution": "2304x1296",
-          "codec": "H.265"
+          "codec": "H.265",
+          "fps": 15
         }
-      ]
+      ],
+      "max_fps": 15
     },
-    "field_of_view_deg": "pan 360 / tilt",
+    "field_of_view_deg": "88 H / 45 V / 107 D; pan 330 / tilt 90",
     "night_vision": {
-      "type": "hybrid"
+      "type": "hybrid",
+      "range_m": 20
     },
     "ptz": {
       "autotracking": true
@@ -1823010,7 +1823150,7 @@
       "two_way": true
     },
     "features": [
-      "360 pan & tilt",
+      "330 pan / 90 tilt",
       "intelligent auto-tracking",
       "color / smart / infrared night vision modes",
       "human, vehicle, pet & parcel detection",
@@ -1823019,12 +1823159,13 @@
       "up to 30 days storage",
       "100% wire-free"
     ],
-    "release_notes": "Separate 'Cell PT 2C' and 'Cell PT 4G' models exist as distinct SKUs. Night-vision distance, focal length and sensor not stated on official sources.",
+    "release_notes": "Separate 'Cell PT 2C' and 'Cell PT 4G' models exist as distinct SKUs. Night-vision distance, focal length and sensor not stated on official sources. Corrected 2026-10-30 against the official Imou spec sheet: field_of_view_deg \"pan 360 / tilt\" -> 88 H / 45 V / 107 D; pan 330 / tilt 90 (feature \"360 pan & tilt\" -> 330 pan / 90 tilt); added night-vision range 20 m, sensor 1/2.8\" CMOS, 3.6 mm lens, max 15 fps and model code IPC-K9E-3T0WE.",
     "sources": [
       "https://www.imou.com/en/product/detail/cell-pt",
-      "https://www.imou.com/en/product/specs/cell-pt"
+      "https://www.imou.com/en/product/specs/cell-pt",
+      "https://static-website.imou.com/6d5e4a2e-f48c-477c-8abe-9a7c274368e3.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1823040,7 +1823181,17 @@
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-required",
+    "sensor": "1/2.8\" Progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "3.6",
+      "varifocal": false
+    },
+    "aliases": [
+      "IPC-K9E-3T0WE"
+    ],
     "added": "2026-07-05",
+    "sensor_size_inch": 0.3571,
     "substream_count": 0,
     "substream_max_resolution": null
   },
@@ -1823167,22 +1823318,26 @@
     },
     "video": {
       "codecs": [
-        "H.265"
+        "H.265",
+        "H.264"
       ],
       "streams": [
         {
           "name": "main",
           "resolution": "2880x1620",
-          "codec": "H.265"
+          "codec": "H.265",
+          "fps": 15
         }
-      ]
+      ],
+      "max_fps": 15
     },
     "lens": {
       "count": 1,
       "aperture": "F1.6",
-      "varifocal": false
+      "varifocal": false,
+      "focal_length_mm": "4.0"
     },
-    "field_of_view_deg": "pan 350 / tilt 90",
+    "field_of_view_deg": "76 H / 41 V / 91 D; pan 350 / tilt 90",
     "night_vision": {
       "type": "hybrid",
       "range_m": 15
@@ -1823194,7 +1823349,8 @@
     "storage": {
       "onboard": true,
       "nvr_compatible": false,
-      "cloud": true
+      "cloud": true,
+      "max_microsd_gb": 512
     },
     "protocols": [
       "http"
@@ -1823216,12 +1823372,12 @@
       "3W solar panel included",
       "two-way talk"
     ],
-    "release_notes": "5MP variant of the Cell PT 2C line (also sold in 3MP). Distinct from the plain Cell PT / Cell PT Lite (3MP). Sensor, exact focal length, IP rating and max microSD not stated on accessible official sources.",
+    "release_notes": "5MP variant of the Cell PT 2C line (also sold in 3MP). Distinct from the plain Cell PT / Cell PT Lite (3MP). Sensor, exact focal length, IP rating and max microSD not stated on accessible official sources. Corrected 2026-10-30 against the official Imou spec sheet: added model code IPC-B7C-5M0WEH, sensor 1/2.8\" CMOS, 4.0mm lens, FOV 76/41/91, H.264 alongside H.265, 15 fps max, microSD up to 512 GB (all from the 5MP spec page; the linked datasheet is the 3MP sheet and was not used).",
     "sources": [
       "https://www.imou.com/en/product/detail/cell-pt2c-5mp",
       "https://www.imou.com/en/product/specs/cell-pt2c-5mp"
     ],
-    "last_verified": "2026-10-01",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1823234,7 +1823390,12 @@
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-required",
+    "aliases": [
+      "IPC-B7C-5M0WEH"
+    ],
+    "sensor": "1/2.8\" Progressive CMOS",
     "added": "2026-07-05",
+    "sensor_size_inch": 0.3571,
     "substream_count": 0,
     "substream_max_resolution": null
   },
@@ -1823398,11 +1823559,11 @@
       "solar-compatible",
       "two-way audio"
     ],
-    "release_notes": "Cell PT 3C 5MP: Wi-Fi 6 battery/solar pan-tilt camera, 5000mAh. Specs from Imou's official spec-page table (Cell PT 3C 3MP/5MP). Low-power battery camera does not list RTSP/ONVIF, so protocols/configs are omitted. No official IPC code published; min-lux not stated.",
+    "release_notes": "Cell PT 3C 5MP: Wi-Fi 6 battery/solar pan-tilt camera, 5000mAh. Specs from Imou's official spec-page table (Cell PT 3C 3MP/5MP). Low-power battery camera does not list RTSP/ONVIF, so protocols/configs are omitted. No official IPC code published; min-lux not stated. Corrected 2026-10-30 against the official Imou spec sheet: added the official 5MP model codes IPC-B7CP-5B0S1/FSP14 and IPC-B7CN-5B0S1/FSP14 from the spec page; specs otherwise confirmed (no datasheet is linked for this model).",
     "sources": [
       "https://www.imou.com/en/product/specs/cell-pt3c-3mp-5mp"
     ],
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1823418,6 +1823579,10 @@
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-required",
+    "aliases": [
+      "IPC-B7CP-5B0S1/FSP14",
+      "IPC-B7CN-5B0S1/FSP14"
+    ],
     "added": "2026-09-02",
     "sensor_size_inch": 0.3333
   },
@@ -1823558,22 +1823723,23 @@
     "lens": {
       "count": 1,
       "focal_length_mm": "3.6",
-      "varifocal": false
+      "varifocal": false,
+      "aperture": "F1.6"
     },
     "field_of_view_deg": "88 H / 45 V / 107 D; pan 330 / tilt 90",
     "night_vision": {
-      "type": "ir",
+      "type": "hybrid",
       "range_m": 20
     },
     "power": {
-      "method": "15000mAh rechargeable battery (up to ~365 days); optional 3W solar; DC 5V/2A",
+      "method": "10000mAh rechargeable battery; optional solar; DC 5V/2A",
       "consumption_w": 3.5
     },
     "storage": {
       "onboard": true,
       "max_microsd_gb": 256,
       "nvr_compatible": false,
-      "cloud": true
+      "cloud": false
     },
     "protocols": [
       "http"
@@ -1823595,12 +1823761,13 @@
       "siren/alarm",
       "two-way talk"
     ],
-    "release_notes": "2nd-generation Cell PT 4G, distinct from the 1st-gen (IPC-K9EP-3T0TE-EU). Marketed as '2K QHD' but the 2304x1296 sensor is ~3MP. Specs from the 2nd-gen manual + distributor listings.",
+    "release_notes": "2nd-generation Cell PT 4G, distinct from the 1st-gen (IPC-K9EP-3T0TE-EU). Marketed as '2K QHD' but the 2304x1296 sensor is ~3MP. Specs from the 2nd-gen manual + distributor listings. Corrected 2026-10-30 against the official Imou spec sheet: battery 15000mAh → 10000mAh (spec page and datasheet), night_vision.type ir → hybrid (2 white-light lamps + 1 IR lamp), added aperture F1.6, storage.cloud true → false (datasheet: \"Cloud Storage: Not Support\"), added model code IPC-B7ED-3T1TEH. Official sources disagree on night-vision range (20 m page / 25 m datasheet), microSD (512/256 GB), weight (737.7/640 g) and power (<3.5/<4.9 W); the page values are kept.",
     "sources": [
       "https://www.imou.com/en/product/detail/cell-pt4g-2nd",
-      "https://www.imou.com/en/product/specs/cell-pt4g-2nd"
+      "https://www.imou.com/en/product/specs/cell-pt4g-2nd",
+      "https://static-website.imou.com/47b9f4c8-d6cc-4ead-b689-38c20048fe15.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1823616,6 +1823783,9 @@
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-required",
+    "aliases": [
+      "IPC-B7ED-3T1TEH"
+    ],
     "added": "2026-07-05",
     "sensor_size_inch": 0.3571,
     "substream_count": 0,
@@ -1823660,13 +1823830,13 @@
       "focal_length_mm": "3.6",
       "varifocal": false
     },
-    "field_of_view_deg": "88 H / 45 V; pan 330 / tilt 90",
+    "field_of_view_deg": "88 H / 45 V / 107 D; pan 330 / tilt 90",
     "night_vision": {
       "type": "hybrid",
       "range_m": 20
     },
     "power": {
-      "method": "Rechargeable battery (up to ~15000mAh with kit); DC 5V/2A or optional Imou solar panel; <3.5W",
+      "method": "5000mAh rechargeable battery; DC 5V/2A or optional Imou solar panel; <3.5W",
       "consumption_w": 3.5
     },
     "storage": {
@@ -1823696,12 +1823866,13 @@
       "100% wire-free",
       "two-way talk"
     ],
-    "release_notes": "'Lite' variant of the Cell PT line. Battery capacity varies by kit. Sensor size not confirmed on official sources.",
+    "release_notes": "'Lite' variant of the Cell PT line (IPC-K9EC-3T0WE). Corrected 2026-10-30 against the official Imou spec sheet: added sensor 1/2.8\" Progressive CMOS, 107 D to the field of view, model code IPC-K9EC-3T0WE, battery ~15000mAh -> 5000mAh; the spec page gives 117 x 110 x 142 mm and the datasheet 177 x 110 x 142 mm, so dimensions are left unchanged.",
     "sources": [
       "https://www.imou.com/en/product/detail/cell-pt-lite",
-      "https://www.imou.com/en/product/specs/cell-pt-lite"
+      "https://www.imou.com/en/product/specs/cell-pt-lite",
+      "https://static-website.imou.com/6d08211f-eb1e-4c37-a021-1e3f2979d954.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1823717,7 +1823888,12 @@
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-required",
+    "sensor": "1/2.8\" Progressive CMOS",
+    "aliases": [
+      "IPC-K9EC-3T0WE"
+    ],
     "added": "2026-07-05",
+    "sensor_size_inch": 0.3571,
     "substream_count": 0,
     "substream_max_resolution": null
   },
@@ -1823726,8 +1823902,8 @@
     "brand": "IMOU",
     "model": "Cruiser 4MP",
     "aliases": [
-      "IPC-S42FP",
-      "IPC-S22FP (2MP)"
+      "IPC-S42F",
+      "IPC-S42FP"
     ],
     "type": "ptz",
     "connectivity": [
@@ -1823761,10 +1823937,10 @@
     "sensor": "1/2.7\" progressive CMOS",
     "lens": {
       "count": 1,
-      "focal_length_mm": "3.6",
+      "focal_length_mm": "3.6 / 6",
       "varifocal": false
     },
-    "field_of_view_deg": "105 diagonal; pan 355 / tilt 0-90",
+    "field_of_view_deg": "3.6mm: 88 H / 46 V / 107 D; 6mm: 54 H / 30 V / 64 D; pan 355 / tilt 0-90",
     "night_vision": {
       "type": "hybrid",
       "range_m": 30
@@ -1823801,13 +1823977,14 @@
       "NVR support",
       "Smart Color Night Vision (official product page)"
     ],
-    "release_notes": "Original/base Cruiser (IPC-S42FP 4MP; a 2MP variant IPC-S22FP also exists). Mains-powered wired Wi-Fi PTZ.",
+    "release_notes": "Original/base Cruiser (IPC-S42FP 4MP; a 2MP variant IPC-S22FP also exists). Mains-powered wired Wi-Fi PTZ. Corrected 2026-10-30 against the official Imou spec sheet: field_of_view_deg \"105 diagonal\" -> 3.6mm 88 H / 46 V / 107 D, 6mm 54 H / 30 V / 64 D; lens 3.6 -> 3.6 or 6 mm; added model code IPC-S42F and removed the 2MP sibling code IPC-S22FP.",
     "sources": [
       "https://www.imou.com/en/product/detail/cruiser",
       "https://www.imou.com/en/product/specs/cruiser",
-      "https://www.wifi-stock.com/details/imou-4mp-h-265-wi-fi-p.html"
+      "https://www.wifi-stock.com/details/imou-4mp-h-265-wi-fi-p.html",
+      "https://static-website.imou.com/badd5bd0-7852-4d4d-a184-c5b2fa6a815b.pdf"
     ],
-    "last_verified": "2026-10-22",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1823961,12 +1824138,14 @@
     "brand": "IMOU",
     "model": "Cruiser 2 5MP",
     "aliases": [
+      "IPC-GS7E-5M0WE",
       "IPC-GS7EP-5M0WE",
       "IMOU Cruiser 2 5MP"
     ],
     "type": "ptz",
     "connectivity": [
-      "wifi"
+      "wifi",
+      "ethernet"
     ],
     "release_year": 2024,
     "markets": [
@@ -1823985,24 +1824164,25 @@
     "sensor": "1/2.7\" progressive CMOS",
     "lens": {
       "count": 1,
-      "focal_length_mm": "3.6 (fixed)",
+      "focal_length_mm": "3.6",
       "varifocal": false
     },
-    "field_of_view_deg": "pan 340 / tilt 0-90",
+    "field_of_view_deg": "85 H / 42 V / 102 D; pan 340 / tilt 0-90",
     "night_vision": {
-      "type": "color",
+      "type": "hybrid",
       "range_m": 30
     },
     "ptz": {
       "autotracking": true
     },
     "power": {
-      "method": "DC 12V",
-      "consumption_w": 12
+      "method": "DC 12V/1A",
+      "consumption_w": 12,
+      "voltage": "DC 12V"
     },
     "storage": {
       "onboard": true,
-      "max_microsd_gb": 512,
+      "max_microsd_gb": 256,
       "nvr_compatible": true,
       "cloud": true
     },
@@ -1824025,13 +1824205,14 @@
       "smart siren + spotlight deterrence",
       "IP66",
       "H.265",
-      "Alexa",
-      "₹7,000–9,000 best outdoor India PTZ"
+      "Alexa"
     ],
     "sources": [
       "https://www.imou.com/en/product/detail/cruiser2",
       "https://www.imou.com/en/product/specs/cruiser2",
-      "https://datasheet.w.od.ua/files/imou/imou-cruiser-2-ipc-gs7ep-5m0we-datasheet_eng.pdf"
+      "https://datasheet.w.od.ua/files/imou/imou-cruiser-2-ipc-gs7ep-5m0we-datasheet_eng.pdf",
+      "https://www.imou.com/uk/product/specs/cruiser2",
+      "https://static-website.imou.com/e95ab8a4-4e8a-43d7-a3f8-21bce7c4b803.pdf"
     ],
     "power_source": [
       "dc"
@@ -1824054,14 +1824235,21 @@
         "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
       }
     },
-    "release_notes": "Single-lens Cruiser 2 5MP (IPC-GS7EP-5M0WE). Corrected from a fabricated code (IPC-S7XEP-5M0WED, which is the dual-lens Cruiser Dual 2) and wrong 2.7mm lens. Absorbed the former MENA regional-duplicate entry.",
-    "last_verified": "2026-07-05",
+    "release_notes": "Single-lens Cruiser 2 5MP (IPC-GS7EP-5M0WE). Corrected from a fabricated code (IPC-S7XEP-5M0WED, which is the dual-lens Cruiser Dual 2) and wrong 2.7mm lens. Absorbed the former MENA regional-duplicate entry. Corrected 2026-10-30 against the official Imou spec sheet: added productReportedModel code IPC-GS7E-5M0WE, ethernet connectivity (1x 100 Mbps port), FOV 85/42/102, video H.265/H.264 up to 30 fps; night_vision.type color → hybrid (four-mode IR/colour night vision); microSD 512 → 256 GB (5MP datasheet); removed a price-marketing feature string.",
+    "last_verified": "2026-10-30",
     "status": "available",
     "environment": [
       "outdoor"
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30
+    },
     "added": "2026-06-06",
     "sensor_size_inch": 0.3704
   },
@@ -1824188,6 +1824376,8 @@
     "brand": "IMOU",
     "model": "Cruiser 2C 5MP",
     "aliases": [
+      "IPC-S7CP-5V0W",
+      "IPC-S7CN-5V0W",
       "IPC-S7CP-5M0WE"
     ],
     "type": "ptz",
@@ -1824241,7 +1824431,7 @@
       "onboard": true,
       "nvr_compatible": true,
       "cloud": true,
-      "max_microsd_gb": 256
+      "max_microsd_gb": 512
     },
     "protocols": [
       "onvif",
@@ -1824264,13 +1824454,14 @@
       "110 dB siren",
       "two-way talk"
     ],
-    "release_notes": "Cruiser 2C 5MP (IPC-S7CP-5M0WE); a 3MP variant also exists. Distinct from the Cruiser 2 (IPC-GS7EP).",
+    "release_notes": "Cruiser 2C 5MP (IPC-S7CP-5V0W / IPC-S7CN-5V0W; earlier retail code IPC-S7CP-5M0WE); a 3MP variant also exists. Distinct from the Cruiser 2 (IPC-GS7EP). Corrected 2026-10-30 against the official Imou spec sheet: added the productReportedModel codes IPC-S7CP-5V0W / IPC-S7CN-5V0W (IPC-S7CP-5M0WE kept as the earlier retail code) and max_microsd_gb 256 -> 512; sensor, FOV, 30 m night vision and power confirmed.",
     "sources": [
       "https://www.imou.com/en/product/detail/cruiser2c",
       "https://www.imou.com/en/product/specs/cruiser2c",
-      "https://www.wifi-stock.com/details/imou-5mp-h-265-wi-fi-p_t-camera-cruiser-2c-ipc-s7cp-5m0we.html"
+      "https://www.wifi-stock.com/details/imou-5mp-h-265-wi-fi-p_t-camera-cruiser-2c-ipc-s7cp-5m0we.html",
+      "https://static-website.imou.com/575b3951-b5e7-47be-aef8-948b1cb728df.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1824319,10 +1824510,10 @@
       "max_height": 1080,
       "label": "1080p"
     },
-    "field_of_view_deg": "355 pan/90 tilt",
+    "field_of_view_deg": "86 H / 45 V / 105 D; pan 355 / tilt 0-90",
     "night_vision": {
       "type": "color",
-      "range_m": 10
+      "range_m": 30
     },
     "power": {
       "method": "DC 12V/1A, <6.2W (mains-powered)",
@@ -1824335,38 +1824526,43 @@
       "cloud": true
     },
     "protocols": [
-      "http"
+      "http",
+      "onvif"
     ],
     "ip_rating": "IP66",
     "operating_temp_c": "-20 to 50",
     "dimensions_mm": "120.7 x 136.2 x 183.3",
     "weight_g": 418,
     "audio": {
-      "microphone": false,
-      "speaker": false,
-      "two_way": false
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
     },
     "features": [
       "4G LTE PTZ (FDD B1/3/5/7/8/20/28, TDD B38/40/41)",
       "355 pan / 0-90 tilt",
       "color spotlight night vision",
-      "AI human/vehicle detection",
-      "100Mbps Ethernet port"
+      "AI human detection",
+      "100Mbps Ethernet port",
+      "smart tracking",
+      "110dB siren"
     ],
     "sources": [
       "https://www.imou.com/en/product/detail/cruiser4g",
       "https://www.imou.com/en/product/specs/cruiser4g",
-      "https://www.wifi-stock.com/details/imou-1080p-h-265-4g-p_t-camera-cruiser-4g-ipc-s21ftp.html"
+      "https://www.wifi-stock.com/details/imou-1080p-h-265-4g-p_t-camera-cruiser-4g-ipc-s21ftp.html",
+      "https://static-website.imou.com/e13da325-cbe2-4c74-ad93-5c48e7e2f6df.pdf"
     ],
     "power_source": [
       "dc"
     ],
     "aliases": [
+      "IPC-S21FT",
       "IPC-S21FTP",
       "IMOU Cruiser 4G"
     ],
-    "release_notes": "Cruiser 4G (IPC-S21FTP): a 1080p/2MP MAINS-POWERED 4G LTE pan/tilt camera. Corrected from a fabricated 4MP battery+solar spec block (that described a different Imou solar model).",
-    "last_verified": "2026-07-05",
+    "release_notes": "Cruiser 4G (IPC-S21FTP): a 1080p/2MP MAINS-POWERED 4G LTE pan/tilt camera. Corrected from a fabricated 4MP battery+solar spec block (that described a different Imou solar model). Corrected 2026-10-30 against the official Imou spec sheet: night_vision.range_m 10 -> 30; field_of_view_deg \"355 pan/90 tilt\" -> \"86 H / 45 V / 105 D; pan 355 / tilt 0-90\"; audio mic/speaker/two-way false -> true; added onvif protocol, sensor 1/2.9\" CMOS, 3.6 mm lens, H.265/H.264 at 15 fps, smart tracking and model code IPC-S21FT; detection feature narrowed to human detection (sheet lists no vehicle detection).",
+    "last_verified": "2026-10-30",
     "status": "available",
     "environment": [
       "outdoor"
@@ -1824376,16 +1824572,33 @@
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-required",
-    "added": "2026-06-06"
+    "sensor": "1/2.9\" Progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "3.6",
+      "varifocal": false
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 15
+    },
+    "ptz": {
+      "autotracking": true
+    },
+    "added": "2026-06-06",
+    "sensor_size_inch": 0.3448
   },
   {
     "id": "imou-cruiser-dual",
     "brand": "IMOU",
     "model": "Cruiser Dual 6MP",
     "aliases": [
+      "IPC-S7X-6M0WED",
       "IPC-S7XP-6M0WED",
-      "IPC-S7XP-8M0WED",
-      "IPC-S7XP-10M0WED"
+      "Cruiser Dual 6MP-M1"
     ],
     "type": "dual-lens",
     "connectivity": [
@@ -1824416,13 +1824629,14 @@
         }
       ]
     },
-    "sensor": "1/2.8\" 3MP progressive CMOS (per lens)",
+    "sensor": "1/3\" 3MP Progressive CMOS (per lens)",
     "lens": {
       "count": 2,
       "focal_length_mm": "3.6",
-      "varifocal": false
+      "varifocal": false,
+      "aperture": "F1.6"
     },
-    "field_of_view_deg": "78 H (per lens); PT lens pan 355 / tilt 0-90",
+    "field_of_view_deg": "78 H / 41 V / 91 D (per lens); PT lens pan 355 / tilt 0-90",
     "night_vision": {
       "type": "hybrid",
       "range_m": 30
@@ -1824438,7 +1824652,7 @@
       "onboard": true,
       "nvr_compatible": true,
       "cloud": true,
-      "max_microsd_gb": 256
+      "max_microsd_gb": 512
     },
     "protocols": [
       "onvif",
@@ -1824461,12 +1824675,14 @@
       "Wi-Fi 6",
       "two-way talk"
     ],
-    "release_notes": "Original Cruiser Dual (S7XP prefix, base 6MP=3+3; 8MP=5+3 and 10MP=5+5 variants exist). Mains-wired.",
+    "release_notes": "Original Cruiser Dual (IPC-S7X prefix; base 6MP = 3MP+3MP; 8MP = 4MP+4MP and 10MP = 5MP+5MP variants exist). Mains-wired. Corrected 2026-10-30 against the official Imou spec sheet: sensor 1/2.8\" -> 1/3\" per lens, field_of_view_deg 78 H -> 78 H / 41 V / 91 D, added aperture F1.6, max_microsd_gb 256 -> 512, added productReportedModel IPC-S7X-6M0WED and removed the 8MP/10MP variant codes IPC-S7XP-8M0WED / IPC-S7XP-10M0WED from aliases (the 8MP variant is 4MP+4MP, not 5MP+3MP).",
     "sources": [
       "https://www.imou.com/en/product/detail/cruiser-dual",
-      "https://www.setik.biz/en/cameras/9584-imou-ipc-s7xp-6m0wed-imou-camera-imou-cruiser-dual-6mp-dual-lens-full-color-ir-imou-sense.html"
+      "https://www.setik.biz/en/cameras/9584-imou-ipc-s7xp-6m0wed-imou-camera-imou-cruiser-dual-6mp-dual-lens-full-color-ir-imou-sense.html",
+      "https://www.imou.com/en/product/specs/cruiser-dual",
+      "https://static-website.imou.com/64bad2b6-c222-4232-a674-33a312888139.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1824495,7 +1824711,7 @@
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
     "added": "2026-07-05",
-    "sensor_size_inch": 0.3571,
+    "sensor_size_inch": 0.3333,
     "substream_count": 0,
     "substream_max_resolution": null
   },
@@ -1824504,9 +1824720,10 @@
     "brand": "IMOU",
     "model": "Cruiser Dual 2 10MP",
     "aliases": [
-      "Cruiser Dual 2 10MP-P0",
       "IPC-S7XEP-10M0WED",
-      "IPC-S7XEP-6M0WED (6MP)"
+      "IPC-S7XEN-10M0WED",
+      "IPC-S7XE-10M0WED",
+      "Cruiser Dual 2 10MP-P0"
     ],
     "type": "dual-lens",
     "connectivity": [
@@ -1824544,7 +1824761,7 @@
       "aperture": "F1.6",
       "varifocal": false
     },
-    "field_of_view_deg": "fixed lens pan 0-260; PT lens pan 355 / tilt 0-90",
+    "field_of_view_deg": "73 H / 40 V / 89 D (per lens); fixed lens pan 0-260 / tilt 0-25; PT lens pan 355 / tilt 0-90",
     "night_vision": {
       "type": "hybrid",
       "range_m": 30
@@ -1824585,14 +1824802,15 @@
       "Wi-Fi 6",
       "two-way talk"
     ],
-    "release_notes": "Cruiser Dual 2 (IPC-S7XEP-10M0WED, S7XEP prefix; 6MP variant IPC-S7XEP-6M0WED). Mains-wired dual-lens PT.",
+    "release_notes": "Cruiser Dual 2 (IPC-S7XEP-10M0WED, S7XEP prefix; 6MP variant IPC-S7XEP-6M0WED). Mains-wired dual-lens PT. Corrected 2026-10-30 against the official Imou spec sheet: field_of_view_deg now includes the per-lens FOV 73 H / 40 V / 89 D and fixed-lens tilt 0-25 from the 10MP datasheet (the spec page states 76 H / 41 V / 91 D); aliases now carry the datasheet model numbers IPC-S7XEP-10M0WED / IPC-S7XEN-10M0WED plus IPC-S7XE-10M0WED, and the 6MP sibling code IPC-S7XEP-6M0WED was removed.",
     "sources": [
       "https://www.imou.com/en/product/detail/cruiser-dual2",
       "https://www.imou.com/en/product/specs/cruiser-dual2",
       "https://device.report/manuals/imou-cruiser-dual-2-10mp-datasheet",
-      "https://static-website.imou.com/076ad205-e97a-4a08-a5f1-8b5d5760fd91.pdf"
+      "https://static-website.imou.com/076ad205-e97a-4a08-a5f1-8b5d5760fd91.pdf",
+      "https://static-website.imou.com/f542ba48-f8f5-4c7f-b868-eeff239479fa.pdf"
     ],
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1824631,7 +1824849,9 @@
     "model": "Cruiser Dual 2 6MP",
     "aliases": [
       "Cruiser Dual 2 6MP-M1",
-      "IPC-S7XEP-6M0WED"
+      "IPC-S7XE-6M0WED",
+      "IPC-S7XEP-6M0WED",
+      "IPC-S7XEN-6M0WED"
     ],
     "type": "dual-lens",
     "connectivity": [
@@ -1824661,7 +1824881,7 @@
       "aperture": "F1.6",
       "varifocal": false
     },
-    "field_of_view_deg": "fixed lens pan 0-260 / tilt 0-25; PT lens pan 355 / tilt 0-90",
+    "field_of_view_deg": "78 H / 41 V / 91 D per lens; fixed lens pan 0-260 / tilt 0-25; PT lens pan 355 / tilt 0-90",
     "night_vision": {
       "type": "hybrid",
       "range_m": 30
@@ -1824703,9 +1824923,11 @@
       "two-way talk"
     ],
     "sources": [
-      "https://static-website.imou.com/65299fbf-71d4-480d-9dc8-27418811315a.pdf"
+      "https://static-website.imou.com/65299fbf-71d4-480d-9dc8-27418811315a.pdf",
+      "https://www.imou.com/en/product/specs/cruiser-dual2",
+      "https://static-website.imou.com/23281a2a-70e5-495f-b139-140f6b0b9841.pdf"
     ],
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-30",
     "environment": [
       "outdoor"
     ],
@@ -1824723,6 +1824945,7 @@
     },
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "release_notes": "Corrected 2026-10-30 against the official Imou spec sheet: added per-lens FOV 78/41/91 (spec page / 6MP-M1 sheet; the earlier 6MP sheet states 80/43/93) and model codes IPC-S7XE-6M0WED / IPC-S7XEN-6M0WED (productReportedModel / datasheet \"Model Nos\").",
     "added": "2026-09-02",
     "sensor_size_inch": 0.3333
   },
@@ -1824731,6 +1824954,7 @@
     "brand": "IMOU",
     "model": "Cruiser Dual 2 8MP",
     "aliases": [
+      "IPC-S7XE-8M0WED",
       "Cruiser Dual 2 8MP-M1"
     ],
     "type": "dual-lens",
@@ -1824761,7 +1824985,7 @@
       "aperture": "F1.6",
       "varifocal": false
     },
-    "field_of_view_deg": "fixed lens pan 0-260 / tilt 0-25; PT lens pan 355 / tilt 0-90",
+    "field_of_view_deg": "85 H / 45 V / 103 D (per lens); fixed lens pan 0-260 / tilt 0-25; PT lens pan 355 / tilt 0-90",
     "night_vision": {
       "type": "hybrid",
       "range_m": 30
@@ -1824803,9 +1825027,11 @@
       "two-way talk"
     ],
     "sources": [
-      "https://static-website.imou.com/bf6f3559-0ae4-4141-a298-88420a484948.pdf"
+      "https://static-website.imou.com/bf6f3559-0ae4-4141-a298-88420a484948.pdf",
+      "https://www.imou.com/en/product/detail/cruiser-dual2",
+      "https://www.imou.com/en/product/specs/cruiser-dual2"
     ],
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-30",
     "environment": [
       "outdoor"
     ],
@@ -1824823,6 +1825049,7 @@
     },
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "release_notes": "Corrected 2026-10-30 against the official Imou spec sheet: added the per-lens field of view 85 H / 45 V / 103 D and the model code IPC-S7XE-8M0WED from productReportedModel.",
     "added": "2026-09-02",
     "sensor_size_inch": 0.3571
   },
@@ -1824922,7 +1825149,8 @@
     "brand": "IMOU",
     "model": "Cruiser Dual 2C 4G 6MP",
     "aliases": [
-      "IPC-S7XCP-6M1TED"
+      "IPC-S7XCP-6M1TED",
+      "IPC-S7XCP-6M1TED-EU"
     ],
     "type": "dual-lens",
     "ptz": {
@@ -1824930,7 +1825158,6 @@
     },
     "connectivity": [
       "4g",
-      "wifi",
       "ethernet"
     ],
     "power_source": [
@@ -1824993,7 +1825220,7 @@
     },
     "features": [
       "dual lens (fixed + motorized pan/tilt)",
-      "4G LTE + Wi-Fi",
+      "4G LTE + Ethernet",
       "smart tracking / auto cruise",
       "spotlight + 110 dB siren",
       "red-blue warning lights",
@@ -1825001,12 +1825228,13 @@
       "8x digital zoom",
       "two-way talk"
     ],
-    "release_notes": "Cruiser Dual 2C 4G (IPC-S7XCP-6M1TED): mains-powered dual-lens 4G PT (3MP+3MP=6MP). Datasheet IP65; some retailers list IP66.",
+    "release_notes": "Cruiser Dual 2C 4G (IPC-S7XCP-6M1TED): mains-powered dual-lens 4G PT (3MP+3MP=6MP). Datasheet IP65; some retailers list IP66. Corrected 2026-10-30 against the official Imou spec sheet: connectivity drops wifi (official network section lists only 4G LTE bands + 1x 100 Mbps Ethernet, no Wi-Fi), added productReportedModel IPC-S7XCP-6M1TED-EU.",
     "sources": [
       "https://www.imou.com/en/product/detail/cruiser-dual-2c4g",
-      "https://static-website.imou.com/a1e2f021-4948-4045-986b-b626df772f2c.pdf"
+      "https://static-website.imou.com/a1e2f021-4948-4045-986b-b626df772f2c.pdf",
+      "https://www.imou.com/en/product/specs/cruiser-dual-2c4g"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1825044,7 +1825272,8 @@
     "brand": "IMOU",
     "model": "Cruiser Pano Z 13MP",
     "aliases": [
-      "IPC-S76DP-13M0N"
+      "IPC-S76DP-13M0N",
+      "IPC-S76DN-13M0N"
     ],
     "type": "dual-lens",
     "connectivity": [
@@ -1825079,10 +1825308,11 @@
     "sensor": "fixed 1/3\" 4MP CMOS x2; PT 1/3\" 5MP CMOS",
     "lens": {
       "count": 4,
+      "focal_length_mm": "3.6 (panoramic) / 2.8 + 12 (PT)",
       "aperture": "F1.6",
-      "varifocal": true
+      "varifocal": false
     },
-    "field_of_view_deg": "panoramic 158 H; PT lens 12x mixed zoom",
+    "field_of_view_deg": "panoramic 158 H / 47 V / 165 D; PT lens max 94 H / 52 V / 111 D",
     "night_vision": {
       "type": "hybrid",
       "range_m": 56
@@ -1825124,13 +1825354,15 @@
       "PoE 802.3at",
       "two-way talk"
     ],
-    "release_notes": "Cruiser Pano Z (IPC-S76DP-13M0N): quad-lens panoramic + varifocal zoom PT, PoE-capable. Typed 'dual-lens' (multi-lens family) — lens count 4. PT lens 2.8-12mm F1.6 varifocal; IR to 56m.",
+    "release_notes": "Cruiser Pano Z (IPC-S76DP-13M0N): quad-lens panoramic + varifocal zoom PT, PoE-capable. Typed 'dual-lens' (multi-lens family) — lens count 4. PT lens 2.8-12mm F1.6 varifocal; IR to 56m. Corrected 2026-10-30 against the official Imou spec sheet: PT lens is a dual-focal 2.8 mm + 12 mm F1.6 (12x mixed zoom), not a 2.8-12 mm varifocal, so lens.varifocal true -> false with focal_length_mm \"3.6 (panoramic) / 2.8 + 12 (PT)\"; field_of_view_deg \"panoramic 158 H; PT lens 12x mixed zoom\" -> panoramic 158 H / 47 V / 165 D, PT lens max 94 H / 52 V / 111 D; added model code IPC-S76DN-13M0N.",
     "sources": [
       "https://www.imou.com/en/product/detail/cruiser-pano-z",
       "https://static-website.imou.com/3f65ed29-9082-45c8-8226-5b08e9b8d57e.pdf",
-      "https://www.setik.biz/en/cameras/12807-imou-ipc-s76dp-13m0n-imou-cruiser-pano-z-13mp-quad-lens-wifi-ptz-camera-with-12x-zoom-ai-detection-and-color-night-vision-imou.html"
+      "https://www.setik.biz/en/cameras/12807-imou-ipc-s76dp-13m0n-imou-cruiser-pano-z-13mp-quad-lens-wifi-ptz-camera-with-12x-zoom-ai-detection-and-color-night-vision-imou.html",
+      "https://www.imou.com/en/product/specs/cruiser-pano-z",
+      "https://static-website.imou.com/af2d3f14-2ec5-4843-ae1c-533f21edc47f.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1825277,8 +1825509,7 @@
     "brand": "IMOU",
     "model": "Cruiser SC 4G 5MP",
     "aliases": [
-      "IPC-K7FP-5H0TE",
-      "IPC-K7FP-3H0TE (3MP)"
+      "IPC-K7FP-5H0TE"
     ],
     "type": "ptz",
     "connectivity": [
@@ -1825325,7 +1825556,7 @@
     },
     "power": {
       "method": "DC 12V/1A",
-      "consumption_w": 6
+      "consumption_w": 12
     },
     "dimensions_mm": "126 x 159 x 196",
     "weight_g": 446,
@@ -1825355,12 +1825586,14 @@
       "8x digital zoom",
       "two-way talk"
     ],
-    "release_notes": "Cruiser SC 4G 5MP (IPC-K7FP-5H0TE; 3MP variant IPC-K7FP-3H0TE). Mains-powered wired 4G PT — NOT battery/solar despite the 'SC' name.",
+    "release_notes": "Cruiser SC 4G 5MP (IPC-K7FP-5H0TE; 3MP variant IPC-K7FP-3H0TE). Mains-powered wired 4G PT — NOT battery/solar despite the 'SC' name. Corrected 2026-10-30 against the official Imou spec sheet: power consumption 6 → <12 W; removed the 3MP sibling code IPC-K7FP-3H0TE from aliases (sensor 1/3\" 5MP, FOV 73/40/89, 20 fps, 126 x 159 x 196 mm, 446 g confirmed against the Cruiser SC 4G 5MP-EU datasheet).",
     "sources": [
       "https://www.imou.com/en/product/detail/cruiser-sc4g",
-      "https://www.visiotechsecurity.com/en/products/ip-cctv-1/consumer-ip-10/imou-652/ipc-k7fp-5h0te-eu-imou-detail"
+      "https://www.visiotechsecurity.com/en/products/ip-cctv-1/consumer-ip-10/imou-652/ipc-k7fp-5h0te-eu-imou-detail",
+      "https://www.imou.com/au/product/specs/cruiser-sc4g",
+      "https://static-website.imou.com/c866ad4f-7c7d-420e-9276-0916455bbe77.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1825419,12 +1825652,12 @@
         "H.265",
         "H.264"
       ],
-      "max_fps": 30,
+      "max_fps": 20,
       "streams": [
         {
           "name": "main",
           "resolution": "3840x2160",
-          "fps": 30,
+          "fps": 20,
           "codec": "H.265"
         }
       ]
@@ -1825435,7 +1825668,7 @@
       "focal_length_mm": "3.6",
       "varifocal": false
     },
-    "field_of_view_deg": "105 diagonal; pan 355 / tilt 0-90",
+    "field_of_view_deg": "89 H / 45 V / 105 D; pan 355 / tilt 0-90",
     "night_vision": {
       "type": "hybrid",
       "range_m": 30
@@ -1825473,13 +1825706,15 @@
       "Wi-Fi 6",
       "two-way talk"
     ],
-    "release_notes": "Cruiser SC 8MP (IPC-K7FP-8V0N): mains-powered Wi-Fi 6 PTZ with warning lights — NOT a solar/battery camera despite the 'SC' name (that is the Cruiser SC 4G).",
+    "release_notes": "Cruiser SC 8MP (IPC-K7FP-8V0N): mains-powered Wi-Fi 6 PTZ with warning lights — NOT a solar/battery camera despite the 'SC' name (that is the Cruiser SC 4G). Corrected 2026-10-30 against the official Imou spec sheet: max_fps 30 -> 20 (spec page and earlier datasheet say 20 fps, the current datasheet says 15 fps; no official source states 30) and field_of_view_deg 105 diagonal -> 89 H / 45 V / 105 D.",
     "sources": [
       "https://www.imou.com/en/product/detail/cruiser-sc-8mp",
       "https://www.orbitadigital.com/en/cctv-ip/consumer-ip-cameras/75273-imou-ipc-k7fp-8v0n-imou-cruiser-sc-motorized-camera-8mp-wifi-6-36-mm-.html",
-      "https://static-website.imou.com/ede7325e-f5a3-4670-8510-702e1eaf5305.pdf"
+      "https://static-website.imou.com/ede7325e-f5a3-4670-8510-702e1eaf5305.pdf",
+      "https://www.imou.com/en/product/specs/cruiser-sc-8mp",
+      "https://static-website.imou.com/1d635df8-6f20-4f8d-9e43-da16d72fe46d.pdf"
     ],
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1825646,7 +1825881,7 @@
       "max_height": 1440,
       "label": "4MP"
     },
-    "field_of_view_deg": "79 H / 44 V / 94 D; pan 355 / tilt 0-90",
+    "field_of_view_deg": "3.6mm: 79 H / 44 V / 94 D; 6mm: 48 H / 28 V / 56 D; pan 355 / tilt 0-90",
     "night_vision": {
       "type": "color",
       "range_m": 30
@@ -1825670,20 +1825905,22 @@
     ],
     "ip_rating": "IP66",
     "audio": {
-      "microphone": false,
-      "speaker": false,
-      "two_way": false
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
     },
     "features": [
-      "IMOU Cruiser SE+ 4MP PoE outdoor color bullet",
+      "IMOU Cruiser SE+ 4MP outdoor Wi-Fi pan/tilt",
       "color spotlight night vision",
       "AI human/vehicle",
-      "IP67",
+      "110 dB siren",
+      "IP66",
       "ONVIF/RTSP"
     ],
     "sources": [
       "https://www.imou.com/fr/product/detail/cruiser-se-plus",
-      "https://www.wifi-stock.com/details/imou-4mp-h-265-wi-fi-ptz-camera-cruiser-se-ipc-s41fep.html"
+      "https://www.wifi-stock.com/details/imou-4mp-h-265-wi-fi-ptz-camera-cruiser-se-ipc-s41fep.html",
+      "https://www.imou.com/en/product/specs/cruiser-se-plus"
     ],
     "power_source": [
       "dc"
@@ -1825712,11 +1825949,11 @@
     "sensor": "1/3\" progressive CMOS",
     "lens": {
       "count": 1,
-      "focal_length_mm": "3.6 (fixed)",
+      "focal_length_mm": "3.6 / 6",
       "varifocal": false
     },
-    "release_notes": "Cruiser SE+ 4MP (IPC-S41FEP). Corrected from a wrong 'bullet' form factor (it is a 355/0-90 pan/tilt) and a wrong 'PoE' claim (it is DC 12V + Wi-Fi/LAN).",
-    "last_verified": "2026-07-05",
+    "release_notes": "Cruiser SE+ 4MP (IPC-S41FEP). Corrected from a wrong 'bullet' form factor (it is a 355/0-90 pan/tilt) and a wrong 'PoE' claim (it is DC 12V + Wi-Fi/LAN). Corrected 2026-10-30 against the official Imou spec sheet: audio mic/speaker/two-way false -> true; features \"4MP PoE outdoor color bullet\" and \"IP67\" -> 4MP Wi-Fi pan/tilt and IP66; lens 3.6 -> 3.6 or 6 mm with the 6 mm FOV 48 H / 28 V / 56 D added; added H.265 up to 25 fps and the 110 dB siren (source: the 4MP block of the en spec page, which is mislabelled \"Cruiser SE+ 5MP\"; the current 3MP/5MP SE+ datasheets are a different generation, IPC-K7C).",
+    "last_verified": "2026-10-30",
     "status": "available",
     "environment": [
       "outdoor"
@@ -1825726,6 +1825963,12 @@
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "video": {
+      "codecs": [
+        "H.265"
+      ],
+      "max_fps": 25
+    },
     "added": "2026-06-06",
     "sensor_size_inch": 0.3333
   },
@@ -1825875,9 +1826118,10 @@
     "sensor": "fixed 1/2.8\" 3MP CMOS x2; PT 1/3.06\" 5MP CMOS",
     "lens": {
       "count": 3,
-      "varifocal": false
+      "varifocal": false,
+      "focal_length_mm": "3.6 (fixed) / 6 (PT)"
     },
-    "field_of_view_deg": "fixed 87 H / PT 51 H; PT lens pan 355 / tilt 0-90",
+    "field_of_view_deg": "fixed lenses 87 H / 47 V / 106 D; PT lens 51 H / 28 V / 60 D, pan 355 / tilt 0-90",
     "night_vision": {
       "type": "hybrid",
       "range_m": 30
@@ -1825917,13 +1826161,15 @@
       "Wi-Fi 6",
       "two-way talk"
     ],
-    "release_notes": "Cruiser Triple (IPC-S7UP-11M0WED): 3-lens PT camera, dual microSD up to 1024GB total. Typed 'dual-lens' (multi-lens family; no triple enum) — lens count 3. ONVIF not printed on the datasheet but standard for the platform.",
+    "release_notes": "Cruiser Triple (IPC-S7UP-11M0WED): 3-lens PT camera, dual microSD up to 1024GB total. Typed 'dual-lens' (multi-lens family; no triple enum) — lens count 3. ONVIF not printed on the datasheet but standard for the platform. Corrected 2026-10-30 against the official Imou spec sheet: completed FOV (fixed 87/47/106, PT 51/28/60) and added focal lengths 3.6 mm fixed / 6 mm PT.",
     "sources": [
       "https://www.imou.com/en/product/detail/cruiser-triple",
       "https://static-website.imou.com/3a1a94ba-6119-4774-98a5-32303df42971.pdf",
-      "https://skiteck.com/products/imou-cruiser-triple-lens-11mp-wifi-ourdoor-camera-ipc-s7up-11mowed"
+      "https://skiteck.com/products/imou-cruiser-triple-lens-11mp-wifi-ourdoor-camera-ipc-s7up-11mowed",
+      "https://www.imou.com/en/product/specs/cruiser-triple",
+      "https://static-website.imou.com/21f7c36e-f153-494a-b799-fdc89ee2021f.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1825961,6 +1826207,7 @@
     "brand": "IMOU",
     "model": "Cruiser Z 5MP",
     "aliases": [
+      "IPC-S7D-5M0WEZ",
       "IPC-S7DP-5M0WEZ"
     ],
     "type": "ptz",
@@ -1825982,12 +1826229,12 @@
         "H.265",
         "H.264"
       ],
-      "max_fps": 30,
+      "max_fps": 15,
       "streams": [
         {
           "name": "main",
           "resolution": "2880x1620",
-          "fps": 30,
+          "fps": 15,
           "codec": "H.265"
         }
       ]
@@ -1825996,9 +1826243,10 @@
     "lens": {
       "count": 2,
       "varifocal": false,
-      "aperture": "F1.6"
+      "aperture": "F1.6",
+      "focal_length_mm": "2.8 + 12"
     },
-    "field_of_view_deg": "wide 95.3 H + tele 24.4 H; pan 355 / tilt 0-90",
+    "field_of_view_deg": "2.8mm: 95.3 H / 52.1 V / 113.7 D; 12mm: 24.4 H / 14 V / 28.1 D; pan 355 / tilt 0-90",
     "night_vision": {
       "type": "hybrid",
       "range_m": 56
@@ -1826017,7 +1826265,7 @@
       "onboard": true,
       "nvr_compatible": true,
       "cloud": true,
-      "max_microsd_gb": 256
+      "max_microsd_gb": 512
     },
     "protocols": [
       "onvif",
@@ -1826036,12 +1826284,14 @@
       "spotlight/siren active deterrence",
       "two-way talk"
     ],
-    "release_notes": "Cruiser Z (IPC-S7DP-5M0WEZ): dual fixed-lens (2.8mm wide + 12mm tele) mixed-zoom PTZ, IR to 56m — the longest reach of the Cruiser line.",
+    "release_notes": "Cruiser Z (IPC-S7DP-5M0WEZ): dual fixed-lens (2.8mm wide + 12mm tele) mixed-zoom PTZ, IR to 56m — the longest reach of the Cruiser line. Corrected 2026-10-30 against the official Imou spec sheet: max_fps 30 -> 15, max_microsd_gb 256 -> 512, added lens focal lengths 2.8 + 12 mm and full per-lens field of view, added productReportedModel IPC-S7D-5M0WEZ.",
     "sources": [
       "https://www.imou.com/en/product/detail/cruiser-z",
-      "https://www.wifi-stock.com/details/imou-5mp-h-265-wi-fi-p_t-mixed-zoom-camera-cruiser-z-ipc-s7dp-5m0wez.html"
+      "https://www.wifi-stock.com/details/imou-5mp-h-265-wi-fi-p_t-mixed-zoom-camera-cruiser-z-ipc-s7dp-5m0wez.html",
+      "https://www.imou.com/en/product/specs/cruiser-z",
+      "https://static-website.imou.com/47315a11-5c09-40e2-a920-ddcab5d5077d.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1826589,6 +1826839,8 @@
     "brand": "IMOU",
     "model": "Cue 2C 3MP",
     "aliases": [
+      "IPC-C32CP-R0",
+      "IPC-C32CN-R0",
       "Imou Cue 2 3MP"
     ],
     "type": "box",
@@ -1826630,7 +1826882,7 @@
     "power": {
       "method": "DC 5V/1A",
       "voltage": "DC 5V",
-      "consumption_w": 3.1
+      "consumption_w": 5
     },
     "storage": {
       "onboard": true,
@@ -1826663,9 +1826915,10 @@
     ],
     "sources": [
       "https://www.imou.com/en/product/specs/cue2c-3mp",
-      "https://www.imou.com/en/product/specs/cue2c-3mp/_payload.json"
+      "https://www.imou.com/en/product/specs/cue2c-3mp/_payload.json",
+      "https://static-website.imou.com/af788a76-07d7-496d-b145-ca03855a670a.pdf"
     ],
-    "last_verified": "2026-09-03",
+    "last_verified": "2026-10-30",
     "configs": {
       "frigate": {
         "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -1826677,6 +1826930,7 @@
     },
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "release_notes": "Corrected 2026-10-30 against the official Imou spec sheet: power consumption 3.1 → <5 W; added productReportedModel codes IPC-C32CP-R0 / IPC-C32CN-R0.",
     "added": "2026-09-03",
     "sensor_size_inch": 0.3333
   },
@@ -1826684,10 +1826938,6 @@
     "id": "imou-cue2e-3mp",
     "brand": "IMOU",
     "model": "Cue 2E 3MP",
-    "aliases": [
-      "IPC-C32EP",
-      "Imou Cue 2 3MP"
-    ],
     "type": "box",
     "connectivity": [
       "wifi"
@@ -1826707,7 +1826957,7 @@
         "H.265",
         "H.264"
       ],
-      "max_fps": 25
+      "max_fps": 20
     },
     "lens": {
       "count": 1,
@@ -1826736,7 +1826986,7 @@
       "cloud": true
     },
     "operating_temp_c": "-10 to 45",
-    "dimensions_mm": "68 x 33 x 106.6",
+    "dimensions_mm": "68 x 68 x 106.6",
     "weight_g": 83,
     "environment": [
       "indoor"
@@ -1826765,9 +1827015,10 @@
     "sources": [
       "https://www.imou.com/en/product/specs/cue2e-3mp",
       "https://www.imou.com/en/product/detail/cue2e-3mp",
-      "https://datasheet.w.od.ua/files/imou/imou-cue-2-ipc-c32ep-3mp-datasheet_eng.pdf"
+      "https://datasheet.w.od.ua/files/imou/imou-cue-2-ipc-c32ep-3mp-datasheet_eng.pdf",
+      "https://static-website.imou.com/f788f78a-c1b5-4e0b-aa38-865a05c800eb.pdf"
     ],
-    "last_verified": "2026-09-03",
+    "last_verified": "2026-10-30",
     "configs": {
       "frigate": {
         "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -1826779,6 +1827030,7 @@
     },
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "release_notes": "Corrected 2026-10-30 against the official Imou spec sheet: max_fps 25 -> 20, dimensions_mm 68 x 33 x 106.6 -> 68 x 68 x 106.6, and removed the aliases IPC-C32EP (imou.com lists IPC-C32EP-R0 under the Cue 2C 3MP) and 'Imou Cue 2 3MP' (a separate product); Imou publishes no model code for the Cue 2E 3MP.",
     "added": "2026-09-03",
     "sensor_size_inch": 0.3333
   },
@@ -1827062,6 +1827314,7 @@
     "brand": "IMOU",
     "model": "Ranger S2 4MP",
     "aliases": [
+      "IPC-DK2-4H1W",
       "IMOU DK2 4MP",
       "DK2 4MP"
     ],
@@ -1827146,9 +1827399,11 @@
     ],
     "sources": [
       "https://www.imou.com/product/detail/dk2-4mp",
-      "https://www.imou.com/product/specs/dk2-4mp"
+      "https://www.imou.com/product/specs/dk2-4mp",
+      "https://www.imou.com/en/product/specs/dk2-4mp",
+      "https://static-website.imou.com/f4c2a940-3735-46f7-9d43-ce3eac8bfb39.pdf"
     ],
-    "last_verified": "2026-09-28",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1827169,6 +1827424,7 @@
     },
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "release_notes": "Corrected 2026-10-30 against the official Imou spec sheet: added model code IPC-DK2-4H1W (4MP code from productReportedModel); all specs matched the DK2 4MP datasheet.",
     "added": "2026-09-29",
     "sensor_size_inch": 0.3333,
     "substream_count": 0,
@@ -1827408,7 +1827664,8 @@
     ],
     "type": "bullet",
     "connectivity": [
-      "wifi"
+      "wifi",
+      "ethernet"
     ],
     "power_source": [
       "dc"
@@ -1827428,24 +1827685,27 @@
         {
           "name": "main",
           "resolution": "2304x1296",
-          "codec": "H.265"
+          "codec": "H.265",
+          "fps": 20
         }
-      ]
+      ],
+      "max_fps": 20
     },
     "sensor": "1/2.8\" CMOS",
     "lens": {
       "count": 1,
-      "focal_length_mm": "3.6",
+      "focal_length_mm": "2.8 / 3.6",
       "varifocal": false
     },
-    "field_of_view_deg": "104 diagonal",
+    "field_of_view_deg": "2.8mm: 98 H / 54 V / 121 D; 3.6mm: 82 H / 44 V / 104 D",
     "night_vision": {
       "type": "ir",
       "range_m": 30
     },
     "power": {
-      "method": "DC power adapter",
-      "consumption_w": 6
+      "method": "DC 12V/0.5A",
+      "consumption_w": 6,
+      "voltage": "DC 12V"
     },
     "dimensions_mm": "147.7 x 74.2 x 74.2",
     "weight_g": 230,
@@ -1827463,8 +1827723,8 @@
     "ip_rating": "IP67",
     "audio": {
       "microphone": true,
-      "speaker": true,
-      "two_way": true
+      "speaker": false,
+      "two_way": false
     },
     "features": [
       "outdoor fixed bullet",
@@ -1827475,12 +1827735,14 @@
       "NVR/cloud/microSD storage",
       "Alexa"
     ],
-    "release_notes": "DK3 (IPC-DK3-3H1WY): fixed outdoor bullet — NOT an indoor pan/tilt. 2MP and 4MP variants also exist. Two-way audio/Ethernet not confirmed for this SKU.",
+    "release_notes": "DK3 (IPC-DK3-3H1WY): fixed outdoor bullet — NOT an indoor pan/tilt. 2MP and 4MP variants also exist. Two-way audio/Ethernet not confirmed for this SKU. Corrected 2026-10-30 against the official Imou spec sheet: audio speaker/two-way true -> false (built-in mic only); connectivity wifi -> wifi + ethernet (1 x 100Mbps port); field_of_view_deg \"104 diagonal\" -> 2.8mm 98 H / 54 V / 121 D, 3.6mm 82 H / 44 V / 104 D; lens 3.6 -> 2.8 or 3.6 mm; power -> DC 12V/0.5A; added max 20 fps.",
     "sources": [
       "https://www.imou.com/en/product/detail/dk3",
-      "https://www.flipkart.com/imou-dk3-3mp-bullet-ip67-wi-fi-camera-human-detection-security/p/itmdd274b6cbe0d7"
+      "https://www.flipkart.com/imou-dk3-3mp-bullet-ip67-wi-fi-camera-human-detection-security/p/itmdd274b6cbe0d7",
+      "https://www.imou.com/en/product/specs/dk3",
+      "https://static-website.imou.com/52641fe6-941c-4a92-b3ce-8a337f67c05f.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1827508,6 +1827770,10 @@
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "network": {
+      "ethernet_speed_mbps": 100,
+      "ethernet_ports": 1
+    },
     "added": "2026-07-05",
     "sensor_size_inch": 0.3571,
     "substream_count": 0,
@@ -1827634,15 +1827900,16 @@
     "brand": "IMOU",
     "model": "DK7 5MP",
     "aliases": [
-      "IPC-DK7P-5H1WE",
-      "IPC-DK7P-3H1WE (3MP)"
+      "IPC-DK7-5H1WE",
+      "IPC-DK7P-5H1WE"
     ],
     "type": "ptz",
     "ptz": {
       "autotracking": true
     },
     "connectivity": [
-      "wifi"
+      "wifi",
+      "ethernet"
     ],
     "power_source": [
       "dc"
@@ -1827662,23 +1827929,25 @@
         {
           "name": "main",
           "resolution": "2880x1620",
-          "codec": "H.265"
+          "codec": "H.265",
+          "fps": 20
         }
-      ]
+      ],
+      "max_fps": 20
     },
-    "sensor": "1/2.8\" CMOS",
+    "sensor": "1/3\" 5MP Progressive CMOS",
     "lens": {
       "count": 1,
       "focal_length_mm": "3.6",
       "varifocal": false
     },
-    "field_of_view_deg": "pan 355 / tilt 0-90",
+    "field_of_view_deg": "73 H / 40 V / 89 D; pan 355 / tilt 0-90",
     "night_vision": {
       "type": "hybrid",
       "range_m": 30
     },
     "power": {
-      "method": "DC 12V",
+      "method": "DC 12V/0.5A",
       "consumption_w": 6
     },
     "dimensions_mm": "121 x 136 x 183",
@@ -1827710,12 +1827979,14 @@
       "AI human detection",
       "dual-band Wi-Fi"
     ],
-    "release_notes": "DK7 (IPC-DK7P-5H1WE 5MP / -3H1WE 3MP): outdoor motorized pan/tilt with color night vision + spotlight.",
+    "release_notes": "DK7 (IPC-DK7P-5H1WE 5MP / -3H1WE 3MP): outdoor motorized pan/tilt with color night vision + spotlight. Corrected 2026-10-30 against the official Imou spec sheet: sensor 1/2.8\" (3MP figure) → 1/3\" 5MP CMOS, added FOV 73/40/89, ethernet connectivity (1x 100 Mbps port), 20 fps max, power DC 12V/0.5A; added productReportedModel IPC-DK7-5H1WE and removed the 3MP sibling code IPC-DK7P-3H1WE from aliases.",
     "sources": [
       "https://www.imou.com/en/product/detail/dk7",
-      "https://cctv.rs/wp-content/uploads/2024/07/Dahua-Imou-DK7.pdf"
+      "https://cctv.rs/wp-content/uploads/2024/07/Dahua-Imou-DK7.pdf",
+      "https://www.imou.com/en/product/specs/dk7",
+      "https://static-website.imou.com/2dac8ce5-532e-435f-ba31-def92da81536.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1827744,7 +1828015,7 @@
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
     "added": "2026-07-05",
-    "sensor_size_inch": 0.3571,
+    "sensor_size_inch": 0.3333,
     "substream_count": 0,
     "substream_max_resolution": null
   },
@@ -1827753,6 +1828024,8 @@
     "brand": "IMOU",
     "model": "Doorbell 2S Kit",
     "aliases": [
+      "DB-2SP-3T0W/DS3",
+      "DB-2SN-3T0W/DS3",
       "DB-2S-3T0W",
       "DS2S",
       "DB-2S-3T0W/DS2S"
@@ -1827835,11 +1828108,13 @@
     ],
     "sources": [
       "https://www.imou.com/en/product/specs/doorbell2s-kit",
-      "https://static-website.imou.com/cf8e744f-ec70-4feb-8254-116660e5d9eb.png"
+      "https://static-website.imou.com/cf8e744f-ec70-4feb-8254-116660e5d9eb.png",
+      "https://static-website.imou.com/a16a811f-fbe9-43b4-b89c-d07fc06aa8ba.pdf"
     ],
-    "last_verified": "2026-09-22",
+    "last_verified": "2026-10-30",
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-required",
+    "release_notes": "Corrected 2026-10-30 against the official Imou spec sheet: added the official kit model codes DB-2SP-3T0W/DS3 and DB-2SN-3T0W/DS3 and the datasheet source; specs otherwise confirmed.",
     "added": "2026-09-23",
     "sensor_size_inch": 0.3571,
     "substream_count": 0,
@@ -1827927,15 +1828202,18 @@
       "loitering detection",
       "chime works as Wi-Fi extender for the doorbell",
       "weatherproof",
-      "microSD recording in chime (up to 512GB)"
+      "microSD recording in chime (up to 512GB)",
+      "AI package detection"
     ],
     "sources": [
       "https://www.imou.com/en/product/specs/doorbell3-kit",
-      "https://static-website.imou.com/4196a5b4-a012-4303-a437-ebc1ce67cd9c.png"
+      "https://static-website.imou.com/4196a5b4-a012-4303-a437-ebc1ce67cd9c.png",
+      "https://static-website.imou.com/3e5b6e18-356e-42b8-a761-ade329f42bd0.pdf"
     ],
-    "last_verified": "2026-09-22",
+    "last_verified": "2026-10-30",
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-required",
+    "release_notes": "Corrected 2026-10-30 against the official Imou spec sheet: added \"AI package detection\" (listed on the datasheet); all other specs matched.",
     "added": "2026-09-23",
     "sensor_size_inch": 0.3333,
     "substream_count": 0,
@@ -1828120,6 +1828398,7 @@
     "brand": "IMOU",
     "model": "Knight 8MP",
     "aliases": [
+      "IPC-F88FI-V2",
       "IPC-F88FIP-V2",
       "IPC-F88FIP"
     ],
@@ -1828155,16 +1828434,16 @@
     "sensor": "1/2.8\" 8MP progressive CMOS",
     "lens": {
       "count": 1,
-      "focal_length_mm": "2.8",
+      "focal_length_mm": "2.8 / 3.6",
       "varifocal": false
     },
-    "field_of_view_deg": "107 H / 56 V / 127 D",
+    "field_of_view_deg": "2.8mm: 107 H / 56 V / 127 D; 3.6mm: 84 H / 47 V / 97 D",
     "night_vision": {
       "type": "hybrid",
       "range_m": 30
     },
     "power": {
-      "method": "DC 12V/1.5A",
+      "method": "DC 12V/1A",
       "consumption_w": 9.2
     },
     "dimensions_mm": "128.9 x 83.9 x 71.2",
@@ -1828192,17 +1828471,19 @@
       "110 dB siren",
       "smart color night vision (B/W 30m, color 20m)",
       "AI human/vehicle/animal detection",
-      "16x digital zoom",
+      "8x digital zoom",
       "HDR",
       "dual-band Wi-Fi 6",
       "two-way audio"
     ],
-    "release_notes": "Knight (IPC-F88FIP-V2): 4K Wi-Fi 6 floodlight/spotlight bullet, 15fps at full 4K. ONVIF explicitly confirmed by distributor.",
+    "release_notes": "Knight (IPC-F88FIP-V2): 4K Wi-Fi 6 floodlight/spotlight bullet, 15fps at full 4K. ONVIF explicitly confirmed by distributor. Corrected 2026-10-30 against the official Imou spec sheet: power DC 12V/1.5A -> DC 12V/1A; feature \"16x digital zoom\" -> 8x digital zoom; lens 2.8 -> 2.8 or 3.6 mm with the 3.6 mm FOV 84 H / 47 V / 97 D added; added model code IPC-F88FI-V2.",
     "sources": [
       "https://www.imou.com/en/product/detail/knight",
-      "https://www.setik.biz/en/cameras/8107-imou-ipc-f88fip-imou-imou-knight-4k-wi-fi-6-smart-camera-onvif-8mp-28mm-ir30-people-detection-audio-microphone-ip66-color-night-vision.html"
+      "https://www.setik.biz/en/cameras/8107-imou-ipc-f88fip-imou-imou-knight-4k-wi-fi-6-smart-camera-onvif-8mp-28mm-ir30-people-detection-audio-microphone-ip66-color-night-vision.html",
+      "https://www.imou.com/en/product/specs/knight",
+      "https://static-website.imou.com/0d41db54-9847-4291-95f0-3f9ca5b3c367.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1828367,7 +1828648,7 @@
       "PS2M 4K",
       "PS2M 8MP"
     ],
-    "type": "box",
+    "type": "ptz",
     "connectivity": [
       "ethernet"
     ],
@@ -1828387,7 +1828668,7 @@
       "focal_length_mm": "3.6",
       "varifocal": false
     },
-    "field_of_view_deg": "89 H / 45 V / 105 D",
+    "field_of_view_deg": "89 H / 45 V / 105 D; pan 0-355 / tilt -5 to 50",
     "night_vision": {
       "type": "color",
       "range_m": 15
@@ -1828460,11 +1828741,13 @@
     },
     "sources": [
       "https://www.imou.com/en/product/specs/ps2m4k",
-      "https://static-website.imou.com/5db9573c-3a11-46b2-a13f-d1e7335d97f3.png"
+      "https://static-website.imou.com/5db9573c-3a11-46b2-a13f-d1e7335d97f3.png",
+      "https://static-website.imou.com/819ecef4-1bae-4a5d-addb-557b8e0f5801.pdf"
     ],
-    "last_verified": "2026-09-22",
+    "last_verified": "2026-10-30",
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "release_notes": "Corrected 2026-10-30 against the official Imou spec sheet: type box -> ptz (the datasheet describes the PS2M 8MP as a PoE pan & tilt camera with 0-355 pan / -5 to 50 tilt, which was added to field_of_view_deg).",
     "added": "2026-09-23",
     "sensor_size_inch": 0.3704,
     "substream_count": 0,
@@ -1828482,7 +1828765,8 @@
       "ethernet"
     ],
     "power_source": [
-      "poe"
+      "poe",
+      "dc"
     ],
     "resolution": {
       "megapixels": 5,
@@ -1828499,9 +1828783,11 @@
         {
           "name": "main",
           "resolution": "2880x1620",
-          "codec": "H.265"
+          "codec": "H.265",
+          "fps": 20
         }
-      ]
+      ],
+      "max_fps": 20
     },
     "sensor": "1/3\" progressive CMOS",
     "lens": {
@@ -1828509,13 +1828795,13 @@
       "focal_length_mm": "3.6",
       "varifocal": false
     },
-    "field_of_view_deg": "102 diagonal",
+    "field_of_view_deg": "88 H / 47 V / 107 D; pan 0-355 / tilt -5-50",
     "night_vision": {
       "type": "hybrid",
       "range_m": 15
     },
     "power": {
-      "method": "PoE",
+      "method": "PoE or DC 5V/1A",
       "consumption_w": 5
     },
     "dimensions_mm": "95.0 x 96.0 x 109.2",
@@ -1828524,7 +1828810,8 @@
     "storage": {
       "onboard": true,
       "nvr_compatible": true,
-      "cloud": true
+      "cloud": true,
+      "max_microsd_gb": 512
     },
     "protocols": [
       "onvif",
@@ -1828543,12 +1828830,14 @@
       "AI human & vehicle detection",
       "microSD recording"
     ],
-    "release_notes": "PS2M 5MP (IPC-PS2M-5R1), marketed as 'Ranger Mini': indoor PoE pan/tilt; a 3MP variant exists. Pan/tilt only (no optical zoom); indoor (no IP rating).",
+    "release_notes": "PS2M 5MP (IPC-PS2M-5R1), marketed as 'Ranger Mini': indoor PoE pan/tilt; a 3MP variant exists. Pan/tilt only (no optical zoom); indoor (no IP rating). Corrected 2026-10-30 against the official Imou spec sheet: FOV \"102 diagonal\" → 88/47/107 (pan 0-355 / tilt -5-50), power_source adds dc (PoE or DC 5V 1A), 20 fps max, microSD up to 512 GB, smart tracking (ptz.autotracking), environment outdoor → indoor (home camera, -10~45 °C, no IP rating).",
     "sources": [
       "https://www.imou.com/en/product/detail/ps2m-5mp",
-      "https://www.visiotechsecurity.com/en/products/ip-cctv-1/ip-home-10/imou-652/ipc-ps2m-5r1-imou-detail"
+      "https://www.visiotechsecurity.com/en/products/ip-cctv-1/ip-home-10/imou-652/ipc-ps2m-5r1-imou-detail",
+      "https://www.imou.com/en/product/specs/ps2m-5mp",
+      "https://static-website.imou.com/399f4ab4-16b2-47ae-a2b4-cf5e1c88ed20.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1828569,13 +1828858,16 @@
       }
     },
     "environment": [
-      "outdoor"
+      "indoor"
     ],
     "markets": [
       "global"
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "ptz": {
+      "autotracking": true
+    },
     "added": "2026-07-05",
     "sensor_size_inch": 0.3333,
     "substream_count": 0,
@@ -1828738,7 +1829030,7 @@
     "sensor": "1/3\" progressive scan CMOS",
     "lens": {
       "count": 1,
-      "focal_length_mm": "2.8",
+      "focal_length_mm": "2.8 / 3.6",
       "varifocal": false,
       "aperture": "F1.6"
     },
@@ -1828777,12 +1829069,14 @@
       "8x digital zoom",
       "microSD recording"
     ],
-    "release_notes": "PS3D 5MP (IPC-PS3DP-5M0): PoE bullet; a 3MP variant also exists. The '-D' does NOT denote dual-lens (single-lens). Built-in mic only.",
+    "release_notes": "PS3D 5MP (IPC-PS3DP-5M0): PoE bullet; a 3MP variant also exists. The '-D' does NOT denote dual-lens (single-lens). Built-in mic only. Corrected 2026-10-30 against the official Imou spec sheet: added the field of view (2.8mm 94 H / 52 V / 111 D, 3.6mm 76 H / 41 V / 91 D) and the 2.8 / 3.6 mm lens options; other values confirmed.",
     "sources": [
       "https://www.imou.com/en/product/detail/ps3d-5mp",
-      "https://www.noon.com/qatar-en/ps3d-5mp-outdoor-poe-bullet-security-camera-ipc-ps3dp-5m0/N70275576V/p/"
+      "https://www.noon.com/qatar-en/ps3d-5mp-outdoor-poe-bullet-security-camera-ipc-ps3dp-5m0/N70275576V/p/",
+      "https://www.imou.com/en/product/specs/ps3d-5mp",
+      "https://static-website.imou.com/f5a3353f-37e3-4b03-8848-d612ce0f7a9a.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1828809,6 +1829103,7 @@
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "field_of_view_deg": "2.8mm: 94 H / 52 V / 111 D; 3.6mm: 76 H / 41 V / 91 D",
     "added": "2026-07-05",
     "sensor_size_inch": 0.3333,
     "substream_count": 0,
@@ -1829081,7 +1829376,7 @@
     "sensor": "1/3\" progressive scan CMOS",
     "lens": {
       "count": 1,
-      "focal_length_mm": "2.8",
+      "focal_length_mm": "2.8 / 3.6",
       "varifocal": false,
       "aperture": "F1.6"
     },
@@ -1829119,13 +1829414,14 @@
       "two-way audio",
       "microSD recording"
     ],
-    "release_notes": "PS3E 8MP (IPC-PS3EP-8Q0): 4K PoE bullet; a 3MP variant exists. Full-res FPS not confirmed on the official (JS-rendered) page.",
+    "release_notes": "PS3E 8MP (IPC-PS3EP-8Q0): 4K PoE bullet; a 3MP variant exists. Full-res FPS not confirmed on the official (JS-rendered) page. Corrected 2026-10-30 against the official Imou spec sheet: lens.focal_length_mm 2.8 -> 2.8 or 3.6 mm (both offered, matching the two FOVs already listed); specs otherwise confirmed.",
     "sources": [
       "https://www.imou.com/en/product/detail/ps3e-8mp",
       "https://www.visiotechsecurity.com/en/products/ip-cctv-1/ip-home-10/imou-652/ipc-ps3ep-8q0-imou-detail",
-      "https://static-website.imou.com/9d6f5998-cdc8-4a7b-88f8-e49098b20d53.pdf"
+      "https://static-website.imou.com/9d6f5998-cdc8-4a7b-88f8-e49098b20d53.pdf",
+      "https://www.imou.com/en/product/specs/ps3e-8mp"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1829437,7 +1829733,7 @@
       "focal_length_mm": "3.6",
       "varifocal": false
     },
-    "field_of_view_deg": "91 diagonal (per lens); PT pan 355 / tilt 0-90",
+    "field_of_view_deg": "76 H / 41 V / 91 D (per lens); fixed lens pan 0-260 / tilt 0-25; PT lens pan 355 / tilt 0-90",
     "night_vision": {
       "type": "hybrid",
       "range_m": 30
@@ -1829475,13 +1829771,14 @@
       "full-color night vision",
       "two-way audio"
     ],
-    "release_notes": "PS70F (IPC-PS70FP-10M0): PoE dual-lens PT, each lens 5MP=10MP total. Also sold as 3MP+3MP and 3MP+5MP variants.",
+    "release_notes": "PS70F (IPC-PS70FP-10M0): PoE dual-lens PT, each lens 5MP=10MP total. Also sold as 3MP+3MP and 3MP+5MP variants. Corrected 2026-10-30 against the official Imou spec sheet: field_of_view_deg completed to 76 H / 41 V / 91 D per lens with the fixed-lens 0-260 pan / 0-25 tilt range; specs otherwise confirmed.",
     "sources": [
       "https://www.imou.com/en/product/detail/ps70f-5mp-plus5mp",
       "https://www.orbitadigital.com/en/cctv-ip/77815-imou-ipc-ps70fp-10m0-imou-ps70f-55mp-camera-poe-connection-dual-lens-.html",
-      "https://static-website.imou.com/6f3836d6-10b9-4be0-8e84-9c6690a01dcf.pdf"
+      "https://static-website.imou.com/6f3836d6-10b9-4be0-8e84-9c6690a01dcf.pdf",
+      "https://www.imou.com/en/product/specs/ps70f-5mp-plus5mp"
     ],
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1830000,7 +1830297,9 @@
     "brand": "IMOU",
     "model": "PS7F 8MP",
     "aliases": [
-      "IPC-PS7FP-8X0"
+      "IPC-PS7FP-8X0",
+      "IPC-PS7FN-8X0",
+      "PC4K-CTS/WL"
     ],
     "type": "ptz",
     "connectivity": [
@@ -1830038,7 +1830337,7 @@
       "autotracking": true
     },
     "power": {
-      "method": "PoE or DC 12V/1A; <12W",
+      "method": "PoE or DC 12V/1A; <8.7W",
       "voltage": "DC 12V",
       "consumption_w": 8.7
     },
@@ -1830069,12 +1830368,14 @@
       "AI human & vehicle detection",
       "two-way audio"
     ],
-    "release_notes": "PS7F 8MP (IPC-PS7FP-8X0): PoE 4K outdoor pan/tilt with active deterrence, larger 1/2.7\" sensor vs the 5MP sibling. Specs from Imou's official datasheet. IP rating is not printed on the 8MP datasheet (retailer IP66/67 figures are for the 5MP, not applied here); PoE class, min-lux and IK not stated.",
+    "release_notes": "PS7F 8MP (IPC-PS7FP-8X0): PoE 4K outdoor pan/tilt with active deterrence, larger 1/2.7\" sensor vs the 5MP sibling. Specs from Imou's official datasheet. IP rating is not printed on the 8MP datasheet (retailer IP66/67 figures are for the 5MP, not applied here); PoE class, min-lux and IK not stated. Corrected 2026-10-30 against the official Imou spec sheet: added the productReportedModel codes IPC-PS7FN-8X0 and PC4K-CTS/WL, and corrected the power text '<12W' -> '<8.7W' to match the stated consumption.",
     "sources": [
       "https://www.imou.com/en/support/product-manual",
-      "https://static-website.imou.com/c1bbf711-f4cf-44f8-a19f-6d401e3d2065.pdf"
+      "https://static-website.imou.com/c1bbf711-f4cf-44f8-a19f-6d401e3d2065.pdf",
+      "https://www.imou.com/en/product/detail/ps7f4k",
+      "https://www.imou.com/en/product/specs/ps7f4k"
     ],
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1830245,7 +1830546,8 @@
       "ethernet"
     ],
     "power_source": [
-      "poe"
+      "poe",
+      "dc"
     ],
     "resolution": {
       "megapixels": 5,
@@ -1830258,12 +1830560,12 @@
         "H.265",
         "H.264"
       ],
-      "max_fps": 30,
+      "max_fps": 20,
       "streams": [
         {
           "name": "main",
           "resolution": "2880x1620",
-          "fps": 30,
+          "fps": 20,
           "codec": "H.265"
         }
       ]
@@ -1830271,7 +1830573,7 @@
     "sensor": "1/3\" progressive scan CMOS",
     "lens": {
       "count": 1,
-      "focal_length_mm": "3.6",
+      "focal_length_mm": "2.8 / 3.6",
       "aperture": "F1.6",
       "varifocal": false
     },
@@ -1830280,7 +1830582,7 @@
       "range_m": 30
     },
     "power": {
-      "method": "PoE (IEEE 802.3af)",
+      "method": "PoE (IEEE 802.3af) or DC 12V/1A",
       "consumption_w": 6
     },
     "dimensions_mm": "109.9 x 109.9 x 95.7",
@@ -1830299,23 +1830601,24 @@
     "ip_rating": "IP67",
     "audio": {
       "microphone": true,
-      "speaker": true,
-      "two_way": true
+      "speaker": false,
+      "two_way": false
     },
     "features": [
       "PoE turret",
       "full-color night vision + white LED",
-      "two-way audio",
-      "siren active deterrence",
       "SENSE AI human & vehicle detection",
-      "microSD recording"
+      "microSD recording",
+      "abnormal sound alarm"
     ],
-    "release_notes": "PS8D 5MP (IPC-PS8D-5V0): PoE turret; a 3MP variant exists. The '-D' does NOT denote dual-lens (single-lens).",
+    "release_notes": "PS8D 5MP (IPC-PS8D-5V0): PoE turret; a 3MP variant exists. The '-D' does NOT denote dual-lens (single-lens). Corrected 2026-10-30 against the official Imou spec sheet: max_fps 30 -> 20; audio speaker/two-way true -> false (built-in mic only, so the siren and two-way-audio features were removed); power_source poe -> poe + dc (PoE or DC 12V/1A); lens 3.6 -> 2.8 or 3.6 mm; added FOV 2.8mm 94 H / 52 V / 111 D and 3.6mm 76 H / 41 V / 91 D.",
     "sources": [
       "https://www.imou.com/en/product/detail/ps8d-5mp",
-      "https://orientcctv.com/product/imou-ipc-ps8d-5v0-5mp-poe-smart-dome-ip-camera-with-color-night-vision/"
+      "https://orientcctv.com/product/imou-ipc-ps8d-5v0-5mp-poe-smart-dome-ip-camera-with-color-night-vision/",
+      "https://www.imou.com/en/product/specs/ps8d-5mp",
+      "https://static-website.imou.com/7aba4a80-d5d6-46bf-8c76-ef5f58c7b3dc.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1830343,6 +1830646,7 @@
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "field_of_view_deg": "2.8mm: 94 H / 52 V / 111 D; 3.6mm: 76 H / 41 V / 91 D",
     "added": "2026-07-05",
     "sensor_size_inch": 0.3333,
     "substream_count": 0,
@@ -1830594,7 +1830898,8 @@
     "brand": "IMOU",
     "model": "PS8E 8MP",
     "aliases": [
-      "IPC-PS8EP-8X0"
+      "IPC-PS8EP-8X0",
+      "IPC-PS8EN-8X0"
     ],
     "type": "turret",
     "connectivity": [
@@ -1830621,16 +1830926,18 @@
     "lens": {
       "count": 1,
       "focal_length_mm": "2.8",
-      "varifocal": false
+      "varifocal": false,
+      "aperture": "F1.6"
     },
-    "field_of_view_deg": "100 H / 53 V / 115 D",
+    "field_of_view_deg": "2.8mm: 100 H / 53 V / 115 D; 3.6mm: 89 H / 45 V / 105 D",
     "night_vision": {
       "type": "hybrid",
       "range_m": 30
     },
     "power": {
-      "method": "PoE (802.3af) or DC 12V/1A; ~12W",
-      "poe_class": 1
+      "method": "PoE or DC 12V/1A; max 4.83W",
+      "poe_class": 1,
+      "consumption_w": 4.83
     },
     "storage": {
       "onboard": true,
@@ -1830657,13 +1830964,17 @@
       "hybrid IR + white-light night vision (30m)",
       "AI human & vehicle detection",
       "active deterrence (siren + spotlight)",
-      "two-way audio"
+      "two-way audio",
+      "120 dB WDR",
+      "cross-line detection"
     ],
-    "release_notes": "PS8E 8MP (IPC-PS8EP-8X0): PoE 4K turret with hybrid night vision and active deterrence. Specs corroborated across two independent distributor spec tables; aperture, IK rating and per-stream breakdown not published.",
+    "release_notes": "PS8E 8MP (IPC-PS8EP-8X0): PoE 4K turret with hybrid night vision and active deterrence. Specs corroborated across two independent distributor spec tables; aperture, IK rating and per-stream breakdown not published. Corrected 2026-10-30 against the official Imou spec sheet: power consumption \"~12W\" → max 4.83 W, added aperture F1.6, 3.6mm FOV (89/45/105), 120 dB WDR, cross-line detection and the IPC-PS8EN-8X0 code (productReportedModel).",
     "sources": [
-      "https://www.imou.com/en/support/product-manual"
+      "https://www.imou.com/en/support/product-manual",
+      "https://www.imou.com/en/product/specs/ps8e4k",
+      "https://static-website.imou.com/0b2df3bd-f30d-41d9-8ac9-eef6e85ba8aa.pdf"
     ],
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1830704,6 +1831015,7 @@
     "brand": "IMOU",
     "model": "Ranger 2",
     "aliases": [
+      "K2EP-2R1W",
       "IPC-A22EP-D",
       "IMOU Ranger 2-D"
     ],
@@ -1830731,7 +1831043,7 @@
       "aperture": "F2.4",
       "varifocal": false
     },
-    "field_of_view_deg": "355 pan / 85 tilt",
+    "field_of_view_deg": "93 H / 48 V / 115 D; pan 355 / tilt -5-80",
     "night_vision": {
       "type": "ir",
       "range_m": 10
@@ -1830740,7 +1831052,7 @@
       "autotracking": true
     },
     "power": {
-      "method": "DC 5V (USB)",
+      "method": "DC 5V/1A",
       "consumption_w": 3.5
     },
     "dimensions_mm": "106.1 x 77.4 x 77.4",
@@ -1830753,6 +1831065,7 @@
       "cloud": true
     },
     "protocols": [
+      "onvif",
       "rtsp"
     ],
     "ip_rating": "IP20",
@@ -1830772,9 +1831085,11 @@
       "Alexa / Google"
     ],
     "sources": [
-      "https://www.imou.com/en/product/detail/ranger2"
+      "https://www.imou.com/en/product/detail/ranger2",
+      "https://www.imou.com/en/product/specs/ranger2",
+      "https://static-website.imou.com/03e78d47-130d-43bd-a5ca-8864ab693ea1.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "power_source": [
       "usb"
@@ -1830804,6 +1831119,14 @@
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30
+    },
+    "release_notes": "Corrected 2026-10-30 against the official Imou spec sheet: FOV \"355 pan / 85 tilt\" → 93/48/115 with pan 355 / tilt -5~80, added video H.265/H.264 up to 25/30 fps, protocols add onvif (listed on the sheet), added productReportedModel K2EP-2R1W, power DC 5V/1A.",
     "added": "2026-06-06",
     "sensor_size_inch": 0.3704
   },
@@ -1830816,7 +1831139,20 @@
       "indoor"
     ],
     "aliases": [
-      "IPC-A42P"
+      "IPC-A42P",
+      "IPC-K2E-4H1W",
+      "IPC-A42",
+      "IPC-A42-B",
+      "IPC-A42-C",
+      "IPC-A42-D",
+      "IPC-A42-D-V2",
+      "IPC-A42-D-V3",
+      "IPC-A42-L",
+      "IPC-A42-L-V2",
+      "IPC-A42-L-V3",
+      "IPC-A42N-B",
+      "IPC-A42P-L",
+      "IPC-A42P-D-imou"
     ],
     "connectivity": [
       "wifi",
@@ -1830836,12 +1831172,12 @@
         "H.265",
         "H.264"
       ],
-      "max_fps": 25,
+      "max_fps": 30,
       "streams": [
         {
           "name": "main",
           "resolution": "2560x1440",
-          "fps": 25,
+          "fps": 30,
           "codec": "H.265"
         }
       ]
@@ -1830852,13 +1831188,14 @@
       "focal_length_mm": "3.6",
       "varifocal": false
     },
-    "field_of_view_deg": "85 H / 109 D; pan 355 / tilt -5~80",
+    "field_of_view_deg": "92 H / 48 V / 109 D; pan 355 / tilt -5~80",
     "night_vision": {
       "type": "ir",
       "range_m": 10
     },
     "power": {
-      "method": "DC 5V/1A via USB; <3.5W"
+      "method": "DC 5V/1A via USB; <5W",
+      "consumption_w": 5
     },
     "dimensions_mm": "106.1 x 77.4 x 77.4",
     "weight_g": 211,
@@ -1830886,12 +1831223,14 @@
       "ONVIF / NVR compatible",
       "microSD up to 256GB"
     ],
-    "release_notes": "Base code IPC-A42P (region suffixes -B/-D/-L). 4MP indoor pan/tilt, IR-only — a lower tier than the Ranger 2 Pro 4K line.",
+    "release_notes": "Base code IPC-A42P (region suffixes -B/-D/-L). 4MP indoor pan/tilt, IR-only — a lower tier than the Ranger 2 Pro 4K line. Corrected 2026-10-30 against the official Imou spec sheet: field_of_view_deg 85 H / 109 D -> 92 H / 48 V / 109 D, max_fps 25 -> 30 (25/30 fps), power consumption <3.5W -> <5W, and added the productReportedModel codes (IPC-K2E-4H1W and the IPC-A42 regional variants).",
     "sources": [
       "https://www.imou.com/en/product/detail/ranger2-4mp",
-      "https://datasheet.w.od.ua/files/imou/imou-ranger-2-4mp-ipc-a42p-b-datasheet_eng.pdf"
+      "https://datasheet.w.od.ua/files/imou/imou-ranger-2-4mp-ipc-a42p-b-datasheet_eng.pdf",
+      "https://www.imou.com/en/product/specs/ranger2-4mp",
+      "https://static-website.imou.com/ad9eda81-82cf-46c2-9aa1-d526862fa086.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1830990,12 +1831329,12 @@
       "ONVIF certified",
       "two-way audio"
     ],
-    "release_notes": "Ranger 2 Pro 4G 3MP: compact DC-powered 4G LTE pan-tilt camera (LTE FDD B1/3/5/7/8/20/28, TDD B38/40/41). Specs from Imou's official spec-page table (Ranger 2 Pro 4G 3MP/5MP). ONVIF is certified; RTSP path not published on the datasheet. No official IPC code; IP rating and min-lux not stated.",
+    "release_notes": "Ranger 2 Pro 4G 3MP: compact DC-powered 4G LTE pan-tilt camera (LTE FDD B1/3/5/7/8/20/28, TDD B38/40/41). Specs from Imou's official spec-page table (Ranger 2 Pro 4G 3MP/5MP). ONVIF is certified; RTSP path not published on the datasheet. No official IPC code; IP rating and min-lux not stated. Corrected 2026-10-30 against the official Imou spec sheet: added the official 3MP model codes IPC-S2EP-3R0T-EU and IPC-S2EN-3R0T-EU from the spec page; specs otherwise confirmed.",
     "sources": [
       "https://www.imou.com/en/product/specs/ranger2-pro4g-3mp-5mp",
       "https://static-website.imou.com/590c1e75-67c9-4df8-b942-26bd23e8a873.pdf"
     ],
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1831019,6 +1831358,10 @@
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "aliases": [
+      "IPC-S2EP-3R0T-EU",
+      "IPC-S2EN-3R0T-EU"
+    ],
     "added": "2026-09-02",
     "sensor_size_inch": 0.3333
   },
@@ -1831091,12 +1831434,12 @@
       "smart motion tracking",
       "one-touch call"
     ],
-    "release_notes": "Ranger 2 Pro 4G 5MP: compact DC-powered 4G LTE pan-tilt camera (LTE FDD B1/3/5/7/8/20/28, TDD B38/40/41). Specs from Imou's official spec-page table (Ranger 2 Pro 4G 3MP/5MP). ONVIF is certified; RTSP path not published on the datasheet. No official IPC code; IP rating and min-lux not stated.",
+    "release_notes": "Ranger 2 Pro 4G 5MP: compact DC-powered 4G LTE pan-tilt camera (LTE FDD B1/3/5/7/8/20/28, TDD B38/40/41). Specs from Imou's official spec-page table (Ranger 2 Pro 4G 3MP/5MP). ONVIF is certified; RTSP path not published on the datasheet. No official IPC code; IP rating and min-lux not stated. Corrected 2026-10-30 against the official Imou spec sheet: added the 5MP model codes IPC-S2EP-5R0T-EU / IPC-S2EN-5R0T-EU (productReportedModel); specs matched the 5MP datasheet.",
     "sources": [
       "https://www.imou.com/en/product/specs/ranger2-pro4g-3mp-5mp",
       "https://static-website.imou.com/f58bd338-7363-4bab-856c-b6f3c7577a79.pdf"
     ],
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1831120,6 +1831463,10 @@
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "aliases": [
+      "IPC-S2EP-5R0T-EU",
+      "IPC-S2EN-5R0T-EU"
+    ],
     "added": "2026-09-02",
     "sensor_size_inch": 0.3333
   },
@@ -1831169,13 +1831516,13 @@
       "aperture": "F1.6",
       "varifocal": false
     },
-    "field_of_view_deg": "89 H; pan 355 / tilt -5~80",
+    "field_of_view_deg": "89 H / 45 V / 105 D; pan 355 / tilt -5~80",
     "night_vision": {
       "type": "hybrid",
-      "range_m": 15
+      "range_m": 20
     },
     "power": {
-      "method": "DC 5V/1A via USB-C; <7.5W",
+      "method": "DC 5V/1.5A via USB-C; <7.5W",
       "consumption_w": 7.5
     },
     "dimensions_mm": "77.4 x 77.4 x 106.2",
@@ -1831206,12 +1831553,13 @@
       "USB-C power",
       "two-way talk"
     ],
-    "release_notes": "Flagship 'A' body (IPC-A82P-PRO), one of three distinct SKUs on the same 4K/8MP platform (with Ranger 2C Pro 4K and A1 Pro 4K). RTSP on :554 retailer-stated and community-confirmed for the Ranger 2 line.",
+    "release_notes": "Flagship 'A' body (IPC-A82P-PRO), one of three distinct SKUs on the same 4K/8MP platform (with Ranger 2C Pro 4K and A1 Pro 4K). RTSP on :554 retailer-stated and community-confirmed for the Ranger 2 line. Corrected 2026-10-30 against the official Imou spec sheet: night_vision range_m 15 -> 20, field_of_view_deg 89 H -> 89 H / 45 V / 105 D, power supply 5V/1A -> 5V/1.5A.",
     "sources": [
       "https://www.imou.com/en/product/detail/ranger2-pro4k",
-      "https://www.imou.com/en/product/specs/ranger2-pro4k"
+      "https://www.imou.com/en/product/specs/ranger2-pro4k",
+      "https://static-website.imou.com/88a7fdb6-5def-4cd1-99d9-a9578d4daa16.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1831246,12 +1831594,14 @@
     "brand": "IMOU",
     "model": "Ranger 2 Pro 5MP",
     "aliases": [
+      "IPC-S2EP-5R1S",
+      "IPC-S2EN-5R1S",
+      "S2EP-5R1S",
       "Imou Ranger 2 Pro 5MP"
     ],
     "type": "ptz",
     "connectivity": [
-      "wifi",
-      "ethernet"
+      "wifi"
     ],
     "power_source": [
       "usb"
@@ -1831272,7 +1831622,8 @@
     },
     "lens": {
       "count": 1,
-      "varifocal": false
+      "varifocal": false,
+      "focal_length_mm": "3.6"
     },
     "night_vision": {
       "type": "hybrid",
@@ -1831324,9 +1831675,10 @@
       "two-way audio"
     ],
     "sources": [
-      "https://static-website.imou.com/c75e81ab-e8fb-4446-b2e4-92a3a5fa1ba2.pdf"
+      "https://static-website.imou.com/c75e81ab-e8fb-4446-b2e4-92a3a5fa1ba2.pdf",
+      "https://www.imou.com/en/product/specs/ranger2-pro-5mp"
     ],
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-30",
     "configs": {
       "frigate": {
         "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -1831338,6 +1831690,8 @@
     },
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "field_of_view_deg": "88 H / 47 V / 107 D; pan 355 / tilt -5 to 80",
+    "release_notes": "Corrected 2026-10-30 against the official Imou spec sheet: connectivity wifi + ethernet -> wifi (no Ethernet port on the spec page or datasheet; dual-band Wi-Fi 6 only); added 3.6 mm lens, FOV 88 H / 47 V / 107 D with 355 pan / -5 to 80 tilt, and model codes IPC-S2EP-5R1S / IPC-S2EN-5R1S.",
     "added": "2026-09-02",
     "sensor_size_inch": 0.3333
   },
@@ -1831423,12 +1831777,13 @@
       "8x digital zoom",
       "two-way talk"
     ],
-    "release_notes": "Compact 'C' sibling (IPC-TA82P-PRO) of the Ranger 2 Pro 4K, distinct SKU on the shared 4K platform. Night-vision distance (20m) is retailer-reported and conflicts with the Ranger 2 Pro 4K's 15m. Ethernet port is a family trait, marked with lower confidence. ONVIF listed; RTSP inferred from the platform.",
+    "release_notes": "Compact 'C' sibling (IPC-TA82P-PRO) of the Ranger 2 Pro 4K, distinct SKU on the shared 4K platform. Ethernet port is a family trait, marked with lower confidence. ONVIF listed; RTSP inferred from the platform. Corrected 2026-10-30 against the official Imou spec sheet: no spec values changed; the 20 m night-vision range, 1/2.7\" sensor, FOV, 15 fps and 227 g are confirmed by the official spec page and datasheet, so the earlier note that 20 m was retailer-reported and conflicted with the Ranger 2 Pro 4K was removed.",
     "sources": [
       "https://www.imou.com/en/product/detail/ranger2c-pro4k",
-      "https://www.imou.com/en/product/specs/ranger2c-pro4k"
+      "https://www.imou.com/en/product/specs/ranger2c-pro4k",
+      "https://static-website.imou.com/ce5849fa-b82c-46b5-bb6d-a3ca9fb060c5.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1831467,8 +1831822,7 @@
     ],
     "type": "ptz",
     "connectivity": [
-      "wifi",
-      "ethernet"
+      "wifi"
     ],
     "power_source": [
       "usb"
@@ -1831489,7 +1831843,8 @@
     },
     "lens": {
       "count": 1,
-      "varifocal": false
+      "varifocal": false,
+      "focal_length_mm": "3.6"
     },
     "night_vision": {
       "type": "hybrid",
@@ -1831541,9 +1831896,10 @@
       "two-way audio"
     ],
     "sources": [
-      "https://static-website.imou.com/5f9c3d1c-55d5-47c3-b1c1-1c4c3ff07d27.pdf"
+      "https://static-website.imou.com/5f9c3d1c-55d5-47c3-b1c1-1c4c3ff07d27.pdf",
+      "https://www.imou.com/en/product/specs/ranger2c-pro-5mp"
     ],
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-30",
     "configs": {
       "frigate": {
         "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -1831555,6 +1831911,8 @@
     },
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "field_of_view_deg": "88 H / 47 V / 107 D; pan 355 / tilt -5 to 80",
+    "release_notes": "Corrected 2026-10-30 against the official Imou spec sheet: connectivity wifi + ethernet -> wifi (no Ethernet port on the spec page or datasheet; dual-band Wi-Fi 6 only); added 3.6 mm lens and FOV 88 H / 47 V / 107 D with 355 pan / -5 to 80 tilt.",
     "added": "2026-09-02",
     "sensor_size_inch": 0.3333
   },
@@ -1831563,6 +1831921,7 @@
     "brand": "IMOU",
     "model": "Ranger Dual 10MP",
     "aliases": [
+      "IPC-S2X-10M0WED",
       "Ranger Dual 5MP+5MP"
     ],
     "type": "dual-lens",
@@ -1831642,11 +1832001,12 @@
       "100Mbps Ethernet port",
       "two-way talk"
     ],
-    "release_notes": "Ranger Dual version selector is a per-lens megapixel selector marketed as combined totals: 3MP+3MP=6MP, 3MP fixed+5MP PT=8MP (asymmetric), 5MP+5MP=10MP. This is the 5MP+5MP (10MP) version.",
+    "release_notes": "Ranger Dual version selector is a per-lens megapixel selector marketed as combined totals: 3MP+3MP=6MP, 3MP fixed+5MP PT=8MP (asymmetric), 5MP+5MP=10MP. This is the 5MP+5MP (10MP) version. Corrected 2026-10-30 against the official Imou spec sheet: added model code IPC-S2X-10M0WED (productReportedModel); specs matched the Ranger Dual 10MP datasheet.",
     "sources": [
-      "https://www.imou.com/en/product/specs/ranger-dual"
+      "https://www.imou.com/en/product/specs/ranger-dual",
+      "https://static-website.imou.com/131cd748-a3a5-4940-ae0f-19bcbe9cf789.pdf"
     ],
-    "last_verified": "2026-09-03",
+    "last_verified": "2026-10-30",
     "configs": {
       "frigate": {
         "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -1831666,6 +1832026,7 @@
     "brand": "IMOU",
     "model": "Ranger Dual 6MP",
     "aliases": [
+      "IPC-S2X-6M0WED",
       "Ranger Dual 3MP+3MP"
     ],
     "type": "dual-lens",
@@ -1831745,11 +1832106,12 @@
       "100Mbps Ethernet port",
       "two-way talk"
     ],
-    "release_notes": "Ranger Dual version selector is a per-lens megapixel selector marketed as combined totals: 3MP+3MP=6MP, 3MP fixed+5MP PT=8MP (asymmetric), 5MP+5MP=10MP. This is the 3MP+3MP (6MP) version.",
+    "release_notes": "Ranger Dual version selector is a per-lens megapixel selector marketed as combined totals: 3MP+3MP=6MP, 3MP fixed+5MP PT=8MP (asymmetric), 5MP+5MP=10MP. This is the 3MP+3MP (6MP) version. Corrected 2026-10-30 against the official Imou spec sheet: added the productReportedModel code IPC-S2X-6M0WED (6MP = 3MP + 3MP); all spec values confirmed by the spec page and the Ranger Dual 6MP datasheet.",
     "sources": [
-      "https://www.imou.com/en/product/specs/ranger-dual"
+      "https://www.imou.com/en/product/specs/ranger-dual",
+      "https://static-website.imou.com/b93c8722-c5d0-49e0-a6c6-b776592f1edf.pdf"
     ],
-    "last_verified": "2026-09-03",
+    "last_verified": "2026-10-30",
     "configs": {
       "frigate": {
         "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -1831769,6 +1832131,7 @@
     "brand": "IMOU",
     "model": "Ranger Dual 8MP",
     "aliases": [
+      "IPC-S2X-8M0WED",
       "Ranger Dual 3MP+5MP"
     ],
     "type": "dual-lens",
@@ -1831848,11 +1832211,12 @@
       "100Mbps Ethernet port",
       "two-way talk"
     ],
-    "release_notes": "Ranger Dual version selector is a per-lens megapixel selector marketed as combined totals: 3MP+3MP=6MP, 3MP fixed+5MP PT=8MP (asymmetric), 5MP+5MP=10MP. This is the asymmetric 3MP-fixed + 5MP-PT (8MP) version.",
+    "release_notes": "Ranger Dual version selector is a per-lens megapixel selector marketed as combined totals: 3MP+3MP=6MP, 3MP fixed+5MP PT=8MP (asymmetric), 5MP+5MP=10MP. This is the asymmetric 3MP-fixed + 5MP-PT (8MP) version. Corrected 2026-10-30 against the official Imou spec sheet: added the official 8MP model code IPC-S2X-8M0WED and the 8MP datasheet source; specs otherwise confirmed.",
     "sources": [
-      "https://www.imou.com/en/product/specs/ranger-dual"
+      "https://www.imou.com/en/product/specs/ranger-dual",
+      "https://static-website.imou.com/1f8213c2-caeb-4892-9bba-5f5268400a3d.pdf"
     ],
-    "last_verified": "2026-09-03",
+    "last_verified": "2026-10-30",
     "configs": {
       "frigate": {
         "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -1831876,7 +1832240,8 @@
     ],
     "type": "dual-lens",
     "connectivity": [
-      "wifi"
+      "wifi",
+      "ethernet"
     ],
     "power_source": [
       "usb"
@@ -1831902,7 +1832267,7 @@
     },
     "field_of_view_deg": "88 H / 47 V / 107 D (per lens)",
     "night_vision": {
-      "type": "color",
+      "type": "hybrid",
       "range_m": 15
     },
     "ptz": {
@@ -1831921,7 +1832286,8 @@
     "storage": {
       "onboard": true,
       "max_microsd_gb": 512,
-      "cloud": true
+      "cloud": true,
+      "nvr_compatible": true
     },
     "operating_temp_c": "-10 to 45",
     "dimensions_mm": "82.2 x 82.2 x 115.4",
@@ -1831949,11 +1832315,12 @@
       "dual-band Wi-Fi 6",
       "two-way talk"
     ],
-    "release_notes": "Ranger Dual Pro version selector is a per-lens megapixel selector marketed as combined totals: 3MP=6MP, 4MP=8MP, 5MP=10MP. This is the 5MP-per-lens (10MP) version.",
+    "release_notes": "Ranger Dual Pro version selector is a per-lens megapixel selector marketed as combined totals: 3MP=6MP, 4MP=8MP, 5MP=10MP. This is the 5MP-per-lens (10MP) version. Corrected 2026-10-30 against the official Imou spec sheet: night_vision.type color → hybrid (smart IR→full-colour, four night-vision modes), connectivity adds ethernet (Ethernet port on back view), storage.nvr_compatible true (\"Supports NVR\").",
     "sources": [
-      "https://www.imou.com/en/product/specs/ranger-dual-pro"
+      "https://www.imou.com/en/product/specs/ranger-dual-pro",
+      "https://static-website.imou.com/4b2b174b-6a7e-4165-a741-ada6923e4778.pdf"
     ],
-    "last_verified": "2026-09-03",
+    "last_verified": "2026-10-30",
     "configs": {
       "frigate": {
         "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -1831977,7 +1832344,8 @@
     ],
     "type": "dual-lens",
     "connectivity": [
-      "wifi"
+      "wifi",
+      "ethernet"
     ],
     "power_source": [
       "usb"
@@ -1832050,11 +1832418,12 @@
       "human & pet detection",
       "two-way talk"
     ],
-    "release_notes": "Ranger Dual Pro version selector is a per-lens megapixel selector marketed as combined totals: 3MP=6MP, 4MP=8MP, 5MP=10MP. This is the 3MP-per-lens (6MP) version.",
+    "release_notes": "Ranger Dual Pro version selector is a per-lens megapixel selector marketed as combined totals: 3MP=6MP, 4MP=8MP, 5MP=10MP. This is the 3MP-per-lens (6MP) version. Corrected 2026-10-30 against the official Imou spec sheet: added ethernet to connectivity (the Ranger Dual Pro 6MP datasheet's back-view diagram labels an Ethernet port); all other values confirmed.",
     "sources": [
-      "https://www.imou.com/en/product/specs/ranger-dual-pro"
+      "https://www.imou.com/en/product/specs/ranger-dual-pro",
+      "https://static-website.imou.com/017d9fff-fc43-4ef9-9623-dc36008ecdd3.pdf"
     ],
-    "last_verified": "2026-09-03",
+    "last_verified": "2026-10-30",
     "configs": {
       "frigate": {
         "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -1832175,6 +1832544,10 @@
     "brand": "IMOU",
     "model": "Ranger Mini",
     "aliases": [
+      "IPC-K2MP-3R1W",
+      "IPC-K2MN-3R1W",
+      "IPC-K2MP-5R1W",
+      "IPC-K2MN-5R1W",
       "IPC-K2M-3H1WE",
       "IPC-K2M-5H1WE"
     ],
@@ -1832188,8 +1832561,8 @@
     ],
     "resolution": {
       "megapixels": 5,
-      "max_width": 2880,
-      "max_height": 1620,
+      "max_width": 2688,
+      "max_height": 1664,
       "label": "2K/3K (3MP/5MP selectable)"
     },
     "sensor": "1/3\" Progressive CMOS",
@@ -1832198,12 +1832571,14 @@
       "focal_length_mm": "3.6",
       "varifocal": false
     },
-    "field_of_view_deg": "79 H / 43 V / 94 D",
+    "field_of_view_deg": "3MP: 79 H / 43 V / 94 D; 5MP: 87 H / 48 V / 108 D; pan 355 / tilt -5-50",
     "night_vision": {
-      "type": "color",
+      "type": "hybrid",
       "range_m": 10
     },
-    "ptz": {},
+    "ptz": {
+      "autotracking": true
+    },
     "video": {
       "codecs": [
         "H.265",
@@ -1832213,20 +1832588,21 @@
       "streams": [
         {
           "name": "main",
-          "resolution": "2880x1620",
+          "resolution": "2688x1664",
           "fps": 20,
           "codec": "H.265"
         }
       ]
     },
     "power": {
-      "method": "DC 5V/1A (USB-C)",
+      "method": "DC 5V/1A",
       "consumption_w": 4.2
     },
     "storage": {
       "onboard": true,
       "max_microsd_gb": 512,
-      "cloud": true
+      "cloud": true,
+      "nvr_compatible": true
     },
     "protocols": [
       "onvif",
@@ -1832256,7 +1832632,9 @@
     ],
     "sources": [
       "https://www.imou.com/en/product/detail/ranger-mini",
-      "https://www.imou.com/en/product/specs/ranger-mini"
+      "https://www.imou.com/en/product/specs/ranger-mini",
+      "https://static-website.imou.com/898f87d9-7090-4fb4-8d9a-f15d1354cd7d.pdf",
+      "https://static-website.imou.com/3ed9030f-2722-4113-ba58-d9d6d7af9c6f.pdf"
     ],
     "configs": {
       "frigate": {
@@ -1832281,8 +1832659,9 @@
       "ethernet_ports": 1
     },
     "status": "available",
-    "last_verified": "2026-09-28",
+    "last_verified": "2026-10-30",
     "cloud_dependency": "cloud-optional",
+    "release_notes": "Corrected 2026-10-30 against the official Imou spec sheet: 5MP resolution 2880x1620 → 2688x1664, FOV now lists 3MP 79/43/94 and 5MP 87/48/108 (was 3MP-only), night_vision.type color → hybrid (four-mode smart colour), ptz.autotracking true (smart tracking), nvr_compatible true, added productReportedModel codes IPC-K2MP/K2MN-3R1W and -5R1W.",
     "added": "2026-09-28",
     "sensor_size_inch": 0.3333,
     "substream_count": 0,
@@ -1832414,8 +1832793,9 @@
     "brand": "IMOU",
     "model": "Ranger RC 4MP",
     "aliases": [
-      "Imou Ranger RC 4MP",
-      "IPC-GK2CP-4C0WR"
+      "IPC-GK2C-4C0WR",
+      "IPC-GK2CP-4C0WR",
+      "Imou Ranger RC 4MP"
     ],
     "type": "ptz",
     "environment": [
@@ -1832496,9 +1832876,10 @@
     ],
     "sources": [
       "https://www.imou.com/en/product/specs/ranger-rc-4mp-5mp",
-      "https://www.fsm.fi/downloads/products/i/ipc-gk2cp-4c0wr/IMOU-Ranger-RC-4Mpx-WiFi-kamer_DL_Ranger-RC.pdf"
+      "https://www.fsm.fi/downloads/products/i/ipc-gk2cp-4c0wr/IMOU-Ranger-RC-4Mpx-WiFi-kamer_DL_Ranger-RC.pdf",
+      "https://static-website.imou.com/1fb8b6d9-406e-41b3-85d3-10a49234d20e.pdf"
     ],
-    "last_verified": "2026-09-03",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1832511,6 +1832892,7 @@
     },
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "release_notes": "Corrected 2026-10-30 against the official Imou spec sheet: added the productReportedModel code IPC-GK2C-4C0WR; all spec values confirmed by the spec page and the Ranger RC 4MP datasheet.",
     "added": "2026-09-03",
     "sensor_size_inch": 0.3333
   },
@@ -1832519,8 +1832901,9 @@
     "brand": "IMOU",
     "model": "Ranger RC 5MP",
     "aliases": [
-      "Imou Ranger RC 5MP",
-      "IPC-GK2CP-5C0WR"
+      "IPC-GK2C-5C0WR",
+      "IPC-GK2CP-5C0WR",
+      "Imou Ranger RC 5MP"
     ],
     "type": "ptz",
     "environment": [
@@ -1832601,9 +1832984,10 @@
     ],
     "sources": [
       "https://www.imou.com/en/product/specs/ranger-rc-4mp-5mp",
-      "https://www.fsm.fi/downloads/products/i/ipc-gk2cp-4c0wr/IMOU-Ranger-RC-4Mpx-WiFi-kamer_DL_Ranger-RC.pdf"
+      "https://www.fsm.fi/downloads/products/i/ipc-gk2cp-4c0wr/IMOU-Ranger-RC-4Mpx-WiFi-kamer_DL_Ranger-RC.pdf",
+      "https://static-website.imou.com/caea050b-45a0-4374-b73b-711e3d49869b.pdf"
     ],
-    "last_verified": "2026-09-03",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1832616,6 +1833000,7 @@
     },
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "release_notes": "Corrected 2026-10-30 against the official Imou spec sheet: added the official 5MP model code IPC-GK2C-5C0WR and the official 5MP datasheet; specs otherwise confirmed.",
     "added": "2026-09-03",
     "sensor_size_inch": 0.3333
   },
@@ -1832660,7 +1833045,7 @@
       "focal_length_mm": "3.6",
       "varifocal": false
     },
-    "field_of_view_deg": "88-91 H / 47 V / 107 D; pan 355 / tilt -10~70",
+    "field_of_view_deg": "88 H / 47 V / 107 D; pan 355 / tilt -10~70",
     "night_vision": {
       "type": "ir",
       "range_m": 10
@@ -1832679,7 +1833064,8 @@
       "cloud": true
     },
     "protocols": [
-      "http"
+      "http",
+      "onvif"
     ],
     "audio": {
       "microphone": true,
@@ -1832698,12 +1833084,13 @@
       "microSD up to 512GB + NVR + cloud"
     ],
     "release_year": 2026,
-    "release_notes": "New (~2026) Wi-Fi 6 successor to the older 2.4GHz Ranger RC (IPC-GK2CP-3C0WR/4C0WR/5C0WR). Sold in 3MP (2304x1296), 4MP (2560x1440) and 5MP (2880x1620) variants; the 5MP is used here as the top SKU. RTSP/ONVIF is not documented for this new SKU (the older Ranger RC supported Dahua RTSP).",
+    "release_notes": "New (~2026) Wi-Fi 6 successor to the older 2.4GHz Ranger RC (IPC-GK2CP-3C0WR/4C0WR/5C0WR). Sold in 3MP (2304x1296), 4MP (2560x1440) and 5MP (2880x1620) variants; the 5MP is used here as the top SKU. RTSP/ONVIF is not documented for this new SKU (the older Ranger RC supported Dahua RTSP). Corrected 2026-10-30 against the official Imou spec sheet: FOV \"88-91 H\" → 88/47/107 (5MP-R1 datasheet), protocols add onvif (certification \"CE, Onvif\"), ptz.autotracking true (smart tracking).",
     "sources": [
       "https://www.imou.com/en/product/detail/ranger-rc-r1",
-      "https://www.imou.com/en/product/specs/ranger-rc-r1"
+      "https://www.imou.com/en/product/specs/ranger-rc-r1",
+      "https://static-website.imou.com/31a64e3b-6e40-46af-aab8-b082ffc1da03.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1832716,6 +1833103,9 @@
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-required",
+    "ptz": {
+      "autotracking": true
+    },
     "added": "2026-07-05",
     "sensor_size_inch": 0.3333,
     "substream_count": 0,
@@ -1832949,6 +1833339,7 @@
     "brand": "IMOU",
     "model": "Ranger SE 4MP",
     "aliases": [
+      "IPC-A43",
       "Imou Ranger SE 4MP"
     ],
     "type": "ptz",
@@ -1832974,7 +1833365,8 @@
     },
     "lens": {
       "count": 1,
-      "varifocal": false
+      "varifocal": false,
+      "focal_length_mm": "3.6"
     },
     "night_vision": {
       "type": "ir",
@@ -1833021,9 +1833413,10 @@
       "two-way talk"
     ],
     "sources": [
-      "https://static-website.imou.com/8632fc9d-665e-4561-9279-18c740f54aa2.pdf"
+      "https://static-website.imou.com/8632fc9d-665e-4561-9279-18c740f54aa2.pdf",
+      "https://www.imou.com/en/product/specs/ranger-se-4mp"
     ],
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-30",
     "configs": {
       "frigate": {
         "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -1833035,6 +1833428,8 @@
     },
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "field_of_view_deg": "79 H / 44 V / 94 D; pan 355 / tilt -10 to 80",
+    "release_notes": "Corrected 2026-10-30 against the official Imou spec sheet: added 3.6 mm lens, FOV 79 H / 44 V / 94 D with 355 pan / -10 to 80 tilt, and the official model code IPC-A43.",
     "added": "2026-09-02",
     "sensor_size_inch": 0.3704
   },
@@ -1833043,8 +1833438,9 @@
     "brand": "IMOU",
     "model": "Ranger 2 5MP",
     "aliases": [
-      "Imou Ranger 2 5MP",
+      "IPC-K2E-5H2W",
       "IPC-K2EP-5H2W",
+      "Imou Ranger 2 5MP",
       "Ranger 2 3K"
     ],
     "type": "ptz",
@@ -1833065,7 +1833461,8 @@
       "codecs": [
         "H.265",
         "H.264"
-      ]
+      ],
+      "max_fps": 30
     },
     "lens": {
       "count": 1,
@@ -1833073,7 +1833470,7 @@
       "aperture": "F2.0",
       "varifocal": false
     },
-    "field_of_view_deg": "87 (H), 108 (D)",
+    "field_of_view_deg": "87 H / 48 V / 108 D; pan 355 / tilt -5~80",
     "night_vision": {
       "type": "ir",
       "range_m": 10,
@@ -1833100,7 +1833497,7 @@
     },
     "operating_temp_c": "-10 to 45",
     "dimensions_mm": "77.4 x 77.4 x 108.1",
-    "weight_g": 201,
+    "weight_g": 197,
     "environment": [
       "indoor"
     ],
@@ -1833112,7 +1833509,7 @@
       "rtsp"
     ],
     "features": [
-      "dual-band Wi-Fi 6 (IEEE802.11b/g/n/ax)",
+      "Wi-Fi 6 (IEEE802.11b/g/n/ax)",
       "pan 0 to 355 / tilt -5 to 80",
       "8x digital zoom",
       "smart tracking",
@@ -1833125,9 +1833522,10 @@
     "sources": [
       "https://www.imou.com/en/product/specs/ranger2-5mp",
       "https://www.wifi-stock.com/details/imou-5mp-h-265-wi-fi-pan_tilt-camera-with-privacy-mode-ranger-2-5mp-ipc-k2ep-5h2w.html",
-      "https://www.wifi-stock.com/file/ipc-k2ep-5h2w_ds.pdf"
+      "https://www.wifi-stock.com/file/ipc-k2ep-5h2w_ds.pdf",
+      "https://static-website.imou.com/28bbc353-10dc-474e-a5c1-fbcc849f3df8.pdf"
     ],
-    "last_verified": "2026-09-03",
+    "last_verified": "2026-10-30",
     "configs": {
       "frigate": {
         "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -1833139,6 +1833537,7 @@
     },
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "release_notes": "Corrected 2026-10-30 against the official Imou spec sheet: FOV \"87 (H), 108 (D)\" → 87/48/108 (pan 355 / tilt -5~80), weight 201 → 197 g, added 25/30 fps max, added productReportedModel IPC-K2E-5H2W, Wi-Fi feature no longer claims dual-band (sheet lists IEEE802.11b/g/n/ax only).",
     "added": "2026-09-03",
     "sensor_size_inch": 0.3333
   },
@@ -1833147,9 +1833546,8 @@
     "brand": "IMOU",
     "model": "Ranger 2 Dual",
     "aliases": [
-      "IPC-S2XEP-10M0S",
-      "Imou Ranger 2 Dual 10MP",
-      "Imou Ranger Dual Pro 10MP"
+      "S20EP-5M0S",
+      "Imou Ranger 2 Dual 10MP"
     ],
     "type": "dual-lens",
     "connectivity": [
@@ -1833238,7 +1833636,7 @@
       "https://www.imou.com/en/product/specs/ranger2-dual",
       "https://static-website.imou.com/8dcfc76d-60fe-4629-9edc-94a6de1df742.pdf"
     ],
-    "last_verified": "2026-09-03",
+    "last_verified": "2026-10-30",
     "configs": {
       "frigate": {
         "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -1833250,6 +1833648,7 @@
     },
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "release_notes": "Corrected 2026-10-30 against the official Imou spec sheet: aliases: added the productReportedModel code S20EP-5M0S (5MP per lens = 10MP) and removed IPC-S2XEP-10M0S (S2X is the original Ranger Dual's code family; imou.com lists S20EP for the Ranger 2 Dual) and 'Imou Ranger Dual Pro 10MP' (a different product with its own record); all spec values confirmed by the 10MP spec page and datasheet.",
     "added": "2026-09-03",
     "sensor_size_inch": 0.3333
   },
@@ -1833878,13 +1834277,13 @@
     "brand": "IMOU",
     "model": "Ranger 2C 5MP",
     "aliases": [
-      "Imou Ranger 2C 5MP",
-      "IPC-K2ECP-5H2W"
+      "IPC-K2EC-5H2W",
+      "IPC-K2ECP-5H2W",
+      "Imou Ranger 2C 5MP"
     ],
     "type": "ptz",
     "connectivity": [
-      "wifi",
-      "ethernet"
+      "wifi"
     ],
     "power_source": [
       "dc"
@@ -1833908,7 +1834307,7 @@
       "focal_length_mm": "3.6",
       "varifocal": false
     },
-    "field_of_view_deg": "87 H / 48 V / 108 D",
+    "field_of_view_deg": "87 H / 48 V / 108 D; pan 355 / tilt -5 to 80",
     "night_vision": {
       "type": "ir",
       "range_m": 10
@@ -1833928,7 +1834327,7 @@
     },
     "storage": {
       "onboard": true,
-      "max_microsd_gb": 256,
+      "max_microsd_gb": 512,
       "nvr_compatible": true,
       "cloud": true
     },
@@ -1833959,9 +1834358,10 @@
     "sources": [
       "https://www.imou.com/en/product/specs/ranger2c-5mp",
       "https://www.imou.com/en/product/detail/ranger2c-5mp",
-      "https://www.wifi-stock.com/details/imou-3mp-h-265-wi-fi-pan-tilt-camera-ranger-2c-5mp-ipc-k2ecp-5h2w.html"
+      "https://www.wifi-stock.com/details/imou-3mp-h-265-wi-fi-pan-tilt-camera-ranger-2c-5mp-ipc-k2ecp-5h2w.html",
+      "https://static-website.imou.com/e61fdee1-4752-41a5-8fa1-4e8650a97c36.pdf"
     ],
-    "last_verified": "2026-09-03",
+    "last_verified": "2026-10-30",
     "configs": {
       "frigate": {
         "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -1833973,6 +1834373,7 @@
     },
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "release_notes": "Corrected 2026-10-30 against the official Imou spec sheet: storage.max_microsd_gb 256 -> 512; connectivity wifi + ethernet -> wifi (no Ethernet port on the spec page or datasheet); added model code IPC-K2EC-5H2W and the pan/tilt range to the FOV string.",
     "added": "2026-09-03",
     "sensor_size_inch": 0.3333
   },
@@ -1834194,8 +1834595,7 @@
     ],
     "type": "dual-lens",
     "connectivity": [
-      "wifi",
-      "ethernet"
+      "wifi"
     ],
     "power_source": [
       "usb"
@@ -1834266,14 +1834666,14 @@
       "spotlight + siren",
       "privacy mode",
       "dual-band Wi-Fi 6 (2.4GHz/5GHz)",
-      "Ethernet port",
       "two-way talk"
     ],
-    "release_notes": "Ranger 2C Dual version selector is a per-lens megapixel selector marketed as combined totals: 3MP=6MP, 4MP=8MP, 5MP=10MP. This is the 4MP-per-lens (8MP) version.",
+    "release_notes": "Ranger 2C Dual version selector is a per-lens megapixel selector marketed as combined totals: 3MP=6MP, 4MP=8MP, 5MP=10MP. This is the 4MP-per-lens (8MP) version. Corrected 2026-10-30 against the official Imou spec sheet: connectivity wifi + ethernet -> wifi and the \"Ethernet port\" feature removed (no Ethernet port on the spec page or datasheet; dual-band Wi-Fi 6 only); added weight 200 g.",
     "sources": [
-      "https://www.imou.com/en/product/specs/ranger2c-dual"
+      "https://www.imou.com/en/product/specs/ranger2c-dual",
+      "https://static-website.imou.com/1b52cc47-b9a5-481c-b125-013fb5a2b91d.pdf"
     ],
-    "last_verified": "2026-09-03",
+    "last_verified": "2026-10-30",
     "configs": {
       "frigate": {
         "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -1834285,6 +1834685,7 @@
     },
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "weight_g": 200,
     "added": "2026-09-03",
     "sensor_size_inch": 0.3571
   },
@@ -1834538,7 +1834939,7 @@
     "id": "imou-rex-3d-r1-5mp",
     "brand": "IMOU",
     "model": "Rex 3D-R1 5MP",
-    "type": "turret",
+    "type": "ptz",
     "environment": [
       "indoor"
     ],
@@ -1834551,7 +1834952,7 @@
     ],
     "resolution": {
       "megapixels": 5,
-      "max_width": 2688,
+      "max_width": 2880,
       "max_height": 1620,
       "label": "5MP"
     },
@@ -1834560,36 +1834961,36 @@
         "H.265",
         "H.264"
       ],
-      "max_fps": 30,
+      "max_fps": 20,
       "streams": [
         {
           "name": "main",
-          "resolution": "2688x1620",
-          "fps": 30,
+          "resolution": "2880x1620",
+          "fps": 20,
           "codec": "H.265"
         }
       ]
     },
-    "sensor": "1/2.8\" CMOS",
+    "sensor": "1/3\" Progressive CMOS",
     "lens": {
       "count": 1,
       "focal_length_mm": "3.6",
       "varifocal": false
     },
-    "field_of_view_deg": "77 H / 40 V / 91 D; pan 355 / tilt 0~90",
+    "field_of_view_deg": "88 H / 47 V / 107 D; pan 355 / tilt 0~90",
     "night_vision": {
       "type": "hybrid",
       "range_m": 15
     },
     "power": {
-      "method": "DC 5V/1.5A; <5W",
+      "method": "DC 5V/1A; <5W",
       "consumption_w": 5
     },
     "operating_temp_c": "-10 to 45",
     "dimensions_mm": "90 x 90 x 107.4",
     "storage": {
       "onboard": true,
-      "max_microsd_gb": 256,
+      "max_microsd_gb": 512,
       "nvr_compatible": true,
       "cloud": true
     },
@@ -1834604,20 +1835005,22 @@
     },
     "features": [
       "indoor pan/tilt",
-      "IR night vision",
+      "smart full-color night vision (auto IR→colour)",
       "human & pet detection",
       "customizable siren",
-      "8x/16x digital zoom",
+      "8x digital zoom",
       "two-way talk",
-      "ONVIF / NVR / cloud storage"
+      "ONVIF / NVR / cloud storage",
+      "smart tracking",
+      "dual-band Wi-Fi 6 (2.4/5 GHz)"
     ],
-    "release_notes": "'-R1' is a refreshed revision of the Rex 3D 5MP (base model IPC-GS2DP-5K0W); the R1's own model code was not found and retailers conflate the two, so listed specs fall back to the base Rex 3D. Sensor conflicts across sources (1/2.8\" vs 1/3\"); the R1 refresh may add full-color night vision and a larger microSD — verify against the official datasheet.",
+    "release_notes": "'-R1' is a refreshed revision of the Rex 3D 5MP (base model IPC-GS2DP-5K0W); the R1's own model code was not found and retailers conflate the two, so listed specs fall back to the base Rex 3D. Sensor conflicts across sources (1/2.8\" vs 1/3\"); the R1 refresh may add full-color night vision and a larger microSD — verify against the official datasheet. Corrected 2026-10-30 against the official Imou spec sheet: record carried base Rex 3D values; per the Rex 3D 5MP-R1 datasheet: type turret → ptz (Wi-Fi P&T camera, smart tracking), resolution 2688x1620 → 2880x1620, sensor 1/2.8\" → 1/3\", FOV 77/40/91 → 88/47/107, max fps 30 → 20, microSD 256 → 512 GB, power DC 5V/1.5A → 5V/1A, IR-only/16x zoom feature claims replaced by smart full-colour night vision / 8x zoom, added dual-band Wi-Fi 6.",
     "sources": [
       "https://www.imou.com/en/product/detail/rex3d-r1-5mp",
       "https://www.imou.com/en/product/specs/rex3d-r1-5mp",
       "https://static-website.imou.com/187a55aa-91ec-41f7-a52b-056951e30226.pdf"
     ],
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1834643,8 +1835046,11 @@
     "weight_g": 195,
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "ptz": {
+      "autotracking": true
+    },
     "added": "2026-07-05",
-    "sensor_size_inch": 0.3571,
+    "sensor_size_inch": 0.3333,
     "substream_count": 0,
     "substream_max_resolution": null
   },
@@ -1834895,8 +1835301,10 @@
     "brand": "IMOU",
     "model": "Rex VT Pro",
     "aliases": [
-      "Imou Rex VT Pro",
-      "IPC-S2VBP-5M0WR"
+      "IPC-S2V-5M0WR",
+      "S2VBP-5M0WR",
+      "IPC-S2VBP-5M0WR",
+      "Imou Rex VT Pro"
     ],
     "type": "ptz",
     "environment": [
@@ -1834917,7 +1835325,8 @@
     "sensor": "1/2.7\" Progressive Scan CMOS",
     "video": {
       "codecs": [
-        "H.265"
+        "H.265",
+        "H.264"
       ],
       "max_fps": 15
     },
@@ -1834947,7 +1835356,7 @@
     "operating_temp_c": "-10 to 45",
     "storage": {
       "onboard": true,
-      "max_microsd_gb": 256,
+      "max_microsd_gb": 512,
       "nvr_compatible": true,
       "cloud": true
     },
@@ -1834967,16 +1835376,18 @@
       "integrated siren",
       "microSD / NVR / cloud storage"
     ],
-    "release_notes": "SKU IPC-S2VBP-5M0WR is shared with the non-Pro 'Rex VT'; distributors that title this SKU 'Rex VT Pro' (orbitadigital, visiotech, eurotechnology) add a 2.4\" display. Night-vision range is stated as 20m in Imou feature copy and 30m in some distributor spec tables — recorded the more conservative 20m. Some distributor templates also list Ethernet RJ45 and -30~+50 C operating temp; both look like generic-template artifacts for this WiFi-only DC-plug indoor camera and were omitted pending official confirmation.",
+    "release_notes": "Rex VT Pro (IPC-S2V-5M0WR / S2VBP-5M0WR): the IPC-S2V-5M0WR code is shared with the non-Pro 'Rex VT'; the Pro adds a 2.4\" display and 2000mAh battery. Wi-Fi-only, DC-plug indoor camera. Corrected 2026-10-30 against the official Imou spec sheet: added H.264 to codecs, max_microsd_gb 256 -> 512, weight_g 250 -> 290, added productReportedModel codes IPC-S2V-5M0WR / S2VBP-5M0WR; 20 m night vision, -10 to 45 C and Wi-Fi-only confirmed.",
     "sources": [
       "https://www.imou.com/en/product/specs/rex-vt-pro",
       "https://www.orbitadigital.com/en/cctv-ip/consumer-ip-cameras/50850-imou-ipc-s2vbp-5m0wr-imou-motorized-camera-rex-vt-pro-5mp-wifi-24-ghz-36-mm.html",
       "https://www.visiotechsecurity.com/en/products/ip-cctv-1/consumer-ip-10/imou-652/ipc-s2vbp-5m0wr-imou-detail",
-      "https://eurotechnology.az/datasheet/ipc-s2vbp-5m0wr-rex-vt-pro"
+      "https://eurotechnology.az/datasheet/ipc-s2vbp-5m0wr-rex-vt-pro",
+      "https://www.imou.com/en/product/detail/rex-vt-pro",
+      "https://static-website.imou.com/bcaa771c-6bf5-4b2c-8876-738f330e8269.pdf"
     ],
-    "last_verified": "2026-09-03",
+    "last_verified": "2026-10-30",
     "dimensions_mm": "63 x 60 x 124.5",
-    "weight_g": 250,
+    "weight_g": 290,
     "markets": [
       "global"
     ],
@@ -1835892,12 +1836303,12 @@
       "two-way audio",
       "dual-band Wi-Fi"
     ],
-    "release_notes": "Talos 3MP (store SKU IPC-S7MP-3V0S): outdoor Wi-Fi 6 pan/tilt camera. Specs from the official Imou datasheet (Rev 1.0.0); datasheet states IP65 and 355 pan (not the IP66/336 some retail pages claim). Aperture, min-lux, IK rating and ONVIF/RTSP support are not stated on the datasheet, so omitted.",
+    "release_notes": "Talos 3MP (store SKU IPC-S7MP-3V0S): outdoor Wi-Fi 6 pan/tilt camera. Specs from the official Imou datasheet (Rev 1.0.0); datasheet states IP65 and 355 pan (not the IP66/336 some retail pages claim). Aperture, min-lux, IK rating and ONVIF/RTSP support are not stated on the datasheet, so omitted. Corrected 2026-10-30 against the official Imou spec sheet: added protocol onvif (the en spec page lists ONVIF under Network; the datasheet omits it); the spec page states 30 m night vision vs 25 m on the datasheet, left at 25 m.",
     "sources": [
       "https://www.imou.com/en/product/specs/talos",
       "https://static-website.imou.com/016577d5-725e-452b-ab09-32ac721673f3.pdf"
     ],
-    "last_verified": "2026-09-02",
+    "last_verified": "2026-10-30",
     "status": "available",
     "environment": [
       "outdoor"
@@ -1835907,6 +1836318,9 @@
     ],
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-required",
+    "protocols": [
+      "onvif"
+    ],
     "added": "2026-09-02",
     "sensor_size_inch": 0.3333
   },
@@ -1836091,7 +1836505,8 @@
     "brand": "IMOU",
     "model": "Titan Pro 6MP",
     "aliases": [
-      "IPC-U7LP-6V0NE"
+      "IPC-U7LP-6V0NE",
+      "IPC-U7LN-6V0NE"
     ],
     "type": "ptz",
     "connectivity": [
@@ -1836117,9 +1836532,11 @@
         {
           "name": "main",
           "resolution": "3200x1800",
-          "codec": "H.265"
+          "codec": "H.265",
+          "fps": 20
         }
-      ]
+      ],
+      "max_fps": 20
     },
     "sensor": "1/1.8\" CMOS",
     "lens": {
@@ -1836128,13 +1836545,13 @@
       "aperture": "F1.0",
       "varifocal": false
     },
-    "field_of_view_deg": "pan 340 / tilt 0-90",
+    "field_of_view_deg": "89 H / 47 V / 107 D; pan 340 / tilt 0-90",
     "night_vision": {
       "type": "hybrid",
       "range_m": 30
     },
     "power": {
-      "method": "PoE or DC 12V",
+      "method": "PoE or DC 12V/1A",
       "consumption_w": 12
     },
     "operating_temp_c": "-30 to 60",
@@ -1836143,7 +1836560,8 @@
     "storage": {
       "onboard": true,
       "nvr_compatible": true,
-      "cloud": true
+      "cloud": true,
+      "max_microsd_gb": 512
     },
     "protocols": [
       "onvif",
@@ -1836160,19 +1836578,21 @@
       "Aurora full-color night vision",
       "auto human/vehicle tracking",
       "red-blue warning lights",
-      "spotlight + siren",
+      "spotlight + 125 dB siren",
       "dual-band Wi-Fi 6",
       "AOR adaptive recording",
       "people counting",
       "privacy zones"
     ],
-    "release_notes": "Titan Pro (IPC-U7LP-6V0NE): single-lens motorized PTZ, F1.0 lens, PoE-capable. IP rating and microSD max not confirmed on sources reviewed.",
+    "release_notes": "Titan Pro (IPC-U7LP-6V0NE): single-lens motorized PTZ, F1.0 lens, PoE-capable. IP rating and microSD max not confirmed on sources reviewed. Corrected 2026-10-30 against the official Imou spec sheet: field_of_view_deg \"pan 340 / tilt 0-90\" -> 89 H / 47 V / 107 D; pan 340 / tilt 0-90; added max 20 fps, microSD up to 512 GB, power DC 12V/1A or PoE, 125 dB siren and model code IPC-U7LN-6V0NE.",
     "sources": [
       "https://www.imou.com/en/product/detail/titan-pro",
       "https://www.megateh.eu/products/imou-cloud-cameras/imou-titan-pro-6mp-ptz-camera-with-aurora-color-night-vision",
-      "https://static-website.imou.com/673b89be-cf64-4782-b9cf-30f4779c1d81.pdf"
+      "https://static-website.imou.com/673b89be-cf64-4782-b9cf-30f4779c1d81.pdf",
+      "https://www.imou.com/en/product/specs/titan-pro",
+      "https://static-website.imou.com/e997cf47-4525-4a82-b760-65d68bc0d8ea.pdf"
     ],
-    "last_verified": "2026-10-01",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {
@@ -1836282,11 +1836702,12 @@
       "2x2 MIMO Wi-Fi + 100Mbps Ethernet",
       "two-way talk"
     ],
-    "release_notes": "Turret: outdoor IP67 turret with IR + spotlight active deterrence and 110dB siren. 2MP/1080p (2.8/3.6/6mm lens options).",
+    "release_notes": "Turret: outdoor IP67 turret with IR + spotlight active deterrence and 110dB siren. 2MP/1080p (2.8/3.6/6mm lens options). Corrected 2026-10-30 against the official Imou spec sheet: added the official model code IPC-T26E and the datasheet source; specs otherwise confirmed.",
     "sources": [
-      "https://www.imou.com/en/product/specs/turret"
+      "https://www.imou.com/en/product/specs/turret",
+      "https://static-website.imou.com/02451b42-3a11-4846-b767-7c1077cdf39d.pdf"
     ],
-    "last_verified": "2026-09-03",
+    "last_verified": "2026-10-30",
     "configs": {
       "frigate": {
         "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -1836298,6 +1836719,9 @@
     },
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "aliases": [
+      "IPC-T26E"
+    ],
     "added": "2026-09-03",
     "sensor_size_inch": 0.3704
   },
@@ -1836376,11 +1836800,12 @@
       "dual-antenna Wi-Fi + 100Mbps Ethernet",
       "built-in microphone"
     ],
-    "release_notes": "Turret SE: budget turret, IR-only, built-in mic (no speaker/siren/spotlight). 2MP and 4MP versions. No IP rating stated on the datasheet.",
+    "release_notes": "Turret SE: budget turret, IR-only, built-in mic (no speaker/siren/spotlight). 2MP and 4MP versions. No IP rating stated on the datasheet. Corrected 2026-10-30 against the official Imou spec sheet: added 2MP model codes IPC-T22E / IPC-T22E-C (productReportedModel); specs matched the Turret SE 1080P datasheet.",
     "sources": [
-      "https://www.imou.com/en/product/specs/turret-se"
+      "https://www.imou.com/en/product/specs/turret-se",
+      "https://static-website.imou.com/0859eba6-b788-40e3-9580-240a727684eb.pdf"
     ],
-    "last_verified": "2026-09-03",
+    "last_verified": "2026-10-30",
     "configs": {
       "frigate": {
         "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -1836392,6 +1836817,10 @@
     },
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "aliases": [
+      "IPC-T22E",
+      "IPC-T22E-C"
+    ],
     "added": "2026-09-03",
     "sensor_size_inch": 0.3571
   },
@@ -1836470,11 +1836899,12 @@
       "dual-antenna Wi-Fi + 100Mbps Ethernet",
       "built-in microphone"
     ],
-    "release_notes": "Turret SE: budget turret, IR-only, built-in mic (no speaker/siren/spotlight). 2MP and 4MP versions. No IP rating stated on the datasheet.",
+    "release_notes": "Turret SE: budget turret, IR-only, built-in mic (no speaker/siren/spotlight). 2MP and 4MP versions. No IP rating stated on the datasheet. Corrected 2026-10-30 against the official Imou spec sheet: added the 4MP productReportedModel codes IPC-T42E / IPC-T42E-C; all spec values confirmed by the spec page and the Turret SE 4MP datasheet.",
     "sources": [
-      "https://www.imou.com/en/product/specs/turret-se"
+      "https://www.imou.com/en/product/specs/turret-se",
+      "https://static-website.imou.com/c00188aa-44a7-4bd4-adf9-dde64c5e6ede.pdf"
     ],
-    "last_verified": "2026-09-03",
+    "last_verified": "2026-10-30",
     "configs": {
       "frigate": {
         "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
@@ -1836486,6 +1836916,10 @@
     },
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
+    "aliases": [
+      "IPC-T42E",
+      "IPC-T42E-C"
+    ],
     "added": "2026-09-03",
     "sensor_size_inch": 0.3571
   },
@@ -1836494,7 +1836928,7 @@
     "brand": "IMOU",
     "model": "VD1",
     "aliases": [
-      "VD1",
+      "VD1-5M0S",
       "Imou Door View Camera VD1"
     ],
     "type": "doorbell",
@@ -1836569,9 +1837003,10 @@
       "https://www.imou.com/en/product/specs/vd1",
       "https://static-website.imou.com/7ae08249-d89d-4c6b-b170-cb99f1edb0a5.png"
     ],
-    "last_verified": "2026-09-22",
+    "last_verified": "2026-10-30",
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-required",
+    "release_notes": "Corrected 2026-10-30 against the official Imou spec sheet: added the official model code VD1-5M0S from the spec page; specs otherwise confirmed (no datasheet is linked for this model).",
     "added": "2026-09-23",
     "sensor_size_inch": 0.3333,
     "substream_count": 0,
@@ -1836685,12 +1837120,10 @@
     ],
     "type": "doorbell",
     "connectivity": [
-      "ethernet",
-      "wifi"
+      "ethernet"
     ],
     "power_source": [
-      "poe",
-      "dc"
+      "poe"
     ],
     "resolution": {
       "megapixels": 5,
@@ -1836730,8 +1837163,8 @@
       "two_way": true
     },
     "power": {
-      "method": "DC 24V/1.5A",
-      "voltage": "DC 24V"
+      "method": "PoE, 48V DC IEEE 802.3af/at",
+      "voltage": "48V DC"
     },
     "storage": {
       "onboard": true,
@@ -1836751,12 +1837184,12 @@
       "smart home video doorphone (door station VTO + 7-inch touch indoor monitor VTH)",
       "7-inch touch screen, 1024x600 (indoor monitor)",
       "IR night vision (15m)",
-      "Wi-Fi 6 (2.4G & 5G, IEEE 802.11b/g/n/ax)",
       "two-way audio",
       "unlock via card, password or VTO/app; 2-channel lock control",
       "exit button (2 channels), tamper alarm",
       "human / loitering / vehicle detection",
-      "microSD recording (up to 512GB)"
+      "microSD recording (up to 512GB)",
+      "PoE (IEEE 802.3af/at) power + network"
     ],
     "configs": {
       "frigate": {
@@ -1836768,14 +1837201,17 @@
     },
     "sources": [
       "https://www.imou.com/en/product/specs/vdp7-poe",
-      "https://static-website.imou.com/5444f632-1f72-4660-b6e0-45663de79e3f.png"
+      "https://static-website.imou.com/5444f632-1f72-4660-b6e0-45663de79e3f.png",
+      "https://www.imou.com/uk/product/specs/vdp7-poe",
+      "https://static-website.imou.com/dad53af3-ae1e-431b-859b-766794ed5a04.pdf"
     ],
-    "last_verified": "2026-09-22",
+    "last_verified": "2026-10-30",
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
     "protocols": [
       "rtsp"
     ],
+    "release_notes": "Corrected 2026-10-30 against the official Imou spec sheet: record carried the 2-wire VDP7 values; per the VDP7 PoE spec sheet connectivity [ethernet, wifi] → [ethernet] (no Wi-Fi), power_source [poe, dc] → [poe], power DC 24V/1.5A → 48V DC IEEE 802.3af/at PoE, Wi-Fi 6 feature removed. Note: imou.com/en/product/specs/vdp7-poe currently shows the 2-wire VDP7 table; the uk/de/fr pages and the VDP7 POE 5MP datasheet show the PoE spec.",
     "added": "2026-09-23",
     "sensor_size_inch": 0.3333,
     "substream_count": 0,
@@ -1836786,12 +1837222,13 @@
     "brand": "IMOU",
     "model": "Versa 2MP",
     "aliases": [
+      "IPC-C22F-C",
+      "IPC-C22F-C0",
       "IPC-C22FP-C"
     ],
     "type": "bullet",
     "connectivity": [
-      "wifi",
-      "ethernet"
+      "wifi"
     ],
     "power_source": [
       "dc"
@@ -1836813,22 +1837250,25 @@
           "resolution": "1920x1080",
           "codec": "H.265"
         }
-      ]
+      ],
+      "max_fps": 30
     },
     "sensor": "1/2.8\" 2MP progressive CMOS",
     "lens": {
       "count": 1,
       "focal_length_mm": "2.8",
-      "varifocal": false
+      "varifocal": false,
+      "aperture": "F1.6"
     },
-    "field_of_view_deg": "97 H",
+    "field_of_view_deg": "97 H / 52 V / 114 D",
     "night_vision": {
       "type": "hybrid",
       "range_m": 20
     },
     "power": {
-      "method": "DC power adapter",
-      "consumption_w": 3.5
+      "method": "DC 5V/1A",
+      "consumption_w": 3.5,
+      "voltage": "DC 5V"
     },
     "operating_temp_c": "-20 to 45",
     "dimensions_mm": "72 x 51 x 52",
@@ -1836843,7 +1837283,7 @@
       "onvif",
       "rtsp"
     ],
-    "ip_rating": "IP67",
+    "ip_rating": "IP65",
     "audio": {
       "microphone": true,
       "speaker": true,
@@ -1836856,14 +1837296,16 @@
       "two-way audio",
       "AI human detection",
       "magnetic base",
-      "2.4GHz Wi-Fi + Ethernet port"
+      "2.4GHz Wi-Fi"
     ],
-    "release_notes": "Versa (IPC-C22FP-C): compact 1080p corded Wi-Fi bullet. IP rating varies by SKU (IP65/IP67).",
+    "release_notes": "Versa (IPC-C22FP-C): compact 1080p corded Wi-Fi bullet. IP rating varies by SKU (IP65/IP67). Corrected 2026-10-30 against the official Imou spec sheet: ip_rating IP67 → IP65, connectivity drops ethernet (network section lists Wi-Fi only; no Ethernet port on the product views), FOV \"97 H\" → 97/52/114, added aperture F1.6, 25/30 fps max, power DC 5V/1A, productReportedModel codes IPC-C22F-C / IPC-C22F-C0.",
     "sources": [
       "https://www.imou.com/en/product/detail/versa",
-      "https://www.wifi-stock.com/details/imou-1080p-h-265-wi-fi-bullet-camera-versa-ipc-c22fp-c.html"
+      "https://www.wifi-stock.com/details/imou-1080p-h-265-wi-fi-bullet-camera-versa-ipc-c22fp-c.html",
+      "https://www.imou.com/en/product/specs/versa",
+      "https://static-website.imou.com/f75b4759-41c6-4c8e-a7fe-6dec9421ebc5.pdf"
     ],
-    "last_verified": "2026-07-05",
+    "last_verified": "2026-10-30",
     "status": "available",
     "configs": {
       "frigate": {

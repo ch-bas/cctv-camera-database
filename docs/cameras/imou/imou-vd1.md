@@ -1,6 +1,6 @@
 # IMOU VD1
 
-*Also known as: VD1, Imou Door View Camera VD1*
+*Also known as: VD1-5M0S, Imou Door View Camera VD1*
 
 | Field | Spec |
 |-------|------|

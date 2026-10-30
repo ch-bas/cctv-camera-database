@@ -1,6 +1,6 @@
 # IMOU Ranger Dual 8MP
 
-*Also known as: Ranger Dual 3MP+5MP*
+*Also known as: IPC-S2X-8M0WED, Ranger Dual 3MP+5MP*
 
 | Field | Spec |
 |-------|------|
@@ -36,6 +36,7 @@
 ## Sources
 
 - https://www.imou.com/en/product/specs/ranger-dual
+- https://static-website.imou.com/1f8213c2-caeb-4892-9bba-5f5268400a3d.pdf
 
 ---
 *Auto-generated from imou-ranger-dual-8mp.json — do not edit by hand.*

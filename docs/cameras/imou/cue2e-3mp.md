@@ -1,7 +1,5 @@
 # IMOU Cue 2E 3MP
 
-*Also known as: IPC-C32EP, Imou Cue 2 3MP*
-
 | Field | Spec |
 |-------|------|
 | Brand | IMOU |
@@ -39,6 +37,7 @@
 - https://www.imou.com/en/product/specs/cue2e-3mp
 - https://www.imou.com/en/product/detail/cue2e-3mp
 - https://datasheet.w.od.ua/files/imou/imou-cue-2-ipc-c32ep-3mp-datasheet_eng.pdf
+- https://static-website.imou.com/f788f78a-c1b5-4e0b-aa38-865a05c800eb.pdf
 
 ---
 *Auto-generated from imou-cue2e-3mp.json — do not edit by hand.*

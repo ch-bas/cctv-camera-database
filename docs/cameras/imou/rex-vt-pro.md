@@ -1,6 +1,6 @@
 # IMOU Rex VT Pro
 
-*Also known as: Imou Rex VT Pro, IPC-S2VBP-5M0WR*
+*Also known as: IPC-S2V-5M0WR, S2VBP-5M0WR, IPC-S2VBP-5M0WR, Imou Rex VT Pro*
 
 | Field | Spec |
 |-------|------|
@@ -14,7 +14,7 @@
 | Field of view | 87 H / 48 V / 108 D; pan 0~355 / tilt 0~90° |
 | Night vision | ir (20m) |
 | Power | DC 5V/1.5A |
-| Storage | microSD ≤ 256GB, NVR |
+| Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
 | Two-way audio | Yes |
 | Operating temp | -10 to 45°C |
@@ -38,6 +38,8 @@
 - https://www.orbitadigital.com/en/cctv-ip/consumer-ip-cameras/50850-imou-ipc-s2vbp-5m0wr-imou-motorized-camera-rex-vt-pro-5mp-wifi-24-ghz-36-mm.html
 - https://www.visiotechsecurity.com/en/products/ip-cctv-1/consumer-ip-10/imou-652/ipc-s2vbp-5m0wr-imou-detail
 - https://eurotechnology.az/datasheet/ipc-s2vbp-5m0wr-rex-vt-pro
+- https://www.imou.com/en/product/detail/rex-vt-pro
+- https://static-website.imou.com/bcaa771c-6bf5-4b2c-8876-738f330e8269.pdf
 
 ---
 *Auto-generated from imou-rex-vt-pro.json — do not edit by hand.*

@@ -1,6 +1,6 @@
 # IMOU Cue 2C 3MP
 
-*Also known as: Imou Cue 2 3MP*
+*Also known as: IPC-C32CP-R0, IPC-C32CN-R0, Imou Cue 2 3MP*
 
 | Field | Spec |
 |-------|------|
@@ -34,6 +34,7 @@
 
 - https://www.imou.com/en/product/specs/cue2c-3mp
 - https://www.imou.com/en/product/specs/cue2c-3mp/_payload.json
+- https://static-website.imou.com/af788a76-07d7-496d-b145-ca03855a670a.pdf
 
 ---
 *Auto-generated from imou-cue2c-3mp.json — do not edit by hand.*

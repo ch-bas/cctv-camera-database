@@ -1,6 +1,6 @@
 # IMOU Ranger 2 Dual
 
-*Also known as: IPC-S2XEP-10M0S, Imou Ranger 2 Dual 10MP, Imou Ranger Dual Pro 10MP*
+*Also known as: S20EP-5M0S, Imou Ranger 2 Dual 10MP*
 
 | Field | Spec |
 |-------|------|

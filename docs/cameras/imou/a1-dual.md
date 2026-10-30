@@ -1,18 +1,18 @@
 # IMOU A1 Dual 3MP
 
-*Also known as: Ranger 2 Dual, A1 Dual*
+*Also known as: Ranger 2 Dual, A1 Dual, A1 Dual 6MP*
 
 | Field | Spec |
 |-------|------|
 | Brand | IMOU |
 | Model | A1 Dual 3MP |
 | Type | dual-lens |
-| Connectivity | wifi |
+| Connectivity | wifi, ethernet |
 | Resolution | 3MP (per lens) (3MP, 2304×1296) |
 | Sensor | 1/3" Progressive CMOS (per lens) |
 | Lens | 2× 3.6mm |
 | Field of view | 91 H / 47 V / 107 D (per lens)° |
-| Night vision | color (15m) |
+| Night vision | hybrid (15m) |
 | Power | DC 5V/1.5A |
 | Storage | microSD ≤ 512GB |
 | Protocols | onvif, rtsp |
@@ -36,6 +36,7 @@
 ## Sources
 
 - https://www.imou.com/en/product/specs/a1-dual
+- https://static-website.imou.com/6ca314db-fd8e-4cdc-9fa5-965cdb061187.pdf
 
 ---
 *Auto-generated from imou-a1-dual.json — do not edit by hand.*

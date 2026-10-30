@@ -237,8 +237,8 @@ A device type is only emitted when the camera has a known RJ45 link speed (`netw
 | Total cameras | **29,588** |
 | Brands | **235** |
 | Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
-| PoE wired | 20,348 |
-| WiFi | 2,624 |
+| PoE wired | 20,346 |
+| WiFi | 2,623 |
 | Battery / wire-free | 749 |
 | 4K / 8MP+ | 5,553 |
 | 4–7MP | 11,541 |
@@ -551,7 +551,7 @@ Shipped: JSON Schema CI, the [web frontend](https://cctv-database.com) (search /
 Open — contributions very welcome:
 
 - [ ] **Re-source ~1,051 reseller-only cameras** to official OEM datasheets (#164 / #165)
-- [ ] **Backfill pixel resolution** for the ~2,783 entries that state megapixels but no width×height (#169)
+- [ ] **Backfill pixel resolution** for the ~2,782 entries that state megapixels but no width×height (#169)
 - [ ] **Frigate verification drive** — only 37 of 22,948 shipped configs are community-verified; [confirm one you run](../../issues/new?template=verify-frigate-config.yml)
 - [ ] **Grow `community_notes`** — the per-camera quirks/behaviors layer (#297)
 

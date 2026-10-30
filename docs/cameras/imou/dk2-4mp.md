@@ -1,6 +1,6 @@
 # IMOU Ranger S2 4MP
 
-*Also known as: IMOU DK2 4MP, DK2 4MP*
+*Also known as: IPC-DK2-4H1W, IMOU DK2 4MP, DK2 4MP*
 
 | Field | Spec |
 |-------|------|
@@ -41,6 +41,8 @@
 
 - https://www.imou.com/product/detail/dk2-4mp
 - https://www.imou.com/product/specs/dk2-4mp
+- https://www.imou.com/en/product/specs/dk2-4mp
+- https://static-website.imou.com/f4c2a940-3735-46f7-9d43-ce3eac8bfb39.pdf
 
 ---
 *Auto-generated from imou-dk2-4mp.json — do not edit by hand.*

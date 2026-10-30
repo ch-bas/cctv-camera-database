@@ -1,6 +1,6 @@
 # IMOU Bullet 3 5MP
 
-*Also known as: IPC-S3EP-5M0WE, IPC-S3EP-3M0WE (3MP)*
+*Also known as: IPC-S3E-5M0WE, IPC-S3EP-5M0WE*
 
 | Field | Spec |
 |-------|------|
@@ -10,11 +10,11 @@
 | Connectivity | wifi, ethernet |
 | Resolution | 5MP/3K (5MP, 2880×1620) |
 | Sensor | 1/3" 5MP progressive CMOS |
-| Lens | 1× 2.8mm |
-| Field of view | 104 H° |
+| Lens | 1× 2.8 / 3.6mm |
+| Field of view | 2.8mm: 94 H / 52 V / 111 D; 3.6mm: 78 H / 41 V / 94 D° |
 | Night vision | hybrid (30m) |
-| Power | DC 12V or PoE |
-| Storage | microSD ≤ 256GB, NVR |
+| Power | DC 12V 1A |
+| Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
 | IP rating | IP67 |
 | Two-way audio | Yes |
@@ -40,6 +40,8 @@
 
 - https://www.imou.com/en/product/detail/bullet3
 - https://www.setik.biz/en/cameras/9582-imou-ipc-s3ep-5m0we-imou-camera-imou-bullet-3-wi-fi-5mp-28mm-full-color-ir-imou-sense.html
+- https://www.imou.com/en/product/specs/bullet3
+- https://static-website.imou.com/cb79d56b-b9b8-4277-b160-5f8d28385309.pdf
 
 ---
 *Auto-generated from imou-bullet-3-5mp.json — do not edit by hand.*

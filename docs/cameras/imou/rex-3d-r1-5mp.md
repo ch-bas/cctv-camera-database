@@ -4,15 +4,15 @@
 |-------|------|
 | Brand | IMOU |
 | Model | Rex 3D-R1 5MP |
-| Type | turret |
+| Type | ptz |
 | Connectivity | wifi, ethernet |
-| Resolution | 5MP (5MP, 2688×1620) |
-| Sensor | 1/2.8" CMOS |
+| Resolution | 5MP (5MP, 2880×1620) |
+| Sensor | 1/3" Progressive CMOS |
 | Lens | 1× 3.6mm |
-| Field of view | 77 H / 40 V / 91 D; pan 355 / tilt 0~90° |
+| Field of view | 88 H / 47 V / 107 D; pan 355 / tilt 0~90° |
 | Night vision | hybrid (15m) |
-| Power | DC 5V/1.5A; <5W |
-| Storage | microSD ≤ 256GB, NVR |
+| Power | DC 5V/1A; <5W |
+| Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
 | Two-way audio | Yes |
 | Operating temp | -10 to 45°C |
@@ -21,17 +21,19 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| main | 2688x1620 | 30 | H.265 |
+| main | 2880x1620 | 20 | H.265 |
 
 ## Features
 
 - indoor pan/tilt
-- IR night vision
+- smart full-color night vision (auto IR→colour)
 - human & pet detection
 - customizable siren
-- 8x/16x digital zoom
+- 8x digital zoom
 - two-way talk
 - ONVIF / NVR / cloud storage
+- smart tracking
+- dual-band Wi-Fi 6 (2.4/5 GHz)
 
 ## Sources
 

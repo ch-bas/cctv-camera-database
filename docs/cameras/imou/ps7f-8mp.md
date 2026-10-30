@@ -1,6 +1,6 @@
 # IMOU PS7F 8MP
 
-*Also known as: IPC-PS7FP-8X0*
+*Also known as: IPC-PS7FP-8X0, IPC-PS7FN-8X0, PC4K-CTS/WL*
 
 | Field | Spec |
 |-------|------|
@@ -13,7 +13,7 @@
 | Lens | 1× 3.6mm |
 | Field of view | 89 H / 45 V / 105 D; pan 0-355 / tilt 0-90° |
 | Night vision | hybrid (30m) |
-| Power | PoE or DC 12V/1A; <12W |
+| Power | PoE or DC 12V/1A; <8.7W |
 | Storage | microSD ≤ 512GB, NVR |
 | Protocols | onvif, rtsp |
 | Two-way audio | Yes |
@@ -33,6 +33,8 @@
 
 - https://www.imou.com/en/support/product-manual
 - https://static-website.imou.com/c1bbf711-f4cf-44f8-a19f-6d401e3d2065.pdf
+- https://www.imou.com/en/product/detail/ps7f4k
+- https://www.imou.com/en/product/specs/ps7f4k
 
 ---
 *Auto-generated from imou-ps7f-8mp.json — do not edit by hand.*

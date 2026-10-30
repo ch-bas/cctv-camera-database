@@ -1,6 +1,6 @@
 # IMOU Doorbell 2S Kit
 
-*Also known as: DB-2S-3T0W, DS2S, DB-2S-3T0W/DS2S*
+*Also known as: DB-2SP-3T0W/DS3, DB-2SN-3T0W/DS3, DB-2S-3T0W, DS2S, DB-2S-3T0W/DS2S*
 
 | Field | Spec |
 |-------|------|
@@ -40,6 +40,7 @@
 
 - https://www.imou.com/en/product/specs/doorbell2s-kit
 - https://static-website.imou.com/cf8e744f-ec70-4feb-8254-116660e5d9eb.png
+- https://static-website.imou.com/a16a811f-fbe9-43b4-b89c-d07fc06aa8ba.pdf
 
 ---
 *Auto-generated from imou-doorbell-2s-kit.json — do not edit by hand.*

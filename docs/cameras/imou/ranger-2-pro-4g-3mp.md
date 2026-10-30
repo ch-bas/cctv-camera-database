@@ -1,5 +1,7 @@
 # IMOU Ranger 2 Pro 4G 3MP
 
+*Also known as: IPC-S2EP-3R0T-EU, IPC-S2EN-3R0T-EU*
+
 | Field | Spec |
 |-------|------|
 | Brand | IMOU |

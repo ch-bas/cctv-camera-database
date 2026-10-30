@@ -1,6 +1,6 @@
 # IMOU Cruiser Dual 2 8MP
 
-*Also known as: Cruiser Dual 2 8MP-M1*
+*Also known as: IPC-S7XE-8M0WED, Cruiser Dual 2 8MP-M1*
 
 | Field | Spec |
 |-------|------|
@@ -11,7 +11,7 @@
 | Resolution | 8MP (4MP+4MP) (8MP, 2560×1440) |
 | Sensor | 1/2.8" 4MP progressive CMOS (per lens) |
 | Lens | 2× 3.6mm F1.6 |
-| Field of view | fixed lens pan 0-260 / tilt 0-25; PT lens pan 355 / tilt 0-90° |
+| Field of view | 85 H / 45 V / 103 D (per lens); fixed lens pan 0-260 / tilt 0-25; PT lens pan 355 / tilt 0-90° |
 | Night vision | hybrid (30m) |
 | Power | DC 12V/1A |
 | Storage | microSD ≤ 512GB, NVR |
@@ -33,6 +33,8 @@
 ## Sources
 
 - https://static-website.imou.com/bf6f3559-0ae4-4141-a298-88420a484948.pdf
+- https://www.imou.com/en/product/detail/cruiser-dual2
+- https://www.imou.com/en/product/specs/cruiser-dual2
 
 ---
 *Auto-generated from imou-cruiser-dual-2-8mp.json — do not edit by hand.*

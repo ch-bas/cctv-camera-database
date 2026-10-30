@@ -1,6 +1,6 @@
 # IMOU Cruiser SC 4G 5MP
 
-*Also known as: IPC-K7FP-5H0TE, IPC-K7FP-3H0TE (3MP)*
+*Also known as: IPC-K7FP-5H0TE*
 
 | Field | Spec |
 |-------|------|
@@ -40,6 +40,8 @@
 
 - https://www.imou.com/en/product/detail/cruiser-sc4g
 - https://www.visiotechsecurity.com/en/products/ip-cctv-1/consumer-ip-10/imou-652/ipc-k7fp-5h0te-eu-imou-detail
+- https://www.imou.com/au/product/specs/cruiser-sc4g
+- https://static-website.imou.com/c866ad4f-7c7d-420e-9276-0916455bbe77.pdf
 
 ---
 *Auto-generated from imou-cruiser-sc-4g-5mp.json — do not edit by hand.*

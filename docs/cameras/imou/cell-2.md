@@ -1,6 +1,6 @@
 # IMOU Cell 2
 
-*Also known as: IPC-B46LP*
+*Also known as: IPC-B46L, IPC-B46LP*
 
 | Field | Spec |
 |-------|------|
@@ -11,10 +11,10 @@
 | Resolution | 4MP/2.5K (4MP, 2560×1440) |
 | Sensor | 1/2.9" CMOS |
 | Lens | 1× 2.8mm F2.0 |
-| Field of view | 110 H° |
+| Field of view | 110 H / 61 V / 130 D° |
 | Night vision | hybrid (10m) |
 | Power | Rechargeable (removable) battery, up to ~6 months per charge; 5V DC / USB charging; solar-compatible |
-| Storage | microSD ≤ 256GB |
+| Storage | microSD ≤ 128GB |
 | Protocols | http |
 | IP rating | IP65 |
 | Two-way audio | Yes |
@@ -42,6 +42,7 @@
 
 - https://www.imou.com/en/product/detail/cell2
 - https://www.imou.com/en/product/specs/cell2
+- https://static-website.imou.com/bccbe3e6-0a29-41a8-8588-f2bc0c6c4d48.pdf
 
 ---
 *Auto-generated from imou-cell-2.json — do not edit by hand.*

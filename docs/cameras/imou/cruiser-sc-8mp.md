@@ -11,7 +11,7 @@
 | Resolution | 4K/8MP (8MP, 3840×2160) |
 | Sensor | 1/2.7" progressive CMOS |
 | Lens | 1× 3.6mm |
-| Field of view | 105 diagonal; pan 355 / tilt 0-90° |
+| Field of view | 89 H / 45 V / 105 D; pan 355 / tilt 0-90° |
 | Night vision | hybrid (30m) |
 | Power | DC 12V/1A |
 | Storage | microSD ≤ 512GB, NVR |
@@ -24,7 +24,7 @@
 
 | Stream | Resolution | FPS | Codec |
 |--------|-----------|-----|-------|
-| main | 3840x2160 | 30 | H.265 |
+| main | 3840x2160 | 20 | H.265 |
 
 ## Features
 
@@ -42,6 +42,8 @@
 - https://www.imou.com/en/product/detail/cruiser-sc-8mp
 - https://www.orbitadigital.com/en/cctv-ip/consumer-ip-cameras/75273-imou-ipc-k7fp-8v0n-imou-cruiser-sc-motorized-camera-8mp-wifi-6-36-mm-.html
 - https://static-website.imou.com/ede7325e-f5a3-4670-8510-702e1eaf5305.pdf
+- https://www.imou.com/en/product/specs/cruiser-sc-8mp
+- https://static-website.imou.com/1d635df8-6f20-4f8d-9e43-da16d72fe46d.pdf
 
 ---
 *Auto-generated from imou-cruiser-sc-8mp.json — do not edit by hand.*

@@ -7,9 +7,9 @@
 | Type | bullet |
 | Connectivity | wifi |
 | Resolution | 5MP/3K (5MP, 2880×1620) |
-| Sensor | 1/2.8" Progressive CMOS |
-| Lens | 1× 2.8mm F2.0 |
-| Field of view | 98 H / 54 V / 121 D° |
+| Sensor | 1/3" Progressive CMOS |
+| Lens | 1× 2.8mm F2.2 |
+| Field of view | 95 H / 53 V / 112 D° |
 | Night vision | hybrid (15m) |
 | Power | Rechargeable 5000mAh battery (up to 120 days); USB-C DC 5V/2A or Imou 3W solar panel |
 | Storage | microSD ≤ 512GB |

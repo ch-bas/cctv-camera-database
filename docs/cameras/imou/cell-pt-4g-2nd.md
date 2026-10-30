@@ -1,5 +1,7 @@
 # IMOU Cell PT 4G (2nd Gen)
 
+*Also known as: IPC-B7ED-3T1TEH*
+
 | Field | Spec |
 |-------|------|
 | Brand | IMOU |
@@ -8,10 +10,10 @@
 | Connectivity | 4g |
 | Resolution | 2K/3MP (3MP, 2304×1296) |
 | Sensor | 1/2.8" Progressive CMOS |
-| Lens | 1× 3.6mm |
+| Lens | 1× 3.6mm F1.6 |
 | Field of view | 88 H / 45 V / 107 D; pan 330 / tilt 90° |
-| Night vision | ir (20m) |
-| Power | 15000mAh rechargeable battery (up to ~365 days); optional 3W solar; DC 5V/2A |
+| Night vision | hybrid (20m) |
+| Power | 10000mAh rechargeable battery; optional solar; DC 5V/2A |
 | Storage | microSD ≤ 256GB |
 | Protocols | http |
 | IP rating | IP66 |
@@ -37,6 +39,7 @@
 
 - https://www.imou.com/en/product/detail/cell-pt4g-2nd
 - https://www.imou.com/en/product/specs/cell-pt4g-2nd
+- https://static-website.imou.com/47b9f4c8-d6cc-4ead-b689-38c20048fe15.pdf
 
 ---
 *Auto-generated from imou-cell-pt-4g-2nd.json — do not edit by hand.*

@@ -10,7 +10,8 @@
 | Connectivity | ethernet |
 | Resolution | 5MP/3K (5MP, 2880×1620) |
 | Sensor | 1/3" progressive scan CMOS |
-| Lens | 1× 2.8mm F1.6 |
+| Lens | 1× 2.8 / 3.6mm F1.6 |
+| Field of view | 2.8mm: 94 H / 52 V / 111 D; 3.6mm: 76 H / 41 V / 91 D° |
 | Night vision | hybrid (30m) |
 | Power | PoE or DC 12V/1A, <6W |
 | Storage | microSD ≤ 512GB, NVR |
@@ -38,6 +39,8 @@
 
 - https://www.imou.com/en/product/detail/ps3d-5mp
 - https://www.noon.com/qatar-en/ps3d-5mp-outdoor-poe-bullet-security-camera-ipc-ps3dp-5m0/N70275576V/p/
+- https://www.imou.com/en/product/specs/ps3d-5mp
+- https://static-website.imou.com/f5a3353f-37e3-4b03-8848-d612ce0f7a9a.pdf
 
 ---
 *Auto-generated from imou-ps3d-5mp.json — do not edit by hand.*

@@ -1,6 +1,6 @@
 # IMOU Ranger RC 4MP
 
-*Also known as: Imou Ranger RC 4MP, IPC-GK2CP-4C0WR*
+*Also known as: IPC-GK2C-4C0WR, IPC-GK2CP-4C0WR, Imou Ranger RC 4MP*
 
 | Field | Spec |
 |-------|------|
@@ -38,6 +38,7 @@
 
 - https://www.imou.com/en/product/specs/ranger-rc-4mp-5mp
 - https://www.fsm.fi/downloads/products/i/ipc-gk2cp-4c0wr/IMOU-Ranger-RC-4Mpx-WiFi-kamer_DL_Ranger-RC.pdf
+- https://static-website.imou.com/1fb8b6d9-406e-41b3-85d3-10a49234d20e.pdf
 
 ---
 *Auto-generated from imou-ranger-rc-4mp.json — do not edit by hand.*

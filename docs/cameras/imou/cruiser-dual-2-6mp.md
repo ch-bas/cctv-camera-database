@@ -1,6 +1,6 @@
 # IMOU Cruiser Dual 2 6MP
 
-*Also known as: Cruiser Dual 2 6MP-M1, IPC-S7XEP-6M0WED*
+*Also known as: Cruiser Dual 2 6MP-M1, IPC-S7XE-6M0WED, IPC-S7XEP-6M0WED, IPC-S7XEN-6M0WED*
 
 | Field | Spec |
 |-------|------|
@@ -11,7 +11,7 @@
 | Resolution | 6MP (3MP+3MP) (6MP, 2304×1296) |
 | Sensor | 1/3" 3MP progressive CMOS (per lens) |
 | Lens | 2× 3.6mm F1.6 |
-| Field of view | fixed lens pan 0-260 / tilt 0-25; PT lens pan 355 / tilt 0-90° |
+| Field of view | 78 H / 41 V / 91 D per lens; fixed lens pan 0-260 / tilt 0-25; PT lens pan 355 / tilt 0-90° |
 | Night vision | hybrid (30m) |
 | Power | DC 12V/1A |
 | Storage | microSD ≤ 512GB, NVR |
@@ -33,6 +33,8 @@
 ## Sources
 
 - https://static-website.imou.com/65299fbf-71d4-480d-9dc8-27418811315a.pdf
+- https://www.imou.com/en/product/specs/cruiser-dual2
+- https://static-website.imou.com/23281a2a-70e5-495f-b139-140f6b0b9841.pdf
 
 ---
 *Auto-generated from imou-cruiser-dual-2-6mp.json — do not edit by hand.*
