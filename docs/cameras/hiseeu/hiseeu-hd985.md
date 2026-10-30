@@ -1,6 +1,6 @@
 # Hiseeu HD985
 
-*Also known as: 5MP PoE PTZ Camera*
+*Also known as: 5MP PoE PTZ Camera, HD975B-P*
 
 | Field | Spec |
 |-------|------|

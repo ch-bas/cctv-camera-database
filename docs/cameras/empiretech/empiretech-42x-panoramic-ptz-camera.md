@@ -1,5 +1,7 @@
 # EmpireTech 42X Panoramic PTZ Camera
 
+*Also known as: PTZ8C42X-T180, SDT8C842-8P-FA-APV-0280*
+
 | Field | Spec |
 |-------|------|
 | Brand | EmpireTech |

@@ -27,6 +27,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
   Specs come from Imou's own detail and specification pages and the datasheets they link. Model codes are recorded where Imou publishes them. RTSP/ONVIF configs are included only where the spec sheet lists ONVIF, using the Dahua path existing Imou records use (unverified).
 - **eufy Window Camera E10** (T8404121), from the official us.eufy.com spec table.
+- **22 more cameras from makers' stores and datasheet libraries:**
+  - Amcrest (12): the NOVALINK solar, 4G and pan-tilt cameras, the AF-2M HD-analog bullets and dome, Qcam IP bullets, and the Eco 720p bullet and dome
+  - HiLook (7): HAA-series domes, /SX strobe bullets and the DS-T200 Turbo HD camera
+  - Campark (2): SC22 and BC1154
+  - Techage (1): the DM28 8MP fisheye
+
+  Store listings that turned out to be existing cameras now match through new aliases (EmpireTech PTZ8C42X-T180, Hiseeu HD975B-P, Amcrest IP8M-TB2886EW-AI). Campark SC30 is now an alias of the identical Toguard SC30.
 
 ### Changed
 - **ACTi RTSP port:** 22 ACTi cameras now use port 554 instead of 7070: A214, A426, A711, A713, A826, A951, A952, A956, Q450, Q83, Z32, Z33, Z34, Z36, Z37, Z41, Z42, Z71, Z710, Z84, Z94 and Z95. ACTi's own firmware manuals give two defaults: 7070 for most firmware generations (V, A, S and C series) and 554 for newer models and the Z-series OEM line. Only records whose own manual states 554 changed; every other ACTi record keeps 7070. Configs a user has verified are never changed by bulk corrections (none of these had one). The brand-level RTSP pattern for ACTi now says 7070, with 554 for the newer lines.
