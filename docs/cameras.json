@@ -947623,6 +947623,88 @@
     "added": "2026-09-23"
   },
   {
+    "id": "eufy-window-camera-e10",
+    "brand": "Eufy",
+    "model": "Window Camera E10",
+    "aliases": [
+      "T8404121"
+    ],
+    "type": "dome",
+    "connectivity": [
+      "wifi"
+    ],
+    "power_source": [
+      "usb"
+    ],
+    "resolution": {
+      "megapixels": 4,
+      "max_width": 2688,
+      "max_height": 1520,
+      "label": "2.5K"
+    },
+    "video": {
+      "codecs": [
+        "H.264"
+      ],
+      "max_fps": 15
+    },
+    "lens": {
+      "count": 1,
+      "aperture": "F1.0",
+      "varifocal": false
+    },
+    "field_of_view_deg": "105 H / 57 V / 125 D; manual tilt 0 to -25",
+    "night_vision": {
+      "type": "color"
+    },
+    "power": {
+      "method": "Plug-in power adapter via USB-C (10 ft cable)"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "cloud": true,
+      "notes": "microSD up to 256 GB (not included) for 24/7 recording; 24/7 snapshots require HomeBase; optional cloud subscription."
+    },
+    "protocols": [
+      "http"
+    ],
+    "audio": {
+      "microphone": true,
+      "speaker": false,
+      "two_way": false
+    },
+    "features": [
+      "indoor window-mounted camera for outdoor viewing (adhesive mount on interior glass)",
+      "anti-reflection wraparound design + included anti-reflection stickers",
+      "MaxColor Vision color night vision (no spotlight)",
+      "WDR",
+      "AI human / vehicle / pet detection",
+      "24/7 continuous recording to microSD",
+      "pre-roll recording",
+      "dual-band Wi-Fi (2.4/5 GHz)",
+      "Alexa / Google Assistant",
+      "no monthly fee for core AI features"
+    ],
+    "operating_temp_c": "-10 to 50",
+    "dimensions_mm": "68.28 x 68.28 x 41.8",
+    "weight_g": 64,
+    "environment": [
+      "indoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "release_notes": "Specs per official eufy product page (Window Camera E10, T8404121). Mounted indoors on window glass to watch outdoors; no IP rating. Built-in microphone only (no speaker listed). Typed 'dome' following the existing eufy fixed indoor cube convention (Indoor Cam C120); type is approximate for a window-glass camera.",
+    "sources": [
+      "https://us.eufy.com/products/t8404121"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "cloud_dependency": "cloud-required",
+    "added": "2026-10-28"
+  },
+  {
     "id": "everfocus-eba1241",
     "brand": "EverFocus",
     "model": "EBA1241",
@@ -1816857,6 +1816939,115 @@
     "sensor_size_inch": 0.3333
   },
   {
+    "id": "imou-a1-pro-3mp",
+    "brand": "IMOU",
+    "model": "A1 Pro 3MP",
+    "type": "ptz",
+    "connectivity": [
+      "wifi"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "3MP/2K"
+    },
+    "sensor": "1/3\" Progressive CMOS",
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 20,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2304x1296",
+          "fps": 20,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "91 H / 47 V / 107 D; pan 355 / tilt -5~80",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 10
+    },
+    "power": {
+      "method": "DC 5V/1A",
+      "voltage": "DC 5V"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif"
+    ],
+    "operating_temp_c": "-10 to 45",
+    "dimensions_mm": "77.4 x 77.4 x 106.2",
+    "weight_g": 197,
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "indoor pan/tilt (355 pan / -5~80 tilt)",
+      "dual-band Wi-Fi 6",
+      "smart color night vision",
+      "human, pet & abnormal-sound detection",
+      "one-touch call",
+      "8x digital zoom"
+    ],
+    "release_notes": "Specs per official Imou spec page (A1 Pro, DE site), which lists the 3MP 2304x1296 variant (the 4K variant is a separate record). The spec page lists ONVIF but not RTSP, so only onvif is recorded under protocols; the config RTSP path follows the Imou/Dahua convention and is unverified. Night vision is marketed as \"Intelligente Farbnachtsicht\" (smart color); 10m distance per spec. No IPC model code published on the page.",
+    "sources": [
+      "https://www.imou.com/de/product/detail/a1-pro",
+      "https://www.imou.com/de/product/specs/a1-pro"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF is listed for this model but the exact path is not independently verified on this SKU.",
+        "onvif_port": 80,
+        "two_way_audio": true
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "indoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3333,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
     "id": "imou-a1-pro-4k",
     "brand": "IMOU",
     "model": "A1 Pro 4K",
@@ -1816970,6 +1817161,206 @@
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
     "added": "2026-07-05",
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
+    "id": "imou-aov-air",
+    "brand": "IMOU",
+    "model": "AOV Air",
+    "type": "bullet",
+    "connectivity": [
+      "wifi"
+    ],
+    "power_source": [
+      "battery",
+      "solar",
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 5,
+      "max_width": 2880,
+      "max_height": 1620,
+      "label": "5MP/3K"
+    },
+    "sensor": "1/2.9\" Progressive CMOS",
+    "video": {
+      "codecs": [
+        "H.265"
+      ],
+      "max_fps": 15,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2880x1620",
+          "fps": 15,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8",
+      "aperture": "F1.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "94 H / 52 V / 111 D",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 15
+    },
+    "power": {
+      "method": "5000mAh rechargeable battery; DC 5V/2A or Imou solar panel",
+      "voltage": "DC 5V"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": false,
+      "cloud": true
+    },
+    "ip_rating": "IP67",
+    "operating_temp_c": "-20 to 50",
+    "dimensions_mm": "68.6 x 53.5 x 85.7",
+    "weight_g": 270,
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "AOV 3.0 always-on recording (24/7 low-power)",
+      "5000mAh battery",
+      "dual-band Wi-Fi 6",
+      "smart full-color night vision",
+      "spotlight + siren",
+      "human & vehicle detection",
+      "8x digital zoom",
+      "solar-compatible"
+    ],
+    "release_notes": "Specs per official Imou product page and spec page (AOV Air). Battery AOV camera; no RTSP/ONVIF listed, so protocols/stream configs are omitted. No IPC model code published.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/aov-air",
+      "https://www.imou.com/en/product/specs/aov-air"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "notes": "100% wire-free battery camera — it sleeps between events and does not expose a continuous local RTSP stream, so Frigate/local-NVR use is not supported. Recording is via the Imou Life app + cloud and on-device microSD.",
+        "verified": false
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-required",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3448,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
+    "id": "imou-aov-air-4g",
+    "brand": "IMOU",
+    "model": "AOV Air 4G",
+    "type": "bullet",
+    "connectivity": [
+      "4g"
+    ],
+    "power_source": [
+      "battery",
+      "solar",
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 5,
+      "max_width": 2880,
+      "max_height": 1620,
+      "label": "5MP/3K"
+    },
+    "sensor": "1/2.9\" Progressive CMOS",
+    "video": {
+      "codecs": [
+        "H.265"
+      ],
+      "max_fps": 15,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2880x1620",
+          "fps": 15,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8",
+      "aperture": "F1.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "94 H / 52 V / 111 D",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 15
+    },
+    "power": {
+      "method": "5000mAh rechargeable battery; DC 5V/2A or Imou solar panel",
+      "voltage": "DC 5V"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": false,
+      "cloud": true
+    },
+    "ip_rating": "IP67",
+    "operating_temp_c": "-20 to 50",
+    "dimensions_mm": "106 x 91 x 155",
+    "weight_g": 270,
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "AOV 3.0 always-on recording (24/7 low-power)",
+      "4G LTE (FDD B1/3/5/7/8/20/28, TDD B38/40/41)",
+      "5000mAh battery",
+      "smart full-color night vision",
+      "spotlight + siren",
+      "human & vehicle detection",
+      "8x digital zoom",
+      "solar-compatible"
+    ],
+    "release_notes": "Specs per official Imou product page and spec page (AOV Air 4G). 4G LTE variant of the AOV Air; no RTSP/ONVIF listed, so protocols/stream configs are omitted. No IPC model code published.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/aov-air4g",
+      "https://www.imou.com/en/product/specs/aov-air4g"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "notes": "100% wire-free battery camera — it sleeps between events and does not expose a continuous local RTSP stream, so Frigate/local-NVR use is not supported. Recording is via the Imou Life app + cloud and on-device microSD.",
+        "verified": false
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-required",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3448,
     "substream_count": 0,
     "substream_max_resolution": null
   },
@@ -1818047,6 +1818438,117 @@
     "sensor_size_inch": 0.3333
   },
   {
+    "id": "imou-bullet-2-2mp",
+    "brand": "IMOU",
+    "model": "Bullet 2 2MP",
+    "type": "bullet",
+    "connectivity": [
+      "wifi",
+      "ethernet"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 2,
+      "max_width": 1920,
+      "max_height": 1080,
+      "label": "2MP/1080p"
+    },
+    "sensor": "1/2.8\" 2MP Progressive CMOS",
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "1920x1080",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8 / 3.6 / 6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "108 H / 56 V / 128 D (2.8mm); 88 H / 46 V / 104 D (3.6mm); 54 H / 29 V / 63 D (6mm)",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 30
+    },
+    "power": {
+      "method": "DC 12V/1A",
+      "voltage": "DC 12V"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif"
+    ],
+    "ip_rating": "IP67",
+    "operating_temp_c": "-30 to 60",
+    "dimensions_mm": "147.7 x 74.2 x 74.2",
+    "weight_g": 357,
+    "audio": {
+      "microphone": true,
+      "speaker": true
+    },
+    "features": [
+      "smart color night vision",
+      "built-in spotlight",
+      "110 dB siren",
+      "human detection",
+      "configurable detection region",
+      "8x digital zoom",
+      "metal + plastic housing"
+    ],
+    "release_notes": "Specs per official Imou spec page (Bullet 2), which lists the 2MP 1920x1080 variant (lens options 2.8/3.6/6mm); the 4MP variant is a separate record. Spec page lists ONVIF but not RTSP, so only onvif is recorded under protocols; the config RTSP path follows the Imou/Dahua convention and is unverified. No IPC model code on the page.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/bullet2",
+      "https://www.imou.com/en/product/specs/bullet2"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF is listed for this model but the exact path is not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3571,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
     "id": "imou-bullet-2-4mp",
     "brand": "IMOU",
     "model": "Bullet 2 4MP",
@@ -1818269,6 +1818771,221 @@
     "substream_max_resolution": null
   },
   {
+    "id": "imou-bullet-2c-2mp",
+    "brand": "IMOU",
+    "model": "Bullet 2C 2MP",
+    "type": "bullet",
+    "connectivity": [
+      "wifi",
+      "ethernet"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 2,
+      "max_width": 1920,
+      "max_height": 1080,
+      "label": "2MP/1080p"
+    },
+    "sensor": "1/2.8\" 2MP Progressive CMOS",
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "1920x1080",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8 / 3.6 / 6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "102 H / 54 V / 120 D (2.8mm); 89 H / 46 V / 108 D (3.6mm); 53 H / 30 V / 60 D (6mm)",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 30
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif"
+    ],
+    "ip_rating": "IP67",
+    "audio": {
+      "microphone": true,
+      "speaker": false,
+      "two_way": false
+    },
+    "features": [
+      "night vision up to 30m",
+      "human detection",
+      "configurable detection region",
+      "8x digital zoom",
+      "full-metal case",
+      "built-in Wi-Fi hotspot"
+    ],
+    "release_notes": "Specs per official Imou product page and spec page (Bullet 2C), which lists the 2MP 1920x1080 variant (the page also markets a 4MP option, not specified there). Spec table omits the General section (power, dimensions, weight, temperature) so those are not recorded; IP67 per product page. Spec page lists ONVIF but not RTSP, so only onvif is recorded under protocols; the config RTSP path follows the Imou/Dahua convention and is unverified.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/bullet2c",
+      "https://www.imou.com/en/product/specs/bullet2c"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF is listed for this model but the exact path is not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3571,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
+    "id": "imou-bullet-2c-3mp",
+    "brand": "IMOU",
+    "model": "Bullet 2C 3MP",
+    "type": "bullet",
+    "connectivity": [
+      "wifi",
+      "ethernet"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "3MP/2K"
+    },
+    "sensor": "1/3.2\" 3MP Progressive CMOS",
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 20,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2304x1296",
+          "fps": 20,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8 / 3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "100 H / 54 V / 117 D (2.8mm); 79 H / 43 V / 94 D (3.6mm)",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 30
+    },
+    "power": {
+      "method": "DC 12V/0.5A",
+      "voltage": "DC 12V"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif"
+    ],
+    "ip_rating": "IP67",
+    "operating_temp_c": "-30 to 50",
+    "dimensions_mm": "147.7 x 74.2 x 74.2",
+    "weight_g": 240,
+    "audio": {
+      "microphone": true,
+      "speaker": false,
+      "two_way": false
+    },
+    "features": [
+      "night vision up to 30m",
+      "human detection",
+      "configurable detection region",
+      "8x digital zoom",
+      "Wi-Fi 6",
+      "built-in Wi-Fi hotspot"
+    ],
+    "release_notes": "Specs per official Imou product page and spec page (Bullet 2C, current 3MP/5MP generation; URL slug bullet-2c3-5mp), which lists the 3MP 2304x1296 variant; the 5MP variant is a separate record. Not the older 2MP/4MP Bullet 2C (slug bullet2c). Spec page lists ONVIF but not RTSP, so only onvif is recorded under protocols; the config RTSP path follows the Imou/Dahua convention and is unverified. No IPC model code on the page.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/bullet-2c3-5mp",
+      "https://www.imou.com/en/product/specs/bullet-2c3-5mp"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF is listed for this model but the exact path is not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3125,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
     "id": "imou-bullet-2c-5mp",
     "brand": "IMOU",
     "model": "Bullet 2C 5MP",
@@ -1818377,6 +1819094,117 @@
     "cloud_dependency": "cloud-optional",
     "added": "2026-07-05",
     "sensor_size_inch": 0.3125,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
+    "id": "imou-bullet-2c-pro-3mp",
+    "brand": "IMOU",
+    "model": "Bullet 2C Pro 3MP",
+    "type": "bullet",
+    "connectivity": [
+      "wifi",
+      "ethernet"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "3MP/2K"
+    },
+    "sensor": "1/2.9\" 3MP Progressive CMOS",
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 20,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2304x1296",
+          "fps": 20,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8 / 3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "100 H / 54 V / 117 D (2.8mm); 80 H / 42 V / 95 D (3.6mm)",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 25
+    },
+    "power": {
+      "method": "DC 12V/1A",
+      "voltage": "DC 12V"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif"
+    ],
+    "ip_rating": "IP67",
+    "operating_temp_c": "-30 to 50",
+    "dimensions_mm": "147.7 x 74.2 x 75.6",
+    "weight_g": 265,
+    "audio": {
+      "microphone": true,
+      "speaker": false,
+      "two_way": false
+    },
+    "features": [
+      "IR (black-and-white) night vision",
+      "human & vehicle detection",
+      "crossline detection",
+      "configurable detection region",
+      "8x digital zoom",
+      "Wi-Fi 6"
+    ],
+    "release_notes": "Specs per official Imou product page and spec page (Bullet 2C Pro), which lists the 3MP 2304x1296 variant; the 5MP variant is a separate record. Spec page lists ONVIF but not RTSP, so only onvif is recorded under protocols; the config RTSP path follows the Imou/Dahua convention and is unverified. No IPC model code on the page.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/bullet2c-pro",
+      "https://www.imou.com/en/product/specs/bullet2c-pro"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF is listed for this model but the exact path is not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3448,
     "substream_count": 0,
     "substream_max_resolution": null
   },
@@ -1818493,6 +1819321,118 @@
     "substream_max_resolution": null
   },
   {
+    "id": "imou-bullet-2e-3mp",
+    "brand": "IMOU",
+    "model": "Bullet 2E 3MP",
+    "type": "bullet",
+    "connectivity": [
+      "wifi",
+      "ethernet"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "3MP/2K"
+    },
+    "sensor": "1/2.8\" 3MP Progressive CMOS",
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2304x1296",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8 / 3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "98 H / 54 V / 121 D (2.8mm); 82 H / 44 V / 104 D (3.6mm)",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 30
+    },
+    "power": {
+      "method": "DC 12V/0.5A",
+      "voltage": "DC 12V"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif"
+    ],
+    "ip_rating": "IP67",
+    "operating_temp_c": "-30 to 60",
+    "dimensions_mm": "165 x 90 x 73",
+    "weight_g": 280,
+    "audio": {
+      "microphone": true,
+      "speaker": false,
+      "two_way": false
+    },
+    "features": [
+      "smart color night vision",
+      "built-in spotlight",
+      "human detection",
+      "configurable detection region",
+      "configurable voice",
+      "8x digital zoom",
+      "Wi-Fi 6 dual antenna"
+    ],
+    "release_notes": "Specs per official Imou product page and spec page (Bullet 2E), which lists the 3MP 2304x1296 variant; the 5MP variant is a separate record. Spec page lists ONVIF but not RTSP, so only onvif is recorded under protocols; the config RTSP path follows the Imou/Dahua convention and is unverified. No IPC model code on the page.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/bullet2e",
+      "https://www.imou.com/en/product/specs/bullet2e"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF is listed for this model but the exact path is not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3571,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
     "id": "imou-bullet-2e-5mp",
     "brand": "IMOU",
     "model": "Bullet 2E 5MP",
@@ -1818596,6 +1819536,117 @@
     "cloud_dependency": "cloud-optional",
     "added": "2026-06-06",
     "sensor_size_inch": 0.3704
+  },
+  {
+    "id": "imou-bullet-2e-pro-3mp",
+    "brand": "IMOU",
+    "model": "Bullet 2E Pro 3MP",
+    "type": "bullet",
+    "connectivity": [
+      "wifi",
+      "ethernet"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "3MP/2K"
+    },
+    "sensor": "1/2.9\" 3MP Progressive CMOS",
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 20,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2304x1296",
+          "fps": 20,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8 / 3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "96 H / 52 V / 111 D (2.8mm); 78 H / 41 V / 91 D (3.6mm)",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 25
+    },
+    "power": {
+      "method": "DC 12V/1A",
+      "voltage": "DC 12V"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif"
+    ],
+    "ip_rating": "IP67",
+    "operating_temp_c": "-30 to 50",
+    "dimensions_mm": "147.7 x 74.2 x 75.6",
+    "weight_g": 265,
+    "audio": {
+      "microphone": true,
+      "speaker": false,
+      "two_way": false
+    },
+    "features": [
+      "infrared / color / smart night vision modes",
+      "human & vehicle detection",
+      "crossline detection",
+      "configurable detection region",
+      "8x digital zoom",
+      "Wi-Fi 6"
+    ],
+    "release_notes": "Specs per official Imou product page and spec page (Bullet 2E Pro), which lists the 3MP 2304x1296 variant; the 5MP variant is a separate record. Spec page lists ONVIF but not RTSP, so only onvif is recorded under protocols; the config RTSP path follows the Imou/Dahua convention and is unverified. No IPC model code on the page.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/bullet2e-pro",
+      "https://www.imou.com/en/product/specs/bullet2e-pro"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF is listed for this model but the exact path is not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3448,
+    "substream_count": 0,
+    "substream_max_resolution": null
   },
   {
     "id": "imou-bullet-2e-pro-5mp",
@@ -1819147,6 +1820198,115 @@
     "sensor_size_inch": 0.3571
   },
   {
+    "id": "imou-bullet-3c-3mp",
+    "brand": "IMOU",
+    "model": "Bullet 3C 3MP",
+    "type": "bullet",
+    "connectivity": [
+      "wifi",
+      "ethernet"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "3MP/2K"
+    },
+    "sensor": "1/2.8\" 3MP Progressive CMOS",
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2304x1296",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8 / 3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "104 H / 55 V / 124 D (2.8mm); 88 H / 44 V / 105 D (3.6mm)",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 30
+    },
+    "power": {
+      "method": "DC 12V/1A",
+      "voltage": "DC 12V"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif"
+    ],
+    "ip_rating": "IP67",
+    "operating_temp_c": "-30 to 50",
+    "dimensions_mm": "147.7 x 74.2 x 75.6",
+    "weight_g": 254,
+    "audio": {
+      "microphone": true,
+      "speaker": true
+    },
+    "features": [
+      "IR night vision (up to 30m)",
+      "IMOU SENSE AI human & vehicle detection",
+      "110 dB siren",
+      "8x digital zoom",
+      "Wi-Fi 6"
+    ],
+    "release_notes": "Specs per official Imou product page and spec page (Bullet 3C), which lists the 3MP 2304x1296 variant; the 5MP variant (IPC-S3DP-5M0WJ) is a separate record. Spec page lists ONVIF but not RTSP, so only onvif is recorded under protocols; the config RTSP path follows the Imou/Dahua convention and is unverified. No IPC model code for the 3MP variant on the page.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/bullet3c",
+      "https://www.imou.com/en/product/specs/bullet3c"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF is listed for this model but the exact path is not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3571,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
     "id": "imou-bullet-3c-5mp",
     "brand": "IMOU",
     "model": "Bullet 3C 5MP",
@@ -1819466,6 +1820626,107 @@
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-required",
     "added": "2026-07-05",
+    "sensor_size_inch": 0.3571,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
+    "id": "imou-cell-3c-3mp",
+    "brand": "IMOU",
+    "model": "Cell 3C 3MP",
+    "type": "bullet",
+    "connectivity": [
+      "wifi"
+    ],
+    "power_source": [
+      "battery",
+      "solar",
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "3MP/2K"
+    },
+    "sensor": "1/2.8\" Progressive CMOS",
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 15,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2304x1296",
+          "fps": 15,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8",
+      "aperture": "F2.0",
+      "varifocal": false
+    },
+    "field_of_view_deg": "98 H / 54 V / 121 D",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 15
+    },
+    "power": {
+      "method": "5000mAh rechargeable battery; DC 5V/2A (USB-C) or Imou solar panel",
+      "voltage": "DC 5V"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": false,
+      "cloud": true
+    },
+    "ip_rating": "IP66",
+    "operating_temp_c": "-20 to 50",
+    "dimensions_mm": "168.1 x 72.2 x 60.6",
+    "weight_g": 270,
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "5000mAh battery",
+      "smart full-color night vision (IR + spotlight modes)",
+      "motion & human detection",
+      "configurable detection region",
+      "8x digital zoom",
+      "two-way audio",
+      "solar-compatible",
+      "Alexa"
+    ],
+    "release_notes": "Specs per official Imou product page and spec page (Cell 3C), which lists the 3MP 2304x1296 variant; the 5MP variant is a separate record. Battery camera; no RTSP/ONVIF listed, so protocols/stream configs are omitted.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/cell3c",
+      "https://www.imou.com/en/product/specs/cell3c"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "notes": "100% wire-free battery camera — it sleeps between events and does not expose a continuous local RTSP stream, so Frigate/local-NVR use is not supported. Recording is via the Imou Life app + cloud and on-device microSD.",
+        "verified": false
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-required",
+    "added": "2026-10-28",
     "sensor_size_inch": 0.3571,
     "substream_count": 0,
     "substream_max_resolution": null
@@ -1819966,6 +1821227,105 @@
     "substream_max_resolution": null
   },
   {
+    "id": "imou-cell-pt-2c-3mp",
+    "brand": "IMOU",
+    "model": "Cell PT 2C 3MP",
+    "type": "ptz",
+    "connectivity": [
+      "wifi"
+    ],
+    "power_source": [
+      "battery",
+      "solar",
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "3MP/2K"
+    },
+    "sensor": "1/2.8\" Progressive CMOS",
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 15,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2304x1296",
+          "fps": 15,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "4.0",
+      "aperture": "F1.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "78 H / 41 V / 91 D; pan 350 / tilt 90",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 15
+    },
+    "power": {
+      "method": "5000mAh rechargeable battery; DC 5V/2A (USB-C) or Imou solar panel",
+      "voltage": "DC 5V"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": false,
+      "cloud": true
+    },
+    "operating_temp_c": "-20 to 50",
+    "dimensions_mm": "165 x 126 x 154",
+    "weight_g": 275,
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "battery/solar pan-tilt (350 pan / 90 tilt)",
+      "smart full-color night vision",
+      "PIR + human detection",
+      "low-temperature charging (to -10C)",
+      "8x digital zoom",
+      "two-way audio",
+      "Alexa"
+    ],
+    "release_notes": "Specs per official Imou product page and spec page (Cell PT 2C 3MP). Battery camera; no RTSP/ONVIF listed, so protocols/stream configs are omitted. IP rating not stated on the 3MP pages. No IPC model code published.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/cell-pt2c-3mp",
+      "https://www.imou.com/en/product/specs/cell-pt2c-3mp"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "notes": "100% wire-free battery camera — it sleeps between events and does not expose a continuous local RTSP stream, so Frigate/local-NVR use is not supported. Recording is via the Imou Life app + cloud and on-device microSD.",
+        "verified": false
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-required",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3571,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
     "id": "imou-cell-pt-2c-5mp",
     "brand": "IMOU",
     "model": "Cell PT 2C 5MP",
@@ -1820242,6 +1821602,105 @@
     "cloud_dependency": "cloud-required",
     "added": "2026-09-02",
     "sensor_size_inch": 0.3333
+  },
+  {
+    "id": "imou-cell-pt-4g",
+    "brand": "IMOU",
+    "model": "Cell PT 4G",
+    "type": "ptz",
+    "connectivity": [
+      "4g"
+    ],
+    "power_source": [
+      "battery",
+      "solar",
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "3MP/2K"
+    },
+    "sensor": "1/2.8\" Progressive CMOS",
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 15,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2304x1296",
+          "fps": 15,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "88 H / 45 V / 107 D; pan 330 / tilt 90",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 20
+    },
+    "power": {
+      "method": "15000mAh rechargeable battery (up to 120 days); DC 5V/2A (USB-C) or Imou solar panel",
+      "voltage": "DC 5V"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": false,
+      "cloud": true
+    },
+    "ip_rating": "IP66",
+    "operating_temp_c": "-20 to 50",
+    "dimensions_mm": "177 x 110 x 142",
+    "weight_g": 738,
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "4G LTE cellular (nano SIM; EU and LA band variants)",
+      "15000mAh battery",
+      "pan/tilt (330 pan / 90 tilt)",
+      "infrared / full-color (spotlight) night vision modes",
+      "motion & human detection",
+      "8x digital zoom",
+      "solar-compatible"
+    ],
+    "release_notes": "Specs per official Imou product page and spec page (Cell PT 4G, 1st generation: 15000mAh battery, microSD up to 256GB) — distinct from the Cell PT 4G 2nd Gen (10000mAh, 512GB). Battery camera; no RTSP/ONVIF listed, so protocols/stream configs are omitted. No IPC model code published on the page.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/cell-pt4g",
+      "https://www.imou.com/en/product/specs/cell-pt4g"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "notes": "100% wire-free battery camera — it sleeps between events and does not expose a continuous local RTSP stream, so Frigate/local-NVR use is not supported. Recording is via the Imou Life app + cloud and on-device microSD.",
+        "verified": false
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-required",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3571,
+    "substream_count": 0,
+    "substream_max_resolution": null
   },
   {
     "id": "imou-cell-pt-4g-2nd",
@@ -1820564,6 +1822023,122 @@
     "substream_max_resolution": null
   },
   {
+    "id": "imou-cruiser-2-3mp",
+    "brand": "IMOU",
+    "model": "Cruiser 2 3MP",
+    "type": "ptz",
+    "connectivity": [
+      "wifi",
+      "ethernet"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "3MP/2K"
+    },
+    "sensor": "1/2.8\" 3MP Progressive CMOS",
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2304x1296",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "82 H / 42 V / 100 D; pan 0-340 / tilt 0-90",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 30
+    },
+    "ptz": {
+      "autotracking": true
+    },
+    "power": {
+      "method": "DC 12V/1A",
+      "voltage": "DC 12V"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif"
+    ],
+    "ip_rating": "IP66",
+    "operating_temp_c": "-30 to 60",
+    "dimensions_mm": "110.4 x 128.8 x 132.7",
+    "weight_g": 370,
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "pan/tilt (340 / 0-90)",
+      "smart tracking",
+      "smart full-color night vision",
+      "110 dB siren",
+      "IMOU SENSE human & vehicle detection",
+      "8x digital zoom",
+      "Wi-Fi 6"
+    ],
+    "release_notes": "Specs per official Imou product page and spec page (Cruiser 2), which lists the 3MP 2304x1296 variant; the 5MP variant (IPC-GS7EP-5M0WE) is a separate record. Spec page lists ONVIF but not RTSP, so only onvif is recorded under protocols; the config RTSP path follows the Imou/Dahua convention and is unverified. No IPC model code for the 3MP variant on the page.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/cruiser2",
+      "https://www.imou.com/en/product/specs/cruiser2"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF is listed for this model but the exact path is not independently verified on this SKU.",
+        "onvif_port": 80,
+        "two_way_audio": true
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3571,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
     "id": "imou-cruiser-2-5mp",
     "brand": "IMOU",
     "model": "Cruiser 2 5MP",
@@ -1820671,6 +1822246,124 @@
     "cloud_dependency": "cloud-optional",
     "added": "2026-06-06",
     "sensor_size_inch": 0.3704
+  },
+  {
+    "id": "imou-cruiser-2c-3mp",
+    "brand": "IMOU",
+    "model": "Cruiser 2C 3MP",
+    "aliases": [
+      "IPC-S7CP-3V0W",
+      "IPC-S7CN-3V0W"
+    ],
+    "type": "ptz",
+    "connectivity": [
+      "wifi",
+      "ethernet"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "3MP/2K"
+    },
+    "sensor": "1/2.8\" 3MP Progressive CMOS",
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2304x1296",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "88 H / 45 V / 107 D; pan 355 / tilt 0-90",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 30
+    },
+    "ptz": {
+      "autotracking": true
+    },
+    "power": {
+      "method": "DC 12V/1A",
+      "voltage": "DC 12V"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif"
+    ],
+    "ip_rating": "IP66",
+    "operating_temp_c": "-30 to 50",
+    "dimensions_mm": "120.7 x 136.2 x 183.3",
+    "weight_g": 409,
+    "audio": {
+      "microphone": true,
+      "speaker": true
+    },
+    "features": [
+      "pan/tilt (355 / 0-90)",
+      "smart tracking",
+      "smart full-color night vision",
+      "spotlight + 110 dB siren",
+      "IMOU SENSE human & vehicle detection",
+      "8x digital zoom",
+      "Wi-Fi 6"
+    ],
+    "release_notes": "Specs per official Imou product page and spec page (Cruiser 2C), which lists the 3MP 2304x1296 variant; the 5MP variant is a separate record. Model codes IPC-S7CP-3V0W / IPC-S7CN-3V0W are from the reported-model field of imou.com's product catalogue for Cruiser 2C (3MP codes; P/N suffix = regional/plug variant, unconfirmed). Spec page lists ONVIF but not RTSP, so only onvif is recorded under protocols; the config RTSP path follows the Imou/Dahua convention and is unverified.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/cruiser2c",
+      "https://www.imou.com/en/product/specs/cruiser2c"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF is listed for this model but the exact path is not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3571,
+    "substream_count": 0,
+    "substream_max_resolution": null
   },
   {
     "id": "imou-cruiser-2c-5mp",
@@ -1821316,6 +1823009,97 @@
     "sensor_size_inch": 0.3571
   },
   {
+    "id": "imou-cruiser-dual-2-pro-8mp",
+    "brand": "IMOU",
+    "model": "Cruiser Dual 2 Pro 8MP",
+    "type": "dual-lens",
+    "connectivity": [
+      "wifi",
+      "ethernet"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 8,
+      "max_width": 2560,
+      "max_height": 1440,
+      "label": "8MP (4MP+4MP)"
+    },
+    "sensor": "4MP Progressive CMOS (per lens)",
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 20,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2560x1440",
+          "fps": 20,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "lens": {
+      "count": 2,
+      "focal_length_mm": "3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "85 H / 45 V / 100 D (each lens); fixed lens pan 0-260 / tilt 0-25; PT lens pan 0-355 / tilt 0-90",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 30
+    },
+    "power": {
+      "method": "DC 12V/1A",
+      "voltage": "DC 12V"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "ip_rating": "IP65",
+    "operating_temp_c": "-30 to 50",
+    "dimensions_mm": "158.72 x 124.98 x 201.9",
+    "weight_g": 635,
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "dual lens (fixed 4MP + pan/tilt 4MP)",
+      "IR / full-color night vision modes (white + IR fill lights)",
+      "spotlight + 110 dB siren",
+      "red-blue warning lights",
+      "human & vehicle detection, intrusion and crossing-line detection",
+      "8x digital zoom",
+      "Wi-Fi 6"
+    ],
+    "release_notes": "Specs per official Imou product page and spec page (Cruiser Dual 2 Pro, 4MP+4MP). Distinct from the Cruiser Dual 2 8MP (20 fps vs 15 fps, different fill-light layout). The spec page does not list ONVIF or RTSP, so no stream configs are given. No IPC model code on the page.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/cruiser-dual2-pro",
+      "https://www.imou.com/en/product/specs/cruiser-dual2-pro"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
     "id": "imou-cruiser-dual-2c-4g",
     "brand": "IMOU",
     "model": "Cruiser Dual 2C 4G 6MP",
@@ -1821557,6 +1823341,115 @@
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
     "added": "2026-07-05",
+    "sensor_size_inch": 0.3333,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
+    "id": "imou-cruiser-sc-3mp",
+    "brand": "IMOU",
+    "model": "Cruiser SC 3MP",
+    "type": "ptz",
+    "connectivity": [
+      "wifi",
+      "ethernet"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "3MP/2K"
+    },
+    "sensor": "1/3\" 3MP Progressive CMOS",
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 20,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2304x1296",
+          "fps": 20,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "78 H / 41 V / 91 D; pan 355 / tilt 0-90",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 30
+    },
+    "power": {
+      "method": "DC 12V/0.5A",
+      "voltage": "DC 12V"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif"
+    ],
+    "operating_temp_c": "-30 to 50",
+    "dimensions_mm": "126 x 159 x 196",
+    "weight_g": 446,
+    "audio": {
+      "microphone": true,
+      "speaker": true
+    },
+    "features": [
+      "pan/tilt (355 / 0-90)",
+      "4 combined spotlight + IR illuminators (IR / full-color modes)",
+      "red-blue warning lights",
+      "motion & human detection",
+      "8x digital zoom",
+      "Wi-Fi 6"
+    ],
+    "release_notes": "Specs per official Imou product page and spec page (Cruiser SC, Wi-Fi model, 3MP 2304x1296). Mains-powered (DC 12V), not the 4G or 8MP variants (separate records). IP rating not stated on the page. Spec page lists ONVIF but not RTSP, so only onvif is recorded under protocols; the config RTSP path follows the Imou/Dahua convention and is unverified. No IPC model code on the page.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/cruiser-sc",
+      "https://www.imou.com/en/product/specs/cruiser-sc"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF is listed for this model but the exact path is not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
     "sensor_size_inch": 0.3333,
     "substream_count": 0,
     "substream_max_resolution": null
@@ -1821805,6 +1823698,121 @@
     "substream_max_resolution": null
   },
   {
+    "id": "imou-cruiser-se-2mp",
+    "brand": "IMOU",
+    "model": "Cruiser SE 2MP",
+    "type": "ptz",
+    "connectivity": [
+      "wifi",
+      "ethernet"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 2,
+      "max_width": 1920,
+      "max_height": 1080,
+      "label": "2MP/1080p"
+    },
+    "sensor": "1/2.9\" 2MP Progressive CMOS",
+    "video": {
+      "codecs": [
+        "H.264"
+      ],
+      "max_fps": 20,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "1920x1080",
+          "fps": 20,
+          "codec": "H.264"
+        }
+      ]
+    },
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "3.6 / 6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "86 H / 45 V / 105 D (3.6mm); 51 H / 29 V / 59 D (6mm); pan 0-355 / tilt 0-90",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 30
+    },
+    "ptz": {
+      "autotracking": true
+    },
+    "power": {
+      "method": "DC 12V/1A",
+      "voltage": "DC 12V"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif"
+    ],
+    "ip_rating": "IP66",
+    "operating_temp_c": "-20 to 50",
+    "dimensions_mm": "120.7 x 136.2 x 183.3",
+    "weight_g": 388,
+    "audio": {
+      "microphone": true,
+      "speaker": false,
+      "two_way": false
+    },
+    "features": [
+      "pan/tilt (355 / 0-90)",
+      "auto tracking",
+      "smart color night vision",
+      "spotlight",
+      "human detection",
+      "configurable detection region",
+      "8x digital zoom",
+      "dual antennas"
+    ],
+    "release_notes": "Specs per official Imou product page and spec page (Cruiser SE, 2MP Wi-Fi). Distinct from the Cruiser SE+ (4MP) and the Cruiser SE PoE. Built-in mic only per spec page. Spec page lists ONVIF but not RTSP, so only onvif is recorded under protocols; the config RTSP path follows the Imou/Dahua convention and is unverified. No IPC model code on the page.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/cruiser-se",
+      "https://www.imou.com/en/product/specs/cruiser-se"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF is listed for this model but the exact path is not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3448,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
     "id": "imou-cruiser-se-plus",
     "brand": "IMOU",
     "model": "Cruiser SE+",
@@ -1821902,6 +1823910,112 @@
     "cloud_dependency": "cloud-optional",
     "added": "2026-06-06",
     "sensor_size_inch": 0.3333
+  },
+  {
+    "id": "imou-cruiser-se-poe-2mp",
+    "brand": "IMOU",
+    "model": "Cruiser SE PoE 2MP",
+    "type": "ptz",
+    "connectivity": [
+      "ethernet"
+    ],
+    "power_source": [
+      "poe"
+    ],
+    "resolution": {
+      "megapixels": 2,
+      "max_width": 1920,
+      "max_height": 1080,
+      "label": "2MP/1080p"
+    },
+    "sensor": "1/2.9\" 2MP Progressive CMOS",
+    "video": {
+      "codecs": [
+        "H.264"
+      ],
+      "max_fps": 20,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "1920x1080",
+          "fps": 20,
+          "codec": "H.264"
+        }
+      ]
+    },
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "3.6 / 6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "86 H / 45 V / 105 D (3.6mm); 51 H / 29 V / 59 D (6mm); pan 355 / tilt 0-90",
+    "night_vision": {
+      "range_m": 30
+    },
+    "power": {
+      "method": "PoE"
+    },
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif"
+    ],
+    "ip_rating": "IP66",
+    "operating_temp_c": "-20 to 50",
+    "dimensions_mm": "120.7 x 136.2 x 183.3",
+    "weight_g": 390,
+    "audio": {
+      "microphone": true,
+      "speaker": false,
+      "two_way": false
+    },
+    "features": [
+      "PoE pan/tilt (355 / 0-90)",
+      "spotlight",
+      "human detection",
+      "configurable detection region",
+      "8x digital zoom"
+    ],
+    "release_notes": "Specs per official Imou spec page (Cruiser SE PoE, 2MP; Thai-locale page with English spec table). Wired PoE version of the Cruiser SE (no Wi-Fi listed). Night-vision type not stated in the spec table (product page mentions a spotlight). Spec page lists ONVIF but not RTSP, so only onvif is recorded under protocols; the config RTSP path follows the Imou/Dahua convention and is unverified. No IPC model code on the page.",
+    "sources": [
+      "https://www.imou.com/th/product/detail/cruiser-se-poe",
+      "https://www.imou.com/th/product/specs/cruiser-se-poe"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "IMOU uses the Dahua protocol; the RTSP path follows the Dahua realmonitor convention. ONVIF is listed for this model but the exact path is not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3448,
+    "substream_count": 0,
+    "substream_max_resolution": null
   },
   {
     "id": "imou-cruiser-triple",
@@ -1823352,6 +1825466,122 @@
     "added": "2026-09-03"
   },
   {
+    "id": "imou-dk3-2mp",
+    "brand": "IMOU",
+    "model": "DK3 2MP",
+    "type": "bullet",
+    "connectivity": [
+      "wifi",
+      "ethernet"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 2,
+      "max_width": 1920,
+      "max_height": 1080,
+      "label": "1080p"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 20,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "1920x1080",
+          "fps": 20,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/3.2\" 2MP progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8/3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "2.8mm: 81 H / 44 V / 94 D; 3.6mm: 67 H / 36 V / 79 D",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 30
+    },
+    "power": {
+      "method": "DC 12V/0.5A",
+      "consumption_w": 6,
+      "voltage": "DC 12V"
+    },
+    "dimensions_mm": "147.7 x 74.2 x 74.2",
+    "weight_g": 230,
+    "operating_temp_c": "-30 to 50",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "ip_rating": "IP67",
+    "audio": {
+      "microphone": true,
+      "speaker": false,
+      "two_way": false
+    },
+    "features": [
+      "outdoor fixed bullet",
+      "2.8mm or 3.6mm lens options",
+      "Wi-Fi 6 (IEEE802.11b/g/n/ax, 2.4GHz) + 100Mbps Ethernet port",
+      "IR night vision (30m)",
+      "8x digital zoom",
+      "human detection",
+      "built-in mic",
+      "NVR / cloud / microSD (up to 512GB) storage"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (DK3 2MP). The DK3 page sells 2MP/3MP/4MP variants; the official spec table gives no separate model code for this variant. Built-in mic only (no speaker listed).",
+    "sources": [
+      "https://www.imou.com/au/product/detail/dk3",
+      "https://www.imou.com/au/product/specs/dk3",
+      "https://static-website.imou.com/cc7fc961-8bbb-405b-bdde-28b2fe9f79a5.pdf"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3125,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
     "id": "imou-dk3-3mp",
     "brand": "IMOU",
     "model": "DK3 3MP",
@@ -1823462,6 +1825692,122 @@
     "cloud_dependency": "cloud-optional",
     "added": "2026-07-05",
     "sensor_size_inch": 0.3571,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
+    "id": "imou-dk3-4mp",
+    "brand": "IMOU",
+    "model": "DK3 4MP",
+    "type": "bullet",
+    "connectivity": [
+      "wifi",
+      "ethernet"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 4,
+      "max_width": 2560,
+      "max_height": 1440,
+      "label": "4MP/QHD"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 20,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2560x1440",
+          "fps": 20,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/3\" 4MP progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8/3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "2.8mm: 88 H / 49 V / 105 D; 3.6mm: 73 H / 40 V / 89 D",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 30
+    },
+    "power": {
+      "method": "DC 12V/0.5A",
+      "consumption_w": 6,
+      "voltage": "DC 12V"
+    },
+    "dimensions_mm": "147.7 x 74.2 x 74.2",
+    "weight_g": 230,
+    "operating_temp_c": "-30 to 50",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "ip_rating": "IP67",
+    "audio": {
+      "microphone": true,
+      "speaker": false,
+      "two_way": false
+    },
+    "features": [
+      "outdoor fixed bullet",
+      "2.8mm or 3.6mm lens options",
+      "Wi-Fi 6 (IEEE802.11b/g/n/ax, 2.4GHz) + 100Mbps Ethernet port",
+      "IR night vision (30m)",
+      "8x digital zoom",
+      "human detection",
+      "built-in mic",
+      "NVR / cloud / microSD (up to 512GB) storage"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (DK3 4MP). The DK3 page sells 2MP/3MP/4MP variants; the official spec table gives no separate model code for this variant. Built-in mic only (no speaker listed).",
+    "sources": [
+      "https://www.imou.com/au/product/detail/dk3",
+      "https://www.imou.com/au/product/specs/dk3",
+      "https://static-website.imou.com/35725efc-3688-47d6-8f18-5c5b1e1e2fbf.pdf"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3333,
     "substream_count": 0,
     "substream_max_resolution": null
   },
@@ -1823778,6 +1826124,87 @@
     "substream_max_resolution": null
   },
   {
+    "id": "imou-doorbell-wired",
+    "brand": "IMOU",
+    "model": "Doorbell Wired",
+    "type": "doorbell",
+    "connectivity": [
+      "wifi"
+    ],
+    "power_source": [
+      "ac-mains",
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 2,
+      "max_width": 1920,
+      "max_height": 1080,
+      "label": "1080p"
+    },
+    "video": {
+      "codecs": [
+        "H.264"
+      ],
+      "max_fps": 20
+    },
+    "sensor": "1/2.7\" 2MP progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "1.9",
+      "varifocal": false
+    },
+    "field_of_view_deg": "140 H / 158 D",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 5
+    },
+    "power": {
+      "method": "AC 16-24V / DC 12/24V wired",
+      "consumption_w": 9,
+      "voltage": "AC 16-24V / DC 12/24V"
+    },
+    "dimensions_mm": "119 x 47 x 29.3",
+    "weight_g": 200,
+    "operating_temp_c": "-20 to 50",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 64,
+      "cloud": true
+    },
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "wired Wi-Fi video doorbell (2.4GHz IEEE802.11b/g/n)",
+      "PIR detection (120 H, 5m) with configurable PIR area",
+      "call notification",
+      "two-way talk with echo cancellation",
+      "G.711 audio",
+      "surface mount; chime kit included",
+      "cloud storage + microSD (up to 64GB)"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (Doorbell Wired). No ONVIF/RTSP stated; no IP rating stated on the official spec sheet.",
+    "sources": [
+      "https://www.imou.com/eu/product/detail/doorbell-wired",
+      "https://www.imou.com/eu/product/specs/doorbell-wired",
+      "https://static-website.imou.com/4b636c3f-8cda-44ab-bc54-b586422be38b.pdf"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-required",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3704
+  },
+  {
     "id": "imou-indoor-2k",
     "brand": "IMOU",
     "model": "Indoor 2K",
@@ -1823987,6 +1826414,130 @@
     "cloud_dependency": "cloud-optional",
     "added": "2026-07-05",
     "sensor_size_inch": 0.3571,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
+    "id": "imou-ps2m-3mp",
+    "brand": "IMOU",
+    "model": "PS2M 3MP",
+    "aliases": [
+      "IPC-PS2MP-3R1",
+      "IPC-PS2MN-3R1",
+      "PRM2K-CTS"
+    ],
+    "type": "ptz",
+    "connectivity": [
+      "ethernet"
+    ],
+    "power_source": [
+      "poe",
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "3MP/2K"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2304x1296",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/3\" progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "91 H / 47 V / 107 D; pan 0-355 / tilt -5 to 50",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 15
+    },
+    "ptz": {
+      "autotracking": true
+    },
+    "power": {
+      "method": "PoE or DC 5V/1A",
+      "consumption_w": 5
+    },
+    "dimensions_mm": "95.0 x 96.0 x 109.2",
+    "weight_g": 210,
+    "operating_temp_c": "-10 to 45",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "PoE pan/tilt (Ranger Mini PoE form factor)",
+      "integrated bracket, ceiling or wall mount",
+      "four-mode smart color night vision with spotlight",
+      "smart tracking",
+      "privacy mode",
+      "human & vehicle detection",
+      "abnormal sound alarm",
+      "8x digital zoom",
+      "two-way talk",
+      "AOR (always-on-record) mode"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (PS2M 3MP). Max frame rate stated as 'up to 25/30fps'. No IP rating stated and operating range is -10 to 45 C, so recorded as indoor.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/ps2m-3mp",
+      "https://www.imou.com/en/product/specs/ps2m-3mp",
+      "https://static-website.imou.com/89b56edb-55ea-41e4-8572-3177549a42f8.pdf"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "indoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3333,
     "substream_count": 0,
     "substream_max_resolution": null
   },
@@ -1824213,6 +1826764,124 @@
     "substream_max_resolution": null
   },
   {
+    "id": "imou-ps3d-3mp",
+    "brand": "IMOU",
+    "model": "PS3D 3MP",
+    "aliases": [
+      "IPC-PS3DP-3M0-JD"
+    ],
+    "type": "bullet",
+    "connectivity": [
+      "ethernet"
+    ],
+    "power_source": [
+      "poe",
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "3MP/2K"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2304x1296",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/3\" progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8/3.6",
+      "aperture": "F1.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "2.8mm: 96 H / 52 V / 111 D; 3.6mm: 78 H / 41 V / 91 D",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 30
+    },
+    "power": {
+      "method": "PoE or DC 12V/1A",
+      "consumption_w": 6
+    },
+    "dimensions_mm": "147.7 x 74.2 x 74.2",
+    "weight_g": 220,
+    "operating_temp_c": "-30 to 60",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "ip_rating": "IP67",
+    "audio": {
+      "microphone": true,
+      "speaker": false,
+      "two_way": false
+    },
+    "features": [
+      "PoE outdoor bullet",
+      "four-mode smart color night vision + spotlight",
+      "IMOU SENSE human & vehicle detection",
+      "built-in microphone",
+      "8x digital zoom",
+      "AOR (always-on-record) mode"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (PS3D 3MP). The '-D' does not denote dual-lens. The Middle-East 'PS3D 3MP-JD' page (IPC-PS3DP-3M0-JD) lists identical specs but omits the built-in mic. Frame rate stated as 'up to 25/30fps'.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/ps3d-3mp",
+      "https://www.imou.com/en/product/specs/ps3d-3mp",
+      "https://static-website.imou.com/ae29f002-e470-4c58-97e2-bbaaf50b7de9.pdf",
+      "https://www.imou.com/me/product/specs/ps3d-3mp-jd"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3333,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
     "id": "imou-ps3d-5mp",
     "brand": "IMOU",
     "model": "PS3D 5MP",
@@ -1824323,6 +1826992,236 @@
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
     "added": "2026-07-05",
+    "sensor_size_inch": 0.3333,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
+    "id": "imou-ps3e-3mp",
+    "brand": "IMOU",
+    "model": "PS3E 3MP",
+    "type": "bullet",
+    "connectivity": [
+      "ethernet"
+    ],
+    "power_source": [
+      "poe",
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "3MP/2K"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2304x1296",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/3\" progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8/3.6",
+      "aperture": "F1.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "2.8mm: 96 H / 52 V / 111 D; 3.6mm: 78 H / 41 V / 91 D",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 30
+    },
+    "power": {
+      "method": "PoE or DC 12V/1A",
+      "consumption_w": 12
+    },
+    "dimensions_mm": "147.7 x 74.2 x 74.2",
+    "weight_g": 220,
+    "operating_temp_c": "-30 to 60",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "ip_rating": "IP67",
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "PoE outdoor bullet",
+      "four-mode smart color night vision + spotlight",
+      "110dB siren",
+      "IMOU SENSE human & vehicle detection",
+      "two-way talk",
+      "8x digital zoom",
+      "AOR (always-on-record) mode"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (PS3E 3MP). Frame rate stated as 'up to 25/30fps'. No separate model code is given on the official page.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/ps3e-3mp",
+      "https://www.imou.com/en/product/specs/ps3e-3mp",
+      "https://static-website.imou.com/f4ffd599-f3bf-4411-b6ce-f5ccb1eee205.pdf"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3333,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
+    "id": "imou-ps3e-5mp",
+    "brand": "IMOU",
+    "model": "PS3E 5MP",
+    "type": "bullet",
+    "connectivity": [
+      "ethernet"
+    ],
+    "power_source": [
+      "poe",
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 5,
+      "max_width": 2880,
+      "max_height": 1620,
+      "label": "5MP/3K"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2880x1620",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/3\" progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8/3.6",
+      "aperture": "F1.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "2.8mm: 94 H / 52 V / 111 D; 3.6mm: 76 H / 41 V / 91 D",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 30
+    },
+    "power": {
+      "method": "PoE or DC 12V/1A",
+      "consumption_w": 12
+    },
+    "dimensions_mm": "147.7 x 74.2 x 74.2",
+    "weight_g": 220,
+    "operating_temp_c": "-30 to 60",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "ip_rating": "IP67",
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "PoE outdoor bullet",
+      "four-mode smart color night vision + spotlight",
+      "110dB siren",
+      "IMOU SENSE human & vehicle detection",
+      "two-way talk",
+      "8x digital zoom",
+      "AOR (always-on-record) mode"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (PS3E 5MP). Frame rate stated as 'up to 25/30fps'. No separate model code is given on the official page.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/ps3e-5mp",
+      "https://www.imou.com/en/product/specs/ps3e-5mp",
+      "https://static-website.imou.com/2136f6f5-d0fb-4b18-b776-aa8786bff41e.pdf"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
     "sensor_size_inch": 0.3333,
     "substream_count": 0,
     "substream_max_resolution": null
@@ -1824798,6 +1827697,366 @@
     "substream_max_resolution": null
   },
   {
+    "id": "imou-ps70f-6mp",
+    "brand": "IMOU",
+    "model": "PS70F 3MP+3MP",
+    "type": "dual-lens",
+    "connectivity": [
+      "ethernet"
+    ],
+    "power_source": [
+      "poe",
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 6,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "6MP (3MP fixed + 3MP PT, 2304x1296 per lens)"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 15,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2304x1296",
+          "fps": 15,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/3\" progressive CMOS (per lens)",
+    "lens": {
+      "count": 2,
+      "focal_length_mm": "3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "fixed lens 78 H / 41 V / 91 D (manual 0-260 pan / 0-25 tilt); PT lens 78 H / 41 V / 91 D (motorized 0-355 pan / 0-90 tilt)",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 30
+    },
+    "ptz": {
+      "autotracking": true
+    },
+    "power": {
+      "method": "PoE or DC 12V/1A",
+      "consumption_w": 12
+    },
+    "dimensions_mm": "202 x 115 x 159",
+    "weight_g": 622,
+    "operating_temp_c": "-30 to 50",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "dual lens (fixed + motorized pan/tilt)",
+      "PoE",
+      "smart tracking",
+      "IMOU SENSE human & vehicle detection",
+      "spotlight + red/blue warning lights + 110dB siren",
+      "four-mode smart color night vision",
+      "two-way talk",
+      "8x digital zoom"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (PS70F 3MP+3MP). Datasheet says weatherproof but gives no IP number. Frame rate 15 fps.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/ps70f-3mp-plus3mp",
+      "https://www.imou.com/en/product/specs/ps70f-3mp-plus3mp",
+      "https://static-website.imou.com/8b1131de-3c8e-4ed2-91c0-3f27c95debbd.pdf"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3333,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
+    "id": "imou-ps70f-8mp",
+    "brand": "IMOU",
+    "model": "PS70F 3MP+5MP",
+    "aliases": [
+      "IPC-PS70FP-8M0",
+      "IPC-PS70FN-8M0"
+    ],
+    "type": "dual-lens",
+    "connectivity": [
+      "ethernet"
+    ],
+    "power_source": [
+      "poe",
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 8,
+      "max_width": 2880,
+      "max_height": 1620,
+      "label": "8MP (3MP fixed + 5MP PT)"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 15,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2880x1620",
+          "fps": 15,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/3\" progressive CMOS (per lens)",
+    "lens": {
+      "count": 2,
+      "focal_length_mm": "3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "fixed lens 78 H / 41 V / 91 D (manual 0-260 pan / 0-25 tilt); PT lens 76 H / 41 V / 91 D (motorized 0-355 pan / 0-90 tilt)",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 30
+    },
+    "ptz": {
+      "autotracking": true
+    },
+    "power": {
+      "method": "PoE or DC 12V/1A",
+      "consumption_w": 12
+    },
+    "dimensions_mm": "202 x 115 x 159",
+    "weight_g": 622,
+    "operating_temp_c": "-30 to 50",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "dual lens (fixed + motorized pan/tilt)",
+      "PoE",
+      "smart tracking",
+      "IMOU SENSE human & vehicle detection",
+      "spotlight + red/blue warning lights + 110dB siren",
+      "four-mode smart color night vision",
+      "two-way talk",
+      "8x digital zoom"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (PS70F 3MP+5MP). Datasheet says weatherproof but gives no IP number. Frame rate 15 fps.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/ps70f-3mp-plus5mp",
+      "https://www.imou.com/en/product/specs/ps70f-3mp-plus5mp",
+      "https://static-website.imou.com/f1bb16b4-e950-46ad-bc1c-be37d89a5f27.pdf"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3333,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
+    "id": "imou-ps7f-3mp",
+    "brand": "IMOU",
+    "model": "PS7F 3MP",
+    "aliases": [
+      "IPC-PS7FP-3V0",
+      "IPC-PS7FN-3V0",
+      "PC2K-CTS/WL"
+    ],
+    "type": "ptz",
+    "connectivity": [
+      "ethernet"
+    ],
+    "power_source": [
+      "poe",
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "3MP/2K"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2304x1296",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/3\" 3MP progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "78 H / 41 V / 91 D; pan 355 / tilt 0-90",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 30
+    },
+    "ptz": {
+      "autotracking": true
+    },
+    "power": {
+      "method": "PoE or DC 12V/1A",
+      "consumption_w": 12
+    },
+    "dimensions_mm": "196 x 115 x 159",
+    "weight_g": 505,
+    "operating_temp_c": "-30 to 50",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "outdoor PoE pan/tilt",
+      "4 integrated spotlight/IR illuminators",
+      "2 red-blue warning lights + 110dB siren",
+      "smart tracking",
+      "AI human & vehicle detection",
+      "four-mode smart color night vision",
+      "two-way talk",
+      "8x digital zoom"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (PS7F 3MP). Datasheet says weatherproof but gives no IP number. Frame rate stated as 25/30 fps.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/ps7f-3mp",
+      "https://www.imou.com/en/product/specs/ps7f-3mp",
+      "https://static-website.imou.com/728d9a26-93ee-4e39-9468-8aad1a50b86a.pdf"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3333,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
     "id": "imou-ps7f-5mp",
     "brand": "IMOU",
     "model": "PS7F 5MP",
@@ -1825034,6 +1828293,129 @@
     "sensor_size_inch": 0.3704
   },
   {
+    "id": "imou-ps8d-3mp",
+    "brand": "IMOU",
+    "model": "PS8D 3MP",
+    "aliases": [
+      "IPC-PS8DP-3V0",
+      "IPC-PS8DN-3V0",
+      "PD2K-CMS/WL",
+      "PD2K-CMS/WL-28",
+      "IPC-PS8DP-3V0-JD"
+    ],
+    "type": "turret",
+    "connectivity": [
+      "ethernet"
+    ],
+    "power_source": [
+      "poe",
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "3MP/2K"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2304x1296",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/3\" progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8/3.6",
+      "aperture": "F1.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "2.8mm: 96 H / 52 V / 111 D; 3.6mm: 78 H / 41 V / 91 D",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 30
+    },
+    "power": {
+      "method": "PoE or DC 12V/1A",
+      "consumption_w": 6
+    },
+    "dimensions_mm": "109.9 x 109.9 x 95.7",
+    "weight_g": 254,
+    "operating_temp_c": "-30 to 60",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "ip_rating": "IP67",
+    "audio": {
+      "microphone": true,
+      "speaker": false,
+      "two_way": false
+    },
+    "features": [
+      "PoE outdoor turret",
+      "built-in spotlights + red-blue warning lights",
+      "four-mode smart color night vision",
+      "IMOU SENSE human & vehicle detection",
+      "abnormal sound alarm",
+      "AOR (always-on-record) mode",
+      "built-in microphone"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (PS8D 3MP). The '-D' does not denote dual-lens. The Middle-East 'PS8D 3MP JD' page (IPC-PS8DP-3V0-JD) lists identical specs but omits the built-in mic. Frame rate stated as 'up to 25/30fps'.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/ps8d-3mp",
+      "https://www.imou.com/en/product/specs/ps8d-3mp",
+      "https://static-website.imou.com/d069a0d0-3790-4785-b5dc-5be6daf0d474.pdf",
+      "https://www.imou.com/me/product/specs/ps8d-3mp-jd"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3333,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
     "id": "imou-ps8d-5mp",
     "brand": "IMOU",
     "model": "PS8D 5MP",
@@ -1825144,6 +1828526,247 @@
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-optional",
     "added": "2026-07-05",
+    "sensor_size_inch": 0.3333,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
+    "id": "imou-ps8e-3mp",
+    "brand": "IMOU",
+    "model": "PS8E 3MP",
+    "aliases": [
+      "IPC-PS8EP-3V0",
+      "IPC-PS8EN-3V0",
+      "PD2K-CTS/WL",
+      "PD2K-CTS/WL-28"
+    ],
+    "type": "turret",
+    "connectivity": [
+      "ethernet"
+    ],
+    "power_source": [
+      "poe",
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "3MP/2K"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2304x1296",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/3\" progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8/3.6",
+      "aperture": "F1.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "2.8mm: 96 H / 52 V / 111 D; 3.6mm: 78 H / 41 V / 91 D",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 30
+    },
+    "power": {
+      "method": "PoE or DC 12V/1A",
+      "consumption_w": 6
+    },
+    "dimensions_mm": "109.9 x 109.9 x 95.7",
+    "weight_g": 254,
+    "operating_temp_c": "-30 to 60",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "ip_rating": "IP67",
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "PoE outdoor turret",
+      "built-in spotlights + red-blue warning lights",
+      "four-mode smart color night vision",
+      "IMOU SENSE human & vehicle detection",
+      "abnormal sound alarm",
+      "AOR (always-on-record) mode",
+      "two-way talk"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (PS8E 3MP). Frame rate stated as 'up to 25/30fps'.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/ps8e-3mp",
+      "https://www.imou.com/en/product/specs/ps8e-3mp",
+      "https://static-website.imou.com/bf19f5ae-6ef3-4a57-833f-724cadc3a0ec.pdf"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3333,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
+    "id": "imou-ps8e-5mp",
+    "brand": "IMOU",
+    "model": "PS8E 5MP",
+    "aliases": [
+      "IPC-PS8E-5V0",
+      "PD3K-CTS/WL",
+      "PD3K-CTS/WL-28"
+    ],
+    "type": "turret",
+    "connectivity": [
+      "ethernet"
+    ],
+    "power_source": [
+      "poe",
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 5,
+      "max_width": 2880,
+      "max_height": 1620,
+      "label": "5MP/3K"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 20,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2880x1620",
+          "fps": 20,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/3\" progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8/3.6",
+      "aperture": "F1.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "2.8mm: 94 H / 52 V / 111 D; 3.6mm: 76 H / 41 V / 91 D",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 30
+    },
+    "power": {
+      "method": "PoE or DC 12V/1A",
+      "consumption_w": 6
+    },
+    "dimensions_mm": "109.9 x 109.9 x 95.7",
+    "weight_g": 254,
+    "operating_temp_c": "-30 to 60",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "ip_rating": "IP67",
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "PoE outdoor turret",
+      "built-in spotlights + red-blue warning lights",
+      "four-mode smart color night vision",
+      "IMOU SENSE human & vehicle detection",
+      "abnormal sound alarm",
+      "AOR (always-on-record) mode",
+      "two-way talk"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (PS8E 5MP). Frame rate up to 20 fps.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/ps8e-5mp",
+      "https://www.imou.com/en/product/specs/ps8e-5mp",
+      "https://static-website.imou.com/3c1efc63-9367-4f6a-8a1d-c72df9e06588.pdf"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
     "sensor_size_inch": 0.3333,
     "substream_count": 0,
     "substream_max_resolution": null
@@ -1826848,6 +1830471,127 @@
     "substream_max_resolution": null
   },
   {
+    "id": "imou-ranger-rc-3mp",
+    "brand": "IMOU",
+    "model": "Ranger RC 3MP",
+    "aliases": [
+      "IPC-GK2C-3C0WR"
+    ],
+    "type": "ptz",
+    "connectivity": [
+      "wifi"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "3MP/2K"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2304x1296",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/2.7\" progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "86.5 H / 44.5 V / 104.5 D; pan 0-355 / tilt -10 to 70",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 10
+    },
+    "ptz": {
+      "autotracking": true
+    },
+    "power": {
+      "method": "DC 5V/1A",
+      "consumption_w": 5,
+      "voltage": "DC 5V"
+    },
+    "dimensions_mm": "80 x 80 x 110.4",
+    "weight_g": 171,
+    "operating_temp_c": "-10 to 45",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "indoor pan/tilt",
+      "Wi-Fi (IEEE802.11b/g/n)",
+      "one-touch call button",
+      "smart tracking",
+      "privacy mode",
+      "human detection",
+      "abnormal sound alarm",
+      "built-in siren",
+      "two-way audio"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (Ranger RC 3MP). Frame rate stated as 'up to 25/30fps'.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/ranger-rc-3mp",
+      "https://www.imou.com/en/product/specs/ranger-rc-3mp",
+      "https://static-website.imou.com/cc4497a5-3e21-43ab-acda-ad2bbc9410f4.pdf"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "indoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3704,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
     "id": "imou-ranger-rc-4mp",
     "brand": "IMOU",
     "model": "Ranger RC 4MP",
@@ -1827263,6 +1831007,126 @@
     "sensor_size_inch": 0.3704
   },
   {
+    "id": "imou-ranger-se",
+    "brand": "IMOU",
+    "model": "Ranger SE",
+    "aliases": [
+      "IPC-A23"
+    ],
+    "type": "ptz",
+    "connectivity": [
+      "wifi"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 2,
+      "max_width": 1920,
+      "max_height": 1080,
+      "label": "1080p"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "1920x1080",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/2.8\" 2MP progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "83 H / 44 V / 99 D; pan 0-355 / tilt -10 to 80",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 10
+    },
+    "ptz": {
+      "autotracking": true
+    },
+    "power": {
+      "method": "DC 5V/1A",
+      "consumption_w": 5,
+      "voltage": "DC 5V"
+    },
+    "dimensions_mm": "80 x 80 x 110.4",
+    "weight_g": 192,
+    "operating_temp_c": "-10 to 45",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "indoor pan/tilt",
+      "Wi-Fi (IEEE802.11b/g/n)",
+      "smart tracking",
+      "privacy mode",
+      "human detection",
+      "abnormal sound alarm",
+      "built-in siren",
+      "two-way audio"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (Ranger SE). 1080p (2MP) base model of the Ranger SE line (the 4MP model is a separate record). Frame rate stated as 'up to 25/30fps'.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/ranger-se",
+      "https://www.imou.com/en/product/specs/ranger-se",
+      "https://static-website.imou.com/3bb839d7-cdb0-417c-85c8-ce33e8480423.pdf"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "indoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3571,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
     "id": "imou-ranger-se-4mp",
     "brand": "IMOU",
     "model": "Ranger SE 4MP",
@@ -1827570,6 +1831434,626 @@
     "cloud_dependency": "cloud-optional",
     "added": "2026-09-03",
     "sensor_size_inch": 0.3333
+  },
+  {
+    "id": "imou-ranger2-dual-8mp",
+    "brand": "IMOU",
+    "model": "Ranger 2 Dual 8MP",
+    "type": "dual-lens",
+    "connectivity": [
+      "wifi",
+      "ethernet"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 8,
+      "max_width": 2560,
+      "max_height": 1440,
+      "label": "8MP (4MP fixed + 4MP PT, 2560x1440 per lens)"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 15,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2560x1440",
+          "fps": 15,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/2.8\" progressive CMOS (per lens)",
+    "lens": {
+      "count": 2,
+      "focal_length_mm": "3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "82 H / 44 V / 104 D (per lens); PT lens pan 355 / tilt -5 to 80; fixed lens manual 0-355 pan / 0-15 tilt",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 15
+    },
+    "ptz": {
+      "autotracking": true
+    },
+    "power": {
+      "method": "DC 5V/1.5A (USB-C)",
+      "consumption_w": 7.5,
+      "voltage": "DC 5V"
+    },
+    "dimensions_mm": "77.4 x 77.4 x 106.8",
+    "weight_g": 200,
+    "operating_temp_c": "-10 to 45",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "dual lens (fixed + pan/tilt) indoor camera",
+      "dual-band Wi-Fi 6 (2.4/5GHz) + Ethernet port",
+      "smart full-color night vision",
+      "one-touch call",
+      "smart tracking",
+      "auto-cruise",
+      "privacy mode",
+      "human & pet detection",
+      "abnormal sound detection",
+      "custom siren",
+      "8x digital zoom",
+      "two-way audio"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (Ranger 2 Dual 8MP). The Ranger 2 Dual page sells 3MP+3MP, 4MP+4MP and 5MP+5MP options; the 6MP and 10MP options already exist as separate records. No model code given for the 4MP+4MP option.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/ranger2-dual",
+      "https://www.imou.com/en/product/specs/ranger2-dual",
+      "https://static-website.imou.com/151df31a-7125-4bc0-9d3b-eb9f461a28af.pdf"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "indoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3571,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
+    "id": "imou-ranger2-pro-3mp",
+    "brand": "IMOU",
+    "model": "Ranger 2 Pro 3MP",
+    "type": "ptz",
+    "connectivity": [
+      "wifi",
+      "ethernet"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "3MP/2K"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 20,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2304x1296",
+          "fps": 20,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/3\" progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "91 H / 47 V / 107 D; pan 355 / tilt -5 to 80",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 10
+    },
+    "ptz": {
+      "autotracking": true
+    },
+    "power": {
+      "method": "DC 5V/1A (USB-C)",
+      "consumption_w": 5,
+      "voltage": "DC 5V"
+    },
+    "dimensions_mm": "77.4 x 77.4 x 106.2",
+    "weight_g": 197,
+    "operating_temp_c": "-10 to 45",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "indoor pan/tilt",
+      "dual-band Wi-Fi 6 (2.4/5GHz) + Ethernet port",
+      "smart full-color night vision",
+      "one-touch call button",
+      "smart tracking",
+      "auto-cruise",
+      "privacy mode",
+      "human & pet detection",
+      "abnormal sound detection",
+      "custom siren",
+      "8x digital zoom",
+      "two-way audio"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (Ranger 2 Pro 3MP). Ethernet port and USB-C power per the datasheet's product drawing.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/ranger2-pro-3mp",
+      "https://www.imou.com/en/product/specs/ranger2-pro-3mp",
+      "https://static-website.imou.com/655995e9-b13d-4a87-8d89-f7a599e0bcfb.pdf"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "indoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3333,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
+    "id": "imou-ranger2c-2mp",
+    "brand": "IMOU",
+    "model": "Ranger 2C 2MP",
+    "aliases": [
+      "IPC-K2EC-2H1W",
+      "IPC-TA22C",
+      "IPC-TA22C-B",
+      "IPC-TA22C-C",
+      "IPC-TA22C-D",
+      "IPC-TA22C-G",
+      "IPC-TA22C-L",
+      "IPC-TA22CN-G-US"
+    ],
+    "type": "ptz",
+    "connectivity": [
+      "wifi"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 2,
+      "max_width": 1920,
+      "max_height": 1080,
+      "label": "1080p"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "1920x1080",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/2.8\" 2MP progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "93 H / 48 V / 118 D; pan 355 / tilt -5 to 80",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 10
+    },
+    "ptz": {
+      "autotracking": true
+    },
+    "power": {
+      "method": "DC 5V/1A",
+      "consumption_w": 3.5,
+      "voltage": "DC 5V"
+    },
+    "dimensions_mm": "106.1 x 77.4 x 77.4",
+    "weight_g": 219,
+    "operating_temp_c": "-10 to 45",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "indoor pan/tilt",
+      "Wi-Fi (IEEE802.11b/g/n)",
+      "16x digital zoom",
+      "smart tracking",
+      "privacy mode",
+      "human detection",
+      "abnormal sound alarm",
+      "built-in siren",
+      "two-way audio"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (Ranger 2C 2MP). Model codes taken from the official Ranger 2C series page model list (2MP 'TA22C'/'K2EC-2H1W' codes). Frame rate stated as 'up to 25/30fps'.",
+    "sources": [
+      "https://www.imou.com/de/product/detail/ranger2c-2mp",
+      "https://www.imou.com/de/product/specs/ranger2c-2mp",
+      "https://static-website.imou.com/7a6353d4-4c86-41bb-820b-835b453d0c9c.pdf",
+      "https://www.imou.com/en/product/specs/ranger2c"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "indoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3571,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
+    "id": "imou-ranger2c-3mp",
+    "brand": "IMOU",
+    "model": "Ranger 2C 3MP",
+    "aliases": [
+      "IPC-K2EC-3H1W",
+      "IPC-TA32C-L",
+      "Ranger 2C 3MP-H1"
+    ],
+    "type": "ptz",
+    "connectivity": [
+      "wifi"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "3MP/2K"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2304x1296",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/2.8\" progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "79 H / 43.5 V / 94 D; pan 355 / tilt -5 to 80",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 10
+    },
+    "ptz": {
+      "autotracking": true
+    },
+    "power": {
+      "method": "DC 5V/1A",
+      "consumption_w": 3.5,
+      "voltage": "DC 5V"
+    },
+    "dimensions_mm": "83 x 83 x 106.1",
+    "weight_g": 201,
+    "operating_temp_c": "-10 to 45",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "indoor pan/tilt",
+      "Wi-Fi (IEEE802.11b/g/n/ax)",
+      "smart tracking",
+      "privacy mode",
+      "human detection",
+      "abnormal sound alarm",
+      "built-in siren",
+      "two-way audio"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (Ranger 2C 3MP). Datasheet is titled 'Ranger 2C 3MP-H1'. Frame rate stated as 'up to 25/30fps'.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/ranger2c-3mp",
+      "https://www.imou.com/en/product/specs/ranger2c-3mp",
+      "https://static-website.imou.com/f71e439b-6fb1-4f52-9687-ca0260a65e0e.pdf",
+      "https://www.imou.com/en/product/specs/ranger2c"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "indoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3571,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
+    "id": "imou-ranger2c-4mp",
+    "brand": "IMOU",
+    "model": "Ranger 2C 4MP",
+    "aliases": [
+      "IPC-K2EC-4H1W",
+      "IPC-TA42-B",
+      "IPC-TA42-L"
+    ],
+    "type": "ptz",
+    "connectivity": [
+      "wifi"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 4,
+      "max_width": 2560,
+      "max_height": 1440,
+      "label": "4MP/QHD"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2560x1440",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/2.7\" 4MP progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "92 H / 48 V / 109 D; pan 355 / tilt -5 to 80",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 10
+    },
+    "ptz": {
+      "autotracking": true
+    },
+    "power": {
+      "method": "DC 5V/1A",
+      "consumption_w": 5,
+      "voltage": "DC 5V"
+    },
+    "dimensions_mm": "106.1 x 77.4 x 77.4",
+    "weight_g": 244,
+    "operating_temp_c": "-10 to 45",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "indoor pan/tilt",
+      "Wi-Fi (IEEE802.11b/g/n)",
+      "8x digital zoom",
+      "smart tracking",
+      "privacy mode",
+      "human detection",
+      "abnormal sound alarm",
+      "built-in siren",
+      "two-way audio"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (Ranger 2C 4MP). Model codes taken from the official Ranger 2C series page model list (4MP 'TA42'/'K2EC-4H1W' codes); the 4MP page's own model field lists IPC-A22E* 2MP codes, which look like a CMS error and were not used. Frame rate stated as 'up to 25/30fps'.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/ranger2c-4mp",
+      "https://www.imou.com/en/product/specs/ranger2c-4mp",
+      "https://static-website.imou.com/4215ebf1-b1df-4292-916c-58ce6d3c28b7.pdf",
+      "https://www.imou.com/en/product/specs/ranger2c"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "indoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3704,
+    "substream_count": 0,
+    "substream_max_resolution": null
   },
   {
     "id": "imou-ranger2c-5mp",
@@ -1827987,6 +1832471,252 @@
     "sensor_size_inch": 0.3571
   },
   {
+    "id": "imou-ranger2c-pro-3mp",
+    "brand": "IMOU",
+    "model": "Ranger 2C Pro 3MP",
+    "type": "ptz",
+    "connectivity": [
+      "wifi",
+      "ethernet"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "3MP/2K"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 20,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2304x1296",
+          "fps": 20,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/3\" progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "91 H / 47 V / 107 D; pan 355 / tilt -5 to 80",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 10
+    },
+    "ptz": {
+      "autotracking": true
+    },
+    "power": {
+      "method": "DC 5V/1A (USB-C)",
+      "consumption_w": 5,
+      "voltage": "DC 5V"
+    },
+    "dimensions_mm": "77.4 x 77.4 x 106.2",
+    "weight_g": 197,
+    "operating_temp_c": "-10 to 45",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "indoor pan/tilt",
+      "dual-band Wi-Fi 6 (2.4/5GHz) + Ethernet port",
+      "smart full-color night vision",
+      "one-touch call button",
+      "smart tracking",
+      "auto-cruise",
+      "privacy mode",
+      "human & pet detection",
+      "abnormal sound detection",
+      "custom siren",
+      "8x digital zoom",
+      "two-way audio"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (Ranger 2C Pro 3MP). Ethernet port and USB-C power per the datasheet's product drawing.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/ranger2c-pro-3mp",
+      "https://www.imou.com/en/product/specs/ranger2c-pro-3mp",
+      "https://static-website.imou.com/17c2c7b7-d57e-4241-8ee1-4b33875f5ec7.pdf"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "indoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3333,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
+    "id": "imou-rex-2mp",
+    "brand": "IMOU",
+    "model": "Rex 2MP",
+    "aliases": [
+      "IPC-A26L",
+      "IPC-A26L-C"
+    ],
+    "type": "ptz",
+    "connectivity": [
+      "wifi",
+      "ethernet"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 2,
+      "max_width": 1920,
+      "max_height": 1080,
+      "label": "1080p"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "1920x1080",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/2.7\" 2MP progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "89 H / 46 V / 108 D; pan 355 / tilt 0-90",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 10
+    },
+    "ptz": {
+      "autotracking": true
+    },
+    "power": {
+      "method": "DC 5V/1.5A",
+      "consumption_w": 5.5,
+      "voltage": "DC 5V"
+    },
+    "dimensions_mm": "90 x 90 x 107.4",
+    "weight_g": 257,
+    "operating_temp_c": "-10 to 45",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "indoor pan/tilt",
+      "Wi-Fi (IEEE802.11b/g/n, 2.4GHz) + 100Mbps Ethernet port",
+      "spotlight + siren active deterrence",
+      "smart tracking",
+      "auto-tour",
+      "privacy mode",
+      "human detection",
+      "abnormal sound alarm",
+      "8x digital zoom",
+      "two-way audio"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (Rex 2MP). Frame rate stated as 'up to 25/30fps'. Page sensor 1/2.7\" vs datasheet 1/2.8\" (page value recorded); weight 257 g (page) vs 256 g (datasheet). Both listed model codes assigned to the 2MP variant (the page lists them for the series).",
+    "sources": [
+      "https://www.imou.com/en/product/detail/rex",
+      "https://www.imou.com/en/product/specs/rex",
+      "https://static-website.imou.com/4bea7c06-1626-4da6-b1e6-db634357a89e.pdf"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "indoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3704,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
     "id": "imou-rex-3d-r1-5mp",
     "brand": "IMOU",
     "model": "Rex 3D-R1 5MP",
@@ -1828101,6 +1832831,248 @@
     "substream_max_resolution": null
   },
   {
+    "id": "imou-rex-4mp",
+    "brand": "IMOU",
+    "model": "Rex 4MP",
+    "type": "ptz",
+    "connectivity": [
+      "wifi",
+      "ethernet"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 4,
+      "max_width": 2560,
+      "max_height": 1440,
+      "label": "4MP/QHD"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2560x1440",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/2.7\" 4MP progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "92 H / 48 V / 109 D; pan 355 / tilt 0-90",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 10
+    },
+    "ptz": {
+      "autotracking": true
+    },
+    "power": {
+      "method": "DC 5V/1.5A",
+      "consumption_w": 5.5,
+      "voltage": "DC 5V"
+    },
+    "dimensions_mm": "90 x 90 x 107.4",
+    "weight_g": 257,
+    "operating_temp_c": "-10 to 45",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "indoor pan/tilt",
+      "Wi-Fi (IEEE802.11b/g/n, 2.4GHz) + 100Mbps Ethernet port",
+      "spotlight + siren active deterrence",
+      "smart tracking",
+      "auto-tour",
+      "privacy mode",
+      "human detection",
+      "abnormal sound alarm",
+      "8x digital zoom",
+      "two-way audio"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (Rex 4MP). Frame rate stated as 'up to 25/30fps'. No separate model code given for the 4MP variant.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/rex",
+      "https://www.imou.com/en/product/specs/rex",
+      "https://static-website.imou.com/861cbd4b-8e11-4199-9a38-12990faed943.pdf"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "indoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3704,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
+    "id": "imou-rex-vt",
+    "brand": "IMOU",
+    "model": "Rex VT",
+    "aliases": [
+      "IPC-S2V-5M0WR"
+    ],
+    "type": "ptz",
+    "connectivity": [
+      "wifi"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 5,
+      "max_width": 2880,
+      "max_height": 1620,
+      "label": "5MP/3K"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 15,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2880x1620",
+          "fps": 15,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/2.7\" progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "87 H / 48 V / 108 D; pan 0-355 / tilt 0-90",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 20
+    },
+    "ptz": {
+      "autotracking": true
+    },
+    "power": {
+      "method": "DC 5V/1.5A",
+      "consumption_w": 6.2,
+      "voltage": "DC 5V"
+    },
+    "dimensions_mm": "63 x 60 x 124.5",
+    "weight_g": 250,
+    "operating_temp_c": "-10 to 45",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "indoor pan/tilt",
+      "2.4-inch screen with call/hang-up buttons (two-way video calls)",
+      "info display (weather / device status) and alarm clock",
+      "Wi-Fi (IEEE802.11b/g/n/ax)",
+      "smart tracking",
+      "privacy mode",
+      "human & pet detection",
+      "abnormal sound alarm",
+      "built-in siren",
+      "8x digital zoom"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (Rex VT). Model code IPC-S2V-5M0WR from the official Rex VT page (the Rex VT Pro page also lists it alongside S2VBP-5M0WR; Rex VT Pro is a separate record).",
+    "sources": [
+      "https://www.imou.com/en/product/detail/rex-vt",
+      "https://www.imou.com/en/product/specs/rex-vt",
+      "https://static-website.imou.com/9d4e06e7-1be8-4444-a261-04c8d3e380ed.pdf"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "indoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3704,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
     "id": "imou-rex-vt-pro",
     "brand": "IMOU",
     "model": "Rex VT Pro",
@@ -1828203,6 +1833175,834 @@
     "cloud_dependency": "cloud-optional",
     "added": "2026-09-03",
     "sensor_size_inch": 0.3704
+  },
+  {
+    "id": "imou-rex2d-3mp",
+    "brand": "IMOU",
+    "model": "Rex 2D 3MP",
+    "aliases": [
+      "IPC-GK2D-3C0W"
+    ],
+    "type": "ptz",
+    "connectivity": [
+      "wifi",
+      "ethernet"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "3MP/2K"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2304x1296",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/2.8\" progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "83 H / 46 V / 102 D; pan 0-355 / tilt 0-90",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 10
+    },
+    "ptz": {
+      "autotracking": true
+    },
+    "power": {
+      "method": "DC 5V/1A",
+      "consumption_w": 3.4,
+      "voltage": "DC 5V"
+    },
+    "dimensions_mm": "90 x 90 x 104",
+    "weight_g": 206,
+    "operating_temp_c": "-10 to 45",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "indoor pan/tilt",
+      "Wi-Fi (IEEE802.11b/g/n, 2.4GHz) + 100Mbps Ethernet port",
+      "smart tracking",
+      "auto-cruise",
+      "privacy mode",
+      "human detection",
+      "abnormal sound alarm",
+      "built-in siren",
+      "digital zoom",
+      "two-way audio"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (Rex 2D 3MP). Frame rate stated as 'up to 25/30fps'.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/rex2d",
+      "https://www.imou.com/en/product/specs/rex2d",
+      "https://static-website.imou.com/107e7e7a-90ec-4a09-9b10-69076df4fa8a.pdf"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "indoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3571,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
+    "id": "imou-rex2d-5mp",
+    "brand": "IMOU",
+    "model": "Rex 2D 5MP",
+    "aliases": [
+      "IPC-GK2D-5C0W"
+    ],
+    "type": "ptz",
+    "connectivity": [
+      "wifi",
+      "ethernet"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 5,
+      "max_width": 2688,
+      "max_height": 1664,
+      "label": "5MP"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2688x1664",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/3\" progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "79 H / 44 V / 94 D; pan 0-355 / tilt 0-90",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 10
+    },
+    "ptz": {
+      "autotracking": true
+    },
+    "power": {
+      "method": "DC 5V/1A",
+      "consumption_w": 3.5,
+      "voltage": "DC 5V"
+    },
+    "dimensions_mm": "90 x 90 x 104",
+    "weight_g": 206,
+    "operating_temp_c": "-10 to 45",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "indoor pan/tilt",
+      "Wi-Fi (IEEE802.11b/g/n, 2.4GHz) + 100Mbps Ethernet port",
+      "smart tracking",
+      "auto-cruise",
+      "privacy mode",
+      "human detection",
+      "abnormal sound alarm",
+      "built-in siren",
+      "digital zoom",
+      "two-way audio"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (Rex 2D 5MP). Frame rate stated as 'up to 25/30fps'.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/rex2d",
+      "https://www.imou.com/en/product/specs/rex2d",
+      "https://static-website.imou.com/e5e866f7-855d-4e25-8332-85dbd7fdfdac.pdf"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "indoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3333,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
+    "id": "imou-rex3d-3mp",
+    "brand": "IMOU",
+    "model": "Rex 3D 3MP",
+    "aliases": [
+      "IPC-GS2D-3K0W"
+    ],
+    "type": "ptz",
+    "connectivity": [
+      "wifi",
+      "ethernet"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 3,
+      "max_width": 2304,
+      "max_height": 1296,
+      "label": "3MP/2K"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2304x1296",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/2.8\" progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "83 H / 46 V / 102 D; pan 0-355 / tilt 0-90",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 10
+    },
+    "ptz": {
+      "autotracking": true
+    },
+    "power": {
+      "method": "DC 5V/1A",
+      "consumption_w": 5,
+      "voltage": "DC 5V"
+    },
+    "dimensions_mm": "90 x 90 x 104",
+    "weight_g": 206,
+    "operating_temp_c": "-10 to 45",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "indoor pan/tilt",
+      "Wi-Fi (IEEE802.11b/g/n, 2.4GHz) + 100Mbps Ethernet port",
+      "smart tracking",
+      "auto-cruise",
+      "privacy mode",
+      "human & pet detection",
+      "abnormal sound alarm",
+      "built-in siren",
+      "digital zoom",
+      "two-way audio"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (Rex 3D 3MP). Frame rate stated as 'up to 25/30fps'. Spec page and datasheet disagree (datasheet: 1/2.7\" sensor, 86.5 H / 44.5 V / 104.5 D, 90 x 90 x 107.4 mm); spec-page values recorded.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/rex3d",
+      "https://www.imou.com/en/product/specs/rex3d",
+      "https://static-website.imou.com/34a066f1-580f-4f76-8012-2f8395de6541.pdf"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "indoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3571,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
+    "id": "imou-s21fa",
+    "brand": "IMOU",
+    "model": "S21FA",
+    "aliases": [
+      "IPC-S21FA"
+    ],
+    "type": "ptz",
+    "connectivity": [
+      "ethernet"
+    ],
+    "power_source": [
+      "poe"
+    ],
+    "resolution": {
+      "megapixels": 2,
+      "max_width": 1920,
+      "max_height": 1080,
+      "label": "1080p"
+    },
+    "video": {
+      "codecs": [
+        "H.264"
+      ],
+      "max_fps": 20,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "1920x1080",
+          "fps": 20,
+          "codec": "H.264"
+        }
+      ]
+    },
+    "sensor": "1/2.9\" 2MP progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "3.6/6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "3.6mm: 86 H / 45 V / 105 D; 6mm: 51 H / 29 V / 59 D; pan 355 / tilt 0-90",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 30
+    },
+    "ptz": {
+      "autotracking": true
+    },
+    "power": {
+      "method": "PoE",
+      "consumption_w": 6.2
+    },
+    "dimensions_mm": "120.7 x 136.2 x 183.3",
+    "weight_g": 390,
+    "operating_temp_c": "-20 to 50",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "ip_rating": "IP66",
+    "audio": {
+      "microphone": true,
+      "speaker": false,
+      "two_way": false
+    },
+    "features": [
+      "outdoor PoE pan/tilt",
+      "3.6mm or 6mm lens options",
+      "four-mode smart color night vision + spotlight",
+      "smart tracking",
+      "human detection",
+      "16x digital zoom",
+      "built-in microphone"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (IPC-S21FA). H.264 only.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/s21fa-s41fa",
+      "https://www.imou.com/en/product/specs/s21fa-s41fa",
+      "https://static-website.imou.com/be034eec-2983-49bb-84f6-a24f5f78aedf.pdf"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3448,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
+    "id": "imou-s41fa",
+    "brand": "IMOU",
+    "model": "S41FA",
+    "aliases": [
+      "IPC-S41FA"
+    ],
+    "type": "ptz",
+    "connectivity": [
+      "ethernet"
+    ],
+    "power_source": [
+      "poe"
+    ],
+    "resolution": {
+      "megapixels": 4,
+      "max_width": 2560,
+      "max_height": 1440,
+      "label": "4MP/QHD"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2560x1440",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/3\" 4MP progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "3.6/6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "3.6mm: 79 H / 44 V / 94 D; 6mm: 48 H / 28 V / 56 D; pan 355 / tilt 0-90",
+    "night_vision": {
+      "type": "hybrid",
+      "range_m": 30
+    },
+    "ptz": {
+      "autotracking": true
+    },
+    "power": {
+      "method": "PoE",
+      "consumption_w": 6.2
+    },
+    "dimensions_mm": "120.7 x 136.2 x 183.3",
+    "weight_g": 390,
+    "operating_temp_c": "-20 to 50",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "ip_rating": "IP66",
+    "audio": {
+      "microphone": true,
+      "speaker": false,
+      "two_way": false
+    },
+    "features": [
+      "outdoor PoE pan/tilt",
+      "3.6mm or 6mm lens options",
+      "four-mode smart color night vision + spotlight",
+      "smart tracking",
+      "human detection",
+      "16x digital zoom",
+      "built-in microphone"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (IPC-S41FA). Frame rate stated as 'up to 25/30fps'.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/s21fa-s41fa",
+      "https://www.imou.com/en/product/specs/s21fa-s41fa",
+      "https://static-website.imou.com/c86dc296-0e39-45c4-b187-9f144a112344.pdf"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3333,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
+    "id": "imou-t22ea",
+    "brand": "IMOU",
+    "model": "T22EA",
+    "aliases": [
+      "IPC-T22EA"
+    ],
+    "type": "turret",
+    "connectivity": [
+      "ethernet"
+    ],
+    "power_source": [
+      "poe"
+    ],
+    "resolution": {
+      "megapixels": 2,
+      "max_width": 1920,
+      "max_height": 1080,
+      "label": "1080p"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "1920x1080",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/2.8\" 2MP progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8/3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "2.8mm: 92 H / 50 V / 107 D; 3.6mm: 78 H / 40 V / 97 D",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 30
+    },
+    "power": {
+      "method": "PoE",
+      "consumption_w": 3
+    },
+    "dimensions_mm": "109.9 (dia) x 81.3",
+    "weight_g": 200,
+    "operating_temp_c": "-20 to 50",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "audio": {
+      "microphone": true,
+      "speaker": false,
+      "two_way": false
+    },
+    "features": [
+      "PoE turret",
+      "2.8mm or 3.6mm lens options",
+      "IR night vision (30m)",
+      "human detection",
+      "16x digital zoom",
+      "built-in microphone"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (IPC-T22EA). No IP rating stated (listed under IMOU's indoor category), so environment is left unset. Frame rate stated as 'up to 25/30fps'.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/t22ea-t42ea",
+      "https://www.imou.com/en/product/specs/t22ea-t42ea",
+      "https://static-website.imou.com/e157b273-af05-45d6-809e-536c34afb249.pdf"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3571,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
+    "id": "imou-t42ea",
+    "brand": "IMOU",
+    "model": "T42EA",
+    "aliases": [
+      "IPC-T42EA"
+    ],
+    "type": "turret",
+    "connectivity": [
+      "ethernet"
+    ],
+    "power_source": [
+      "poe"
+    ],
+    "resolution": {
+      "megapixels": 4,
+      "max_width": 2560,
+      "max_height": 1440,
+      "label": "4MP/QHD"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 30,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2560x1440",
+          "fps": 30,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/2.8\" 4MP progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.8/3.6",
+      "varifocal": false
+    },
+    "field_of_view_deg": "2.8mm: 90 H / 50 V / 107 D; 3.6mm: 76 H / 40 V / 92 D",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 30
+    },
+    "power": {
+      "method": "PoE",
+      "consumption_w": 3
+    },
+    "dimensions_mm": "109.9 (dia) x 81.3",
+    "weight_g": 200,
+    "operating_temp_c": "-20 to 50",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 256,
+      "nvr_compatible": true,
+      "cloud": true
+    },
+    "protocols": [
+      "onvif",
+      "rtsp"
+    ],
+    "audio": {
+      "microphone": true,
+      "speaker": false,
+      "two_way": false
+    },
+    "features": [
+      "PoE turret",
+      "2.8mm or 3.6mm lens options",
+      "IR night vision (30m)",
+      "human detection",
+      "16x digital zoom",
+      "built-in microphone"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (IPC-T42EA). No IP rating stated (listed under IMOU's indoor category), so environment is left unset. Frame rate stated as 'up to 25/30fps'.",
+    "sources": [
+      "https://www.imou.com/en/product/detail/t22ea-t42ea",
+      "https://www.imou.com/en/product/specs/t22ea-t42ea",
+      "https://static-website.imou.com/f3e5475c-7c5b-4d07-b5be-f74e9872ee98.pdf"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "configs": {
+      "frigate": {
+        "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+        "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+        "verified": false,
+        "notes": "ONVIF is officially listed for this SKU; IMOU uses the Dahua protocol so the RTSP path follows the Dahua realmonitor convention, not independently verified on this SKU.",
+        "onvif_port": 80
+      },
+      "home_assistant": {
+        "integration": "onvif",
+        "notes": "IMOU uses the Dahua protocol; the ONVIF integration works."
+      },
+      "blue_iris": {
+        "profile": "Dahua",
+        "notes": "Select the 'Dahua' profile — IMOU uses the Dahua protocol."
+      }
+    },
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
+    "sensor_size_inch": 0.3571,
+    "substream_count": 0,
+    "substream_max_resolution": null
   },
   {
     "id": "imou-talos-3mp",
@@ -1828955,6 +1834755,104 @@
     "ndaa_compliant": false,
     "cloud_dependency": "cloud-required",
     "added": "2026-09-23",
+    "sensor_size_inch": 0.3333,
+    "substream_count": 0,
+    "substream_max_resolution": null
+  },
+  {
+    "id": "imou-vdp7",
+    "brand": "IMOU",
+    "model": "VDP7",
+    "aliases": [
+      "VDP7-JD",
+      "VD1-5M0R",
+      "VH1-7A0S"
+    ],
+    "type": "doorbell",
+    "connectivity": [
+      "wifi"
+    ],
+    "power_source": [
+      "dc"
+    ],
+    "resolution": {
+      "megapixels": 5,
+      "max_width": 2880,
+      "max_height": 1620,
+      "label": "5MP/3K"
+    },
+    "video": {
+      "codecs": [
+        "H.265",
+        "H.264"
+      ],
+      "max_fps": 15,
+      "streams": [
+        {
+          "name": "main",
+          "resolution": "2880x1620",
+          "fps": 15,
+          "codec": "H.265"
+        }
+      ]
+    },
+    "sensor": "1/3\" progressive CMOS",
+    "lens": {
+      "count": 1,
+      "focal_length_mm": "2.3",
+      "varifocal": false
+    },
+    "field_of_view_deg": "125 H / 71 V / 149 D",
+    "night_vision": {
+      "type": "ir",
+      "range_m": 15
+    },
+    "power": {
+      "method": "DC 24V/1.5A (2-wire to door station)",
+      "voltage": "DC 24V"
+    },
+    "dimensions_mm": "181 x 83.5 x 29 (door station); 184 x 113 x 23.5 (indoor monitor)",
+    "weight_g": 474,
+    "operating_temp_c": "-20 to 50",
+    "storage": {
+      "onboard": true,
+      "max_microsd_gb": 512
+    },
+    "audio": {
+      "microphone": true,
+      "speaker": true,
+      "two_way": true
+    },
+    "features": [
+      "2-wire smart video doorphone kit (outdoor station + 7-inch touch indoor monitor, 1024x600)",
+      "IMOU transwire 2-wire connection (over 200m)",
+      "unlock via card, password, indoor unit or app; 2-channel lock control",
+      "dual-band Wi-Fi 6 (2.4/5GHz) on indoor unit",
+      "IR night vision (15m)",
+      "human / loitering / vehicle detection",
+      "privacy masking",
+      "tamper alarm",
+      "two-way talk",
+      "microSD up to 512GB"
+    ],
+    "release_notes": "Specs per official IMOU product page and datasheet (VDP7, 2-wire kit). Weight is the door station (VTO); the indoor monitor (VTH) is 360 g. VD1-5M0R / VH1-7A0S (door station / monitor) codes come from the official Middle-East 'VDP7-JD' page with identical specs. Distinct from the VDP7 PoE kit (separate record).",
+    "sources": [
+      "https://www.imou.com/de/product/detail/vdp7",
+      "https://www.imou.com/de/product/specs/vdp7",
+      "https://static-website.imou.com/238e7c16-d590-454e-a387-711b290aad1a.pdf",
+      "https://www.imou.com/me/product/specs/vdp7-jd"
+    ],
+    "last_verified": "2026-10-28",
+    "status": "available",
+    "environment": [
+      "outdoor"
+    ],
+    "markets": [
+      "global"
+    ],
+    "ndaa_compliant": false,
+    "cloud_dependency": "cloud-optional",
+    "added": "2026-10-28",
     "sensor_size_inch": 0.3333,
     "substream_count": 0,
     "substream_max_resolution": null

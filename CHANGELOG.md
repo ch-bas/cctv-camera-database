@@ -18,6 +18,15 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
   - Tiandy: 2; Annke: 2 (C500D I51HK, I81HZ thermal); Wyze Bulb Cam Pan Color; Reolink OMVI 2i Ultra (announced); Lorex IC301
 
   Every value comes from the maker's own product page or datasheet. Catalogue entries that are variants of existing records, accessories, subscription plans, unreleased pages, or products whose page has no spec table were left out.
+- **51 Imou cameras** (Imou now has 170), found by comparing imou.com's product catalogue with the dataset. They include:
+  - the 2MP and 3MP variants of the Bullet, Cruiser, Cell and Ranger lines (where the dataset had only the 4MP/5MP model)
+  - DK3, the PS-series bullets, turrets, PTZs and dual-lens cameras (PS2M, PS3D, PS3E, PS7F, PS70F, PS8D, PS8E)
+  - Rex, Rex 2D, Rex 3D and Rex VT
+  - the S21FA/S41FA PoE PTZs and T22EA/T42EA PoE turrets
+  - Doorbell Wired and the VDP7 2-wire video door phone
+
+  Specs come from Imou's own detail and specification pages and the datasheets they link. Model codes are recorded where Imou publishes them. RTSP/ONVIF configs are included only where the spec sheet lists ONVIF, using the Dahua path existing Imou records use (unverified).
+- **eufy Window Camera E10** (T8404121), from the official us.eufy.com spec table.
 
 ### Changed
 - **ACTi RTSP port:** 22 ACTi cameras now use port 554 instead of 7070: A214, A426, A711, A713, A826, A951, A952, A956, Q450, Q83, Z32, Z33, Z34, Z36, Z37, Z41, Z42, Z71, Z710, Z84, Z94 and Z95. ACTi's own firmware manuals give two defaults: 7070 for most firmware generations (V, A, S and C series) and 554 for newer models and the Z-series OEM line. Only records whose own manual states 554 changed; every other ACTi record keeps 7070. Configs a user has verified are never changed by bulk corrections (none of these had one). The brand-level RTSP pattern for ACTi now says 7070, with 554 for the newer lines.
