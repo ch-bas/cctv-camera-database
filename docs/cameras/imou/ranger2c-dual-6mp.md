@@ -1,6 +1,6 @@
 # IMOU Ranger 2C Dual 6MP
 
-*Also known as: Ranger 2C Dual 3MP*
+*Also known as: Ranger 2C Dual 3MP, A1 Dual 3MP, A1 Dual, A1 Dual 6MP*
 
 | Field | Spec |
 |-------|------|
@@ -38,6 +38,8 @@
 ## Sources
 
 - https://www.imou.com/en/product/specs/ranger2c-dual
+- https://www.imou.com/en/product/specs/a1-dual
+- https://static-website.imou.com/6ca314db-fd8e-4cdc-9fa5-965cdb061187.pdf
 
 ---
 *Auto-generated from imou-ranger2c-dual-6mp.json — do not edit by hand.*

@@ -1,6 +1,6 @@
 # IMOU Ranger 2 Pro 5MP
 
-*Also known as: IPC-S2EP-5R1S, IPC-S2EN-5R1S, S2EP-5R1S, Imou Ranger 2 Pro 5MP*
+*Also known as: IPC-S2EP-5R1S, IPC-S2EN-5R1S, S2EP-5R1S, Imou Ranger 2 Pro 5MP, Ranger 2C Pro 5MP, Imou Ranger 2C Pro 5MP*
 
 | Field | Spec |
 |-------|------|
@@ -37,6 +37,8 @@
 
 - https://static-website.imou.com/c75e81ab-e8fb-4446-b2e4-92a3a5fa1ba2.pdf
 - https://www.imou.com/en/product/specs/ranger2-pro-5mp
+- https://static-website.imou.com/5f9c3d1c-55d5-47c3-b1c1-1c4c3ff07d27.pdf
+- https://www.imou.com/en/product/specs/ranger2c-pro-5mp
 
 ---
 *Auto-generated from imou-ranger-2-pro-5mp.json — do not edit by hand.*

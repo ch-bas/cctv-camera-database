@@ -1,6 +1,6 @@
 # IMOU Ranger 2 Dual
 
-*Also known as: S20EP-5M0S, Imou Ranger 2 Dual 10MP*
+*Also known as: S20EP-5M0S, Imou Ranger 2 Dual 10MP, Ranger 2C Dual 10MP, Ranger 2C Dual 5MP*
 
 | Field | Spec |
 |-------|------|
@@ -43,6 +43,7 @@
 
 - https://www.imou.com/en/product/specs/ranger2-dual
 - https://static-website.imou.com/8dcfc76d-60fe-4629-9edc-94a6de1df742.pdf
+- https://www.imou.com/en/product/specs/ranger2c-dual
 
 ---
 *Auto-generated from imou-ranger2-dual.json — do not edit by hand.*
