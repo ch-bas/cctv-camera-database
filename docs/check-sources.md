@@ -11,6 +11,7 @@ To keep checks fast and minimize bandwidth usage, the script attempts a lightwei
 * **PDF vs. Webpage Separation:** Distinguishes between `.pdf` spec sheets/manuals and general web pages for clearer status tracking.
 * **Smart Fallbacks:** Handles anti-scraping 403/405 responses from vendor CDNs using proper browser headers and fallback stream cancellations.
 * **Targeted Scanning:** Supports filtering by brand or filename pattern so you can test specific vendors without querying the entire database.
+* **Dead vs blocked:** Only 404/410 responses, redirects to the homepage and domains that no longer resolve count as dead. 401/403/405/429, 5xx, timeouts and TLS errors are usually bot blocks, so they are summarized by host and do not fail the run.
 * **CI-Friendly:** Exits with status code `0` when all links are healthy, or `1` when broken URLs are detected (suitable for automated GitHub Actions checks).
 
 ---

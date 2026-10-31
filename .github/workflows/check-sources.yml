@@ -48,7 +48,7 @@ jobs:
             if [ "${{ steps.check.outputs.dead }}" = "0" ]; then
               echo "🎉 All checked sources are reachable."
             else
-              echo "❌ **${{ steps.check.outputs.dead }}** dead/unreachable source URL(s) — see the tracking issue."
+              echo "❌ **${{ steps.check.outputs.dead }}** dead source URL(s) — see the tracking issue."
               echo ""
               echo '```'
               sed -n '/--- VALIDATION REPORT ---/,$p' source-report.txt | head -n 400
@@ -71,7 +71,7 @@ jobs:
           {
             echo "_Automated weekly source-availability check (\`scripts/check-sources.js\`). Last run: $(date -u '+%Y-%m-%d %H:%M UTC') — [run log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})._"
             echo ""
-            echo "**${{ steps.check.outputs.dead }}** source URL(s) failed. Re-source each to a working (preferably official OEM) URL. Related: the reseller-source audit #164."
+            echo "**${{ steps.check.outputs.dead }}** source URL(s) are dead (404/410, redirected to the homepage, or the domain is gone). Re-source each to a working (preferably official OEM) URL. URLs that only block bots or time out are summarized below and are not counted. Related: the reseller-source audit #164."
             echo ""
             echo '```'
             sed -n '/--- VALIDATION REPORT ---/,$p' source-report.txt | head -n 400
