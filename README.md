@@ -586,7 +586,7 @@ Specifications are compiled from manufacturer datasheets and reputable retailers
 If you use this dataset, a link back is appreciated:
 
 ```
-CCTV Camera Database (v2.31.1), CC0 1.0. https://cctv-database.com — https://github.com/ch-bas/cctv-camera-database
+CCTV Camera Database (v2.32.0), CC0 1.0. https://cctv-database.com — https://github.com/ch-bas/cctv-camera-database
 ```
 
 ---
