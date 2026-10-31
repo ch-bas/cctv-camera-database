@@ -163,9 +163,17 @@ function validate(cameras) {
     // Siqura's datasheets live on its TKH Security parent catalog; RVi's brand
     // token ("rvi") is under 4 chars so it never matches rvigroup.ru (#164).
     "tkhsecurity.com", "rvigroup.ru",
+    // Maker-owned sites and CDNs the brand token can't reach (renamed companies,
+    // sub-brands and asset hosts).
+    "iqsight.com", "snapav.com", "snapone.com", "clarecontrols.com", "ltsmall.com",
+    "illustracameras.com", "surveillance-download.com", "bcscctv.pl", "dssl.ru",
+    "cnbtec.com", "level1.com", "yitechnology.com", "sricam.com", "anc.cn",
+    "ubox-eu.oss-eu-central-1.aliyuncs.com", "dmq883log67hn.cloudfront.net",
   ];
   const hostMatches = (host, dom) => host === dom || host.endsWith("." + dom);
-  const isOfficialSource = (cam, url) => {
+  const isOfficialSource = (cam, rawUrl) => {
+    // A Wayback capture is as official as the page it archives.
+    const url = rawUrl.replace(/^https?:\/\/web\.archive\.org\/web\/[^/]+\//, "");
     let host = "";
     try { host = new URL(url).host.toLowerCase(); } catch { return false; }
     if (OFFICIAL_DOMAINS.some((d) => hostMatches(host, d))) return true;

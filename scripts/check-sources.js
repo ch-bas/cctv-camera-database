@@ -138,6 +138,18 @@ async function checkUrl(url) {
   }
 }
 
+/**
+ * True only when a failure proves the URL is gone: 404/410, a redirect to the
+ * homepage, or a domain that no longer resolves. 401/403/405/429, 5xx, timeouts
+ * and TLS errors usually mean a vendor blocks bots or was briefly down, so they
+ * are counted separately and never reported as dead.
+ */
+function isDead(res) {
+  if (res.moved) return true;
+  if (res.status === 404 || res.status === 410) return true;
+  return res.status === 0 && /ENOTFOUND/.test(res.error || '');
+}
+
 async function processInBatches(items, batchSize, fn) {
   const results = [];
   for (let i = 0; i < items.length; i += batchSize) {
@@ -208,6 +220,7 @@ async function run() {
   console.log(`Matched ${matchedFiles.length} file(s) across ${vendorGroups.size} brand(s).\n`);
 
   const deadUrlsReport = [];
+  const blockedByHost = new Map();
 
   // Helper function to check a URL list and stream output
   async function checkUrlGroup(urls, urlToEntriesMap, label) {
@@ -231,7 +244,10 @@ async function run() {
     process.stdout.write('\n\n');
 
     for (const res of results) {
-      if (!res.ok || res.moved) {
+      if (!res.ok && !isDead(res)) {
+        const host = new URL(res.url).host;
+        blockedByHost.set(host, (blockedByHost.get(host) || 0) + 1);
+      } else if (!res.ok || res.moved) {
         deadUrlsReport.push({
           url: res.url,
           status: res.moved ? `${res.status} → homepage` : res.status,
@@ -282,12 +298,23 @@ async function run() {
 
   // Final summary
   console.log('--- VALIDATION REPORT ---');
+  const blockedTotal = [...blockedByHost.values()].reduce((sum, n) => sum + n, 0);
+  if (blockedTotal > 0) {
+    const topHosts = [...blockedByHost.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 15)
+      .map(([host, n]) => `${host} (${n})`)
+      .join(', ');
+    console.log(`⚠️  ${blockedTotal} URL(s) could not be checked (bot block, timeout or server error); not counted as dead.`);
+    console.log(`   Top hosts: ${topHosts}\n`);
+  }
+
   if (deadUrlsReport.length === 0) {
-    console.log('🎉 All checked sources are valid and accessible!');
+    console.log('🎉 No dead source URLs found.');
     process.exit(0);
   }
 
-  console.log(`❌ Found ${deadUrlsReport.length} dead/unreachable source URL(s):\n`);
+  console.log(`❌ Found ${deadUrlsReport.length} dead source URL(s):\n`);
   for (const item of deadUrlsReport) {
     console.log(`URL: ${item.url}`);
     console.log(`  Reason : Status ${item.status || 'ERROR'} (${item.error})`);
