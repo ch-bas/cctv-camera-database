@@ -6,7 +6,16 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
-## [2.31.1] — Unreleased
+## [2.32.0] — Unreleased
+
+### Changed
+- **Source checks now separate dead links from blocked ones:** only 404s, 410s, moved pages and hosts that no longer exist fail the check and open an issue. Sites that refuse automated requests are counted per host in the report instead of being listed as broken (#164).
+- **Official-source check:** more manufacturer domains are recognised, and Wayback Machine copies count according to the site they archive. Records flagged as having only reseller sources fell from 3,471 to 1,828 (#336).
+
+### Fixed
+- **21 Dahua and HiLook records had no `last_verified` date (#399).** Each was checked against its official datasheet and no differences were found, so they now carry one.
+
+## [2.31.1] — 2026-10-30
 
 ### Changed
 - **Tenda CP7 RTSP (#424):** the documented path is `rtsp://<ip>:8554/profile0` (main) and `/profile1` (sub). A user reported that their CP7 serves the main stream at `rtsp://<ip>:554/ch=1?subtype=0` instead, which is the path Tenda documents for the CP3 v3 and CH3; it is likely a newer V2.x revision. This is recorded as a community note, and the Frigate notes now give both paths. The config stays unverified.
