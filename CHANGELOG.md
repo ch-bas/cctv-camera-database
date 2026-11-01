@@ -6,7 +6,15 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
-## [2.32.0] — Unreleased
+## [2.33.0] — Unreleased
+
+### Added
+- **Moxa, new brand: 16 VPort cameras** for rail and industrial sites, covering all 9 current series. Lens, wide-temperature and conformal-coating order codes are kept as aliases. RTSP paths come from Moxa's manuals.
+- **Videotec, new brand: 45 cameras**, covering legacy MAXIMUS, NVX, NTX, NTC, NXPTZ and ULISSE models, including explosion-proof and thermal cameras. These come from archived copies of Videotec's own datasheets, because videotec.com now redirects to Pelco.
+- **Geutebrueck, new brand: 27 cameras** from the G-Cam E and H series, fisheye, speed dome and thermal ranges.
+- **Pelco: 2 ExSite Enhanced 2 PTZ cameras** (8 MP), plus 11 order codes added as aliases on 9 existing records.
+
+## [2.32.0] — 2026-10-31
 
 ### Changed
 - **Source checks now separate dead links from blocked ones:** only 404s, 410s, moved pages and hosts that no longer exist fail the check and open an issue. Sites that refuse automated requests are counted per host in the report instead of being listed as broken (#164).
