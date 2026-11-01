@@ -1,5 +1,7 @@
 # Pelco ExSite Pro PTZ
 
+*Also known as: EXPP1-2X30-EPT-00A0M3*
+
 | Field | Spec |
 |-------|------|
 | Brand | Pelco |

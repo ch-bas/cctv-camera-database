@@ -1,5 +1,7 @@
 # Pelco ExSite Pro IR PTZ
 
+*Also known as: EXLP1-2X30-EPT-85B0M3*
+
 | Field | Spec |
 |-------|------|
 | Brand | Pelco |

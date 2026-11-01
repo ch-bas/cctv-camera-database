@@ -1,6 +1,6 @@
 # Pelco ExSite Enhanced 2 EXF22302B-C0
 
-*Also known as: EXF22302B-C0*
+*Also known as: EXF22302B-C0, EXF22302A-A0*
 
 | Field | Spec |
 |-------|------|

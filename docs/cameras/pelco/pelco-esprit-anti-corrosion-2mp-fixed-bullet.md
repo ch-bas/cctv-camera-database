@@ -1,5 +1,7 @@
 # Pelco Esprit Anti-Corrosion 2MP Fixed Bullet
 
+*Also known as: ESSE1-2X40-SBT-PA, ESSE1-2X40-SBT-PAP, ESSE1-2X40-SBT-PAW*
+
 | Field | Spec |
 |-------|------|
 | Brand | Pelco |

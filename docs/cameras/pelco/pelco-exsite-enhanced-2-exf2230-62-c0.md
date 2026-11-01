@@ -1,6 +1,6 @@
 # Pelco ExSite Enhanced 2 EXF2230-62-C0
 
-*Also known as: EXF2230-62-C0*
+*Also known as: EXF2230-62-C0, EXF2230-62-A0*
 
 | Field | Spec |
 |-------|------|

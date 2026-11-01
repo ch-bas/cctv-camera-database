@@ -1,6 +1,6 @@
 # Pelco ExSite Enhanced 2 EXF2230-52-C4
 
-*Also known as: EXF2230-52-C4*
+*Also known as: EXF2230-52-C4, EXF2230-52-A4*
 
 | Field | Spec |
 |-------|------|
