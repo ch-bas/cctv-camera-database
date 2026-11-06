@@ -49,12 +49,17 @@
         "ip": {
           "type": "integer",
           "minimum": 0,
-          "description": "Maximum IP channels."
+          "description": "Maximum IP channels stated in any mode (for hybrids, the most IP channels the recorder can take)."
         },
         "analog": {
           "type": "integer",
           "minimum": 0,
-          "description": "BNC / HD-over-coax inputs."
+          "description": "Coax (BNC / HD-over-coax) inputs."
+        },
+        "total": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Stated maximum number of channels in use at once, when the maker gives one (hybrids often share a total between coax and IP inputs)."
         }
       }
     },
@@ -141,6 +146,10 @@
         "esata_ports": {
           "type": "integer",
           "minimum": 0
+        },
+        "built_in": {
+          "type": "string",
+          "description": "Storage included or fixed in the unit, as stated (e.g. '1 TB HDD pre-installed', '120 GB SSD (OS)')."
         }
       }
     },
@@ -199,7 +208,18 @@
         "consumption_w": {
           "type": "number",
           "minimum": 0,
-          "description": "Without HDDs unless features says otherwise."
+          "description": "As stated by the maker; consumption_condition gives the stated condition."
+        },
+        "consumption_condition": {
+          "type": "string",
+          "enum": [
+            "max",
+            "typical",
+            "without-hdd",
+            "with-hdd",
+            "without-hdd-and-poe"
+          ],
+          "description": "Condition the stated consumption_w applies to, only when the source states it."
         }
       }
     },
@@ -256,6 +276,62 @@
     "last_verified": {
       "type": "string",
       "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Provenance notes: conflicts between official sources, values left out and why, conditions a value was stated under. Not product features."
+    },
+    "alarm": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "inputs": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "outputs": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "audio": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "inputs": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "outputs": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "two_way": {
+          "type": "boolean"
+        }
+      }
+    },
+    "usb_ports": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "remote_connections": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Maximum simultaneous remote users or connections, as stated."
+    },
+    "weight_condition": {
+      "type": "string",
+      "enum": [
+        "max",
+        "without-hdd",
+        "with-hdd"
+      ],
+      "description": "Condition the stated weight_g applies to, only when the source states it."
     }
   }
 }
