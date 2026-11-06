@@ -12,6 +12,7 @@ const path = require("path");
 const { execFileSync } = require("child_process");
 const Ajv = require("ajv");
 const addFormats = require("ajv-formats");
+const { buildNvrs } = require("./build-nvrs");
 
 const ROOT = path.resolve(__dirname, "..");
 const CAMERAS_DIR = path.join(ROOT, "cameras");
@@ -573,9 +574,13 @@ function main() {
     }
   }
 
-  if (updateReadme(cameras)) outputs.push("README.md");
-
   console.log(`✓ Built ${cameras.length} camera(s) → ${outputs.join(" + ")}`);
+
+  // NVR / DVR / hybrid recorders under nvrs/ → data/nvrs.json (+ csv, docs
+  // copy and the same optional mirror). Validated against nvr.schema.json.
+  buildNvrs({ mirrorDir: mirrorDir && fs.existsSync(mirrorDir) ? mirrorDir : null });
+
+  if (updateReadme(cameras)) console.log("✓ Updated README.md");
 }
 
 main();

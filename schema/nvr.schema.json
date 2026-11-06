@@ -1,0 +1,261 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ch-bas/cctv-camera-database/schema/nvr.schema.json",
+  "title": "Video recorder (NVR / DVR)",
+  "type": "object",
+  "required": [
+    "id",
+    "brand",
+    "model",
+    "kind",
+    "channels",
+    "sources",
+    "last_verified"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "brand": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "nvr",
+        "dvr",
+        "hybrid"
+      ],
+      "description": "nvr: IP cameras only. dvr: analog/HD-over-coax inputs only. hybrid: a DVR that also takes IP channels."
+    },
+    "series": {
+      "type": "string"
+    },
+    "channels": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ip": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Maximum IP channels."
+        },
+        "analog": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "BNC / HD-over-coax inputs."
+        }
+      }
+    },
+    "analog_formats": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "hd-tvi",
+          "hdcvi",
+          "ahd",
+          "cvbs"
+        ]
+      }
+    },
+    "bandwidth": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "incoming_mbps": {
+          "type": "number",
+          "minimum": 0
+        },
+        "outgoing_mbps": {
+          "type": "number",
+          "minimum": 0
+        },
+        "total_mbps": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Stated only as a total, with no incoming or outgoing split."
+        }
+      }
+    },
+    "video": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "max_camera_mp": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Highest camera resolution it records, in megapixels."
+        },
+        "decoding_codecs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "decoding_capability": {
+          "type": "string",
+          "description": "As stated, e.g. '2-ch @ 8 MP (30 fps)'."
+        },
+        "outputs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "As stated, e.g. '1 x HDMI (4K)'."
+        }
+      }
+    },
+    "storage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "bays": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "interface": {
+          "type": "string"
+        },
+        "max_capacity_per_bay_tb": {
+          "type": "number",
+          "minimum": 0
+        },
+        "raid": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "esata_ports": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "network": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ethernet_ports": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "ethernet_speed_mbps": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "poe": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ports": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "budget_w": {
+          "type": "number",
+          "minimum": 0
+        },
+        "standard": {
+          "type": "string"
+        }
+      }
+    },
+    "protocols": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "onvif",
+          "rtsp",
+          "http",
+          "https",
+          "isapi",
+          "p2p"
+        ]
+      }
+    },
+    "power": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "supply": {
+          "type": "string"
+        },
+        "consumption_w": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Without HDDs unless features says otherwise."
+        }
+      }
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "form_factor": {
+      "type": "string",
+      "description": "As stated, e.g. '1U 19-inch rack'."
+    },
+    "dimensions_mm": {
+      "type": "string"
+    },
+    "weight_g": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "operating_temp_c": {
+      "type": "string"
+    },
+    "ndaa_compliant": {
+      "type": "boolean"
+    },
+    "cloud_dependency": {
+      "type": "string",
+      "enum": [
+        "local",
+        "cloud-optional",
+        "cloud-required"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "available",
+        "discontinued",
+        "announced"
+      ]
+    },
+    "release_year": {
+      "type": "integer"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "last_verified": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    }
+  }
+}

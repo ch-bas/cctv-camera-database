@@ -7,7 +7,7 @@ const path = require("path");
 const { execFileSync } = require("child_process");
 
 const ROOT = path.resolve(__dirname, "..");
-const DATA_FILES = ["cameras.json", "cameras.csv"];
+const DATA_FILES = ["cameras.json", "cameras.csv", "nvrs.json", "nvrs.csv"];
 const METADATA_FILE = "release-metadata.json";
 
 function git(...args) {
@@ -67,6 +67,7 @@ function main() {
     repository,
     release_url: repository ? `${serverUrl}/${repository}/releases/tag/${encodeURIComponent(tag)}` : null,
     camera_count: cameras.length,
+    recorder_count: JSON.parse(fs.readFileSync(path.join(ROOT, "data", "nvrs.json"), "utf8")).length,
     files: dataPaths.map(fileDetails),
   };
 
