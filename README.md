@@ -555,7 +555,7 @@ Open — contributions very welcome:
 
 - [ ] **Re-source ~1,051 reseller-only cameras** to official OEM datasheets (#164 / #165)
 - [ ] **Backfill pixel resolution** for the ~2,789 entries that state megapixels but no width×height (#169)
-- [ ] **Frigate verification drive** — only 37 of 22,958 shipped configs are community-verified; [confirm one you run](../../issues/new?template=verify-frigate-config.yml)
+- [ ] **Frigate verification drive** — only 38 of 22,958 shipped configs are community-verified; [confirm one you run](../../issues/new?template=verify-frigate-config.yml)
 - [ ] **Grow `community_notes`** — the per-camera quirks/behaviors layer (#297)
 
 ---
