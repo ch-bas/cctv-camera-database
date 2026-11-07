@@ -6,7 +6,19 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
-## [2.32.0] — Unreleased
+## [2.33.0] — Unreleased
+
+### Added
+- **Moxa, new brand: 16 VPort cameras** for rail and industrial sites, covering all 9 current series. Lens, wide-temperature and conformal-coating order codes are kept as aliases. RTSP paths come from Moxa's manuals.
+- **Videotec, new brand: 45 cameras**, covering legacy MAXIMUS, NVX, NTX, NTC, NXPTZ and ULISSE models, including explosion-proof and thermal cameras. These come from archived copies of Videotec's own datasheets, because videotec.com now redirects to Pelco.
+- **Geutebrueck, new brand: 27 cameras** from the G-Cam E and H series, fisheye, speed dome and thermal ranges.
+- **Pelco: 2 ExSite Enhanced 2 PTZ cameras** (8 MP), plus 11 order codes added as aliases on 9 existing records.
+- **Video recorders: 4,534 NVR, DVR and hybrid recorders from 96 brands**, in a new `nvrs/` folder with its own schema (`schema/nvr.schema.json`). Each record states the channel counts (IP and coax), supported coax formats, incoming and outgoing bandwidth, maximum camera resolution, decoding, video outputs, drive bays and capacity, RAID, PoE ports and budget, network ports, protocols, power, size, weight and operating temperature, where the maker publishes them. Values come from official datasheets and product pages; anything not stated is left out. Records also give alarm and audio inputs and outputs, USB ports, remote connections and built-in storage where stated, plus the condition a power or weight figure was stated under. Conflicts between a maker's own documents and values left out are listed in a separate `notes` field. The build writes `data/nvrs.json` and `data/nvrs.csv`, and both are included in the release archive.
+
+### Changed
+- **Hikvision DS-2CD1023G2-IUF (#428):** its Frigate config was reported working on Frigate 0.18.2 with the main and sub streams in H.264 and the main stream with audio, so it is now marked verified.
+
+## [2.32.0] — 2026-10-31
 
 ### Changed
 - **Source checks now separate dead links from blocked ones:** only 404s, 410s, moved pages and hosts that no longer exist fail the check and open an issue. Sites that refuse automated requests are counted per host in the report instead of being listed as broken (#164).

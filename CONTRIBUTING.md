@@ -215,6 +215,16 @@ cameras/hikvision/ds-2cd2387g2-lu.json   →   id: "hikvision-ds-2cd2387g2-lu"
 
 ---
 
+## Recorders (NVR / DVR)
+
+Recorders live in `nvrs/<brand-slug>/<model-slug>.json`, with id `<brand-slug>-<model-slug>`, and follow `schema/nvr.schema.json`. Use the same brand folder and brand string as `cameras/` when that brand already has cameras.
+
+- `kind`: `nvr` (IP cameras only), `dvr` (coax only) or `hybrid` (coax plus IP).
+- `channels.ip` is the stated maximum number of IP channels; put the maker's full channel breakdown (for example "8 + 8 in hybrid mode") in `features`. Leave `channels` empty for VMS servers that state no camera limit.
+- Only record what the official datasheet or product page states, and cite it in `sources`. Same-spec variants (drive capacity, colour, region) go in `aliases`.
+
+`node scripts/build.js` validates every recorder and writes `data/nvrs.json`.
+
 ## Contributing camera configs (Frigate, Home Assistant, Blue Iris)
 
 Know how to set up a camera in Frigate, Home Assistant, or Blue Iris? Share your working config so others don't have to figure it out.
