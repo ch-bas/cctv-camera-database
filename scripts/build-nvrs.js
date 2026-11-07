@@ -130,6 +130,14 @@ function buildNvrs({ mirrorDir } = {}) {
   if (mirrorDir && fs.existsSync(mirrorDir)) {
     fs.writeFileSync(path.join(mirrorDir, "nvrs.json"), json);
     outputs.push(path.join(mirrorDir, "nvrs.json"));
+    // Add the recorder count to the mirror-only build marker written by build.js.
+    const metaPath = path.join(mirrorDir, "data-meta.json");
+    if (fs.existsSync(metaPath)) {
+      const meta = JSON.parse(fs.readFileSync(metaPath, "utf8"));
+      meta.recorderCount = recs.length;
+      meta.recorderBrandCount = new Set(recs.map((r) => r.brand)).size;
+      fs.writeFileSync(metaPath, JSON.stringify(meta, null, 2) + "\n");
+    }
   }
   const brands = new Set(recs.map((r) => r.brand)).size;
   console.log(`✓ Built ${recs.length} recorder(s) from ${brands} brands → ${outputs.join(" + ")}`);
