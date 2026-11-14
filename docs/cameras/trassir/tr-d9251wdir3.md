@@ -1,6 +1,6 @@
 # Trassir TR-D9251WDIR3
 
-*Also known as: 5 MP (2592×1920) TR-D9251WDIR3 v2 1.4 IP camera is supplied in a metal housing protected from dust and moisture according to IP65 standard, which is combined with an operating temperature range of -30 °C ... +60 °C and lightning protection TVS 4000 V ensures stable outdoor operation at any time of the year., TR-D9251WDIR3, TR-D9251WDIR3 v2 1.4*
+*Also known as: TR-D9251WDIR3, TR-D9251WDIR3 v2 1.4*
 
 | Field | Spec |
 |-------|------|

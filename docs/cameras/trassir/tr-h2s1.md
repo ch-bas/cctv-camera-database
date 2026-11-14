@@ -14,7 +14,7 @@
 | Night vision | ir (20m) |
 | Power | 12V DC |
 | IP rating | IP67 |
-| Operating temp | –10 … +60°C |
+| Operating temp | -10 to 60°C |
 
 ## Features
 

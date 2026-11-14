@@ -1,6 +1,6 @@
 # Trassir TR-D2253WDZCL7
 
-*Also known as: 5 MP (2880×1632) shock-resistant (IK08) IP camera TR-D2253WDZCL7 2.7–13.5 is adapted for outdoor use at any time of the year and day: IP67 protection against moisture and dust, operating temperatures from –40 °C… + 60 °C, lightning protection - TVS 4000 V, range of the integrated backlight - 70 m., TR-D2253WDZCL7, TR-D2253WDZCL7 2.7-13.5*
+*Also known as: TR-D2253WDZCL7, TR-D2253WDZCL7 2.7-13.5*
 
 | Field | Spec |
 |-------|------|

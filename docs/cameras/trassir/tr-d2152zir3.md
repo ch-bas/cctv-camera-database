@@ -1,6 +1,6 @@
 # Trassir TR-D2152ZIR3
 
-*Also known as: 5 MP (2560 × 1920) TR-D2152ZIR3 v2 2.8–8 IP camera is adapted for outdoor use regardless of the season: housing protection against moisture and dust - IP67, operating temperatures from -40 °C ... +60 °C, lightning protection - TVS 4000 V., TR-D2152ZIR3, TR-D2152ZIR3 v2 2.8-8*
+*Also known as: TR-D2152ZIR3, TR-D2152ZIR3 v2 2.8-8*
 
 | Field | Spec |
 |-------|------|

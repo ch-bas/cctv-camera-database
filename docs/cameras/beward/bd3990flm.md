@@ -8,7 +8,7 @@
 | Connectivity | ethernet |
 | Resolution | (12MP, 4000×3000) |
 | Sensor | 1/1.7" Sony CMOS |
-| Lens | 1× . 1.65mm F2.8 |
+| Lens | 1× 1.65mm F2.8 |
 | Field of view | 190° |
 | Night vision | ir (5m), 0.01 lux, 0.1 lux color |
 | Power | PoE / DC 12V |

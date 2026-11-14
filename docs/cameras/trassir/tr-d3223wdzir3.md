@@ -1,6 +1,6 @@
 # Trassir TR-D3223WDZIR3
 
-*Also known as: 2 MP (1920×1080) IP camera TR-D3223WDZIR3 v2 2.7–13.5 is adapted for outdoor use regardless of the season and location: the case is made of metal, protected from mechanical impacts according to IK10, from moisture and dust - IP66, operating temperatures from -40 °C ... +60 °C, lightning protection - TVS 4000 V., TR-D3223WDZIR3, TR-D3223WDZIR3 v2 2.7-13.5*
+*Also known as: TR-D3223WDZIR3, TR-D3223WDZIR3 v2 2.7-13.5*
 
 | Field | Spec |
 |-------|------|

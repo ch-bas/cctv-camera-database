@@ -1,6 +1,6 @@
 # Trassir TR-D2251WDIR4W
 
-*Also known as: 5 MP (2592×1920) IP camera TR-D2251WDIR4W v2 2.8 is adapted for year-round outdoor operation: body protection against moisture and dust - IP67, operating temperatures from -40 °C ... +60 °C, lightning protection - TVS 4000 V. Equipped with a Wi-Fi module for wireless data transmission., TR-D2251WDIR4W, TR-D2251WDIR4W v2 2.8, TR-D2251WDIR4W v2 3.6*
+*Also known as: TR-D2251WDIR4W, TR-D2251WDIR4W v2 2.8, TR-D2251WDIR4W v2 3.6*
 
 | Field | Spec |
 |-------|------|

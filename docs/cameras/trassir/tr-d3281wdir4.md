@@ -1,6 +1,6 @@
 # Trassir TR-D3281WDIR4
 
-*Also known as: 8 MP (3840×2160) TR-D3281WDIR4 2.8 IP camera is adapted for year-round outdoor operation, including places of direct access, under the influence of precipitation: the case is protected from dust and moisture according to the IP67 standard, from mechanical influences — IK10, operating temperatures from – 40 °C… +60 °C, lightning protection - TVS 6000 V., TR-D3281WDIR4, TR-D3281WDIR4 2.8*
+*Also known as: TR-D3281WDIR4, TR-D3281WDIR4 2.8*
 
 | Field | Spec |
 |-------|------|
