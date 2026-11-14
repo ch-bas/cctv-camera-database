@@ -18,6 +18,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ### Changed
 - **Tapo C250 (#430):** its Frigate config was reported working on Frigate 0.18.2, so it is now marked verified. The reporter's setup for live view on iPhone and iPad (a go2rtc restream with H.264 video and AAC audio for MSE) and two-way talk (a go2rtc `tapo://admin:<password>@{ip}` source, ONVIF on port 2020) is added as a community note. Reported via the website by Liero.
+- **NetBox Device Type Library export (#429):** `scripts/gen-netbox.js` now maps a sub-brand to the manufacturer the library already uses, with a model prefix. Cisco Meraki cameras are written as manufacturer `Cisco`, model `Meraki MV22`, file `device-types/Cisco/Meraki-MV22.yaml`, slug `cisco-meraki-mv22`, matching the library's 86 existing Meraki devices. Before writing a new manufacturer, the script warns when its name contains an existing library manufacturer or when library files already use it as a model prefix. It reads the manufacturer list from a local library clone (`--dtl <path>`, or `../devicetype-library`) and skips the check with a notice when none is found. `--plan` lists where each camera would be written without writing anything.
 
 ## [2.33.0] — Unreleased
 
