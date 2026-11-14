@@ -6,6 +6,16 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.34.0] — Unreleased
+
+### Fixed
+- **Storage: 271 cameras now set `storage.onboard`.** They listed a maximum microSD size but did not say they had a card slot. AVYCON (101), Bosch (50), Panasonic (33), TRUEN (25), Hikvision (22), Hyundai (12), Anpviz (9), QuarkView (9), Tapo (6), FLIR (4).
+- **Trassir: 29 aliases removed** that held the maker's product description paragraph instead of an order code or name. One of them described a different model.
+- **Trassir: 4 operating temperatures** written with a dash and ellipsis (`–10 … +50`) now use the standard `-10 to 50` form (TR-D7121IR1W, TR-D8121IR2W, TR-H2L1, TR-H2S1).
+- **BEWARD BD3990FL2 and BD3990FLM:** focal length read `. 1.65`; it is now `1.65` mm, as on BEWARD's product pages.
+- **Stray spaces removed** from the RVi-1NCE2020 (3.6) and RVi-2NCR54605 (2.7-13.5) model names and from one Dahua SD6CE245GB-HNR alias.
+- **Hikvision DS-2DE3404W-DET5:** an empty focal length value was removed.
+
 ## [2.33.0] — Unreleased
 
 ### Added
