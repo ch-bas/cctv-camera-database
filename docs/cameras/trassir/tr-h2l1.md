@@ -12,7 +12,7 @@
 | Sensor | 1/2.9" CMOS |
 | Lens | 1× 2.8mm |
 | Power | 12V DC |
-| Operating temp | –10 … +50°C |
+| Operating temp | -10 to 50°C |
 
 ## Features
 

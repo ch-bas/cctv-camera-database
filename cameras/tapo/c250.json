@@ -91,7 +91,9 @@
       },
       "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/stream1",
       "best_substream": "rtsp://{user}:{pass}@{ip}:554/stream2",
-      "verified": false,
+      "verified": true,
+      "tested_by": "Liero via website (#430)",
+      "tested_version": "0.18.2",
       "notes": "Mains-powered Tapo cameras expose RTSP once a Camera Account is created in the Tapo app (Settings > Advanced > Camera Account). /stream1 is the main stream, /stream2 the substream. go2rtc alternative: TP-Link's proprietary protocol via go2rtc (tapo://<tapo-account-password>@{ip}) is often more stable than RTSP (fewer timeouts / non-monotonic-timestamp errors). The password form is firmware-dependent: either your Tapo app/cloud account password, or user `admin` + the UPPERCASE SHA-256 of the camera password (`tapo://admin:<UPPERCASE-SHA256>@{ip}`) — see go2rtc's Tapo docs. It is not the camera's plain RTSP/Device password. If non-monotonic-timestamp errors persist, disable audio for that camera in Frigate. Chrome may render the go2rtc live view with a squashed aspect ratio (a browser live-view quirk, not the stream); Firefox is correct. The go2rtc tapo:// source also carries a two-way-audio backchannel, so Frigate's live view gets a talk button (mic+speaker). Pan/tilt: Tapo exposes ONVIF PTZ on port 2020 (not 80) — point Frigate's onvif block at host:<ip> port:2020 with the camera Account credentials for manual pan/tilt. (Frigate autotracking stays off: Tapo only does continuous-move ONVIF, no reliable absolute/FOV positioning.)",
       "autotracking": false,
       "onvif_port": 2020,
@@ -106,11 +108,20 @@
       "notes": "Use Generic/ONVIF profile. RTSP streams: /stream1 (main), /stream2 (sub). Must enable the Camera Account / ONVIF in the Tapo app."
     }
   },
-  "last_verified": "2026-07-26",
+  "last_verified": "2026-11-14",
   "markets": [
     "global"
   ],
   "cloud_dependency": "cloud-optional",
   "operating_temp_c": "0 to 40",
-  "dimensions_mm": "85.4 x 86.8 x 117.2"
+  "dimensions_mm": "85.4 x 86.8 x 117.2",
+  "community_notes": [
+    {
+      "note": "Frigate live view on iPhone/iPad (MSE) needs H.264 video and AAC audio. On Frigate 0.18.2 the reporter added a go2rtc restream of the main stream, ffmpeg:rtsp://127.0.0.1:8554/tapo_c250#video=h264#audio=aac, and set it as the camera live stream. Two-way talk worked after adding a go2rtc tapo://admin:<password>@{ip} source (with ffmpeg:...#audio=aac) to the substream; ONVIF was set to port 2020.",
+      "category": "frigate",
+      "source": "https://github.com/ch-bas/cctv-camera-database/issues/430",
+      "reported_by": "Liero",
+      "date": "2026-11-14"
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 # Trassir TR-D4281WDIR2
 
-*Also known as: 8 MP (3840×2160) IP-camera TR-D4281WDIR2 2.8 is adapted for year-round outdoor operation, including places of direct access, under the influence of precipitation: the case is protected from dust and moisture according to the IP67 standard, from mechanical influences — IK10, operating temperatures from – 40 °C… +60 °C, lightning protection - TVS 6000 V., TR-D4281WDIR2, TR-D4281WDIR2 2.8*
+*Also known as: TR-D4281WDIR2, TR-D4281WDIR2 2.8*
 
 | Field | Spec |
 |-------|------|

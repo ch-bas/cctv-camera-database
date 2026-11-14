@@ -1,6 +1,6 @@
 # Trassir TR-D2221WDIR4W
 
-*Also known as: 2 MP (1920×1080) IP-camera TR-D2221WDIR4W v2 2.8 is adapted for outdoor use at any time of the year: protection of the body made of metal against moisture and dust complies with the IP67 standard, operating temperatures from -40 °C ... +60 °C , lightning protection - TVS 4000 V. Equipped with a Wi-Fi module - for wireless data transmission., TR-D2221WDIR4W, TR-D2221WDIR4W v2 2.8, TR-D2221WDIR4W v2 3.6*
+*Also known as: TR-D2221WDIR4W, TR-D2221WDIR4W v2 2.8, TR-D2221WDIR4W v2 3.6*
 
 | Field | Spec |
 |-------|------|

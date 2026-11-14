@@ -6,6 +6,20 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ---
 
+## [2.34.0] — Unreleased
+
+### Fixed
+- **Storage: 271 cameras now set `storage.onboard`.** They listed a maximum microSD size but did not say they had a card slot. AVYCON (101), Bosch (50), Panasonic (33), TRUEN (25), Hikvision (22), Hyundai (12), Anpviz (9), QuarkView (9), Tapo (6), FLIR (4).
+- **Trassir: 29 aliases removed** that held the maker's product description paragraph instead of an order code or name. One of them described a different model.
+- **Trassir: 4 operating temperatures** written with a dash and ellipsis (`–10 … +50`) now use the standard `-10 to 50` form (TR-D7121IR1W, TR-D8121IR2W, TR-H2L1, TR-H2S1).
+- **BEWARD BD3990FL2 and BD3990FLM:** focal length read `. 1.65`; it is now `1.65` mm, as on BEWARD's product pages.
+- **Stray spaces removed** from the RVi-1NCE2020 (3.6) and RVi-2NCR54605 (2.7-13.5) model names and from one Dahua SD6CE245GB-HNR alias.
+- **Hikvision DS-2DE3404W-DET5:** an empty focal length value was removed.
+
+### Changed
+- **Tapo C250 (#430):** its Frigate config was reported working on Frigate 0.18.2, so it is now marked verified. The reporter's setup for live view on iPhone and iPad (a go2rtc restream with H.264 video and AAC audio for MSE) and two-way talk (a go2rtc `tapo://admin:<password>@{ip}` source, ONVIF on port 2020) is added as a community note. Reported via the website by Liero.
+- **NetBox Device Type Library export (#429):** `scripts/gen-netbox.js` now maps a sub-brand to the manufacturer the library already uses, with a model prefix. Cisco Meraki cameras are written as manufacturer `Cisco`, model `Meraki MV22`, file `device-types/Cisco/Meraki-MV22.yaml`, slug `cisco-meraki-mv22`, matching the library's 86 existing Meraki devices. Before writing a new manufacturer, the script warns when its name contains an existing library manufacturer or when library files already use it as a model prefix. It reads the manufacturer list from a local library clone (`--dtl <path>`, or `../devicetype-library`) and skips the check with a notice when none is found. `--plan` lists where each camera would be written without writing anything.
+
 ## [2.33.0] — Unreleased
 
 ### Added

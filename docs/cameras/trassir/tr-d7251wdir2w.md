@@ -1,6 +1,6 @@
 # Trassir TR-D7251WDIR2W
 
-*Also known as: 5 MP (2880 × 1632) TR-D8251WDCL3 2.8 IP camera is adapted for outdoor use at any time of the year and day - in places of direct access under the influence of precipitation: protection of the case from moisture and dust - IP66, from mechanical influences - IK10, working temperatures - -40 °C ... +60 °C, lightning protection - TVS 4000 V, range of the integrated backlight - 30 m., TR-D7251WDIR2W, TR-D7251WDIR2W v2 2.8*
+*Also known as: TR-D7251WDIR2W, TR-D7251WDIR2W v2 2.8*
 
 | Field | Spec |
 |-------|------|

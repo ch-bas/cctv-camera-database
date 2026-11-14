@@ -1,6 +1,6 @@
 # Trassir TR-D2281WDIR4
 
-*Also known as: 8 MP (3840×2160) IP-camera TR-D2281WDIR4 2.8 is designed taking into account the conditions of year-round outdoor operation under the influence of precipitation: the case is protected from dust and moisture according to the IP67 standard, operating temperatures from -40 °C ... +60 °C, lightning protection — 6000V., TR-D2281WDIR4, TR-D2281WDIR4 2.8*
+*Also known as: TR-D2281WDIR4, TR-D2281WDIR4 2.8*
 
 | Field | Spec |
 |-------|------|

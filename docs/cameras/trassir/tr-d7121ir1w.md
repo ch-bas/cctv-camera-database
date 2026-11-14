@@ -16,7 +16,7 @@
 | Storage | microSD ≤ 128GB, NVR |
 | Protocols | onvif, rtsp |
 | Two-way audio | No |
-| Operating temp | –10 … +50°C |
+| Operating temp | -10 to 50°C |
 
 ## Streams
 

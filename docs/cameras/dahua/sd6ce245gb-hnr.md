@@ -1,6 +1,6 @@
 # Dahua SD6CE245GB-HNR
 
-*Also known as: DH-SD6CE245GB-HNR, SD6CE245GB-HNR(only for  Georgia)*
+*Also known as: DH-SD6CE245GB-HNR, SD6CE245GB-HNR(only for Georgia)*
 
 | Field | Spec |
 |-------|------|

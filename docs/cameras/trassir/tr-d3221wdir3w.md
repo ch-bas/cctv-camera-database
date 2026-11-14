@@ -1,6 +1,6 @@
 # Trassir TR-D3221WDIR3W
 
-*Also known as: 2 MP (1920×1080) IP camera TR-D3221WDIR3W v2 2.8 is adapted for outdoor use regardless of the season and location: body protection against mechanical impacts - IK10, moisture and dust - IP66, operating temperatures from -40 °C ... +60 °C, lightning protection - TVS 4000 V. Equipped with a Wi-Fi module for wireless data transmission., TR-D3221WDIR3W, TR-D3221WDIR3W v2 2.8*
+*Also known as: TR-D3221WDIR3W, TR-D3221WDIR3W v2 2.8*
 
 | Field | Spec |
 |-------|------|

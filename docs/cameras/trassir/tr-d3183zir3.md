@@ -1,6 +1,6 @@
 # Trassir TR-D3183ZIR3
 
-*Also known as: 8 MP (3840×2160) IP camera TR-D3183ZIR3 v3 2.7–13.5 is supplied in a metal case, protected from moisture and dust according to IP67 standard, from mechanical impact - according to IK10, which in combination with an operating temperature range of -40 °C … +60 °C ensures stable operation of the device outdoors in a place of direct access – regardless of the season., TR-D3183ZIR3, TR-D3183ZIR3 v3 2.7-13.5*
+*Also known as: TR-D3183ZIR3, TR-D3183ZIR3 v3 2.7-13.5*
 
 | Field | Spec |
 |-------|------|

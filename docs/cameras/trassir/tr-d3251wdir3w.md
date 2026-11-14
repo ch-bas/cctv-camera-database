@@ -1,6 +1,6 @@
 # Trassir TR-D3251WDIR3W
 
-*Also known as: 5 MP (2592×1920) IP-camera TR-D3251WDIR3W v2 2.8 is adapted for year-round outdoor operation in places of direct access: the case meets the standard of protection against moisture and dust IP66, against mechanical influences - IK10, operating temperatures from -40 °C... +60 °C, lightning protection - TVS 4000 V. Equipped with a Wi-Fi module for wireless data transmission and IR illumination (30 m range) for night video surveillance., TR-D3251WDIR3W, TR-D3251WDIR3W v2 2.8*
+*Also known as: TR-D3251WDIR3W, TR-D3251WDIR3W v2 2.8*
 
 | Field | Spec |
 |-------|------|

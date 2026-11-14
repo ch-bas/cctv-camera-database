@@ -4,6 +4,7 @@
  *
  * Usage:
  *   node scripts/gen-netbox.js --brand Hikvision [--out netbox-out] [--limit 50] [--report]
+ *                              [--dtl ../devicetype-library] [--plan]
  *
  * Rules (mirrors the project's datasheet-only policy):
  *   - Only cameras with power_source "poe" AND a known Ethernet link speed are emitted.
@@ -17,6 +18,22 @@
  *
  * --report lists PoE cameras that are blocked only by a missing ethernet speed,
  * with their datasheet URL so the field can be filled from the source.
+ *
+ * Manufacturer mapping (#429): a dataset brand can map to an existing library
+ * manufacturer with a model prefix (BRAND_OVERRIDE), e.g. "Cisco Meraki" MV22 →
+ * manufacturer Cisco, model "Meraki MV22", device-types/Cisco/Meraki-MV22.yaml,
+ * slug cisco-meraki-mv22 — the library already files Meraki under Cisco.
+ *
+ * --dtl <path> points at a local clone of netbox-community/devicetype-library
+ * (default: ../devicetype-library next to this repo, if present). Its
+ * device-types/ directory names are the existing manufacturers; before writing a
+ * NEW manufacturer the script warns when the brand starts with or contains an
+ * existing manufacturer name, or when library files already use the brand as a
+ * model prefix. Without a clone the check is skipped with a notice.
+ *
+ * --plan prints manufacturer / model / file / slug for every selected camera
+ * (including ones that would be skipped for a missing ethernet speed) and
+ * writes nothing.
  */
 const fs = require('fs');
 const path = require('path');
@@ -27,6 +44,11 @@ const BRAND = opt('--brand', null);
 const OUT = opt('--out', 'netbox-out');
 const LIMIT = parseInt(opt('--limit', '0'), 10);
 const REPORT = args.includes('--report');
+const PLAN = args.includes('--plan');
+const ROOT = path.resolve(__dirname, '..');
+const DTL = [opt('--dtl', null), path.join(ROOT, '..', 'devicetype-library')]
+  .find((p) => p && fs.existsSync(path.join(p, 'device-types'))) || null;
+if (opt('--dtl', null) && DTL !== opt('--dtl', null)) console.error(`notice: --dtl ${opt('--dtl', null)} has no device-types/ directory`);
 
 const SPEED_TYPE = { 10: '10base-t', 100: '100base-tx', 1000: '1000base-t', 2500: '2.5gbase-t', 10000: '10gbase-t' };
 
@@ -34,10 +56,71 @@ const SPEED_TYPE = { 10: '10base-t', 100: '100base-tx', 1000: '1000base-t', 2500
 // brand casing. Match the library's existing convention exactly or CI creates a
 // duplicate manufacturer (and macOS's case-insensitive FS clobbers the real dir).
 // lowerFile mirrors vendors whose existing files are lowercased (e.g. AXIS).
+// A sub-brand the library files under its parent maps to the parent manufacturer
+// with a modelPrefix (prepended to the model, joined with '-' in the filename) and
+// an optional dir when the directory name differs from the manufacturer name.
 const BRAND_OVERRIDE = {
   axis: { name: 'AXIS', lowerFile: true },
+  'cisco meraki': { name: 'Cisco', modelPrefix: 'Meraki' },
 };
 const brandInfo = (brand) => BRAND_OVERRIDE[brand.toLowerCase()] || { name: brand };
+
+// Filename must equal the model or its slug (their CI checks this, case-insensitively).
+// Raw model when filesystem-safe (keeps parens, matching library convention); for a
+// model with a slash, drop the slash + parens so the name still resolves to the slug.
+const fileModel = (m) => (/[/\\]/.test(m) ? m.replace(/[/\\]/g, '-').replace(/[()]/g, '') : m);
+
+// Where a camera lands in the library: manufacturer, model, directory, file, slug.
+function dtlTarget(c) {
+  const info = brandInfo(c.brand);
+  const manufacturer = info.name;
+  const model = info.modelPrefix ? `${info.modelPrefix} ${c.model}` : c.model;
+  let fname = info.modelPrefix ? `${info.modelPrefix}-${fileModel(c.model)}` : fileModel(c.model);
+  if (info.lowerFile) fname = fname.toLowerCase();
+  const dir = info.dir || manufacturer;
+  return {
+    manufacturer, model, dir,
+    file: path.join('device-types', dir, `${fname}.yaml`),
+    slug: `${slugifyManufacturer(manufacturer)}-${slugifyModel(model)}`,
+  };
+}
+
+// Warn before creating a manufacturer the library may already have under another
+// name: brand starts with / contains an existing manufacturer directory name, or
+// existing library files already use the brand (or its trailing words) as a model prefix.
+function checkNewManufacturers(targets) {
+  if (!DTL) {
+    console.error('notice: no devicetype-library clone found (pass --dtl <path>); skipping the existing-manufacturer check');
+    return;
+  }
+  const root = path.join(DTL, 'device-types');
+  const dirs = fs.readdirSync(root).filter((d) => fs.statSync(path.join(root, d)).isDirectory());
+  const norm = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+  const have = new Set(dirs.map((d) => d.toLowerCase()));
+  const seen = new Set();
+  for (const t of targets) {
+    if (seen.has(t.dir) || have.has(t.dir.toLowerCase())) continue;
+    seen.add(t.dir);
+    const b = norm(t.manufacturer);
+    for (const d of dirs) {
+      const dn = norm(d);
+      if (dn.length < 3 || dn === b) continue;
+      if (` ${b} `.includes(` ${dn} `)) { // whole words: "Cisco Meraki" ⊃ "Cisco", not "Digital" ⊃ "Digi"
+        console.error(`WARNING: new manufacturer "${t.manufacturer}" starts with or contains existing library manufacturer "${d}" — map it in BRAND_OVERRIDE (manufacturer + modelPrefix) if it is a sub-brand`);
+      }
+    }
+    // Brand words as a model-file prefix elsewhere ("Meraki-MR36.yaml" under Cisco).
+    const words = b.split(' ');
+    const prefixes = words.map((_, i) => words.slice(i).join('-')).filter((p) => p.length >= 3);
+    for (const d of dirs) {
+      const hits = fs.readdirSync(path.join(root, d))
+        .filter((f) => prefixes.some((p) => f.toLowerCase().startsWith(`${p}-`)));
+      if (hits.length) {
+        console.error(`WARNING: new manufacturer "${t.manufacturer}": ${hits.length} file(s) in device-types/${d}/ already use it as a model prefix (e.g. ${hits[0]})`);
+      }
+    }
+  }
+}
 
 // Mirror devicetype-library's exact slug rules (tests/device_types.py) — the
 // ordered replace chains must match theirs char-for-char, or their CI rejects
@@ -120,12 +203,11 @@ function toYaml(c) {
   // would fabricate a nonexistent DC-terminal port on a PoE-only device.
   const dcV = hasDc ? dcVoltage(method) : null;
   const draw = c.power && c.power.consumption_w;
-  const mfr = brandInfo(c.brand).name;
-  const slug = `${slugifyManufacturer(mfr)}-${slugifyModel(c.model)}`;
+  const { manufacturer: mfr, model, slug } = dtlTarget(c);
 
   const L = ['---']; // devicetype-library's yamllint requires the document-start marker
   L.push(`manufacturer: ${yamlStr(mfr)}`);
-  L.push(`model: ${yamlStr(c.model)}`);
+  L.push(`model: ${yamlStr(model)}`);
   L.push(`slug: ${slug}`);
   L.push(`part_number: ${yamlStr(c.model)}`);
   L.push(`u_height: 0`);
@@ -192,21 +274,23 @@ if (REPORT) {
   process.exit(0);
 }
 
+checkNewManufacturers(cams.map(dtlTarget));
+
+if (PLAN) {
+  for (const c of cams) {
+    const t = dtlTarget(c);
+    const note = SPEED_TYPE[c.network && c.network.ethernet_speed_mbps] ? '' : '\t(skipped: no ethernet speed)';
+    console.log(`${c.id}\t${t.manufacturer}\t${t.model}\t${t.file}\t${t.slug}${note}`);
+  }
+  process.exit(0);
+}
+
 let n = 0, skipped = 0;
 for (const c of cams) {
   const r = toYaml(c);
   if (!r) { skipped++; continue; }
-  const info = brandInfo(c.brand);
-  const dir = path.join(OUT, 'device-types', info.name);
-  fs.mkdirSync(dir, { recursive: true });
-  // Filename must equal the model or its slug (their CI checks this, case-insensitively).
-  // Raw model when filesystem-safe (keeps parens, matching library convention); for a
-  // model with a slash, drop the slash + parens so the name still resolves to the slug.
-  let fname = /[/\\]/.test(c.model)
-    ? c.model.replace(/[/\\]/g, '-').replace(/[()]/g, '')
-    : c.model;
-  if (info.lowerFile) fname = fname.toLowerCase();
-  const file = path.join(dir, `${fname}.yaml`);
+  const file = path.join(OUT, dtlTarget(c).file);
+  fs.mkdirSync(path.dirname(file), { recursive: true });
   if (fs.existsSync(file)) { console.error(`EXISTS - skip ${file}`); continue; }
   fs.writeFileSync(file, r.yaml);
   n++;
