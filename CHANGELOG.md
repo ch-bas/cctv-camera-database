@@ -16,6 +16,9 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - **Stray spaces removed** from the RVi-1NCE2020 (3.6) and RVi-2NCR54605 (2.7-13.5) model names and from one Dahua SD6CE245GB-HNR alias.
 - **Hikvision DS-2DE3404W-DET5:** an empty focal length value was removed.
 
+### Changed
+- **Tapo C250 (#430):** its Frigate config was reported working on Frigate 0.18.2, so it is now marked verified. The reporter's setup for live view on iPhone and iPad (a go2rtc restream with H.264 video and AAC audio for MSE) and two-way talk (a go2rtc `tapo://admin:<password>@{ip}` source, ONVIF on port 2020) is added as a community note. Reported via the website by Liero.
+
 ## [2.33.0] — Unreleased
 
 ### Added
